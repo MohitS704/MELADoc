@@ -1,0 +1,723 @@
+\hypertarget{CALLING__cpHTO_8f}{}\doxysection{M\+E\+L\+A/fortran/\+C\+P\+S/\+C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+TO.f File Reference}
+\label{CALLING__cpHTO_8f}\index{MELA/fortran/CPS/CALLING\_cpHTO.f@{MELA/fortran/CPS/CALLING\_cpHTO.f}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacehto__acmplx__pro_1_1operator_07_8cp_8_08}{hto\+\_\+acmplx\+\_\+pro\+::operator(.\+cp.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__acmplx__rat_1_1operator_07_8cq_8_08}{hto\+\_\+acmplx\+\_\+rat\+::operator(.\+cq.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__linear__comb__c_1_1operator_07_8lcc_8_08}{hto\+\_\+linear\+\_\+comb\+\_\+c\+::operator(.\+lcc.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__real__lnz_1_1operator_07_8rlnz_8_08}{hto\+\_\+real\+\_\+lnz\+::operator(.\+rlnz.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__imag__lnz_1_1operator_07_8ilnz_8_08}{hto\+\_\+imag\+\_\+lnz\+::operator(.\+ilnz.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__real__ln_1_1operator_07_8rln_8_08}{hto\+\_\+real\+\_\+ln\+::operator(.\+rln.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__cmplx__ln_1_1operator_07_8cln_8_08}{hto\+\_\+cmplx\+\_\+ln\+::operator(.\+cln.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__full__ln_1_1operator_07_8fln_8_08}{hto\+\_\+full\+\_\+ln\+::operator(.\+fln.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__ln__2__riemann_1_1operator_07_8lnsrs_8_08}{hto\+\_\+ln\+\_\+2\+\_\+riemann\+::operator(.\+lnsrs.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__cmplx__srs__root_1_1operator_07_8crsrs_8_08}{hto\+\_\+cmplx\+\_\+srs\+\_\+root\+::operator(.\+crsrs.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__cmplx__root_1_1operator_07_8cr_8_08}{hto\+\_\+cmplx\+\_\+root\+::operator(.\+cr.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__cmplx__rootz_1_1operator_07_8crz_8_08}{hto\+\_\+cmplx\+\_\+rootz\+::operator(.\+crz.)}}
+\item 
+interface \mbox{\hyperlink{interfacehto__linear__comb_1_1operator_07_8lc_8_08}{hto\+\_\+linear\+\_\+comb\+::operator(.\+lc.)}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacehto__aux__hcp}{hto\+\_\+aux\+\_\+hcp}}
+\item 
+module \mbox{\hyperlink{namespacehto__masses}{hto\+\_\+masses}}
+\item 
+module \mbox{\hyperlink{namespacehto__puttime}{hto\+\_\+puttime}}
+\item 
+module \mbox{\hyperlink{namespacehto__units}{hto\+\_\+units}}
+\item 
+module \mbox{\hyperlink{namespacehto__riemann}{hto\+\_\+riemann}}
+\item 
+module \mbox{\hyperlink{namespacehto__bernoulli}{hto\+\_\+bernoulli}}
+\item 
+module \mbox{\hyperlink{namespacehto__ferbos}{hto\+\_\+ferbos}}
+\item 
+module \mbox{\hyperlink{namespacehto__aux__hbb}{hto\+\_\+aux\+\_\+hbb}}
+\item 
+module \mbox{\hyperlink{namespacehto__optcp}{hto\+\_\+optcp}}
+\item 
+module \mbox{\hyperlink{namespacehto__set__phys__const}{hto\+\_\+set\+\_\+phys\+\_\+const}}
+\item 
+module \mbox{\hyperlink{namespacehto__rootw}{hto\+\_\+rootw}}
+\item 
+module \mbox{\hyperlink{namespacehto__transfmh}{hto\+\_\+transfmh}}
+\item 
+module \mbox{\hyperlink{namespacehto__acmplx__pro}{hto\+\_\+acmplx\+\_\+pro}}
+\item 
+module \mbox{\hyperlink{namespacehto__acmplx__rat}{hto\+\_\+acmplx\+\_\+rat}}
+\item 
+module \mbox{\hyperlink{namespacehto__linear__comb__c}{hto\+\_\+linear\+\_\+comb\+\_\+c}}
+\item 
+module \mbox{\hyperlink{namespacehto__real__lnz}{hto\+\_\+real\+\_\+lnz}}
+\item 
+module \mbox{\hyperlink{namespacehto__imag__lnz}{hto\+\_\+imag\+\_\+lnz}}
+\item 
+module \mbox{\hyperlink{namespacehto__real__ln}{hto\+\_\+real\+\_\+ln}}
+\item 
+module \mbox{\hyperlink{namespacehto__cmplx__ln}{hto\+\_\+cmplx\+\_\+ln}}
+\item 
+module \mbox{\hyperlink{namespacehto__full__ln}{hto\+\_\+full\+\_\+ln}}
+\item 
+module \mbox{\hyperlink{namespacehto__ln__2__riemann}{hto\+\_\+ln\+\_\+2\+\_\+riemann}}
+\item 
+module \mbox{\hyperlink{namespacehto__cmplx__srs__root}{hto\+\_\+cmplx\+\_\+srs\+\_\+root}}
+\item 
+module \mbox{\hyperlink{namespacehto__cmplx__root}{hto\+\_\+cmplx\+\_\+root}}
+\item 
+module \mbox{\hyperlink{namespacehto__cmplx__rootz}{hto\+\_\+cmplx\+\_\+rootz}}
+\item 
+module \mbox{\hyperlink{namespacehto__common__niels}{hto\+\_\+common\+\_\+niels}}
+\item 
+module \mbox{\hyperlink{namespacehto__kountac}{hto\+\_\+kountac}}
+\item 
+module \mbox{\hyperlink{namespacehto__linear__comb}{hto\+\_\+linear\+\_\+comb}}
+\item 
+module \mbox{\hyperlink{namespacehto__sp__fun}{hto\+\_\+sp\+\_\+fun}}
+\item 
+module \mbox{\hyperlink{namespacehto__dzpar}{hto\+\_\+dzpar}}
+\item 
+module \mbox{\hyperlink{namespacehto__rzeta}{hto\+\_\+rzeta}}
+\item 
+module \mbox{\hyperlink{namespacehto__colour}{hto\+\_\+colour}}
+\item 
+module \mbox{\hyperlink{namespacehto__asinp}{hto\+\_\+asinp}}
+\item 
+module \mbox{\hyperlink{namespacehto__aspar}{hto\+\_\+aspar}}
+\item 
+module \mbox{\hyperlink{namespacehto__varflv}{hto\+\_\+varflv}}
+\item 
+module \mbox{\hyperlink{namespacehto__nffix}{hto\+\_\+nffix}}
+\item 
+module \mbox{\hyperlink{namespacehto__frrat}{hto\+\_\+frrat}}
+\item 
+module \mbox{\hyperlink{namespacehto__asfthr}{hto\+\_\+asfthr}}
+\item 
+module \mbox{\hyperlink{namespacehto__betacom}{hto\+\_\+betacom}}
+\item 
+module \mbox{\hyperlink{namespacehto__olas}{hto\+\_\+olas}}
+\item 
+module \mbox{\hyperlink{namespacehto__qcd}{hto\+\_\+qcd}}
+\item 
+module \mbox{\hyperlink{namespacehto__a__cmplx}{hto\+\_\+a\+\_\+cmplx}}
+\item 
+module \mbox{\hyperlink{namespacehto__root__find2}{hto\+\_\+root\+\_\+find2}}
+\item 
+module \mbox{\hyperlink{namespacehto__hbb__cp}{hto\+\_\+hbb\+\_\+cp}}
+\item 
+module \mbox{\hyperlink{namespacehto__solve__nonlin}{hto\+\_\+solve\+\_\+nonlin}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacehto__puttime_a04188ac3806eff906eaed6b87d3f43a6}{hto\+\_\+puttime\+::hto\+\_\+timestamp}} ()
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{hto\+\_\+acmplx\+\_\+pro\+::cp}} (x, y)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{hto\+\_\+acmplx\+\_\+rat\+::cq}} (x, y)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__linear__comb__c_a5dcd513468424c144e752e8c3b74f99b}{hto\+\_\+linear\+\_\+comb\+\_\+c\+::lcc}} (c, x)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__real__lnz_ab05e8bf3b23247730845e910d16651fc}{hto\+\_\+real\+\_\+lnz\+::rlnz}} (x, y)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__imag__lnz_ab2cf7932bc14b87dcd9f0a0b43916299}{hto\+\_\+imag\+\_\+lnz\+::ilnz}} (x, y)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__real__ln_a8e33bb717adbc2f3565c8adb112014c4}{hto\+\_\+real\+\_\+ln\+::rln}} (x, ep)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{hto\+\_\+cmplx\+\_\+ln\+::cln}} (x, ep)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{hto\+\_\+full\+\_\+ln\+::fln}} (x, y)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{hto\+\_\+ln\+\_\+2\+\_\+riemann\+::lnsrs}} (x, y)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{hto\+\_\+cmplx\+\_\+srs\+\_\+root\+::crsrs}} (x, y)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{hto\+\_\+cmplx\+\_\+root\+::cr}} (x, ep)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__cmplx__rootz_a7a26cf49825b24cebd8ab098b92319e6}{hto\+\_\+cmplx\+\_\+rootz\+::crz}} (x, y)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__linear__comb_a3a6d4c769508942bb56a51af0df73841}{hto\+\_\+linear\+\_\+comb\+::lc}} (c, x)
+\item 
+recursive real $\ast$8 function, dimension(6, 2) \mbox{\hyperlink{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+s\+\_\+niels\+\_\+up4}} (x)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_ad1509c1703a2f91ac6473d42b78adc21}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li2\+\_\+srsz}} (x, y, unit)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_a3cd8ec48b6a81b6d803b3fcfa614eeea}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li3\+\_\+srsz}} (x, y, unit)
+\item 
+real $\ast$8 function, dimension(3, 2) \mbox{\hyperlink{namespacehto__sp__fun_ae00024005793a98a7520e6051a2f6482}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+poly\+\_\+unit}} (theta)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li2}} (x)
+\item 
+real $\ast$8 function, dimension(size(x)) \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li3}} (x)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__sp__fun_a4bee27933857d07ff259f76be1059c1d}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+init\+\_\+niels}}
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+cqlnx}} (arg)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\+\_\+sp\+\_\+fun\+::hto\+\_\+cqlnomx}} (arg, omarg)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}{hto\+\_\+initalphas}} (I\+O\+RD, F\+R2, M\+UR, A\+S\+M\+UR, MC, MB, MT)
+\item 
+real $\ast$8 function \mbox{\hyperlink{CALLING__cpHTO_8f_a3052dded3815a1f698b9467fc22dc3fe}{hto\+\_\+findalphasr0}} (A\+SI)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_ac8c2d230bda80df973278063e94b25d0}{hto\+\_\+initalphasr0}} (I\+O\+RD, F\+R2, R0, A\+SI, MC, MB, MT)
+\item 
+real $\ast$8 function \mbox{\hyperlink{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}{hto\+\_\+alphas}} (M\+UR)
+\item 
+real $\ast$8 function \mbox{\hyperlink{CALLING__cpHTO_8f_a893b84102b13f4dd978da342143bc62e}{hto\+\_\+asnf1}} (A\+S\+NF, L\+O\+G\+RH, NF)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a115772aacbf61ed42f3f0847820fbc3b}{hto\+\_\+evnfthr}} (M\+C2, M\+B2, M\+T2)
+\item 
+real $\ast$8 function \mbox{\hyperlink{CALLING__cpHTO_8f_a64e9d7612f8415717d1ca02fa3e96fbe}{hto\+\_\+as}} (R2, R20, A\+S0, NF)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_afe5f33d7c3b19fc1094b3ab1b1d99eba}{hto\+\_\+betafct}}
+\item 
+real $\ast$8 function \mbox{\hyperlink{CALLING__cpHTO_8f_a3e6505d3a159c9db3a57f8551bde74fd}{hto\+\_\+dzero}} (A0, B0, E\+PS, M\+A\+XF, F, M\+O\+DE)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\+\_\+olas\+::hto\+\_\+b0af\+\_\+em}} (scal, psi, ps0i, xmsi, xm0i)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\+\_\+quarkqcd}} (scal, psi, ps0i, xmsi, xm0i, type)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\+\_\+qcd\+::hto\+\_\+ralphas}} (rs0, rs, als)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\+\_\+qcd\+::hto\+\_\+qcdlam}} (\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}, als, rs, x1, x2, xacc)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\+\_\+qcd\+::hto\+\_\+qcdscale}} (\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}, als, rs, x)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__qcd_a56727402fd2ceaa1f03af4e6415f8ae8}{hto\+\_\+qcd\+::hto\+\_\+run\+\_\+bc}} (scal)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\+\_\+qcd\+::hto\+\_\+rrunm}} (x1, x2, xacc, qm, als, rm1, rm2, fn)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}{hto\+\_\+qcd\+::hto\+\_\+qcdmass}} (qm, als, rm1, rm2, fn, x)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__a__cmplx_aaac6b4eaa10f4705abb364aee1ad8deb}{hto\+\_\+a\+\_\+cmplx\+::hto\+\_\+b021\+\_\+dm\+\_\+cp}} (scal, psi, ps0i, xmsi, xm0i)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__root__find2_a639fa414c36aee03d64b13ba342dcb19}{hto\+\_\+root\+\_\+find2\+::hto\+\_\+zeroin}} (f, ax, bx, aerr, rerr)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__hbb__cp_a8feffc4d9be4bf53bae92ecfbd1c1200}{hto\+\_\+hbb\+\_\+cp\+::hto\+\_\+sshh}} (x)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\+\_\+hbb\+\_\+cp\+::hto\+\_\+shh}} (muhr, scal, rgh)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_ac7377fe94e9462c40c3bd7076752d8bb}{hto\+\_\+gridht}} (mass, evalue)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a86c01352b919ddc48290bb32b323c495}{hto\+\_\+fmmsplinesingleht}} (b, c, d, top, gdim)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a399f0f519a5abaf3bfeae455dd22a83d}{hto\+\_\+seval3singleht}} (u, b, c, d, top, gdim, f, fp, fpp, fppp)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a4979159d7fd56b36b2468653173bdbc7}{hto\+\_\+gridlow}} (mass, evalue)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a1c71e91ab32b1ee6784f0094a8a1e6e8}{hto\+\_\+fmmsplinesinglel}} (b, c, d, top, gdim)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_a647dca579ab77fafd8d72bb8e3bba530}{hto\+\_\+seval3singlel}} (u, b, c, d, top, gdim, f, fp, fpp, fppp)
+\item 
+real $\ast$8 function, dimension(10, 2) \mbox{\hyperlink{CALLING__cpHTO_8f_a16ae89d9fa2a912af02a9b912db18882}{hto\+\_\+deriv}} (scal, rhm)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_ad09c47e4ae7c1d8320a2de670e2d26c2}{hto\+\_\+pole}} (m, mhb, ghb)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_af9cb8e45e26c3b74323cbb1906c8775a}{hto\+\_\+gh}} (muh, cpgh)
+\item 
+subroutine, public \mbox{\hyperlink{namespacehto__solve__nonlin_a4913ccbfdbf22332947aa02f3df9eee5}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+hbrd}} (H\+T\+O\+\_\+\+F\+CN, n, x, fvec, epsfcn, tol, info, diag)
+\item 
+subroutine, public \mbox{\hyperlink{namespacehto__solve__nonlin_a2fedece7d4082c4306271f14df72387e}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+hybrd}} (H\+T\+O\+\_\+\+F\+CN, n, x, fvec, xtol, maxfev, ml, mu, epsfcn, diag, mode, factor, nprint, info, nfev)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_afe4e5fea1ad06250f9e5ce2a5ac37e33}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+dogleg}} (n, r, lr, diag, qtb, delta, x, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a9b9991931fe83ae42bd577aa132fd691}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+fdjac1}} (H\+T\+O\+\_\+\+F\+CN, n, x, fvec, fjac, ldfjac, iflag, ml, mu, epsfcn, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a6c27c7948dee7924b448527cd0e47aff}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+qform}} (m, n, q, ldq, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a98884f67245c484b378efff769d60f69}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+qrfac}} (m, n, a, lda, pivot, ipvt, lipvt, rdiag, acnorm, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a89a4ef64a31dd4d201b9b6bb3c077ab1}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+r1mpyq}} (m, n, a, lda, v, w)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_af73d8384fe07fde7b063afc452466f03}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+r1updt}} (m, n, s, ls, u, v, w, sing)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+enorm}} (n, x)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_aa0da85ed9a60be9fb6f4e61812e1c34a}{hto\+\_\+poles}} (m, nv)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_ae199988a5e8df9ac229deaae68cdb40d}{hto\+\_\+cpoles}} (n, xcp, fvcp, iflag)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{CALLING__cpHTO_8f_a58d9fd44de7741688cae97b18484ae74}{hto\+\_\+lquarkqcd}} (scal, psi, ps0i, xmsi, xm0i, type)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{CALLING__cpHTO_8f_aa9a6875bfcee8236da0172eac72ad2a0}{hto\+\_\+lb0af\+\_\+dm}} (scal, psi, ps0i, xmsi, xm0i)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{CALLING__cpHTO_8f_ab681ede29a9ac992dd7a4b7f9183c4eb}{hto\+\_\+lb0af\+\_\+em}} (scal, psi, ps0i, xmsi, xm0i)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{CALLING__cpHTO_8f_a3ab7ca07d0ef9042712ff01b2c2a47ae}{hto\+\_\+lb021\+\_\+dm\+\_\+cp}} (scal, psi, ps0i, xmsi, xm0i)
+\item 
+subroutine \mbox{\hyperlink{CALLING__cpHTO_8f_ad1513038b5ac660f269a101b3734964d}{call\+\_\+hto}} (mhiggs, mtop, mhb, ghb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacehto__aux__hcp_a0d3a2b5d51e5c4c54cb15ec7ad539726}{hto\+\_\+aux\+\_\+hcp\+::qcdc}}
+\item 
+integer \mbox{\hyperlink{namespacehto__aux__hcp_a7f219e54879b211be5a8f01ee3ab9626}{hto\+\_\+aux\+\_\+hcp\+::pcnt}}
+\item 
+integer \mbox{\hyperlink{namespacehto__aux__hcp_a6736a2a621a3b459df115cbc30feb04b}{hto\+\_\+aux\+\_\+hcp\+::gtop}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ae353ce339bb2473a6ab3bb01df6c1673}{hto\+\_\+aux\+\_\+hcp\+::cxe}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a75b7fb9e7b7ce39379f2e255bdff0d84}{hto\+\_\+aux\+\_\+hcp\+::cxmu}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ae4e838250158e1c37e0df143a8579c43}{hto\+\_\+aux\+\_\+hcp\+::cxtau}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a20815704597665ac1f4c9f2f8d39ca60}{hto\+\_\+aux\+\_\+hcp\+::cxu}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a049b756a199db407e68e16c592af58a6}{hto\+\_\+aux\+\_\+hcp\+::cxd}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a53c0554f1627500e2b5c16f0ebdd8b44}{hto\+\_\+aux\+\_\+hcp\+::cxc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a3b22c63ad9da5cf620cb0df47e944f59}{hto\+\_\+aux\+\_\+hcp\+::cxs}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a8a4d1abfb17ef9ce5af01ebebf4d4a6b}{hto\+\_\+aux\+\_\+hcp\+::cxt}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a49333c36ef5416b17454efb46425ff9e}{hto\+\_\+aux\+\_\+hcp\+::cxb}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a84cb0435b767d4280e6e8ae9f329cb1b}{hto\+\_\+aux\+\_\+hcp\+::cxes}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ad0ef876572ffb15b2d74354ebe8f169d}{hto\+\_\+aux\+\_\+hcp\+::cxmus}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a3ec2f0f2e7dee58154a6f4ea4594b6a8}{hto\+\_\+aux\+\_\+hcp\+::cxtaus}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a9c2281bd3ea86385ae5b975e967c05a8}{hto\+\_\+aux\+\_\+hcp\+::cxus}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ab12a3b32fc4f55cd54ee6b4a55f5c292}{hto\+\_\+aux\+\_\+hcp\+::cxds}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ac4dfee5c86cb034e2974902b5d037f7f}{hto\+\_\+aux\+\_\+hcp\+::cxcs}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a354fad87738621a838327bf72a4c0b4e}{hto\+\_\+aux\+\_\+hcp\+::cxss}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a06201b7c4b1f4fc96599421b4bdd6a95}{hto\+\_\+aux\+\_\+hcp\+::cxts}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ab675e82fd0c7da560b23e8ec2c1342b7}{hto\+\_\+aux\+\_\+hcp\+::cxbs}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a9ee3ef8bae95f46472ba2fed0ec2cc54}{hto\+\_\+aux\+\_\+hcp\+::clxe}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_afda016249568de8fbcdcc55d5703538e}{hto\+\_\+aux\+\_\+hcp\+::clxmu}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a1688ca572e0132112b9847ff5ee32ce3}{hto\+\_\+aux\+\_\+hcp\+::clxtau}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_affbfb7de5c1ab75a48f6415a7fedfca1}{hto\+\_\+aux\+\_\+hcp\+::clxu}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a8ef92fe005c90f99facda6a696fb7c6d}{hto\+\_\+aux\+\_\+hcp\+::clxd}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ae3143fe37ab4bfa3465598c86bd76cf8}{hto\+\_\+aux\+\_\+hcp\+::clxc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ae52144b1d97d7d42d237cf8082949d3b}{hto\+\_\+aux\+\_\+hcp\+::clxs}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ab2347cfdb59ae306208932d7971ceaf1}{hto\+\_\+aux\+\_\+hcp\+::clxt}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a03acc5c9b1616d1c1cadeba7086adee6}{hto\+\_\+aux\+\_\+hcp\+::clxb}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ab3f40e3738ae6befd75d6811ce8846f1}{hto\+\_\+aux\+\_\+hcp\+::muhcp}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_aa11378073105ae2f60600fde51820c2f}{hto\+\_\+aux\+\_\+hcp\+::scalec}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a8a335cda3f443dd9598615649a1610ef}{hto\+\_\+aux\+\_\+hcp\+::cxqs}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ae12d4bfd48b2ac1b34afc37ae1035132}{hto\+\_\+aux\+\_\+hcp\+::cxq}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_afd39525f32807a7194123669b772c4fd}{hto\+\_\+aux\+\_\+hcp\+::cxls}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_afe7f0425db42ac56487ec48efd1cf9cc}{hto\+\_\+aux\+\_\+hcp\+::cxl}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a8d4d1cc22055df3ad42ba4c6ba711b65}{hto\+\_\+aux\+\_\+hcp\+::cxtmb}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a7b4a7e9b38657664b4b670df637ddc60}{hto\+\_\+aux\+\_\+hcp\+::cxtmbs}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a0e5d385314e700e9171692263685e390}{hto\+\_\+aux\+\_\+hcp\+::cxbi}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_ae30319b08a2444cdecc36102fb89c310}{hto\+\_\+aux\+\_\+hcp\+::cxtmbi}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a633c5e4dcba2551dd869132792fdeda0}{hto\+\_\+aux\+\_\+hcp\+::xq}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a43f4eef4b47680bb0948095f9fca9a69}{hto\+\_\+aux\+\_\+hcp\+::cxtc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a29a7ff8665af5b4dbf628882d7bec445}{hto\+\_\+aux\+\_\+hcp\+::cxbc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hcp_a3e5df8d349c3ab794ef8239014e6ed25}{hto\+\_\+aux\+\_\+hcp\+::yimt}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hcp_a8a68b9c365065df038026ca68a9c58e0}{hto\+\_\+aux\+\_\+hcp\+::cxwi}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hcp_aeec513e43593eed175976a7318ee1af0}{hto\+\_\+aux\+\_\+hcp\+::clcts}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hcp_a69a3fdc4d5ae956bb622f74dfeae1263}{hto\+\_\+aux\+\_\+hcp\+::clwtb}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hcp_a9395896561bad35966782894a385179d}{hto\+\_\+aux\+\_\+hcp\+::cpw}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hcp_a2f8ee561fc33cda3aab15218f9778cdf}{hto\+\_\+aux\+\_\+hcp\+::cpz}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{hto\+\_\+masses\+::mt}}
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_af1baa31351d69bbf639d69a1f453a030}{hto\+\_\+masses\+::m0}} = 0.d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{hto\+\_\+masses\+::mw}} = 80.\+398d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{hto\+\_\+masses\+::mz}} = 91.\+1876d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{hto\+\_\+masses\+::me}} = 0.\+51099907d-\/3
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{hto\+\_\+masses\+::mm}} = 0.\+105658389d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{hto\+\_\+masses\+::mtl}} = 1.\+77684d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{hto\+\_\+masses\+::muq}} = 0.\+190d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{hto\+\_\+masses\+::mdq}} = 0.\+190d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{hto\+\_\+masses\+::mcq}} = 1.\+55d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{hto\+\_\+masses\+::msq}} = 0.\+190d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{hto\+\_\+masses\+::mbq}} = 4.\+69d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_aa2ec14b5a832317e4f204d8bcfaf6ac9}{hto\+\_\+masses\+::mb}} = 4.\+69d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_af073589e754f25ca7a40c006a5c3c135}{hto\+\_\+masses\+::mtiny}} = 1.d-\/10
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a1ea34eefdea75ef8d06ebfdb88059e08}{hto\+\_\+masses\+::imw}} = 2.\+08872d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a2cdd2bedb3c9ed1459a5321813b30ca7}{hto\+\_\+masses\+::imz}} = 2.\+4952d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{hto\+\_\+masses\+::swr}} = mw$\ast$mw-\/imw$\ast$imw
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{hto\+\_\+masses\+::swi}} = -\/mw$\ast$imw$\ast$(1.d0-\/0.\+5d0$\ast$(imw$\ast$imw)/(mw$\ast$mw))
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_a4b61b92f994a0d83a9e3678a08b731a9}{hto\+\_\+masses\+::szr}} = mz$\ast$mz-\/imz$\ast$imz
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__masses_aa72db3d9eb68c74aad41f46ca475a6d9}{hto\+\_\+masses\+::szi}} = -\/mz$\ast$imz$\ast$(1.d0-\/0.\+5d0$\ast$(imz$\ast$imz)/(mz$\ast$mz))
+\item 
+integer, parameter \mbox{\hyperlink{namespacehto__units_a09c05f55004fb31a1b0ebf77c1441b1e}{hto\+\_\+units\+::izer}} = 0
+\item 
+integer, parameter \mbox{\hyperlink{namespacehto__units_adbe27b25e8a0cae1f6f412778412178e}{hto\+\_\+units\+::ione}} = 1
+\item 
+integer, parameter \mbox{\hyperlink{namespacehto__units_a03500c566788a0ffc94b779061732013}{hto\+\_\+units\+::itwo}} = 2
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{hto\+\_\+units\+::eps}} = -\/1.d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{hto\+\_\+units\+::one}} = 1.d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{hto\+\_\+units\+::zero}} = 0.d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__units_a85c13cdeb98005bce3d8368f412d6c41}{hto\+\_\+units\+::qeps}} = 1.d-\/25
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__units_ad0f165f43e3328ea852f42c9cbf5ec52}{hto\+\_\+units\+::ez}} = 1.d-\/15
+\item 
+real $\ast$8, dimension(1\+:2) \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{hto\+\_\+units\+::co}} =(/1.d0,0.d0/)
+\item 
+real $\ast$8, dimension(1\+:2) \mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{hto\+\_\+units\+::ci}} =(/0.d0,1.d0/)
+\item 
+real $\ast$8, dimension(1\+:2) \mbox{\hyperlink{namespacehto__units_ad041570d0a70023e97a42aeff2ad05aa}{hto\+\_\+units\+::cz}} =(/0.d0,0.d0/)
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{hto\+\_\+riemann\+::pi}} = 3.\+141592653589793238462643d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{hto\+\_\+riemann\+::pis}} = pi$\ast$pi
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_a3c577bfd3645b2c03f0f53e655c90570}{hto\+\_\+riemann\+::piq}} = pis$\ast$pis
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{hto\+\_\+riemann\+::rz2}} = 1.\+64493406684823d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{hto\+\_\+riemann\+::rz3}} = 1.\+20205690315959d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{hto\+\_\+riemann\+::rz4}} = 1.\+08232323371114d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_a22c5b34c87697cb2335438399f61c739}{hto\+\_\+riemann\+::rz5}} = 1.\+03692775514337d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_aba1aa536747a88812dd7733f2f6e75b4}{hto\+\_\+riemann\+::eg}} = 0.\+5772156649d0
+\item 
+real $\ast$8, parameter \mbox{\hyperlink{namespacehto__riemann_ab7816a3d2d7330abecb41379c473a167}{hto\+\_\+riemann\+::ln\+\_\+pi}} = 0.\+114472988584940016d1
+\item 
+real $\ast$8, dimension(0\+:18) \mbox{\hyperlink{namespacehto__bernoulli_a6f6dec1d767b85a16c78cdf79c31a935}{hto\+\_\+bernoulli\+::b\+\_\+num}} =(/1.d0,-\/5.d-\/1,1.\+66666666666666d-\/1, 0.d0,-\/3.\+33333333333333d-\/2,0.d0,2.\+38095238095238d-\/2, 0.d0,-\/3.\+33333333333333d-\/2,0.d0,7.\+57575757575757d-\/2, 0.d0,-\/2.\+53113553113553d-\/1,0.d0,1.\+16666666666666d0, 0.d0,-\/7.\+09215686274509d0,0.d0,5.\+49711779448621d1/)
+\item 
+integer \mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{hto\+\_\+ferbos\+::ifb}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{hto\+\_\+aux\+\_\+hbb\+::xb}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__aux__hbb_aef8f39832097b38623a4af5676a71cff}{hto\+\_\+aux\+\_\+hbb\+::xtop}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{hto\+\_\+aux\+\_\+hbb\+::cxw}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_aedd955f4c5ac4ace27874f441817671a}{hto\+\_\+aux\+\_\+hbb\+::clw}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_aca6b9e835eee8d56ee76ae5d729cb307}{hto\+\_\+aux\+\_\+hbb\+::ccts}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a0d7d235a092cb5ab08adf56cc930e6f9}{hto\+\_\+aux\+\_\+hbb\+::csts}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_affdcd453da833803744373f6f1b0428e}{hto\+\_\+aux\+\_\+hbb\+::cctq}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a77af1e403496ced0a7266fe5605403e5}{hto\+\_\+aux\+\_\+hbb\+::cswt}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_aeb8dfc9cc364248d798dd620d373583f}{hto\+\_\+aux\+\_\+hbb\+::cdwt}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a01dec61306d6546fc2fccc28ed0d73e2}{hto\+\_\+aux\+\_\+hbb\+::cdzt}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_ad666a0a8b5430f4c98abc53f89e3275b}{hto\+\_\+aux\+\_\+hbb\+::cxws}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a902287ffea712337b48f80d37eb2cba9}{hto\+\_\+aux\+\_\+hbb\+::cxwc}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a326dbe613768890cbc8a794e6f937cec}{hto\+\_\+aux\+\_\+hbb\+::cxz}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a4ecab26dfc439c32472534cd741f6ad8}{hto\+\_\+aux\+\_\+hbb\+::rcmw}}
+\item 
+real $\ast$8, dimension(2) \mbox{\hyperlink{namespacehto__aux__hbb_a2d89428c2f7705dc51f03d7e74edc19f}{hto\+\_\+aux\+\_\+hbb\+::cctvi}}
+\item 
+character(len=3) \mbox{\hyperlink{namespacehto__optcp_af352e8f3d664a5c3056b46893d30dee1}{hto\+\_\+optcp\+::ocp}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_aed7c79e0b835fa7b7db64f8eaca1be7d}{hto\+\_\+set\+\_\+phys\+\_\+const\+::alpha\+\_\+0}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_adf97d1bf3a663ded7ef686746aaba509}{hto\+\_\+set\+\_\+phys\+\_\+const\+::g\+\_\+f}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_a71ecff010f78c1d8fcd5a9a279976503}{hto\+\_\+set\+\_\+phys\+\_\+const\+::g\+\_\+w}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{hto\+\_\+set\+\_\+phys\+\_\+const\+::als}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_a4a904a1ea16b558fa1be40236223e055}{hto\+\_\+set\+\_\+phys\+\_\+const\+::alpha\+\_\+s\+\_\+mh}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_a3086c58555c4f5dc8e2ebd51dafe812b}{hto\+\_\+set\+\_\+phys\+\_\+const\+::alpha\+\_\+s\+\_\+kmh}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{hto\+\_\+set\+\_\+phys\+\_\+const\+::imt}}
+\item 
+integer \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{hto\+\_\+rootw\+::inc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__transfmh_a2101732506d2ad3bddfb24f380c392a7}{hto\+\_\+transfmh\+::tmuh}}
+\item 
+real $\ast$8, dimension(3, 0\+:15) \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{hto\+\_\+common\+\_\+niels\+::plr}}
+\item 
+real $\ast$8, dimension(3, 0\+:15) \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{hto\+\_\+common\+\_\+niels\+::plr\+\_\+4}}
+\item 
+integer \mbox{\hyperlink{namespacehto__kountac_a37986cfaf156ed0008c32d07cc119090}{hto\+\_\+kountac\+::kp}}
+\item 
+integer \mbox{\hyperlink{namespacehto__kountac_ac66a099c5c995b1f3aeb2584a39f8d45}{hto\+\_\+kountac\+::km}}
+\item 
+integer \mbox{\hyperlink{namespacehto__dzpar_a426456b853bd1afed3ddeb6e6dbc338f}{hto\+\_\+dzpar\+::iordc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_a26b7c919cd21630e3dfa809cd120e336}{hto\+\_\+dzpar\+::fr2c}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_ad22fb6feacc7b7dd7cc09e4c123740d6}{hto\+\_\+dzpar\+::murc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_a8871318ab361d199901aadad533c7dba}{hto\+\_\+dzpar\+::asmurc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_a7d5e4fefa9c131a721a5227363726f32}{hto\+\_\+dzpar\+::mcc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_aa455806b08bf8880b43dd769f594527a}{hto\+\_\+dzpar\+::mbc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_aa2cd6ffdadb26c006de259035318163a}{hto\+\_\+dzpar\+::mtc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__dzpar_aaadeff0a8703cc488df290a684b2efdd}{hto\+\_\+dzpar\+::r0c}}
+\item 
+real $\ast$8, dimension(6) \mbox{\hyperlink{namespacehto__rzeta_a07d0e6461467790856d750ad1b2c17db}{hto\+\_\+rzeta\+::zeta}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__colour_a836ff5ae2e2c290b7853e7f53855a2f6}{hto\+\_\+colour\+::cf}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__colour_a2c9d16838ff6bc6257284d3e0002b886}{hto\+\_\+colour\+::ca}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__colour_a8a27bc2cd0959e8a8a5c5c9d4af24a8c}{hto\+\_\+colour\+::tr}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asinp_ad4e09d92d68a407f5b566f3fdb48546c}{hto\+\_\+asinp\+::as0}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asinp_a4579954aaddfa1420d3f1132cb9a11dd}{hto\+\_\+asinp\+::m20}}
+\item 
+integer \mbox{\hyperlink{namespacehto__aspar_ac9c5abd60032958442d604ffbd4b8a62}{hto\+\_\+aspar\+::naord}}
+\item 
+integer \mbox{\hyperlink{namespacehto__aspar_aa778d4d3ffac8f15d37dfdfaf867b1c0}{hto\+\_\+aspar\+::nastps}}
+\item 
+integer \mbox{\hyperlink{namespacehto__varflv_a578063a560c4e0c09e52723391b5b649}{hto\+\_\+varflv\+::ivfns}}
+\item 
+integer \mbox{\hyperlink{namespacehto__nffix_a7cdae9dd3ddf1db37cb7ca4ae42c7870}{hto\+\_\+nffix\+::nff}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__frrat_ad827417da518ff960ed6403b564e7ef7}{hto\+\_\+frrat\+::logfr}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asfthr_ad618e7eaf43e339e680553f86f37e2cb}{hto\+\_\+asfthr\+::asc}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asfthr_a43d85ec0bd0af0e261b272c743d89240}{hto\+\_\+asfthr\+::m2c}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asfthr_a8249cbd0568f234e11c0e0c8ff7b8be7}{hto\+\_\+asfthr\+::asb}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asfthr_ac7778ded2dca66030e4c39463369b331}{hto\+\_\+asfthr\+::m2b}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asfthr_a03cea88b4dc8f682e8d58f25c6bd6551}{hto\+\_\+asfthr\+::ast}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespacehto__asfthr_aff0ccab7205e4e76d27fd528984cf538}{hto\+\_\+asfthr\+::m2t}}
+\item 
+real $\ast$8, dimension(3\+:6) \mbox{\hyperlink{namespacehto__betacom_ad465ac9fec9fee4e1736b02ba03887d7}{hto\+\_\+betacom\+::beta0}}
+\item 
+real $\ast$8, dimension(3\+:6) \mbox{\hyperlink{namespacehto__betacom_a23daf5ceee007b285d3bc6884f286133}{hto\+\_\+betacom\+::beta1}}
+\item 
+real $\ast$8, dimension(3\+:6) \mbox{\hyperlink{namespacehto__betacom_a338b5706bbe0778b8cb761407b23f3a4}{hto\+\_\+betacom\+::beta2}}
+\item 
+real $\ast$8, dimension(3\+:6) \mbox{\hyperlink{namespacehto__betacom_aa6da673489854ee52594b3eeef3cd6a0}{hto\+\_\+betacom\+::beta3}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{CALLING__cpHTO_8f_ad1513038b5ac660f269a101b3734964d}\label{CALLING__cpHTO_8f_ad1513038b5ac660f269a101b3734964d}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!call\_hto@{call\_hto}}
+\index{call\_hto@{call\_hto}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{call\_hto()}{call\_hto()}}
+{\footnotesize\ttfamily subroutine call\+\_\+hto (\begin{DoxyParamCaption}\item[{real$\ast$8}]{mhiggs,  }\item[{real$\ast$8}]{mtop,  }\item[{real$\ast$8}]{mhb,  }\item[{real$\ast$8}]{ghb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}\label{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_alphas@{hto\_alphas}}
+\index{hto\_alphas@{hto\_alphas}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_alphas()}{hto\_alphas()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+alphas (\begin{DoxyParamCaption}\item[{real$\ast$8}]{M\+UR }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a64e9d7612f8415717d1ca02fa3e96fbe}\label{CALLING__cpHTO_8f_a64e9d7612f8415717d1ca02fa3e96fbe}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_as@{hto\_as}}
+\index{hto\_as@{hto\_as}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_as()}{hto\_as()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+as (\begin{DoxyParamCaption}\item[{real$\ast$8}]{R2,  }\item[{real$\ast$8}]{R20,  }\item[{real$\ast$8}]{A\+S0,  }\item[{integer}]{NF }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a893b84102b13f4dd978da342143bc62e}\label{CALLING__cpHTO_8f_a893b84102b13f4dd978da342143bc62e}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_asnf1@{hto\_asnf1}}
+\index{hto\_asnf1@{hto\_asnf1}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_asnf1()}{hto\_asnf1()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+asnf1 (\begin{DoxyParamCaption}\item[{real$\ast$8}]{A\+S\+NF,  }\item[{real$\ast$8}]{L\+O\+G\+RH,  }\item[{integer}]{NF }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_afe5f33d7c3b19fc1094b3ab1b1d99eba}\label{CALLING__cpHTO_8f_afe5f33d7c3b19fc1094b3ab1b1d99eba}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_betafct@{hto\_betafct}}
+\index{hto\_betafct@{hto\_betafct}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_betafct()}{hto\_betafct()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+betafct}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_ae199988a5e8df9ac229deaae68cdb40d}\label{CALLING__cpHTO_8f_ae199988a5e8df9ac229deaae68cdb40d}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_cpoles@{hto\_cpoles}}
+\index{hto\_cpoles@{hto\_cpoles}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_cpoles()}{hto\_cpoles()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+cpoles (\begin{DoxyParamCaption}\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{xcp,  }\item[{real$\ast$8, dimension(n)}]{fvcp,  }\item[{integer}]{iflag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a16ae89d9fa2a912af02a9b912db18882}\label{CALLING__cpHTO_8f_a16ae89d9fa2a912af02a9b912db18882}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_deriv@{hto\_deriv}}
+\index{hto\_deriv@{hto\_deriv}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_deriv()}{hto\_deriv()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(10,2) hto\+\_\+deriv (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8}]{rhm }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a3e6505d3a159c9db3a57f8551bde74fd}\label{CALLING__cpHTO_8f_a3e6505d3a159c9db3a57f8551bde74fd}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_dzero@{hto\_dzero}}
+\index{hto\_dzero@{hto\_dzero}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_dzero()}{hto\_dzero()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+dzero (\begin{DoxyParamCaption}\item[{}]{A0,  }\item[{}]{B0,  }\item[{}]{E\+PS,  }\item[{}]{M\+A\+XF,  }\item[{}]{F,  }\item[{}]{M\+O\+DE }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a115772aacbf61ed42f3f0847820fbc3b}\label{CALLING__cpHTO_8f_a115772aacbf61ed42f3f0847820fbc3b}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_evnfthr@{hto\_evnfthr}}
+\index{hto\_evnfthr@{hto\_evnfthr}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_evnfthr()}{hto\_evnfthr()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+evnfthr (\begin{DoxyParamCaption}\item[{real$\ast$8}]{M\+C2,  }\item[{real$\ast$8}]{M\+B2,  }\item[{real$\ast$8}]{M\+T2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a3052dded3815a1f698b9467fc22dc3fe}\label{CALLING__cpHTO_8f_a3052dded3815a1f698b9467fc22dc3fe}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_findalphasr0@{hto\_findalphasr0}}
+\index{hto\_findalphasr0@{hto\_findalphasr0}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_findalphasr0()}{hto\_findalphasr0()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+findalphasr0 (\begin{DoxyParamCaption}\item[{real$\ast$8}]{A\+SI }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a86c01352b919ddc48290bb32b323c495}\label{CALLING__cpHTO_8f_a86c01352b919ddc48290bb32b323c495}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_fmmsplinesingleht@{hto\_fmmsplinesingleht}}
+\index{hto\_fmmsplinesingleht@{hto\_fmmsplinesingleht}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_fmmsplinesingleht()}{hto\_fmmsplinesingleht()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gridht\+::hto\+\_\+fmmsplinesingleht (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(gdim)}]{b,  }\item[{real$\ast$8, dimension(gdim)}]{c,  }\item[{real$\ast$8, dimension(gdim)}]{d,  }\item[{integer}]{top,  }\item[{integer}]{gdim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a1c71e91ab32b1ee6784f0094a8a1e6e8}\label{CALLING__cpHTO_8f_a1c71e91ab32b1ee6784f0094a8a1e6e8}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_fmmsplinesinglel@{hto\_fmmsplinesinglel}}
+\index{hto\_fmmsplinesinglel@{hto\_fmmsplinesinglel}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_fmmsplinesinglel()}{hto\_fmmsplinesinglel()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gridlow\+::hto\+\_\+fmmsplinesinglel (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(gdim)}]{b,  }\item[{real$\ast$8, dimension(gdim)}]{c,  }\item[{real$\ast$8, dimension(gdim)}]{d,  }\item[{integer}]{top,  }\item[{integer}]{gdim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_af9cb8e45e26c3b74323cbb1906c8775a}\label{CALLING__cpHTO_8f_af9cb8e45e26c3b74323cbb1906c8775a}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_gh@{hto\_gh}}
+\index{hto\_gh@{hto\_gh}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_gh()}{hto\_gh()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gh (\begin{DoxyParamCaption}\item[{real$\ast$8}]{muh,  }\item[{real$\ast$8}]{cpgh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_ac7377fe94e9462c40c3bd7076752d8bb}\label{CALLING__cpHTO_8f_ac7377fe94e9462c40c3bd7076752d8bb}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_gridht@{hto\_gridht}}
+\index{hto\_gridht@{hto\_gridht}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_gridht()}{hto\_gridht()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gridht (\begin{DoxyParamCaption}\item[{real$\ast$8}]{mass,  }\item[{real$\ast$8}]{evalue }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a4979159d7fd56b36b2468653173bdbc7}\label{CALLING__cpHTO_8f_a4979159d7fd56b36b2468653173bdbc7}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_gridlow@{hto\_gridlow}}
+\index{hto\_gridlow@{hto\_gridlow}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_gridlow()}{hto\_gridlow()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gridlow (\begin{DoxyParamCaption}\item[{real$\ast$8}]{mass,  }\item[{real$\ast$8}]{evalue }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}\label{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_initalphas@{hto\_initalphas}}
+\index{hto\_initalphas@{hto\_initalphas}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_initalphas()}{hto\_initalphas()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+initalphas (\begin{DoxyParamCaption}\item[{integer}]{I\+O\+RD,  }\item[{real$\ast$8}]{F\+R2,  }\item[{real$\ast$8}]{M\+UR,  }\item[{real$\ast$8}]{A\+S\+M\+UR,  }\item[{real$\ast$8}]{MC,  }\item[{real$\ast$8}]{MB,  }\item[{real$\ast$8}]{MT }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_ac8c2d230bda80df973278063e94b25d0}\label{CALLING__cpHTO_8f_ac8c2d230bda80df973278063e94b25d0}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_initalphasr0@{hto\_initalphasr0}}
+\index{hto\_initalphasr0@{hto\_initalphasr0}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_initalphasr0()}{hto\_initalphasr0()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+initalphasr0 (\begin{DoxyParamCaption}\item[{integer}]{I\+O\+RD,  }\item[{real$\ast$8}]{F\+R2,  }\item[{real$\ast$8}]{R0,  }\item[{real$\ast$8}]{A\+SI,  }\item[{real$\ast$8}]{MC,  }\item[{real$\ast$8}]{MB,  }\item[{real$\ast$8}]{MT }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a3ab7ca07d0ef9042712ff01b2c2a47ae}\label{CALLING__cpHTO_8f_a3ab7ca07d0ef9042712ff01b2c2a47ae}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_lb021\_dm\_cp@{hto\_lb021\_dm\_cp}}
+\index{hto\_lb021\_dm\_cp@{hto\_lb021\_dm\_cp}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_lb021\_dm\_cp()}{hto\_lb021\_dm\_cp()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+lb021\+\_\+dm\+\_\+cp (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8, dimension(2)}]{psi,  }\item[{real$\ast$8}]{ps0i,  }\item[{real$\ast$8, dimension(2,2), intent(in)}]{xmsi,  }\item[{real$\ast$8, dimension(2), intent(in)}]{xm0i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_aa9a6875bfcee8236da0172eac72ad2a0}\label{CALLING__cpHTO_8f_aa9a6875bfcee8236da0172eac72ad2a0}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_lb0af\_dm@{hto\_lb0af\_dm}}
+\index{hto\_lb0af\_dm@{hto\_lb0af\_dm}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_lb0af\_dm()}{hto\_lb0af\_dm()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+lb0af\+\_\+dm (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8, dimension(2)}]{psi,  }\item[{real$\ast$8}]{ps0i,  }\item[{real$\ast$8, dimension(2,2)}]{xmsi,  }\item[{real$\ast$8, dimension(2)}]{xm0i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_ab681ede29a9ac992dd7a4b7f9183c4eb}\label{CALLING__cpHTO_8f_ab681ede29a9ac992dd7a4b7f9183c4eb}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_lb0af\_em@{hto\_lb0af\_em}}
+\index{hto\_lb0af\_em@{hto\_lb0af\_em}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_lb0af\_em()}{hto\_lb0af\_em()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+lb0af\+\_\+em (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8, dimension(2)}]{psi,  }\item[{real$\ast$8}]{ps0i,  }\item[{real$\ast$8, dimension(2)}]{xmsi,  }\item[{real$\ast$8}]{xm0i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a58d9fd44de7741688cae97b18484ae74}\label{CALLING__cpHTO_8f_a58d9fd44de7741688cae97b18484ae74}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_lquarkqcd@{hto\_lquarkqcd}}
+\index{hto\_lquarkqcd@{hto\_lquarkqcd}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_lquarkqcd()}{hto\_lquarkqcd()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+lquarkqcd (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8, dimension(2)}]{psi,  }\item[{real$\ast$8}]{ps0i,  }\item[{real$\ast$8, dimension(2)}]{xmsi,  }\item[{real$\ast$8}]{xm0i,  }\item[{integer}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_ad09c47e4ae7c1d8320a2de670e2d26c2}\label{CALLING__cpHTO_8f_ad09c47e4ae7c1d8320a2de670e2d26c2}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_pole@{hto\_pole}}
+\index{hto\_pole@{hto\_pole}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_pole()}{hto\_pole()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+pole (\begin{DoxyParamCaption}\item[{real$\ast$8}]{m,  }\item[{real$\ast$8}]{mhb,  }\item[{real$\ast$8}]{ghb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_aa0da85ed9a60be9fb6f4e61812e1c34a}\label{CALLING__cpHTO_8f_aa0da85ed9a60be9fb6f4e61812e1c34a}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_poles@{hto\_poles}}
+\index{hto\_poles@{hto\_poles}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_poles()}{hto\_poles()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+poles (\begin{DoxyParamCaption}\item[{real$\ast$8}]{m,  }\item[{integer}]{nv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}\label{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_quarkqcd@{hto\_quarkqcd}}
+\index{hto\_quarkqcd@{hto\_quarkqcd}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_quarkqcd()}{hto\_quarkqcd()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+quarkqcd (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8, dimension(2)}]{psi,  }\item[{real$\ast$8}]{ps0i,  }\item[{real$\ast$8, dimension(2)}]{xmsi,  }\item[{real$\ast$8}]{xm0i,  }\item[{integer}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a399f0f519a5abaf3bfeae455dd22a83d}\label{CALLING__cpHTO_8f_a399f0f519a5abaf3bfeae455dd22a83d}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_seval3singleht@{hto\_seval3singleht}}
+\index{hto\_seval3singleht@{hto\_seval3singleht}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_seval3singleht()}{hto\_seval3singleht()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gridht\+::hto\+\_\+seval3singleht (\begin{DoxyParamCaption}\item[{real$\ast$8, intent(in)}]{u,  }\item[{real$\ast$8, dimension(gdim)}]{b,  }\item[{real$\ast$8, dimension(gdim)}]{c,  }\item[{real$\ast$8, dimension(gdim)}]{d,  }\item[{integer}]{top,  }\item[{integer}]{gdim,  }\item[{real$\ast$8, intent(out), optional}]{f,  }\item[{real$\ast$8, intent(out), optional}]{fp,  }\item[{real$\ast$8, intent(out), optional}]{fpp,  }\item[{real$\ast$8, intent(out), optional}]{fppp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CALLING__cpHTO_8f_a647dca579ab77fafd8d72bb8e3bba530}\label{CALLING__cpHTO_8f_a647dca579ab77fafd8d72bb8e3bba530}} 
+\index{CALLING\_cpHTO.f@{CALLING\_cpHTO.f}!hto\_seval3singlel@{hto\_seval3singlel}}
+\index{hto\_seval3singlel@{hto\_seval3singlel}!CALLING\_cpHTO.f@{CALLING\_cpHTO.f}}
+\doxysubsubsection{\texorpdfstring{hto\_seval3singlel()}{hto\_seval3singlel()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+gridlow\+::hto\+\_\+seval3singlel (\begin{DoxyParamCaption}\item[{real$\ast$8, intent(in)}]{u,  }\item[{real$\ast$8, dimension(gdim)}]{b,  }\item[{real$\ast$8, dimension(gdim)}]{c,  }\item[{real$\ast$8, dimension(gdim)}]{d,  }\item[{integer}]{top,  }\item[{integer}]{gdim,  }\item[{real$\ast$8, intent(out), optional}]{f,  }\item[{real$\ast$8, intent(out), optional}]{fp,  }\item[{real$\ast$8, intent(out), optional}]{fpp,  }\item[{real$\ast$8, intent(out), optional}]{fppp }\end{DoxyParamCaption})}
+

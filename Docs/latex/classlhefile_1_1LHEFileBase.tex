@@ -1,0 +1,216 @@
+\hypertarget{classlhefile_1_1LHEFileBase}{}\doxysection{lhefile.\+L\+H\+E\+File\+Base Class Reference}
+\label{classlhefile_1_1LHEFileBase}\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+
+
+Inheritance diagram for lhefile.\+L\+H\+E\+File\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlhefile_1_1LHEFileBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for lhefile.\+L\+H\+E\+File\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classlhefile_1_1LHEFileBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a23c4cb28397e6f57fee93a97138eddc8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classlhefile_1_1LHEFileBase_aad2cc1edd802513097a07b6b003c3d0e}{filename}}, $\ast$melaargs, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a5c8a03fbf23279ced89001e2d6e0a2cd}{\+\_\+\+\_\+enter\+\_\+\+\_\+}} (self, $\ast$\mbox{\hyperlink{namespacelhefile_a06c6458c3f9c09e313de667748297aee}{args}}, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a56730ff74ab6b68f6f866b2478518847}{\+\_\+\+\_\+exit\+\_\+\+\_\+}} (self, $\ast$\mbox{\hyperlink{namespacelhefile_a06c6458c3f9c09e313de667748297aee}{args}}, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a9b607721f99e56bb55e1e84fd82f74c8}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a3ac034e0fece5d4f3755b3ff0174f9d5}{\+\_\+\+\_\+getattr\+\_\+\+\_\+}} (self, attr)
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_ac0c4b80f9f7f8bb5622e27363fc65952}{\+\_\+\+\_\+setattr\+\_\+\+\_\+}} (self, attr, value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_a4b61ce76b9c779d7a4a8b38682b23386}{isgen}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_aad2cc1edd802513097a07b6b003c3d0e}{filename}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_ad2d650469371897e3fa2a562cfb24e27}{mela}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_a615b10f37e5c276cf7da68d828da350a}{f}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_a565511db801b1cae7b544f4898469835}{daughters}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_a477626bd258d50151df14adace76bb21}{associated}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_acecf0963b833e52556c2b0c06bf8e4ca}{mothers}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_a36e3d7bb53daa1c2151cb5903569cd45}{weight}}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_a8bce9698aa1659d2380da7b90e785d6c}{weights}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a625a68d01fcee841b31261789a725a29}{\+\_\+set\+Input\+Event}} (self, event)
+\item 
+def \mbox{\hyperlink{classlhefile_1_1LHEFileBase_ae59c143daf611e98a6aee2010cfb28d6}{\+\_\+\+L\+H\+Eclassattributes}} (cls)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlhefile_1_1LHEFileBase_affb0860fc9f437d54d4b202befb5f86b}{\+\_\+\+\_\+metaclass\+\_\+\+\_\+}} = abc.\+A\+B\+C\+Meta
+\item 
+dictionary \mbox{\hyperlink{classlhefile_1_1LHEFileBase_a1ba43826ed2a031be2d785478de7254d}{\+\_\+\+\_\+melas}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Simple class to iterate through an LHE file and calculate probabilities for each event
+Example usage:
+h1 = ROOT.TH1F("costheta1", "costheta1", 100, -1, 1)
+h2 = ROOT.TH1F("D_0minus", "D_0minus", 100, 0, 1)
+with LHEFile("filename.lhe") as f:
+  for event in f:  #event becomes the mela object
+    h1.Fill(event.computeDecayAngles().costheta1)
+    event.ghz1 = 1
+    p0plus = event.computeP()
+    event.ghz4 = 1
+    p0minus = event.computeP()
+    h2.Fill(p0plus / (p0plus + p0minus))
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a23c4cb28397e6f57fee93a97138eddc8}\label{classlhefile_1_1LHEFileBase_a23c4cb28397e6f57fee93a97138eddc8}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename,  }\item[{$\ast$}]{melaargs,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a5c8a03fbf23279ced89001e2d6e0a2cd}\label{classlhefile_1_1LHEFileBase_a5c8a03fbf23279ced89001e2d6e0a2cd}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_enter\_\_@{\_\_enter\_\_}}
+\index{\_\_enter\_\_@{\_\_enter\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_enter\_\_()}{\_\_enter\_\_()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a56730ff74ab6b68f6f866b2478518847}\label{classlhefile_1_1LHEFileBase_a56730ff74ab6b68f6f866b2478518847}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_exit\_\_@{\_\_exit\_\_}}
+\index{\_\_exit\_\_@{\_\_exit\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_exit\_\_()}{\_\_exit\_\_()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a3ac034e0fece5d4f3755b3ff0174f9d5}\label{classlhefile_1_1LHEFileBase_a3ac034e0fece5d4f3755b3ff0174f9d5}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_getattr\_\_@{\_\_getattr\_\_}}
+\index{\_\_getattr\_\_@{\_\_getattr\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_getattr\_\_()}{\_\_getattr\_\_()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a9b607721f99e56bb55e1e84fd82f74c8}\label{classlhefile_1_1LHEFileBase_a9b607721f99e56bb55e1e84fd82f74c8}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_ac0c4b80f9f7f8bb5622e27363fc65952}\label{classlhefile_1_1LHEFileBase_ac0c4b80f9f7f8bb5622e27363fc65952}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_setattr\_\_@{\_\_setattr\_\_}}
+\index{\_\_setattr\_\_@{\_\_setattr\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_setattr\_\_()}{\_\_setattr\_\_()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+setattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_ae59c143daf611e98a6aee2010cfb28d6}\label{classlhefile_1_1LHEFileBase_ae59c143daf611e98a6aee2010cfb28d6}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_LHEclassattributes@{\_LHEclassattributes}}
+\index{\_LHEclassattributes@{\_LHEclassattributes}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_LHEclassattributes()}{\_LHEclassattributes()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+L\+H\+Eclassattributes (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a625a68d01fcee841b31261789a725a29}\label{classlhefile_1_1LHEFileBase_a625a68d01fcee841b31261789a725a29}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_setInputEvent@{\_setInputEvent}}
+\index{\_setInputEvent@{\_setInputEvent}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_setInputEvent()}{\_setInputEvent()}}
+{\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+set\+Input\+Event (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a1ba43826ed2a031be2d785478de7254d}\label{classlhefile_1_1LHEFileBase_a1ba43826ed2a031be2d785478de7254d}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_melas@{\_\_melas}}
+\index{\_\_melas@{\_\_melas}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_melas}{\_\_melas}}
+{\footnotesize\ttfamily dictionary lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+melas = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_affb0860fc9f437d54d4b202befb5f86b}\label{classlhefile_1_1LHEFileBase_affb0860fc9f437d54d4b202befb5f86b}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_metaclass\_\_@{\_\_metaclass\_\_}}
+\index{\_\_metaclass\_\_@{\_\_metaclass\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{\_\_metaclass\_\_}{\_\_metaclass\_\_}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+metaclass\+\_\+\+\_\+ = abc.\+A\+B\+C\+Meta\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a477626bd258d50151df14adace76bb21}\label{classlhefile_1_1LHEFileBase_a477626bd258d50151df14adace76bb21}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!associated@{associated}}
+\index{associated@{associated}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{associated}{associated}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+associated}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a565511db801b1cae7b544f4898469835}\label{classlhefile_1_1LHEFileBase_a565511db801b1cae7b544f4898469835}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!daughters@{daughters}}
+\index{daughters@{daughters}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{daughters}{daughters}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+daughters}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a615b10f37e5c276cf7da68d828da350a}\label{classlhefile_1_1LHEFileBase_a615b10f37e5c276cf7da68d828da350a}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!f@{f}}
+\index{f@{f}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+f}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_aad2cc1edd802513097a07b6b003c3d0e}\label{classlhefile_1_1LHEFileBase_aad2cc1edd802513097a07b6b003c3d0e}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!filename@{filename}}
+\index{filename@{filename}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+filename}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a4b61ce76b9c779d7a4a8b38682b23386}\label{classlhefile_1_1LHEFileBase_a4b61ce76b9c779d7a4a8b38682b23386}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!isgen@{isgen}}
+\index{isgen@{isgen}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{isgen}{isgen}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+isgen}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_ad2d650469371897e3fa2a562cfb24e27}\label{classlhefile_1_1LHEFileBase_ad2d650469371897e3fa2a562cfb24e27}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!mela@{mela}}
+\index{mela@{mela}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{mela}{mela}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+mela}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_acecf0963b833e52556c2b0c06bf8e4ca}\label{classlhefile_1_1LHEFileBase_acecf0963b833e52556c2b0c06bf8e4ca}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!mothers@{mothers}}
+\index{mothers@{mothers}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{mothers}{mothers}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+mothers}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a36e3d7bb53daa1c2151cb5903569cd45}\label{classlhefile_1_1LHEFileBase_a36e3d7bb53daa1c2151cb5903569cd45}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!weight@{weight}}
+\index{weight@{weight}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+weight}
+
+\mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a8bce9698aa1659d2380da7b90e785d6c}\label{classlhefile_1_1LHEFileBase_a8bce9698aa1659d2380da7b90e785d6c}} 
+\index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!weights@{weights}}
+\index{weights@{weights}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+weights}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/python/\mbox{\hyperlink{lhefile_8py}{lhefile.\+py}}\end{DoxyCompactItemize}

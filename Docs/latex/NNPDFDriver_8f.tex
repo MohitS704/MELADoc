@@ -1,0 +1,56 @@
+\hypertarget{NNPDFDriver_8f}{}\doxysection{M\+E\+L\+A/fortran/pdfs/\+N\+N\+P\+D\+F\+Driver.f File Reference}
+\label{NNPDFDriver_8f}\index{MELA/fortran/pdfs/NNPDFDriver.f@{MELA/fortran/pdfs/NNPDFDriver.f}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{NNPDFDriver_8f_a4632379e514c3dd029fceb3473816cb2}{nnpdfdriver}} (gridfilename, lenfilename)
+\item 
+subroutine \mbox{\hyperlink{NNPDFDriver_8f_a8c9ecfcf06a91da0c8408f3cc8c02a95}{nninitpdf}} (irep)
+\item 
+subroutine \mbox{\hyperlink{NNPDFDriver_8f_aa7f570bf5ff7ca76ead59e74b3f45f47}{readpdfset}} (gridfilename, lenfilename)
+\item 
+subroutine \mbox{\hyperlink{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}{nnevolvepdf}} (x, Q, xpdf)
+\item 
+subroutine \mbox{\hyperlink{NNPDFDriver_8f_a15823352d7ba4c536da9edc5568f33d4}{lh\+\_\+polin2}} (x1a, x2a, ya, m, n, x1, x2, y, dy)
+\item 
+subroutine \mbox{\hyperlink{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}{lh\+\_\+polint}} (xa, ya, n, x, y, dy)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{NNPDFDriver_8f_a15823352d7ba4c536da9edc5568f33d4}\label{NNPDFDriver_8f_a15823352d7ba4c536da9edc5568f33d4}} 
+\index{NNPDFDriver.f@{NNPDFDriver.f}!lh\_polin2@{lh\_polin2}}
+\index{lh\_polin2@{lh\_polin2}!NNPDFDriver.f@{NNPDFDriver.f}}
+\doxysubsubsection{\texorpdfstring{lh\_polin2()}{lh\_polin2()}}
+{\footnotesize\ttfamily subroutine lh\+\_\+polin2 (\begin{DoxyParamCaption}\item[{real(8), dimension(mmax)}]{x1a,  }\item[{real(8), dimension(nmax)}]{x2a,  }\item[{real(8), dimension(mmax,nmax)}]{ya,  }\item[{integer}]{m,  }\item[{integer}]{n,  }\item[{real(8)}]{x1,  }\item[{real(8)}]{x2,  }\item[{real(8)}]{y,  }\item[{real(8)}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}\label{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}} 
+\index{NNPDFDriver.f@{NNPDFDriver.f}!lh\_polint@{lh\_polint}}
+\index{lh\_polint@{lh\_polint}!NNPDFDriver.f@{NNPDFDriver.f}}
+\doxysubsubsection{\texorpdfstring{lh\_polint()}{lh\_polint()}}
+{\footnotesize\ttfamily subroutine lh\+\_\+polint (\begin{DoxyParamCaption}\item[{real(8), dimension(nmax)}]{xa,  }\item[{real(8), dimension(nmax)}]{ya,  }\item[{integer}]{n,  }\item[{real(8)}]{x,  }\item[{real(8)}]{y,  }\item[{real(8)}]{dy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}\label{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}} 
+\index{NNPDFDriver.f@{NNPDFDriver.f}!nnevolvepdf@{nnevolvepdf}}
+\index{nnevolvepdf@{nnevolvepdf}!NNPDFDriver.f@{NNPDFDriver.f}}
+\doxysubsubsection{\texorpdfstring{nnevolvepdf()}{nnevolvepdf()}}
+{\footnotesize\ttfamily subroutine nnevolvepdf (\begin{DoxyParamCaption}\item[{double precision}]{x,  }\item[{double precision}]{Q,  }\item[{double precision, dimension(-\/6\+:7)}]{xpdf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NNPDFDriver_8f_a8c9ecfcf06a91da0c8408f3cc8c02a95}\label{NNPDFDriver_8f_a8c9ecfcf06a91da0c8408f3cc8c02a95}} 
+\index{NNPDFDriver.f@{NNPDFDriver.f}!nninitpdf@{nninitpdf}}
+\index{nninitpdf@{nninitpdf}!NNPDFDriver.f@{NNPDFDriver.f}}
+\doxysubsubsection{\texorpdfstring{nninitpdf()}{nninitpdf()}}
+{\footnotesize\ttfamily subroutine nninitpdf (\begin{DoxyParamCaption}\item[{integer}]{irep }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NNPDFDriver_8f_a4632379e514c3dd029fceb3473816cb2}\label{NNPDFDriver_8f_a4632379e514c3dd029fceb3473816cb2}} 
+\index{NNPDFDriver.f@{NNPDFDriver.f}!nnpdfdriver@{nnpdfdriver}}
+\index{nnpdfdriver@{nnpdfdriver}!NNPDFDriver.f@{NNPDFDriver.f}}
+\doxysubsubsection{\texorpdfstring{nnpdfdriver()}{nnpdfdriver()}}
+{\footnotesize\ttfamily subroutine nnpdfdriver (\begin{DoxyParamCaption}\item[{character(len=lenfilename)}]{gridfilename,  }\item[{integer}]{lenfilename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{NNPDFDriver_8f_aa7f570bf5ff7ca76ead59e74b3f45f47}\label{NNPDFDriver_8f_aa7f570bf5ff7ca76ead59e74b3f45f47}} 
+\index{NNPDFDriver.f@{NNPDFDriver.f}!readpdfset@{readpdfset}}
+\index{readpdfset@{readpdfset}!NNPDFDriver.f@{NNPDFDriver.f}}
+\doxysubsubsection{\texorpdfstring{readpdfset()}{readpdfset()}}
+{\footnotesize\ttfamily subroutine readpdfset (\begin{DoxyParamCaption}\item[{character(len=lenfilename)}]{gridfilename,  }\item[{integer}]{lenfilename }\end{DoxyParamCaption})}
+

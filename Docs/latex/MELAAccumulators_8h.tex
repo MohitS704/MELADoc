@@ -1,0 +1,51 @@
+\hypertarget{MELAAccumulators_8h}{}\doxysection{M\+E\+L\+A/interface/\+M\+E\+L\+A\+Accumulators.h File Reference}
+\label{MELAAccumulators_8h}\index{MELA/interface/MELAAccumulators.h@{MELA/interface/MELAAccumulators.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for M\+E\+L\+A\+Accumulators.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{MELAAccumulators_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MELAAccumulators_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTNumericUtil_1_1NaiveAccumulator}{T\+Numeric\+Util\+::\+Naive\+Accumulator$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceTNumericUtil}{T\+Numeric\+Util}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceTNumericUtil_a22c94c1a7cc6b6de6f990b9344797d4a}{T\+Numeric\+Util\+::\+Precise\+Accumulator}} = Kahan\+Accumulator$<$ T $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceTNumericUtil_aac51976bff771b27114575f1eacc7e92}{T\+Numeric\+Util\+::\+Fast\+Accumulator}} = Naive\+Accumulator$<$ T $>$
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceTNumericUtil_ac1e15acb346327d63f8cba17d50a4fda}{T\+Numeric\+Util\+::\+Default\+Accumulator}} = Precise\+Accumulator$<$ T $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , class A $>$ }\\T \mbox{\hyperlink{namespaceTNumericUtil_a34254600f53ed394187c9cb8119a5160}{T\+Numeric\+Util\+::sum\+With}} (const std\+::vector$<$ T $>$ \&vals)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceTNumericUtil_ac2473610b272af5a7865fae4716b2e50}{T\+Numeric\+Util\+::sum\+Precise}} (const std\+::vector$<$ T, std\+::allocator$<$ T $>$$>$ \&vals)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceTNumericUtil_a25b75a599f51d58c53067b546f1e1ac8}{T\+Numeric\+Util\+::sum\+Fast}} (const std\+::vector$<$ T, std\+::allocator$<$ T $>$$>$ \&vals)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespaceTNumericUtil_abd602ea71a44ca0cd22fb988a26e935b}{T\+Numeric\+Util\+::sum\+Default}} (const std\+::vector$<$ T, std\+::allocator$<$ T $>$$>$ \&vals)
+\end{DoxyCompactItemize}

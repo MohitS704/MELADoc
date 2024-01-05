@@ -1,0 +1,681 @@
+\hypertarget{calcC__lintolog_8c}{}\doxysection{M\+E\+L\+A/test/calc\+C\+\_\+lintolog.c File Reference}
+\label{calcC__lintolog_8c}\index{MELA/test/calcC\_lintolog.c@{MELA/test/calcC\_lintolog.c}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include \char`\"{}T\+R\+O\+O\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Rotation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Tree.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Chain.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+F1.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Spline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Canvas.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H1\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H2\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H3\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Profile.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Graph\+Errors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Random.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Num\+Int\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Real\+Integral.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mela.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+h\char`\"{}}\newline
+Include dependency graph for calc\+C\+\_\+lintolog.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calcC__lintolog_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structExtBin}{Ext\+Bin}}
+\item 
+struct \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{calcC__lintolog_8c_a3a493f9e23930e7fa6672509f6347800}{add\+By\+Lowest}} (std\+::vector$<$ T $>$ \&val\+Array, T val, bool unique)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\void \mbox{\hyperlink{calcC__lintolog_8c_ac3e4081f3087d4d0f5c8e8d0e9d57ed2}{add\+By\+Lowest}} (std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&val\+Array, T val, U index)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{calcC__lintolog_8c_aa43349b52c98662951698d59806dc97e}{append\+Vector}} (std\+::vector$<$ T $>$ \&a, std\+::vector$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{calcC__lintolog_8c_ac9fdc41deaff5d963cf06dad8f91e869}{check\+List\+Variable}} (const vector$<$ T $>$ \&list, const T \&var)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_adeef62b6204427efbfaae118249cb4c2}{split\+Option}} (const string rawoption, string \&wish, string \&value, char delimiter)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aa2f38c31cbb69dcdcedb710bf5435660}{split\+Option\+Recursive}} (const string rawoption, vector$<$ string $>$ \&splitoptions, char delimiter)
+\item 
+float \mbox{\hyperlink{calcC__lintolog_8c_a87af69d74e1712db02417cb1bd6f7541}{find\+Pole\+Mass}} (T\+String samplename)
+\item 
+T\+Tree $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a6a59230d55de0e008c2dde1b807f002e}{find\+Tree}} (vector$<$ T\+Tree $\ast$ $>$ tree\+List, int evid)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_ad02f8aac427884f95d9cfd7014636b98}{get\+Entry}} (vector$<$ T\+Tree $\ast$ $>$ tree\+List, int evid)
+\item 
+vector$<$ T\+String $>$ \mbox{\hyperlink{calcC__lintolog_8c_a7fe540203f22526a878986af5c17757d}{construct\+Samples\+List}} (T\+String strsample, float \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}})
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a079f3455b27c8a4761ec6c90c1830499}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs\+\_\+7or8\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a84dc6a6e64c03c90f3bf7f38c709dba4}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+7or8\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a3c3ba12061485db264cd866010bd4638}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+7or8\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a22f2e290fe28461b6c6b0403f754d882}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aab953ff5ebb2ea3e45a2549b17186f16}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a0ae4bbca109ea8b92093b71e5d375dda}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a398134b22108b206297d76d076a3f907}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+V\+H\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a4e0460ddc9f959523dd24fcdd51147e5}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_af8f21f7c12750bebdcbb4c34786ac9b5}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+bkg\+Z\+Z\+\_\+13\+TeV}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a77f5dab7573e5de04ed9635eae68524d}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+13\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13, bool recalculate=true)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a1cd893d1b20a9d957098ed8b0a18508e}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+I\+N\+D\+E\+P\+E\+N\+D\+E\+N\+T\+\_\+\+H\+S\+M\+Higgs}} (bool recalculate=false)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a3d4560436158ecde957f5eb15623340a}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs}} (bool recalculate=false)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aab79622f08c976cf7a30638f17e065c2}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs}} (bool recalculate=false)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a99e74d0c63266c4ab31c36d19016a3fa}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+ZZ}} (bool recalculate=false)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a9a9d4c132284051fd2c4c901628bf514}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+ZZ}} (bool recalculate=false)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a24cb970d55f94f523fc020a948b1093e}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+A\+N\+A\+L\+Y\+T\+I\+C\+A\+L\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+ZZ}} ()
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a2b9383546c9f8970ebfc6d57a1027684}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+A\+N\+A\+L\+Y\+T\+I\+C\+A\+L\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs}} ()
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a33c65eecf83260556068c5d2a84acfeb}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+A\+N\+A\+L\+Y\+T\+I\+C\+A\+L\+\_\+\+Had\+V\+H\+\_\+\+H\+S\+M\+Higgs}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}})
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_ab1be664873e412656b70371b0d96f2ee}{get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Jets\+\_\+13\+Te\+V\+\_\+2l2q}} ()
+\item 
+T\+Spline3 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ac536b1dfa4ef1f741d79e06dc090814e}{convert\+Graph\+To\+Spline3}} (T\+Graph $\ast$tg, double $\ast$dfirst=0, double $\ast$dlast=0)
+\item 
+T\+Spline3 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ad3bff15e87a76969d92bc00b7411d5e3}{convert\+Graph\+To\+Spline3\+\_\+\+Faithful\+Slopes}} (T\+Graph $\ast$tg, double $\ast$dfirst=0, double $\ast$dlast=0, bool faithful\+Low=true, bool faithful\+High=true)
+\item 
+T\+Spline5 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a748f8e78c2bd8a564901499e9567653d}{convert\+Graph\+To\+Spline5}} (T\+Graph $\ast$tg, double $\ast$dfirst=0, double $\ast$dlast=0)
+\item 
+T\+Spline3 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a44ac47aab2a2d880b7118a72b5af2e55}{convert\+T\+Spline5\+To\+Tspline3}} (T\+Spline5 $\ast$sp)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ac60163de274b558ad0ffaea560fc18ba}{get\+Fcn\+\_\+a0}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a70195c1e0b5bbeae27e40a15a36c0d6e}{get\+Fcn\+\_\+a0plusa1expX}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_aeb28eb09bea582409639c28ee0bbab17}{get\+Fcn\+\_\+a0plusa1overX}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ae3ef6ebb7012fdb8ed5bbc0970926bd3}{get\+Fcn\+\_\+a0over\+X2minusa1overX}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a574246155eeaecebeff28c86bb4854e1}{get\+Fcn\+\_\+a0plus\+X\+Pinvminus\+Xpsqinv}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ad75a06867d62de5e3ef58e152a681cf8}{get\+Fcn\+\_\+a0plusa1timesX}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ad9413873fd5ae6a0f6254c3f49e3ceea}{get\+Fcn\+\_\+a0plusa1times\+Xplusa2over\+X2}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+F1 $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a797c2f34081dcab551229e0c33134599}{get\+Fcn\+\_\+a0plusa1times\+Xplusa2times\+X2}} (T\+Spline3 $\ast$sp, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+T\+Graph $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_aa12795571583bfb827e6be250484e508}{get\+Patch\+\_\+a0a1}} (T\+Spline3 $\ast$sp, T\+Spline3 $\ast$sppatch, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound, bool force\+Output=true)
+\item 
+T\+Graph $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ae78c0baaad2839c185466db32ee24000}{get\+Patch\+\_\+a0plusa1overX}} (T\+Spline3 $\ast$sp, T\+Spline3 $\ast$sppatch, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound, bool force\+Output=true)
+\item 
+T\+Graph $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a92d08f41c1858517d171accb1c505096}{get\+Patch\+\_\+a0plusa1timesX}} (T\+Spline3 $\ast$sp, T\+Spline3 $\ast$sppatch, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound, bool force\+Output=true)
+\item 
+T\+Graph $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a0cfe36570dba9b00260af61079d7b8c9}{get\+Patch\+\_\+a0expa1timesX}} (T\+Spline3 $\ast$sp, T\+Spline3 $\ast$sppatch, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax, bool use\+Low\+Bound)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aec1f80ee5ffdba12f9dce71825793632}{regularize\+Slice}} (T\+Graph\+Errors $\ast$tg\+Slice, std\+::vector$<$ double $>$ $\ast$fixedX=0, double omitbelow=0., int n\+Iter\+\_\+=-\/1, double threshold\+\_\+=-\/1)
+\item 
+T\+Graph\+Errors $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a112734e2a1bf2535ddbc456d5fb182a7}{remove\+Points\+Between}} (T\+Graph\+Errors $\ast$tg\+Slice, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax)
+\item 
+T\+Graph\+Errors $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a62e0164fea818810afab547cea757c57}{replace\+Points\+Between}} (T\+Graph\+Errors $\ast$tg\+Slice, double \mbox{\hyperlink{TMCFM_8hh_ab5bbe897a0c25c58341c216a1b31fbbf}{xmin}}, double xmax)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a5c4568c8b538216172e9ca131d7103b7}{add\+Point}} (T\+Graph\+Errors $\ast$\&tg, double x, double y, double ex, double ey)
+\item 
+T\+Graph\+Errors $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_a50277120f8754768fd1dbad359398124}{add\+Point}} (T\+Graph\+Errors $\ast$tg\+Slice, double x)
+\item 
+T\+Graph\+Errors $\ast$ \mbox{\hyperlink{calcC__lintolog_8c_ad02b555ee4aacb24e746b8160c868b79}{add\+Point\+After\+Bin}} (T\+Graph\+Errors $\ast$tg\+Slice, int abin)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_abee02feaf3432886a401bd640803085b}{rebin\+Average\+ME}} (T\+Graph\+Errors $\ast$\&tg, T\+Tree $\ast$\&tree, T\+Profile $\ast$\&pmass, \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} \&rediv, float \&Z\+Z\+Mass, float \&mesq, float \&weight)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a8f0f643f05367f75985c2d7f3fa07062}{generic\+\_\+\+P\+Avg\+Smooth\+Producer}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc, T\+F1 $\ast$($\ast$lowf)(T\+Spline3 $\ast$, double, double, bool), T\+F1 $\ast$($\ast$highf)(T\+Spline3 $\ast$, double, double, bool), int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=-\/1, bool use\+Faithful\+Low\+Slopes=false, bool use\+Faithful\+High\+Slopes=false, vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$redivision=nullptr)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a4508271aa20df60b297667e1539d3468}{generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc, T\+F1 $\ast$($\ast$lowf)(T\+Spline3 $\ast$, double, double, bool), T\+F1 $\ast$($\ast$highf)(T\+Spline3 $\ast$, double, double, bool), int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=-\/1, bool use\+Faithful\+Low\+Slopes=false, bool use\+Faithful\+High\+Slopes=false, vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$redivision=nullptr)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_afbced57a7077c690345af85ef34d0ca4}{generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc, T\+String strpatchpath, T\+String strpatchname, T\+Graph $\ast$($\ast$lowpatcher)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool), T\+Graph $\ast$($\ast$highpatcher)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool), int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=-\/1, vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$redivision=nullptr)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a30adde5d179cc8f2ebe41d34a30ddf27}{generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc, T\+String strpatchpath, T\+String strpatchname, T\+String strpatchpath2, T\+String strpatchname2, T\+Graph $\ast$($\ast$lowpatcher)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool), T\+Graph $\ast$($\ast$highpatcher)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool), int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=-\/1, vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$redivision=nullptr)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aa407755dd235762096d734077b8a9355}{generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc, T\+String strpatchpath, T\+String strpatchname, T\+F1 $\ast$($\ast$lowf)(T\+Spline3 $\ast$, double, double, bool), T\+Graph $\ast$($\ast$highpatcher)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool), int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=-\/1, vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$redivision=nullptr)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_ae33c3b6515a7db30ed86385a51325e36}{generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc, T\+String strpatchpath, T\+String strpatchname, T\+Graph $\ast$($\ast$lowpatcher)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool), T\+F1 $\ast$($\ast$highf)(T\+Spline3 $\ast$, double, double, bool), int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=-\/1, vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$redivision=nullptr)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a0693b0dc6777acfb3a183b3e399f1779}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Jets\+\_\+2l2q}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a1ea27c1e70335e7b5a2a2b254b95b311}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a3db66960f980b1c7745ec9123781c6bf}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a9fc6a82ada34d83535da149c3f10776c}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_ab2ec4b6ebe7fdeac0df6de8c6089ad49}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+V\+H\+\_\+\+H\+S\+M\+Higgs}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a2f5d787361c739bfa8f25807ab44a02e}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs}} ()
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a76981dd8d00ad609daa0c6793db0fba2}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs}} ()
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a45166d294448cac8c63a6d3e8efe0600}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+ZZ}} ()
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aa9718d2df82d1f8beb713bb020a23899}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+ZZ}} ()
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a996799d715076960d33682ca147ff525}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_ad192f14cd2e5800f134e094c75ee4976}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+bkg\+ZZ}} (T\+String strprod, int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a80d6fe48b90c02505e64b81f2a74a812}{produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+ZZ}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_ac38d428298521a49c607b4cfd83aeeb0}{check\+\_\+\+J\+J\+V\+B\+F\+\_\+vs\+\_\+\+J\+J\+Q\+C\+D\+\_\+7or8\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_aa510bbed0cf6ec8685abf5238e1260ee}{check\+\_\+\+J\+J\+V\+B\+F\+\_\+vs\+\_\+\+J\+J\+Q\+C\+D\+\_\+13\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a7bbac523442654341dfb3e27e60630b0}{check\+\_\+\+J\+Q\+C\+D\+\_\+7or8\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=8)
+\item 
+void \mbox{\hyperlink{calcC__lintolog_8c_a07c0775ca383b3a96c767b57c1657223}{check\+\_\+\+J\+Q\+C\+D\+\_\+13\+TeV}} (int \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}=13)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+T\+String \mbox{\hyperlink{calcC__lintolog_8c_ad3db335ab1d86d1bc5d0acb14444c0df}{inputdir\+\_\+7\+TeV}} = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519/P\+R\+O\+D\+F\+SR\char`\"{}
+\item 
+T\+String \mbox{\hyperlink{calcC__lintolog_8c_ac94c091c12962c9c2c0a3a5b7a7756e5}{inputdir\+\_\+8\+TeV}} = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519b/P\+R\+O\+D\+F\+S\+R\+\_\+8\+TeV\char`\"{}
+\item 
+T\+String \mbox{\hyperlink{calcC__lintolog_8c_a643c1dcc1180ec6668cf3d2e506fc377}{inputdir\+\_\+13\+TeV}} = \char`\"{}/work-\/zfs/lhc/C\+J\+L\+S\+Ttrees/180214\+\_\+2016\+MC\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{calcC__lintolog_8c_ac3e4081f3087d4d0f5c8e8d0e9d57ed2}\label{calcC__lintolog_8c_ac3e4081f3087d4d0f5c8e8d0e9d57ed2}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!addByLowest@{addByLowest}}
+\index{addByLowest@{addByLowest}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{addByLowest()}{addByLowest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+void add\+By\+Lowest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&}]{val\+Array,  }\item[{T}]{val,  }\item[{U}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a3a493f9e23930e7fa6672509f6347800}\label{calcC__lintolog_8c_a3a493f9e23930e7fa6672509f6347800}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!addByLowest@{addByLowest}}
+\index{addByLowest@{addByLowest}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{addByLowest()}{addByLowest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void add\+By\+Lowest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{val\+Array,  }\item[{T}]{val,  }\item[{bool}]{unique }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a5c4568c8b538216172e9ca131d7103b7}\label{calcC__lintolog_8c_a5c4568c8b538216172e9ca131d7103b7}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void add\+Point (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$\&}]{tg,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{ex,  }\item[{double}]{ey }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a50277120f8754768fd1dbad359398124}\label{calcC__lintolog_8c_a50277120f8754768fd1dbad359398124}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily T\+Graph\+Errors$\ast$ add\+Point (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$}]{tg\+Slice,  }\item[{double}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad02b555ee4aacb24e746b8160c868b79}\label{calcC__lintolog_8c_ad02b555ee4aacb24e746b8160c868b79}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!addPointAfterBin@{addPointAfterBin}}
+\index{addPointAfterBin@{addPointAfterBin}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{addPointAfterBin()}{addPointAfterBin()}}
+{\footnotesize\ttfamily T\+Graph\+Errors$\ast$ add\+Point\+After\+Bin (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$}]{tg\+Slice,  }\item[{int}]{abin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aa43349b52c98662951698d59806dc97e}\label{calcC__lintolog_8c_aa43349b52c98662951698d59806dc97e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!appendVector@{appendVector}}
+\index{appendVector@{appendVector}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{appendVector()}{appendVector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void append\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aa510bbed0cf6ec8685abf5238e1260ee}\label{calcC__lintolog_8c_aa510bbed0cf6ec8685abf5238e1260ee}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!check\_JJVBF\_vs\_JJQCD\_13TeV@{check\_JJVBF\_vs\_JJQCD\_13TeV}}
+\index{check\_JJVBF\_vs\_JJQCD\_13TeV@{check\_JJVBF\_vs\_JJQCD\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{check\_JJVBF\_vs\_JJQCD\_13TeV()}{check\_JJVBF\_vs\_JJQCD\_13TeV()}}
+{\footnotesize\ttfamily void check\+\_\+\+J\+J\+V\+B\+F\+\_\+vs\+\_\+\+J\+J\+Q\+C\+D\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ac38d428298521a49c607b4cfd83aeeb0}\label{calcC__lintolog_8c_ac38d428298521a49c607b4cfd83aeeb0}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!check\_JJVBF\_vs\_JJQCD\_7or8TeV@{check\_JJVBF\_vs\_JJQCD\_7or8TeV}}
+\index{check\_JJVBF\_vs\_JJQCD\_7or8TeV@{check\_JJVBF\_vs\_JJQCD\_7or8TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{check\_JJVBF\_vs\_JJQCD\_7or8TeV()}{check\_JJVBF\_vs\_JJQCD\_7or8TeV()}}
+{\footnotesize\ttfamily void check\+\_\+\+J\+J\+V\+B\+F\+\_\+vs\+\_\+\+J\+J\+Q\+C\+D\+\_\+7or8\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a07c0775ca383b3a96c767b57c1657223}\label{calcC__lintolog_8c_a07c0775ca383b3a96c767b57c1657223}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!check\_JQCD\_13TeV@{check\_JQCD\_13TeV}}
+\index{check\_JQCD\_13TeV@{check\_JQCD\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{check\_JQCD\_13TeV()}{check\_JQCD\_13TeV()}}
+{\footnotesize\ttfamily void check\+\_\+\+J\+Q\+C\+D\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a7bbac523442654341dfb3e27e60630b0}\label{calcC__lintolog_8c_a7bbac523442654341dfb3e27e60630b0}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!check\_JQCD\_7or8TeV@{check\_JQCD\_7or8TeV}}
+\index{check\_JQCD\_7or8TeV@{check\_JQCD\_7or8TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{check\_JQCD\_7or8TeV()}{check\_JQCD\_7or8TeV()}}
+{\footnotesize\ttfamily void check\+\_\+\+J\+Q\+C\+D\+\_\+7or8\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ac9fdc41deaff5d963cf06dad8f91e869}\label{calcC__lintolog_8c_ac9fdc41deaff5d963cf06dad8f91e869}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!checkListVariable@{checkListVariable}}
+\index{checkListVariable@{checkListVariable}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{checkListVariable()}{checkListVariable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool check\+List\+Variable (\begin{DoxyParamCaption}\item[{const vector$<$ T $>$ \&}]{list,  }\item[{const T \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a7fe540203f22526a878986af5c17757d}\label{calcC__lintolog_8c_a7fe540203f22526a878986af5c17757d}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!constructSamplesList@{constructSamplesList}}
+\index{constructSamplesList@{constructSamplesList}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{constructSamplesList()}{constructSamplesList()}}
+{\footnotesize\ttfamily vector$<$T\+String$>$ construct\+Samples\+List (\begin{DoxyParamCaption}\item[{T\+String}]{strsample,  }\item[{float}]{sqrts }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ac536b1dfa4ef1f741d79e06dc090814e}\label{calcC__lintolog_8c_ac536b1dfa4ef1f741d79e06dc090814e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!convertGraphToSpline3@{convertGraphToSpline3}}
+\index{convertGraphToSpline3@{convertGraphToSpline3}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{convertGraphToSpline3()}{convertGraphToSpline3()}}
+{\footnotesize\ttfamily T\+Spline3$\ast$ convert\+Graph\+To\+Spline3 (\begin{DoxyParamCaption}\item[{T\+Graph $\ast$}]{tg,  }\item[{double $\ast$}]{dfirst = {\ttfamily 0},  }\item[{double $\ast$}]{dlast = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad3bff15e87a76969d92bc00b7411d5e3}\label{calcC__lintolog_8c_ad3bff15e87a76969d92bc00b7411d5e3}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!convertGraphToSpline3\_FaithfulSlopes@{convertGraphToSpline3\_FaithfulSlopes}}
+\index{convertGraphToSpline3\_FaithfulSlopes@{convertGraphToSpline3\_FaithfulSlopes}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{convertGraphToSpline3\_FaithfulSlopes()}{convertGraphToSpline3\_FaithfulSlopes()}}
+{\footnotesize\ttfamily T\+Spline3$\ast$ convert\+Graph\+To\+Spline3\+\_\+\+Faithful\+Slopes (\begin{DoxyParamCaption}\item[{T\+Graph $\ast$}]{tg,  }\item[{double $\ast$}]{dfirst = {\ttfamily 0},  }\item[{double $\ast$}]{dlast = {\ttfamily 0},  }\item[{bool}]{faithful\+Low = {\ttfamily true},  }\item[{bool}]{faithful\+High = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a748f8e78c2bd8a564901499e9567653d}\label{calcC__lintolog_8c_a748f8e78c2bd8a564901499e9567653d}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!convertGraphToSpline5@{convertGraphToSpline5}}
+\index{convertGraphToSpline5@{convertGraphToSpline5}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{convertGraphToSpline5()}{convertGraphToSpline5()}}
+{\footnotesize\ttfamily T\+Spline5$\ast$ convert\+Graph\+To\+Spline5 (\begin{DoxyParamCaption}\item[{T\+Graph $\ast$}]{tg,  }\item[{double $\ast$}]{dfirst = {\ttfamily 0},  }\item[{double $\ast$}]{dlast = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a44ac47aab2a2d880b7118a72b5af2e55}\label{calcC__lintolog_8c_a44ac47aab2a2d880b7118a72b5af2e55}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!convertTSpline5ToTspline3@{convertTSpline5ToTspline3}}
+\index{convertTSpline5ToTspline3@{convertTSpline5ToTspline3}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{convertTSpline5ToTspline3()}{convertTSpline5ToTspline3()}}
+{\footnotesize\ttfamily T\+Spline3$\ast$ convert\+T\+Spline5\+To\+Tspline3 (\begin{DoxyParamCaption}\item[{T\+Spline5 $\ast$}]{sp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a87af69d74e1712db02417cb1bd6f7541}\label{calcC__lintolog_8c_a87af69d74e1712db02417cb1bd6f7541}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!findPoleMass@{findPoleMass}}
+\index{findPoleMass@{findPoleMass}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{findPoleMass()}{findPoleMass()}}
+{\footnotesize\ttfamily float find\+Pole\+Mass (\begin{DoxyParamCaption}\item[{T\+String}]{samplename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a6a59230d55de0e008c2dde1b807f002e}\label{calcC__lintolog_8c_a6a59230d55de0e008c2dde1b807f002e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!findTree@{findTree}}
+\index{findTree@{findTree}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{findTree()}{findTree()}}
+{\footnotesize\ttfamily T\+Tree$\ast$ find\+Tree (\begin{DoxyParamCaption}\item[{vector$<$ T\+Tree $\ast$ $>$}]{tree\+List,  }\item[{int}]{evid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a8f0f643f05367f75985c2d7f3fa07062}\label{calcC__lintolog_8c_a8f0f643f05367f75985c2d7f3fa07062}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!generic\_PAvgSmoothProducer@{generic\_PAvgSmoothProducer}}
+\index{generic\_PAvgSmoothProducer@{generic\_PAvgSmoothProducer}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{generic\_PAvgSmoothProducer()}{generic\_PAvgSmoothProducer()}}
+{\footnotesize\ttfamily void generic\+\_\+\+P\+Avg\+Smooth\+Producer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc,  }\item[{T\+F1 $\ast$($\ast$)(T\+Spline3 $\ast$, double, double, bool)}]{lowf,  }\item[{T\+F1 $\ast$($\ast$)(T\+Spline3 $\ast$, double, double, bool)}]{highf,  }\item[{int}]{sqrts = {\ttfamily -\/1},  }\item[{bool}]{use\+Faithful\+Low\+Slopes = {\ttfamily false},  }\item[{bool}]{use\+Faithful\+High\+Slopes = {\ttfamily false},  }\item[{vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$}]{redivision = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a4508271aa20df60b297667e1539d3468}\label{calcC__lintolog_8c_a4508271aa20df60b297667e1539d3468}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}}
+\index{generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{generic\_PAvgSmoothProducer\_withDecay()}{generic\_PAvgSmoothProducer\_withDecay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc,  }\item[{T\+F1 $\ast$($\ast$)(T\+Spline3 $\ast$, double, double, bool)}]{lowf,  }\item[{T\+F1 $\ast$($\ast$)(T\+Spline3 $\ast$, double, double, bool)}]{highf,  }\item[{int}]{sqrts = {\ttfamily -\/1},  }\item[{bool}]{use\+Faithful\+Low\+Slopes = {\ttfamily false},  }\item[{bool}]{use\+Faithful\+High\+Slopes = {\ttfamily false},  }\item[{vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$}]{redivision = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aa407755dd235762096d734077b8a9355}\label{calcC__lintolog_8c_aa407755dd235762096d734077b8a9355}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}}
+\index{generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{generic\_PAvgSmoothProducer\_withDecay()}{generic\_PAvgSmoothProducer\_withDecay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc,  }\item[{T\+String}]{strpatchpath,  }\item[{T\+String}]{strpatchname,  }\item[{T\+F1 $\ast$($\ast$)(T\+Spline3 $\ast$, double, double, bool)}]{lowf,  }\item[{T\+Graph $\ast$($\ast$)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool)}]{highpatcher,  }\item[{int}]{sqrts = {\ttfamily -\/1},  }\item[{vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$}]{redivision = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ae33c3b6515a7db30ed86385a51325e36}\label{calcC__lintolog_8c_ae33c3b6515a7db30ed86385a51325e36}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}}
+\index{generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{generic\_PAvgSmoothProducer\_withDecay()}{generic\_PAvgSmoothProducer\_withDecay()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc,  }\item[{T\+String}]{strpatchpath,  }\item[{T\+String}]{strpatchname,  }\item[{T\+Graph $\ast$($\ast$)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool)}]{lowpatcher,  }\item[{T\+F1 $\ast$($\ast$)(T\+Spline3 $\ast$, double, double, bool)}]{highf,  }\item[{int}]{sqrts = {\ttfamily -\/1},  }\item[{vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$}]{redivision = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_afbced57a7077c690345af85ef34d0ca4}\label{calcC__lintolog_8c_afbced57a7077c690345af85ef34d0ca4}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}}
+\index{generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{generic\_PAvgSmoothProducer\_withDecay()}{generic\_PAvgSmoothProducer\_withDecay()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc,  }\item[{T\+String}]{strpatchpath,  }\item[{T\+String}]{strpatchname,  }\item[{T\+Graph $\ast$($\ast$)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool)}]{lowpatcher,  }\item[{T\+Graph $\ast$($\ast$)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool)}]{highpatcher,  }\item[{int}]{sqrts = {\ttfamily -\/1},  }\item[{vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$}]{redivision = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a30adde5d179cc8f2ebe41d34a30ddf27}\label{calcC__lintolog_8c_a30adde5d179cc8f2ebe41d34a30ddf27}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}}
+\index{generic\_PAvgSmoothProducer\_withDecay@{generic\_PAvgSmoothProducer\_withDecay}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{generic\_PAvgSmoothProducer\_withDecay()}{generic\_PAvgSmoothProducer\_withDecay()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void generic\+\_\+\+P\+Avg\+Smooth\+Producer\+\_\+with\+Decay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc,  }\item[{T\+String}]{strpatchpath,  }\item[{T\+String}]{strpatchname,  }\item[{T\+String}]{strpatchpath2,  }\item[{T\+String}]{strpatchname2,  }\item[{T\+Graph $\ast$($\ast$)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool)}]{lowpatcher,  }\item[{T\+Graph $\ast$($\ast$)(T\+Spline3 $\ast$, T\+Spline3 $\ast$, double, double, bool, bool)}]{highpatcher,  }\item[{int}]{sqrts = {\ttfamily -\/1},  }\item[{vector$<$ \mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} $>$ $\ast$}]{redivision = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a33c65eecf83260556068c5d2a84acfeb}\label{calcC__lintolog_8c_a33c65eecf83260556068c5d2a84acfeb}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_ANALYTICAL\_HadVH\_HSMHiggs@{get\_PAvgProfile\_ANALYTICAL\_HadVH\_HSMHiggs}}
+\index{get\_PAvgProfile\_ANALYTICAL\_HadVH\_HSMHiggs@{get\_PAvgProfile\_ANALYTICAL\_HadVH\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_ANALYTICAL\_HadVH\_HSMHiggs()}{get\_PAvgProfile\_ANALYTICAL\_HadVH\_HSMHiggs()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+A\+N\+A\+L\+Y\+T\+I\+C\+A\+L\+\_\+\+Had\+V\+H\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts }\end{DoxyParamCaption})}
+
+measurables.\+m2,\mbox{\Hypertarget{calcC__lintolog_8c_a2b9383546c9f8970ebfc6d57a1027684}\label{calcC__lintolog_8c_a2b9383546c9f8970ebfc6d57a1027684}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_ANALYTICAL\_ZZGG\_HSMHiggs@{get\_PAvgProfile\_ANALYTICAL\_ZZGG\_HSMHiggs}}
+\index{get\_PAvgProfile\_ANALYTICAL\_ZZGG\_HSMHiggs@{get\_PAvgProfile\_ANALYTICAL\_ZZGG\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_ANALYTICAL\_ZZGG\_HSMHiggs()}{get\_PAvgProfile\_ANALYTICAL\_ZZGG\_HSMHiggs()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+A\+N\+A\+L\+Y\+T\+I\+C\+A\+L\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a24cb970d55f94f523fc020a948b1093e}\label{calcC__lintolog_8c_a24cb970d55f94f523fc020a948b1093e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_ANALYTICAL\_ZZQQB\_bkgZZ@{get\_PAvgProfile\_ANALYTICAL\_ZZQQB\_bkgZZ}}
+\index{get\_PAvgProfile\_ANALYTICAL\_ZZQQB\_bkgZZ@{get\_PAvgProfile\_ANALYTICAL\_ZZQQB\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_ANALYTICAL\_ZZQQB\_bkgZZ()}{get\_PAvgProfile\_ANALYTICAL\_ZZQQB\_bkgZZ()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+A\+N\+A\+L\+Y\+T\+I\+C\+A\+L\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a398134b22108b206297d76d076a3f907}\label{calcC__lintolog_8c_a398134b22108b206297d76d076a3f907}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_HadVH\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_HadVH\_HSMHiggs\_13TeV}}
+\index{get\_PAvgProfile\_JHUGen\_HadVH\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_HadVH\_HSMHiggs\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_HadVH\_HSMHiggs\_13TeV()}{get\_PAvgProfile\_JHUGen\_HadVH\_HSMHiggs\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+V\+H\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aab953ff5ebb2ea3e45a2549b17186f16}\label{calcC__lintolog_8c_aab953ff5ebb2ea3e45a2549b17186f16}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_13TeV}}
+\index{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_13TeV()}{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a84dc6a6e64c03c90f3bf7f38c709dba4}\label{calcC__lintolog_8c_a84dc6a6e64c03c90f3bf7f38c709dba4}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_7or8TeV@{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_7or8TeV}}
+\index{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_7or8TeV@{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_7or8TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_7or8TeV()}{get\_PAvgProfile\_JHUGen\_JJQCD\_HSMHiggs\_7or8TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+7or8\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a22f2e290fe28461b6c6b0403f754d882}\label{calcC__lintolog_8c_a22f2e290fe28461b6c6b0403f754d882}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_13TeV}}
+\index{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_13TeV()}{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a079f3455b27c8a4761ec6c90c1830499}\label{calcC__lintolog_8c_a079f3455b27c8a4761ec6c90c1830499}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_7or8TeV@{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_7or8TeV}}
+\index{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_7or8TeV@{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_7or8TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_7or8TeV()}{get\_PAvgProfile\_JHUGen\_JJVBF\_HSMHiggs\_7or8TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs\+\_\+7or8\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a0ae4bbca109ea8b92093b71e5d375dda}\label{calcC__lintolog_8c_a0ae4bbca109ea8b92093b71e5d375dda}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_13TeV}}
+\index{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_13TeV@{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_13TeV()}{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a3c3ba12061485db264cd866010bd4638}\label{calcC__lintolog_8c_a3c3ba12061485db264cd866010bd4638}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_7or8TeV@{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_7or8TeV}}
+\index{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_7or8TeV@{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_7or8TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_7or8TeV()}{get\_PAvgProfile\_JHUGen\_JQCD\_HSMHiggs\_7or8TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\+\_\+7or8\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a3d4560436158ecde957f5eb15623340a}\label{calcC__lintolog_8c_a3d4560436158ecde957f5eb15623340a}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_ZZGG\_HSMHiggs@{get\_PAvgProfile\_JHUGen\_ZZGG\_HSMHiggs}}
+\index{get\_PAvgProfile\_JHUGen\_ZZGG\_HSMHiggs@{get\_PAvgProfile\_JHUGen\_ZZGG\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_ZZGG\_HSMHiggs()}{get\_PAvgProfile\_JHUGen\_ZZGG\_HSMHiggs()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{bool}]{recalculate = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a1cd893d1b20a9d957098ed8b0a18508e}\label{calcC__lintolog_8c_a1cd893d1b20a9d957098ed8b0a18508e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_JHUGen\_ZZINDEPENDENT\_HSMHiggs@{get\_PAvgProfile\_JHUGen\_ZZINDEPENDENT\_HSMHiggs}}
+\index{get\_PAvgProfile\_JHUGen\_ZZINDEPENDENT\_HSMHiggs@{get\_PAvgProfile\_JHUGen\_ZZINDEPENDENT\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_JHUGen\_ZZINDEPENDENT\_HSMHiggs()}{get\_PAvgProfile\_JHUGen\_ZZINDEPENDENT\_HSMHiggs()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+I\+N\+D\+E\+P\+E\+N\+D\+E\+N\+T\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{bool}]{recalculate = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_af8f21f7c12750bebdcbb4c34786ac9b5}\label{calcC__lintolog_8c_af8f21f7c12750bebdcbb4c34786ac9b5}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_JJPROD\_bkgZZ\_13TeV@{get\_PAvgProfile\_MCFM\_JJPROD\_bkgZZ\_13TeV}}
+\index{get\_PAvgProfile\_MCFM\_JJPROD\_bkgZZ\_13TeV@{get\_PAvgProfile\_MCFM\_JJPROD\_bkgZZ\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_JJPROD\_bkgZZ\_13TeV()}{get\_PAvgProfile\_MCFM\_JJPROD\_bkgZZ\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+bkg\+Z\+Z\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a4e0460ddc9f959523dd24fcdd51147e5}\label{calcC__lintolog_8c_a4e0460ddc9f959523dd24fcdd51147e5}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_JJPROD\_S\_HSMHiggs\_13TeV@{get\_PAvgProfile\_MCFM\_JJPROD\_S\_HSMHiggs\_13TeV}}
+\index{get\_PAvgProfile\_MCFM\_JJPROD\_S\_HSMHiggs\_13TeV@{get\_PAvgProfile\_MCFM\_JJPROD\_S\_HSMHiggs\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_JJPROD\_S\_HSMHiggs\_13TeV()}{get\_PAvgProfile\_MCFM\_JJPROD\_S\_HSMHiggs\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ab1be664873e412656b70371b0d96f2ee}\label{calcC__lintolog_8c_ab1be664873e412656b70371b0d96f2ee}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_JJQCD\_bkgZJets\_13TeV\_2l2q@{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZJets\_13TeV\_2l2q}}
+\index{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZJets\_13TeV\_2l2q@{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZJets\_13TeV\_2l2q}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZJets\_13TeV\_2l2q()}{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZJets\_13TeV\_2l2q()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Jets\+\_\+13\+Te\+V\+\_\+2l2q (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a77f5dab7573e5de04ed9635eae68524d}\label{calcC__lintolog_8c_a77f5dab7573e5de04ed9635eae68524d}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_JJQCD\_bkgZZ\_13TeV@{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZZ\_13TeV}}
+\index{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZZ\_13TeV@{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZZ\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZZ\_13TeV()}{get\_PAvgProfile\_MCFM\_JJQCD\_bkgZZ\_13TeV()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+13\+TeV (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13},  }\item[{bool}]{recalculate = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a99e74d0c63266c4ab31c36d19016a3fa}\label{calcC__lintolog_8c_a99e74d0c63266c4ab31c36d19016a3fa}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_ZZGG\_bkgZZ@{get\_PAvgProfile\_MCFM\_ZZGG\_bkgZZ}}
+\index{get\_PAvgProfile\_MCFM\_ZZGG\_bkgZZ@{get\_PAvgProfile\_MCFM\_ZZGG\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_ZZGG\_bkgZZ()}{get\_PAvgProfile\_MCFM\_ZZGG\_bkgZZ()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}\item[{bool}]{recalculate = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aab79622f08c976cf7a30638f17e065c2}\label{calcC__lintolog_8c_aab79622f08c976cf7a30638f17e065c2}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_ZZGG\_HSMHiggs@{get\_PAvgProfile\_MCFM\_ZZGG\_HSMHiggs}}
+\index{get\_PAvgProfile\_MCFM\_ZZGG\_HSMHiggs@{get\_PAvgProfile\_MCFM\_ZZGG\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_ZZGG\_HSMHiggs()}{get\_PAvgProfile\_MCFM\_ZZGG\_HSMHiggs()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{bool}]{recalculate = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a9a9d4c132284051fd2c4c901628bf514}\label{calcC__lintolog_8c_a9a9d4c132284051fd2c4c901628bf514}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!get\_PAvgProfile\_MCFM\_ZZQQB\_bkgZZ@{get\_PAvgProfile\_MCFM\_ZZQQB\_bkgZZ}}
+\index{get\_PAvgProfile\_MCFM\_ZZQQB\_bkgZZ@{get\_PAvgProfile\_MCFM\_ZZQQB\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{get\_PAvgProfile\_MCFM\_ZZQQB\_bkgZZ()}{get\_PAvgProfile\_MCFM\_ZZQQB\_bkgZZ()}}
+{\footnotesize\ttfamily void get\+\_\+\+P\+Avg\+Profile\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}\item[{bool}]{recalculate = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad02f8aac427884f95d9cfd7014636b98}\label{calcC__lintolog_8c_ad02f8aac427884f95d9cfd7014636b98}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getEntry()}{getEntry()}}
+{\footnotesize\ttfamily void get\+Entry (\begin{DoxyParamCaption}\item[{vector$<$ T\+Tree $\ast$ $>$}]{tree\+List,  }\item[{int}]{evid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ac60163de274b558ad0ffaea560fc18ba}\label{calcC__lintolog_8c_ac60163de274b558ad0ffaea560fc18ba}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0@{getFcn\_a0}}
+\index{getFcn\_a0@{getFcn\_a0}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0()}{getFcn\_a0()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0 (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ae3ef6ebb7012fdb8ed5bbc0970926bd3}\label{calcC__lintolog_8c_ae3ef6ebb7012fdb8ed5bbc0970926bd3}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0overX2minusa1overX@{getFcn\_a0overX2minusa1overX}}
+\index{getFcn\_a0overX2minusa1overX@{getFcn\_a0overX2minusa1overX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0overX2minusa1overX()}{getFcn\_a0overX2minusa1overX()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0over\+X2minusa1overX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a70195c1e0b5bbeae27e40a15a36c0d6e}\label{calcC__lintolog_8c_a70195c1e0b5bbeae27e40a15a36c0d6e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0plusa1expX@{getFcn\_a0plusa1expX}}
+\index{getFcn\_a0plusa1expX@{getFcn\_a0plusa1expX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0plusa1expX()}{getFcn\_a0plusa1expX()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0plusa1expX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aeb28eb09bea582409639c28ee0bbab17}\label{calcC__lintolog_8c_aeb28eb09bea582409639c28ee0bbab17}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0plusa1overX@{getFcn\_a0plusa1overX}}
+\index{getFcn\_a0plusa1overX@{getFcn\_a0plusa1overX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0plusa1overX()}{getFcn\_a0plusa1overX()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0plusa1overX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad75a06867d62de5e3ef58e152a681cf8}\label{calcC__lintolog_8c_ad75a06867d62de5e3ef58e152a681cf8}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0plusa1timesX@{getFcn\_a0plusa1timesX}}
+\index{getFcn\_a0plusa1timesX@{getFcn\_a0plusa1timesX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0plusa1timesX()}{getFcn\_a0plusa1timesX()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0plusa1timesX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad9413873fd5ae6a0f6254c3f49e3ceea}\label{calcC__lintolog_8c_ad9413873fd5ae6a0f6254c3f49e3ceea}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0plusa1timesXplusa2overX2@{getFcn\_a0plusa1timesXplusa2overX2}}
+\index{getFcn\_a0plusa1timesXplusa2overX2@{getFcn\_a0plusa1timesXplusa2overX2}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0plusa1timesXplusa2overX2()}{getFcn\_a0plusa1timesXplusa2overX2()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0plusa1times\+Xplusa2over\+X2 (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a797c2f34081dcab551229e0c33134599}\label{calcC__lintolog_8c_a797c2f34081dcab551229e0c33134599}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0plusa1timesXplusa2timesX2@{getFcn\_a0plusa1timesXplusa2timesX2}}
+\index{getFcn\_a0plusa1timesXplusa2timesX2@{getFcn\_a0plusa1timesXplusa2timesX2}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0plusa1timesXplusa2timesX2()}{getFcn\_a0plusa1timesXplusa2timesX2()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0plusa1times\+Xplusa2times\+X2 (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a574246155eeaecebeff28c86bb4854e1}\label{calcC__lintolog_8c_a574246155eeaecebeff28c86bb4854e1}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getFcn\_a0plusXPinvminusXpsqinv@{getFcn\_a0plusXPinvminusXpsqinv}}
+\index{getFcn\_a0plusXPinvminusXpsqinv@{getFcn\_a0plusXPinvminusXpsqinv}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getFcn\_a0plusXPinvminusXpsqinv()}{getFcn\_a0plusXPinvminusXpsqinv()}}
+{\footnotesize\ttfamily T\+F1$\ast$ get\+Fcn\+\_\+a0plus\+X\+Pinvminus\+Xpsqinv (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aa12795571583bfb827e6be250484e508}\label{calcC__lintolog_8c_aa12795571583bfb827e6be250484e508}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getPatch\_a0a1@{getPatch\_a0a1}}
+\index{getPatch\_a0a1@{getPatch\_a0a1}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getPatch\_a0a1()}{getPatch\_a0a1()}}
+{\footnotesize\ttfamily T\+Graph$\ast$ get\+Patch\+\_\+a0a1 (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{T\+Spline3 $\ast$}]{sppatch,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound,  }\item[{bool}]{force\+Output = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a0cfe36570dba9b00260af61079d7b8c9}\label{calcC__lintolog_8c_a0cfe36570dba9b00260af61079d7b8c9}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getPatch\_a0expa1timesX@{getPatch\_a0expa1timesX}}
+\index{getPatch\_a0expa1timesX@{getPatch\_a0expa1timesX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getPatch\_a0expa1timesX()}{getPatch\_a0expa1timesX()}}
+{\footnotesize\ttfamily T\+Graph$\ast$ get\+Patch\+\_\+a0expa1timesX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{T\+Spline3 $\ast$}]{sppatch,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ae78c0baaad2839c185466db32ee24000}\label{calcC__lintolog_8c_ae78c0baaad2839c185466db32ee24000}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getPatch\_a0plusa1overX@{getPatch\_a0plusa1overX}}
+\index{getPatch\_a0plusa1overX@{getPatch\_a0plusa1overX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getPatch\_a0plusa1overX()}{getPatch\_a0plusa1overX()}}
+{\footnotesize\ttfamily T\+Graph$\ast$ get\+Patch\+\_\+a0plusa1overX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{T\+Spline3 $\ast$}]{sppatch,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound,  }\item[{bool}]{force\+Output = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a92d08f41c1858517d171accb1c505096}\label{calcC__lintolog_8c_a92d08f41c1858517d171accb1c505096}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!getPatch\_a0plusa1timesX@{getPatch\_a0plusa1timesX}}
+\index{getPatch\_a0plusa1timesX@{getPatch\_a0plusa1timesX}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{getPatch\_a0plusa1timesX()}{getPatch\_a0plusa1timesX()}}
+{\footnotesize\ttfamily T\+Graph$\ast$ get\+Patch\+\_\+a0plusa1timesX (\begin{DoxyParamCaption}\item[{T\+Spline3 $\ast$}]{sp,  }\item[{T\+Spline3 $\ast$}]{sppatch,  }\item[{double}]{xmin,  }\item[{double}]{xmax,  }\item[{bool}]{use\+Low\+Bound,  }\item[{bool}]{force\+Output = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ab2ec4b6ebe7fdeac0df6de8c6089ad49}\label{calcC__lintolog_8c_ab2ec4b6ebe7fdeac0df6de8c6089ad49}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_JHUGen\_HadVH\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_HadVH\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_JHUGen\_HadVH\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_HadVH\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_JHUGen\_HadVH\_HSMHiggs()}{produce\_PAvgSmooth\_JHUGen\_HadVH\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+V\+H\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a3db66960f980b1c7745ec9123781c6bf}\label{calcC__lintolog_8c_a3db66960f980b1c7745ec9123781c6bf}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs()}{produce\_PAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a1ea27c1e70335e7b5a2a2b254b95b311}\label{calcC__lintolog_8c_a1ea27c1e70335e7b5a2a2b254b95b311}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs()}{produce\_PAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a9fc6a82ada34d83535da149c3f10776c}\label{calcC__lintolog_8c_a9fc6a82ada34d83535da149c3f10776c}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_JHUGen\_JQCD\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_JQCD\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_JHUGen\_JQCD\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_JQCD\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_JHUGen\_JQCD\_HSMHiggs()}{produce\_PAvgSmooth\_JHUGen\_JQCD\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a2f5d787361c739bfa8f25807ab44a02e}\label{calcC__lintolog_8c_a2f5d787361c739bfa8f25807ab44a02e}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs@{produce\_PAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs()}{produce\_PAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad192f14cd2e5800f134e094c75ee4976}\label{calcC__lintolog_8c_ad192f14cd2e5800f134e094c75ee4976}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_JJPROD\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_JJPROD\_bkgZZ}}
+\index{produce\_PAvgSmooth\_MCFM\_JJPROD\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_JJPROD\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_JJPROD\_bkgZZ()}{produce\_PAvgSmooth\_MCFM\_JJPROD\_bkgZZ()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a996799d715076960d33682ca147ff525}\label{calcC__lintolog_8c_a996799d715076960d33682ca147ff525}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_JJPROD\_S\_HSMHiggs@{produce\_PAvgSmooth\_MCFM\_JJPROD\_S\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_MCFM\_JJPROD\_S\_HSMHiggs@{produce\_PAvgSmooth\_MCFM\_JJPROD\_S\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_JJPROD\_S\_HSMHiggs()}{produce\_PAvgSmooth\_MCFM\_JJPROD\_S\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+P\+R\+O\+D\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}\item[{T\+String}]{strprod,  }\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a0693b0dc6777acfb3a183b3e399f1779}\label{calcC__lintolog_8c_a0693b0dc6777acfb3a183b3e399f1779}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q@{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q}}
+\index{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q@{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q()}{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Jets\+\_\+2l2q (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a80d6fe48b90c02505e64b81f2a74a812}\label{calcC__lintolog_8c_a80d6fe48b90c02505e64b81f2a74a812}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZZ}}
+\index{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZZ()}{produce\_PAvgSmooth\_MCFM\_JJQCD\_bkgZZ()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}\item[{int}]{sqrts = {\ttfamily 13} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a45166d294448cac8c63a6d3e8efe0600}\label{calcC__lintolog_8c_a45166d294448cac8c63a6d3e8efe0600}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_ZZGG\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_ZZGG\_bkgZZ}}
+\index{produce\_PAvgSmooth\_MCFM\_ZZGG\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_ZZGG\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_ZZGG\_bkgZZ()}{produce\_PAvgSmooth\_MCFM\_ZZGG\_bkgZZ()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a76981dd8d00ad609daa0c6793db0fba2}\label{calcC__lintolog_8c_a76981dd8d00ad609daa0c6793db0fba2}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_ZZGG\_HSMHiggs@{produce\_PAvgSmooth\_MCFM\_ZZGG\_HSMHiggs}}
+\index{produce\_PAvgSmooth\_MCFM\_ZZGG\_HSMHiggs@{produce\_PAvgSmooth\_MCFM\_ZZGG\_HSMHiggs}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_ZZGG\_HSMHiggs()}{produce\_PAvgSmooth\_MCFM\_ZZGG\_HSMHiggs()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aa9718d2df82d1f8beb713bb020a23899}\label{calcC__lintolog_8c_aa9718d2df82d1f8beb713bb020a23899}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!produce\_PAvgSmooth\_MCFM\_ZZQQB\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_ZZQQB\_bkgZZ}}
+\index{produce\_PAvgSmooth\_MCFM\_ZZQQB\_bkgZZ@{produce\_PAvgSmooth\_MCFM\_ZZQQB\_bkgZZ}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{produce\_PAvgSmooth\_MCFM\_ZZQQB\_bkgZZ()}{produce\_PAvgSmooth\_MCFM\_ZZQQB\_bkgZZ()}}
+{\footnotesize\ttfamily void produce\+\_\+\+P\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+ZZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_abee02feaf3432886a401bd640803085b}\label{calcC__lintolog_8c_abee02feaf3432886a401bd640803085b}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!rebinAverageME@{rebinAverageME}}
+\index{rebinAverageME@{rebinAverageME}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{rebinAverageME()}{rebinAverageME()}}
+{\footnotesize\ttfamily void rebin\+Average\+ME (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$\&}]{tg,  }\item[{T\+Tree $\ast$\&}]{tree,  }\item[{T\+Profile $\ast$\&}]{pmass,  }\item[{\mbox{\hyperlink{structPointRedivision}{Point\+Redivision}} \&}]{rediv,  }\item[{float \&}]{Z\+Z\+Mass,  }\item[{float \&}]{mesq,  }\item[{float \&}]{weight }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aec1f80ee5ffdba12f9dce71825793632}\label{calcC__lintolog_8c_aec1f80ee5ffdba12f9dce71825793632}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!regularizeSlice@{regularizeSlice}}
+\index{regularizeSlice@{regularizeSlice}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{regularizeSlice()}{regularizeSlice()}}
+{\footnotesize\ttfamily void regularize\+Slice (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$}]{tg\+Slice,  }\item[{std\+::vector$<$ double $>$ $\ast$}]{fixedX = {\ttfamily 0},  }\item[{double}]{omitbelow = {\ttfamily 0.},  }\item[{int}]{n\+Iter\+\_\+ = {\ttfamily -\/1},  }\item[{double}]{threshold\+\_\+ = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a112734e2a1bf2535ddbc456d5fb182a7}\label{calcC__lintolog_8c_a112734e2a1bf2535ddbc456d5fb182a7}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!removePointsBetween@{removePointsBetween}}
+\index{removePointsBetween@{removePointsBetween}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{removePointsBetween()}{removePointsBetween()}}
+{\footnotesize\ttfamily T\+Graph\+Errors$\ast$ remove\+Points\+Between (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$}]{tg\+Slice,  }\item[{double}]{xmin,  }\item[{double}]{xmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_a62e0164fea818810afab547cea757c57}\label{calcC__lintolog_8c_a62e0164fea818810afab547cea757c57}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!replacePointsBetween@{replacePointsBetween}}
+\index{replacePointsBetween@{replacePointsBetween}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{replacePointsBetween()}{replacePointsBetween()}}
+{\footnotesize\ttfamily T\+Graph\+Errors$\ast$ replace\+Points\+Between (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$}]{tg\+Slice,  }\item[{double}]{xmin,  }\item[{double}]{xmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_adeef62b6204427efbfaae118249cb4c2}\label{calcC__lintolog_8c_adeef62b6204427efbfaae118249cb4c2}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!splitOption@{splitOption}}
+\index{splitOption@{splitOption}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{splitOption()}{splitOption()}}
+{\footnotesize\ttfamily void split\+Option (\begin{DoxyParamCaption}\item[{const string}]{rawoption,  }\item[{string \&}]{wish,  }\item[{string \&}]{value,  }\item[{char}]{delimiter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_aa2f38c31cbb69dcdcedb710bf5435660}\label{calcC__lintolog_8c_aa2f38c31cbb69dcdcedb710bf5435660}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!splitOptionRecursive@{splitOptionRecursive}}
+\index{splitOptionRecursive@{splitOptionRecursive}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{splitOptionRecursive()}{splitOptionRecursive()}}
+{\footnotesize\ttfamily void split\+Option\+Recursive (\begin{DoxyParamCaption}\item[{const string}]{rawoption,  }\item[{vector$<$ string $>$ \&}]{splitoptions,  }\item[{char}]{delimiter }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{calcC__lintolog_8c_a643c1dcc1180ec6668cf3d2e506fc377}\label{calcC__lintolog_8c_a643c1dcc1180ec6668cf3d2e506fc377}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!inputdir\_13TeV@{inputdir\_13TeV}}
+\index{inputdir\_13TeV@{inputdir\_13TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{inputdir\_13TeV}{inputdir\_13TeV}}
+{\footnotesize\ttfamily T\+String inputdir\+\_\+13\+TeV = \char`\"{}/work-\/zfs/lhc/C\+J\+L\+S\+Ttrees/180214\+\_\+2016\+MC\char`\"{}}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ad3db335ab1d86d1bc5d0acb14444c0df}\label{calcC__lintolog_8c_ad3db335ab1d86d1bc5d0acb14444c0df}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!inputdir\_7TeV@{inputdir\_7TeV}}
+\index{inputdir\_7TeV@{inputdir\_7TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{inputdir\_7TeV}{inputdir\_7TeV}}
+{\footnotesize\ttfamily T\+String inputdir\+\_\+7\+TeV = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519/P\+R\+O\+D\+F\+SR\char`\"{}}
+
+\mbox{\Hypertarget{calcC__lintolog_8c_ac94c091c12962c9c2c0a3a5b7a7756e5}\label{calcC__lintolog_8c_ac94c091c12962c9c2c0a3a5b7a7756e5}} 
+\index{calcC\_lintolog.c@{calcC\_lintolog.c}!inputdir\_8TeV@{inputdir\_8TeV}}
+\index{inputdir\_8TeV@{inputdir\_8TeV}!calcC\_lintolog.c@{calcC\_lintolog.c}}
+\doxysubsubsection{\texorpdfstring{inputdir\_8TeV}{inputdir\_8TeV}}
+{\footnotesize\ttfamily T\+String inputdir\+\_\+8\+TeV = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519b/P\+R\+O\+D\+F\+S\+R\+\_\+8\+TeV\char`\"{}}
+

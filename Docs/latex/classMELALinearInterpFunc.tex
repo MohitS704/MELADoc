@@ -1,0 +1,340 @@
+\hypertarget{classMELALinearInterpFunc}{}\doxysection{M\+E\+L\+A\+Linear\+Interp\+Func Class Reference}
+\label{classMELALinearInterpFunc}\index{MELALinearInterpFunc@{MELALinearInterpFunc}}
+
+
+{\ttfamily \#include $<$M\+E\+L\+A\+Linear\+Interp\+Func.\+h$>$}
+
+
+
+Inheritance diagram for M\+E\+L\+A\+Linear\+Interp\+Func\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classMELALinearInterpFunc__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+E\+L\+A\+Linear\+Interp\+Func\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classMELALinearInterpFunc__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}{Verbosity\+Level}} \{ \mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb}{k\+Silent}}, 
+\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}{k\+Error}}, 
+\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{k\+Verbose}}
+ \}
+\item 
+typedef Float\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a064fa3e81e3ab32a5f26dc6d2f4cb1a3}{M\+E\+L\+A\+Linear\+Interp\+Func}} ()
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a9f3e9999722348ce6099045934b5b706}{M\+E\+L\+A\+Linear\+Interp\+Func}} (const char $\ast$name, const char $\ast$title)
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c5052e8ff12be05b2664fd7099eb870}{M\+E\+L\+A\+Linear\+Interp\+Func}} (const char $\ast$name, const char $\ast$title, Roo\+Abs\+Real \&in\+X\+Var, const std\+::vector$<$ \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} $>$ \&in\+X\+List, const Roo\+Arg\+List \&in\+Fcn\+List, Bool\+\_\+t in\+Use\+Floor=true, \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} in\+Floor\+Eval=1e-\/15, \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} in\+Floor\+Int=1e-\/10)
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a9ff90ef1c80175e23624649cc772f4f1}{M\+E\+L\+A\+Linear\+Interp\+Func}} (const \mbox{\hyperlink{classMELALinearInterpFunc}{M\+E\+L\+A\+Linear\+Interp\+Func}} \&other, const char $\ast$name=0)
+\item 
+virtual T\+Object $\ast$ \mbox{\hyperlink{classMELALinearInterpFunc_a7e29f92a7164225086a237ab3405d2b3}{clone}} (const char $\ast$newname) const
+\item 
+virtual \mbox{\hyperlink{classMELALinearInterpFunc_ac84ca10ce77d49ea1813e0b6bbc94160}{$\sim$\+M\+E\+L\+A\+Linear\+Interp\+Func}} ()
+\item 
+void \mbox{\hyperlink{classMELALinearInterpFunc_a399f316445bce2b393ad3a98fc874e98}{set\+Verbosity}} (\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}{Verbosity\+Level}} flag)
+\item 
+void \mbox{\hyperlink{classMELALinearInterpFunc_a6a089c6e5333998d2510b7da5820726f}{set\+Eval\+Floor}} (\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} val)
+\item 
+void \mbox{\hyperlink{classMELALinearInterpFunc_a49899af99f661ccd829250ab623cadc8}{set\+Int\+Floor}} (\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} val)
+\item 
+void \mbox{\hyperlink{classMELALinearInterpFunc_a253ccc868c763ae80c47915b63460d09}{do\+Floor}} (Bool\+\_\+t flag)
+\item 
+void \mbox{\hyperlink{classMELALinearInterpFunc_a5ce9d07b367e590ba4a8d4e6627c88af}{set\+Range\+Validity}} (const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} valmin, const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} valmax)
+\item 
+Int\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a7bc11e6452703aca5312d4f527a15d92}{get\+Analytical\+Integral}} (Roo\+Arg\+Set \&all\+Vars, Roo\+Arg\+Set \&anal\+Vars, const char $\ast$range\+Name=0) const
+\item 
+Double\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a30df08cb66c3655f8b363f289f75be0d}{analytical\+Integral}} (Int\+\_\+t code, const char $\ast$range\+Name=0) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classMELALinearInterpFunc_a20db6c8f4cce07215a33c2dce1a31845}{npoints}} () const
+\item 
+Int\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_ab066ec897fde842d0e8f36f392883794}{get\+Which\+Bin}} (const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&val) const
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_afef96a0fb39d2a190e20042297feddc8}{get\+Kappa}} (const Int\+\_\+t \&bin) const
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_ab6317fcd36eabe30e04f106601662d5f}{get\+T\+Var}} (const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&val) const
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a23ec7256fa464adb5b852d813e1ae694}{test\+Range\+Validity}} (const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&val) const
+\item 
+void \mbox{\hyperlink{classMELALinearInterpFunc_a4e1fdc2ab84f929486b93ff9902c9afe}{crop\+Value\+For\+Range}} (\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&val) const
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}{interpolate\+Fcn}} (Int\+\_\+t code, const char $\ast$range\+Name=0) const
+\item 
+Double\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a1a4ce4f2d2bf339beafe3526142bfb2a}{evaluate}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}{Verbosity\+Level}} \mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}{use\+Floor}}
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}{floor\+Eval}}
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}{floor\+Int}}
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_a3607e8d09c8766a3a6db89c2555e79ae}{range\+Xmin}}
+\item 
+\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \mbox{\hyperlink{classMELALinearInterpFunc_a7d4cb0380e27c07e58ab7fee47c46aca}{range\+Xmax}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} $>$ \mbox{\hyperlink{classMELALinearInterpFunc_ae7c0d22c40c40e5c1c4673ba46cc9728}{X\+List}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}{the\+X\+Var}}
+\item 
+Roo\+List\+Proxy \mbox{\hyperlink{classMELALinearInterpFunc_aeaefc297d160fd3b65138b5f02349bd0}{Fcn\+List}}
+\item 
+Roo\+List\+Proxy \mbox{\hyperlink{classMELALinearInterpFunc_ad11951d91e733a5d44512ac0b70eeaaa}{leaf\+Deps\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}\label{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!T@{T}}
+\index{T@{T}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily typedef Float\+\_\+t \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{M\+E\+L\+A\+Linear\+Interp\+Func\+::T}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}\label{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!VerbosityLevel@{VerbosityLevel}}
+\index{VerbosityLevel@{VerbosityLevel}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{VerbosityLevel}{VerbosityLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}{M\+E\+L\+A\+Linear\+Interp\+Func\+::\+Verbosity\+Level}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSilent@{kSilent}!MELALinearInterpFunc@{MELALinearInterpFunc}}\index{MELALinearInterpFunc@{MELALinearInterpFunc}!kSilent@{kSilent}}}\mbox{\Hypertarget{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb}\label{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb}} 
+k\+Silent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kError@{kError}!MELALinearInterpFunc@{MELALinearInterpFunc}}\index{MELALinearInterpFunc@{MELALinearInterpFunc}!kError@{kError}}}\mbox{\Hypertarget{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}\label{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}} 
+k\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kVerbose@{kVerbose}!MELALinearInterpFunc@{MELALinearInterpFunc}}\index{MELALinearInterpFunc@{MELALinearInterpFunc}!kVerbose@{kVerbose}}}\mbox{\Hypertarget{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}\label{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}} 
+k\+Verbose&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMELALinearInterpFunc_a064fa3e81e3ab32a5f26dc6d2f4cb1a3}\label{classMELALinearInterpFunc_a064fa3e81e3ab32a5f26dc6d2f4cb1a3}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{MELALinearInterpFunc()}{MELALinearInterpFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Linear\+Interp\+Func\+::\+M\+E\+L\+A\+Linear\+Interp\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a9f3e9999722348ce6099045934b5b706}\label{classMELALinearInterpFunc_a9f3e9999722348ce6099045934b5b706}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{MELALinearInterpFunc()}{MELALinearInterpFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Linear\+Interp\+Func\+::\+M\+E\+L\+A\+Linear\+Interp\+Func (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a2c5052e8ff12be05b2664fd7099eb870}\label{classMELALinearInterpFunc_a2c5052e8ff12be05b2664fd7099eb870}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{MELALinearInterpFunc()}{MELALinearInterpFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Linear\+Interp\+Func\+::\+M\+E\+L\+A\+Linear\+Interp\+Func (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title,  }\item[{Roo\+Abs\+Real \&}]{in\+X\+Var,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} $>$ \&}]{in\+X\+List,  }\item[{const Roo\+Arg\+List \&}]{in\+Fcn\+List,  }\item[{Bool\+\_\+t}]{in\+Use\+Floor = {\ttfamily true},  }\item[{\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}}}]{in\+Floor\+Eval = {\ttfamily 1e-\/15},  }\item[{\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}}}]{in\+Floor\+Int = {\ttfamily 1e-\/10} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a9ff90ef1c80175e23624649cc772f4f1}\label{classMELALinearInterpFunc_a9ff90ef1c80175e23624649cc772f4f1}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{MELALinearInterpFunc()}{MELALinearInterpFunc()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Linear\+Interp\+Func\+::\+M\+E\+L\+A\+Linear\+Interp\+Func (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELALinearInterpFunc}{M\+E\+L\+A\+Linear\+Interp\+Func}} \&}]{other,  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_ac84ca10ce77d49ea1813e0b6bbc94160}\label{classMELALinearInterpFunc_ac84ca10ce77d49ea1813e0b6bbc94160}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!````~MELALinearInterpFunc@{$\sim$MELALinearInterpFunc}}
+\index{````~MELALinearInterpFunc@{$\sim$MELALinearInterpFunc}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{$\sim$MELALinearInterpFunc()}{~MELALinearInterpFunc()}}
+{\footnotesize\ttfamily virtual M\+E\+L\+A\+Linear\+Interp\+Func\+::$\sim$\+M\+E\+L\+A\+Linear\+Interp\+Func (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMELALinearInterpFunc_a30df08cb66c3655f8b363f289f75be0d}\label{classMELALinearInterpFunc_a30df08cb66c3655f8b363f289f75be0d}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!analyticalIntegral@{analyticalIntegral}}
+\index{analyticalIntegral@{analyticalIntegral}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{analyticalIntegral()}{analyticalIntegral()}}
+{\footnotesize\ttfamily Double\+\_\+t M\+E\+L\+A\+Linear\+Interp\+Func\+::analytical\+Integral (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{code,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a7e29f92a7164225086a237ab3405d2b3}\label{classMELALinearInterpFunc_a7e29f92a7164225086a237ab3405d2b3}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!clone@{clone}}
+\index{clone@{clone}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual T\+Object$\ast$ M\+E\+L\+A\+Linear\+Interp\+Func\+::clone (\begin{DoxyParamCaption}\item[{const char $\ast$}]{newname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a4e1fdc2ab84f929486b93ff9902c9afe}\label{classMELALinearInterpFunc_a4e1fdc2ab84f929486b93ff9902c9afe}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!cropValueForRange@{cropValueForRange}}
+\index{cropValueForRange@{cropValueForRange}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{cropValueForRange()}{cropValueForRange()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Linear\+Interp\+Func\+::crop\+Value\+For\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a253ccc868c763ae80c47915b63460d09}\label{classMELALinearInterpFunc_a253ccc868c763ae80c47915b63460d09}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!doFloor@{doFloor}}
+\index{doFloor@{doFloor}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{doFloor()}{doFloor()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Linear\+Interp\+Func\+::do\+Floor (\begin{DoxyParamCaption}\item[{Bool\+\_\+t}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a1a4ce4f2d2bf339beafe3526142bfb2a}\label{classMELALinearInterpFunc_a1a4ce4f2d2bf339beafe3526142bfb2a}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily Double\+\_\+t M\+E\+L\+A\+Linear\+Interp\+Func\+::evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a7bc11e6452703aca5312d4f527a15d92}\label{classMELALinearInterpFunc_a7bc11e6452703aca5312d4f527a15d92}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!getAnalyticalIntegral@{getAnalyticalIntegral}}
+\index{getAnalyticalIntegral@{getAnalyticalIntegral}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{getAnalyticalIntegral()}{getAnalyticalIntegral()}}
+{\footnotesize\ttfamily Int\+\_\+t M\+E\+L\+A\+Linear\+Interp\+Func\+::get\+Analytical\+Integral (\begin{DoxyParamCaption}\item[{Roo\+Arg\+Set \&}]{all\+Vars,  }\item[{Roo\+Arg\+Set \&}]{anal\+Vars,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_afef96a0fb39d2a190e20042297feddc8}\label{classMELALinearInterpFunc_afef96a0fb39d2a190e20042297feddc8}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!getKappa@{getKappa}}
+\index{getKappa@{getKappa}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{getKappa()}{getKappa()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{M\+E\+L\+A\+Linear\+Interp\+Func\+::T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::get\+Kappa (\begin{DoxyParamCaption}\item[{const Int\+\_\+t \&}]{bin }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_ab6317fcd36eabe30e04f106601662d5f}\label{classMELALinearInterpFunc_ab6317fcd36eabe30e04f106601662d5f}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!getTVar@{getTVar}}
+\index{getTVar@{getTVar}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{getTVar()}{getTVar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{M\+E\+L\+A\+Linear\+Interp\+Func\+::T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::get\+T\+Var (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_ab066ec897fde842d0e8f36f392883794}\label{classMELALinearInterpFunc_ab066ec897fde842d0e8f36f392883794}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!getWhichBin@{getWhichBin}}
+\index{getWhichBin@{getWhichBin}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{getWhichBin()}{getWhichBin()}}
+{\footnotesize\ttfamily Int\+\_\+t M\+E\+L\+A\+Linear\+Interp\+Func\+::get\+Which\+Bin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}\label{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!interpolateFcn@{interpolateFcn}}
+\index{interpolateFcn@{interpolateFcn}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{interpolateFcn()}{interpolateFcn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{M\+E\+L\+A\+Linear\+Interp\+Func\+::T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::interpolate\+Fcn (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{code,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a20db6c8f4cce07215a33c2dce1a31845}\label{classMELALinearInterpFunc_a20db6c8f4cce07215a33c2dce1a31845}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!npoints@{npoints}}
+\index{npoints@{npoints}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{npoints()}{npoints()}}
+{\footnotesize\ttfamily unsigned int M\+E\+L\+A\+Linear\+Interp\+Func\+::npoints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a6a089c6e5333998d2510b7da5820726f}\label{classMELALinearInterpFunc_a6a089c6e5333998d2510b7da5820726f}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!setEvalFloor@{setEvalFloor}}
+\index{setEvalFloor@{setEvalFloor}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{setEvalFloor()}{setEvalFloor()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Linear\+Interp\+Func\+::set\+Eval\+Floor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{M\+E\+L\+A\+Linear\+Interp\+Func\+::T}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a49899af99f661ccd829250ab623cadc8}\label{classMELALinearInterpFunc_a49899af99f661ccd829250ab623cadc8}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!setIntFloor@{setIntFloor}}
+\index{setIntFloor@{setIntFloor}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{setIntFloor()}{setIntFloor()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Linear\+Interp\+Func\+::set\+Int\+Floor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{M\+E\+L\+A\+Linear\+Interp\+Func\+::T}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a5ce9d07b367e590ba4a8d4e6627c88af}\label{classMELALinearInterpFunc_a5ce9d07b367e590ba4a8d4e6627c88af}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!setRangeValidity@{setRangeValidity}}
+\index{setRangeValidity@{setRangeValidity}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{setRangeValidity()}{setRangeValidity()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Linear\+Interp\+Func\+::set\+Range\+Validity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}}}]{valmin,  }\item[{const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}}}]{valmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a399f316445bce2b393ad3a98fc874e98}\label{classMELALinearInterpFunc_a399f316445bce2b393ad3a98fc874e98}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!setVerbosity@{setVerbosity}}
+\index{setVerbosity@{setVerbosity}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{setVerbosity()}{setVerbosity()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Linear\+Interp\+Func\+::set\+Verbosity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}{Verbosity\+Level}}}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a23ec7256fa464adb5b852d813e1ae694}\label{classMELALinearInterpFunc_a23ec7256fa464adb5b852d813e1ae694}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!testRangeValidity@{testRangeValidity}}
+\index{testRangeValidity@{testRangeValidity}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{testRangeValidity()}{testRangeValidity()}}
+{\footnotesize\ttfamily Bool\+\_\+t M\+E\+L\+A\+Linear\+Interp\+Func\+::test\+Range\+Validity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMELALinearInterpFunc_aeaefc297d160fd3b65138b5f02349bd0}\label{classMELALinearInterpFunc_aeaefc297d160fd3b65138b5f02349bd0}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!FcnList@{FcnList}}
+\index{FcnList@{FcnList}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{FcnList}{FcnList}}
+{\footnotesize\ttfamily Roo\+List\+Proxy M\+E\+L\+A\+Linear\+Interp\+Func\+::\+Fcn\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}\label{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!floorEval@{floorEval}}
+\index{floorEval@{floorEval}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{floorEval}{floorEval}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::floor\+Eval\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}\label{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!floorInt@{floorInt}}
+\index{floorInt@{floorInt}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{floorInt}{floorInt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::floor\+Int\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_ad11951d91e733a5d44512ac0b70eeaaa}\label{classMELALinearInterpFunc_ad11951d91e733a5d44512ac0b70eeaaa}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!leafDepsList@{leafDepsList}}
+\index{leafDepsList@{leafDepsList}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{leafDepsList}{leafDepsList}}
+{\footnotesize\ttfamily Roo\+List\+Proxy M\+E\+L\+A\+Linear\+Interp\+Func\+::leaf\+Deps\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a7d4cb0380e27c07e58ab7fee47c46aca}\label{classMELALinearInterpFunc_a7d4cb0380e27c07e58ab7fee47c46aca}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!rangeXmax@{rangeXmax}}
+\index{rangeXmax@{rangeXmax}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{rangeXmax}{rangeXmax}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::range\+Xmax\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a3607e8d09c8766a3a6db89c2555e79ae}\label{classMELALinearInterpFunc_a3607e8d09c8766a3a6db89c2555e79ae}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!rangeXmin@{rangeXmin}}
+\index{rangeXmin@{rangeXmin}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{rangeXmin}{rangeXmin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}} M\+E\+L\+A\+Linear\+Interp\+Func\+::range\+Xmin\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}\label{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!theXVar@{theXVar}}
+\index{theXVar@{theXVar}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{theXVar}{theXVar}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy M\+E\+L\+A\+Linear\+Interp\+Func\+::the\+X\+Var\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}\label{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!useFloor@{useFloor}}
+\index{useFloor@{useFloor}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{useFloor}{useFloor}}
+{\footnotesize\ttfamily Bool\+\_\+t M\+E\+L\+A\+Linear\+Interp\+Func\+::use\+Floor\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}\label{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!verbosity@{verbosity}}
+\index{verbosity@{verbosity}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{verbosity}{verbosity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edf}{Verbosity\+Level}} M\+E\+L\+A\+Linear\+Interp\+Func\+::verbosity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELALinearInterpFunc_ae7c0d22c40c40e5c1c4673ba46cc9728}\label{classMELALinearInterpFunc_ae7c0d22c40c40e5c1c4673ba46cc9728}} 
+\index{MELALinearInterpFunc@{MELALinearInterpFunc}!XList@{XList}}
+\index{XList@{XList}!MELALinearInterpFunc@{MELALinearInterpFunc}}
+\doxysubsubsection{\texorpdfstring{XList}{XList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELALinearInterpFunc_a2c8810a5b3310a79154eb904152692fc}{T}}$>$ M\+E\+L\+A\+Linear\+Interp\+Func\+::\+X\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{MELALinearInterpFunc_8h}{M\+E\+L\+A\+Linear\+Interp\+Func.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{MELALinearInterpFunc_8cc}{M\+E\+L\+A\+Linear\+Interp\+Func.\+cc}}\end{DoxyCompactItemize}

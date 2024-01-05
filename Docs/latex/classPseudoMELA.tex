@@ -1,0 +1,149 @@
+\hypertarget{classPseudoMELA}{}\doxysection{Pseudo\+M\+E\+LA Class Reference}
+\label{classPseudoMELA}\index{PseudoMELA@{PseudoMELA}}
+
+
+{\ttfamily \#include $<$Pseudo\+M\+E\+L\+A.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPseudoMELA_aa96843d9eb8ee6336ba0bf535ec7c59d}{Pseudo\+M\+E\+LA}} ()
+\item 
+\mbox{\hyperlink{classPseudoMELA_a902b9eee8325ce70c920bad57390c838}{$\sim$\+Pseudo\+M\+E\+LA}} ()
+\item 
+void \mbox{\hyperlink{classPseudoMELA_a3f89a3c65b642b8160e4929ff53b04ee}{compute\+KD}} (T\+Lorentz\+Vector Z1\+\_\+lept1, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector Z1\+\_\+lept2, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector Z2\+\_\+lept1, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector Z2\+\_\+lept2, int Z2\+\_\+lept2\+Id, float \&kd, float \&psig, float \&pbkg)
+\item 
+void \mbox{\hyperlink{classPseudoMELA_acd171320fe4d236aa26b11fae801f7b3}{compute\+KD}} (float zzmass, float z1mass, float z2mass, float costhetstar, float costheta1, float costheta2, float phi, float phistar1, float \&kd, float \&psig, float \&psig\+A\+LT)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPseudoMELA_ac49300d6a8ed7cd3b3258a10698c172b}{check\+Zorder}} (float \&z1mass, float \&z2mass, float \&costhetastar, float \&costheta1, float \&costheta2, float \&phi, float \&phistar1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_af5a6cd466b57def743962baf8d1167c8}{z1mass\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_a20d61251c0ec6be6fd01c7ba1046eb13}{z2mass\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_ab0a4c4324ccc698e51123610784ff40b}{costheta1\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_a89787bf3c1ad8616f976f3f104d02304}{costheta2\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_abea9719728d1abfa132f9e16ac1c7e81}{phi\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_aca59ffd78c10011ff0c80bb9b6388add}{costhetastar\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_ab247f98042d3cc087fb747968832e9bf}{phistar1\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classPseudoMELA_adeba5fe145df60bbc9bc4830240f0b84}{mzz\+\_\+rrv}}
+\item 
+Angular\+Pdf\+Factory $\ast$ \mbox{\hyperlink{classPseudoMELA_a34a6d16304b76d982f4cef03b7a9ebab}{S\+M\+Higgs}}
+\item 
+Angular\+Pdf\+Factory $\ast$ \mbox{\hyperlink{classPseudoMELA_a99dd69a798e078f0cba61d68992e2da0}{P\+S\+Higgs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPseudoMELA_aa96843d9eb8ee6336ba0bf535ec7c59d}\label{classPseudoMELA_aa96843d9eb8ee6336ba0bf535ec7c59d}} 
+\index{PseudoMELA@{PseudoMELA}!PseudoMELA@{PseudoMELA}}
+\index{PseudoMELA@{PseudoMELA}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{PseudoMELA()}{PseudoMELA()}}
+{\footnotesize\ttfamily Pseudo\+M\+E\+L\+A\+::\+Pseudo\+M\+E\+LA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPseudoMELA_a902b9eee8325ce70c920bad57390c838}\label{classPseudoMELA_a902b9eee8325ce70c920bad57390c838}} 
+\index{PseudoMELA@{PseudoMELA}!````~PseudoMELA@{$\sim$PseudoMELA}}
+\index{````~PseudoMELA@{$\sim$PseudoMELA}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{$\sim$PseudoMELA()}{~PseudoMELA()}}
+{\footnotesize\ttfamily Pseudo\+M\+E\+L\+A\+::$\sim$\+Pseudo\+M\+E\+LA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPseudoMELA_ac49300d6a8ed7cd3b3258a10698c172b}\label{classPseudoMELA_ac49300d6a8ed7cd3b3258a10698c172b}} 
+\index{PseudoMELA@{PseudoMELA}!checkZorder@{checkZorder}}
+\index{checkZorder@{checkZorder}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{checkZorder()}{checkZorder()}}
+{\footnotesize\ttfamily void Pseudo\+M\+E\+L\+A\+::check\+Zorder (\begin{DoxyParamCaption}\item[{float \&}]{z1mass,  }\item[{float \&}]{z2mass,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{phi,  }\item[{float \&}]{phistar1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_acd171320fe4d236aa26b11fae801f7b3}\label{classPseudoMELA_acd171320fe4d236aa26b11fae801f7b3}} 
+\index{PseudoMELA@{PseudoMELA}!computeKD@{computeKD}}
+\index{computeKD@{computeKD}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{computeKD()}{computeKD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pseudo\+M\+E\+L\+A\+::compute\+KD (\begin{DoxyParamCaption}\item[{float}]{zzmass,  }\item[{float}]{z1mass,  }\item[{float}]{z2mass,  }\item[{float}]{costhetstar,  }\item[{float}]{costheta1,  }\item[{float}]{costheta2,  }\item[{float}]{phi,  }\item[{float}]{phistar1,  }\item[{float \&}]{kd,  }\item[{float \&}]{psig,  }\item[{float \&}]{psig\+A\+LT }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPseudoMELA_a3f89a3c65b642b8160e4929ff53b04ee}\label{classPseudoMELA_a3f89a3c65b642b8160e4929ff53b04ee}} 
+\index{PseudoMELA@{PseudoMELA}!computeKD@{computeKD}}
+\index{computeKD@{computeKD}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{computeKD()}{computeKD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pseudo\+M\+E\+L\+A\+::compute\+KD (\begin{DoxyParamCaption}\item[{T\+Lorentz\+Vector}]{Z1\+\_\+lept1,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{Z1\+\_\+lept2,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{Z2\+\_\+lept1,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{Z2\+\_\+lept2,  }\item[{int}]{Z2\+\_\+lept2\+Id,  }\item[{float \&}]{kd,  }\item[{float \&}]{psig,  }\item[{float \&}]{pbkg }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPseudoMELA_ab0a4c4324ccc698e51123610784ff40b}\label{classPseudoMELA_ab0a4c4324ccc698e51123610784ff40b}} 
+\index{PseudoMELA@{PseudoMELA}!costheta1\_rrv@{costheta1\_rrv}}
+\index{costheta1\_rrv@{costheta1\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{costheta1\_rrv}{costheta1\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::costheta1\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_a89787bf3c1ad8616f976f3f104d02304}\label{classPseudoMELA_a89787bf3c1ad8616f976f3f104d02304}} 
+\index{PseudoMELA@{PseudoMELA}!costheta2\_rrv@{costheta2\_rrv}}
+\index{costheta2\_rrv@{costheta2\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{costheta2\_rrv}{costheta2\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::costheta2\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_aca59ffd78c10011ff0c80bb9b6388add}\label{classPseudoMELA_aca59ffd78c10011ff0c80bb9b6388add}} 
+\index{PseudoMELA@{PseudoMELA}!costhetastar\_rrv@{costhetastar\_rrv}}
+\index{costhetastar\_rrv@{costhetastar\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{costhetastar\_rrv}{costhetastar\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::costhetastar\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_adeba5fe145df60bbc9bc4830240f0b84}\label{classPseudoMELA_adeba5fe145df60bbc9bc4830240f0b84}} 
+\index{PseudoMELA@{PseudoMELA}!mzz\_rrv@{mzz\_rrv}}
+\index{mzz\_rrv@{mzz\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{mzz\_rrv}{mzz\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::mzz\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_abea9719728d1abfa132f9e16ac1c7e81}\label{classPseudoMELA_abea9719728d1abfa132f9e16ac1c7e81}} 
+\index{PseudoMELA@{PseudoMELA}!phi\_rrv@{phi\_rrv}}
+\index{phi\_rrv@{phi\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{phi\_rrv}{phi\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::phi\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_ab247f98042d3cc087fb747968832e9bf}\label{classPseudoMELA_ab247f98042d3cc087fb747968832e9bf}} 
+\index{PseudoMELA@{PseudoMELA}!phistar1\_rrv@{phistar1\_rrv}}
+\index{phistar1\_rrv@{phistar1\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{phistar1\_rrv}{phistar1\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::phistar1\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_a99dd69a798e078f0cba61d68992e2da0}\label{classPseudoMELA_a99dd69a798e078f0cba61d68992e2da0}} 
+\index{PseudoMELA@{PseudoMELA}!PSHiggs@{PSHiggs}}
+\index{PSHiggs@{PSHiggs}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{PSHiggs}{PSHiggs}}
+{\footnotesize\ttfamily Angular\+Pdf\+Factory$\ast$ Pseudo\+M\+E\+L\+A\+::\+P\+S\+Higgs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_a34a6d16304b76d982f4cef03b7a9ebab}\label{classPseudoMELA_a34a6d16304b76d982f4cef03b7a9ebab}} 
+\index{PseudoMELA@{PseudoMELA}!SMHiggs@{SMHiggs}}
+\index{SMHiggs@{SMHiggs}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{SMHiggs}{SMHiggs}}
+{\footnotesize\ttfamily Angular\+Pdf\+Factory$\ast$ Pseudo\+M\+E\+L\+A\+::\+S\+M\+Higgs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_af5a6cd466b57def743962baf8d1167c8}\label{classPseudoMELA_af5a6cd466b57def743962baf8d1167c8}} 
+\index{PseudoMELA@{PseudoMELA}!z1mass\_rrv@{z1mass\_rrv}}
+\index{z1mass\_rrv@{z1mass\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{z1mass\_rrv}{z1mass\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::z1mass\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPseudoMELA_a20d61251c0ec6be6fd01c7ba1046eb13}\label{classPseudoMELA_a20d61251c0ec6be6fd01c7ba1046eb13}} 
+\index{PseudoMELA@{PseudoMELA}!z2mass\_rrv@{z2mass\_rrv}}
+\index{z2mass\_rrv@{z2mass\_rrv}!PseudoMELA@{PseudoMELA}}
+\doxysubsubsection{\texorpdfstring{z2mass\_rrv}{z2mass\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Pseudo\+M\+E\+L\+A\+::z2mass\+\_\+rrv\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{PseudoMELA_8h}{Pseudo\+M\+E\+L\+A.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,1518 @@
+\hypertarget{classMela}{}\doxysection{Mela Class Reference}
+\label{classMela}\index{Mela@{Mela}}
+
+
+{\ttfamily \#include $<$Mela.\+h$>$}
+
+
+
+Collaboration diagram for Mela\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMela__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela}} (double L\+H\+Csqrts\+\_\+=13., double mh\+\_\+=125., \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity\+\_\+=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}})
+\item 
+\mbox{\hyperlink{classMela_acdce01b49b3c5f53c208dc0cc2d7d2e0}{Mela}} (const \mbox{\hyperlink{classMela}{Mela}} \&other)
+\item 
+\mbox{\hyperlink{classMela_a39328d800ae0c22a339a416dd8075de0}{$\sim$\+Mela}} ()
+\item 
+void \mbox{\hyperlink{classMela_a1b6f1bb342556508b765cf6fe299a467}{build}} (double mh\+\_\+)
+\item 
+void \mbox{\hyperlink{classMela_addbf65232c5fa5bf44cf8180b543b904}{set\+Process}} (\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} my\+Model, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} my\+ME, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} my\+Production)
+\item 
+void \mbox{\hyperlink{classMela_a540460c5f493ffa154560ec2d7452799}{set\+Verbosity}} (\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity\+\_\+=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}})
+\item 
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \mbox{\hyperlink{classMela_a6bb33dcae94f2873b0c53891e71bbbcb}{get\+Verbosity}} ()
+\item 
+void \mbox{\hyperlink{classMela_ae810756749a5c14defbda7721c00642c}{set\+Mela\+Lepton\+Interference}} (\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} my\+Lep\+Interf=\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca92cbe92f4215368249033082e6671aa6}{T\+Var\+::\+Default\+Lepton\+Interf}})
+\item 
+void \mbox{\hyperlink{classMela_a7ae40993c2bc0c8b6764ddc0cc948c4b}{set\+Remove\+Lepton\+Masses}} (bool Massless\+Lepton\+Switch=true)
+\item 
+void \mbox{\hyperlink{classMela_ae8c0515d34386567b8bdb01a77b36d86}{set\+Remove\+Jet\+Masses}} (bool Massless\+Lepton\+Switch=true)
+\item 
+void \mbox{\hyperlink{classMela_af478cd82f2e006df9bdf90da9232142a}{set\+Mela\+Primary\+Higgs\+Mass}} (double my\+Higgs\+Mass)
+\item 
+void \mbox{\hyperlink{classMela_aa835c3b33ddec39682776bb1cf98176b}{set\+Mela\+Higgs\+Mass}} (double my\+Higgs\+Mass, int index=0)
+\item 
+void \mbox{\hyperlink{classMela_ac08cf6732bf5c84fa3da1c5252d2660f}{set\+Mela\+Higgs\+Width}} (double my\+Higgs\+Width=-\/1, int index=0)
+\item 
+void \mbox{\hyperlink{classMela_a89930f849726aa1ffd4b38830df7a083}{set\+Mela\+Higgs\+Mass\+Width}} (double my\+Higgs\+Mass, double my\+Higgs\+Width, int index)
+\item 
+void \mbox{\hyperlink{classMela_a8d7f183b5bcc90bf190e2576ad7ac1a9}{set\+Ren\+Fac\+Scale\+Mode}} (\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} renormalization\+Sch, \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} factorization\+Sch, double ren\+\_\+sf, double fac\+\_\+sf)
+\item 
+void \mbox{\hyperlink{classMela_a56c78e0f627c65fbff7f312ff373bbad}{set\+Candidate\+Decay\+Mode}} (\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{classMela_a7534093301fd2bc7cc6d33158d5a8ae5}{set\+Current\+Candidate\+From\+Index}} (unsigned int icand)
+\item 
+void \mbox{\hyperlink{classMela_ac6289c43968f54589f1ecfc3192d7349}{set\+Current\+Candidate}} (\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$cand)
+\item 
+void \mbox{\hyperlink{classMela_a71142f41d44bb42a1cd2be50b3cc8240}{set\+Input\+Event}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Daughters, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Associated=0, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Mothers=0, bool is\+Gen=false)
+\item 
+void \mbox{\hyperlink{classMela_a05ede92ecd47e2be112a27695a11e5a2}{reset\+Input\+Event}} ()
+\item 
+void \mbox{\hyperlink{classMela_a752922e898b2e456d43d7d16d33c63cd}{set\+Temp\+Candidate}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Daughters, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Associated=0, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Mothers=0, bool is\+Gen=false)
+\item 
+void \mbox{\hyperlink{classMela_abeaf8019f374bd300a1262f67fd58b89}{append\+Top\+Candidate}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$Top\+Daughters)
+\item 
+void \mbox{\hyperlink{classMela_aed49296bc1ba9b4f0747b032d5089aef}{reset\+Mass}} (double inmass, int ipart)
+\item 
+void \mbox{\hyperlink{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}{reset\+Width}} (double inwidth, int ipart)
+\item 
+void \mbox{\hyperlink{classMela_aac843ada4c5aac21f952c13fc706cca1}{reset\+Quark\+Masses}} ()
+\item 
+void \mbox{\hyperlink{classMela_a646efa5968b603acf694196f420cf039}{reset\+M\+C\+F\+M\+\_\+\+E\+W\+K\+Parameters}} (double ext\+\_\+\+Gf, double ext\+\_\+aemmz, double ext\+\_\+mW, double ext\+\_\+mZ, double ext\+\_\+xW, int ext\+\_\+ewscheme=3)
+\item 
+double \mbox{\hyperlink{classMela_a7fa7208ec310f5683a9bc347d132f2da}{get\+Primary\+Mass}} (int ipart)
+\item 
+double \mbox{\hyperlink{classMela_a16f735b882d7351f1e108f379ee064b9}{get\+Primary\+Width}} (int ipart)
+\item 
+double \mbox{\hyperlink{classMela_ae74d928920338825bd34a7eb924fd44e}{get\+Higgs\+Width\+At\+Pole\+Mass}} (double mass)
+\item 
+\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$ \mbox{\hyperlink{classMela_aedae1c57a3a6029bf103dcf4223c3fd5}{get\+I\+O\+Record}} ()
+\item 
+\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ \mbox{\hyperlink{classMela_a50878827e30fe08357d67465fe577235}{get\+Current\+Candidate}} ()
+\item 
+int \mbox{\hyperlink{classMela_acf9c25a1e346a47e1d68fe51c9670835}{get\+Current\+Candidate\+Index}} ()
+\item 
+int \mbox{\hyperlink{classMela_a39c5688a8e4cecde34a8807f1b190c8c}{get\+N\+Candidates}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{MELAThreeBodyDecayCandidate_8h_a210e2b9474d7315495c5b75eccb742f1}{M\+E\+L\+A\+Top\+Candidate\+\_\+t}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{classMela_a767956e9edcc23b8332b9c6fb72ea2c0}{get\+Top\+Candidate\+Collection}} ()
+\item 
+void \mbox{\hyperlink{classMela_a40221b711597c6c682e2283692255f18}{get\+Constant}} (float \&prob)
+\item 
+void \mbox{\hyperlink{classMela_a1094cda5be40b685507ec9f720fa57f2}{get\+P\+Aux}} (float \&prob)
+\item 
+\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} \mbox{\hyperlink{classMela_a74a20d795ece2fd4e7aa10fa6d390202}{get\+Measurables\+R\+RV}} ()
+\item 
+void \mbox{\hyperlink{classMela_a7ed076cbbb4121926e53f56cb4d56bab}{compute\+Decay\+Angles}} (float \&qH, float \&m1, float \&m2, float \&costheta1, float \&costheta2, float \&Phi, float \&costhetastar, float \&Phi1)
+\item 
+void \mbox{\hyperlink{classMela_a888f07999471870590557aa4fec74caa}{compute\+V\+B\+F\+Angles}} (float \&Q2\+V1, float \&Q2\+V2, float \&costheta1, float \&costheta2, float \&Phi, float \&costhetastar, float \&Phi1)
+\item 
+void \mbox{\hyperlink{classMela_a30000328153231efb52ec54cafca4e4f}{compute\+V\+B\+F\+Angles\+\_\+\+Complex\+Boost}} (float \&Q2\+V1, float \&Q2\+V2, float \&costheta1\+\_\+real, float \&costheta1\+\_\+imag, float \&costheta2\+\_\+real, float \&costheta2\+\_\+imag, float \&Phi, float \&costhetastar, float \&Phi1)
+\item 
+void \mbox{\hyperlink{classMela_a4b68e6c2c5b1f430d6f88bc048137e88}{compute\+V\+H\+Angles}} (float \&m\+Vstar, float \&mV, float \&costheta1, float \&costheta2, float \&Phi, float \&costhetastar, float \&Phi1)
+\item 
+void \mbox{\hyperlink{classMela_af09b0369dbcba3908e4d8d5daee21909}{compute\+T\+T\+H\+Angles}} (int top\+Decay, float \&m\+T1, float \&m\+W1, float \&m\+T2, float \&m\+W2, float \&costheta1, float \&costheta2, float \&Phi, float \&costhetastar, float \&Phi1, float \&hbb, float \&h\+WW, float \&Phibb, float \&Phi1bb, float \&h\+Wplusf, float \&Phi\+Wplusf, float \&h\+Wminusf, float \&Phi\+Wminusf)
+\item 
+void \mbox{\hyperlink{classMela_a13db15a91b1f78acdd79cb57e299b4a8}{compute\+P\+\_\+self\+Dspin0}} (double self\+D\+Hvvcoupl\+\_\+input\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_ae4e4f7ad7abdc513ae9bfd9e8f7cae93}{compute\+P\+\_\+self\+Dspin1}} (double self\+D\+Zqqcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+QQ\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Zvvcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a97b814512ac9c9d1431a81e5a2c69bd4}{compute\+P\+\_\+self\+Dspin1}} (double self\+D\+Zvvcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_af89095e77f63251cb489e2a96dace213}{compute\+P\+\_\+self\+Dspin2}} (double self\+D\+Gggcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+G\+GG\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Gqqcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+G\+QQ\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Gvvcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a531c3987c3c1f95f1ec95baab4077872}{compute\+P\+\_\+self\+Dspin2}} (double self\+D\+Gggcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+G\+GG\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Gvvcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{computeP}} (float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_ad935ce70f751c6bc0ea90ce45cbf0f3d}{compute\+D\+\_\+\+CP}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} my\+ME, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} my\+Type, float \&prob)
+\item 
+void \mbox{\hyperlink{classMela_a2a7cdd6ed1feba898cd58e99d75269fa}{compute\+Prod\+DecP}} (double self\+D\+Hvvcoupl\+\_\+input\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Hwwcoupl\+\_\+input\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, double self\+Da\+T\+Q\+G\+Ccoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+A\+T\+Q\+GC\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+A\+Zffcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+A\+Zff\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a8205fa1b605672d7f054389bd0983406}{compute\+Prod\+DecP}} (float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a2e5af4f25feb182e3d68a7b651d45dcc}{compute\+ProdP}} (double self\+D\+Hggcoupl\+\_\+input\mbox{[}S\+I\+Z\+E\+\_\+\+H\+GG\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Hvvcoupl\+\_\+input\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, double self\+D\+Hwwcoupl\+\_\+input\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a2052364296fd8a384dc4486d339207a0}{compute\+ProdP}} (float \&prob, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a817d72f9d39bf2bb0747d4d77dc811a1}{compute\+Prod\+P\+\_\+\+VH}} (double self\+D\+Hvvcoupl\+\_\+input\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, float \&prob, bool include\+Higgs\+Decay=false, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a53c470859a7a8f59f1247d3a32eac090}{compute\+Prod\+P\+\_\+\+VH}} (float \&prob, bool include\+Higgs\+Decay=false, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a92651068b8ec1788d274900a99c4a9b9}{compute\+Prod\+P\+\_\+ttH}} (float \&prob, int top\+Process=2, int top\+Decay=0, bool use\+Constant=true)
+\item 
+void \mbox{\hyperlink{classMela_a59d1a090a31df4b2825526d62c7d7024}{compute4\+Fermion\+Weight}} (float \&w)
+\item 
+void \mbox{\hyperlink{classMela_a4683c0250cc1a9c37bccd26ad8f849e9}{get\+X\+Propagator}} (\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016}{T\+Var\+::\+Resonance\+Propagator\+Scheme}} scheme, float \&prop)
+\item 
+void \mbox{\hyperlink{classMela_a6e945c3826090ac856f69a32dc6ee3db}{compute\+P\+M4l}} (\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}} syst, float \&prob)
+\item 
+void \mbox{\hyperlink{classMela_a29e05816b98616ecfe3d8e623e8eac82}{compute\+Dijet\+Conv\+BW}} (float \&prob, bool use\+True\+BW=false)
+\item 
+void \mbox{\hyperlink{classMela_a00a769b235fa9dc161cc1c25d74b5f0e}{compute\+D\+\_\+gg}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} my\+ME, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} my\+Type, float \&prob)
+\item 
+std\+::vector$<$ T\+Lorentz\+Vector $>$ \mbox{\hyperlink{classMela_ac5c7e6974fd6d7243eee0ca149229f8a}{calculate4\+Momentum}} (double Mx, double M1, double M2, double theta, double theta1, double theta2, double Phi1, double Phi)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classMela_aa6434caec11775f003388791cbcce593}{clean\+Linked\+Files}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Random3 \mbox{\hyperlink{classMela_a593625b3974934a7f8787491917c69d7}{mela\+Random\+Number}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a9493faba9ccb37da73162287e2ffc1a0}{mzz\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a688d4756e27fe2a7a2a0f8c053675048}{z1mass\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a5355d2f1a0c3b00cc8ef87d0a439a5f7}{z2mass\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a12d56afd447d6d79b39cefbb81027234}{costhetastar\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a589149959cfcc4da620b27555701a515}{costheta1\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a76cbf0a18f9e41d2bc10ffdb4e15dd48}{costheta2\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a14c674efee81f3fe1831b62a547c3bd7}{phi\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a51249e638c67525efca6d71454a333b6}{phi1\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a367b057444858b7c287af91193f1460d}{Y\+\_\+rrv}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classMela_a17110134c10849d99b40491ff51a2148}{up\+Frac\+\_\+rrv}}
+\item 
+Roo\+Abs\+Pdf $\ast$ \mbox{\hyperlink{classMela_a0805294fe244e5416e64e50771b1b746}{pdf}}
+\item 
+\mbox{\hyperlink{classScalarPdfFactory__HVV}{Scalar\+Pdf\+Factory\+\_\+\+H\+VV}} $\ast$ \mbox{\hyperlink{classMela_aa162ceb8442a31a63619b3b4774ad940}{gg\+Spin0\+Model}}
+\item 
+\mbox{\hyperlink{classVectorPdfFactory}{Vector\+Pdf\+Factory}} $\ast$ \mbox{\hyperlink{classMela_a0bca2d72ddc4daeb8664a0b6a12b25e9}{spin1\+Model}}
+\item 
+\mbox{\hyperlink{classTensorPdfFactory__ppHVV}{Tensor\+Pdf\+Factory\+\_\+pp\+H\+VV}} $\ast$ \mbox{\hyperlink{classMela_ae75795c4d19c2fdfe1f9d1ec508104bc}{spin2\+Model}}
+\item 
+\mbox{\hyperlink{classRooqqZZ__JHU__ZgammaZZ__fast}{Rooqq\+Z\+Z\+\_\+\+J\+H\+U\+\_\+\+Zgamma\+Z\+Z\+\_\+fast}} $\ast$ \mbox{\hyperlink{classMela_a47c77a64d94797ab53575c7a9de3a471}{qq\+Z\+Zmodel}}
+\item 
+\mbox{\hyperlink{classSuperMELA}{Super\+M\+E\+LA}} $\ast$ \mbox{\hyperlink{classMela_ade6a7487f6e323ac661f56c9318a829f}{super}}
+\item 
+double \mbox{\hyperlink{classMela_a3a9d214b2e2a9afa49b839248dfe8ba8}{self\+D\+Hggcoupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+GG\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a5e0bfe7507d06900d2032e1f5ba2909e}{self\+D\+Hg4g4coupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+GG\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_afacb62e24d7e84e904b258b2f4cf5dd4}{self\+D\+Hqqcoupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a56487cd83fb61f1c5e566b537367974b}{self\+D\+Hbbcoupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_aa9d3f00febdb8e0e5a0635f22d922300}{self\+D\+Httcoupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a00b434f82a9936a60740368a2ae0f5c8}{self\+D\+Hb4b4coupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_aa379a951d01d24a9c7761012ab633550}{self\+D\+Ht4t4coupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_abeedcc146fa604a15f16780b99057f89}{self\+D\+Hzzcoupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a5239be5ef69410296d18070ff68c0f3e}{self\+D\+Hwwcoupl}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a718a857f441d077c9042c1d73942c308}{self\+D\+Hzz\+Lambda\+\_\+qsq}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+L\+A\+M\+B\+D\+A\+Q\+SQ\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_ae3c3c9f0cdf07f409dc78176ba1e997c}{self\+D\+Hww\+Lambda\+\_\+qsq}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+L\+A\+M\+B\+D\+A\+Q\+SQ\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}
+\item 
+int \mbox{\hyperlink{classMela_a634ce2f63e0a3cd23aa185c19e62a734}{self\+D\+Hzz\+C\+Lambda\+\_\+qsq}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}
+\item 
+int \mbox{\hyperlink{classMela_a7302f7a0b838c2a3f3e9d0a598a25043}{self\+D\+Hww\+C\+Lambda\+\_\+qsq}} \mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}
+\item 
+bool \mbox{\hyperlink{classMela_ae9ddd93244ff8ccf95fd50699679d7c7}{differentiate\+\_\+\+H\+W\+W\+\_\+\+H\+ZZ}}
+\item 
+double \mbox{\hyperlink{classMela_abe1837fec463bb6db0a9b06b2a0f99cf}{self\+D\+Hzzpcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_aa8fde8a0cbfa680a5c8f9312c480974c}{self\+D\+Hzpzpcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a2733b7883767858bb8eed7f30deecd37}{self\+D\+Zpffcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a63c7ad8ae502940286f274c4b6e3df54}{self\+D\+Hwwpcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a8893f0c52513afd8bb64c37024d6ba60}{self\+D\+Hwpwpcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a307367d5ff83be80ccfa9e4560507e93}{self\+D\+Wpffcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_ab6425a613f155bd0f475ac401419ee2d}{self\+D\+M\+\_\+\+Zprime}}
+\item 
+double \mbox{\hyperlink{classMela_af4e38a8649440826f0dab2338d0f8929}{self\+D\+Ga\+\_\+\+Zprime}}
+\item 
+double \mbox{\hyperlink{classMela_a5dfc7a761cf6a244538badbb119bddd8}{self\+D\+M\+\_\+\+Wprime}}
+\item 
+double \mbox{\hyperlink{classMela_a645a36dde08b0c5dd392da0ad8d07455}{self\+D\+Ga\+\_\+\+Wprime}}
+\item 
+double \mbox{\hyperlink{classMela_ab85a88a939ee917faef962422de963d4}{self\+D\+Zqqcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+Z\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a337ba964ea97fee3e619f4dbbc4f2f20}{self\+D\+Zvvcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+Z\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a1f4517c76fb7156a1ae14ed919f7dba5}{self\+D\+Gqqcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+G\+QQ\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a85f5106df0e28980c367be244565621f}{self\+D\+Gggcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+G\+GG\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a32c366f920eebdfa928bd46e1b25cf08}{self\+D\+Gvvcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_abe5090af92bd5c4a51542088eea21e45}{self\+D\+Gvvpcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a07963e57e278d7aaf10e414faa351cf5}{self\+D\+Gvpvpcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a0053ba2b1f0c4b065ed2a3786c0b8abd}{self\+Da\+T\+Q\+G\+Ccoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+A\+T\+Q\+GC\mbox{]}\mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classMela_a925b9b1fbafe7a9ea436364090c0db03}{self\+D\+A\+Zffcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+A\+Zff\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMela_aedb1835333ea82e0bc2186e8920b514d}{print\+Logo}} () const
+\item 
+void \mbox{\hyperlink{classMela_a3d02b2dbebd33da734a14faea9926f51}{set\+Spin\+Zero\+Couplings}} ()
+\item 
+void \mbox{\hyperlink{classMela_a063525c4c9f007a9136f31aa6cb3915a}{set\+Spin\+One\+Couplings}} ()
+\item 
+void \mbox{\hyperlink{classMela_a553694c04f25a8113c10aaa3f1b2711e}{set\+Spin\+Two\+Couplings}} ()
+\item 
+void \mbox{\hyperlink{classMela_a89cd35e50224150c7165224d85a7cefc}{set\+A\+T\+Q\+G\+C\+Couplings}} ()
+\item 
+void \mbox{\hyperlink{classMela_a44fa3db83a2e94ed04d16e742af80387}{set\+A\+Zff\+Couplings}} ()
+\item 
+bool \mbox{\hyperlink{classMela_ae062e0112d6ff51227f7426aae9fbd0d}{configure\+Analytical\+P\+D\+Fs}} ()
+\item 
+void \mbox{\hyperlink{classMela_ab06f0adb907de7eb611afe8e55e1a4e2}{reset\+\_\+\+Self\+D\+Couplings}} ()
+\item 
+void \mbox{\hyperlink{classMela_a9cea49ac84cbe1e2a84b5a25974e3aa6}{reset\+\_\+\+P\+Aux}} ()
+\item 
+void \mbox{\hyperlink{classMela_a0185e202caf92b78872d25505497c6e3}{reset\+\_\+\+Cand\+Ref}} ()
+\item 
+void \mbox{\hyperlink{classMela_a8eb9b55d401c8adfabcf07ada94b1a44}{construct\+Dggr}} (float bkg\+\_\+\+V\+A\+M\+C\+F\+M\+\_\+noscale, float ggzz\+\_\+\+V\+A\+M\+C\+F\+M\+\_\+noscale, float gg\+H\+Z\+Z\+\_\+prob\+\_\+pure\+\_\+noscale, float gg\+H\+Z\+Z\+\_\+prob\+\_\+int\+\_\+noscale, float width\+Scale, float \&my\+Dggr)
+\item 
+void \mbox{\hyperlink{classMela_a18ab7647ddc2d2d422c7b5e1f8c7536d}{get\+P\+Constant\+Handles}} ()
+\item 
+void \mbox{\hyperlink{classMela_a36b78ac6fb2cc8146167e2a32556fd1e}{delete\+P\+Constant\+Handles}} ()
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a684145c9efdcfd45926db9095af0280c}{get\+P\+Constant\+Handle}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} me\+\_\+, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod\+\_\+, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} proc\+\_\+, T\+String relpath, T\+String spname, const bool use\+Sqrts=false)
+\item 
+void \mbox{\hyperlink{classMela_ac39c7755847804b55c0bc2b3a69ffa11}{delete\+P\+Constant\+Handle}} (\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$\&handle)
+\item 
+void \mbox{\hyperlink{classMela_adeff758cef0a6c37fa4f9c8c8d29280c}{compute\+Constant}} (float \&prob)
+\item 
+void \mbox{\hyperlink{classMela_a0246097a906e531b16af208d3e1ad974}{set\+Constant}} ()
+\item 
+float \mbox{\hyperlink{classMela_ac19a57913986dc4cf4f68e4bb972f688}{get\+Constant\+\_\+\+J\+H\+U\+Gen\+Undecayed}} ()
+\item 
+float \mbox{\hyperlink{classMela_ae496bc3aa440bcd768cf0ed914a67343}{get\+Constant\+\_\+4l}} ()
+\item 
+float \mbox{\hyperlink{classMela_a824700effa81cff3b7f7354022820648}{get\+Constant\+\_\+2l2q}} ()
+\item 
+float \mbox{\hyperlink{classMela_ab2952f245f9ed37faf79affb1b28f6f7}{get\+Constant\+\_\+4q}} ()
+\item 
+float \mbox{\hyperlink{classMela_a9f9a8074fc4e68c40030b9bc836e5882}{get\+Constant\+\_\+\+Four\+Fermion\+Decay}} (const int \&decid)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classMela_ae91d3fb772ed62358c39763f76040eb0}{L\+H\+Csqrts}}
+\item 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \mbox{\hyperlink{classMela_a7ab8aae7ca1b9207b1bc8e6325e9d333}{my\+Model\+\_\+}}
+\item 
+\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \mbox{\hyperlink{classMela_a0c66d5637e21772dcd26ff36e218bdb5}{my\+M\+E\+\_\+}}
+\item 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \mbox{\hyperlink{classMela_a7465ba52cec6291664579cc8960a67f4}{my\+Production\+\_\+}}
+\item 
+\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} \mbox{\hyperlink{classMela_ae74862ce66eb2b884b2da38e0b8ff037}{my\+Lep\+Interf\+\_\+}}
+\item 
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \mbox{\hyperlink{classMela_a184394c3903e2ce9cbad068b0fc7d94f}{my\+Verbosity\+\_\+}}
+\item 
+\mbox{\hyperlink{classZZMatrixElement}{Z\+Z\+Matrix\+Element}} $\ast$ \mbox{\hyperlink{classMela_a81aba2f77ab82a5fc9f50e2d2274a456}{Z\+Z\+ME}}
+\item 
+\mbox{\hyperlink{classSuperDijetMela}{Super\+Dijet\+Mela}} $\ast$ \mbox{\hyperlink{classMela_a6ba6d4f926af3d2647faf602d12091b6}{super\+Dijet}}
+\item 
+float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+Prob}}
+\item 
+\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ \mbox{\hyperlink{classMela_a71aca0cbd86bec77e0d0cd31087c93fd}{mela\+Cand}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_af1a37d9a226b6be31da4e3abcf35adad}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs}} \mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_aea1af3d2b093edeb88d52b64faff9d7e}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs}} \mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a78230ffd64c3b0e1077d704a43e6f96d}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs}} \mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a483534360a2f2682f7da28092500b449}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+H\+S\+M\+Higgs}} \mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_aae61d8dc1b66c3cf0a3384aedb80d842}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+H\+S\+M\+Higgs}} \mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a85d5445420b4799cee5f8332501aab46}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_abc118762fef9f9078f25c272d5f419cc}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a343cdfcb7c46f1d9f1bbe9a1eb793e32}{p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_abc2fdbbdb944a83ee31b49edad523639}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_acc33d036d422dbca1fd28716f2380c66}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a74c5f99fdab8ca468309eec54929b5c8}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_aaf71b7797d69dd59c4489659570747f8}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a4b752bf8fbacec0e3b147d01ec2ad582}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a70e341b1014ee49899b3d1593d033ab6}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a904fe5b45598abb06e2aeeada1845592}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a4871d143247ce9a9559ea303d7ae800a}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a294efb351b3d52917b744f280bafd0c3}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_af06dddbc57f6daff60fe0f75a75347f4}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a6cb9650c069f4523e17462b52950042a}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a05e4e6aea578121e1e8f54e0cb4340fa}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a92cee9b649bbe6e029023ef26c9847c0}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+Z\+Z\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_aec5bf7c826c4c2cd0bacd2f5b9f393c7}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+Z\+Z\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a86c5c05293b0277f479b817a9b1544b9}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+Z\+Z\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a0a8191269625a502cdccba7c8e2b0377}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+Z\+Z\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_aa943203725c83373174bb8157a4beb29}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+Z\+Z\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a3d617a238a7259678555d53636f25d3e}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+Z\+Z\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a1bb1bb714e0a9f0659246674280c394a}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+bkg\+Z\+Z\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a9240fea46abe9f476301488b0d726c6a}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+bkg\+Z\+Z\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a74d64ea8cff62604111f7655c6a283da}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+bkg\+Z\+Z\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_aeaafa9f0337b5b4d5cc795966f391fd1}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+bkg\+Z\+Z\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a720d26767888770dc8bad0cc24ad9bf8}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+bkg\+Z\+Z\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a3ffd2ae28ea425f4e51f16271164b55f}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+bkg\+Z\+Z\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a5b6045b14c7ec1393438ff968f8bd36d}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+bkg\+Z\+Z\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a5e777472d1fc9df76b6aef66b5496395}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+bkg\+Z\+Z\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_a3ff39e822543255d1609264013faa78a}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+bkg\+Z\+Z\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_ab4f02e09aae3923cbc949450f35f4236}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+4mu}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_abe18cba80223e9c38c4c959a67f9dd84}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+4e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_ab0a7380fd2984e63cdcd32a325435189}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+2mu2e}}
+\item 
+\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ \mbox{\hyperlink{classMela_abcf50b83926051b71352919cdfd603b9}{p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Jets\+\_\+2l2q}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMela_aa0d92c0d836f7c720f584dc75a8031fc}\label{classMela_aa0d92c0d836f7c720f584dc75a8031fc}} 
+\index{Mela@{Mela}!Mela@{Mela}}
+\index{Mela@{Mela}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{Mela()}{Mela()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mela\+::\+Mela (\begin{DoxyParamCaption}\item[{double}]{L\+H\+Csqrts\+\_\+ = {\ttfamily 13.},  }\item[{double}]{mh\+\_\+ = {\ttfamily 125.},  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity\+\_\+ = {\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_acdce01b49b3c5f53c208dc0cc2d7d2e0}\label{classMela_acdce01b49b3c5f53c208dc0cc2d7d2e0}} 
+\index{Mela@{Mela}!Mela@{Mela}}
+\index{Mela@{Mela}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{Mela()}{Mela()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mela\+::\+Mela (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMela}{Mela}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a39328d800ae0c22a339a416dd8075de0}\label{classMela_a39328d800ae0c22a339a416dd8075de0}} 
+\index{Mela@{Mela}!````~Mela@{$\sim$Mela}}
+\index{````~Mela@{$\sim$Mela}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{$\sim$Mela()}{~Mela()}}
+{\footnotesize\ttfamily Mela\+::$\sim$\+Mela (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMela_abeaf8019f374bd300a1262f67fd58b89}\label{classMela_abeaf8019f374bd300a1262f67fd58b89}} 
+\index{Mela@{Mela}!appendTopCandidate@{appendTopCandidate}}
+\index{appendTopCandidate@{appendTopCandidate}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{appendTopCandidate()}{appendTopCandidate()}}
+{\footnotesize\ttfamily void Mela\+::append\+Top\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{Top\+Daughters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a1b6f1bb342556508b765cf6fe299a467}\label{classMela_a1b6f1bb342556508b765cf6fe299a467}} 
+\index{Mela@{Mela}!build@{build}}
+\index{build@{build}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily void Mela\+::build (\begin{DoxyParamCaption}\item[{double}]{mh\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ac5c7e6974fd6d7243eee0ca149229f8a}\label{classMela_ac5c7e6974fd6d7243eee0ca149229f8a}} 
+\index{Mela@{Mela}!calculate4Momentum@{calculate4Momentum}}
+\index{calculate4Momentum@{calculate4Momentum}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{calculate4Momentum()}{calculate4Momentum()}}
+{\footnotesize\ttfamily std\+::vector$<$ T\+Lorentz\+Vector $>$ Mela\+::calculate4\+Momentum (\begin{DoxyParamCaption}\item[{double}]{Mx,  }\item[{double}]{M1,  }\item[{double}]{M2,  }\item[{double}]{theta,  }\item[{double}]{theta1,  }\item[{double}]{theta2,  }\item[{double}]{Phi1,  }\item[{double}]{Phi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_aa6434caec11775f003388791cbcce593}\label{classMela_aa6434caec11775f003388791cbcce593}} 
+\index{Mela@{Mela}!cleanLinkedFiles@{cleanLinkedFiles}}
+\index{cleanLinkedFiles@{cleanLinkedFiles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{cleanLinkedFiles()}{cleanLinkedFiles()}}
+{\footnotesize\ttfamily void Mela\+::clean\+Linked\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMela_a59d1a090a31df4b2825526d62c7d7024}\label{classMela_a59d1a090a31df4b2825526d62c7d7024}} 
+\index{Mela@{Mela}!compute4FermionWeight@{compute4FermionWeight}}
+\index{compute4FermionWeight@{compute4FermionWeight}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{compute4FermionWeight()}{compute4FermionWeight()}}
+{\footnotesize\ttfamily void Mela\+::compute4\+Fermion\+Weight (\begin{DoxyParamCaption}\item[{float \&}]{w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_adeff758cef0a6c37fa4f9c8c8d29280c}\label{classMela_adeff758cef0a6c37fa4f9c8c8d29280c}} 
+\index{Mela@{Mela}!computeConstant@{computeConstant}}
+\index{computeConstant@{computeConstant}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeConstant()}{computeConstant()}}
+{\footnotesize\ttfamily void Mela\+::compute\+Constant (\begin{DoxyParamCaption}\item[{float \&}]{prob }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ad935ce70f751c6bc0ea90ce45cbf0f3d}\label{classMela_ad935ce70f751c6bc0ea90ce45cbf0f3d}} 
+\index{Mela@{Mela}!computeD\_CP@{computeD\_CP}}
+\index{computeD\_CP@{computeD\_CP}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeD\_CP()}{computeD\_CP()}}
+{\footnotesize\ttfamily void Mela\+::compute\+D\+\_\+\+CP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{my\+ME,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{my\+Type,  }\item[{float \&}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a00a769b235fa9dc161cc1c25d74b5f0e}\label{classMela_a00a769b235fa9dc161cc1c25d74b5f0e}} 
+\index{Mela@{Mela}!computeD\_gg@{computeD\_gg}}
+\index{computeD\_gg@{computeD\_gg}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeD\_gg()}{computeD\_gg()}}
+{\footnotesize\ttfamily void Mela\+::compute\+D\+\_\+gg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{my\+ME,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{my\+Type,  }\item[{float \&}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a7ed076cbbb4121926e53f56cb4d56bab}\label{classMela_a7ed076cbbb4121926e53f56cb4d56bab}} 
+\index{Mela@{Mela}!computeDecayAngles@{computeDecayAngles}}
+\index{computeDecayAngles@{computeDecayAngles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeDecayAngles()}{computeDecayAngles()}}
+{\footnotesize\ttfamily void Mela\+::compute\+Decay\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{qH,  }\item[{float \&}]{m1,  }\item[{float \&}]{m2,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{Phi1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a29e05816b98616ecfe3d8e623e8eac82}\label{classMela_a29e05816b98616ecfe3d8e623e8eac82}} 
+\index{Mela@{Mela}!computeDijetConvBW@{computeDijetConvBW}}
+\index{computeDijetConvBW@{computeDijetConvBW}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeDijetConvBW()}{computeDijetConvBW()}}
+{\footnotesize\ttfamily void Mela\+::compute\+Dijet\+Conv\+BW (\begin{DoxyParamCaption}\item[{float \&}]{prob,  }\item[{bool}]{use\+True\+BW = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a8503608babd744076ebe4f173b519844}\label{classMela_a8503608babd744076ebe4f173b519844}} 
+\index{Mela@{Mela}!computeP@{computeP}}
+\index{computeP@{computeP}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeP()}{computeP()}}
+{\footnotesize\ttfamily void Mela\+::computeP (\begin{DoxyParamCaption}\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a13db15a91b1f78acdd79cb57e299b4a8}\label{classMela_a13db15a91b1f78acdd79cb57e299b4a8}} 
+\index{Mela@{Mela}!computeP\_selfDspin0@{computeP\_selfDspin0}}
+\index{computeP\_selfDspin0@{computeP\_selfDspin0}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeP\_selfDspin0()}{computeP\_selfDspin0()}}
+{\footnotesize\ttfamily void Mela\+::compute\+P\+\_\+self\+Dspin0 (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Hvvcoupl\+\_\+input\mbox{[}n\+Supported\+Higgses\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ae4e4f7ad7abdc513ae9bfd9e8f7cae93}\label{classMela_ae4e4f7ad7abdc513ae9bfd9e8f7cae93}} 
+\index{Mela@{Mela}!computeP\_selfDspin1@{computeP\_selfDspin1}}
+\index{computeP\_selfDspin1@{computeP\_selfDspin1}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeP\_selfDspin1()}{computeP\_selfDspin1()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+P\+\_\+self\+Dspin1 (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Zqqcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+Z\+Q\+Q\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Zvvcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+Z\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a97b814512ac9c9d1431a81e5a2c69bd4}\label{classMela_a97b814512ac9c9d1431a81e5a2c69bd4}} 
+\index{Mela@{Mela}!computeP\_selfDspin1@{computeP\_selfDspin1}}
+\index{computeP\_selfDspin1@{computeP\_selfDspin1}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeP\_selfDspin1()}{computeP\_selfDspin1()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+P\+\_\+self\+Dspin1 (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Zvvcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+Z\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_af89095e77f63251cb489e2a96dace213}\label{classMela_af89095e77f63251cb489e2a96dace213}} 
+\index{Mela@{Mela}!computeP\_selfDspin2@{computeP\_selfDspin2}}
+\index{computeP\_selfDspin2@{computeP\_selfDspin2}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeP\_selfDspin2()}{computeP\_selfDspin2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+P\+\_\+self\+Dspin2 (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Gggcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+G\+G\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Gqqcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+Q\+Q\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Gvvcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a531c3987c3c1f95f1ec95baab4077872}\label{classMela_a531c3987c3c1f95f1ec95baab4077872}} 
+\index{Mela@{Mela}!computeP\_selfDspin2@{computeP\_selfDspin2}}
+\index{computeP\_selfDspin2@{computeP\_selfDspin2}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeP\_selfDspin2()}{computeP\_selfDspin2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+P\+\_\+self\+Dspin2 (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Gggcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+G\+G\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Gvvcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a6e945c3826090ac856f69a32dc6ee3db}\label{classMela_a6e945c3826090ac856f69a32dc6ee3db}} 
+\index{Mela@{Mela}!computePM4l@{computePM4l}}
+\index{computePM4l@{computePM4l}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computePM4l()}{computePM4l()}}
+{\footnotesize\ttfamily void Mela\+::compute\+P\+M4l (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}}}]{syst,  }\item[{float \&}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a2a7cdd6ed1feba898cd58e99d75269fa}\label{classMela_a2a7cdd6ed1feba898cd58e99d75269fa}} 
+\index{Mela@{Mela}!computeProdDecP@{computeProdDecP}}
+\index{computeProdDecP@{computeProdDecP}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdDecP()}{computeProdDecP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+Prod\+DecP (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Hvvcoupl\+\_\+input\mbox{[}n\+Supported\+Higgses\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Hwwcoupl\+\_\+input\mbox{[}n\+Supported\+Higgses\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+Da\+T\+Q\+G\+Ccoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+A\+T\+Q\+G\+C\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+A\+Zffcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+A\+Zff\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a8205fa1b605672d7f054389bd0983406}\label{classMela_a8205fa1b605672d7f054389bd0983406}} 
+\index{Mela@{Mela}!computeProdDecP@{computeProdDecP}}
+\index{computeProdDecP@{computeProdDecP}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdDecP()}{computeProdDecP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+Prod\+DecP (\begin{DoxyParamCaption}\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a2e5af4f25feb182e3d68a7b651d45dcc}\label{classMela_a2e5af4f25feb182e3d68a7b651d45dcc}} 
+\index{Mela@{Mela}!computeProdP@{computeProdP}}
+\index{computeProdP@{computeProdP}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdP()}{computeProdP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+ProdP (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Hggcoupl\+\_\+input\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+G\+G\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Hvvcoupl\+\_\+input\mbox{[}n\+Supported\+Higgses\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{self\+D\+Hwwcoupl\+\_\+input\mbox{[}n\+Supported\+Higgses\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a2052364296fd8a384dc4486d339207a0}\label{classMela_a2052364296fd8a384dc4486d339207a0}} 
+\index{Mela@{Mela}!computeProdP@{computeProdP}}
+\index{computeProdP@{computeProdP}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdP()}{computeProdP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+ProdP (\begin{DoxyParamCaption}\item[{float \&}]{prob,  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a92651068b8ec1788d274900a99c4a9b9}\label{classMela_a92651068b8ec1788d274900a99c4a9b9}} 
+\index{Mela@{Mela}!computeProdP\_ttH@{computeProdP\_ttH}}
+\index{computeProdP\_ttH@{computeProdP\_ttH}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdP\_ttH()}{computeProdP\_ttH()}}
+{\footnotesize\ttfamily void Mela\+::compute\+Prod\+P\+\_\+ttH (\begin{DoxyParamCaption}\item[{float \&}]{prob,  }\item[{int}]{top\+Process = {\ttfamily 2},  }\item[{int}]{top\+Decay = {\ttfamily 0},  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a817d72f9d39bf2bb0747d4d77dc811a1}\label{classMela_a817d72f9d39bf2bb0747d4d77dc811a1}} 
+\index{Mela@{Mela}!computeProdP\_VH@{computeProdP\_VH}}
+\index{computeProdP\_VH@{computeProdP\_VH}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdP\_VH()}{computeProdP\_VH()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+Prod\+P\+\_\+\+VH (\begin{DoxyParamCaption}\item[{double}]{self\+D\+Hvvcoupl\+\_\+input\mbox{[}n\+Supported\+Higgses\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{float \&}]{prob,  }\item[{bool}]{include\+Higgs\+Decay = {\ttfamily false},  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a53c470859a7a8f59f1247d3a32eac090}\label{classMela_a53c470859a7a8f59f1247d3a32eac090}} 
+\index{Mela@{Mela}!computeProdP\_VH@{computeProdP\_VH}}
+\index{computeProdP\_VH@{computeProdP\_VH}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeProdP\_VH()}{computeProdP\_VH()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Mela\+::compute\+Prod\+P\+\_\+\+VH (\begin{DoxyParamCaption}\item[{float \&}]{prob,  }\item[{bool}]{include\+Higgs\+Decay = {\ttfamily false},  }\item[{bool}]{use\+Constant = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_af09b0369dbcba3908e4d8d5daee21909}\label{classMela_af09b0369dbcba3908e4d8d5daee21909}} 
+\index{Mela@{Mela}!computeTTHAngles@{computeTTHAngles}}
+\index{computeTTHAngles@{computeTTHAngles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeTTHAngles()}{computeTTHAngles()}}
+{\footnotesize\ttfamily void Mela\+::compute\+T\+T\+H\+Angles (\begin{DoxyParamCaption}\item[{int}]{top\+Decay,  }\item[{float \&}]{m\+T1,  }\item[{float \&}]{m\+W1,  }\item[{float \&}]{m\+T2,  }\item[{float \&}]{m\+W2,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{Phi1,  }\item[{float \&}]{hbb,  }\item[{float \&}]{h\+WW,  }\item[{float \&}]{Phibb,  }\item[{float \&}]{Phi1bb,  }\item[{float \&}]{h\+Wplusf,  }\item[{float \&}]{Phi\+Wplusf,  }\item[{float \&}]{h\+Wminusf,  }\item[{float \&}]{Phi\+Wminusf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a888f07999471870590557aa4fec74caa}\label{classMela_a888f07999471870590557aa4fec74caa}} 
+\index{Mela@{Mela}!computeVBFAngles@{computeVBFAngles}}
+\index{computeVBFAngles@{computeVBFAngles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeVBFAngles()}{computeVBFAngles()}}
+{\footnotesize\ttfamily void Mela\+::compute\+V\+B\+F\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{Q2\+V1,  }\item[{float \&}]{Q2\+V2,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{Phi1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a30000328153231efb52ec54cafca4e4f}\label{classMela_a30000328153231efb52ec54cafca4e4f}} 
+\index{Mela@{Mela}!computeVBFAngles\_ComplexBoost@{computeVBFAngles\_ComplexBoost}}
+\index{computeVBFAngles\_ComplexBoost@{computeVBFAngles\_ComplexBoost}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeVBFAngles\_ComplexBoost()}{computeVBFAngles\_ComplexBoost()}}
+{\footnotesize\ttfamily void Mela\+::compute\+V\+B\+F\+Angles\+\_\+\+Complex\+Boost (\begin{DoxyParamCaption}\item[{float \&}]{Q2\+V1,  }\item[{float \&}]{Q2\+V2,  }\item[{float \&}]{costheta1\+\_\+real,  }\item[{float \&}]{costheta1\+\_\+imag,  }\item[{float \&}]{costheta2\+\_\+real,  }\item[{float \&}]{costheta2\+\_\+imag,  }\item[{float \&}]{Phi,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{Phi1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a4b68e6c2c5b1f430d6f88bc048137e88}\label{classMela_a4b68e6c2c5b1f430d6f88bc048137e88}} 
+\index{Mela@{Mela}!computeVHAngles@{computeVHAngles}}
+\index{computeVHAngles@{computeVHAngles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{computeVHAngles()}{computeVHAngles()}}
+{\footnotesize\ttfamily void Mela\+::compute\+V\+H\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{m\+Vstar,  }\item[{float \&}]{mV,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{Phi1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ae062e0112d6ff51227f7426aae9fbd0d}\label{classMela_ae062e0112d6ff51227f7426aae9fbd0d}} 
+\index{Mela@{Mela}!configureAnalyticalPDFs@{configureAnalyticalPDFs}}
+\index{configureAnalyticalPDFs@{configureAnalyticalPDFs}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{configureAnalyticalPDFs()}{configureAnalyticalPDFs()}}
+{\footnotesize\ttfamily bool Mela\+::configure\+Analytical\+P\+D\+Fs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a8eb9b55d401c8adfabcf07ada94b1a44}\label{classMela_a8eb9b55d401c8adfabcf07ada94b1a44}} 
+\index{Mela@{Mela}!constructDggr@{constructDggr}}
+\index{constructDggr@{constructDggr}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{constructDggr()}{constructDggr()}}
+{\footnotesize\ttfamily void Mela\+::construct\+Dggr (\begin{DoxyParamCaption}\item[{float}]{bkg\+\_\+\+V\+A\+M\+C\+F\+M\+\_\+noscale,  }\item[{float}]{ggzz\+\_\+\+V\+A\+M\+C\+F\+M\+\_\+noscale,  }\item[{float}]{gg\+H\+Z\+Z\+\_\+prob\+\_\+pure\+\_\+noscale,  }\item[{float}]{gg\+H\+Z\+Z\+\_\+prob\+\_\+int\+\_\+noscale,  }\item[{float}]{width\+Scale,  }\item[{float \&}]{my\+Dggr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ac39c7755847804b55c0bc2b3a69ffa11}\label{classMela_ac39c7755847804b55c0bc2b3a69ffa11}} 
+\index{Mela@{Mela}!deletePConstantHandle@{deletePConstantHandle}}
+\index{deletePConstantHandle@{deletePConstantHandle}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{deletePConstantHandle()}{deletePConstantHandle()}}
+{\footnotesize\ttfamily void Mela\+::delete\+P\+Constant\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$\&}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a36b78ac6fb2cc8146167e2a32556fd1e}\label{classMela_a36b78ac6fb2cc8146167e2a32556fd1e}} 
+\index{Mela@{Mela}!deletePConstantHandles@{deletePConstantHandles}}
+\index{deletePConstantHandles@{deletePConstantHandles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{deletePConstantHandles()}{deletePConstantHandles()}}
+{\footnotesize\ttfamily void Mela\+::delete\+P\+Constant\+Handles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a40221b711597c6c682e2283692255f18}\label{classMela_a40221b711597c6c682e2283692255f18}} 
+\index{Mela@{Mela}!getConstant@{getConstant}}
+\index{getConstant@{getConstant}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getConstant()}{getConstant()}}
+{\footnotesize\ttfamily void Mela\+::get\+Constant (\begin{DoxyParamCaption}\item[{float \&}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a824700effa81cff3b7f7354022820648}\label{classMela_a824700effa81cff3b7f7354022820648}} 
+\index{Mela@{Mela}!getConstant\_2l2q@{getConstant\_2l2q}}
+\index{getConstant\_2l2q@{getConstant\_2l2q}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getConstant\_2l2q()}{getConstant\_2l2q()}}
+{\footnotesize\ttfamily float Mela\+::get\+Constant\+\_\+2l2q (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ae496bc3aa440bcd768cf0ed914a67343}\label{classMela_ae496bc3aa440bcd768cf0ed914a67343}} 
+\index{Mela@{Mela}!getConstant\_4l@{getConstant\_4l}}
+\index{getConstant\_4l@{getConstant\_4l}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getConstant\_4l()}{getConstant\_4l()}}
+{\footnotesize\ttfamily float Mela\+::get\+Constant\+\_\+4l (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ab2952f245f9ed37faf79affb1b28f6f7}\label{classMela_ab2952f245f9ed37faf79affb1b28f6f7}} 
+\index{Mela@{Mela}!getConstant\_4q@{getConstant\_4q}}
+\index{getConstant\_4q@{getConstant\_4q}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getConstant\_4q()}{getConstant\_4q()}}
+{\footnotesize\ttfamily float Mela\+::get\+Constant\+\_\+4q (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a9f9a8074fc4e68c40030b9bc836e5882}\label{classMela_a9f9a8074fc4e68c40030b9bc836e5882}} 
+\index{Mela@{Mela}!getConstant\_FourFermionDecay@{getConstant\_FourFermionDecay}}
+\index{getConstant\_FourFermionDecay@{getConstant\_FourFermionDecay}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getConstant\_FourFermionDecay()}{getConstant\_FourFermionDecay()}}
+{\footnotesize\ttfamily float Mela\+::get\+Constant\+\_\+\+Four\+Fermion\+Decay (\begin{DoxyParamCaption}\item[{const int \&}]{decid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ac19a57913986dc4cf4f68e4bb972f688}\label{classMela_ac19a57913986dc4cf4f68e4bb972f688}} 
+\index{Mela@{Mela}!getConstant\_JHUGenUndecayed@{getConstant\_JHUGenUndecayed}}
+\index{getConstant\_JHUGenUndecayed@{getConstant\_JHUGenUndecayed}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getConstant\_JHUGenUndecayed()}{getConstant\_JHUGenUndecayed()}}
+{\footnotesize\ttfamily float Mela\+::get\+Constant\+\_\+\+J\+H\+U\+Gen\+Undecayed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a50878827e30fe08357d67465fe577235}\label{classMela_a50878827e30fe08357d67465fe577235}} 
+\index{Mela@{Mela}!getCurrentCandidate@{getCurrentCandidate}}
+\index{getCurrentCandidate@{getCurrentCandidate}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getCurrentCandidate()}{getCurrentCandidate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ Mela\+::get\+Current\+Candidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_acf9c25a1e346a47e1d68fe51c9670835}\label{classMela_acf9c25a1e346a47e1d68fe51c9670835}} 
+\index{Mela@{Mela}!getCurrentCandidateIndex@{getCurrentCandidateIndex}}
+\index{getCurrentCandidateIndex@{getCurrentCandidateIndex}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getCurrentCandidateIndex()}{getCurrentCandidateIndex()}}
+{\footnotesize\ttfamily int Mela\+::get\+Current\+Candidate\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ae74d928920338825bd34a7eb924fd44e}\label{classMela_ae74d928920338825bd34a7eb924fd44e}} 
+\index{Mela@{Mela}!getHiggsWidthAtPoleMass@{getHiggsWidthAtPoleMass}}
+\index{getHiggsWidthAtPoleMass@{getHiggsWidthAtPoleMass}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getHiggsWidthAtPoleMass()}{getHiggsWidthAtPoleMass()}}
+{\footnotesize\ttfamily double Mela\+::get\+Higgs\+Width\+At\+Pole\+Mass (\begin{DoxyParamCaption}\item[{double}]{mass }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_aedae1c57a3a6029bf103dcf4223c3fd5}\label{classMela_aedae1c57a3a6029bf103dcf4223c3fd5}} 
+\index{Mela@{Mela}!getIORecord@{getIORecord}}
+\index{getIORecord@{getIORecord}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getIORecord()}{getIORecord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$ Mela\+::get\+I\+O\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a74a20d795ece2fd4e7aa10fa6d390202}\label{classMela_a74a20d795ece2fd4e7aa10fa6d390202}} 
+\index{Mela@{Mela}!getMeasurablesRRV@{getMeasurablesRRV}}
+\index{getMeasurablesRRV@{getMeasurablesRRV}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getMeasurablesRRV()}{getMeasurablesRRV()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} Mela\+::get\+Measurables\+R\+RV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a39c5688a8e4cecde34a8807f1b190c8c}\label{classMela_a39c5688a8e4cecde34a8807f1b190c8c}} 
+\index{Mela@{Mela}!getNCandidates@{getNCandidates}}
+\index{getNCandidates@{getNCandidates}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getNCandidates()}{getNCandidates()}}
+{\footnotesize\ttfamily int Mela\+::get\+N\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a1094cda5be40b685507ec9f720fa57f2}\label{classMela_a1094cda5be40b685507ec9f720fa57f2}} 
+\index{Mela@{Mela}!getPAux@{getPAux}}
+\index{getPAux@{getPAux}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getPAux()}{getPAux()}}
+{\footnotesize\ttfamily void Mela\+::get\+P\+Aux (\begin{DoxyParamCaption}\item[{float \&}]{prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a684145c9efdcfd45926db9095af0280c}\label{classMela_a684145c9efdcfd45926db9095af0280c}} 
+\index{Mela@{Mela}!getPConstantHandle@{getPConstantHandle}}
+\index{getPConstantHandle@{getPConstantHandle}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getPConstantHandle()}{getPConstantHandle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}} $\ast$ Mela\+::get\+P\+Constant\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{me\+\_\+,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{prod\+\_\+,  }\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{proc\+\_\+,  }\item[{T\+String}]{relpath,  }\item[{T\+String}]{spname,  }\item[{const bool}]{use\+Sqrts = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a18ab7647ddc2d2d422c7b5e1f8c7536d}\label{classMela_a18ab7647ddc2d2d422c7b5e1f8c7536d}} 
+\index{Mela@{Mela}!getPConstantHandles@{getPConstantHandles}}
+\index{getPConstantHandles@{getPConstantHandles}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getPConstantHandles()}{getPConstantHandles()}}
+{\footnotesize\ttfamily void Mela\+::get\+P\+Constant\+Handles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a7fa7208ec310f5683a9bc347d132f2da}\label{classMela_a7fa7208ec310f5683a9bc347d132f2da}} 
+\index{Mela@{Mela}!getPrimaryMass@{getPrimaryMass}}
+\index{getPrimaryMass@{getPrimaryMass}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getPrimaryMass()}{getPrimaryMass()}}
+{\footnotesize\ttfamily double Mela\+::get\+Primary\+Mass (\begin{DoxyParamCaption}\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a16f735b882d7351f1e108f379ee064b9}\label{classMela_a16f735b882d7351f1e108f379ee064b9}} 
+\index{Mela@{Mela}!getPrimaryWidth@{getPrimaryWidth}}
+\index{getPrimaryWidth@{getPrimaryWidth}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getPrimaryWidth()}{getPrimaryWidth()}}
+{\footnotesize\ttfamily double Mela\+::get\+Primary\+Width (\begin{DoxyParamCaption}\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a767956e9edcc23b8332b9c6fb72ea2c0}\label{classMela_a767956e9edcc23b8332b9c6fb72ea2c0}} 
+\index{Mela@{Mela}!getTopCandidateCollection@{getTopCandidateCollection}}
+\index{getTopCandidateCollection@{getTopCandidateCollection}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getTopCandidateCollection()}{getTopCandidateCollection()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{MELAThreeBodyDecayCandidate_8h_a210e2b9474d7315495c5b75eccb742f1}{M\+E\+L\+A\+Top\+Candidate\+\_\+t}} $\ast$ $>$ $\ast$ Mela\+::get\+Top\+Candidate\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a6bb33dcae94f2873b0c53891e71bbbcb}\label{classMela_a6bb33dcae94f2873b0c53891e71bbbcb}} 
+\index{Mela@{Mela}!getVerbosity@{getVerbosity}}
+\index{getVerbosity@{getVerbosity}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getVerbosity()}{getVerbosity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} Mela\+::get\+Verbosity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a4683c0250cc1a9c37bccd26ad8f849e9}\label{classMela_a4683c0250cc1a9c37bccd26ad8f849e9}} 
+\index{Mela@{Mela}!getXPropagator@{getXPropagator}}
+\index{getXPropagator@{getXPropagator}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{getXPropagator()}{getXPropagator()}}
+{\footnotesize\ttfamily void Mela\+::get\+X\+Propagator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016}{T\+Var\+::\+Resonance\+Propagator\+Scheme}}}]{scheme,  }\item[{float \&}]{prop }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_aedb1835333ea82e0bc2186e8920b514d}\label{classMela_aedb1835333ea82e0bc2186e8920b514d}} 
+\index{Mela@{Mela}!printLogo@{printLogo}}
+\index{printLogo@{printLogo}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{printLogo()}{printLogo()}}
+{\footnotesize\ttfamily void Mela\+::print\+Logo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a0185e202caf92b78872d25505497c6e3}\label{classMela_a0185e202caf92b78872d25505497c6e3}} 
+\index{Mela@{Mela}!reset\_CandRef@{reset\_CandRef}}
+\index{reset\_CandRef@{reset\_CandRef}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{reset\_CandRef()}{reset\_CandRef()}}
+{\footnotesize\ttfamily void Mela\+::reset\+\_\+\+Cand\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a9cea49ac84cbe1e2a84b5a25974e3aa6}\label{classMela_a9cea49ac84cbe1e2a84b5a25974e3aa6}} 
+\index{Mela@{Mela}!reset\_PAux@{reset\_PAux}}
+\index{reset\_PAux@{reset\_PAux}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{reset\_PAux()}{reset\_PAux()}}
+{\footnotesize\ttfamily void Mela\+::reset\+\_\+\+P\+Aux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ab06f0adb907de7eb611afe8e55e1a4e2}\label{classMela_ab06f0adb907de7eb611afe8e55e1a4e2}} 
+\index{Mela@{Mela}!reset\_SelfDCouplings@{reset\_SelfDCouplings}}
+\index{reset\_SelfDCouplings@{reset\_SelfDCouplings}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{reset\_SelfDCouplings()}{reset\_SelfDCouplings()}}
+{\footnotesize\ttfamily void Mela\+::reset\+\_\+\+Self\+D\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a05ede92ecd47e2be112a27695a11e5a2}\label{classMela_a05ede92ecd47e2be112a27695a11e5a2}} 
+\index{Mela@{Mela}!resetInputEvent@{resetInputEvent}}
+\index{resetInputEvent@{resetInputEvent}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{resetInputEvent()}{resetInputEvent()}}
+{\footnotesize\ttfamily void Mela\+::reset\+Input\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_aed49296bc1ba9b4f0747b032d5089aef}\label{classMela_aed49296bc1ba9b4f0747b032d5089aef}} 
+\index{Mela@{Mela}!resetMass@{resetMass}}
+\index{resetMass@{resetMass}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{resetMass()}{resetMass()}}
+{\footnotesize\ttfamily void Mela\+::reset\+Mass (\begin{DoxyParamCaption}\item[{double}]{inmass,  }\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a646efa5968b603acf694196f420cf039}\label{classMela_a646efa5968b603acf694196f420cf039}} 
+\index{Mela@{Mela}!resetMCFM\_EWKParameters@{resetMCFM\_EWKParameters}}
+\index{resetMCFM\_EWKParameters@{resetMCFM\_EWKParameters}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{resetMCFM\_EWKParameters()}{resetMCFM\_EWKParameters()}}
+{\footnotesize\ttfamily void Mela\+::reset\+M\+C\+F\+M\+\_\+\+E\+W\+K\+Parameters (\begin{DoxyParamCaption}\item[{double}]{ext\+\_\+\+Gf,  }\item[{double}]{ext\+\_\+aemmz,  }\item[{double}]{ext\+\_\+mW,  }\item[{double}]{ext\+\_\+mZ,  }\item[{double}]{ext\+\_\+xW,  }\item[{int}]{ext\+\_\+ewscheme = {\ttfamily 3} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_aac843ada4c5aac21f952c13fc706cca1}\label{classMela_aac843ada4c5aac21f952c13fc706cca1}} 
+\index{Mela@{Mela}!resetQuarkMasses@{resetQuarkMasses}}
+\index{resetQuarkMasses@{resetQuarkMasses}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{resetQuarkMasses()}{resetQuarkMasses()}}
+{\footnotesize\ttfamily void Mela\+::reset\+Quark\+Masses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}\label{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}} 
+\index{Mela@{Mela}!resetWidth@{resetWidth}}
+\index{resetWidth@{resetWidth}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{resetWidth()}{resetWidth()}}
+{\footnotesize\ttfamily void Mela\+::reset\+Width (\begin{DoxyParamCaption}\item[{double}]{inwidth,  }\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a89cd35e50224150c7165224d85a7cefc}\label{classMela_a89cd35e50224150c7165224d85a7cefc}} 
+\index{Mela@{Mela}!setATQGCCouplings@{setATQGCCouplings}}
+\index{setATQGCCouplings@{setATQGCCouplings}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setATQGCCouplings()}{setATQGCCouplings()}}
+{\footnotesize\ttfamily void Mela\+::set\+A\+T\+Q\+G\+C\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a44fa3db83a2e94ed04d16e742af80387}\label{classMela_a44fa3db83a2e94ed04d16e742af80387}} 
+\index{Mela@{Mela}!setAZffCouplings@{setAZffCouplings}}
+\index{setAZffCouplings@{setAZffCouplings}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setAZffCouplings()}{setAZffCouplings()}}
+{\footnotesize\ttfamily void Mela\+::set\+A\+Zff\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a56c78e0f627c65fbff7f312ff373bbad}\label{classMela_a56c78e0f627c65fbff7f312ff373bbad}} 
+\index{Mela@{Mela}!setCandidateDecayMode@{setCandidateDecayMode}}
+\index{setCandidateDecayMode@{setCandidateDecayMode}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setCandidateDecayMode()}{setCandidateDecayMode()}}
+{\footnotesize\ttfamily void Mela\+::set\+Candidate\+Decay\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}}}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a0246097a906e531b16af208d3e1ad974}\label{classMela_a0246097a906e531b16af208d3e1ad974}} 
+\index{Mela@{Mela}!setConstant@{setConstant}}
+\index{setConstant@{setConstant}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setConstant()}{setConstant()}}
+{\footnotesize\ttfamily void Mela\+::set\+Constant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ac6289c43968f54589f1ecfc3192d7349}\label{classMela_ac6289c43968f54589f1ecfc3192d7349}} 
+\index{Mela@{Mela}!setCurrentCandidate@{setCurrentCandidate}}
+\index{setCurrentCandidate@{setCurrentCandidate}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setCurrentCandidate()}{setCurrentCandidate()}}
+{\footnotesize\ttfamily void Mela\+::set\+Current\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$}]{cand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a7534093301fd2bc7cc6d33158d5a8ae5}\label{classMela_a7534093301fd2bc7cc6d33158d5a8ae5}} 
+\index{Mela@{Mela}!setCurrentCandidateFromIndex@{setCurrentCandidateFromIndex}}
+\index{setCurrentCandidateFromIndex@{setCurrentCandidateFromIndex}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setCurrentCandidateFromIndex()}{setCurrentCandidateFromIndex()}}
+{\footnotesize\ttfamily void Mela\+::set\+Current\+Candidate\+From\+Index (\begin{DoxyParamCaption}\item[{unsigned int}]{icand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a71142f41d44bb42a1cd2be50b3cc8240}\label{classMela_a71142f41d44bb42a1cd2be50b3cc8240}} 
+\index{Mela@{Mela}!setInputEvent@{setInputEvent}}
+\index{setInputEvent@{setInputEvent}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setInputEvent()}{setInputEvent()}}
+{\footnotesize\ttfamily void Mela\+::set\+Input\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Daughters,  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Associated = {\ttfamily 0},  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Mothers = {\ttfamily 0},  }\item[{bool}]{is\+Gen = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_aa835c3b33ddec39682776bb1cf98176b}\label{classMela_aa835c3b33ddec39682776bb1cf98176b}} 
+\index{Mela@{Mela}!setMelaHiggsMass@{setMelaHiggsMass}}
+\index{setMelaHiggsMass@{setMelaHiggsMass}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setMelaHiggsMass()}{setMelaHiggsMass()}}
+{\footnotesize\ttfamily void Mela\+::set\+Mela\+Higgs\+Mass (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Mass,  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a89930f849726aa1ffd4b38830df7a083}\label{classMela_a89930f849726aa1ffd4b38830df7a083}} 
+\index{Mela@{Mela}!setMelaHiggsMassWidth@{setMelaHiggsMassWidth}}
+\index{setMelaHiggsMassWidth@{setMelaHiggsMassWidth}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setMelaHiggsMassWidth()}{setMelaHiggsMassWidth()}}
+{\footnotesize\ttfamily void Mela\+::set\+Mela\+Higgs\+Mass\+Width (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Mass,  }\item[{double}]{my\+Higgs\+Width,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ac08cf6732bf5c84fa3da1c5252d2660f}\label{classMela_ac08cf6732bf5c84fa3da1c5252d2660f}} 
+\index{Mela@{Mela}!setMelaHiggsWidth@{setMelaHiggsWidth}}
+\index{setMelaHiggsWidth@{setMelaHiggsWidth}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setMelaHiggsWidth()}{setMelaHiggsWidth()}}
+{\footnotesize\ttfamily void Mela\+::set\+Mela\+Higgs\+Width (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Width = {\ttfamily -\/1},  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ae810756749a5c14defbda7721c00642c}\label{classMela_ae810756749a5c14defbda7721c00642c}} 
+\index{Mela@{Mela}!setMelaLeptonInterference@{setMelaLeptonInterference}}
+\index{setMelaLeptonInterference@{setMelaLeptonInterference}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setMelaLeptonInterference()}{setMelaLeptonInterference()}}
+{\footnotesize\ttfamily void Mela\+::set\+Mela\+Lepton\+Interference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}}}]{my\+Lep\+Interf = {\ttfamily \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca92cbe92f4215368249033082e6671aa6}{T\+Var\+::\+Default\+Lepton\+Interf}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_af478cd82f2e006df9bdf90da9232142a}\label{classMela_af478cd82f2e006df9bdf90da9232142a}} 
+\index{Mela@{Mela}!setMelaPrimaryHiggsMass@{setMelaPrimaryHiggsMass}}
+\index{setMelaPrimaryHiggsMass@{setMelaPrimaryHiggsMass}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setMelaPrimaryHiggsMass()}{setMelaPrimaryHiggsMass()}}
+{\footnotesize\ttfamily void Mela\+::set\+Mela\+Primary\+Higgs\+Mass (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Mass }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_addbf65232c5fa5bf44cf8180b543b904}\label{classMela_addbf65232c5fa5bf44cf8180b543b904}} 
+\index{Mela@{Mela}!setProcess@{setProcess}}
+\index{setProcess@{setProcess}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setProcess()}{setProcess()}}
+{\footnotesize\ttfamily void Mela\+::set\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{my\+Model,  }\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{my\+ME,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{my\+Production }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_ae8c0515d34386567b8bdb01a77b36d86}\label{classMela_ae8c0515d34386567b8bdb01a77b36d86}} 
+\index{Mela@{Mela}!setRemoveJetMasses@{setRemoveJetMasses}}
+\index{setRemoveJetMasses@{setRemoveJetMasses}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setRemoveJetMasses()}{setRemoveJetMasses()}}
+{\footnotesize\ttfamily void Mela\+::set\+Remove\+Jet\+Masses (\begin{DoxyParamCaption}\item[{bool}]{Massless\+Lepton\+Switch = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a7ae40993c2bc0c8b6764ddc0cc948c4b}\label{classMela_a7ae40993c2bc0c8b6764ddc0cc948c4b}} 
+\index{Mela@{Mela}!setRemoveLeptonMasses@{setRemoveLeptonMasses}}
+\index{setRemoveLeptonMasses@{setRemoveLeptonMasses}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setRemoveLeptonMasses()}{setRemoveLeptonMasses()}}
+{\footnotesize\ttfamily void Mela\+::set\+Remove\+Lepton\+Masses (\begin{DoxyParamCaption}\item[{bool}]{Massless\+Lepton\+Switch = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a8d7f183b5bcc90bf190e2576ad7ac1a9}\label{classMela_a8d7f183b5bcc90bf190e2576ad7ac1a9}} 
+\index{Mela@{Mela}!setRenFacScaleMode@{setRenFacScaleMode}}
+\index{setRenFacScaleMode@{setRenFacScaleMode}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setRenFacScaleMode()}{setRenFacScaleMode()}}
+{\footnotesize\ttfamily void Mela\+::set\+Ren\+Fac\+Scale\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}}}]{renormalization\+Sch,  }\item[{\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}}}]{factorization\+Sch,  }\item[{double}]{ren\+\_\+sf,  }\item[{double}]{fac\+\_\+sf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a063525c4c9f007a9136f31aa6cb3915a}\label{classMela_a063525c4c9f007a9136f31aa6cb3915a}} 
+\index{Mela@{Mela}!setSpinOneCouplings@{setSpinOneCouplings}}
+\index{setSpinOneCouplings@{setSpinOneCouplings}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setSpinOneCouplings()}{setSpinOneCouplings()}}
+{\footnotesize\ttfamily void Mela\+::set\+Spin\+One\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a553694c04f25a8113c10aaa3f1b2711e}\label{classMela_a553694c04f25a8113c10aaa3f1b2711e}} 
+\index{Mela@{Mela}!setSpinTwoCouplings@{setSpinTwoCouplings}}
+\index{setSpinTwoCouplings@{setSpinTwoCouplings}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setSpinTwoCouplings()}{setSpinTwoCouplings()}}
+{\footnotesize\ttfamily void Mela\+::set\+Spin\+Two\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a3d02b2dbebd33da734a14faea9926f51}\label{classMela_a3d02b2dbebd33da734a14faea9926f51}} 
+\index{Mela@{Mela}!setSpinZeroCouplings@{setSpinZeroCouplings}}
+\index{setSpinZeroCouplings@{setSpinZeroCouplings}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setSpinZeroCouplings()}{setSpinZeroCouplings()}}
+{\footnotesize\ttfamily void Mela\+::set\+Spin\+Zero\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a752922e898b2e456d43d7d16d33c63cd}\label{classMela_a752922e898b2e456d43d7d16d33c63cd}} 
+\index{Mela@{Mela}!setTempCandidate@{setTempCandidate}}
+\index{setTempCandidate@{setTempCandidate}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setTempCandidate()}{setTempCandidate()}}
+{\footnotesize\ttfamily void Mela\+::set\+Temp\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Daughters,  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Associated = {\ttfamily 0},  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Mothers = {\ttfamily 0},  }\item[{bool}]{is\+Gen = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMela_a540460c5f493ffa154560ec2d7452799}\label{classMela_a540460c5f493ffa154560ec2d7452799}} 
+\index{Mela@{Mela}!setVerbosity@{setVerbosity}}
+\index{setVerbosity@{setVerbosity}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{setVerbosity()}{setVerbosity()}}
+{\footnotesize\ttfamily void Mela\+::set\+Verbosity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity\+\_\+ = {\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMela_a32b1d88b009f76e7bbf6a88a4389f287}\label{classMela_a32b1d88b009f76e7bbf6a88a4389f287}} 
+\index{Mela@{Mela}!auxiliaryProb@{auxiliaryProb}}
+\index{auxiliaryProb@{auxiliaryProb}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{auxiliaryProb}{auxiliaryProb}}
+{\footnotesize\ttfamily float Mela\+::auxiliary\+Prob\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a589149959cfcc4da620b27555701a515}\label{classMela_a589149959cfcc4da620b27555701a515}} 
+\index{Mela@{Mela}!costheta1\_rrv@{costheta1\_rrv}}
+\index{costheta1\_rrv@{costheta1\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{costheta1\_rrv}{costheta1\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::costheta1\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a76cbf0a18f9e41d2bc10ffdb4e15dd48}\label{classMela_a76cbf0a18f9e41d2bc10ffdb4e15dd48}} 
+\index{Mela@{Mela}!costheta2\_rrv@{costheta2\_rrv}}
+\index{costheta2\_rrv@{costheta2\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{costheta2\_rrv}{costheta2\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::costheta2\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a12d56afd447d6d79b39cefbb81027234}\label{classMela_a12d56afd447d6d79b39cefbb81027234}} 
+\index{Mela@{Mela}!costhetastar\_rrv@{costhetastar\_rrv}}
+\index{costhetastar\_rrv@{costhetastar\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{costhetastar\_rrv}{costhetastar\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::costhetastar\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_ae9ddd93244ff8ccf95fd50699679d7c7}\label{classMela_ae9ddd93244ff8ccf95fd50699679d7c7}} 
+\index{Mela@{Mela}!differentiate\_HWW\_HZZ@{differentiate\_HWW\_HZZ}}
+\index{differentiate\_HWW\_HZZ@{differentiate\_HWW\_HZZ}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{differentiate\_HWW\_HZZ}{differentiate\_HWW\_HZZ}}
+{\footnotesize\ttfamily bool Mela\+::differentiate\+\_\+\+H\+W\+W\+\_\+\+H\+ZZ}
+
+\mbox{\Hypertarget{classMela_aa162ceb8442a31a63619b3b4774ad940}\label{classMela_aa162ceb8442a31a63619b3b4774ad940}} 
+\index{Mela@{Mela}!ggSpin0Model@{ggSpin0Model}}
+\index{ggSpin0Model@{ggSpin0Model}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{ggSpin0Model}{ggSpin0Model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScalarPdfFactory__HVV}{Scalar\+Pdf\+Factory\+\_\+\+H\+VV}}$\ast$ Mela\+::gg\+Spin0\+Model}
+
+\mbox{\Hypertarget{classMela_ae91d3fb772ed62358c39763f76040eb0}\label{classMela_ae91d3fb772ed62358c39763f76040eb0}} 
+\index{Mela@{Mela}!LHCsqrts@{LHCsqrts}}
+\index{LHCsqrts@{LHCsqrts}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{LHCsqrts}{LHCsqrts}}
+{\footnotesize\ttfamily double Mela\+::\+L\+H\+Csqrts\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a71aca0cbd86bec77e0d0cd31087c93fd}\label{classMela_a71aca0cbd86bec77e0d0cd31087c93fd}} 
+\index{Mela@{Mela}!melaCand@{melaCand}}
+\index{melaCand@{melaCand}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{melaCand}{melaCand}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}}$\ast$ Mela\+::mela\+Cand\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a593625b3974934a7f8787491917c69d7}\label{classMela_a593625b3974934a7f8787491917c69d7}} 
+\index{Mela@{Mela}!melaRandomNumber@{melaRandomNumber}}
+\index{melaRandomNumber@{melaRandomNumber}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{melaRandomNumber}{melaRandomNumber}}
+{\footnotesize\ttfamily T\+Random3 Mela\+::mela\+Random\+Number}
+
+\mbox{\Hypertarget{classMela_ae74862ce66eb2b884b2da38e0b8ff037}\label{classMela_ae74862ce66eb2b884b2da38e0b8ff037}} 
+\index{Mela@{Mela}!myLepInterf\_@{myLepInterf\_}}
+\index{myLepInterf\_@{myLepInterf\_}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{myLepInterf\_}{myLepInterf\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} Mela\+::my\+Lep\+Interf\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a0c66d5637e21772dcd26ff36e218bdb5}\label{classMela_a0c66d5637e21772dcd26ff36e218bdb5}} 
+\index{Mela@{Mela}!myME\_@{myME\_}}
+\index{myME\_@{myME\_}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{myME\_}{myME\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} Mela\+::my\+M\+E\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a7ab8aae7ca1b9207b1bc8e6325e9d333}\label{classMela_a7ab8aae7ca1b9207b1bc8e6325e9d333}} 
+\index{Mela@{Mela}!myModel\_@{myModel\_}}
+\index{myModel\_@{myModel\_}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{myModel\_}{myModel\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} Mela\+::my\+Model\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a7465ba52cec6291664579cc8960a67f4}\label{classMela_a7465ba52cec6291664579cc8960a67f4}} 
+\index{Mela@{Mela}!myProduction\_@{myProduction\_}}
+\index{myProduction\_@{myProduction\_}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{myProduction\_}{myProduction\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} Mela\+::my\+Production\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a184394c3903e2ce9cbad068b0fc7d94f}\label{classMela_a184394c3903e2ce9cbad068b0fc7d94f}} 
+\index{Mela@{Mela}!myVerbosity\_@{myVerbosity\_}}
+\index{myVerbosity\_@{myVerbosity\_}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{myVerbosity\_}{myVerbosity\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} Mela\+::my\+Verbosity\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a9493faba9ccb37da73162287e2ffc1a0}\label{classMela_a9493faba9ccb37da73162287e2ffc1a0}} 
+\index{Mela@{Mela}!mzz\_rrv@{mzz\_rrv}}
+\index{mzz\_rrv@{mzz\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{mzz\_rrv}{mzz\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::mzz\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_aae61d8dc1b66c3cf0a3384aedb80d842}\label{classMela_aae61d8dc1b66c3cf0a3384aedb80d842}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_Had\_WH\_HSMHiggs@{pAvgSmooth\_JHUGen\_Had\_WH\_HSMHiggs}}
+\index{pAvgSmooth\_JHUGen\_Had\_WH\_HSMHiggs@{pAvgSmooth\_JHUGen\_Had\_WH\_HSMHiggs}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_Had\_WH\_HSMHiggs}{pAvgSmooth\_JHUGen\_Had\_WH\_HSMHiggs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+H\+S\+M\+Higgs\mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a483534360a2f2682f7da28092500b449}\label{classMela_a483534360a2f2682f7da28092500b449}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_Had\_ZH\_HSMHiggs@{pAvgSmooth\_JHUGen\_Had\_ZH\_HSMHiggs}}
+\index{pAvgSmooth\_JHUGen\_Had\_ZH\_HSMHiggs@{pAvgSmooth\_JHUGen\_Had\_ZH\_HSMHiggs}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_Had\_ZH\_HSMHiggs}{pAvgSmooth\_JHUGen\_Had\_ZH\_HSMHiggs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+H\+S\+M\+Higgs\mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_aea1af3d2b093edeb88d52b64faff9d7e}\label{classMela_aea1af3d2b093edeb88d52b64faff9d7e}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs@{pAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs}}
+\index{pAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs@{pAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs}{pAvgSmooth\_JHUGen\_JJQCD\_HSMHiggs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a78230ffd64c3b0e1077d704a43e6f96d}\label{classMela_a78230ffd64c3b0e1077d704a43e6f96d}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs@{pAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs}}
+\index{pAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs@{pAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs}{pAvgSmooth\_JHUGen\_JJVBF\_HSMHiggs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+J\+V\+B\+F\+\_\+\+H\+S\+M\+Higgs\mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_af1a37d9a226b6be31da4e3abcf35adad}\label{classMela_af1a37d9a226b6be31da4e3abcf35adad}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_JQCD\_HSMHiggs@{pAvgSmooth\_JHUGen\_JQCD\_HSMHiggs}}
+\index{pAvgSmooth\_JHUGen\_JQCD\_HSMHiggs@{pAvgSmooth\_JHUGen\_JQCD\_HSMHiggs}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_JQCD\_HSMHiggs}{pAvgSmooth\_JHUGen\_JQCD\_HSMHiggs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+J\+Q\+C\+D\+\_\+\+H\+S\+M\+Higgs\mbox{[}\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}-\/1\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a343cdfcb7c46f1d9f1bbe9a1eb793e32}\label{classMela_a343cdfcb7c46f1d9f1bbe9a1eb793e32}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_2mu2e@{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_2mu2e}}
+\index{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_2mu2e@{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_2mu2e}{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_abc118762fef9f9078f25c272d5f419cc}\label{classMela_abc118762fef9f9078f25c272d5f419cc}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4e@{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4e}}
+\index{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4e@{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4e}{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a85d5445420b4799cee5f8332501aab46}\label{classMela_a85d5445420b4799cee5f8332501aab46}} 
+\index{Mela@{Mela}!pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4mu@{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4mu}}
+\index{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4mu@{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4mu}{pAvgSmooth\_JHUGen\_ZZGG\_HSMHiggs\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+J\+H\+U\+Gen\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a3ff39e822543255d1609264013faa78a}\label{classMela_a3ff39e822543255d1609264013faa78a}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_2mu2e}{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+bkg\+Z\+Z\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a5e777472d1fc9df76b6aef66b5496395}\label{classMela_a5e777472d1fc9df76b6aef66b5496395}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4e}}
+\index{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4e}{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+bkg\+Z\+Z\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a5b6045b14c7ec1393438ff968f8bd36d}\label{classMela_a5b6045b14c7ec1393438ff968f8bd36d}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4mu}}
+\index{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4mu}{pAvgSmooth\_MCFM\_Had\_WH\_bkgZZ\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+bkg\+Z\+Z\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a05e4e6aea578121e1e8f54e0cb4340fa}\label{classMela_a05e4e6aea578121e1e8f54e0cb4340fa}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_2mu2e}{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a6cb9650c069f4523e17462b52950042a}\label{classMela_a6cb9650c069f4523e17462b52950042a}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4e}}
+\index{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4e}{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_af06dddbc57f6daff60fe0f75a75347f4}\label{classMela_af06dddbc57f6daff60fe0f75a75347f4}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4mu}}
+\index{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4mu}{pAvgSmooth\_MCFM\_Had\_WH\_S\_HSMHiggs\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+W\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a3ffd2ae28ea425f4e51f16271164b55f}\label{classMela_a3ffd2ae28ea425f4e51f16271164b55f}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_2mu2e}{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+bkg\+Z\+Z\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a720d26767888770dc8bad0cc24ad9bf8}\label{classMela_a720d26767888770dc8bad0cc24ad9bf8}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4e}}
+\index{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4e}{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+bkg\+Z\+Z\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_aeaafa9f0337b5b4d5cc795966f391fd1}\label{classMela_aeaafa9f0337b5b4d5cc795966f391fd1}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4mu}}
+\index{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4mu}{pAvgSmooth\_MCFM\_Had\_ZH\_bkgZZ\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+bkg\+Z\+Z\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a294efb351b3d52917b744f280bafd0c3}\label{classMela_a294efb351b3d52917b744f280bafd0c3}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_2mu2e}{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a4871d143247ce9a9559ea303d7ae800a}\label{classMela_a4871d143247ce9a9559ea303d7ae800a}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4e}}
+\index{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4e}{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a904fe5b45598abb06e2aeeada1845592}\label{classMela_a904fe5b45598abb06e2aeeada1845592}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4mu}}
+\index{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4mu}{pAvgSmooth\_MCFM\_Had\_ZH\_S\_HSMHiggs\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Had\+\_\+\+Z\+H\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_abcf50b83926051b71352919cdfd603b9}\label{classMela_abcf50b83926051b71352919cdfd603b9}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q@{pAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q}}
+\index{pAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q@{pAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q}{pAvgSmooth\_MCFM\_JJQCD\_bkgZJets\_2l2q}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Jets\+\_\+2l2q\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ab0a7380fd2984e63cdcd32a325435189}\label{classMela_ab0a7380fd2984e63cdcd32a325435189}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_2mu2e}{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_abe18cba80223e9c38c4c959a67f9dd84}\label{classMela_abe18cba80223e9c38c4c959a67f9dd84}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4e}}
+\index{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4e}{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_ab4f02e09aae3923cbc949450f35f4236}\label{classMela_ab4f02e09aae3923cbc949450f35f4236}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4mu}}
+\index{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4mu}{pAvgSmooth\_MCFM\_JJQCD\_bkgZZ\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+Q\+C\+D\+\_\+bkg\+Z\+Z\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a74d64ea8cff62604111f7655c6a283da}\label{classMela_a74d64ea8cff62604111f7655c6a283da}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_2mu2e}{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+bkg\+Z\+Z\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a9240fea46abe9f476301488b0d726c6a}\label{classMela_a9240fea46abe9f476301488b0d726c6a}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4e}}
+\index{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4e}{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+bkg\+Z\+Z\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a1bb1bb714e0a9f0659246674280c394a}\label{classMela_a1bb1bb714e0a9f0659246674280c394a}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4mu}}
+\index{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4mu}{pAvgSmooth\_MCFM\_JJVBF\_bkgZZ\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+bkg\+Z\+Z\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a70e341b1014ee49899b3d1593d033ab6}\label{classMela_a70e341b1014ee49899b3d1593d033ab6}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_2mu2e}{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a4b752bf8fbacec0e3b147d01ec2ad582}\label{classMela_a4b752bf8fbacec0e3b147d01ec2ad582}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4e}}
+\index{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4e}{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_aaf71b7797d69dd59c4489659570747f8}\label{classMela_aaf71b7797d69dd59c4489659570747f8}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4mu}}
+\index{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4mu}{pAvgSmooth\_MCFM\_JJVBF\_S\_HSMHiggs\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+J\+J\+V\+B\+F\+\_\+\+S\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a86c5c05293b0277f479b817a9b1544b9}\label{classMela_a86c5c05293b0277f479b817a9b1544b9}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_2mu2e}{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+Z\+Z\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_aec5bf7c826c4c2cd0bacd2f5b9f393c7}\label{classMela_aec5bf7c826c4c2cd0bacd2f5b9f393c7}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4e}}
+\index{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4e}{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+Z\+Z\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a92cee9b649bbe6e029023ef26c9847c0}\label{classMela_a92cee9b649bbe6e029023ef26c9847c0}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4mu}}
+\index{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4mu}{pAvgSmooth\_MCFM\_ZZGG\_bkgZZ\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+bkg\+Z\+Z\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a74c5f99fdab8ca468309eec54929b5c8}\label{classMela_a74c5f99fdab8ca468309eec54929b5c8}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_2mu2e@{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_2mu2e}{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_acc33d036d422dbca1fd28716f2380c66}\label{classMela_acc33d036d422dbca1fd28716f2380c66}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4e}}
+\index{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4e@{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4e}{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_abc2fdbbdb944a83ee31b49edad523639}\label{classMela_abc2fdbbdb944a83ee31b49edad523639}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4mu}}
+\index{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4mu@{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4mu}{pAvgSmooth\_MCFM\_ZZGG\_HSMHiggs\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+G\+G\+\_\+\+H\+S\+M\+Higgs\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a3d617a238a7259678555d53636f25d3e}\label{classMela_a3d617a238a7259678555d53636f25d3e}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_2mu2e}}
+\index{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_2mu2e@{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_2mu2e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_2mu2e}{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_2mu2e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+Z\+Z\+\_\+2mu2e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_aa943203725c83373174bb8157a4beb29}\label{classMela_aa943203725c83373174bb8157a4beb29}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4e}}
+\index{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4e@{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4e}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4e}{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+Z\+Z\+\_\+4e\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a0a8191269625a502cdccba7c8e2b0377}\label{classMela_a0a8191269625a502cdccba7c8e2b0377}} 
+\index{Mela@{Mela}!pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4mu}}
+\index{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4mu@{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4mu}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4mu}{pAvgSmooth\_MCFM\_ZZQQB\_bkgZZ\_4mu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMelaPConstant}{Mela\+P\+Constant}}$\ast$ Mela\+::p\+Avg\+Smooth\+\_\+\+M\+C\+F\+M\+\_\+\+Z\+Z\+Q\+Q\+B\+\_\+bkg\+Z\+Z\+\_\+4mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a0805294fe244e5416e64e50771b1b746}\label{classMela_a0805294fe244e5416e64e50771b1b746}} 
+\index{Mela@{Mela}!pdf@{pdf}}
+\index{pdf@{pdf}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{pdf}{pdf}}
+{\footnotesize\ttfamily Roo\+Abs\+Pdf$\ast$ Mela\+::pdf}
+
+\mbox{\Hypertarget{classMela_a51249e638c67525efca6d71454a333b6}\label{classMela_a51249e638c67525efca6d71454a333b6}} 
+\index{Mela@{Mela}!phi1\_rrv@{phi1\_rrv}}
+\index{phi1\_rrv@{phi1\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{phi1\_rrv}{phi1\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::phi1\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a14c674efee81f3fe1831b62a547c3bd7}\label{classMela_a14c674efee81f3fe1831b62a547c3bd7}} 
+\index{Mela@{Mela}!phi\_rrv@{phi\_rrv}}
+\index{phi\_rrv@{phi\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{phi\_rrv}{phi\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::phi\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a47c77a64d94797ab53575c7a9de3a471}\label{classMela_a47c77a64d94797ab53575c7a9de3a471}} 
+\index{Mela@{Mela}!qqZZmodel@{qqZZmodel}}
+\index{qqZZmodel@{qqZZmodel}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{qqZZmodel}{qqZZmodel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRooqqZZ__JHU__ZgammaZZ__fast}{Rooqq\+Z\+Z\+\_\+\+J\+H\+U\+\_\+\+Zgamma\+Z\+Z\+\_\+fast}}$\ast$ Mela\+::qq\+Z\+Zmodel}
+
+\mbox{\Hypertarget{classMela_a0053ba2b1f0c4b065ed2a3786c0b8abd}\label{classMela_a0053ba2b1f0c4b065ed2a3786c0b8abd}} 
+\index{Mela@{Mela}!selfDaTQGCcoupl@{selfDaTQGCcoupl}}
+\index{selfDaTQGCcoupl@{selfDaTQGCcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDaTQGCcoupl}{selfDaTQGCcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+Da\+T\+Q\+G\+Ccoupl\mbox{[}S\+I\+Z\+E\+\_\+\+A\+T\+Q\+GC\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a925b9b1fbafe7a9ea436364090c0db03}\label{classMela_a925b9b1fbafe7a9ea436364090c0db03}} 
+\index{Mela@{Mela}!selfDAZffcoupl@{selfDAZffcoupl}}
+\index{selfDAZffcoupl@{selfDAZffcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDAZffcoupl}{selfDAZffcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+A\+Zffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+A\+Zff\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a645a36dde08b0c5dd392da0ad8d07455}\label{classMela_a645a36dde08b0c5dd392da0ad8d07455}} 
+\index{Mela@{Mela}!selfDGa\_Wprime@{selfDGa\_Wprime}}
+\index{selfDGa\_Wprime@{selfDGa\_Wprime}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGa\_Wprime}{selfDGa\_Wprime}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Ga\+\_\+\+Wprime}
+
+\mbox{\Hypertarget{classMela_af4e38a8649440826f0dab2338d0f8929}\label{classMela_af4e38a8649440826f0dab2338d0f8929}} 
+\index{Mela@{Mela}!selfDGa\_Zprime@{selfDGa\_Zprime}}
+\index{selfDGa\_Zprime@{selfDGa\_Zprime}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGa\_Zprime}{selfDGa\_Zprime}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Ga\+\_\+\+Zprime}
+
+\mbox{\Hypertarget{classMela_a85f5106df0e28980c367be244565621f}\label{classMela_a85f5106df0e28980c367be244565621f}} 
+\index{Mela@{Mela}!selfDGggcoupl@{selfDGggcoupl}}
+\index{selfDGggcoupl@{selfDGggcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGggcoupl}{selfDGggcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Gggcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+GG\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a1f4517c76fb7156a1ae14ed919f7dba5}\label{classMela_a1f4517c76fb7156a1ae14ed919f7dba5}} 
+\index{Mela@{Mela}!selfDGqqcoupl@{selfDGqqcoupl}}
+\index{selfDGqqcoupl@{selfDGqqcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGqqcoupl}{selfDGqqcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Gqqcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a07963e57e278d7aaf10e414faa351cf5}\label{classMela_a07963e57e278d7aaf10e414faa351cf5}} 
+\index{Mela@{Mela}!selfDGvpvpcoupl@{selfDGvpvpcoupl}}
+\index{selfDGvpvpcoupl@{selfDGvpvpcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGvpvpcoupl}{selfDGvpvpcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Gvpvpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a32c366f920eebdfa928bd46e1b25cf08}\label{classMela_a32c366f920eebdfa928bd46e1b25cf08}} 
+\index{Mela@{Mela}!selfDGvvcoupl@{selfDGvvcoupl}}
+\index{selfDGvvcoupl@{selfDGvvcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGvvcoupl}{selfDGvvcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Gvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_abe5090af92bd5c4a51542088eea21e45}\label{classMela_abe5090af92bd5c4a51542088eea21e45}} 
+\index{Mela@{Mela}!selfDGvvpcoupl@{selfDGvvpcoupl}}
+\index{selfDGvvpcoupl@{selfDGvvpcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDGvvpcoupl}{selfDGvvpcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Gvvpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a00b434f82a9936a60740368a2ae0f5c8}\label{classMela_a00b434f82a9936a60740368a2ae0f5c8}} 
+\index{Mela@{Mela}!selfDHb4b4coupl@{selfDHb4b4coupl}}
+\index{selfDHb4b4coupl@{selfDHb4b4coupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHb4b4coupl}{selfDHb4b4coupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hb4b4coupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a56487cd83fb61f1c5e566b537367974b}\label{classMela_a56487cd83fb61f1c5e566b537367974b}} 
+\index{Mela@{Mela}!selfDHbbcoupl@{selfDHbbcoupl}}
+\index{selfDHbbcoupl@{selfDHbbcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHbbcoupl}{selfDHbbcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hbbcoupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a5e0bfe7507d06900d2032e1f5ba2909e}\label{classMela_a5e0bfe7507d06900d2032e1f5ba2909e}} 
+\index{Mela@{Mela}!selfDHg4g4coupl@{selfDHg4g4coupl}}
+\index{selfDHg4g4coupl@{selfDHg4g4coupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHg4g4coupl}{selfDHg4g4coupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hg4g4coupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+GG\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a3a9d214b2e2a9afa49b839248dfe8ba8}\label{classMela_a3a9d214b2e2a9afa49b839248dfe8ba8}} 
+\index{Mela@{Mela}!selfDHggcoupl@{selfDHggcoupl}}
+\index{selfDHggcoupl@{selfDHggcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHggcoupl}{selfDHggcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hggcoupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+GG\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_afacb62e24d7e84e904b258b2f4cf5dd4}\label{classMela_afacb62e24d7e84e904b258b2f4cf5dd4}} 
+\index{Mela@{Mela}!selfDHqqcoupl@{selfDHqqcoupl}}
+\index{selfDHqqcoupl@{selfDHqqcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHqqcoupl}{selfDHqqcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hqqcoupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_aa379a951d01d24a9c7761012ab633550}\label{classMela_aa379a951d01d24a9c7761012ab633550}} 
+\index{Mela@{Mela}!selfDHt4t4coupl@{selfDHt4t4coupl}}
+\index{selfDHt4t4coupl@{selfDHt4t4coupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHt4t4coupl}{selfDHt4t4coupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Ht4t4coupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_aa9d3f00febdb8e0e5a0635f22d922300}\label{classMela_aa9d3f00febdb8e0e5a0635f22d922300}} 
+\index{Mela@{Mela}!selfDHttcoupl@{selfDHttcoupl}}
+\index{selfDHttcoupl@{selfDHttcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHttcoupl}{selfDHttcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Httcoupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a8893f0c52513afd8bb64c37024d6ba60}\label{classMela_a8893f0c52513afd8bb64c37024d6ba60}} 
+\index{Mela@{Mela}!selfDHwpwpcoupl@{selfDHwpwpcoupl}}
+\index{selfDHwpwpcoupl@{selfDHwpwpcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHwpwpcoupl}{selfDHwpwpcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hwpwpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a7302f7a0b838c2a3f3e9d0a598a25043}\label{classMela_a7302f7a0b838c2a3f3e9d0a598a25043}} 
+\index{Mela@{Mela}!selfDHwwCLambda\_qsq@{selfDHwwCLambda\_qsq}}
+\index{selfDHwwCLambda\_qsq@{selfDHwwCLambda\_qsq}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHwwCLambda\_qsq}{selfDHwwCLambda\_qsq}}
+{\footnotesize\ttfamily int Mela\+::self\+D\+Hww\+C\+Lambda\+\_\+qsq\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a5239be5ef69410296d18070ff68c0f3e}\label{classMela_a5239be5ef69410296d18070ff68c0f3e}} 
+\index{Mela@{Mela}!selfDHwwcoupl@{selfDHwwcoupl}}
+\index{selfDHwwcoupl@{selfDHwwcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHwwcoupl}{selfDHwwcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hwwcoupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_ae3c3c9f0cdf07f409dc78176ba1e997c}\label{classMela_ae3c3c9f0cdf07f409dc78176ba1e997c}} 
+\index{Mela@{Mela}!selfDHwwLambda\_qsq@{selfDHwwLambda\_qsq}}
+\index{selfDHwwLambda\_qsq@{selfDHwwLambda\_qsq}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHwwLambda\_qsq}{selfDHwwLambda\_qsq}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hww\+Lambda\+\_\+qsq\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+L\+A\+M\+B\+D\+A\+Q\+SQ\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a63c7ad8ae502940286f274c4b6e3df54}\label{classMela_a63c7ad8ae502940286f274c4b6e3df54}} 
+\index{Mela@{Mela}!selfDHwwpcoupl@{selfDHwwpcoupl}}
+\index{selfDHwwpcoupl@{selfDHwwpcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHwwpcoupl}{selfDHwwpcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hwwpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_aa8fde8a0cbfa680a5c8f9312c480974c}\label{classMela_aa8fde8a0cbfa680a5c8f9312c480974c}} 
+\index{Mela@{Mela}!selfDHzpzpcoupl@{selfDHzpzpcoupl}}
+\index{selfDHzpzpcoupl@{selfDHzpzpcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHzpzpcoupl}{selfDHzpzpcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hzpzpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a634ce2f63e0a3cd23aa185c19e62a734}\label{classMela_a634ce2f63e0a3cd23aa185c19e62a734}} 
+\index{Mela@{Mela}!selfDHzzCLambda\_qsq@{selfDHzzCLambda\_qsq}}
+\index{selfDHzzCLambda\_qsq@{selfDHzzCLambda\_qsq}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHzzCLambda\_qsq}{selfDHzzCLambda\_qsq}}
+{\footnotesize\ttfamily int Mela\+::self\+D\+Hzz\+C\+Lambda\+\_\+qsq\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}}
+
+\mbox{\Hypertarget{classMela_abeedcc146fa604a15f16780b99057f89}\label{classMela_abeedcc146fa604a15f16780b99057f89}} 
+\index{Mela@{Mela}!selfDHzzcoupl@{selfDHzzcoupl}}
+\index{selfDHzzcoupl@{selfDHzzcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHzzcoupl}{selfDHzzcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hzzcoupl\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a718a857f441d077c9042c1d73942c308}\label{classMela_a718a857f441d077c9042c1d73942c308}} 
+\index{Mela@{Mela}!selfDHzzLambda\_qsq@{selfDHzzLambda\_qsq}}
+\index{selfDHzzLambda\_qsq@{selfDHzzLambda\_qsq}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHzzLambda\_qsq}{selfDHzzLambda\_qsq}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hzz\+Lambda\+\_\+qsq\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a16af7b253440dadd46a80a4b9fddba4da6454e2bc65b0a38b32bc9b8ca8a34faf}{n\+Supported\+Higgses}}\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+L\+A\+M\+B\+D\+A\+Q\+SQ\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}}
+
+\mbox{\Hypertarget{classMela_abe1837fec463bb6db0a9b06b2a0f99cf}\label{classMela_abe1837fec463bb6db0a9b06b2a0f99cf}} 
+\index{Mela@{Mela}!selfDHzzpcoupl@{selfDHzzpcoupl}}
+\index{selfDHzzpcoupl@{selfDHzzpcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDHzzpcoupl}{selfDHzzpcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Hzzpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a5dfc7a761cf6a244538badbb119bddd8}\label{classMela_a5dfc7a761cf6a244538badbb119bddd8}} 
+\index{Mela@{Mela}!selfDM\_Wprime@{selfDM\_Wprime}}
+\index{selfDM\_Wprime@{selfDM\_Wprime}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDM\_Wprime}{selfDM\_Wprime}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+M\+\_\+\+Wprime}
+
+\mbox{\Hypertarget{classMela_ab6425a613f155bd0f475ac401419ee2d}\label{classMela_ab6425a613f155bd0f475ac401419ee2d}} 
+\index{Mela@{Mela}!selfDM\_Zprime@{selfDM\_Zprime}}
+\index{selfDM\_Zprime@{selfDM\_Zprime}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDM\_Zprime}{selfDM\_Zprime}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+M\+\_\+\+Zprime}
+
+\mbox{\Hypertarget{classMela_a307367d5ff83be80ccfa9e4560507e93}\label{classMela_a307367d5ff83be80ccfa9e4560507e93}} 
+\index{Mela@{Mela}!selfDWpffcoupl@{selfDWpffcoupl}}
+\index{selfDWpffcoupl@{selfDWpffcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDWpffcoupl}{selfDWpffcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Wpffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a2733b7883767858bb8eed7f30deecd37}\label{classMela_a2733b7883767858bb8eed7f30deecd37}} 
+\index{Mela@{Mela}!selfDZpffcoupl@{selfDZpffcoupl}}
+\index{selfDZpffcoupl@{selfDZpffcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDZpffcoupl}{selfDZpffcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Zpffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_ab85a88a939ee917faef962422de963d4}\label{classMela_ab85a88a939ee917faef962422de963d4}} 
+\index{Mela@{Mela}!selfDZqqcoupl@{selfDZqqcoupl}}
+\index{selfDZqqcoupl@{selfDZqqcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDZqqcoupl}{selfDZqqcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Zqqcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+QQ\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a337ba964ea97fee3e619f4dbbc4f2f20}\label{classMela_a337ba964ea97fee3e619f4dbbc4f2f20}} 
+\index{Mela@{Mela}!selfDZvvcoupl@{selfDZvvcoupl}}
+\index{selfDZvvcoupl@{selfDZvvcoupl}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{selfDZvvcoupl}{selfDZvvcoupl}}
+{\footnotesize\ttfamily double Mela\+::self\+D\+Zvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classMela_a0bca2d72ddc4daeb8664a0b6a12b25e9}\label{classMela_a0bca2d72ddc4daeb8664a0b6a12b25e9}} 
+\index{Mela@{Mela}!spin1Model@{spin1Model}}
+\index{spin1Model@{spin1Model}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{spin1Model}{spin1Model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVectorPdfFactory}{Vector\+Pdf\+Factory}}$\ast$ Mela\+::spin1\+Model}
+
+\mbox{\Hypertarget{classMela_ae75795c4d19c2fdfe1f9d1ec508104bc}\label{classMela_ae75795c4d19c2fdfe1f9d1ec508104bc}} 
+\index{Mela@{Mela}!spin2Model@{spin2Model}}
+\index{spin2Model@{spin2Model}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{spin2Model}{spin2Model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTensorPdfFactory__ppHVV}{Tensor\+Pdf\+Factory\+\_\+pp\+H\+VV}}$\ast$ Mela\+::spin2\+Model}
+
+\mbox{\Hypertarget{classMela_ade6a7487f6e323ac661f56c9318a829f}\label{classMela_ade6a7487f6e323ac661f56c9318a829f}} 
+\index{Mela@{Mela}!super@{super}}
+\index{super@{super}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{super}{super}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSuperMELA}{Super\+M\+E\+LA}}$\ast$ Mela\+::super}
+
+\mbox{\Hypertarget{classMela_a6ba6d4f926af3d2647faf602d12091b6}\label{classMela_a6ba6d4f926af3d2647faf602d12091b6}} 
+\index{Mela@{Mela}!superDijet@{superDijet}}
+\index{superDijet@{superDijet}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{superDijet}{superDijet}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSuperDijetMela}{Super\+Dijet\+Mela}}$\ast$ Mela\+::super\+Dijet\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMela_a17110134c10849d99b40491ff51a2148}\label{classMela_a17110134c10849d99b40491ff51a2148}} 
+\index{Mela@{Mela}!upFrac\_rrv@{upFrac\_rrv}}
+\index{upFrac\_rrv@{upFrac\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{upFrac\_rrv}{upFrac\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::up\+Frac\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a367b057444858b7c287af91193f1460d}\label{classMela_a367b057444858b7c287af91193f1460d}} 
+\index{Mela@{Mela}!Y\_rrv@{Y\_rrv}}
+\index{Y\_rrv@{Y\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{Y\_rrv}{Y\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::\+Y\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a688d4756e27fe2a7a2a0f8c053675048}\label{classMela_a688d4756e27fe2a7a2a0f8c053675048}} 
+\index{Mela@{Mela}!z1mass\_rrv@{z1mass\_rrv}}
+\index{z1mass\_rrv@{z1mass\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{z1mass\_rrv}{z1mass\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::z1mass\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a5355d2f1a0c3b00cc8ef87d0a439a5f7}\label{classMela_a5355d2f1a0c3b00cc8ef87d0a439a5f7}} 
+\index{Mela@{Mela}!z2mass\_rrv@{z2mass\_rrv}}
+\index{z2mass\_rrv@{z2mass\_rrv}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{z2mass\_rrv}{z2mass\_rrv}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Mela\+::z2mass\+\_\+rrv}
+
+\mbox{\Hypertarget{classMela_a81aba2f77ab82a5fc9f50e2d2274a456}\label{classMela_a81aba2f77ab82a5fc9f50e2d2274a456}} 
+\index{Mela@{Mela}!ZZME@{ZZME}}
+\index{ZZME@{ZZME}!Mela@{Mela}}
+\doxysubsubsection{\texorpdfstring{ZZME}{ZZME}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classZZMatrixElement}{Z\+Z\+Matrix\+Element}}$\ast$ Mela\+::\+Z\+Z\+ME\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{Mela_8h}{Mela.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{Mela_8cc}{Mela.\+cc}}\end{DoxyCompactItemize}

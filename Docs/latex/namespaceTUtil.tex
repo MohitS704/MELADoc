@@ -1,0 +1,571 @@
+\hypertarget{namespaceTUtil}{}\doxysection{T\+Util Namespace Reference}
+\label{namespaceTUtil}\index{TUtil@{TUtil}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a4824d6613cde741139ec5bc7e199ac57}{apply\+Lepton\+Mass\+Correction}} (bool flag=true)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ae24251edeb2dbc469b31a1e1dc05e51e}{apply\+Jet\+Mass\+Correction}} (bool flag=true)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a8a1a325f3bb025d57fa9b649a31c93d2}{set\+Lepton\+Mass\+Scheme}} (\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} scheme=\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a4f9532dc2110d5229def322ed98d61bc}{set\+Jet\+Mass\+Scheme}} (\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} scheme=\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a9dabf236e23c4ae39f05d575a1e501f9}{constrained\+Remove\+Pair\+Mass}} (T\+Lorentz\+Vector \&p1, T\+Lorentz\+Vector \&p2, double m1=0, double m2=0)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ab0e969365520b20156c39c71b1f4706b}{scale\+Momentum\+To\+Energy}} (const T\+Lorentz\+Vector \&massive\+Jet, T\+Lorentz\+Vector \&massless\+Jet, double mass=0)
+\item 
+std\+::pair$<$ T\+Lorentz\+Vector, T\+Lorentz\+Vector $>$ \mbox{\hyperlink{namespaceTUtil_afa7eed75a1c5dfc02d8c068efffe18e7}{remove\+Mass\+From\+Pair}} (T\+Lorentz\+Vector const \&jet1, int const \&jet1\+Id, T\+Lorentz\+Vector const \&jet2, int const \&jet2\+Id, double m1=0, double m2=0)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a22ae65dea83b7d412dd94f09ac3b7de7}{adjust\+Top\+Daughters}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} \&daughters)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{compute\+Fake\+Jet}} (T\+Lorentz\+Vector const \&real\+Jet, T\+Lorentz\+Vector const \&others, T\+Lorentz\+Vector \&fake\+Jet)
+\item 
+std\+::pair$<$ T\+Lorentz\+Vector, T\+Lorentz\+Vector $>$ \mbox{\hyperlink{namespaceTUtil_a30ecd7cb8ba8ecd70fc2f18c0d7d56ee}{Complex\+Boost}} (T\+Vector3 const \&beta, T\+Lorentz\+Vector const \&p4)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_afa81b178917557f2d5440957bbf5f08b}{compute\+Angles}} (float \&costhetastar, float \&costheta1, float \&costheta2, float \&Phi, float \&Phi1, T\+Lorentz\+Vector Z1\+\_\+lept1, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector Z1\+\_\+lept2, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector Z2\+\_\+lept1, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector Z2\+\_\+lept2, int Z2\+\_\+lept2\+Id)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a97664aaabcea7347c605799618ed1764}{compute\+Angles\+CS}} (float const \&pbeam, float \&costhetastar, float \&costheta1, float \&costheta2, float \&Phi, float \&Phi1, T\+Lorentz\+Vector Z1\+\_\+lept1, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector Z1\+\_\+lept2, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector Z2\+\_\+lept1, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector Z2\+\_\+lept2, int Z2\+\_\+lept2\+Id)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ac25514d0b4bfda2daae52ee27f8d2fe8}{compute\+V\+B\+F\+Angles}} (float \&costhetastar, float \&costheta1, float \&costheta2, float \&Phi, float \&Phi1, float \&Q2\+V1, float \&Q2\+V2, T\+Lorentz\+Vector p4\+M11, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M12, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector p4\+M21, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M22, int Z2\+\_\+lept2\+Id, T\+Lorentz\+Vector jet1, int jet1\+Id, T\+Lorentz\+Vector jet2, int jet2\+Id, T\+Lorentz\+Vector $\ast$injet1=0, int injet1\+Id=0, T\+Lorentz\+Vector $\ast$injet2=0, int injet2\+Id=0)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a9a0761a097eca0e6c200ad64ccfdf80f}{compute\+V\+B\+F\+Angles\+\_\+\+Complex\+Boost}} (float \&costhetastar, float \&costheta1\+\_\+real, float \&costheta1\+\_\+imag, float \&costheta2\+\_\+real, float \&costheta2\+\_\+imag, float \&Phi, float \&Phi1, float \&Q2\+V1, float \&Q2\+V2, T\+Lorentz\+Vector p4\+M11, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M12, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector p4\+M21, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M22, int Z2\+\_\+lept2\+Id, T\+Lorentz\+Vector jet1, int jet1\+Id, T\+Lorentz\+Vector jet2, int jet2\+Id, T\+Lorentz\+Vector $\ast$injet1=0, int injet1\+Id=0, T\+Lorentz\+Vector $\ast$injet2=0, int injet2\+Id=0)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a928302e7a9815e5777eeea1fcd832a6e}{compute\+V\+H\+Angles}} (float \&costhetastar, float \&costheta1, float \&costheta2, float \&Phi, float \&Phi1, float \&m1, float \&m2, T\+Lorentz\+Vector p4\+M11, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M12, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector p4\+M21, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M22, int Z2\+\_\+lept2\+Id, T\+Lorentz\+Vector jet1, int jet1\+Id, T\+Lorentz\+Vector jet2, int jet2\+Id, T\+Lorentz\+Vector $\ast$injet1=0, int injet1\+Id=0, T\+Lorentz\+Vector $\ast$injet2=0, int injet2\+Id=0)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a8f220424c5f98ce6e208bb834ecd55a6}{compute\+T\+T\+H\+Angles}} (float \&hs, float \&hincoming, float \&h\+TT, float \&Phi\+TT, float \&Phi1, float \&hbb, float \&h\+WW, float \&Phibb, float \&Phi1bb, float \&h\+Wplusf, float \&Phi\+Wplusf, float \&h\+Wminusf, float \&Phi\+Wminusf, T\+Lorentz\+Vector p4\+M11, int Z1\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M12, int Z1\+\_\+lept2\+Id, T\+Lorentz\+Vector p4\+M21, int Z2\+\_\+lept1\+Id, T\+Lorentz\+Vector p4\+M22, int Z2\+\_\+lept2\+Id, T\+Lorentz\+Vector b, int b\+Id, T\+Lorentz\+Vector Wplusf, int Wplusf\+Id, T\+Lorentz\+Vector Wplusfb, int Wplusfb\+Id, T\+Lorentz\+Vector bbar, int bbar\+Id, T\+Lorentz\+Vector Wminusf, int Wminusf\+Id, T\+Lorentz\+Vector Wminusfb, int Wminusfb\+Id, T\+Lorentz\+Vector $\ast$injet1=0, int injet1\+Id=0, T\+Lorentz\+Vector $\ast$injet2=0, int injet2\+Id=0)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ab719f9b19416aa6c8df52515ac6a6db4}{Set\+Ewk\+Coupling\+Parameters}} (double ext\+\_\+\+Gf, double ext\+\_\+aemmz, double ext\+\_\+mW, double ext\+\_\+mZ, double ext\+\_\+xW, int ext\+\_\+ewscheme)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a51c225f177937798f635f16e7999af99}{Set\+Mass}} (double inmass, int ipart)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_af2f4d9e772c5b03b8554ecbd6778f623}{Set\+Decay\+Width}} (double inwidth, int ipart)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_af0a7eb81fc049eae88e8be0e72e27451}{Get\+Mass}} (int ipart)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a2abfaba12b321c4f89447482105635a5}{Get\+Decay\+Width}} (int ipart)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_aa1d4b6a7bde96bc1a25ecfbee76d7ee5}{Get\+Mass}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a57432221ba2618d1ee87cc363de43adf}{Get\+Decay\+Width}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a72e7c71bfda18734d90f846c43f0e0a5}{Get\+Mass\+Width}} (int ipart, double \&m, double \&ga)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a6e9f4b3d6db136b1bca9f7f7642565cc}{Get\+Mass\+Width}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part, double \&m, double \&ga)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a9082c83a90005205bb355123c1c24875}{Set\+C\+K\+M\+Elements}} (double $\ast$invckm\+\_\+ud, double $\ast$invckm\+\_\+us, double $\ast$invckm\+\_\+cd, double $\ast$invckm\+\_\+cs, double $\ast$invckm\+\_\+ts, double $\ast$invckm\+\_\+tb, double $\ast$invckm\+\_\+ub=0, double $\ast$invckm\+\_\+cb=0, double $\ast$invckm\+\_\+td=0)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a8cff275aa36f42dd114b266e6f8dcd74}{Get\+C\+K\+M\+Element}} (int iquark, int jquark)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a4a00d03fa1abeb4335b6abd9fae90663}{Interpret\+Scale\+Scheme}} (const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, const \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} \&scheme, T\+Lorentz\+Vector p\mbox{[}\mbox{\hyperlink{TMCFM_8hh_aaf105ae5beaca1dee30ae54530691fceaa807e6e258b5a07d460f300f873eab10}{mxpart}}\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ab551562aaa197841cd0a638f1f38b0ff}{Set\+AlphaS}} (double \&Q\+\_\+ren, double \&Q\+\_\+fac, double multiplier\+\_\+ren, double multiplier\+\_\+fac, int mynloop, int mynflav, std\+::string mypartons)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a2f0fce2b3d66f17b673f2e75d87adf00}{Get\+AlphaS}} (double $\ast$\mbox{\hyperlink{TMCFM_8hh_a7166ca25e90c8884ec236febf53bf4c4}{alphas\+\_\+}}, double $\ast$alphasmz\+\_\+)
+\item 
+bool \mbox{\hyperlink{namespaceTUtil_a5a527eeac9cb1eef2572d69f647e1e30}{M\+C\+F\+M\+\_\+chooser}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} \&lepton\+Interf, const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&verbosity, const \mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} \&mela\+\_\+event)
+\item 
+bool \mbox{\hyperlink{namespaceTUtil_a886fd38c76f045c4d516492ecf1cb0ce}{M\+C\+F\+M\+\_\+\+Setup\+Particle\+Couplings}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&verbosity, const \mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} \&mela\+\_\+event, std\+::vector$<$ int $>$ $\ast$part\+Order, std\+::vector$<$ int $>$ $\ast$apart\+Order)
+\item 
+T\+String \mbox{\hyperlink{namespaceTUtil_aec249fff7743f70229476d9a17dadf99}{Get\+M\+C\+F\+M\+Particle\+Label}} (const int \&pid, bool use\+QJ, bool use\+Extended\+Conventions)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a8b3783c74e8947c4c7f5c1bb2d6cef5e}{Init\+J\+H\+U\+Gen\+M\+E\+LA}} (const char $\ast$pathto\+P\+D\+F\+Set, int P\+D\+F\+Member, double collider\+\_\+sqrts)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ae8313a38acdcb638b50a63bf04bc472f}{Set\+J\+H\+U\+Gen\+Higgs\+Mass\+Width}} (double M\+Reso, double Ga\+Reso)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ac6fdb5a1ca4802adaaee14c1c052efd4}{Set\+J\+H\+U\+Gen\+Distinguish\+W\+W\+Couplings}} (bool do\+Allow)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a2e1b502237f00dd823a0ef37b49e7aaa}{Reset\+Amplitude\+Includes}} ()
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a45366db1a43b30a467e146dc8477f771}{Set\+M\+C\+F\+M\+Spin\+Zero\+Couplings}} (bool use\+B\+SM, \mbox{\hyperlink{classSpinZeroCouplings}{Spin\+Zero\+Couplings}} const $\ast$Hcouplings, bool force\+ZZ)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ac48c90afbcdf62150abcc380ea428eef}{Set\+M\+C\+F\+Ma\+T\+Q\+G\+C\+Couplings}} (bool use\+B\+SM, \mbox{\hyperlink{classaTQGCCouplings}{a\+T\+Q\+G\+C\+Couplings}} const $\ast$couplings)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a1706a661b9c70c8a8e5e3180e8ff676f}{Set\+J\+H\+U\+Gen\+Spin\+Zero\+V\+V\+Couplings}} (double Hvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, double Hvvpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, double Hvpvpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]}, int Hvvcoupl\+\_\+cqsq\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}, double Hvv\+Lambda\+\_\+qsq\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+L\+A\+M\+B\+D\+A\+Q\+SQ\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+SQ\mbox{]}, bool use\+W\+Wcoupl)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a534d1442fc379e1a036eb23050c13c5b}{Set\+J\+H\+U\+Gen\+Spin\+Zero\+G\+G\+Couplings}} (double Hggcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+GG\mbox{]}\mbox{[}2\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_ac5984b5d69c38cd854dc9368ba0d66ef}{Set\+J\+H\+U\+Gen\+Spin\+Zero\+Q\+Q\+Couplings}} (double Hqqcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+QQ\mbox{]}\mbox{[}2\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_aa7944801377c33a4e6b405058c03e1c7}{Set\+J\+H\+U\+Gen\+Spin\+One\+Couplings}} (double Zqqcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+QQ\mbox{]}\mbox{[}2\mbox{]}, double Zvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+VV\mbox{]}\mbox{[}2\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a9153965831508e074e8ef8fdc0c261b8}{Set\+J\+H\+U\+Gen\+Spin\+Two\+Couplings}} (double Gacoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+GG\mbox{]}\mbox{[}2\mbox{]}, double Gvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}, double Gvvpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}, double Gvpvpcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+VV\mbox{]}\mbox{[}2\mbox{]}, double q\+Left\+Rightcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+G\+QQ\mbox{]}\mbox{[}2\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a1c600f2c3dcc37a9512d659f46a364aa}{Set\+J\+H\+U\+Gen\+Vprime\+Contact\+Couplings}} (double Zpffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}, double Wpffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a345c5ae46930918d36cb7ca55b01c853}{Set\+M\+C\+F\+M\+A\+Zff\+Couplings}} (bool use\+B\+SM, \mbox{\hyperlink{classAZffCouplings}{A\+Zff\+Couplings}} const $\ast$Zcouplings)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a89b248250ed67dd79baf7e0a911473d2}{Set\+J\+H\+U\+Gen\+A\+Zff\+Couplings}} (bool need\+A\+Zff, double A\+Zffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+A\+Zff\mbox{]}\mbox{[}2\mbox{]})
+\item 
+bool \mbox{\hyperlink{namespaceTUtil_ae2cf0c66b72320a09e280aa5681d4f19}{M\+C\+F\+M\+\_\+masscuts}} (double s\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{TMCFM_8hh_aaf105ae5beaca1dee30ae54530691fceaa807e6e258b5a07d460f300f873eab10}{mxpart}}\mbox{]}, const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process)
+\item 
+bool \mbox{\hyperlink{namespaceTUtil_a009f1369c2ba692d3fa2ceb2097ef2cc}{M\+C\+F\+M\+\_\+smalls}} (double s\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{TMCFM_8hh_aaf105ae5beaca1dee30ae54530691fceaa807e6e258b5a07d460f300f873eab10}{mxpart}}\mbox{]}, int \mbox{\hyperlink{TMCFM_8hh_a8852a945ad0b8536ee161f7ddb1e4be0}{npart}})
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a460b9061f340996162890fcbdbef34b9}{Sum\+Matrix\+Element\+P\+DF}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, const \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} \&lepton\+Interf, \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$event\+\_\+scales, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_ad2f4fde8f2c90dadebec96378b36144d}{J\+H\+U\+Gen\+Mat\+El}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$event\+\_\+scales, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_ae53582caadc4362e0dc6f9519dede582}{H\+J\+J\+Mat\+El}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$event\+\_\+scales, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a30b0f3cd4082fab9f6d057b0243f26de}{V\+Higgs\+Mat\+El}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$event\+\_\+scales, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, bool include\+Higgs\+Decay, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_ae18db0378d82ee0e0efb6dab7216690b}{T\+T\+Higgs\+Mat\+El}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$event\+\_\+scales, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, int top\+Decay, int top\+Process, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a4812281815c3cd3df59c9575878c76e6}{B\+B\+Higgs\+Mat\+El}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&matrix\+Element, \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$event\+\_\+scales, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, int bot\+Process, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity)
+\item 
+int \mbox{\hyperlink{namespaceTUtil_a3e24aa1f4311876d507e30ff4162a1db}{Wipe\+M\+E\+Array}} (const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&process, const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&production, const int id\mbox{[}\mbox{\hyperlink{TMCFM_8hh_aaf105ae5beaca1dee30ae54530691fceaa807e6e258b5a07d460f300f873eab10}{mxpart}}\mbox{]}, double msq\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a6b7b47dd702d9e331586d485013fd1eaa0e114837eeba529282c4225945283111}{nmsq}}\mbox{]}\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a6b7b47dd702d9e331586d485013fd1eaa0e114837eeba529282c4225945283111}{nmsq}}\mbox{]}, const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&verbosity)
+\item 
+bool \mbox{\hyperlink{namespaceTUtil_af6d616d949d1a340c25d2ed39edd5ddd}{Check\+Parton\+Mom\+Fraction}} (const T\+Lorentz\+Vector \&p0, const T\+Lorentz\+Vector \&p1, double xx\mbox{[}2\mbox{]}, const double \&E\+B\+E\+AM, const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&verbosity)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a90b6428b41acb4a3ca30d2307d1de436}{Compute\+P\+DF}} (const T\+Lorentz\+Vector \&p0, const T\+Lorentz\+Vector \&p1, double fx1\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a6b7b47dd702d9e331586d485013fd1eaa0e114837eeba529282c4225945283111}{nmsq}}\mbox{]}, double fx2\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a6b7b47dd702d9e331586d485013fd1eaa0e114837eeba529282c4225945283111}{nmsq}}\mbox{]}, const double \&E\+B\+E\+AM, const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_adf7b61bc902b23177090ce6b48a7f026}{Sum\+M\+E\+P\+DF}} (const T\+Lorentz\+Vector \&p0, const T\+Lorentz\+Vector \&p1, double msq\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a6b7b47dd702d9e331586d485013fd1eaa0e114837eeba529282c4225945283111}{nmsq}}\mbox{]}\mbox{[}\mbox{\hyperlink{TMCFM_8hh_a6b7b47dd702d9e331586d485013fd1eaa0e114837eeba529282c4225945283111}{nmsq}}\mbox{]}, \mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$Rcd\+ME, const double \&E\+B\+E\+AM, const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&verbosity)
+\item 
+double \mbox{\hyperlink{namespaceTUtil_a7ed7b2d062c0a1fbb809e065e6752cce}{Resonance\+Propagator}} (double const \&\mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}, \mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016}{T\+Var\+::\+Resonance\+Propagator\+Scheme}} scheme)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a2bfa5115b0bf398c2fae3cc36aedf9f5}{Get\+Boosted\+Particle\+Vectors}} (\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$mela\+Cand, \mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} \&mela\+\_\+event, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce}{T\+Var\+::\+D\+E\+B\+UG}})
+\item 
+\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ \mbox{\hyperlink{namespaceTUtil_accabe530df4828c083abd7ea98bf5da2}{Convert\+Vector\+Format}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Daughters, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Associated, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Mothers, bool is\+Gen, std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ $\ast$particle\+List, std\+::vector$<$ \mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ $>$ $\ast$cand\+List)
+\item 
+\mbox{\hyperlink{classMELAThreeBodyDecayCandidate}{M\+E\+L\+A\+Three\+Body\+Decay\+Candidate}} $\ast$ \mbox{\hyperlink{namespaceTUtil_a34005f7891c27c535153be4ab35211f0}{Convert\+Three\+Body\+Decay\+Candidate}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$tbd\+Daughters, std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ $\ast$particle\+List, std\+::vector$<$ \mbox{\hyperlink{classMELAThreeBodyDecayCandidate}{M\+E\+L\+A\+Three\+Body\+Decay\+Candidate}} $\ast$ $>$ $\ast$tbd\+Cand\+List)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a7f6ec9418811fe987c034629691182af}{Print\+Candidate\+Summary}} (\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$cand)
+\item 
+void \mbox{\hyperlink{namespaceTUtil_a12cc275df4bf912ec19b38f3fbe936f0}{Print\+Candidate\+Summary}} (\mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} $\ast$cand)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceTUtil_afd769e0556af6d51531e549c9f683e9a}{forbid\+Massive\+Leptons}} = true
+\begin{DoxyCompactList}\small\item\em Remove fermion mass if the flag is set to true. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceTUtil_a5908ccfb76dc006556fffda3fb26898a}{forbid\+Massive\+Jets}} = true
+\item 
+\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} \mbox{\hyperlink{namespaceTUtil_a026e5022c0a942b5d6ea06f02fb8339a}{Lepton\+Mass\+Scheme}} = \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}
+\item 
+\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} \mbox{\hyperlink{namespaceTUtil_ac1527caab4673d577edefd7d64c6f9f9}{Jet\+Mass\+Scheme}} = \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceTUtil_a22ae65dea83b7d412dd94f09ac3b7de7}\label{namespaceTUtil_a22ae65dea83b7d412dd94f09ac3b7de7}} 
+\index{TUtil@{TUtil}!adjustTopDaughters@{adjustTopDaughters}}
+\index{adjustTopDaughters@{adjustTopDaughters}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{adjustTopDaughters()}{adjustTopDaughters()}}
+{\footnotesize\ttfamily void T\+Util\+::adjust\+Top\+Daughters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} \&}]{daughters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ae24251edeb2dbc469b31a1e1dc05e51e}\label{namespaceTUtil_ae24251edeb2dbc469b31a1e1dc05e51e}} 
+\index{TUtil@{TUtil}!applyJetMassCorrection@{applyJetMassCorrection}}
+\index{applyJetMassCorrection@{applyJetMassCorrection}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{applyJetMassCorrection()}{applyJetMassCorrection()}}
+{\footnotesize\ttfamily void T\+Util\+::apply\+Jet\+Mass\+Correction (\begin{DoxyParamCaption}\item[{bool}]{flag = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a4824d6613cde741139ec5bc7e199ac57}\label{namespaceTUtil_a4824d6613cde741139ec5bc7e199ac57}} 
+\index{TUtil@{TUtil}!applyLeptonMassCorrection@{applyLeptonMassCorrection}}
+\index{applyLeptonMassCorrection@{applyLeptonMassCorrection}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{applyLeptonMassCorrection()}{applyLeptonMassCorrection()}}
+{\footnotesize\ttfamily void T\+Util\+::apply\+Lepton\+Mass\+Correction (\begin{DoxyParamCaption}\item[{bool}]{flag = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a4812281815c3cd3df59c9575878c76e6}\label{namespaceTUtil_a4812281815c3cd3df59c9575878c76e6}} 
+\index{TUtil@{TUtil}!BBHiggsMatEl@{BBHiggsMatEl}}
+\index{BBHiggsMatEl@{BBHiggsMatEl}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{BBHiggsMatEl()}{BBHiggsMatEl()}}
+{\footnotesize\ttfamily double T\+Util\+::\+B\+B\+Higgs\+Mat\+El (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{\mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$}]{event\+\_\+scales,  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{int}]{bot\+Process,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_af6d616d949d1a340c25d2ed39edd5ddd}\label{namespaceTUtil_af6d616d949d1a340c25d2ed39edd5ddd}} 
+\index{TUtil@{TUtil}!CheckPartonMomFraction@{CheckPartonMomFraction}}
+\index{CheckPartonMomFraction@{CheckPartonMomFraction}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{CheckPartonMomFraction()}{CheckPartonMomFraction()}}
+{\footnotesize\ttfamily bool T\+Util\+::\+Check\+Parton\+Mom\+Fraction (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{p0,  }\item[{const T\+Lorentz\+Vector \&}]{p1,  }\item[{double}]{xx\mbox{[}2\mbox{]},  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a30ecd7cb8ba8ecd70fc2f18c0d7d56ee}\label{namespaceTUtil_a30ecd7cb8ba8ecd70fc2f18c0d7d56ee}} 
+\index{TUtil@{TUtil}!ComplexBoost@{ComplexBoost}}
+\index{ComplexBoost@{ComplexBoost}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{ComplexBoost()}{ComplexBoost()}}
+{\footnotesize\ttfamily std\+::pair$<$ T\+Lorentz\+Vector, T\+Lorentz\+Vector $>$ T\+Util\+::\+Complex\+Boost (\begin{DoxyParamCaption}\item[{T\+Vector3 const \&}]{beta,  }\item[{T\+Lorentz\+Vector const \&}]{p4 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_afa81b178917557f2d5440957bbf5f08b}\label{namespaceTUtil_afa81b178917557f2d5440957bbf5f08b}} 
+\index{TUtil@{TUtil}!computeAngles@{computeAngles}}
+\index{computeAngles@{computeAngles}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeAngles()}{computeAngles()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{costhetastar,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{Phi1,  }\item[{T\+Lorentz\+Vector}]{Z1\+\_\+lept1,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{Z1\+\_\+lept2,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{Z2\+\_\+lept1,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{Z2\+\_\+lept2,  }\item[{int}]{Z2\+\_\+lept2\+Id }\end{DoxyParamCaption})}
+
+Compute decay angles from the lepton four-\/vectors and pdg\+Ids. ~\newline
+ Theta1 is the angle corresponding to Z1. Z1\+\_\+lept1 and Z1\+\_\+lept2 are supposed to come from the same Z. Leptons are re-\/ordered internally according to a standard convention\+: lept1 = negative-\/charged lepton (for OS pairs). \mbox{\Hypertarget{namespaceTUtil_a97664aaabcea7347c605799618ed1764}\label{namespaceTUtil_a97664aaabcea7347c605799618ed1764}} 
+\index{TUtil@{TUtil}!computeAnglesCS@{computeAnglesCS}}
+\index{computeAnglesCS@{computeAnglesCS}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeAnglesCS()}{computeAnglesCS()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+Angles\+CS (\begin{DoxyParamCaption}\item[{float const \&}]{pbeam,  }\item[{float \&}]{costhetastar,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{Phi1,  }\item[{T\+Lorentz\+Vector}]{Z1\+\_\+lept1,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{Z1\+\_\+lept2,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{Z2\+\_\+lept1,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{Z2\+\_\+lept2,  }\item[{int}]{Z2\+\_\+lept2\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}\label{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}} 
+\index{TUtil@{TUtil}!computeFakeJet@{computeFakeJet}}
+\index{computeFakeJet@{computeFakeJet}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeFakeJet()}{computeFakeJet()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+Fake\+Jet (\begin{DoxyParamCaption}\item[{T\+Lorentz\+Vector const \&}]{real\+Jet,  }\item[{T\+Lorentz\+Vector const \&}]{others,  }\item[{T\+Lorentz\+Vector \&}]{fake\+Jet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a90b6428b41acb4a3ca30d2307d1de436}\label{namespaceTUtil_a90b6428b41acb4a3ca30d2307d1de436}} 
+\index{TUtil@{TUtil}!ComputePDF@{ComputePDF}}
+\index{ComputePDF@{ComputePDF}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{ComputePDF()}{ComputePDF()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Compute\+P\+DF (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{p0,  }\item[{const T\+Lorentz\+Vector \&}]{p1,  }\item[{double}]{fx1\mbox{[}nmsq\mbox{]},  }\item[{double}]{fx2\mbox{[}nmsq\mbox{]},  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a8f220424c5f98ce6e208bb834ecd55a6}\label{namespaceTUtil_a8f220424c5f98ce6e208bb834ecd55a6}} 
+\index{TUtil@{TUtil}!computeTTHAngles@{computeTTHAngles}}
+\index{computeTTHAngles@{computeTTHAngles}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeTTHAngles()}{computeTTHAngles()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+T\+T\+H\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{hs,  }\item[{float \&}]{hincoming,  }\item[{float \&}]{h\+TT,  }\item[{float \&}]{Phi\+TT,  }\item[{float \&}]{Phi1,  }\item[{float \&}]{hbb,  }\item[{float \&}]{h\+WW,  }\item[{float \&}]{Phibb,  }\item[{float \&}]{Phi1bb,  }\item[{float \&}]{h\+Wplusf,  }\item[{float \&}]{Phi\+Wplusf,  }\item[{float \&}]{h\+Wminusf,  }\item[{float \&}]{Phi\+Wminusf,  }\item[{T\+Lorentz\+Vector}]{p4\+M11,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M12,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M21,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M22,  }\item[{int}]{Z2\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{b,  }\item[{int}]{b\+Id,  }\item[{T\+Lorentz\+Vector}]{Wplusf,  }\item[{int}]{Wplusf\+Id,  }\item[{T\+Lorentz\+Vector}]{Wplusfb,  }\item[{int}]{Wplusfb\+Id,  }\item[{T\+Lorentz\+Vector}]{bbar,  }\item[{int}]{bbar\+Id,  }\item[{T\+Lorentz\+Vector}]{Wminusf,  }\item[{int}]{Wminusf\+Id,  }\item[{T\+Lorentz\+Vector}]{Wminusfb,  }\item[{int}]{Wminusfb\+Id,  }\item[{T\+Lorentz\+Vector $\ast$}]{injet1 = {\ttfamily 0},  }\item[{int}]{injet1\+Id = {\ttfamily 0},  }\item[{T\+Lorentz\+Vector $\ast$}]{injet2 = {\ttfamily 0},  }\item[{int}]{injet2\+Id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ac25514d0b4bfda2daae52ee27f8d2fe8}\label{namespaceTUtil_ac25514d0b4bfda2daae52ee27f8d2fe8}} 
+\index{TUtil@{TUtil}!computeVBFAngles@{computeVBFAngles}}
+\index{computeVBFAngles@{computeVBFAngles}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeVBFAngles()}{computeVBFAngles()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+V\+B\+F\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{costhetastar,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{Phi1,  }\item[{float \&}]{Q2\+V1,  }\item[{float \&}]{Q2\+V2,  }\item[{T\+Lorentz\+Vector}]{p4\+M11,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M12,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M21,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M22,  }\item[{int}]{Z2\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{jet1,  }\item[{int}]{jet1\+Id,  }\item[{T\+Lorentz\+Vector}]{jet2,  }\item[{int}]{jet2\+Id,  }\item[{T\+Lorentz\+Vector $\ast$}]{injet1 = {\ttfamily 0},  }\item[{int}]{injet1\+Id = {\ttfamily 0},  }\item[{T\+Lorentz\+Vector $\ast$}]{injet2 = {\ttfamily 0},  }\item[{int}]{injet2\+Id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a9a0761a097eca0e6c200ad64ccfdf80f}\label{namespaceTUtil_a9a0761a097eca0e6c200ad64ccfdf80f}} 
+\index{TUtil@{TUtil}!computeVBFAngles\_ComplexBoost@{computeVBFAngles\_ComplexBoost}}
+\index{computeVBFAngles\_ComplexBoost@{computeVBFAngles\_ComplexBoost}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeVBFAngles\_ComplexBoost()}{computeVBFAngles\_ComplexBoost()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+V\+B\+F\+Angles\+\_\+\+Complex\+Boost (\begin{DoxyParamCaption}\item[{float \&}]{costhetastar,  }\item[{float \&}]{costheta1\+\_\+real,  }\item[{float \&}]{costheta1\+\_\+imag,  }\item[{float \&}]{costheta2\+\_\+real,  }\item[{float \&}]{costheta2\+\_\+imag,  }\item[{float \&}]{Phi,  }\item[{float \&}]{Phi1,  }\item[{float \&}]{Q2\+V1,  }\item[{float \&}]{Q2\+V2,  }\item[{T\+Lorentz\+Vector}]{p4\+M11,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M12,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M21,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M22,  }\item[{int}]{Z2\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{jet1,  }\item[{int}]{jet1\+Id,  }\item[{T\+Lorentz\+Vector}]{jet2,  }\item[{int}]{jet2\+Id,  }\item[{T\+Lorentz\+Vector $\ast$}]{injet1 = {\ttfamily 0},  }\item[{int}]{injet1\+Id = {\ttfamily 0},  }\item[{T\+Lorentz\+Vector $\ast$}]{injet2 = {\ttfamily 0},  }\item[{int}]{injet2\+Id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a928302e7a9815e5777eeea1fcd832a6e}\label{namespaceTUtil_a928302e7a9815e5777eeea1fcd832a6e}} 
+\index{TUtil@{TUtil}!computeVHAngles@{computeVHAngles}}
+\index{computeVHAngles@{computeVHAngles}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{computeVHAngles()}{computeVHAngles()}}
+{\footnotesize\ttfamily void T\+Util\+::compute\+V\+H\+Angles (\begin{DoxyParamCaption}\item[{float \&}]{costhetastar,  }\item[{float \&}]{costheta1,  }\item[{float \&}]{costheta2,  }\item[{float \&}]{Phi,  }\item[{float \&}]{Phi1,  }\item[{float \&}]{m1,  }\item[{float \&}]{m2,  }\item[{T\+Lorentz\+Vector}]{p4\+M11,  }\item[{int}]{Z1\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M12,  }\item[{int}]{Z1\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M21,  }\item[{int}]{Z2\+\_\+lept1\+Id,  }\item[{T\+Lorentz\+Vector}]{p4\+M22,  }\item[{int}]{Z2\+\_\+lept2\+Id,  }\item[{T\+Lorentz\+Vector}]{jet1,  }\item[{int}]{jet1\+Id,  }\item[{T\+Lorentz\+Vector}]{jet2,  }\item[{int}]{jet2\+Id,  }\item[{T\+Lorentz\+Vector $\ast$}]{injet1 = {\ttfamily 0},  }\item[{int}]{injet1\+Id = {\ttfamily 0},  }\item[{T\+Lorentz\+Vector $\ast$}]{injet2 = {\ttfamily 0},  }\item[{int}]{injet2\+Id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a9dabf236e23c4ae39f05d575a1e501f9}\label{namespaceTUtil_a9dabf236e23c4ae39f05d575a1e501f9}} 
+\index{TUtil@{TUtil}!constrainedRemovePairMass@{constrainedRemovePairMass}}
+\index{constrainedRemovePairMass@{constrainedRemovePairMass}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{constrainedRemovePairMass()}{constrainedRemovePairMass()}}
+{\footnotesize\ttfamily void T\+Util\+::constrained\+Remove\+Pair\+Mass (\begin{DoxyParamCaption}\item[{T\+Lorentz\+Vector \&}]{p1,  }\item[{T\+Lorentz\+Vector \&}]{p2,  }\item[{double}]{m1 = {\ttfamily 0},  }\item[{double}]{m2 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a34005f7891c27c535153be4ab35211f0}\label{namespaceTUtil_a34005f7891c27c535153be4ab35211f0}} 
+\index{TUtil@{TUtil}!ConvertThreeBodyDecayCandidate@{ConvertThreeBodyDecayCandidate}}
+\index{ConvertThreeBodyDecayCandidate@{ConvertThreeBodyDecayCandidate}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{ConvertThreeBodyDecayCandidate()}{ConvertThreeBodyDecayCandidate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAThreeBodyDecayCandidate}{M\+E\+L\+A\+Three\+Body\+Decay\+Candidate}} $\ast$ T\+Util\+::\+Convert\+Three\+Body\+Decay\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{tbd\+Daughters,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ $\ast$}]{particle\+List,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classMELAThreeBodyDecayCandidate}{M\+E\+L\+A\+Three\+Body\+Decay\+Candidate}} $\ast$ $>$ $\ast$}]{tbd\+Cand\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_accabe530df4828c083abd7ea98bf5da2}\label{namespaceTUtil_accabe530df4828c083abd7ea98bf5da2}} 
+\index{TUtil@{TUtil}!ConvertVectorFormat@{ConvertVectorFormat}}
+\index{ConvertVectorFormat@{ConvertVectorFormat}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{ConvertVectorFormat()}{ConvertVectorFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ T\+Util\+::\+Convert\+Vector\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Daughters,  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Associated,  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Mothers,  }\item[{bool}]{is\+Gen,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ $\ast$}]{particle\+List,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$ $>$ $\ast$}]{cand\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a2f0fce2b3d66f17b673f2e75d87adf00}\label{namespaceTUtil_a2f0fce2b3d66f17b673f2e75d87adf00}} 
+\index{TUtil@{TUtil}!GetAlphaS@{GetAlphaS}}
+\index{GetAlphaS@{GetAlphaS}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetAlphaS()}{GetAlphaS()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Get\+AlphaS (\begin{DoxyParamCaption}\item[{double $\ast$}]{alphas\+\_\+,  }\item[{double $\ast$}]{alphasmz\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a2bfa5115b0bf398c2fae3cc36aedf9f5}\label{namespaceTUtil_a2bfa5115b0bf398c2fae3cc36aedf9f5}} 
+\index{TUtil@{TUtil}!GetBoostedParticleVectors@{GetBoostedParticleVectors}}
+\index{GetBoostedParticleVectors@{GetBoostedParticleVectors}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetBoostedParticleVectors()}{GetBoostedParticleVectors()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Get\+Boosted\+Particle\+Vectors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$}]{mela\+Cand,  }\item[{\mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} \&}]{mela\+\_\+event,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity = {\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce}{T\+Var\+::\+D\+E\+B\+UG}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a8cff275aa36f42dd114b266e6f8dcd74}\label{namespaceTUtil_a8cff275aa36f42dd114b266e6f8dcd74}} 
+\index{TUtil@{TUtil}!GetCKMElement@{GetCKMElement}}
+\index{GetCKMElement@{GetCKMElement}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetCKMElement()}{GetCKMElement()}}
+{\footnotesize\ttfamily double T\+Util\+::\+Get\+C\+K\+M\+Element (\begin{DoxyParamCaption}\item[{int}]{iquark,  }\item[{int}]{jquark }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a57432221ba2618d1ee87cc363de43adf}\label{namespaceTUtil_a57432221ba2618d1ee87cc363de43adf}} 
+\index{TUtil@{TUtil}!GetDecayWidth@{GetDecayWidth}}
+\index{GetDecayWidth@{GetDecayWidth}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetDecayWidth()}{GetDecayWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double T\+Util\+::\+Get\+Decay\+Width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a2abfaba12b321c4f89447482105635a5}\label{namespaceTUtil_a2abfaba12b321c4f89447482105635a5}} 
+\index{TUtil@{TUtil}!GetDecayWidth@{GetDecayWidth}}
+\index{GetDecayWidth@{GetDecayWidth}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetDecayWidth()}{GetDecayWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double T\+Util\+::\+Get\+Decay\+Width (\begin{DoxyParamCaption}\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_aa1d4b6a7bde96bc1a25ecfbee76d7ee5}\label{namespaceTUtil_aa1d4b6a7bde96bc1a25ecfbee76d7ee5}} 
+\index{TUtil@{TUtil}!GetMass@{GetMass}}
+\index{GetMass@{GetMass}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetMass()}{GetMass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double T\+Util\+::\+Get\+Mass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_af0a7eb81fc049eae88e8be0e72e27451}\label{namespaceTUtil_af0a7eb81fc049eae88e8be0e72e27451}} 
+\index{TUtil@{TUtil}!GetMass@{GetMass}}
+\index{GetMass@{GetMass}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetMass()}{GetMass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double T\+Util\+::\+Get\+Mass (\begin{DoxyParamCaption}\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a6e9f4b3d6db136b1bca9f7f7642565cc}\label{namespaceTUtil_a6e9f4b3d6db136b1bca9f7f7642565cc}} 
+\index{TUtil@{TUtil}!GetMassWidth@{GetMassWidth}}
+\index{GetMassWidth@{GetMassWidth}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetMassWidth()}{GetMassWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+Util\+::\+Get\+Mass\+Width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part,  }\item[{double \&}]{m,  }\item[{double \&}]{ga }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a72e7c71bfda18734d90f846c43f0e0a5}\label{namespaceTUtil_a72e7c71bfda18734d90f846c43f0e0a5}} 
+\index{TUtil@{TUtil}!GetMassWidth@{GetMassWidth}}
+\index{GetMassWidth@{GetMassWidth}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetMassWidth()}{GetMassWidth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+Util\+::\+Get\+Mass\+Width (\begin{DoxyParamCaption}\item[{int}]{ipart,  }\item[{double \&}]{m,  }\item[{double \&}]{ga }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_aec249fff7743f70229476d9a17dadf99}\label{namespaceTUtil_aec249fff7743f70229476d9a17dadf99}} 
+\index{TUtil@{TUtil}!GetMCFMParticleLabel@{GetMCFMParticleLabel}}
+\index{GetMCFMParticleLabel@{GetMCFMParticleLabel}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{GetMCFMParticleLabel()}{GetMCFMParticleLabel()}}
+{\footnotesize\ttfamily T\+String T\+Util\+::\+Get\+M\+C\+F\+M\+Particle\+Label (\begin{DoxyParamCaption}\item[{const int \&}]{pid,  }\item[{bool}]{use\+QJ,  }\item[{bool}]{use\+Extended\+Conventions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ae53582caadc4362e0dc6f9519dede582}\label{namespaceTUtil_ae53582caadc4362e0dc6f9519dede582}} 
+\index{TUtil@{TUtil}!HJJMatEl@{HJJMatEl}}
+\index{HJJMatEl@{HJJMatEl}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{HJJMatEl()}{HJJMatEl()}}
+{\footnotesize\ttfamily double T\+Util\+::\+H\+J\+J\+Mat\+El (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{\mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$}]{event\+\_\+scales,  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a8b3783c74e8947c4c7f5c1bb2d6cef5e}\label{namespaceTUtil_a8b3783c74e8947c4c7f5c1bb2d6cef5e}} 
+\index{TUtil@{TUtil}!InitJHUGenMELA@{InitJHUGenMELA}}
+\index{InitJHUGenMELA@{InitJHUGenMELA}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{InitJHUGenMELA()}{InitJHUGenMELA()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Init\+J\+H\+U\+Gen\+M\+E\+LA (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pathto\+P\+D\+F\+Set,  }\item[{int}]{P\+D\+F\+Member,  }\item[{double}]{collider\+\_\+sqrts }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a4a00d03fa1abeb4335b6abd9fae90663}\label{namespaceTUtil_a4a00d03fa1abeb4335b6abd9fae90663}} 
+\index{TUtil@{TUtil}!InterpretScaleScheme@{InterpretScaleScheme}}
+\index{InterpretScaleScheme@{InterpretScaleScheme}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{InterpretScaleScheme()}{InterpretScaleScheme()}}
+{\footnotesize\ttfamily double T\+Util\+::\+Interpret\+Scale\+Scheme (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{const \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} \&}]{scheme,  }\item[{T\+Lorentz\+Vector}]{p\mbox{[}mxpart\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ad2f4fde8f2c90dadebec96378b36144d}\label{namespaceTUtil_ad2f4fde8f2c90dadebec96378b36144d}} 
+\index{TUtil@{TUtil}!JHUGenMatEl@{JHUGenMatEl}}
+\index{JHUGenMatEl@{JHUGenMatEl}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{JHUGenMatEl()}{JHUGenMatEl()}}
+{\footnotesize\ttfamily double T\+Util\+::\+J\+H\+U\+Gen\+Mat\+El (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{\mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$}]{event\+\_\+scales,  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a5a527eeac9cb1eef2572d69f647e1e30}\label{namespaceTUtil_a5a527eeac9cb1eef2572d69f647e1e30}} 
+\index{TUtil@{TUtil}!MCFM\_chooser@{MCFM\_chooser}}
+\index{MCFM\_chooser@{MCFM\_chooser}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{MCFM\_chooser()}{MCFM\_chooser()}}
+{\footnotesize\ttfamily bool T\+Util\+::\+M\+C\+F\+M\+\_\+chooser (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} \&}]{lepton\+Interf,  }\item[{const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&}]{verbosity,  }\item[{const \mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} \&}]{mela\+\_\+event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ae2cf0c66b72320a09e280aa5681d4f19}\label{namespaceTUtil_ae2cf0c66b72320a09e280aa5681d4f19}} 
+\index{TUtil@{TUtil}!MCFM\_masscuts@{MCFM\_masscuts}}
+\index{MCFM\_masscuts@{MCFM\_masscuts}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{MCFM\_masscuts()}{MCFM\_masscuts()}}
+{\footnotesize\ttfamily bool T\+Util\+::\+M\+C\+F\+M\+\_\+masscuts (\begin{DoxyParamCaption}\item[{double}]{s\mbox{[}$\,$\mbox{]}\mbox{[}mxpart\mbox{]},  }\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a886fd38c76f045c4d516492ecf1cb0ce}\label{namespaceTUtil_a886fd38c76f045c4d516492ecf1cb0ce}} 
+\index{TUtil@{TUtil}!MCFM\_SetupParticleCouplings@{MCFM\_SetupParticleCouplings}}
+\index{MCFM\_SetupParticleCouplings@{MCFM\_SetupParticleCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{MCFM\_SetupParticleCouplings()}{MCFM\_SetupParticleCouplings()}}
+{\footnotesize\ttfamily bool T\+Util\+::\+M\+C\+F\+M\+\_\+\+Setup\+Particle\+Couplings (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&}]{verbosity,  }\item[{const \mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} \&}]{mela\+\_\+event,  }\item[{std\+::vector$<$ int $>$ $\ast$}]{part\+Order,  }\item[{std\+::vector$<$ int $>$ $\ast$}]{apart\+Order }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a009f1369c2ba692d3fa2ceb2097ef2cc}\label{namespaceTUtil_a009f1369c2ba692d3fa2ceb2097ef2cc}} 
+\index{TUtil@{TUtil}!MCFM\_smalls@{MCFM\_smalls}}
+\index{MCFM\_smalls@{MCFM\_smalls}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{MCFM\_smalls()}{MCFM\_smalls()}}
+{\footnotesize\ttfamily bool T\+Util\+::\+M\+C\+F\+M\+\_\+smalls (\begin{DoxyParamCaption}\item[{double}]{s\mbox{[}$\,$\mbox{]}\mbox{[}mxpart\mbox{]},  }\item[{int}]{npart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a7f6ec9418811fe987c034629691182af}\label{namespaceTUtil_a7f6ec9418811fe987c034629691182af}} 
+\index{TUtil@{TUtil}!PrintCandidateSummary@{PrintCandidateSummary}}
+\index{PrintCandidateSummary@{PrintCandidateSummary}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{PrintCandidateSummary()}{PrintCandidateSummary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void T\+Util\+::\+Print\+Candidate\+Summary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$}]{cand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a12cc275df4bf912ec19b38f3fbe936f0}\label{namespaceTUtil_a12cc275df4bf912ec19b38f3fbe936f0}} 
+\index{TUtil@{TUtil}!PrintCandidateSummary@{PrintCandidateSummary}}
+\index{PrintCandidateSummary@{PrintCandidateSummary}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{PrintCandidateSummary()}{PrintCandidateSummary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+Util\+::\+Print\+Candidate\+Summary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}} $\ast$}]{cand }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_afa7eed75a1c5dfc02d8c068efffe18e7}\label{namespaceTUtil_afa7eed75a1c5dfc02d8c068efffe18e7}} 
+\index{TUtil@{TUtil}!removeMassFromPair@{removeMassFromPair}}
+\index{removeMassFromPair@{removeMassFromPair}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{removeMassFromPair()}{removeMassFromPair()}}
+{\footnotesize\ttfamily std\+::pair$<$ T\+Lorentz\+Vector, T\+Lorentz\+Vector $>$ T\+Util\+::remove\+Mass\+From\+Pair (\begin{DoxyParamCaption}\item[{T\+Lorentz\+Vector const \&}]{jet1,  }\item[{int const \&}]{jet1\+Id,  }\item[{T\+Lorentz\+Vector const \&}]{jet2,  }\item[{int const \&}]{jet2\+Id,  }\item[{double}]{m1 = {\ttfamily 0},  }\item[{double}]{m2 = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a2e1b502237f00dd823a0ef37b49e7aaa}\label{namespaceTUtil_a2e1b502237f00dd823a0ef37b49e7aaa}} 
+\index{TUtil@{TUtil}!ResetAmplitudeIncludes@{ResetAmplitudeIncludes}}
+\index{ResetAmplitudeIncludes@{ResetAmplitudeIncludes}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{ResetAmplitudeIncludes()}{ResetAmplitudeIncludes()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Reset\+Amplitude\+Includes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a7ed7b2d062c0a1fbb809e065e6752cce}\label{namespaceTUtil_a7ed7b2d062c0a1fbb809e065e6752cce}} 
+\index{TUtil@{TUtil}!ResonancePropagator@{ResonancePropagator}}
+\index{ResonancePropagator@{ResonancePropagator}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{ResonancePropagator()}{ResonancePropagator()}}
+{\footnotesize\ttfamily double T\+Util\+::\+Resonance\+Propagator (\begin{DoxyParamCaption}\item[{double const \&}]{sqrts,  }\item[{\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016}{T\+Var\+::\+Resonance\+Propagator\+Scheme}}}]{scheme }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ab0e969365520b20156c39c71b1f4706b}\label{namespaceTUtil_ab0e969365520b20156c39c71b1f4706b}} 
+\index{TUtil@{TUtil}!scaleMomentumToEnergy@{scaleMomentumToEnergy}}
+\index{scaleMomentumToEnergy@{scaleMomentumToEnergy}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{scaleMomentumToEnergy()}{scaleMomentumToEnergy()}}
+{\footnotesize\ttfamily void T\+Util\+::scale\+Momentum\+To\+Energy (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{massive\+Jet,  }\item[{T\+Lorentz\+Vector \&}]{massless\+Jet,  }\item[{double}]{mass = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ab551562aaa197841cd0a638f1f38b0ff}\label{namespaceTUtil_ab551562aaa197841cd0a638f1f38b0ff}} 
+\index{TUtil@{TUtil}!SetAlphaS@{SetAlphaS}}
+\index{SetAlphaS@{SetAlphaS}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetAlphaS()}{SetAlphaS()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+AlphaS (\begin{DoxyParamCaption}\item[{double \&}]{Q\+\_\+ren,  }\item[{double \&}]{Q\+\_\+fac,  }\item[{double}]{multiplier\+\_\+ren,  }\item[{double}]{multiplier\+\_\+fac,  }\item[{int}]{mynloop,  }\item[{int}]{mynflav,  }\item[{std\+::string}]{mypartons }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a9082c83a90005205bb355123c1c24875}\label{namespaceTUtil_a9082c83a90005205bb355123c1c24875}} 
+\index{TUtil@{TUtil}!SetCKMElements@{SetCKMElements}}
+\index{SetCKMElements@{SetCKMElements}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetCKMElements()}{SetCKMElements()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+C\+K\+M\+Elements (\begin{DoxyParamCaption}\item[{double $\ast$}]{invckm\+\_\+ud,  }\item[{double $\ast$}]{invckm\+\_\+us,  }\item[{double $\ast$}]{invckm\+\_\+cd,  }\item[{double $\ast$}]{invckm\+\_\+cs,  }\item[{double $\ast$}]{invckm\+\_\+ts,  }\item[{double $\ast$}]{invckm\+\_\+tb,  }\item[{double $\ast$}]{invckm\+\_\+ub = {\ttfamily 0},  }\item[{double $\ast$}]{invckm\+\_\+cb = {\ttfamily 0},  }\item[{double $\ast$}]{invckm\+\_\+td = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_af2f4d9e772c5b03b8554ecbd6778f623}\label{namespaceTUtil_af2f4d9e772c5b03b8554ecbd6778f623}} 
+\index{TUtil@{TUtil}!SetDecayWidth@{SetDecayWidth}}
+\index{SetDecayWidth@{SetDecayWidth}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetDecayWidth()}{SetDecayWidth()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+Decay\+Width (\begin{DoxyParamCaption}\item[{double}]{inwidth,  }\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ab719f9b19416aa6c8df52515ac6a6db4}\label{namespaceTUtil_ab719f9b19416aa6c8df52515ac6a6db4}} 
+\index{TUtil@{TUtil}!SetEwkCouplingParameters@{SetEwkCouplingParameters}}
+\index{SetEwkCouplingParameters@{SetEwkCouplingParameters}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetEwkCouplingParameters()}{SetEwkCouplingParameters()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+Ewk\+Coupling\+Parameters (\begin{DoxyParamCaption}\item[{double}]{ext\+\_\+\+Gf,  }\item[{double}]{ext\+\_\+aemmz,  }\item[{double}]{ext\+\_\+mW,  }\item[{double}]{ext\+\_\+mZ,  }\item[{double}]{ext\+\_\+xW,  }\item[{int}]{ext\+\_\+ewscheme }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a4f9532dc2110d5229def322ed98d61bc}\label{namespaceTUtil_a4f9532dc2110d5229def322ed98d61bc}} 
+\index{TUtil@{TUtil}!setJetMassScheme@{setJetMassScheme}}
+\index{setJetMassScheme@{setJetMassScheme}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{setJetMassScheme()}{setJetMassScheme()}}
+{\footnotesize\ttfamily void T\+Util\+::set\+Jet\+Mass\+Scheme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}}}]{scheme = {\ttfamily \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a89b248250ed67dd79baf7e0a911473d2}\label{namespaceTUtil_a89b248250ed67dd79baf7e0a911473d2}} 
+\index{TUtil@{TUtil}!SetJHUGenAZffCouplings@{SetJHUGenAZffCouplings}}
+\index{SetJHUGenAZffCouplings@{SetJHUGenAZffCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenAZffCouplings()}{SetJHUGenAZffCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+A\+Zff\+Couplings (\begin{DoxyParamCaption}\item[{bool}]{need\+A\+Zff,  }\item[{double}]{A\+Zffcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+A\+Zff\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ac6fdb5a1ca4802adaaee14c1c052efd4}\label{namespaceTUtil_ac6fdb5a1ca4802adaaee14c1c052efd4}} 
+\index{TUtil@{TUtil}!SetJHUGenDistinguishWWCouplings@{SetJHUGenDistinguishWWCouplings}}
+\index{SetJHUGenDistinguishWWCouplings@{SetJHUGenDistinguishWWCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenDistinguishWWCouplings()}{SetJHUGenDistinguishWWCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Distinguish\+W\+W\+Couplings (\begin{DoxyParamCaption}\item[{bool}]{do\+Allow }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ae8313a38acdcb638b50a63bf04bc472f}\label{namespaceTUtil_ae8313a38acdcb638b50a63bf04bc472f}} 
+\index{TUtil@{TUtil}!SetJHUGenHiggsMassWidth@{SetJHUGenHiggsMassWidth}}
+\index{SetJHUGenHiggsMassWidth@{SetJHUGenHiggsMassWidth}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenHiggsMassWidth()}{SetJHUGenHiggsMassWidth()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Higgs\+Mass\+Width (\begin{DoxyParamCaption}\item[{double}]{M\+Reso,  }\item[{double}]{Ga\+Reso }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_aa7944801377c33a4e6b405058c03e1c7}\label{namespaceTUtil_aa7944801377c33a4e6b405058c03e1c7}} 
+\index{TUtil@{TUtil}!SetJHUGenSpinOneCouplings@{SetJHUGenSpinOneCouplings}}
+\index{SetJHUGenSpinOneCouplings@{SetJHUGenSpinOneCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenSpinOneCouplings()}{SetJHUGenSpinOneCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Spin\+One\+Couplings (\begin{DoxyParamCaption}\item[{double}]{Zqqcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+Z\+Q\+Q\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Zvvcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+Z\+V\+V\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a9153965831508e074e8ef8fdc0c261b8}\label{namespaceTUtil_a9153965831508e074e8ef8fdc0c261b8}} 
+\index{TUtil@{TUtil}!SetJHUGenSpinTwoCouplings@{SetJHUGenSpinTwoCouplings}}
+\index{SetJHUGenSpinTwoCouplings@{SetJHUGenSpinTwoCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenSpinTwoCouplings()}{SetJHUGenSpinTwoCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Spin\+Two\+Couplings (\begin{DoxyParamCaption}\item[{double}]{Gacoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+G\+G\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Gvvcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Gvvpcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Gvpvpcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{q\+Left\+Rightcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+G\+Q\+Q\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a534d1442fc379e1a036eb23050c13c5b}\label{namespaceTUtil_a534d1442fc379e1a036eb23050c13c5b}} 
+\index{TUtil@{TUtil}!SetJHUGenSpinZeroGGCouplings@{SetJHUGenSpinZeroGGCouplings}}
+\index{SetJHUGenSpinZeroGGCouplings@{SetJHUGenSpinZeroGGCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenSpinZeroGGCouplings()}{SetJHUGenSpinZeroGGCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Spin\+Zero\+G\+G\+Couplings (\begin{DoxyParamCaption}\item[{double}]{Hggcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+G\+G\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ac5984b5d69c38cd854dc9368ba0d66ef}\label{namespaceTUtil_ac5984b5d69c38cd854dc9368ba0d66ef}} 
+\index{TUtil@{TUtil}!SetJHUGenSpinZeroQQCouplings@{SetJHUGenSpinZeroQQCouplings}}
+\index{SetJHUGenSpinZeroQQCouplings@{SetJHUGenSpinZeroQQCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenSpinZeroQQCouplings()}{SetJHUGenSpinZeroQQCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Spin\+Zero\+Q\+Q\+Couplings (\begin{DoxyParamCaption}\item[{double}]{Hqqcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+Q\+Q\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a1706a661b9c70c8a8e5e3180e8ff676f}\label{namespaceTUtil_a1706a661b9c70c8a8e5e3180e8ff676f}} 
+\index{TUtil@{TUtil}!SetJHUGenSpinZeroVVCouplings@{SetJHUGenSpinZeroVVCouplings}}
+\index{SetJHUGenSpinZeroVVCouplings@{SetJHUGenSpinZeroVVCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenSpinZeroVVCouplings()}{SetJHUGenSpinZeroVVCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Spin\+Zero\+V\+V\+Couplings (\begin{DoxyParamCaption}\item[{double}]{Hvvcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Hvvpcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Hvpvpcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]},  }\item[{int}]{Hvvcoupl\+\_\+cqsq\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+S\+Q\mbox{]},  }\item[{double}]{Hvv\+Lambda\+\_\+qsq\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+L\+A\+M\+B\+D\+A\+Q\+S\+Q\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\+\_\+\+C\+Q\+S\+Q\mbox{]},  }\item[{bool}]{use\+W\+Wcoupl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a1c600f2c3dcc37a9512d659f46a364aa}\label{namespaceTUtil_a1c600f2c3dcc37a9512d659f46a364aa}} 
+\index{TUtil@{TUtil}!SetJHUGenVprimeContactCouplings@{SetJHUGenVprimeContactCouplings}}
+\index{SetJHUGenVprimeContactCouplings@{SetJHUGenVprimeContactCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetJHUGenVprimeContactCouplings()}{SetJHUGenVprimeContactCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+J\+H\+U\+Gen\+Vprime\+Contact\+Couplings (\begin{DoxyParamCaption}\item[{double}]{Zpffcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]},  }\item[{double}]{Wpffcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a8a1a325f3bb025d57fa9b649a31c93d2}\label{namespaceTUtil_a8a1a325f3bb025d57fa9b649a31c93d2}} 
+\index{TUtil@{TUtil}!setLeptonMassScheme@{setLeptonMassScheme}}
+\index{setLeptonMassScheme@{setLeptonMassScheme}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{setLeptonMassScheme()}{setLeptonMassScheme()}}
+{\footnotesize\ttfamily void T\+Util\+::set\+Lepton\+Mass\+Scheme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}}}]{scheme = {\ttfamily \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a51c225f177937798f635f16e7999af99}\label{namespaceTUtil_a51c225f177937798f635f16e7999af99}} 
+\index{TUtil@{TUtil}!SetMass@{SetMass}}
+\index{SetMass@{SetMass}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetMass()}{SetMass()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+Mass (\begin{DoxyParamCaption}\item[{double}]{inmass,  }\item[{int}]{ipart }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ac48c90afbcdf62150abcc380ea428eef}\label{namespaceTUtil_ac48c90afbcdf62150abcc380ea428eef}} 
+\index{TUtil@{TUtil}!SetMCFMaTQGCCouplings@{SetMCFMaTQGCCouplings}}
+\index{SetMCFMaTQGCCouplings@{SetMCFMaTQGCCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetMCFMaTQGCCouplings()}{SetMCFMaTQGCCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+M\+C\+F\+Ma\+T\+Q\+G\+C\+Couplings (\begin{DoxyParamCaption}\item[{bool}]{use\+B\+SM,  }\item[{\mbox{\hyperlink{classaTQGCCouplings}{a\+T\+Q\+G\+C\+Couplings}} const $\ast$}]{couplings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a345c5ae46930918d36cb7ca55b01c853}\label{namespaceTUtil_a345c5ae46930918d36cb7ca55b01c853}} 
+\index{TUtil@{TUtil}!SetMCFMAZffCouplings@{SetMCFMAZffCouplings}}
+\index{SetMCFMAZffCouplings@{SetMCFMAZffCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetMCFMAZffCouplings()}{SetMCFMAZffCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+M\+C\+F\+M\+A\+Zff\+Couplings (\begin{DoxyParamCaption}\item[{bool}]{use\+B\+SM,  }\item[{\mbox{\hyperlink{classAZffCouplings}{A\+Zff\+Couplings}} const $\ast$}]{Zcouplings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a45366db1a43b30a467e146dc8477f771}\label{namespaceTUtil_a45366db1a43b30a467e146dc8477f771}} 
+\index{TUtil@{TUtil}!SetMCFMSpinZeroCouplings@{SetMCFMSpinZeroCouplings}}
+\index{SetMCFMSpinZeroCouplings@{SetMCFMSpinZeroCouplings}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SetMCFMSpinZeroCouplings()}{SetMCFMSpinZeroCouplings()}}
+{\footnotesize\ttfamily void T\+Util\+::\+Set\+M\+C\+F\+M\+Spin\+Zero\+Couplings (\begin{DoxyParamCaption}\item[{bool}]{use\+B\+SM,  }\item[{\mbox{\hyperlink{classSpinZeroCouplings}{Spin\+Zero\+Couplings}} const $\ast$}]{Hcouplings,  }\item[{bool}]{force\+ZZ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a460b9061f340996162890fcbdbef34b9}\label{namespaceTUtil_a460b9061f340996162890fcbdbef34b9}} 
+\index{TUtil@{TUtil}!SumMatrixElementPDF@{SumMatrixElementPDF}}
+\index{SumMatrixElementPDF@{SumMatrixElementPDF}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SumMatrixElementPDF()}{SumMatrixElementPDF()}}
+{\footnotesize\ttfamily double T\+Util\+::\+Sum\+Matrix\+Element\+P\+DF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{const \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} \&}]{lepton\+Interf,  }\item[{\mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$}]{event\+\_\+scales,  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_adf7b61bc902b23177090ce6b48a7f026}\label{namespaceTUtil_adf7b61bc902b23177090ce6b48a7f026}} 
+\index{TUtil@{TUtil}!SumMEPDF@{SumMEPDF}}
+\index{SumMEPDF@{SumMEPDF}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{SumMEPDF()}{SumMEPDF()}}
+{\footnotesize\ttfamily double T\+Util\+::\+Sum\+M\+E\+P\+DF (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{p0,  }\item[{const T\+Lorentz\+Vector \&}]{p1,  }\item[{double}]{msq\mbox{[}nmsq\mbox{]}\mbox{[}nmsq\mbox{]},  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_ae18db0378d82ee0e0efb6dab7216690b}\label{namespaceTUtil_ae18db0378d82ee0e0efb6dab7216690b}} 
+\index{TUtil@{TUtil}!TTHiggsMatEl@{TTHiggsMatEl}}
+\index{TTHiggsMatEl@{TTHiggsMatEl}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{TTHiggsMatEl()}{TTHiggsMatEl()}}
+{\footnotesize\ttfamily double T\+Util\+::\+T\+T\+Higgs\+Mat\+El (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{\mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$}]{event\+\_\+scales,  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{int}]{top\+Decay,  }\item[{int}]{top\+Process,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a30b0f3cd4082fab9f6d057b0243f26de}\label{namespaceTUtil_a30b0f3cd4082fab9f6d057b0243f26de}} 
+\index{TUtil@{TUtil}!VHiggsMatEl@{VHiggsMatEl}}
+\index{VHiggsMatEl@{VHiggsMatEl}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{VHiggsMatEl()}{VHiggsMatEl()}}
+{\footnotesize\ttfamily double T\+Util\+::\+V\+Higgs\+Mat\+El (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \&}]{matrix\+Element,  }\item[{\mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}} $\ast$}]{event\+\_\+scales,  }\item[{\mbox{\hyperlink{classMelaIO}{Mela\+IO}} $\ast$}]{Rcd\+ME,  }\item[{const double \&}]{E\+B\+E\+AM,  }\item[{bool}]{include\+Higgs\+Decay,  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceTUtil_a3e24aa1f4311876d507e30ff4162a1db}\label{namespaceTUtil_a3e24aa1f4311876d507e30ff4162a1db}} 
+\index{TUtil@{TUtil}!WipeMEArray@{WipeMEArray}}
+\index{WipeMEArray@{WipeMEArray}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{WipeMEArray()}{WipeMEArray()}}
+{\footnotesize\ttfamily int T\+Util\+::\+Wipe\+M\+E\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \&}]{process,  }\item[{const \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \&}]{production,  }\item[{const int}]{id\mbox{[}mxpart\mbox{]},  }\item[{double}]{msq\mbox{[}nmsq\mbox{]}\mbox{[}nmsq\mbox{]},  }\item[{const \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \&}]{verbosity }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceTUtil_a5908ccfb76dc006556fffda3fb26898a}\label{namespaceTUtil_a5908ccfb76dc006556fffda3fb26898a}} 
+\index{TUtil@{TUtil}!forbidMassiveJets@{forbidMassiveJets}}
+\index{forbidMassiveJets@{forbidMassiveJets}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{forbidMassiveJets}{forbidMassiveJets}}
+{\footnotesize\ttfamily bool T\+Util\+::forbid\+Massive\+Jets = true}
+
+\mbox{\Hypertarget{namespaceTUtil_afd769e0556af6d51531e549c9f683e9a}\label{namespaceTUtil_afd769e0556af6d51531e549c9f683e9a}} 
+\index{TUtil@{TUtil}!forbidMassiveLeptons@{forbidMassiveLeptons}}
+\index{forbidMassiveLeptons@{forbidMassiveLeptons}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{forbidMassiveLeptons}{forbidMassiveLeptons}}
+{\footnotesize\ttfamily bool T\+Util\+::forbid\+Massive\+Leptons = true}
+
+
+
+Remove fermion mass if the flag is set to true. 
+
+\mbox{\Hypertarget{namespaceTUtil_ac1527caab4673d577edefd7d64c6f9f9}\label{namespaceTUtil_ac1527caab4673d577edefd7d64c6f9f9}} 
+\index{TUtil@{TUtil}!JetMassScheme@{JetMassScheme}}
+\index{JetMassScheme@{JetMassScheme}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{JetMassScheme}{JetMassScheme}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} T\+Util\+::\+Jet\+Mass\+Scheme = \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}}
+
+\mbox{\Hypertarget{namespaceTUtil_a026e5022c0a942b5d6ea06f02fb8339a}\label{namespaceTUtil_a026e5022c0a942b5d6ea06f02fb8339a}} 
+\index{TUtil@{TUtil}!LeptonMassScheme@{LeptonMassScheme}}
+\index{LeptonMassScheme@{LeptonMassScheme}!TUtil@{TUtil}}
+\doxysubsubsection{\texorpdfstring{LeptonMassScheme}{LeptonMassScheme}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} T\+Util\+::\+Lepton\+Mass\+Scheme = \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}}
+

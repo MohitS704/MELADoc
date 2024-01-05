@@ -1,0 +1,172 @@
+\hypertarget{structExtBin}{}\doxysection{Ext\+Bin Struct Reference}
+\label{structExtBin}\index{ExtBin@{ExtBin}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{add\+Event}} (float mass, float me, float me2, float weight=1)
+\item 
+void \mbox{\hyperlink{structExtBin_a9a587e8a2cd99e748eb1d6d87350e94c}{sift}} ()
+\item 
+void \mbox{\hyperlink{structExtBin_a37cd8e32daa1b715edaacb27ae542a00}{adjust\+Weights}} (float refth=3.)
+\item 
+void \mbox{\hyperlink{structExtBin_ade8385937445d26a51ca0fe07ca44955}{merge\+Bin}} (const \mbox{\hyperlink{structExtBin}{Ext\+Bin}} \&other)
+\item 
+void \mbox{\hyperlink{structExtBin_af64114608872260774c6c54f866de3cb}{add\+Event}} (\mbox{\hyperlink{structSimpleEntry}{Simple\+Entry}} evt)
+\item 
+void \mbox{\hyperlink{structExtBin_aada7b54a020aa88533c6f0898b285ebf}{add\+Event}} (int ev, float trueval, float recoval, float recotrackval=0, float weight=1)
+\item 
+void \mbox{\hyperlink{structExtBin_a091da5b69b06767ea062d7a980f6ac97}{sort\+By\+Reco\+Minus\+True\+Vals}} (vector$<$ pair$<$ float, int $>$$>$ \&res)
+\item 
+void \mbox{\hyperlink{structExtBin_a1c3ed08105425ac2f6d51c5d3ad1ed18}{sort\+By\+Reco\+Vals}} (vector$<$ pair$<$ float, int $>$$>$ \&res)
+\item 
+void \mbox{\hyperlink{structExtBin_a8433cda0d3757cdde4092c26b92513a3}{sift}} (double threshold=0.\+998, bool use\+\_\+recominustrue=false)
+\item 
+void \mbox{\hyperlink{structExtBin_a7a5b49dc8deddee3bec8946a567eb447}{adjust\+Weights}} (float refth=-\/1)
+\item 
+void \mbox{\hyperlink{structExtBin_ade8385937445d26a51ca0fe07ca44955}{merge\+Bin}} (const \mbox{\hyperlink{structExtBin}{Ext\+Bin}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structExtBin_a114648d1cd50630afd465203ba9470c5}{binlow}}
+\item 
+double \mbox{\hyperlink{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}{binhigh}}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{structExtBin_a9237950b87849087a3aebb840b0927be}{events}}
+\item 
+vector$<$ float $>$ \mbox{\hyperlink{structExtBin_ad359f2a956efe42775652e550b3f9ba0}{masses}}
+\item 
+vector$<$ float $>$ \mbox{\hyperlink{structExtBin_a932429e7160baa480c14096285e3fbdb}{mevals}}
+\item 
+vector$<$ float $>$ \mbox{\hyperlink{structExtBin_ae0a8fa6af257edd3ba7e72b587e627e3}{me2vals}}
+\item 
+vector$<$ float $>$ \mbox{\hyperlink{structExtBin_ae2c908d9d8fa13992c2919657e6c67b0}{weights}}
+\item 
+vector$<$ \mbox{\hyperlink{structSimpleEntry}{Simple\+Entry}} $>$ \mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}\label{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}} 
+\index{ExtBin@{ExtBin}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::add\+Event (\begin{DoxyParamCaption}\item[{float}]{mass,  }\item[{float}]{me,  }\item[{float}]{me2,  }\item[{float}]{weight = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_aada7b54a020aa88533c6f0898b285ebf}\label{structExtBin_aada7b54a020aa88533c6f0898b285ebf}} 
+\index{ExtBin@{ExtBin}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::add\+Event (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{float}]{trueval,  }\item[{float}]{recoval,  }\item[{float}]{recotrackval = {\ttfamily 0},  }\item[{float}]{weight = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_af64114608872260774c6c54f866de3cb}\label{structExtBin_af64114608872260774c6c54f866de3cb}} 
+\index{ExtBin@{ExtBin}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::add\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSimpleEntry}{Simple\+Entry}}}]{evt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_a7a5b49dc8deddee3bec8946a567eb447}\label{structExtBin_a7a5b49dc8deddee3bec8946a567eb447}} 
+\index{ExtBin@{ExtBin}!adjustWeights@{adjustWeights}}
+\index{adjustWeights@{adjustWeights}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{adjustWeights()}{adjustWeights()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::adjust\+Weights (\begin{DoxyParamCaption}\item[{float}]{refth = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_a37cd8e32daa1b715edaacb27ae542a00}\label{structExtBin_a37cd8e32daa1b715edaacb27ae542a00}} 
+\index{ExtBin@{ExtBin}!adjustWeights@{adjustWeights}}
+\index{adjustWeights@{adjustWeights}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{adjustWeights()}{adjustWeights()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::adjust\+Weights (\begin{DoxyParamCaption}\item[{float}]{refth = {\ttfamily 3.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_ade8385937445d26a51ca0fe07ca44955}\label{structExtBin_ade8385937445d26a51ca0fe07ca44955}} 
+\index{ExtBin@{ExtBin}!mergeBin@{mergeBin}}
+\index{mergeBin@{mergeBin}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{mergeBin()}{mergeBin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::merge\+Bin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structExtBin}{Ext\+Bin}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_ade8385937445d26a51ca0fe07ca44955}\label{structExtBin_ade8385937445d26a51ca0fe07ca44955}} 
+\index{ExtBin@{ExtBin}!mergeBin@{mergeBin}}
+\index{mergeBin@{mergeBin}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{mergeBin()}{mergeBin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::merge\+Bin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structExtBin}{Ext\+Bin}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_a9a587e8a2cd99e748eb1d6d87350e94c}\label{structExtBin_a9a587e8a2cd99e748eb1d6d87350e94c}} 
+\index{ExtBin@{ExtBin}!sift@{sift}}
+\index{sift@{sift}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{sift()}{sift()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::sift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_a8433cda0d3757cdde4092c26b92513a3}\label{structExtBin_a8433cda0d3757cdde4092c26b92513a3}} 
+\index{ExtBin@{ExtBin}!sift@{sift}}
+\index{sift@{sift}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{sift()}{sift()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ext\+Bin\+::sift (\begin{DoxyParamCaption}\item[{double}]{threshold = {\ttfamily 0.998},  }\item[{bool}]{use\+\_\+recominustrue = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_a091da5b69b06767ea062d7a980f6ac97}\label{structExtBin_a091da5b69b06767ea062d7a980f6ac97}} 
+\index{ExtBin@{ExtBin}!sortByRecoMinusTrueVals@{sortByRecoMinusTrueVals}}
+\index{sortByRecoMinusTrueVals@{sortByRecoMinusTrueVals}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{sortByRecoMinusTrueVals()}{sortByRecoMinusTrueVals()}}
+{\footnotesize\ttfamily void Ext\+Bin\+::sort\+By\+Reco\+Minus\+True\+Vals (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ float, int $>$$>$ \&}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structExtBin_a1c3ed08105425ac2f6d51c5d3ad1ed18}\label{structExtBin_a1c3ed08105425ac2f6d51c5d3ad1ed18}} 
+\index{ExtBin@{ExtBin}!sortByRecoVals@{sortByRecoVals}}
+\index{sortByRecoVals@{sortByRecoVals}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{sortByRecoVals()}{sortByRecoVals()}}
+{\footnotesize\ttfamily void Ext\+Bin\+::sort\+By\+Reco\+Vals (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ float, int $>$$>$ \&}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}\label{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}} 
+\index{ExtBin@{ExtBin}!binhigh@{binhigh}}
+\index{binhigh@{binhigh}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{binhigh}{binhigh}}
+{\footnotesize\ttfamily double Ext\+Bin\+::binhigh}
+
+\mbox{\Hypertarget{structExtBin_a114648d1cd50630afd465203ba9470c5}\label{structExtBin_a114648d1cd50630afd465203ba9470c5}} 
+\index{ExtBin@{ExtBin}!binlow@{binlow}}
+\index{binlow@{binlow}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{binlow}{binlow}}
+{\footnotesize\ttfamily double Ext\+Bin\+::binlow}
+
+\mbox{\Hypertarget{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}\label{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}} 
+\index{ExtBin@{ExtBin}!collection@{collection}}
+\index{collection@{collection}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{collection}{collection}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structSimpleEntry}{Simple\+Entry}}$>$ Ext\+Bin\+::collection}
+
+\mbox{\Hypertarget{structExtBin_a9237950b87849087a3aebb840b0927be}\label{structExtBin_a9237950b87849087a3aebb840b0927be}} 
+\index{ExtBin@{ExtBin}!events@{events}}
+\index{events@{events}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily vector$<$int$>$ Ext\+Bin\+::events}
+
+\mbox{\Hypertarget{structExtBin_ad359f2a956efe42775652e550b3f9ba0}\label{structExtBin_ad359f2a956efe42775652e550b3f9ba0}} 
+\index{ExtBin@{ExtBin}!masses@{masses}}
+\index{masses@{masses}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{masses}{masses}}
+{\footnotesize\ttfamily vector$<$float$>$ Ext\+Bin\+::masses}
+
+\mbox{\Hypertarget{structExtBin_ae0a8fa6af257edd3ba7e72b587e627e3}\label{structExtBin_ae0a8fa6af257edd3ba7e72b587e627e3}} 
+\index{ExtBin@{ExtBin}!me2vals@{me2vals}}
+\index{me2vals@{me2vals}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{me2vals}{me2vals}}
+{\footnotesize\ttfamily vector$<$float$>$ Ext\+Bin\+::me2vals}
+
+\mbox{\Hypertarget{structExtBin_a932429e7160baa480c14096285e3fbdb}\label{structExtBin_a932429e7160baa480c14096285e3fbdb}} 
+\index{ExtBin@{ExtBin}!mevals@{mevals}}
+\index{mevals@{mevals}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{mevals}{mevals}}
+{\footnotesize\ttfamily vector$<$float$>$ Ext\+Bin\+::mevals}
+
+\mbox{\Hypertarget{structExtBin_ae2c908d9d8fa13992c2919657e6c67b0}\label{structExtBin_ae2c908d9d8fa13992c2919657e6c67b0}} 
+\index{ExtBin@{ExtBin}!weights@{weights}}
+\index{weights@{weights}!ExtBin@{ExtBin}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily vector$<$float$>$ Ext\+Bin\+::weights}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/test/\mbox{\hyperlink{calcC__lintolog_8c}{calc\+C\+\_\+lintolog.\+c}}\item 
+M\+E\+L\+A/test/\mbox{\hyperlink{getResolution_8c}{get\+Resolution.\+c}}\end{DoxyCompactItemize}

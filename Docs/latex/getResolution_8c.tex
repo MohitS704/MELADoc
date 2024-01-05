@@ -1,0 +1,258 @@
+\hypertarget{getResolution_8c}{}\doxysection{M\+E\+L\+A/test/get\+Resolution.c File Reference}
+\label{getResolution_8c}\index{MELA/test/getResolution.c@{MELA/test/getResolution.c}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include \char`\"{}T\+R\+O\+O\+T.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Rotation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Tree.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Chain.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+F1.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Spline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Canvas.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H1\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H2\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H3\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Profile.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Graph\+Errors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Random.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Generic\+Pdf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Prod\+Pdf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Num\+Int\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Real\+Integral.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Plot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Data\+Set.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Roo\+Random.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mela.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+Linear\+Interp\+Func.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+N\+C\+Spline\+Factory\+\_\+1\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+N\+C\+Spline\+Factory\+\_\+2\+D.\+h\char`\"{}}\newline
+Include dependency graph for get\+Resolution.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{getResolution_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSimpleEntry}{Simple\+Entry}}
+\item 
+struct \mbox{\hyperlink{structExtBin}{Ext\+Bin}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{getResolution_8c_aa43349b52c98662951698d59806dc97e}{append\+Vector}} (std\+::vector$<$ T $>$ \&a, std\+::vector$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}{add\+By\+Lowest}} (std\+::vector$<$ T $>$ \&val\+Array, T val, bool unique)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\void \mbox{\hyperlink{getResolution_8c_ac3e4081f3087d4d0f5c8e8d0e9d57ed2}{add\+By\+Lowest}} (std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&val\+Array, T val, U index)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\void \mbox{\hyperlink{getResolution_8c_a7a06f96a86bb9835cfe5c49c6d4d6c1e}{add\+By\+Lowest}} (std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&val\+Array, std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&in\+Array, bool consecutive=false, bool inputordered=false)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{getResolution_8c_ac9fdc41deaff5d963cf06dad8f91e869}{check\+List\+Variable}} (const vector$<$ T $>$ \&list, const T \&var)
+\item 
+void \mbox{\hyperlink{getResolution_8c_adeef62b6204427efbfaae118249cb4c2}{split\+Option}} (const string rawoption, string \&wish, string \&value, char delimiter)
+\item 
+void \mbox{\hyperlink{getResolution_8c_aa2f38c31cbb69dcdcedb710bf5435660}{split\+Option\+Recursive}} (const string rawoption, vector$<$ string $>$ \&splitoptions, char delimiter)
+\item 
+float \mbox{\hyperlink{getResolution_8c_a87af69d74e1712db02417cb1bd6f7541}{find\+Pole\+Mass}} (T\+String samplename)
+\item 
+T\+Tree $\ast$ \mbox{\hyperlink{getResolution_8c_a6a59230d55de0e008c2dde1b807f002e}{find\+Tree}} (vector$<$ T\+Tree $\ast$ $>$ tree\+List, int evid)
+\item 
+void \mbox{\hyperlink{getResolution_8c_ad02f8aac427884f95d9cfd7014636b98}{get\+Entry}} (vector$<$ T\+Tree $\ast$ $>$ tree\+List, int evid)
+\item 
+vector$<$ T\+String $>$ \mbox{\hyperlink{getResolution_8c_a7fe540203f22526a878986af5c17757d}{construct\+Samples\+List}} (T\+String strsample, float \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}})
+\item 
+T\+Graph\+Errors $\ast$ \mbox{\hyperlink{getResolution_8c_a85bf9f12555420bb67e71cacbf5a868d}{make\+Graph\+From\+T\+H1}} (T\+H1 $\ast$hx, T\+H1 $\ast$hy, T\+String name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T\+Graph $\ast$ \mbox{\hyperlink{getResolution_8c_a582321a752f6c95355f55b8952b3fc36}{make\+Graph\+From\+Pair}} (vector$<$ pair$<$ T, T $>$$>$ points, T\+String name)
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{getResolution_8c_ae8cc52e3e8edee332e79545882d03afb}{solve\+Quadratic}} (vector$<$ pair$<$ double, double $>$$>$ xy)
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{getResolution_8c_ac7910d0f4f528c86866c70f0e01fb066}{solve\+Gaussian}} (vector$<$ pair$<$ double, double $>$$>$ xy)
+\item 
+void \mbox{\hyperlink{getResolution_8c_a850ab8285cd924183f360d2dc275dd63}{add\+Point}} (T\+Graph $\ast$\&tg, double x, double y)
+\item 
+void \mbox{\hyperlink{getResolution_8c_a5c4568c8b538216172e9ca131d7103b7}{add\+Point}} (T\+Graph\+Errors $\ast$\&tg, double x, double y, double ex, double ey)
+\item 
+void \mbox{\hyperlink{getResolution_8c_af5c4994b7bdb6db66572ee03c33ace69}{get\+Resolution\+\_\+m\+H\+\_\+signal}} (float \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}, T\+String strprod)
+\item 
+void \mbox{\hyperlink{getResolution_8c_a1288bb3f73703b062dfa02288bc58e2c}{get\+Resolution\+\_\+m\+JJ}} (float \mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}, T\+String strprod, bool debug=false)
+\item 
+void \mbox{\hyperlink{getResolution_8c_ae1a3968e7947464bee7714f6d43b7002}{test}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+T\+String \mbox{\hyperlink{getResolution_8c_ad3db335ab1d86d1bc5d0acb14444c0df}{inputdir\+\_\+7\+TeV}} = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519/P\+R\+O\+D\+F\+SR\char`\"{}
+\item 
+T\+String \mbox{\hyperlink{getResolution_8c_ac94c091c12962c9c2c0a3a5b7a7756e5}{inputdir\+\_\+8\+TeV}} = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519b/P\+R\+O\+D\+F\+S\+R\+\_\+8\+TeV\char`\"{}
+\item 
+T\+String \mbox{\hyperlink{getResolution_8c_a643c1dcc1180ec6668cf3d2e506fc377}{inputdir\+\_\+13\+TeV}} = \char`\"{}root\+://lxcms03//data3/Higgs/170222\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{getResolution_8c_a7a06f96a86bb9835cfe5c49c6d4d6c1e}\label{getResolution_8c_a7a06f96a86bb9835cfe5c49c6d4d6c1e}} 
+\index{getResolution.c@{getResolution.c}!addByLowest@{addByLowest}}
+\index{addByLowest@{addByLowest}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{addByLowest()}{addByLowest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+void add\+By\+Lowest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&}]{val\+Array,  }\item[{std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&}]{in\+Array,  }\item[{bool}]{consecutive = {\ttfamily false},  }\item[{bool}]{inputordered = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_ac3e4081f3087d4d0f5c8e8d0e9d57ed2}\label{getResolution_8c_ac3e4081f3087d4d0f5c8e8d0e9d57ed2}} 
+\index{getResolution.c@{getResolution.c}!addByLowest@{addByLowest}}
+\index{addByLowest@{addByLowest}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{addByLowest()}{addByLowest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+void add\+By\+Lowest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ T, U $>$$>$ \&}]{val\+Array,  }\item[{T}]{val,  }\item[{U}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}\label{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}} 
+\index{getResolution.c@{getResolution.c}!addByLowest@{addByLowest}}
+\index{addByLowest@{addByLowest}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{addByLowest()}{addByLowest()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void add\+By\+Lowest (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{val\+Array,  }\item[{T}]{val,  }\item[{bool}]{unique }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a850ab8285cd924183f360d2dc275dd63}\label{getResolution_8c_a850ab8285cd924183f360d2dc275dd63}} 
+\index{getResolution.c@{getResolution.c}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void add\+Point (\begin{DoxyParamCaption}\item[{T\+Graph $\ast$\&}]{tg,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a5c4568c8b538216172e9ca131d7103b7}\label{getResolution_8c_a5c4568c8b538216172e9ca131d7103b7}} 
+\index{getResolution.c@{getResolution.c}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void add\+Point (\begin{DoxyParamCaption}\item[{T\+Graph\+Errors $\ast$\&}]{tg,  }\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{ex,  }\item[{double}]{ey }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_aa43349b52c98662951698d59806dc97e}\label{getResolution_8c_aa43349b52c98662951698d59806dc97e}} 
+\index{getResolution.c@{getResolution.c}!appendVector@{appendVector}}
+\index{appendVector@{appendVector}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{appendVector()}{appendVector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void append\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{a,  }\item[{std\+::vector$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_ac9fdc41deaff5d963cf06dad8f91e869}\label{getResolution_8c_ac9fdc41deaff5d963cf06dad8f91e869}} 
+\index{getResolution.c@{getResolution.c}!checkListVariable@{checkListVariable}}
+\index{checkListVariable@{checkListVariable}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{checkListVariable()}{checkListVariable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool check\+List\+Variable (\begin{DoxyParamCaption}\item[{const vector$<$ T $>$ \&}]{list,  }\item[{const T \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a7fe540203f22526a878986af5c17757d}\label{getResolution_8c_a7fe540203f22526a878986af5c17757d}} 
+\index{getResolution.c@{getResolution.c}!constructSamplesList@{constructSamplesList}}
+\index{constructSamplesList@{constructSamplesList}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{constructSamplesList()}{constructSamplesList()}}
+{\footnotesize\ttfamily vector$<$T\+String$>$ construct\+Samples\+List (\begin{DoxyParamCaption}\item[{T\+String}]{strsample,  }\item[{float}]{sqrts }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a87af69d74e1712db02417cb1bd6f7541}\label{getResolution_8c_a87af69d74e1712db02417cb1bd6f7541}} 
+\index{getResolution.c@{getResolution.c}!findPoleMass@{findPoleMass}}
+\index{findPoleMass@{findPoleMass}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{findPoleMass()}{findPoleMass()}}
+{\footnotesize\ttfamily float find\+Pole\+Mass (\begin{DoxyParamCaption}\item[{T\+String}]{samplename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a6a59230d55de0e008c2dde1b807f002e}\label{getResolution_8c_a6a59230d55de0e008c2dde1b807f002e}} 
+\index{getResolution.c@{getResolution.c}!findTree@{findTree}}
+\index{findTree@{findTree}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{findTree()}{findTree()}}
+{\footnotesize\ttfamily T\+Tree$\ast$ find\+Tree (\begin{DoxyParamCaption}\item[{vector$<$ T\+Tree $\ast$ $>$}]{tree\+List,  }\item[{int}]{evid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_ad02f8aac427884f95d9cfd7014636b98}\label{getResolution_8c_ad02f8aac427884f95d9cfd7014636b98}} 
+\index{getResolution.c@{getResolution.c}!getEntry@{getEntry}}
+\index{getEntry@{getEntry}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{getEntry()}{getEntry()}}
+{\footnotesize\ttfamily void get\+Entry (\begin{DoxyParamCaption}\item[{vector$<$ T\+Tree $\ast$ $>$}]{tree\+List,  }\item[{int}]{evid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_af5c4994b7bdb6db66572ee03c33ace69}\label{getResolution_8c_af5c4994b7bdb6db66572ee03c33ace69}} 
+\index{getResolution.c@{getResolution.c}!getResolution\_mH\_signal@{getResolution\_mH\_signal}}
+\index{getResolution\_mH\_signal@{getResolution\_mH\_signal}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{getResolution\_mH\_signal()}{getResolution\_mH\_signal()}}
+{\footnotesize\ttfamily void get\+Resolution\+\_\+m\+H\+\_\+signal (\begin{DoxyParamCaption}\item[{float}]{sqrts,  }\item[{T\+String}]{strprod }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a1288bb3f73703b062dfa02288bc58e2c}\label{getResolution_8c_a1288bb3f73703b062dfa02288bc58e2c}} 
+\index{getResolution.c@{getResolution.c}!getResolution\_mJJ@{getResolution\_mJJ}}
+\index{getResolution\_mJJ@{getResolution\_mJJ}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{getResolution\_mJJ()}{getResolution\_mJJ()}}
+{\footnotesize\ttfamily void get\+Resolution\+\_\+m\+JJ (\begin{DoxyParamCaption}\item[{float}]{sqrts,  }\item[{T\+String}]{strprod,  }\item[{bool}]{debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a582321a752f6c95355f55b8952b3fc36}\label{getResolution_8c_a582321a752f6c95355f55b8952b3fc36}} 
+\index{getResolution.c@{getResolution.c}!makeGraphFromPair@{makeGraphFromPair}}
+\index{makeGraphFromPair@{makeGraphFromPair}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{makeGraphFromPair()}{makeGraphFromPair()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\+Graph$\ast$ make\+Graph\+From\+Pair (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ T, T $>$$>$}]{points,  }\item[{T\+String}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_a85bf9f12555420bb67e71cacbf5a868d}\label{getResolution_8c_a85bf9f12555420bb67e71cacbf5a868d}} 
+\index{getResolution.c@{getResolution.c}!makeGraphFromTH1@{makeGraphFromTH1}}
+\index{makeGraphFromTH1@{makeGraphFromTH1}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{makeGraphFromTH1()}{makeGraphFromTH1()}}
+{\footnotesize\ttfamily T\+Graph\+Errors$\ast$ make\+Graph\+From\+T\+H1 (\begin{DoxyParamCaption}\item[{T\+H1 $\ast$}]{hx,  }\item[{T\+H1 $\ast$}]{hy,  }\item[{T\+String}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_ac7910d0f4f528c86866c70f0e01fb066}\label{getResolution_8c_ac7910d0f4f528c86866c70f0e01fb066}} 
+\index{getResolution.c@{getResolution.c}!solveGaussian@{solveGaussian}}
+\index{solveGaussian@{solveGaussian}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{solveGaussian()}{solveGaussian()}}
+{\footnotesize\ttfamily vector$<$double$>$ solve\+Gaussian (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ double, double $>$$>$}]{xy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_ae8cc52e3e8edee332e79545882d03afb}\label{getResolution_8c_ae8cc52e3e8edee332e79545882d03afb}} 
+\index{getResolution.c@{getResolution.c}!solveQuadratic@{solveQuadratic}}
+\index{solveQuadratic@{solveQuadratic}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{solveQuadratic()}{solveQuadratic()}}
+{\footnotesize\ttfamily vector$<$double$>$ solve\+Quadratic (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ double, double $>$$>$}]{xy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_adeef62b6204427efbfaae118249cb4c2}\label{getResolution_8c_adeef62b6204427efbfaae118249cb4c2}} 
+\index{getResolution.c@{getResolution.c}!splitOption@{splitOption}}
+\index{splitOption@{splitOption}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{splitOption()}{splitOption()}}
+{\footnotesize\ttfamily void split\+Option (\begin{DoxyParamCaption}\item[{const string}]{rawoption,  }\item[{string \&}]{wish,  }\item[{string \&}]{value,  }\item[{char}]{delimiter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_aa2f38c31cbb69dcdcedb710bf5435660}\label{getResolution_8c_aa2f38c31cbb69dcdcedb710bf5435660}} 
+\index{getResolution.c@{getResolution.c}!splitOptionRecursive@{splitOptionRecursive}}
+\index{splitOptionRecursive@{splitOptionRecursive}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{splitOptionRecursive()}{splitOptionRecursive()}}
+{\footnotesize\ttfamily void split\+Option\+Recursive (\begin{DoxyParamCaption}\item[{const string}]{rawoption,  }\item[{vector$<$ string $>$ \&}]{splitoptions,  }\item[{char}]{delimiter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{getResolution_8c_ae1a3968e7947464bee7714f6d43b7002}\label{getResolution_8c_ae1a3968e7947464bee7714f6d43b7002}} 
+\index{getResolution.c@{getResolution.c}!test@{test}}
+\index{test@{test}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily void test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{getResolution_8c_a643c1dcc1180ec6668cf3d2e506fc377}\label{getResolution_8c_a643c1dcc1180ec6668cf3d2e506fc377}} 
+\index{getResolution.c@{getResolution.c}!inputdir\_13TeV@{inputdir\_13TeV}}
+\index{inputdir\_13TeV@{inputdir\_13TeV}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{inputdir\_13TeV}{inputdir\_13TeV}}
+{\footnotesize\ttfamily T\+String inputdir\+\_\+13\+TeV = \char`\"{}root\+://lxcms03//data3/Higgs/170222\char`\"{}}
+
+\mbox{\Hypertarget{getResolution_8c_ad3db335ab1d86d1bc5d0acb14444c0df}\label{getResolution_8c_ad3db335ab1d86d1bc5d0acb14444c0df}} 
+\index{getResolution.c@{getResolution.c}!inputdir\_7TeV@{inputdir\_7TeV}}
+\index{inputdir\_7TeV@{inputdir\_7TeV}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{inputdir\_7TeV}{inputdir\_7TeV}}
+{\footnotesize\ttfamily T\+String inputdir\+\_\+7\+TeV = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519/P\+R\+O\+D\+F\+SR\char`\"{}}
+
+\mbox{\Hypertarget{getResolution_8c_ac94c091c12962c9c2c0a3a5b7a7756e5}\label{getResolution_8c_ac94c091c12962c9c2c0a3a5b7a7756e5}} 
+\index{getResolution.c@{getResolution.c}!inputdir\_8TeV@{inputdir\_8TeV}}
+\index{inputdir\_8TeV@{inputdir\_8TeV}!getResolution.c@{getResolution.c}}
+\doxysubsubsection{\texorpdfstring{inputdir\_8TeV}{inputdir\_8TeV}}
+{\footnotesize\ttfamily T\+String inputdir\+\_\+8\+TeV = \char`\"{}/work-\/zfs/lhc/ianderso/hep/C\+J\+L\+ST/140519b/P\+R\+O\+D\+F\+S\+R\+\_\+8\+TeV\char`\"{}}
+

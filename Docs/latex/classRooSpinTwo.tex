@@ -1,0 +1,376 @@
+\hypertarget{classRooSpinTwo}{}\doxysection{Roo\+Spin\+Two Class Reference}
+\label{classRooSpinTwo}\index{RooSpinTwo@{RooSpinTwo}}
+
+
+{\ttfamily \#include $<$Roo\+Spin\+Two.\+h$>$}
+
+
+
+Inheritance diagram for Roo\+Spin\+Two\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classRooSpinTwo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Roo\+Spin\+Two\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classRooSpinTwo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings}{model\+Couplings}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRooSpinTwo_ade715a299515de8ff4f578592f57b888}{Roo\+Spin\+Two}} ()
+\item 
+\mbox{\hyperlink{classRooSpinTwo_a7c1780f0b1503e2330580c0f0210eaeb}{Roo\+Spin\+Two}} (const char $\ast$name, const char $\ast$title, \mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{model\+Measurables}} const \&\+\_\+measurables, \mbox{\hyperlink{structRooSpin_1_1modelParameters}{model\+Parameters}} const \&\+\_\+parameters, \mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings}{model\+Couplings}} const \&\+\_\+couplings, \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}} \+\_\+\+Vdecay1=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}, \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}} \+\_\+\+Vdecay2=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}, \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity\+\_\+=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}})
+\item 
+\mbox{\hyperlink{classRooSpinTwo_af34a4fdedefc91875b95f4836c30bea3}{Roo\+Spin\+Two}} (const \mbox{\hyperlink{classRooSpinTwo}{Roo\+Spin\+Two}} \&other, const char $\ast$name=0)
+\item 
+virtual T\+Object $\ast$ \mbox{\hyperlink{classRooSpinTwo_ad87be174b5c8e8a64a863cd930a9205c}{clone}} (const char $\ast$newname) const =0
+\item 
+virtual \mbox{\hyperlink{classRooSpinTwo_afacb322c39619711bee737042b3c6021}{$\sim$\+Roo\+Spin\+Two}} ()
+\item 
+virtual Double\+\_\+t \mbox{\hyperlink{classRooSpinTwo_adfcc5388dda936e0f7a1570df0eaaff5}{evaluate}} () const =0
+\item 
+virtual Int\+\_\+t \mbox{\hyperlink{classRooSpinTwo_ad975b2b56ee6faf2fc042cb918114715}{get\+Analytical\+Integral}} (Roo\+Arg\+Set \&all\+Vars, Roo\+Arg\+Set \&anal\+Vars, const char $\ast$range\+Name=0) const =0
+\item 
+virtual Double\+\_\+t \mbox{\hyperlink{classRooSpinTwo_a65707b816509dd1df63006915e672997}{analytical\+Integral}} (Int\+\_\+t code, const char $\ast$range\+Name=0) const =0
+\item 
+virtual void \mbox{\hyperlink{classRooSpinTwo_abfd860dfe47e6b220519636b71ccc683}{print\+Parameters}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classRooSpinTwo_ac73a26f20af0d8f7a6ee21747e327aa6}{evaluate\+Polarization\+Terms}} (std\+::vector$<$ Double\+\_\+t $>$ \&Axxyyterm, const Int\+\_\+t code, bool is\+Gamma\+V1=false, bool is\+Gamma\+V2=false) const =0
+\item 
+virtual void \mbox{\hyperlink{classRooSpinTwo_a1d984aa4d924580343382665fb4ac534}{calculate\+Ci}} (std\+::vector$<$ Double\+\_\+t $>$ \&ci\+Re, std\+::vector$<$ Double\+\_\+t $>$ \&ci\+Im, bool is\+Gamma\+V1=false, bool is\+Gamma\+V2=false) const
+\item 
+virtual void \mbox{\hyperlink{classRooSpinTwo_a993395d5b06dfe7dee4e4b5e8663574e}{calculate\+Amplitudes}} (Double\+\_\+t \&A00\+Re, Double\+\_\+t \&A00\+Im, Double\+\_\+t \&App\+Re, Double\+\_\+t \&App\+Im, Double\+\_\+t \&A0p\+Re, Double\+\_\+t \&A0p\+Im, Double\+\_\+t \&Ap0\+Re, Double\+\_\+t \&Ap0\+Im, Double\+\_\+t \&Amm\+Re, Double\+\_\+t \&Amm\+Im, Double\+\_\+t \&A0m\+Re, Double\+\_\+t \&A0m\+Im, Double\+\_\+t \&Am0\+Re, Double\+\_\+t \&Am0\+Im, Double\+\_\+t \&Apm\+Re, Double\+\_\+t \&Apm\+Im, Double\+\_\+t \&Amp\+Re, Double\+\_\+t \&Amp\+Im, bool is\+Gamma\+V1=false, bool is\+Gamma\+V2=false) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a3ddb1e9ff762ffc6fa4abfd5491fab50}{b1\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a0d279e4f9489d1c600abf7df432d7ea9}{b2\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_ac9b7fa16a6186a8e24fb6e5f187c86c3}{b3\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_ab14c6c106152a718e6b797cc4dd15c0b}{b4\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a6102368d8c197e87c112b3072190d713}{b5\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_aa78d1fc0ee4724292c93ca804c831e71}{b6\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a52641609c5938d63dbb75e34f575878a}{b7\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a0b54384ee2573bf076ece4e532bd7027}{b8\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a734c5cd5e25ef5d5ac790eabd61156cc}{b9\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_ad14f59c5ed5cdb71fb95e87c0453d079}{b10\+Val}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a165bd437d266b88a09ee8aad8b99af02}{b1\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a3d0e1d464acf92a883296e8e9931ba80}{b2\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a0fd1c011abdfd2a938708deb1811c4d4}{b3\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_aed6a6a95ef546166e172e13ad45f4013}{b4\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_aa6edad67a9a137a0e82832e6592431c9}{b5\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a79be9ac60c276ecd09f65be28d0347f7}{b6\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_ab1a5c6bd6057ccaf16b19ba9171febfe}{b7\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_aa80ede56717830997647b1aecf6d5eea}{b8\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_a23620ef545db525ddf5f0fab640a9065}{b9\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_ac393bdfc684f6682e8deb6b9735fdeb8}{b10\+Val\+Im}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_aeb465254cb341782494c0661a20f637c}{Lambda}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_adeb93e00aad7f0b0eff58ccd4a7cb06f}{f\+\_\+spinz1}}
+\item 
+Roo\+Real\+Proxy \mbox{\hyperlink{classRooSpinTwo_addad52cd27479cca5c8cee44ad63c937}{f\+\_\+spinz2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRooSpinTwo_ade715a299515de8ff4f578592f57b888}\label{classRooSpinTwo_ade715a299515de8ff4f578592f57b888}} 
+\index{RooSpinTwo@{RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\index{RooSpinTwo@{RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{RooSpinTwo()}{RooSpinTwo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Roo\+Spin\+Two\+::\+Roo\+Spin\+Two (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRooSpinTwo_a7c1780f0b1503e2330580c0f0210eaeb}\label{classRooSpinTwo_a7c1780f0b1503e2330580c0f0210eaeb}} 
+\index{RooSpinTwo@{RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\index{RooSpinTwo@{RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{RooSpinTwo()}{RooSpinTwo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Roo\+Spin\+Two\+::\+Roo\+Spin\+Two (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title,  }\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{model\+Measurables}} const \&}]{\+\_\+measurables,  }\item[{\mbox{\hyperlink{structRooSpin_1_1modelParameters}{model\+Parameters}} const \&}]{\+\_\+parameters,  }\item[{\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings}{model\+Couplings}} const \&}]{\+\_\+couplings,  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{\+\_\+\+Vdecay1 = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{\+\_\+\+Vdecay2 = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity\+\_\+ = {\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRooSpinTwo_af34a4fdedefc91875b95f4836c30bea3}\label{classRooSpinTwo_af34a4fdedefc91875b95f4836c30bea3}} 
+\index{RooSpinTwo@{RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\index{RooSpinTwo@{RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{RooSpinTwo()}{RooSpinTwo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Roo\+Spin\+Two\+::\+Roo\+Spin\+Two (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRooSpinTwo}{Roo\+Spin\+Two}} \&}]{other,  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRooSpinTwo_afacb322c39619711bee737042b3c6021}\label{classRooSpinTwo_afacb322c39619711bee737042b3c6021}} 
+\index{RooSpinTwo@{RooSpinTwo}!````~RooSpinTwo@{$\sim$RooSpinTwo}}
+\index{````~RooSpinTwo@{$\sim$RooSpinTwo}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{$\sim$RooSpinTwo()}{~RooSpinTwo()}}
+{\footnotesize\ttfamily virtual Roo\+Spin\+Two\+::$\sim$\+Roo\+Spin\+Two (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRooSpinTwo_a65707b816509dd1df63006915e672997}\label{classRooSpinTwo_a65707b816509dd1df63006915e672997}} 
+\index{RooSpinTwo@{RooSpinTwo}!analyticalIntegral@{analyticalIntegral}}
+\index{analyticalIntegral@{analyticalIntegral}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{analyticalIntegral()}{analyticalIntegral()}}
+{\footnotesize\ttfamily virtual Double\+\_\+t Roo\+Spin\+Two\+::analytical\+Integral (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{code,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRooSpin_aaeb2f240fbc7994ea710e4118dfc6c77}{Roo\+Spin}}.
+
+
+
+Implemented in \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_ac02a0de58ecc54dc683e1448c79575dc}{Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classRooSpinTwo_a993395d5b06dfe7dee4e4b5e8663574e}\label{classRooSpinTwo_a993395d5b06dfe7dee4e4b5e8663574e}} 
+\index{RooSpinTwo@{RooSpinTwo}!calculateAmplitudes@{calculateAmplitudes}}
+\index{calculateAmplitudes@{calculateAmplitudes}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{calculateAmplitudes()}{calculateAmplitudes()}}
+{\footnotesize\ttfamily void Roo\+Spin\+Two\+::calculate\+Amplitudes (\begin{DoxyParamCaption}\item[{Double\+\_\+t \&}]{A00\+Re,  }\item[{Double\+\_\+t \&}]{A00\+Im,  }\item[{Double\+\_\+t \&}]{App\+Re,  }\item[{Double\+\_\+t \&}]{App\+Im,  }\item[{Double\+\_\+t \&}]{A0p\+Re,  }\item[{Double\+\_\+t \&}]{A0p\+Im,  }\item[{Double\+\_\+t \&}]{Ap0\+Re,  }\item[{Double\+\_\+t \&}]{Ap0\+Im,  }\item[{Double\+\_\+t \&}]{Amm\+Re,  }\item[{Double\+\_\+t \&}]{Amm\+Im,  }\item[{Double\+\_\+t \&}]{A0m\+Re,  }\item[{Double\+\_\+t \&}]{A0m\+Im,  }\item[{Double\+\_\+t \&}]{Am0\+Re,  }\item[{Double\+\_\+t \&}]{Am0\+Im,  }\item[{Double\+\_\+t \&}]{Apm\+Re,  }\item[{Double\+\_\+t \&}]{Apm\+Im,  }\item[{Double\+\_\+t \&}]{Amp\+Re,  }\item[{Double\+\_\+t \&}]{Amp\+Im,  }\item[{bool}]{is\+Gamma\+V1 = {\ttfamily false},  }\item[{bool}]{is\+Gamma\+V2 = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a1d984aa4d924580343382665fb4ac534}\label{classRooSpinTwo_a1d984aa4d924580343382665fb4ac534}} 
+\index{RooSpinTwo@{RooSpinTwo}!calculateCi@{calculateCi}}
+\index{calculateCi@{calculateCi}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{calculateCi()}{calculateCi()}}
+{\footnotesize\ttfamily void Roo\+Spin\+Two\+::calculate\+Ci (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Double\+\_\+t $>$ \&}]{ci\+Re,  }\item[{std\+::vector$<$ Double\+\_\+t $>$ \&}]{ci\+Im,  }\item[{bool}]{is\+Gamma\+V1 = {\ttfamily false},  }\item[{bool}]{is\+Gamma\+V2 = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_ad87be174b5c8e8a64a863cd930a9205c}\label{classRooSpinTwo_ad87be174b5c8e8a64a863cd930a9205c}} 
+\index{RooSpinTwo@{RooSpinTwo}!clone@{clone}}
+\index{clone@{clone}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual T\+Object$\ast$ Roo\+Spin\+Two\+::clone (\begin{DoxyParamCaption}\item[{const char $\ast$}]{newname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRooSpin_ad8b07d6e5b7903fd35b8455b57fbe002}{Roo\+Spin}}.
+
+
+
+Implemented in \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_ab05c72ae5ab955f4885d96d1b4b5a582}{Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classRooSpinTwo_adfcc5388dda936e0f7a1570df0eaaff5}\label{classRooSpinTwo_adfcc5388dda936e0f7a1570df0eaaff5}} 
+\index{RooSpinTwo@{RooSpinTwo}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily virtual Double\+\_\+t Roo\+Spin\+Two\+::evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRooSpin_a71db16e0793ee28312f95fd3b29bd30b}{Roo\+Spin}}.
+
+
+
+Implemented in \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_a9652ab986846e6d9c208f216b7ceb2fa}{Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classRooSpinTwo_ac73a26f20af0d8f7a6ee21747e327aa6}\label{classRooSpinTwo_ac73a26f20af0d8f7a6ee21747e327aa6}} 
+\index{RooSpinTwo@{RooSpinTwo}!evaluatePolarizationTerms@{evaluatePolarizationTerms}}
+\index{evaluatePolarizationTerms@{evaluatePolarizationTerms}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{evaluatePolarizationTerms()}{evaluatePolarizationTerms()}}
+{\footnotesize\ttfamily virtual void Roo\+Spin\+Two\+::evaluate\+Polarization\+Terms (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Double\+\_\+t $>$ \&}]{Axxyyterm,  }\item[{const Int\+\_\+t}]{code,  }\item[{bool}]{is\+Gamma\+V1 = {\ttfamily false},  }\item[{bool}]{is\+Gamma\+V2 = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_a49d5ffd584d16c65b30aa64f26abbc6b}{Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classRooSpinTwo_ad975b2b56ee6faf2fc042cb918114715}\label{classRooSpinTwo_ad975b2b56ee6faf2fc042cb918114715}} 
+\index{RooSpinTwo@{RooSpinTwo}!getAnalyticalIntegral@{getAnalyticalIntegral}}
+\index{getAnalyticalIntegral@{getAnalyticalIntegral}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{getAnalyticalIntegral()}{getAnalyticalIntegral()}}
+{\footnotesize\ttfamily virtual Int\+\_\+t Roo\+Spin\+Two\+::get\+Analytical\+Integral (\begin{DoxyParamCaption}\item[{Roo\+Arg\+Set \&}]{all\+Vars,  }\item[{Roo\+Arg\+Set \&}]{anal\+Vars,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classRooSpin_af90c0586e66e64abfe1f9342a6478403}{Roo\+Spin}}.
+
+
+
+Implemented in \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_a2ed764547c97fbbbe0a31a248b13125c}{Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classRooSpinTwo_abfd860dfe47e6b220519636b71ccc683}\label{classRooSpinTwo_abfd860dfe47e6b220519636b71ccc683}} 
+\index{RooSpinTwo@{RooSpinTwo}!printParameters@{printParameters}}
+\index{printParameters@{printParameters}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{printParameters()}{printParameters()}}
+{\footnotesize\ttfamily void Roo\+Spin\+Two\+::print\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classRooSpin_afae43f6172436721c6ec9ec6b20afff4}{Roo\+Spin}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRooSpinTwo_ad14f59c5ed5cdb71fb95e87c0453d079}\label{classRooSpinTwo_ad14f59c5ed5cdb71fb95e87c0453d079}} 
+\index{RooSpinTwo@{RooSpinTwo}!b10Val@{b10Val}}
+\index{b10Val@{b10Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b10Val}{b10Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b10\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_ac393bdfc684f6682e8deb6b9735fdeb8}\label{classRooSpinTwo_ac393bdfc684f6682e8deb6b9735fdeb8}} 
+\index{RooSpinTwo@{RooSpinTwo}!b10ValIm@{b10ValIm}}
+\index{b10ValIm@{b10ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b10ValIm}{b10ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b10\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a3ddb1e9ff762ffc6fa4abfd5491fab50}\label{classRooSpinTwo_a3ddb1e9ff762ffc6fa4abfd5491fab50}} 
+\index{RooSpinTwo@{RooSpinTwo}!b1Val@{b1Val}}
+\index{b1Val@{b1Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b1Val}{b1Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b1\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a165bd437d266b88a09ee8aad8b99af02}\label{classRooSpinTwo_a165bd437d266b88a09ee8aad8b99af02}} 
+\index{RooSpinTwo@{RooSpinTwo}!b1ValIm@{b1ValIm}}
+\index{b1ValIm@{b1ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b1ValIm}{b1ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b1\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a0d279e4f9489d1c600abf7df432d7ea9}\label{classRooSpinTwo_a0d279e4f9489d1c600abf7df432d7ea9}} 
+\index{RooSpinTwo@{RooSpinTwo}!b2Val@{b2Val}}
+\index{b2Val@{b2Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b2Val}{b2Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b2\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a3d0e1d464acf92a883296e8e9931ba80}\label{classRooSpinTwo_a3d0e1d464acf92a883296e8e9931ba80}} 
+\index{RooSpinTwo@{RooSpinTwo}!b2ValIm@{b2ValIm}}
+\index{b2ValIm@{b2ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b2ValIm}{b2ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b2\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_ac9b7fa16a6186a8e24fb6e5f187c86c3}\label{classRooSpinTwo_ac9b7fa16a6186a8e24fb6e5f187c86c3}} 
+\index{RooSpinTwo@{RooSpinTwo}!b3Val@{b3Val}}
+\index{b3Val@{b3Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b3Val}{b3Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b3\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a0fd1c011abdfd2a938708deb1811c4d4}\label{classRooSpinTwo_a0fd1c011abdfd2a938708deb1811c4d4}} 
+\index{RooSpinTwo@{RooSpinTwo}!b3ValIm@{b3ValIm}}
+\index{b3ValIm@{b3ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b3ValIm}{b3ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b3\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_ab14c6c106152a718e6b797cc4dd15c0b}\label{classRooSpinTwo_ab14c6c106152a718e6b797cc4dd15c0b}} 
+\index{RooSpinTwo@{RooSpinTwo}!b4Val@{b4Val}}
+\index{b4Val@{b4Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b4Val}{b4Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b4\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_aed6a6a95ef546166e172e13ad45f4013}\label{classRooSpinTwo_aed6a6a95ef546166e172e13ad45f4013}} 
+\index{RooSpinTwo@{RooSpinTwo}!b4ValIm@{b4ValIm}}
+\index{b4ValIm@{b4ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b4ValIm}{b4ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b4\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a6102368d8c197e87c112b3072190d713}\label{classRooSpinTwo_a6102368d8c197e87c112b3072190d713}} 
+\index{RooSpinTwo@{RooSpinTwo}!b5Val@{b5Val}}
+\index{b5Val@{b5Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b5Val}{b5Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b5\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_aa6edad67a9a137a0e82832e6592431c9}\label{classRooSpinTwo_aa6edad67a9a137a0e82832e6592431c9}} 
+\index{RooSpinTwo@{RooSpinTwo}!b5ValIm@{b5ValIm}}
+\index{b5ValIm@{b5ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b5ValIm}{b5ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b5\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_aa78d1fc0ee4724292c93ca804c831e71}\label{classRooSpinTwo_aa78d1fc0ee4724292c93ca804c831e71}} 
+\index{RooSpinTwo@{RooSpinTwo}!b6Val@{b6Val}}
+\index{b6Val@{b6Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b6Val}{b6Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b6\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a79be9ac60c276ecd09f65be28d0347f7}\label{classRooSpinTwo_a79be9ac60c276ecd09f65be28d0347f7}} 
+\index{RooSpinTwo@{RooSpinTwo}!b6ValIm@{b6ValIm}}
+\index{b6ValIm@{b6ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b6ValIm}{b6ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b6\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a52641609c5938d63dbb75e34f575878a}\label{classRooSpinTwo_a52641609c5938d63dbb75e34f575878a}} 
+\index{RooSpinTwo@{RooSpinTwo}!b7Val@{b7Val}}
+\index{b7Val@{b7Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b7Val}{b7Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b7\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_ab1a5c6bd6057ccaf16b19ba9171febfe}\label{classRooSpinTwo_ab1a5c6bd6057ccaf16b19ba9171febfe}} 
+\index{RooSpinTwo@{RooSpinTwo}!b7ValIm@{b7ValIm}}
+\index{b7ValIm@{b7ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b7ValIm}{b7ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b7\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a0b54384ee2573bf076ece4e532bd7027}\label{classRooSpinTwo_a0b54384ee2573bf076ece4e532bd7027}} 
+\index{RooSpinTwo@{RooSpinTwo}!b8Val@{b8Val}}
+\index{b8Val@{b8Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b8Val}{b8Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b8\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_aa80ede56717830997647b1aecf6d5eea}\label{classRooSpinTwo_aa80ede56717830997647b1aecf6d5eea}} 
+\index{RooSpinTwo@{RooSpinTwo}!b8ValIm@{b8ValIm}}
+\index{b8ValIm@{b8ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b8ValIm}{b8ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b8\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a734c5cd5e25ef5d5ac790eabd61156cc}\label{classRooSpinTwo_a734c5cd5e25ef5d5ac790eabd61156cc}} 
+\index{RooSpinTwo@{RooSpinTwo}!b9Val@{b9Val}}
+\index{b9Val@{b9Val}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b9Val}{b9Val}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b9\+Val\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_a23620ef545db525ddf5f0fab640a9065}\label{classRooSpinTwo_a23620ef545db525ddf5f0fab640a9065}} 
+\index{RooSpinTwo@{RooSpinTwo}!b9ValIm@{b9ValIm}}
+\index{b9ValIm@{b9ValIm}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{b9ValIm}{b9ValIm}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::b9\+Val\+Im\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_adeb93e00aad7f0b0eff58ccd4a7cb06f}\label{classRooSpinTwo_adeb93e00aad7f0b0eff58ccd4a7cb06f}} 
+\index{RooSpinTwo@{RooSpinTwo}!f\_spinz1@{f\_spinz1}}
+\index{f\_spinz1@{f\_spinz1}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{f\_spinz1}{f\_spinz1}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::f\+\_\+spinz1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_addad52cd27479cca5c8cee44ad63c937}\label{classRooSpinTwo_addad52cd27479cca5c8cee44ad63c937}} 
+\index{RooSpinTwo@{RooSpinTwo}!f\_spinz2@{f\_spinz2}}
+\index{f\_spinz2@{f\_spinz2}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{f\_spinz2}{f\_spinz2}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::f\+\_\+spinz2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classRooSpinTwo_aeb465254cb341782494c0661a20f637c}\label{classRooSpinTwo_aeb465254cb341782494c0661a20f637c}} 
+\index{RooSpinTwo@{RooSpinTwo}!Lambda@{Lambda}}
+\index{Lambda@{Lambda}!RooSpinTwo@{RooSpinTwo}}
+\doxysubsubsection{\texorpdfstring{Lambda}{Lambda}}
+{\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Spin\+Two\+::\+Lambda\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{RooSpinTwo_8h}{Roo\+Spin\+Two.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{RooSpinTwo_8cc}{Roo\+Spin\+Two.\+cc}}\end{DoxyCompactItemize}

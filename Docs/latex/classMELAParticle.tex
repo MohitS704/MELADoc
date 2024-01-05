@@ -1,0 +1,527 @@
+\hypertarget{classMELAParticle}{}\doxysection{M\+E\+L\+A\+Particle Class Reference}
+\label{classMELAParticle}\index{MELAParticle@{MELAParticle}}
+
+
+{\ttfamily \#include $<$M\+E\+L\+A\+Particle.\+h$>$}
+
+
+
+Inheritance diagram for M\+E\+L\+A\+Particle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMELAParticle__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMELAParticle_ab9814bc508cf2f1ac422615ec9c1ba9f}{M\+E\+L\+A\+Particle}} ()
+\item 
+\mbox{\hyperlink{classMELAParticle_ae48eed4bdcf1e8e1d276ecd294354094}{M\+E\+L\+A\+Particle}} (int id\+\_\+)
+\item 
+\mbox{\hyperlink{classMELAParticle_ac84e88f70ebe97dd783616caddf7024f}{M\+E\+L\+A\+Particle}} (int id\+\_\+, T\+Lorentz\+Vector p4\+\_\+)
+\item 
+\mbox{\hyperlink{classMELAParticle_a193545a37aa8b793e93d4a40222c8a39}{M\+E\+L\+A\+Particle}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&particle\+\_\+)
+\item 
+\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \& \mbox{\hyperlink{classMELAParticle_a462da92ca58829e33bb27d4b67421355}{operator=}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&particle\+\_\+)
+\item 
+virtual \mbox{\hyperlink{classMELAParticle_a0b9ff89b073edb655e36731da3f183b4}{$\sim$\+M\+E\+L\+A\+Particle}} ()
+\item 
+void \mbox{\hyperlink{classMELAParticle_add0bb024f6e38a670d59f42ae9f71a46}{swap}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&particle\+\_\+)
+\item 
+void \mbox{\hyperlink{classMELAParticle_ade427a65e11bbfead2cba0d6b79cdd68}{set\+Selected}} (bool is\+Selected=true)
+\item 
+void \mbox{\hyperlink{classMELAParticle_a4acf2bbd01994e54cd9514b8ce7d5c95}{set\+Gen\+Status}} (int status\+\_\+)
+\item 
+void \mbox{\hyperlink{classMELAParticle_a707668177b5002cfb78a6f6c69e0b5bd}{set\+Lifetime}} (double life\+\_\+)
+\item 
+void \mbox{\hyperlink{classMELAParticle_a842ee69ede2f6fbdd62517bc4bcf8946}{add\+Mother}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$my\+Particle)
+\item 
+void \mbox{\hyperlink{classMELAParticle_a555dda1d36e3cf9801de88ad38a6c6de}{add\+Daughter}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$my\+Particle)
+\item 
+int \mbox{\hyperlink{classMELAParticle_a793d2d9fbebea5e9a0a7b7c3205d4d43}{get\+N\+Mothers}} () const
+\item 
+int \mbox{\hyperlink{classMELAParticle_af888923eb993c0115a0f952820f820f3}{get\+N\+Daughters}} () const
+\item 
+virtual std\+::vector$<$ int $>$ \mbox{\hyperlink{classMELAParticle_a97b26c533e90b1a4f8581aeede48386e}{get\+Daughter\+Ids}} () const
+\item 
+\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ \mbox{\hyperlink{classMELAParticle_afca775f013fab57b11b4e586df949236}{get\+Mother}} (int index) const
+\item 
+\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ \mbox{\hyperlink{classMELAParticle_aede96ba9ae62a63421125ed11b64c7ed}{get\+Daughter}} (int index) const
+\item 
+virtual void \mbox{\hyperlink{classMELAParticle_ad81cc36758dcba717efe1ebd1326e2fd}{get\+Related\+Particles}} (std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \&particles) const
+\item 
+virtual void \mbox{\hyperlink{classMELAParticle_a9f502179545dba5a27154f0fbe31af63}{get\+Daughter\+Particles}} (std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \&particles) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \& \mbox{\hyperlink{classMELAParticle_acf803d5769b382fbac5c780971aef13d}{get\+Mothers}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \& \mbox{\hyperlink{classMELAParticle_a7b091a138709e28de0ca4d843b755efd}{get\+Daughters}} ()
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \& \mbox{\hyperlink{classMELAParticle_a5a7f74f3a8a30a467e821fa22d107359}{get\+Mothers}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \& \mbox{\hyperlink{classMELAParticle_a16f6b8a78daecf7fe4e54ddef62af440}{get\+Daughters}} () const
+\item 
+bool \mbox{\hyperlink{classMELAParticle_a6de9038fdf9ecc3d2c3adb6b2cd0b829}{has\+Mother}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$part) const
+\item 
+bool \mbox{\hyperlink{classMELAParticle_adfadf4c265815e5e636860f29fa6719e}{has\+Daughter}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$part) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a4766d9d6fec92de6a5ea19bdc745c460}{charge}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_ac3cb815d870a9a9698be43534ee5066d}{m}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a0af94e94c1e288b5f26f9809eb604fa4}{x}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_af708228a162d4eed0c991e8ffec9abf1}{y}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a681ce5a5168b0ec3e210e9fc4894cebf}{z}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a89fb7c7e68444009583fc7ebe34291f5}{t}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a2f85096ecfee57923775197c94cba587}{p}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a38fe0e0f118d6c8d26839204758e163a}{pt}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_ada96b24afb3092f17ae2ac6693ba3021}{eta}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a84e0a877ea4c6cfaa002fb9b27d313e4}{phi}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a069177366b93fca3365ebde68e2e906c}{rapidity}} () const
+\item 
+double \mbox{\hyperlink{classMELAParticle_ac9a44c53f2e96c1b951291c00ac70c89}{dot}} (const T\+Lorentz\+Vector \&v) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a2b0e3127991aecb7e771b57a0835ff83}{dot}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&part) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a32991f5b2f656ada2e09d62849693304}{dot}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a8b9e356765010c0c7bc905f8b00d2ce5}{euclidean\+\_\+dot}} (const T\+Lorentz\+Vector \&v) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_aacc1ec90ff3c9801afad1e0472dd7d3d}{euclidean\+\_\+dot}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&part) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a1afcbda941a63029d79ebf1959a9754f}{euclidean\+\_\+dot}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a41e2d842e5dd8d6a646b0cf3089bc36b}{deltaR}} (const T\+Lorentz\+Vector \&v) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a432cae470906fdca56922d4c08965c84}{deltaR}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&part) const
+\item 
+double \mbox{\hyperlink{classMELAParticle_a62b9f0b1c085ee73bd38cb7c44f8a6d9}{deltaR}} (const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part) const
+\item 
+void \mbox{\hyperlink{classMELAParticle_a6cfc38eb7bb51f8358f62c0b646eefc2}{boost}} (const T\+Vector3 \&vec, bool boost\+All=false)
+\item 
+T\+Vector3 \mbox{\hyperlink{classMELAParticle_ab06d3ce1af7ff8fcfea9102414e61478}{vect}} () const
+\item 
+T\+Vector3 \mbox{\hyperlink{classMELAParticle_a21b9d5bfde8623ae4357d7da45b2734f}{calculate\+Total\+Displacement}} () const
+\item 
+\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \& \mbox{\hyperlink{classMELAParticle_aeb35e3727b9fe6d3b78b177081fc6b0c}{operator+=}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$part)
+\item 
+\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \& \mbox{\hyperlink{classMELAParticle_ad701ae43d8398735e015dfe25cf0ac74}{operator+=}} (const T\+Lorentz\+Vector \&mom)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classMELAParticle_a0f3f2cd96fcfcbb55d394a024cf43eae}{check\+Particle\+Exists}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$my\+Particle, std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ const \&particle\+Array)
+\item 
+static bool \mbox{\hyperlink{classMELAParticle_a29816075eb9a171f22dac709885348bf}{check\+Deep\+Daughtership}} (\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$part1, \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$part2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classMELAParticle_aa386f1d8d5641ba54762863d0636ad74}{id}}
+\item 
+T\+Lorentz\+Vector \mbox{\hyperlink{classMELAParticle_ad4924857d4bf0679c844a652f90c65e6}{p4}}
+\item 
+bool \mbox{\hyperlink{classMELAParticle_ad13ac757794f9042a720703d363bb3c6}{pass\+Selection}}
+\item 
+int \mbox{\hyperlink{classMELAParticle_ae3f24a2add4727054d41c2519b131bb8}{gen\+Status}}
+\item 
+double \mbox{\hyperlink{classMELAParticle_a04f2457d64d0c618d4fb22c2836b9948}{lifetime}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \mbox{\hyperlink{classMELAParticle_acc81feeb51b02571b4f8e5fa5c518eb6}{mothers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \mbox{\hyperlink{classMELAParticle_af502c9b11703a89f4006c5bde416593f}{daughters}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMELAParticle_ab9814bc508cf2f1ac422615ec9c1ba9f}\label{classMELAParticle_ab9814bc508cf2f1ac422615ec9c1ba9f}} 
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{MELAParticle()}{MELAParticle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Particle\+::\+M\+E\+L\+A\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_ae48eed4bdcf1e8e1d276ecd294354094}\label{classMELAParticle_ae48eed4bdcf1e8e1d276ecd294354094}} 
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{MELAParticle()}{MELAParticle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Particle\+::\+M\+E\+L\+A\+Particle (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_ac84e88f70ebe97dd783616caddf7024f}\label{classMELAParticle_ac84e88f70ebe97dd783616caddf7024f}} 
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{MELAParticle()}{MELAParticle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Particle\+::\+M\+E\+L\+A\+Particle (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{T\+Lorentz\+Vector}]{p4\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a193545a37aa8b793e93d4a40222c8a39}\label{classMELAParticle_a193545a37aa8b793e93d4a40222c8a39}} 
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\index{MELAParticle@{MELAParticle}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{MELAParticle()}{MELAParticle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Particle\+::\+M\+E\+L\+A\+Particle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&}]{particle\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a0b9ff89b073edb655e36731da3f183b4}\label{classMELAParticle_a0b9ff89b073edb655e36731da3f183b4}} 
+\index{MELAParticle@{MELAParticle}!````~MELAParticle@{$\sim$MELAParticle}}
+\index{````~MELAParticle@{$\sim$MELAParticle}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{$\sim$MELAParticle()}{~MELAParticle()}}
+{\footnotesize\ttfamily virtual M\+E\+L\+A\+Particle\+::$\sim$\+M\+E\+L\+A\+Particle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMELAParticle_a555dda1d36e3cf9801de88ad38a6c6de}\label{classMELAParticle_a555dda1d36e3cf9801de88ad38a6c6de}} 
+\index{MELAParticle@{MELAParticle}!addDaughter@{addDaughter}}
+\index{addDaughter@{addDaughter}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{addDaughter()}{addDaughter()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::add\+Daughter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{my\+Particle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a842ee69ede2f6fbdd62517bc4bcf8946}\label{classMELAParticle_a842ee69ede2f6fbdd62517bc4bcf8946}} 
+\index{MELAParticle@{MELAParticle}!addMother@{addMother}}
+\index{addMother@{addMother}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{addMother()}{addMother()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::add\+Mother (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{my\+Particle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a6cfc38eb7bb51f8358f62c0b646eefc2}\label{classMELAParticle_a6cfc38eb7bb51f8358f62c0b646eefc2}} 
+\index{MELAParticle@{MELAParticle}!boost@{boost}}
+\index{boost@{boost}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{boost()}{boost()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::boost (\begin{DoxyParamCaption}\item[{const T\+Vector3 \&}]{vec,  }\item[{bool}]{boost\+All = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a21b9d5bfde8623ae4357d7da45b2734f}\label{classMELAParticle_a21b9d5bfde8623ae4357d7da45b2734f}} 
+\index{MELAParticle@{MELAParticle}!calculateTotalDisplacement@{calculateTotalDisplacement}}
+\index{calculateTotalDisplacement@{calculateTotalDisplacement}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{calculateTotalDisplacement()}{calculateTotalDisplacement()}}
+{\footnotesize\ttfamily T\+Vector3 M\+E\+L\+A\+Particle\+::calculate\+Total\+Displacement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELAParticle_a4766d9d6fec92de6a5ea19bdc745c460}\label{classMELAParticle_a4766d9d6fec92de6a5ea19bdc745c460}} 
+\index{MELAParticle@{MELAParticle}!charge@{charge}}
+\index{charge@{charge}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{charge()}{charge()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::charge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELAParticle_a29816075eb9a171f22dac709885348bf}\label{classMELAParticle_a29816075eb9a171f22dac709885348bf}} 
+\index{MELAParticle@{MELAParticle}!checkDeepDaughtership@{checkDeepDaughtership}}
+\index{checkDeepDaughtership@{checkDeepDaughtership}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{checkDeepDaughtership()}{checkDeepDaughtership()}}
+{\footnotesize\ttfamily bool M\+E\+L\+A\+Particle\+::check\+Deep\+Daughtership (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$}]{part1,  }\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$}]{part2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMELAParticle_a0f3f2cd96fcfcbb55d394a024cf43eae}\label{classMELAParticle_a0f3f2cd96fcfcbb55d394a024cf43eae}} 
+\index{MELAParticle@{MELAParticle}!checkParticleExists@{checkParticleExists}}
+\index{checkParticleExists@{checkParticleExists}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{checkParticleExists()}{checkParticleExists()}}
+{\footnotesize\ttfamily bool M\+E\+L\+A\+Particle\+::check\+Particle\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$}]{my\+Particle,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ const \&}]{particle\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMELAParticle_a432cae470906fdca56922d4c08965c84}\label{classMELAParticle_a432cae470906fdca56922d4c08965c84}} 
+\index{MELAParticle@{MELAParticle}!deltaR@{deltaR}}
+\index{deltaR@{deltaR}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{deltaR()}{deltaR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::deltaR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&}]{part }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a62b9f0b1c085ee73bd38cb7c44f8a6d9}\label{classMELAParticle_a62b9f0b1c085ee73bd38cb7c44f8a6d9}} 
+\index{MELAParticle@{MELAParticle}!deltaR@{deltaR}}
+\index{deltaR@{deltaR}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{deltaR()}{deltaR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::deltaR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a41e2d842e5dd8d6a646b0cf3089bc36b}\label{classMELAParticle_a41e2d842e5dd8d6a646b0cf3089bc36b}} 
+\index{MELAParticle@{MELAParticle}!deltaR@{deltaR}}
+\index{deltaR@{deltaR}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{deltaR()}{deltaR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::deltaR (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a2b0e3127991aecb7e771b57a0835ff83}\label{classMELAParticle_a2b0e3127991aecb7e771b57a0835ff83}} 
+\index{MELAParticle@{MELAParticle}!dot@{dot}}
+\index{dot@{dot}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&}]{part }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a32991f5b2f656ada2e09d62849693304}\label{classMELAParticle_a32991f5b2f656ada2e09d62849693304}} 
+\index{MELAParticle@{MELAParticle}!dot@{dot}}
+\index{dot@{dot}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_ac9a44c53f2e96c1b951291c00ac70c89}\label{classMELAParticle_ac9a44c53f2e96c1b951291c00ac70c89}} 
+\index{MELAParticle@{MELAParticle}!dot@{dot}}
+\index{dot@{dot}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::dot (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_ada96b24afb3092f17ae2ac6693ba3021}\label{classMELAParticle_ada96b24afb3092f17ae2ac6693ba3021}} 
+\index{MELAParticle@{MELAParticle}!eta@{eta}}
+\index{eta@{eta}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{eta()}{eta()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::eta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_aacc1ec90ff3c9801afad1e0472dd7d3d}\label{classMELAParticle_aacc1ec90ff3c9801afad1e0472dd7d3d}} 
+\index{MELAParticle@{MELAParticle}!euclidean\_dot@{euclidean\_dot}}
+\index{euclidean\_dot@{euclidean\_dot}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{euclidean\_dot()}{euclidean\_dot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::euclidean\+\_\+dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&}]{part }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a1afcbda941a63029d79ebf1959a9754f}\label{classMELAParticle_a1afcbda941a63029d79ebf1959a9754f}} 
+\index{MELAParticle@{MELAParticle}!euclidean\_dot@{euclidean\_dot}}
+\index{euclidean\_dot@{euclidean\_dot}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{euclidean\_dot()}{euclidean\_dot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::euclidean\+\_\+dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a8b9e356765010c0c7bc905f8b00d2ce5}\label{classMELAParticle_a8b9e356765010c0c7bc905f8b00d2ce5}} 
+\index{MELAParticle@{MELAParticle}!euclidean\_dot@{euclidean\_dot}}
+\index{euclidean\_dot@{euclidean\_dot}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{euclidean\_dot()}{euclidean\_dot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::euclidean\+\_\+dot (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_aede96ba9ae62a63421125ed11b64c7ed}\label{classMELAParticle_aede96ba9ae62a63421125ed11b64c7ed}} 
+\index{MELAParticle@{MELAParticle}!getDaughter@{getDaughter}}
+\index{getDaughter@{getDaughter}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getDaughter()}{getDaughter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ M\+E\+L\+A\+Particle\+::get\+Daughter (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELAParticle_a97b26c533e90b1a4f8581aeede48386e}\label{classMELAParticle_a97b26c533e90b1a4f8581aeede48386e}} 
+\index{MELAParticle@{MELAParticle}!getDaughterIds@{getDaughterIds}}
+\index{getDaughterIds@{getDaughterIds}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getDaughterIds()}{getDaughterIds()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ M\+E\+L\+A\+Particle\+::get\+Daughter\+Ids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classMELACandidate_a72f650a2446070200743e4daa36ab6a6}{M\+E\+L\+A\+Candidate}}.
+
+\mbox{\Hypertarget{classMELAParticle_a9f502179545dba5a27154f0fbe31af63}\label{classMELAParticle_a9f502179545dba5a27154f0fbe31af63}} 
+\index{MELAParticle@{MELAParticle}!getDaughterParticles@{getDaughterParticles}}
+\index{getDaughterParticles@{getDaughterParticles}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getDaughterParticles()}{getDaughterParticles()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::get\+Daughter\+Particles (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \&}]{particles }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classMELACandidate_a3c103722cba5f49aff829bb4ebe9efda}{M\+E\+L\+A\+Candidate}}.
+
+\mbox{\Hypertarget{classMELAParticle_a7b091a138709e28de0ca4d843b755efd}\label{classMELAParticle_a7b091a138709e28de0ca4d843b755efd}} 
+\index{MELAParticle@{MELAParticle}!getDaughters@{getDaughters}}
+\index{getDaughters@{getDaughters}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getDaughters()}{getDaughters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}$\ast$$>$\& M\+E\+L\+A\+Particle\+::get\+Daughters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a16f6b8a78daecf7fe4e54ddef62af440}\label{classMELAParticle_a16f6b8a78daecf7fe4e54ddef62af440}} 
+\index{MELAParticle@{MELAParticle}!getDaughters@{getDaughters}}
+\index{getDaughters@{getDaughters}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getDaughters()}{getDaughters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}$\ast$$>$\& M\+E\+L\+A\+Particle\+::get\+Daughters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_afca775f013fab57b11b4e586df949236}\label{classMELAParticle_afca775f013fab57b11b4e586df949236}} 
+\index{MELAParticle@{MELAParticle}!getMother@{getMother}}
+\index{getMother@{getMother}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getMother()}{getMother()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ M\+E\+L\+A\+Particle\+::get\+Mother (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELAParticle_acf803d5769b382fbac5c780971aef13d}\label{classMELAParticle_acf803d5769b382fbac5c780971aef13d}} 
+\index{MELAParticle@{MELAParticle}!getMothers@{getMothers}}
+\index{getMothers@{getMothers}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getMothers()}{getMothers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}$\ast$$>$\& M\+E\+L\+A\+Particle\+::get\+Mothers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a5a7f74f3a8a30a467e821fa22d107359}\label{classMELAParticle_a5a7f74f3a8a30a467e821fa22d107359}} 
+\index{MELAParticle@{MELAParticle}!getMothers@{getMothers}}
+\index{getMothers@{getMothers}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getMothers()}{getMothers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}$\ast$$>$\& M\+E\+L\+A\+Particle\+::get\+Mothers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_af888923eb993c0115a0f952820f820f3}\label{classMELAParticle_af888923eb993c0115a0f952820f820f3}} 
+\index{MELAParticle@{MELAParticle}!getNDaughters@{getNDaughters}}
+\index{getNDaughters@{getNDaughters}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getNDaughters()}{getNDaughters()}}
+{\footnotesize\ttfamily int M\+E\+L\+A\+Particle\+::get\+N\+Daughters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a793d2d9fbebea5e9a0a7b7c3205d4d43}\label{classMELAParticle_a793d2d9fbebea5e9a0a7b7c3205d4d43}} 
+\index{MELAParticle@{MELAParticle}!getNMothers@{getNMothers}}
+\index{getNMothers@{getNMothers}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getNMothers()}{getNMothers()}}
+{\footnotesize\ttfamily int M\+E\+L\+A\+Particle\+::get\+N\+Mothers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_ad81cc36758dcba717efe1ebd1326e2fd}\label{classMELAParticle_ad81cc36758dcba717efe1ebd1326e2fd}} 
+\index{MELAParticle@{MELAParticle}!getRelatedParticles@{getRelatedParticles}}
+\index{getRelatedParticles@{getRelatedParticles}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{getRelatedParticles()}{getRelatedParticles()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::get\+Related\+Particles (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$ $>$ \&}]{particles }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classMELACandidate_ace4aaf8279aeabeaf8c0e024261e0d04}{M\+E\+L\+A\+Candidate}}.
+
+\mbox{\Hypertarget{classMELAParticle_adfadf4c265815e5e636860f29fa6719e}\label{classMELAParticle_adfadf4c265815e5e636860f29fa6719e}} 
+\index{MELAParticle@{MELAParticle}!hasDaughter@{hasDaughter}}
+\index{hasDaughter@{hasDaughter}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{hasDaughter()}{hasDaughter()}}
+{\footnotesize\ttfamily bool M\+E\+L\+A\+Particle\+::has\+Daughter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$}]{part }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELAParticle_a6de9038fdf9ecc3d2c3adb6b2cd0b829}\label{classMELAParticle_a6de9038fdf9ecc3d2c3adb6b2cd0b829}} 
+\index{MELAParticle@{MELAParticle}!hasMother@{hasMother}}
+\index{hasMother@{hasMother}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{hasMother()}{hasMother()}}
+{\footnotesize\ttfamily bool M\+E\+L\+A\+Particle\+::has\+Mother (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} const $\ast$}]{part }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMELAParticle_ac3cb815d870a9a9698be43534ee5066d}\label{classMELAParticle_ac3cb815d870a9a9698be43534ee5066d}} 
+\index{MELAParticle@{MELAParticle}!m@{m}}
+\index{m@{m}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{m()}{m()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::m (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_ad701ae43d8398735e015dfe25cf0ac74}\label{classMELAParticle_ad701ae43d8398735e015dfe25cf0ac74}} 
+\index{MELAParticle@{MELAParticle}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}\& M\+E\+L\+A\+Particle\+::operator+= (\begin{DoxyParamCaption}\item[{const T\+Lorentz\+Vector \&}]{mom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_aeb35e3727b9fe6d3b78b177081fc6b0c}\label{classMELAParticle_aeb35e3727b9fe6d3b78b177081fc6b0c}} 
+\index{MELAParticle@{MELAParticle}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}\& M\+E\+L\+A\+Particle\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} $\ast$}]{part }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a462da92ca58829e33bb27d4b67421355}\label{classMELAParticle_a462da92ca58829e33bb27d4b67421355}} 
+\index{MELAParticle@{MELAParticle}!operator=@{operator=}}
+\index{operator=@{operator=}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \& M\+E\+L\+A\+Particle\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&}]{particle\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a2f85096ecfee57923775197c94cba587}\label{classMELAParticle_a2f85096ecfee57923775197c94cba587}} 
+\index{MELAParticle@{MELAParticle}!p@{p}}
+\index{p@{p}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{p()}{p()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a84e0a877ea4c6cfaa002fb9b27d313e4}\label{classMELAParticle_a84e0a877ea4c6cfaa002fb9b27d313e4}} 
+\index{MELAParticle@{MELAParticle}!phi@{phi}}
+\index{phi@{phi}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{phi()}{phi()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::phi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a38fe0e0f118d6c8d26839204758e163a}\label{classMELAParticle_a38fe0e0f118d6c8d26839204758e163a}} 
+\index{MELAParticle@{MELAParticle}!pt@{pt}}
+\index{pt@{pt}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{pt()}{pt()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::pt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a069177366b93fca3365ebde68e2e906c}\label{classMELAParticle_a069177366b93fca3365ebde68e2e906c}} 
+\index{MELAParticle@{MELAParticle}!rapidity@{rapidity}}
+\index{rapidity@{rapidity}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{rapidity()}{rapidity()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::rapidity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a4acf2bbd01994e54cd9514b8ce7d5c95}\label{classMELAParticle_a4acf2bbd01994e54cd9514b8ce7d5c95}} 
+\index{MELAParticle@{MELAParticle}!setGenStatus@{setGenStatus}}
+\index{setGenStatus@{setGenStatus}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{setGenStatus()}{setGenStatus()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::set\+Gen\+Status (\begin{DoxyParamCaption}\item[{int}]{status\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a707668177b5002cfb78a6f6c69e0b5bd}\label{classMELAParticle_a707668177b5002cfb78a6f6c69e0b5bd}} 
+\index{MELAParticle@{MELAParticle}!setLifetime@{setLifetime}}
+\index{setLifetime@{setLifetime}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{setLifetime()}{setLifetime()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::set\+Lifetime (\begin{DoxyParamCaption}\item[{double}]{life\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_ade427a65e11bbfead2cba0d6b79cdd68}\label{classMELAParticle_ade427a65e11bbfead2cba0d6b79cdd68}} 
+\index{MELAParticle@{MELAParticle}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{is\+Selected = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_add0bb024f6e38a670d59f42ae9f71a46}\label{classMELAParticle_add0bb024f6e38a670d59f42ae9f71a46}} 
+\index{MELAParticle@{MELAParticle}!swap@{swap}}
+\index{swap@{swap}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Particle\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}} \&}]{particle\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELAParticle_a89fb7c7e68444009583fc7ebe34291f5}\label{classMELAParticle_a89fb7c7e68444009583fc7ebe34291f5}} 
+\index{MELAParticle@{MELAParticle}!t@{t}}
+\index{t@{t}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{t()}{t()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_ab06d3ce1af7ff8fcfea9102414e61478}\label{classMELAParticle_ab06d3ce1af7ff8fcfea9102414e61478}} 
+\index{MELAParticle@{MELAParticle}!vect@{vect}}
+\index{vect@{vect}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{vect()}{vect()}}
+{\footnotesize\ttfamily T\+Vector3 M\+E\+L\+A\+Particle\+::vect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a0af94e94c1e288b5f26f9809eb604fa4}\label{classMELAParticle_a0af94e94c1e288b5f26f9809eb604fa4}} 
+\index{MELAParticle@{MELAParticle}!x@{x}}
+\index{x@{x}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_af708228a162d4eed0c991e8ffec9abf1}\label{classMELAParticle_af708228a162d4eed0c991e8ffec9abf1}} 
+\index{MELAParticle@{MELAParticle}!y@{y}}
+\index{y@{y}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMELAParticle_a681ce5a5168b0ec3e210e9fc4894cebf}\label{classMELAParticle_a681ce5a5168b0ec3e210e9fc4894cebf}} 
+\index{MELAParticle@{MELAParticle}!z@{z}}
+\index{z@{z}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{z()}{z()}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMELAParticle_af502c9b11703a89f4006c5bde416593f}\label{classMELAParticle_af502c9b11703a89f4006c5bde416593f}} 
+\index{MELAParticle@{MELAParticle}!daughters@{daughters}}
+\index{daughters@{daughters}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{daughters}{daughters}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}$\ast$$>$ M\+E\+L\+A\+Particle\+::daughters\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELAParticle_ae3f24a2add4727054d41c2519b131bb8}\label{classMELAParticle_ae3f24a2add4727054d41c2519b131bb8}} 
+\index{MELAParticle@{MELAParticle}!genStatus@{genStatus}}
+\index{genStatus@{genStatus}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{genStatus}{genStatus}}
+{\footnotesize\ttfamily int M\+E\+L\+A\+Particle\+::gen\+Status}
+
+\mbox{\Hypertarget{classMELAParticle_aa386f1d8d5641ba54762863d0636ad74}\label{classMELAParticle_aa386f1d8d5641ba54762863d0636ad74}} 
+\index{MELAParticle@{MELAParticle}!id@{id}}
+\index{id@{id}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int M\+E\+L\+A\+Particle\+::id}
+
+\mbox{\Hypertarget{classMELAParticle_a04f2457d64d0c618d4fb22c2836b9948}\label{classMELAParticle_a04f2457d64d0c618d4fb22c2836b9948}} 
+\index{MELAParticle@{MELAParticle}!lifetime@{lifetime}}
+\index{lifetime@{lifetime}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{lifetime}{lifetime}}
+{\footnotesize\ttfamily double M\+E\+L\+A\+Particle\+::lifetime}
+
+\mbox{\Hypertarget{classMELAParticle_acc81feeb51b02571b4f8e5fa5c518eb6}\label{classMELAParticle_acc81feeb51b02571b4f8e5fa5c518eb6}} 
+\index{MELAParticle@{MELAParticle}!mothers@{mothers}}
+\index{mothers@{mothers}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{mothers}{mothers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELAParticle}{M\+E\+L\+A\+Particle}}$\ast$$>$ M\+E\+L\+A\+Particle\+::mothers\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMELAParticle_ad4924857d4bf0679c844a652f90c65e6}\label{classMELAParticle_ad4924857d4bf0679c844a652f90c65e6}} 
+\index{MELAParticle@{MELAParticle}!p4@{p4}}
+\index{p4@{p4}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{p4}{p4}}
+{\footnotesize\ttfamily T\+Lorentz\+Vector M\+E\+L\+A\+Particle\+::p4}
+
+\mbox{\Hypertarget{classMELAParticle_ad13ac757794f9042a720703d363bb3c6}\label{classMELAParticle_ad13ac757794f9042a720703d363bb3c6}} 
+\index{MELAParticle@{MELAParticle}!passSelection@{passSelection}}
+\index{passSelection@{passSelection}!MELAParticle@{MELAParticle}}
+\doxysubsubsection{\texorpdfstring{passSelection}{passSelection}}
+{\footnotesize\ttfamily bool M\+E\+L\+A\+Particle\+::pass\+Selection}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{MELAParticle_8h}{M\+E\+L\+A\+Particle.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{MELAParticle_8cc}{M\+E\+L\+A\+Particle.\+cc}}\end{DoxyCompactItemize}

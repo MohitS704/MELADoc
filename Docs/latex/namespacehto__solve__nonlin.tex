@@ -1,0 +1,80 @@
+\hypertarget{namespacehto__solve__nonlin}{}\doxysection{hto\+\_\+solve\+\_\+nonlin Module Reference}
+\label{namespacehto__solve__nonlin}\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacehto__solve__nonlin_a4913ccbfdbf22332947aa02f3df9eee5}{hto\+\_\+hbrd}} (H\+T\+O\+\_\+\+F\+CN, n, x, fvec, epsfcn, tol, info, diag)
+\item 
+subroutine, public \mbox{\hyperlink{namespacehto__solve__nonlin_a2fedece7d4082c4306271f14df72387e}{hto\+\_\+hybrd}} (H\+T\+O\+\_\+\+F\+CN, n, x, fvec, xtol, maxfev, ml, mu, epsfcn, diag, mode, factor, nprint, info, nfev)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_afe4e5fea1ad06250f9e5ce2a5ac37e33}{hto\+\_\+dogleg}} (n, r, lr, diag, qtb, delta, x, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a9b9991931fe83ae42bd577aa132fd691}{hto\+\_\+fdjac1}} (H\+T\+O\+\_\+\+F\+CN, n, x, fvec, fjac, ldfjac, iflag, ml, mu, epsfcn, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a6c27c7948dee7924b448527cd0e47aff}{hto\+\_\+qform}} (m, n, q, ldq, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a98884f67245c484b378efff769d60f69}{hto\+\_\+qrfac}} (m, n, a, lda, pivot, ipvt, lipvt, rdiag, acnorm, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_a89a4ef64a31dd4d201b9b6bb3c077ab1}{hto\+\_\+r1mpyq}} (m, n, a, lda, v, w)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__solve__nonlin_af73d8384fe07fde7b063afc452466f03}{hto\+\_\+r1updt}} (m, n, s, ls, u, v, w, sing)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\+\_\+enorm}} (n, x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__solve__nonlin_afe4e5fea1ad06250f9e5ce2a5ac37e33}\label{namespacehto__solve__nonlin_afe4e5fea1ad06250f9e5ce2a5ac37e33}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_dogleg@{hto\_dogleg}}
+\index{hto\_dogleg@{hto\_dogleg}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_dogleg()}{hto\_dogleg()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+dogleg (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(lr), intent(in)}]{r,  }\item[{integer, intent(in)}]{lr,  }\item[{real$\ast$8, dimension(n), intent(in)}]{diag,  }\item[{real$\ast$8, dimension(n), intent(in)}]{qtb,  }\item[{real$\ast$8, intent(in)}]{delta,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{x,  }\item[{real$\ast$8, dimension(n), intent(out)}]{wa1,  }\item[{real$\ast$8, dimension(n), intent(out)}]{wa2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}\label{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_enorm@{hto\_enorm}}
+\index{hto\_enorm@{hto\_enorm}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_enorm()}{hto\_enorm()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+enorm (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(n), intent(in)}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a9b9991931fe83ae42bd577aa132fd691}\label{namespacehto__solve__nonlin_a9b9991931fe83ae42bd577aa132fd691}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_fdjac1@{hto\_fdjac1}}
+\index{hto\_fdjac1@{hto\_fdjac1}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_fdjac1()}{hto\_fdjac1()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+fdjac1 (\begin{DoxyParamCaption}\item[{}]{H\+T\+O\+\_\+\+F\+CN,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{x,  }\item[{real$\ast$8, dimension(n), intent(in)}]{fvec,  }\item[{real$\ast$8, dimension(ldfjac,n), intent(out)}]{fjac,  }\item[{integer, intent(in)}]{ldfjac,  }\item[{integer, intent(inout)}]{iflag,  }\item[{integer, intent(in)}]{ml,  }\item[{integer, intent(in)}]{mu,  }\item[{real$\ast$8, intent(in)}]{epsfcn,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{wa1,  }\item[{real$\ast$8, dimension(n), intent(out)}]{wa2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a4913ccbfdbf22332947aa02f3df9eee5}\label{namespacehto__solve__nonlin_a4913ccbfdbf22332947aa02f3df9eee5}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_hbrd@{hto\_hbrd}}
+\index{hto\_hbrd@{hto\_hbrd}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_hbrd()}{hto\_hbrd()}}
+{\footnotesize\ttfamily subroutine, public hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+hbrd (\begin{DoxyParamCaption}\item[{}]{H\+T\+O\+\_\+\+F\+CN,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{x,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{fvec,  }\item[{real$\ast$8, intent(in)}]{epsfcn,  }\item[{real$\ast$8, intent(in)}]{tol,  }\item[{integer, intent(out)}]{info,  }\item[{real$\ast$8, dimension(n), intent(out)}]{diag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a2fedece7d4082c4306271f14df72387e}\label{namespacehto__solve__nonlin_a2fedece7d4082c4306271f14df72387e}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_hybrd@{hto\_hybrd}}
+\index{hto\_hybrd@{hto\_hybrd}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_hybrd()}{hto\_hybrd()}}
+{\footnotesize\ttfamily subroutine, public hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+hybrd (\begin{DoxyParamCaption}\item[{}]{H\+T\+O\+\_\+\+F\+CN,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{x,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{fvec,  }\item[{real$\ast$8, intent(in)}]{xtol,  }\item[{integer, intent(inout)}]{maxfev,  }\item[{integer, intent(inout)}]{ml,  }\item[{integer, intent(in)}]{mu,  }\item[{real$\ast$8, intent(in)}]{epsfcn,  }\item[{real$\ast$8, dimension(n), intent(out)}]{diag,  }\item[{integer, intent(in)}]{mode,  }\item[{real$\ast$8, intent(in)}]{factor,  }\item[{integer, intent(inout)}]{nprint,  }\item[{integer, intent(out)}]{info,  }\item[{integer, intent(out)}]{nfev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a6c27c7948dee7924b448527cd0e47aff}\label{namespacehto__solve__nonlin_a6c27c7948dee7924b448527cd0e47aff}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_qform@{hto\_qform}}
+\index{hto\_qform@{hto\_qform}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_qform()}{hto\_qform()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+qform (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(ldq,m), intent(out)}]{q,  }\item[{integer, intent(in)}]{ldq,  }\item[{real$\ast$8, dimension(m), intent(out)}]{wa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a98884f67245c484b378efff769d60f69}\label{namespacehto__solve__nonlin_a98884f67245c484b378efff769d60f69}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_qrfac@{hto\_qrfac}}
+\index{hto\_qrfac@{hto\_qrfac}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_qrfac()}{hto\_qrfac()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+qrfac (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(lda,n), intent(inout)}]{a,  }\item[{integer, intent(in)}]{lda,  }\item[{logical, intent(in)}]{pivot,  }\item[{integer, dimension(lipvt), intent(out)}]{ipvt,  }\item[{integer, intent(in)}]{lipvt,  }\item[{real$\ast$8, dimension(n), intent(out)}]{rdiag,  }\item[{real$\ast$8, dimension(n), intent(out)}]{acnorm,  }\item[{real$\ast$8, dimension(n), intent(out)}]{wa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_a89a4ef64a31dd4d201b9b6bb3c077ab1}\label{namespacehto__solve__nonlin_a89a4ef64a31dd4d201b9b6bb3c077ab1}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_r1mpyq@{hto\_r1mpyq}}
+\index{hto\_r1mpyq@{hto\_r1mpyq}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_r1mpyq()}{hto\_r1mpyq()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+r1mpyq (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(lda,n), intent(inout)}]{a,  }\item[{integer, intent(in)}]{lda,  }\item[{real$\ast$8, dimension(n), intent(in)}]{v,  }\item[{real$\ast$8, dimension(n), intent(in)}]{w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacehto__solve__nonlin_af73d8384fe07fde7b063afc452466f03}\label{namespacehto__solve__nonlin_af73d8384fe07fde7b063afc452466f03}} 
+\index{hto\_solve\_nonlin@{hto\_solve\_nonlin}!hto\_r1updt@{hto\_r1updt}}
+\index{hto\_r1updt@{hto\_r1updt}!hto\_solve\_nonlin@{hto\_solve\_nonlin}}
+\doxysubsubsection{\texorpdfstring{hto\_r1updt()}{hto\_r1updt()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+solve\+\_\+nonlin\+::hto\+\_\+r1updt (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{m,  }\item[{integer, intent(in)}]{n,  }\item[{real$\ast$8, dimension(ls), intent(inout)}]{s,  }\item[{integer, intent(in)}]{ls,  }\item[{real$\ast$8, dimension(m), intent(in)}]{u,  }\item[{real$\ast$8, dimension(n), intent(inout)}]{v,  }\item[{real$\ast$8, dimension(m), intent(out)}]{w,  }\item[{logical, intent(out)}]{sing }\end{DoxyParamCaption})}
+

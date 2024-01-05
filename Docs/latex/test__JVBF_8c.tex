@@ -1,0 +1,89 @@
+\hypertarget{test__JVBF_8c}{}\doxysection{M\+E\+L\+A/test/test\+\_\+\+J\+V\+BF.c File Reference}
+\label{test__JVBF_8c}\index{MELA/test/test\_JVBF.c@{MELA/test/test\_JVBF.c}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}T\+Math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Rotation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Tree.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Chain.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H1\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H2\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H3\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H1\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H2\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H3\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Profile.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+F1.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Graph\+Errors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$J\+H\+U\+Gen\+M\+E\+L\+A/\+M\+E\+L\+A/interface/\+Mela.\+h$>$}\newline
+{\ttfamily \#include $<$J\+H\+U\+Gen\+M\+E\+L\+A/\+M\+E\+L\+A/src/compute\+Angles.\+h$>$}\newline
+Include dependency graph for test\+\_\+\+J\+V\+B\+F.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__JVBF_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{test__JVBF_8c_a4f71f9ee244c0848455c24c49d999de9}{get\+M\+C\+F\+M\+M\+E\+L\+A\+Weight}} (\mbox{\hyperlink{classMela}{Mela}} \&my\+Mela, int lep\+Id\mbox{[}4\mbox{]}, float angular\+Ordered\mbox{[}8\mbox{]}, double ggcoupl\mbox{[}2\mbox{]}, int use\+Constant=0)
+\item 
+float \mbox{\hyperlink{test__JVBF_8c_a4e4d84dffe082802bd84887537888dd6}{get\+J\+H\+U\+Gen\+M\+E\+L\+A\+Weight}} (\mbox{\hyperlink{classMela}{Mela}} \&my\+Mela, int lep\+Id\mbox{[}4\mbox{]}, float angular\+Ordered\mbox{[}8\mbox{]}, double self\+D\+Hvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+H\+VV\mbox{]}\mbox{[}2\mbox{]})
+\item 
+float \mbox{\hyperlink{test__JVBF_8c_a99c757a16030538ea0fc163f83c5c91d}{get\+Super\+M\+E\+LA}} (\mbox{\hyperlink{classMela}{Mela}} \&my\+Mela, int lep\+Id\mbox{[}4\mbox{]}, float m\+ZZ, \mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}} syst)
+\item 
+double \mbox{\hyperlink{test__JVBF_8c_a8895809fdf542ca7644e1744fd23fd31}{eta\+\_\+to\+\_\+costheta}} (double eta)
+\item 
+void \mbox{\hyperlink{test__JVBF_8c_a9e726053adaf5fd05b933ed25d560727}{test\+\_\+\+J\+V\+BF}} (int erg\+\_\+tev=8, float m\+Sample=0, bool isggH=false)
+\item 
+void \mbox{\hyperlink{test__JVBF_8c_a8b600efcfd299400e9950c661fe86814}{fit\+\_\+\+J\+V\+BF}} (int erg\+\_\+tev=8, float m\+Sample=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__JVBF_8c_a8895809fdf542ca7644e1744fd23fd31}\label{test__JVBF_8c_a8895809fdf542ca7644e1744fd23fd31}} 
+\index{test\_JVBF.c@{test\_JVBF.c}!eta\_to\_costheta@{eta\_to\_costheta}}
+\index{eta\_to\_costheta@{eta\_to\_costheta}!test\_JVBF.c@{test\_JVBF.c}}
+\doxysubsubsection{\texorpdfstring{eta\_to\_costheta()}{eta\_to\_costheta()}}
+{\footnotesize\ttfamily double eta\+\_\+to\+\_\+costheta (\begin{DoxyParamCaption}\item[{double}]{eta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__JVBF_8c_a8b600efcfd299400e9950c661fe86814}\label{test__JVBF_8c_a8b600efcfd299400e9950c661fe86814}} 
+\index{test\_JVBF.c@{test\_JVBF.c}!fit\_JVBF@{fit\_JVBF}}
+\index{fit\_JVBF@{fit\_JVBF}!test\_JVBF.c@{test\_JVBF.c}}
+\doxysubsubsection{\texorpdfstring{fit\_JVBF()}{fit\_JVBF()}}
+{\footnotesize\ttfamily void fit\+\_\+\+J\+V\+BF (\begin{DoxyParamCaption}\item[{int}]{erg\+\_\+tev = {\ttfamily 8},  }\item[{float}]{m\+Sample = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__JVBF_8c_a4e4d84dffe082802bd84887537888dd6}\label{test__JVBF_8c_a4e4d84dffe082802bd84887537888dd6}} 
+\index{test\_JVBF.c@{test\_JVBF.c}!getJHUGenMELAWeight@{getJHUGenMELAWeight}}
+\index{getJHUGenMELAWeight@{getJHUGenMELAWeight}!test\_JVBF.c@{test\_JVBF.c}}
+\doxysubsubsection{\texorpdfstring{getJHUGenMELAWeight()}{getJHUGenMELAWeight()}}
+{\footnotesize\ttfamily float get\+J\+H\+U\+Gen\+M\+E\+L\+A\+Weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMela}{Mela}} \&}]{my\+Mela,  }\item[{int}]{lep\+Id\mbox{[}4\mbox{]},  }\item[{float}]{angular\+Ordered\mbox{[}8\mbox{]},  }\item[{double}]{self\+D\+Hvvcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__JVBF_8c_a4f71f9ee244c0848455c24c49d999de9}\label{test__JVBF_8c_a4f71f9ee244c0848455c24c49d999de9}} 
+\index{test\_JVBF.c@{test\_JVBF.c}!getMCFMMELAWeight@{getMCFMMELAWeight}}
+\index{getMCFMMELAWeight@{getMCFMMELAWeight}!test\_JVBF.c@{test\_JVBF.c}}
+\doxysubsubsection{\texorpdfstring{getMCFMMELAWeight()}{getMCFMMELAWeight()}}
+{\footnotesize\ttfamily float get\+M\+C\+F\+M\+M\+E\+L\+A\+Weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMela}{Mela}} \&}]{my\+Mela,  }\item[{int}]{lep\+Id\mbox{[}4\mbox{]},  }\item[{float}]{angular\+Ordered\mbox{[}8\mbox{]},  }\item[{double}]{ggcoupl\mbox{[}2\mbox{]},  }\item[{int}]{use\+Constant = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__JVBF_8c_a99c757a16030538ea0fc163f83c5c91d}\label{test__JVBF_8c_a99c757a16030538ea0fc163f83c5c91d}} 
+\index{test\_JVBF.c@{test\_JVBF.c}!getSuperMELA@{getSuperMELA}}
+\index{getSuperMELA@{getSuperMELA}!test\_JVBF.c@{test\_JVBF.c}}
+\doxysubsubsection{\texorpdfstring{getSuperMELA()}{getSuperMELA()}}
+{\footnotesize\ttfamily float get\+Super\+M\+E\+LA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMela}{Mela}} \&}]{my\+Mela,  }\item[{int}]{lep\+Id\mbox{[}4\mbox{]},  }\item[{float}]{m\+ZZ,  }\item[{\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}}}]{syst }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__JVBF_8c_a9e726053adaf5fd05b933ed25d560727}\label{test__JVBF_8c_a9e726053adaf5fd05b933ed25d560727}} 
+\index{test\_JVBF.c@{test\_JVBF.c}!test\_JVBF@{test\_JVBF}}
+\index{test\_JVBF@{test\_JVBF}!test\_JVBF.c@{test\_JVBF.c}}
+\doxysubsubsection{\texorpdfstring{test\_JVBF()}{test\_JVBF()}}
+{\footnotesize\ttfamily void test\+\_\+\+J\+V\+BF (\begin{DoxyParamCaption}\item[{int}]{erg\+\_\+tev = {\ttfamily 8},  }\item[{float}]{m\+Sample = {\ttfamily 0},  }\item[{bool}]{isggH = {\ttfamily false} }\end{DoxyParamCaption})}
+

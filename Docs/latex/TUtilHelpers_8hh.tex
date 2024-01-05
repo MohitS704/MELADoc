@@ -1,0 +1,63 @@
+\hypertarget{TUtilHelpers_8hh}{}\doxysection{M\+E\+L\+A/interface/\+T\+Util\+Helpers.hh File Reference}
+\label{TUtilHelpers_8hh}\index{MELA/interface/TUtilHelpers.hh@{MELA/interface/TUtilHelpers.hh}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+Particle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+Candidate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+Three\+Body\+Decay\+Candidate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Var.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Numeric\+Util.\+hh\char`\"{}}\newline
+Include dependency graph for T\+Util\+Helpers.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TUtilHelpers_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TUtilHelpers_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceTUtilHelpers}{T\+Util\+Helpers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}{T\+Util\+Helpers\+::copy\+Vector}} (std\+::vector$<$ T $>$ const \&input, std\+::vector$<$ T $>$ \&target)
+\item 
+{\footnotesize template$<$typename T , typename U  = T$>$ }\\bool \mbox{\hyperlink{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}{T\+Util\+Helpers\+::check\+Element\+Exists}} (T const \&element, std\+::vector$<$ U $>$ const \&elementlist)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceTUtilHelpers_aa210de9b601a59c26984d7b511a44541}{T\+Util\+Helpers\+::has\+Common\+Elements}} (std\+::vector$<$ T $>$ const \&v1, std\+::vector$<$ T $>$ const \&v2)
+\item 
+void \mbox{\hyperlink{namespaceTUtilHelpers_ad6fe059920d844f1c5a88bd06002eb0c}{T\+Util\+Helpers\+::\+Expand\+Environment\+Variables}} (std\+::string \&str)
+\item 
+template void \mbox{\hyperlink{TUtilHelpers_8hh_a2dbc29719265d4c71be5cc9e71010e16}{T\+Util\+Helpers\+::copy\+Vector$<$ T\+Numeric\+Util\+::int\+Quad\+\_\+t $>$}} (std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ const \&input, std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ \&target)
+\item 
+template bool \mbox{\hyperlink{TUtilHelpers_8hh_a69df357c673880a54065061228ac748d}{T\+Util\+Helpers\+::check\+Element\+Exists$<$ T\+Numeric\+Util\+::int\+Quad\+\_\+t $>$}} (\mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} const \&element, std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ const \&elementlist)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{TUtilHelpers_8hh_a69df357c673880a54065061228ac748d}\label{TUtilHelpers_8hh_a69df357c673880a54065061228ac748d}} 
+\index{TUtilHelpers.hh@{TUtilHelpers.hh}!TUtilHelpers::checkElementExists$<$ TNumericUtil::intQuad\_t $>$@{TUtilHelpers::checkElementExists$<$ TNumericUtil::intQuad\_t $>$}}
+\index{TUtilHelpers::checkElementExists$<$ TNumericUtil::intQuad\_t $>$@{TUtilHelpers::checkElementExists$<$ TNumericUtil::intQuad\_t $>$}!TUtilHelpers.hh@{TUtilHelpers.hh}}
+\doxysubsubsection{\texorpdfstring{TUtilHelpers::checkElementExists$<$ TNumericUtil::intQuad\_t $>$()}{TUtilHelpers::checkElementExists< TNumericUtil::intQuad\_t >()}}
+{\footnotesize\ttfamily template bool \mbox{\hyperlink{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}{T\+Util\+Helpers\+::check\+Element\+Exists}}$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} const \&}]{element,  }\item[{std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ const \&}]{elementlist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{TUtilHelpers_8hh_a2dbc29719265d4c71be5cc9e71010e16}\label{TUtilHelpers_8hh_a2dbc29719265d4c71be5cc9e71010e16}} 
+\index{TUtilHelpers.hh@{TUtilHelpers.hh}!TUtilHelpers::copyVector$<$ TNumericUtil::intQuad\_t $>$@{TUtilHelpers::copyVector$<$ TNumericUtil::intQuad\_t $>$}}
+\index{TUtilHelpers::copyVector$<$ TNumericUtil::intQuad\_t $>$@{TUtilHelpers::copyVector$<$ TNumericUtil::intQuad\_t $>$}!TUtilHelpers.hh@{TUtilHelpers.hh}}
+\doxysubsubsection{\texorpdfstring{TUtilHelpers::copyVector$<$ TNumericUtil::intQuad\_t $>$()}{TUtilHelpers::copyVector< TNumericUtil::intQuad\_t >()}}
+{\footnotesize\ttfamily template void \mbox{\hyperlink{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}{T\+Util\+Helpers\+::copy\+Vector}}$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ const \&}]{input,  }\item[{std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ \&}]{target }\end{DoxyParamCaption})}
+

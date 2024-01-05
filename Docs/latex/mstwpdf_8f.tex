@@ -1,0 +1,96 @@
+\hypertarget{mstwpdf_8f}{}\doxysection{M\+E\+L\+A/fortran/pdfs/mstwpdf.f File Reference}
+\label{mstwpdf_8f}\index{MELA/fortran/pdfs/mstwpdf.f@{MELA/fortran/pdfs/mstwpdf.f}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}{getallpdfs}} (prefix, ih, x, q, upv, dnv, usea, dsea, str, sbar, chm, cbar, bot, bbar, glu, phot)
+\item 
+subroutine \mbox{\hyperlink{mstwpdf_8f_a8163352523fbd8d286ba8f69b83ff656}{getallpdfsalt}} (prefix, ih, x, q, xpdf, xphoton)
+\item 
+double precision function \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}} (prefix, ih, x, q, f)
+\item 
+subroutine \mbox{\hyperlink{mstwpdf_8f_a4c579229e3760cca4e906603bc50de60}{initialisepdf}} (ip, np, ih, nhess, nx, my, myc0, myb0, xx, yy, ff, cc)
+\item 
+double precision function \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}} (ip, np, ih, nhess, x, y, nx, my, xx, yy, cc)
+\item 
+double precision function \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}} (ip, np, ih, nhess, x, y, nx, my, xx, yy, cc)
+\item 
+integer function \mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}} (xx, nx, x)
+\item 
+double precision function \mbox{\hyperlink{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}{polderiv1}} (x1, x2, x3, y1, y2, y3)
+\item 
+double precision function \mbox{\hyperlink{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}{polderiv2}} (x1, x2, x3, y1, y2, y3)
+\item 
+double precision function \mbox{\hyperlink{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}{polderiv3}} (x1, x2, x3, y1, y2, y3)
+\item 
+integer function \mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}} (s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}\label{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}} 
+\index{mstwpdf.f@{mstwpdf.f}!extrapolatepdf@{extrapolatepdf}}
+\index{extrapolatepdf@{extrapolatepdf}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{extrapolatepdf()}{extrapolatepdf()}}
+{\footnotesize\ttfamily double precision function extrapolatepdf (\begin{DoxyParamCaption}\item[{integer}]{ip,  }\item[{integer}]{np,  }\item[{integer}]{ih,  }\item[{integer}]{nhess,  }\item[{double precision}]{x,  }\item[{double precision}]{y,  }\item[{integer}]{nx,  }\item[{integer}]{my,  }\item[{double precision, dimension(nx)}]{xx,  }\item[{double precision, dimension(my)}]{yy,  }\item[{double precision, dimension(np,0\+:nhess,nx,my,4,4)}]{cc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}\label{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}} 
+\index{mstwpdf.f@{mstwpdf.f}!getallpdfs@{getallpdfs}}
+\index{getallpdfs@{getallpdfs}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{getallpdfs()}{getallpdfs()}}
+{\footnotesize\ttfamily subroutine getallpdfs (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$)}]{prefix,  }\item[{integer}]{ih,  }\item[{double precision}]{x,  }\item[{double precision}]{q,  }\item[{double precision}]{upv,  }\item[{double precision}]{dnv,  }\item[{double precision}]{usea,  }\item[{double precision}]{dsea,  }\item[{double precision}]{str,  }\item[{double precision}]{sbar,  }\item[{double precision}]{chm,  }\item[{double precision}]{cbar,  }\item[{double precision}]{bot,  }\item[{double precision}]{bbar,  }\item[{double precision}]{glu,  }\item[{double precision}]{phot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_a8163352523fbd8d286ba8f69b83ff656}\label{mstwpdf_8f_a8163352523fbd8d286ba8f69b83ff656}} 
+\index{mstwpdf.f@{mstwpdf.f}!getallpdfsalt@{getallpdfsalt}}
+\index{getallpdfsalt@{getallpdfsalt}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{getallpdfsalt()}{getallpdfsalt()}}
+{\footnotesize\ttfamily subroutine getallpdfsalt (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$)}]{prefix,  }\item[{integer}]{ih,  }\item[{double precision}]{x,  }\item[{double precision}]{q,  }\item[{double precision, dimension(-\/6\+:6)}]{xpdf,  }\item[{double precision}]{xphoton }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}\label{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}} 
+\index{mstwpdf.f@{mstwpdf.f}!getonepdf@{getonepdf}}
+\index{getonepdf@{getonepdf}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{getonepdf()}{getonepdf()}}
+{\footnotesize\ttfamily double precision function getonepdf (\begin{DoxyParamCaption}\item[{character, dimension($\ast$)}]{prefix,  }\item[{integer}]{ih,  }\item[{double precision}]{x,  }\item[{double precision}]{q,  }\item[{integer}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_a4c579229e3760cca4e906603bc50de60}\label{mstwpdf_8f_a4c579229e3760cca4e906603bc50de60}} 
+\index{mstwpdf.f@{mstwpdf.f}!initialisepdf@{initialisepdf}}
+\index{initialisepdf@{initialisepdf}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{initialisepdf()}{initialisepdf()}}
+{\footnotesize\ttfamily subroutine initialisepdf (\begin{DoxyParamCaption}\item[{integer}]{ip,  }\item[{integer}]{np,  }\item[{integer}]{ih,  }\item[{integer}]{nhess,  }\item[{integer}]{nx,  }\item[{integer}]{my,  }\item[{integer}]{myc0,  }\item[{integer}]{myb0,  }\item[{double precision, dimension(nx)}]{xx,  }\item[{double precision, dimension(my)}]{yy,  }\item[{double precision, dimension(np,nx,my)}]{ff,  }\item[{double precision, dimension(np,0\+:nhess,nx,my,4,4)}]{cc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}\label{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}} 
+\index{mstwpdf.f@{mstwpdf.f}!interpolatepdf@{interpolatepdf}}
+\index{interpolatepdf@{interpolatepdf}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{interpolatepdf()}{interpolatepdf()}}
+{\footnotesize\ttfamily double precision function interpolatepdf (\begin{DoxyParamCaption}\item[{integer}]{ip,  }\item[{integer}]{np,  }\item[{integer}]{ih,  }\item[{integer}]{nhess,  }\item[{double precision}]{x,  }\item[{double precision}]{y,  }\item[{integer}]{nx,  }\item[{integer}]{my,  }\item[{double precision, dimension(nx)}]{xx,  }\item[{double precision, dimension(my)}]{yy,  }\item[{double precision, dimension(np,0\+:nhess,nx,my,4,4)}]{cc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}\label{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}} 
+\index{mstwpdf.f@{mstwpdf.f}!lentrim@{lentrim}}
+\index{lentrim@{lentrim}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{lentrim()}{lentrim()}}
+{\footnotesize\ttfamily integer function lentrim (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$)}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}\label{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}} 
+\index{mstwpdf.f@{mstwpdf.f}!locx@{locx}}
+\index{locx@{locx}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{locx()}{locx()}}
+{\footnotesize\ttfamily integer function locx (\begin{DoxyParamCaption}\item[{double precision, dimension(nx)}]{xx,  }\item[{integer}]{nx,  }\item[{double precision}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}\label{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}} 
+\index{mstwpdf.f@{mstwpdf.f}!polderiv1@{polderiv1}}
+\index{polderiv1@{polderiv1}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{polderiv1()}{polderiv1()}}
+{\footnotesize\ttfamily double precision function polderiv1 (\begin{DoxyParamCaption}\item[{double precision}]{x1,  }\item[{double precision}]{x2,  }\item[{double precision}]{x3,  }\item[{double precision}]{y1,  }\item[{double precision}]{y2,  }\item[{double precision}]{y3 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}\label{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}} 
+\index{mstwpdf.f@{mstwpdf.f}!polderiv2@{polderiv2}}
+\index{polderiv2@{polderiv2}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{polderiv2()}{polderiv2()}}
+{\footnotesize\ttfamily double precision function polderiv2 (\begin{DoxyParamCaption}\item[{double precision}]{x1,  }\item[{double precision}]{x2,  }\item[{double precision}]{x3,  }\item[{double precision}]{y1,  }\item[{double precision}]{y2,  }\item[{double precision}]{y3 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}\label{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}} 
+\index{mstwpdf.f@{mstwpdf.f}!polderiv3@{polderiv3}}
+\index{polderiv3@{polderiv3}!mstwpdf.f@{mstwpdf.f}}
+\doxysubsubsection{\texorpdfstring{polderiv3()}{polderiv3()}}
+{\footnotesize\ttfamily double precision function polderiv3 (\begin{DoxyParamCaption}\item[{double precision}]{x1,  }\item[{double precision}]{x2,  }\item[{double precision}]{x3,  }\item[{double precision}]{y1,  }\item[{double precision}]{y2,  }\item[{double precision}]{y3 }\end{DoxyParamCaption})}
+

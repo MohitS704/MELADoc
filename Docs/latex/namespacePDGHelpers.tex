@@ -1,0 +1,302 @@
+\hypertarget{namespacePDGHelpers}{}\doxysection{P\+D\+G\+Helpers Namespace Reference}
+\label{namespacePDGHelpers}\index{PDGHelpers@{PDGHelpers}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{is\+A\+Lepton}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{is\+A\+Neutrino}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{is\+An\+Unknown\+Jet}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a5df90e9bb7f9a1c9e0431aed9ab6281c}{is\+A\+Known\+Jet}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a70d454afa0ba8867880810d0a527e4e5}{is\+A\+Jet}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aede37ff1f5e2de0fa895b4d995c98b46}{is\+Invalid}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a01f8690aaafe2c1d9b2497a41270f56a}{is\+A\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aa742c7a0d0c0a6abdd6fb7f137d9b300}{is\+A\+Light\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}{is\+Up\+Type\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}{is\+Down\+Type\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_ab98f91f00daa234b2d34eaec820cf49f}{is\+A\+Top\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a794b5a5be20c1b6004500abb9938deec}{is\+A\+Tau\+Lepton}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aa131c0152ebf5bd159b177834aebc66f}{is\+A\+Gluon}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_af9c70c52922e73d3870e6111c1c02a5f}{is\+A\+Photon}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a46f4e810ad2fb213e757e3e76499900a}{is\+A\+Z\+Boson}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a1af3488542122be4701bbdbc558d8bc9}{is\+A\+W\+Boson}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aaac73ca6f564f311d27776c534b7ab0d}{is\+A\+Higgs}} (const int id)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_a9199e7e413b6d357651085ce2b6eddf2}{order\+Particles}} (const std\+::vector$<$ int $>$ \&idlist, const std\+::vector$<$ bool($\ast$)(const int)$>$ \&testlist, std\+::vector$<$ int $>$ \&ordering, bool allow\+Unknown=false)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_a0d4831415fa8b5d2ac0d4d65e7f44f24}{group\+Identical\+Particles}} (const std\+::vector$<$ int $>$ \&ids, std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&ordering, bool $\ast$has\+Unknown\+Particles=0)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_a501cd0c6500f40c6ec8ac50a7eb69e6d}{pair\+Identical\+Particles}} (const std\+::vector$<$ int $>$ \&ids, std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ \&ordering, bool allow\+Unknown=false)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_ada65c143a77a2a790135be88683df66a}{all\+Equivalent}} (std\+::vector$<$ int $>$ const \&ids, bool allow\+Unknown=false)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_af92acaa64c96e22a6dca8b60076a40ec}{set\+Candidate\+Decay\+Mode}} (\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} mode)
+\item 
+int \mbox{\hyperlink{namespacePDGHelpers_a524d028bd6c958101639b40c8bfc5622}{get\+Coupled\+Vertex}} (const int idfirst, const int idsecond, int $\ast$hel=0, int $\ast$use\+A\+Hcoupl=0)
+\item 
+int \mbox{\hyperlink{namespacePDGHelpers_a8df93769d72030417c55edd7396816ec}{convert\+Pythia\+Status}} (int p\+St)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_aef56d30802022f90e495c826b45da30f}{Wmass}} = 80.\+399
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a389baabd05c060ec6ed14e0354118c8d}{Zmass}} = 91.\+1876
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a4ac4e98677ff93090e659bbc1e652533}{Topmass}} = 173.\+2
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a40fcf29893a1771d79c3e391ae057df5}{Bottommass}} = 4.\+75
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a4672126d5b27c5e95d0e2572b63eb36e}{Zeromass}} = 0
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a5bd91e476142300e381e0729c23fca85}{m\+\_\+el}} = 0.\+00051100
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_aad8c010f54c11e91d58485d45d6b68cd}{m\+\_\+mu}} = 0.\+10566
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a371324b6062c44fb304aa0b25ab886b4}{m\+\_\+tau}} = 1.\+7768
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_af33845852f7da2b6c8e0243a0faddf17}{Wwidth}} = 2.\+085
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_aeb9b5319d1610d5b7cae2e523689e07c}{Zwidth}} = 2.\+4952
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_ac9029100a1af4e7fe4bec221ccf4eb4f}{Topwidth}} = 2.
+\item 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} \mbox{\hyperlink{namespacePDGHelpers_ad093a6206d20114f4716a631777a93ff}{H\+Decay\+Mode}} = \mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4ac0c27bc9239fab096f3b6efefd813036}{T\+Var\+::\+Candidate\+Decay\+\_\+\+ZZ}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacePDGHelpers_ada65c143a77a2a790135be88683df66a}\label{namespacePDGHelpers_ada65c143a77a2a790135be88683df66a}} 
+\index{PDGHelpers@{PDGHelpers}!allEquivalent@{allEquivalent}}
+\index{allEquivalent@{allEquivalent}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{allEquivalent()}{allEquivalent()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::all\+Equivalent (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ const \&}]{ids,  }\item[{bool}]{allow\+Unknown = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a8df93769d72030417c55edd7396816ec}\label{namespacePDGHelpers_a8df93769d72030417c55edd7396816ec}} 
+\index{PDGHelpers@{PDGHelpers}!convertPythiaStatus@{convertPythiaStatus}}
+\index{convertPythiaStatus@{convertPythiaStatus}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{convertPythiaStatus()}{convertPythiaStatus()}}
+{\footnotesize\ttfamily int P\+D\+G\+Helpers\+::convert\+Pythia\+Status (\begin{DoxyParamCaption}\item[{int}]{p\+St }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a524d028bd6c958101639b40c8bfc5622}\label{namespacePDGHelpers_a524d028bd6c958101639b40c8bfc5622}} 
+\index{PDGHelpers@{PDGHelpers}!getCoupledVertex@{getCoupledVertex}}
+\index{getCoupledVertex@{getCoupledVertex}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{getCoupledVertex()}{getCoupledVertex()}}
+{\footnotesize\ttfamily int P\+D\+G\+Helpers\+::get\+Coupled\+Vertex (\begin{DoxyParamCaption}\item[{const int}]{idfirst,  }\item[{const int}]{idsecond,  }\item[{int $\ast$}]{hel = {\ttfamily 0},  }\item[{int $\ast$}]{use\+A\+Hcoupl = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a0d4831415fa8b5d2ac0d4d65e7f44f24}\label{namespacePDGHelpers_a0d4831415fa8b5d2ac0d4d65e7f44f24}} 
+\index{PDGHelpers@{PDGHelpers}!groupIdenticalParticles@{groupIdenticalParticles}}
+\index{groupIdenticalParticles@{groupIdenticalParticles}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{groupIdenticalParticles()}{groupIdenticalParticles()}}
+{\footnotesize\ttfamily void P\+D\+G\+Helpers\+::group\+Identical\+Particles (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{ids,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&}]{ordering,  }\item[{bool $\ast$}]{has\+Unknown\+Particles = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aa131c0152ebf5bd159b177834aebc66f}\label{namespacePDGHelpers_aa131c0152ebf5bd159b177834aebc66f}} 
+\index{PDGHelpers@{PDGHelpers}!isAGluon@{isAGluon}}
+\index{isAGluon@{isAGluon}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAGluon()}{isAGluon()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Gluon (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aaac73ca6f564f311d27776c534b7ab0d}\label{namespacePDGHelpers_aaac73ca6f564f311d27776c534b7ab0d}} 
+\index{PDGHelpers@{PDGHelpers}!isAHiggs@{isAHiggs}}
+\index{isAHiggs@{isAHiggs}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAHiggs()}{isAHiggs()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Higgs (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a70d454afa0ba8867880810d0a527e4e5}\label{namespacePDGHelpers_a70d454afa0ba8867880810d0a527e4e5}} 
+\index{PDGHelpers@{PDGHelpers}!isAJet@{isAJet}}
+\index{isAJet@{isAJet}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAJet()}{isAJet()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Jet (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a5df90e9bb7f9a1c9e0431aed9ab6281c}\label{namespacePDGHelpers_a5df90e9bb7f9a1c9e0431aed9ab6281c}} 
+\index{PDGHelpers@{PDGHelpers}!isAKnownJet@{isAKnownJet}}
+\index{isAKnownJet@{isAKnownJet}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAKnownJet()}{isAKnownJet()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Known\+Jet (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}\label{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}} 
+\index{PDGHelpers@{PDGHelpers}!isALepton@{isALepton}}
+\index{isALepton@{isALepton}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isALepton()}{isALepton()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Lepton (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aa742c7a0d0c0a6abdd6fb7f137d9b300}\label{namespacePDGHelpers_aa742c7a0d0c0a6abdd6fb7f137d9b300}} 
+\index{PDGHelpers@{PDGHelpers}!isALightQuark@{isALightQuark}}
+\index{isALightQuark@{isALightQuark}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isALightQuark()}{isALightQuark()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Light\+Quark (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}\label{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}} 
+\index{PDGHelpers@{PDGHelpers}!isANeutrino@{isANeutrino}}
+\index{isANeutrino@{isANeutrino}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isANeutrino()}{isANeutrino()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Neutrino (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}\label{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}} 
+\index{PDGHelpers@{PDGHelpers}!isAnUnknownJet@{isAnUnknownJet}}
+\index{isAnUnknownJet@{isAnUnknownJet}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAnUnknownJet()}{isAnUnknownJet()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+An\+Unknown\+Jet (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_af9c70c52922e73d3870e6111c1c02a5f}\label{namespacePDGHelpers_af9c70c52922e73d3870e6111c1c02a5f}} 
+\index{PDGHelpers@{PDGHelpers}!isAPhoton@{isAPhoton}}
+\index{isAPhoton@{isAPhoton}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAPhoton()}{isAPhoton()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Photon (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a01f8690aaafe2c1d9b2497a41270f56a}\label{namespacePDGHelpers_a01f8690aaafe2c1d9b2497a41270f56a}} 
+\index{PDGHelpers@{PDGHelpers}!isAQuark@{isAQuark}}
+\index{isAQuark@{isAQuark}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAQuark()}{isAQuark()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Quark (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a794b5a5be20c1b6004500abb9938deec}\label{namespacePDGHelpers_a794b5a5be20c1b6004500abb9938deec}} 
+\index{PDGHelpers@{PDGHelpers}!isATauLepton@{isATauLepton}}
+\index{isATauLepton@{isATauLepton}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isATauLepton()}{isATauLepton()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Tau\+Lepton (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_ab98f91f00daa234b2d34eaec820cf49f}\label{namespacePDGHelpers_ab98f91f00daa234b2d34eaec820cf49f}} 
+\index{PDGHelpers@{PDGHelpers}!isATopQuark@{isATopQuark}}
+\index{isATopQuark@{isATopQuark}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isATopQuark()}{isATopQuark()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Top\+Quark (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a1af3488542122be4701bbdbc558d8bc9}\label{namespacePDGHelpers_a1af3488542122be4701bbdbc558d8bc9}} 
+\index{PDGHelpers@{PDGHelpers}!isAWBoson@{isAWBoson}}
+\index{isAWBoson@{isAWBoson}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAWBoson()}{isAWBoson()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+W\+Boson (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a46f4e810ad2fb213e757e3e76499900a}\label{namespacePDGHelpers_a46f4e810ad2fb213e757e3e76499900a}} 
+\index{PDGHelpers@{PDGHelpers}!isAZBoson@{isAZBoson}}
+\index{isAZBoson@{isAZBoson}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isAZBoson()}{isAZBoson()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+A\+Z\+Boson (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}\label{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}} 
+\index{PDGHelpers@{PDGHelpers}!isDownTypeQuark@{isDownTypeQuark}}
+\index{isDownTypeQuark@{isDownTypeQuark}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isDownTypeQuark()}{isDownTypeQuark()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+Down\+Type\+Quark (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aede37ff1f5e2de0fa895b4d995c98b46}\label{namespacePDGHelpers_aede37ff1f5e2de0fa895b4d995c98b46}} 
+\index{PDGHelpers@{PDGHelpers}!isInvalid@{isInvalid}}
+\index{isInvalid@{isInvalid}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isInvalid()}{isInvalid()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+Invalid (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}\label{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}} 
+\index{PDGHelpers@{PDGHelpers}!isUpTypeQuark@{isUpTypeQuark}}
+\index{isUpTypeQuark@{isUpTypeQuark}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{isUpTypeQuark()}{isUpTypeQuark()}}
+{\footnotesize\ttfamily bool P\+D\+G\+Helpers\+::is\+Up\+Type\+Quark (\begin{DoxyParamCaption}\item[{const int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a9199e7e413b6d357651085ce2b6eddf2}\label{namespacePDGHelpers_a9199e7e413b6d357651085ce2b6eddf2}} 
+\index{PDGHelpers@{PDGHelpers}!orderParticles@{orderParticles}}
+\index{orderParticles@{orderParticles}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{orderParticles()}{orderParticles()}}
+{\footnotesize\ttfamily void P\+D\+G\+Helpers\+::order\+Particles (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{idlist,  }\item[{const std\+::vector$<$ bool($\ast$)(const int)$>$ \&}]{testlist,  }\item[{std\+::vector$<$ int $>$ \&}]{ordering,  }\item[{bool}]{allow\+Unknown = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a501cd0c6500f40c6ec8ac50a7eb69e6d}\label{namespacePDGHelpers_a501cd0c6500f40c6ec8ac50a7eb69e6d}} 
+\index{PDGHelpers@{PDGHelpers}!pairIdenticalParticles@{pairIdenticalParticles}}
+\index{pairIdenticalParticles@{pairIdenticalParticles}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{pairIdenticalParticles()}{pairIdenticalParticles()}}
+{\footnotesize\ttfamily void P\+D\+G\+Helpers\+::pair\+Identical\+Particles (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{ids,  }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ \&}]{ordering,  }\item[{bool}]{allow\+Unknown = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacePDGHelpers_af92acaa64c96e22a6dca8b60076a40ec}\label{namespacePDGHelpers_af92acaa64c96e22a6dca8b60076a40ec}} 
+\index{PDGHelpers@{PDGHelpers}!setCandidateDecayMode@{setCandidateDecayMode}}
+\index{setCandidateDecayMode@{setCandidateDecayMode}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{setCandidateDecayMode()}{setCandidateDecayMode()}}
+{\footnotesize\ttfamily void P\+D\+G\+Helpers\+::set\+Candidate\+Decay\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacePDGHelpers_a40fcf29893a1771d79c3e391ae057df5}\label{namespacePDGHelpers_a40fcf29893a1771d79c3e391ae057df5}} 
+\index{PDGHelpers@{PDGHelpers}!Bottommass@{Bottommass}}
+\index{Bottommass@{Bottommass}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Bottommass}{Bottommass}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Bottommass = 4.\+75}
+
+\mbox{\Hypertarget{namespacePDGHelpers_ad093a6206d20114f4716a631777a93ff}\label{namespacePDGHelpers_ad093a6206d20114f4716a631777a93ff}} 
+\index{PDGHelpers@{PDGHelpers}!HDecayMode@{HDecayMode}}
+\index{HDecayMode@{HDecayMode}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{HDecayMode}{HDecayMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} P\+D\+G\+Helpers\+::\+H\+Decay\+Mode = \mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4ac0c27bc9239fab096f3b6efefd813036}{T\+Var\+::\+Candidate\+Decay\+\_\+\+ZZ}}}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a5bd91e476142300e381e0729c23fca85}\label{namespacePDGHelpers_a5bd91e476142300e381e0729c23fca85}} 
+\index{PDGHelpers@{PDGHelpers}!m\_el@{m\_el}}
+\index{m\_el@{m\_el}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{m\_el}{m\_el}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::m\+\_\+el = 0.\+00051100}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aad8c010f54c11e91d58485d45d6b68cd}\label{namespacePDGHelpers_aad8c010f54c11e91d58485d45d6b68cd}} 
+\index{PDGHelpers@{PDGHelpers}!m\_mu@{m\_mu}}
+\index{m\_mu@{m\_mu}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{m\_mu}{m\_mu}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::m\+\_\+mu = 0.\+10566}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a371324b6062c44fb304aa0b25ab886b4}\label{namespacePDGHelpers_a371324b6062c44fb304aa0b25ab886b4}} 
+\index{PDGHelpers@{PDGHelpers}!m\_tau@{m\_tau}}
+\index{m\_tau@{m\_tau}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{m\_tau}{m\_tau}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::m\+\_\+tau = 1.\+7768}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a4ac4e98677ff93090e659bbc1e652533}\label{namespacePDGHelpers_a4ac4e98677ff93090e659bbc1e652533}} 
+\index{PDGHelpers@{PDGHelpers}!Topmass@{Topmass}}
+\index{Topmass@{Topmass}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Topmass}{Topmass}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Topmass = 173.\+2}
+
+\mbox{\Hypertarget{namespacePDGHelpers_ac9029100a1af4e7fe4bec221ccf4eb4f}\label{namespacePDGHelpers_ac9029100a1af4e7fe4bec221ccf4eb4f}} 
+\index{PDGHelpers@{PDGHelpers}!Topwidth@{Topwidth}}
+\index{Topwidth@{Topwidth}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Topwidth}{Topwidth}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Topwidth = 2.}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aef56d30802022f90e495c826b45da30f}\label{namespacePDGHelpers_aef56d30802022f90e495c826b45da30f}} 
+\index{PDGHelpers@{PDGHelpers}!Wmass@{Wmass}}
+\index{Wmass@{Wmass}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Wmass}{Wmass}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Wmass = 80.\+399}
+
+\mbox{\Hypertarget{namespacePDGHelpers_af33845852f7da2b6c8e0243a0faddf17}\label{namespacePDGHelpers_af33845852f7da2b6c8e0243a0faddf17}} 
+\index{PDGHelpers@{PDGHelpers}!Wwidth@{Wwidth}}
+\index{Wwidth@{Wwidth}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Wwidth}{Wwidth}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Wwidth = 2.\+085}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a4672126d5b27c5e95d0e2572b63eb36e}\label{namespacePDGHelpers_a4672126d5b27c5e95d0e2572b63eb36e}} 
+\index{PDGHelpers@{PDGHelpers}!Zeromass@{Zeromass}}
+\index{Zeromass@{Zeromass}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Zeromass}{Zeromass}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Zeromass = 0}
+
+\mbox{\Hypertarget{namespacePDGHelpers_a389baabd05c060ec6ed14e0354118c8d}\label{namespacePDGHelpers_a389baabd05c060ec6ed14e0354118c8d}} 
+\index{PDGHelpers@{PDGHelpers}!Zmass@{Zmass}}
+\index{Zmass@{Zmass}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Zmass}{Zmass}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Zmass = 91.\+1876}
+
+\mbox{\Hypertarget{namespacePDGHelpers_aeb9b5319d1610d5b7cae2e523689e07c}\label{namespacePDGHelpers_aeb9b5319d1610d5b7cae2e523689e07c}} 
+\index{PDGHelpers@{PDGHelpers}!Zwidth@{Zwidth}}
+\index{Zwidth@{Zwidth}!PDGHelpers@{PDGHelpers}}
+\doxysubsubsection{\texorpdfstring{Zwidth}{Zwidth}}
+{\footnotesize\ttfamily const double P\+D\+G\+Helpers\+::\+Zwidth = 2.\+4952}
+
