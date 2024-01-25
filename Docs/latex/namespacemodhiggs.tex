@@ -1,0 +1,116 @@
+\hypertarget{namespacemodhiggs}{}\doxysection{modhiggs Module Reference}
+\label{namespacemodhiggs}\index{modhiggs@{modhiggs}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggs_a89c8cd53b17bd58ce16abdf6405444c0}{evalamp\+\_\+gg\+\_\+h\+\_\+vv}} (p, M\+Y\+\_\+\+I\+D\+UP, res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggs_aa7cc63eb66d12f86c36804479c61fd4b}{calchelamp}} (ordering, V\+V\+Mode, M\+Y\+\_\+\+I\+D\+UP, p, i1, i2, i3, i4, A)
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggs_aa9c8911ccacc777ecae2067b406ef752}{gghzzampl}} (V\+V\+Mode, p, sp, res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggs_a0812ada9d21ed68ab46c17688fc21529}{evalamp\+\_\+h\+\_\+vv}} (p, M\+Y\+\_\+\+I\+D\+UP, res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggs_a9a5db877e8a089469707d10ff4ea3a3f}{calchelamp2}} (ordering, V\+V\+Mode, M\+Y\+\_\+\+I\+D\+UP, p, i3, i4, A)
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggs_ad4b9ab22b4abbe493625beac223a7a68}{hzzampl}} (V\+V\+Mode, p, sp, res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggs_af1a8901a3d59d975518c61a630b8df96}{evalamp\+\_\+h\+\_\+ff}} (pin, mass\+\_\+F, res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggs_a84249519958e2f7cee236904afef5c3e}{evalamp\+\_\+h\+\_\+tt\+\_\+decay}} (pin, mass\+\_\+F, ga\+\_\+F, res)
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggs_a151d03fd06095515e0a95e62e236d1bc}{getdecay\+\_\+couplings\+\_\+spinors\+\_\+props}} (V\+V\+Mode, idordered, pordered, h3
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggs_a995340651e4f644c8b35e14349e6efcc}{getdecay\+\_\+vvmode\+\_\+ordering}} (M\+Y\+\_\+\+I\+D\+UP, V\+V\+Mode, ordering, V\+V\+Mode\+\_\+swap
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemodhiggs_aa7cc63eb66d12f86c36804479c61fd4b}\label{namespacemodhiggs_aa7cc63eb66d12f86c36804479c61fd4b}} 
+\index{modhiggs@{modhiggs}!calchelamp@{calchelamp}}
+\index{calchelamp@{calchelamp}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{calchelamp()}{calchelamp()}}
+{\footnotesize\ttfamily subroutine, public modhiggs\+::calchelamp (\begin{DoxyParamCaption}\item[{integer, dimension(1\+:4)}]{ordering,  }\item[{integer}]{V\+V\+Mode,  }\item[{integer, dimension(6\+: 
+      real(dp) \+:: p(1\+:4,1\+:6)
+      complex(dp) \+:: propg
+      real(dp) \+:: pin(4,4)
+      complex(dp) \+:: a(1\+:1), sp(4,4)
+
+      l1=ordering(1)
+      l2=ordering(2)
+      l3=ordering(3)
+      l4=ordering(4)
+
+      !print $\ast$,\char`\"{}l1=\char`\"{},l1
+      !print $\ast$,\char`\"{}l2=\char`\"{},l2
+      !print $\ast$,\char`\"{}l3=\char`\"{},l3
+      !print $\ast$,\char`\"{}l4=\char`\"{},l4
+      !print $\ast$,\char`\"{}id(6)=\char`\"{},convertlhe(my\+\_\+idup(l1))
+      !print $\ast$,\char`\"{}id(7)=\char`\"{},convertlhe(my\+\_\+idup(l2))
+      !print $\ast$,\char`\"{}id(8)=\char`\"{},convertlhe(my\+\_\+idup(l3))
+      !print $\ast$,\char`\"{}id(9)=\char`\"{},convertlhe(my\+\_\+idup(l4))
+      !print $\ast$,\char`\"{}p(6)=\char`\"{},(p(\+:,l1))
+      !print $\ast$,\char`\"{}p(7)=\char`\"{},(p(\+:,l2))
+      !print $\ast$,\char`\"{}p(8)=\char`\"{},(p(\+:,l3))
+      !print $\ast$,\char`\"{}p(9)=\char`\"{},(p(\+:,l4))
+
+      propg = one/dcmplx(2d0$\ast$scr(p(\+:,1),p(\+:,2)) -\/ m\+\_\+reso$\ast$$\ast$2,m\+\_\+reso$\ast$ga\+\_\+re 
+
+      pin(1,\+:) = p(\+:,1)
+      pin(2,\+:) = p(\+:,2)
+      sp(1,\+:) = pol\+\_\+mless2(dcmplx(p(\+:,1)),-\/3+2$\ast$i1,\textquotesingle{}in\textquotesingle{})}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{}]{p,  }\item[{integer}]{i1,  }\item[{integer}]{i2,  }\item[{integer}]{i3,  }\item[{integer}]{i4,  }\item[{}]{A }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemodhiggs_a9a5db877e8a089469707d10ff4ea3a3f}\label{namespacemodhiggs_a9a5db877e8a089469707d10ff4ea3a3f}} 
+\index{modhiggs@{modhiggs}!calchelamp2@{calchelamp2}}
+\index{calchelamp2@{calchelamp2}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{calchelamp2()}{calchelamp2()}}
+{\footnotesize\ttfamily subroutine, public modhiggs\+::calchelamp2 (\begin{DoxyParamCaption}\item[{integer, dimension(1\+:4)}]{ordering,  }\item[{integer}]{V\+V\+Mode,  }\item[{integer, dimension(6\+:9)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{real(dp), dimension(1\+:4,1\+:6)}]{p,  }\item[{integer}]{i3,  }\item[{integer}]{i4,  }\item[{complex(dp), dimension(1\+:1)}]{A }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemodhiggs_a89c8cd53b17bd58ce16abdf6405444c0}\label{namespacemodhiggs_a89c8cd53b17bd58ce16abdf6405444c0}} 
+\index{modhiggs@{modhiggs}!evalamp\_gg\_h\_vv@{evalamp\_gg\_h\_vv}}
+\index{evalamp\_gg\_h\_vv@{evalamp\_gg\_h\_vv}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{evalamp\_gg\_h\_vv()}{evalamp\_gg\_h\_vv()}}
+{\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+gg\+\_\+h\+\_\+vv (\begin{DoxyParamCaption}\item[{real(dp), dimension(4,6), intent(in)}]{p,  }\item[{integer, dimension(6\+:9), intent(in)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemodhiggs_af1a8901a3d59d975518c61a630b8df96}\label{namespacemodhiggs_af1a8901a3d59d975518c61a630b8df96}} 
+\index{modhiggs@{modhiggs}!evalamp\_h\_ff@{evalamp\_h\_ff}}
+\index{evalamp\_h\_ff@{evalamp\_h\_ff}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{evalamp\_h\_ff()}{evalamp\_h\_ff()}}
+{\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+h\+\_\+ff (\begin{DoxyParamCaption}\item[{real(dp), dimension(1\+:4,1\+:2), intent(in)}]{pin,  }\item[{real(dp), intent(in)}]{mass\+\_\+F,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemodhiggs_a84249519958e2f7cee236904afef5c3e}\label{namespacemodhiggs_a84249519958e2f7cee236904afef5c3e}} 
+\index{modhiggs@{modhiggs}!evalamp\_h\_tt\_decay@{evalamp\_h\_tt\_decay}}
+\index{evalamp\_h\_tt\_decay@{evalamp\_h\_tt\_decay}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{evalamp\_h\_tt\_decay()}{evalamp\_h\_tt\_decay()}}
+{\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+h\+\_\+tt\+\_\+decay (\begin{DoxyParamCaption}\item[{real(dp), dimension(1\+:4,1\+:6), intent(in)}]{pin,  }\item[{real(dp), intent(in)}]{mass\+\_\+F,  }\item[{real(dp), intent(in)}]{ga\+\_\+F,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemodhiggs_a0812ada9d21ed68ab46c17688fc21529}\label{namespacemodhiggs_a0812ada9d21ed68ab46c17688fc21529}} 
+\index{modhiggs@{modhiggs}!evalamp\_h\_vv@{evalamp\_h\_vv}}
+\index{evalamp\_h\_vv@{evalamp\_h\_vv}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{evalamp\_h\_vv()}{evalamp\_h\_vv()}}
+{\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+h\+\_\+vv (\begin{DoxyParamCaption}\item[{real(dp), dimension(4,6), intent(in)}]{p,  }\item[{integer, dimension(6\+:9), intent(in)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemodhiggs_a151d03fd06095515e0a95e62e236d1bc}\label{namespacemodhiggs_a151d03fd06095515e0a95e62e236d1bc}} 
+\index{modhiggs@{modhiggs}!getdecay\_couplings\_spinors\_props@{getdecay\_couplings\_spinors\_props}}
+\index{getdecay\_couplings\_spinors\_props@{getdecay\_couplings\_spinors\_props}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{getdecay\_couplings\_spinors\_props()}{getdecay\_couplings\_spinors\_props()}}
+{\footnotesize\ttfamily subroutine modhiggs\+::getdecay\+\_\+couplings\+\_\+spinors\+\_\+props (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{integer, dimension(6\+:9), intent(in)}]{idordered,  }\item[{real(dp), dimension(1\+:4,6\+:9), intent(in)}]{pordered,  }\item[{integer, intent(in)}]{h3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemodhiggs_a995340651e4f644c8b35e14349e6efcc}\label{namespacemodhiggs_a995340651e4f644c8b35e14349e6efcc}} 
+\index{modhiggs@{modhiggs}!getdecay\_vvmode\_ordering@{getdecay\_vvmode\_ordering}}
+\index{getdecay\_vvmode\_ordering@{getdecay\_vvmode\_ordering}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{getdecay\_vvmode\_ordering()}{getdecay\_vvmode\_ordering()}}
+{\footnotesize\ttfamily subroutine modhiggs\+::getdecay\+\_\+vvmode\+\_\+ordering (\begin{DoxyParamCaption}\item[{integer, dimension(6\+:9), intent(in)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{integer, intent(out)}]{V\+V\+Mode,  }\item[{integer, dimension(1\+:4), intent(out)}]{ordering,  }\item[{integer, intent(out)}]{V\+V\+Mode\+\_\+swap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemodhiggs_aa9c8911ccacc777ecae2067b406ef752}\label{namespacemodhiggs_aa9c8911ccacc777ecae2067b406ef752}} 
+\index{modhiggs@{modhiggs}!gghzzampl@{gghzzampl}}
+\index{gghzzampl@{gghzzampl}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{gghzzampl()}{gghzzampl()}}
+{\footnotesize\ttfamily subroutine modhiggs\+::gghzzampl (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{real(dp), dimension(4,4), intent(in)}]{p,  }\item[{complex(dp), dimension(4,4), intent(in)}]{sp,  }\item[{complex(dp), intent(out)}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespacemodhiggs_ad4b9ab22b4abbe493625beac223a7a68}\label{namespacemodhiggs_ad4b9ab22b4abbe493625beac223a7a68}} 
+\index{modhiggs@{modhiggs}!hzzampl@{hzzampl}}
+\index{hzzampl@{hzzampl}!modhiggs@{modhiggs}}
+\doxysubsubsection{\texorpdfstring{hzzampl()}{hzzampl()}}
+{\footnotesize\ttfamily subroutine modhiggs\+::hzzampl (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{real(dp), dimension(4,4), intent(in)}]{p,  }\item[{complex(dp), dimension(3\+:4,4), intent(in)}]{sp,  }\item[{complex(dp), intent(out)}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+

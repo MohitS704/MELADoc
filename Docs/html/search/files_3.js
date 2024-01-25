@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getresolution_2ec_3182',['getResolution.c',['../getResolution_8c.html',1,'']]]
+  ['getresolution_2ec_4141',['getResolution.c',['../getResolution_8c.html',1,'']]]
 ];

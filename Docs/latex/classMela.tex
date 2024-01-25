@@ -17,55 +17,55 @@ Collaboration diagram for Mela\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela}} (double L\+H\+Csqrts\+\_\+=13., double mh\+\_\+=125., \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity\+\_\+=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}})
-\item 
+\begin{DoxyCompactList}\small\item\em the M\+E\+LA constructor \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classMela_acdce01b49b3c5f53c208dc0cc2d7d2e0}{Mela}} (const \mbox{\hyperlink{classMela}{Mela}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor for M\+E\+LA. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classMela_a39328d800ae0c22a339a416dd8075de0}{$\sim$\+Mela}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em M\+E\+LA destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a1b6f1bb342556508b765cf6fe299a467}{build}} (double mh\+\_\+)
-\item 
+\begin{DoxyCompactList}\small\item\em This is the actual building of the tool that occurs in each instance of the \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela\+::\+Mela}} constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_addbf65232c5fa5bf44cf8180b543b904}{set\+Process}} (\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} my\+Model, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} my\+ME, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} my\+Production)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the process, matrix element, and production that M\+E\+LA is to use for this event. Calls \mbox{\hyperlink{classZZMatrixElement_a28c78d859931ce874db2ae52a503eb92}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Process}}, which calls \mbox{\hyperlink{classTEvtProb_afb64507e9e2b613ac14f1fbd07031fd3}{T\+Evt\+Prob\+::\+Set\+Process}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a540460c5f493ffa154560ec2d7452799}{set\+Verbosity}} (\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} verbosity\+\_\+=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the verbosity for M\+E\+LA outside of the initial constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \mbox{\hyperlink{classMela_a6bb33dcae94f2873b0c53891e71bbbcb}{get\+Verbosity}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the current verbosity level for M\+E\+LA. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_ae810756749a5c14defbda7721c00642c}{set\+Mela\+Lepton\+Interference}} (\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} my\+Lep\+Interf=\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca92cbe92f4215368249033082e6671aa6}{T\+Var\+::\+Default\+Lepton\+Interf}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the M\+E\+LA Lepton Interference. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a7ae40993c2bc0c8b6764ddc0cc948c4b}{set\+Remove\+Lepton\+Masses}} (bool Massless\+Lepton\+Switch=true)
-\item 
+\begin{DoxyCompactList}\small\item\em either permits or forbids massive leptons. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_ae8c0515d34386567b8bdb01a77b36d86}{set\+Remove\+Jet\+Masses}} (bool Massless\+Lepton\+Switch=true)
-\item 
+\begin{DoxyCompactList}\small\item\em either permits or forbids massive jets. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_af478cd82f2e006df9bdf90da9232142a}{set\+Mela\+Primary\+Higgs\+Mass}} (double my\+Higgs\+Mass)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the mass of the \char`\"{}primary\char`\"{} higgs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_aa835c3b33ddec39682776bb1cf98176b}{set\+Mela\+Higgs\+Mass}} (double my\+Higgs\+Mass, int index=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the mass of your chosen Higgs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_ac08cf6732bf5c84fa3da1c5252d2660f}{set\+Mela\+Higgs\+Width}} (double my\+Higgs\+Width=-\/1, int index=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the width of your chosen Higgs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a89930f849726aa1ffd4b38830df7a083}{set\+Mela\+Higgs\+Mass\+Width}} (double my\+Higgs\+Mass, double my\+Higgs\+Width, int index)
-\item 
+\begin{DoxyCompactList}\small\item\em a combination of set\+Mela\+Higgs\+Mass and set\+Mela\+Higgs\+Width. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a8d7f183b5bcc90bf190e2576ad7ac1a9}{set\+Ren\+Fac\+Scale\+Mode}} (\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} renormalization\+Sch, \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} factorization\+Sch, double ren\+\_\+sf, double fac\+\_\+sf)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the renormalization and the factorization schemes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a56c78e0f627c65fbff7f312ff373bbad}{set\+Candidate\+Decay\+Mode}} (\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} mode)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the decay mode for your event. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a7534093301fd2bc7cc6d33158d5a8ae5}{set\+Current\+Candidate\+From\+Index}} (unsigned int icand)
-\item 
+\begin{DoxyCompactList}\small\item\em Switches the candidate that you are working on to another candidate based off of an index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_ac6289c43968f54589f1ecfc3192d7349}{set\+Current\+Candidate}} (\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$cand)
-\item 
+\begin{DoxyCompactList}\small\item\em Switches the candidate that you are working on to another candidate object specified. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a71142f41d44bb42a1cd2be50b3cc8240}{set\+Input\+Event}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Daughters, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Associated=0, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Mothers=0, bool is\+Gen=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the input event for M\+E\+LA. M\+E\+LA cannot run without this. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a05ede92ecd47e2be112a27695a11e5a2}{reset\+Input\+Event}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the event in preparation for the next iteration of the event loop. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a752922e898b2e456d43d7d16d33c63cd}{set\+Temp\+Candidate}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Daughters, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Associated=0, \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$p\+Mothers=0, bool is\+Gen=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets a temporary M\+E\+LA candidate, by setting mela\+Cand in Xcal2 to a temporary candidate without pushing this candidate to the cand\+List of Xcal2. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_abeaf8019f374bd300a1262f67fd58b89}{append\+Top\+Candidate}} (\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$Top\+Daughters)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a top quark as a M\+E\+LA candidate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_aed49296bc1ba9b4f0747b032d5089aef}{reset\+Mass}} (double inmass, int ipart)
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the mass for a particle that is an electroweak parameter according to its id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}{reset\+Width}} (double inwidth, int ipart)
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the width for a particle that is an electroweak parameter according to its id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_aac843ada4c5aac21f952c13fc706cca1}{reset\+Quark\+Masses}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the masses of each quark to their original values. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMela_a646efa5968b603acf694196f420cf039}{reset\+M\+C\+F\+M\+\_\+\+E\+W\+K\+Parameters}} (double ext\+\_\+\+Gf, double ext\+\_\+aemmz, double ext\+\_\+mW, double ext\+\_\+mZ, double ext\+\_\+xW, int ext\+\_\+ewscheme=3)
 \item 
 double \mbox{\hyperlink{classMela_a7fa7208ec310f5683a9bc347d132f2da}{get\+Primary\+Mass}} (int ipart)
@@ -405,17 +405,43 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{Mela()}{Mela()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Mela\+::\+Mela (\begin{DoxyParamCaption}\item[{double}]{L\+H\+Csqrts\+\_\+ = {\ttfamily 13.},  }\item[{double}]{mh\+\_\+ = {\ttfamily 125.},  }\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity\+\_\+ = {\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}}} }\end{DoxyParamCaption})}
 
+
+
+the M\+E\+LA constructor 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em L\+H\+Csqrts\+\_\+} & The luminosity of your collider in TeV. Default is L\+HC at 13 TeV. \\
+\hline
+\mbox{\texttt{ in}}  & {\em mh\+\_\+} & The mass of the Higgs in GeV. Default is 125 GeV \\
+\hline
+\mbox{\texttt{ in}}  & {\em verbosity\+\_\+} & The verbosity of M\+E\+LA that you desire, as defined in \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_acdce01b49b3c5f53c208dc0cc2d7d2e0}\label{classMela_acdce01b49b3c5f53c208dc0cc2d7d2e0}} 
 \index{Mela@{Mela}!Mela@{Mela}}
 \index{Mela@{Mela}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{Mela()}{Mela()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Mela\+::\+Mela (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMela}{Mela}} \&}]{other }\end{DoxyParamCaption})}
 
+
+
+Copy constructor for M\+E\+LA. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & another M\+E\+LA instance \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a39328d800ae0c22a339a416dd8075de0}\label{classMela_a39328d800ae0c22a339a416dd8075de0}} 
 \index{Mela@{Mela}!````~Mela@{$\sim$Mela}}
 \index{````~Mela@{$\sim$Mela}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{$\sim$Mela()}{~Mela()}}
 {\footnotesize\ttfamily Mela\+::$\sim$\+Mela (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+M\+E\+LA destructor. 
 
 
 
@@ -426,12 +452,33 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{appendTopCandidate()}{appendTopCandidate()}}
 {\footnotesize\ttfamily void Mela\+::append\+Top\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{Top\+Daughters }\end{DoxyParamCaption})}
 
+
+
+Adds a top quark as a M\+E\+LA candidate. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_aeba1d231d6af1393ca02688c26d59dc8}{Z\+Z\+Matrix\+Element\+::append\+\_\+\+Top\+Candidate}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_a605e94a0c6f814e4481fd887d2e65123}{T\+Evt\+Prob\+::\+Append\+Top\+Candidate}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em Top\+Daughters} & A Simple\+Particle\+Collection\+\_\+t of the top\textquotesingle{}s daughters, or decay products \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a1b6f1bb342556508b765cf6fe299a467}\label{classMela_a1b6f1bb342556508b765cf6fe299a467}} 
 \index{Mela@{Mela}!build@{build}}
 \index{build@{build}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{build()}{build()}}
 {\footnotesize\ttfamily void Mela\+::build (\begin{DoxyParamCaption}\item[{double}]{mh\+\_\+ }\end{DoxyParamCaption})}
 
+
+
+This is the actual building of the tool that occurs in each instance of the \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela\+::\+Mela}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mh\+\_\+} & This is the mass of the Higgs in GeV \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_ac5c7e6974fd6d7243eee0ca149229f8a}\label{classMela_ac5c7e6974fd6d7243eee0ca149229f8a}} 
 \index{Mela@{Mela}!calculate4Momentum@{calculate4Momentum}}
 \index{calculate4Momentum@{calculate4Momentum}!Mela@{Mela}}
@@ -726,6 +773,13 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{getVerbosity()}{getVerbosity()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} Mela\+::get\+Verbosity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Gets the current verbosity level for M\+E\+LA. 
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} describing the verbosity level for M\+E\+LA. This is a number from 0 to 5, and corresponds to the values in \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classMela_a4683c0250cc1a9c37bccd26ad8f849e9}\label{classMela_a4683c0250cc1a9c37bccd26ad8f849e9}} 
 \index{Mela@{Mela}!getXPropagator@{getXPropagator}}
 \index{getXPropagator@{getXPropagator}!Mela@{Mela}}
@@ -762,12 +816,108 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{resetInputEvent()}{resetInputEvent()}}
 {\footnotesize\ttfamily void Mela\+::reset\+Input\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Resets the event in preparation for the next iteration of the event loop. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a98c614af486d54475c694e421f890512}{Z\+Z\+Matrix\+Element\+::reset\+\_\+\+Input\+Event}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_ab2540657d95d7c6589fd10f369c8dcf5}{T\+Evt\+Prob\+::\+Reset\+Input\+Event}} 
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+Without resetting the input event at the end of each for loop, behavior could be unexpected! 
+
+It is important to call this at the end of every event loop iteration to clean up T\+Evt\+Prob! 
+\end{DoxyAttention}
 \mbox{\Hypertarget{classMela_aed49296bc1ba9b4f0747b032d5089aef}\label{classMela_aed49296bc1ba9b4f0747b032d5089aef}} 
 \index{Mela@{Mela}!resetMass@{resetMass}}
 \index{resetMass@{resetMass}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{resetMass()}{resetMass()}}
 {\footnotesize\ttfamily void Mela\+::reset\+Mass (\begin{DoxyParamCaption}\item[{double}]{inmass,  }\item[{int}]{ipart }\end{DoxyParamCaption})}
 
+
+
+Resets the mass for a particle that is an electroweak parameter according to its id. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_aacf31f260e6517938b94975425a69546}{Z\+Z\+Matrix\+Element\+::reset\+\_\+\+Mass}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_a468300f9b0101f6333dceb0346a7346a}{T\+Evt\+Prob\+::\+Reset\+Mass}}, which is a wrapper for \mbox{\hyperlink{namespaceTUtil_a51c225f177937798f635f16e7999af99}{T\+Util\+::\+Set\+Mass}} 
+
+This finally interfaces with either the function Set\+Mass in mod\+\_\+parameters.\+F90 for J\+H\+U\+Gen, accessed through .\mbox{\hyperlink{TModParameters_8hh}{T\+Mod\+Parameters.\+hh}} 
+
+in mod\+\_\+parameters.\+F90 the conversion from ipart to the values in J\+H\+U\+Gen\textquotesingle{}s internal code happens with the function \mbox{\hyperlink{TModParameters_8hh_a00e07c5a686985e7a030b7349d0f4998}{convert\+L\+H\+Ereverse(\+Part)}} 
+
+or the masses in the J\+H\+U\+Gen-\/\+M\+C\+FM library at /src/\+Inc/masses.F or at T\+M\+C\+F\+M\+::spinzerohiggs\+\_\+anomcoupl (for t\+Prime and b\+Prime)
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+It is not recommended to use this function to edit the mass of the Higgs in M\+C\+FM.
+\end{DoxyWarning}
+\begin{DoxyAttention}{Attention}
+You can input negative ids to edit antiparticles (i.\+e. 24 -\/$>$ W+, -\/24 -\/$>$ W-\/) In M\+C\+FM both the particle and its antiparticle\textquotesingle{}s mass are changed at the same time. In J\+H\+U\+Gen this is not the case -\/ they are separate entries. The particles that you can change when using the M\+C\+FM matrix element are as as follow\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ absolute value of ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ absolute value of ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name  }\\\cline{1-2}
+\endhead
+\PBS\centering 8 &\PBS\centering t Prime quark (4th generation)  \\\cline{1-2}
+\PBS\centering 7 &\PBS\centering b Prime quark (4th generation)  \\\cline{1-2}
+\PBS\centering 6 &\PBS\centering Top Quark  \\\cline{1-2}
+\PBS\centering 5 &\PBS\centering Bottom Quark  \\\cline{1-2}
+\PBS\centering 4 &\PBS\centering Charm Quark  \\\cline{1-2}
+\PBS\centering 3 &\PBS\centering Strange Quark  \\\cline{1-2}
+\PBS\centering 2 &\PBS\centering Up Quark  \\\cline{1-2}
+\PBS\centering 1 &\PBS\centering Down Quark  \\\cline{1-2}
+\PBS\centering 11 &\PBS\centering Electron  \\\cline{1-2}
+\PBS\centering 13 &\PBS\centering Muon  \\\cline{1-2}
+\PBS\centering 15 &\PBS\centering Tau  \\\cline{1-2}
+\PBS\centering 23 &\PBS\centering Z Boson  \\\cline{1-2}
+\PBS\centering 24 &\PBS\centering W Boson  \\\cline{1-2}
+\PBS\centering 25 &\PBS\centering Higgs Boson  \\\cline{1-2}
+\end{longtabu}
+
+
+The particles that you can change when using the J\+H\+U\+Gen matrix element are as follow\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Sign Sensitive  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Sign Sensitive  }\\\cline{1-3}
+\endhead
+\PBS\centering 0 OR 21 &\PBS\centering Gluon &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 1 &\PBS\centering Down Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 2 &\PBS\centering Up Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 3 &\PBS\centering Strange Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 4 &\PBS\centering Charm Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 5 &\PBS\centering Bottom Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 6 &\PBS\centering Top Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 11 &\PBS\centering Electron &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 22 &\PBS\centering Photon &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 23 &\PBS\centering Z Boson &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 24 &\PBS\centering W Boson &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 13 &\PBS\centering Muon &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 15 &\PBS\centering Tau &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 12 &\PBS\centering Electron Neutrino &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 14 &\PBS\centering Muon Neutrino &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 16 &\PBS\centering Tau Neutrino &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 25 &\PBS\centering Higgs Boson &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 32 &\PBS\centering Z Prime &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 33 &\PBS\centering Z Prime 2 &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 34 &\PBS\centering W Prime &\PBS\centering Yes  \\\cline{1-3}
+\end{longtabu}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em inmass} & the mass that you want in GeV \\
+\hline
+{\em ipart} & the particle whose mass you wish to change \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a646efa5968b603acf694196f420cf039}\label{classMela_a646efa5968b603acf694196f420cf039}} 
 \index{Mela@{Mela}!resetMCFM\_EWKParameters@{resetMCFM\_EWKParameters}}
 \index{resetMCFM\_EWKParameters@{resetMCFM\_EWKParameters}!Mela@{Mela}}
@@ -780,12 +930,93 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{resetQuarkMasses()}{resetQuarkMasses()}}
 {\footnotesize\ttfamily void Mela\+::reset\+Quark\+Masses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}\label{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}} 
+
+
+Resets the masses of each quark to their original values. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a896017fd6dae347b1442bb4499be89b2}{Z\+Z\+Matrix\+Element\+::reset\+\_\+\+Quark\+Masses}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_a56b49305ac2be20da4f96bbdb266d4c4}{T\+Evt\+Prob\+::\+Reset\+Quark\+Masses}}, which calls \mbox{\hyperlink{classTEvtProb_a468300f9b0101f6333dceb0346a7346a}{T\+Evt\+Prob\+::\+Reset\+Mass}} The quarks that are reset are \mbox{\hyperlink{TMCFM_8hh_a227245fee3351583169a3a906450210c}{as}} follow, with their default masses in GeV listed \mbox{\hyperlink{TMCFM_8hh_a227245fee3351583169a3a906450210c}{as}} well\+:
+\end{DoxySeeAlso}
+Quark $\vert$ Mass Down $\vert$ 0.\+001 Up $\vert$ 0.\+005 Strange $\vert$ 0.\+1 Charm $\vert$ 1.\+275 Bottom $\vert$ 4.\+75 Top $\vert$ 173.\+2 B Prime $\vert$ 1e5 T Prime $\vert$ 1e5 \mbox{\Hypertarget{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}\label{classMela_adbd3569fc8446ccfe31d6cf4cf1c2d49}} 
 \index{Mela@{Mela}!resetWidth@{resetWidth}}
 \index{resetWidth@{resetWidth}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{resetWidth()}{resetWidth()}}
 {\footnotesize\ttfamily void Mela\+::reset\+Width (\begin{DoxyParamCaption}\item[{double}]{inwidth,  }\item[{int}]{ipart }\end{DoxyParamCaption})}
 
+
+
+Resets the width for a particle that is an electroweak parameter according to its id. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_aa0dd3f1dea6bf8642432981e44c013d0}{Z\+Z\+Matrix\+Element\+::reset\+\_\+\+Width}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_a8ad3590f69842c1b09ee364ab59e311c}{T\+Evt\+Prob\+::\+Reset\+Width}}, which is a wrapper for \mbox{\hyperlink{namespaceTUtil_af2f4d9e772c5b03b8554ecbd6778f623}{T\+Util\+::\+Set\+Decay\+Width}} 
+
+This finally interfaces with either the function Set\+Decay\+Width in mod\+\_\+parameters.\+F90 for J\+H\+U\+Gen, accessed through .\mbox{\hyperlink{TModParameters_8hh}{T\+Mod\+Parameters.\+hh}} 
+
+in mod\+\_\+parameters.\+F90 the conversion from ipart to the values in J\+H\+U\+Gen\textquotesingle{}s internal code happens with the function \mbox{\hyperlink{TModParameters_8hh_a00e07c5a686985e7a030b7349d0f4998}{convert\+L\+H\+Ereverse(\+Part)}} 
+
+or the masses in the J\+H\+U\+Gen-\/\+M\+C\+FM library at /src/\+Inc/masses.F or at T\+M\+C\+F\+M\+::spinzerohiggs\+\_\+anomcoupl (for t\+Prime and b\+Prime)
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+It is not recommended to use this function to edit the mass of the Higgs in M\+C\+FM.
+\end{DoxyWarning}
+\begin{DoxyAttention}{Attention}
+You can input negative ids to edit antiparticles (i.\+e. 24 -\/$>$ W+, -\/24 -\/$>$ W-\/) In M\+C\+FM both the particle and its antiparticle\textquotesingle{}s mass are changed at the same time. In J\+H\+U\+Gen this is not the case -\/ they are separate entries. The particles that you can change when using the M\+C\+FM matrix element are as as follow\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ absolute value of ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ absolute value of ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name  }\\\cline{1-2}
+\endhead
+\PBS\centering 15 &\PBS\centering Tau  \\\cline{1-2}
+\PBS\centering 23 &\PBS\centering Z Boson  \\\cline{1-2}
+\PBS\centering 24 &\PBS\centering W Boson  \\\cline{1-2}
+\PBS\centering 25 &\PBS\centering Higgs Boson  \\\cline{1-2}
+\end{longtabu}
+
+
+The particles that you can change when using the J\+H\+U\+Gen matrix element are as follow\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Sign Sensitive  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ipart }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Particle Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Sign Sensitive  }\\\cline{1-3}
+\endhead
+\PBS\centering 0 OR 21 &\PBS\centering Gluon &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 1 &\PBS\centering Down Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 2 &\PBS\centering Up Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 3 &\PBS\centering Strange Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 4 &\PBS\centering Charm Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 5 &\PBS\centering Bottom Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 6 &\PBS\centering Top Quark &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 11 &\PBS\centering Electron &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 22 &\PBS\centering Photon &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 23 &\PBS\centering Z Boson &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 24 &\PBS\centering W Boson &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 13 &\PBS\centering Muon &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 15 &\PBS\centering Tau &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 12 &\PBS\centering Electron Neutrino &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 14 &\PBS\centering Muon Neutrino &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 16 &\PBS\centering Tau Neutrino &\PBS\centering Yes  \\\cline{1-3}
+\PBS\centering 25 &\PBS\centering Higgs Boson &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 32 &\PBS\centering Z Prime &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 33 &\PBS\centering Z Prime 2 &\PBS\centering No  \\\cline{1-3}
+\PBS\centering 34 &\PBS\centering W Prime &\PBS\centering Yes  \\\cline{1-3}
+\end{longtabu}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em inmass} & the mass that you want in GeV \\
+\hline
+{\em ipart} & the particle whose mass you wish to change \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a89cd35e50224150c7165224d85a7cefc}\label{classMela_a89cd35e50224150c7165224d85a7cefc}} 
 \index{Mela@{Mela}!setATQGCCouplings@{setATQGCCouplings}}
 \index{setATQGCCouplings@{setATQGCCouplings}!Mela@{Mela}}
@@ -804,6 +1035,18 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{setCandidateDecayMode()}{setCandidateDecayMode()}}
 {\footnotesize\ttfamily void Mela\+::set\+Candidate\+Decay\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}}}]{mode }\end{DoxyParamCaption})}
 
+
+
+Sets the decay mode for your event. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_af54ddda7398c3c42277c3d4d1721ec52}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Candidate\+Decay\+Mode}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_acf960167b7e18752cff5642df4e6599c}{T\+Evt\+Prob\+::\+Set\+Candidate\+Decay\+Mode}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The decay mode you would like picked from \mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a0246097a906e531b16af208d3e1ad974}\label{classMela_a0246097a906e531b16af208d3e1ad974}} 
 \index{Mela@{Mela}!setConstant@{setConstant}}
 \index{setConstant@{setConstant}!Mela@{Mela}}
@@ -816,72 +1059,246 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{setCurrentCandidate()}{setCurrentCandidate()}}
 {\footnotesize\ttfamily void Mela\+::set\+Current\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} $\ast$}]{cand }\end{DoxyParamCaption})}
 
+
+
+Switches the candidate that you are working on to another candidate object specified. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a47806d0e611a943e685e1517742fe706}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Current\+Candidate}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_abd5ba3b869ae174e1252000de6d89bb9}{T\+Evt\+Prob\+::\+Set\+Current\+Candidate}}.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em cand} & The \mbox{\hyperlink{classMELACandidate}{M\+E\+L\+A\+Candidate}} object you would like to switch to \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a7534093301fd2bc7cc6d33158d5a8ae5}\label{classMela_a7534093301fd2bc7cc6d33158d5a8ae5}} 
 \index{Mela@{Mela}!setCurrentCandidateFromIndex@{setCurrentCandidateFromIndex}}
 \index{setCurrentCandidateFromIndex@{setCurrentCandidateFromIndex}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setCurrentCandidateFromIndex()}{setCurrentCandidateFromIndex()}}
 {\footnotesize\ttfamily void Mela\+::set\+Current\+Candidate\+From\+Index (\begin{DoxyParamCaption}\item[{unsigned int}]{icand }\end{DoxyParamCaption})}
 
+
+
+Switches the candidate that you are working on to another candidate based off of an index. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a2254343e3ccd2694f509575edf6300a6}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Current\+Candidate\+From\+Index}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_a637aac2e6a3a0b8d93642f46917c3128}{T\+Evt\+Prob\+::\+Set\+Current\+Candidate\+From\+Index}}.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em icand} & The index of the candidate that you would like to switch to \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a71142f41d44bb42a1cd2be50b3cc8240}\label{classMela_a71142f41d44bb42a1cd2be50b3cc8240}} 
 \index{Mela@{Mela}!setInputEvent@{setInputEvent}}
 \index{setInputEvent@{setInputEvent}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setInputEvent()}{setInputEvent()}}
 {\footnotesize\ttfamily void Mela\+::set\+Input\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Daughters,  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Associated = {\ttfamily 0},  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Mothers = {\ttfamily 0},  }\item[{bool}]{is\+Gen = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Sets the input event for M\+E\+LA. M\+E\+LA cannot run without this. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a46c43c987dfc8abf076d6890b6b5a6e0}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Input\+Event}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_a109d0820759c6d8f1ef6e9d1d67364a2}{T\+Evt\+Prob\+::\+Set\+Input\+Event}}, which calls \mbox{\hyperlink{namespaceTUtil_accabe530df4828c083abd7ea98bf5da2}{T\+Util\+::\+Convert\+Vector\+Format}} 
+\end{DoxySeeAlso}
+\begin{DoxyAttention}{Attention}
+An input event must be set for each event in an event loop, otherwise M\+E\+LA will throw a segmentation error
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Daughters} & A Simple\+Particle\+Collection\+\_\+t of particle daughters (decay products) \\
+\hline
+{\em p\+Associated} & A Simple\+Particle\+Collection\+\_\+t of associated particles (i.\+e. jets), by default 0 (no jets) \\
+\hline
+{\em p\+Mothers} & A Simple\+Particle\+Collection\+\_\+t of particle mothers (i.\+e. gluons), by default 0 (reco data contains no mother information) \\
+\hline
+{\em is\+Gen} & A boolean signifying whether the event in question is a Gen event or a reco event, by default false (reco) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_aa835c3b33ddec39682776bb1cf98176b}\label{classMela_aa835c3b33ddec39682776bb1cf98176b}} 
 \index{Mela@{Mela}!setMelaHiggsMass@{setMelaHiggsMass}}
 \index{setMelaHiggsMass@{setMelaHiggsMass}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setMelaHiggsMass()}{setMelaHiggsMass()}}
 {\footnotesize\ttfamily void Mela\+::set\+Mela\+Higgs\+Mass (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Mass,  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Sets the mass of your chosen Higgs. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a1ec046181d8211dde031687e23f2d5f5}{Z\+Z\+Matrix\+Element\+::set\+\_\+m\+Higgs}}.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Higgs\+Mass} & This is the mass of the Higgs that you would like, in GeV \\
+\hline
+{\em index} & This is either 0 or 1, depending on if you want to change the first or second resonance. By default it is 0. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a89930f849726aa1ffd4b38830df7a083}\label{classMela_a89930f849726aa1ffd4b38830df7a083}} 
 \index{Mela@{Mela}!setMelaHiggsMassWidth@{setMelaHiggsMassWidth}}
 \index{setMelaHiggsMassWidth@{setMelaHiggsMassWidth}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setMelaHiggsMassWidth()}{setMelaHiggsMassWidth()}}
 {\footnotesize\ttfamily void Mela\+::set\+Mela\+Higgs\+Mass\+Width (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Mass,  }\item[{double}]{my\+Higgs\+Width,  }\item[{int}]{index }\end{DoxyParamCaption})}
 
+
+
+a combination of set\+Mela\+Higgs\+Mass and set\+Mela\+Higgs\+Width. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a787fddd6a5c3ac37bd498404314f9990}{Z\+Z\+Matrix\+Element\+::set\+\_\+m\+Higgs\+\_\+w\+Higgs}}.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Higgs\+Mass} & This is the mass of the Higgs that you would like, in GeV \\
+\hline
+{\em my\+Higgs\+Width} & This is the mass of the Higgs that you would like, in GeV \\
+\hline
+{\em index} & This is either 0 or 1, depending on if you want to change the first or second resonance. By default it is 0. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_ac08cf6732bf5c84fa3da1c5252d2660f}\label{classMela_ac08cf6732bf5c84fa3da1c5252d2660f}} 
 \index{Mela@{Mela}!setMelaHiggsWidth@{setMelaHiggsWidth}}
 \index{setMelaHiggsWidth@{setMelaHiggsWidth}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setMelaHiggsWidth()}{setMelaHiggsWidth()}}
 {\footnotesize\ttfamily void Mela\+::set\+Mela\+Higgs\+Width (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Width = {\ttfamily -\/1},  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Sets the width of your chosen Higgs. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a21ee44aa8e60545833157ef43b72452a}{Z\+Z\+Matrix\+Element\+::set\+\_\+w\+Higgs}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Higgs\+Width} & This is the mass of the Higgs that you would like, in GeV \\
+\hline
+{\em index} & This is either 0 or 1, depending on if you want to change the first or second resonance. By default it is 0. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_ae810756749a5c14defbda7721c00642c}\label{classMela_ae810756749a5c14defbda7721c00642c}} 
 \index{Mela@{Mela}!setMelaLeptonInterference@{setMelaLeptonInterference}}
 \index{setMelaLeptonInterference@{setMelaLeptonInterference}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setMelaLeptonInterference()}{setMelaLeptonInterference()}}
 {\footnotesize\ttfamily void Mela\+::set\+Mela\+Lepton\+Interference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}}}]{my\+Lep\+Interf = {\ttfamily \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca92cbe92f4215368249033082e6671aa6}{T\+Var\+::\+Default\+Lepton\+Interf}}} }\end{DoxyParamCaption})}
 
+
+
+Sets the M\+E\+LA Lepton Interference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Lep\+Interf} & sets the my\+Lep\+Interf\+\_\+ variable to one found in T\+Var\+::\+Lepton\+Interface through Z\+Z\+Matrix\+Element\+::set\+\_\+\+Lepton\+Interface. \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca92cbe92f4215368249033082e6671aa6}{T\+Var\+::\+Default\+Lepton\+Interf}} by default. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_af478cd82f2e006df9bdf90da9232142a}\label{classMela_af478cd82f2e006df9bdf90da9232142a}} 
 \index{Mela@{Mela}!setMelaPrimaryHiggsMass@{setMelaPrimaryHiggsMass}}
 \index{setMelaPrimaryHiggsMass@{setMelaPrimaryHiggsMass}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setMelaPrimaryHiggsMass()}{setMelaPrimaryHiggsMass()}}
 {\footnotesize\ttfamily void Mela\+::set\+Mela\+Primary\+Higgs\+Mass (\begin{DoxyParamCaption}\item[{double}]{my\+Higgs\+Mass }\end{DoxyParamCaption})}
 
+
+
+Sets the mass of the \char`\"{}primary\char`\"{} higgs. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for the function \mbox{\hyperlink{classZZMatrixElement_a251b2a4481acd7f092a56673f6770cf6}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Primary\+Higgs\+Mass}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_ae3f6a1cbc7f65aec45736791a28e7bab}{T\+Evt\+Prob\+::\+Set\+Primary\+Higgs\+Mass}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Higgs\+Mass} & This is the mass of the Higgs that you would like, in GeV\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+The primary Higgs is the first resonance -\/ nominally M\+E\+LA can have 2 resonances when working through J\+H\+U\+Gen-\/\+M\+C\+FM 
+\end{DoxyAttention}
+\begin{DoxyRemark}{Remarks}
+This function is effectively the same as set\+Mela\+Higgs\+Mass(mass, 0) 
+\end{DoxyRemark}
 \mbox{\Hypertarget{classMela_addbf65232c5fa5bf44cf8180b543b904}\label{classMela_addbf65232c5fa5bf44cf8180b543b904}} 
 \index{Mela@{Mela}!setProcess@{setProcess}}
 \index{setProcess@{setProcess}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setProcess()}{setProcess()}}
 {\footnotesize\ttfamily void Mela\+::set\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{my\+Model,  }\item[{\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}}]{my\+ME,  }\item[{\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}}]{my\+Production }\end{DoxyParamCaption})}
 
+
+
+Sets the process, matrix element, and production that M\+E\+LA is to use for this event. Calls \mbox{\hyperlink{classZZMatrixElement_a28c78d859931ce874db2ae52a503eb92}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Process}}, which calls \mbox{\hyperlink{classTEvtProb_afb64507e9e2b613ac14f1fbd07031fd3}{T\+Evt\+Prob\+::\+Set\+Process}}. 
+
+\begin{DoxyAttention}{Attention}
+Remember to set the process for each event, otherwise the M\+E\+LA event loop will throw a segmentation error. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em my\+Model} & a \mbox{\hyperlink{namespaceTVar}{T\+Var}} for the Process you would like, as defined in \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em my\+ME} & a \mbox{\hyperlink{namespaceTVar}{T\+Var}} for the matrix element you would like, as defined in \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em my\+Production} & a \mbox{\hyperlink{namespaceTVar}{T\+Var}} for the production mode you would like, as defined in \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_ae8c0515d34386567b8bdb01a77b36d86}\label{classMela_ae8c0515d34386567b8bdb01a77b36d86}} 
 \index{Mela@{Mela}!setRemoveJetMasses@{setRemoveJetMasses}}
 \index{setRemoveJetMasses@{setRemoveJetMasses}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setRemoveJetMasses()}{setRemoveJetMasses()}}
 {\footnotesize\ttfamily void Mela\+::set\+Remove\+Jet\+Masses (\begin{DoxyParamCaption}\item[{bool}]{Massless\+Lepton\+Switch = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+either permits or forbids massive jets. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for the function \mbox{\hyperlink{namespaceTUtil_ae24251edeb2dbc469b31a1e1dc05e51e}{T\+Util\+::apply\+Jet\+Mass\+Correction}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em Massless\+Lepton\+Switch} & Whether you would like your jets to be massive, by default true. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a7ae40993c2bc0c8b6764ddc0cc948c4b}\label{classMela_a7ae40993c2bc0c8b6764ddc0cc948c4b}} 
 \index{Mela@{Mela}!setRemoveLeptonMasses@{setRemoveLeptonMasses}}
 \index{setRemoveLeptonMasses@{setRemoveLeptonMasses}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setRemoveLeptonMasses()}{setRemoveLeptonMasses()}}
 {\footnotesize\ttfamily void Mela\+::set\+Remove\+Lepton\+Masses (\begin{DoxyParamCaption}\item[{bool}]{Massless\+Lepton\+Switch = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+either permits or forbids massive leptons. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for the function \mbox{\hyperlink{namespaceTUtil_a4824d6613cde741139ec5bc7e199ac57}{T\+Util\+::apply\+Lepton\+Mass\+Correction}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em Massless\+Lepton\+Swtich} & Whether you would like your leptons to be massive, by default true. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a8d7f183b5bcc90bf190e2576ad7ac1a9}\label{classMela_a8d7f183b5bcc90bf190e2576ad7ac1a9}} 
 \index{Mela@{Mela}!setRenFacScaleMode@{setRenFacScaleMode}}
 \index{setRenFacScaleMode@{setRenFacScaleMode}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setRenFacScaleMode()}{setRenFacScaleMode()}}
 {\footnotesize\ttfamily void Mela\+::set\+Ren\+Fac\+Scale\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}}}]{renormalization\+Sch,  }\item[{\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}}}]{factorization\+Sch,  }\item[{double}]{ren\+\_\+sf,  }\item[{double}]{fac\+\_\+sf }\end{DoxyParamCaption})}
 
+
+
+Sets the renormalization and the factorization schemes. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a120fdda15b37b8d4086610d0ff70094e}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Ren\+Fac\+Scale\+Mode}}, which is a wrapper for \mbox{\hyperlink{classTEvtProb_ac8fed41a11754f0bb76090d4e848c6c4}{T\+Evt\+Prob\+::\+Set\+Ren\+Fac\+Scale\+Mode}}, which edits \mbox{\hyperlink{classTEvtProb_a5c8f37b5ba8969536d38f5edad26cbe4}{T\+Evt\+Prob.\+event\+\_\+scales}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em renormalization\+Sch} & This is the renormalization scheme that you are picking from \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} \\
+\hline
+{\em factorization\+Sch} & This is the factorization scheme that you are picking from \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} \\
+\hline
+{\em ren\+\_\+sf} & This is the renormalization scale factor that you would like \\
+\hline
+{\em fac\+\_\+sf} & This is the scale factor for the factorization scale that you would like \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a063525c4c9f007a9136f31aa6cb3915a}\label{classMela_a063525c4c9f007a9136f31aa6cb3915a}} 
 \index{Mela@{Mela}!setSpinOneCouplings@{setSpinOneCouplings}}
 \index{setSpinOneCouplings@{setSpinOneCouplings}!Mela@{Mela}}
@@ -906,12 +1323,39 @@ float \mbox{\hyperlink{classMela_a32b1d88b009f76e7bbf6a88a4389f287}{auxiliary\+P
 \doxysubsubsection{\texorpdfstring{setTempCandidate()}{setTempCandidate()}}
 {\footnotesize\ttfamily void Mela\+::set\+Temp\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Daughters,  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Associated = {\ttfamily 0},  }\item[{\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} $\ast$}]{p\+Mothers = {\ttfamily 0},  }\item[{bool}]{is\+Gen = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Sets a temporary M\+E\+LA candidate, by setting mela\+Cand in Xcal2 to a temporary candidate without pushing this candidate to the cand\+List of Xcal2. 
+
+\begin{DoxySeeAlso}{See also}
+Wrapper for \mbox{\hyperlink{classZZMatrixElement_a6fec23332f9bd6a332527b91ad1a3748}{Z\+Z\+Matrix\+Element\+::set\+\_\+\+Temp\+Candidate}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Daughters} & A Simple\+Particle\+Collection\+\_\+t of particle daughters (decay products) \\
+\hline
+{\em p\+Associated} & A Simple\+Particle\+Collection\+\_\+t of associated particles (i.\+e. jets), by default 0 (no jets) \\
+\hline
+{\em p\+Mothers} & A Simple\+Particle\+Collection\+\_\+t of particle mothers (i.\+e. gluons), by default 0 (reco data contains no mother information) \\
+\hline
+{\em is\+Gen} & A boolean signifying whether the event in question is a Gen event or a reco event, by default false (reco) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classMela_a540460c5f493ffa154560ec2d7452799}\label{classMela_a540460c5f493ffa154560ec2d7452799}} 
 \index{Mela@{Mela}!setVerbosity@{setVerbosity}}
 \index{setVerbosity@{setVerbosity}!Mela@{Mela}}
 \doxysubsubsection{\texorpdfstring{setVerbosity()}{setVerbosity()}}
 {\footnotesize\ttfamily void Mela\+::set\+Verbosity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity\+\_\+ = {\ttfamily \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}}} }\end{DoxyParamCaption})}
 
+
+
+Sets the verbosity for M\+E\+LA outside of the initial constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em verbosity\+\_\+} & The verbosity of M\+E\+LA that you desire, as defined in \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}}. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
