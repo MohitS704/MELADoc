@@ -80,7 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d96093334da4d526f0bd330ecd1d190"><td class="memItemLeft" align="right" valign="top">real *8 function, dimension(2)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacehto__cmplx__rootz_1_1operator_07_8crz_8_08.html#a5d96093334da4d526f0bd330ecd1d190">crz</a> (x, y)</td></tr>
 <tr class="separator:a5d96093334da4d526f0bd330ecd1d190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function/Subroutine Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00681">681</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+</div><h2 class="groupheader">Member Function/Subroutine Documentation</h2>
 <a id="a5d96093334da4d526f0bd330ecd1d190"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d96093334da4d526f0bd330ecd1d190">&#9670;&nbsp;</a></span>crz()</h2>
 
@@ -107,12 +110,43 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00686">686</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+<div class="fragment"><div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;       <span class="keywordtype">USE </span><a class="code" href="namespacehto__units.html">hto_units</a></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;       <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;       real*8, <span class="keywordtype">dimension(2)</span> :: <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;       real*8, <span class="keywordtype">INTENT(IN)</span> :: x,y</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;       real*8 rs,r,u,v,sax</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;       <span class="keywordflow">IF</span>(abs(y/x).lt.1.d-8) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        <span class="keywordflow">IF</span>(x.gt.0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;         <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(1)= sqrt(x)*(1.d0+0.5d0*y*y/(x*x))</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;         <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(2)= 0.5d0*y/sqrt(x)</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        <span class="keywordflow">ELSEIF</span>(x.lt.0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;         sax= sqrt(abs(x))</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;         <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(1)= 0.5d0*abs(y)/sax</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;         <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(2)= sign(<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>,y)*sax*(1.d0+0.5d0*y*y/(x*x))</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="keywordflow">        ENDIF</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;       <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        rs= x*x+y*y</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        r= sqrt(rs)</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        u= 0.5d0*(r+x)</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(1)= sqrt(u)</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordflow">IF</span>(x &gt; 0.d0.and.y.eq.0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;         <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(2)= 0.d0</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;         v= 0.5d0*(r-x)</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;         <a class="code" href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">crz</a>(2)= sign(<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>,y)*sqrt(v)</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;<span class="keywordflow">        ENDIF</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;<span class="keywordflow">       ENDIF</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>MELA/fortran/CPS/<a class="el" href="CALLING__cpHTO_8f.html">CALLING_cpHTO.f</a></li>
+<li>MELA/fortran/CPS/<a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="anamespacehto__units_html_adb7ab93d326f14720c354f68b0f7ee6c"><div class="ttname"><a href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">hto_units::one</a></div><div class="ttdeci">real *8, parameter one</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00184">CALLING_cpHTO.f:184</a></div></div>
+<div class="ttc" id="anamespacehto__units_html"><div class="ttname"><a href="namespacehto__units.html">hto_units</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00179">CALLING_cpHTO.f:179</a></div></div>
+<div class="ttc" id="anamespacehto__cmplx__rootz_html_a7a26cf49825b24cebd8ab098b92319e6"><div class="ttname"><a href="namespacehto__cmplx__rootz.html#a7a26cf49825b24cebd8ab098b92319e6">hto_cmplx_rootz::crz</a></div><div class="ttdeci">real *8 function, dimension(2) crz(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00686">CALLING_cpHTO.f:686</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

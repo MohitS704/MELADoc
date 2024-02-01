@@ -15,6 +15,13 @@ subroutine \mbox{\hyperlink{interfacemodmisc_1_1swap_ad3ace8dca4801dbc2d03be7610
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 5 of file mod\+\_\+\+Misc.\+F90.
+
+
+
 \doxysubsection{Member Function/\+Subroutine Documentation}
 \mbox{\Hypertarget{interfacemodmisc_1_1swap_ad3ace8dca4801dbc2d03be76101ab600}\label{interfacemodmisc_1_1swap_ad3ace8dca4801dbc2d03be76101ab600}} 
 \index{modmisc::swap@{modmisc::swap}!swap\_cmom@{swap\_cmom}}
@@ -22,30 +29,107 @@ subroutine \mbox{\hyperlink{interfacemodmisc_1_1swap_ad3ace8dca4801dbc2d03be7610
 \doxysubsubsection{\texorpdfstring{swap\_cmom()}{swap\_cmom()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+::swap\+\_\+cmom (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:4)}]{Mom1,  }\item[{complex(8), dimension(1\+:4)}]{Mom2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 434 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{434 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{435 \textcolor{keywordtype}{complex(8)} :: Mom1(1:4),Mom2(1:4),tmp(1:4)}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437     tmp(1:4) = mom2(1:4)}
+\DoxyCodeLine{438     mom2(1:4) = mom1(1:4)}
+\DoxyCodeLine{439     mom1(1:4) = tmp(1:4)}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1swap_a1a0b77cfe5edc497ee55a38666190521}\label{interfacemodmisc_1_1swap_a1a0b77cfe5edc497ee55a38666190521}} 
 \index{modmisc::swap@{modmisc::swap}!swap\_mom@{swap\_mom}}
 \index{swap\_mom@{swap\_mom}!modmisc::swap@{modmisc::swap}}
 \doxysubsubsection{\texorpdfstring{swap\_mom()}{swap\_mom()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+::swap\+\_\+mom (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom1,  }\item[{real(8), dimension(1\+:4)}]{Mom2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 423 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{423 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{424 \textcolor{keywordtype}{real}(8) :: Mom1(1:4),Mom2(1:4),tmp(1:4)}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426     tmp(1:4) = mom2(1:4)}
+\DoxyCodeLine{427     mom2(1:4) = mom1(1:4)}
+\DoxyCodeLine{428     mom1(1:4) = tmp(1:4)}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1swap_a41abf12c8a42451bc9b35614965e3113}\label{interfacemodmisc_1_1swap_a41abf12c8a42451bc9b35614965e3113}} 
 \index{modmisc::swap@{modmisc::swap}!swapc@{swapc}}
 \index{swapc@{swapc}!modmisc::swap@{modmisc::swap}}
 \doxysubsubsection{\texorpdfstring{swapc()}{swapc()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+::swapc (\begin{DoxyParamCaption}\item[{complex(8)}]{i,  }\item[{complex(8)}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 413 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{413 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{414 \textcolor{keywordtype}{complex(8)} :: i,j,temp}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     temp=j}
+\DoxyCodeLine{417     j=i}
+\DoxyCodeLine{418     i=temp}
+\DoxyCodeLine{419 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1swap_a4a112c39c2ab220b3499318ab82ee122}\label{interfacemodmisc_1_1swap_a4a112c39c2ab220b3499318ab82ee122}} 
 \index{modmisc::swap@{modmisc::swap}!swapi@{swapi}}
 \index{swapi@{swapi}!modmisc::swap@{modmisc::swap}}
 \doxysubsubsection{\texorpdfstring{swapi()}{swapi()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+::swapi (\begin{DoxyParamCaption}\item[{integer}]{i,  }\item[{integer}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 393 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{393 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{394 \textcolor{keywordtype}{integer} :: i,j,temp}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396     temp=j}
+\DoxyCodeLine{397     j=i}
+\DoxyCodeLine{398     i=temp}
+\DoxyCodeLine{399 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1swap_ad1b9ab6a7b1accae3565521c1fb27353}\label{interfacemodmisc_1_1swap_ad1b9ab6a7b1accae3565521c1fb27353}} 
 \index{modmisc::swap@{modmisc::swap}!swapr@{swapr}}
 \index{swapr@{swapr}!modmisc::swap@{modmisc::swap}}
 \doxysubsubsection{\texorpdfstring{swapr()}{swapr()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+::swapr (\begin{DoxyParamCaption}\item[{real(8)}]{i,  }\item[{real(8)}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 403 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{403 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{404 \textcolor{keywordtype}{real}(8) :: i,j,temp}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406     temp=j}
+\DoxyCodeLine{407     j=i}
+\DoxyCodeLine{408     i=temp}
+\DoxyCodeLine{409 }
+
+\end{DoxyCode}
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}

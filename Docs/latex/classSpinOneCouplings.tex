@@ -32,6 +32,13 @@ double \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 65 of file T\+Couplings.\+hh.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSpinOneCouplings_a5835e29c742766dc5b1f963dbbccec1a}\label{classSpinOneCouplings_a5835e29c742766dc5b1f963dbbccec1a}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!SpinOneCouplings@{SpinOneCouplings}}
@@ -39,18 +46,45 @@ double \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}
 \doxysubsubsection{\texorpdfstring{SpinOneCouplings()}{SpinOneCouplings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Spin\+One\+Couplings\+::\+Spin\+One\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 273 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{273 \{ \mbox{\hyperlink{classSpinOneCouplings_a93e5a21d94aaea00672ad59f8bf2a2d9}{reset}}(); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinOneCouplings_a1e882bf509925d5bc3a9152abb0329db}\label{classSpinOneCouplings_a1e882bf509925d5bc3a9152abb0329db}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!SpinOneCouplings@{SpinOneCouplings}}
 \index{SpinOneCouplings@{SpinOneCouplings}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{SpinOneCouplings()}{SpinOneCouplings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Spin\+One\+Couplings\+::\+Spin\+One\+Couplings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSpinOneCouplings}{Spin\+One\+Couplings}} const \&}]{other }\end{DoxyParamCaption})}
 
+
+
+Definition at line 274 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{274 \{ this-\/>\mbox{\hyperlink{classSpinOneCouplings_ac2f95df73888aaa7e44b82f9973b82a1}{copy}}(other); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinOneCouplings_ab93d621de81970ac14574db0422a2f6e}\label{classSpinOneCouplings_ab93d621de81970ac14574db0422a2f6e}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!````~SpinOneCouplings@{$\sim$SpinOneCouplings}}
 \index{````~SpinOneCouplings@{$\sim$SpinOneCouplings}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{$\sim$SpinOneCouplings()}{~SpinOneCouplings()}}
 {\footnotesize\ttfamily Spin\+One\+Couplings\+::$\sim$\+Spin\+One\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 275 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{275 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -60,30 +94,102 @@ double \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}
 \doxysubsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily void Spin\+One\+Couplings\+::copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSpinOneCouplings}{Spin\+One\+Couplings}} const \&}]{other }\end{DoxyParamCaption})}
 
+
+
+Definition at line 288 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{288                                                         \{}
+\DoxyCodeLine{289   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{290     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<SIZE\_ZVV; ic++) \mbox{\hyperlink{classSpinOneCouplings_ae892bd28e0e8ac4ab6bfcc0b5433c789}{Zvvcoupl}}[ic][im] = (other.Zvvcoupl)[ic][im];}
+\DoxyCodeLine{291     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<SIZE\_ZQQ; ic++) \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}{Zqqcoupl}}[ic][im] = (other.Zqqcoupl)[ic][im];}
+\DoxyCodeLine{292   \}}
+\DoxyCodeLine{293 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinOneCouplings_ae1aee13439f751b13594ac177598ced7}\label{classSpinOneCouplings_ae1aee13439f751b13594ac177598ced7}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!getRef@{getRef}}
 \index{getRef@{getRef}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{getRef()}{getRef()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classSpinOneCouplings}{Spin\+One\+Couplings}} $\ast$ Spin\+One\+Couplings\+::get\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 294 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{294 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{this}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinOneCouplings_a93e5a21d94aaea00672ad59f8bf2a2d9}\label{classSpinOneCouplings_a93e5a21d94aaea00672ad59f8bf2a2d9}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!reset@{reset}}
 \index{reset@{reset}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
 {\footnotesize\ttfamily void Spin\+One\+Couplings\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 277 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{277                             \{}
+\DoxyCodeLine{278   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{279     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<SIZE\_ZVV; ic++) \mbox{\hyperlink{classSpinOneCouplings_ae892bd28e0e8ac4ab6bfcc0b5433c789}{Zvvcoupl}}[ic][im] = 0;}
+\DoxyCodeLine{280     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<SIZE\_ZQQ; ic++) \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}{Zqqcoupl}}[ic][im] = 0;}
+\DoxyCodeLine{281   \}}
+\DoxyCodeLine{282   \textcolor{comment}{/*}}
+\DoxyCodeLine{283 \textcolor{comment}{  Zvvcoupl[0][0]=1.0;}}
+\DoxyCodeLine{284 \textcolor{comment}{  Zqqcoupl[0][0]=1.0;}}
+\DoxyCodeLine{285 \textcolor{comment}{  Zqqcoupl[1][0]=1.0;}}
+\DoxyCodeLine{286 \textcolor{comment}{  */}}
+\DoxyCodeLine{287 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinOneCouplings_a92f42814af1ba2376130520a7754448a}\label{classSpinOneCouplings_a92f42814af1ba2376130520a7754448a}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!SetZQQCouplings@{SetZQQCouplings}}
 \index{SetZQQCouplings@{SetZQQCouplings}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{SetZQQCouplings()}{SetZQQCouplings()}}
 {\footnotesize\ttfamily void Spin\+One\+Couplings\+::\+Set\+Z\+Q\+Q\+Couplings (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{double}]{c\+\_\+real,  }\item[{double}]{c\+\_\+imag }\end{DoxyParamCaption})}
 
+
+
+Definition at line 303 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{303                                                                                       \{}
+\DoxyCodeLine{304   \textcolor{keywordflow}{if} (index>=SIZE\_ZQQ) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Cannot set index "} << index << \textcolor{stringliteral}{" for the Zqqcoupl, out of range."} << endl;}
+\DoxyCodeLine{305   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{306     \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}{Zqqcoupl}}[index][0] = c\_real;}
+\DoxyCodeLine{307     \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}{Zqqcoupl}}[index][1] = c\_imag;}
+\DoxyCodeLine{308   \}}
+\DoxyCodeLine{309 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinOneCouplings_a232f34f738abadb99274d942ca73766b}\label{classSpinOneCouplings_a232f34f738abadb99274d942ca73766b}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!SetZVVCouplings@{SetZVVCouplings}}
 \index{SetZVVCouplings@{SetZVVCouplings}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{SetZVVCouplings()}{SetZVVCouplings()}}
 {\footnotesize\ttfamily void Spin\+One\+Couplings\+::\+Set\+Z\+V\+V\+Couplings (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{double}]{c\+\_\+real,  }\item[{double}]{c\+\_\+imag }\end{DoxyParamCaption})}
 
+
+
+Definition at line 296 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{296                                                                                       \{}
+\DoxyCodeLine{297   \textcolor{keywordflow}{if} (index>=SIZE\_ZVV) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Cannot set index "} << index << \textcolor{stringliteral}{" for the Zvvcoupl, out of range."} << endl;}
+\DoxyCodeLine{298   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{299     \mbox{\hyperlink{classSpinOneCouplings_ae892bd28e0e8ac4ab6bfcc0b5433c789}{Zvvcoupl}}[index][0] = c\_real;}
+\DoxyCodeLine{300     \mbox{\hyperlink{classSpinOneCouplings_ae892bd28e0e8ac4ab6bfcc0b5433c789}{Zvvcoupl}}[index][1] = c\_imag;}
+\DoxyCodeLine{301   \}}
+\DoxyCodeLine{302 \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -93,11 +199,19 @@ double \mbox{\hyperlink{classSpinOneCouplings_a736cb93b8069bf2589d021060674e8c0}
 \doxysubsubsection{\texorpdfstring{Zqqcoupl}{Zqqcoupl}}
 {\footnotesize\ttfamily double Spin\+One\+Couplings\+::\+Zqqcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+QQ\mbox{]}\mbox{[}2\mbox{]}}
 
+
+
+Definition at line 79 of file T\+Couplings.\+hh.
+
 \mbox{\Hypertarget{classSpinOneCouplings_ae892bd28e0e8ac4ab6bfcc0b5433c789}\label{classSpinOneCouplings_ae892bd28e0e8ac4ab6bfcc0b5433c789}} 
 \index{SpinOneCouplings@{SpinOneCouplings}!Zvvcoupl@{Zvvcoupl}}
 \index{Zvvcoupl@{Zvvcoupl}!SpinOneCouplings@{SpinOneCouplings}}
 \doxysubsubsection{\texorpdfstring{Zvvcoupl}{Zvvcoupl}}
 {\footnotesize\ttfamily double Spin\+One\+Couplings\+::\+Zvvcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Z\+VV\mbox{]}\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 78 of file T\+Couplings.\+hh.
 
 
 

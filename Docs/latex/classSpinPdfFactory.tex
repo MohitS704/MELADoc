@@ -101,6 +101,13 @@ Bool\+\_\+t \mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d70
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 9 of file Spin\+Pdf\+Factory.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSpinPdfFactory_ad10e24b0b56d547bae5ec802402b5da3}\label{classSpinPdfFactory_ad10e24b0b56d547bae5ec802402b5da3}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!SpinPdfFactory@{SpinPdfFactory}}
@@ -108,12 +115,41 @@ Bool\+\_\+t \mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d70
 \doxysubsubsection{\texorpdfstring{SpinPdfFactory()}{SpinPdfFactory()}}
 {\footnotesize\ttfamily Spin\+Pdf\+Factory\+::\+Spin\+Pdf\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+,  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V1decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V2decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{Bool\+\_\+t}]{Onshell\+H\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 8 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                                                                                                                                     :}
+\DoxyCodeLine{9 \mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}(V1decay\_),}
+\DoxyCodeLine{10 \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}(V2decay\_),}
+\DoxyCodeLine{11 \mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d7007}{OnshellH}}(OnshellH\_)}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13   \mbox{\hyperlink{classSpinPdfFactory_a5d3aa9b3e757c3b713a5f3ac037779b3}{initMeasurables}}(measurables\_);}
+\DoxyCodeLine{14   \mbox{\hyperlink{classSpinPdfFactory_a5616c1f95bfc3c98af4361eb3f8b7677}{initMassPole}}();}
+\DoxyCodeLine{15   \mbox{\hyperlink{classSpinPdfFactory_a91e9bb9c00ba4052bf3e73e56f42b060}{initVdecayParams}}();}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a3c4bd665a3d217db93962ea0e4e713ba}\label{classSpinPdfFactory_a3c4bd665a3d217db93962ea0e4e713ba}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!````~SpinPdfFactory@{$\sim$SpinPdfFactory}}
 \index{````~SpinPdfFactory@{$\sim$SpinPdfFactory}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{$\sim$SpinPdfFactory()}{~SpinPdfFactory()}}
 {\footnotesize\ttfamily Spin\+Pdf\+Factory\+::$\sim$\+Spin\+Pdf\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 18 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                                \{}
+\DoxyCodeLine{19   \mbox{\hyperlink{classSpinPdfFactory_adad847c63ec6152f06ab421285cda3a0}{destroyVdecayParams}}();}
+\DoxyCodeLine{20   \mbox{\hyperlink{classSpinPdfFactory_a00933fa8367203744677e4eb68b641bc}{destroyMassPole}}();}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -123,12 +159,30 @@ Bool\+\_\+t \mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d70
 \doxysubsubsection{\texorpdfstring{alwaysIntegrate()}{alwaysIntegrate()}}
 {\footnotesize\ttfamily virtual void Spin\+Pdf\+Factory\+::always\+Integrate (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{code = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 30 of file Spin\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{ \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}}-\/>\mbox{\hyperlink{classRooSpin_a40db25f08c8a1c56fc0bd327e48e94fa}{alwaysIntegrate}}(code); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a554e9a66f34ba6968f43b79c4afec2a2}\label{classSpinPdfFactory_a554e9a66f34ba6968f43b79c4afec2a2}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!defaultIntegration@{defaultIntegration}}
 \index{defaultIntegration@{defaultIntegration}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{defaultIntegration()}{defaultIntegration()}}
 {\footnotesize\ttfamily virtual void Spin\+Pdf\+Factory\+::default\+Integration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 29 of file Spin\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{ \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}}-\/>\mbox{\hyperlink{classRooSpin_aff9d9fddbd2345452ee932523037d941}{defaultIntegration}}(); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a6147e6a5e94e6d2fa6da43bde3b9e302}\label{classSpinPdfFactory_a6147e6a5e94e6d2fa6da43bde3b9e302}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!destroyGVals@{destroyGVals}}
 \index{destroyGVals@{destroyGVals}!SpinPdfFactory@{SpinPdfFactory}}
@@ -145,6 +199,18 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_a0c002868f1db2298a0207a5cc
 \doxysubsubsection{\texorpdfstring{destroyMassPole()}{destroyMassPole()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::destroy\+Mass\+Pole (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 122 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                                     \{}
+\DoxyCodeLine{123   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}};}
+\DoxyCodeLine{124   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d7007}{OnshellH}}) \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}};}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a6b6ec4f4b3ffcbdd10c26aa97371f65f}\label{classSpinPdfFactory_a6b6ec4f4b3ffcbdd10c26aa97371f65f}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!destroyPDF@{destroyPDF}}
 \index{destroyPDF@{destroyPDF}!SpinPdfFactory@{SpinPdfFactory}}
@@ -161,18 +227,86 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_a1f0636cd638bc53e990660c52
 \doxysubsubsection{\texorpdfstring{destroyVdecayParams()}{destroyVdecayParams()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::destroy\+Vdecay\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 126 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{126                                         \{}
+\DoxyCodeLine{127   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a585f17f844d893b80e887f8f425e2a60}{gVprimeff\_decay2\_right}};}
+\DoxyCodeLine{128   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a711179257930736e8d99360a1c3b1251}{gVprimeff\_decay2\_left}};}
+\DoxyCodeLine{129   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a6dfdb1e1a8d80fb35cf7a35919291f0b}{gVprimeff\_decay1\_right}};}
+\DoxyCodeLine{130   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a3ec1d33c7a142217f05bf864d5467c23}{gVprimeff\_decay1\_left}};}
+\DoxyCodeLine{131   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a91f75de98c0689009c7dabdd8bfab38b}{vev}};}
+\DoxyCodeLine{132   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1a3992ec2ea1de40e4f2f9578c19b062}{Sin2ThetaW}};}
+\DoxyCodeLine{133   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_af5fd514b83d5a24507dc3359bc434d7f}{gamZ}};}
+\DoxyCodeLine{134   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1d9c867e9e3ef5627013ef1300205e96}{mZ}};}
+\DoxyCodeLine{135   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_ab205f52435d1570bcc51cfb9664555b2}{gamW}};}
+\DoxyCodeLine{136   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1bb8d915ef2d8973ea90f032a848e19f}{mW}};}
+\DoxyCodeLine{137   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa06a75407686e0fd3d2afa433486e32e}{gamZprime}};}
+\DoxyCodeLine{138   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a46119b8c646820a047003b86d89fc8c0}{mZprime}};}
+\DoxyCodeLine{139   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a922f2dcd46b623cb2d198e82200922f2}{gamWprime}};}
+\DoxyCodeLine{140   \textcolor{keyword}{delete} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa606d7f2b0938e9f1efc34b93a8e7122}{mWprime}};}
+\DoxyCodeLine{141 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_ad1ad1686f278a474c98f7063a6a4afd9}\label{classSpinPdfFactory_ad1ad1686f278a474c98f7063a6a4afd9}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!getMVGamV@{getMVGamV}}
 \index{getMVGamV@{getMVGamV}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{getMVGamV()}{getMVGamV()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::get\+M\+V\+GamV (\begin{DoxyParamCaption}\item[{Double\+\_\+t $\ast$}]{mV = {\ttfamily 0},  }\item[{Double\+\_\+t $\ast$}]{gamV = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 86 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                                                                \{}
+\DoxyCodeLine{87   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91}{RooSpin::kVdecayType\_Wany}})\{}
+\DoxyCodeLine{88     \textcolor{keywordflow}{if} (mV!=0) (*mV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1bb8d915ef2d8973ea90f032a848e19f}{mW}})-\/>getVal();}
+\DoxyCodeLine{89     \textcolor{keywordflow}{if} (gamV!=0) (*gamV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_ab205f52435d1570bcc51cfb9664555b2}{gamW}})-\/>getVal();}
+\DoxyCodeLine{90   \}}
+\DoxyCodeLine{91   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!(\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}} \&\& \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}))\{}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if} (mV!=0) (*mV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1d9c867e9e3ef5627013ef1300205e96}{mZ}})-\/>getVal();}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} (gamV!=0) (*gamV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_af5fd514b83d5a24507dc3359bc434d7f}{gamZ}})-\/>getVal();}
+\DoxyCodeLine{94   \}}
+\DoxyCodeLine{95   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{96     \textcolor{keywordflow}{if} (mV!=0) (*mV)=0;}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if} (gamV!=0) (*gamV)=0;}
+\DoxyCodeLine{98   \}}
+\DoxyCodeLine{99 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_aa3f313224c0bf1592b09ea3fe316d068}\label{classSpinPdfFactory_aa3f313224c0bf1592b09ea3fe316d068}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!getMVprimeGamVprime@{getMVprimeGamVprime}}
 \index{getMVprimeGamVprime@{getMVprimeGamVprime}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{getMVprimeGamVprime()}{getMVprimeGamVprime()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::get\+M\+Vprime\+Gam\+Vprime (\begin{DoxyParamCaption}\item[{Double\+\_\+t $\ast$}]{mV = {\ttfamily 0},  }\item[{Double\+\_\+t $\ast$}]{gamV = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 100 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100                                                                          \{}
+\DoxyCodeLine{101   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91}{RooSpin::kVdecayType\_Wany}})\{}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if} (mV!=0) (*mV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa606d7f2b0938e9f1efc34b93a8e7122}{mWprime}})-\/>getVal();}
+\DoxyCodeLine{103     \textcolor{keywordflow}{if} (gamV!=0) (*gamV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a922f2dcd46b623cb2d198e82200922f2}{gamWprime}})-\/>getVal();}
+\DoxyCodeLine{104   \}}
+\DoxyCodeLine{105   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!(\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}} \&\& \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}))\{}
+\DoxyCodeLine{106     \textcolor{keywordflow}{if} (mV!=0) (*mV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a46119b8c646820a047003b86d89fc8c0}{mZprime}})-\/>getVal();}
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (gamV!=0) (*gamV)=(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa06a75407686e0fd3d2afa433486e32e}{gamZprime}})-\/>getVal();}
+\DoxyCodeLine{108   \}}
+\DoxyCodeLine{109   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{110     \textcolor{keywordflow}{if} (mV!=0) (*mV)=0;}
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (gamV!=0) (*gamV)=0;}
+\DoxyCodeLine{112   \}}
+\DoxyCodeLine{113 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a334a54252b5578b5260854498da5e8b1}\label{classSpinPdfFactory_a334a54252b5578b5260854498da5e8b1}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!initGVals@{initGVals}}
 \index{initGVals@{initGVals}!SpinPdfFactory@{SpinPdfFactory}}
@@ -189,12 +323,44 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_a8d17dac6a28ed39d9a36ebf2e
 \doxysubsubsection{\texorpdfstring{initMassPole()}{initMassPole()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::init\+Mass\+Pole (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 33 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                                  \{}
+\DoxyCodeLine{34   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d7007}{OnshellH}}) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mX"}, \textcolor{stringliteral}{"mX"}, (\mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a111ea550007d0002293e9c33e18cc1ea}{m12}})-\/>getVal());}
+\DoxyCodeLine{35   \textcolor{keywordflow}{else} \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}} = \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a111ea550007d0002293e9c33e18cc1ea}{m12}};}
+\DoxyCodeLine{36   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gamX"}, \textcolor{stringliteral}{"gamX"}, 0);}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a5d3aa9b3e757c3b713a5f3ac037779b3}\label{classSpinPdfFactory_a5d3aa9b3e757c3b713a5f3ac037779b3}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!initMeasurables@{initMeasurables}}
 \index{initMeasurables@{initMeasurables}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{initMeasurables()}{initMeasurables()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::init\+Measurables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 22 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                                                                                \{}
+\DoxyCodeLine{23   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_afe6983759e2682424885a9bb18b697ad}{h1}} = (RooAbsReal*)measurables\_.h1;}
+\DoxyCodeLine{24   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_ad528de8e4fcbbd3aee5b3ab0ffd7cfa2}{h2}} = (RooAbsReal*)measurables\_.h2;}
+\DoxyCodeLine{25   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_aa17a592fc6c2ead290a2a0934efb4458}{Phi}} = (RooAbsReal*)measurables\_.Phi;}
+\DoxyCodeLine{26   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a69c2b20b07f3020591946d558892332f}{m1}} = (RooAbsReal*)measurables\_.m1;}
+\DoxyCodeLine{27   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a0dc1f7de3fef00774a77e901b9f6dd5f}{m2}} = (RooAbsReal*)measurables\_.m2;}
+\DoxyCodeLine{28   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a111ea550007d0002293e9c33e18cc1ea}{m12}} = (RooAbsReal*)measurables\_.m12;}
+\DoxyCodeLine{29   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a91a45cd485b0da38c9a62abdd21385d7}{hs}} = (RooAbsReal*)measurables\_.hs;}
+\DoxyCodeLine{30   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a1eef1147c62f6333dea2ed09cc3cce2c}{Phi1}} = (RooAbsReal*)measurables\_.Phi1;}
+\DoxyCodeLine{31   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a5af796207b85d31b4f95a4e92253ac39}{Y}} = (RooAbsReal*)measurables\_.Y;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a75ae6989146c5621672f56cf3b3df6aa}\label{classSpinPdfFactory_a75ae6989146c5621672f56cf3b3df6aa}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!initPDF@{initPDF}}
 \index{initPDF@{initPDF}!SpinPdfFactory@{SpinPdfFactory}}
@@ -211,6 +377,35 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_ad5b8690d25e95177ecfe0d3d4
 \doxysubsubsection{\texorpdfstring{initVdecayParams()}{initVdecayParams()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::init\+Vdecay\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 45 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                      \{}
+\DoxyCodeLine{46   \textcolor{keywordflow}{if} ((((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}})>0 \&\& ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}})<0) || (((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}})<0 \&\& ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}})>0)) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SpinPdfFactory::initVdecayParams: V1 and V2 decays are inconsistent!"} << endl;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \textcolor{keyword}{const} Double\_t GfVal = 1.16639e-\/5;}
+\DoxyCodeLine{49   \textcolor{keyword}{const} Double\_t vevVal = 1./sqrt(GfVal*sqrt(2.));}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1bb8d915ef2d8973ea90f032a848e19f}{mW}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mW"}, \textcolor{stringliteral}{"mW"}, 80.399);}
+\DoxyCodeLine{52   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_ab205f52435d1570bcc51cfb9664555b2}{gamW}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gamW"}, \textcolor{stringliteral}{"gamW"}, 2.085);}
+\DoxyCodeLine{53   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1d9c867e9e3ef5627013ef1300205e96}{mZ}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mZ"}, \textcolor{stringliteral}{"mZ"}, 91.1876);}
+\DoxyCodeLine{54   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_af5fd514b83d5a24507dc3359bc434d7f}{gamZ}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gamZ"}, \textcolor{stringliteral}{"gamZ"}, 2.4952);}
+\DoxyCodeLine{55   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa606d7f2b0938e9f1efc34b93a8e7122}{mWprime}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mWprime"}, \textcolor{stringliteral}{"mWprime"}, 0);}
+\DoxyCodeLine{56   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a922f2dcd46b623cb2d198e82200922f2}{gamWprime}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gamWprime"}, \textcolor{stringliteral}{"gamWprime"}, -\/1); \textcolor{comment}{// Turns off Wprime}}
+\DoxyCodeLine{57   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a46119b8c646820a047003b86d89fc8c0}{mZprime}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mZprime"}, \textcolor{stringliteral}{"mZprime"}, 0);}
+\DoxyCodeLine{58   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa06a75407686e0fd3d2afa433486e32e}{gamZprime}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gamZprime"}, \textcolor{stringliteral}{"gamZprime"}, -\/1); \textcolor{comment}{// Turns off Zprime}}
+\DoxyCodeLine{59   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1a3992ec2ea1de40e4f2f9578c19b062}{Sin2ThetaW}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"Sin2ThetaW"}, \textcolor{stringliteral}{"Sin2ThetaW"}, 0.23119);}
+\DoxyCodeLine{60   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a91f75de98c0689009c7dabdd8bfab38b}{vev}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"vev"}, \textcolor{stringliteral}{"vev"}, vevVal);}
+\DoxyCodeLine{61   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a3ec1d33c7a142217f05bf864d5467c23}{gVprimeff\_decay1\_left}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gVprimeff\_decay1\_left"}, \textcolor{stringliteral}{"gVprimeff\_decay1\_left"}, 0);}
+\DoxyCodeLine{62   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a6dfdb1e1a8d80fb35cf7a35919291f0b}{gVprimeff\_decay1\_right}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gVprimeff\_decay1\_right"}, \textcolor{stringliteral}{"gVprimeff\_decay1\_right"}, 0);}
+\DoxyCodeLine{63   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a711179257930736e8d99360a1c3b1251}{gVprimeff\_decay2\_left}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gVprimeff\_decay2\_left"}, \textcolor{stringliteral}{"gVprimeff\_decay2\_left"}, 0);}
+\DoxyCodeLine{64   \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a585f17f844d893b80e887f8f425e2a60}{gVprimeff\_decay2\_right}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gVprimeff\_decay2\_right"}, \textcolor{stringliteral}{"gVprimeff\_decay2\_right"}, 0);}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a280c4b121d847bc0e6825ec7d647ffef}\label{classSpinPdfFactory_a280c4b121d847bc0e6825ec7d647ffef}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!makeCouplingsConst@{makeCouplingsConst}}
 \index{makeCouplingsConst@{makeCouplingsConst}!SpinPdfFactory@{SpinPdfFactory}}
@@ -231,12 +426,53 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_a14164e5411cd02d2df132b5de
 
 Reimplemented in \mbox{\hyperlink{classScalarPdfFactory__HVV_a90a90e96f6d78a2ac3825613453db34a}{Scalar\+Pdf\+Factory\+\_\+\+H\+VV}}.
 
+
+
+Definition at line 154 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{154                                               \{}
+\DoxyCodeLine{155   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{156   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{157   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1bb8d915ef2d8973ea90f032a848e19f}{mW}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{158   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_ab205f52435d1570bcc51cfb9664555b2}{gamW}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{159   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1d9c867e9e3ef5627013ef1300205e96}{mZ}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{160   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_af5fd514b83d5a24507dc3359bc434d7f}{gamZ}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{161   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa606d7f2b0938e9f1efc34b93a8e7122}{mWprime}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{162   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a922f2dcd46b623cb2d198e82200922f2}{gamWprime}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{163   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a46119b8c646820a047003b86d89fc8c0}{mZprime}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{164   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa06a75407686e0fd3d2afa433486e32e}{gamZprime}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{165   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1a3992ec2ea1de40e4f2f9578c19b062}{Sin2ThetaW}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{166   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a91f75de98c0689009c7dabdd8bfab38b}{vev}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{167   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a3ec1d33c7a142217f05bf864d5467c23}{gVprimeff\_decay1\_left}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{168   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a6dfdb1e1a8d80fb35cf7a35919291f0b}{gVprimeff\_decay1\_right}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{169   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a711179257930736e8d99360a1c3b1251}{gVprimeff\_decay2\_left}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{170   ((RooRealVar*) \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a585f17f844d893b80e887f8f425e2a60}{gVprimeff\_decay2\_right}})-\/>setConstant(yesNo);}
+\DoxyCodeLine{171 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a37d074bef4d15d13e75b8da62c0ff756}\label{classSpinPdfFactory_a37d074bef4d15d13e75b8da62c0ff756}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!resetHiggsMassWidth@{resetHiggsMassWidth}}
 \index{resetHiggsMassWidth@{resetHiggsMassWidth}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{resetHiggsMassWidth()}{resetHiggsMassWidth()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::reset\+Higgs\+Mass\+Width (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{m\+Xval,  }\item[{Double\+\_\+t}]{gam\+Xval = {\ttfamily 0.} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 38 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                                                                         \{}
+\DoxyCodeLine{39   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d7007}{OnshellH}})\{}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if} (\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})!=0)\{ ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>removeMin(); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>removeMax(); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>setConstant(\textcolor{keyword}{false}); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>setVal(mXval); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>setRange(mXval, mXval); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a0b7d3d0ae8f424efee3c614422b801eb}{mX}})-\/>setConstant(\textcolor{keyword}{true}); \}}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if} (\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})!=0)\{ ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>removeMin(); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>removeMax(); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>setConstant(\textcolor{keyword}{false}); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>setVal(gamXval); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>setRange(gamXval, gamXval); ((RooRealVar*)\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a37338f0fff538e02a9190d723c563720}{gamX}})-\/>setConstant(\textcolor{keyword}{true}); \}}
+\DoxyCodeLine{42   \}}
+\DoxyCodeLine{43   \textcolor{keywordflow}{else} \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SpinPdfFactory::resetHiggsMassWidth: Higgs mass is already determined by the virtuality with zero width. Cannot set Higgs mass or width"} << endl;}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_ac6e90c38ce3daa936696fbee0fc135ac}\label{classSpinPdfFactory_ac6e90c38ce3daa936696fbee0fc135ac}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!resetHypotheses@{resetHypotheses}}
 \index{resetHypotheses@{resetHypotheses}!SpinPdfFactory@{SpinPdfFactory}}
@@ -253,36 +489,122 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_abdc200ccc68c5a4926bd160e7
 \doxysubsubsection{\texorpdfstring{resetVdecay()}{resetVdecay()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::reset\+Vdecay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V1decay\+\_\+,  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V2decay\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 114 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114                                                                                       \{}
+\DoxyCodeLine{115   \textcolor{keywordflow}{if} ((((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}})>0 \&\& ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}})<0) || (((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}})<0 \&\& ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}})>0)) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SpinPdfFactory::resetVdecay: V1 and V2 decays are inconsistent!"} << endl;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117   \mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}=V1decay\_;}
+\DoxyCodeLine{118   \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}=V2decay\_;}
+\DoxyCodeLine{119   \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}}-\/>\mbox{\hyperlink{classRooSpin_aa419c0d47907c40d8220e0f7449ca39c}{setDecayModes}}(\mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}, \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}});}
+\DoxyCodeLine{120 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a20f9cccba89afc93794788f81e871c04}\label{classSpinPdfFactory_a20f9cccba89afc93794788f81e871c04}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!resetVdecayParams@{resetVdecayParams}}
 \index{resetVdecayParams@{resetVdecayParams}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{resetVdecayParams()}{resetVdecayParams()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::reset\+Vdecay\+Params (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{m\+Wval,  }\item[{Double\+\_\+t}]{gam\+Wval,  }\item[{Double\+\_\+t}]{m\+Zval,  }\item[{Double\+\_\+t}]{gam\+Zval,  }\item[{Double\+\_\+t}]{Sin2\+Theta\+Wval,  }\item[{Double\+\_\+t}]{vevval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 66 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                                                                                                                                  \{}
+\DoxyCodeLine{67   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1bb8d915ef2d8973ea90f032a848e19f}{mW}}), mWval);}
+\DoxyCodeLine{68   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_ab205f52435d1570bcc51cfb9664555b2}{gamW}}), gamWval);}
+\DoxyCodeLine{69   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1d9c867e9e3ef5627013ef1300205e96}{mZ}}), mZval);}
+\DoxyCodeLine{70   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_af5fd514b83d5a24507dc3359bc434d7f}{gamZ}}), gamZval);}
+\DoxyCodeLine{71   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a1a3992ec2ea1de40e4f2f9578c19b062}{Sin2ThetaW}}), Sin2ThetaWval);}
+\DoxyCodeLine{72   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a91f75de98c0689009c7dabdd8bfab38b}{vev}}), vevval);}
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_af5ba4436642697d71b6cfd7388b8ea3c}\label{classSpinPdfFactory_af5ba4436642697d71b6cfd7388b8ea3c}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!resetVprimeffCouplings@{resetVprimeffCouplings}}
 \index{resetVprimeffCouplings@{resetVprimeffCouplings}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{resetVprimeffCouplings()}{resetVprimeffCouplings()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::reset\+Vprimeff\+Couplings (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{g\+Vprimeff\+\_\+decay1\mbox{[}2\mbox{]},  }\item[{Double\+\_\+t}]{g\+Vprimeff\+\_\+decay2\mbox{[}2\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 74 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                                                                                                      \{}
+\DoxyCodeLine{75   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a3ec1d33c7a142217f05bf864d5467c23}{gVprimeff\_decay1\_left}}), gVprimeff\_decay1[0]);}
+\DoxyCodeLine{76   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a6dfdb1e1a8d80fb35cf7a35919291f0b}{gVprimeff\_decay1\_right}}), gVprimeff\_decay1[1]);}
+\DoxyCodeLine{77   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a711179257930736e8d99360a1c3b1251}{gVprimeff\_decay2\_left}}), gVprimeff\_decay2[0]);}
+\DoxyCodeLine{78   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a585f17f844d893b80e887f8f425e2a60}{gVprimeff\_decay2\_right}}), gVprimeff\_decay2[1]);}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_af0f11263fb11adaa31c9134eb5c368e0}\label{classSpinPdfFactory_af0f11263fb11adaa31c9134eb5c368e0}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!resetVprimeMasses@{resetVprimeMasses}}
 \index{resetVprimeMasses@{resetVprimeMasses}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{resetVprimeMasses()}{resetVprimeMasses()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::reset\+Vprime\+Masses (\begin{DoxyParamCaption}\item[{Double\+\_\+t}]{m\+Wval,  }\item[{Double\+\_\+t}]{gam\+Wval,  }\item[{Double\+\_\+t}]{m\+Zval,  }\item[{Double\+\_\+t}]{gam\+Zval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 80 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                                                                                                         \{}
+\DoxyCodeLine{81   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa606d7f2b0938e9f1efc34b93a8e7122}{mWprime}}), mWval);}
+\DoxyCodeLine{82   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a922f2dcd46b623cb2d198e82200922f2}{gamWprime}}), gamWval);}
+\DoxyCodeLine{83   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_a46119b8c646820a047003b86d89fc8c0}{mZprime}}), mZval);}
+\DoxyCodeLine{84   \mbox{\hyperlink{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}{SpinPdfFactory::setVariableValue}}(\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}}.\mbox{\hyperlink{structRooSpin_1_1modelParameters_aa06a75407686e0fd3d2afa433486e32e}{gamZprime}}), gamZval);}
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}\label{classSpinPdfFactory_a72a342388bf23abbd750dd144eb80e26}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!setVariableValue@{setVariableValue}}
 \index{setVariableValue@{setVariableValue}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{setVariableValue()}{setVariableValue()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::set\+Variable\+Value (\begin{DoxyParamCaption}\item[{Roo\+Real\+Var $\ast$}]{var,  }\item[{Double\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Definition at line 143 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143                                                                   \{}
+\DoxyCodeLine{144   \textcolor{keywordflow}{if} (var)\{}
+\DoxyCodeLine{145     var-\/>removeMin();}
+\DoxyCodeLine{146     var-\/>removeMax();}
+\DoxyCodeLine{147     var-\/>setConstant(\textcolor{keyword}{false});}
+\DoxyCodeLine{148     var-\/>setVal(val);}
+\DoxyCodeLine{149     var-\/>setRange(val, val);}
+\DoxyCodeLine{150     var-\/>setConstant(\textcolor{keyword}{true});}
+\DoxyCodeLine{151   \}}
+\DoxyCodeLine{152 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classSpinPdfFactory_a40a0c5ab10c739e59e3163a663232f0f}\label{classSpinPdfFactory_a40a0c5ab10c739e59e3163a663232f0f}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!setVerbosity@{setVerbosity}}
 \index{setVerbosity@{setVerbosity}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{setVerbosity()}{setVerbosity()}}
 {\footnotesize\ttfamily void Spin\+Pdf\+Factory\+::set\+Verbosity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}}]{verbosity }\end{DoxyParamCaption})}
 
+
+
+Definition at line 173 of file Spin\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{173 \{ \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}}-\/>\mbox{\hyperlink{classRooSpin_ab420dcbc6fe926386ea8f921e28ce3ed}{setVerbosity}}(verbosity); \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -292,11 +614,19 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_abdc200ccc68c5a4926bd160e7
 \doxysubsubsection{\texorpdfstring{measurables}{measurables}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} Spin\+Pdf\+Factory\+::measurables}
 
+
+
+Definition at line 11 of file Spin\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d7007}\label{classSpinPdfFactory_ad9379360a1bf84b37e2b6ff4228d7007}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!OnshellH@{OnshellH}}
 \index{OnshellH@{OnshellH}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{OnshellH}{OnshellH}}
 {\footnotesize\ttfamily Bool\+\_\+t Spin\+Pdf\+Factory\+::\+OnshellH\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file Spin\+Pdf\+Factory.\+h.
 
 \mbox{\Hypertarget{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}\label{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!parameters@{parameters}}
@@ -304,11 +634,19 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_abdc200ccc68c5a4926bd160e7
 \doxysubsubsection{\texorpdfstring{parameters}{parameters}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structRooSpin_1_1modelParameters}{Roo\+Spin\+::model\+Parameters}} Spin\+Pdf\+Factory\+::parameters}
 
+
+
+Definition at line 12 of file Spin\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}\label{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!PDF\_base@{PDF\_base}}
 \index{PDF\_base@{PDF\_base}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{PDF\_base}{PDF\_base}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpin}{Roo\+Spin}}$\ast$ Spin\+Pdf\+Factory\+::\+P\+D\+F\+\_\+base\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file Spin\+Pdf\+Factory.\+h.
 
 \mbox{\Hypertarget{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}\label{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!V1decay@{V1decay}}
@@ -316,11 +654,19 @@ Implemented in \mbox{\hyperlink{classScalarPdfFactory_abdc200ccc68c5a4926bd160e7
 \doxysubsubsection{\texorpdfstring{V1decay}{V1decay}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}} Spin\+Pdf\+Factory\+::\+V1decay\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 38 of file Spin\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}\label{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}} 
 \index{SpinPdfFactory@{SpinPdfFactory}!V2decay@{V2decay}}
 \index{V2decay@{V2decay}!SpinPdfFactory@{SpinPdfFactory}}
 \doxysubsubsection{\texorpdfstring{V2decay}{V2decay}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}} Spin\+Pdf\+Factory\+::\+V2decay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file Spin\+Pdf\+Factory.\+h.
 
 
 

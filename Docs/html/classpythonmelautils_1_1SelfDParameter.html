@@ -110,7 +110,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ac5466f14d214b7643f488d1cf8f21396"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpythonmelautils_1_1SelfDParameter.html#ac5466f14d214b7643f488d1cf8f21396">indices</a></td></tr>
 <tr class="separator:ac5466f14d214b7643f488d1cf8f21396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="pythonmelautils_8py_source.html#l00158">158</a> of file <a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6e9c2006df0e938548885267a75c682c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e9c2006df0e938548885267a75c682c">&#9670;&nbsp;</a></span>__init__()</h2>
 
@@ -143,6 +146,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="pythonmelautils_8py_source.html#l00159">159</a> of file <a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keyword">def </span>__init__(self, arrayname, *indices):</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    self.arrayname = arrayname</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    self.indices = indices</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -178,6 +187,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="pythonmelautils_8py_source.html#l00163">163</a> of file <a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keyword">def </span>__get__(self, obj, objtype):</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span> obj <span class="keywordflow">is</span> <span class="keywordtype">None</span>: <span class="keywordflow">return</span> self</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    array = getattr(obj, self.arrayname)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.indices: <span class="keywordflow">return</span> array</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">for</span> index <span class="keywordflow">in</span> self.indices[:-1]:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      array = array[index]</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> array[self.indices[-1]]</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaabf952996fa56af2264b0ce35272904"></a>
@@ -212,6 +231,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="pythonmelautils_8py_source.html#l00171">171</a> of file <a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keyword">def </span>__set__(self, obj, val):</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.indices: <span class="keywordflow">return</span> setattr(obj, self.arrayname, val)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    array = getattr(obj, self.arrayname)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">for</span> index <span class="keywordflow">in</span> self.indices[:-1]:</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      array = array[index]</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    array[self.indices[-1]] = val</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -227,6 +255,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="pythonmelautils_8py_source.html#l00160">160</a> of file <a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a>.</p>
+
 </div>
 </div>
 <a id="ac5466f14d214b7643f488d1cf8f21396"></a>
@@ -241,10 +271,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="pythonmelautils_8py_source.html#l00161">161</a> of file <a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>MELA/python/<a class="el" href="pythonmelautils_8py.html">pythonmelautils.py</a></li>
+<li>MELA/python/<a class="el" href="pythonmelautils_8py_source.html">pythonmelautils.py</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

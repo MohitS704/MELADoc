@@ -28,6 +28,13 @@ double \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{a
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 128 of file T\+Couplings.\+hh.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classaTQGCCouplings_a6f68c526a73f7551d6f25c3f74d85acb}\label{classaTQGCCouplings_a6f68c526a73f7551d6f25c3f74d85acb}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!aTQGCCouplings@{aTQGCCouplings}}
@@ -35,18 +42,45 @@ double \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{a
 \doxysubsubsection{\texorpdfstring{aTQGCCouplings()}{aTQGCCouplings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily a\+T\+Q\+G\+C\+Couplings\+::a\+T\+Q\+G\+C\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 439 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{439 \{ \mbox{\hyperlink{classaTQGCCouplings_ae7930d9d576ea1b093c9c3d7ccd042b5}{reset}}(); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classaTQGCCouplings_a16e83cd2650f46a75c2793a32744e054}\label{classaTQGCCouplings_a16e83cd2650f46a75c2793a32744e054}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!aTQGCCouplings@{aTQGCCouplings}}
 \index{aTQGCCouplings@{aTQGCCouplings}!aTQGCCouplings@{aTQGCCouplings}}
 \doxysubsubsection{\texorpdfstring{aTQGCCouplings()}{aTQGCCouplings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily a\+T\+Q\+G\+C\+Couplings\+::a\+T\+Q\+G\+C\+Couplings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classaTQGCCouplings}{a\+T\+Q\+G\+C\+Couplings}} const \&}]{other }\end{DoxyParamCaption})}
 
+
+
+Definition at line 440 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{440 \{ this-\/>\mbox{\hyperlink{classaTQGCCouplings_a76732f1c53766e007d47f38be7a8f1f6}{copy}}(other); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classaTQGCCouplings_a02fa26c68dc622976e4d70bea0d86ca1}\label{classaTQGCCouplings_a02fa26c68dc622976e4d70bea0d86ca1}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!````~aTQGCCouplings@{$\sim$aTQGCCouplings}}
 \index{````~aTQGCCouplings@{$\sim$aTQGCCouplings}!aTQGCCouplings@{aTQGCCouplings}}
 \doxysubsubsection{\texorpdfstring{$\sim$aTQGCCouplings()}{~aTQGCCouplings()}}
 {\footnotesize\ttfamily a\+T\+Q\+G\+C\+Couplings\+::$\sim$a\+T\+Q\+G\+C\+Couplings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 441 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{441 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -56,18 +90,53 @@ double \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{a
 \doxysubsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily void a\+T\+Q\+G\+C\+Couplings\+::copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classaTQGCCouplings}{a\+T\+Q\+G\+C\+Couplings}} const \&}]{other }\end{DoxyParamCaption})}
 
+
+
+Definition at line 448 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{448                                                     \{}
+\DoxyCodeLine{449   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{450     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<SIZE\_ATQGC; ic++) \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{aTQGCcoupl}}[ic][im] = (other.aTQGCcoupl)[ic][im];}
+\DoxyCodeLine{451   \}}
+\DoxyCodeLine{452 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classaTQGCCouplings_a6cea5eb8b1386da4a8eb638c985761e8}\label{classaTQGCCouplings_a6cea5eb8b1386da4a8eb638c985761e8}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!getRef@{getRef}}
 \index{getRef@{getRef}!aTQGCCouplings@{aTQGCCouplings}}
 \doxysubsubsection{\texorpdfstring{getRef()}{getRef()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classaTQGCCouplings}{a\+T\+Q\+G\+C\+Couplings}} $\ast$ a\+T\+Q\+G\+C\+Couplings\+::get\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 453 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{453 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{this}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classaTQGCCouplings_ae7930d9d576ea1b093c9c3d7ccd042b5}\label{classaTQGCCouplings_ae7930d9d576ea1b093c9c3d7ccd042b5}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!reset@{reset}}
 \index{reset@{reset}!aTQGCCouplings@{aTQGCCouplings}}
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
 {\footnotesize\ttfamily void a\+T\+Q\+G\+C\+Couplings\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 443 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{443                           \{}
+\DoxyCodeLine{444   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{445     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic = 0; ic < SIZE\_ATQGC; ic++) \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{aTQGCcoupl}}[ic][im]=0;}
+\DoxyCodeLine{446   \}}
+\DoxyCodeLine{447 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classaTQGCCouplings_abbca97b9862ab83c164c5c75ba5f0c16}\label{classaTQGCCouplings_abbca97b9862ab83c164c5c75ba5f0c16}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!SetATQGCCouplings@{SetATQGCCouplings}}
 \index{SetATQGCCouplings@{SetATQGCCouplings}!aTQGCCouplings@{aTQGCCouplings}}
@@ -76,12 +145,31 @@ double \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{a
 
 
 
+Definition at line 455 of file T\+Couplings.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{455                                                                                       \{}
+\DoxyCodeLine{456   \textcolor{keywordflow}{if} (index>=SIZE\_ATQGC)\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"aTQGCCouplings::SetATQGCCouplings: Cannot set index "} << index << \textcolor{stringliteral}{", out of range for the type requested."} << endl; \}}
+\DoxyCodeLine{457   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{458     \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{aTQGCcoupl}}[index][0] = c\_real;}
+\DoxyCodeLine{459     \mbox{\hyperlink{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}{aTQGCcoupl}}[index][1] = c\_imag;}
+\DoxyCodeLine{460   \}}
+\DoxyCodeLine{461 \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}\label{classaTQGCCouplings_ab90473f8613a7b3240bf8d9e67a18dfa}} 
 \index{aTQGCCouplings@{aTQGCCouplings}!aTQGCcoupl@{aTQGCcoupl}}
 \index{aTQGCcoupl@{aTQGCcoupl}!aTQGCCouplings@{aTQGCCouplings}}
 \doxysubsubsection{\texorpdfstring{aTQGCcoupl}{aTQGCcoupl}}
 {\footnotesize\ttfamily double a\+T\+Q\+G\+C\+Couplings\+::a\+T\+Q\+G\+Ccoupl\mbox{[}S\+I\+Z\+E\+\_\+\+A\+T\+Q\+GC\mbox{]}\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 140 of file T\+Couplings.\+hh.
 
 
 

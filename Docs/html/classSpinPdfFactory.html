@@ -179,7 +179,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0643dc0b0c59ce6745155b9e2f2f165d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRooSpin.html">RooSpin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a></td></tr>
 <tr class="separator:a0643dc0b0c59ce6745155b9e2f2f165d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00009">9</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad10e24b0b56d547bae5ec802402b5da3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad10e24b0b56d547bae5ec802402b5da3">&#9670;&nbsp;</a></span>SpinPdfFactory()</h2>
 
@@ -218,6 +221,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00008">8</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                                                                                                                                    :</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>(V1decay_),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>(V2decay_),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="classSpinPdfFactory.html#ad9379360a1bf84b37e2b6ff4228d7007">OnshellH</a>(OnshellH_)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a5d3aa9b3e757c3b713a5f3ac037779b3">initMeasurables</a>(measurables_);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a5616c1f95bfc3c98af4361eb3f8b7677">initMassPole</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a91e9bb9c00ba4052bf3e73e56f42b060">initVdecayParams</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3c4bd665a3d217db93962ea0e4e713ba"></a>
@@ -243,6 +257,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00018">18</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                               {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classSpinPdfFactory.html#adad847c63ec6152f06ab421285cda3a0">destroyVdecayParams</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a00933fa8367203744677e4eb68b641bc">destroyMassPole</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -270,6 +290,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00030">30</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a>-&gt;<a class="code" href="classRooSpin.html#a40db25f08c8a1c56fc0bd327e48e94fa">alwaysIntegrate</a>(code); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a554e9a66f34ba6968f43b79c4afec2a2"></a>
@@ -295,6 +318,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00029">29</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{ <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a>-&gt;<a class="code" href="classRooSpin.html#aff9d9fddbd2345452ee932523037d941">defaultIntegration</a>(); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6147e6a5e94e6d2fa6da43bde3b9e302"></a>
@@ -347,6 +373,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00122">122</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="classSpinPdfFactory.html#ad9379360a1bf84b37e2b6ff4228d7007">OnshellH</a>) <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6b6ec4f4b3ffcbdd10c26aa97371f65f"></a>
@@ -399,6 +431,24 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00126">126</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                        {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a585f17f844d893b80e887f8f425e2a60">gVprimeff_decay2_right</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a711179257930736e8d99360a1c3b1251">gVprimeff_decay2_left</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a6dfdb1e1a8d80fb35cf7a35919291f0b">gVprimeff_decay1_right</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a3ec1d33c7a142217f05bf864d5467c23">gVprimeff_decay1_left</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a91f75de98c0689009c7dabdd8bfab38b">vev</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1a3992ec2ea1de40e4f2f9578c19b062">Sin2ThetaW</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#af5fd514b83d5a24507dc3359bc434d7f">gamZ</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1d9c867e9e3ef5627013ef1300205e96">mZ</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#ab205f52435d1570bcc51cfb9664555b2">gamW</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1bb8d915ef2d8973ea90f032a848e19f">mW</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa06a75407686e0fd3d2afa433486e32e">gamZprime</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a46119b8c646820a047003b86d89fc8c0">mZprime</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a922f2dcd46b623cb2d198e82200922f2">gamWprime</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa606d7f2b0938e9f1efc34b93a8e7122">mWprime</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad1ad1686f278a474c98f7063a6a4afd9"></a>
@@ -435,6 +485,22 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00086">86</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                               {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a>){</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (mV!=0) (*mV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1bb8d915ef2d8973ea90f032a848e19f">mW</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (gamV!=0) (*gamV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#ab205f52435d1570bcc51cfb9664555b2">gamW</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a> &amp;&amp; <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>)){</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (mV!=0) (*mV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1d9c867e9e3ef5627013ef1300205e96">mZ</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (gamV!=0) (*gamV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#af5fd514b83d5a24507dc3359bc434d7f">gamZ</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (mV!=0) (*mV)=0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (gamV!=0) (*gamV)=0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa3f313224c0bf1592b09ea3fe316d068"></a>
@@ -471,6 +537,22 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00100">100</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a>){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (mV!=0) (*mV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa606d7f2b0938e9f1efc34b93a8e7122">mWprime</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (gamV!=0) (*gamV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a922f2dcd46b623cb2d198e82200922f2">gamWprime</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a> &amp;&amp; <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>)){</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (mV!=0) (*mV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a46119b8c646820a047003b86d89fc8c0">mZprime</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (gamV!=0) (*gamV)=(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa06a75407686e0fd3d2afa433486e32e">gamZprime</a>)-&gt;getVal();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (mV!=0) (*mV)=0;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (gamV!=0) (*gamV)=0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a334a54252b5578b5260854498da5e8b1"></a>
@@ -523,6 +605,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00033">33</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                 {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="classSpinPdfFactory.html#ad9379360a1bf84b37e2b6ff4228d7007">OnshellH</a>) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;mX&quot;</span>, <span class="stringliteral">&quot;mX&quot;</span>, (<a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a111ea550007d0002293e9c33e18cc1ea">m12</a>)-&gt;getVal());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a> = <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a111ea550007d0002293e9c33e18cc1ea">m12</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gamX&quot;</span>, <span class="stringliteral">&quot;gamX&quot;</span>, 0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5d3aa9b3e757c3b713a5f3ac037779b3"></a>
@@ -549,6 +638,19 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00022">22</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#afe6983759e2682424885a9bb18b697ad">h1</a> = (RooAbsReal*)measurables_.h1;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#ad528de8e4fcbbd3aee5b3ab0ffd7cfa2">h2</a> = (RooAbsReal*)measurables_.h2;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#aa17a592fc6c2ead290a2a0934efb4458">Phi</a> = (RooAbsReal*)measurables_.Phi;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a69c2b20b07f3020591946d558892332f">m1</a> = (RooAbsReal*)measurables_.m1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a0dc1f7de3fef00774a77e901b9f6dd5f">m2</a> = (RooAbsReal*)measurables_.m2;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a111ea550007d0002293e9c33e18cc1ea">m12</a> = (RooAbsReal*)measurables_.m12;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a91a45cd485b0da38c9a62abdd21385d7">hs</a> = (RooAbsReal*)measurables_.hs;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a1eef1147c62f6333dea2ed09cc3cce2c">Phi1</a> = (RooAbsReal*)measurables_.Phi1;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">Y</a> = (RooAbsReal*)measurables_.Y;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a75ae6989146c5621672f56cf3b3df6aa"></a>
@@ -601,6 +703,29 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00045">45</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                     {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> ((((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>)&gt;0 &amp;&amp; ((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>)&lt;0) || (((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>)&lt;0 &amp;&amp; ((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>)&gt;0)) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;SpinPdfFactory::initVdecayParams: V1 and V2 decays are inconsistent!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">const</span> Double_t GfVal = 1.16639e-5;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">const</span> Double_t vevVal = 1./sqrt(GfVal*sqrt(2.));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1bb8d915ef2d8973ea90f032a848e19f">mW</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;mW&quot;</span>, <span class="stringliteral">&quot;mW&quot;</span>, 80.399);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#ab205f52435d1570bcc51cfb9664555b2">gamW</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gamW&quot;</span>, <span class="stringliteral">&quot;gamW&quot;</span>, 2.085);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1d9c867e9e3ef5627013ef1300205e96">mZ</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;mZ&quot;</span>, <span class="stringliteral">&quot;mZ&quot;</span>, 91.1876);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#af5fd514b83d5a24507dc3359bc434d7f">gamZ</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gamZ&quot;</span>, <span class="stringliteral">&quot;gamZ&quot;</span>, 2.4952);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa606d7f2b0938e9f1efc34b93a8e7122">mWprime</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;mWprime&quot;</span>, <span class="stringliteral">&quot;mWprime&quot;</span>, 0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a922f2dcd46b623cb2d198e82200922f2">gamWprime</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gamWprime&quot;</span>, <span class="stringliteral">&quot;gamWprime&quot;</span>, -1); <span class="comment">// Turns off Wprime</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a46119b8c646820a047003b86d89fc8c0">mZprime</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;mZprime&quot;</span>, <span class="stringliteral">&quot;mZprime&quot;</span>, 0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa06a75407686e0fd3d2afa433486e32e">gamZprime</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gamZprime&quot;</span>, <span class="stringliteral">&quot;gamZprime&quot;</span>, -1); <span class="comment">// Turns off Zprime</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1a3992ec2ea1de40e4f2f9578c19b062">Sin2ThetaW</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;Sin2ThetaW&quot;</span>, <span class="stringliteral">&quot;Sin2ThetaW&quot;</span>, 0.23119);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a91f75de98c0689009c7dabdd8bfab38b">vev</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;vev&quot;</span>, <span class="stringliteral">&quot;vev&quot;</span>, vevVal);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a3ec1d33c7a142217f05bf864d5467c23">gVprimeff_decay1_left</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gVprimeff_decay1_left&quot;</span>, <span class="stringliteral">&quot;gVprimeff_decay1_left&quot;</span>, 0);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a6dfdb1e1a8d80fb35cf7a35919291f0b">gVprimeff_decay1_right</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gVprimeff_decay1_right&quot;</span>, <span class="stringliteral">&quot;gVprimeff_decay1_right&quot;</span>, 0);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a711179257930736e8d99360a1c3b1251">gVprimeff_decay2_left</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gVprimeff_decay2_left&quot;</span>, <span class="stringliteral">&quot;gVprimeff_decay2_left&quot;</span>, 0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a585f17f844d893b80e887f8f425e2a60">gVprimeff_decay2_right</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gVprimeff_decay2_right&quot;</span>, <span class="stringliteral">&quot;gVprimeff_decay2_right&quot;</span>, 0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a280c4b121d847bc0e6825ec7d647ffef"></a>
@@ -657,6 +782,26 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classScalarPdfFactory__HVV.html#a90a90e96f6d78a2ac3825613453db34a">ScalarPdfFactory_HVV</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00154">154</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                              {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1bb8d915ef2d8973ea90f032a848e19f">mW</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#ab205f52435d1570bcc51cfb9664555b2">gamW</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1d9c867e9e3ef5627013ef1300205e96">mZ</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#af5fd514b83d5a24507dc3359bc434d7f">gamZ</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa606d7f2b0938e9f1efc34b93a8e7122">mWprime</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a922f2dcd46b623cb2d198e82200922f2">gamWprime</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a46119b8c646820a047003b86d89fc8c0">mZprime</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa06a75407686e0fd3d2afa433486e32e">gamZprime</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1a3992ec2ea1de40e4f2f9578c19b062">Sin2ThetaW</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a91f75de98c0689009c7dabdd8bfab38b">vev</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a3ec1d33c7a142217f05bf864d5467c23">gVprimeff_decay1_left</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a6dfdb1e1a8d80fb35cf7a35919291f0b">gVprimeff_decay1_right</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a711179257930736e8d99360a1c3b1251">gVprimeff_decay2_left</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  ((RooRealVar*) <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a585f17f844d893b80e887f8f425e2a60">gVprimeff_decay2_right</a>)-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a37d074bef4d15d13e75b8da62c0ff756"></a>
@@ -693,6 +838,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00038">38</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="classSpinPdfFactory.html#ad9379360a1bf84b37e2b6ff4228d7007">OnshellH</a>){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)!=0){ ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;removeMin(); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;removeMax(); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;setConstant(<span class="keyword">false</span>); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;setVal(mXval); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;setRange(mXval, mXval); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">mX</a>)-&gt;setConstant(<span class="keyword">true</span>); }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)!=0){ ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;removeMin(); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;removeMax(); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;setConstant(<span class="keyword">false</span>); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;setVal(gamXval); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;setRange(gamXval, gamXval); ((RooRealVar*)<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">gamX</a>)-&gt;setConstant(<span class="keyword">true</span>); }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;SpinPdfFactory::resetHiggsMassWidth: Higgs mass is already determined by the virtuality with zero width. Cannot set Higgs mass or width&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac6e90c38ce3daa936696fbee0fc135ac"></a>
@@ -756,6 +910,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00114">114</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                                                                      {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">if</span> ((((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>)&gt;0 &amp;&amp; ((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>)&lt;0) || (((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>)&lt;0 &amp;&amp; ((<span class="keywordtype">int</span>)<a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>)&gt;0)) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;SpinPdfFactory::resetVdecay: V1 and V2 decays are inconsistent!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>=V1decay_;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>=V2decay_;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a>-&gt;<a class="code" href="classRooSpin.html#aa419c0d47907c40d8220e0f7449ca39c">setDecayModes</a>(<a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>, <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a20f9cccba89afc93794788f81e871c04"></a>
@@ -816,6 +979,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00066">66</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                                                                                                                 {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1bb8d915ef2d8973ea90f032a848e19f">mW</a>), mWval);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#ab205f52435d1570bcc51cfb9664555b2">gamW</a>), gamWval);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1d9c867e9e3ef5627013ef1300205e96">mZ</a>), mZval);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#af5fd514b83d5a24507dc3359bc434d7f">gamZ</a>), gamZval);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a1a3992ec2ea1de40e4f2f9578c19b062">Sin2ThetaW</a>), Sin2ThetaWval);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a91f75de98c0689009c7dabdd8bfab38b">vev</a>), vevval);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af5ba4436642697d71b6cfd7388b8ea3c"></a>
@@ -852,6 +1025,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00074">74</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                                                                     {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a3ec1d33c7a142217f05bf864d5467c23">gVprimeff_decay1_left</a>), gVprimeff_decay1[0]);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a6dfdb1e1a8d80fb35cf7a35919291f0b">gVprimeff_decay1_right</a>), gVprimeff_decay1[1]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a711179257930736e8d99360a1c3b1251">gVprimeff_decay2_left</a>), gVprimeff_decay2[0]);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a585f17f844d893b80e887f8f425e2a60">gVprimeff_decay2_right</a>), gVprimeff_decay2[1]);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af0f11263fb11adaa31c9134eb5c368e0"></a>
@@ -900,6 +1081,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00080">80</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                                                                        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa606d7f2b0938e9f1efc34b93a8e7122">mWprime</a>), mWval);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a922f2dcd46b623cb2d198e82200922f2">gamWprime</a>), gamWval);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#a46119b8c646820a047003b86d89fc8c0">mZprime</a>), mZval);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a>(<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>.<a class="code" href="structRooSpin_1_1modelParameters.html#aa06a75407686e0fd3d2afa433486e32e">gamZprime</a>), gamZval);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a72a342388bf23abbd750dd144eb80e26"></a>
@@ -936,6 +1125,18 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00143">143</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">if</span> (var){</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    var-&gt;removeMin();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    var-&gt;removeMax();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    var-&gt;setConstant(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    var-&gt;setVal(val);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    var-&gt;setRange(val, val);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    var-&gt;setConstant(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a40a0c5ab10c739e59e3163a663232f0f"></a>
@@ -954,6 +1155,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8cc_source.html#l00173">173</a> of file <a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{ <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a>-&gt;<a class="code" href="classRooSpin.html#ab420dcbc6fe926386ea8f921e28ce3ed">setVerbosity</a>(verbosity); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -968,6 +1172,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00011">11</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
 
 </div>
 </div>
@@ -991,6 +1197,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00041">41</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <a id="a3f4b1441cab694c933cd1383540c06e0"></a>
@@ -1004,6 +1212,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00012">12</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
 
 </div>
 </div>
@@ -1027,6 +1237,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00043">43</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <a id="a31cdbd1e87fe667c360761a75007e7d1"></a>
@@ -1048,6 +1260,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00038">38</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
 
 </div>
 </div>
@@ -1071,13 +1285,59 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SpinPdfFactory_8h_source.html#l00039">39</a> of file <a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="SpinPdfFactory_8h_source.html">SpinPdfFactory.h</a></li>
-<li>MELA/src/<a class="el" href="SpinPdfFactory_8cc.html">SpinPdfFactory.cc</a></li>
+<li>MELA/src/<a class="el" href="SpinPdfFactory_8cc_source.html">SpinPdfFactory.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_ad528de8e4fcbbd3aee5b3ab0ffd7cfa2"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#ad528de8e4fcbbd3aee5b3ab0ffd7cfa2">RooSpin::modelMeasurables::h2</a></div><div class="ttdeci">RooAbsReal * h2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00052">RooSpin.h:52</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_ab205f52435d1570bcc51cfb9664555b2"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#ab205f52435d1570bcc51cfb9664555b2">RooSpin::modelParameters::gamW</a></div><div class="ttdeci">RooAbsReal * gamW</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00065">RooSpin.h:65</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ab420dcbc6fe926386ea8f921e28ce3ed"><div class="ttname"><a href="classRooSpin.html#ab420dcbc6fe926386ea8f921e28ce3ed">RooSpin::setVerbosity</a></div><div class="ttdeci">void setVerbosity(TVar::VerbosityLevel verbosity_)</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00376">RooSpin.cc:376</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a5af796207b85d31b4f95a4e92253ac39"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">RooSpin::modelMeasurables::Y</a></div><div class="ttdeci">RooAbsReal * Y</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00059">RooSpin.h:59</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a72a342388bf23abbd750dd144eb80e26"><div class="ttname"><a href="classSpinPdfFactory.html#a72a342388bf23abbd750dd144eb80e26">SpinPdfFactory::setVariableValue</a></div><div class="ttdeci">static void setVariableValue(RooRealVar *var, Double_t val)</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00143">SpinPdfFactory.cc:143</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_af5fd514b83d5a24507dc3359bc434d7f"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#af5fd514b83d5a24507dc3359bc434d7f">RooSpin::modelParameters::gamZ</a></div><div class="ttdeci">RooAbsReal * gamZ</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00067">RooSpin.h:67</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a0643dc0b0c59ce6745155b9e2f2f165d"><div class="ttname"><a href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">SpinPdfFactory::PDF_base</a></div><div class="ttdeci">RooSpin * PDF_base</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00043">SpinPdfFactory.h:43</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a1eef1147c62f6333dea2ed09cc3cce2c"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a1eef1147c62f6333dea2ed09cc3cce2c">RooSpin::modelMeasurables::Phi1</a></div><div class="ttdeci">RooAbsReal * Phi1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00055">RooSpin.h:55</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a31cdbd1e87fe667c360761a75007e7d1"><div class="ttname"><a href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">SpinPdfFactory::V1decay</a></div><div class="ttdeci">RooSpin::VdecayType V1decay</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00038">SpinPdfFactory.h:38</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a1d9c867e9e3ef5627013ef1300205e96"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a1d9c867e9e3ef5627013ef1300205e96">RooSpin::modelParameters::mZ</a></div><div class="ttdeci">RooAbsReal * mZ</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00066">RooSpin.h:66</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a111ea550007d0002293e9c33e18cc1ea"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a111ea550007d0002293e9c33e18cc1ea">RooSpin::modelMeasurables::m12</a></div><div class="ttdeci">RooAbsReal * m12</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00058">RooSpin.h:58</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a69c2b20b07f3020591946d558892332f"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a69c2b20b07f3020591946d558892332f">RooSpin::modelMeasurables::m1</a></div><div class="ttdeci">RooAbsReal * m1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00056">RooSpin.h:56</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_aa06a75407686e0fd3d2afa433486e32e"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#aa06a75407686e0fd3d2afa433486e32e">RooSpin::modelParameters::gamZprime</a></div><div class="ttdeci">RooAbsReal * gamZprime</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00071">RooSpin.h:71</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a922f2dcd46b623cb2d198e82200922f2"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a922f2dcd46b623cb2d198e82200922f2">RooSpin::modelParameters::gamWprime</a></div><div class="ttdeci">RooAbsReal * gamWprime</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00069">RooSpin.h:69</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a1bb8d915ef2d8973ea90f032a848e19f"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a1bb8d915ef2d8973ea90f032a848e19f">RooSpin::modelParameters::mW</a></div><div class="ttdeci">RooAbsReal * mW</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00064">RooSpin.h:64</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_aa606d7f2b0938e9f1efc34b93a8e7122"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#aa606d7f2b0938e9f1efc34b93a8e7122">RooSpin::modelParameters::mWprime</a></div><div class="ttdeci">RooAbsReal * mWprime</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00068">RooSpin.h:68</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a3f4b1441cab694c933cd1383540c06e0"><div class="ttname"><a href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">SpinPdfFactory::parameters</a></div><div class="ttdeci">RooSpin::modelParameters parameters</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00012">SpinPdfFactory.h:12</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_abc28d5256c7b49750335553c2a0d0e92"><div class="ttname"><a href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">SpinPdfFactory::V2decay</a></div><div class="ttdeci">RooSpin::VdecayType V2decay</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00039">SpinPdfFactory.h:39</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a6dfdb1e1a8d80fb35cf7a35919291f0b"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a6dfdb1e1a8d80fb35cf7a35919291f0b">RooSpin::modelParameters::gVprimeff_decay1_right</a></div><div class="ttdeci">RooAbsReal * gVprimeff_decay1_right</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00075">RooSpin.h:75</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a></div><div class="ttdeci">@ kVdecayType_GammaOnshell</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00030">RooSpin.h:30</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a585f17f844d893b80e887f8f425e2a60"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a585f17f844d893b80e887f8f425e2a60">RooSpin::modelParameters::gVprimeff_decay2_right</a></div><div class="ttdeci">RooAbsReal * gVprimeff_decay2_right</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00077">RooSpin.h:77</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_aa17a592fc6c2ead290a2a0934efb4458"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#aa17a592fc6c2ead290a2a0934efb4458">RooSpin::modelMeasurables::Phi</a></div><div class="ttdeci">RooAbsReal * Phi</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00054">RooSpin.h:54</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a0b7d3d0ae8f424efee3c614422b801eb"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a0b7d3d0ae8f424efee3c614422b801eb">RooSpin::modelParameters::mX</a></div><div class="ttdeci">RooAbsReal * mX</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00062">RooSpin.h:62</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_ad9379360a1bf84b37e2b6ff4228d7007"><div class="ttname"><a href="classSpinPdfFactory.html#ad9379360a1bf84b37e2b6ff4228d7007">SpinPdfFactory::OnshellH</a></div><div class="ttdeci">Bool_t OnshellH</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00041">SpinPdfFactory.h:41</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a0dc1f7de3fef00774a77e901b9f6dd5f"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a0dc1f7de3fef00774a77e901b9f6dd5f">RooSpin::modelMeasurables::m2</a></div><div class="ttdeci">RooAbsReal * m2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00057">RooSpin.h:57</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_afe6983759e2682424885a9bb18b697ad"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#afe6983759e2682424885a9bb18b697ad">RooSpin::modelMeasurables::h1</a></div><div class="ttdeci">RooAbsReal * h1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00051">RooSpin.h:51</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a46119b8c646820a047003b86d89fc8c0"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a46119b8c646820a047003b86d89fc8c0">RooSpin::modelParameters::mZprime</a></div><div class="ttdeci">RooAbsReal * mZprime</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00070">RooSpin.h:70</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a91f75de98c0689009c7dabdd8bfab38b"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a91f75de98c0689009c7dabdd8bfab38b">RooSpin::modelParameters::vev</a></div><div class="ttdeci">RooAbsReal * vev</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00073">RooSpin.h:73</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a37338f0fff538e02a9190d723c563720"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a37338f0fff538e02a9190d723c563720">RooSpin::modelParameters::gamX</a></div><div class="ttdeci">RooAbsReal * gamX</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00063">RooSpin.h:63</a></div></div>
+<div class="ttc" id="anamespaceMELAStreamHelpers_html_a48e6b604de686a3c2033bdcf75c51f6f"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAStreamHelpers::MELAerr</a></div><div class="ttdeci">MELAOutputStreamer MELAerr</div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a1a3992ec2ea1de40e4f2f9578c19b062"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a1a3992ec2ea1de40e4f2f9578c19b062">RooSpin::modelParameters::Sin2ThetaW</a></div><div class="ttdeci">RooAbsReal * Sin2ThetaW</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00072">RooSpin.h:72</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a00933fa8367203744677e4eb68b641bc"><div class="ttname"><a href="classSpinPdfFactory.html#a00933fa8367203744677e4eb68b641bc">SpinPdfFactory::destroyMassPole</a></div><div class="ttdeci">virtual void destroyMassPole()</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00122">SpinPdfFactory.cc:122</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a5616c1f95bfc3c98af4361eb3f8b7677"><div class="ttname"><a href="classSpinPdfFactory.html#a5616c1f95bfc3c98af4361eb3f8b7677">SpinPdfFactory::initMassPole</a></div><div class="ttdeci">virtual void initMassPole()</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00033">SpinPdfFactory.cc:33</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a91e9bb9c00ba4052bf3e73e56f42b060"><div class="ttname"><a href="classSpinPdfFactory.html#a91e9bb9c00ba4052bf3e73e56f42b060">SpinPdfFactory::initVdecayParams</a></div><div class="ttdeci">virtual void initVdecayParams()</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00045">SpinPdfFactory.cc:45</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a711179257930736e8d99360a1c3b1251"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a711179257930736e8d99360a1c3b1251">RooSpin::modelParameters::gVprimeff_decay2_left</a></div><div class="ttdeci">RooAbsReal * gVprimeff_decay2_left</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00076">RooSpin.h:76</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelParameters_html_a3ec1d33c7a142217f05bf864d5467c23"><div class="ttname"><a href="structRooSpin_1_1modelParameters.html#a3ec1d33c7a142217f05bf864d5467c23">RooSpin::modelParameters::gVprimeff_decay1_left</a></div><div class="ttdeci">RooAbsReal * gVprimeff_decay1_left</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00074">RooSpin.h:74</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_a40db25f08c8a1c56fc0bd327e48e94fa"><div class="ttname"><a href="classRooSpin.html#a40db25f08c8a1c56fc0bd327e48e94fa">RooSpin::alwaysIntegrate</a></div><div class="ttdeci">virtual void alwaysIntegrate(Int_t code=1)</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00120">RooSpin.cc:120</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_aa419c0d47907c40d8220e0f7449ca39c"><div class="ttname"><a href="classRooSpin.html#aa419c0d47907c40d8220e0f7449ca39c">RooSpin::setDecayModes</a></div><div class="ttdeci">virtual void setDecayModes(RooSpin::VdecayType Vdecay1_, RooSpin::VdecayType Vdecay2_)</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00098">RooSpin.h:98</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_adad847c63ec6152f06ab421285cda3a0"><div class="ttname"><a href="classSpinPdfFactory.html#adad847c63ec6152f06ab421285cda3a0">SpinPdfFactory::destroyVdecayParams</a></div><div class="ttdeci">virtual void destroyVdecayParams()</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00126">SpinPdfFactory.cc:126</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a></div><div class="ttdeci">@ kVdecayType_Wany</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00029">RooSpin.h:29</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a049d5515269542f4bfc5a4b971a35042"><div class="ttname"><a href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">SpinPdfFactory::measurables</a></div><div class="ttdeci">RooSpin::modelMeasurables measurables</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00011">SpinPdfFactory.h:11</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a5d3aa9b3e757c3b713a5f3ac037779b3"><div class="ttname"><a href="classSpinPdfFactory.html#a5d3aa9b3e757c3b713a5f3ac037779b3">SpinPdfFactory::initMeasurables</a></div><div class="ttdeci">virtual void initMeasurables(RooSpin::modelMeasurables const &amp;measurables_)</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00022">SpinPdfFactory.cc:22</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a91a45cd485b0da38c9a62abdd21385d7"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a91a45cd485b0da38c9a62abdd21385d7">RooSpin::modelMeasurables::hs</a></div><div class="ttdeci">RooAbsReal * hs</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00053">RooSpin.h:53</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_aff9d9fddbd2345452ee932523037d941"><div class="ttname"><a href="classRooSpin.html#aff9d9fddbd2345452ee932523037d941">RooSpin::defaultIntegration</a></div><div class="ttdeci">virtual void defaultIntegration()</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00102">RooSpin.h:102</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

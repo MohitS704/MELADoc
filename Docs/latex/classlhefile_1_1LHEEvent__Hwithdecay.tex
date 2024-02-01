@@ -26,6 +26,13 @@ def \mbox{\hyperlink{classlhefile_1_1LHEEvent__Hwithdecay_aa338ac45149cf7665c2a2
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 50 of file lhefile.\+py.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classlhefile_1_1LHEEvent__Hwithdecay_aa338ac45149cf7665c2a2a7d241b4f39}\label{classlhefile_1_1LHEEvent__Hwithdecay_aa338ac45149cf7665c2a2a7d241b4f39}} 
 \index{lhefile.LHEEvent\_Hwithdecay@{lhefile.LHEEvent\_Hwithdecay}!extracteventparticles@{extracteventparticles}}
@@ -37,6 +44,42 @@ def \mbox{\hyperlink{classlhefile_1_1LHEEvent__Hwithdecay_aa338ac45149cf7665c2a2
 
 Reimplemented from \mbox{\hyperlink{classlhefile_1_1LHEEvent_a880b1ab270c39604de82d9aa2f4bfe98}{lhefile.\+L\+H\+E\+Event}}.
 
+
+
+Definition at line 52 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52   \textcolor{keyword}{def }extracteventparticles(cls, lines, isgen):}
+\DoxyCodeLine{53     daughters, mothers, associated = [], [], []}
+\DoxyCodeLine{54     ids = [\textcolor{keywordtype}{None}]}
+\DoxyCodeLine{55     mother1s = [\textcolor{keywordtype}{None}]}
+\DoxyCodeLine{56     mother2s = [\textcolor{keywordtype}{None}]}
+\DoxyCodeLine{57     \textcolor{keywordflow}{for} line \textcolor{keywordflow}{in} lines:}
+\DoxyCodeLine{58       id, status, mother1, mother2 = (\mbox{\hyperlink{namespacetestME__all_a2f9c5cba6551dc41bae400ced29c30b3}{int}}(\_) \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} line.split()[0:4])}
+\DoxyCodeLine{59       ids.append(id)}
+\DoxyCodeLine{60       \textcolor{keywordflow}{if} (1 <= abs(id) <= 6 \textcolor{keywordflow}{or} abs(id) == 21) \textcolor{keywordflow}{and} \textcolor{keywordflow}{not} isgen:}
+\DoxyCodeLine{61         line = line.replace(str(id), \textcolor{stringliteral}{"0"}, 1)  \textcolor{comment}{\#replace the first instance of the jet id with 0, which means unknown jet}}
+\DoxyCodeLine{62       mother1s.append(mother1)}
+\DoxyCodeLine{63       mother2s.append(mother2)}
+\DoxyCodeLine{64       \textcolor{keywordflow}{if} status == -\/1:}
+\DoxyCodeLine{65         mothers.append(line)}
+\DoxyCodeLine{66       \textcolor{keywordflow}{elif} status == 1 \textcolor{keywordflow}{and} (1 <= abs(id) <= 6 \textcolor{keywordflow}{or} 11 <= abs(id) <= 16 \textcolor{keywordflow}{or} abs(id) \textcolor{keywordflow}{in} (21, 22)):}
+\DoxyCodeLine{67         \textcolor{keywordflow}{while} \textcolor{keyword}{True}:}
+\DoxyCodeLine{68           \textcolor{keywordflow}{if} mother1 != mother2 \textcolor{keywordflow}{or} mother1 \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{69             associated.append(line)}
+\DoxyCodeLine{70             \textcolor{keywordflow}{break}}
+\DoxyCodeLine{71           \textcolor{keywordflow}{if} ids[mother1] \textcolor{keywordflow}{in} (25, 39):}
+\DoxyCodeLine{72             daughters.append(line)}
+\DoxyCodeLine{73             \textcolor{keywordflow}{break}}
+\DoxyCodeLine{74           mother2 = mother2s[mother1]}
+\DoxyCodeLine{75           mother1 = mother1s[mother1]}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} isgen: mothers = \textcolor{keywordtype}{None}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} daughters, associated, mothers}
+\DoxyCodeLine{79 }
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

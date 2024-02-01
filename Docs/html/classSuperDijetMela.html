@@ -104,7 +104,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aefe925a6076ca6366aa66d7702abe5ab"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; int, <a class="el" href="classMELADifermionResolutionModel.html">MELADifermionResolutionModel</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a></td></tr>
 <tr class="separator:aefe925a6076ca6366aa66d7702abe5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8h_source.html#l00008">8</a> of file <a class="el" href="SuperDijetMela_8h_source.html">SuperDijetMela.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ced861e2a72c66a896dea5f8aa062ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ced861e2a72c66a896dea5f8aa062ad">&#9670;&nbsp;</a></span>SuperDijetMela() <span class="overload">[1/2]</span></h2>
 
@@ -131,6 +134,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8cc_source.html#l00014">14</a> of file <a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                                          :</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>(sqrts_),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>(verbosity_)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="classSuperDijetMela.html#a7a0f5e667967b0b4ed7be62eb266308b">Build</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6a17c34fca05264604d57069bef160f7"></a>
@@ -149,6 +160,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8cc_source.html#l00020">20</a> of file <a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                          : </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>(other.<a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>),</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>(other.<a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classSuperDijetMela.html#a7a0f5e667967b0b4ed7be62eb266308b">Build</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad195f23c33b0a5aead6c3c0b05ed4fca"></a>
@@ -166,6 +185,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8cc_source.html#l00026">26</a> of file <a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                               {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> it=<a class="code" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a>.begin(); it!=<a class="code" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a>.end(); it++) <span class="keyword">delete</span> it-&gt;second;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -192,6 +216,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8cc_source.html#l00030">30</a> of file <a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                          {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="classSuperDijetMela.html#ae235ef216f20001fa23c4ac9f0469843">SetupResolutionModel</a>(<a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d">TVar::Had_ZH</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classSuperDijetMela.html#ae235ef216f20001fa23c4ac9f0469843">SetupResolutionModel</a>(<a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a">TVar::Had_WH</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a05fb862f6932c48bdf64de203d8291f7"></a>
@@ -226,6 +256,80 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8cc_source.html#l00064">64</a> of file <a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                                                       {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">float</span> result=-1;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">int</span> iprod = (<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">if</span> (cand!=0){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">float</span> mJJval=-1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> modelExists = (<a class="code" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a>.find(iprod)!=<a class="code" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a>.end());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> AssociationVCompatibility=0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (modelExists || useTrueBW){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// Get a simple event record, safest way to handle jet mass corrections</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordtype">int</span> nRequested_AssociatedJets=0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordtype">int</span> partIncCode=<a class="code" href="namespaceTVar.html#a8dbe2bd8efad9a9d5d55e43c0c6f777bad10522f5bc41f80ca8edf7c195cdb858">TVar::kNoAssociated</a>; <span class="comment">// Just to avoid warnings</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a> == <a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d">TVar::Had_ZH</a> || <a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a> == <a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a">TVar::Had_WH</a>){ <span class="comment">// Only use associated partons</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        partIncCode=<a class="code" href="namespaceTVar.html#a8dbe2bd8efad9a9d5d55e43c0c6f777ba73861ec433a26ae79407bfe3f2f7b71a">TVar::kUseAssociated_Jets</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        nRequested_AssociatedJets=2;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>==<a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a">TVar::Had_WH</a>) AssociationVCompatibility=24;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>==<a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d">TVar::Had_ZH</a>) AssociationVCompatibility=23;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <a class="code" href="structTVar_1_1simple__event__record.html">simple_event_record</a> mela_event;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      mela_event.<a class="code" href="structTVar_1_1simple__event__record.html#a743a8c341936dbaa10ce50a5b8d87eba">AssociationCode</a>=partIncCode;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      mela_event.<a class="code" href="structTVar_1_1simple__event__record.html#a210cc509a3d155a23d69c94ea4558f87">AssociationVCompatibility</a>=AssociationVCompatibility;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      mela_event.<a class="code" href="structTVar_1_1simple__event__record.html#aca54cfc4690b7f0ba78f5af03d0f1ddf">nRequested_AssociatedJets</a>=nRequested_AssociatedJets;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="namespaceTUtil.html#a2bfa5115b0bf398c2fae3cc36aedf9f5">TUtil::GetBoostedParticleVectors</a>(</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        cand,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        mela_event,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      vector&lt;TLorentzVector&gt; pJets;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keyword">const</span> <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a>&amp; pAssociated = mela_event.<a class="code" href="structTVar_1_1simple__event__record.html#a53c971bb7cdfc390927309ca66fa77b4">pAssociated</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; part : pAssociated){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacePDGHelpers.html#a70d454afa0ba8867880810d0a527e4e5">PDGHelpers::isAJet</a>(part.first)) pJets.push_back(part.second);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (pJets.size()==2) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">if</span> (pJets.size()==2) mJJval = (pJets[0] + pJets[1]).M();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (useTrueBW){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordtype">float</span> truePoleMass=-1;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordtype">float</span> truePoleWidth=-1;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <span class="keywordflow">if</span> (AssociationVCompatibility!=0){</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        truePoleMass=<a class="code" href="namespaceTUtil.html#af0a7eb81fc049eae88e8be0e72e27451">TUtil::GetMass</a>(AssociationVCompatibility);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        truePoleWidth=<a class="code" href="namespaceTUtil.html#a2abfaba12b321c4f89447482105635a5">TUtil::GetDecayWidth</a>(AssociationVCompatibility);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (mJJval&gt;=0.) result = 1./(pow(pow(mJJval, 2)-pow(truePoleMass, 2), 2) + pow(truePoleMass*truePoleWidth, 2));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>&gt;=<a class="code" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce">TVar::DEBUG</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;SuperDijetMela::GetConvBW[idV=&quot;</span> &lt;&lt; AssociationVCompatibility &lt;&lt; <span class="stringliteral">&quot;]::&quot;</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;sqrt(s) = &quot;</span> &lt;&lt; mJJval</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;, true (m,Gamma) = ( &quot;</span> &lt;&lt; truePoleMass &lt;&lt; <span class="stringliteral">&quot; , &quot;</span> &lt;&lt; truePoleWidth &lt;&lt; <span class="stringliteral">&quot; )&quot;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;, ideal BW = &quot;</span> &lt;&lt; result</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        &lt;&lt; endl;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (modelExists){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      result = <a class="code" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a>[iprod]-&gt;getVal(mJJval);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>&gt;=<a class="code" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce">TVar::DEBUG</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;SuperDijetMela::GetConvBW[&quot;</span> &lt;&lt; <a class="code" href="namespaceTVar.html#a1225a4280a727b6456d225d3493e0e66">TVar::ProductionName</a>(<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>) &lt;&lt; <span class="stringliteral">&quot;]::&quot;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;sqrt(s) = &quot;</span> &lt;&lt; mJJval</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;, reco BW = &quot;</span> &lt;&lt; result</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        &lt;&lt; endl;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>&gt;=<a class="code" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce">TVar::DEBUG</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;SuperDijetMela::GetConvBW:: No method for &quot;</span> &lt;&lt; <a class="code" href="namespaceTVar.html#a1225a4280a727b6456d225d3493e0e66">TVar::ProductionName</a>(<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>) &lt;&lt; <span class="stringliteral">&quot; is known. &quot;</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;sqrt(s) = &quot;</span> &lt;&lt; mJJval</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;, return value = &quot;</span> &lt;&lt; result</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        &lt;&lt; endl;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae235ef216f20001fa23c4ac9f0469843"></a>
@@ -244,6 +348,37 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8cc_source.html#l00035">35</a> of file <a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                            {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// Setup file path</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">string</span> MELAPKGPATH = <a class="code" href="namespaceTVar.html#a06f1ddf9957f91a474c2cf0fbc73caed">TVar::GetMELAPath</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  TString path = TString(MELAPKGPATH.c_str()) + <span class="stringliteral">&quot;data/resolution_mJJ_recoVStrue_&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  TString prodName;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">switch</span> (<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d">TVar::Had_ZH</a>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    prodName = <span class="stringliteral">&quot;ZH&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a">TVar::Had_WH</a>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    prodName = <span class="stringliteral">&quot;WH&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;SuperDijetMela::SetupResolutionModel: Production &quot;</span> &lt;&lt; <a class="code" href="namespaceTVar.html#a1225a4280a727b6456d225d3493e0e66">TVar::ProductionName</a>(<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>) &lt;&lt; <span class="stringliteral">&quot; is unknown.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a> = floor(<a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>); <span class="comment">// interim solution until 13.6 TeV production is ready</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  path += prodName;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  path += Form(<span class="stringliteral">&quot;_%.0fTeV%s&quot;</span>, <a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>, <span class="stringliteral">&quot;.root&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  TString appendName = Form(<span class="stringliteral">&quot;mJJReso_%.0fTeV&quot;</span>, <a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classMELADifermionResolutionModel.html">MELADifermionResolutionModel</a>* model = <span class="keyword">new</span> <a class="code" href="classMELADifermionResolutionModel.html">MELADifermionResolutionModel</a>(<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>, <a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a>, path, appendName);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (model-&gt;<a class="code" href="classMELADifermionResolutionModel.html#a0101dab25cd7cd40b487f4edecae1abf">isValid</a>()){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> iprod = (<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">ResolutionModelMap</a>[iprod] = model;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;SuperDijetMela::SetupResolutionModel: Model MELADifermionResolutionModel(&quot;</span> &lt;&lt; <a class="code" href="namespaceTVar.html#a1225a4280a727b6456d225d3493e0e66">TVar::ProductionName</a>(<a class="code" href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">prod</a>) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code" href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">sqrts</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; path &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; appendName &lt;&lt; <span class="stringliteral">&quot;) cannot be built.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6fd6750da209162873b997190f067872"></a>
@@ -270,6 +405,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8h_source.html#l00023">23</a> of file <a class="el" href="SuperDijetMela_8h_source.html">SuperDijetMela.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{ <a class="code" href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">verbosity</a>=verbosity_; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -293,6 +431,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8h_source.html#l00013">13</a> of file <a class="el" href="SuperDijetMela_8h_source.html">SuperDijetMela.h</a>.</p>
+
 </div>
 </div>
 <a id="abf521ba17f08fcb54b68a6d22650a6b9"></a>
@@ -314,6 +454,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8h_source.html#l00010">10</a> of file <a class="el" href="SuperDijetMela_8h_source.html">SuperDijetMela.h</a>.</p>
 
 </div>
 </div>
@@ -337,13 +479,43 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="SuperDijetMela_8h_source.html#l00011">11</a> of file <a class="el" href="SuperDijetMela_8h_source.html">SuperDijetMela.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="SuperDijetMela_8h_source.html">SuperDijetMela.h</a></li>
-<li>MELA/src/<a class="el" href="SuperDijetMela_8cc.html">SuperDijetMela.cc</a></li>
+<li>MELA/src/<a class="el" href="SuperDijetMela_8cc_source.html">SuperDijetMela.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassSuperDijetMela_html_aefe925a6076ca6366aa66d7702abe5ab"><div class="ttname"><a href="classSuperDijetMela.html#aefe925a6076ca6366aa66d7702abe5ab">SuperDijetMela::ResolutionModelMap</a></div><div class="ttdeci">std::unordered_map&lt; int, MELADifermionResolutionModel * &gt; ResolutionModelMap</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8h_source.html#l00013">SuperDijetMela.h:13</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a8dbe2bd8efad9a9d5d55e43c0c6f777ba73861ec433a26ae79407bfe3f2f7b71a"><div class="ttname"><a href="namespaceTVar.html#a8dbe2bd8efad9a9d5d55e43c0c6f777ba73861ec433a26ae79407bfe3f2f7b71a">TVar::kUseAssociated_Jets</a></div><div class="ttdeci">@ kUseAssociated_Jets</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00033">TVar.hh:33</a></div></div>
+<div class="ttc" id="astructTVar_1_1simple__event__record_html_aca54cfc4690b7f0ba78f5af03d0f1ddf"><div class="ttname"><a href="structTVar_1_1simple__event__record.html#aca54cfc4690b7f0ba78f5af03d0f1ddf">TVar::simple_event_record::nRequested_AssociatedJets</a></div><div class="ttdeci">int nRequested_AssociatedJets</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00230">TVar.hh:230</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a1225a4280a727b6456d225d3493e0e66"><div class="ttname"><a href="namespaceTVar.html#a1225a4280a727b6456d225d3493e0e66">TVar::ProductionName</a></div><div class="ttdeci">TString ProductionName(TVar::Production temp)</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8cc_source.html#l00064">TVar.cc:64</a></div></div>
+<div class="ttc" id="anamespacemela_html_ad931acffcdd325571523d5fc76d67185"><div class="ttname"><a href="namespacemela.html#ad931acffcdd325571523d5fc76d67185">mela.prod</a></div><div class="ttdeci">prod</div><div class="ttdef"><b>Definition:</b> <a href="mela_8py_source.html#l00806">mela.py:806</a></div></div>
+<div class="ttc" id="aclassMELADifermionResolutionModel_html"><div class="ttname"><a href="classMELADifermionResolutionModel.html">MELADifermionResolutionModel</a></div><div class="ttdef"><b>Definition:</b> <a href="MELADifermionResolutionModel_8h_source.html#l00008">MELADifermionResolutionModel.h:8</a></div></div>
+<div class="ttc" id="astructTVar_1_1simple__event__record_html_a210cc509a3d155a23d69c94ea4558f87"><div class="ttname"><a href="structTVar_1_1simple__event__record.html#a210cc509a3d155a23d69c94ea4558f87">TVar::simple_event_record::AssociationVCompatibility</a></div><div class="ttdeci">int AssociationVCompatibility</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00229">TVar.hh:229</a></div></div>
+<div class="ttc" id="anamespaceMELAStreamHelpers_html_a540da07450fb5154e684e182766cd72d"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAStreamHelpers::MELAout</a></div><div class="ttdeci">MELAOutputStreamer MELAout</div></div>
+<div class="ttc" id="anamespaceTVar_html_a8dbe2bd8efad9a9d5d55e43c0c6f777bad10522f5bc41f80ca8edf7c195cdb858"><div class="ttname"><a href="namespaceTVar.html#a8dbe2bd8efad9a9d5d55e43c0c6f777bad10522f5bc41f80ca8edf7c195cdb858">TVar::kNoAssociated</a></div><div class="ttdeci">@ kNoAssociated</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00030">TVar.hh:30</a></div></div>
+<div class="ttc" id="anamespacetestME__all_html_a2f9c5cba6551dc41bae400ced29c30b3"><div class="ttname"><a href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">testME_all.int</a></div><div class="ttdeci">int</div><div class="ttdef"><b>Definition:</b> <a href="testME__all_8py_source.html#l00013">testME_all.py:13</a></div></div>
+<div class="ttc" id="astructTVar_1_1simple__event__record_html_a743a8c341936dbaa10ce50a5b8d87eba"><div class="ttname"><a href="structTVar_1_1simple__event__record.html#a743a8c341936dbaa10ce50a5b8d87eba">TVar::simple_event_record::AssociationCode</a></div><div class="ttdeci">int AssociationCode</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00228">TVar.hh:228</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a06f1ddf9957f91a474c2cf0fbc73caed"><div class="ttname"><a href="namespaceTVar.html#a06f1ddf9957f91a474c2cf0fbc73caed">TVar::GetMELAPath</a></div><div class="ttdeci">std::string GetMELAPath()</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8cc_source.html#l00121">TVar.cc:121</a></div></div>
+<div class="ttc" id="aclassSuperDijetMela_html_a7a0f5e667967b0b4ed7be62eb266308b"><div class="ttname"><a href="classSuperDijetMela.html#a7a0f5e667967b0b4ed7be62eb266308b">SuperDijetMela::Build</a></div><div class="ttdeci">void Build()</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8cc_source.html#l00030">SuperDijetMela.cc:30</a></div></div>
+<div class="ttc" id="anamespaceTUtil_html_a2abfaba12b321c4f89447482105635a5"><div class="ttname"><a href="namespaceTUtil.html#a2abfaba12b321c4f89447482105635a5">TUtil::GetDecayWidth</a></div><div class="ttdeci">double GetDecayWidth(int ipart)</div><div class="ttdef"><b>Definition:</b> <a href="TUtil_8cc_source.html#l01566">TUtil.cc:1566</a></div></div>
+<div class="ttc" id="aclassSuperDijetMela_html_abf521ba17f08fcb54b68a6d22650a6b9"><div class="ttname"><a href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">SuperDijetMela::sqrts</a></div><div class="ttdeci">float sqrts</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8h_source.html#l00010">SuperDijetMela.h:10</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d"><div class="ttname"><a href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d">TVar::Had_ZH</a></div><div class="ttdeci">@ Had_ZH</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00075">TVar.hh:75</a></div></div>
+<div class="ttc" id="anamespaceTUtil_html_af0a7eb81fc049eae88e8be0e72e27451"><div class="ttname"><a href="namespaceTUtil.html#af0a7eb81fc049eae88e8be0e72e27451">TUtil::GetMass</a></div><div class="ttdeci">double GetMass(int ipart)</div><div class="ttdef"><b>Definition:</b> <a href="TUtil_8cc_source.html#l01529">TUtil.cc:1529</a></div></div>
+<div class="ttc" id="anamespaceMELAStreamHelpers_html_a48e6b604de686a3c2033bdcf75c51f6f"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAStreamHelpers::MELAerr</a></div><div class="ttdeci">MELAOutputStreamer MELAerr</div></div>
+<div class="ttc" id="aclassMELADifermionResolutionModel_html_a0101dab25cd7cd40b487f4edecae1abf"><div class="ttname"><a href="classMELADifermionResolutionModel.html#a0101dab25cd7cd40b487f4edecae1abf">MELADifermionResolutionModel::isValid</a></div><div class="ttdeci">bool isValid()</div><div class="ttdef"><b>Definition:</b> <a href="MELADifermionResolutionModel_8h_source.html#l00022">MELADifermionResolutionModel.h:22</a></div></div>
+<div class="ttc" id="aclassSuperDijetMela_html_a2bc0a772602d5d42e39e0c700a6739e4"><div class="ttname"><a href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">SuperDijetMela::verbosity</a></div><div class="ttdeci">TVar::VerbosityLevel verbosity</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8h_source.html#l00011">SuperDijetMela.h:11</a></div></div>
+<div class="ttc" id="astructTVar_1_1simple__event__record_html_a53c971bb7cdfc390927309ca66fa77b4"><div class="ttname"><a href="structTVar_1_1simple__event__record.html#a53c971bb7cdfc390927309ca66fa77b4">TVar::simple_event_record::pAssociated</a></div><div class="ttdeci">SimpleParticleCollection_t pAssociated</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00239">TVar.hh:239</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce"><div class="ttname"><a href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce">TVar::DEBUG</a></div><div class="ttdeci">@ DEBUG</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00051">TVar.hh:51</a></div></div>
+<div class="ttc" id="aTVar_8hh_html_ac8ad3b9b9fb4621a213e219ad7289d76"><div class="ttname"><a href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a></div><div class="ttdeci">std::vector&lt; SimpleParticle_t &gt; SimpleParticleCollection_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00025">TVar.hh:25</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a"><div class="ttname"><a href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a">TVar::Had_WH</a></div><div class="ttdeci">@ Had_WH</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00076">TVar.hh:76</a></div></div>
+<div class="ttc" id="astructTVar_1_1simple__event__record_html"><div class="ttname"><a href="structTVar_1_1simple__event__record.html">TVar::simple_event_record</a></div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00227">TVar.hh:227</a></div></div>
+<div class="ttc" id="aclassSuperDijetMela_html_ae235ef216f20001fa23c4ac9f0469843"><div class="ttname"><a href="classSuperDijetMela.html#ae235ef216f20001fa23c4ac9f0469843">SuperDijetMela::SetupResolutionModel</a></div><div class="ttdeci">void SetupResolutionModel(TVar::Production prod)</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8cc_source.html#l00035">SuperDijetMela.cc:35</a></div></div>
+<div class="ttc" id="anamespaceTUtil_html_a2bfa5115b0bf398c2fae3cc36aedf9f5"><div class="ttname"><a href="namespaceTUtil.html#a2bfa5115b0bf398c2fae3cc36aedf9f5">TUtil::GetBoostedParticleVectors</a></div><div class="ttdeci">void GetBoostedParticleVectors(MELACandidate *melaCand, TVar::simple_event_record &amp;mela_event, TVar::VerbosityLevel verbosity=TVar::DEBUG)</div><div class="ttdef"><b>Definition:</b> <a href="TUtil_8cc_source.html#l07947">TUtil.cc:7947</a></div></div>
+<div class="ttc" id="anamespacePDGHelpers_html_a70d454afa0ba8867880810d0a527e4e5"><div class="ttname"><a href="namespacePDGHelpers.html#a70d454afa0ba8867880810d0a527e4e5">PDGHelpers::isAJet</a></div><div class="ttdeci">bool isAJet(const int id)</div><div class="ttdef"><b>Definition:</b> <a href="PDGHelpers_8cc_source.html#l00018">PDGHelpers.cc:18</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -14,3 +14,69 @@ real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__a__cmplx_aaac
 \doxysubsubsection{\texorpdfstring{hto\_b021\_dm\_cp()}{hto\_b021\_dm\_cp()}}
 {\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+a\+\_\+cmplx\+::hto\+\_\+b021\+\_\+dm\+\_\+cp (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8, dimension(2)}]{psi,  }\item[{real$\ast$8}]{ps0i,  }\item[{real$\ast$8, dimension(2,2), intent(in)}]{xmsi,  }\item[{real$\ast$8, dimension(2), intent(in)}]{xm0i }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3360 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3360       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__root}{hto\_cmplx\_root}}}
+\DoxyCodeLine{3361       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__rootz}{hto\_cmplx\_rootz}}}
+\DoxyCodeLine{3362       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__srs__root}{hto\_cmplx\_srs\_root}}}
+\DoxyCodeLine{3363       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__ln__2__riemann}{hto\_ln\_2\_riemann}}}
+\DoxyCodeLine{3364       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{3365       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__rat}{hto\_acmplx\_rat}}}
+\DoxyCodeLine{3366       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{3367       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{3368 \textcolor{comment}{*}}
+\DoxyCodeLine{3369       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3370 \textcolor{comment}{*}}
+\DoxyCodeLine{3371       \textcolor{keywordtype}{INTEGER} i,nci,nc}
+\DoxyCodeLine{3372       real*8 scal,scals,ps0i,ps0,xm1,xm2}
+\DoxyCodeLine{3373       real*8, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(2)} :: xm0i}
+\DoxyCodeLine{3374       real*8, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(2,2)} :: xmsi}
+\DoxyCodeLine{3375       real*8, \textcolor{keywordtype}{dimension(2)} :: \textcolor{keywordtype}{value},xm1c,xm2c}
+\DoxyCodeLine{3376       real*8, \textcolor{keywordtype}{dimension(2,2)} :: xms}
+\DoxyCodeLine{3377       real*8, \textcolor{keywordtype}{dimension(2)} :: xm0}
+\DoxyCodeLine{3378       real*8, \textcolor{keywordtype}{dimension(2)} :: psi,ps,aroot,root,lambdasc,lambdas,}
+\DoxyCodeLine{3379      \#        lambdac,lambda,argc,arg,llam,l1,l2 }
+\DoxyCodeLine{3380 \textcolor{comment}{*}}
+\DoxyCodeLine{3381       ps= psi}
+\DoxyCodeLine{3382       ps0= ps0i}
+\DoxyCodeLine{3383       xms= xmsi}
+\DoxyCodeLine{3384       xm0= xm0i}
+\DoxyCodeLine{3385 \textcolor{comment}{*}}
+\DoxyCodeLine{3386       xm1c(1:2)= xms(1,1:2)}
+\DoxyCodeLine{3387       xm2c(1:2)= xms(2,1:2)}
+\DoxyCodeLine{3388       xm1c= xm1c.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.ps}
+\DoxyCodeLine{3389       xm2c= xm2c.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.ps}
+\DoxyCodeLine{3390       xm1= xm0(1)*xm0(1)/ps0}
+\DoxyCodeLine{3391       xm2= xm0(2)*xm0(2)/ps0}
+\DoxyCodeLine{3392 \textcolor{comment}{*}}
+\DoxyCodeLine{3393       aroot= xm1c.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.xm2c}
+\DoxyCodeLine{3394       root= (aroot(1).\mbox{\hyperlink{namespacehto__cmplx__rootz_a7a26cf49825b24cebd8ab098b92319e6}{crz}}.aroot(2))}
+\DoxyCodeLine{3395 \textcolor{comment}{*}}
+\DoxyCodeLine{3396       lambdasc= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}+(xm1c.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.xm1c)+(xm2c.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.xm2c)-\/2.d0*(}
+\DoxyCodeLine{3397      \#          xm1c+xm2c+(xm1c.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.xm2c))}
+\DoxyCodeLine{3398       lambdas(1)= 1.d0+xm1*xm1+xm2*xm2-\/2.d0*(}
+\DoxyCodeLine{3399      \#            xm1+xm2+xm1*xm2)}
+\DoxyCodeLine{3400       lambdas(2)= -\/\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}}
+\DoxyCodeLine{3401       lambdac= (lambdasc(1)).\mbox{\hyperlink{namespacehto__cmplx__rootz_a7a26cf49825b24cebd8ab098b92319e6}{crz}}.(lambdasc(2))}
+\DoxyCodeLine{3402       lambda= (lambdas(1)).\mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{cr}}.(lambdas(2))}
+\DoxyCodeLine{3403       \textcolor{keywordflow}{IF}(lambda(2).eq.0.d0) lambda(2)= -\/\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}}
+\DoxyCodeLine{3404 \textcolor{comment}{*}}
+\DoxyCodeLine{3405       argc= 0.5d0*((-\/\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}+xm1c+xm2c-\/lambdac).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.root)}
+\DoxyCodeLine{3406 \textcolor{comment}{*}}
+\DoxyCodeLine{3407       arg(1)= 0.5d0*(-\/1.d0+xm1+xm2-\/lambda(1))/sqrt(xm1*xm2)}
+\DoxyCodeLine{3408       arg(2)= \mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}}
+\DoxyCodeLine{3409 \textcolor{comment}{*}}
+\DoxyCodeLine{3410       llam= argc.\mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}.arg}
+\DoxyCodeLine{3411 \textcolor{comment}{*}}
+\DoxyCodeLine{3412       l1= xm1c(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.xm1c(2)}
+\DoxyCodeLine{3413       l2= xm2c(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.xm2c(2)}
+\DoxyCodeLine{3414 \textcolor{comment}{*}}
+\DoxyCodeLine{3415       \textcolor{keywordtype}{value}= (((xm1c-\/xm2c-\/\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.lambdac).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.llam)+0.5d0*(l1-\/l2) }
+\DoxyCodeLine{3416 \textcolor{comment}{*}}
+\DoxyCodeLine{3417       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}

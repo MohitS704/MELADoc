@@ -1,0 +1,28 @@
+var structRooSpinZero_1_1modelCouplings =
+[
+    [ "cLambda_qsq", "structRooSpinZero_1_1modelCouplings.html#a771ad471f600c4123a592bd28603251c", null ],
+    [ "g1List", "structRooSpinZero_1_1modelCouplings.html#a22c02de4068fcd8bf994d60f668ac598", null ],
+    [ "g2List", "structRooSpinZero_1_1modelCouplings.html#ad4aa0c8b73033427bcdaf37e5d4a6a80", null ],
+    [ "g3List", "structRooSpinZero_1_1modelCouplings.html#ad9e2800efd88e9bad98394b32bd01993", null ],
+    [ "g4List", "structRooSpinZero_1_1modelCouplings.html#a32cb480377c28e95409d1a1e088c3c03", null ],
+    [ "ggsgs2List", "structRooSpinZero_1_1modelCouplings.html#a6666f41b5b1309f97ead803798d6f767", null ],
+    [ "ggsgs3List", "structRooSpinZero_1_1modelCouplings.html#ae0c92c412ea25970df4aaba1cf13bdac", null ],
+    [ "ggsgs4List", "structRooSpinZero_1_1modelCouplings.html#ad29438c001acb6a78629130dff862cac", null ],
+    [ "gvpvp1List", "structRooSpinZero_1_1modelCouplings.html#a5062c284645dbf4b3ac835a241f4f09e", null ],
+    [ "gvvp1List", "structRooSpinZero_1_1modelCouplings.html#aeb98e1890e58199097a4801860b20c05", null ],
+    [ "gzgs1List", "structRooSpinZero_1_1modelCouplings.html#aed9757d87a0bf1f274b7a2f8febb381c", null ],
+    [ "gzgs2List", "structRooSpinZero_1_1modelCouplings.html#a0cab0e49d2df477da93b3a906e8f0782", null ],
+    [ "gzgs3List", "structRooSpinZero_1_1modelCouplings.html#ad03b8ffce8804849b8f14b4143604e19", null ],
+    [ "gzgs4List", "structRooSpinZero_1_1modelCouplings.html#ab4ce0a64acd990649e72c2284ac4d7cb", null ],
+    [ "Lambda", "structRooSpinZero_1_1modelCouplings.html#a8641258e0ee5dd589fc6a542aa58eae7", null ],
+    [ "Lambda_Q", "structRooSpinZero_1_1modelCouplings.html#a6afe25c7a510d68c53d5d78ad8f3215f", null ],
+    [ "Lambda_z1", "structRooSpinZero_1_1modelCouplings.html#a587dfb271a74ee1ec3ca390053935d09", null ],
+    [ "Lambda_z1qsq", "structRooSpinZero_1_1modelCouplings.html#aa262aa2096aac70d737fe04b02b222ef", null ],
+    [ "Lambda_z2", "structRooSpinZero_1_1modelCouplings.html#aed14d44c711572f90bb3b6d3ffa010f6", null ],
+    [ "Lambda_z2qsq", "structRooSpinZero_1_1modelCouplings.html#ac0585f35f1f97e2ed66a9d4139943d8b", null ],
+    [ "Lambda_z3", "structRooSpinZero_1_1modelCouplings.html#a9ba397207dbc1d685aeb20903058a969", null ],
+    [ "Lambda_z3qsq", "structRooSpinZero_1_1modelCouplings.html#a47135f5a93939f9575495ba1d184c1ab", null ],
+    [ "Lambda_z4", "structRooSpinZero_1_1modelCouplings.html#a46f88399b7a44f34286dcd5cb2012b91", null ],
+    [ "Lambda_z4qsq", "structRooSpinZero_1_1modelCouplings.html#a55b85106a0b393db071867e59dc518b4", null ],
+    [ "Lambda_zgs1", "structRooSpinZero_1_1modelCouplings.html#a5acf7191928d6c712d6be9c5ecedc78e", null ]
+];

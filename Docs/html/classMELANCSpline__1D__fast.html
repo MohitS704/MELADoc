@@ -230,7 +230,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aebc5f10ddc26a57f0c3b2bb8e9969162 inherit pub_types_classMELANCSplineCore"><td class="memItemLeft" align="right" valign="top">typedef TVectorT&lt; <a class="el" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMELANCSplineCore.html#aebc5f10ddc26a57f0c3b2bb8e9969162">TVector_t</a></td></tr>
 <tr class="separator:aebc5f10ddc26a57f0c3b2bb8e9969162 inherit pub_types_classMELANCSplineCore"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00012">12</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9098e4c7f5283a43a1bac240eeb88fc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9098e4c7f5283a43a1bac240eeb88fc9">&#9670;&nbsp;</a></span>MELANCSpline_1D_fast() <span class="overload">[1/4]</span></h2>
 
@@ -274,6 +277,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00020">20</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    :</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a9d561d07179ecc2a53812027a3c572b7">MELANCSplineCore</a>(name, title),</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">bcBeginX</a>(<a class="code" href="classMELANCSplineCore.html#aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937">MELANCSplineCore::bcNaturalSpline</a>), <a class="code" href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">bcEndX</a>(<a class="code" href="classMELANCSplineCore.html#aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937">MELANCSplineCore::bcNaturalSpline</a>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5579fecd1ffef6f2270c923bf9f8dee1"></a>
@@ -350,6 +359,37 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00028">28</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    :</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a9d561d07179ecc2a53812027a3c572b7">MELANCSplineCore</a>(name, title, inXVar, inXList, inUseFloor, inFloorEval, inFloorInt),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">bcBeginX</a>(bcBeginX_), <a class="code" href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">bcEndX</a>(bcEndX_),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9">FcnList</a>(inFcnList)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#ab85b15b7e8b390c9f538f38b6c3f801f">npointsX</a>()&gt;1){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> npoints;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    vector&lt;vector&lt;MELANCSplineCore::T&gt;&gt; xA; <a class="code" href="classMELANCSpline__1D__fast.html#a2072dd16dcadba22fe77d50c7b3b7fa1">getKappas</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>, 0); <a class="code" href="classMELANCSplineCore.html#a49f714cbe9ef9d4eb15312080d8d0a04">getAArray</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>, xA, <a class="code" href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">bcBeginX</a>, <a class="code" href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">bcEndX</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    npoints=<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>.size();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a08a91432eef42c1737e8368cd330e25a">TMatrix_t</a> xAtrans(npoints, npoints);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;npoints; i++){ <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=0; j&lt;npoints; j++){ xAtrans[i][j]=xA.at(i).at(j); } }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    Double_t det=0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a08a91432eef42c1737e8368cd330e25a">TMatrix_t</a> xAinv = xAtrans.Invert(&amp;det);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (det==0.){</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      coutE(InputArguments) &lt;&lt; <span class="stringliteral">&quot;MELANCSpline_1D::interpolateFcn: Matrix xA could not be inverted. Something is wrong with the x coordinates of points!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      assert(0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06">coefficients</a> = <a class="code" href="classMELANCSplineCore.html#a4ca8fe5de992ddfa3901893601bc0934">getCoefficientsAlongDirection</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>, xAinv, <a class="code" href="classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9">FcnList</a>, <a class="code" href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">bcBeginX</a>, <a class="code" href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">bcEndX</a>, -1);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">else</span> assert(0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  RooArgSet leafset;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a3c73be7bda1af9d7cf4dd6e113e11fd3">getLeafDependents</a>(<a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>, leafset);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a70433d5860a7e332db2239bf5bb86d2d">addLeafDependents</a>(leafset);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#aeda656dab01c7795e1e710ded190e1df">emptyFcnList</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae8f35c7939c050351d70c7a2d18453dd"></a>
@@ -378,6 +418,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00069">69</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    :</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a9d561d07179ecc2a53812027a3c572b7">MELANCSplineCore</a>(other, name),</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">bcBeginX</a>(other.<a class="code" href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">bcBeginX</a>), <a class="code" href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">bcEndX</a>(other.<a class="code" href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">bcEndX</a>),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9">FcnList</a>(other.<a class="code" href="classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9">FcnList</a>),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>(other.<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06">coefficients</a>(other.<a class="code" href="classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06">coefficients</a>)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b37b26f6a5107902a3fc20ebd0dac74"></a>
@@ -403,6 +452,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00042">42</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -442,6 +494,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a4152f834a8dde69a8fc0ad02da6c96fb">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00197">197</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                                                                        {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  Double_t value = <a class="code" href="classMELANCSpline__1D__fast.html#a0289bf60ae925490f713b93c3e7e5018">interpolateFcn</a>(code, rangeName);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#ad7f81f65dc5c79ff1c8b7916b8b0d7c7">useFloor</a> &amp;&amp; value&lt;<a class="code" href="classMELANCSplineCore.html#abbe41867b34ccb098b7b0f6eae9ca3b0">floorInt</a>){</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#a8ab4e8e64ab4752af5ed73393c0d0c6c">verbosity</a>&gt;=<a class="code" href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986">MELANCSplineCore::kError</a>) coutE(Integration) &lt;&lt; <span class="stringliteral">&quot;MELANCSpline_1D_fast ERROR::MELANCSpline_1D_fast(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) integration returned &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    value = <a class="code" href="classMELANCSplineCore.html#abbe41867b34ccb098b7b0f6eae9ca3b0">floorInt</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#a8ab4e8e64ab4752af5ed73393c0d0c6c">verbosity</a>==<a class="code" href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49">MELANCSplineCore::kVerbose</a>){ cout &lt;&lt; <span class="stringliteral">&quot;MELANCSpline_1D_fast(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::analyticalIntegral = &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl; }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a753fe8801b3d359e73a0d8bb94314f15"></a>
@@ -470,6 +533,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#ac4108ed3ea23dc9c017db1608e6e909d">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00041">41</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classMELANCSpline__1D__fast.html#a9098e4c7f5283a43a1bac240eeb88fc9">MELANCSpline_1D_fast</a>(*<span class="keyword">this</span>, newname); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab88b9410a534ab508aeccf38d5f518fd"></a>
@@ -508,6 +574,16 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a5cf7c32aae0d2a6f038d59fccc7b5183">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00220">220</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                                                      {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSpline__1D__fast.html#a403ad050d169bd234e137568d422bf3b">testRangeValidity</a>(val)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">T</a>* range[2];</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  range[0] = &amp;<a class="code" href="classMELANCSplineCore.html#af9532533981a93114dcbcce595341219">rangeXmin</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  range[1] = &amp;<a class="code" href="classMELANCSplineCore.html#a08fe9bb66a90fa755b7ca55ec8350244">rangeXmax</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordflow">if</span> (val&lt;*(range[0])) val = *(range[0]);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordflow">if</span> (val&gt;*(range[1])) val = *(range[1]);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aeda656dab01c7795e1e710ded190e1df"></a>
@@ -535,6 +611,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a6dbd8202aa9824505fbfa7770967d676">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00050">50</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ std::vector&lt;T&gt; tmp; <a class="code" href="classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9">FcnList</a>.swap(tmp); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6ad1c31b038d97d53735340494d27afb"></a>
@@ -562,6 +641,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#acbfced658063a55878b12518624af202">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00170">170</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                             {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  Double_t value = <a class="code" href="classMELANCSpline__1D__fast.html#a0289bf60ae925490f713b93c3e7e5018">interpolateFcn</a>(0);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#ad7f81f65dc5c79ff1c8b7916b8b0d7c7">useFloor</a> &amp;&amp; value&lt;<a class="code" href="classMELANCSplineCore.html#a9cc748a9d519b5fa4e07f6c13f90eef2">floorEval</a>){</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#a8ab4e8e64ab4752af5ed73393c0d0c6c">verbosity</a>&gt;=<a class="code" href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986">MELANCSplineCore::kError</a>) coutE(Eval) &lt;&lt; <span class="stringliteral">&quot;MELANCSpline_1D_fast ERROR::MELANCSpline_1D_fast(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) evaluation returned &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    value = <a class="code" href="classMELANCSplineCore.html#a9cc748a9d519b5fa4e07f6c13f90eef2">floorEval</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#a8ab4e8e64ab4752af5ed73393c0d0c6c">verbosity</a>==<a class="code" href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49">MELANCSplineCore::kVerbose</a>){</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;MELANCSpline_1D_fast(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::evaluate = &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    RooArgSet Xdeps; <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>.absArg()-&gt;leafNodeServerList(&amp;Xdeps, 0, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    TIterator* iter = Xdeps.createIterator();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    RooAbsArg* var;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">while</span> ((var = (RooAbsArg*)iter-&gt;Next())){</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      cout &lt;&lt; var-&gt;GetName() &lt;&lt; <span class="stringliteral">&quot; value = &quot;</span> &lt;&lt; <span class="keyword">dynamic_cast&lt;</span>RooAbsReal*<span class="keyword">&gt;</span>(var)-&gt;getVal() &lt;&lt; endl;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">delete</span> iter;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2611a4f9d34d0a657ccefeee3ca1a3f4"></a>
@@ -606,6 +706,16 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#afb4a4385e7ee883b170930fa2e0a4fc6">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00189">189</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                                                                                             {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">if</span> (_forceNumInt) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  Int_t code=0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>.absArg())!=0){</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>)) code=2;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordflow">return</span> code;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2072dd16dcadba22fe77d50c7b3b7fa1"></a>
@@ -644,6 +754,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a9a3f25075c8dae1bdb5f38ebaf450555">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00124">124</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                                                    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  kappas.clear();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> <a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a>=1;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  Int_t npoints;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  vector&lt;MELANCSplineCore::T&gt; <span class="keyword">const</span>* coord;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  npoints=<a class="code" href="classMELANCSplineCore.html#ab85b15b7e8b390c9f538f38b6c3f801f">npointsX</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  coord=&amp;<a class="code" href="classMELANCSplineCore.html#a5e2644c4546eb70631d80943698830a7">XList</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">for</span> (Int_t j=0; j&lt;npoints-1; j++){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> val_j = coord-&gt;at(j);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> val_jpo = coord-&gt;at(j+1);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> val_diff = (val_jpo-val_j);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (fabs(val_diff)&gt;<a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a>(0)) <a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a> = 1./val_diff;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a> = 0;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    kappas.push_back(<a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  kappas.push_back(<a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a>); <span class="comment">// Push the same kappa_(N-1)=kappa_(N-2) at the end point</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a20d422b52d0d76ad8c3d3b0b3ceadee5"></a>
@@ -694,6 +825,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a267e73e6b6752b22476e8665d24b1100">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00165">165</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                                                                                                                                          {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a>&amp; K=kappas.at(bin);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">return</span> (val-<a class="code" href="classMELANCSplineCore.html#a5e2644c4546eb70631d80943698830a7">XList</a>.at(bin))*K;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a30d5e03635a1db4c2e9e5f41d07cd911"></a>
@@ -732,6 +869,30 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a32bca8b4a1b5a25ddbc6157a6fc860ef">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00143">143</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                                                       {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  Int_t bin=-1;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> valj, valjpo;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  Int_t npoints;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  vector&lt;MELANCSplineCore::T&gt; <span class="keyword">const</span>* coord;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  coord=&amp;<a class="code" href="classMELANCSplineCore.html#a5e2644c4546eb70631d80943698830a7">XList</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  npoints=<a class="code" href="classMELANCSplineCore.html#ab85b15b7e8b390c9f538f38b6c3f801f">npointsX</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordflow">if</span> (npoints&lt;=1) bin=0;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    valjpo = coord-&gt;at(0);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">for</span> (Int_t j=0; j&lt;npoints-1; j++){</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      valj = coord-&gt;at(j);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      valjpo = coord-&gt;at(j+1);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="keywordflow">if</span> (val&lt;valjpo &amp;&amp; val&gt;=valj){ bin=j; <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (bin==-1 &amp;&amp; val&gt;=valjpo) bin=npoints-2;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bin==-1) bin=0;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">return</span> bin;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0289bf60ae925490f713b93c3e7e5018"></a>
@@ -770,6 +931,51 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#a3803793855a30ad0862383a031cc8647">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00080">80</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                                                            {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html">DefaultAccumulator&lt;MELANCSplineCore::T&gt;</a> res;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineCore.html#a8ab4e8e64ab4752af5ed73393c0d0c6c">verbosity</a>==<a class="code" href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49">MELANCSplineCore::kVerbose</a>) cout &lt;&lt; <span class="stringliteral">&quot;MELANCSpline_1D_fast(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::interpolateFcn begin with code: &quot;</span> &lt;&lt; code &lt;&lt; endl;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Get bins</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  Int_t xbin=-1, xbinmin=-1, xbinmax=-1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> tx=0, txmin=0, txmax=0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span> (code==0 || code%2!=0){ <span class="comment">// Case to just compute the value at x</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classMELANCSpline__1D__fast.html#a403ad050d169bd234e137568d422bf3b">testRangeValidity</a>(<a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>)) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    xbin = <a class="code" href="classMELANCSpline__1D__fast.html#a30d5e03635a1db4c2e9e5f41d07cd911">getWhichBin</a>(<a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>, 0);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    tx = <a class="code" href="classMELANCSpline__1D__fast.html#a20d422b52d0d76ad8c3d3b0b3ceadee5">getTVar</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>, <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>, xbin, 0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">else</span>{ <span class="comment">// Case to integrate along x</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> coordmin = <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>.min(rangeName); <a class="code" href="classMELANCSpline__1D__fast.html#ab88b9410a534ab508aeccf38d5f518fd">cropValueForRange</a>(coordmin);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> coordmax = <a class="code" href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">theXVar</a>.max(rangeName); <a class="code" href="classMELANCSpline__1D__fast.html#ab88b9410a534ab508aeccf38d5f518fd">cropValueForRange</a>(coordmax);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    xbinmin = <a class="code" href="classMELANCSpline__1D__fast.html#a30d5e03635a1db4c2e9e5f41d07cd911">getWhichBin</a>(coordmin, 0);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    txmin = <a class="code" href="classMELANCSpline__1D__fast.html#a20d422b52d0d76ad8c3d3b0b3ceadee5">getTVar</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>, coordmin, xbinmin, 0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    xbinmax = <a class="code" href="classMELANCSpline__1D__fast.html#a30d5e03635a1db4c2e9e5f41d07cd911">getWhichBin</a>(coordmax, 0);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    txmax = <a class="code" href="classMELANCSpline__1D__fast.html#a20d422b52d0d76ad8c3d3b0b3ceadee5">getTVar</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>, coordmax, xbinmax, 0);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">int</span> nxbins = (<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)<a class="code" href="classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06">coefficients</a>.size();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ix=0; ix&lt;nxbins; ix++){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      (xbin&gt;=0 &amp;&amp; ix!=xbin)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      ||</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      (xbinmin&gt;=0 &amp;&amp; xbinmax&gt;=xbinmin &amp;&amp; !(xbinmin&lt;=ix &amp;&amp; ix&lt;=xbinmax))</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      ) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> txlow=0, txhigh=1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (code&gt;0 &amp;&amp; code%2==0){</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordflow">if</span> (ix==xbinmin) txlow=txmin;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">if</span> (ix==xbinmax) txhigh=txmax;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">else</span> txhigh=tx;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Get the x coefficients at bin ix and evaluate value of spline at x</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    res += <a class="code" href="classMELANCSplineCore.html#a3236653994df040165ec3785ea381b1e">evalSplineSegment</a>(<a class="code" href="classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06">coefficients</a>.at(ix), <a class="code" href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">kappaX</a>.at(ix), txhigh, txlow, (code&gt;0 &amp;&amp; code%2==0));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2623be9cafef13f68d655955e9ca99ab"></a>
@@ -814,6 +1020,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#aca4506f2d77ad375e7d257ba2d524a79">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00213">213</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                                                                        {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">T</a>* range[2];</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  range[0] = &amp;<a class="code" href="classMELANCSplineCore.html#af9532533981a93114dcbcce595341219">rangeXmin</a>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  range[1] = &amp;<a class="code" href="classMELANCSplineCore.html#a08fe9bb66a90fa755b7ca55ec8350244">rangeXmax</a>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  *(range[0])=valmin;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  *(range[1])=valmax;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a403ad050d169bd234e137568d422bf3b"></a>
@@ -852,6 +1067,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classMELANCSplineCore.html#ae2f4f6577d8432e2fc72257e1d8cd295">MELANCSplineCore</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8cc_source.html#l00207">207</a> of file <a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">T</a>* range[2];</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  range[0] = &amp;<a class="code" href="classMELANCSplineCore.html#af9532533981a93114dcbcce595341219">rangeXmin</a>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  range[1] = &amp;<a class="code" href="classMELANCSplineCore.html#a08fe9bb66a90fa755b7ca55ec8350244">rangeXmax</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">return</span> (*(range[0])&gt;*(range[1]) || (val&gt;=*(range[0]) &amp;&amp; val&lt;=*(range[1])));</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -875,6 +1098,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00014">14</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+
 </div>
 </div>
 <a id="a249d0d81a4ab3a0564cd3d143271a129"></a>
@@ -896,6 +1121,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00015">15</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
 
 </div>
 </div>
@@ -919,6 +1146,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00020">20</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+
 </div>
 </div>
 <a id="a2a7daacf1ec3d330fabc610dc26da2c9"></a>
@@ -940,6 +1169,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00017">17</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
 
 </div>
 </div>
@@ -963,13 +1194,51 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSpline__1D__fast_8h_source.html#l00019">19</a> of file <a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="MELANCSpline__1D__fast_8h_source.html">MELANCSpline_1D_fast.h</a></li>
-<li>MELA/src/<a class="el" href="MELANCSpline__1D__fast_8cc.html">MELANCSpline_1D_fast.cc</a></li>
+<li>MELA/src/<a class="el" href="MELANCSpline__1D__fast_8cc_source.html">MELANCSpline_1D_fast.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMELANCSplineCore_html_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49"><div class="ttname"><a href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49">MELANCSplineCore::kVerbose</a></div><div class="ttdeci">@ kVerbose</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00025">MELANCSplineCore.h:25</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a0289bf60ae925490f713b93c3e7e5018"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a0289bf60ae925490f713b93c3e7e5018">MELANCSpline_1D_fast::interpolateFcn</a></div><div class="ttdeci">virtual T interpolateFcn(Int_t code, const char *rangeName=0) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8cc_source.html#l00080">MELANCSpline_1D_fast.cc:80</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a95c39d3f034fd95001c071a73ff2ef99"><div class="ttname"><a href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a></div><div class="ttdeci">Float_t T</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00018">MELANCSplineCore.h:18</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a20d422b52d0d76ad8c3d3b0b3ceadee5"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a20d422b52d0d76ad8c3d3b0b3ceadee5">MELANCSpline_1D_fast::getTVar</a></div><div class="ttdeci">virtual T getTVar(const std::vector&lt; T &gt; &amp;kappas, const T &amp;val, const Int_t &amp;bin, const Int_t whichDirection) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8cc_source.html#l00165">MELANCSpline_1D_fast.cc:165</a></div></div>
+<div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html">TNumericUtil::KahanAccumulator</a></div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00027">MELAAccumulators.h:27</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a08fe9bb66a90fa755b7ca55ec8350244"><div class="ttname"><a href="classMELANCSplineCore.html#a08fe9bb66a90fa755b7ca55ec8350244">MELANCSplineCore::rangeXmax</a></div><div class="ttdeci">T rangeXmax</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00073">MELANCSplineCore.h:73</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a9098e4c7f5283a43a1bac240eeb88fc9"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a9098e4c7f5283a43a1bac240eeb88fc9">MELANCSpline_1D_fast::MELANCSpline_1D_fast</a></div><div class="ttdeci">MELANCSpline_1D_fast()</div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a3c73be7bda1af9d7cf4dd6e113e11fd3"><div class="ttname"><a href="classMELANCSplineCore.html#a3c73be7bda1af9d7cf4dd6e113e11fd3">MELANCSplineCore::getLeafDependents</a></div><div class="ttdeci">void getLeafDependents(RooRealProxy &amp;proxy, RooArgSet &amp;set)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8cc_source.html#l00275">MELANCSplineCore.cc:275</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a2a7daacf1ec3d330fabc610dc26da2c9"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9">MELANCSpline_1D_fast::FcnList</a></div><div class="ttdeci">std::vector&lt; T &gt; FcnList</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00017">MELANCSpline_1D_fast.h:17</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_aeda656dab01c7795e1e710ded190e1df"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#aeda656dab01c7795e1e710ded190e1df">MELANCSpline_1D_fast::emptyFcnList</a></div><div class="ttdeci">virtual void emptyFcnList()</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00050">MELANCSpline_1D_fast.h:50</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986"><div class="ttname"><a href="classMELANCSplineCore.html#a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986">MELANCSplineCore::kError</a></div><div class="ttdeci">@ kError</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00024">MELANCSplineCore.h:24</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a249d0d81a4ab3a0564cd3d143271a129"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129">MELANCSpline_1D_fast::bcEndX</a></div><div class="ttdeci">const BoundaryCondition bcEndX</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00015">MELANCSpline_1D_fast.h:15</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_af9532533981a93114dcbcce595341219"><div class="ttname"><a href="classMELANCSplineCore.html#af9532533981a93114dcbcce595341219">MELANCSplineCore::rangeXmin</a></div><div class="ttdeci">T rangeXmin</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00072">MELANCSplineCore.h:72</a></div></div>
+<div class="ttc" id="anamespacemodparameters_html_a222bf0bdea155ccb3ee2be242af4eee8"><div class="ttname"><a href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">modparameters::kappa</a></div><div class="ttdeci">complex(8), public kappa</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l00882">mod_Parameters.F90:882</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a3236653994df040165ec3785ea381b1e"><div class="ttname"><a href="classMELANCSplineCore.html#a3236653994df040165ec3785ea381b1e">MELANCSplineCore::evalSplineSegment</a></div><div class="ttdeci">virtual T evalSplineSegment(const std::vector&lt; T &gt; &amp;coefs, const T &amp;kappa, const T &amp;tup, const T &amp;tdn, Bool_t doIntegrate=false) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8cc_source.html#l00265">MELANCSplineCore.cc:265</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a30d5e03635a1db4c2e9e5f41d07cd911"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a30d5e03635a1db4c2e9e5f41d07cd911">MELANCSpline_1D_fast::getWhichBin</a></div><div class="ttdeci">virtual Int_t getWhichBin(const T &amp;val, const Int_t whichDirection) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8cc_source.html#l00143">MELANCSpline_1D_fast.cc:143</a></div></div>
+<div class="ttc" id="anamespacetestME__all_html_a2f9c5cba6551dc41bae400ced29c30b3"><div class="ttname"><a href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">testME_all.int</a></div><div class="ttdeci">int</div><div class="ttdef"><b>Definition:</b> <a href="testME__all_8py_source.html#l00013">testME_all.py:13</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a4ca8fe5de992ddfa3901893601bc0934"><div class="ttname"><a href="classMELANCSplineCore.html#a4ca8fe5de992ddfa3901893601bc0934">MELANCSplineCore::getCoefficientsAlongDirection</a></div><div class="ttdeci">virtual std::vector&lt; std::vector&lt; T &gt; &gt; getCoefficientsAlongDirection(const std::vector&lt; T &gt; &amp;kappas, const TMatrix_t &amp;Ainv, const std::vector&lt; T &gt; &amp;fcnList, BoundaryCondition const &amp;bcBegin, BoundaryCondition const &amp;bcEnd, const Int_t pickBin) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8cc_source.html#l00247">MELANCSplineCore.cc:247</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a08a91432eef42c1737e8368cd330e25a"><div class="ttname"><a href="classMELANCSplineCore.html#a08a91432eef42c1737e8368cd330e25a">MELANCSplineCore::TMatrix_t</a></div><div class="ttdeci">TMatrixT&lt; T &gt; TMatrix_t</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00019">MELANCSplineCore.h:19</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a2072dd16dcadba22fe77d50c7b3b7fa1"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a2072dd16dcadba22fe77d50c7b3b7fa1">MELANCSpline_1D_fast::getKappas</a></div><div class="ttdeci">virtual void getKappas(std::vector&lt; T &gt; &amp;kappas, const Int_t whichDirection)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8cc_source.html#l00124">MELANCSpline_1D_fast.cc:124</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a9d561d07179ecc2a53812027a3c572b7"><div class="ttname"><a href="classMELANCSplineCore.html#a9d561d07179ecc2a53812027a3c572b7">MELANCSplineCore::MELANCSplineCore</a></div><div class="ttdeci">MELANCSplineCore()</div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_ab85b15b7e8b390c9f538f38b6c3f801f"><div class="ttname"><a href="classMELANCSplineCore.html#ab85b15b7e8b390c9f538f38b6c3f801f">MELANCSplineCore::npointsX</a></div><div class="ttdeci">unsigned int npointsX() const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00084">MELANCSplineCore.h:84</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_ab88b9410a534ab508aeccf38d5f518fd"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#ab88b9410a534ab508aeccf38d5f518fd">MELANCSpline_1D_fast::cropValueForRange</a></div><div class="ttdeci">void cropValueForRange(T &amp;val, const Int_t whichDirection=0) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8cc_source.html#l00220">MELANCSpline_1D_fast.cc:220</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a403ad050d169bd234e137568d422bf3b"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a403ad050d169bd234e137568d422bf3b">MELANCSpline_1D_fast::testRangeValidity</a></div><div class="ttdeci">Bool_t testRangeValidity(const T &amp;val, const Int_t whichDirection=0) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8cc_source.html#l00207">MELANCSpline_1D_fast.cc:207</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_aebe51f523f743b412af4cffa5a7eb462"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462">MELANCSpline_1D_fast::bcBeginX</a></div><div class="ttdeci">const BoundaryCondition bcBeginX</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00014">MELANCSpline_1D_fast.h:14</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_ad7f81f65dc5c79ff1c8b7916b8b0d7c7"><div class="ttname"><a href="classMELANCSplineCore.html#ad7f81f65dc5c79ff1c8b7916b8b0d7c7">MELANCSplineCore::useFloor</a></div><div class="ttdeci">Bool_t useFloor</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00068">MELANCSplineCore.h:68</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a1babec345a963b49c1ef54d2dcfbc9a3"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3">MELANCSpline_1D_fast::kappaX</a></div><div class="ttdeci">std::vector&lt; T &gt; kappaX</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00019">MELANCSpline_1D_fast.h:19</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937"><div class="ttname"><a href="classMELANCSplineCore.html#aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937">MELANCSplineCore::bcNaturalSpline</a></div><div class="ttdeci">@ bcNaturalSpline</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00032">MELANCSplineCore.h:32</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_abbe41867b34ccb098b7b0f6eae9ca3b0"><div class="ttname"><a href="classMELANCSplineCore.html#abbe41867b34ccb098b7b0f6eae9ca3b0">MELANCSplineCore::floorInt</a></div><div class="ttdeci">T floorInt</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00070">MELANCSplineCore.h:70</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a5e2644c4546eb70631d80943698830a7"><div class="ttname"><a href="classMELANCSplineCore.html#a5e2644c4546eb70631d80943698830a7">MELANCSplineCore::XList</a></div><div class="ttdeci">std::vector&lt; T &gt; XList</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00077">MELANCSplineCore.h:77</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a9cc748a9d519b5fa4e07f6c13f90eef2"><div class="ttname"><a href="classMELANCSplineCore.html#a9cc748a9d519b5fa4e07f6c13f90eef2">MELANCSplineCore::floorEval</a></div><div class="ttdeci">T floorEval</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00069">MELANCSplineCore.h:69</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a70433d5860a7e332db2239bf5bb86d2d"><div class="ttname"><a href="classMELANCSplineCore.html#a70433d5860a7e332db2239bf5bb86d2d">MELANCSplineCore::addLeafDependents</a></div><div class="ttdeci">void addLeafDependents(RooArgSet &amp;set)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8cc_source.html#l00280">MELANCSplineCore.cc:280</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html_a977e61de13d0cdd008cb91a7057e8b06"><div class="ttname"><a href="classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06">MELANCSpline_1D_fast::coefficients</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; T &gt; &gt; coefficients</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00020">MELANCSpline_1D_fast.h:20</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a8ab4e8e64ab4752af5ed73393c0d0c6c"><div class="ttname"><a href="classMELANCSplineCore.html#a8ab4e8e64ab4752af5ed73393c0d0c6c">MELANCSplineCore::verbosity</a></div><div class="ttdeci">VerbosityLevel verbosity</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00067">MELANCSplineCore.h:67</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a0e34d3e05bc6c0eb790775aa0686ede4"><div class="ttname"><a href="classMELANCSplineCore.html#a0e34d3e05bc6c0eb790775aa0686ede4">MELANCSplineCore::theXVar</a></div><div class="ttdeci">RooRealProxy theXVar</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00075">MELANCSplineCore.h:75</a></div></div>
+<div class="ttc" id="aclassMELANCSplineCore_html_a49f714cbe9ef9d4eb15312080d8d0a04"><div class="ttname"><a href="classMELANCSplineCore.html#a49f714cbe9ef9d4eb15312080d8d0a04">MELANCSplineCore::getAArray</a></div><div class="ttdeci">virtual void getAArray(const std::vector&lt; T &gt; &amp;kappas, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;AArray, BoundaryCondition const &amp;bcBegin, BoundaryCondition const &amp;bcEnd) const</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8cc_source.html#l00159">MELANCSplineCore.cc:159</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

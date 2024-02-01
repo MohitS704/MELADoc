@@ -1,0 +1,26 @@
+var classRooqqZZ__JHU__ZgammaZZ__fast =
+[
+    [ "RooqqZZ_JHU_ZgammaZZ_fast", "classRooqqZZ__JHU__ZgammaZZ__fast.html#aaf4b5b8e3112f8b24a0492f706127812", null ],
+    [ "RooqqZZ_JHU_ZgammaZZ_fast", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a8c7f608e912ae05af1ac6b4e07482b6e", null ],
+    [ "RooqqZZ_JHU_ZgammaZZ_fast", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a39d012b5a6a3172b9732440dc7d557f2", null ],
+    [ "~RooqqZZ_JHU_ZgammaZZ_fast", "classRooqqZZ__JHU__ZgammaZZ__fast.html#aea654a7ed2689f4c957853ca6342f1c8", null ],
+    [ "analyticalIntegral", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a41e0e3cafb1060d59a851e66b037d05c", null ],
+    [ "clone", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a0873892714db2d008c8595d28b1d32b6", null ],
+    [ "evaluate", "classRooqqZZ__JHU__ZgammaZZ__fast.html#acfad251fd79e5101f31443b0fd220ff8", null ],
+    [ "getAnalyticalIntegral", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a9170adb52f0dcf05d900d11c4abe1886", null ],
+    [ "integratePartonicXS_Dh1Dh2DPh1_4", "classRooqqZZ__JHU__ZgammaZZ__fast.html#ac8b1cdd6fdb6e3ae9d92d91e7ca13f43", null ],
+    [ "integratePartonicXS_Dh1Dh2Dph_3", "classRooqqZZ__JHU__ZgammaZZ__fast.html#aa38f02a7d9ee7747f81a19e2cf73fe0f", null ],
+    [ "integratePartonicXS_Dh1Dh2DphDPh1_5", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a9d3860944e8f29cbbb567b37c409aff2", null ],
+    [ "integratePartonicXS_Dh1DphDPh1_2", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a5730a3be8b0adb94e46b94854629ddd7", null ],
+    [ "integratePartonicXS_Dh2DphDPh1_1", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a7f668897266176e17aef9bde172f3093", null ],
+    [ "partonicXS", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a87638b8f1ff200be46626bfc0a79f5ff", null ],
+    [ "h1j", "classRooqqZZ__JHU__ZgammaZZ__fast.html#acf341a3f561a708bc4ea45be36f36669", null ],
+    [ "h2j", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a0246f6c4c7fa7acd912a1dfad68483b3", null ],
+    [ "hsj", "classRooqqZZ__JHU__ZgammaZZ__fast.html#ac851e3998dc993e3daf2025b89e2ffc5", null ],
+    [ "m1j", "classRooqqZZ__JHU__ZgammaZZ__fast.html#aa30416438b25d5eeb9a3d7cd0ad66e0f", null ],
+    [ "m2j", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a0a9b7833d58d7d5af08f17c70ec496a7", null ],
+    [ "mZZj", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a08638e3e644967d7f318a20370d4a754", null ],
+    [ "Phi1j", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a62f22ef7285d3fe26c80412b772cb5b7", null ],
+    [ "phij", "classRooqqZZ__JHU__ZgammaZZ__fast.html#a303742246770992fe468c141c91f1219", null ],
+    [ "upFrac", "classRooqqZZ__JHU__ZgammaZZ__fast.html#aa7d1538bd4597b04d444c1d6a0f1db0a", null ]
+];

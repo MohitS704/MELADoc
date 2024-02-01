@@ -134,7 +134,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:adbf72f33862fbd417b3ce613643ddcca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMELAFuncPdf.html">MELAFuncPdf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">PDF</a></td></tr>
 <tr class="separator:adbf72f33862fbd417b3ce613643ddcca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00012">12</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9f801b9fc11bca52e261d2f98e1b777"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9f801b9fc11bca52e261d2f98e1b777">&#9670;&nbsp;</a></span>MELANCSplineFactory_1D()</h2>
 
@@ -173,6 +176,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00007">7</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  :</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a8a4cc3046b83acddc449a875efde4bca">appendName</a>(appendName_),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a4f1d75d63ed03960bd113811b95fc5b4">bcBeginX</a>(bcBeginX_), <a class="code" href="classMELANCSplineFactory__1D.html#ab50cf0f57c7ff5b15fe4f478fac2bb8d">bcEndX</a>(bcEndX_),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a83249d5261606e2eb3334ac70066aac4">splineVar</a>(&amp;splineVar_),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>(0),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">PDF</a>(0)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8ce2d9870c2a2e50fe353e02c22f4fe7"></a>
@@ -190,6 +202,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00018">18</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                               {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a34ab24b4ac9be33907043beddd2ddc75">destroyPDF</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -216,6 +233,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00050">50</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keyword">delete</span> <a class="code" href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">PDF</a>; <a class="code" href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">PDF</a>=0; <span class="keyword">delete</span> <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>; <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>=0; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a11017c508272a7b68f5240c5abf20c1c"></a>
@@ -241,6 +261,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00036">36</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad4dbbba0eaeeb0834cf15cac289b3e5b"></a>
@@ -266,6 +289,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00037">37</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">PDF</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="addb45d6d29018e728004a025cf15eb79"></a>
@@ -302,6 +328,19 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00038">38</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                                                                                                                                                      {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nX = XList.size();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n = FcnList.size();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> (nX!=n){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    cerr &lt;&lt; <span class="stringliteral">&quot;MELANCSplineFactory_1D::getPoints: nX=&quot;</span> &lt;&lt; nX &lt;&lt; <span class="stringliteral">&quot; != nFcn=&quot;</span> &lt;&lt; n &lt;&lt; endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    assert(0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  std::vector&lt;std::pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;&gt; pList; pList.reserve(n);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ip=0; ip&lt;n; ip++) pList.push_back(pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;(XList.at(ip), FcnList.at(ip)));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> pList;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a182f096d0308745b299d7177e0b8df5f"></a>
@@ -328,6 +367,37 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00051">51</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                                                         {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a34ab24b4ac9be33907043beddd2ddc75">destroyPDF</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n = pList.size();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  std::vector&lt;MELANCSplineCore::T&gt; XList;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  std::vector&lt;MELANCSplineCore::T&gt; FcnList;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ip=0; ip&lt;n; ip++){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    XList.push_back(pList.at(ip).first);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    FcnList.push_back(pList.at(ip).second);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  TString name = <span class="stringliteral">&quot;Func&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELANCSplineFactory__1D.html#a8a4cc3046b83acddc449a875efde4bca">appendName</a>!=<span class="stringliteral">&quot;&quot;</span>) name = Form(<span class="stringliteral">&quot;%s_%s&quot;</span>, name.Data(), <a class="code" href="classMELANCSplineFactory__1D.html#a8a4cc3046b83acddc449a875efde4bca">appendName</a>.Data());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  TString title=name;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a> = <span class="keyword">new</span> <a class="code" href="classMELANCSpline__1D__fast.html">MELANCSpline_1D_fast</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    name.Data(),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    title.Data(),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    *<a class="code" href="classMELANCSplineFactory__1D.html#a83249d5261606e2eb3334ac70066aac4">splineVar</a>,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    XList, FcnList,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classMELANCSplineFactory__1D.html#a4f1d75d63ed03960bd113811b95fc5b4">bcBeginX</a>, <a class="code" href="classMELANCSplineFactory__1D.html#ab50cf0f57c7ff5b15fe4f478fac2bb8d">bcEndX</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  name.Prepend(<span class="stringliteral">&quot;PDF_&quot;</span>); title=name;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">PDF</a> = <span class="keyword">new</span> <a class="code" href="classMELAFuncPdf.html">MELAFuncPdf</a>(</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    name.Data(),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    title.Data(),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    *<a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa6d4539944fc36b38ddea3a2cea589f8"></a>
@@ -362,6 +432,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00081">81</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a4f1d75d63ed03960bd113811b95fc5b4">bcBeginX</a>=bcBegin;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#ab50cf0f57c7ff5b15fe4f478fac2bb8d">bcEndX</a>=bcEnd;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae1f068efce5bbd6594aa446cc3a64c1e"></a>
@@ -400,6 +476,16 @@ template&lt;typename inType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00048">48</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                                                                            {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;MELANCSplineCore::T&gt; transXList;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::vector&lt;MELANCSplineCore::T&gt; transFcnList;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ip=0; ip&lt;XList.size(); ip++) transXList.push_back((<a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a>)XList.at(ip));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ip=0; ip&lt;FcnList.size(); ip++) transFcnList.push_back((<a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a>)FcnList.at(ip));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;&gt; pList = <a class="code" href="classMELANCSplineFactory__1D.html#addb45d6d29018e728004a025cf15eb79">getPoints</a>(transXList, transFcnList);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classMELANCSplineFactory__1D.html#a182f096d0308745b299d7177e0b8df5f">initPDF</a>(pList);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad825bd458f9ee9e49f30b9c8a0abd2b7"></a>
@@ -426,6 +512,9 @@ template&lt;typename inType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00047">47</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{ <a class="code" href="classMELANCSplineFactory__1D.html#a182f096d0308745b299d7177e0b8df5f">initPDF</a>(pList); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a84576915a644a8835887da26d4f4f1e8"></a>
@@ -444,6 +533,16 @@ template&lt;typename inType &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00030">30</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  vector&lt;pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;&gt; pList;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">double</span>* xx = tg-&gt;GetX();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span>* yy = tg-&gt;GetY();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> n = tg-&gt;GetN();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ip=0; ip&lt;n; ip++) pList.push_back(pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;(xx[ip], yy[ip]));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a33646a710123db10f84f991f19226bd9">setPoints</a>(pList);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a33646a710123db10f84f991f19226bd9"></a>
@@ -462,6 +561,17 @@ template&lt;typename inType &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8cc_source.html#l00021">21</a> of file <a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                                 {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  vector&lt;pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;&gt; pList;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> x, <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;X&quot;</span>, &amp;x);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;Fcn&quot;</span>, &amp;<a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">int</span> n = tree-&gt;GetEntries();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ip=0; ip&lt;n; ip++){ tree-&gt;GetEntry(ip); pList.push_back(pair&lt;MELANCSplineCore::T, MELANCSplineCore::T&gt;(x, <a class="code" href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">fcn</a>)); }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classMELANCSplineFactory__1D.html#a33646a710123db10f84f991f19226bd9">setPoints</a>(pList);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -485,6 +595,8 @@ template&lt;typename inType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00014">14</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+
 </div>
 </div>
 <a id="a4f1d75d63ed03960bd113811b95fc5b4"></a>
@@ -506,6 +618,8 @@ template&lt;typename inType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00016">16</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
 
 </div>
 </div>
@@ -529,6 +643,8 @@ template&lt;typename inType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00017">17</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+
 </div>
 </div>
 <a id="aea404bdf507474c2a7ef1641a66ceb77"></a>
@@ -550,6 +666,8 @@ template&lt;typename inType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00020">20</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
 
 </div>
 </div>
@@ -573,6 +691,8 @@ template&lt;typename inType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00021">21</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+
 </div>
 </div>
 <a id="a83249d5261606e2eb3334ac70066aac4"></a>
@@ -595,13 +715,28 @@ template&lt;typename inType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELANCSplineFactory__1D_8h_source.html#l00019">19</a> of file <a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="MELANCSplineFactory__1D_8h_source.html">MELANCSplineFactory_1D.h</a></li>
-<li>MELA/src/<a class="el" href="MELANCSplineFactory__1D_8cc.html">MELANCSplineFactory_1D.cc</a></li>
+<li>MELA/src/<a class="el" href="MELANCSplineFactory__1D_8cc_source.html">MELANCSplineFactory_1D.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMELANCSplineCore_html_a95c39d3f034fd95001c071a73ff2ef99"><div class="ttname"><a href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a></div><div class="ttdeci">Float_t T</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00018">MELANCSplineCore.h:18</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_a182f096d0308745b299d7177e0b8df5f"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#a182f096d0308745b299d7177e0b8df5f">MELANCSplineFactory_1D::initPDF</a></div><div class="ttdeci">void initPDF(const std::vector&lt; std::pair&lt; MELANCSplineCore::T, MELANCSplineCore::T &gt;&gt; &amp;pList)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8cc_source.html#l00051">MELANCSplineFactory_1D.cc:51</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_a83249d5261606e2eb3334ac70066aac4"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#a83249d5261606e2eb3334ac70066aac4">MELANCSplineFactory_1D::splineVar</a></div><div class="ttdeci">RooAbsReal * splineVar</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8h_source.html#l00019">MELANCSplineFactory_1D.h:19</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_ab50cf0f57c7ff5b15fe4f478fac2bb8d"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#ab50cf0f57c7ff5b15fe4f478fac2bb8d">MELANCSplineFactory_1D::bcEndX</a></div><div class="ttdeci">MELANCSplineCore::BoundaryCondition bcEndX</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8h_source.html#l00017">MELANCSplineFactory_1D.h:17</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_a4f1d75d63ed03960bd113811b95fc5b4"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#a4f1d75d63ed03960bd113811b95fc5b4">MELANCSplineFactory_1D::bcBeginX</a></div><div class="ttdeci">MELANCSplineCore::BoundaryCondition bcBeginX</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8h_source.html#l00016">MELANCSplineFactory_1D.h:16</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_aea404bdf507474c2a7ef1641a66ceb77"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#aea404bdf507474c2a7ef1641a66ceb77">MELANCSplineFactory_1D::fcn</a></div><div class="ttdeci">MELANCSpline_1D_fast * fcn</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8h_source.html#l00020">MELANCSplineFactory_1D.h:20</a></div></div>
+<div class="ttc" id="aclassMELANCSpline__1D__fast_html"><div class="ttname"><a href="classMELANCSpline__1D__fast.html">MELANCSpline_1D_fast</a></div><div class="ttdef"><b>Definition:</b> <a href="MELANCSpline__1D__fast_8h_source.html#l00012">MELANCSpline_1D_fast.h:12</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_addb45d6d29018e728004a025cf15eb79"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#addb45d6d29018e728004a025cf15eb79">MELANCSplineFactory_1D::getPoints</a></div><div class="ttdeci">const std::vector&lt; std::pair&lt; MELANCSplineCore::T, MELANCSplineCore::T &gt; &gt; getPoints(const std::vector&lt; MELANCSplineCore::T &gt; &amp;XList, const std::vector&lt; MELANCSplineCore::T &gt; &amp;FcnList)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8cc_source.html#l00038">MELANCSplineFactory_1D.cc:38</a></div></div>
+<div class="ttc" id="aclassMELAFuncPdf_html"><div class="ttname"><a href="classMELAFuncPdf.html">MELAFuncPdf</a></div><div class="ttdef"><b>Definition:</b> <a href="MELAFuncPdf_8h_source.html#l00007">MELAFuncPdf.h:7</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_adbf72f33862fbd417b3ce613643ddcca"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#adbf72f33862fbd417b3ce613643ddcca">MELANCSplineFactory_1D::PDF</a></div><div class="ttdeci">MELAFuncPdf * PDF</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8h_source.html#l00021">MELANCSplineFactory_1D.h:21</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_a33646a710123db10f84f991f19226bd9"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#a33646a710123db10f84f991f19226bd9">MELANCSplineFactory_1D::setPoints</a></div><div class="ttdeci">void setPoints(TTree *tree)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8cc_source.html#l00021">MELANCSplineFactory_1D.cc:21</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_a34ab24b4ac9be33907043beddd2ddc75"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#a34ab24b4ac9be33907043beddd2ddc75">MELANCSplineFactory_1D::destroyPDF</a></div><div class="ttdeci">void destroyPDF()</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8cc_source.html#l00050">MELANCSplineFactory_1D.cc:50</a></div></div>
+<div class="ttc" id="aclassMELANCSplineFactory__1D_html_a8a4cc3046b83acddc449a875efde4bca"><div class="ttname"><a href="classMELANCSplineFactory__1D.html#a8a4cc3046b83acddc449a875efde4bca">MELANCSplineFactory_1D::appendName</a></div><div class="ttdeci">TString appendName</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__1D_8h_source.html#l00014">MELANCSplineFactory_1D.h:14</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

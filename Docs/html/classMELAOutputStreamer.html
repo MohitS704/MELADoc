@@ -118,7 +118,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0bc46b66128216e7c7ad88c52ce936e8"><td class="memItemLeft" align="right" valign="top">std::ostream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a></td></tr>
 <tr class="separator:a0bc46b66128216e7c7ad88c52ce936e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00021">21</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a286924e788a93a6b4c43e6e052662ff3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a286924e788a93a6b4c43e6e052662ff3">&#9670;&nbsp;</a></span>MELAOutputStreamer()</h2>
 
@@ -151,6 +154,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00007">7</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                                                    :</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>(fname, fmode)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (!printError) <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a> = &amp;std::cout;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a> = &amp;std::cerr;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0799f92f2d62c5d7a41391c97193205b"></a>
@@ -168,6 +179,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00013">13</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{ this-&gt;<a class="code" href="classMELAOutputStreamer.html#afe550795f82fdedc35e5bdee32976a16">close</a>(); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -186,6 +200,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00145">145</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                              {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>.close();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9f6fcb2a456eb679106359c7a5d35793"></a>
@@ -203,6 +222,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00139">139</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>.fill(); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3f0146724aa67fe574b1f4f318e60773"></a>
@@ -221,6 +243,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00140">140</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                        {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>) <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>-&gt;fill(fillch);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>.fill(fillch);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaee2287900058a9969b2ccafb3fc94f5"></a>
@@ -249,6 +277,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00148">148</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  this-&gt;<a class="code" href="classMELAOutputStreamer.html#afe550795f82fdedc35e5bdee32976a16">close</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>.open(fname, fmode);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a23221e66df1f847c7d4f4b57b12a6c12"></a>
@@ -267,6 +301,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00020">20</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  fcn(<a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>) fcn(*<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a915c54086ed707dd7516ff5bb77552f7"></a>
@@ -285,6 +326,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00025">25</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                                                   {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  fcn(<a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>) fcn(*<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a194360ba1299ff139bf9c784f6412a82"></a>
@@ -303,6 +351,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00015">15</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                                                 {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  fcn(<a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>) fcn(*<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab71f46911360bce430a7feac25b213ac"></a>
@@ -323,6 +378,12 @@ template&lt;typename T , typename U &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00090">90</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                                                                           {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  *<span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; val.first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; val.second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a12fd625961bed688131da2ef26a95bc0"></a>
@@ -343,6 +404,15 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00097">97</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                                              {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">typename</span> std::vector&lt;T&gt;::const_iterator it=val.cbegin(); it!=val.cend(); it++){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    *<span class="keyword">this</span> &lt;&lt; *it;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (it!=val.cend()-1) *<span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a52b0a3316a7ecc60bd09f492dccb568f"></a>
@@ -363,6 +433,13 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00050">50</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                                                   {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a> &lt;&lt; val;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>) *<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a> &lt;&lt; val;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aeb688254b59671637ee465a6c4d522a3"></a>
@@ -380,6 +457,9 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00133">133</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>.width(); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3b9e4878755b2b6765d1b6a32ea83e53"></a>
@@ -398,6 +478,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8cc_source.html#l00134">134</a> of file <a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                                         {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>) <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a>-&gt;width(wide);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">theFile</a>.width(wide);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8ed58ad93845b32f784574d3b2be568e"></a>
@@ -434,6 +520,25 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00131">131</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                                                                           {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">char</span> deffillch = this-&gt;<a class="code" href="classMELAOutputStreamer.html#a9f6fcb2a456eb679106359c7a5d35793">fill</a>(fillch);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  std::stringstream tmpss;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  tmpss &lt;&lt; val;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  std::string tmpstr = tmpss.str();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  std::streamsize strlength = (std::streamsize) tmpstr.length();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordflow">if</span> (strlength&gt;gapsize) *<span class="keyword">this</span> &lt;&lt; std::setw(gapsize) &lt;&lt; <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    std::streamsize leftgap = (gapsize+strlength)/2;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::streamsize rightgap = gapsize-leftgap;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    *<span class="keyword">this</span> &lt;&lt; std::setw(leftgap) &lt;&lt; tmpstr &lt;&lt; std::setw(rightgap) &lt;&lt; <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  this-&gt;<a class="code" href="classMELAOutputStreamer.html#a9f6fcb2a456eb679106359c7a5d35793">fill</a>(deffillch);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -457,6 +562,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00024">24</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+
 </div>
 </div>
 <a id="abe29ee4a84ed53e474ff2ce2dfb1ca3c"></a>
@@ -479,13 +586,19 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAOutputStreamer_8h_source.html#l00023">23</a> of file <a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="MELAOutputStreamer_8h_source.html">MELAOutputStreamer.h</a></li>
-<li>MELA/src/<a class="el" href="MELAOutputStreamer_8cc.html">MELAOutputStreamer.cc</a></li>
+<li>MELA/src/<a class="el" href="MELAOutputStreamer_8cc_source.html">MELAOutputStreamer.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMELAOutputStreamer_html_a9f6fcb2a456eb679106359c7a5d35793"><div class="ttname"><a href="classMELAOutputStreamer.html#a9f6fcb2a456eb679106359c7a5d35793">MELAOutputStreamer::fill</a></div><div class="ttdeci">char fill() const</div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8cc_source.html#l00139">MELAOutputStreamer.cc:139</a></div></div>
+<div class="ttc" id="aclassMELAOutputStreamer_html_afe550795f82fdedc35e5bdee32976a16"><div class="ttname"><a href="classMELAOutputStreamer.html#afe550795f82fdedc35e5bdee32976a16">MELAOutputStreamer::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8cc_source.html#l00145">MELAOutputStreamer.cc:145</a></div></div>
+<div class="ttc" id="aclassMELAOutputStreamer_html_abe29ee4a84ed53e474ff2ce2dfb1ca3c"><div class="ttname"><a href="classMELAOutputStreamer.html#abe29ee4a84ed53e474ff2ce2dfb1ca3c">MELAOutputStreamer::theFile</a></div><div class="ttdeci">std::ofstream theFile</div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8h_source.html#l00023">MELAOutputStreamer.h:23</a></div></div>
+<div class="ttc" id="aclassMELAOutputStreamer_html_a0bc46b66128216e7c7ad88c52ce936e8"><div class="ttname"><a href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">MELAOutputStreamer::stdout_ptr</a></div><div class="ttdeci">std::ostream * stdout_ptr</div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8h_source.html#l00024">MELAOutputStreamer.h:24</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

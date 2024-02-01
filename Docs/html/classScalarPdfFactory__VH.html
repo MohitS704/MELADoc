@@ -322,7 +322,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3f4b1441cab694c933cd1383540c06e0 inherit pub_attribs_classSpinPdfFactory"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRooSpin_1_1modelParameters.html">RooSpin::modelParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a></td></tr>
 <tr class="separator:a3f4b1441cab694c933cd1383540c06e0 inherit pub_attribs_classSpinPdfFactory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8h_source.html#l00009">9</a> of file <a class="el" href="ScalarPdfFactory__VH_8h_source.html">ScalarPdfFactory_VH.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acda7e473d504b6cc692680915c7615a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acda7e473d504b6cc692680915c7615a8">&#9670;&nbsp;</a></span>ScalarPdfFactory_VH() <span class="overload">[1/2]</span></h2>
 
@@ -367,6 +370,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8cc_source.html#l00004">4</a> of file <a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                                                                                                                                                                 :</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<a class="code" href="classScalarPdfFactory.html#a467f2cc6b625f2a44553e8edce1c8b64">ScalarPdfFactory</a>(measurables_, <span class="keyword">false</span>, VHmode1_, VHmode2_, OnshellH_),</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<a class="code" href="classScalarPdfFactory__VH.html#a1d36a4bed7774cd331724f556bbd0162">sqrts</a>(sqrts_)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordflow">if</span> (VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a> || VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a524b08679c1805619abf049808a9988d">RooSpin::kVdecayType_Zuu</a> || VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a5d157310cd50d22ff2f287aaaa8b7322">RooSpin::kVdecayType_Zdd</a> || VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da">RooSpin::kVdecayType_Zud</a>) <a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a> = 1;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a> = 2;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a>==2) <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">Y</a>=0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a276406a01a911b69ab4de0a7922fdc4b">makeParamsConst</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classScalarPdfFactory__VH.html#a59ca4b19986ee874260f761e218d50c5">initPDF</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a76af71a3c98e292a845b63b07a514263"></a>
@@ -449,6 +465,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8cc_source.html#l00015">15</a> of file <a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  : <a class="code" href="classScalarPdfFactory.html#a467f2cc6b625f2a44553e8edce1c8b64">ScalarPdfFactory</a>(measurables_, gRatio_, gZGsRatio_, gGsGsRatio_, gVVpRatio_, gVpVpRatio_, pmf_applied_, <span class="keyword">false</span>, VHmode1_, VHmode2_, OnshellH_),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="classScalarPdfFactory__VH.html#a1d36a4bed7774cd331724f556bbd0162">sqrts</a>(sqrts_)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">if</span> (VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a> || VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a524b08679c1805619abf049808a9988d">RooSpin::kVdecayType_Zuu</a> || VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a5d157310cd50d22ff2f287aaaa8b7322">RooSpin::kVdecayType_Zdd</a> || VHmode1_==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da">RooSpin::kVdecayType_Zud</a>) <a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a> = 1;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a> = 2;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a>==2) <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">Y</a>=0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a276406a01a911b69ab4de0a7922fdc4b">makeParamsConst</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classScalarPdfFactory__VH.html#a59ca4b19986ee874260f761e218d50c5">initPDF</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a26bea9956d35475d7bb46bfe0bec5890"></a>
@@ -466,6 +494,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8cc_source.html#l00029">29</a> of file <a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                         {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classScalarPdfFactory__VH.html#a0ceef169f0bd083f3f0b7a2b911fa8b0">destroyPDF</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -494,6 +527,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classScalarPdfFactory.html#a1f0636cd638bc53e990660c52e2b0cf2">ScalarPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8cc_source.html#l00065">65</a> of file <a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a>!=0) <span class="keyword">delete</span> <a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a>!=0) <span class="keyword">delete</span> <a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a>=0; <a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a>=0; <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a>=0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab26b81b737b5d28c8b9bab41451d43bc"></a>
@@ -521,6 +561,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classScalarPdfFactory.html#a3a641ea50e2b8b8ab5ff6e8518c8f229">ScalarPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8cc_source.html#l00059">59</a> of file <a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                        {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a>==2) <span class="keywordflow">return</span> (<a class="code" href="classRooSpinZero.html">RooSpinZero</a>*)<a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a>==1) <span class="keywordflow">return</span> (<a class="code" href="classRooSpinZero.html">RooSpinZero</a>*)<a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a59ca4b19986ee874260f761e218d50c5"></a>
@@ -548,6 +595,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classScalarPdfFactory.html#ad5b8690d25e95177ecfe0d3d4fa36179">ScalarPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8cc_source.html#l00033">33</a> of file <a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                 {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a>=0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a>=0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a>==2){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a> = <span class="keyword">new</span> <a class="code" href="classRooSpinZero__5D__VH.html">RooSpinZero_5D_VH</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="stringliteral">&quot;PDF&quot;</span>, <span class="stringliteral">&quot;PDF&quot;</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <a class="code" href="classScalarPdfFactory.html#a0ce27eb1bc06518693ed3b3677ca6ea9">couplings</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>, <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a> = (<a class="code" href="classRooSpinZero.html">RooSpinZero</a>*)<a class="code" href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">PDF_ILC_5D</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">PDFType</a>==1){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a> = <span class="keyword">new</span> <a class="code" href="classRooSpinZero__3D__pp__VH.html">RooSpinZero_3D_pp_VH</a>(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="stringliteral">&quot;PDF&quot;</span>, <span class="stringliteral">&quot;PDF&quot;</span>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <a class="code" href="classScalarPdfFactory.html#a0ce27eb1bc06518693ed3b3677ca6ea9">couplings</a>,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <a class="code" href="classScalarPdfFactory__VH.html#a1d36a4bed7774cd331724f556bbd0162">sqrts</a>,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>, <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a> = (<a class="code" href="classRooSpin.html">RooSpin</a>*)<a class="code" href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">PDF_LHC_3D</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -571,6 +645,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8h_source.html#l00023">23</a> of file <a class="el" href="ScalarPdfFactory__VH_8h_source.html">ScalarPdfFactory_VH.h</a>.</p>
+
 </div>
 </div>
 <a id="a13035588ca716f22aadf5fdb703f15be"></a>
@@ -592,6 +668,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8h_source.html#l00024">24</a> of file <a class="el" href="ScalarPdfFactory__VH_8h_source.html">ScalarPdfFactory_VH.h</a>.</p>
 
 </div>
 </div>
@@ -615,6 +693,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8h_source.html#l00026">26</a> of file <a class="el" href="ScalarPdfFactory__VH_8h_source.html">ScalarPdfFactory_VH.h</a>.</p>
+
 </div>
 </div>
 <a id="a1d36a4bed7774cd331724f556bbd0162"></a>
@@ -637,13 +717,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ScalarPdfFactory__VH_8h_source.html#l00025">25</a> of file <a class="el" href="ScalarPdfFactory__VH_8h_source.html">ScalarPdfFactory_VH.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="ScalarPdfFactory__VH_8h_source.html">ScalarPdfFactory_VH.h</a></li>
-<li>MELA/src/<a class="el" href="ScalarPdfFactory__VH_8cc.html">ScalarPdfFactory_VH.cc</a></li>
+<li>MELA/src/<a class="el" href="ScalarPdfFactory__VH_8cc_source.html">ScalarPdfFactory_VH.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassScalarPdfFactory_html_a467f2cc6b625f2a44553e8edce1c8b64"><div class="ttname"><a href="classScalarPdfFactory.html#a467f2cc6b625f2a44553e8edce1c8b64">ScalarPdfFactory::ScalarPdfFactory</a></div><div class="ttdeci">ScalarPdfFactory(RooSpin::modelMeasurables const &amp;measurables_, bool acceptance_=false, RooSpin::VdecayType V1decay_=RooSpin::kVdecayType_Zll, RooSpin::VdecayType V2decay_=RooSpin::kVdecayType_Zll, Bool_t OnshellH_=true)</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory_8cc_source.html#l00008">ScalarPdfFactory.cc:8</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory__VH_html_a13035588ca716f22aadf5fdb703f15be"><div class="ttname"><a href="classScalarPdfFactory__VH.html#a13035588ca716f22aadf5fdb703f15be">ScalarPdfFactory_VH::PDF_LHC_3D</a></div><div class="ttdeci">RooSpinZero_3D_pp_VH * PDF_LHC_3D</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory__VH_8h_source.html#l00024">ScalarPdfFactory_VH.h:24</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory__VH_html_a0da82eab57396a73a24c46d83563fb31"><div class="ttname"><a href="classScalarPdfFactory__VH.html#a0da82eab57396a73a24c46d83563fb31">ScalarPdfFactory_VH::PDF_ILC_5D</a></div><div class="ttdeci">RooSpinZero_5D_VH * PDF_ILC_5D</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory__VH_8h_source.html#l00023">ScalarPdfFactory_VH.h:23</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a5af796207b85d31b4f95a4e92253ac39"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">RooSpin::modelMeasurables::Y</a></div><div class="ttdeci">RooAbsReal * Y</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00059">RooSpin.h:59</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a0643dc0b0c59ce6745155b9e2f2f165d"><div class="ttname"><a href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">SpinPdfFactory::PDF_base</a></div><div class="ttdeci">RooSpin * PDF_base</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00043">SpinPdfFactory.h:43</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723a5d157310cd50d22ff2f287aaaa8b7322"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a5d157310cd50d22ff2f287aaaa8b7322">RooSpin::kVdecayType_Zdd</a></div><div class="ttdeci">@ kVdecayType_Zdd</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00034">RooSpin.h:34</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a31cdbd1e87fe667c360761a75007e7d1"><div class="ttname"><a href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">SpinPdfFactory::V1decay</a></div><div class="ttdeci">RooSpin::VdecayType V1decay</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00038">SpinPdfFactory.h:38</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723a524b08679c1805619abf049808a9988d"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a524b08679c1805619abf049808a9988d">RooSpin::kVdecayType_Zuu</a></div><div class="ttdeci">@ kVdecayType_Zuu</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00033">RooSpin.h:33</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory__VH_html_a59ca4b19986ee874260f761e218d50c5"><div class="ttname"><a href="classScalarPdfFactory__VH.html#a59ca4b19986ee874260f761e218d50c5">ScalarPdfFactory_VH::initPDF</a></div><div class="ttdeci">virtual void initPDF()</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory__VH_8cc_source.html#l00033">ScalarPdfFactory_VH.cc:33</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory__VH_html_a7b3e92289ab0d01254cce9dd7a719d72"><div class="ttname"><a href="classScalarPdfFactory__VH.html#a7b3e92289ab0d01254cce9dd7a719d72">ScalarPdfFactory_VH::PDFType</a></div><div class="ttdeci">int PDFType</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory__VH_8h_source.html#l00026">ScalarPdfFactory_VH.h:26</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a3f4b1441cab694c933cd1383540c06e0"><div class="ttname"><a href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">SpinPdfFactory::parameters</a></div><div class="ttdeci">RooSpin::modelParameters parameters</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00012">SpinPdfFactory.h:12</a></div></div>
+<div class="ttc" id="aclassRooSpinZero_html"><div class="ttname"><a href="classRooSpinZero.html">RooSpinZero</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8h_source.html#l00007">RooSpinZero.h:7</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_abc28d5256c7b49750335553c2a0d0e92"><div class="ttname"><a href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">SpinPdfFactory::V2decay</a></div><div class="ttdeci">RooSpin::VdecayType V2decay</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00039">SpinPdfFactory.h:39</a></div></div>
+<div class="ttc" id="aclassRooSpinZero__3D__pp__VH_html"><div class="ttname"><a href="classRooSpinZero__3D__pp__VH.html">RooSpinZero_3D_pp_VH</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero__3D__pp__VH_8h_source.html#l00009">RooSpinZero_3D_pp_VH.h:9</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory__VH_html_a1d36a4bed7774cd331724f556bbd0162"><div class="ttname"><a href="classScalarPdfFactory__VH.html#a1d36a4bed7774cd331724f556bbd0162">ScalarPdfFactory_VH::sqrts</a></div><div class="ttdeci">double sqrts</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory__VH_8h_source.html#l00025">ScalarPdfFactory_VH.h:25</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory__VH_html_a0ceef169f0bd083f3f0b7a2b911fa8b0"><div class="ttname"><a href="classScalarPdfFactory__VH.html#a0ceef169f0bd083f3f0b7a2b911fa8b0">ScalarPdfFactory_VH::destroyPDF</a></div><div class="ttdeci">virtual void destroyPDF()</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory__VH_8cc_source.html#l00065">ScalarPdfFactory_VH.cc:65</a></div></div>
+<div class="ttc" id="aclassRooSpin_html"><div class="ttname"><a href="classRooSpin.html">RooSpin</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00025">RooSpin.h:25</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a276406a01a911b69ab4de0a7922fdc4b"><div class="ttname"><a href="classSpinPdfFactory.html#a276406a01a911b69ab4de0a7922fdc4b">SpinPdfFactory::makeParamsConst</a></div><div class="ttdeci">virtual void makeParamsConst(bool yesNo)</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00154">SpinPdfFactory.cc:154</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da">RooSpin::kVdecayType_Zud</a></div><div class="ttdeci">@ kVdecayType_Zud</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00035">RooSpin.h:35</a></div></div>
+<div class="ttc" id="aclassRooSpinZero__5D__VH_html"><div class="ttname"><a href="classRooSpinZero__5D__VH.html">RooSpinZero_5D_VH</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero__5D__VH_8h_source.html#l00007">RooSpinZero_5D_VH.h:7</a></div></div>
+<div class="ttc" id="aclassScalarPdfFactory_html_a0ce27eb1bc06518693ed3b3677ca6ea9"><div class="ttname"><a href="classScalarPdfFactory.html#a0ce27eb1bc06518693ed3b3677ca6ea9">ScalarPdfFactory::couplings</a></div><div class="ttdeci">RooSpinZero::modelCouplings couplings</div><div class="ttdef"><b>Definition:</b> <a href="ScalarPdfFactory_8h_source.html#l00012">ScalarPdfFactory.h:12</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a></div><div class="ttdeci">@ kVdecayType_Wany</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00029">RooSpin.h:29</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a049d5515269542f4bfc5a4b971a35042"><div class="ttname"><a href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">SpinPdfFactory::measurables</a></div><div class="ttdeci">RooSpin::modelMeasurables measurables</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00011">SpinPdfFactory.h:11</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -175,7 +175,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ad11951d91e733a5d44512ac0b70eeaaa"><td class="memItemLeft" align="right" valign="top">RooListProxy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMELALinearInterpFunc.html#ad11951d91e733a5d44512ac0b70eeaaa">leafDepsList</a></td></tr>
 <tr class="separator:ad11951d91e733a5d44512ac0b70eeaaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00013">13</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2c8810a5b3310a79154eb904152692fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c8810a5b3310a79154eb904152692fc">&#9670;&nbsp;</a></span>T</h2>
 
@@ -187,6 +190,8 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00015">15</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
 
 </div>
 </div>
@@ -208,6 +213,13 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46"></a>kVerbose&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00017">17</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                     {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb">kSilent</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">kError</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">kVerbose</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -254,6 +266,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00024">24</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    :</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  RooAbsReal(name, title),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>(<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb">MELALinearInterpFunc::kSilent</a>),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a>(<span class="keyword">true</span>), <a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>(0), <a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>(0),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">rangeXmin</a>(1), <a class="code" href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">rangeXmax</a>(-1),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>(<span class="stringliteral">&quot;theXVar&quot;</span>, <span class="stringliteral">&quot;theXVar&quot;</span>, <span class="keyword">this</span>),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>(<span class="stringliteral">&quot;FcnList&quot;</span>, <span class="stringliteral">&quot;FcnList&quot;</span>, <span class="keyword">this</span>),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#ad11951d91e733a5d44512ac0b70eeaaa">leafDepsList</a>(<span class="stringliteral">&quot;leafDepsList&quot;</span>, <span class="stringliteral">&quot;leafDepsList&quot;</span>, <span class="keyword">this</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2c5052e8ff12be05b2664fd7099eb870"></a>
@@ -346,6 +369,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00090">90</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    :</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  RooAbsReal(other, name),</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>(other.<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>),</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a>(other.<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a>), <a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>(other.<a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>), <a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>(other.<a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>),</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">rangeXmin</a>(other.<a class="code" href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">rangeXmin</a>), <a class="code" href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">rangeXmax</a>(other.<a class="code" href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">rangeXmax</a>),</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">XList</a>(other.<a class="code" href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">XList</a>),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>(<span class="stringliteral">&quot;theXVar&quot;</span>, <span class="keyword">this</span>, other.<a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>),</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>(<span class="stringliteral">&quot;FcnList&quot;</span>, <span class="keyword">this</span>, other.<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>),</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#ad11951d91e733a5d44512ac0b70eeaaa">leafDepsList</a>(<span class="stringliteral">&quot;leafDepsList&quot;</span>, <span class="keyword">this</span>, other.<a class="code" href="classMELALinearInterpFunc.html#ad11951d91e733a5d44512ac0b70eeaaa">leafDepsList</a>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac84ca10ce77d49ea1813e0b6bbc94160"></a>
@@ -371,6 +406,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00041">41</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -400,6 +438,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00290">290</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                                                                       {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  Double_t value = <a class="code" href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">interpolateFcn</a>(code, rangeName);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> &amp;&amp; value&lt;<a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>){</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>&gt;=<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a>) coutE(Integration) &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc ERROR::MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) integration returned &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    value = <a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){ cout &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::analyticalIntegral = &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl; }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7e29f92a7164225086a237ab3405d2b3"></a>
@@ -426,6 +475,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00040">40</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classMELALinearInterpFunc.html#a064fa3e81e3ab32a5f26dc6d2f4cb1a3">MELALinearInterpFunc</a>(*<span class="keyword">this</span>, newname); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4e1fdc2ab84f929486b93ff9902c9afe"></a>
@@ -452,6 +504,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00313">313</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                                       {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a23ec7256fa464adb5b852d813e1ae694">testRangeValidity</a>(val)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">T</a>* range[2];</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  range[0] = &amp;<a class="code" href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">rangeXmin</a>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  range[1] = &amp;<a class="code" href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">rangeXmax</a>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keywordflow">if</span> (val&lt;*(range[0])) val = *(range[0]);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keywordflow">if</span> (val&gt;*(range[1])) val = *(range[1]);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a253ccc868c763ae80c47915b63460d09"></a>
@@ -470,6 +532,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00107">107</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{ <a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> = flag; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1a4ce4f2d2bf339beafe3526142bfb2a"></a>
@@ -495,6 +560,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00222">222</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                            {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  Double_t value = <a class="code" href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">interpolateFcn</a>(0);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> &amp;&amp; value&lt;<a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>){</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>&gt;=<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a>) coutE(Eval) &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc ERROR::MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) evaluation returned &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    value = <a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){ cout &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::evaluate = &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a> &lt;&lt; endl; }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7bc11e6452703aca5312d4f527a15d92"></a>
@@ -529,6 +605,67 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00231">231</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                                                                                                    {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (_forceNumInt) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keyword">const</span> Int_t xprime = 101;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  Int_t code=1;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  RooArgSet Xdeps, Fcndeps;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  RooRealVar* rrv_x = <span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>.absArg());</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">if</span> (rrv_x==0) <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>.absArg()-&gt;leafNodeServerList(&amp;Xdeps, 0, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ix=0; ix&lt;<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>.getSize(); ix++){</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    RooArgSet tmpdeps;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    RooAbsReal <span class="keyword">const</span>* fcn = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>RooAbsReal*<span class="keyword">&gt;</span>(<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>.at(ix));</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    fcn-&gt;leafNodeServerList(&amp;tmpdeps, 0, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    Fcndeps.add(tmpdeps);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (ix==0){</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      RooArgSet mirrorvars;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      TIterator* iter = allVars.createIterator();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      RooAbsArg* var;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <span class="keywordflow">while</span> ((var = (RooAbsArg*)iter-&gt;Next())){</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        RooRealVar* rrv_tmp = <span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(var);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">if</span> (rrv_tmp==0) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordtype">bool</span> isFound=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">if</span> (rrv_x!=0){</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;          isFound = (rrv_tmp==rrv_x);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;          TIterator* iter_deps = Xdeps.createIterator();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;          RooAbsArg* var_deps;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;          <span class="keywordflow">while</span> ((var_deps = (RooAbsArg*)iter_deps-&gt;Next())){</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            RooRealVar* depvar = <span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(var_deps);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> (depvar==0) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">if</span> (depvar==rrv_tmp){ isFound=<span class="keyword">true</span>; <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;          }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;          <span class="keyword">delete</span> iter_deps;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">if</span> (!isFound) mirrorvars.add(*var);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      <span class="keyword">delete</span> iter;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      Int_t codetmp = fcn-&gt;getAnalyticalIntegral(mirrorvars, analVars, rangeName);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">if</span> (codetmp!=0) code *= codetmp;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">if</span> (rrv_x!=0){</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> (Fcndeps.find(*rrv_x)==0){</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>)) code *= xprime;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">if</span> (code==1) code=0;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::getAnalyticalIntegral code = &quot;</span> &lt;&lt; code &lt;&lt; endl;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    allVars.Print(<span class="stringliteral">&quot;v&quot;</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    analVars.Print(<span class="stringliteral">&quot;v&quot;</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">return</span> code;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afef96a0fb39d2a190e20042297feddc8"></a>
@@ -555,6 +692,18 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00130">130</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">if</span> (bin&gt;=0){</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    vector&lt;MELALinearInterpFunc::T&gt; <span class="keyword">const</span>* coord=&amp;<a class="code" href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">XList</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> diff = 1;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (Int_t(coord-&gt;size())&gt;(bin+1)) diff = coord-&gt;at(bin+1)-coord-&gt;at(bin);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (fabs(diff)&gt;<a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a>(0)) <span class="keywordflow">return</span> <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a>(1)/diff;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab6317fcd36eabe30e04f106601662d5f"></a>
@@ -581,6 +730,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00140">140</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                                                                        {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keyword">const</span> Int_t bin = <a class="code" href="classMELALinearInterpFunc.html#ab066ec897fde842d0e8f36f392883794">getWhichBin</a>(val);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  vector&lt;MELALinearInterpFunc::T&gt; <span class="keyword">const</span>* coord=&amp;<a class="code" href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">XList</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> <a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a> = <a class="code" href="classMELALinearInterpFunc.html#afef96a0fb39d2a190e20042297feddc8">getKappa</a>(bin);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">return</span> (val - coord-&gt;at(bin))*<a class="code" href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">kappa</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab066ec897fde842d0e8f36f392883794"></a>
@@ -607,6 +764,29 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00109">109</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                                            {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  Int_t bin=-1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> valj, valjpo;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  Int_t np;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  vector&lt;MELALinearInterpFunc::T&gt; <span class="keyword">const</span>* coord=&amp;<a class="code" href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">XList</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  np=<a class="code" href="classMELALinearInterpFunc.html#a20db6c8f4cce07215a33c2dce1a31845">npoints</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">if</span> (np&lt;=1) bin=0;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    valjpo = coord-&gt;at(0);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (Int_t j=0; j&lt;np-1; j++){</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      valj = coord-&gt;at(j);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      valjpo = coord-&gt;at(j+1);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keywordflow">if</span> (val&lt;valjpo &amp;&amp; val&gt;=valj){ bin=j; <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (bin==-1 &amp;&amp; val&gt;=valjpo) bin=np-2;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bin==-1) bin=0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">return</span> bin;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a64c098b9693a3f095a9384a31e01970d"></a>
@@ -643,6 +823,83 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00147">147</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                                                                                {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keyword">const</span> Int_t xprime = 101;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> intAlongX=(code&gt;0 &amp;&amp; code%xprime==0);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html">DefaultAccumulator&lt;MELALinearInterpFunc::T&gt;</a> res;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  Int_t coderem = (intAlongX ? code/xprime : code);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">if</span> (coderem==1) coderem=0;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (intAlongX) cout &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::interpolateFcn integrates using code = &quot;</span> &lt;&lt; code &lt;&lt; <span class="stringliteral">&quot;, coderem = &quot;</span> &lt;&lt; coderem &lt;&lt; endl;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">else</span> cout &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::interpolateFcn evaluates using code = &quot;</span> &lt;&lt; code &lt;&lt; <span class="stringliteral">&quot;, coderem = &quot;</span> &lt;&lt; coderem &lt;&lt; endl;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="comment">// Get bins</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  Int_t xbin=-1, xbinmin=-1, xbinmax=-1;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> tx=0, txmin=0, txmax=0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">if</span> (!intAlongX){ <span class="comment">// Case to just compute the value at x</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classMELALinearInterpFunc.html#a23ec7256fa464adb5b852d813e1ae694">testRangeValidity</a>(<a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>)) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    xbin = <a class="code" href="classMELALinearInterpFunc.html#ab066ec897fde842d0e8f36f392883794">getWhichBin</a>(<a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    tx = <a class="code" href="classMELALinearInterpFunc.html#ab6317fcd36eabe30e04f106601662d5f">getTVar</a>(<a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">else</span>{ <span class="comment">// Case to integrate along x</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> coordmin = <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>.min(rangeName); <a class="code" href="classMELALinearInterpFunc.html#a4e1fdc2ab84f929486b93ff9902c9afe">cropValueForRange</a>(coordmin);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> coordmax = <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a>.max(rangeName); <a class="code" href="classMELALinearInterpFunc.html#a4e1fdc2ab84f929486b93ff9902c9afe">cropValueForRange</a>(coordmax);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    xbinmin = <a class="code" href="classMELALinearInterpFunc.html#ab066ec897fde842d0e8f36f392883794">getWhichBin</a>(coordmin);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    txmin = <a class="code" href="classMELALinearInterpFunc.html#ab6317fcd36eabe30e04f106601662d5f">getTVar</a>(coordmin);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    xbinmax = <a class="code" href="classMELALinearInterpFunc.html#ab066ec897fde842d0e8f36f392883794">getWhichBin</a>(coordmax);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    txmax = <a class="code" href="classMELALinearInterpFunc.html#ab6317fcd36eabe30e04f106601662d5f">getTVar</a>(coordmax);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">int</span> nxbins = <a class="code" href="classMELALinearInterpFunc.html#a20db6c8f4cce07215a33c2dce1a31845">npoints</a>()-1;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keywordflow">if</span> (nxbins==0){</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> fcnval;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> (coderem==0) fcnval = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>RooAbsReal*<span class="keyword">&gt;</span>(<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>.at(0))-&gt;getVal();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">else</span> fcnval = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>RooAbsReal*<span class="keyword">&gt;</span>(<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>.at(0))-&gt;<a class="code" href="classMELALinearInterpFunc.html#a30df08cb66c3655f8b363f289f75be0d">analyticalIntegral</a>(coderem, rangeName);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    res = fcnval;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> (intAlongX) res *= (txmax-txmin);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ix=0; ix&lt;nxbins; ix++){</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">if</span> (</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        (xbin&gt;=0 &amp;&amp; ix!=xbin)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        ||</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        (xbinmin&gt;=0 &amp;&amp; xbinmax&gt;=xbinmin &amp;&amp; !(xbinmin&lt;=ix &amp;&amp; ix&lt;=xbinmax))</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        ) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> txlow=0, txhigh=1;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">if</span> (intAlongX){</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">if</span> (ix==xbinmin) txlow=txmin;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (ix==xbinmax) txhigh=txmax;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <span class="keywordflow">else</span> txhigh=tx;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a> fcnval[2]={ 0 };</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">if</span> (coderem==0){</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j=0; j&lt;2; j++) fcnval[j] = dynamic_cast&lt;const RooAbsReal*&gt;(<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>.at(ix+j))-&gt;getVal();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j=0; j&lt;2; j++) fcnval[j] = dynamic_cast&lt;const RooAbsReal*&gt;(<a class="code" href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">FcnList</a>.at(ix+j))-&gt;analyticalIntegral(coderem, rangeName);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html">DefaultAccumulator&lt;MELALinearInterpFunc::T&gt;</a> segval = fcnval[0];</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keywordflow">if</span> (intAlongX) segval += (fcnval[1] - fcnval[0])*(pow(txhigh, 2)-pow(txlow, 2))/2.;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">else</span> segval += (fcnval[1] - fcnval[0])*txhigh;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      res += segval;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>) cout</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::interpolateFcn evaluated bin &quot;</span> &lt;&lt; ix</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; with txlow = &quot;</span> &lt;&lt; txlow &lt;&lt; <span class="stringliteral">&quot;, txhigh = &quot;</span> &lt;&lt; txhigh &lt;&lt; <span class="stringliteral">&quot;, fcnval[0] = &quot;</span> &lt;&lt; fcnval[0] &lt;&lt; <span class="stringliteral">&quot;, fcnval[1] = &quot;</span> &lt;&lt; fcnval[1]</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        &lt;&lt; endl;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a20db6c8f4cce07215a33c2dce1a31845"></a>
@@ -668,6 +925,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00067">67</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">XList</a>.size(); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6a089c6e5333998d2510b7da5820726f"></a>
@@ -686,6 +946,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00105">105</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{ <a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a> = val; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a49899af99f661ccd829250ab623cadc8"></a>
@@ -704,6 +967,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00106">106</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{ <a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a> = val; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5ce9d07b367e590ba4a8d4e6627c88af"></a>
@@ -732,6 +998,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00306">306</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">T</a>* range[2];</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  range[0] = &amp;<a class="code" href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">rangeXmin</a>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  range[1] = &amp;<a class="code" href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">rangeXmax</a>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  *(range[0])=valmin;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  *(range[1])=valmax;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a399f316445bce2b393ad3a98fc874e98"></a>
@@ -750,6 +1025,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00104">104</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{ <a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a> = flag; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a23ec7256fa464adb5b852d813e1ae694"></a>
@@ -776,6 +1054,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8cc_source.html#l00300">300</a> of file <a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                                                {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keyword">const</span> <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">T</a>* range[2];</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  range[0] = &amp;<a class="code" href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">rangeXmin</a>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  range[1] = &amp;<a class="code" href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">rangeXmax</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keywordflow">return</span> (*(range[0])&gt;*(range[1]) || (val&gt;=*(range[0]) &amp;&amp; val&lt;=*(range[1])));</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -799,6 +1085,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00064">64</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+
 </div>
 </div>
 <a id="a4436c39502b948c4187b6fe7829f264c"></a>
@@ -820,6 +1108,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00056">56</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
 
 </div>
 </div>
@@ -843,6 +1133,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00057">57</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+
 </div>
 </div>
 <a id="ad11951d91e733a5d44512ac0b70eeaaa"></a>
@@ -864,6 +1156,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00065">65</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
 
 </div>
 </div>
@@ -887,6 +1181,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00060">60</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+
 </div>
 </div>
 <a id="a3607e8d09c8766a3a6db89c2555e79ae"></a>
@@ -908,6 +1204,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00059">59</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
 
 </div>
 </div>
@@ -931,6 +1229,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00063">63</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+
 </div>
 </div>
 <a id="a563764d6a63a6e04dc9d796f79d0bf1c"></a>
@@ -952,6 +1252,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00055">55</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
 
 </div>
 </div>
@@ -975,6 +1277,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00054">54</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+
 </div>
 </div>
 <a id="ae7c0d22c40c40e5c1c4673ba46cc9728"></a>
@@ -997,13 +1301,40 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELALinearInterpFunc_8h_source.html#l00062">62</a> of file <a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="MELALinearInterpFunc_8h_source.html">MELALinearInterpFunc.h</a></li>
-<li>MELA/src/<a class="el" href="MELALinearInterpFunc_8cc.html">MELALinearInterpFunc.cc</a></li>
+<li>MELA/src/<a class="el" href="MELALinearInterpFunc_8cc_source.html">MELALinearInterpFunc.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46"><div class="ttname"><a href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a></div><div class="ttdeci">@ kVerbose</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00020">MELALinearInterpFunc.h:20</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_aeaefc297d160fd3b65138b5f02349bd0"><div class="ttname"><a href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">MELALinearInterpFunc::FcnList</a></div><div class="ttdeci">RooListProxy FcnList</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00064">MELALinearInterpFunc.h:64</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_ab4fc90d26e384ce5929394e4cd7f2b8d"><div class="ttname"><a href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">MELALinearInterpFunc::verbosity</a></div><div class="ttdeci">VerbosityLevel verbosity</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00054">MELALinearInterpFunc.h:54</a></div></div>
+<div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html">TNumericUtil::KahanAccumulator</a></div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00027">MELAAccumulators.h:27</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_ad11951d91e733a5d44512ac0b70eeaaa"><div class="ttname"><a href="classMELALinearInterpFunc.html#ad11951d91e733a5d44512ac0b70eeaaa">MELALinearInterpFunc::leafDepsList</a></div><div class="ttdeci">RooListProxy leafDepsList</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00065">MELALinearInterpFunc.h:65</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_ab066ec897fde842d0e8f36f392883794"><div class="ttname"><a href="classMELALinearInterpFunc.html#ab066ec897fde842d0e8f36f392883794">MELALinearInterpFunc::getWhichBin</a></div><div class="ttdeci">Int_t getWhichBin(const T &amp;val) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00109">MELALinearInterpFunc.cc:109</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a4e1fdc2ab84f929486b93ff9902c9afe"><div class="ttname"><a href="classMELALinearInterpFunc.html#a4e1fdc2ab84f929486b93ff9902c9afe">MELALinearInterpFunc::cropValueForRange</a></div><div class="ttdeci">void cropValueForRange(T &amp;val) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00313">MELALinearInterpFunc.cc:313</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a7d4cb0380e27c07e58ab7fee47c46aca"><div class="ttname"><a href="classMELALinearInterpFunc.html#a7d4cb0380e27c07e58ab7fee47c46aca">MELALinearInterpFunc::rangeXmax</a></div><div class="ttdeci">T rangeXmax</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00060">MELALinearInterpFunc.h:60</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a064fa3e81e3ab32a5f26dc6d2f4cb1a3"><div class="ttname"><a href="classMELALinearInterpFunc.html#a064fa3e81e3ab32a5f26dc6d2f4cb1a3">MELALinearInterpFunc::MELALinearInterpFunc</a></div><div class="ttdeci">MELALinearInterpFunc()</div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb"><div class="ttname"><a href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfad883d35189da41d329d6a7324b2068fb">MELALinearInterpFunc::kSilent</a></div><div class="ttdeci">@ kSilent</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00018">MELALinearInterpFunc.h:18</a></div></div>
+<div class="ttc" id="anamespacemodparameters_html_a222bf0bdea155ccb3ee2be242af4eee8"><div class="ttname"><a href="namespacemodparameters.html#a222bf0bdea155ccb3ee2be242af4eee8">modparameters::kappa</a></div><div class="ttdeci">complex(8), public kappa</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l00882">mod_Parameters.F90:882</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_ab6317fcd36eabe30e04f106601662d5f"><div class="ttname"><a href="classMELALinearInterpFunc.html#ab6317fcd36eabe30e04f106601662d5f">MELALinearInterpFunc::getTVar</a></div><div class="ttdeci">T getTVar(const T &amp;val) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00140">MELALinearInterpFunc.cc:140</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_af5c1bc264b83bfd1bfa0b0def9c0138f"><div class="ttname"><a href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">MELALinearInterpFunc::theXVar</a></div><div class="ttdeci">RooRealProxy theXVar</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00063">MELALinearInterpFunc.h:63</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a20db6c8f4cce07215a33c2dce1a31845"><div class="ttname"><a href="classMELALinearInterpFunc.html#a20db6c8f4cce07215a33c2dce1a31845">MELALinearInterpFunc::npoints</a></div><div class="ttdeci">unsigned int npoints() const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00067">MELALinearInterpFunc.h:67</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a4436c39502b948c4187b6fe7829f264c"><div class="ttname"><a href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">MELALinearInterpFunc::floorEval</a></div><div class="ttdeci">T floorEval</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00056">MELALinearInterpFunc.h:56</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a3607e8d09c8766a3a6db89c2555e79ae"><div class="ttname"><a href="classMELALinearInterpFunc.html#a3607e8d09c8766a3a6db89c2555e79ae">MELALinearInterpFunc::rangeXmin</a></div><div class="ttdeci">T rangeXmin</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00059">MELALinearInterpFunc.h:59</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a2c8810a5b3310a79154eb904152692fc"><div class="ttname"><a href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">MELALinearInterpFunc::T</a></div><div class="ttdeci">Float_t T</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00015">MELALinearInterpFunc.h:15</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_aa50bca7467686abbcd20ff23cf0c6e33"><div class="ttname"><a href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">MELALinearInterpFunc::floorInt</a></div><div class="ttdeci">T floorInt</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00057">MELALinearInterpFunc.h:57</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_ae7c0d22c40c40e5c1c4673ba46cc9728"><div class="ttname"><a href="classMELALinearInterpFunc.html#ae7c0d22c40c40e5c1c4673ba46cc9728">MELALinearInterpFunc::XList</a></div><div class="ttdeci">std::vector&lt; T &gt; XList</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00062">MELALinearInterpFunc.h:62</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a30df08cb66c3655f8b363f289f75be0d"><div class="ttname"><a href="classMELALinearInterpFunc.html#a30df08cb66c3655f8b363f289f75be0d">MELALinearInterpFunc::analyticalIntegral</a></div><div class="ttdeci">Double_t analyticalIntegral(Int_t code, const char *rangeName=0) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00290">MELALinearInterpFunc.cc:290</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a563764d6a63a6e04dc9d796f79d0bf1c"><div class="ttname"><a href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">MELALinearInterpFunc::useFloor</a></div><div class="ttdeci">Bool_t useFloor</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00055">MELALinearInterpFunc.h:55</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd"><div class="ttname"><a href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a></div><div class="ttdeci">@ kError</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00019">MELALinearInterpFunc.h:19</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_afef96a0fb39d2a190e20042297feddc8"><div class="ttname"><a href="classMELALinearInterpFunc.html#afef96a0fb39d2a190e20042297feddc8">MELALinearInterpFunc::getKappa</a></div><div class="ttdeci">T getKappa(const Int_t &amp;bin) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00130">MELALinearInterpFunc.cc:130</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a64c098b9693a3f095a9384a31e01970d"><div class="ttname"><a href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">MELALinearInterpFunc::interpolateFcn</a></div><div class="ttdeci">T interpolateFcn(Int_t code, const char *rangeName=0) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00147">MELALinearInterpFunc.cc:147</a></div></div>
+<div class="ttc" id="aclassMELALinearInterpFunc_html_a23ec7256fa464adb5b852d813e1ae694"><div class="ttname"><a href="classMELALinearInterpFunc.html#a23ec7256fa464adb5b852d813e1ae694">MELALinearInterpFunc::testRangeValidity</a></div><div class="ttdeci">Bool_t testRangeValidity(const T &amp;val) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00300">MELALinearInterpFunc.cc:300</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

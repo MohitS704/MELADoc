@@ -121,285 +121,1956 @@ logical function \mbox{\hyperlink{namespacemodmisc_a6ac5e4d5117566541606747e97c2
 \doxysubsubsection{\texorpdfstring{calculatesxsec()}{calculatesxsec()}}
 {\footnotesize\ttfamily logical function modmisc\+::calculatesxsec (\begin{DoxyParamCaption}\item[{integer}]{Process }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1570 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1570   \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1571   \textcolor{keywordtype}{integer} :: Process}
+\DoxyCodeLine{1572   \textcolor{keywordtype}{logical} :: CalculatesXsec}
+\DoxyCodeLine{1573   calculatesxsec=.false.}
+\DoxyCodeLine{1574   \textcolor{keywordflow}{if} (process.le.2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1575     calculatesxsec=.true.}
+\DoxyCodeLine{1576   \textcolor{keywordflow}{elseif} (process.eq.50) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1577     calculatesxsec=.false.}
+\DoxyCodeLine{1578   \textcolor{keywordflow}{elseif} (process.ge.51 .and. process.le.52) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1579     calculatesxsec=.false.}
+\DoxyCodeLine{1580   \textcolor{keywordflow}{elseif} (process.eq.60) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1581     calculatesxsec=.true.}
+\DoxyCodeLine{1582   \textcolor{keywordflow}{elseif} (process.eq.61) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1583     calculatesxsec=.true.}
+\DoxyCodeLine{1584   \textcolor{keywordflow}{elseif} (process.eq.62) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1585     calculatesxsec=.false.}
+\DoxyCodeLine{1586   \textcolor{keywordflow}{elseif} (process.ge.66 .and. process.le.75) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1587     calculatesxsec=.true.}
+\DoxyCodeLine{1588   \textcolor{keywordflow}{elseif} (process.eq.80 .or. process.eq.90) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1589     calculatesxsec=.false.}
+\DoxyCodeLine{1590   \textcolor{keywordflow}{elseif} (process.ge.110 .and. process.le.114) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1591     calculatesxsec=.true.}
+\DoxyCodeLine{1592   \textcolor{keywordflow}{elseif} (process.ge.115 .and. process.le.117) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1593     calculatesxsec=.true.}
+\DoxyCodeLine{1594   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1595     print *, \textcolor{stringliteral}{"Unknown process in CalculatesXsec"}, process, \textcolor{stringliteral}{"; setting CalculatesXsec=false."}}
+\DoxyCodeLine{1596 \textcolor{keywordflow}{  endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a77efda25ce167292fc0a5e0196dbd479}\label{namespacemodmisc_a77efda25ce167292fc0a5e0196dbd479}} 
 \index{modmisc@{modmisc}!capitalize@{capitalize}}
 \index{capitalize@{capitalize}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{capitalize()}{capitalize()}}
 {\footnotesize\ttfamily character(len=150) function modmisc\+::capitalize (\begin{DoxyParamCaption}\item[{character(len=150)}]{Input\+String }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1144 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1144 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1145 \textcolor{keywordtype}{character(len=150)} :: InputString}
+\DoxyCodeLine{1146 \textcolor{keywordtype}{character(len=150)} :: Capitalize}
+\DoxyCodeLine{1147 \textcolor{keywordtype}{character(len=26)}, \textcolor{keywordtype}{parameter} :: lower = \textcolor{stringliteral}{"abcdefghijklmnopqrstuvwxyz"}}
+\DoxyCodeLine{1148 \textcolor{keywordtype}{character(len=26)}, \textcolor{keywordtype}{parameter} :: upper = \textcolor{stringliteral}{"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}}
+\DoxyCodeLine{1149 \textcolor{keywordtype}{integer} :: i, j}
+\DoxyCodeLine{1150 }
+\DoxyCodeLine{1151 capitalize = \textcolor{stringliteral}{""}}
+\DoxyCodeLine{1152 }
+\DoxyCodeLine{1153 \textcolor{keywordflow}{do} i=1,len(trim(inputstring))}
+\DoxyCodeLine{1154     j = index(lower,inputstring(i:i))}
+\DoxyCodeLine{1155     \textcolor{keywordflow}{if} (j.ne.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1156         capitalize(i:i) = upper(j:j)}
+\DoxyCodeLine{1157     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1158         capitalize(i:i) = inputstring(i:i)}
+\DoxyCodeLine{1159 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1160 \textcolor{keywordflow}{enddo}}
+\DoxyCodeLine{1161 \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a5d09bd430284bf287a4aa6308766a6db}\label{namespacemodmisc_a5d09bd430284bf287a4aa6308766a6db}} 
 \index{modmisc@{modmisc}!centerwithstars@{centerwithstars}}
 \index{centerwithstars@{centerwithstars}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{centerwithstars()}{centerwithstars()}}
 {\footnotesize\ttfamily character(len=totallength) function modmisc\+::centerwithstars (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{string,  }\item[{integer}]{totallength,  }\item[{integer, optional}]{align,  }\item[{integer, optional}]{padleft,  }\item[{integer, optional}]{padright }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1493 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1493 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1494 \textcolor{keywordtype}{character(len=*)} :: string}
+\DoxyCodeLine{1495 \textcolor{keywordtype}{integer} :: totallength, nspaces, nleftspaces, nrightspaces}
+\DoxyCodeLine{1496 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional} :: align, padleft, padright}
+\DoxyCodeLine{1497 \textcolor{keywordtype}{integer} :: align2, padleft2, padright2}
+\DoxyCodeLine{1498 \textcolor{keywordtype}{character(len=totallength)} CenterWithStars}
+\DoxyCodeLine{1499 }
+\DoxyCodeLine{1500     align2 = 2}
+\DoxyCodeLine{1501     padleft2 = 0}
+\DoxyCodeLine{1502     padright2 = 0}
+\DoxyCodeLine{1503     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(align)) align2 = align}
+\DoxyCodeLine{1504     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(padleft)) padleft2 = padleft}
+\DoxyCodeLine{1505     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(padright)) padright2 = padright}
+\DoxyCodeLine{1506 }
+\DoxyCodeLine{1507     \textcolor{keywordflow}{if} (len(trim(string))+padleft2+padright2 .gt. totallength-\/2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1508         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"len(trim(string))+padleft+padright > totallength-\/2!"})}
+\DoxyCodeLine{1509 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1510 }
+\DoxyCodeLine{1511     nspaces = totallength -\/ len(trim(string)) -\/ 2}
+\DoxyCodeLine{1512 }
+\DoxyCodeLine{1513     \textcolor{keywordflow}{if} (align2.eq.1) \textcolor{keywordflow}{then} \textcolor{comment}{!left}}
+\DoxyCodeLine{1514       nleftspaces = padleft2}
+\DoxyCodeLine{1515       nrightspaces = nspaces-\/nleftspaces}
+\DoxyCodeLine{1516     \textcolor{keywordflow}{elseif} (align2.eq.2) \textcolor{keywordflow}{then} \textcolor{comment}{!center}}
+\DoxyCodeLine{1517       nleftspaces = (nspaces+padleft2-\/padright2)/2}
+\DoxyCodeLine{1518       nrightspaces = nspaces-\/nleftspaces}
+\DoxyCodeLine{1519     \textcolor{keywordflow}{elseif} (align2.eq.3) \textcolor{keywordflow}{then} \textcolor{comment}{!right}}
+\DoxyCodeLine{1520       nrightspaces = padright2}
+\DoxyCodeLine{1521       nleftspaces = nspaces-\/nrightspaces}
+\DoxyCodeLine{1522     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1523       print *, \textcolor{stringliteral}{"Unknown align value"}, align2}
+\DoxyCodeLine{1524 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1525 }
+\DoxyCodeLine{1526     centerwithstars = \textcolor{stringliteral}{"*"} // repeat(\textcolor{stringliteral}{" "}, nleftspaces) // trim(string) // repeat(\textcolor{stringliteral}{" "}, nrightspaces) // \textcolor{stringliteral}{"*"}}
+\DoxyCodeLine{1527 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a7ca64b7e83364c5cd4703612d946e292}\label{namespacemodmisc_a7ca64b7e83364c5cd4703612d946e292}} 
 \index{modmisc@{modmisc}!chir\_weyl@{chir\_weyl}}
 \index{chir\_weyl@{chir\_weyl}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{chir\_weyl()}{chir\_weyl()}}
 {\footnotesize\ttfamily double complex function, dimension(1\+:4) modmisc\+::chir\+\_\+weyl (\begin{DoxyParamCaption}\item[{integer}]{sign,  }\item[{double complex, dimension(1\+:4)}]{sp }\end{DoxyParamCaption})}
 
+
+
+Definition at line 607 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{607 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{608 \textcolor{keywordtype}{integer} :: sign}
+\DoxyCodeLine{609 \textcolor{keywordtype}{double complex} :: sp(1:4)}
+\DoxyCodeLine{610 \textcolor{keywordtype}{double complex} :: Chir\_Weyl(1:4)}
+\DoxyCodeLine{611    \textcolor{keywordflow}{if}(sign.eq.+1) \textcolor{keywordflow}{then} \textcolor{comment}{!omega\_+}}
+\DoxyCodeLine{612       chir\_weyl(1) = sp(1)}
+\DoxyCodeLine{613       chir\_weyl(2) = sp(2)}
+\DoxyCodeLine{614       chir\_weyl(3) = 0d0}
+\DoxyCodeLine{615       chir\_weyl(4) = 0d0}
+\DoxyCodeLine{616    \textcolor{keywordflow}{else} \textcolor{comment}{!omega\_-\/}}
+\DoxyCodeLine{617       chir\_weyl(1) = 0d0}
+\DoxyCodeLine{618       chir\_weyl(2) = 0d0}
+\DoxyCodeLine{619       chir\_weyl(3) = sp(3)}
+\DoxyCodeLine{620       chir\_weyl(4) = sp(4)}
+\DoxyCodeLine{621 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{622    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a88674022f66b662981b6e56ecb86d945}\label{namespacemodmisc_a88674022f66b662981b6e56ecb86d945}} 
 \index{modmisc@{modmisc}!convert\_to\_mcfm@{convert\_to\_mcfm}}
 \index{convert\_to\_mcfm@{convert\_to\_mcfm}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{convert\_to\_mcfm()}{convert\_to\_mcfm()}}
 {\footnotesize\ttfamily subroutine modmisc\+::convert\+\_\+to\+\_\+mcfm (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{p,  }\item[{real(8), dimension(1\+:4), optional}]{pout }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1281 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1281       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1282 \textcolor{comment}{! converts from (E,px,py,pz) to (px,py,pz,E)}}
+\DoxyCodeLine{1283 \textcolor{keywordtype}{      real}(8) :: p(1:4),tmp(1:4)}
+\DoxyCodeLine{1284 \textcolor{keywordtype}{      real}(8), \textcolor{keywordtype}{optional} :: pout(1:4)}
+\DoxyCodeLine{1285 }
+\DoxyCodeLine{1286       \textcolor{keywordflow}{if}( \textcolor{keyword}{present}(pout) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1287           pout(1)=p(2)}
+\DoxyCodeLine{1288           pout(2)=p(3)}
+\DoxyCodeLine{1289           pout(3)=p(4)}
+\DoxyCodeLine{1290           pout(4)=p(1)}
+\DoxyCodeLine{1291       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1292           tmp(1)=p(1)}
+\DoxyCodeLine{1293           tmp(2)=p(2)}
+\DoxyCodeLine{1294           tmp(3)=p(3)}
+\DoxyCodeLine{1295           tmp(4)=p(4)}
+\DoxyCodeLine{1296 }
+\DoxyCodeLine{1297           p(1)=tmp(2)}
+\DoxyCodeLine{1298           p(2)=tmp(3)}
+\DoxyCodeLine{1299           p(3)=tmp(4)}
+\DoxyCodeLine{1300           p(4)=tmp(1)}
+\DoxyCodeLine{1301 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1302 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a67da31b838636e613886adf687dd9040}\label{namespacemodmisc_a67da31b838636e613886adf687dd9040}} 
 \index{modmisc@{modmisc}!error@{error}}
 \index{error@{error}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{error()}{error()}}
 {\footnotesize\ttfamily subroutine modmisc\+::error (\begin{DoxyParamCaption}\item[{character($\ast$)}]{Message,  }\item[{integer, optional}]{Err\+Num }\end{DoxyParamCaption})}
 
+
+
+Definition at line 366 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{366 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{367 \textcolor{keywordtype}{character(*)} :: Message}
+\DoxyCodeLine{368 \textcolor{keywordtype}{integer},\textcolor{keywordtype}{optional} :: ErrNum}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370    \textcolor{keywordflow}{if}( \textcolor{keyword}{present}(errnum) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{371       print *, \textcolor{stringliteral}{"ERROR: "},message,errnum}
+\DoxyCodeLine{372    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{373       print *, \textcolor{stringliteral}{"ERROR: "},message}
+\DoxyCodeLine{374 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{375    stop 1}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a0795d8fbf3d1017126319148c42c8181}\label{namespacemodmisc_a0795d8fbf3d1017126319148c42c8181}} 
 \index{modmisc@{modmisc}!et1@{et1}}
 \index{et1@{et1}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{et1()}{et1()}}
 {\footnotesize\ttfamily double complex function modmisc\+::et1 (\begin{DoxyParamCaption}\item[{complex(8), dimension(4), intent(in)}]{e1,  }\item[{complex(8), dimension(4), intent(in)}]{e2,  }\item[{complex(8), dimension(4), intent(in)}]{e3,  }\item[{complex(8), dimension(4), intent(in)}]{e4 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 109 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{110 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: e1(4), e2(4), e3(4), e4(4)}
+\DoxyCodeLine{111    \mbox{\hyperlink{namespacemodmisc_a0795d8fbf3d1017126319148c42c8181}{et1}} =  e1(1)*e2(2)*e3(3)*e4(4)-\/e1(1)*e2(2)*e3(4)*e4(3) \&}
+\DoxyCodeLine{112    -\/e1(1)*e2(3)*e3(2)*e4(4)+e1(1)*e2(3)*e3(4)*e4(2) \&}
+\DoxyCodeLine{113    +e1(1)*e2(4)*e3(2)*e4(3)-\/e1(1)*e2(4)*e3(3)*e4(2) \&}
+\DoxyCodeLine{114    -\/e1(2)*e2(1)*e3(3)*e4(4)+e1(2)*e2(1)*e3(4)*e4(3) \&}
+\DoxyCodeLine{115    +e1(2)*e2(3)*e3(1)*e4(4)-\/e1(2)*e2(3)*e3(4)*e4(1) \&}
+\DoxyCodeLine{116    -\/e1(2)*e2(4)*e3(1)*e4(3)+e1(2)*e2(4)*e3(3)*e4(1) \&}
+\DoxyCodeLine{117    +e1(3)*e2(1)*e3(2)*e4(4)-\/e1(3)*e2(1)*e3(4)*e4(2) \&}
+\DoxyCodeLine{118    -\/e1(3)*e2(2)*e3(1)*e4(4)+e1(3)*e2(2)*e3(4)*e4(1) \&}
+\DoxyCodeLine{119    +e1(3)*e2(4)*e3(1)*e4(2)-\/e1(3)*e2(4)*e3(2)*e4(1) \&}
+\DoxyCodeLine{120    -\/e1(4)*e2(1)*e3(2)*e4(3)+e1(4)*e2(1)*e3(3)*e4(2) \&}
+\DoxyCodeLine{121    +e1(4)*e2(2)*e3(1)*e4(3)-\/e1(4)*e2(2)*e3(3)*e4(1) \&}
+\DoxyCodeLine{122    -\/e1(4)*e2(3)*e3(1)*e4(2)+e1(4)*e2(3)*e3(2)*e4(1)}
+\DoxyCodeLine{123    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a8dbc3ab8816ff1d9a811605cacdb2bc6}\label{namespacemodmisc_a8dbc3ab8816ff1d9a811605cacdb2bc6}} 
 \index{modmisc@{modmisc}!evaluatespline@{evaluatespline}}
 \index{evaluatespline@{evaluatespline}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{evaluatespline()}{evaluatespline()}}
 {\footnotesize\ttfamily subroutine modmisc\+::evaluatespline (\begin{DoxyParamCaption}\item[{real(8)}]{Eval\+Point,  }\item[{real(8), dimension(1\+:splinedatalength, 1\+:2)}]{Spline\+Data,  }\item[{integer}]{Spline\+Data\+Length,  }\item[{real(8), intent(out)}]{The\+Result }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1311 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1311 \textcolor{comment}{!SplineData: SplineDataLength by 2 array}}
+\DoxyCodeLine{1312 \textcolor{comment}{!    SplineData(1:SplineDataLength,1) are the x values}}
+\DoxyCodeLine{1313 \textcolor{comment}{!    SplineData(1:SplineDataLength,2) are the corresponding y values}}
+\DoxyCodeLine{1314 }
+\DoxyCodeLine{1315 \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1316 }
+\DoxyCodeLine{1317 \textcolor{keywordtype}{INTEGER} i,top,gdim,SplineDataLength}
+\DoxyCodeLine{1318 \textcolor{keywordtype}{REAL}(8) u,\textcolor{keywordtype}{value},EvalPoint}
+\DoxyCodeLine{1319 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{intent(out)} :: TheResult}
+\DoxyCodeLine{1320 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(SplineDataLength)} :: bc,cc,dc}
+\DoxyCodeLine{1321 \textcolor{keywordtype}{REAL}(8) :: SplineData(1:SplineDataLength, 1:2)}
+\DoxyCodeLine{1322 }
+\DoxyCodeLine{1323 \textcolor{comment}{! u value of M\_H at which the spline is to be evaluated}}
+\DoxyCodeLine{1324 }
+\DoxyCodeLine{1325 gdim= splinedatalength}
+\DoxyCodeLine{1326 }
+\DoxyCodeLine{1327 \textcolor{keyword}{CALL }\mbox{\hyperlink{CALLING__cpHTO_8f_a86c01352b919ddc48290bb32b323c495}{hto\_fmmsplinesingleht}}(bc,cc,dc,top,gdim,splinedata(1:splinedatalength,1),splinedata(1:splinedatalength,2))}
+\DoxyCodeLine{1328 }
+\DoxyCodeLine{1329 u= evalpoint}
+\DoxyCodeLine{1330 \textcolor{keyword}{CALL }\mbox{\hyperlink{CALLING__cpHTO_8f_a399f0f519a5abaf3bfeae455dd22a83d}{hto\_seval3singleht}}(u,bc,cc,dc,top,gdim,\textcolor{keywordtype}{value},xc=splinedata(1:splinedatalength,1),yc=splinedata(1:splinedatalength,2))}
+\DoxyCodeLine{1331 }
+\DoxyCodeLine{1332 theresult= \textcolor{keywordtype}{value}}
+\DoxyCodeLine{1333 }
+\DoxyCodeLine{1334 \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1335 }
+\DoxyCodeLine{1336 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1337 }
+\DoxyCodeLine{1338 \textcolor{keyword}{CONTAINS}}
+\DoxyCodeLine{1339 }
+\DoxyCodeLine{1340 \textcolor{keyword}{SUBROUTINE }\mbox{\hyperlink{CALLING__cpHTO_8f_a86c01352b919ddc48290bb32b323c495}{hto\_fmmsplinesingleht}}(b,c,d,top,gdim,xc,yc)}
+\DoxyCodeLine{1341 }
+\DoxyCodeLine{1342 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1343 }
+\DoxyCodeLine{1344 \textcolor{keywordtype}{INTEGER} k,n,i,top,gdim,l}
+\DoxyCodeLine{1345 }
+\DoxyCodeLine{1346 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: xc,yc}
+\DoxyCodeLine{1347 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: x,y}
+\DoxyCodeLine{1348 }
+\DoxyCodeLine{1349 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: b}
+\DoxyCodeLine{1350 \textcolor{comment}{! linear coeff}}
+\DoxyCodeLine{1351 }
+\DoxyCodeLine{1352 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: c}
+\DoxyCodeLine{1353 \textcolor{comment}{! quadratic coeff.}}
+\DoxyCodeLine{1354 }
+\DoxyCodeLine{1355 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: d}
+\DoxyCodeLine{1356 \textcolor{comment}{! cubic coeff.}}
+\DoxyCodeLine{1357 }
+\DoxyCodeLine{1358 \textcolor{keywordtype}{REAL}(8) :: t}
+\DoxyCodeLine{1359 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{PARAMETER}:: ZERO=0.0, \mbox{\hyperlink{namespacemodparameters_a2f3f801555ec94b0aa1d9c5bf2f4631e}{two}}=2.0, three=3.0}
+\DoxyCodeLine{1360 }
+\DoxyCodeLine{1361 \textcolor{comment}{! The grid}}
+\DoxyCodeLine{1362 }
+\DoxyCodeLine{1363 }
+\DoxyCodeLine{1364 n= gdim}
+\DoxyCodeLine{1365 \textcolor{keywordflow}{FORALL}(l=1:gdim)}
+\DoxyCodeLine{1366 x(l)= xc(l)}
+\DoxyCodeLine{1367 y(l)= yc(l)}
+\DoxyCodeLine{1368 \textcolor{keywordflow}{ENDFORALL}}
+\DoxyCodeLine{1369 }
+\DoxyCodeLine{1370 \textcolor{comment}{!.....Set up tridiagonal system.........................................}}
+\DoxyCodeLine{1371 \textcolor{comment}{!     b=diagonal, d=offdiagonal, c=right-\/hand side}}
+\DoxyCodeLine{1372 }
+\DoxyCodeLine{1373 d(1)= x(2)-\/x(1)}
+\DoxyCodeLine{1374 c(2)= (y(2)-\/y(1))/d(1)}
+\DoxyCodeLine{1375 \textcolor{keywordflow}{DO} k= 2,n-\/1}
+\DoxyCodeLine{1376 d(k)= x(k+1)-\/x(k)}
+\DoxyCodeLine{1377 b(k)= \mbox{\hyperlink{namespacemodparameters_a2f3f801555ec94b0aa1d9c5bf2f4631e}{two}}*(d(k-\/1)+d(k))}
+\DoxyCodeLine{1378 c(k+1)= (y(k+1)-\/y(k))/d(k)}
+\DoxyCodeLine{1379 c(k)= c(k+1)-\/c(k)}
+\DoxyCodeLine{1380 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1381 }
+\DoxyCodeLine{1382 \textcolor{comment}{!.....End conditions.  third derivatives at x(1) and x(n) obtained}}
+\DoxyCodeLine{1383 \textcolor{comment}{!     from divided differences.......................................}}
+\DoxyCodeLine{1384 }
+\DoxyCodeLine{1385 b(1)= -\/d(1)}
+\DoxyCodeLine{1386 b(n)= -\/d(n-\/1)}
+\DoxyCodeLine{1387 c(1)= zero}
+\DoxyCodeLine{1388 c(n)= zero}
+\DoxyCodeLine{1389 \textcolor{keywordflow}{IF} (n > 3) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1390 c(1)= c(3)/(x(4)-\/x(2))-\/c(2)/(x(3)-\/x(1))}
+\DoxyCodeLine{1391 c(n)= c(n-\/1)/(x(n)-\/x(n-\/2))-\/c(n-\/2)/(x(n-\/1)-\/x(n-\/3))}
+\DoxyCodeLine{1392 c(1)= c(1)*d(1)*d(1)/(x(4)-\/x(1))}
+\DoxyCodeLine{1393 c(n)= -\/c(n)*d(n-\/1)*d(n-\/1)/(x(n)-\/x(n-\/3))}
+\DoxyCodeLine{1394 \textcolor{keywordflow}{END IF}}
+\DoxyCodeLine{1395 }
+\DoxyCodeLine{1396 \textcolor{keywordflow}{DO} k=2,n    \textcolor{comment}{! forward elimination}}
+\DoxyCodeLine{1397 t= d(k-\/1)/b(k-\/1)}
+\DoxyCodeLine{1398 b(k)= b(k)-\/t*d(k-\/1)}
+\DoxyCodeLine{1399 c(k)= c(k)-\/t*c(k-\/1)}
+\DoxyCodeLine{1400 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1401 }
+\DoxyCodeLine{1402 c(n)= c(n)/b(n)}
+\DoxyCodeLine{1403 }
+\DoxyCodeLine{1404 \textcolor{comment}{! back substitution ( makes c the sigma of text)}}
+\DoxyCodeLine{1405 }
+\DoxyCodeLine{1406 \textcolor{keywordflow}{DO} k=n-\/1,1,-\/1}
+\DoxyCodeLine{1407 c(k)= (c(k)-\/d(k)*c(k+1))/b(k)}
+\DoxyCodeLine{1408 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1409 }
+\DoxyCodeLine{1410 \textcolor{comment}{!.....Compute polynomial coefficients...................................}}
+\DoxyCodeLine{1411 }
+\DoxyCodeLine{1412 b(n)= (y(n)-\/y(n-\/1))/d(n-\/1)+d(n-\/1)*(c(n-\/1)+c(n)+c(n))}
+\DoxyCodeLine{1413 \textcolor{keywordflow}{DO} k=1,n-\/1}
+\DoxyCodeLine{1414 b(k)= (y(k+1)-\/y(k))/d(k)-\/d(k)*(c(k+1)+c(k)+c(k))}
+\DoxyCodeLine{1415 d(k)= (c(k+1)-\/c(k))/d(k)}
+\DoxyCodeLine{1416 c(k)= three*c(k)}
+\DoxyCodeLine{1417 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1418 c(n)= three*c(n)}
+\DoxyCodeLine{1419 d(n)= d(n-\/1)}
+\DoxyCodeLine{1420 }
+\DoxyCodeLine{1421 \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1422 }
+\DoxyCodeLine{1423 \textcolor{keyword}{END SUBROUTINE }\mbox{\hyperlink{CALLING__cpHTO_8f_a86c01352b919ddc48290bb32b323c495}{hto\_fmmsplinesingleht}}}
+\DoxyCodeLine{1424 }
+\DoxyCodeLine{1425 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1426 }
+\DoxyCodeLine{1427 \textcolor{keyword}{SUBROUTINE }\mbox{\hyperlink{CALLING__cpHTO_8f_a399f0f519a5abaf3bfeae455dd22a83d}{hto\_seval3singleht}}(u,b,c,d,top,gdim,f,fp,fpp,fppp,xc,yc)}
+\DoxyCodeLine{1428 }
+\DoxyCodeLine{1429 \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1430 }
+\DoxyCodeLine{1431 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{INTENT(IN)} :: u}
+\DoxyCodeLine{1432 \textcolor{comment}{! abscissa at which the spline is to be evaluated}}
+\DoxyCodeLine{1433 }
+\DoxyCodeLine{1434 \textcolor{keywordtype}{INTEGER} j,k,n,l,top,gdim}
+\DoxyCodeLine{1435 }
+\DoxyCodeLine{1436 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: xc,yc}
+\DoxyCodeLine{1437 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: x,y}
+\DoxyCodeLine{1438 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: b,c,d}
+\DoxyCodeLine{1439 \textcolor{comment}{! linear,quadratic,cubic coeff}}
+\DoxyCodeLine{1440 }
+\DoxyCodeLine{1441 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{INTENT(OUT)},\textcolor{keywordtype}{OPTIONAL}:: f,fp,fpp,fppp}
+\DoxyCodeLine{1442 \textcolor{comment}{! function, 1st,2nd,3rd deriv}}
+\DoxyCodeLine{1443 }
+\DoxyCodeLine{1444 \textcolor{keywordtype}{INTEGER}, \textcolor{keywordtype}{SAVE} :: i=1}
+\DoxyCodeLine{1445 \textcolor{keywordtype}{REAL}(8)    :: dx}
+\DoxyCodeLine{1446 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{PARAMETER}:: TWO=2.0, three=3.0, six=6.0}
+\DoxyCodeLine{1447 }
+\DoxyCodeLine{1448 \textcolor{comment}{! The grid}}
+\DoxyCodeLine{1449 }
+\DoxyCodeLine{1450 n= gdim}
+\DoxyCodeLine{1451 \textcolor{keywordflow}{FORALL}(l=1:gdim)}
+\DoxyCodeLine{1452 x(l)= xc(l)}
+\DoxyCodeLine{1453 y(l)= yc(l)}
+\DoxyCodeLine{1454 \textcolor{keywordflow}{ENDFORALL}}
+\DoxyCodeLine{1455 }
+\DoxyCodeLine{1456 \textcolor{comment}{!.....First check if u is in the same interval found on the}}
+\DoxyCodeLine{1457 \textcolor{comment}{!     last call to Seval.............................................}}
+\DoxyCodeLine{1458 }
+\DoxyCodeLine{1459 \textcolor{keywordflow}{IF} (  (i<1) .OR. (i >= n) ) i=1}
+\DoxyCodeLine{1460 \textcolor{keywordflow}{IF} ( (u < x(i))  .OR.  (u >= x(i+1)) ) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1461 i=1}
+\DoxyCodeLine{1462 }
+\DoxyCodeLine{1463 \textcolor{comment}{! binary search}}
+\DoxyCodeLine{1464 }
+\DoxyCodeLine{1465 j= n+1}
+\DoxyCodeLine{1466 \textcolor{keywordflow}{DO}}
+\DoxyCodeLine{1467 k= (i+j)/2}
+\DoxyCodeLine{1468 \textcolor{keywordflow}{IF} (u < x(k)) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1469 j= k}
+\DoxyCodeLine{1470 \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1471 i= k}
+\DoxyCodeLine{1472 \textcolor{keywordflow}{ENDIF}}
+\DoxyCodeLine{1473 \textcolor{keywordflow}{IF} (j <= i+1) \textcolor{keywordflow}{EXIT}}
+\DoxyCodeLine{1474 \textcolor{keywordflow}{ENDDO}}
+\DoxyCodeLine{1475 \textcolor{keywordflow}{ENDIF}}
+\DoxyCodeLine{1476 }
+\DoxyCodeLine{1477 dx= u-\/x(i)}
+\DoxyCodeLine{1478 }
+\DoxyCodeLine{1479 \textcolor{comment}{! evaluate the spline}}
+\DoxyCodeLine{1480 }
+\DoxyCodeLine{1481 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(f))    f= y(i)+dx*(b(i)+dx*(c(i)+dx*d(i)))}
+\DoxyCodeLine{1482 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(fp))   fp= b(i)+dx*(two*c(i) + dx*three*d(i))}
+\DoxyCodeLine{1483 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(fpp))  fpp= two*c(i) + dx*six*d(i)}
+\DoxyCodeLine{1484 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(fppp)) fppp= six*d(i)}
+\DoxyCodeLine{1485 }
+\DoxyCodeLine{1486 \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1487 }
+\DoxyCodeLine{1488 \textcolor{keyword}{END SUBROUTINE }\mbox{\hyperlink{CALLING__cpHTO_8f_a399f0f519a5abaf3bfeae455dd22a83d}{hto\_seval3singleht}}}
+\DoxyCodeLine{1489 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a7f62f096a28a7e46a6df7f9f2bc5ba44}\label{namespacemodmisc_a7f62f096a28a7e46a6df7f9f2bc5ba44}} 
 \index{modmisc@{modmisc}!findinputfmt0@{findinputfmt0}}
 \index{findinputfmt0@{findinputfmt0}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{findinputfmt0()}{findinputfmt0()}}
 {\footnotesize\ttfamily character(len=150) function modmisc\+::findinputfmt0 (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{Event\+Info\+Line }\end{DoxyParamCaption})}
 
+
+
+Definition at line 769 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{769 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{770 \textcolor{keywordtype}{character(len=*)} :: EventInfoLine}
+\DoxyCodeLine{771 \textcolor{keywordtype}{character(len=150)} FindInputFmt0}
+\DoxyCodeLine{772 \textcolor{keywordtype}{integer} :: i, j, fieldwidth, spaces(1:6)}
+\DoxyCodeLine{773 \textcolor{keywordtype}{integer} :: ProcessIdCharacters, WeightScaleAqedAqcdCharacters(1:4), WeightScaleAqedAqcdAfterDecimal(1:4)}
+\DoxyCodeLine{774 \textcolor{keywordtype}{character(len=40)} :: FormatParts(1:6)}
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776 \textcolor{comment}{!find the number of spaces at the beginning}}
+\DoxyCodeLine{777 spaces(1) = 0}
+\DoxyCodeLine{778 i = 1}
+\DoxyCodeLine{779 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (eventinfoline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{780     i = i+1}
+\DoxyCodeLine{781     spaces(1) = spaces(1)+1}
+\DoxyCodeLine{782 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{783 \textcolor{comment}{!now find the width of the number of particles, assume it's right aligned with a max of 2 digits}}
+\DoxyCodeLine{784 fieldwidth = 0}
+\DoxyCodeLine{785 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (eventinfoline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{786     i = i+1}
+\DoxyCodeLine{787     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{788 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{789 spaces(1) = spaces(1) + fieldwidth -\/ 2}
+\DoxyCodeLine{790 }
+\DoxyCodeLine{791 \textcolor{comment}{!spaces and process id.}}
+\DoxyCodeLine{792 \textcolor{comment}{!"The process ID’s are not intended to be generic" [arXiv:0109068]}}
+\DoxyCodeLine{793 \textcolor{comment}{!I will assume that however many digits they are, they're right aligned}}
+\DoxyCodeLine{794 }
+\DoxyCodeLine{795 processidcharacters = -\/1  \textcolor{comment}{!so that it's 0 after the first space}}
+\DoxyCodeLine{796 spaces(2) = 1             \textcolor{comment}{!this is not increased, it's exactly 1}}
+\DoxyCodeLine{797 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (eventinfoline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{798     i = i+1}
+\DoxyCodeLine{799     processidcharacters = processidcharacters+1}
+\DoxyCodeLine{800 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{801 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (eventinfoline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{802     i = i+1}
+\DoxyCodeLine{803     processidcharacters = processidcharacters+1}
+\DoxyCodeLine{804 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806 \textcolor{comment}{!the rest of the fields (scale, alpha\_QED, alpha\_QCD) are decimals}}
+\DoxyCodeLine{807 \textcolor{keywordflow}{do} j=1,4}
+\DoxyCodeLine{808     spaces(j+2) = 0}
+\DoxyCodeLine{809     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (eventinfoline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{810         i = i+1}
+\DoxyCodeLine{811         spaces(j+2) = spaces(j+2)+1}
+\DoxyCodeLine{812 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{813     \textcolor{keywordflow}{if} (eventinfoline(i:i) .eq. \textcolor{stringliteral}{"-\/"}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{814         i = i+1}
+\DoxyCodeLine{815         weightscaleaqedaqcdcharacters(j) = 1  \textcolor{comment}{!we are already past the -\/}}
+\DoxyCodeLine{816     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spaces(j+2).eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{817         weightscaleaqedaqcdcharacters(j) = 0}
+\DoxyCodeLine{818     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{819         spaces(j+2) = spaces(j+2)-\/1           \textcolor{comment}{!because the place where the -\/ sign is supposed to go is not always a space}}
+\DoxyCodeLine{820         weightscaleaqedaqcdcharacters(j) = 1  \textcolor{comment}{!we are already past the -\/}}
+\DoxyCodeLine{821 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{822     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (eventinfoline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{823         i = i+1}
+\DoxyCodeLine{824         weightscaleaqedaqcdcharacters(j) = weightscaleaqedaqcdcharacters(j)+1}
+\DoxyCodeLine{825 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{826     weightscaleaqedaqcdafterdecimal(j) = weightscaleaqedaqcdcharacters(j)-\/7}
+\DoxyCodeLine{827 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{828 }
+\DoxyCodeLine{829 \textcolor{comment}{!now we construct the format string}}
+\DoxyCodeLine{830 \textcolor{keywordflow}{if} (spaces(1).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{831     formatparts(1) = \textcolor{stringliteral}{"(I2,"}}
+\DoxyCodeLine{832 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{833     \textcolor{keyword}{write}(formatparts(1), \textcolor{stringliteral}{"(A,I1,A)"}) \textcolor{stringliteral}{"("}, spaces(1), \textcolor{stringliteral}{"X,I2,"}}
+\DoxyCodeLine{834 \textcolor{keywordflow}{endif}}
+\DoxyCodeLine{835 \textcolor{keywordflow}{if} (processidcharacters.lt.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{836     \textcolor{keyword}{write}(formatparts(2), \textcolor{stringliteral}{"(I1,A,I1,A)"}) spaces(2), \textcolor{stringliteral}{"X,I"}, processidcharacters \textcolor{comment}{!the comma is at the beginning of the next part}}
+\DoxyCodeLine{837 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{838     \textcolor{keyword}{write}(formatparts(2), \textcolor{stringliteral}{"(I1,A,I2)"}) spaces(2), \textcolor{stringliteral}{"X,I"}, processidcharacters \textcolor{comment}{!the comma is at the beginning of the next part}}
+\DoxyCodeLine{839 \textcolor{keywordflow}{endif}}
+\DoxyCodeLine{840 \textcolor{keywordflow}{do} j=1,4}
+\DoxyCodeLine{841     \textcolor{keywordflow}{if} (weightscaleaqedaqcdcharacters(j).lt.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{842         \textcolor{keyword}{write}(formatparts(j+2), \textcolor{stringliteral}{"(A,I1,A,I1,A,I1)"}) \textcolor{stringliteral}{","}, spaces(j+2), \textcolor{stringliteral}{"X,1PE"}, weightscaleaqedaqcdcharacters(j), \textcolor{stringliteral}{"."}, weightscaleaqedaqcdafterdecimal(j)}
+\DoxyCodeLine{843     \textcolor{keywordflow}{elseif} (weightscaleaqedaqcdcharacters(j).lt.17) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{844         \textcolor{keyword}{write}(formatparts(j+2), \textcolor{stringliteral}{"(A,I1,A,I2,A,I1)"}) \textcolor{stringliteral}{","}, spaces(j+2), \textcolor{stringliteral}{"X,1PE"}, weightscaleaqedaqcdcharacters(j), \textcolor{stringliteral}{"."}, weightscaleaqedaqcdafterdecimal(j)}
+\DoxyCodeLine{845     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{846         \textcolor{keyword}{write}(formatparts(j+2), \textcolor{stringliteral}{"(A,I1,A,I2,A,I2)"}) \textcolor{stringliteral}{","}, spaces(j+2), \textcolor{stringliteral}{"X,1PE"}, weightscaleaqedaqcdcharacters(j), \textcolor{stringliteral}{"."}, weightscaleaqedaqcdafterdecimal(j)}
+\DoxyCodeLine{847 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{848 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{849 }
+\DoxyCodeLine{850 findinputfmt0 = (trim(formatparts(1))  \&}
+\DoxyCodeLine{851               // trim(formatparts(2))  \&}
+\DoxyCodeLine{852               // trim(formatparts(3))  \&}
+\DoxyCodeLine{853               // trim(formatparts(4))  \&}
+\DoxyCodeLine{854               // trim(formatparts(5))  \&}
+\DoxyCodeLine{855               // trim(formatparts(6))  \&}
+\DoxyCodeLine{856               // \textcolor{stringliteral}{")"})}
+\DoxyCodeLine{857 }
+\DoxyCodeLine{858 \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a187adba58a588e038e8b717a54304b82}\label{namespacemodmisc_a187adba58a588e038e8b717a54304b82}} 
 \index{modmisc@{modmisc}!findinputfmt1@{findinputfmt1}}
 \index{findinputfmt1@{findinputfmt1}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{findinputfmt1()}{findinputfmt1()}}
 {\footnotesize\ttfamily character(len=150) function modmisc\+::findinputfmt1 (\begin{DoxyParamCaption}\item[{character(len=$\ast$)}]{Particle\+Line }\end{DoxyParamCaption})}
 
+
+
+Definition at line 864 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{864 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{865 \textcolor{keywordtype}{character(len=*)} :: ParticleLine}
+\DoxyCodeLine{866 \textcolor{keywordtype}{integer} :: i, j, fieldwidth, spaces(1:13)}
+\DoxyCodeLine{867 \textcolor{keywordtype}{character(len=150)} :: FindInputFmt1}
+\DoxyCodeLine{868 \textcolor{keywordtype}{integer} :: MomentumCharacters(1:5), LifetimeCharacters, LifetimeDigitsAfterDecimal, SpinCharacters, SpinDigitsAfterDecimal}
+\DoxyCodeLine{869 \textcolor{keywordtype}{logical} :: LifetimeIsExponential, SpinIsExponential}
+\DoxyCodeLine{870 \textcolor{keywordtype}{character(len=40)} :: FormatParts(11)}
+\DoxyCodeLine{871 \textcolor{comment}{!first find the number of spaces at the beginning}}
+\DoxyCodeLine{872 i = 1}
+\DoxyCodeLine{873 spaces(1) = 0}
+\DoxyCodeLine{874 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{875     i = i+1}
+\DoxyCodeLine{876     spaces(1) = spaces(1)+1}
+\DoxyCodeLine{877 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{878 \textcolor{comment}{!now find the width of the id; assume it's right aligned.}}
+\DoxyCodeLine{879 fieldwidth = 0}
+\DoxyCodeLine{880 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{881     i = i+1}
+\DoxyCodeLine{882     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{883 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{884 spaces(1) = spaces(1) + fieldwidth -\/ 3}
+\DoxyCodeLine{885 }
+\DoxyCodeLine{886 \textcolor{comment}{!number of spaces between the id and the status}}
+\DoxyCodeLine{887 spaces(2) = 0}
+\DoxyCodeLine{888 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{889     i = i+1}
+\DoxyCodeLine{890     spaces(2) = spaces(2)+1}
+\DoxyCodeLine{891 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{892 \textcolor{comment}{!width of the status (should be -\/1, so width 2, but just in case)}}
+\DoxyCodeLine{893 fieldwidth = 0}
+\DoxyCodeLine{894 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{895     i = i+1}
+\DoxyCodeLine{896     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{897 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{898 spaces(2) = spaces(2) + fieldwidth -\/ 2}
+\DoxyCodeLine{899 }
+\DoxyCodeLine{900 \textcolor{comment}{!number of spaces between the status and the first mother}}
+\DoxyCodeLine{901 spaces(3) = 0}
+\DoxyCodeLine{902 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{903     i = i+1}
+\DoxyCodeLine{904     spaces(3) = spaces(3)+1}
+\DoxyCodeLine{905 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{906 fieldwidth = 0}
+\DoxyCodeLine{907 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{908     i = i+1}
+\DoxyCodeLine{909     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{910 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{911 spaces(3) = spaces(3) + fieldwidth -\/ 2}
+\DoxyCodeLine{912 }
+\DoxyCodeLine{913 \textcolor{comment}{!number of spaces between the mothers}}
+\DoxyCodeLine{914 spaces(4) = 0}
+\DoxyCodeLine{915 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{916     i = i+1}
+\DoxyCodeLine{917     spaces(4) = spaces(4)+1}
+\DoxyCodeLine{918 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{919 fieldwidth = 0}
+\DoxyCodeLine{920 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{921     i = i+1}
+\DoxyCodeLine{922     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{923 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{924 spaces(4) = spaces(4) + fieldwidth -\/ 2}
+\DoxyCodeLine{925 }
+\DoxyCodeLine{926 \textcolor{comment}{!number of spaces between the second mother and the color}}
+\DoxyCodeLine{927 spaces(5) = 0}
+\DoxyCodeLine{928 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{929     i = i+1}
+\DoxyCodeLine{930     spaces(5) = spaces(5)+1}
+\DoxyCodeLine{931 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{932 fieldwidth = 0}
+\DoxyCodeLine{933 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{934     i = i+1}
+\DoxyCodeLine{935     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{936 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{937 spaces(5) = spaces(5) + fieldwidth -\/ 3}
+\DoxyCodeLine{938 }
+\DoxyCodeLine{939 \textcolor{comment}{!number of spaces between the color and the anticolor}}
+\DoxyCodeLine{940 spaces(6) = 0}
+\DoxyCodeLine{941 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{942     i = i+1}
+\DoxyCodeLine{943     spaces(6) = spaces(6)+1}
+\DoxyCodeLine{944 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{945 fieldwidth = 0}
+\DoxyCodeLine{946 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{947     i = i+1}
+\DoxyCodeLine{948     fieldwidth = fieldwidth+1}
+\DoxyCodeLine{949 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{950 spaces(6) = spaces(6) + fieldwidth -\/ 3}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 \textcolor{comment}{!From now on the alignment is simpler, every row will have the same width}}
+\DoxyCodeLine{953 \textcolor{comment}{!   except for possibly a -\/ sign at the beginning}}
+\DoxyCodeLine{954 \textcolor{comment}{!Unfortunately now there's number formatting to worry about}}
+\DoxyCodeLine{955 \textcolor{keywordflow}{do} j=7,11   \textcolor{comment}{!px, py, pz, E, m}}
+\DoxyCodeLine{956     \textcolor{comment}{!spaces before the momentum component}}
+\DoxyCodeLine{957     spaces(j) = 0}
+\DoxyCodeLine{958     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{959         i = i+1}
+\DoxyCodeLine{960         spaces(j) = spaces(j)+1}
+\DoxyCodeLine{961 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{962     \textcolor{keywordflow}{if} (particleline(i:i) .eq. \textcolor{stringliteral}{"-\/"}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{963         i = i+1}
+\DoxyCodeLine{964     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{965         spaces(j) = spaces(j)-\/1  \textcolor{comment}{!because the place where the -\/ sign is supposed to go is not always a space}}
+\DoxyCodeLine{966 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{967     \textcolor{comment}{!i is now on the first actual digit (not -\/) of the component}}
+\DoxyCodeLine{968 }
+\DoxyCodeLine{969     \textcolor{comment}{!number of characters used for the component}}
+\DoxyCodeLine{970     momentumcharacters(j-\/6) = 1           \textcolor{comment}{!we are already past the -\/}}
+\DoxyCodeLine{971     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{972         i = i+1}
+\DoxyCodeLine{973         momentumcharacters(j-\/6) = momentumcharacters(j-\/6)+1}
+\DoxyCodeLine{974 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{975 \textcolor{keywordflow}{enddo}}
+\DoxyCodeLine{976 }
+\DoxyCodeLine{977 \textcolor{comment}{!number of spaces between m and lifetime}}
+\DoxyCodeLine{978 \textcolor{comment}{!lifetime is nonnegative, so no -\/ sign}}
+\DoxyCodeLine{979 \textcolor{comment}{!but some generators (JHUGen) write 0.00000000000E+00}}
+\DoxyCodeLine{980 \textcolor{comment}{!while some (old JHUGen, some versions of MadGraph) write 0.}}
+\DoxyCodeLine{981 spaces(12) = 0}
+\DoxyCodeLine{982 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{983     i = i+1}
+\DoxyCodeLine{984     spaces(12) = spaces(12)+1}
+\DoxyCodeLine{985 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{986 }
+\DoxyCodeLine{987 \textcolor{comment}{!lifetime formatting}}
+\DoxyCodeLine{988 lifetimecharacters = 0}
+\DoxyCodeLine{989 lifetimedigitsafterdecimal = -\/1}
+\DoxyCodeLine{990 lifetimeisexponential = .false.}
+\DoxyCodeLine{991 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{992     \textcolor{keywordflow}{if} ((lifetimedigitsafterdecimal .ge. 0 .and. .not.lifetimeisexponential) \&}
+\DoxyCodeLine{993             .or. particleline(i:i) .eq. \textcolor{stringliteral}{"."}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{994         lifetimedigitsafterdecimal = lifetimedigitsafterdecimal+1}
+\DoxyCodeLine{995 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{996     \textcolor{keywordflow}{if} (particleline(i:i) .eq. \textcolor{stringliteral}{"E"} .or. particleline(i:i) .eq. \textcolor{stringliteral}{"e"}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{997         lifetimeisexponential = .true.}
+\DoxyCodeLine{998 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{999     i = i+1}
+\DoxyCodeLine{1000     lifetimecharacters = lifetimecharacters+1}
+\DoxyCodeLine{1001 \textcolor{keywordflow}{enddo}}
+\DoxyCodeLine{1002 }
+\DoxyCodeLine{1003 \textcolor{comment}{!number of spaces between lifetime and spin}}
+\DoxyCodeLine{1004 \textcolor{comment}{!spin has all the complications of lifetime, plus it might be negative}}
+\DoxyCodeLine{1005 spaces(13) = 0}
+\DoxyCodeLine{1006 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .eq. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{1007     i = i+1}
+\DoxyCodeLine{1008     spaces(13) = spaces(13)+1}
+\DoxyCodeLine{1009 \textcolor{keywordflow}{end do}}
+\DoxyCodeLine{1010 \textcolor{keywordflow}{if} (particleline(i:i) .eq. \textcolor{stringliteral}{"-\/"}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1011     i = i+1}
+\DoxyCodeLine{1012 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1013     spaces(13) = spaces(13)-\/1  \textcolor{comment}{!because the place where the -\/ sign is supposed to go is not always a space}}
+\DoxyCodeLine{1014 \textcolor{keywordflow}{endif}}
+\DoxyCodeLine{1015 \textcolor{comment}{!i is now on the first digit of the spin}}
+\DoxyCodeLine{1016 }
+\DoxyCodeLine{1017 \textcolor{comment}{!spin formatting}}
+\DoxyCodeLine{1018 spincharacters = 1             \textcolor{comment}{!we are already past the -\/}}
+\DoxyCodeLine{1019 spindigitsafterdecimal = -\/1}
+\DoxyCodeLine{1020 spinisexponential = .false.}
+\DoxyCodeLine{1021 \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (particleline(i:i) .ne. \textcolor{stringliteral}{" "})}
+\DoxyCodeLine{1022     \textcolor{keywordflow}{if} (spindigitsafterdecimal .ge. 0 .or. particleline(i:i) .eq. \textcolor{stringliteral}{"."}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1023         spindigitsafterdecimal = spindigitsafterdecimal+1}
+\DoxyCodeLine{1024 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1025     \textcolor{keywordflow}{if} (particleline(i:i) .eq. \textcolor{stringliteral}{"E"} .or. particleline(i:i) .eq. \textcolor{stringliteral}{"e"}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1026         spinisexponential = .true.}
+\DoxyCodeLine{1027 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1028     i = i+1}
+\DoxyCodeLine{1029     spincharacters = spincharacters+1}
+\DoxyCodeLine{1030 \textcolor{keywordflow}{enddo}}
+\DoxyCodeLine{1031 }
+\DoxyCodeLine{1032 \textcolor{comment}{!check that spaces(i) > 0}}
+\DoxyCodeLine{1033 \textcolor{comment}{!(besides for spaces(1), before the id, which can be 0)}}
+\DoxyCodeLine{1034 \textcolor{comment}{!the only way this can happen, consistent with the definition of lhe format,}}
+\DoxyCodeLine{1035 \textcolor{comment}{! is for a column not to leave extra space for a -\/}}
+\DoxyCodeLine{1036 \textcolor{keywordflow}{do} i=2,13}
+\DoxyCodeLine{1037     \textcolor{keywordflow}{if} (spaces(i).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1038         spaces(i) = 1}
+\DoxyCodeLine{1039         \textcolor{keywordflow}{if} (i.ge.7 .and. i.le.11) \textcolor{keywordflow}{then}   \textcolor{comment}{!we counted the nonexistant space for -\/ in MomentumCharacters(i-\/6)}}
+\DoxyCodeLine{1040             momentumcharacters(i-\/6) = momentumcharacters(i-\/6)-\/1}
+\DoxyCodeLine{1041 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{1042         \textcolor{keywordflow}{if} (i.eq.13) \textcolor{keywordflow}{then}  \textcolor{comment}{!same}}
+\DoxyCodeLine{1043             spincharacters = spincharacters-\/1}
+\DoxyCodeLine{1044 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{1045 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1046 \textcolor{keywordflow}{enddo}}
+\DoxyCodeLine{1047 }
+\DoxyCodeLine{1048 \textcolor{comment}{!Ok, now we construct the format string}}
+\DoxyCodeLine{1049 \textcolor{comment}{!Initial spaces and id}}
+\DoxyCodeLine{1050 \textcolor{keywordflow}{if} (spaces(1).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1051     formatparts(1) = \textcolor{stringliteral}{"(I3,"}}
+\DoxyCodeLine{1052 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1053     \textcolor{keyword}{write}(formatparts(1),\textcolor{stringliteral}{"(A,I1,A)"}) \textcolor{stringliteral}{"("}, spaces(1), \textcolor{stringliteral}{"X,I3,"}}
+\DoxyCodeLine{1054 \textcolor{keywordflow}{endif}}
+\DoxyCodeLine{1055 \textcolor{comment}{!spaces and status}}
+\DoxyCodeLine{1056 \textcolor{keyword}{write}(formatparts(2),\textcolor{stringliteral}{"(I1,A)"}) spaces(2), \textcolor{stringliteral}{"X,I2,"}}
+\DoxyCodeLine{1057 \textcolor{comment}{!spaces and mothers}}
+\DoxyCodeLine{1058 \textcolor{keyword}{write}(formatparts(3),\textcolor{stringliteral}{"(I1,A,I1,A)"}) spaces(3), \textcolor{stringliteral}{"X,I2,"}, spaces(4), \textcolor{stringliteral}{"X,I2,"}}
+\DoxyCodeLine{1059 \textcolor{comment}{!spaces and colors}}
+\DoxyCodeLine{1060 \textcolor{keyword}{write}(formatparts(4),\textcolor{stringliteral}{"(I1,A,I1,A)"}) spaces(5), \textcolor{stringliteral}{"X,I3,"}, spaces(6), \textcolor{stringliteral}{"X,I3,"}}
+\DoxyCodeLine{1061 }
+\DoxyCodeLine{1062 \textcolor{keywordflow}{do} i=5,9}
+\DoxyCodeLine{1063     \textcolor{comment}{!spaces and momentum components (and mass)}}
+\DoxyCodeLine{1064     \textcolor{keywordflow}{if} (momentumcharacters(i-\/4) .lt. 10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1065         \textcolor{keyword}{write}(formatparts(i),\textcolor{stringliteral}{"(I1,A,I1,A,I1,A)"}) spaces(i+2), \textcolor{stringliteral}{"X,1PE"}, momentumcharacters(i-\/4), \textcolor{stringliteral}{"."}, momentumcharacters(i-\/4)-\/7, \textcolor{stringliteral}{","}}
+\DoxyCodeLine{1066     \textcolor{keywordflow}{elseif} (momentumcharacters(i-\/4) .lt. 17) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1067         \textcolor{keyword}{write}(formatparts(i),\textcolor{stringliteral}{"(I1,A,I2,A,I1,A)"}) spaces(i+2), \textcolor{stringliteral}{"X,1PE"}, momentumcharacters(i-\/4), \textcolor{stringliteral}{"."}, momentumcharacters(i-\/4)-\/7, \textcolor{stringliteral}{","}}
+\DoxyCodeLine{1068     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1069         \textcolor{keyword}{write}(formatparts(i),\textcolor{stringliteral}{"(I1,A,I2,A,I2,A)"}) spaces(i+2), \textcolor{stringliteral}{"X,1PE"}, momentumcharacters(i-\/4), \textcolor{stringliteral}{"."}, momentumcharacters(i-\/4)-\/7, \textcolor{stringliteral}{","}}
+\DoxyCodeLine{1070 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1071 \textcolor{keywordflow}{enddo}}
+\DoxyCodeLine{1072 }
+\DoxyCodeLine{1073 \textcolor{comment}{!spaces and lifetime}}
+\DoxyCodeLine{1074 \textcolor{keywordflow}{if} (lifetimeisexponential) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1075     \textcolor{keywordflow}{if} (lifetimecharacters .lt. 10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1076         \textcolor{keyword}{write}(formatparts(10),\textcolor{stringliteral}{"(I1,A,I1,A,I1,A)"}) \&}
+\DoxyCodeLine{1077             spaces(12), \textcolor{stringliteral}{"X,1PE"},lifetimecharacters,\textcolor{stringliteral}{"."},lifetimedigitsafterdecimal,\textcolor{stringliteral}{","}}
+\DoxyCodeLine{1078     \textcolor{keywordflow}{elseif} (lifetimedigitsafterdecimal.lt.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1079         \textcolor{keyword}{write}(formatparts(10),\textcolor{stringliteral}{"(I1,A,I2,A,I1,A)"}) \&}
+\DoxyCodeLine{1080             spaces(12), \textcolor{stringliteral}{"X,1PE"},lifetimecharacters,\textcolor{stringliteral}{"."},lifetimedigitsafterdecimal,\textcolor{stringliteral}{","}}
+\DoxyCodeLine{1081     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1082         \textcolor{keyword}{write}(formatparts(10),\textcolor{stringliteral}{"(I1,A,I2,A,I2,A)"}) \&}
+\DoxyCodeLine{1083             spaces(12), \textcolor{stringliteral}{"X,1PE"},lifetimecharacters,\textcolor{stringliteral}{"."},lifetimedigitsafterdecimal,\textcolor{stringliteral}{","}}
+\DoxyCodeLine{1084 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1085 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1086     \textcolor{keywordflow}{if} (lifetimecharacters .lt. 10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1087         \textcolor{keyword}{write}(formatparts(10),\textcolor{stringliteral}{"(I1,A,I1,A,I1,A)"}) \&}
+\DoxyCodeLine{1088             spaces(12), \textcolor{stringliteral}{"X,1F"},lifetimecharacters,\textcolor{stringliteral}{"."},lifetimedigitsafterdecimal,\textcolor{stringliteral}{","}}
+\DoxyCodeLine{1089     \textcolor{keywordflow}{elseif} (lifetimedigitsafterdecimal.lt.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1090         \textcolor{keyword}{write}(formatparts(10),\textcolor{stringliteral}{"(I1,A,I2,A,I1,A)"}) \&}
+\DoxyCodeLine{1091             spaces(12), \textcolor{stringliteral}{"X,1F"},lifetimecharacters,\textcolor{stringliteral}{"."},lifetimedigitsafterdecimal,\textcolor{stringliteral}{","}}
+\DoxyCodeLine{1092     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1093         \textcolor{keyword}{write}(formatparts(10),\textcolor{stringliteral}{"(I1,A,I2,A,I2,A)"}) \&}
+\DoxyCodeLine{1094             spaces(12), \textcolor{stringliteral}{"X,1F"},lifetimecharacters,\textcolor{stringliteral}{"."},lifetimedigitsafterdecimal,\textcolor{stringliteral}{","}}
+\DoxyCodeLine{1095 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1096 \textcolor{keywordflow}{endif}}
+\DoxyCodeLine{1097 }
+\DoxyCodeLine{1098 \textcolor{comment}{!spaces and spin}}
+\DoxyCodeLine{1099 \textcolor{keywordflow}{if} (spinisexponential) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1100     \textcolor{keywordflow}{if} (spincharacters .lt. 10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1101         \textcolor{keyword}{write}(formatparts(11),\textcolor{stringliteral}{"(I1,A,I1,A,I1,A)"}) \&}
+\DoxyCodeLine{1102             spaces(13), \textcolor{stringliteral}{"X,1PE"},spincharacters,\textcolor{stringliteral}{"."},spindigitsafterdecimal,\textcolor{stringliteral}{")"}}
+\DoxyCodeLine{1103     \textcolor{keywordflow}{elseif} (spindigitsafterdecimal.lt.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1104         \textcolor{keyword}{write}(formatparts(11),\textcolor{stringliteral}{"(I1,A,I2,A,I1,A)"}) \&}
+\DoxyCodeLine{1105             spaces(13), \textcolor{stringliteral}{"X,1PE"},spincharacters,\textcolor{stringliteral}{"."},spindigitsafterdecimal,\textcolor{stringliteral}{")"}}
+\DoxyCodeLine{1106     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1107         \textcolor{keyword}{write}(formatparts(11),\textcolor{stringliteral}{"(I1,A,I2,A,I2,A)"}) \&}
+\DoxyCodeLine{1108             spaces(13), \textcolor{stringliteral}{"X,1PE"},spincharacters,\textcolor{stringliteral}{"."},spindigitsafterdecimal,\textcolor{stringliteral}{")"}}
+\DoxyCodeLine{1109 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1110 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1111     \textcolor{keywordflow}{if} (spincharacters .lt. 10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1112         \textcolor{keyword}{write}(formatparts(11),\textcolor{stringliteral}{"(I1,A,I1,A,I1,A)"}) \&}
+\DoxyCodeLine{1113             spaces(13), \textcolor{stringliteral}{"X,1F"},spincharacters,\textcolor{stringliteral}{"."},spindigitsafterdecimal,\textcolor{stringliteral}{")"}}
+\DoxyCodeLine{1114     \textcolor{keywordflow}{elseif} (spindigitsafterdecimal.lt.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1115         \textcolor{keyword}{write}(formatparts(11),\textcolor{stringliteral}{"(I1,A,I2,A,I1,A)"}) \&}
+\DoxyCodeLine{1116             spaces(13), \textcolor{stringliteral}{"X,1F"},spincharacters,\textcolor{stringliteral}{"."},spindigitsafterdecimal,\textcolor{stringliteral}{")"}}
+\DoxyCodeLine{1117     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1118         \textcolor{keyword}{write}(formatparts(11),\textcolor{stringliteral}{"(I1,A,I2,A,I2,A)"}) \&}
+\DoxyCodeLine{1119             spaces(13), \textcolor{stringliteral}{"X,1F"},spincharacters,\textcolor{stringliteral}{"."},spindigitsafterdecimal,\textcolor{stringliteral}{")"}}
+\DoxyCodeLine{1120 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1121 \textcolor{keywordflow}{endif}}
+\DoxyCodeLine{1122 }
+\DoxyCodeLine{1123 \textcolor{comment}{!do i=1,11}}
+\DoxyCodeLine{1124 \textcolor{comment}{!    print *, FormatParts(i)}}
+\DoxyCodeLine{1125 \textcolor{comment}{!enddo}}
+\DoxyCodeLine{1126 }
+\DoxyCodeLine{1127 findinputfmt1 = (trim(formatparts(1))  \&}
+\DoxyCodeLine{1128               // trim(formatparts(2))  \&}
+\DoxyCodeLine{1129               // trim(formatparts(3))  \&}
+\DoxyCodeLine{1130               // trim(formatparts(4))  \&}
+\DoxyCodeLine{1131               // trim(formatparts(5))  \&}
+\DoxyCodeLine{1132               // trim(formatparts(6))  \&}
+\DoxyCodeLine{1133               // trim(formatparts(7))  \&}
+\DoxyCodeLine{1134               // trim(formatparts(8))  \&}
+\DoxyCodeLine{1135               // trim(formatparts(9))  \&}
+\DoxyCodeLine{1136               // trim(formatparts(10)) \&}
+\DoxyCodeLine{1137               // trim(formatparts(11)))}
+\DoxyCodeLine{1138 \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a2deaec996b883fffd3d9b19523d51fdf}\label{namespacemodmisc_a2deaec996b883fffd3d9b19523d51fdf}} 
 \index{modmisc@{modmisc}!get\_cosalpha@{get\_cosalpha}}
 \index{get\_cosalpha@{get\_cosalpha}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_cosalpha()}{get\_cosalpha()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+cosalpha (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom1,  }\item[{real(8), dimension(1\+:4)}]{Mom2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 212 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{212 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{213 \textcolor{keywordtype}{real}(8) ::Mom1(1:4),Mom2(1:4),Get\_CosAlpha}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     get\_cosalpha = (mom1(2)*mom2(2)+mom1(3)*mom2(3)+mom1(4)*mom2(4))/dsqrt(mom1(2)**2+mom1(3)**2+mom1(4)**2)/dsqrt(mom2(2)**2+mom2(3)**2+mom2(4)**2)}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a48b5ae16f30c3494deb4d3fc8af305e5}\label{namespacemodmisc_a48b5ae16f30c3494deb4d3fc8af305e5}} 
 \index{modmisc@{modmisc}!get\_costheta@{get\_costheta}}
 \index{get\_costheta@{get\_costheta}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_costheta()}{get\_costheta()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+costheta (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 222 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{222 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{223 \textcolor{keywordtype}{real}(8) ::Mom(1:4), Get\_CosTheta}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225     get\_costheta = mom(4)/dsqrt( mom(2)**2+mom(3)**2+mom(4)**2 +1d-\/16)}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a05526cf686aa06459c1cd8d9cb994c14}\label{namespacemodmisc_a05526cf686aa06459c1cd8d9cb994c14}} 
 \index{modmisc@{modmisc}!get\_eta@{get\_eta}}
 \index{get\_eta@{get\_eta}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_eta()}{get\_eta()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+eta (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 190 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{190 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{191 \textcolor{keywordtype}{real}(8) ::Mom(1:4),Get\_ETA}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193    get\_eta = 0.5d0*dlog( dabs((mom(1)+mom(4)+1d-\/16)/(mom(1)-\/mom(4) +1d-\/16) ))}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}\label{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}} 
 \index{modmisc@{modmisc}!get\_minv@{get\_minv}}
 \index{get\_minv@{get\_minv}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_minv()}{get\_minv()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+minv (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 172 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{172 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{173 \textcolor{keywordtype}{real}(8) ::Mom(1:4),Get\_MInv}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175    get\_minv = dsqrt( dabs(mom(1:4).dot.mom(1:4)) )}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a8f5484a847bac9816a81f6b58fbd5a9e}\label{namespacemodmisc_a8f5484a847bac9816a81f6b58fbd5a9e}} 
 \index{modmisc@{modmisc}!get\_minv2@{get\_minv2}}
 \index{get\_minv2@{get\_minv2}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_minv2()}{get\_minv2()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+minv2 (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 181 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{182 \textcolor{keywordtype}{real}(8) ::Mom(1:4),Get\_MInv2}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184    get\_minv2 = mom(1:4).dot.mom(1:4)}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a6749378af481a8e3721cebb7eca09cce}\label{namespacemodmisc_a6749378af481a8e3721cebb7eca09cce}} 
 \index{modmisc@{modmisc}!get\_phi@{get\_phi}}
 \index{get\_phi@{get\_phi}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_phi()}{get\_phi()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+phi (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 200 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{200 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{201 \textcolor{keywordtype}{real}(8) ::Mom(1:4),Get\_PHI}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203    get\_phi = datan2( mom(3),mom(2) )}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a16087c52e2af5fad4da5ed6a8698380a}\label{namespacemodmisc_a16087c52e2af5fad4da5ed6a8698380a}} 
 \index{modmisc@{modmisc}!get\_pt@{get\_pt}}
 \index{get\_pt@{get\_pt}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_pt()}{get\_pt()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+pt (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 152 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{153 \textcolor{keywordtype}{real}(8) ::Mom(1:4),Get\_PT}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155    get\_pt = dsqrt( mom(2)**2 + mom(3)**2 )}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_aec9407c3be9e130960571ced057362b3}\label{namespacemodmisc_aec9407c3be9e130960571ced057362b3}} 
 \index{modmisc@{modmisc}!get\_pt2@{get\_pt2}}
 \index{get\_pt2@{get\_pt2}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_pt2()}{get\_pt2()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+pt2 (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 162 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{163 \textcolor{keywordtype}{real}(8) ::Mom(1:4),Get\_PT2}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165    get\_pt2 = mom(2)**2 + mom(3)**2}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_aa2b700cf276ef4d3e4a0fc6f57fd2e27}\label{namespacemodmisc_aa2b700cf276ef4d3e4a0fc6f57fd2e27}} 
 \index{modmisc@{modmisc}!get\_r@{get\_r}}
 \index{get\_r@{get\_r}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{get\_r()}{get\_r()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::get\+\_\+r (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom1,  }\item[{real(8), dimension(1\+:4)}]{Mom2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 233 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{233 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{234 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Pi=3.141592653589793d0}
+\DoxyCodeLine{235 \textcolor{keywordtype}{real}(8) :: Mom1(1:4),Mom2(1:4),Get\_R}
+\DoxyCodeLine{236 \textcolor{keywordtype}{real}(8) :: eta1,eta2,phi1,phi2,DeltaPhi,r2,delphi}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238    eta1 = get\_eta(mom1(1:4))}
+\DoxyCodeLine{239    eta2 = get\_eta(mom2(1:4))}
+\DoxyCodeLine{240    phi1 = get\_phi(mom1(1:4))}
+\DoxyCodeLine{241    phi2 = get\_phi(mom2(1:4))}
+\DoxyCodeLine{242    deltaphi = dabs(phi1-\/phi2)}
+\DoxyCodeLine{243    \textcolor{keywordflow}{if}( deltaphi.gt.pi ) deltaphi=2d0*pi-\/deltaphi}
+\DoxyCodeLine{244    get\_r = dsqrt((eta1-\/eta2)**2 + deltaphi**2)}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_acb57f3f42fbae92a730a0291d79c47f7}\label{namespacemodmisc_acb57f3f42fbae92a730a0291d79c47f7}} 
 \index{modmisc@{modmisc}!houseofrepresentatives@{houseofrepresentatives}}
 \index{houseofrepresentatives@{houseofrepresentatives}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{houseofrepresentatives()}{houseofrepresentatives()}}
 {\footnotesize\ttfamily subroutine modmisc\+::houseofrepresentatives (\begin{DoxyParamCaption}\item[{real(8), dimension(-\/5\+:5,-\/5\+:5), intent(in)}]{X\+Sec\+Array,  }\item[{integer(8), dimension(-\/5\+:5,-\/5\+:5), intent(out)}]{Number\+Of\+Seats,  }\item[{integer, intent(in)}]{Total\+Number\+Of\+Seats }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1167 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1167 \textcolor{comment}{!Want to generate TotalNumberOfSeats events among the partonic channels, proportional to the xsec.}}
+\DoxyCodeLine{1168 \textcolor{comment}{!But can't generate half an event, so need to round in some way.}}
+\DoxyCodeLine{1169 \textcolor{comment}{!Apparently this is a major political issue.  https://en.wikipedia.org/wiki/Apportionment\_paradox}}
+\DoxyCodeLine{1170 \textcolor{comment}{!The first US presidential veto was when George Washington vetoed a change in rounding scheme}}
+\DoxyCodeLine{1171 \textcolor{comment}{! because Virginia would have lost seats in the House.}}
+\DoxyCodeLine{1172 \textcolor{comment}{!Also, if the US had used a different system, Rutherford B. Hayes wouldn't have been president.}}
+\DoxyCodeLine{1173 }
+\DoxyCodeLine{1174 \textcolor{comment}{!For our case, it's much easier because we can and should distribute randomly, not deterministically}}
+\DoxyCodeLine{1175 \textcolor{comment}{! so that if you run 1000 times with 50 events each the fluctuations average out.}}
+\DoxyCodeLine{1176 \textcolor{comment}{!Also states with small xsec like Wyoming don't get a seat.}}
+\DoxyCodeLine{1177 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1178 \textcolor{keywordtype}{real}(8) :: totalxsec, CrossSecNormalized(-\/5:5,-\/5:5), yRnd}
+\DoxyCodeLine{1179 \textcolor{keywordtype}{integer} :: n, i, j}
+\DoxyCodeLine{1180 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: TotalNumberOfSeats}
+\DoxyCodeLine{1181 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: XSecArray(-\/5:5,-\/5:5)}
+\DoxyCodeLine{1182 \textcolor{keywordtype}{integer(8)}, \textcolor{keywordtype}{intent(out)} :: NumberOfSeats(-\/5:5,-\/5:5)}
+\DoxyCodeLine{1183   totalxsec = 0}
+\DoxyCodeLine{1184   numberofseats(:,:) = 0}
+\DoxyCodeLine{1185   \textcolor{keywordflow}{if} (totalnumberofseats.lt.1) \textcolor{keywordflow}{return}}
+\DoxyCodeLine{1186 }
+\DoxyCodeLine{1187   \textcolor{keywordflow}{do} i=-\/5,5}
+\DoxyCodeLine{1188     \textcolor{keywordflow}{do} j=-\/5,5}
+\DoxyCodeLine{1189       totalxsec = totalxsec+abs(xsecarray(i,j))}
+\DoxyCodeLine{1190 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{1191 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1192   \textcolor{keywordflow}{if} (totalxsec.eq.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1193     print *,\textcolor{stringliteral}{"HouseOfRepresentatives: Total xsec is 0. Aborting..."}}
+\DoxyCodeLine{1194     stop 1}
+\DoxyCodeLine{1195 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{1196   \textcolor{keywordflow}{do} i=-\/5,5}
+\DoxyCodeLine{1197     \textcolor{keywordflow}{do} j=-\/5,5}
+\DoxyCodeLine{1198       crosssecnormalized(i,j) = abs(xsecarray(i,j)) / totalxsec}
+\DoxyCodeLine{1199 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{1200 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1201 }
+\DoxyCodeLine{1202   \textcolor{keywordflow}{do} n=1,totalnumberofseats}
+\DoxyCodeLine{1203     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(.true.)}
+\DoxyCodeLine{1204       \textcolor{keyword}{call }random\_number(yrnd)}
+\DoxyCodeLine{1205       \textcolor{keywordflow}{do} i=-\/5,5}
+\DoxyCodeLine{1206         \textcolor{keywordflow}{do} j=-\/5,5}
+\DoxyCodeLine{1207           \textcolor{keywordflow}{if} (yrnd .lt. crosssecnormalized(i,j)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1208             numberofseats(i,j) = numberofseats(i,j)+1}
+\DoxyCodeLine{1209             \textcolor{keywordflow}{goto} 99}
+\DoxyCodeLine{1210 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{1211           yrnd = yrnd -\/ crosssecnormalized(i,j)}
+\DoxyCodeLine{1212 \textcolor{keywordflow}{        enddo}}
+\DoxyCodeLine{1213 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1214       \textcolor{comment}{!in case a rounding error causes sum(CrossSecNormalized) != 1}}
+\DoxyCodeLine{1215       print *, \textcolor{stringliteral}{"HouseOfRepresentatives: Warning, rounding error, try again"}}
+\DoxyCodeLine{1216 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{1217 99  \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{1218 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1219 }
+\DoxyCodeLine{1220   \textcolor{keywordflow}{if} (sum(numberofseats(:,:)).ne.totalnumberofseats) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1221     print *, \textcolor{stringliteral}{"HouseOfRepresentatives: Wrong total number of events, shouldn't be able to happen"}}
+\DoxyCodeLine{1222     stop 1}
+\DoxyCodeLine{1223 \textcolor{keywordflow}{  endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a06b31627b7caea5513cb4edd231310e6}\label{namespacemodmisc_a06b31627b7caea5513cb4edd231310e6}} 
 \index{modmisc@{modmisc}!houseofrepresentatives2@{houseofrepresentatives2}}
 \index{houseofrepresentatives2@{houseofrepresentatives2}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{houseofrepresentatives2()}{houseofrepresentatives2()}}
 {\footnotesize\ttfamily subroutine modmisc\+::houseofrepresentatives2 (\begin{DoxyParamCaption}\item[{real(8), dimension(\+:), intent(in)}]{X\+Sec\+Array,  }\item[{integer(8), dimension(\+:), intent(out)}]{Number\+Of\+Seats,  }\item[{integer, intent(in)}]{Total\+Number\+Of\+Seats }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1230 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1230 \textcolor{comment}{!same as above with one-\/dim. arrays}}
+\DoxyCodeLine{1231 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1232 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: XSecArray(:)}
+\DoxyCodeLine{1233 \textcolor{keywordtype}{real}(8) :: totalxsec, CrossSecNormalized(size(XSecArray)), yRnd}
+\DoxyCodeLine{1234 \textcolor{keywordtype}{integer} :: n,i,nchannels}
+\DoxyCodeLine{1235 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: TotalNumberOfSeats}
+\DoxyCodeLine{1236 \textcolor{keywordtype}{integer(8)}, \textcolor{keywordtype}{intent(out)} :: NumberOfSeats(:)}
+\DoxyCodeLine{1237   totalxsec = 0}
+\DoxyCodeLine{1238   numberofseats(:) = 0}
+\DoxyCodeLine{1239   \textcolor{keywordflow}{if} (totalnumberofseats.lt.1) \textcolor{keywordflow}{return}}
+\DoxyCodeLine{1240 }
+\DoxyCodeLine{1241   nchannels = \textcolor{keyword}{size}(xsecarray)}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243   \textcolor{keywordflow}{do} i=1,nchannels}
+\DoxyCodeLine{1244     totalxsec = totalxsec+abs(xsecarray(i))}
+\DoxyCodeLine{1245 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1246   \textcolor{keywordflow}{if} (totalxsec.eq.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1247     print *,\textcolor{stringliteral}{"HouseOfRepresentatives2: Total xsec is 0. Aborting..."}}
+\DoxyCodeLine{1248     stop 1}
+\DoxyCodeLine{1249 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{1250   \textcolor{keywordflow}{do} i=1,nchannels}
+\DoxyCodeLine{1251     crosssecnormalized(i) = abs(xsecarray(i)) / totalxsec}
+\DoxyCodeLine{1252 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1253 }
+\DoxyCodeLine{1254   \textcolor{keywordflow}{do} n=1,totalnumberofseats}
+\DoxyCodeLine{1255     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(.true.)}
+\DoxyCodeLine{1256       \textcolor{keyword}{call }random\_number(yrnd)}
+\DoxyCodeLine{1257       \textcolor{keywordflow}{do} i=1,nchannels}
+\DoxyCodeLine{1258           \textcolor{keywordflow}{if} (yrnd .lt. crosssecnormalized(i)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1259             numberofseats(i) = numberofseats(i)+1}
+\DoxyCodeLine{1260             \textcolor{keywordflow}{goto} 99}
+\DoxyCodeLine{1261 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{1262           yrnd = yrnd -\/ crosssecnormalized(i)}
+\DoxyCodeLine{1263 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1264       print *, \textcolor{stringliteral}{"HouseOfRepresentatives2: Warning, rounding error, try again"}}
+\DoxyCodeLine{1265 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{1266 99  \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{1267 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1268 }
+\DoxyCodeLine{1269   \textcolor{keywordflow}{if} (sum(numberofseats(:)).ne.totalnumberofseats) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1270     print *, \textcolor{stringliteral}{"HouseOfRepresentatives2: Wrong total number of events, shouldn't be able to happen"}}
+\DoxyCodeLine{1271     stop 1}
+\DoxyCodeLine{1272 \textcolor{keywordflow}{  endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_abc2510f822a295ad2fac165fe41a8a96}\label{namespacemodmisc_abc2510f822a295ad2fac165fe41a8a96}} 
 \index{modmisc@{modmisc}!infinity@{infinity}}
 \index{infinity@{infinity}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{infinity()}{infinity()}}
 {\footnotesize\ttfamily real function modmisc\+::infinity}
 
+
+
+Definition at line 1563 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1563   \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1564 \textcolor{keywordtype}{  real} :: x}
+\DoxyCodeLine{1565   x = 0}
+\DoxyCodeLine{1566   \mbox{\hyperlink{namespacemodmisc_abc2510f822a295ad2fac165fe41a8a96}{infinity}}=-\/log(x)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_aec88f7154cdc627bd8c823597a684073}\label{namespacemodmisc_aec88f7154cdc627bd8c823597a684073}} 
 \index{modmisc@{modmisc}!isnan@{isnan}}
 \index{isnan@{isnan}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{isnan()}{isnan()}}
 {\footnotesize\ttfamily logical function modmisc\+::isnan (\begin{DoxyParamCaption}\item[{real(8)}]{x }\end{DoxyParamCaption})}
 
+
+
+Definition at line 380 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{380 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{381 \textcolor{keywordtype}{logical} IsNan}
+\DoxyCodeLine{382 \textcolor{keywordtype}{real}(8) :: x}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384    isnan = .not.(x.eq.x)}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a14b27552033291b7da4d75268ac50615}\label{namespacemodmisc_a14b27552033291b7da4d75268ac50615}} 
 \index{modmisc@{modmisc}!leviciv@{leviciv}}
 \index{leviciv@{leviciv}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{leviciv()}{leviciv()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::leviciv (\begin{DoxyParamCaption}\item[{complex(8), dimension(4), intent(in)}]{e1,  }\item[{complex(8), dimension(4), intent(in)}]{e2,  }\item[{complex(8), dimension(4), intent(in)}]{e3,  }\item[{complex(8), dimension(4), intent(in)}]{e4 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 448 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{448 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{449 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)}  :: e1(4), e2(4), e3(4), e4(4)}
+\DoxyCodeLine{450 \textcolor{keywordtype}{complex(8)}  ::LeviCiv}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 leviciv =  e1(1)*e2(2)*e3(3)*e4(4)-\/e1(1)*e2(2)*e3(4)*e4(3) \&}
+\DoxyCodeLine{453           -\/e1(1)*e2(3)*e3(2)*e4(4)+e1(1)*e2(3)*e3(4)*e4(2) \&}
+\DoxyCodeLine{454           +e1(1)*e2(4)*e3(2)*e4(3)-\/e1(1)*e2(4)*e3(3)*e4(2) \&}
+\DoxyCodeLine{455           -\/e1(2)*e2(1)*e3(3)*e4(4)+e1(2)*e2(1)*e3(4)*e4(3) \&}
+\DoxyCodeLine{456           +e1(2)*e2(3)*e3(1)*e4(4)-\/e1(2)*e2(3)*e3(4)*e4(1) \&}
+\DoxyCodeLine{457           -\/e1(2)*e2(4)*e3(1)*e4(3)+e1(2)*e2(4)*e3(3)*e4(1) \&}
+\DoxyCodeLine{458           +e1(3)*e2(1)*e3(2)*e4(4)-\/e1(3)*e2(1)*e3(4)*e4(2) \&}
+\DoxyCodeLine{459           -\/e1(3)*e2(2)*e3(1)*e4(4)+e1(3)*e2(2)*e3(4)*e4(1) \&}
+\DoxyCodeLine{460           +e1(3)*e2(4)*e3(1)*e4(2)-\/e1(3)*e2(4)*e3(2)*e4(1) \&}
+\DoxyCodeLine{461           -\/e1(4)*e2(1)*e3(2)*e4(3)+e1(4)*e2(1)*e3(3)*e4(2) \&}
+\DoxyCodeLine{462           +e1(4)*e2(2)*e3(1)*e4(3)-\/e1(4)*e2(2)*e3(3)*e4(1) \&}
+\DoxyCodeLine{463           -\/e1(4)*e2(3)*e3(1)*e4(2)+e1(4)*e2(3)*e3(2)*e4(1)}
+\DoxyCodeLine{464 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}\label{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}} 
 \index{modmisc@{modmisc}!logicaltointeger@{logicaltointeger}}
 \index{logicaltointeger@{logicaltointeger}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{logicaltointeger()}{logicaltointeger()}}
 {\footnotesize\ttfamily integer function modmisc\+::logicaltointeger (\begin{DoxyParamCaption}\item[{logical}]{var }\end{DoxyParamCaption})}
 
+
+
+Definition at line 97 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{98 \textcolor{keywordtype}{logical} :: var}
+\DoxyCodeLine{99 \textcolor{keywordtype}{integer} :: LogicalToInteger}
+\DoxyCodeLine{100    \textcolor{keywordflow}{if} (var) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{101       logicaltointeger = 1}
+\DoxyCodeLine{102    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{103       logicaltointeger = 0}
+\DoxyCodeLine{104 \textcolor{keywordflow}{   endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a40302e047edf719cd8549dc9527e0bbe}\label{namespacemodmisc_a40302e047edf719cd8549dc9527e0bbe}} 
 \index{modmisc@{modmisc}!minkowskyproduct@{minkowskyproduct}}
 \index{minkowskyproduct@{minkowskyproduct}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{minkowskyproduct()}{minkowskyproduct()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::minkowskyproduct (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{real(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 50 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{51 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: p1(1:4),p2(1:4)}
+\DoxyCodeLine{52 \textcolor{keywordtype}{real}(8)             :: MinkowskyProduct}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54    minkowskyproduct = p1(1)*p2(1)  \&}
+\DoxyCodeLine{55                     -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{56                     -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{57                     -\/p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a7c41f3834703063f40e1c40c240b0e06}\label{namespacemodmisc_a7c41f3834703063f40e1c40c240b0e06}} 
 \index{modmisc@{modmisc}!minkowskyproductc@{minkowskyproductc}}
 \index{minkowskyproductc@{minkowskyproductc}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{minkowskyproductc()}{minkowskyproductc()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::minkowskyproductc (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{complex(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 61 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{62 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p1(1:4),p2(1:4)}
+\DoxyCodeLine{63 \textcolor{keywordtype}{complex(8)}             :: MinkowskyProductC}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65    minkowskyproductc = p1(1)*p2(1)  \&}
+\DoxyCodeLine{66                      -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{67                      -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{68                      -\/ p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a29f390c69567f0956fe5d248815b2718}\label{namespacemodmisc_a29f390c69567f0956fe5d248815b2718}} 
 \index{modmisc@{modmisc}!minkowskyproductcr@{minkowskyproductcr}}
 \index{minkowskyproductcr@{minkowskyproductcr}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{minkowskyproductcr()}{minkowskyproductcr()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::minkowskyproductcr (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{real(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 84 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{85 \textcolor{keywordtype}{real}(8),    \textcolor{keywordtype}{intent(in)} :: p2(1:4)}
+\DoxyCodeLine{86 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p1(1:4)}
+\DoxyCodeLine{87 \textcolor{keywordtype}{complex(8)}             :: MinkowskyProductCR}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89    minkowskyproductcr = p1(1)*p2(1)  \&}
+\DoxyCodeLine{90                       -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{91                       -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{92                       -\/ p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_aacfa89cffdffb9e858f85de293d51107}\label{namespacemodmisc_aacfa89cffdffb9e858f85de293d51107}} 
 \index{modmisc@{modmisc}!minkowskyproductrc@{minkowskyproductrc}}
 \index{minkowskyproductrc@{minkowskyproductrc}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{minkowskyproductrc()}{minkowskyproductrc()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::minkowskyproductrc (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{complex(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 72 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{73 \textcolor{keywordtype}{real}(8),    \textcolor{keywordtype}{intent(in)} :: p1(1:4)}
+\DoxyCodeLine{74 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p2(1:4)}
+\DoxyCodeLine{75 \textcolor{keywordtype}{complex(8)}             :: MinkowskyProductRC}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77    minkowskyproductrc = p1(1)*p2(1)  \&}
+\DoxyCodeLine{78                       -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{79                       -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{80                       -\/ p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a6513c51ea08f81a34b2458f33e0b5052}\label{namespacemodmisc_a6513c51ea08f81a34b2458f33e0b5052}} 
 \index{modmisc@{modmisc}!pol\_gluon\_incoming@{pol\_gluon\_incoming}}
 \index{pol\_gluon\_incoming@{pol\_gluon\_incoming}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{pol\_gluon\_incoming()}{pol\_gluon\_incoming()}}
 {\footnotesize\ttfamily complex(8) function, dimension(1\+:4) modmisc\+::pol\+\_\+gluon\+\_\+incoming (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{p,  }\item[{integer}]{hel }\end{DoxyParamCaption})}
 
+
+
+Definition at line 469 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{469 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{470 \textcolor{keywordtype}{complex(8)} :: pol\_gluon\_incoming(1:4)}
+\DoxyCodeLine{471 \textcolor{keywordtype}{real}(8) :: p(1:4)}
+\DoxyCodeLine{472 \textcolor{keywordtype}{integer} :: hel}
+\DoxyCodeLine{473 \textcolor{keywordtype}{real}(8) :: pv,ct,st,cphi,sphi}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476     pv=dsqrt(dabs(p(1)**2))}
+\DoxyCodeLine{477     ct=p(4)/pv}
+\DoxyCodeLine{478     st=dsqrt(abs(1.0d0-\/ct**2))}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480     \textcolor{keywordflow}{if}( st.le.1d-\/9 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{481        cphi=1.0d0}
+\DoxyCodeLine{482        sphi=0.0d0}
+\DoxyCodeLine{483     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{484        cphi= p(2)/pv/st}
+\DoxyCodeLine{485        sphi= p(3)/pv/st}
+\DoxyCodeLine{486 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{487     \textcolor{comment}{! -\/-\/ distinguish between positive and negative energies}}
+\DoxyCodeLine{488 \textcolor{comment}{!     if ( p(1) .gt. 0.0\_dp) then}}
+\DoxyCodeLine{489 \textcolor{comment}{!        hel=hel}}
+\DoxyCodeLine{490 \textcolor{comment}{!     else}}
+\DoxyCodeLine{491 \textcolor{comment}{!        hel=-\/hel}}
+\DoxyCodeLine{492 \textcolor{comment}{!     endif}}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494 \textcolor{comment}{!     if (present(outgoing)) then}}
+\DoxyCodeLine{495 \textcolor{comment}{!        if (outgoing) pol = -\/pol}}
+\DoxyCodeLine{496 \textcolor{comment}{!     endif}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498     pol\_gluon\_incoming(1) = 0d0}
+\DoxyCodeLine{499     pol\_gluon\_incoming(2) = ct*cphi -\/ (0d0,1d0)*hel*sphi}
+\DoxyCodeLine{500     pol\_gluon\_incoming(3) = ct*sphi + (0d0,1d0)*hel*cphi}
+\DoxyCodeLine{501     pol\_gluon\_incoming(4) = -\/st}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503     pol\_gluon\_incoming(2:4) = pol\_gluon\_incoming(2:4)/dsqrt(2.0d0)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a46a3ced2544bfb257c9f3f35f340e98c}\label{namespacemodmisc_a46a3ced2544bfb257c9f3f35f340e98c}} 
 \index{modmisc@{modmisc}!pol\_zff\_outgoing@{pol\_zff\_outgoing}}
 \index{pol\_zff\_outgoing@{pol\_zff\_outgoing}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{pol\_zff\_outgoing()}{pol\_zff\_outgoing()}}
 {\footnotesize\ttfamily complex(8) function, dimension(4) modmisc\+::pol\+\_\+zff\+\_\+outgoing (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{pf,  }\item[{real(8), dimension(1\+:4)}]{pfbar,  }\item[{integer}]{hel }\end{DoxyParamCaption})}
 
+
+
+Definition at line 507 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{507 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{508 \textcolor{keywordtype}{complex(8)} :: pol\_Zff\_outgoing(4)}
+\DoxyCodeLine{509 \textcolor{keywordtype}{integer} :: hel}
+\DoxyCodeLine{510 \textcolor{keywordtype}{real}(8):: pf(1:4),pfbar(1:4)}
+\DoxyCodeLine{511 \textcolor{keywordtype}{complex(8)} :: Ub(1:4),V(1:4)}
+\DoxyCodeLine{512     ub(1:4) = \mbox{\hyperlink{namespacemodmisc_a1afc2e6e1e690b780362c1ed54eba41e}{ubar\_spinor}}(pf,hel)}
+\DoxyCodeLine{513     v(1:4)  = \mbox{\hyperlink{namespacemodmisc_a1fa24751336ef1074ba19731c5a158f4}{v\_spinor}}(pfbar,-\/hel)}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515     \textcolor{comment}{!   This is an expression for (-\/i)* (-\/i) Ub(+/-\/)) Gamma\string^\(\backslash\)mu V(-\//+)}}
+\DoxyCodeLine{516     pol\_zff\_outgoing(1)=-\/(ub(2)*v(4)+v(2)*ub(4)+ub(1)*v(3)+v(1)*ub(3))}
+\DoxyCodeLine{517     pol\_zff\_outgoing(2)=-\/(-\/ub(1)*v(4)+v(1)*ub(4)-\/ub(2)*v(3)+v(2)*ub(3))}
+\DoxyCodeLine{518     pol\_zff\_outgoing(3)=-\/(0d0,1d0)*(ub(1)*v(4)+v(1)*ub(4)-\/ub(2)*v(3)-\/v(2)*ub(3))}
+\DoxyCodeLine{519     pol\_zff\_outgoing(4)=-\/(ub(2)*v(4)-\/v(2)*ub(4)-\/ub(1)*v(3)+v(1)*ub(3))}
+\DoxyCodeLine{520 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a61bad9ca8f9cc15902f5a24598fbcc19}\label{namespacemodmisc_a61bad9ca8f9cc15902f5a24598fbcc19}} 
 \index{modmisc@{modmisc}!printlogo@{printlogo}}
 \index{printlogo@{printlogo}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{printlogo()}{printlogo()}}
 {\footnotesize\ttfamily subroutine modmisc\+::printlogo (\begin{DoxyParamCaption}\item[{integer}]{The\+Unit,  }\item[{character(len=$\ast$)}]{title }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1531 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1531 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{1532 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1533 \textcolor{keywordtype}{integer} :: TheUnit}
+\DoxyCodeLine{1534 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: linelength = 89}
+\DoxyCodeLine{1535 \textcolor{keywordtype}{character(len=*)} :: title}
+\DoxyCodeLine{1536 }
+\DoxyCodeLine{1537     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}}
+\DoxyCodeLine{1538     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, repeat(\textcolor{stringliteral}{"*"}, linelength)}
+\DoxyCodeLine{1539     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(trim(title)//\textcolor{stringliteral}{" "}//trim(\mbox{\hyperlink{namespacemodparameters_a47bb1c8c852aab13a340c46b2efe8ed4}{jhugen\_version}}), linelength)}
+\DoxyCodeLine{1540     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, repeat(\textcolor{stringliteral}{"*"}, linelength)}
+\DoxyCodeLine{1541     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{""}, linelength)}
+\DoxyCodeLine{1542     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Spin and parity determination of single-\/produced resonances at hadron colliders"}, linelength)}
+\DoxyCodeLine{1543     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{""}, linelength)}
+\DoxyCodeLine{1544     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"I. Anderson, S. Bolognesi, F. Caola, J. Davis, Y. Gao, A. V. Gritsan,"}, linelength)}
+\DoxyCodeLine{1545     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"L. S. Mandacaru Guerra, Z. Guo, L. Kang, S. Kyriacou, C. B. Martin, T. Martini,"}, linelength)}
+\DoxyCodeLine{1546     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"K. Melnikov, R. Pan, M. Panagiotou, R. Rontsch, J. Roskes, U. Sarica,"}, linelength)}
+\DoxyCodeLine{1547     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"M. Schulze, M. V. Srivastav, N. V. Tran, A. Whitbeck, M. Xiao, Y. Zhou"}, linelength)}
+\DoxyCodeLine{1548     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D81 (2010) 075022;  arXiv:1001.3396  [hep-\/ph],"}, linelength)}
+\DoxyCodeLine{1549     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D86 (2012) 095031;  arXiv:1208.4018  [hep-\/ph],"}, linelength)}
+\DoxyCodeLine{1550     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D89 (2014) 035007;  arXiv:1309.4819  [hep-\/ph],"}, linelength)}
+\DoxyCodeLine{1551     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D94 (2016) 055023;  arXiv:1606.03107 [hep-\/ph],"}, linelength)}
+\DoxyCodeLine{1552     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D102 (2020) 056022; arXiv:2002.09888 [hep-\/ph],"}, linelength)}
+\DoxyCodeLine{1553     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D102 (2021) 055045; arXiv:2104.04277 [hep-\/ph]."}, linelength)}
+\DoxyCodeLine{1554     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{"Phys.Rev. D105 (2022) 096027; arXiv:2109.13363 [hep-\/ph]."}, linelength)}
+\DoxyCodeLine{1555     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, centerwithstars(\textcolor{stringliteral}{""}, linelength)}
+\DoxyCodeLine{1556     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}, repeat(\textcolor{stringliteral}{"*"}, linelength)}
+\DoxyCodeLine{1557     \textcolor{keyword}{write}(theunit, *) \textcolor{stringliteral}{" "}}
+\DoxyCodeLine{1558 \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_aace7c4a048eb3cded1072e6e257a1fd9}\label{namespacemodmisc_aace7c4a048eb3cded1072e6e257a1fd9}} 
 \index{modmisc@{modmisc}!printmom@{printmom}}
 \index{printmom@{printmom}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{printmom()}{printmom()}}
 {\footnotesize\ttfamily subroutine modmisc\+::printmom (\begin{DoxyParamCaption}\item[{real(8), dimension(\+:,\+:)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 351 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{351 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{352 \textcolor{keywordtype}{real}(8) :: Mom(:,:)}
+\DoxyCodeLine{353 \textcolor{keywordtype}{integer} :: n}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355     \textcolor{keywordflow}{do} n=1,\textcolor{keyword}{size}(mom,2)}
+\DoxyCodeLine{356       \textcolor{keyword}{write} (*,\textcolor{stringliteral}{"(A,I2,A,1F20.16,A,1F20.16,A,1F20.16,A,1F20.16,A)"}) \textcolor{stringliteral}{"Mom(1:4,"},n,\textcolor{stringliteral}{")= (/"},mom(1,n),\textcolor{stringliteral}{"d0,"},mom(2,n),\textcolor{stringliteral}{"d0,"},mom(3,n),\textcolor{stringliteral}{"d0,"},mom(4,n),\textcolor{stringliteral}{"d0   /)"}}
+\DoxyCodeLine{357 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a1ac47dc64761009dcc50e57fbbbcf519}\label{namespacemodmisc_a1ac47dc64761009dcc50e57fbbbcf519}} 
 \index{modmisc@{modmisc}!pt\_order@{pt\_order}}
 \index{pt\_order@{pt\_order}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{pt\_order()}{pt\_order()}}
 {\footnotesize\ttfamily subroutine modmisc\+::pt\+\_\+order (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{real(8), dimension(1\+:4,1\+:n)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 253 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{253 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{254 \textcolor{keywordtype}{integer} :: N}
+\DoxyCodeLine{255 \textcolor{keywordtype}{real}(8) :: Mom(1:4,1:N),Mom\_Tmp(1:4,1:N),pTList(1:N)}
+\DoxyCodeLine{256 \textcolor{keywordtype}{integer} :: i,MomOrder(1:N)}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259     \textcolor{keywordflow}{if}(n.lt.1) \textcolor{keywordflow}{return}}
+\DoxyCodeLine{260     \textcolor{keywordflow}{do} i=1,n}
+\DoxyCodeLine{261       ptlist(i) = get\_pt(mom(1:4,i))}
+\DoxyCodeLine{262       momorder(i) = i}
+\DoxyCodeLine{263 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{keyword}{call }\mbox{\hyperlink{interfacemodmisc_1_1bublesort}{bublesort}}(n,ptlist(1:n),momorder(1:n))}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267     mom\_tmp(1:4,1:n) = mom(1:4,1:n)}
+\DoxyCodeLine{268     \textcolor{keywordflow}{do} i=1,n}
+\DoxyCodeLine{269         mom(1:4,i) = mom\_tmp(1:4,momorder(i))}
+\DoxyCodeLine{270 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{271 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_ad7a51fc80e98c8745facacd7104065d5}\label{namespacemodmisc_ad7a51fc80e98c8745facacd7104065d5}} 
 \index{modmisc@{modmisc}!sc@{sc}}
 \index{sc@{sc}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{sc()}{sc()}}
 {\footnotesize\ttfamily double complex function modmisc\+::sc (\begin{DoxyParamCaption}\item[{complex(8), dimension(4), intent(in)}]{q1,  }\item[{complex(8), dimension(4), intent(in)}]{q2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 127 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{128 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: q1(4)}
+\DoxyCodeLine{129 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: q2(4)}
+\DoxyCodeLine{130    \mbox{\hyperlink{namespacemodmisc_ad7a51fc80e98c8745facacd7104065d5}{sc}} = q1.dot.q2}
+\DoxyCodeLine{131    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a3f09f85d546e0284b955a11b37ef1310}\label{namespacemodmisc_a3f09f85d546e0284b955a11b37ef1310}} 
 \index{modmisc@{modmisc}!scr@{scr}}
 \index{scr@{scr}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{scr()}{scr()}}
 {\footnotesize\ttfamily double precision function modmisc\+::scr (\begin{DoxyParamCaption}\item[{real(8), dimension(4), intent(in)}]{p1,  }\item[{real(8), dimension(4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 135 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{136 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: p1(4),p2(4)}
+\DoxyCodeLine{137    \mbox{\hyperlink{namespacemodmisc_a3f09f85d546e0284b955a11b37ef1310}{scr}} = p1.dot.p2}
+\DoxyCodeLine{138    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a656b78f23188708e38caa4b28bb1e5fb}\label{namespacemodmisc_a656b78f23188708e38caa4b28bb1e5fb}} 
 \index{modmisc@{modmisc}!scrc@{scrc}}
 \index{scrc@{scrc}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{scrc()}{scrc()}}
 {\footnotesize\ttfamily double complex function modmisc\+::scrc (\begin{DoxyParamCaption}\item[{real(8), dimension(4), intent(in)}]{p1,  }\item[{complex(8), dimension(4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 142 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{142 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{143 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: p1(4)}
+\DoxyCodeLine{144 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p2(4)}
+\DoxyCodeLine{145    \mbox{\hyperlink{namespacemodmisc_a656b78f23188708e38caa4b28bb1e5fb}{scrc}} = p1.dot.p2}
+\DoxyCodeLine{146    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_adae9194ef960165bb25545daa834dad4}\label{namespacemodmisc_adae9194ef960165bb25545daa834dad4}} 
 \index{modmisc@{modmisc}!spb2\_weyl@{spb2\_weyl}}
 \index{spb2\_weyl@{spb2\_weyl}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{spb2\_weyl()}{spb2\_weyl()}}
 {\footnotesize\ttfamily complex(8) function, dimension(4) modmisc\+::spb2\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(\+:), intent(in)}]{sp,  }\item[{complex(8), dimension(\+:), intent(in)}]{v }\end{DoxyParamCaption})}
 
+
+
+Definition at line 657 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{657 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{658 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp(:),v(:)}
+\DoxyCodeLine{659 \textcolor{keywordtype}{complex(8)} :: spb2\_Weyl(4)}
+\DoxyCodeLine{660 \textcolor{keywordtype}{complex(8)} :: x0(4,4),xx(4,4),xy(4,4)}
+\DoxyCodeLine{661 \textcolor{keywordtype}{complex(8)} :: xz(4,4),x5(4,4)}
+\DoxyCodeLine{662 \textcolor{keywordtype}{complex(8)} :: y1,y2,y3,y4,bp,bm,cp,cm}
+\DoxyCodeLine{663 \textcolor{keywordtype}{integer} :: i,i1,i2,i3,Dv,Ds,imax}
+\DoxyCodeLine{664 }
+\DoxyCodeLine{665    ds = 4}
+\DoxyCodeLine{666    dv = 4}
+\DoxyCodeLine{667    imax = ds/4}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669    \textcolor{keywordflow}{do} i=1,imax}
+\DoxyCodeLine{670       i1= 1+4*(i-\/1)}
+\DoxyCodeLine{671       i2=i1+3}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673       y1=sp(i1)}
+\DoxyCodeLine{674       y2=sp(i1+1)}
+\DoxyCodeLine{675       y3=sp(i1+2)}
+\DoxyCodeLine{676       y4=sp(i1+3)}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678       x0(1,i)=y3}
+\DoxyCodeLine{679       x0(2,i)=y4}
+\DoxyCodeLine{680       x0(3,i)=y1}
+\DoxyCodeLine{681       x0(4,i)=y2}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683       xx(1,i) = y4}
+\DoxyCodeLine{684       xx(2,i) = y3}
+\DoxyCodeLine{685       xx(3,i) = -\/y2}
+\DoxyCodeLine{686       xx(4,i) = -\/y1}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688       xy(1,i)=(0d0,1d0)*y4}
+\DoxyCodeLine{689       xy(2,i)=-\/(0d0,1d0)*y3}
+\DoxyCodeLine{690       xy(3,i)=-\/(0d0,1d0)*y2}
+\DoxyCodeLine{691       xy(4,i)=(0d0,1d0)*y1}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693       xz(1,i)=y3}
+\DoxyCodeLine{694       xz(2,i)=-\/y4}
+\DoxyCodeLine{695       xz(3,i)=-\/y1}
+\DoxyCodeLine{696       xz(4,i)=y2}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698       x5(1,i)=y1}
+\DoxyCodeLine{699       x5(2,i)=y2}
+\DoxyCodeLine{700       x5(3,i)=-\/y3}
+\DoxyCodeLine{701       x5(4,i)=-\/y4}
+\DoxyCodeLine{702 \textcolor{keywordflow}{   enddo}}
+\DoxyCodeLine{703 }
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705    \textcolor{keywordflow}{do} i=1,4}
+\DoxyCodeLine{706       spb2\_weyl(i)=v(1)*x0(i,1)-\/v(2)*xx(i,1)-\/v(3)*xy(i,1)-\/v(4)*xz(i,1)}
+\DoxyCodeLine{707 \textcolor{keywordflow}{   enddo}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a62ab057832b4bcaa7ec79890c68b607c}\label{namespacemodmisc_a62ab057832b4bcaa7ec79890c68b607c}} 
 \index{modmisc@{modmisc}!spi2\_weyl@{spi2\_weyl}}
 \index{spi2\_weyl@{spi2\_weyl}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{spi2\_weyl()}{spi2\_weyl()}}
 {\footnotesize\ttfamily complex(8) function, dimension(4) modmisc\+::spi2\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(\+:), intent(in)}]{v,  }\item[{complex(8), dimension(\+:), intent(in)}]{sp }\end{DoxyParamCaption})}
 
+
+
+Definition at line 711 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{711 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{712 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp(:),v(:)}
+\DoxyCodeLine{713 \textcolor{keywordtype}{complex(8)} :: spi2\_Weyl(4)}
+\DoxyCodeLine{714 \textcolor{keywordtype}{complex(8)} :: x0(4,4),xx(4,4),xy(4,4)}
+\DoxyCodeLine{715 \textcolor{keywordtype}{complex(8)} :: xz(4,4),x5(4,4)}
+\DoxyCodeLine{716 \textcolor{keywordtype}{complex(8)} ::  y1,y2,y3,y4,bp,bm,cp,cm}
+\DoxyCodeLine{717 \textcolor{keywordtype}{integer} :: i,i1,i2,i3,imax,Dv,Ds}
+\DoxyCodeLine{718 }
+\DoxyCodeLine{719    ds = 4}
+\DoxyCodeLine{720    dv = 4}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722    imax = ds/4}
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724    \textcolor{keywordflow}{do} i=1,imax}
+\DoxyCodeLine{725       i1= 1+4*(i-\/1)}
+\DoxyCodeLine{726       i2=i1+3}
+\DoxyCodeLine{727 }
+\DoxyCodeLine{728       y1=sp(i1)}
+\DoxyCodeLine{729       y2=sp(i1+1)}
+\DoxyCodeLine{730       y3=sp(i1+2)}
+\DoxyCodeLine{731       y4=sp(i1+3)}
+\DoxyCodeLine{732 }
+\DoxyCodeLine{733       x0(1,i)=y3}
+\DoxyCodeLine{734       x0(2,i)=y4}
+\DoxyCodeLine{735       x0(3,i)=y1}
+\DoxyCodeLine{736       x0(4,i)=y2}
+\DoxyCodeLine{737 }
+\DoxyCodeLine{738 }
+\DoxyCodeLine{739       xx(1,i) = -\/y4}
+\DoxyCodeLine{740       xx(2,i) = -\/y3}
+\DoxyCodeLine{741       xx(3,i) = y2}
+\DoxyCodeLine{742       xx(4,i) = y1}
+\DoxyCodeLine{743 }
+\DoxyCodeLine{744 }
+\DoxyCodeLine{745       xy(1,i)=(0d0,1d0)*y4}
+\DoxyCodeLine{746       xy(2,i)=-\/(0d0,1d0)*y3}
+\DoxyCodeLine{747       xy(3,i)=-\/(0d0,1d0)*y2}
+\DoxyCodeLine{748       xy(4,i)=(0d0,1d0)*y1}
+\DoxyCodeLine{749 }
+\DoxyCodeLine{750       xz(1,i)=-\/y3}
+\DoxyCodeLine{751       xz(2,i)=y4}
+\DoxyCodeLine{752       xz(3,i)=y1}
+\DoxyCodeLine{753       xz(4,i)=-\/y2}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755       x5(1,i)=y1}
+\DoxyCodeLine{756       x5(2,i)=y2}
+\DoxyCodeLine{757       x5(3,i)=-\/y3}
+\DoxyCodeLine{758       x5(4,i)=-\/y4}
+\DoxyCodeLine{759 \textcolor{keywordflow}{   enddo}}
+\DoxyCodeLine{760    \textcolor{keywordflow}{do} i=1,4}
+\DoxyCodeLine{761       spi2\_weyl(i)=v(1)*x0(i,1)-\/v(2)*xx(i,1) -\/v(3)*xy(i,1)-\/v(4)*xz(i,1)}
+\DoxyCodeLine{762 \textcolor{keywordflow}{   enddo}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a8dec65192dc31f19d4c3c44d5105a901}\label{namespacemodmisc_a8dec65192dc31f19d4c3c44d5105a901}} 
 \index{modmisc@{modmisc}!swap\_cmom@{swap\_cmom}}
 \index{swap\_cmom@{swap\_cmom}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{swap\_cmom()}{swap\_cmom()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+\_\+cmom (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:4)}]{Mom1,  }\item[{complex(8), dimension(1\+:4)}]{Mom2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 434 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{434 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{435 \textcolor{keywordtype}{complex(8)} :: Mom1(1:4),Mom2(1:4),tmp(1:4)}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437     tmp(1:4) = mom2(1:4)}
+\DoxyCodeLine{438     mom2(1:4) = mom1(1:4)}
+\DoxyCodeLine{439     mom1(1:4) = tmp(1:4)}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a66e6a665132a82ba20fc014b11c7fc6a}\label{namespacemodmisc_a66e6a665132a82ba20fc014b11c7fc6a}} 
 \index{modmisc@{modmisc}!swap\_mom@{swap\_mom}}
 \index{swap\_mom@{swap\_mom}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{swap\_mom()}{swap\_mom()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swap\+\_\+mom (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{Mom1,  }\item[{real(8), dimension(1\+:4)}]{Mom2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 423 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{423 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{424 \textcolor{keywordtype}{real}(8) :: Mom1(1:4),Mom2(1:4),tmp(1:4)}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426     tmp(1:4) = mom2(1:4)}
+\DoxyCodeLine{427     mom2(1:4) = mom1(1:4)}
+\DoxyCodeLine{428     mom1(1:4) = tmp(1:4)}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a316c5e80a9dff0f6cb32b42052f3bd49}\label{namespacemodmisc_a316c5e80a9dff0f6cb32b42052f3bd49}} 
 \index{modmisc@{modmisc}!swapc@{swapc}}
 \index{swapc@{swapc}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{swapc()}{swapc()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swapc (\begin{DoxyParamCaption}\item[{complex(8)}]{i,  }\item[{complex(8)}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 413 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{413 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{414 \textcolor{keywordtype}{complex(8)} :: i,j,temp}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416     temp=j}
+\DoxyCodeLine{417     j=i}
+\DoxyCodeLine{418     i=temp}
+\DoxyCodeLine{419 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a5e82d0b873a2134ae12c18569547f5d6}\label{namespacemodmisc_a5e82d0b873a2134ae12c18569547f5d6}} 
 \index{modmisc@{modmisc}!swapi@{swapi}}
 \index{swapi@{swapi}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{swapi()}{swapi()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swapi (\begin{DoxyParamCaption}\item[{integer}]{i,  }\item[{integer}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 393 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{393 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{394 \textcolor{keywordtype}{integer} :: i,j,temp}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396     temp=j}
+\DoxyCodeLine{397     j=i}
+\DoxyCodeLine{398     i=temp}
+\DoxyCodeLine{399 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a7262c4ef2e4832436c895d154dbe3080}\label{namespacemodmisc_a7262c4ef2e4832436c895d154dbe3080}} 
 \index{modmisc@{modmisc}!swapr@{swapr}}
 \index{swapr@{swapr}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{swapr()}{swapr()}}
 {\footnotesize\ttfamily subroutine modmisc\+::swapr (\begin{DoxyParamCaption}\item[{real(8)}]{i,  }\item[{real(8)}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 403 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{403 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{404 \textcolor{keywordtype}{real}(8) :: i,j,temp}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406     temp=j}
+\DoxyCodeLine{407     j=i}
+\DoxyCodeLine{408     i=temp}
+\DoxyCodeLine{409 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a1afc2e6e1e690b780362c1ed54eba41e}\label{namespacemodmisc_a1afc2e6e1e690b780362c1ed54eba41e}} 
 \index{modmisc@{modmisc}!ubar\_spinor@{ubar\_spinor}}
 \index{ubar\_spinor@{ubar\_spinor}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{ubar\_spinor()}{ubar\_spinor()}}
 {\footnotesize\ttfamily complex(8) function, dimension(1\+:4) modmisc\+::ubar\+\_\+spinor (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{p,  }\item[{integer}]{hel }\end{DoxyParamCaption})}
 
+
+
+Definition at line 526 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{526 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{527 \textcolor{keywordtype}{real}(8) :: p(1:4)}
+\DoxyCodeLine{528 \textcolor{keywordtype}{integer} :: hel}
+\DoxyCodeLine{529 \textcolor{keywordtype}{complex(8)} :: ubar\_spinor(1:4)}
+\DoxyCodeLine{530 \textcolor{keywordtype}{complex(8)} :: fc, fc2}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533     fc2 = p(1) + p(4)}
+\DoxyCodeLine{534     fc=sqrt(fc2)}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536     \textcolor{keywordflow}{if}( abs(fc2).gt.1d-\/9 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{537        \textcolor{keywordflow}{if}(hel.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{538           ubar\_spinor(1)=0d0}
+\DoxyCodeLine{539           ubar\_spinor(2)=0d0}
+\DoxyCodeLine{540           ubar\_spinor(3)=fc}
+\DoxyCodeLine{541           ubar\_spinor(4)=(p(2)-\/(0d0,1d0)*p(3))/fc}
+\DoxyCodeLine{542        \textcolor{keywordflow}{elseif} (hel.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{543           ubar\_spinor(1)=(p(2)+(0d0,1d0)*p(3))/fc}
+\DoxyCodeLine{544           ubar\_spinor(2)=-\/fc}
+\DoxyCodeLine{545           ubar\_spinor(3)=0d0}
+\DoxyCodeLine{546           ubar\_spinor(4)=0d0}
+\DoxyCodeLine{547 \textcolor{keywordflow}{       endif}}
+\DoxyCodeLine{548     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{549        \textcolor{keywordflow}{if}(hel.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{550           ubar\_spinor(1) = 0d0}
+\DoxyCodeLine{551           ubar\_spinor(2) = 0d0}
+\DoxyCodeLine{552           ubar\_spinor(3) = 0d0}
+\DoxyCodeLine{553           ubar\_spinor(4) = dsqrt(2*p(1))}
+\DoxyCodeLine{554        \textcolor{keywordflow}{elseif} (hel.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{555           ubar\_spinor(1) = dsqrt((2*p(1)))}
+\DoxyCodeLine{556           ubar\_spinor(2) = 0d0}
+\DoxyCodeLine{557           ubar\_spinor(3) = 0d0}
+\DoxyCodeLine{558           ubar\_spinor(4) = 0d0}
+\DoxyCodeLine{559 \textcolor{keywordflow}{       endif}}
+\DoxyCodeLine{560 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a1fa24751336ef1074ba19731c5a158f4}\label{namespacemodmisc_a1fa24751336ef1074ba19731c5a158f4}} 
 \index{modmisc@{modmisc}!v\_spinor@{v\_spinor}}
 \index{v\_spinor@{v\_spinor}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{v\_spinor()}{v\_spinor()}}
 {\footnotesize\ttfamily complex(8) function, dimension(1\+:4) modmisc\+::v\+\_\+spinor (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4)}]{p,  }\item[{integer}]{hel }\end{DoxyParamCaption})}
 
+
+
+Definition at line 567 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{567 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{568 \textcolor{keywordtype}{real}(8) :: p(1:4)}
+\DoxyCodeLine{569 \textcolor{keywordtype}{integer} :: hel}
+\DoxyCodeLine{570 \textcolor{keywordtype}{complex(8)} :: v\_spinor(1:4)}
+\DoxyCodeLine{571 \textcolor{keywordtype}{complex(8)} :: fc2, fc}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 }
+\DoxyCodeLine{574     fc2 = p(1) + p(4)}
+\DoxyCodeLine{575     fc=sqrt(fc2)}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577     \textcolor{keywordflow}{if}( abs(fc2).gt.1d-\/9 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{578        \textcolor{keywordflow}{if}(hel.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{579           v\_spinor(1)=0d0}
+\DoxyCodeLine{580           v\_spinor(2)=0d0}
+\DoxyCodeLine{581           v\_spinor(3)=(p(2)-\/(0d0,1d0)*p(3))/fc}
+\DoxyCodeLine{582           v\_spinor(4)=-\/fc}
+\DoxyCodeLine{583        \textcolor{keywordflow}{elseif} (hel.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{584           v\_spinor(1)=fc}
+\DoxyCodeLine{585           v\_spinor(2)=(p(2)+(0d0,1d0)*p(3))/fc}
+\DoxyCodeLine{586           v\_spinor(3)=0d0}
+\DoxyCodeLine{587           v\_spinor(4)=0d0}
+\DoxyCodeLine{588 \textcolor{keywordflow}{       endif}}
+\DoxyCodeLine{589     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{590        \textcolor{keywordflow}{if}(hel.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{591           v\_spinor(1)=0d0}
+\DoxyCodeLine{592           v\_spinor(2)=0d0}
+\DoxyCodeLine{593           v\_spinor(3)=dsqrt(2*p(1))}
+\DoxyCodeLine{594           v\_spinor(4)=0d0}
+\DoxyCodeLine{595        \textcolor{keywordflow}{elseif} (hel.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{596           v\_spinor(1)=0d0}
+\DoxyCodeLine{597           v\_spinor(2)=dsqrt(2*p(1))}
+\DoxyCodeLine{598           v\_spinor(3)=0d0}
+\DoxyCodeLine{599           v\_spinor(4)=0d0}
+\DoxyCodeLine{600 \textcolor{keywordflow}{       endif}}
+\DoxyCodeLine{601 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a8cc0ea8d114091af9a19cfe25131ac86}\label{namespacemodmisc_a8cc0ea8d114091af9a19cfe25131ac86}} 
 \index{modmisc@{modmisc}!vbqq\_weyl@{vbqq\_weyl}}
 \index{vbqq\_weyl@{vbqq\_weyl}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{vbqq\_weyl()}{vbqq\_weyl()}}
 {\footnotesize\ttfamily complex(8) function, dimension(dv) modmisc\+::vbqq\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(\+:), intent(in)}]{sp1,  }\item[{complex(8), dimension(\+:), intent(in)}]{sp2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 626 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{626 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{627 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp1(:), sp2(:)}
+\DoxyCodeLine{628 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} ::  Dv=4}
+\DoxyCodeLine{629 \textcolor{keywordtype}{integer} :: i}
+\DoxyCodeLine{630 \textcolor{keywordtype}{complex(8)} :: vbqq\_Weyl(Dv)}
+\DoxyCodeLine{631 \textcolor{keywordtype}{complex(8)} :: rr, va(Dv),sp1a(4)}
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633    va=(0d0,0d0)}
+\DoxyCodeLine{634    vbqq\_weyl=(0d0,0d0)}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636    \textcolor{keywordflow}{do} i=1,dv}
+\DoxyCodeLine{637       \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{638          va(1)=(1d0,0d0)}
+\DoxyCodeLine{639       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{640          va(i)=(-\/1d0,0d0)}
+\DoxyCodeLine{641 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{642       sp1a=spb2\_weyl(sp1,va)}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644 }
+\DoxyCodeLine{645       rr=sum(sp1a(1:4)*sp2(1:4))}
+\DoxyCodeLine{646       \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{647          vbqq\_weyl = vbqq\_weyl + rr*va}
+\DoxyCodeLine{648       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{649          vbqq\_weyl = vbqq\_weyl -\/ rr*va}
+\DoxyCodeLine{650 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{651       va(i)=(0d0,0d0)}
+\DoxyCodeLine{652 \textcolor{keywordflow}{   enddo}}
+\DoxyCodeLine{653 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodmisc_a5c1ae793e3808197355304880195cd7d}\label{namespacemodmisc_a5c1ae793e3808197355304880195cd7d}} 
 \index{modmisc@{modmisc}!vectorcross@{vectorcross}}
 \index{vectorcross@{vectorcross}!modmisc@{modmisc}}
 \doxysubsubsection{\texorpdfstring{vectorcross()}{vectorcross()}}
 {\footnotesize\ttfamily real(8) function, dimension(1\+:3) modmisc\+::vectorcross (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:3), intent(in)}]{p1,  }\item[{real(8), dimension(1\+:3), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 38 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{39 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: p1(1:3),p2(1:3)}
+\DoxyCodeLine{40 \textcolor{keywordtype}{real}(8)             :: VectorCross(1:3)}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     vectorcross(1)  = p1(2)*p2(3) -\/ p1(3)*p2(2)}
+\DoxyCodeLine{43     vectorcross(2)  = p1(3)*p2(1) -\/ p1(1)*p2(3)}
+\DoxyCodeLine{44     vectorcross(3)  = p1(1)*p2(2) -\/ p1(2)*p2(1)}
+
+\end{DoxyCode}

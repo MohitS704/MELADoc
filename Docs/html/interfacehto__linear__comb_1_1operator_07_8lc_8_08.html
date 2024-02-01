@@ -80,7 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8f0c88bfb7d45679fb5822edb7233d6"><td class="memItemLeft" align="right" valign="top">real *8 function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacehto__linear__comb_1_1operator_07_8lc_8_08.html#ac8f0c88bfb7d45679fb5822edb7233d6">lc</a> (c, x)</td></tr>
 <tr class="separator:ac8f0c88bfb7d45679fb5822edb7233d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function/Subroutine Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00731">731</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+</div><h2 class="groupheader">Member Function/Subroutine Documentation</h2>
 <a id="ac8f0c88bfb7d45679fb5822edb7233d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8f0c88bfb7d45679fb5822edb7233d6">&#9670;&nbsp;</a></span>lc()</h2>
 
@@ -107,10 +110,24 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00736">736</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+<div class="fragment"><div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;       <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;       real*8, <span class="keywordtype">dimension(:)</span> :: c</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;       real*8 x,lc</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;       <span class="keywordtype">INTENT(IN)</span> c,x</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;       <span class="keywordtype">INTEGER</span> n,i</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;       real*8 sum      </div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;       n= <span class="keyword">size</span>(c)</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;       sum= c(n)</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;       <span class="keywordflow">DO</span> i=n-1,1,-1</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        sum= sum*x+c(i)</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="keywordflow">       ENDDO</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;       lc= sum      </div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>MELA/fortran/CPS/<a class="el" href="CALLING__cpHTO_8f.html">CALLING_cpHTO.f</a></li>
+<li>MELA/fortran/CPS/<a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -48,12 +48,59 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \doxysubsubsection{\texorpdfstring{SimpleParticle\_t()}{SimpleParticle\_t()}}
 {\footnotesize\ttfamily def mela.\+Simple\+Particle\+\_\+t (\begin{DoxyParamCaption}\item[{}]{lineorid,  }\item[{}]{pxortlv = {\ttfamily None},  }\item[{}]{py = {\ttfamily None},  }\item[{}]{pz = {\ttfamily None},  }\item[{}]{e = {\ttfamily None} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 690 of file mela.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{690 \textcolor{keyword}{def }\mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{SimpleParticle\_t}}(lineorid, pxortlv=None, py=None, pz=None, e=None):}
+\DoxyCodeLine{691   \textcolor{keywordflow}{if} pxortlv \textcolor{keywordflow}{is} py \textcolor{keywordflow}{is} pz \textcolor{keywordflow}{is} e \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{692     \textcolor{keywordflow}{if} isinstance(lineorid, ROOT.SimpleParticle\_t): \textcolor{keywordflow}{return} lineorid}
+\DoxyCodeLine{693     \textcolor{keywordflow}{if} isinstance(lineorid, basestring):}
+\DoxyCodeLine{694       lineorid = lineorid.split()}
+\DoxyCodeLine{695     \textcolor{keywordflow}{if} len(lineorid) == 13:}
+\DoxyCodeLine{696       id, status, mother1, mother2, color1, color2, px, py, pz, e, m, lifetime, spin = (\mbox{\hyperlink{namespacemodttbhiggs_adad982f9354a9487600f7cc5dbc4123c}{f}}(\_) \textcolor{keywordflow}{for} f, \_ \textcolor{keywordflow}{in} zip((int, int, int, int, int, int, float, float, float, float, float, float, float), lineorid))}
+\DoxyCodeLine{697     \textcolor{keywordflow}{elif} len(lineorid) == 5:}
+\DoxyCodeLine{698       id, px, py, pz, e = (\mbox{\hyperlink{namespacemodttbhiggs_adad982f9354a9487600f7cc5dbc4123c}{f}}(\_) \textcolor{keywordflow}{for} f, \_ \textcolor{keywordflow}{in} zip((int, float, float, float, float), lineorid))}
+\DoxyCodeLine{699     \textcolor{keywordflow}{elif} len(lineorid) == 2:}
+\DoxyCodeLine{700       id, pxortlv = lineorid}
+\DoxyCodeLine{701     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{702       \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"len(lineorid) has to be 5 or 13, not \{\}"}.format(len(lineorid)))}
+\DoxyCodeLine{703   \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{704     id = lineorid}
+\DoxyCodeLine{705     px = pxortlv}
+\DoxyCodeLine{706 }
+\DoxyCodeLine{707   \textcolor{keywordflow}{if} py \textcolor{keywordflow}{is} pz \textcolor{keywordflow}{is} e \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{708     tlv = pxortlv}
+\DoxyCodeLine{709   \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{710     tlv = ROOT.TLorentzVector(px, py, pz, e)}
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712   \textcolor{keywordflow}{return} ROOT.SimpleParticle\_t(id, tlv)}
+\DoxyCodeLine{713 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemela_ae4405be17771a467e20ffacc3f9f8431}\label{namespacemela_ae4405be17771a467e20ffacc3f9f8431}} 
 \index{mela@{mela}!SimpleParticleCollection\_t@{SimpleParticleCollection\_t}}
 \index{SimpleParticleCollection\_t@{SimpleParticleCollection\_t}!mela@{mela}}
 \doxysubsubsection{\texorpdfstring{SimpleParticleCollection\_t()}{SimpleParticleCollection\_t()}}
 {\footnotesize\ttfamily def mela.\+Simple\+Particle\+Collection\+\_\+t (\begin{DoxyParamCaption}\item[{}]{iterable = {\ttfamily None} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 683 of file mela.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{683 \textcolor{keyword}{def }\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{SimpleParticleCollection\_t}}(iterable=None):}
+\DoxyCodeLine{684   \textcolor{keywordflow}{if} iterable \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{keywordflow}{return} ROOT.SimpleParticleCollection\_t()}
+\DoxyCodeLine{685   result = ROOT.SimpleParticleCollection\_t()}
+\DoxyCodeLine{686   \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} iterable:}
+\DoxyCodeLine{687     result.push\_back(SimpleParticle\_t(\_))}
+\DoxyCodeLine{688   \textcolor{keywordflow}{return} result}
+\DoxyCodeLine{689 }
+
+\end{DoxyCode}
 
 
 \doxysubsection{Variable Documentation}
@@ -71,11 +118,19 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{4 \textcolor{stringliteral}{  """}}
 
 \end{DoxyCode}
+
+
+Definition at line 773 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_ae50e59d08ecdd9b4c113926a841b76af}\label{namespacemela_ae50e59d08ecdd9b4c113926a841b76af}} 
 \index{mela@{mela}!basestring@{basestring}}
 \index{basestring@{basestring}!mela@{mela}}
 \doxysubsubsection{\texorpdfstring{basestring}{basestring}}
 {\footnotesize\ttfamily mela.\+basestring = str}
+
+
+
+Definition at line 47 of file mela.\+py.
 
 \mbox{\Hypertarget{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}\label{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}} 
 \index{mela@{mela}!couplings@{couplings}}
@@ -96,6 +151,10 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{9               )}
 
 \end{DoxyCode}
+
+
+Definition at line 791 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_a0944c7e72a30532e078afc17c62df400}\label{namespacemela_a0944c7e72a30532e078afc17c62df400}} 
 \index{mela@{mela}!daughters@{daughters}}
 \index{daughters@{daughters}!mela@{mela}}
@@ -112,11 +171,19 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{6 \textcolor{stringliteral}{  """}}
 
 \end{DoxyCode}
+
+
+Definition at line 767 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_acbbd5d6eab0927b6f569e8fc32f9cc4a}\label{namespacemela_acbbd5d6eab0927b6f569e8fc32f9cc4a}} 
 \index{mela@{mela}!dec@{dec}}
 \index{dec@{dec}!mela@{mela}}
 \doxysubsubsection{\texorpdfstring{dec}{dec}}
 {\footnotesize\ttfamily mela.\+dec = m.\+computeP(False)}
+
+
+
+Definition at line 803 of file mela.\+py.
 
 \mbox{\Hypertarget{namespacemela_a4910e7a896e447c638cc0d39c0f03f9f}\label{namespacemela_a4910e7a896e447c638cc0d39c0f03f9f}} 
 \index{mela@{mela}!event1@{event1}}
@@ -145,6 +212,10 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{17 \textcolor{stringliteral}{  """}}
 
 \end{DoxyCode}
+
+
+Definition at line 716 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_ada98b3dacb0aad4e8296e5cae475dee3}\label{namespacemela_ada98b3dacb0aad4e8296e5cae475dee3}} 
 \index{mela@{mela}!event2@{event2}}
 \index{event2@{event2}!mela@{mela}}
@@ -172,6 +243,10 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{17 \textcolor{stringliteral}{  """}}
 
 \end{DoxyCode}
+
+
+Definition at line 733 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_a03eb7d93b7ac452db2f770ea9b2edc9b}\label{namespacemela_a03eb7d93b7ac452db2f770ea9b2edc9b}} 
 \index{mela@{mela}!event3@{event3}}
 \index{event3@{event3}!mela@{mela}}
@@ -198,17 +273,29 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{16 \textcolor{stringliteral}{  """}}
 
 \end{DoxyCode}
+
+
+Definition at line 750 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_a6861d4777c76f52ba92f0ddbc706b561}\label{namespacemela_a6861d4777c76f52ba92f0ddbc706b561}} 
 \index{mela@{mela}!ghz1\_prime2@{ghz1\_prime2}}
 \index{ghz1\_prime2@{ghz1\_prime2}!mela@{mela}}
 \doxysubsubsection{\texorpdfstring{ghz1\_prime2}{ghz1\_prime2}}
 {\footnotesize\ttfamily mela.\+ghz1\+\_\+prime2}
 
+
+
+Definition at line 801 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_a42a9f6ba8d6c9cec91eb11b999fea95e}\label{namespacemela_a42a9f6ba8d6c9cec91eb11b999fea95e}} 
 \index{mela@{mela}!m@{m}}
 \index{m@{m}!mela@{mela}}
 \doxysubsubsection{\texorpdfstring{m}{m}}
 {\footnotesize\ttfamily mela.\+m = \mbox{\hyperlink{classmela_1_1Mela}{Mela}}()}
+
+
+
+Definition at line 715 of file mela.\+py.
 
 \mbox{\Hypertarget{namespacemela_aed44237203997859afcf9aa344bff4af}\label{namespacemela_aed44237203997859afcf9aa344bff4af}} 
 \index{mela@{mela}!mothers@{mothers}}
@@ -224,9 +311,17 @@ tuple \mbox{\hyperlink{namespacemela_aab83238ea47f824af8b4c4a4c3e2fff0}{coupling
 \DoxyCodeLine{4 \textcolor{stringliteral}{  """}}
 
 \end{DoxyCode}
+
+
+Definition at line 777 of file mela.\+py.
+
 \mbox{\Hypertarget{namespacemela_ad931acffcdd325571523d5fc76d67185}\label{namespacemela_ad931acffcdd325571523d5fc76d67185}} 
 \index{mela@{mela}!prod@{prod}}
 \index{prod@{prod}!mela@{mela}}
 \doxysubsubsection{\texorpdfstring{prod}{prod}}
 {\footnotesize\ttfamily mela.\+prod = m.\+compute\+ProdP(False)}
+
+
+
+Definition at line 806 of file mela.\+py.
 

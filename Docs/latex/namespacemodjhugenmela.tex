@@ -58,135 +58,1155 @@ subroutine, public \mbox{\hyperlink{namespacemodjhugenmela_a72416cea92af2e019f5c
 \doxysubsubsection{\texorpdfstring{getalphasalphasmz()}{getalphasalphasmz()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::getalphasalphasmz (\begin{DoxyParamCaption}\item[{real(8), intent(out)}]{val\+\_\+as,  }\item[{real(8), intent(out)}]{val\+\_\+asmz }\end{DoxyParamCaption})}
 
+
+
+Definition at line 658 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{658 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{659 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(out)} :: val\_as, val\_asmz}
+\DoxyCodeLine{660    val\_as=\mbox{\hyperlink{namespacemodparameters_abcc8d0f63ddeea7d3c2e2fd9a6b50980}{alphas}}}
+\DoxyCodeLine{661    val\_asmz=\mbox{\hyperlink{namespacemodparameters_ad69bb172f6ecf39c101347a0c8f3e17b}{alphas\_mz}}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a72416cea92af2e019f5cefd99b6e2fb1}\label{namespacemodjhugenmela_a72416cea92af2e019f5cefd99b6e2fb1}} 
 \index{modjhugenmela@{modjhugenmela}!getdecaycouplings@{getdecaycouplings}}
 \index{getdecaycouplings@{getdecaycouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{getdecaycouplings()}{getdecaycouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::getdecaycouplings (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{integer, dimension(6\+:9), intent(in)}]{idordered,  }\item[{real(dp), intent(out)}]{a\+L1,  }\item[{real(dp), intent(out)}]{a\+R1,  }\item[{real(dp), intent(out)}]{a\+L2,  }\item[{real(dp), intent(out)}]{a\+R2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 676 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{676    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{677    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: VVMode,idordered(6:9)}
+\DoxyCodeLine{678 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(out)} :: aL1,aR1,aL2,aR2}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{680    \textcolor{comment}{!        h3/h4 helicities: -\/1 == left, 1 == right}}
+\DoxyCodeLine{681    \textcolor{keywordflow}{if}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_a30e15e6c861646e51c3445a52d4afcaa}{zzmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{682    \textcolor{comment}{!        ZZ DECAYS}}
+\DoxyCodeLine{683       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}})  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{684          al1=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{685          ar1=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{686       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{687          al1=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{688          ar1=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{689       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{690          al1=\mbox{\hyperlink{namespacemodparameters_a1fe9002b5ebfcbc449bd7e34ebc34adb}{al\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{691          ar1=\mbox{\hyperlink{namespacemodparameters_ac20aa8e159fcf03059079f7ceb1fc2fe}{ar\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{692       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{693          al1=\mbox{\hyperlink{namespacemodparameters_a4fd89886af56f2c21744e98023198f21}{al\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{694          ar1=\mbox{\hyperlink{namespacemodparameters_a8bbf1e148575e0979d27af2162b6ce00}{ar\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{695       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{696          al1=\mbox{\hyperlink{namespacemodparameters_a8916b68a87612e38ec2ba9d94c82c407}{al\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{697          ar1=\mbox{\hyperlink{namespacemodparameters_a389822865ce831a828ab87c58f563d2b}{ar\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{698       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{699          al1=0d0}
+\DoxyCodeLine{700          ar1=0d0}
+\DoxyCodeLine{701 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{702       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}})  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{703          al2=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{704          ar2=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{705       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{706          al2=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{707          ar2=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{708       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{709          al2=\mbox{\hyperlink{namespacemodparameters_a1fe9002b5ebfcbc449bd7e34ebc34adb}{al\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{710          ar2=\mbox{\hyperlink{namespacemodparameters_ac20aa8e159fcf03059079f7ceb1fc2fe}{ar\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{711       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{712          al2=\mbox{\hyperlink{namespacemodparameters_a4fd89886af56f2c21744e98023198f21}{al\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{713          ar2=\mbox{\hyperlink{namespacemodparameters_a8bbf1e148575e0979d27af2162b6ce00}{ar\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{714       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{715          al2=\mbox{\hyperlink{namespacemodparameters_a8916b68a87612e38ec2ba9d94c82c407}{al\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{716          ar2=\mbox{\hyperlink{namespacemodparameters_a389822865ce831a828ab87c58f563d2b}{ar\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{717       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{718          al2=0d0}
+\DoxyCodeLine{719          ar2=0d0}
+\DoxyCodeLine{720 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_abf39ed40be7ec764c127095b83d7f3c9}{wwmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{723    \textcolor{comment}{!        WW DECAYS}}
+\DoxyCodeLine{724       \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodparameters_ab996c40fc17c5961c313410da5812468}{isaquark}}(idordered(6)) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{725          al1 = \mbox{\hyperlink{namespacemodparameters_ad738ab7e94da0fbafe0c58d279d6ca2b}{bl}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a115f16bcc32316a6d74db3f997c922c6}{scale\_alpha\_w\_ud}})}
+\DoxyCodeLine{726          ar1 = \mbox{\hyperlink{namespacemodparameters_a488a0a72403aaa61b4bb1076a73d368a}{br}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a115f16bcc32316a6d74db3f997c922c6}{scale\_alpha\_w\_ud}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{727       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{728                (abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a9298a42e5a68fb1f3ea5fb78eb37d0c8}{elp\_}}) .and. abs(idordered(7)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}})) .or. (abs(idordered(7)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a9298a42e5a68fb1f3ea5fb78eb37d0c8}{elp\_}}) .and. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}})) .or. \&}
+\DoxyCodeLine{729                (abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a3e452fc6cd0bd427c0b6a6ac621cfe91}{mup\_}}) .and. abs(idordered(7)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}})) .or. (abs(idordered(7)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a3e452fc6cd0bd427c0b6a6ac621cfe91}{mup\_}}) .and. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}))      \&}
+\DoxyCodeLine{730             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{731          al1 = \mbox{\hyperlink{namespacemodparameters_ad738ab7e94da0fbafe0c58d279d6ca2b}{bl}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a90369f69092745c36505b9880061ac27}{scale\_alpha\_w\_ln}})}
+\DoxyCodeLine{732          ar1 = \mbox{\hyperlink{namespacemodparameters_a488a0a72403aaa61b4bb1076a73d368a}{br}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a90369f69092745c36505b9880061ac27}{scale\_alpha\_w\_ln}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{733       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{734                (abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6edec38c1dc30d4be564c439bd5e1402}{tap\_}}) .and. abs(idordered(7)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}})) .or. (abs(idordered(7)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6edec38c1dc30d4be564c439bd5e1402}{tap\_}}) .and. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}))      \&}
+\DoxyCodeLine{735             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{736          al1 = \mbox{\hyperlink{namespacemodparameters_ad738ab7e94da0fbafe0c58d279d6ca2b}{bl}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0d2693d70aff322057ba39e1ad54647}{scale\_alpha\_w\_tn}})}
+\DoxyCodeLine{737          ar1 = \mbox{\hyperlink{namespacemodparameters_a488a0a72403aaa61b4bb1076a73d368a}{br}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0d2693d70aff322057ba39e1ad54647}{scale\_alpha\_w\_tn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{738       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{739          al1=0d0}
+\DoxyCodeLine{740          ar1=0d0}
+\DoxyCodeLine{741 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{742       \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodparameters_ab996c40fc17c5961c313410da5812468}{isaquark}}(idordered(8)) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{743          al2 = \mbox{\hyperlink{namespacemodparameters_ad738ab7e94da0fbafe0c58d279d6ca2b}{bl}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a115f16bcc32316a6d74db3f997c922c6}{scale\_alpha\_w\_ud}})}
+\DoxyCodeLine{744          ar2 = \mbox{\hyperlink{namespacemodparameters_a488a0a72403aaa61b4bb1076a73d368a}{br}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a115f16bcc32316a6d74db3f997c922c6}{scale\_alpha\_w\_ud}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{745       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{746                (abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .and. abs(idordered(9)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a1bcb78a7a1a581a3cd0cf1676964f44d}{anue\_}})) .or. (abs(idordered(9)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .and. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a1bcb78a7a1a581a3cd0cf1676964f44d}{anue\_}})) .or. \&}
+\DoxyCodeLine{747                (abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) .and. abs(idordered(9)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a895f7483a14411b607cfe33372084386}{anum\_}})) .or. (abs(idordered(9)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) .and. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a895f7483a14411b607cfe33372084386}{anum\_}}))      \&}
+\DoxyCodeLine{748             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{749          al2 = \mbox{\hyperlink{namespacemodparameters_ad738ab7e94da0fbafe0c58d279d6ca2b}{bl}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a90369f69092745c36505b9880061ac27}{scale\_alpha\_w\_ln}})}
+\DoxyCodeLine{750          ar2 = \mbox{\hyperlink{namespacemodparameters_a488a0a72403aaa61b4bb1076a73d368a}{br}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_a90369f69092745c36505b9880061ac27}{scale\_alpha\_w\_ln}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{751       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{752                (abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) .and. abs(idordered(9)).eq.abs(\mbox{\hyperlink{namespacemodparameters_af42fc49b8d640da4e90bead1e769f0ae}{anut\_}})) .or. (abs(idordered(9)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) .and. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_af42fc49b8d640da4e90bead1e769f0ae}{anut\_}}))      \&}
+\DoxyCodeLine{753             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{754          al2 = \mbox{\hyperlink{namespacemodparameters_ad738ab7e94da0fbafe0c58d279d6ca2b}{bl}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0d2693d70aff322057ba39e1ad54647}{scale\_alpha\_w\_tn}})}
+\DoxyCodeLine{755          ar2 = \mbox{\hyperlink{namespacemodparameters_a488a0a72403aaa61b4bb1076a73d368a}{br}} * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0d2693d70aff322057ba39e1ad54647}{scale\_alpha\_w\_tn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{756       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{757          al2=0d0}
+\DoxyCodeLine{758          ar2=0d0}
+\DoxyCodeLine{759 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{760 }
+\DoxyCodeLine{761    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_ac4b25b22357a712987ed4d9b213d3f85}{zgmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{762    \textcolor{comment}{!        Zgamma DECAYS}}
+\DoxyCodeLine{763       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{764          al1=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{765          ar1=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{766       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{767          al1=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{768          ar1=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{769       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{770          al1=\mbox{\hyperlink{namespacemodparameters_a1fe9002b5ebfcbc449bd7e34ebc34adb}{al\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{771          ar1=\mbox{\hyperlink{namespacemodparameters_ac20aa8e159fcf03059079f7ceb1fc2fe}{ar\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{772       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{773          al1=\mbox{\hyperlink{namespacemodparameters_a4fd89886af56f2c21744e98023198f21}{al\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{774          ar1=\mbox{\hyperlink{namespacemodparameters_a8bbf1e148575e0979d27af2162b6ce00}{ar\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{775       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{776          al1=\mbox{\hyperlink{namespacemodparameters_a8916b68a87612e38ec2ba9d94c82c407}{al\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{777          ar1=\mbox{\hyperlink{namespacemodparameters_a389822865ce831a828ab87c58f563d2b}{ar\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{778       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{779          al1=0d0}
+\DoxyCodeLine{780          ar1=0d0}
+\DoxyCodeLine{781 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{782       al2=0d0}
+\DoxyCodeLine{783       ar2=0d0}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_a40b9715c53813545ffa7e6071a4b1180}{ggmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{786    \textcolor{comment}{!        gamma gamma DECAYS}}
+\DoxyCodeLine{787       al1=0d0}
+\DoxyCodeLine{788       ar1=0d0}
+\DoxyCodeLine{789       al2=0d0}
+\DoxyCodeLine{790       ar2=0d0}
+\DoxyCodeLine{791 }
+\DoxyCodeLine{792    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_ab96bb64f5aa9f06d2c8b9c5fbb88c1b2}{gsgmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{793    \textcolor{comment}{!        gamma* gamma DECAYS}}
+\DoxyCodeLine{794       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{795          al1=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{796          ar1=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{797       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{798          al1=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{799          ar1=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{800       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{801          al1=\mbox{\hyperlink{namespacemodparameters_a6c08d7ec607a296685a452827597c239}{cl\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{802          ar1=\mbox{\hyperlink{namespacemodparameters_ad54ab47a69065dd8578e39d8571e06e4}{cr\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{803       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{804          al1=\mbox{\hyperlink{namespacemodparameters_a30d5727df57c61ff08e947b463c8a8dc}{cl\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{805          ar1=\mbox{\hyperlink{namespacemodparameters_ae120f5b204dcb278b5bd65db9e6cb8e2}{cr\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{806       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{807          al1=\mbox{\hyperlink{namespacemodparameters_a6c2fb42b72fadb9f2429facbe74edf88}{cl\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{808          ar1=\mbox{\hyperlink{namespacemodparameters_aeba7292e302d2b3f6a97af5582f95b7b}{cr\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{809       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{810          al1=0d0}
+\DoxyCodeLine{811          ar1=0d0}
+\DoxyCodeLine{812 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{813       al2=0d0}
+\DoxyCodeLine{814       ar2=0d0}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{816    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_a5c44256676fd72159319aa18b4addee0}{gszmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{817    \textcolor{comment}{!        gamma* Z DECAYS}}
+\DoxyCodeLine{818       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}})  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{819          al1=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{820          ar1=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{821       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{822          al1=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{823          ar1=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{824       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{825          al1=\mbox{\hyperlink{namespacemodparameters_a6c08d7ec607a296685a452827597c239}{cl\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{826          ar1=\mbox{\hyperlink{namespacemodparameters_ad54ab47a69065dd8578e39d8571e06e4}{cr\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{827       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{828          al1=\mbox{\hyperlink{namespacemodparameters_a30d5727df57c61ff08e947b463c8a8dc}{cl\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{829          ar1=\mbox{\hyperlink{namespacemodparameters_ae120f5b204dcb278b5bd65db9e6cb8e2}{cr\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{830       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{831          al1=\mbox{\hyperlink{namespacemodparameters_a6c2fb42b72fadb9f2429facbe74edf88}{cl\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{832          ar1=\mbox{\hyperlink{namespacemodparameters_aeba7292e302d2b3f6a97af5582f95b7b}{cr\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{833       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{834          al1=0d0}
+\DoxyCodeLine{835          ar1=0d0}
+\DoxyCodeLine{836 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{837       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{838          al2=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{839          ar2=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{840       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{841          al2=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{842          ar2=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{843       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{844          al2=\mbox{\hyperlink{namespacemodparameters_a1fe9002b5ebfcbc449bd7e34ebc34adb}{al\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{845          ar2=\mbox{\hyperlink{namespacemodparameters_ac20aa8e159fcf03059079f7ceb1fc2fe}{ar\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{846       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{847          al2=\mbox{\hyperlink{namespacemodparameters_a4fd89886af56f2c21744e98023198f21}{al\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{848          ar2=\mbox{\hyperlink{namespacemodparameters_a8bbf1e148575e0979d27af2162b6ce00}{ar\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{849       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{850          al2=\mbox{\hyperlink{namespacemodparameters_a8916b68a87612e38ec2ba9d94c82c407}{al\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{851          ar2=\mbox{\hyperlink{namespacemodparameters_a389822865ce831a828ab87c58f563d2b}{ar\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{852       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{853          al2=0d0}
+\DoxyCodeLine{854          ar2=0d0}
+\DoxyCodeLine{855 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{856 }
+\DoxyCodeLine{857    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_aecf983baaef81c1c4cdd82c7c51d6872}{zgsmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{858    \textcolor{comment}{!        Z gamma* DECAYS}}
+\DoxyCodeLine{859       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{860          al1=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{861          ar1=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{862       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{863          al1=\mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{864          ar1=\mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{865       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{866          al1=\mbox{\hyperlink{namespacemodparameters_a1fe9002b5ebfcbc449bd7e34ebc34adb}{al\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{867          ar1=\mbox{\hyperlink{namespacemodparameters_ac20aa8e159fcf03059079f7ceb1fc2fe}{ar\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})}
+\DoxyCodeLine{868       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{869          al1=\mbox{\hyperlink{namespacemodparameters_a4fd89886af56f2c21744e98023198f21}{al\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{870          ar1=\mbox{\hyperlink{namespacemodparameters_a8bbf1e148575e0979d27af2162b6ce00}{ar\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{871       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{872          al1=\mbox{\hyperlink{namespacemodparameters_a8916b68a87612e38ec2ba9d94c82c407}{al\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{873          ar1=\mbox{\hyperlink{namespacemodparameters_a389822865ce831a828ab87c58f563d2b}{ar\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{874       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{875          al1=0d0}
+\DoxyCodeLine{876          ar1=0d0}
+\DoxyCodeLine{877 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{878       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{879          al2=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{880          ar2=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{881       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{882          al2=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{883          ar2=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{884       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{885          al2=\mbox{\hyperlink{namespacemodparameters_a6c08d7ec607a296685a452827597c239}{cl\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{886          ar2=\mbox{\hyperlink{namespacemodparameters_ad54ab47a69065dd8578e39d8571e06e4}{cr\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{887       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{888          al2=\mbox{\hyperlink{namespacemodparameters_a30d5727df57c61ff08e947b463c8a8dc}{cl\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{889          ar2=\mbox{\hyperlink{namespacemodparameters_ae120f5b204dcb278b5bd65db9e6cb8e2}{cr\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{890       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{891          al2=\mbox{\hyperlink{namespacemodparameters_a6c2fb42b72fadb9f2429facbe74edf88}{cl\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{892          ar2=\mbox{\hyperlink{namespacemodparameters_aeba7292e302d2b3f6a97af5582f95b7b}{cr\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{893       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{894          al2=0d0}
+\DoxyCodeLine{895          ar2=0d0}
+\DoxyCodeLine{896 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{897 }
+\DoxyCodeLine{898    \textcolor{keywordflow}{elseif}( vvmode.eq.\mbox{\hyperlink{namespacemodparameters_a6d0283a626527d734fa969a1af2f4992}{gsgsmode}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{899    \textcolor{comment}{!        gamma* gamma* DECAYS}}
+\DoxyCodeLine{900       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{901          al1=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{902          ar1=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{903       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{904          al1=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{905          ar1=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{906       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{907          al1=\mbox{\hyperlink{namespacemodparameters_a6c08d7ec607a296685a452827597c239}{cl\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{908          ar1=\mbox{\hyperlink{namespacemodparameters_ad54ab47a69065dd8578e39d8571e06e4}{cr\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{909       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{910          al1=\mbox{\hyperlink{namespacemodparameters_a30d5727df57c61ff08e947b463c8a8dc}{cl\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{911          ar1=\mbox{\hyperlink{namespacemodparameters_ae120f5b204dcb278b5bd65db9e6cb8e2}{cr\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{912       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(6)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{913          al1=\mbox{\hyperlink{namespacemodparameters_a6c2fb42b72fadb9f2429facbe74edf88}{cl\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{914          ar1=\mbox{\hyperlink{namespacemodparameters_aeba7292e302d2b3f6a97af5582f95b7b}{cr\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{915       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{916          al1=0d0}
+\DoxyCodeLine{917          ar1=0d0}
+\DoxyCodeLine{918 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{919       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{920          al2=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{921          ar2=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_ac0cda99097b9ee501421fd19bdf2dee2}{scale\_alpha\_z\_ll}})}
+\DoxyCodeLine{922       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{923          al2=\mbox{\hyperlink{namespacemodparameters_a5a381db0cbf99775d2269874c20ce89e}{cl\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{924          ar2=\mbox{\hyperlink{namespacemodparameters_a1b7a391ea7e9fb4485e698614322ffb1}{cr\_lep}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_aabbd8499bc77587ac3bd80c8474e74fc}{scale\_alpha\_z\_tt}})}
+\DoxyCodeLine{925       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{926          al2=\mbox{\hyperlink{namespacemodparameters_a6c08d7ec607a296685a452827597c239}{cl\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{927          ar2=\mbox{\hyperlink{namespacemodparameters_ad54ab47a69065dd8578e39d8571e06e4}{cr\_neu}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a9dee2307e3e6c397ca6125e987d3952a}{scale\_alpha\_z\_nn}})\textcolor{comment}{! = 0}}
+\DoxyCodeLine{928       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{929          al2=\mbox{\hyperlink{namespacemodparameters_a30d5727df57c61ff08e947b463c8a8dc}{cl\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{930          ar2=\mbox{\hyperlink{namespacemodparameters_ae120f5b204dcb278b5bd65db9e6cb8e2}{cr\_qup}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a21875f489fc19a7904ffa470e94c4409}{scale\_alpha\_z\_uu}})}
+\DoxyCodeLine{931       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) .or. abs(idordered(8)).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{932          al2=\mbox{\hyperlink{namespacemodparameters_a6c2fb42b72fadb9f2429facbe74edf88}{cl\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{933          ar2=\mbox{\hyperlink{namespacemodparameters_aeba7292e302d2b3f6a97af5582f95b7b}{cr\_qdn}}    * dsqrt(\mbox{\hyperlink{namespacemodparameters_a865816887da2f203996f9e72c6f38104}{scale\_alpha\_z\_dd}})}
+\DoxyCodeLine{934       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{935          al2=0d0}
+\DoxyCodeLine{936          ar2=0d0}
+\DoxyCodeLine{937 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{938 }
+\DoxyCodeLine{939    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{940       al1=0d0}
+\DoxyCodeLine{941       ar1=0d0}
+\DoxyCodeLine{942       al2=0d0}
+\DoxyCodeLine{943       ar2=0d0}
+\DoxyCodeLine{944 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{945 }
+\DoxyCodeLine{946    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a8c1ccc35927de4a9d2d86b687427a82b}\label{namespacemodjhugenmela_a8c1ccc35927de4a9d2d86b687427a82b}} 
 \index{modjhugenmela@{modjhugenmela}!getmvgv@{getmvgv}}
 \index{getmvgv@{getmvgv}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{getmvgv()}{getmvgv()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::getmvgv (\begin{DoxyParamCaption}\item[{real(8), intent(out)}]{mv,  }\item[{real(8), intent(out)}]{gv }\end{DoxyParamCaption})}
 
+
+
+Definition at line 644 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{644    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{645 \textcolor{keywordtype}{   real}(8), \textcolor{keywordtype}{intent(out)} :: mv,gv}
+\DoxyCodeLine{646    mv=\mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}}}
+\DoxyCodeLine{647    gv=ga\_v}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_aa310f1910be1afd3ae4d6aab30d6dc7a}\label{namespacemodjhugenmela_aa310f1910be1afd3ae4d6aab30d6dc7a}} 
 \index{modjhugenmela@{modjhugenmela}!getmvprimegvprime@{getmvprimegvprime}}
 \index{getmvprimegvprime@{getmvprimegvprime}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{getmvprimegvprime()}{getmvprimegvprime()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::getmvprimegvprime (\begin{DoxyParamCaption}\item[{real(8), intent(out)}]{mv,  }\item[{real(8), intent(out)}]{gv }\end{DoxyParamCaption})}
 
+
+
+Definition at line 651 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{651    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{652 \textcolor{keywordtype}{   real}(8), \textcolor{keywordtype}{intent(out)} :: mv,gv}
+\DoxyCodeLine{653    mv=\mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}}}
+\DoxyCodeLine{654    gv=\mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a556b94d45536df1fde8a2320ab4421e6}\label{namespacemodjhugenmela_a556b94d45536df1fde8a2320ab4421e6}} 
 \index{modjhugenmela@{modjhugenmela}!getpdfconstants@{getpdfconstants}}
 \index{getpdfconstants@{getpdfconstants}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{getpdfconstants()}{getpdfconstants()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::getpdfconstants (\begin{DoxyParamCaption}\item[{real(8), intent(out)}]{pdfzmass,  }\item[{integer, intent(out)}]{pdfnloops,  }\item[{integer, intent(out)}]{pdfnf }\end{DoxyParamCaption})}
 
+
+
+Definition at line 665 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{665 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{666 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(out)} :: pdfzmass}
+\DoxyCodeLine{667 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(out)} :: pdfnloops, pdfnf}
+\DoxyCodeLine{668    pdfzmass=\mbox{\hyperlink{namespacemodparameters_a4b2fa7c852c7088da41c85dfb7bb5a20}{zmass\_pdf}}}
+\DoxyCodeLine{669    pdfnloops=\mbox{\hyperlink{namespacemodparameters_a9bd6127afe05d22dd1b92b8c8d986b27}{nloops\_pdf}}}
+\DoxyCodeLine{670    pdfnf=\mbox{\hyperlink{namespacemodparameters_a07bac31e5e8f32c8058cf73dafae9602}{nqflavors\_pdf}}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a597e61e7e80a7a66d2dceb84cb873fd6}\label{namespacemodjhugenmela_a597e61e7e80a7a66d2dceb84cb873fd6}} 
 \index{modjhugenmela@{modjhugenmela}!resetamplitudeincludes@{resetamplitudeincludes}}
 \index{resetamplitudeincludes@{resetamplitudeincludes}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{resetamplitudeincludes()}{resetamplitudeincludes()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::resetamplitudeincludes}
 
+
+
+Definition at line 118 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{118 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{119    \mbox{\hyperlink{namespacemodparameters_ae3d72e37a9eb1474b6995ceee9b71e2b}{includevprime}}=.false.}
+\DoxyCodeLine{120    \mbox{\hyperlink{namespacemodparameters_a167bcc6e3f7ced5f643bf20ce27f5221}{includegammastar}}=.false.}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a2da743968a2296fb0419a1064d2307e9}\label{namespacemodjhugenmela_a2da743968a2296fb0419a1064d2307e9}} 
 \index{modjhugenmela@{modjhugenmela}!resetmubarhgabarh@{resetmubarhgabarh}}
 \index{resetmubarhgabarh@{resetmubarhgabarh}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{resetmubarhgabarh()}{resetmubarhgabarh()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::resetmubarhgabarh}
 
+
+
+Definition at line 112 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{113    \mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}}=-\/999d0}
+\DoxyCodeLine{114    \mbox{\hyperlink{namespacemodparameters_abb80020a6846b9eca1a1ba3ad58b8369}{gabarh}}=-\/999d0}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_af2cd457c578aba3a02c255f14c76b6dc}\label{namespacemodjhugenmela_af2cd457c578aba3a02c255f14c76b6dc}} 
 \index{modjhugenmela@{modjhugenmela}!setazffcouplings@{setazffcouplings}}
 \index{setazffcouplings@{setazffcouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setazffcouplings()}{setazffcouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setazffcouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:12), intent(in)}]{azffcoupl }\end{DoxyParamCaption})}
 
+
+
+Definition at line 588 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{588    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{589    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: azffcoupl(1:12)}
+\DoxyCodeLine{590    \mbox{\hyperlink{namespacemodparameters_ae35770c9dc7f0b7e4224b67e8c31f528}{ar\_lep}} = azffcoupl(1) \textcolor{comment}{! rez}}
+\DoxyCodeLine{591    \mbox{\hyperlink{namespacemodparameters_af731b787aa7dfbd5dd1910001e28d29c}{al\_lep}} = azffcoupl(2) \textcolor{comment}{! lez}}
+\DoxyCodeLine{592    \mbox{\hyperlink{namespacemodparameters_a8bbf1e148575e0979d27af2162b6ce00}{ar\_qup}} = azffcoupl(3) \textcolor{comment}{! rquz}}
+\DoxyCodeLine{593    \mbox{\hyperlink{namespacemodparameters_a4fd89886af56f2c21744e98023198f21}{al\_qup}} = azffcoupl(4) \textcolor{comment}{! lquz}}
+\DoxyCodeLine{594    \mbox{\hyperlink{namespacemodparameters_a389822865ce831a828ab87c58f563d2b}{ar\_qdn}} = azffcoupl(5) \textcolor{comment}{! rqdz}}
+\DoxyCodeLine{595    \mbox{\hyperlink{namespacemodparameters_a8916b68a87612e38ec2ba9d94c82c407}{al\_qdn}} = azffcoupl(6) \textcolor{comment}{! lqdz}}
+\DoxyCodeLine{596    \mbox{\hyperlink{namespacemodparameters_ac20aa8e159fcf03059079f7ceb1fc2fe}{ar\_neu}} = azffcoupl(7) \textcolor{comment}{! rnz}}
+\DoxyCodeLine{597    \mbox{\hyperlink{namespacemodparameters_a1fe9002b5ebfcbc449bd7e34ebc34adb}{al\_neu}} = azffcoupl(8) \textcolor{comment}{! lnz}}
+\DoxyCodeLine{598    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a6b9060817dbb03c5671f361249c605e8}\label{namespacemodjhugenmela_a6b9060817dbb03c5671f361249c605e8}} 
 \index{modjhugenmela@{modjhugenmela}!setdecaymodes@{setdecaymodes}}
 \index{setdecaymodes@{setdecaymodes}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setdecaymodes()}{setdecaymodes()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setdecaymodes (\begin{DoxyParamCaption}\item[{integer, dimension(1\+:2), intent(in)}]{idfirst,  }\item[{integer, dimension(1\+:2), intent(in)}]{idsecond }\end{DoxyParamCaption})}
 
+
+
+Definition at line 61 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{62    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: idfirst(1:2)}
+\DoxyCodeLine{63    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: idsecond(1:2)}
+\DoxyCodeLine{64    \textcolor{keywordtype}{integer} :: idV(1:2)}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66    \textcolor{keywordflow}{if}( idfirst(1).eq.\mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}} .or. idfirst(2).eq.\mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{67       \mbox{\hyperlink{namespacemodparameters_a2aea81d9f9004ec11a67c697fcf4dcb7}{decaymode1}} = 7}
+\DoxyCodeLine{68       idv(1)=\mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}}}
+\DoxyCodeLine{69    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{70       idv(1)=\mbox{\hyperlink{namespacemodparameters_a17392dac2d49d8ae1bb6eea9ac2b38e0}{coupledvertex}}(idfirst,-\/1)}
+\DoxyCodeLine{71       \textcolor{keywordflow}{if}( idv(1).eq.\mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}} .or. idv(1).eq.\mbox{\hyperlink{namespacemodparameters_a1b39effcaa0b828d41ba32bd7b77c97f}{wm\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{72          \mbox{\hyperlink{namespacemodparameters_a2aea81d9f9004ec11a67c697fcf4dcb7}{decaymode1}}=11}
+\DoxyCodeLine{73       \textcolor{keywordflow}{elseif}( idv(1).eq.\mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{74          \mbox{\hyperlink{namespacemodparameters_a2aea81d9f9004ec11a67c697fcf4dcb7}{decaymode1}}=9}
+\DoxyCodeLine{75 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{76 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{77    \textcolor{keywordflow}{if}( idsecond(1).eq.\mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}} .or. idsecond(2).eq.\mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{78       \mbox{\hyperlink{namespacemodparameters_a7c103debcd071078fa1bcf75f6248ba9}{decaymode2}} = 7}
+\DoxyCodeLine{79       idv(2)=\mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}}}
+\DoxyCodeLine{80    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{81       idv(2)=\mbox{\hyperlink{namespacemodparameters_a17392dac2d49d8ae1bb6eea9ac2b38e0}{coupledvertex}}(idsecond,-\/1)}
+\DoxyCodeLine{82       \textcolor{keywordflow}{if}( idv(2).eq.\mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}} .or. idv(2).eq.\mbox{\hyperlink{namespacemodparameters_a1b39effcaa0b828d41ba32bd7b77c97f}{wm\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{83          \mbox{\hyperlink{namespacemodparameters_a7c103debcd071078fa1bcf75f6248ba9}{decaymode2}}=11}
+\DoxyCodeLine{84       \textcolor{keywordflow}{elseif}( idv(2).eq.\mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{85          \mbox{\hyperlink{namespacemodparameters_a7c103debcd071078fa1bcf75f6248ba9}{decaymode2}}=9}
+\DoxyCodeLine{86 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{87 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{88    \textcolor{keyword}{call }setmvgv()}
+\DoxyCodeLine{89    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a2b735eae5555dc08803a8401760fd19b}\label{namespacemodjhugenmela_a2b735eae5555dc08803a8401760fd19b}} 
 \index{modjhugenmela@{modjhugenmela}!setdistinguishwwcouplingsflag@{setdistinguishwwcouplingsflag}}
 \index{setdistinguishwwcouplingsflag@{setdistinguishwwcouplingsflag}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setdistinguishwwcouplingsflag()}{setdistinguishwwcouplingsflag()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setdistinguishwwcouplingsflag (\begin{DoxyParamCaption}\item[{logical, intent(in)}]{do\+Allow }\end{DoxyParamCaption})}
 
+
+
+Definition at line 474 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{474    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{475    \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(in)} :: doAllow}
+\DoxyCodeLine{476    \mbox{\hyperlink{namespacemodparameters_a7920005de2c2f3f6feaf8cd2a34586db}{distinguish\_hwwcouplings}} = doallow}
+\DoxyCodeLine{477    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_ab4b6a899f429ae938a7af9397f7afe09}\label{namespacemodjhugenmela_ab4b6a899f429ae938a7af9397f7afe09}} 
 \index{modjhugenmela@{modjhugenmela}!setewparameters@{setewparameters}}
 \index{setewparameters@{setewparameters}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setewparameters()}{setewparameters()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setewparameters (\begin{DoxyParamCaption}\item[{real(8), intent(in)}]{in\+MZ,  }\item[{real(8), intent(in)}]{in\+MW,  }\item[{real(8), intent(in)}]{in\+Gf,  }\item[{real(8), intent(in)}]{inalpha\+\_\+\+Q\+ED,  }\item[{real(8), intent(in)}]{inxw }\end{DoxyParamCaption})}
 
+
+
+Definition at line 41 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{42 \textcolor{keywordtype}{   real}(8), \textcolor{keywordtype}{intent(in)} :: inMZ, inMW, inGf, inalpha\_QED, inxw}
+\DoxyCodeLine{43    \mbox{\hyperlink{namespacemodparameters_ac4ffa11251ddf5cccc129abe4dee0f0a}{m\_z}} = inmz}
+\DoxyCodeLine{44    \mbox{\hyperlink{namespacemodparameters_a8a4eb778815aeef541d5caa3a69f6d4f}{m\_w}} = inmw}
+\DoxyCodeLine{45    \mbox{\hyperlink{namespacemodparameters_afd00149f9a063e998297e817473716ec}{gf}} = ingf}
+\DoxyCodeLine{46    \mbox{\hyperlink{namespacemodparameters_ab25ed4b8462cf6acf16b5f05e0fdf918}{alpha\_qed}} = inalpha\_qed}
+\DoxyCodeLine{47    \mbox{\hyperlink{namespacemodparameters_a8f720ace25c8e774030dffc62868ce56}{xw}} = inxw}
+\DoxyCodeLine{48    \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodparameters_a6f5e3be14a947d3c0a34d451c5650812}{computeewvariables}}()}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a9769c3bbbdc44022a5d627816918ecd6}\label{namespacemodjhugenmela_a9769c3bbbdc44022a5d627816918ecd6}} 
 \index{modjhugenmela@{modjhugenmela}!sethdk@{sethdk}}
 \index{sethdk@{sethdk}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{sethdk()}{sethdk()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::sethdk (\begin{DoxyParamCaption}\item[{logical, intent(in)}]{flag }\end{DoxyParamCaption})}
 
+
+
+Definition at line 99 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{100 \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(in)} :: flag}
+\DoxyCodeLine{101    \mbox{\hyperlink{namespacemodparameters_afb535a4820273c11d4a8dd798fb9bda4}{h\_dk}}=flag}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a9ed61a32e40bccfb0d2f0898075082be}\label{namespacemodjhugenmela_a9ed61a32e40bccfb0d2f0898075082be}} 
 \index{modjhugenmela@{modjhugenmela}!sethiggsmasswidth@{sethiggsmasswidth}}
 \index{sethiggsmasswidth@{sethiggsmasswidth}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{sethiggsmasswidth()}{sethiggsmasswidth()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::sethiggsmasswidth (\begin{DoxyParamCaption}\item[{real(8), intent(in)}]{mass,  }\item[{real(8), intent(in)}]{width }\end{DoxyParamCaption})}
 
+
+
+Definition at line 53 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{54 \textcolor{keywordtype}{   real}(8), \textcolor{keywordtype}{intent(in)} :: mass, width}
+\DoxyCodeLine{55    \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodparameters_a630da8487bf990b04b213e41d87eee42}{setmass}}(mass,\mbox{\hyperlink{namespacemodparameters_aa870ec8eae32205d85d87524bccadea6}{hig\_}})}
+\DoxyCodeLine{56    \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodparameters_a8af42df757f3e55c8b43a3556375bb0a}{setdecaywidth}}(width,\mbox{\hyperlink{namespacemodparameters_aa870ec8eae32205d85d87524bccadea6}{hig\_}})}
+\DoxyCodeLine{57    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_ab4b3ce91f78bd3674a2958b58dc0f08a}\label{namespacemodjhugenmela_ab4b3ce91f78bd3674a2958b58dc0f08a}} 
 \index{modjhugenmela@{modjhugenmela}!setmurenfac@{setmurenfac}}
 \index{setmurenfac@{setmurenfac}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setmurenfac()}{setmurenfac()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setmurenfac (\begin{DoxyParamCaption}\item[{real(8), intent(in)}]{muren,  }\item[{real(8), intent(in)}]{mufac }\end{DoxyParamCaption})}
 
+
+
+Definition at line 105 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{106 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: muren,mufac}
+\DoxyCodeLine{107     \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = muren}
+\DoxyCodeLine{108    \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = mufac}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a77f3ae236f5c73ef3f1e74c4848236b7}\label{namespacemodjhugenmela_a77f3ae236f5c73ef3f1e74c4848236b7}} 
 \index{modjhugenmela@{modjhugenmela}!setmvgv@{setmvgv}}
 \index{setmvgv@{setmvgv}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setmvgv()}{setmvgv()}}
 {\footnotesize\ttfamily subroutine modjhugenmela\+::setmvgv}
 
+
+
+Definition at line 603 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{603 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{604   \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodparameters_a57df9f4f301b8791563bdd02da3c4850}{isazdecay}}(\mbox{\hyperlink{namespacemodparameters_a2aea81d9f9004ec11a67c697fcf4dcb7}{decaymode1}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{605     \mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}} = \mbox{\hyperlink{namespacemodparameters_ac4ffa11251ddf5cccc129abe4dee0f0a}{m\_z}}}
+\DoxyCodeLine{606     ga\_v= \mbox{\hyperlink{namespacemodparameters_a8c77498171d6f246a6fc005a0743afdb}{ga\_z}}}
+\DoxyCodeLine{607     \mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}} = \mbox{\hyperlink{namespacemodparameters_ae598e8880f4a32df8ac0bd1e5e6eb9b3}{m\_zprime}}}
+\DoxyCodeLine{608     \mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}= \mbox{\hyperlink{namespacemodparameters_a3e916591207273f52c87b72961a2ab0a}{ga\_zprime}}}
+\DoxyCodeLine{609   \textcolor{keywordflow}{elseif}( \mbox{\hyperlink{namespacemodparameters_a2edcfa9afc7298dfdf8e93f1d736f159}{isawdecay}}(\mbox{\hyperlink{namespacemodparameters_a2aea81d9f9004ec11a67c697fcf4dcb7}{decaymode1}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{610     \mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}} = \mbox{\hyperlink{namespacemodparameters_a8a4eb778815aeef541d5caa3a69f6d4f}{m\_w}}}
+\DoxyCodeLine{611     ga\_v= \mbox{\hyperlink{namespacemodparameters_af49389d8a8c35940ba24013b08361ca1}{ga\_w}}}
+\DoxyCodeLine{612     \mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}} = \mbox{\hyperlink{namespacemodparameters_a20246516205d3ef37a4a70aeb6563664}{m\_wprime}}}
+\DoxyCodeLine{613     \mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}= \mbox{\hyperlink{namespacemodparameters_aaf40396f7e1c172e6a015303b7a925ea}{ga\_wprime}}}
+\DoxyCodeLine{614   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{615     \mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}} = 0d0}
+\DoxyCodeLine{616     ga\_v= 0d0}
+\DoxyCodeLine{617     \mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}} = -\/1d0}
+\DoxyCodeLine{618     \mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}= 0d0}
+\DoxyCodeLine{619 \textcolor{keywordflow}{  endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_ab8cca35eff5f9f35d2b22fce53915b8f}\label{namespacemodjhugenmela_ab8cca35eff5f9f35d2b22fce53915b8f}} 
 \index{modjhugenmela@{modjhugenmela}!setmvgvfromvertex@{setmvgvfromvertex}}
 \index{setmvgvfromvertex@{setmvgvfromvertex}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setmvgvfromvertex()}{setmvgvfromvertex()}}
 {\footnotesize\ttfamily subroutine modjhugenmela\+::setmvgvfromvertex (\begin{DoxyParamCaption}\item[{integer}]{idV }\end{DoxyParamCaption})}
 
+
+
+Definition at line 623 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{623 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{624 \textcolor{keywordtype}{integer} idV}
+\DoxyCodeLine{625   \textcolor{keywordflow}{if}( idv.eq.\mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{626     \mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}} = \mbox{\hyperlink{namespacemodparameters_ac4ffa11251ddf5cccc129abe4dee0f0a}{m\_z}}}
+\DoxyCodeLine{627     ga\_v= \mbox{\hyperlink{namespacemodparameters_a8c77498171d6f246a6fc005a0743afdb}{ga\_z}}}
+\DoxyCodeLine{628     \mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}} = \mbox{\hyperlink{namespacemodparameters_ae598e8880f4a32df8ac0bd1e5e6eb9b3}{m\_zprime}}}
+\DoxyCodeLine{629     \mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}= \mbox{\hyperlink{namespacemodparameters_a3e916591207273f52c87b72961a2ab0a}{ga\_zprime}}}
+\DoxyCodeLine{630   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( idv.eq.\mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}} .or. idv.eq.\mbox{\hyperlink{namespacemodparameters_a1b39effcaa0b828d41ba32bd7b77c97f}{wm\_}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{631     \mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}} = \mbox{\hyperlink{namespacemodparameters_a8a4eb778815aeef541d5caa3a69f6d4f}{m\_w}}}
+\DoxyCodeLine{632     ga\_v= \mbox{\hyperlink{namespacemodparameters_af49389d8a8c35940ba24013b08361ca1}{ga\_w}}}
+\DoxyCodeLine{633     \mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}} = \mbox{\hyperlink{namespacemodparameters_a20246516205d3ef37a4a70aeb6563664}{m\_wprime}}}
+\DoxyCodeLine{634     \mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}= \mbox{\hyperlink{namespacemodparameters_aaf40396f7e1c172e6a015303b7a925ea}{ga\_wprime}}}
+\DoxyCodeLine{635   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{636     \mbox{\hyperlink{namespacemodparameters_a3ded7281aeb85e020c80c647b3978f81}{m\_v}} = 0d0}
+\DoxyCodeLine{637     ga\_v= 0d0}
+\DoxyCodeLine{638     \mbox{\hyperlink{namespacemodparameters_a3db0f0e0c8d6ea4f8d27b0fb220e843b}{m\_vprime}} = -\/1d0}
+\DoxyCodeLine{639     \mbox{\hyperlink{namespacemodparameters_aa481fae611572650de24959a9f7ae822}{ga\_vprime}}= 0d0}
+\DoxyCodeLine{640 \textcolor{keywordflow}{  endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_af2167f3e62dbf62492a5cda881c62307}\label{namespacemodjhugenmela_af2167f3e62dbf62492a5cda881c62307}} 
 \index{modjhugenmela@{modjhugenmela}!setspinonecouplings@{setspinonecouplings}}
 \index{setspinonecouplings@{setspinonecouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setspinonecouplings()}{setspinonecouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setspinonecouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:2), intent(in)}]{qqcoupl,  }\item[{complex(8), dimension(1\+:2), intent(in)}]{vvcoupl }\end{DoxyParamCaption})}
 
+
+
+Definition at line 498 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{498    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{499    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: qqcoupl(1:2)}
+\DoxyCodeLine{500    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: vvcoupl(1:2)}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502    \mbox{\hyperlink{namespacemodparameters_a88292fb77d2a7c897a9e8cd972e56a80}{zprime\_qq\_left}}  = qqcoupl(1)}
+\DoxyCodeLine{503    \mbox{\hyperlink{namespacemodparameters_a167091a19d2fffa91191e339c0511a08}{zprime\_qq\_right}} = qqcoupl(2)}
+\DoxyCodeLine{504    \mbox{\hyperlink{namespacemodparameters_ab2e7bb5f5f425f6f7dbc9f11ad86f2a5}{zprime\_zz\_1}} = vvcoupl(1)}
+\DoxyCodeLine{505    \mbox{\hyperlink{namespacemodparameters_a978999d6d4c651728aa7a628dbaf270e}{zprime\_zz\_2}} = vvcoupl(2)}
+\DoxyCodeLine{506    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_aca271d14ffa5a062665b987590e10742}\label{namespacemodjhugenmela_aca271d14ffa5a062665b987590e10742}} 
 \index{modjhugenmela@{modjhugenmela}!setspintwocouplings@{setspintwocouplings}}
 \index{setspintwocouplings@{setspintwocouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setspintwocouplings()}{setspintwocouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setspintwocouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:5), intent(in)}]{acoupl,  }\item[{complex(8), dimension(1\+:indexvvsize), intent(in)}]{vvcoupl,  }\item[{complex(8), dimension(1\+:indexvvsize), intent(in)}]{vvpcoupl,  }\item[{complex(8), dimension(1\+:indexvvsize), intent(in)}]{vpvpcoupl,  }\item[{complex(8), dimension(1\+:2), intent(in)}]{q\+LR }\end{DoxyParamCaption})}
 
+
+
+Definition at line 510 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{510    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{511    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: indexGammaBegin=11}
+\DoxyCodeLine{512    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: indexVVSize=20}
+\DoxyCodeLine{513    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: acoupl(1:5)}
+\DoxyCodeLine{514    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: vvcoupl(1:indexVVSize),vvpcoupl(1:indexVVSize),vpvpcoupl(1:indexVVSize)}
+\DoxyCodeLine{515    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: qLR(1:2)}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517    \mbox{\hyperlink{namespacemodparameters_ae3d72e37a9eb1474b6995ceee9b71e2b}{includevprime}} = (any(vvpcoupl.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}}) .or. any(vpvpcoupl.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}}))}
+\DoxyCodeLine{518    \mbox{\hyperlink{namespacemodparameters_a167bcc6e3f7ced5f643bf20ce27f5221}{includegammastar}} = (                                                       \&}
+\DoxyCodeLine{519                     any(vvcoupl(indexgammabegin:indexvvsize).ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}}) .or.   \&}
+\DoxyCodeLine{520                     any(vvpcoupl(indexgammabegin:indexvvsize).ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}})       \&}
+\DoxyCodeLine{521                    )}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523    a1 = acoupl(1)}
+\DoxyCodeLine{524    a2 = acoupl(2)}
+\DoxyCodeLine{525    a3 = acoupl(3)}
+\DoxyCodeLine{526    \mbox{\hyperlink{namespacemodparameters_ab405300ef0f86c98904016f49d768bac}{a4}} = acoupl(4)}
+\DoxyCodeLine{527    \mbox{\hyperlink{namespacemodparameters_a4fd32750a46944f64f36cef583ac8d11}{a5}} = acoupl(5)}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529    \mbox{\hyperlink{namespacemodparameters_aaebd3eadf1b614513d70a9a3c0159c78}{graviton\_qq\_left}}  = qlr(1)}
+\DoxyCodeLine{530    \mbox{\hyperlink{namespacemodparameters_ab4b1c73117174069803bb7892446356e}{graviton\_qq\_right}} = qlr(2)}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532    \mbox{\hyperlink{namespacemodparameters_ad8d341613535f209d1edd2aa26e10056}{b1}} = vvcoupl(1)}
+\DoxyCodeLine{533    \mbox{\hyperlink{namespacemodparameters_a07c57cc6e137206a0865bbad7e6fe289}{b2}} = vvcoupl(2)}
+\DoxyCodeLine{534    \mbox{\hyperlink{namespacemodparameters_af8210ed077b196ad737e86aa86f39b08}{b3}} = vvcoupl(3)}
+\DoxyCodeLine{535    \mbox{\hyperlink{namespacemodparameters_a4a4cb59fe956e97056bd457e8c8ead5c}{b4}} = vvcoupl(4)}
+\DoxyCodeLine{536    \mbox{\hyperlink{namespacemodparameters_a8f8eaba2adc26b3b0359c6b1592975e2}{b5}} = vvcoupl(5)}
+\DoxyCodeLine{537    \mbox{\hyperlink{namespacemodparameters_ac34eec4a90d81fa460845f25560ecc08}{b6}} = vvcoupl(6)}
+\DoxyCodeLine{538    \mbox{\hyperlink{namespacemodparameters_a4abef91525cd3afdfd187fed61963689}{b7}} = vvcoupl(7)}
+\DoxyCodeLine{539    \mbox{\hyperlink{namespacemodparameters_a96dceb4e7366be50aa1b532a034b74c7}{b8}} = vvcoupl(8)}
+\DoxyCodeLine{540    \mbox{\hyperlink{namespacemodparameters_a62d1134d096afb9af7917108ce47d8a0}{b9}} = vvcoupl(9)}
+\DoxyCodeLine{541    \mbox{\hyperlink{namespacemodparameters_ab54e4644ad7b44492e81af9e05658da0}{b10}} = vvcoupl(10)}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{543    \mbox{\hyperlink{namespacemodparameters_af015416614255efce04fc194849a66a5}{bzgs1}} = vvcoupl(11)}
+\DoxyCodeLine{544    \mbox{\hyperlink{namespacemodparameters_a39b0709206beca4e225f726f71937625}{bzgs2}} = vvcoupl(12)}
+\DoxyCodeLine{545    \mbox{\hyperlink{namespacemodparameters_ab74dec2a0559f3a723a2ddd1d1260c0f}{bzgs3}} = vvcoupl(13)}
+\DoxyCodeLine{546    \mbox{\hyperlink{namespacemodparameters_a7080dcbde8f23ebf72dd3c0c545e4c8b}{bzgs4}} = vvcoupl(14)}
+\DoxyCodeLine{547    \mbox{\hyperlink{namespacemodparameters_a4597546f655763a6615d08bc4d6da0a7}{bzgs8}} = vvcoupl(15)}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549    \mbox{\hyperlink{namespacemodparameters_a8b72311238fa8b99f18a6d00676ab948}{bgsgs1}} = vvcoupl(16)}
+\DoxyCodeLine{550    \mbox{\hyperlink{namespacemodparameters_af22d196fd0cda73bf59f0e9a967e4c85}{bgsgs2}} = vvcoupl(17)}
+\DoxyCodeLine{551    \mbox{\hyperlink{namespacemodparameters_a3b8d62c104e1be2bc0366544b768d4e8}{bgsgs3}} = vvcoupl(18)}
+\DoxyCodeLine{552    \mbox{\hyperlink{namespacemodparameters_ae0d399a340ba33764b11887672df9dcd}{bgsgs4}} = vvcoupl(19)}
+\DoxyCodeLine{553    \mbox{\hyperlink{namespacemodparameters_a7566892826adecd36f67b223151c12f1}{bgsgs8}} = vvcoupl(20)}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555    \mbox{\hyperlink{namespacemodparameters_a0cedbd16d0a589de3bafd13ff159802d}{bzzp1}} = vvpcoupl(1)}
+\DoxyCodeLine{556    \mbox{\hyperlink{namespacemodparameters_a60b6d985daf228caeb52c170178ab61f}{bzzp2}} = vvpcoupl(2)}
+\DoxyCodeLine{557    \mbox{\hyperlink{namespacemodparameters_a28f2adbf435f338dad302e74debd15ef}{bzzp3}} = vvpcoupl(3)}
+\DoxyCodeLine{558    \mbox{\hyperlink{namespacemodparameters_a4bb29fa0ca141b5d528f315f97faf9c5}{bzzp4}} = vvpcoupl(4)}
+\DoxyCodeLine{559    \mbox{\hyperlink{namespacemodparameters_a1c082a176ad4702e19b0b5bb4c56b408}{bzzp5}} = vvpcoupl(5)}
+\DoxyCodeLine{560    \mbox{\hyperlink{namespacemodparameters_a65de9b3d096c9dd9f0c941513650baa1}{bzzp6}} = vvpcoupl(6)}
+\DoxyCodeLine{561    \mbox{\hyperlink{namespacemodparameters_abc6b8c73bc89ad3f8ce6aca6ed980d73}{bzzp7}} = vvpcoupl(7)}
+\DoxyCodeLine{562    \mbox{\hyperlink{namespacemodparameters_a1f3377f584c942aa19aee97062f2d7d6}{bzzp8}} = vvpcoupl(8)}
+\DoxyCodeLine{563    \mbox{\hyperlink{namespacemodparameters_a01e624a136777a6975ba00ce50a7d688}{bzzp9}} = vvpcoupl(9)}
+\DoxyCodeLine{564    \mbox{\hyperlink{namespacemodparameters_aa7c5589af005ba7ab6ab7ead646d0d6a}{bzzp10}} = vvpcoupl(10)}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566    \mbox{\hyperlink{namespacemodparameters_abe706f5b1e621767e9c87f71b89204ac}{bzpgs1}} = vvpcoupl(11)}
+\DoxyCodeLine{567    \mbox{\hyperlink{namespacemodparameters_abc057c45ab37b32eba9b8a2cbc3f9ff0}{bzpgs2}} = vvpcoupl(12)}
+\DoxyCodeLine{568    \mbox{\hyperlink{namespacemodparameters_aec17998cce0ecf55d0a484f40b70d9e8}{bzpgs3}} = vvpcoupl(13)}
+\DoxyCodeLine{569    \mbox{\hyperlink{namespacemodparameters_a56f4b11e2e2999c3dbac6bd948f3b72f}{bzpgs4}} = vvpcoupl(14)}
+\DoxyCodeLine{570    \mbox{\hyperlink{namespacemodparameters_a6ecbaafc0aecc328f16c1517529ad3da}{bzpgs8}} = vvpcoupl(15)}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573    \mbox{\hyperlink{namespacemodparameters_a1660d3221a70e17ab1404d6094875ae5}{bzpzp1}} = vpvpcoupl(1)}
+\DoxyCodeLine{574    \mbox{\hyperlink{namespacemodparameters_a5c52c48e4da72c3be73167e27cb823b9}{bzpzp2}} = vpvpcoupl(2)}
+\DoxyCodeLine{575    \mbox{\hyperlink{namespacemodparameters_a60700c0213dffca8be31e8e4613bd12a}{bzpzp3}} = vpvpcoupl(3)}
+\DoxyCodeLine{576    \mbox{\hyperlink{namespacemodparameters_ac6ee8ab595af3821385cee6e15b361b5}{bzpzp4}} = vpvpcoupl(4)}
+\DoxyCodeLine{577    \mbox{\hyperlink{namespacemodparameters_a81c09e37482b400674ba4fc31c304e94}{bzpzp5}} = vpvpcoupl(5)}
+\DoxyCodeLine{578    \mbox{\hyperlink{namespacemodparameters_a198c61f6865c9e0909b095c05d6486e3}{bzpzp6}} = vpvpcoupl(6)}
+\DoxyCodeLine{579    \mbox{\hyperlink{namespacemodparameters_a5dfd35169e176eb62b678a73d01915a6}{bzpzp7}} = vpvpcoupl(7)}
+\DoxyCodeLine{580    \mbox{\hyperlink{namespacemodparameters_a530dd7fa5e8f18dc1b65210c78a17f5f}{bzpzp8}} = vpvpcoupl(8)}
+\DoxyCodeLine{581    \mbox{\hyperlink{namespacemodparameters_ab0fb016b109c97d2a88b44ba5360009b}{bzpzp9}} = vpvpcoupl(9)}
+\DoxyCodeLine{582    \mbox{\hyperlink{namespacemodparameters_ab9b6ff6472bcc689e984bd6944dd5461}{bzpzp10}} = vpvpcoupl(10)}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a7545b6f80c24ff883bc920d442fa7498}\label{namespacemodjhugenmela_a7545b6f80c24ff883bc920d442fa7498}} 
 \index{modjhugenmela@{modjhugenmela}!setspinzeroggcouplings@{setspinzeroggcouplings}}
 \index{setspinzeroggcouplings@{setspinzeroggcouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setspinzeroggcouplings()}{setspinzeroggcouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setspinzeroggcouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:3), intent(in)}]{ggcoupl }\end{DoxyParamCaption})}
 
+
+
+Definition at line 481 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{481    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{482    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: ggcoupl(1:3)}
+\DoxyCodeLine{483    \mbox{\hyperlink{namespacemodparameters_a4c2971f8c061b79ef20dc250225aa071}{ghg2}} =  ggcoupl(1)}
+\DoxyCodeLine{484    \mbox{\hyperlink{namespacemodparameters_afb30369922094b4be565ab2b24e66101}{ghg3}} =  ggcoupl(2)}
+\DoxyCodeLine{485    \mbox{\hyperlink{namespacemodparameters_acd7ec822bc40474291f3fe3f8d1e29ba}{ghg4}} =  ggcoupl(3)}
+\DoxyCodeLine{486    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a5880889285cb3a91400dbdc2172a86c0}\label{namespacemodjhugenmela_a5880889285cb3a91400dbdc2172a86c0}} 
 \index{modjhugenmela@{modjhugenmela}!setspinzeroqqcouplings@{setspinzeroqqcouplings}}
 \index{setspinzeroqqcouplings@{setspinzeroqqcouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setspinzeroqqcouplings()}{setspinzeroqqcouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setspinzeroqqcouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:2), intent(in)}]{qqcoupl }\end{DoxyParamCaption})}
 
+
+
+Definition at line 490 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{490    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{491    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: qqcoupl(1:2)}
+\DoxyCodeLine{492    \mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}} =  qqcoupl(1)}
+\DoxyCodeLine{493    \mbox{\hyperlink{namespacemodparameters_a2d07bef2db6fb4b475c2057dcb03c2fe}{kappa\_tilde}} =  qqcoupl(2)}
+\DoxyCodeLine{494    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_acb02d6b339acf17395d8973b79cabb96}\label{namespacemodjhugenmela_acb02d6b339acf17395d8973b79cabb96}} 
 \index{modjhugenmela@{modjhugenmela}!setspinzerovvcouplings@{setspinzerovvcouplings}}
 \index{setspinzerovvcouplings@{setspinzerovvcouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setspinzerovvcouplings()}{setspinzerovvcouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setspinzerovvcouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(39), intent(in)}]{vvcoupl,  }\item[{complex(8), dimension(39), intent(in)}]{vvpcoupl,  }\item[{complex(8), dimension(39), intent(in)}]{vpvpcoupl,  }\item[{integer, dimension(3), intent(in)}]{cqsq,  }\item[{real(8), dimension(1\+:3,1\+:4), intent(in)}]{Lambda\+\_\+qsq,  }\item[{logical, intent(in)}]{use\+W\+Wcoupl }\end{DoxyParamCaption})}
 
+
+
+Definition at line 124 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{125    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: vvcoupl(39)}
+\DoxyCodeLine{126    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: vvpcoupl(39)}
+\DoxyCodeLine{127    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: vpvpcoupl(39)}
+\DoxyCodeLine{128    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: cqsq(3)}
+\DoxyCodeLine{129 \textcolor{keywordtype}{   real}(8), \textcolor{keywordtype}{intent(in)} :: Lambda\_qsq(1:3,1:4)}
+\DoxyCodeLine{130    \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(in)} :: useWWcoupl}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132    \mbox{\hyperlink{namespacemodparameters_ae3d72e37a9eb1474b6995ceee9b71e2b}{includevprime}} = \mbox{\hyperlink{namespacemodparameters_ae3d72e37a9eb1474b6995ceee9b71e2b}{includevprime}} .or. (                                   \&}
+\DoxyCodeLine{133                     (any(vvpcoupl.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}}) .or. any(vpvpcoupl.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}})) \&}
+\DoxyCodeLine{134                    )}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136    \textcolor{keywordflow}{if}(.not.usewwcoupl) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{137       \mbox{\hyperlink{namespacemodparameters_a886f808fbc6c87cd4dc86c9eab68bc06}{cz\_q1sq}} = cqsq(1)}
+\DoxyCodeLine{138       \mbox{\hyperlink{namespacemodparameters_ab18353fb5593426bb87fa04d29af92ab}{lambda\_z11}} = lambda\_qsq(1,1)}
+\DoxyCodeLine{139       \mbox{\hyperlink{namespacemodparameters_a63eff9d710f7ca0a2fbc115d32b26866}{lambda\_z21}} = lambda\_qsq(1,2)}
+\DoxyCodeLine{140       \mbox{\hyperlink{namespacemodparameters_aa796368750824ea0b42c397777ab90e1}{lambda\_z31}} = lambda\_qsq(1,3)}
+\DoxyCodeLine{141       \mbox{\hyperlink{namespacemodparameters_adca70fffb57167a4c669890476a3a437}{lambda\_z41}} = lambda\_qsq(1,4)}
+\DoxyCodeLine{142       \mbox{\hyperlink{namespacemodparameters_a7bc3245eb7f61b7703337622674a4e01}{cz\_q2sq}} = cqsq(2)}
+\DoxyCodeLine{143       \mbox{\hyperlink{namespacemodparameters_a0a6539a95433a2bf12ecf59a6ab9f2d8}{lambda\_z12}} = lambda\_qsq(2,1)}
+\DoxyCodeLine{144       \mbox{\hyperlink{namespacemodparameters_a1fe3e2fdc4e8bf1bcc686e411da67d5e}{lambda\_z22}} = lambda\_qsq(2,2)}
+\DoxyCodeLine{145       \mbox{\hyperlink{namespacemodparameters_a504e300c28cd24783d280088b91b6a8e}{lambda\_z32}} = lambda\_qsq(2,3)}
+\DoxyCodeLine{146       \mbox{\hyperlink{namespacemodparameters_a3cc3132c77d5892b6a9688823b8bed6c}{lambda\_z42}} = lambda\_qsq(2,4)}
+\DoxyCodeLine{147       \mbox{\hyperlink{namespacemodparameters_adb23ca882724c1d3a87c2a511bc72576}{cz\_q12sq}} = cqsq(3)}
+\DoxyCodeLine{148       \mbox{\hyperlink{namespacemodparameters_ad7937970889d330ee607c0beaa936868}{lambda\_z10}} = lambda\_qsq(3,1)}
+\DoxyCodeLine{149       \mbox{\hyperlink{namespacemodparameters_a12521aab9f604461c911ca916bab1549}{lambda\_z20}} = lambda\_qsq(3,2)}
+\DoxyCodeLine{150       \mbox{\hyperlink{namespacemodparameters_ad8c370fb87c7f319a33fa9ac10b11aaf}{lambda\_z30}} = lambda\_qsq(3,3)}
+\DoxyCodeLine{151       \mbox{\hyperlink{namespacemodparameters_ae289830af244a98309985446bc7acc2a}{lambda\_z40}} = lambda\_qsq(3,4)}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153       \mbox{\hyperlink{namespacemodparameters_a22cfd2a0ad8d9b39ece1b378c6b163c8}{ghz1}} =  vvcoupl(1)}
+\DoxyCodeLine{154       \mbox{\hyperlink{namespacemodparameters_a01f3a694a907496c50deb076b723bfd9}{ghz2}} =  vvcoupl(2)}
+\DoxyCodeLine{155       \mbox{\hyperlink{namespacemodparameters_aeee7702960f2b8c8671fdb1c2c7e568f}{ghz3}} =  vvcoupl(3)}
+\DoxyCodeLine{156       \mbox{\hyperlink{namespacemodparameters_a96bff933bfb9375c7d8c342362592a00}{ghz4}} =  vvcoupl(4)}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158       \mbox{\hyperlink{namespacemodparameters_a7e45680efabbc6803ab4150718067d13}{ghzgs2}}  = vvcoupl(5)}
+\DoxyCodeLine{159       \mbox{\hyperlink{namespacemodparameters_a3adf62f35ccd1cd09be782ed34bff6c7}{ghzgs3}}  = vvcoupl(6)}
+\DoxyCodeLine{160       \mbox{\hyperlink{namespacemodparameters_a791300280d78c7825f406001faaa3023}{ghzgs4}}  = vvcoupl(7)}
+\DoxyCodeLine{161       \mbox{\hyperlink{namespacemodparameters_a672c1da74b0496d7cd5fad84b7414f3f}{ghgsgs2}} = vvcoupl(8)}
+\DoxyCodeLine{162       \mbox{\hyperlink{namespacemodparameters_a01ec96063c7cf66d7d3264589b08fcee}{ghgsgs3}} = vvcoupl(9)}
+\DoxyCodeLine{163       \mbox{\hyperlink{namespacemodparameters_a5882b1925df2a1f9f4cfb530e07f7154}{ghgsgs4}} = vvcoupl(10)}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165       \mbox{\hyperlink{namespacemodparameters_acab081c2f07daa26a6f7438de0ebd061}{ghz1\_prime}} = vvcoupl(11)}
+\DoxyCodeLine{166       \mbox{\hyperlink{namespacemodparameters_aeaa61fce2a801bf03a213b26b58ed987}{ghz1\_prime2}}= vvcoupl(12)}
+\DoxyCodeLine{167       \mbox{\hyperlink{namespacemodparameters_aa1bee2894efcf972104fb0930be834d2}{ghz1\_prime3}}= vvcoupl(13)}
+\DoxyCodeLine{168       \mbox{\hyperlink{namespacemodparameters_aca052ec9bd97c52103969a1224906ecc}{ghz1\_prime4}}= vvcoupl(14)}
+\DoxyCodeLine{169       \mbox{\hyperlink{namespacemodparameters_a1930d8d10953ae04e282c8a0d3deea22}{ghz1\_prime5}}= vvcoupl(15)}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171       \mbox{\hyperlink{namespacemodparameters_ab14447ba5ad260a1a654cb24013c4aca}{ghz2\_prime}} = vvcoupl(16)}
+\DoxyCodeLine{172       \mbox{\hyperlink{namespacemodparameters_a489baf56a4fc8085326c921d2d21dc90}{ghz2\_prime2}}= vvcoupl(17)}
+\DoxyCodeLine{173       \mbox{\hyperlink{namespacemodparameters_ae7f0bad9e784f3d222f56058f292ffde}{ghz2\_prime3}}= vvcoupl(18)}
+\DoxyCodeLine{174       \mbox{\hyperlink{namespacemodparameters_ae356688653dd7f162cf80d94e98526f1}{ghz2\_prime4}}= vvcoupl(19)}
+\DoxyCodeLine{175       \mbox{\hyperlink{namespacemodparameters_a85ca10c9b2f7e0b5f5616e9059c2645d}{ghz2\_prime5}}= vvcoupl(20)}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177       \mbox{\hyperlink{namespacemodparameters_a98c430095b31b729cdcce904452d357a}{ghz3\_prime}} = vvcoupl(21)}
+\DoxyCodeLine{178       \mbox{\hyperlink{namespacemodparameters_adf46f292b580c21c7cdb2d41e59c12b2}{ghz3\_prime2}}= vvcoupl(22)}
+\DoxyCodeLine{179       \mbox{\hyperlink{namespacemodparameters_a39a857bc261bdfb31819fe42dad7919b}{ghz3\_prime3}}= vvcoupl(23)}
+\DoxyCodeLine{180       \mbox{\hyperlink{namespacemodparameters_abaad22d4e5d0359d388dee8bb2f85ac4}{ghz3\_prime4}}= vvcoupl(24)}
+\DoxyCodeLine{181       \mbox{\hyperlink{namespacemodparameters_afde38bb258b350371ed6407ee6bd1787}{ghz3\_prime5}}= vvcoupl(25)}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183       \mbox{\hyperlink{namespacemodparameters_a7998ed4fa3187143c90e6d9d9444d1a8}{ghz4\_prime}} = vvcoupl(26)}
+\DoxyCodeLine{184       \mbox{\hyperlink{namespacemodparameters_a403fc3cb9807abafffc32f8a78af1bff}{ghz4\_prime2}}= vvcoupl(27)}
+\DoxyCodeLine{185       \mbox{\hyperlink{namespacemodparameters_a1b2e568497ee243b4af46dca9c19d1c0}{ghz4\_prime3}}= vvcoupl(28)}
+\DoxyCodeLine{186       \mbox{\hyperlink{namespacemodparameters_a78b3ecb22898c6e45bc77c82de4faaf3}{ghz4\_prime4}}= vvcoupl(29)}
+\DoxyCodeLine{187       \mbox{\hyperlink{namespacemodparameters_ad88b5140aab1f22f03732e96de5a2ad8}{ghz4\_prime5}}= vvcoupl(30)}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189       \mbox{\hyperlink{namespacemodparameters_a55353b88f11a77b4acdc2f4588d5bfeb}{ghzgs1\_prime2}}= vvcoupl(31)}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191       \mbox{\hyperlink{namespacemodparameters_aa826366a45d1905c0e5be8cbc97b1a90}{ghz1\_prime6}}  = vvcoupl(32)}
+\DoxyCodeLine{192       \mbox{\hyperlink{namespacemodparameters_a22b63137997b4dba4e5bd3af71bdf935}{ghz1\_prime7}}  = vvcoupl(33)}
+\DoxyCodeLine{193       \mbox{\hyperlink{namespacemodparameters_a9463b4dc45d54a42a8f3963fc63b5aa1}{ghz2\_prime6}}  = vvcoupl(34)}
+\DoxyCodeLine{194       \mbox{\hyperlink{namespacemodparameters_a84ff3fdaf2a47fa0ff3bb53e2886e825}{ghz2\_prime7}}  = vvcoupl(35)}
+\DoxyCodeLine{195       \mbox{\hyperlink{namespacemodparameters_a1e2e63965a6d3b1484b6cdf39bb5d7cb}{ghz3\_prime6}}  = vvcoupl(36)}
+\DoxyCodeLine{196       \mbox{\hyperlink{namespacemodparameters_a9e1c09c7bcdb1290352c212598f1c42d}{ghz3\_prime7}}  = vvcoupl(37)}
+\DoxyCodeLine{197       \mbox{\hyperlink{namespacemodparameters_aa4447c127741fd771fddfe68bc5955e0}{ghz4\_prime6}}  = vvcoupl(38)}
+\DoxyCodeLine{198       \mbox{\hyperlink{namespacemodparameters_a2f3e0320d43c892bd708289b495ea539}{ghz4\_prime7}}  = vvcoupl(39)}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201       \mbox{\hyperlink{namespacemodparameters_ad4c4c8794bad72622cfb1db9535b1be6}{ghzzp1}} =  vvpcoupl(1)}
+\DoxyCodeLine{202       \mbox{\hyperlink{namespacemodparameters_a8a7702e87e3a1350c56c26d08d320f91}{ghzzp2}} =  vvpcoupl(2)}
+\DoxyCodeLine{203       \mbox{\hyperlink{namespacemodparameters_a688340484fea3b4fff3413b03b09f18d}{ghzzp3}} =  vvpcoupl(3)}
+\DoxyCodeLine{204       \mbox{\hyperlink{namespacemodparameters_a96f629a980ed2acd3b7246ca227f104c}{ghzzp4}} =  vvpcoupl(4)}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206       \mbox{\hyperlink{namespacemodparameters_a03e395c5e4eaed18039cf7cdc9a16f50}{ghzpgs2}}  = vvpcoupl(5)}
+\DoxyCodeLine{207       \mbox{\hyperlink{namespacemodparameters_ac2c87a73c55596f08368782f5d2d46f3}{ghzpgs3}}  = vvpcoupl(6)}
+\DoxyCodeLine{208       \mbox{\hyperlink{namespacemodparameters_aca3c5e649dd133a8c3ea0f94566b4108}{ghzpgs4}}  = vvpcoupl(7)}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210       \mbox{\hyperlink{namespacemodparameters_a240518a0c0218c99751daf6d5c8353d8}{ghzzp1\_prime}} = vvpcoupl(11)}
+\DoxyCodeLine{211       \mbox{\hyperlink{namespacemodparameters_ae5b9ff45781f3dc25f0b8a4be64c46ee}{ghzzp1\_prime2}}= vvpcoupl(12)}
+\DoxyCodeLine{212       \mbox{\hyperlink{namespacemodparameters_af740c66ee87d7e0669198bd8872fc519}{ghzzp1\_prime3}}= vvpcoupl(13)}
+\DoxyCodeLine{213       \mbox{\hyperlink{namespacemodparameters_a06c728d82103e4c040379dce9b27cf91}{ghzzp1\_prime4}}= vvpcoupl(14)}
+\DoxyCodeLine{214       \mbox{\hyperlink{namespacemodparameters_a31d699b7b52452adcb128e810b1f93d8}{ghzzp1\_prime5}}= vvpcoupl(15)}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216       \mbox{\hyperlink{namespacemodparameters_a551e15d2a9e2042b9d6d41df3d40dfd9}{ghzzp2\_prime}} = vvpcoupl(16)}
+\DoxyCodeLine{217       \mbox{\hyperlink{namespacemodparameters_afbaa2835e8bb54800ff455ec694dcb16}{ghzzp2\_prime2}}= vvpcoupl(17)}
+\DoxyCodeLine{218       \mbox{\hyperlink{namespacemodparameters_ae4a88dcfbbae4520af3a5ba05b7d56e5}{ghzzp2\_prime3}}= vvpcoupl(18)}
+\DoxyCodeLine{219       \mbox{\hyperlink{namespacemodparameters_a31585e2cf71d248f57d83af1a759be10}{ghzzp2\_prime4}}= vvpcoupl(19)}
+\DoxyCodeLine{220       \mbox{\hyperlink{namespacemodparameters_a1d9e733f7fdcc9c3bb635b2ad4b7e74c}{ghzzp2\_prime5}}= vvpcoupl(20)}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222       \mbox{\hyperlink{namespacemodparameters_a15619551dd66ae97c22beef8653b2c45}{ghzzp3\_prime}} = vvpcoupl(21)}
+\DoxyCodeLine{223       \mbox{\hyperlink{namespacemodparameters_a155114e9c9772777533c8750cd29ecd9}{ghzzp3\_prime2}}= vvpcoupl(22)}
+\DoxyCodeLine{224       \mbox{\hyperlink{namespacemodparameters_a4ef8ff66f2ce7686815e7fa1b440338e}{ghzzp3\_prime3}}= vvpcoupl(23)}
+\DoxyCodeLine{225       \mbox{\hyperlink{namespacemodparameters_aacde7bb7715ea6971745d4a2dd705a0c}{ghzzp3\_prime4}}= vvpcoupl(24)}
+\DoxyCodeLine{226       \mbox{\hyperlink{namespacemodparameters_a649a5f14f962f3c3d57933cec80a8bd2}{ghzzp3\_prime5}}= vvpcoupl(25)}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228       \mbox{\hyperlink{namespacemodparameters_ac1f93d5e84b302aff6c8675347f82b42}{ghzzp4\_prime}} = vvpcoupl(26)}
+\DoxyCodeLine{229       \mbox{\hyperlink{namespacemodparameters_a9aa9921d9185b0fff6dcdd653ce7e094}{ghzzp4\_prime2}}= vvpcoupl(27)}
+\DoxyCodeLine{230       \mbox{\hyperlink{namespacemodparameters_a46da93f295e8ec5d721c6c0cb24a42b9}{ghzzp4\_prime3}}= vvpcoupl(28)}
+\DoxyCodeLine{231       \mbox{\hyperlink{namespacemodparameters_a117c4f7a064a7f6d1f9a89a35a409971}{ghzzp4\_prime4}}= vvpcoupl(29)}
+\DoxyCodeLine{232       \mbox{\hyperlink{namespacemodparameters_adc1a7c1b025a6778c0b15a125092bab4}{ghzzp4\_prime5}}= vvpcoupl(30)}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234       \mbox{\hyperlink{namespacemodparameters_a4aa7d9b27c456717dbec9deabb8d5bb7}{ghzpgs1\_prime2}}= vvpcoupl(31)}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236       \mbox{\hyperlink{namespacemodparameters_ab7bc69810d7b2c783dc28ece2d90f825}{ghzzp1\_prime6}}  = vvpcoupl(32)}
+\DoxyCodeLine{237       \mbox{\hyperlink{namespacemodparameters_af9a1e7f0a4a72991d79234f129119389}{ghzzp1\_prime7}}  = vvpcoupl(33)}
+\DoxyCodeLine{238       \mbox{\hyperlink{namespacemodparameters_afa95baab96d760261cf92ed0a11cb891}{ghzzp2\_prime6}}  = vvpcoupl(34)}
+\DoxyCodeLine{239       \mbox{\hyperlink{namespacemodparameters_adab864cfb33143bf55381aa132325f73}{ghzzp2\_prime7}}  = vvpcoupl(35)}
+\DoxyCodeLine{240       \mbox{\hyperlink{namespacemodparameters_a24c3acabd44a97e22532483afa1beea4}{ghzzp3\_prime6}}  = vvpcoupl(36)}
+\DoxyCodeLine{241       \mbox{\hyperlink{namespacemodparameters_a412c3f9ae450623c791702364e6a7079}{ghzzp3\_prime7}}  = vvpcoupl(37)}
+\DoxyCodeLine{242       \mbox{\hyperlink{namespacemodparameters_a24f5c394a87abeb3452eda2cdb0f42b0}{ghzzp4\_prime6}}  = vvpcoupl(38)}
+\DoxyCodeLine{243       \mbox{\hyperlink{namespacemodparameters_a02b7096c1553c0e4222535aaa5798a08}{ghzzp4\_prime7}}  = vvpcoupl(39)}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245       \mbox{\hyperlink{namespacemodparameters_af050621d907d8705e9bea2482628edd3}{ghzpzp1}} =  vpvpcoupl(1)}
+\DoxyCodeLine{246       \mbox{\hyperlink{namespacemodparameters_ae6624ed8ec8a9dfefaef2f25aefa15c0}{ghzpzp2}} =  vpvpcoupl(2)}
+\DoxyCodeLine{247       \mbox{\hyperlink{namespacemodparameters_a4675427f1b7f90cc339efe9bf272b749}{ghzpzp3}} =  vpvpcoupl(3)}
+\DoxyCodeLine{248       \mbox{\hyperlink{namespacemodparameters_a381f50f93e4000a3f7df1e4ef4e4ec8a}{ghzpzp4}} =  vpvpcoupl(4)}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250       \mbox{\hyperlink{namespacemodparameters_ae9c61f3cfe0f230afbed67da7cb3db99}{ghzpzp1\_prime}} = vpvpcoupl(11)}
+\DoxyCodeLine{251       \mbox{\hyperlink{namespacemodparameters_a33afb655eb113fb02d661d5f1aac6c44}{ghzpzp1\_prime2}}= vpvpcoupl(12)}
+\DoxyCodeLine{252       \mbox{\hyperlink{namespacemodparameters_aa1d9925bf169fdf8a0df41e91290b4dd}{ghzpzp1\_prime3}}= vpvpcoupl(13)}
+\DoxyCodeLine{253       \mbox{\hyperlink{namespacemodparameters_a9712004669210514edb519de09429ebd}{ghzpzp1\_prime4}}= vpvpcoupl(14)}
+\DoxyCodeLine{254       \mbox{\hyperlink{namespacemodparameters_a6bd6ef4b993eb548f71b1b2b301f93d6}{ghzpzp1\_prime5}}= vpvpcoupl(15)}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256       \mbox{\hyperlink{namespacemodparameters_aa2bb33e0af75a0e95f5be46185be24c8}{ghzpzp2\_prime}} = vpvpcoupl(16)}
+\DoxyCodeLine{257       \mbox{\hyperlink{namespacemodparameters_aa13df7bf7697bc27dbc0fddbf509340d}{ghzpzp2\_prime2}}= vpvpcoupl(17)}
+\DoxyCodeLine{258       \mbox{\hyperlink{namespacemodparameters_a9919af568893f44399dedc640cccf4fc}{ghzpzp2\_prime3}}= vpvpcoupl(18)}
+\DoxyCodeLine{259       \mbox{\hyperlink{namespacemodparameters_ae72ea71ceb708d50ae893ea6fb26031f}{ghzpzp2\_prime4}}= vpvpcoupl(19)}
+\DoxyCodeLine{260       \mbox{\hyperlink{namespacemodparameters_aef7c02ded62da0874e2c2f3e0e09cbdd}{ghzpzp2\_prime5}}= vpvpcoupl(20)}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262       \mbox{\hyperlink{namespacemodparameters_a3fc07e0a03340f14a574ae47e8ac121c}{ghzpzp3\_prime}} = vpvpcoupl(21)}
+\DoxyCodeLine{263       \mbox{\hyperlink{namespacemodparameters_a99490bb01e6b6277c59f079c8a7a03ed}{ghzpzp3\_prime2}}= vpvpcoupl(22)}
+\DoxyCodeLine{264       \mbox{\hyperlink{namespacemodparameters_ae3bbd05c2fa87a5e2e74fed61bbb850b}{ghzpzp3\_prime3}}= vpvpcoupl(23)}
+\DoxyCodeLine{265       \mbox{\hyperlink{namespacemodparameters_a37e42430f008ebaefb8ee332598219b3}{ghzpzp3\_prime4}}= vpvpcoupl(24)}
+\DoxyCodeLine{266       \mbox{\hyperlink{namespacemodparameters_a6300e4efb32b5205a05dc32b0bc3d274}{ghzpzp3\_prime5}}= vpvpcoupl(25)}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268       \mbox{\hyperlink{namespacemodparameters_a31b28d0d2b3a497520af3fcb23fa615b}{ghzpzp4\_prime}} = vpvpcoupl(26)}
+\DoxyCodeLine{269       \mbox{\hyperlink{namespacemodparameters_a52a12fde03dd3342af46a6667d441f12}{ghzpzp4\_prime2}}= vpvpcoupl(27)}
+\DoxyCodeLine{270       \mbox{\hyperlink{namespacemodparameters_a0be9def2833c003b15e69f62982f699d}{ghzpzp4\_prime3}}= vpvpcoupl(28)}
+\DoxyCodeLine{271       \mbox{\hyperlink{namespacemodparameters_a94c0d22e0c8bc343540498434f3a1cd2}{ghzpzp4\_prime4}}= vpvpcoupl(29)}
+\DoxyCodeLine{272       \mbox{\hyperlink{namespacemodparameters_acb98c0b232c4dc6f8ed90d5cbb39b803}{ghzpzp4\_prime5}}= vpvpcoupl(30)}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274       \mbox{\hyperlink{namespacemodparameters_a4aa26782a1d006e2e0570ff67c070395}{ghzpzp1\_prime6}}  = vpvpcoupl(32)}
+\DoxyCodeLine{275       \mbox{\hyperlink{namespacemodparameters_ab153787255334c8451202233ce1180fc}{ghzpzp1\_prime7}}  = vpvpcoupl(33)}
+\DoxyCodeLine{276       \mbox{\hyperlink{namespacemodparameters_adcf7d9a8dc043b4979593dee861d4f87}{ghzpzp2\_prime6}}  = vpvpcoupl(34)}
+\DoxyCodeLine{277       \mbox{\hyperlink{namespacemodparameters_ac1d79f7d4f68b038b1ad4fb6120ea342}{ghzpzp2\_prime7}}  = vpvpcoupl(35)}
+\DoxyCodeLine{278       \mbox{\hyperlink{namespacemodparameters_a9cc6834ea43b9be66f7dfd9fa6affbec}{ghzpzp3\_prime6}}  = vpvpcoupl(36)}
+\DoxyCodeLine{279       \mbox{\hyperlink{namespacemodparameters_aa139092d911714479c3db1c95f6baaad}{ghzpzp3\_prime7}}  = vpvpcoupl(37)}
+\DoxyCodeLine{280       \mbox{\hyperlink{namespacemodparameters_a69a755821de1c3394373a410400296b2}{ghzpzp4\_prime6}}  = vpvpcoupl(38)}
+\DoxyCodeLine{281       \mbox{\hyperlink{namespacemodparameters_a1527590d149f5cfc5d70f26510a1c50b}{ghzpzp4\_prime7}}  = vpvpcoupl(39)}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284       \textcolor{comment}{! Set includeGammaStar based on the actual coupling values}}
+\DoxyCodeLine{285       \mbox{\hyperlink{namespacemodparameters_a167bcc6e3f7ced5f643bf20ce27f5221}{includegammastar}} = (          \&}
+\DoxyCodeLine{286          \mbox{\hyperlink{namespacemodparameters_a55353b88f11a77b4acdc2f4588d5bfeb}{ghzgs1\_prime2}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or. \&}
+\DoxyCodeLine{287          \mbox{\hyperlink{namespacemodparameters_a7e45680efabbc6803ab4150718067d13}{ghzgs2}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.        \&}
+\DoxyCodeLine{288          \mbox{\hyperlink{namespacemodparameters_a3adf62f35ccd1cd09be782ed34bff6c7}{ghzgs3}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.        \&}
+\DoxyCodeLine{289          \mbox{\hyperlink{namespacemodparameters_a791300280d78c7825f406001faaa3023}{ghzgs4}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.        \&}
+\DoxyCodeLine{290          \mbox{\hyperlink{namespacemodparameters_a672c1da74b0496d7cd5fad84b7414f3f}{ghgsgs2}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.       \&}
+\DoxyCodeLine{291          \mbox{\hyperlink{namespacemodparameters_a01ec96063c7cf66d7d3264589b08fcee}{ghgsgs3}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.       \&}
+\DoxyCodeLine{292          \mbox{\hyperlink{namespacemodparameters_a5882b1925df2a1f9f4cfb530e07f7154}{ghgsgs4}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.       \&}
+\DoxyCodeLine{293          \mbox{\hyperlink{namespacemodparameters_a4aa7d9b27c456717dbec9deabb8d5bb7}{ghzpgs1\_prime2}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or. \&}
+\DoxyCodeLine{294          \mbox{\hyperlink{namespacemodparameters_a03e395c5e4eaed18039cf7cdc9a16f50}{ghzpgs2}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.        \&}
+\DoxyCodeLine{295          \mbox{\hyperlink{namespacemodparameters_ac2c87a73c55596f08368782f5d2d46f3}{ghzpgs3}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}} .or.        \&}
+\DoxyCodeLine{296          \mbox{\hyperlink{namespacemodparameters_aca3c5e649dd133a8c3ea0f94566b4108}{ghzpgs4}}.ne.\mbox{\hyperlink{namespacemodparameters_a6a30b7d4b026523c4f9ba552a92d4fcf}{czero}}             \&}
+\DoxyCodeLine{297          )}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{300       \mbox{\hyperlink{namespacemodparameters_a95b0222c765fafee5648140bca3d9b40}{cw\_q1sq}} = cqsq(1)}
+\DoxyCodeLine{301       \mbox{\hyperlink{namespacemodparameters_a1f81f1d7a8871de8558f1fe22595a619}{lambda\_w11}} = lambda\_qsq(1,1)}
+\DoxyCodeLine{302       \mbox{\hyperlink{namespacemodparameters_af6eb4e166e5b6de410d997980df80e70}{lambda\_w21}} = lambda\_qsq(1,2)}
+\DoxyCodeLine{303       \mbox{\hyperlink{namespacemodparameters_a0fe8ba6165fa2ae5d059578239f7d5b6}{lambda\_w31}} = lambda\_qsq(1,3)}
+\DoxyCodeLine{304       \mbox{\hyperlink{namespacemodparameters_a6ce7b082e9ed34ea155b8e9ba417a23a}{lambda\_w41}} = lambda\_qsq(1,4)}
+\DoxyCodeLine{305       \mbox{\hyperlink{namespacemodparameters_a987c0c339c67c6f23f128ed10ea77e3d}{cw\_q2sq}} = cqsq(2)}
+\DoxyCodeLine{306       \mbox{\hyperlink{namespacemodparameters_a510969796e60ee670a9d682078327486}{lambda\_w12}} = lambda\_qsq(2,1)}
+\DoxyCodeLine{307       \mbox{\hyperlink{namespacemodparameters_a5a6b35f29ab4def56f9e82abbf259cfc}{lambda\_w22}} = lambda\_qsq(2,2)}
+\DoxyCodeLine{308       \mbox{\hyperlink{namespacemodparameters_ab918ae61485c08b2222c148d09250040}{lambda\_w32}} = lambda\_qsq(2,3)}
+\DoxyCodeLine{309       \mbox{\hyperlink{namespacemodparameters_a27fb49a8fcbc884aca28b82ca0a97544}{lambda\_w42}} = lambda\_qsq(2,4)}
+\DoxyCodeLine{310       \mbox{\hyperlink{namespacemodparameters_af2f8118a6549470d2780e706b27c83d4}{cw\_q12sq}} = cqsq(3)}
+\DoxyCodeLine{311       \mbox{\hyperlink{namespacemodparameters_acc74a27267d59d8ecd051efa13897d70}{lambda\_w10}} = lambda\_qsq(3,1)}
+\DoxyCodeLine{312       \mbox{\hyperlink{namespacemodparameters_a831ff988a34180451a1ca193e97a8a2e}{lambda\_w20}} = lambda\_qsq(3,2)}
+\DoxyCodeLine{313       \mbox{\hyperlink{namespacemodparameters_a071025571e082b4f7a2238ea198a68c7}{lambda\_w30}} = lambda\_qsq(3,3)}
+\DoxyCodeLine{314       \mbox{\hyperlink{namespacemodparameters_ad6037e74aeeb3f74816cbfd15d0ab1b0}{lambda\_w40}} = lambda\_qsq(3,4)}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316       \mbox{\hyperlink{namespacemodparameters_a136e0e65d09d8f10f3508fc640d00645}{ghw1}} =  vvcoupl(1)}
+\DoxyCodeLine{317       \mbox{\hyperlink{namespacemodparameters_a3403a560d28bb278a7f6ec3fc03f6365}{ghw2}} =  vvcoupl(2)}
+\DoxyCodeLine{318       \mbox{\hyperlink{namespacemodparameters_aa91118e703afb2d878ccc46ee3e47b3d}{ghw3}} =  vvcoupl(3)}
+\DoxyCodeLine{319       \mbox{\hyperlink{namespacemodparameters_abff0686b032568fa81cbe43450aad0ca}{ghw4}} =  vvcoupl(4)}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321       \mbox{\hyperlink{namespacemodparameters_ab0a093afa1d39ba29e4475ceaeb12867}{ghw1\_prime}} = vvcoupl(11)}
+\DoxyCodeLine{322       \mbox{\hyperlink{namespacemodparameters_a39b15f4e40bf43d92a8d8cc37773d67e}{ghw1\_prime2}}= vvcoupl(12)}
+\DoxyCodeLine{323       \mbox{\hyperlink{namespacemodparameters_a27331291d3a7d441f93123aaf06de0d8}{ghw1\_prime3}}= vvcoupl(13)}
+\DoxyCodeLine{324       \mbox{\hyperlink{namespacemodparameters_a44b6151d848fcaa81dd2d6119ad8765f}{ghw1\_prime4}}= vvcoupl(14)}
+\DoxyCodeLine{325       \mbox{\hyperlink{namespacemodparameters_a3e438dbb6e4d1a21ae6a84d0d2f31ca2}{ghw1\_prime5}}= vvcoupl(15)}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327       \mbox{\hyperlink{namespacemodparameters_aeedd9bb2793dfd180827b235063210e5}{ghw2\_prime}} = vvcoupl(16)}
+\DoxyCodeLine{328       \mbox{\hyperlink{namespacemodparameters_a779f4316721fa18057c8ce01326c7c36}{ghw2\_prime2}}= vvcoupl(17)}
+\DoxyCodeLine{329       \mbox{\hyperlink{namespacemodparameters_a677dfaa7903272c6fa0cfe9e4143f24c}{ghw2\_prime3}}= vvcoupl(18)}
+\DoxyCodeLine{330       \mbox{\hyperlink{namespacemodparameters_a0a3bd00fbcf9493238f1a3369d318771}{ghw2\_prime4}}= vvcoupl(19)}
+\DoxyCodeLine{331       \mbox{\hyperlink{namespacemodparameters_a1914428d096c07fe0329109651de1db0}{ghw2\_prime5}}= vvcoupl(20)}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333       \mbox{\hyperlink{namespacemodparameters_a0a5e896abd60c02e8572943388cc71cf}{ghw3\_prime}} = vvcoupl(21)}
+\DoxyCodeLine{334       \mbox{\hyperlink{namespacemodparameters_a1fa0fbb261678290891641989e928696}{ghw3\_prime2}}= vvcoupl(22)}
+\DoxyCodeLine{335       \mbox{\hyperlink{namespacemodparameters_ad8d77810d9dbbafda6c0b554d7406e52}{ghw3\_prime3}}= vvcoupl(23)}
+\DoxyCodeLine{336       \mbox{\hyperlink{namespacemodparameters_a0d7d6fb81815b23ebf49cb98d7832175}{ghw3\_prime4}}= vvcoupl(24)}
+\DoxyCodeLine{337       \mbox{\hyperlink{namespacemodparameters_ab1250aaa305951f9c2bef58a527595a9}{ghw3\_prime5}}= vvcoupl(25)}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339       \mbox{\hyperlink{namespacemodparameters_a0354ad600b2ffa084dc45041f3edb4f2}{ghw4\_prime}} = vvcoupl(26)}
+\DoxyCodeLine{340       \mbox{\hyperlink{namespacemodparameters_a9a888b5ef5b9d2dd5e54478b80a08dad}{ghw4\_prime2}}= vvcoupl(27)}
+\DoxyCodeLine{341       \mbox{\hyperlink{namespacemodparameters_a09d15035092bdee08dd258f5857abd54}{ghw4\_prime3}}= vvcoupl(28)}
+\DoxyCodeLine{342       \mbox{\hyperlink{namespacemodparameters_ac1c377b15a373d11bd48082aefe4ecb7}{ghw4\_prime4}}= vvcoupl(29)}
+\DoxyCodeLine{343       \mbox{\hyperlink{namespacemodparameters_a50f406988b73b3e9ca67bbf1cbe4bd2c}{ghw4\_prime5}}= vvcoupl(30)}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345       \mbox{\hyperlink{namespacemodparameters_abfa5a742c459e62038cbe70caf9efe1f}{ghw1\_prime6}}  = vvcoupl(32)}
+\DoxyCodeLine{346       \mbox{\hyperlink{namespacemodparameters_a22592c9ee039dfd70acdc5b9f531b290}{ghw1\_prime7}}  = vvcoupl(33)}
+\DoxyCodeLine{347       \mbox{\hyperlink{namespacemodparameters_a315f58cb96e5a74a587f89d127312a9f}{ghw2\_prime6}}  = vvcoupl(34)}
+\DoxyCodeLine{348       \mbox{\hyperlink{namespacemodparameters_a34944d626bee3b07df92fad4c4dedf6d}{ghw2\_prime7}}  = vvcoupl(35)}
+\DoxyCodeLine{349       \mbox{\hyperlink{namespacemodparameters_a674d1d7a2fd881a2221b311220191a82}{ghw3\_prime6}}  = vvcoupl(36)}
+\DoxyCodeLine{350       \mbox{\hyperlink{namespacemodparameters_a57ccc2528e4234b3f0182048bce3dae3}{ghw3\_prime7}}  = vvcoupl(37)}
+\DoxyCodeLine{351       \mbox{\hyperlink{namespacemodparameters_ac74c35ca8d8071406ab4ac0900def973}{ghw4\_prime6}}  = vvcoupl(38)}
+\DoxyCodeLine{352       \mbox{\hyperlink{namespacemodparameters_ad7a2b64bb9d562e40cd1afbe9c759cd0}{ghw4\_prime7}}  = vvcoupl(39)}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354       \mbox{\hyperlink{namespacemodparameters_aaf90c43738637013d36bb8ebc6e04036}{ghwwp1}} =  vvpcoupl(1)}
+\DoxyCodeLine{355       \mbox{\hyperlink{namespacemodparameters_a871afd54468a3bb2c5a9837dc312297b}{ghwwp2}} =  vvpcoupl(2)}
+\DoxyCodeLine{356       \mbox{\hyperlink{namespacemodparameters_a5f9e66bb5b1efa50a2042015130efde1}{ghwwp3}} =  vvpcoupl(3)}
+\DoxyCodeLine{357       \mbox{\hyperlink{namespacemodparameters_a9d2283e98cc1566f2bbc18313ff4342b}{ghwwp4}} =  vvpcoupl(4)}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359       \mbox{\hyperlink{namespacemodparameters_ac6e908f4e090474d9a5046ec7671bb28}{ghwwp1\_prime}} = vvpcoupl(11)}
+\DoxyCodeLine{360       \mbox{\hyperlink{namespacemodparameters_afb8baa8ed85da6b3e3518cf64475225a}{ghwwp1\_prime2}}= vvpcoupl(12)}
+\DoxyCodeLine{361       \mbox{\hyperlink{namespacemodparameters_a02cfea6e846900f5114ef082d5874f11}{ghwwp1\_prime3}}= vvpcoupl(13)}
+\DoxyCodeLine{362       \mbox{\hyperlink{namespacemodparameters_a5accdb58afeb6a4c27c5a9b3e8700d87}{ghwwp1\_prime4}}= vvpcoupl(14)}
+\DoxyCodeLine{363       \mbox{\hyperlink{namespacemodparameters_a91f8b9dc2e28ded833ec98bb7034aee0}{ghwwp1\_prime5}}= vvpcoupl(15)}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365       \mbox{\hyperlink{namespacemodparameters_a7156e9b9994b494024f527f61207f68b}{ghwwp2\_prime}} = vvpcoupl(16)}
+\DoxyCodeLine{366       \mbox{\hyperlink{namespacemodparameters_ad352a62073c919fa498634c22a10b5a3}{ghwwp2\_prime2}}= vvpcoupl(17)}
+\DoxyCodeLine{367       \mbox{\hyperlink{namespacemodparameters_a4bf0a1c9409ac3795d25b0d503d664ef}{ghwwp2\_prime3}}= vvpcoupl(18)}
+\DoxyCodeLine{368       \mbox{\hyperlink{namespacemodparameters_a4043903cef7de401d7782b907e1721ac}{ghwwp2\_prime4}}= vvpcoupl(19)}
+\DoxyCodeLine{369       \mbox{\hyperlink{namespacemodparameters_a4d50bb332a224a88fbd15e61837accec}{ghwwp2\_prime5}}= vvpcoupl(20)}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371       \mbox{\hyperlink{namespacemodparameters_a660d2fe6304d69f3e541a10d30e14a59}{ghwwp3\_prime}} = vvpcoupl(21)}
+\DoxyCodeLine{372       \mbox{\hyperlink{namespacemodparameters_a92559e0290108e3bdddd087a61109d16}{ghwwp3\_prime2}}= vvpcoupl(22)}
+\DoxyCodeLine{373       \mbox{\hyperlink{namespacemodparameters_af24735daec04d0d197087ff3c471c99f}{ghwwp3\_prime3}}= vvpcoupl(23)}
+\DoxyCodeLine{374       \mbox{\hyperlink{namespacemodparameters_a77aba17d4136832cf29a272f86124482}{ghwwp3\_prime4}}= vvpcoupl(24)}
+\DoxyCodeLine{375       \mbox{\hyperlink{namespacemodparameters_a3f58cdd096829f4d88557300c6202d64}{ghwwp3\_prime5}}= vvpcoupl(25)}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377       \mbox{\hyperlink{namespacemodparameters_a6aaeb8dd7f59981b33f3447bf4ed5b74}{ghwwp4\_prime}} = vvpcoupl(26)}
+\DoxyCodeLine{378       \mbox{\hyperlink{namespacemodparameters_a0fbaf3c994498e3beecbc4dddb8d2bef}{ghwwp4\_prime2}}= vvpcoupl(27)}
+\DoxyCodeLine{379       \mbox{\hyperlink{namespacemodparameters_a53e99f1bcc46eed8d2c9ca7ec89a150a}{ghwwp4\_prime3}}= vvpcoupl(28)}
+\DoxyCodeLine{380       \mbox{\hyperlink{namespacemodparameters_ac21197bd464384575407ad9bd737eea8}{ghwwp4\_prime4}}= vvpcoupl(29)}
+\DoxyCodeLine{381       \mbox{\hyperlink{namespacemodparameters_a27c0bb60190038eb1f1fc72ea0c13a96}{ghwwp4\_prime5}}= vvpcoupl(30)}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383       \mbox{\hyperlink{namespacemodparameters_a44372f77170b4cbdf0c35382d5b6037e}{ghwwp1\_prime6}}  = vvpcoupl(32)}
+\DoxyCodeLine{384       \mbox{\hyperlink{namespacemodparameters_a67068c82531bf1f22121ff08fd614a5d}{ghwwp1\_prime7}}  = vvpcoupl(33)}
+\DoxyCodeLine{385       \mbox{\hyperlink{namespacemodparameters_ad43c55106f2c6088ef6577a1da130b48}{ghwwp2\_prime6}}  = vvpcoupl(34)}
+\DoxyCodeLine{386       \mbox{\hyperlink{namespacemodparameters_a56446f396ac843fcd5eb9d99568c596c}{ghwwp2\_prime7}}  = vvpcoupl(35)}
+\DoxyCodeLine{387       \mbox{\hyperlink{namespacemodparameters_a9ae85b9155ba9d9fcb4884235c0d6dfd}{ghwwp3\_prime6}}  = vvpcoupl(36)}
+\DoxyCodeLine{388       \mbox{\hyperlink{namespacemodparameters_a1fdfa5e91d3c8ba041893cc12afa9054}{ghwwp3\_prime7}}  = vvpcoupl(37)}
+\DoxyCodeLine{389       \mbox{\hyperlink{namespacemodparameters_acc99cdef182e67bbf631bab4e5a32e6a}{ghwwp4\_prime6}}  = vvpcoupl(38)}
+\DoxyCodeLine{390       \mbox{\hyperlink{namespacemodparameters_a33e8330647a77f338303b2592f6a4673}{ghwwp4\_prime7}}  = vvpcoupl(39)}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392       \mbox{\hyperlink{namespacemodparameters_a1f1fe569d2381ad3d4f45042c55d9f43}{ghwpwp1}} =  vpvpcoupl(1)}
+\DoxyCodeLine{393       \mbox{\hyperlink{namespacemodparameters_a644b9135843e6d60243be970722f289a}{ghwpwp2}} =  vpvpcoupl(2)}
+\DoxyCodeLine{394       \mbox{\hyperlink{namespacemodparameters_ae00ec9d7217d08f5189efb03c8fc827a}{ghwpwp3}} =  vpvpcoupl(3)}
+\DoxyCodeLine{395       \mbox{\hyperlink{namespacemodparameters_a31fcb310e4e0fc48e46989fb227d021b}{ghwpwp4}} =  vpvpcoupl(4)}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397       \mbox{\hyperlink{namespacemodparameters_aaebba4fb1b42b1b814fce334fe2613fc}{ghwpwp1\_prime}} = vpvpcoupl(11)}
+\DoxyCodeLine{398       \mbox{\hyperlink{namespacemodparameters_a53370daeaa49227e28ab33501f157779}{ghwpwp1\_prime2}}= vpvpcoupl(12)}
+\DoxyCodeLine{399       \mbox{\hyperlink{namespacemodparameters_ad9a787ef7954d317d3fbefeb35181e5d}{ghwpwp1\_prime3}}= vpvpcoupl(13)}
+\DoxyCodeLine{400       \mbox{\hyperlink{namespacemodparameters_af0d28da4caf10a38aceebaf861b10619}{ghwpwp1\_prime4}}= vpvpcoupl(14)}
+\DoxyCodeLine{401       \mbox{\hyperlink{namespacemodparameters_a2478d84846330f5bbe5c669cbdec935b}{ghwpwp1\_prime5}}= vpvpcoupl(15)}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403       \mbox{\hyperlink{namespacemodparameters_afe8b581f8cad8d0880c53c4d90a2811f}{ghwpwp2\_prime}} = vpvpcoupl(16)}
+\DoxyCodeLine{404       \mbox{\hyperlink{namespacemodparameters_a20b67b5026c4b70ed3e033a0125ebffb}{ghwpwp2\_prime2}}= vpvpcoupl(17)}
+\DoxyCodeLine{405       \mbox{\hyperlink{namespacemodparameters_a86fa243976edf56917ee861196f65b5a}{ghwpwp2\_prime3}}= vpvpcoupl(18)}
+\DoxyCodeLine{406       \mbox{\hyperlink{namespacemodparameters_a6ecec42bf56121bc2693c908fb206140}{ghwpwp2\_prime4}}= vpvpcoupl(19)}
+\DoxyCodeLine{407       \mbox{\hyperlink{namespacemodparameters_a76b818b0c30d189befaf8d129f0bb529}{ghwpwp2\_prime5}}= vpvpcoupl(20)}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409       \mbox{\hyperlink{namespacemodparameters_aff2a732c21d193979c0de7c25e4d8518}{ghwpwp3\_prime}} = vpvpcoupl(21)}
+\DoxyCodeLine{410       \mbox{\hyperlink{namespacemodparameters_a6ebd68b753434d0f40aadae3a5d4d975}{ghwpwp3\_prime2}}= vpvpcoupl(22)}
+\DoxyCodeLine{411       \mbox{\hyperlink{namespacemodparameters_af956a4dab90b1c5523271765320cb572}{ghwpwp3\_prime3}}= vpvpcoupl(23)}
+\DoxyCodeLine{412       \mbox{\hyperlink{namespacemodparameters_a0dda4d20f8dbeff769ab13514cbeb28c}{ghwpwp3\_prime4}}= vpvpcoupl(24)}
+\DoxyCodeLine{413       \mbox{\hyperlink{namespacemodparameters_a0c8c88479d3201c2a3038e6cd295ee0b}{ghwpwp3\_prime5}}= vpvpcoupl(25)}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415       \mbox{\hyperlink{namespacemodparameters_a31ba5a147ce72c7099b1d724d9ac8ea2}{ghwpwp4\_prime}} = vpvpcoupl(26)}
+\DoxyCodeLine{416       \mbox{\hyperlink{namespacemodparameters_a19ac61fc948bcca040cd4f1f1015aee7}{ghwpwp4\_prime2}}= vpvpcoupl(27)}
+\DoxyCodeLine{417       \mbox{\hyperlink{namespacemodparameters_afc09497e8be5f6a1c9bcd98a13db82d1}{ghwpwp4\_prime3}}= vpvpcoupl(28)}
+\DoxyCodeLine{418       \mbox{\hyperlink{namespacemodparameters_ae8b4881ff1e622dd616977ff53d7c74a}{ghwpwp4\_prime4}}= vpvpcoupl(29)}
+\DoxyCodeLine{419       \mbox{\hyperlink{namespacemodparameters_affa79e0e15a88715a3173998a88391e2}{ghwpwp4\_prime5}}= vpvpcoupl(30)}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421       \mbox{\hyperlink{namespacemodparameters_ad39f921bdaaff4987ea77cd4654ae178}{ghwpwp1\_prime6}}  = vpvpcoupl(32)}
+\DoxyCodeLine{422       \mbox{\hyperlink{namespacemodparameters_af80ce45069fc5c86d0d8ad607f6809bd}{ghwpwp1\_prime7}}  = vpvpcoupl(33)}
+\DoxyCodeLine{423       \mbox{\hyperlink{namespacemodparameters_a7c0b31578b889bec904f5d2b8eef86e4}{ghwpwp2\_prime6}}  = vpvpcoupl(34)}
+\DoxyCodeLine{424       \mbox{\hyperlink{namespacemodparameters_a025af75118798dc40d317676e253e92d}{ghwpwp2\_prime7}}  = vpvpcoupl(35)}
+\DoxyCodeLine{425       \mbox{\hyperlink{namespacemodparameters_ab849cdb0f766b665490bee831fc78a8c}{ghwpwp3\_prime6}}  = vpvpcoupl(36)}
+\DoxyCodeLine{426       \mbox{\hyperlink{namespacemodparameters_abbc9ecbd2ee0d03db21f3055f8ca7c33}{ghwpwp3\_prime7}}  = vpvpcoupl(37)}
+\DoxyCodeLine{427       \mbox{\hyperlink{namespacemodparameters_a9b9e6b74c6b8e7300d31ddd103bd5e09}{ghwpwp4\_prime6}}  = vpvpcoupl(38)}
+\DoxyCodeLine{428       \mbox{\hyperlink{namespacemodparameters_a6b30e5fe296202543f701b8045c6f4d9}{ghwpwp4\_prime7}}  = vpvpcoupl(39)}
+\DoxyCodeLine{429 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{430    \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a54907f9370924233b2164387da061463}\label{namespacemodjhugenmela_a54907f9370924233b2164387da061463}} 
 \index{modjhugenmela@{modjhugenmela}!settopdecays@{settopdecays}}
 \index{settopdecays@{settopdecays}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{settopdecays()}{settopdecays()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::settopdecays (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{flag }\end{DoxyParamCaption})}
 
+
+
+Definition at line 93 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{94 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: flag}
+\DoxyCodeLine{95    \mbox{\hyperlink{namespacemodparameters_a84a1906d0ab59dec59e38f0a1826d5f2}{topdecays}}=flag}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodjhugenmela_a192093db1556466b914577ee44795c55}\label{namespacemodjhugenmela_a192093db1556466b914577ee44795c55}} 
 \index{modjhugenmela@{modjhugenmela}!setvprimecontactcouplings@{setvprimecontactcouplings}}
 \index{setvprimecontactcouplings@{setvprimecontactcouplings}!modjhugenmela@{modjhugenmela}}
 \doxysubsubsection{\texorpdfstring{setvprimecontactcouplings()}{setvprimecontactcouplings()}}
 {\footnotesize\ttfamily subroutine, public modjhugenmela\+::setvprimecontactcouplings (\begin{DoxyParamCaption}\item[{complex(8), dimension(20), intent(in)}]{Zpffcoupl,  }\item[{complex(8), dimension(20), intent(in)}]{Wpffcoupl }\end{DoxyParamCaption})}
 
+
+
+Definition at line 434 of file mod\+\_\+\+J\+H\+U\+Gen\+M\+E\+L\+A.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{434    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{435    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: Zpffcoupl(20)}
+\DoxyCodeLine{436    \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: Wpffcoupl(20)}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438    \mbox{\hyperlink{namespacemodparameters_a75b2a4a21e579ed464eb016d2994d4c4}{ezp\_el\_left}} = zpffcoupl(1)}
+\DoxyCodeLine{439    \mbox{\hyperlink{namespacemodparameters_a419926c67b1eeec4c916de324c99f3af}{ezp\_el\_right}} = zpffcoupl(2)}
+\DoxyCodeLine{440    \mbox{\hyperlink{namespacemodparameters_a151c51b531b40d5a2e4a5236391f6147}{ezp\_mu\_left}} = zpffcoupl(3)}
+\DoxyCodeLine{441    \mbox{\hyperlink{namespacemodparameters_a385dd88305bdc10b446a14b4342513f8}{ezp\_mu\_right}} = zpffcoupl(4)}
+\DoxyCodeLine{442    \mbox{\hyperlink{namespacemodparameters_a51927617a643a99d736c806f062d1356}{ezp\_ta\_left}} = zpffcoupl(5)}
+\DoxyCodeLine{443    \mbox{\hyperlink{namespacemodparameters_a3348d4dd542a67316e23bca49ce82fa6}{ezp\_ta\_right}} = zpffcoupl(6)}
+\DoxyCodeLine{444    \mbox{\hyperlink{namespacemodparameters_a47cfc575c6a6bba5cd9b14b79c31aba9}{ezp\_nue\_left}} = zpffcoupl(7)}
+\DoxyCodeLine{445    \mbox{\hyperlink{namespacemodparameters_ab07ec7bd880aacc8eb603ab83b5602c4}{ezp\_nue\_right}} = zpffcoupl(8)}
+\DoxyCodeLine{446    \mbox{\hyperlink{namespacemodparameters_a83d366a254a68430879b480e1670b09f}{ezp\_dn\_left}} = zpffcoupl(9)}
+\DoxyCodeLine{447    \mbox{\hyperlink{namespacemodparameters_a6e016d19e9b8574e2ec7f74ef6da9d28}{ezp\_dn\_right}} = zpffcoupl(10)}
+\DoxyCodeLine{448    \mbox{\hyperlink{namespacemodparameters_ad95c333b630dec552d0fff22684edd46}{ezp\_up\_left}} = zpffcoupl(11)}
+\DoxyCodeLine{449    \mbox{\hyperlink{namespacemodparameters_a1f705240ed81d06892b27f0d4a72ed60}{ezp\_up\_right}} = zpffcoupl(12)}
+\DoxyCodeLine{450    \mbox{\hyperlink{namespacemodparameters_a00547c5130ae4155402a7936e40023ec}{ezp\_str\_left}} = zpffcoupl(13)}
+\DoxyCodeLine{451    \mbox{\hyperlink{namespacemodparameters_a747cbbb3940b3ca753a56848dc9383ba}{ezp\_str\_right}} = zpffcoupl(14)}
+\DoxyCodeLine{452    \mbox{\hyperlink{namespacemodparameters_af00c601382f8f67f7936878cfc649896}{ezp\_chm\_left}} = zpffcoupl(15)}
+\DoxyCodeLine{453    \mbox{\hyperlink{namespacemodparameters_a53b29d6be51cffcea2d528ab8fed32e8}{ezp\_chm\_right}} = zpffcoupl(16)}
+\DoxyCodeLine{454    \mbox{\hyperlink{namespacemodparameters_abaf890560153b056d2cfbf734470250f}{ezp\_bot\_left}} = zpffcoupl(17)}
+\DoxyCodeLine{455    \mbox{\hyperlink{namespacemodparameters_a0c9ce76120072913b53a876e2ae9ce5b}{ezp\_bot\_right}} = zpffcoupl(18)}
+\DoxyCodeLine{456    \mbox{\hyperlink{namespacemodparameters_a9466ab11f1d8622129dfb813f31eeb58}{ezp\_top\_left}} = zpffcoupl(19)}
+\DoxyCodeLine{457    \mbox{\hyperlink{namespacemodparameters_abe8433e6ac04cb02f9d148e5dd52b6d2}{ezp\_top\_right}} = zpffcoupl(20)}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459    \mbox{\hyperlink{namespacemodparameters_a65b575c8ad09849dcf95dfadc0529887}{ewp\_el\_left}} = wpffcoupl(1)}
+\DoxyCodeLine{460    \mbox{\hyperlink{namespacemodparameters_a112ecee1fd5456a593b25fea635d178e}{ewp\_el\_right}} = wpffcoupl(2)}
+\DoxyCodeLine{461    \mbox{\hyperlink{namespacemodparameters_ad18723708b379a272cf308c1e69443a1}{ewp\_mu\_left}} = wpffcoupl(3)}
+\DoxyCodeLine{462    \mbox{\hyperlink{namespacemodparameters_abb291a6af3a6b378d85dd40bc889ecb5}{ewp\_mu\_right}} = wpffcoupl(4)}
+\DoxyCodeLine{463    \mbox{\hyperlink{namespacemodparameters_afaff6d51dfc5c3c9bb77c17fed494696}{ewp\_ta\_left}} = wpffcoupl(5)}
+\DoxyCodeLine{464    \mbox{\hyperlink{namespacemodparameters_abb24a28b75a81ddb6d159dc355182318}{ewp\_ta\_right}} = wpffcoupl(6)}
+\DoxyCodeLine{465    \mbox{\hyperlink{namespacemodparameters_a1d5741c5c0f17b112b3758e2c737e908}{ewp\_up\_left}} = wpffcoupl(11)}
+\DoxyCodeLine{466    \mbox{\hyperlink{namespacemodparameters_a4c4823b61ffeb11965cca2511d69c771}{ewp\_up\_right}} = wpffcoupl(12)}
+\DoxyCodeLine{467    \mbox{\hyperlink{namespacemodparameters_ac88f80245716850954c10bead5cb85f2}{ewp\_chm\_left}} = wpffcoupl(15)}
+\DoxyCodeLine{468    \mbox{\hyperlink{namespacemodparameters_add0befc2c8836825690e67a59c0413e4}{ewp\_chm\_right}} = wpffcoupl(16)}
+\DoxyCodeLine{469    \mbox{\hyperlink{namespacemodparameters_a55defed12bb3cc9c63ba23afe374462e}{ewp\_top\_left}} = wpffcoupl(19)}
+\DoxyCodeLine{470    \mbox{\hyperlink{namespacemodparameters_ac5878404efb6947c54b6eeadfe539505}{ewp\_top\_right}} = wpffcoupl(20)}
+
+\end{DoxyCode}

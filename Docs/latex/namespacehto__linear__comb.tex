@@ -19,3 +19,23 @@ real $\ast$8 function \mbox{\hyperlink{namespacehto__linear__comb_a3a6d4c7695089
 \doxysubsubsection{\texorpdfstring{lc()}{lc()}}
 {\footnotesize\ttfamily real$\ast$8 function hto\+\_\+linear\+\_\+comb\+::lc (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(\+:), intent(in)}]{c,  }\item[{real$\ast$8, intent(in)}]{x }\end{DoxyParamCaption})}
 
+
+
+Definition at line 736 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{736        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{737        real*8, \textcolor{keywordtype}{dimension(:)} :: c}
+\DoxyCodeLine{738        real*8 x,lc}
+\DoxyCodeLine{739        \textcolor{keywordtype}{INTENT(IN)} c,x}
+\DoxyCodeLine{740        \textcolor{keywordtype}{INTEGER} n,i}
+\DoxyCodeLine{741        real*8 sum      }
+\DoxyCodeLine{742        n= \textcolor{keyword}{size}(c)}
+\DoxyCodeLine{743        sum= c(n)}
+\DoxyCodeLine{744        \textcolor{keywordflow}{DO} i=n-\/1,1,-\/1}
+\DoxyCodeLine{745         sum= sum*x+c(i)}
+\DoxyCodeLine{746 \textcolor{keywordflow}{       ENDDO}}
+\DoxyCodeLine{747        lc= sum      }
+
+\end{DoxyCode}

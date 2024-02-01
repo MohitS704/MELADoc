@@ -113,6 +113,12 @@ template&lt;typename T , typename U  = T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TUtilHelpers_8hh_source.html#l00042">42</a> of file <a class="el" href="TUtilHelpers_8hh_source.html">TUtilHelpers.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                                                                       {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">for</span> (U <span class="keyword">const</span>&amp; el:elementlist){ <span class="keywordflow">if</span> (el==element) <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad3d14e2f2ee73f5f85403a15b71895f3"></a>
@@ -143,6 +149,11 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TUtilHelpers_8hh_source.html#l00024">24</a> of file <a class="el" href="TUtilHelpers_8hh_source.html">TUtilHelpers.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                                                                 {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  std::copy(input.cbegin(), input.cend(), std::back_inserter(target));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad6fe059920d844f1c5a88bd06002eb0c"></a>
@@ -161,6 +172,34 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TUtilHelpers_8cc_source.html#l00006">6</a> of file <a class="el" href="TUtilHelpers_8cc_source.html">TUtilHelpers.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                                           {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="comment">// Take care of special characters</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordtype">size_t</span> ipos;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  std::string strTakeOut, strPutIn;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  strTakeOut = <span class="stringliteral">&quot;.oODOLLAROo.&quot;</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  strPutIn = <span class="stringliteral">&quot;$&quot;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ipos = str.find(strTakeOut);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">while</span> (ipos!=std::string::npos){ str.replace(ipos, strTakeOut.length(), strPutIn.c_str()); ipos = str.find(strTakeOut); }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  strTakeOut = <span class="stringliteral">&quot;.oOOPEN_BRACKETOo.&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  strPutIn = <span class="stringliteral">&quot;{&quot;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ipos = str.find(strTakeOut);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">while</span> (ipos!=std::string::npos){ str.replace(ipos, strTakeOut.length(), strPutIn.c_str()); ipos = str.find(strTakeOut); }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  strTakeOut = <span class="stringliteral">&quot;.oOCLOSE_BRACKETOo.&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  strPutIn = <span class="stringliteral">&quot;}&quot;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ipos = str.find(strTakeOut);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">while</span> (ipos!=std::string::npos){ str.replace(ipos, strTakeOut.length(), strPutIn.c_str()); ipos = str.find(strTakeOut); }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">static</span> std::regex env(<span class="stringliteral">&quot;\\$\\{([^}]+)\\}&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  std::smatch <a class="code" href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">match</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">while</span> (std::regex_search(str, <a class="code" href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">match</a>, env)){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* s = getenv(<a class="code" href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">match</a>[1].str().c_str());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> std::string var(s == NULL ? <span class="stringliteral">&quot;&quot;</span> : s);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    str.replace(<a class="code" href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">match</a>[0].first, <a class="code" href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">match</a>[0].<a class="code" href="namespacemodparameters.html#ab25730bf36fa1669616bd6fbf66f8614">second</a>, var);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa210de9b601a59c26984d7b511a44541"></a>
@@ -191,9 +230,21 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TUtilHelpers_8hh_source.html#l00063">63</a> of file <a class="el" href="TUtilHelpers_8hh_source.html">TUtilHelpers.hh</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                                                                       {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">for</span> (T <span class="keyword">const</span>&amp; el1:v1){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> (T <span class="keyword">const</span>&amp; el2:v2){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">if</span> (el1==el2) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="anamespacemodparameters_html_ab25730bf36fa1669616bd6fbf66f8614"><div class="ttname"><a href="namespacemodparameters.html#ab25730bf36fa1669616bd6fbf66f8614">modparameters::second</a></div><div class="ttdeci">real(8), parameter, public second</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l00105">mod_Parameters.F90:105</a></div></div>
+<div class="ttc" id="anamespacetestME__all_html_a911918741134891edbb514bd018fd3b5"><div class="ttname"><a href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">testME_all.match</a></div><div class="ttdeci">match</div><div class="ttdef"><b>Definition:</b> <a href="testME__all_8py_source.html#l00056">testME_all.py:56</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

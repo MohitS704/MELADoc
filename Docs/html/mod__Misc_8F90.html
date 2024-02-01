@@ -76,6 +76,8 @@ $(function() {
 <div class="title">mod_Misc.F90 File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="mod__Misc_8F90_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Types</h2></td></tr>
@@ -374,6 +376,90 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l01341">1341</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160; </div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;<span class="comment">!---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160; </div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;<span class="keywordtype">INTEGER</span> k,n,i,top,gdim,l</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160; </div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">dimension(gdim)</span> :: xc,yc</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">dimension(gdim)</span> :: x,y</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160; </div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">DIMENSION(gdim)</span> :: b</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;<span class="comment">! linear coeff</span></div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160; </div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">DIMENSION(gdim)</span> :: c</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;<span class="comment">! quadratic coeff.</span></div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160; </div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">DIMENSION(gdim)</span> :: d</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;<span class="comment">! cubic coeff.</span></div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160; </div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;<span class="keywordtype">REAL</span>(8) :: t</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;<span class="keywordtype">REAL</span>(8),<span class="keywordtype">PARAMETER</span>:: ZERO=0.0, two=2.0, three=3.0</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160; </div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;<span class="comment">! The grid</span></div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160; </div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160; </div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;n= gdim</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;<span class="keywordflow">FORALL</span>(l=1:gdim)</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;x(l)= xc(l)</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;y(l)= yc(l)</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;<span class="keywordflow">ENDFORALL</span></div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160; </div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;<span class="comment">!.....Set up tridiagonal system.........................................</span></div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;<span class="comment">!     b=diagonal, d=offdiagonal, c=right-hand side</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160; </div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;d(1)= x(2)-x(1)</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;c(2)= (y(2)-y(1))/d(1)</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;<span class="keywordflow">DO</span> k= 2,n-1</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;d(k)= x(k+1)-x(k)</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;b(k)= two*(d(k-1)+d(k))</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;c(k+1)= (y(k+1)-y(k))/d(k)</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;c(k)= c(k+1)-c(k)</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;<span class="keywordflow">END DO</span></div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160; </div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;<span class="comment">!.....End conditions.  third derivatives at x(1) and x(n) obtained</span></div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;<span class="comment">!     from divided differences.......................................</span></div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160; </div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;b(1)= -d(1)</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;b(n)= -d(n-1)</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;c(1)= <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;c(n)= <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;<span class="keywordflow">IF</span> (n &gt; 3) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;c(1)= c(3)/(x(4)-x(2))-c(2)/(x(3)-x(1))</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;c(n)= c(n-1)/(x(n)-x(n-2))-c(n-2)/(x(n-1)-x(n-3))</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;c(1)= c(1)*d(1)*d(1)/(x(4)-x(1))</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;c(n)= -c(n)*d(n-1)*d(n-1)/(x(n)-x(n-3))</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;<span class="keywordflow">END IF</span></div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160; </div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;<span class="keywordflow">DO</span> k=2,n    <span class="comment">! forward elimination</span></div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;t= d(k-1)/b(k-1)</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;b(k)= b(k)-t*d(k-1)</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;c(k)= c(k)-t*c(k-1)</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;<span class="keywordflow">END DO</span></div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160; </div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;c(n)= c(n)/b(n)</div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160; </div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;<span class="comment">! back substitution ( makes c the sigma of text)</span></div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160; </div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;<span class="keywordflow">DO</span> k=n-1,1,-1</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;c(k)= (c(k)-d(k)*c(k+1))/b(k)</div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;<span class="keywordflow">END DO</span></div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160; </div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;<span class="comment">!.....Compute polynomial coefficients...................................</span></div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160; </div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;b(n)= (y(n)-y(n-1))/d(n-1)+d(n-1)*(c(n-1)+c(n)+c(n))</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;<span class="keywordflow">DO</span> k=1,n-1</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;b(k)= (y(k+1)-y(k))/d(k)-d(k)*(c(k+1)+c(k)+c(k))</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;d(k)= (c(k+1)-c(k))/d(k)</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;c(k)= three*c(k)</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;<span class="keywordflow">END DO</span></div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;c(n)= three*c(n)</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;d(n)= d(n-1)</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160; </div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;<span class="keywordflow">RETURN</span></div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa91afe68b1537c093c096cdd8f158fed"></a>
@@ -462,9 +548,72 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l01428">1428</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160; </div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;<span class="comment">! ---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160; </div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;<span class="keywordtype">REAL</span>(8),<span class="keywordtype">INTENT(IN)</span> :: u</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;<span class="comment">! abscissa at which the spline is to be evaluated</span></div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160; </div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="keywordtype">INTEGER</span> j,k,n,l,top,gdim</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160; </div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">dimension(gdim)</span> :: xc,yc</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">dimension(gdim)</span> :: x,y</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;<span class="keywordtype">REAL</span>(8), <span class="keywordtype">DIMENSION(gdim)</span> :: b,c,d</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;<span class="comment">! linear,quadratic,cubic coeff</span></div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160; </div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;<span class="keywordtype">REAL</span>(8),<span class="keywordtype">INTENT(OUT)</span>,<span class="keywordtype">OPTIONAL</span>:: f,fp,fpp,fppp</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;<span class="comment">! function, 1st,2nd,3rd deriv</span></div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160; </div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;<span class="keywordtype">INTEGER</span>, <span class="keywordtype">SAVE</span> :: i=1</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;<span class="keywordtype">REAL</span>(8)    :: dx</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;<span class="keywordtype">REAL</span>(8),<span class="keywordtype">PARAMETER</span>:: TWO=2.0, three=3.0, six=6.0</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160; </div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;<span class="comment">! The grid</span></div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160; </div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;n= gdim</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;<span class="keywordflow">FORALL</span>(l=1:gdim)</div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;x(l)= xc(l)</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;y(l)= yc(l)</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;<span class="keywordflow">ENDFORALL</span></div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160; </div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;<span class="comment">!.....First check if u is in the same interval found on the</span></div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;<span class="comment">!     last call to Seval.............................................</span></div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160; </div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;<span class="keywordflow">IF</span> (  (i&lt;1) .OR. (i &gt;= n) ) i=1</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;<span class="keywordflow">IF</span> ( (u &lt; x(i))  .OR.  (u &gt;= x(i+1)) ) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;i=1</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160; </div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;<span class="comment">! binary search</span></div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160; </div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;j= n+1</div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;<span class="keywordflow">DO</span></div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;k= (i+j)/2</div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;<span class="keywordflow">IF</span> (u &lt; x(k)) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;j= k</div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;<span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;i= k</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;<span class="keywordflow">ENDIF</span></div>
+<div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;<span class="keywordflow">IF</span> (j &lt;= i+1) <span class="keywordflow">EXIT</span></div>
+<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;<span class="keywordflow">ENDDO</span></div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;<span class="keywordflow">ENDIF</span></div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160; </div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;dx= u-x(i)</div>
+<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160; </div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;<span class="comment">! evaluate the spline</span></div>
+<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160; </div>
+<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;<span class="keywordflow">IF</span> (<span class="keyword">Present</span>(f))    f= y(i)+dx*(b(i)+dx*(c(i)+dx*d(i)))</div>
+<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;<span class="keywordflow">IF</span> (<span class="keyword">Present</span>(fp))   fp= b(i)+dx*(two*c(i) + dx*three*d(i))</div>
+<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;<span class="keywordflow">IF</span> (<span class="keyword">Present</span>(fpp))  fpp= two*c(i) + dx*six*d(i)</div>
+<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;<span class="keywordflow">IF</span> (<span class="keyword">Present</span>(fppp)) fppp= six*d(i)</div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160; </div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;<span class="keywordflow">RETURN</span></div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="anamespacehto__units_html_a99185641f2fef22fbd699ff69ee64f18"><div class="ttname"><a href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">hto_units::zero</a></div><div class="ttdeci">real *8, parameter zero</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00185">CALLING_cpHTO.f:185</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

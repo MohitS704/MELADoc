@@ -13,6 +13,13 @@ complex(8) function \mbox{\hyperlink{interfacemodmisc_1_1operator_07_8dot_8_08_a
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file mod\+\_\+\+Misc.\+F90.
+
+
+
 \doxysubsection{Member Function/\+Subroutine Documentation}
 \mbox{\Hypertarget{interfacemodmisc_1_1operator_07_8dot_8_08_a7af386d4ae28ba4a911223eadae01cef}\label{interfacemodmisc_1_1operator_07_8dot_8_08_a7af386d4ae28ba4a911223eadae01cef}} 
 \index{modmisc::operator(.dot.)@{modmisc::operator(.dot.)}!minkowskyproduct@{minkowskyproduct}}
@@ -20,24 +27,90 @@ complex(8) function \mbox{\hyperlink{interfacemodmisc_1_1operator_07_8dot_8_08_a
 \doxysubsubsection{\texorpdfstring{minkowskyproduct()}{minkowskyproduct()}}
 {\footnotesize\ttfamily real(8) function modmisc\+::operator(.dot.)\+::minkowskyproduct (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{real(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 50 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{51 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(in)} :: p1(1:4),p2(1:4)}
+\DoxyCodeLine{52 \textcolor{keywordtype}{real}(8)             :: MinkowskyProduct}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54    minkowskyproduct = p1(1)*p2(1)  \&}
+\DoxyCodeLine{55                     -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{56                     -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{57                     -\/p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1operator_07_8dot_8_08_a23da6769e1f2ed98100f93872c28e79d}\label{interfacemodmisc_1_1operator_07_8dot_8_08_a23da6769e1f2ed98100f93872c28e79d}} 
 \index{modmisc::operator(.dot.)@{modmisc::operator(.dot.)}!minkowskyproductc@{minkowskyproductc}}
 \index{minkowskyproductc@{minkowskyproductc}!modmisc::operator(.dot.)@{modmisc::operator(.dot.)}}
 \doxysubsubsection{\texorpdfstring{minkowskyproductc()}{minkowskyproductc()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::operator(.dot.)\+::minkowskyproductc (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{complex(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 61 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{62 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p1(1:4),p2(1:4)}
+\DoxyCodeLine{63 \textcolor{keywordtype}{complex(8)}             :: MinkowskyProductC}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65    minkowskyproductc = p1(1)*p2(1)  \&}
+\DoxyCodeLine{66                      -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{67                      -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{68                      -\/ p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1operator_07_8dot_8_08_ae6ff84035be88038790cc2b715c34c7b}\label{interfacemodmisc_1_1operator_07_8dot_8_08_ae6ff84035be88038790cc2b715c34c7b}} 
 \index{modmisc::operator(.dot.)@{modmisc::operator(.dot.)}!minkowskyproductcr@{minkowskyproductcr}}
 \index{minkowskyproductcr@{minkowskyproductcr}!modmisc::operator(.dot.)@{modmisc::operator(.dot.)}}
 \doxysubsubsection{\texorpdfstring{minkowskyproductcr()}{minkowskyproductcr()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::operator(.dot.)\+::minkowskyproductcr (\begin{DoxyParamCaption}\item[{complex(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{real(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 84 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{85 \textcolor{keywordtype}{real}(8),    \textcolor{keywordtype}{intent(in)} :: p2(1:4)}
+\DoxyCodeLine{86 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p1(1:4)}
+\DoxyCodeLine{87 \textcolor{keywordtype}{complex(8)}             :: MinkowskyProductCR}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89    minkowskyproductcr = p1(1)*p2(1)  \&}
+\DoxyCodeLine{90                       -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{91                       -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{92                       -\/ p1(4)*p2(4)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{interfacemodmisc_1_1operator_07_8dot_8_08_a692346730a4216b5bc188427396ea05c}\label{interfacemodmisc_1_1operator_07_8dot_8_08_a692346730a4216b5bc188427396ea05c}} 
 \index{modmisc::operator(.dot.)@{modmisc::operator(.dot.)}!minkowskyproductrc@{minkowskyproductrc}}
 \index{minkowskyproductrc@{minkowskyproductrc}!modmisc::operator(.dot.)@{modmisc::operator(.dot.)}}
 \doxysubsubsection{\texorpdfstring{minkowskyproductrc()}{minkowskyproductrc()}}
 {\footnotesize\ttfamily complex(8) function modmisc\+::operator(.dot.)\+::minkowskyproductrc (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{complex(8), dimension(1\+:4), intent(in)}]{p2 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 72 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{73 \textcolor{keywordtype}{real}(8),    \textcolor{keywordtype}{intent(in)} :: p1(1:4)}
+\DoxyCodeLine{74 \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p2(1:4)}
+\DoxyCodeLine{75 \textcolor{keywordtype}{complex(8)}             :: MinkowskyProductRC}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77    minkowskyproductrc = p1(1)*p2(1)  \&}
+\DoxyCodeLine{78                       -\/ p1(2)*p2(2)  \&}
+\DoxyCodeLine{79                       -\/ p1(3)*p2(3)  \&}
+\DoxyCodeLine{80                       -\/ p1(4)*p2(4)}
+
+\end{DoxyCode}
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}

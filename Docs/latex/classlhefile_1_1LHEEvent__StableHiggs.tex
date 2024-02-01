@@ -31,6 +31,13 @@ def \mbox{\hyperlink{classlhefile_1_1LHEEvent__StableHiggs_a85e7cac563b447f149c4
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 80 of file lhefile.\+py.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classlhefile_1_1LHEEvent__StableHiggs_a85e7cac563b447f149c4a80e699197a0}\label{classlhefile_1_1LHEEvent__StableHiggs_a85e7cac563b447f149c4a80e699197a0}} 
 \index{lhefile.LHEEvent\_StableHiggs@{lhefile.LHEEvent\_StableHiggs}!extracteventparticles@{extracteventparticles}}
@@ -44,12 +51,49 @@ Reimplemented from \mbox{\hyperlink{classlhefile_1_1LHEEvent_a880b1ab270c39604de
 
 
 
+Definition at line 82 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82   \textcolor{keyword}{def }extracteventparticles(cls, lines, isgen):}
+\DoxyCodeLine{83     daughters, mothers, associated = [], [], []}
+\DoxyCodeLine{84     \textcolor{keywordflow}{for} line \textcolor{keywordflow}{in} lines:}
+\DoxyCodeLine{85       id, status, mother1, mother2 = (\mbox{\hyperlink{namespacetestME__all_a2f9c5cba6551dc41bae400ced29c30b3}{int}}(\_) \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} line.split()[0:4])}
+\DoxyCodeLine{86       \textcolor{keywordflow}{if} (1 <= abs(id) <= 6 \textcolor{keywordflow}{or} abs(id) == 21) \textcolor{keywordflow}{and} \textcolor{keywordflow}{not} isgen:}
+\DoxyCodeLine{87         line = line.replace(str(id), \textcolor{stringliteral}{"0"}, 1)  \textcolor{comment}{\#replace the first instance of the jet id with 0, which means unknown jet}}
+\DoxyCodeLine{88       \textcolor{keywordflow}{if} status == -\/1:}
+\DoxyCodeLine{89         mothers.append(line)}
+\DoxyCodeLine{90       \textcolor{keywordflow}{if} id == 25:}
+\DoxyCodeLine{91         \textcolor{keywordflow}{if} status != 1:}
+\DoxyCodeLine{92           \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"Higgs has status \{\}, expected it to be 1\(\backslash\)n\(\backslash\)n"}.format(status) + \textcolor{stringliteral}{"\(\backslash\)n"}.join(lines))}
+\DoxyCodeLine{93         daughters.append(line)}
+\DoxyCodeLine{94       \textcolor{keywordflow}{if} abs(id) \textcolor{keywordflow}{in} (0, 1, 2, 3, 4, 5, 11, 12, 13, 14, 15, 16, 21) \textcolor{keywordflow}{and} status == 1:}
+\DoxyCodeLine{95         associated.append(line)}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{keywordflow}{if} len(daughters) != 1:}
+\DoxyCodeLine{98       \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"More than one H in the event??\(\backslash\)n\(\backslash\)n"}+\textcolor{stringliteral}{"\(\backslash\)n"}.join(lines))}
+\DoxyCodeLine{99     \textcolor{keywordflow}{if} cls.nassociatedparticles \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None} \textcolor{keywordflow}{and} len(associated) != cls.nassociatedparticles:}
+\DoxyCodeLine{100       \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"Wrong number of associated particles (expected \{\}, found \{\})\(\backslash\)n\(\backslash\)n"}.format(cls.nassociatedparticles, len(associated))+\textcolor{stringliteral}{"\(\backslash\)n"}.join(lines))}
+\DoxyCodeLine{101     \textcolor{keywordflow}{if} len(mothers) != 2:}
+\DoxyCodeLine{102       \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"\{\} mothers in the event??\(\backslash\)n\(\backslash\)n"}.format(len(mothers))+\textcolor{stringliteral}{"\(\backslash\)n"}.join(lines))}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} isgen: mothers = \textcolor{keywordtype}{None}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} daughters, associated, mothers}
+\DoxyCodeLine{106 }
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classlhefile_1_1LHEEvent__StableHiggs_a047b24577dee085a068b771eca546332}\label{classlhefile_1_1LHEEvent__StableHiggs_a047b24577dee085a068b771eca546332}} 
 \index{lhefile.LHEEvent\_StableHiggs@{lhefile.LHEEvent\_StableHiggs}!nassociatedparticles@{nassociatedparticles}}
 \index{nassociatedparticles@{nassociatedparticles}!lhefile.LHEEvent\_StableHiggs@{lhefile.LHEEvent\_StableHiggs}}
 \doxysubsubsection{\texorpdfstring{nassociatedparticles}{nassociatedparticles}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+Event\+\_\+\+Stable\+Higgs.\+nassociatedparticles = None\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 107 of file lhefile.\+py.
 
 
 

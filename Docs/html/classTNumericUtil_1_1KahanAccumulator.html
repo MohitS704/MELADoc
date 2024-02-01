@@ -114,7 +114,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a8555225445ada7a40c7d8c3c1591b159"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a></td></tr>
 <tr class="separator:a8555225445ada7a40c7d8c3c1591b159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class TNumericUtil::KahanAccumulator&lt; T &gt;</h3>
+
+
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00027">27</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a28ff054284c769c926e3be5afb987506"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28ff054284c769c926e3be5afb987506">&#9670;&nbsp;</a></span>KahanAccumulator() <span class="overload">[1/3]</span></h2>
 
@@ -140,6 +146,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00031">31</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;: <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>(0), <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a>(0) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afefe5e72a23762b0f07505670426a877"></a>
@@ -168,6 +177,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00032">32</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;: <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>(value), <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a>(0) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a16d8f8deeb4aaf1a2afc1051ba683f9b"></a>
@@ -196,6 +208,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00033">33</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;: <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>(other.sum_), <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a>(other.compensation_){}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -224,6 +239,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00050">50</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4a9ea7e8e7a378179609dbe249ecf6a7"></a>
@@ -252,6 +270,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00047">47</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{ KahanAccumulator&lt;T&gt; tmp(*<span class="keyword">this</span>);  tmp *= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <span class="keywordflow">return</span> tmp; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a24a959cb5472d240abbe167a90b7f2bd"></a>
@@ -280,6 +301,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00043">43</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{ <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a> *= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a> *= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4c3a6bf4bbf30efc9980dc215cf3dc7a"></a>
@@ -308,6 +332,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00045">45</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{ KahanAccumulator&lt;T&gt; tmp(*<span class="keyword">this</span>);  tmp += <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <span class="keywordflow">return</span> tmp; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa3f2c622d10b26b29ab5a71c4645dd2b"></a>
@@ -336,6 +363,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00034">34</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                              {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      T y = <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a> - <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      T sumnew = <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a> + y;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      T sumerr = (sumnew - <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a> = sumerr - y;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a> = sumnew;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae93d4998558b4477035ea7378b3125ea"></a>
@@ -364,6 +401,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00046">46</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{ KahanAccumulator&lt;T&gt; tmp(*<span class="keyword">this</span>);  tmp -= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <span class="keywordflow">return</span> tmp; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4e8afb940b05a04746fc0fb8f2a326a6"></a>
@@ -392,6 +432,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00042">42</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ this-&gt;<a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#aa3f2c622d10b26b29ab5a71c4645dd2b">operator+=</a>(-<a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a81b2f73f06e42e476d9cdefa78782cdb"></a>
@@ -420,6 +463,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00048">48</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{ KahanAccumulator&lt;T&gt; tmp(*<span class="keyword">this</span>);  tmp /= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <span class="keywordflow">return</span> tmp; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a23ea71be1d56cb94cf3236b20e60ef40"></a>
@@ -448,6 +494,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00044">44</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a> /= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a> /= <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab7f4a5f8ee41fb82545950d4d831fc06"></a>
@@ -475,6 +524,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00049">49</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -500,6 +552,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00029">29</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+
 </div>
 </div>
 <a id="a8d5c710dab9b7f0144660fc657f4ffb3"></a>
@@ -524,12 +578,18 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00029">29</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>MELA/interface/<a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="anamespacehto__rootw_html_a51e365cf14dc5783680394486ebc97d7"><div class="ttname"><a href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">hto_rootw::inc</a></div><div class="ttdeci">integer inc</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00246">CALLING_cpHTO.f:246</a></div></div>
+<div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html_a8d5c710dab9b7f0144660fc657f4ffb3"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">TNumericUtil::KahanAccumulator::sum_</a></div><div class="ttdeci">T sum_</div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00029">MELAAccumulators.h:29</a></div></div>
+<div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html_a8555225445ada7a40c7d8c3c1591b159"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">TNumericUtil::KahanAccumulator::compensation_</a></div><div class="ttdeci">T compensation_</div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00029">MELAAccumulators.h:29</a></div></div>
+<div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html_aa3f2c622d10b26b29ab5a71c4645dd2b"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html#aa3f2c622d10b26b29ab5a71c4645dd2b">TNumericUtil::KahanAccumulator::operator+=</a></div><div class="ttdeci">KahanAccumulator &amp; operator+=(const T &amp;inc)</div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00034">MELAAccumulators.h:34</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

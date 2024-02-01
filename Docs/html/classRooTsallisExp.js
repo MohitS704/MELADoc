@@ -1,0 +1,27 @@
+var classRooTsallisExp =
+[
+    [ "RooTsallisExp", "classRooTsallisExp.html#a5b239947eb0509d54a5c7a37fc32020b", null ],
+    [ "RooTsallisExp", "classRooTsallisExp.html#a9e2ec364f9239346ea14e17d80c29731", null ],
+    [ "~RooTsallisExp", "classRooTsallisExp.html#adeb7be0ae224f7b582a205ceea6eed62", null ],
+    [ "clone", "classRooTsallisExp.html#a3e05c58c48a9d3f6953d632799342354", null ],
+    [ "evaluate", "classRooTsallisExp.html#ab60f0b43df73bb75ef935f6e8c826e9e", null ],
+    [ "bb0", "classRooTsallisExp.html#adfd89779ba37e7035776f5ed7787e085", null ],
+    [ "bb1", "classRooTsallisExp.html#ab4def34d1be9ff67b9545a91fe7460df", null ],
+    [ "bb2", "classRooTsallisExp.html#a24c16fcb248f0c6a8454f067d3e54eda", null ],
+    [ "bbdue0", "classRooTsallisExp.html#aa879b0f4527e85d695bd4ee8e7f114a8", null ],
+    [ "bbdue1", "classRooTsallisExp.html#a17dc56a165a8bd9c7d2c77cb008888b4", null ],
+    [ "bbdue2", "classRooTsallisExp.html#abd96a31d1cb603d13d782d2e6291df17", null ],
+    [ "fexp0", "classRooTsallisExp.html#a833a01d45085d0fd6e4f008b2aa034d6", null ],
+    [ "fexp1", "classRooTsallisExp.html#ad23a99d5c2d282a3452b735f1bae8dce", null ],
+    [ "fexp2", "classRooTsallisExp.html#a640316911b6e78c64031ca03937eba93", null ],
+    [ "m", "classRooTsallisExp.html#a530f0f89371b907038797ce6f887f06e", null ],
+    [ "mzz", "classRooTsallisExp.html#a6c95f09dbd99afb43029422b718b4529", null ],
+    [ "n0", "classRooTsallisExp.html#a766d7eb584c5f42a602b44cbe46eca55", null ],
+    [ "n1", "classRooTsallisExp.html#a4bad44ae84de2a47540aa7d53ceddebe", null ],
+    [ "n2", "classRooTsallisExp.html#ac066d3e329f413cd6eec5cbe3bbe920e", null ],
+    [ "ndue", "classRooTsallisExp.html#aacc87695af974429a227f56083039239", null ],
+    [ "T0", "classRooTsallisExp.html#aa1e9e34a7c4ce0f7bc0981cf0f0ce4fb", null ],
+    [ "T1", "classRooTsallisExp.html#a37c400d95df0b8326d5d9ca94d9d1ee0", null ],
+    [ "T2", "classRooTsallisExp.html#a1728883fc90caa4d42ee4dba23f965ab", null ],
+    [ "x", "classRooTsallisExp.html#afb62c1ca29c68b58125c88192bff6949", null ]
+];

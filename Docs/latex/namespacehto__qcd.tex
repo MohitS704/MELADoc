@@ -24,33 +24,371 @@ real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc20
 \doxysubsubsection{\texorpdfstring{hto\_qcdlam()}{hto\_qcdlam()}}
 {\footnotesize\ttfamily real$\ast$8 function hto\+\_\+qcd\+::hto\+\_\+qcdlam (\begin{DoxyParamCaption}\item[{integer}]{nf,  }\item[{real$\ast$8}]{als,  }\item[{real$\ast$8}]{rs,  }\item[{real$\ast$8}]{x1,  }\item[{real$\ast$8}]{x2,  }\item[{real$\ast$8}]{xacc }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3114 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3114        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3115        \textcolor{keywordtype}{INTEGER} nf,j}
+\DoxyCodeLine{3116        real*8 \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x1,x2,xacc,fmid,f,dx,xmid}
+\DoxyCodeLine{3117        \textcolor{keywordtype}{INTEGER}, \textcolor{keywordtype}{parameter} :: jmax=50}
+\DoxyCodeLine{3118 *}
+\DoxyCodeLine{3119        fmid= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x2)}
+\DoxyCodeLine{3120        f= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x1)}
+\DoxyCodeLine{3121        \textcolor{keywordflow}{IF}(f*fmid >= 0.d0) stop}
+\DoxyCodeLine{3122        \textcolor{keywordflow}{IF}(f < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3123         \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}= x1}
+\DoxyCodeLine{3124         dx= x2-\/x1}
+\DoxyCodeLine{3125        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3126         \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}= x2}
+\DoxyCodeLine{3127         dx= x1-\/x2}
+\DoxyCodeLine{3128 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3129        \textcolor{keywordflow}{DO} j=1,jmax}
+\DoxyCodeLine{3130         dx= dx*0.5d0}
+\DoxyCodeLine{3131         xmid= \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}+dx}
+\DoxyCodeLine{3132         fmid= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,xmid)}
+\DoxyCodeLine{3133         \textcolor{keywordflow}{IF}(fmid <= 0.d0) \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}= xmid}
+\DoxyCodeLine{3134         \textcolor{keywordflow}{IF}(abs(dx) < xacc.or.fmid.eq.0.d0) \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{3135 \textcolor{keywordflow}{       ENDDO}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}\label{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}} 
 \index{hto\_qcd@{hto\_qcd}!hto\_qcdmass@{hto\_qcdmass}}
 \index{hto\_qcdmass@{hto\_qcdmass}!hto\_qcd@{hto\_qcd}}
 \doxysubsubsection{\texorpdfstring{hto\_qcdmass()}{hto\_qcdmass()}}
 {\footnotesize\ttfamily real$\ast$8 function hto\+\_\+qcd\+::hto\+\_\+qcdmass (\begin{DoxyParamCaption}\item[{real$\ast$8}]{qm,  }\item[{real$\ast$8}]{als,  }\item[{real$\ast$8}]{rm1,  }\item[{real$\ast$8}]{rm2,  }\item[{real$\ast$8}]{fn,  }\item[{real$\ast$8}]{x }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3327 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3327       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{3328 \textcolor{comment}{*}}
+\DoxyCodeLine{3329       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3330 \textcolor{comment}{*}}
+\DoxyCodeLine{3331       real*8 \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}{hto\_qcdmass}},qm,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rm1,rm2,fn,x,rln,rlns,r1,r2,delta0,}
+\DoxyCodeLine{3332      \#       delta1,delta2,rhs}
+\DoxyCodeLine{3333 \textcolor{comment}{*}}
+\DoxyCodeLine{3334       rln= 2.d0*log(qm/x)}
+\DoxyCodeLine{3335       rlns= rln*rln}
+\DoxyCodeLine{3336       r1= rm1/x}
+\DoxyCodeLine{3337       r2= rm2/x}
+\DoxyCodeLine{3338       delta0= 3.d0/4.d0*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}-\/3.d0/8.d0}
+\DoxyCodeLine{3339       delta1= r1*(\mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}}/8.d0+r1*(-\/0.597d0+0.230d0*r1))}
+\DoxyCodeLine{3340       delta2= r2*(\mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}}/8.d0+r2*(-\/0.597d0+0.230d0*r2))}
+\DoxyCodeLine{3341 \textcolor{comment}{*}}
+\DoxyCodeLine{3342       rhs= 1.d0+\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}*(4.d0/3.d0+rln+\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}*(3817.d0/288.d0-\/8.d0/3.d0+}
+\DoxyCodeLine{3343      \#     2.d0/3.d0*(2.d0+log(2.d0))*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}-\/\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}/6.d0-\/fn/3.d0*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+}
+\DoxyCodeLine{3344      \#     71.d0/48.d0)+4.d0/3.d0*(delta0+delta1+delta2)+(173.d0/}
+\DoxyCodeLine{3345      \#     24.d0-\/13.d0/36.d0*fn)*rln+(15.d0/8.d0-\/fn/12.d0)*rlns))}
+\DoxyCodeLine{3346       \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}{hto\_qcdmass}}= qm-\/x*rhs}
+\DoxyCodeLine{3347 \textcolor{comment}{*}}
+\DoxyCodeLine{3348       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{3349 \textcolor{comment}{*}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}\label{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}} 
 \index{hto\_qcd@{hto\_qcd}!hto\_qcdscale@{hto\_qcdscale}}
 \index{hto\_qcdscale@{hto\_qcdscale}!hto\_qcd@{hto\_qcd}}
 \doxysubsubsection{\texorpdfstring{hto\_qcdscale()}{hto\_qcdscale()}}
 {\footnotesize\ttfamily real$\ast$8 function hto\+\_\+qcd\+::hto\+\_\+qcdscale (\begin{DoxyParamCaption}\item[{integer}]{nf,  }\item[{real$\ast$8}]{als,  }\item[{real$\ast$8}]{rs,  }\item[{real$\ast$8}]{x }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3139 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3139        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{3140        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3141        \textcolor{keywordtype}{INTEGER} nf}
+\DoxyCodeLine{3142        real*8 \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x,qcdb0,qcdb1,qcdb2,qcda,\mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}}
+\DoxyCodeLine{3143 *}
+\DoxyCodeLine{3144        qcdb0= 11.d0-\/2.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
+\DoxyCodeLine{3145        qcdb1= 102.d0-\/38.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
+\DoxyCodeLine{3146        qcdb2= 0.5d0*(2857.d0-\/5033.d0/9.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}+325.d0/27.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}})}
+\DoxyCodeLine{3147        qcda= 2.d0*log(rs/x)}
+\DoxyCodeLine{3148        \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}-\/(4.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
+\DoxyCodeLine{3149      \textcolor{preprocessor}{\#             log(qcda)+(qcdb1/qcdb0**2/qcda)**2*((log(qcda)-\/}}
+\DoxyCodeLine{3150 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#             0.5d0)**2+qcdb2*qcdb0/qcdb1**2-\/5.d0/4.d0)))}}
+\DoxyCodeLine{3151 \textcolor{preprocessor}{}       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}\label{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}} 
 \index{hto\_qcd@{hto\_qcd}!hto\_ralphas@{hto\_ralphas}}
 \index{hto\_ralphas@{hto\_ralphas}!hto\_qcd@{hto\_qcd}}
 \doxysubsubsection{\texorpdfstring{hto\_ralphas()}{hto\_ralphas()}}
 {\footnotesize\ttfamily real$\ast$8 function hto\+\_\+qcd\+::hto\+\_\+ralphas (\begin{DoxyParamCaption}\item[{real$\ast$8}]{rs0,  }\item[{real$\ast$8}]{rs,  }\item[{real$\ast$8}]{als }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3035 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3035        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{3036        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__masses}{hto\_masses}}}
+\DoxyCodeLine{3037        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3038        \textcolor{keywordtype}{INTEGER} i,nfe}
+\DoxyCodeLine{3039        real*8 \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}},rs0,rs,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},x1,x2,xacc,qcdl,rat,rl,rll,rb,fac,}
+\DoxyCodeLine{3040      \textcolor{preprocessor}{\#        facp,rhs,ratl2,pqcdl4,qcdb0,qcdb1,qcdb2,qcda,pqcdl3,}}
+\DoxyCodeLine{3041 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#        fac2,pqcdl5}}
+\DoxyCodeLine{3042 \textcolor{preprocessor}{}       real*8, \textcolor{keywordtype}{dimension(5)} :: b0,b1,b2}
+\DoxyCodeLine{3043        \textcolor{keywordtype}{INTEGER}, \textcolor{keywordtype}{parameter} :: nf=5 }
+\DoxyCodeLine{3044 *}
+\DoxyCodeLine{3045 *-\/-\/-\/-\/-\/limits for lambda\_5 are 1 mev < lambda\_5 < 10 gev}
+\DoxyCodeLine{3046 *}
+\DoxyCodeLine{3047        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}.eq.0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3048         \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}= 0.d0}
+\DoxyCodeLine{3049        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3050         x1= 0.001d0}
+\DoxyCodeLine{3051         x2= 10.0d0}
+\DoxyCodeLine{3052         xacc= 1.d-\/12}
+\DoxyCodeLine{3053         qcdl= \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs0,x1,x2,xacc)}
+\DoxyCodeLine{3054         pqcdl5= qcdl}
+\DoxyCodeLine{3055         \textcolor{keywordflow}{DO} i=1,5}
+\DoxyCodeLine{3056          b0(i)= (11.d0-\/2.d0/3.d0*i)/4.d0}
+\DoxyCodeLine{3057          b1(i)= (102.d0-\/38.d0/3.d0*i)/16.d0}
+\DoxyCodeLine{3058          b2(i)= 0.5d0*(2857.d0-\/i*(5033.d0/9.d0-\/325.d0/27.d0*i))/64.d0}
+\DoxyCodeLine{3059 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{3060 *}
+\DoxyCodeLine{3061         \textcolor{keywordflow}{IF}(rs < \mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{mbq}}) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3062          rat= \mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{mbq}}/qcdl}
+\DoxyCodeLine{3063          rl= 2.d0*log(rat)}
+\DoxyCodeLine{3064          rll= log(rl)}
+\DoxyCodeLine{3065          rb= log(b0(5)/b0(4))}
+\DoxyCodeLine{3066          fac= b1(5)/b0(5)-\/b1(4)/b0(4)}
+\DoxyCodeLine{3067          facp= b2(5)/b0(5)-\/b2(4)/b0(4)}
+\DoxyCodeLine{3068          fac2= b1(5)*b1(5)/b0(5)/b0(5)-\/b1(4)*b1(4)/b0(4)/b0(4)}
+\DoxyCodeLine{3069          rhs= (b0(5)-\/b0(4))*rl+fac*rll-\/b1(4)/b0(4)*rb+}
+\DoxyCodeLine{3070      \textcolor{preprocessor}{\#         b1(5)/b0(5)/b0(5)*fac*rll/rl+1.d0/b0(5)/rl*(}}
+\DoxyCodeLine{3071 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         fac2-\/facp-\/7.d0/72.d0)}}
+\DoxyCodeLine{3072 \textcolor{preprocessor}{}         rhs= rhs/b0(4)}
+\DoxyCodeLine{3073          ratl2= exp(rhs)}
+\DoxyCodeLine{3074          qcdl= qcdl/sqrt(ratl2)      }
+\DoxyCodeLine{3075          pqcdl4= qcdl}
+\DoxyCodeLine{3076          nfe= \mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}-\/1}
+\DoxyCodeLine{3077          \textcolor{keywordflow}{IF}(rs < \mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}}) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3078           rat= \mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}}/qcdl}
+\DoxyCodeLine{3079           rl= 2.d0*log(rat)}
+\DoxyCodeLine{3080           rll= log(rl)}
+\DoxyCodeLine{3081           rb= log(b0(4)/b0(3))}
+\DoxyCodeLine{3082           fac= b1(4)/b0(4)-\/b1(3)/b0(3)}
+\DoxyCodeLine{3083           facp= b2(4)/b0(4)-\/b2(3)/b0(3)}
+\DoxyCodeLine{3084           fac2= b1(4)*b1(4)/b0(4)/b0(4)-\/b1(3)*b1(3)/b0(3)/b0(3)}
+\DoxyCodeLine{3085           rhs= (b0(4)-\/b0(3))*rl+fac*rll-\/b1(3)/b0(3)*rb+}
+\DoxyCodeLine{3086      \textcolor{preprocessor}{\#          b1(4)/b0(4)/b0(4)*fac*rll/rl+1.d0/b0(4)/rl*(}}
+\DoxyCodeLine{3087 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#          fac2-\/facp-\/7.d0/72.d0)}}
+\DoxyCodeLine{3088 \textcolor{preprocessor}{}          rhs= rhs/b0(3)}
+\DoxyCodeLine{3089           ratl2= exp(rhs)}
+\DoxyCodeLine{3090           qcdl= qcdl/sqrt(ratl2)      }
+\DoxyCodeLine{3091           pqcdl3= qcdl}
+\DoxyCodeLine{3092           nfe= \mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}-\/2}
+\DoxyCodeLine{3093 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{3094         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3095          nfe= \mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
+\DoxyCodeLine{3096 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{3097 *}
+\DoxyCodeLine{3098         qcdb0= 11.d0-\/2.d0/3.d0*nfe}
+\DoxyCodeLine{3099         qcdb1= 102.d0-\/38.d0/3.d0*nfe}
+\DoxyCodeLine{3100         qcdb2= 0.5d0*(2857.d0-\/5033.d0/9.d0*nfe+325.d0/27.d0*nfe*nfe)}
+\DoxyCodeLine{3101         qcda= 2.d0*log(rs/qcdl)}
+\DoxyCodeLine{3102 *}
+\DoxyCodeLine{3103         \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}= 4.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
+\DoxyCodeLine{3104      \textcolor{preprocessor}{\#           log(qcda)+(qcdb1/qcdb0**2/qcda)**2*((log(qcda)-\/}}
+\DoxyCodeLine{3105 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#           0.5d0)**2+qcdb2*qcdb0/qcdb1**2-\/5.d0/4.d0))}}
+\DoxyCodeLine{3106 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{3107 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3108        \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}\label{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}} 
 \index{hto\_qcd@{hto\_qcd}!hto\_rrunm@{hto\_rrunm}}
 \index{hto\_rrunm@{hto\_rrunm}!hto\_qcd@{hto\_qcd}}
 \doxysubsubsection{\texorpdfstring{hto\_rrunm()}{hto\_rrunm()}}
 {\footnotesize\ttfamily real$\ast$8 function hto\+\_\+qcd\+::hto\+\_\+rrunm (\begin{DoxyParamCaption}\item[{real$\ast$8}]{x1,  }\item[{real$\ast$8}]{x2,  }\item[{real$\ast$8}]{xacc,  }\item[{real$\ast$8}]{qm,  }\item[{real$\ast$8}]{als,  }\item[{real$\ast$8}]{rm1,  }\item[{real$\ast$8}]{rm2,  }\item[{real$\ast$8}]{fn }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3292 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3292       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3293 \textcolor{comment}{*}}
+\DoxyCodeLine{3294       \textcolor{keywordtype}{INTEGER}, \textcolor{keywordtype}{parameter} :: jmax=50}
+\DoxyCodeLine{3295       \textcolor{keywordtype}{INTEGER} j}
+\DoxyCodeLine{3296       real*8 \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}},x1,x2,xacc,qm,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rm1,rm2,fn,fmid,f,dx,xmid}
+\DoxyCodeLine{3297 \textcolor{comment}{*}}
+\DoxyCodeLine{3298       fmid= \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}{hto\_qcdmass}}(qm,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rm1,rm2,fn,x2)}
+\DoxyCodeLine{3299          f= \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}{hto\_qcdmass}}(qm,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rm1,rm2,fn,x1)}
+\DoxyCodeLine{3300       \textcolor{keywordflow}{IF}(f*fmid.ge.0.d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{3301        print*,\textcolor{stringliteral}{'root must be bracketed for bisection'}}
+\DoxyCodeLine{3302        print 1,qm}
+\DoxyCodeLine{3303     1  \textcolor{keyword}{format}(/\textcolor{stringliteral}{' error detected by HTO\_rrunm '},/}
+\DoxyCodeLine{3304      \#         \textcolor{stringliteral}{' current value of quark mass  = '},e20.5)}
+\DoxyCodeLine{3305 \textcolor{comment}{*       STOP    !  MARKUS NOTE: Removed this stop. Hence, the program keeps running even if there are errors!}}
+\DoxyCodeLine{3306 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{3307       \textcolor{keywordflow}{IF}(f < 0.d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{3308        \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}}= x1}
+\DoxyCodeLine{3309        dx= x2-\/x1}
+\DoxyCodeLine{3310       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3311        \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}}= x2}
+\DoxyCodeLine{3312        dx= x1-\/x2}
+\DoxyCodeLine{3313 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{3314       \textcolor{keywordflow}{DO} j=1,jmax}
+\DoxyCodeLine{3315        dx= dx*0.5d0}
+\DoxyCodeLine{3316        xmid= \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}}+dx}
+\DoxyCodeLine{3317        fmid= \mbox{\hyperlink{namespacehto__qcd_a6d96a68c031e4bf3e7bc2053846c3596}{hto\_qcdmass}}(qm,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rm1,rm2,fn,xmid)}
+\DoxyCodeLine{3318        \textcolor{keywordflow}{IF}(fmid.le.0.d0) \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}}= xmid}
+\DoxyCodeLine{3319        \textcolor{keywordflow}{IF}(abs(dx) < xacc.or.fmid.eq.0.d0) \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{3320 \textcolor{keywordflow}{      ENDDO}}
+\DoxyCodeLine{3321 \textcolor{comment}{*}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacehto__qcd_a56727402fd2ceaa1f03af4e6415f8ae8}\label{namespacehto__qcd_a56727402fd2ceaa1f03af4e6415f8ae8}} 
 \index{hto\_qcd@{hto\_qcd}!hto\_run\_bc@{hto\_run\_bc}}
 \index{hto\_run\_bc@{hto\_run\_bc}!hto\_qcd@{hto\_qcd}}
 \doxysubsubsection{\texorpdfstring{hto\_run\_bc()}{hto\_run\_bc()}}
 {\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+qcd\+::hto\+\_\+run\+\_\+bc (\begin{DoxyParamCaption}\item[{real$\ast$8}]{scal }\end{DoxyParamCaption})}
 
+
+
+Definition at line 3157 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3157       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{3158       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__masses}{hto\_masses}}}
+\DoxyCodeLine{3159       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__set__phys__const}{hto\_set\_phys\_const}}}
+\DoxyCodeLine{3160 \textcolor{comment}{*}}
+\DoxyCodeLine{3161       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3162 \textcolor{comment}{*}}
+\DoxyCodeLine{3163       real*8 scal,scal2,alsr,aexps,scaling1g,als1g,alsc4,alsc42,}
+\DoxyCodeLine{3164      \#       als1g2,alsb,alsb2,alsz,alsz2,fn,b03,b13,b23,g03,g13,}
+\DoxyCodeLine{3165      \#       g23,rex3,b03s,b03c,b13s,sm1g,cfm13,cfm23,rmsc,}
+\DoxyCodeLine{3166      \#       b04,b04c,b14,b24,g04,g14,g24,rex4,b04s,b14s,asldf,cfm14,}
+\DoxyCodeLine{3167      \#       cfm24,rsmb,\mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}},x1,x2,xacc,cmm4,cmb,b05,b15,b25,g05,g15,}
+\DoxyCodeLine{3168      \#       g25,rex5,b05s,b05c,b15s,cfm15,cfm25,rcqm,bmm5,rbqm,scal1g,}
+\DoxyCodeLine{3169      \#       rsmc}
+\DoxyCodeLine{3170       real*8, \textcolor{keywordtype}{dimension(2)} :: \textcolor{keywordtype}{value}}
+\DoxyCodeLine{3171 \textcolor{comment}{*}}
+\DoxyCodeLine{3172       scal2= scal*scal}
+\DoxyCodeLine{3173       alsr= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})}
+\DoxyCodeLine{3174       aexps= alsr/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3175 \textcolor{comment}{*}}
+\DoxyCodeLine{3176 \textcolor{comment}{*-\/-\/-\/-\/-\/COMPUTES THE RUNNING CHARM MASS}}
+\DoxyCodeLine{3177 \textcolor{comment}{*}}
+\DoxyCodeLine{3178       scal1g= 1.d0}
+\DoxyCodeLine{3179       als1g= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal1g,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3180       alsc4= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},\mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3181       alsc42= alsc4*alsc4}
+\DoxyCodeLine{3182       als1g2= als1g*als1g}
+\DoxyCodeLine{3183       alsb= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},\mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{mbq}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3184       alsb2= alsb*alsb}
+\DoxyCodeLine{3185       alsz= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3186       alsz2= alsz*alsz}
+\DoxyCodeLine{3187 \textcolor{comment}{*}}
+\DoxyCodeLine{3188 \textcolor{comment}{*-\/-\/-\/-\/-\/FIRST THE RUNNING OF THE S-\/QUARK MASS}}
+\DoxyCodeLine{3189 \textcolor{comment}{*     UP TO C/B-\/THRESHOLD}}
+\DoxyCodeLine{3190 \textcolor{comment}{*}}
+\DoxyCodeLine{3191       fn= 3.d0}
+\DoxyCodeLine{3192       b03= (11.d0-\/2.d0/3.d0*fn)/4.d0}
+\DoxyCodeLine{3193       b13= (102.d0-\/38.d0/3.d0*fn)/16.d0}
+\DoxyCodeLine{3194       b23= (2857.d0/2.d0-\/5033.d0/18.d0*fn+325.d0/54.d0*fn*fn)/64.d0}
+\DoxyCodeLine{3195       g03= 1.d0}
+\DoxyCodeLine{3196       g13= (202.d0/3.d0-\/20.d0/9.d0*fn)/16.d0}
+\DoxyCodeLine{3197       g23= (1249.d0-\/(2216.d0/27.d0+160.d0/3.d0*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}})*fn-\/}
+\DoxyCodeLine{3198      \#     140.d0/81.d0*fn*fn)/64.d0}
+\DoxyCodeLine{3199       rex3= g03/b03}
+\DoxyCodeLine{3200       b03s= b03*b03}
+\DoxyCodeLine{3201       b03c= b03s*b03}
+\DoxyCodeLine{3202       b13s= b13*b13}
+\DoxyCodeLine{3203       sm1g= 0.189d0}
+\DoxyCodeLine{3204       asldf= alsc4-\/als1g}
+\DoxyCodeLine{3205       cfm13= g13/b03-\/b13*g03/b03s}
+\DoxyCodeLine{3206       cfm23= g23/b03-\/b13*g13/b03s-\/b23*g03/b03s+b13s*g03/b03c}
+\DoxyCodeLine{3207       rsmc= sm1g*(alsc4/als1g)**rex3*(1.d0+cfm13*}
+\DoxyCodeLine{3208      \#      asldf+0.5d0*cfm13*cfm13*asldf*asldf+0.5d0*cfm23*}
+\DoxyCodeLine{3209      \#      (alsc42-\/als1g2))}
+\DoxyCodeLine{3210 \textcolor{comment}{*}}
+\DoxyCodeLine{3211       fn= 4.d0}
+\DoxyCodeLine{3212       b04= (11.d0-\/2.d0/3.d0*fn)/4.d0}
+\DoxyCodeLine{3213       b14= (102.d0-\/38.d0/3.d0*fn)/16.d0}
+\DoxyCodeLine{3214       b24= (2857.d0/2.d0-\/5033.d0/18.d0*fn+325.d0/54.d0*fn*fn)/64.d0}
+\DoxyCodeLine{3215       g04= 1.d0}
+\DoxyCodeLine{3216       g14= (202.d0/3.d0-\/20.d0/9.d0*fn)/16.d0}
+\DoxyCodeLine{3217       g24= (1249.d0-\/(2216.d0/27.d0+160.d0/3.d0*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}})*fn-\/}
+\DoxyCodeLine{3218      \#      140.d0/81.d0*fn*fn)/64.d0}
+\DoxyCodeLine{3219       rex4= g04/b04}
+\DoxyCodeLine{3220       b04s= b04*b04}
+\DoxyCodeLine{3221       b04c= b04s*b04}
+\DoxyCodeLine{3222       b14s= b14*b14}
+\DoxyCodeLine{3223       asldf= alsb-\/alsc4}
+\DoxyCodeLine{3224       cfm14= g14/b04-\/b14*g04/b04s}
+\DoxyCodeLine{3225       cfm24= g24/b04-\/b14*g14/b04s-\/b24*g04/b04s+}
+\DoxyCodeLine{3226      \#       b14s*g04/b04c}
+\DoxyCodeLine{3227       rsmb= rsmc*(alsb/alsc4)**rex4*(1.d0+cfm14*}
+\DoxyCodeLine{3228      \#      asldf+0.5d0*cfm14*cfm14*asldf*asldf+0.5d0*cfm24*}
+\DoxyCodeLine{3229      \#      (alsb2-\/alsc42))}
+\DoxyCodeLine{3230 \textcolor{comment}{*}}
+\DoxyCodeLine{3231 \textcolor{comment}{*-\/-\/-\/-\/-\/C QUARK mASS AT C-\/THRESHOLD}}
+\DoxyCodeLine{3232 \textcolor{comment}{*}}
+\DoxyCodeLine{3233       \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}= 0.d0}
+\DoxyCodeLine{3234       x1= 0.5d0}
+\DoxyCodeLine{3235       x2= 2.0d0}
+\DoxyCodeLine{3236       xacc= 1.d-\/12}
+\DoxyCodeLine{3237       fn= 4.d0}
+\DoxyCodeLine{3238       cmm4= \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}}(x1,x2,xacc,\mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}},alsc4,rsmc,\mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}},fn)}
+\DoxyCodeLine{3239 \textcolor{comment}{*}}
+\DoxyCodeLine{3240 \textcolor{comment}{*-\/-\/-\/-\/-\/C QUARK MASS AT B-\/THRESHOLD}}
+\DoxyCodeLine{3241 \textcolor{comment}{*}}
+\DoxyCodeLine{3242       cmb= cmm4*(alsb/alsc4)**rex4*(1.d0+cfm14*}
+\DoxyCodeLine{3243      \#     (alsb-\/alsc4)+0.5d0*cfm14*cfm14*}
+\DoxyCodeLine{3244      \#     (alsb-\/alsc4)**2+0.5d0*cfm24*(alsb2-\/alsc42))}
+\DoxyCodeLine{3245 \textcolor{comment}{*}}
+\DoxyCodeLine{3246 \textcolor{comment}{*-\/-\/-\/-\/-\/RUNNING CHARM MASS}}
+\DoxyCodeLine{3247 \textcolor{comment}{*}}
+\DoxyCodeLine{3248       fn= 5.d0}
+\DoxyCodeLine{3249       b05= (11.d0-\/2.d0/3.d0*fn)/4.d0}
+\DoxyCodeLine{3250       b15= (102.d0-\/38.d0/3.d0*fn)/16.d0}
+\DoxyCodeLine{3251       b25= (2857.d0/2.d0-\/5033.d0/18.d0*fn+325.d0/54.d0*fn*fn)/64.d0}
+\DoxyCodeLine{3252       g05= 1.d0}
+\DoxyCodeLine{3253       g15= (202.d0/3.d0-\/20.d0/9.d0*fn)/16.d0}
+\DoxyCodeLine{3254       g25= (1249.d0-\/(2216.d0/27.d0+160.d0/3.d0*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}})*fn-\/}
+\DoxyCodeLine{3255      \#      140.d0/81.d0*fn*fn)/64.d0}
+\DoxyCodeLine{3256       rex5= g05/b05}
+\DoxyCodeLine{3257       b05s= b05*b05}
+\DoxyCodeLine{3258       b05c= b05s*b05}
+\DoxyCodeLine{3259       b15s= b15*b15}
+\DoxyCodeLine{3260       cfm15= g15/b05-\/b15*g05/b05s}
+\DoxyCodeLine{3261       cfm25= g25/b05-\/b15*g15/b05s-\/b25*g05/b05s+b15s*g05/b05c}
+\DoxyCodeLine{3262       rcqm= cmb*(alsz/alsb)**rex5*(1.d0+cfm15*}
+\DoxyCodeLine{3263      \#     (alsz-\/alsb)+0.5d0*cfm15*cfm15*}
+\DoxyCodeLine{3264      \#     (alsz-\/alsb)**2+0.5d0*cfm25*(alsz2-\/alsb2))}
+\DoxyCodeLine{3265 \textcolor{comment}{*}}
+\DoxyCodeLine{3266 \textcolor{comment}{*-\/-\/-\/-\/-\/B QUARK MASS AT B-\/THRESHOLD}}
+\DoxyCodeLine{3267 \textcolor{comment}{*}}
+\DoxyCodeLine{3268       x1= 0.5d0}
+\DoxyCodeLine{3269       x2= 6.0d0}
+\DoxyCodeLine{3270       xacc= 1.d-\/12}
+\DoxyCodeLine{3271       fn= 5.d0}
+\DoxyCodeLine{3272       bmm5= \mbox{\hyperlink{namespacehto__qcd_adc0745a27f86cd6e9bede67ddeb7c656}{hto\_rrunm}}(x1,x2,xacc,\mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{mbq}},alsb,cmb,rsmb,fn)}
+\DoxyCodeLine{3273 \textcolor{comment}{*}}
+\DoxyCodeLine{3274 \textcolor{comment}{*-\/-\/-\/-\/-\/RUNNINg B MASS}}
+\DoxyCodeLine{3275 \textcolor{comment}{*}}
+\DoxyCodeLine{3276       asldf= alsz-\/alsb}
+\DoxyCodeLine{3277       rbqm= bmm5*(alsz/alsb)**rex5*(1.d0+cfm15*}
+\DoxyCodeLine{3278      \#      asldf+0.5d0*cfm15*cfm15*asldf*asldf+0.5d0*cfm25*}
+\DoxyCodeLine{3279      \#      (alsz2-\/alsb2))}
+\DoxyCodeLine{3280 \textcolor{comment}{*}}
+\DoxyCodeLine{3281       value(1)= rcqm}
+\DoxyCodeLine{3282       value(2)= rbqm}
+\DoxyCodeLine{3283 \textcolor{comment}{*}}
+\DoxyCodeLine{3284       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}

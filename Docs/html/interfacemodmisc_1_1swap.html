@@ -88,7 +88,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3ace8dca4801dbc2d03be76101ab600"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1swap.html#ad3ace8dca4801dbc2d03be76101ab600">swap_cmom</a> (Mom1, Mom2)</td></tr>
 <tr class="separator:ad3ace8dca4801dbc2d03be76101ab600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function/Subroutine Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00005">5</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+</div><h2 class="groupheader">Member Function/Subroutine Documentation</h2>
 <a id="ad3ace8dca4801dbc2d03be76101ab600"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3ace8dca4801dbc2d03be76101ab600">&#9670;&nbsp;</a></span>swap_cmom()</h2>
 
@@ -115,6 +118,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00434">434</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="keywordtype">complex(8)</span> :: Mom1(1:4),Mom2(1:4),tmp(1:4)</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    tmp(1:4) = mom2(1:4)</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    mom2(1:4) = mom1(1:4)</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    mom1(1:4) = tmp(1:4)</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keywordflow">RETURN</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1a0b77cfe5edc497ee55a38666190521"></a>
@@ -143,6 +156,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00423">423</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="keywordtype">real</span>(8) :: Mom1(1:4),Mom2(1:4),tmp(1:4)</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    tmp(1:4) = mom2(1:4)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    mom2(1:4) = mom1(1:4)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    mom1(1:4) = tmp(1:4)</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="keywordflow">RETURN</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a41abf12c8a42451bc9b35614965e3113"></a>
@@ -171,6 +194,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00413">413</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="keywordtype">complex(8)</span> :: i,j,temp</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    temp=j</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    j=i</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    i=temp</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4a112c39c2ab220b3499318ab82ee122"></a>
@@ -199,6 +231,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00393">393</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="keywordtype">integer</span> :: i,j,temp</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    temp=j</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    j=i</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    i=temp</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad1b9ab6a7b1accae3565521c1fb27353"></a>
@@ -227,10 +268,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00403">403</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="keywordtype">real</span>(8) :: i,j,temp</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    temp=j</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    j=i</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    i=temp</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>MELA/fortran/<a class="el" href="mod__Misc_8F90.html">mod_Misc.F90</a></li>
+<li>MELA/fortran/<a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

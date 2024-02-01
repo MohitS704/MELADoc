@@ -204,7 +204,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a3f4b1441cab694c933cd1383540c06e0 inherit pub_attribs_classSpinPdfFactory"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRooSpin_1_1modelParameters.html">RooSpin::modelParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a></td></tr>
 <tr class="separator:a3f4b1441cab694c933cd1383540c06e0 inherit pub_attribs_classSpinPdfFactory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html#l00008">8</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html">TensorPdfFactory_ppHVV.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaefba7d0d5319995c93384f81a69bb41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaefba7d0d5319995c93384f81a69bb41">&#9670;&nbsp;</a></span>TensorPdfFactory_ppHVV()</h2>
 
@@ -243,6 +246,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html#l00004">4</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html">TensorPdfFactory_ppHVV.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                                                                                                                                                    :</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<a class="code" href="classTensorPdfFactory.html#ac98d01947bcedc363976f9812d881aee">TensorPdfFactory</a>(measurables_, V1decay_, V2decay_, OnshellH_)</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>.<a class="code" href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">Y</a>=0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a276406a01a911b69ab4de0a7922fdc4b">makeParamsConst</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="classTensorPdfFactory__ppHVV.html#a440e7ab8c17413cecc9cc8c975084890">initPDF</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3693505f32e9efd19ed059a546e51dca"></a>
@@ -260,6 +272,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html#l00012">12</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html">TensorPdfFactory_ppHVV.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                               {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classTensorPdfFactory__ppHVV.html#ac61d3a4f8a32c1957337c97c8410a34f">destroyPDF</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -288,6 +305,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classTensorPdfFactory.html#aac6748549318049021bf3b06b4e5fbe7">TensorPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html#l00021">21</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html">TensorPdfFactory_ppHVV.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{ <span class="keyword">delete</span> <a class="code" href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">PDF</a>; <a class="code" href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">PDF</a>=0; <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a>=0; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acad2e9f3058fd9d43db87324c014d77a"></a>
@@ -315,6 +335,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classTensorPdfFactory.html#ad608424ac9626582b9cc67fb0c413739">TensorPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html#l00015">15</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html">TensorPdfFactory_ppHVV.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="classRooSpinTwo.html">RooSpinTwo</a>*)<a class="code" href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">PDF</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a440e7ab8c17413cecc9cc8c975084890"></a>
@@ -342,6 +365,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classTensorPdfFactory.html#aaf939302641b43b20d7cf037cd3ea1d2">TensorPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html#l00018">18</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html">TensorPdfFactory_ppHVV.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">PDF</a> = <span class="keyword">new</span> <a class="code" href="classRooSpinTwo__7DComplex__ppHVV.html">RooSpinTwo_7DComplex_ppHVV</a>(</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&quot;PDF&quot;</span>, <span class="stringliteral">&quot;PDF&quot;</span>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">measurables</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">parameters</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">V1decay</a>, <a class="code" href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">V2decay</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a> = (<a class="code" href="classRooSpin.html">RooSpin</a>*)<a class="code" href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">PDF</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae9f3efba23f77670ef35878613d2d471"></a>
@@ -360,6 +395,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html#l00016">16</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html">TensorPdfFactory_ppHVV.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{ <a class="code" href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">PDF</a>-&gt;<a class="code" href="classRooSpinTwo__7DComplex__ppHVV.html#abce92bf20fc4360f7c488c0a2d29ff51">setZZ4fOrdering</a>(flag); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -383,13 +421,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html#l00018">18</a> of file <a class="el" href="TensorPdfFactory__ppHVV_8h_source.html">TensorPdfFactory_ppHVV.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="TensorPdfFactory__ppHVV_8h_source.html">TensorPdfFactory_ppHVV.h</a></li>
-<li>MELA/src/<a class="el" href="TensorPdfFactory__ppHVV_8cc.html">TensorPdfFactory_ppHVV.cc</a></li>
+<li>MELA/src/<a class="el" href="TensorPdfFactory__ppHVV_8cc_source.html">TensorPdfFactory_ppHVV.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassTensorPdfFactory_html_a605a71ef2822982c3bd4ae7fc641f341"><div class="ttname"><a href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">TensorPdfFactory::couplings</a></div><div class="ttdeci">RooSpinTwo::modelCouplings couplings</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory_8h_source.html#l00012">TensorPdfFactory.h:12</a></div></div>
+<div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a5af796207b85d31b4f95a4e92253ac39"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">RooSpin::modelMeasurables::Y</a></div><div class="ttdeci">RooAbsReal * Y</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00059">RooSpin.h:59</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a0643dc0b0c59ce6745155b9e2f2f165d"><div class="ttname"><a href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">SpinPdfFactory::PDF_base</a></div><div class="ttdeci">RooSpin * PDF_base</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00043">SpinPdfFactory.h:43</a></div></div>
+<div class="ttc" id="aclassTensorPdfFactory__ppHVV_html_a440e7ab8c17413cecc9cc8c975084890"><div class="ttname"><a href="classTensorPdfFactory__ppHVV.html#a440e7ab8c17413cecc9cc8c975084890">TensorPdfFactory_ppHVV::initPDF</a></div><div class="ttdeci">virtual void initPDF()</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory__ppHVV_8cc_source.html#l00018">TensorPdfFactory_ppHVV.cc:18</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a31cdbd1e87fe667c360761a75007e7d1"><div class="ttname"><a href="classSpinPdfFactory.html#a31cdbd1e87fe667c360761a75007e7d1">SpinPdfFactory::V1decay</a></div><div class="ttdeci">RooSpin::VdecayType V1decay</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00038">SpinPdfFactory.h:38</a></div></div>
+<div class="ttc" id="aclassTensorPdfFactory__ppHVV_html_ac61d3a4f8a32c1957337c97c8410a34f"><div class="ttname"><a href="classTensorPdfFactory__ppHVV.html#ac61d3a4f8a32c1957337c97c8410a34f">TensorPdfFactory_ppHVV::destroyPDF</a></div><div class="ttdeci">virtual void destroyPDF()</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory__ppHVV_8h_source.html#l00021">TensorPdfFactory_ppHVV.h:21</a></div></div>
+<div class="ttc" id="aclassRooSpinTwo__7DComplex__ppHVV_html_abce92bf20fc4360f7c488c0a2d29ff51"><div class="ttname"><a href="classRooSpinTwo__7DComplex__ppHVV.html#abce92bf20fc4360f7c488c0a2d29ff51">RooSpinTwo_7DComplex_ppHVV::setZZ4fOrdering</a></div><div class="ttdeci">void setZZ4fOrdering(Bool_t flag=true)</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo__7DComplex__ppHVV_8cc_source.html#l00394">RooSpinTwo_7DComplex_ppHVV.cc:394</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a3f4b1441cab694c933cd1383540c06e0"><div class="ttname"><a href="classSpinPdfFactory.html#a3f4b1441cab694c933cd1383540c06e0">SpinPdfFactory::parameters</a></div><div class="ttdeci">RooSpin::modelParameters parameters</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00012">SpinPdfFactory.h:12</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_abc28d5256c7b49750335553c2a0d0e92"><div class="ttname"><a href="classSpinPdfFactory.html#abc28d5256c7b49750335553c2a0d0e92">SpinPdfFactory::V2decay</a></div><div class="ttdeci">RooSpin::VdecayType V2decay</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00039">SpinPdfFactory.h:39</a></div></div>
+<div class="ttc" id="aclassRooSpinTwo__7DComplex__ppHVV_html"><div class="ttname"><a href="classRooSpinTwo__7DComplex__ppHVV.html">RooSpinTwo_7DComplex_ppHVV</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo__7DComplex__ppHVV_8h_source.html#l00007">RooSpinTwo_7DComplex_ppHVV.h:7</a></div></div>
+<div class="ttc" id="aclassRooSpin_html"><div class="ttname"><a href="classRooSpin.html">RooSpin</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00025">RooSpin.h:25</a></div></div>
+<div class="ttc" id="aclassTensorPdfFactory__ppHVV_html_a08e16a186fb33523e471d1ab36619bfb"><div class="ttname"><a href="classTensorPdfFactory__ppHVV.html#a08e16a186fb33523e471d1ab36619bfb">TensorPdfFactory_ppHVV::PDF</a></div><div class="ttdeci">RooSpinTwo_7DComplex_ppHVV * PDF</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory__ppHVV_8h_source.html#l00018">TensorPdfFactory_ppHVV.h:18</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a276406a01a911b69ab4de0a7922fdc4b"><div class="ttname"><a href="classSpinPdfFactory.html#a276406a01a911b69ab4de0a7922fdc4b">SpinPdfFactory::makeParamsConst</a></div><div class="ttdeci">virtual void makeParamsConst(bool yesNo)</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00154">SpinPdfFactory.cc:154</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_a049d5515269542f4bfc5a4b971a35042"><div class="ttname"><a href="classSpinPdfFactory.html#a049d5515269542f4bfc5a4b971a35042">SpinPdfFactory::measurables</a></div><div class="ttdeci">RooSpin::modelMeasurables measurables</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8h_source.html#l00011">SpinPdfFactory.h:11</a></div></div>
+<div class="ttc" id="aclassRooSpinTwo_html"><div class="ttname"><a href="classRooSpinTwo.html">RooSpinTwo</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00007">RooSpinTwo.h:7</a></div></div>
+<div class="ttc" id="aclassTensorPdfFactory_html_ac98d01947bcedc363976f9812d881aee"><div class="ttname"><a href="classTensorPdfFactory.html#ac98d01947bcedc363976f9812d881aee">TensorPdfFactory::TensorPdfFactory</a></div><div class="ttdeci">TensorPdfFactory(RooSpin::modelMeasurables const &amp;measurables_, RooSpin::VdecayType V1decay_=RooSpin::kVdecayType_Zll, RooSpin::VdecayType V2decay_=RooSpin::kVdecayType_Zll, Bool_t OnshellH_=true)</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory_8cc_source.html#l00008">TensorPdfFactory.cc:8</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -54,6 +54,13 @@ int \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 9 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classScalarPdfFactory__VH_acda7e473d504b6cc692680915c7615a8}\label{classScalarPdfFactory__VH_acda7e473d504b6cc692680915c7615a8}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
@@ -61,18 +68,66 @@ int \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72
 \doxysubsubsection{\texorpdfstring{ScalarPdfFactory\_VH()}{ScalarPdfFactory\_VH()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::\+Scalar\+Pdf\+Factory\+\_\+\+VH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+,  }\item[{double}]{sqrts\+\_\+,  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V\+Hmode1\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zud}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V\+Hmode2\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zud}}},  }\item[{Bool\+\_\+t}]{Onshell\+H\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 4 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4                                                                                                                                                                                  :}
+\DoxyCodeLine{5 \mbox{\hyperlink{classScalarPdfFactory_a467f2cc6b625f2a44553e8edce1c8b64}{ScalarPdfFactory}}(measurables\_, \textcolor{keyword}{false}, VHmode1\_, VHmode2\_, OnshellH\_),}
+\DoxyCodeLine{6 \mbox{\hyperlink{classScalarPdfFactory__VH_a1d36a4bed7774cd331724f556bbd0162}{sqrts}}(sqrts\_)}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8   \textcolor{keywordflow}{if} (VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91}{RooSpin::kVdecayType\_Wany}} || VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a524b08679c1805619abf049808a9988d}{RooSpin::kVdecayType\_Zuu}} || VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a5d157310cd50d22ff2f287aaaa8b7322}{RooSpin::kVdecayType\_Zdd}} || VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da}{RooSpin::kVdecayType\_Zud}}) \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}} = 1;}
+\DoxyCodeLine{9   \textcolor{keywordflow}{else} \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}} = 2;}
+\DoxyCodeLine{10   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}}==2) \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a5af796207b85d31b4f95a4e92253ac39}{Y}}=0;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12   \mbox{\hyperlink{classSpinPdfFactory_a276406a01a911b69ab4de0a7922fdc4b}{makeParamsConst}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{13   \mbox{\hyperlink{classScalarPdfFactory__VH_a59ca4b19986ee874260f761e218d50c5}{initPDF}}();}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a76af71a3c98e292a845b63b07a514263}\label{classScalarPdfFactory__VH_a76af71a3c98e292a845b63b07a514263}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
 \doxysubsubsection{\texorpdfstring{ScalarPdfFactory\_VH()}{ScalarPdfFactory\_VH()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::\+Scalar\+Pdf\+Factory\+\_\+\+VH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+,  }\item[{double}]{g\+Ratio\+\_\+\mbox{[}4\mbox{]}\mbox{[}8\mbox{]},  }\item[{double}]{g\+Z\+Gs\+Ratio\+\_\+\mbox{[}4\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{g\+Gs\+Gs\+Ratio\+\_\+\mbox{[}3\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{g\+V\+Vp\+Ratio\+\_\+\mbox{[}1\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{g\+Vp\+Vp\+Ratio\+\_\+\mbox{[}1\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{sqrts\+\_\+,  }\item[{bool}]{pmf\+\_\+applied\+\_\+ = {\ttfamily false},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V\+Hmode1\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zud}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V\+Hmode2\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zud}}},  }\item[{Bool\+\_\+t}]{Onshell\+H\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 15 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19   : \mbox{\hyperlink{classScalarPdfFactory_a467f2cc6b625f2a44553e8edce1c8b64}{ScalarPdfFactory}}(measurables\_, gRatio\_, gZGsRatio\_, gGsGsRatio\_, gVVpRatio\_, gVpVpRatio\_, pmf\_applied\_, \textcolor{keyword}{false}, VHmode1\_, VHmode2\_, OnshellH\_),}
+\DoxyCodeLine{20 \mbox{\hyperlink{classScalarPdfFactory__VH_a1d36a4bed7774cd331724f556bbd0162}{sqrts}}(sqrts\_)}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22   \textcolor{keywordflow}{if} (VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91}{RooSpin::kVdecayType\_Wany}} || VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a524b08679c1805619abf049808a9988d}{RooSpin::kVdecayType\_Zuu}} || VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723a5d157310cd50d22ff2f287aaaa8b7322}{RooSpin::kVdecayType\_Zdd}} || VHmode1\_==\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723aebfdb5e20b90dc76850b1e62219a29da}{RooSpin::kVdecayType\_Zud}}) \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}} = 1;}
+\DoxyCodeLine{23   \textcolor{keywordflow}{else} \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}} = 2;}
+\DoxyCodeLine{24   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}}==2) \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a5af796207b85d31b4f95a4e92253ac39}{Y}}=0;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \mbox{\hyperlink{classSpinPdfFactory_a276406a01a911b69ab4de0a7922fdc4b}{makeParamsConst}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{27   \mbox{\hyperlink{classScalarPdfFactory__VH_a59ca4b19986ee874260f761e218d50c5}{initPDF}}();}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a26bea9956d35475d7bb46bfe0bec5890}\label{classScalarPdfFactory__VH_a26bea9956d35475d7bb46bfe0bec5890}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!````~ScalarPdfFactory\_VH@{$\sim$ScalarPdfFactory\_VH}}
 \index{````~ScalarPdfFactory\_VH@{$\sim$ScalarPdfFactory\_VH}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
 \doxysubsubsection{\texorpdfstring{$\sim$ScalarPdfFactory\_VH()}{~ScalarPdfFactory\_VH()}}
 {\footnotesize\ttfamily Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::$\sim$\+Scalar\+Pdf\+Factory\+\_\+\+VH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 29 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                          \{}
+\DoxyCodeLine{30   \mbox{\hyperlink{classScalarPdfFactory__VH_a0ceef169f0bd083f3f0b7a2b911fa8b0}{destroyPDF}}();}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -86,6 +141,19 @@ int \mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72
 
 Implements \mbox{\hyperlink{classScalarPdfFactory_a1f0636cd638bc53e990660c52e2b0cf2}{Scalar\+Pdf\+Factory}}.
 
+
+
+Definition at line 65 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                     \{}
+\DoxyCodeLine{66   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}}!=0) \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}};}
+\DoxyCodeLine{67   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}}!=0) \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}};}
+\DoxyCodeLine{68   \mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}}=0; \mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}}=0; \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}}=0;}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__VH_ab26b81b737b5d28c8b9bab41451d43bc}\label{classScalarPdfFactory__VH_ab26b81b737b5d28c8b9bab41451d43bc}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!getPDF@{getPDF}}
 \index{getPDF@{getPDF}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
@@ -96,6 +164,19 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_a1f0636cd638bc53e990660c52e2b0
 
 Implements \mbox{\hyperlink{classScalarPdfFactory_a3a641ea50e2b8b8ab5ff6e8518c8f229}{Scalar\+Pdf\+Factory}}.
 
+
+
+Definition at line 59 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59                                         \{}
+\DoxyCodeLine{60   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}}==2) \textcolor{keywordflow}{return} (\mbox{\hyperlink{classRooSpinZero}{RooSpinZero}}*)\mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}};}
+\DoxyCodeLine{61   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}}==1) \textcolor{keywordflow}{return} (\mbox{\hyperlink{classRooSpinZero}{RooSpinZero}}*)\mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}};}
+\DoxyCodeLine{62   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a59ca4b19986ee874260f761e218d50c5}\label{classScalarPdfFactory__VH_a59ca4b19986ee874260f761e218d50c5}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!initPDF@{initPDF}}
 \index{initPDF@{initPDF}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
@@ -108,6 +189,39 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_ad5b8690d25e95177ecfe0d3d4fa36
 
 
 
+Definition at line 33 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                                  \{}
+\DoxyCodeLine{34   \mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}}=0;}
+\DoxyCodeLine{35   \mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}}=0;}
+\DoxyCodeLine{36   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}}==2)\{}
+\DoxyCodeLine{37     \mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}} = \textcolor{keyword}{new} \mbox{\hyperlink{classRooSpinZero__5D__VH}{RooSpinZero\_5D\_VH}}(}
+\DoxyCodeLine{38       \textcolor{stringliteral}{"PDF"}, \textcolor{stringliteral}{"PDF"},}
+\DoxyCodeLine{39       \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}},}
+\DoxyCodeLine{40       \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}},}
+\DoxyCodeLine{41       \mbox{\hyperlink{classScalarPdfFactory_a0ce27eb1bc06518693ed3b3677ca6ea9}{couplings}},}
+\DoxyCodeLine{42       \mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}, \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}}
+\DoxyCodeLine{43       );}
+\DoxyCodeLine{44     \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}} = (\mbox{\hyperlink{classRooSpinZero}{RooSpinZero}}*)\mbox{\hyperlink{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}{PDF\_ILC\_5D}};}
+\DoxyCodeLine{45   \}}
+\DoxyCodeLine{46   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}{PDFType}}==1)\{}
+\DoxyCodeLine{47     \mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}} = \textcolor{keyword}{new} \mbox{\hyperlink{classRooSpinZero__3D__pp__VH}{RooSpinZero\_3D\_pp\_VH}}(}
+\DoxyCodeLine{48       \textcolor{stringliteral}{"PDF"}, \textcolor{stringliteral}{"PDF"},}
+\DoxyCodeLine{49       \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}},}
+\DoxyCodeLine{50       \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}},}
+\DoxyCodeLine{51       \mbox{\hyperlink{classScalarPdfFactory_a0ce27eb1bc06518693ed3b3677ca6ea9}{couplings}},}
+\DoxyCodeLine{52       \mbox{\hyperlink{classScalarPdfFactory__VH_a1d36a4bed7774cd331724f556bbd0162}{sqrts}},}
+\DoxyCodeLine{53       \mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}}, \mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}}
+\DoxyCodeLine{54       );}
+\DoxyCodeLine{55     \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}} = (\mbox{\hyperlink{classRooSpin}{RooSpin}}*)\mbox{\hyperlink{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}{PDF\_LHC\_3D}};}
+\DoxyCodeLine{56   \}}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}\label{classScalarPdfFactory__VH_a0da82eab57396a73a24c46d83563fb31}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!PDF\_ILC\_5D@{PDF\_ILC\_5D}}
@@ -115,11 +229,19 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_ad5b8690d25e95177ecfe0d3d4fa36
 \doxysubsubsection{\texorpdfstring{PDF\_ILC\_5D}{PDF\_ILC\_5D}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpinZero__5D__VH}{Roo\+Spin\+Zero\+\_\+5\+D\+\_\+\+VH}}$\ast$ Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::\+P\+D\+F\+\_\+\+I\+L\+C\+\_\+5D\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 23 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+h.
+
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}\label{classScalarPdfFactory__VH_a13035588ca716f22aadf5fdb703f15be}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!PDF\_LHC\_3D@{PDF\_LHC\_3D}}
 \index{PDF\_LHC\_3D@{PDF\_LHC\_3D}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
 \doxysubsubsection{\texorpdfstring{PDF\_LHC\_3D}{PDF\_LHC\_3D}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpinZero__3D__pp__VH}{Roo\+Spin\+Zero\+\_\+3\+D\+\_\+pp\+\_\+\+VH}}$\ast$ Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::\+P\+D\+F\+\_\+\+L\+H\+C\+\_\+3D\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 24 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+h.
 
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}\label{classScalarPdfFactory__VH_a7b3e92289ab0d01254cce9dd7a719d72}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!PDFType@{PDFType}}
@@ -127,11 +249,19 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_ad5b8690d25e95177ecfe0d3d4fa36
 \doxysubsubsection{\texorpdfstring{PDFType}{PDFType}}
 {\footnotesize\ttfamily int Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::\+P\+D\+F\+Type\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 26 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+h.
+
 \mbox{\Hypertarget{classScalarPdfFactory__VH_a1d36a4bed7774cd331724f556bbd0162}\label{classScalarPdfFactory__VH_a1d36a4bed7774cd331724f556bbd0162}} 
 \index{ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}!sqrts@{sqrts}}
 \index{sqrts@{sqrts}!ScalarPdfFactory\_VH@{ScalarPdfFactory\_VH}}
 \doxysubsubsection{\texorpdfstring{sqrts}{sqrts}}
 {\footnotesize\ttfamily double Scalar\+Pdf\+Factory\+\_\+\+V\+H\+::sqrts\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 25 of file Scalar\+Pdf\+Factory\+\_\+\+V\+H.\+h.
 
 
 

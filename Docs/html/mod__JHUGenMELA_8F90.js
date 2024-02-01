@@ -1,0 +1,26 @@
+var mod__JHUGenMELA_8F90 =
+[
+    [ "getalphasalphasmz", "mod__JHUGenMELA_8F90.html#a005e6e14f42b9caf6895c40b99cacd33", null ],
+    [ "getdecaycouplings", "mod__JHUGenMELA_8F90.html#a72416cea92af2e019f5cefd99b6e2fb1", null ],
+    [ "getmvgv", "mod__JHUGenMELA_8F90.html#a8c1ccc35927de4a9d2d86b687427a82b", null ],
+    [ "getmvprimegvprime", "mod__JHUGenMELA_8F90.html#aa310f1910be1afd3ae4d6aab30d6dc7a", null ],
+    [ "getpdfconstants", "mod__JHUGenMELA_8F90.html#a556b94d45536df1fde8a2320ab4421e6", null ],
+    [ "resetamplitudeincludes", "mod__JHUGenMELA_8F90.html#a597e61e7e80a7a66d2dceb84cb873fd6", null ],
+    [ "resetmubarhgabarh", "mod__JHUGenMELA_8F90.html#a2da743968a2296fb0419a1064d2307e9", null ],
+    [ "setazffcouplings", "mod__JHUGenMELA_8F90.html#af2cd457c578aba3a02c255f14c76b6dc", null ],
+    [ "setdecaymodes", "mod__JHUGenMELA_8F90.html#a6b9060817dbb03c5671f361249c605e8", null ],
+    [ "setdistinguishwwcouplingsflag", "mod__JHUGenMELA_8F90.html#a2b735eae5555dc08803a8401760fd19b", null ],
+    [ "setewparameters", "mod__JHUGenMELA_8F90.html#ab4b6a899f429ae938a7af9397f7afe09", null ],
+    [ "sethdk", "mod__JHUGenMELA_8F90.html#a9769c3bbbdc44022a5d627816918ecd6", null ],
+    [ "sethiggsmasswidth", "mod__JHUGenMELA_8F90.html#a9ed61a32e40bccfb0d2f0898075082be", null ],
+    [ "setmurenfac", "mod__JHUGenMELA_8F90.html#ab4b3ce91f78bd3674a2958b58dc0f08a", null ],
+    [ "setmvgv", "mod__JHUGenMELA_8F90.html#a77f3ae236f5c73ef3f1e74c4848236b7", null ],
+    [ "setmvgvfromvertex", "mod__JHUGenMELA_8F90.html#ab8cca35eff5f9f35d2b22fce53915b8f", null ],
+    [ "setspinonecouplings", "mod__JHUGenMELA_8F90.html#af2167f3e62dbf62492a5cda881c62307", null ],
+    [ "setspintwocouplings", "mod__JHUGenMELA_8F90.html#aca271d14ffa5a062665b987590e10742", null ],
+    [ "setspinzeroggcouplings", "mod__JHUGenMELA_8F90.html#a7545b6f80c24ff883bc920d442fa7498", null ],
+    [ "setspinzeroqqcouplings", "mod__JHUGenMELA_8F90.html#a5880889285cb3a91400dbdc2172a86c0", null ],
+    [ "setspinzerovvcouplings", "mod__JHUGenMELA_8F90.html#acb02d6b339acf17395d8973b79cabb96", null ],
+    [ "settopdecays", "mod__JHUGenMELA_8F90.html#a54907f9370924233b2164387da061463", null ],
+    [ "setvprimecontactcouplings", "mod__JHUGenMELA_8F90.html#a192093db1556466b914577ee44795c55", null ]
+];

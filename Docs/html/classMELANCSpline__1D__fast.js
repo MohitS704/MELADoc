@@ -1,0 +1,25 @@
+var classMELANCSpline__1D__fast =
+[
+    [ "MELANCSpline_1D_fast", "classMELANCSpline__1D__fast.html#a9098e4c7f5283a43a1bac240eeb88fc9", null ],
+    [ "MELANCSpline_1D_fast", "classMELANCSpline__1D__fast.html#af412110455b8e18254ad8d82e296451e", null ],
+    [ "MELANCSpline_1D_fast", "classMELANCSpline__1D__fast.html#a5579fecd1ffef6f2270c923bf9f8dee1", null ],
+    [ "MELANCSpline_1D_fast", "classMELANCSpline__1D__fast.html#ae8f35c7939c050351d70c7a2d18453dd", null ],
+    [ "~MELANCSpline_1D_fast", "classMELANCSpline__1D__fast.html#a9b37b26f6a5107902a3fc20ebd0dac74", null ],
+    [ "analyticalIntegral", "classMELANCSpline__1D__fast.html#ac114dcdbf7ef68ff46acf74e6c6886f4", null ],
+    [ "clone", "classMELANCSpline__1D__fast.html#a753fe8801b3d359e73a0d8bb94314f15", null ],
+    [ "cropValueForRange", "classMELANCSpline__1D__fast.html#ab88b9410a534ab508aeccf38d5f518fd", null ],
+    [ "emptyFcnList", "classMELANCSpline__1D__fast.html#aeda656dab01c7795e1e710ded190e1df", null ],
+    [ "evaluate", "classMELANCSpline__1D__fast.html#a6ad1c31b038d97d53735340494d27afb", null ],
+    [ "getAnalyticalIntegral", "classMELANCSpline__1D__fast.html#a2611a4f9d34d0a657ccefeee3ca1a3f4", null ],
+    [ "getKappas", "classMELANCSpline__1D__fast.html#a2072dd16dcadba22fe77d50c7b3b7fa1", null ],
+    [ "getTVar", "classMELANCSpline__1D__fast.html#a20d422b52d0d76ad8c3d3b0b3ceadee5", null ],
+    [ "getWhichBin", "classMELANCSpline__1D__fast.html#a30d5e03635a1db4c2e9e5f41d07cd911", null ],
+    [ "interpolateFcn", "classMELANCSpline__1D__fast.html#a0289bf60ae925490f713b93c3e7e5018", null ],
+    [ "setRangeValidity", "classMELANCSpline__1D__fast.html#a2623be9cafef13f68d655955e9ca99ab", null ],
+    [ "testRangeValidity", "classMELANCSpline__1D__fast.html#a403ad050d169bd234e137568d422bf3b", null ],
+    [ "bcBeginX", "classMELANCSpline__1D__fast.html#aebe51f523f743b412af4cffa5a7eb462", null ],
+    [ "bcEndX", "classMELANCSpline__1D__fast.html#a249d0d81a4ab3a0564cd3d143271a129", null ],
+    [ "coefficients", "classMELANCSpline__1D__fast.html#a977e61de13d0cdd008cb91a7057e8b06", null ],
+    [ "FcnList", "classMELANCSpline__1D__fast.html#a2a7daacf1ec3d330fabc610dc26da2c9", null ],
+    [ "kappaX", "classMELANCSpline__1D__fast.html#a1babec345a963b49c1ef54d2dcfbc9a3", null ]
+];

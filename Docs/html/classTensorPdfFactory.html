@@ -190,7 +190,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a0643dc0b0c59ce6745155b9e2f2f165d inherit pro_attribs_classSpinPdfFactory"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRooSpin.html">RooSpin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinPdfFactory.html#a0643dc0b0c59ce6745155b9e2f2f165d">PDF_base</a></td></tr>
 <tr class="separator:a0643dc0b0c59ce6745155b9e2f2f165d inherit pro_attribs_classSpinPdfFactory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8h_source.html#l00010">10</a> of file <a class="el" href="TensorPdfFactory_8h_source.html">TensorPdfFactory.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac98d01947bcedc363976f9812d881aee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac98d01947bcedc363976f9812d881aee">&#9670;&nbsp;</a></span>TensorPdfFactory()</h2>
 
@@ -229,6 +232,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00008">8</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                                                                                                                                        :</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="classSpinPdfFactory.html#ad10e24b0b56d547bae5ec802402b5da3">SpinPdfFactory</a>(measurables_, V1decay_, V2decay_, OnshellH_)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classTensorPdfFactory.html#a8b2a93827932cec07770d32239d8d4c4">initGVals</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae870be9cb1724953cb0ffa70cbe5d900"></a>
@@ -254,6 +264,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00014">14</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                   {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="classTensorPdfFactory.html#a2596adececd94f55148acb4d5a715cb8">destroyGVals</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -297,6 +312,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00056">56</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (ig&gt;=(<span class="keywordtype">int</span>)SIZE_GVV || ig&lt;0) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Invalid g&quot;</span> &lt;&lt; ig &lt;&lt; endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[ig][0])-&gt;setVal(initval*cos(iphase));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[ig][1])-&gt;setVal(initval*sin(iphase));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2596adececd94f55148acb4d5a715cb8"></a>
@@ -324,6 +348,19 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classSpinPdfFactory.html#a6147e6a5e94e6d2fa6da43bde3b9e302">SpinPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00044">44</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                   {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v=0; v&lt;(<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)SIZE_GVV; v++){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keyword">delete</span> <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[v][im];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">Lambda</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">f_spinz1</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">delete</span> <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">f_spinz2</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aac6748549318049021bf3b06b4e5fbe7"></a>
@@ -407,6 +444,35 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classSpinPdfFactory.html#a334a54252b5578b5260854498da5e8b1">SpinPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00017">17</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">Lambda</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;Lambda&quot;</span>, <span class="stringliteral">&quot;Lambda&quot;</span>, 1000.);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v=0; v&lt;(<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)SIZE_GVV; v++){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      TString strcore;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordtype">double</span> initval = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      TString strapp = <span class="stringliteral">&quot;Val&quot;</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">if</span> (im==1) strapp.Append(<span class="stringliteral">&quot;Im&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      strapp.Prepend(Form(<span class="stringliteral">&quot;%i&quot;</span>, v+1));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      strcore = <span class="stringliteral">&quot;g&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      strcore.Append(strapp);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      RooRealVar* gVal = <span class="keyword">new</span> RooRealVar(strcore, strcore, initval, -1e15, 1e15);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      gVal-&gt;removeMin();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      gVal-&gt;removeMax();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[v][im] = (RooAbsReal*)gVal;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>=0; <a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>&lt;2; <a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>++){</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    TString strcore = Form(<span class="stringliteral">&quot;f_spinz%i&quot;</span>, <a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>+1);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    RooRealVar* fVal = <span class="keyword">new</span> RooRealVar(strcore, strcore, 0., 0., 1.);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>==0) <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">f_spinz1</a> = (RooRealVar*)fVal;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">f_spinz2</a> = (RooRealVar*)fVal;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaf939302641b43b20d7cf037cd3ea1d2"></a>
@@ -464,6 +530,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classSpinPdfFactory.html#a280c4b121d847bc0e6825ec7d647ffef">SpinPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00078">78</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                   {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">Lambda</a>-&gt;setConstant(<span class="keyword">true</span>); <span class="comment">// The user is not allowed to change this value!</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// Set fqq, fz2</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">f_spinz1</a>-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">f_spinz2</a>-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Set the b decay couplings</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ig=0; ig&lt;(<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)SIZE_GVV; ig++){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span>RooRealVar*<span class="keyword">&gt;</span>(<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[ig][im])!=0) ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[ig][im])-&gt;setConstant(yesNo);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a72ae05add6106a031bb78d3ce1d69106"></a>
@@ -491,6 +573,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classSpinPdfFactory.html#ac6e90c38ce3daa936696fbee0fc135ac">SpinPdfFactory</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00070">70</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                      {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ig=0; ig&lt;(<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>)SIZE_GVV; ig++){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++) ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[ig][im])-&gt;setVal(0.);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">f_spinz1</a>)-&gt;setVal(0.);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">f_spinz2</a>)-&gt;setVal(0.);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8b64df02be5754db5b5f59ecf40c5573"></a>
@@ -527,6 +618,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8cc_source.html#l00063">63</a> of file <a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (ig&gt;2 || ig&lt;=0) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Cannot set f_spinz&quot;</span> &lt;&lt; ig &lt;&lt; <span class="stringliteral">&quot;. Please st f_spinz1 or f_spinz2 only.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (ig==1) ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">f_spinz1</a>)-&gt;setVal(initval);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">else</span> ((RooRealVar*)<a class="code" href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">couplings</a>.<a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">f_spinz2</a>)-&gt;setVal(initval);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -542,13 +642,26 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="TensorPdfFactory_8h_source.html#l00012">12</a> of file <a class="el" href="TensorPdfFactory_8h_source.html">TensorPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>MELA/interface/<a class="el" href="TensorPdfFactory_8h_source.html">TensorPdfFactory.h</a></li>
-<li>MELA/src/<a class="el" href="TensorPdfFactory_8cc.html">TensorPdfFactory.cc</a></li>
+<li>MELA/src/<a class="el" href="TensorPdfFactory_8cc_source.html">TensorPdfFactory.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassTensorPdfFactory_html_a605a71ef2822982c3bd4ae7fc641f341"><div class="ttname"><a href="classTensorPdfFactory.html#a605a71ef2822982c3bd4ae7fc641f341">TensorPdfFactory::couplings</a></div><div class="ttdeci">RooSpinTwo::modelCouplings couplings</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory_8h_source.html#l00012">TensorPdfFactory.h:12</a></div></div>
+<div class="ttc" id="astructRooSpinTwo_1_1modelCouplings_html_a502a3dec26b9952a933432e7e25a4939"><div class="ttname"><a href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">RooSpinTwo::modelCouplings::Lambda</a></div><div class="ttdeci">RooRealVar * Lambda</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00012">RooSpinTwo.h:12</a></div></div>
+<div class="ttc" id="astructRooSpinTwo_1_1modelCouplings_html_a16f9193d7cfafc85a45813731b84cc76"><div class="ttname"><a href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">RooSpinTwo::modelCouplings::f_spinz1</a></div><div class="ttdeci">RooRealVar * f_spinz1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00013">RooSpinTwo.h:13</a></div></div>
+<div class="ttc" id="aclassTensorPdfFactory_html_a8b2a93827932cec07770d32239d8d4c4"><div class="ttname"><a href="classTensorPdfFactory.html#a8b2a93827932cec07770d32239d8d4c4">TensorPdfFactory::initGVals</a></div><div class="ttdeci">virtual void initGVals()</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory_8cc_source.html#l00017">TensorPdfFactory.cc:17</a></div></div>
+<div class="ttc" id="astructRooSpinTwo_1_1modelCouplings_html_a95812538dbe5ca992085263732f91738"><div class="ttname"><a href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">RooSpinTwo::modelCouplings::f_spinz2</a></div><div class="ttdeci">RooRealVar * f_spinz2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00014">RooSpinTwo.h:14</a></div></div>
+<div class="ttc" id="anamespacemodttbhiggs_html_adad982f9354a9487600f7cc5dbc4123c"><div class="ttname"><a href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">modttbhiggs::f</a></div><div class="ttdeci">recursive complex(8) function, dimension(size(sp)) f(e, k, sp, p, mass, flout, flin, ms)</div><div class="ttdef"><b>Definition:</b> <a href="mod__TTBHiggs_8F90_source.html#l01783">mod_TTBHiggs.F90:1783</a></div></div>
+<div class="ttc" id="aclassSpinPdfFactory_html_ad10e24b0b56d547bae5ec802402b5da3"><div class="ttname"><a href="classSpinPdfFactory.html#ad10e24b0b56d547bae5ec802402b5da3">SpinPdfFactory::SpinPdfFactory</a></div><div class="ttdeci">SpinPdfFactory(RooSpin::modelMeasurables const &amp;measurables_, RooSpin::VdecayType V1decay_=RooSpin::kVdecayType_Zll, RooSpin::VdecayType V2decay_=RooSpin::kVdecayType_Zll, Bool_t OnshellH_=true)</div><div class="ttdef"><b>Definition:</b> <a href="SpinPdfFactory_8cc_source.html#l00008">SpinPdfFactory.cc:8</a></div></div>
+<div class="ttc" id="anamespacetestME__all_html_a2f9c5cba6551dc41bae400ced29c30b3"><div class="ttname"><a href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">testME_all.int</a></div><div class="ttdeci">int</div><div class="ttdef"><b>Definition:</b> <a href="testME__all_8py_source.html#l00013">testME_all.py:13</a></div></div>
+<div class="ttc" id="aclassTensorPdfFactory_html_a2596adececd94f55148acb4d5a715cb8"><div class="ttname"><a href="classTensorPdfFactory.html#a2596adececd94f55148acb4d5a715cb8">TensorPdfFactory::destroyGVals</a></div><div class="ttdeci">virtual void destroyGVals()</div><div class="ttdef"><b>Definition:</b> <a href="TensorPdfFactory_8cc_source.html#l00044">TensorPdfFactory.cc:44</a></div></div>
+<div class="ttc" id="anamespaceMELAStreamHelpers_html_a48e6b604de686a3c2033bdcf75c51f6f"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAStreamHelpers::MELAerr</a></div><div class="ttdeci">MELAOutputStreamer MELAerr</div></div>
+<div class="ttc" id="astructRooSpinTwo_1_1modelCouplings_html_a779cb1fc5486bccaf0c1a3a616e73e95"><div class="ttname"><a href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">RooSpinTwo::modelCouplings::bList</a></div><div class="ttdeci">RooAbsReal * bList[SIZE_GVV][2]</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00011">RooSpinTwo.h:11</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

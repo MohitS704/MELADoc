@@ -74,183 +74,1876 @@ subroutine \mbox{\hyperlink{namespacemodkinematics_a15b6e7c46d44f3005565f892393b
 \doxysubsubsection{\texorpdfstring{boost2lab()}{boost2lab()}}
 {\footnotesize\ttfamily subroutine modkinematics\+::boost2lab (\begin{DoxyParamCaption}\item[{real(8)}]{x1,  }\item[{real(8)}]{x2,  }\item[{integer}]{Num\+Part,  }\item[{real(8), dimension(1\+:4,1\+:numpart)}]{Mom }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1099 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1099 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1100 \textcolor{keywordtype}{real}(8) Mom(1:4,1:NumPart)}
+\DoxyCodeLine{1101 \textcolor{keywordtype}{real}(8) x1,x2}
+\DoxyCodeLine{1102 \textcolor{keywordtype}{real}(8) gamma,betagamma,MomTmp1,MomTmp4}
+\DoxyCodeLine{1103 \textcolor{keywordtype}{integer} :: i,NumPart}
+\DoxyCodeLine{1104 }
+\DoxyCodeLine{1105   gamma     = (x1+x2)/2d0/dsqrt(x1*x2)}
+\DoxyCodeLine{1106   betagamma = (x2-\/x1)/2d0/dsqrt(x1*x2)}
+\DoxyCodeLine{1107 }
+\DoxyCodeLine{1108   \textcolor{keywordflow}{do} i=1,numpart}
+\DoxyCodeLine{1109       momtmp1=mom(1,i)}
+\DoxyCodeLine{1110       momtmp4=mom(4,i)}
+\DoxyCodeLine{1111       mom(1,i)= gamma*momtmp1 -\/ betagamma*momtmp4}
+\DoxyCodeLine{1112       mom(4,i)= gamma*momtmp4 -\/ betagamma*momtmp1}
+\DoxyCodeLine{1113 \textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{1114 }
+\DoxyCodeLine{1115 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a15b6e7c46d44f3005565f892393bdeef}\label{namespacemodkinematics_a15b6e7c46d44f3005565f892393bdeef}} 
 \index{modkinematics@{modkinematics}!cteq6@{cteq6}}
 \index{cteq6@{cteq6}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{cteq6()}{cteq6()}}
 {\footnotesize\ttfamily subroutine modkinematics\+::cteq6 (\begin{DoxyParamCaption}\item[{double precision}]{X,  }\item[{double precision}]{S\+C\+A\+LE,  }\item[{double precision}]{U\+PV,  }\item[{double precision}]{D\+NV,  }\item[{double precision}]{U\+S\+EA,  }\item[{double precision}]{D\+S\+EA,  }\item[{double precision}]{S\+TR,  }\item[{double precision}]{C\+HM,  }\item[{double precision}]{B\+OT,  }\item[{double precision}]{G\+LU }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1552 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1552 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1553 \textcolor{keywordtype}{double precision} X,SCALE,UPV,DNV,USEA,DSEA,STR,CHM,BOT,GLU}
+\DoxyCodeLine{1554 \textcolor{keywordtype}{double precision} Q,xsave,qsave,Ctq6Pdf,D,U}
+\DoxyCodeLine{1555 }
+\DoxyCodeLine{1556          q=scale}
+\DoxyCodeLine{1557          xsave=x}
+\DoxyCodeLine{1558          qsave=q}
+\DoxyCodeLine{1559          u =         ctq6pdf(1,x,q)}
+\DoxyCodeLine{1560          d =         ctq6pdf(2,x,q)}
+\DoxyCodeLine{1561          usea =      ctq6pdf(-\/1,x,q)}
+\DoxyCodeLine{1562          dsea =      ctq6pdf(-\/2,x,q)}
+\DoxyCodeLine{1563          str =       ctq6pdf(3,x,q)}
+\DoxyCodeLine{1564          chm =       ctq6pdf(4,x,q)}
+\DoxyCodeLine{1565          bot =       ctq6pdf(5,x,q)}
+\DoxyCodeLine{1566          glu  =      ctq6pdf(0,x,q)}
+\DoxyCodeLine{1567          upv=u-\/usea}
+\DoxyCodeLine{1568          dnv=d-\/dsea}
+\DoxyCodeLine{1569          x=xsave}
+\DoxyCodeLine{1570          q=qsave}
+\DoxyCodeLine{1571 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_ae1328aa5e196dad5aac5815ee0b66825}\label{namespacemodkinematics_ae1328aa5e196dad5aac5815ee0b66825}} 
 \index{modkinematics@{modkinematics}!getbwpropagator@{getbwpropagator}}
 \index{getbwpropagator@{getbwpropagator}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{getbwpropagator()}{getbwpropagator()}}
 {\footnotesize\ttfamily real(8) function, public modkinematics\+::getbwpropagator (\begin{DoxyParamCaption}\item[{real(8)}]{s\+Hat,  }\item[{integer}]{scheme }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1018 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1018 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{1019 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{1020 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1021 \textcolor{keywordtype}{real}(8) :: GetBWPropagator,sHat}
+\DoxyCodeLine{1022 \textcolor{keywordtype}{real}(8) :: mhb, ghb, BigGamma}
+\DoxyCodeLine{1023 \textcolor{keywordtype}{integer} :: scheme}
+\DoxyCodeLine{1024 \textcolor{keywordtype}{double precision} decayMass, qqq, qqq0}
+\DoxyCodeLine{1025 }
+\DoxyCodeLine{1026     \textcolor{keywordflow}{if}( scheme.eq.1 ) then\textcolor{comment}{! running width}}
+\DoxyCodeLine{1027         getbwpropagator =  1d0/( (shat-\/\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}**2)**2 + (shat*\mbox{\hyperlink{namespacemodparameters_afd0769e0757dc854a98a544d9810eade}{ga\_reso}}/\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}})**2 )}
+\DoxyCodeLine{1028     \textcolor{keywordflow}{elseif}( scheme.eq.2 ) then\textcolor{comment}{! fixed width}}
+\DoxyCodeLine{1029         getbwpropagator = 1d0/( (shat-\/\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}**2)**2 + (\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}*\mbox{\hyperlink{namespacemodparameters_afd0769e0757dc854a98a544d9810eade}{ga\_reso}})**2 )}
+\DoxyCodeLine{1030     \textcolor{keywordflow}{elseif}( scheme.eq.3 ) then\textcolor{comment}{! Passarino's CPS}}
+\DoxyCodeLine{1031         \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}}.lt.0d0 .or. \mbox{\hyperlink{namespacemodparameters_abb80020a6846b9eca1a1ba3ad58b8369}{gabarh}}.lt.0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1032           \textcolor{keyword}{call }\mbox{\hyperlink{CALLING__cpHTO_8f_ad1513038b5ac660f269a101b3734964d}{call\_hto}}(\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}/\mbox{\hyperlink{namespacemodparameters_a3c6f884d6dfc2f867b3f27f558b9dfb5}{gev}}, \mbox{\hyperlink{namespacemodparameters_a617a0be2ae212a7a0a5e93a2ad5e4cb5}{m\_top}}/\mbox{\hyperlink{namespacemodparameters_a3c6f884d6dfc2f867b3f27f558b9dfb5}{gev}}, mhb, ghb)}
+\DoxyCodeLine{1033           \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodmisc_aec88f7154cdc627bd8c823597a684073}{isnan}}(\mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}}).or.\mbox{\hyperlink{namespacemodmisc_aec88f7154cdc627bd8c823597a684073}{isnan}}(\mbox{\hyperlink{namespacemodparameters_abb80020a6846b9eca1a1ba3ad58b8369}{gabarh}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1034             print *, \textcolor{stringliteral}{"Passarino's CALL\_HTO returned a NaN"}}
+\DoxyCodeLine{1035             print *, \textcolor{stringliteral}{"(gabarH,Ehat)"},\mbox{\hyperlink{namespacemodparameters_abb80020a6846b9eca1a1ba3ad58b8369}{gabarh}},dsqrt(dabs(shat))/\mbox{\hyperlink{namespacemodparameters_a3c6f884d6dfc2f867b3f27f558b9dfb5}{gev}}}
+\DoxyCodeLine{1036             stop 1}
+\DoxyCodeLine{1037             \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1038 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{1039           mhb = mhb*\mbox{\hyperlink{namespacemodparameters_a3c6f884d6dfc2f867b3f27f558b9dfb5}{gev}}}
+\DoxyCodeLine{1040           ghb = ghb*\mbox{\hyperlink{namespacemodparameters_a3c6f884d6dfc2f867b3f27f558b9dfb5}{gev}}}
+\DoxyCodeLine{1041 }
+\DoxyCodeLine{1042           \mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}} = sqrt(mhb**2/(1d0+(ghb/mhb)**2))}
+\DoxyCodeLine{1043           \mbox{\hyperlink{namespacemodparameters_abb80020a6846b9eca1a1ba3ad58b8369}{gabarh}} = \mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}}/mhb*ghb}
+\DoxyCodeLine{1044 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{1045 }
+\DoxyCodeLine{1046         getbwpropagator = 1d0/( (shat-\/\mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}}**2)**2 + (\mbox{\hyperlink{namespacemodparameters_a2170651d92fe18642495b733ad5cd48c}{mubarh}}*\mbox{\hyperlink{namespacemodparameters_abb80020a6846b9eca1a1ba3ad58b8369}{gabarh}})**2 )}
+\DoxyCodeLine{1047 }
+\DoxyCodeLine{1048         \textcolor{comment}{!call HTO\_gridHt(dsqrt(dabs(sHat))/GeV,BigGamma)}}
+\DoxyCodeLine{1049         \textcolor{comment}{!BigGamma = BigGamma*GeV}}
+\DoxyCodeLine{1050 }
+\DoxyCodeLine{1051         \textcolor{comment}{!print *, dsqrt(dabs(sHat))/GeV, gabarH/GeV, BigGamma/GeV}}
+\DoxyCodeLine{1052     \textcolor{keywordflow}{elseif}( scheme.eq.4) \textcolor{keywordflow}{then} \textcolor{comment}{!alternate running width}}
+\DoxyCodeLine{1053         \textcolor{keywordflow}{if} ( \mbox{\hyperlink{namespacemodparameters_ae598e8880f4a32df8ac0bd1e5e6eb9b3}{m\_zprime}}.ne.-\/1 ) \textcolor{keywordflow}{then} \textcolor{comment}{!if you're using ZPrime then it will consider the ZPrime mass}}
+\DoxyCodeLine{1054             decaymass = \mbox{\hyperlink{namespacemodparameters_ae598e8880f4a32df8ac0bd1e5e6eb9b3}{m\_zprime}}}
+\DoxyCodeLine{1055         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1056             decaymass = \mbox{\hyperlink{namespacemodparameters_ac4ffa11251ddf5cccc129abe4dee0f0a}{m\_z}} \textcolor{comment}{!if you're doing Z-\/ZPrime stuff this scheme won't work anyways so the point is moot}}
+\DoxyCodeLine{1057 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{1058         \textcolor{comment}{! PRINT *, decayMass, decayMass**2, sHat, 0.25d0*sHat, M\_Reso, 0.25d0*M\_Reso**2}}
+\DoxyCodeLine{1059         \textcolor{keywordflow}{if}(0.25d0*(shat) < decaymass**2) \textcolor{keywordflow}{then} \textcolor{comment}{!sHat is the mass squared!}}
+\DoxyCodeLine{1060             qqq = 0}
+\DoxyCodeLine{1061         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1062             qqq = sqrt(0.25d0*(shat) -\/ decaymass**2)}
+\DoxyCodeLine{1063 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{1064         qqq0=sqrt(0.25d0*(\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}**2) -\/ decaymass**2)}
+\DoxyCodeLine{1065         getbwpropagator =  1d0/( (shat-\/\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}**2)**2 + (\mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}*\mbox{\hyperlink{namespacemodparameters_afd0769e0757dc854a98a544d9810eade}{ga\_reso}}*qqq/qqq0)**2 ) \textcolor{comment}{!new style running width}}
+\DoxyCodeLine{1066     \textcolor{keywordflow}{elseif}( scheme.eq.0 ) \textcolor{keywordflow}{then}  \textcolor{comment}{!remove the propagator completely}}
+\DoxyCodeLine{1067         getbwpropagator = 1d0}
+\DoxyCodeLine{1068     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1069         print *, \textcolor{stringliteral}{"Invalid scheme: "}, scheme}
+\DoxyCodeLine{1070         stop 1}
+\DoxyCodeLine{1071 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1072 }
+\DoxyCodeLine{1073 }
+\DoxyCodeLine{1074 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a34b2409b37a901584fe2ef4429c71061}\label{namespacemodkinematics_a34b2409b37a901584fe2ef4429c71061}} 
 \index{modkinematics@{modkinematics}!getckmpartner@{getckmpartner}}
 \index{getckmpartner@{getckmpartner}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{getckmpartner()}{getckmpartner()}}
 {\footnotesize\ttfamily integer function modkinematics\+::getckmpartner (\begin{DoxyParamCaption}\item[{integer}]{Flavor }\end{DoxyParamCaption})}
 
+
+
+Definition at line 824 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{824 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{825 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{826 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{827 \textcolor{keywordtype}{integer} :: Flavor,GetCKMPartner}
+\DoxyCodeLine{828 \textcolor{keywordtype}{real}(8) :: FlavorRnd,sumCKM,Vsq(1:3)}
+\DoxyCodeLine{829 }
+\DoxyCodeLine{830     \textcolor{keyword}{call }random\_number(flavorrnd)}
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832 }
+\DoxyCodeLine{833     \textcolor{keywordflow}{if}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{834         vsq(1) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})) ))**2}
+\DoxyCodeLine{835         vsq(2) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})) ))**2}
+\DoxyCodeLine{836         vsq(3) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})) ))**2}
+\DoxyCodeLine{837         vsq(:) = vsq(:)/\mbox{\hyperlink{namespacemodparameters_a115f16bcc32316a6d74db3f997c922c6}{scale\_alpha\_w\_ud}}}
+\DoxyCodeLine{838 }
+\DoxyCodeLine{839         sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{840         flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(1) ) then\textcolor{comment}{!  u-\/-\/>d}}
+\DoxyCodeLine{843            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})}
+\DoxyCodeLine{844         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(1)) ) then\textcolor{comment}{!  u-\/-\/>s}}
+\DoxyCodeLine{845            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})}
+\DoxyCodeLine{846         else\textcolor{comment}{!  u-\/-\/>b}}
+\DoxyCodeLine{847            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})}
+\DoxyCodeLine{848 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{849 }
+\DoxyCodeLine{850     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{851         vsq(1) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})) ))**2}
+\DoxyCodeLine{852         vsq(2) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})) ))**2}
+\DoxyCodeLine{853         vsq(3) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})) ))**2}
+\DoxyCodeLine{854         vsq(:) = vsq(:)/\mbox{\hyperlink{namespacemodparameters_aa098304dcabbd63f64b7bdc48e68e2a8}{scale\_alpha\_w\_cs}}}
+\DoxyCodeLine{855 }
+\DoxyCodeLine{856         sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{857         flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{858 }
+\DoxyCodeLine{859         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(2) ) then\textcolor{comment}{!  c-\/-\/>s}}
+\DoxyCodeLine{860            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})}
+\DoxyCodeLine{861         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(1)+vsq(2)) ) then\textcolor{comment}{!  c-\/-\/>d}}
+\DoxyCodeLine{862            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})}
+\DoxyCodeLine{863         else\textcolor{comment}{!  c-\/-\/>b}}
+\DoxyCodeLine{864            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})}
+\DoxyCodeLine{865 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{866 }
+\DoxyCodeLine{867     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{868         vsq(1) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})) ))**2}
+\DoxyCodeLine{869         vsq(2) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})) ))**2}
+\DoxyCodeLine{870         vsq(3) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})) ))**2}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872         sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{873         flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{874 }
+\DoxyCodeLine{875         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(3) ) then\textcolor{comment}{!  t-\/-\/>b}}
+\DoxyCodeLine{876            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})}
+\DoxyCodeLine{877         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(3)) ) then\textcolor{comment}{!  t-\/-\/>s}}
+\DoxyCodeLine{878            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})}
+\DoxyCodeLine{879         else\textcolor{comment}{!  t-\/-\/>d}}
+\DoxyCodeLine{880            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})}
+\DoxyCodeLine{881 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{882 }
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{885         vsq(1) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})) ))**2}
+\DoxyCodeLine{886         vsq(2) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})) ))**2}
+\DoxyCodeLine{887         vsq(3) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})) ))**2}
+\DoxyCodeLine{888         vsq(:) = vsq(:)/\mbox{\hyperlink{namespacemodparameters_a115f16bcc32316a6d74db3f997c922c6}{scale\_alpha\_w\_ud}}}
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890         sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{891         flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{892 }
+\DoxyCodeLine{893         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(1) ) then\textcolor{comment}{!  d-\/-\/>u}}
+\DoxyCodeLine{894            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})}
+\DoxyCodeLine{895         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(1)) ) then\textcolor{comment}{!  d-\/-\/>c}}
+\DoxyCodeLine{896            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})}
+\DoxyCodeLine{897         else\textcolor{comment}{!  d-\/-\/>t}}
+\DoxyCodeLine{898            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})}
+\DoxyCodeLine{899 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{900 }
+\DoxyCodeLine{901     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{902         vsq(1) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})) ))**2}
+\DoxyCodeLine{903         vsq(2) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})) ))**2}
+\DoxyCodeLine{904         vsq(3) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})) ))**2}
+\DoxyCodeLine{905         vsq(:) = vsq(:)/\mbox{\hyperlink{namespacemodparameters_aa098304dcabbd63f64b7bdc48e68e2a8}{scale\_alpha\_w\_cs}}}
+\DoxyCodeLine{906 }
+\DoxyCodeLine{907         sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{908         flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{909 }
+\DoxyCodeLine{910         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(2) ) then\textcolor{comment}{!  s-\/-\/>c}}
+\DoxyCodeLine{911            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})}
+\DoxyCodeLine{912         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(1)+vsq(2)) ) then\textcolor{comment}{!  s-\/-\/>u}}
+\DoxyCodeLine{913            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})}
+\DoxyCodeLine{914         else\textcolor{comment}{!  s-\/-\/>t}}
+\DoxyCodeLine{915            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})}
+\DoxyCodeLine{916 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{919         vsq(1) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})) ))**2}
+\DoxyCodeLine{920         vsq(2) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})) ))**2}
+\DoxyCodeLine{921         vsq(3) = (\mbox{\hyperlink{namespacemodparameters_a87662aacc869c66e2704bbe1a692d460}{ckm}}( \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(flavor)), \mbox{\hyperlink{namespacemodparameters_a9fc8ffda4a5564fa55ef047315eba4c5}{convertlhereverse}}(abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})) ))**2}
+\DoxyCodeLine{922 }
+\DoxyCodeLine{923         sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{924         flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{925 }
+\DoxyCodeLine{926         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(3) ) then\textcolor{comment}{!  b-\/-\/>t}}
+\DoxyCodeLine{927            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})}
+\DoxyCodeLine{928         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(3)) ) then\textcolor{comment}{!  b-\/-\/>c}}
+\DoxyCodeLine{929            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})}
+\DoxyCodeLine{930         else\textcolor{comment}{!  b -\/-\/>u}}
+\DoxyCodeLine{931            getckmpartner = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})}
+\DoxyCodeLine{932 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{933 }
+\DoxyCodeLine{934     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{935         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"Dn flavor conversion not yet implemented"})}
+\DoxyCodeLine{936 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{937 }
+\DoxyCodeLine{938 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a4e79aef3b6a0771bc6f16b9d96d87fa5}\label{namespacemodkinematics_a4e79aef3b6a0771bc6f16b9d96d87fa5}} 
 \index{modkinematics@{modkinematics}!getckmpartner\_flat@{getckmpartner\_flat}}
 \index{getckmpartner\_flat@{getckmpartner\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{getckmpartner\_flat()}{getckmpartner\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::getckmpartner\+\_\+flat (\begin{DoxyParamCaption}\item[{integer}]{Flavor }\end{DoxyParamCaption})}
 
+
+
+Definition at line 942 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{942 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{943 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{944 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{945 \textcolor{keywordtype}{integer} :: Flavor,GetCKMPartner\_flat}
+\DoxyCodeLine{946 \textcolor{keywordtype}{real}(8) :: FlavorRnd,sumCKM,Vsq(1:3)}
+\DoxyCodeLine{947 }
+\DoxyCodeLine{948     \textcolor{keyword}{call }random\_number(flavorrnd)}
+\DoxyCodeLine{949     vsq(:) = 1d0}
+\DoxyCodeLine{950     sumckm = vsq(1)+vsq(2)+vsq(3)}
+\DoxyCodeLine{951     flavorrnd = flavorrnd*sumckm}
+\DoxyCodeLine{952 }
+\DoxyCodeLine{953     \textcolor{keywordflow}{if}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{954         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(1) ) then\textcolor{comment}{!  u-\/-\/>d}}
+\DoxyCodeLine{955            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})}
+\DoxyCodeLine{956         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(1)) ) then\textcolor{comment}{!  u-\/-\/>s}}
+\DoxyCodeLine{957            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})}
+\DoxyCodeLine{958         else\textcolor{comment}{!  u-\/-\/>b}}
+\DoxyCodeLine{959            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})}
+\DoxyCodeLine{960 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{961 }
+\DoxyCodeLine{962     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{963         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(2) ) then\textcolor{comment}{!  c-\/-\/>s}}
+\DoxyCodeLine{964            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})}
+\DoxyCodeLine{965         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(1)+vsq(2)) ) then\textcolor{comment}{!  c-\/-\/>d}}
+\DoxyCodeLine{966            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})}
+\DoxyCodeLine{967         else\textcolor{comment}{!  c-\/-\/>b}}
+\DoxyCodeLine{968            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})}
+\DoxyCodeLine{969 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{970 }
+\DoxyCodeLine{971     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{972         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(3) ) then\textcolor{comment}{!  t-\/-\/>b}}
+\DoxyCodeLine{973            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}})}
+\DoxyCodeLine{974         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(3)) ) then\textcolor{comment}{!  t-\/-\/>s}}
+\DoxyCodeLine{975            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}})}
+\DoxyCodeLine{976         else\textcolor{comment}{!  t-\/-\/>d}}
+\DoxyCodeLine{977            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}})}
+\DoxyCodeLine{978 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{979 }
+\DoxyCodeLine{980 }
+\DoxyCodeLine{981     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{982         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(1) ) then\textcolor{comment}{!  d-\/-\/>u}}
+\DoxyCodeLine{983            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})}
+\DoxyCodeLine{984         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(1)) ) then\textcolor{comment}{!  d-\/-\/>c}}
+\DoxyCodeLine{985            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})}
+\DoxyCodeLine{986         else\textcolor{comment}{!  d-\/-\/>t}}
+\DoxyCodeLine{987            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})}
+\DoxyCodeLine{988 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{989 }
+\DoxyCodeLine{990     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{991         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(2) ) then\textcolor{comment}{!  s-\/-\/>c}}
+\DoxyCodeLine{992            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})}
+\DoxyCodeLine{993         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(1)+vsq(2)) ) then\textcolor{comment}{!  s-\/-\/>u}}
+\DoxyCodeLine{994            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})}
+\DoxyCodeLine{995         else\textcolor{comment}{!  s-\/-\/>t}}
+\DoxyCodeLine{996            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})}
+\DoxyCodeLine{997 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{998 }
+\DoxyCodeLine{999     \textcolor{keywordflow}{elseif}( abs(flavor).eq.abs(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1000         \textcolor{keywordflow}{if}( flavorrnd.le.vsq(3) ) then\textcolor{comment}{!  b-\/-\/>t}}
+\DoxyCodeLine{1001            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a21c2b3e867fc3ebd0baf1d5861b65af2}{top\_}})}
+\DoxyCodeLine{1002         \textcolor{keywordflow}{elseif}( flavorrnd.le.(vsq(2)+vsq(3)) ) then\textcolor{comment}{!  b-\/-\/>c}}
+\DoxyCodeLine{1003            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}})}
+\DoxyCodeLine{1004         else\textcolor{comment}{!  b -\/-\/>u}}
+\DoxyCodeLine{1005            getckmpartner\_flat = -\/sign(1,flavor) * abs(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}})}
+\DoxyCodeLine{1006 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{1007 }
+\DoxyCodeLine{1008     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1009         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"Dn flavor conversion not yet implemented"})}
+\DoxyCodeLine{1010 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{1011 }
+\DoxyCodeLine{1012 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a094ac37cdd50d55addcf65cbb41929c2}\label{namespacemodkinematics_a094ac37cdd50d55addcf65cbb41929c2}} 
 \index{modkinematics@{modkinematics}!kronecker\_delta@{kronecker\_delta}}
 \index{kronecker\_delta@{kronecker\_delta}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{kronecker\_delta()}{kronecker\_delta()}}
 {\footnotesize\ttfamily double precision function modkinematics\+::kronecker\+\_\+delta (\begin{DoxyParamCaption}\item[{integer}]{i,  }\item[{integer}]{j }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1179 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1179       \textcolor{keywordtype}{integer} i,j}
+\DoxyCodeLine{1180       \textcolor{keywordflow}{if}(i.eq.j)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{1181         \mbox{\hyperlink{namespacemodkinematics_a094ac37cdd50d55addcf65cbb41929c2}{kronecker\_delta}} = 1d0}
+\DoxyCodeLine{1182       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1183         \mbox{\hyperlink{namespacemodkinematics_a094ac37cdd50d55addcf65cbb41929c2}{kronecker\_delta}} = 0d0}
+\DoxyCodeLine{1184 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1185 }
+\DoxyCodeLine{1186       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_aa371cab96a7ac645091e90cca06d57cd}\label{namespacemodkinematics_aa371cab96a7ac645091e90cca06d57cd}} 
 \index{modkinematics@{modkinematics}!lorentz@{lorentz}}
 \index{lorentz@{lorentz}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{lorentz()}{lorentz()}}
 {\footnotesize\ttfamily subroutine modkinematics\+::lorentz (\begin{DoxyParamCaption}\item[{double precision, dimension(4)}]{vector,  }\item[{double precision, dimension(4)}]{boost }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1126 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1126 }
+\DoxyCodeLine{1127       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1128 }
+\DoxyCodeLine{1129       \textcolor{keywordtype}{double precision} vector(4), boost(4)}
+\DoxyCodeLine{1130       \textcolor{keywordtype}{double precision} lambdaMtrx(4,4), vector\_copy(4)}
+\DoxyCodeLine{1131       \textcolor{keywordtype}{double precision} beta(2:4), beta\_sq, gamma}
+\DoxyCodeLine{1132       \textcolor{keywordtype}{integer} i,j}
+\DoxyCodeLine{1133       \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{parameter} :: epsilon = 1d-\/13 \textcolor{comment}{!a small quantity slightly above machine precision}}
+\DoxyCodeLine{1134 }
+\DoxyCodeLine{1135 \textcolor{comment}{!      double precision KRONECKER\_DELTA}}
+\DoxyCodeLine{1136 \textcolor{comment}{!      external KRONECKER\_DELTA}}
+\DoxyCodeLine{1137 }
+\DoxyCodeLine{1138       \textcolor{keywordflow}{do} i=2,4}
+\DoxyCodeLine{1139         beta(i) = boost(i)/boost(1)}
+\DoxyCodeLine{1140 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1141 }
+\DoxyCodeLine{1142       beta\_sq = beta(2)**2+beta(3)**2+beta(4)**2}
+\DoxyCodeLine{1143 }
+\DoxyCodeLine{1144   \textcolor{keywordflow}{if}(beta\_sq.ge.epsilon)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{1145 }
+\DoxyCodeLine{1146       gamma = 1d0/dsqrt(1d0-\/beta\_sq)}
+\DoxyCodeLine{1147 }
+\DoxyCodeLine{1148       lambdamtrx(1,1) = gamma}
+\DoxyCodeLine{1149 }
+\DoxyCodeLine{1150       \textcolor{keywordflow}{do} i=2,4}
+\DoxyCodeLine{1151         lambdamtrx(1,i) = gamma*beta(i)}
+\DoxyCodeLine{1152         lambdamtrx(i,1) = lambdamtrx(1,i)}
+\DoxyCodeLine{1153 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1154 }
+\DoxyCodeLine{1155       \textcolor{keywordflow}{do} i=2,4}
+\DoxyCodeLine{1156       \textcolor{keywordflow}{do} j=2,4}
+\DoxyCodeLine{1157         lambdamtrx(i,j) = (gamma-\/1d0)*beta(i)*beta(j)/beta\_sq + \mbox{\hyperlink{namespacemodkinematics_a094ac37cdd50d55addcf65cbb41929c2}{kronecker\_delta}}\textcolor{comment}{(i,j)}}
+\DoxyCodeLine{1158 \textcolor{comment}{}\textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1159 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1160 }
+\DoxyCodeLine{1161 }
+\DoxyCodeLine{1162 \textcolor{comment}{!apply boost to vector1}}
+\DoxyCodeLine{1163       vector\_copy = vector}
+\DoxyCodeLine{1164       vector = 0d0}
+\DoxyCodeLine{1165       \textcolor{keywordflow}{do} i=1,4}
+\DoxyCodeLine{1166       \textcolor{keywordflow}{do} j=1,4}
+\DoxyCodeLine{1167         vector(i) = vector(i) + lambdamtrx(i,j)*vector\_copy(j)}
+\DoxyCodeLine{1168 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1169 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{1170 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{1171 }
+\DoxyCodeLine{1172       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_ae22f510261dbbc1c304af8163126c413}\label{namespacemodkinematics_ae22f510261dbbc1c304af8163126c413}} 
 \index{modkinematics@{modkinematics}!reweightbwpropagator@{reweightbwpropagator}}
 \index{reweightbwpropagator@{reweightbwpropagator}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{reweightbwpropagator()}{reweightbwpropagator()}}
 {\footnotesize\ttfamily real(8) function, public modkinematics\+::reweightbwpropagator (\begin{DoxyParamCaption}\item[{real(8)}]{s\+Hat }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1078 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1078 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{1079 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{1080 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1081 \textcolor{keywordtype}{real}(8) :: ReweightBWPropagator,sHat}
+\DoxyCodeLine{1082 \textcolor{keywordtype}{real}(8) :: BreitWigner,BreitWigner\_Run}
+\DoxyCodeLine{1083 }
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1085      reweightbwpropagator = 1d0}
+\DoxyCodeLine{1086      breitwigner = getbwpropagator(shat, 2)}
+\DoxyCodeLine{1087      breitwigner\_run = getbwpropagator(shat, \mbox{\hyperlink{namespacemodparameters_aed2649fb95a37557de2ea0c9aa67c06b}{widthscheme}})}
+\DoxyCodeLine{1088 }
+\DoxyCodeLine{1089     reweightbwpropagator = breitwigner\_run/breitwigner}
+\DoxyCodeLine{1090 }
+\DoxyCodeLine{1091 }
+\DoxyCodeLine{1092 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_ab1c80d44878473b48f7ac3384b1b1677}\label{namespacemodkinematics_ab1c80d44878473b48f7ac3384b1b1677}} 
 \index{modkinematics@{modkinematics}!setpdfs@{setpdfs}}
 \index{setpdfs@{setpdfs}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{setpdfs()}{setpdfs()}}
 {\footnotesize\ttfamily subroutine, public modkinematics\+::setpdfs (\begin{DoxyParamCaption}\item[{real(8)}]{x1,  }\item[{real(8)}]{x2,  }\item[{real(8), dimension(-\/6\+:6,1\+:2)}]{pdf }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1344 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1344 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{1345 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1346 \textcolor{keywordtype}{real}(8) :: x1,x2,PDFScale}
+\DoxyCodeLine{1347 \textcolor{keywordtype}{real}(8) :: upv(1:2),dnv(1:2),usea(1:2),dsea(1:2),str(1:2),chm(1:2),bot(1:2),glu(1:2),phot(1:2),sbar(1:2),cbar(1:2),bbar(1:2)}
+\DoxyCodeLine{1348 \textcolor{keywordtype}{integer},\textcolor{keywordtype}{parameter} :: swPDF\_u=1, swpdf\_d=1, swpdf\_c=1, swpdf\_s=1, swpdf\_b=1, swpdf\_g=1}
+\DoxyCodeLine{1349 \textcolor{keywordtype}{real}(8) :: pdf(-\/6:6,1:2),NNpdf(1:2,-\/6:7)}
+\DoxyCodeLine{1350 }
+\DoxyCodeLine{1351         pdfscale=\mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}}/\mbox{\hyperlink{namespacemodparameters_a3c6f884d6dfc2f867b3f27f558b9dfb5}{gev}}}
+\DoxyCodeLine{1352         pdf(:,:) = 0d0}
+\DoxyCodeLine{1353 }
+\DoxyCodeLine{1354 \textcolor{preprocessor}{\#if useLHAPDF==1}}
+\DoxyCodeLine{1355 \textcolor{preprocessor}{}        \textcolor{keyword}{call }evolvepdf(x1,pdfscale,nnpdf(1,-\/6:7))}
+\DoxyCodeLine{1356         \textcolor{keyword}{call }evolvepdf(x2,pdfscale,nnpdf(2,-\/6:7))}
+\DoxyCodeLine{1357             nnpdf(1,-\/6:7) = nnpdf(1,-\/6:7)/x1}
+\DoxyCodeLine{1358             nnpdf(2,-\/6:7) = nnpdf(2,-\/6:7)/x2}
+\DoxyCodeLine{1359 }
+\DoxyCodeLine{1360             pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},1)   = nnpdf(1,+2)         * swpdf\_u}
+\DoxyCodeLine{1361             pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},1)  = nnpdf(1,-\/2)         * swpdf\_u}
+\DoxyCodeLine{1362             pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},1)   = nnpdf(1,+1)         * swpdf\_d}
+\DoxyCodeLine{1363             pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},1)  = nnpdf(1,-\/1)         * swpdf\_d}
+\DoxyCodeLine{1364             pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},1)  = nnpdf(1,+4)         * swpdf\_c}
+\DoxyCodeLine{1365             pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},1) = nnpdf(1,-\/4)         * swpdf\_c}
+\DoxyCodeLine{1366             pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},1)  = nnpdf(1,+3)         * swpdf\_s}
+\DoxyCodeLine{1367             pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},1) = nnpdf(1,-\/3)         * swpdf\_s}
+\DoxyCodeLine{1368             pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},1)  = nnpdf(1,+5)         * swpdf\_b}
+\DoxyCodeLine{1369             pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},1) = nnpdf(1,-\/5)         * swpdf\_b}
+\DoxyCodeLine{1370             pdf(0,1)     = nnpdf(1,+0)         * swpdf\_g}
+\DoxyCodeLine{1371 }
+\DoxyCodeLine{1372             pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},2)   = nnpdf(2,+2)         * swpdf\_u}
+\DoxyCodeLine{1373             pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},2)  = nnpdf(2,-\/2)         * swpdf\_u}
+\DoxyCodeLine{1374             pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},2)   = nnpdf(2,+1)         * swpdf\_d}
+\DoxyCodeLine{1375             pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},2)  = nnpdf(2,-\/1)         * swpdf\_d}
+\DoxyCodeLine{1376             pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},2)  = nnpdf(2,+4)         * swpdf\_c}
+\DoxyCodeLine{1377             pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},2) = nnpdf(2,-\/4)         * swpdf\_c}
+\DoxyCodeLine{1378             pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},2)  = nnpdf(2,+3)         * swpdf\_s}
+\DoxyCodeLine{1379             pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},2) = nnpdf(2,-\/3)         * swpdf\_s}
+\DoxyCodeLine{1380             pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},2)  = nnpdf(2,+5)         * swpdf\_b}
+\DoxyCodeLine{1381             pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},2) = nnpdf(2,-\/5)         * swpdf\_b}
+\DoxyCodeLine{1382             pdf(0,2)     = nnpdf(2,+0)         * swpdf\_g}
+\DoxyCodeLine{1383 }
+\DoxyCodeLine{1384             pdf(:,:) = dabs(pdf(:,:))}
+\DoxyCodeLine{1385 }
+\DoxyCodeLine{1386             \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1387 }
+\DoxyCodeLine{1388 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{1389 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}.eq.1 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1390             \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodkinematics_a15b6e7c46d44f3005565f892393bdeef}{cteq6}}(x1,pdfscale,upv(1),dnv(1),usea(1),dsea(1),str(1),chm(1),bot(1),glu(1))}
+\DoxyCodeLine{1391             \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodkinematics_a15b6e7c46d44f3005565f892393bdeef}{cteq6}}(x2,pdfscale,upv(2),dnv(2),usea(2),dsea(2),str(2),chm(2),bot(2),glu(2))}
+\DoxyCodeLine{1392         \textcolor{keywordflow}{elseif}( \mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}.eq.2 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1393             \textcolor{keyword}{call }\mbox{\hyperlink{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}{getallpdfs}}(\textcolor{stringliteral}{"pdfs/mstw2008lo"},0,x1,pdfscale,upv(1),dnv(1),usea(1),dsea(1),str(1),sbar(1),chm(1),cbar(1),bot(1),bbar(1),glu(1),phot(1))}
+\DoxyCodeLine{1394             str(1)= (str(1)+sbar(1))/2d0}
+\DoxyCodeLine{1395             chm(1)= (chm(1)+cbar(1))/2d0}
+\DoxyCodeLine{1396             bot(1)= (bot(1)+bbar(1))/2d0}
+\DoxyCodeLine{1397             upv(1)=upv(1)/x1}
+\DoxyCodeLine{1398             dnv(1)=dnv(1)/x1}
+\DoxyCodeLine{1399             usea(1)=usea(1)/x1}
+\DoxyCodeLine{1400             dsea(1)=dsea(1)/x1}
+\DoxyCodeLine{1401             str(1)=str(1)/x1}
+\DoxyCodeLine{1402             chm(1)=chm(1)/x1}
+\DoxyCodeLine{1403             bot(1)=bot(1)/x1}
+\DoxyCodeLine{1404             glu(1)=glu(1)/x1}
+\DoxyCodeLine{1405             phot(1)=phot(1)/x1}
+\DoxyCodeLine{1406 }
+\DoxyCodeLine{1407             \textcolor{keyword}{call }\mbox{\hyperlink{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}{getallpdfs}}(\textcolor{stringliteral}{"pdfs/mstw2008lo"},0,x2,pdfscale,upv(2),dnv(2),usea(2),dsea(2),str(2),sbar(2),chm(2),cbar(2),bot(2),bbar(2),glu(2),phot(2))}
+\DoxyCodeLine{1408             str(2)= (str(2)+sbar(2))/2d0}
+\DoxyCodeLine{1409             chm(2)= (chm(2)+cbar(2))/2d0}
+\DoxyCodeLine{1410             bot(2)= (bot(2)+bbar(2))/2d0}
+\DoxyCodeLine{1411             upv(2)=upv(2)/x2}
+\DoxyCodeLine{1412             dnv(2)=dnv(2)/x2}
+\DoxyCodeLine{1413             usea(2)=usea(2)/x2}
+\DoxyCodeLine{1414             dsea(2)=dsea(2)/x2}
+\DoxyCodeLine{1415             str(2)=str(2)/x2}
+\DoxyCodeLine{1416             chm(2)=chm(2)/x2}
+\DoxyCodeLine{1417             bot(2)=bot(2)/x2}
+\DoxyCodeLine{1418             glu(2)=glu(2)/x2}
+\DoxyCodeLine{1419             phot(2)=phot(2)/x2}
+\DoxyCodeLine{1420 }
+\DoxyCodeLine{1421         \textcolor{keywordflow}{elseif}( \mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}.ge.201 .and. \mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}.le.240) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1422             \textcolor{keyword}{call }\mbox{\hyperlink{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}{getallpdfs}}(\textcolor{stringliteral}{"pdfs/mstw2008lo.90cl"},\mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}-\/200,x1,pdfscale,upv(1),dnv(1),usea(1),dsea(1),str(1),sbar(1),chm(1),cbar(1),bot(1),bbar(1),glu(1),phot(1))}
+\DoxyCodeLine{1423             str(1)= (str(1)+sbar(1))/2d0}
+\DoxyCodeLine{1424             chm(1)= (chm(1)+cbar(1))/2d0}
+\DoxyCodeLine{1425             bot(1)= (bot(1)+bbar(1))/2d0}
+\DoxyCodeLine{1426             upv(1)=upv(1)/x1}
+\DoxyCodeLine{1427             dnv(1)=dnv(1)/x1}
+\DoxyCodeLine{1428             usea(1)=usea(1)/x1}
+\DoxyCodeLine{1429             dsea(1)=dsea(1)/x1}
+\DoxyCodeLine{1430             str(1)=str(1)/x1}
+\DoxyCodeLine{1431             chm(1)=chm(1)/x1}
+\DoxyCodeLine{1432             bot(1)=bot(1)/x1}
+\DoxyCodeLine{1433             glu(1)=glu(1)/x1}
+\DoxyCodeLine{1434             phot(1)=phot(1)/x1}
+\DoxyCodeLine{1435 }
+\DoxyCodeLine{1436             \textcolor{keyword}{call }\mbox{\hyperlink{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}{getallpdfs}}(\textcolor{stringliteral}{"pdfs/mstw2008lo.90cl"},\mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}-\/200,x2,pdfscale,upv(2),dnv(2),usea(2),dsea(2),str(2),sbar(2),chm(2),cbar(2),bot(2),bbar(2),glu(2),phot(2))}
+\DoxyCodeLine{1437             str(2)= (str(2)+sbar(2))/2d0}
+\DoxyCodeLine{1438             chm(2)= (chm(2)+cbar(2))/2d0}
+\DoxyCodeLine{1439             bot(2)= (bot(2)+bbar(2))/2d0}
+\DoxyCodeLine{1440             upv(2)=upv(2)/x2}
+\DoxyCodeLine{1441             dnv(2)=dnv(2)/x2}
+\DoxyCodeLine{1442             usea(2)=usea(2)/x2}
+\DoxyCodeLine{1443             dsea(2)=dsea(2)/x2}
+\DoxyCodeLine{1444             str(2)=str(2)/x2}
+\DoxyCodeLine{1445             chm(2)=chm(2)/x2}
+\DoxyCodeLine{1446             bot(2)=bot(2)/x2}
+\DoxyCodeLine{1447             glu(2)=glu(2)/x2}
+\DoxyCodeLine{1448             phot(2)=phot(2)/x2}
+\DoxyCodeLine{1449         \textcolor{keywordflow}{elseif}( \mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}}.eq.3 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1450 }
+\DoxyCodeLine{1451             \textcolor{keyword}{call }\mbox{\hyperlink{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}{nnevolvepdf}}(x1,pdfscale,nnpdf(1,-\/6:7))}
+\DoxyCodeLine{1452             \textcolor{keyword}{call }\mbox{\hyperlink{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}{nnevolvepdf}}(x2,pdfscale,nnpdf(2,-\/6:7))}
+\DoxyCodeLine{1453             nnpdf(1,-\/6:7) = nnpdf(1,-\/6:7)/x1}
+\DoxyCodeLine{1454             nnpdf(2,-\/6:7) = nnpdf(2,-\/6:7)/x2}
+\DoxyCodeLine{1455 }
+\DoxyCodeLine{1456     \textcolor{comment}{!       PROTON CONTENT}}
+\DoxyCodeLine{1457             pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},1)   = nnpdf(1,+2)         * swpdf\_u}
+\DoxyCodeLine{1458             pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},1)  = nnpdf(1,-\/2)         * swpdf\_u}
+\DoxyCodeLine{1459             pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},1)   = nnpdf(1,+1)         * swpdf\_d}
+\DoxyCodeLine{1460             pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},1)  = nnpdf(1,-\/1)         * swpdf\_d}
+\DoxyCodeLine{1461             pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},1)  = nnpdf(1,+4)         * swpdf\_c}
+\DoxyCodeLine{1462             pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},1) = nnpdf(1,-\/4)         * swpdf\_c}
+\DoxyCodeLine{1463             pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},1)  = nnpdf(1,+3)         * swpdf\_s}
+\DoxyCodeLine{1464             pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},1) = nnpdf(1,-\/3)         * swpdf\_s}
+\DoxyCodeLine{1465             pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},1)  = nnpdf(1,+5)         * swpdf\_b}
+\DoxyCodeLine{1466             pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},1) = nnpdf(1,-\/5)         * swpdf\_b}
+\DoxyCodeLine{1467             pdf(0,1)     = nnpdf(1,+0)         * swpdf\_g}
+\DoxyCodeLine{1468 }
+\DoxyCodeLine{1469             pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},2)   = nnpdf(2,+2)         * swpdf\_u}
+\DoxyCodeLine{1470             pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},2)  = nnpdf(2,-\/2)         * swpdf\_u}
+\DoxyCodeLine{1471             pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},2)   = nnpdf(2,+1)         * swpdf\_d}
+\DoxyCodeLine{1472             pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},2)  = nnpdf(2,-\/1)         * swpdf\_d}
+\DoxyCodeLine{1473             pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},2)  = nnpdf(2,+4)         * swpdf\_c}
+\DoxyCodeLine{1474             pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},2) = nnpdf(2,-\/4)         * swpdf\_c}
+\DoxyCodeLine{1475             pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},2)  = nnpdf(2,+3)         * swpdf\_s}
+\DoxyCodeLine{1476             pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},2) = nnpdf(2,-\/3)         * swpdf\_s}
+\DoxyCodeLine{1477             pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},2)  = nnpdf(2,+5)         * swpdf\_b}
+\DoxyCodeLine{1478             pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},2) = nnpdf(2,-\/5)         * swpdf\_b}
+\DoxyCodeLine{1479             pdf(0,2)     = nnpdf(2,+0)         * swpdf\_g}
+\DoxyCodeLine{1480 }
+\DoxyCodeLine{1481             pdf(:,:) = dabs(pdf(:,:))}
+\DoxyCodeLine{1482             \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1483         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1484             print *, \textcolor{stringliteral}{"PDFSet"},\mbox{\hyperlink{namespacemodparameters_a4eedc86cefe5155f3317cb6f6d16edc2}{pdfset}},\textcolor{stringliteral}{"not available!"}}
+\DoxyCodeLine{1485             stop}
+\DoxyCodeLine{1486 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{1487 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1488 \textcolor{preprocessor}{}}
+\DoxyCodeLine{1489 \textcolor{keywordflow}{IF}( \mbox{\hyperlink{namespacemodparameters_a3ac750545d788805e30ddc5731191eaf}{collider}}.EQ.1 ) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1490 \textcolor{comment}{!       PROTON CONTENT}}
+\DoxyCodeLine{1491         pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},1)   = (upv(1) + usea(1))  * swpdf\_u}
+\DoxyCodeLine{1492         pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},1)  = usea(1)             * swpdf\_u}
+\DoxyCodeLine{1493         pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},1)   = (dnv(1) + dsea(1))  * swpdf\_d}
+\DoxyCodeLine{1494         pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},1)  = dsea(1)             * swpdf\_d}
+\DoxyCodeLine{1495         pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},1)  = chm(1)              * swpdf\_c}
+\DoxyCodeLine{1496         pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},1) = chm(1)              * swpdf\_c}
+\DoxyCodeLine{1497         pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},1)  = str(1)              * swpdf\_s}
+\DoxyCodeLine{1498         pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},1) = str(1)              * swpdf\_s}
+\DoxyCodeLine{1499         pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},1)  = bot(1)              * swpdf\_b}
+\DoxyCodeLine{1500         pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},1) = bot(1)              * swpdf\_b}
+\DoxyCodeLine{1501         pdf(0,1)     = glu(1)              * swpdf\_g}
+\DoxyCodeLine{1502 }
+\DoxyCodeLine{1503 \textcolor{comment}{!       PROTON CONTENT}}
+\DoxyCodeLine{1504         pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},2)   = (upv(2) + usea(2))  * swpdf\_u}
+\DoxyCodeLine{1505         pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},2)  = usea(2)             * swpdf\_u}
+\DoxyCodeLine{1506         pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},2)   = (dnv(2) + dsea(2))  * swpdf\_d}
+\DoxyCodeLine{1507         pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},2)  = dsea(2)             * swpdf\_d}
+\DoxyCodeLine{1508         pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},2)  = chm(2)              * swpdf\_c}
+\DoxyCodeLine{1509         pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},2) = chm(2)              * swpdf\_c}
+\DoxyCodeLine{1510         pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},2)  = str(2)              * swpdf\_s}
+\DoxyCodeLine{1511         pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},2) = str(2)              * swpdf\_s}
+\DoxyCodeLine{1512         pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},2)  = bot(2)              * swpdf\_b}
+\DoxyCodeLine{1513         pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},2) = bot(2)              * swpdf\_b}
+\DoxyCodeLine{1514         pdf(0,2)     = glu(2)              * swpdf\_g}
+\DoxyCodeLine{1515 }
+\DoxyCodeLine{1516 \textcolor{keywordflow}{ELSEIF}( \mbox{\hyperlink{namespacemodparameters_a3ac750545d788805e30ddc5731191eaf}{collider}}.EQ.2 ) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1517 \textcolor{comment}{!       PROTON CONTENT}}
+\DoxyCodeLine{1518         pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},1)   = (upv(1) + usea(1))  * swpdf\_u}
+\DoxyCodeLine{1519         pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},1)  = usea(1)             * swpdf\_u}
+\DoxyCodeLine{1520         pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},1)   = (dnv(1) + dsea(1))  * swpdf\_d}
+\DoxyCodeLine{1521         pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},1)  = dsea(1)             * swpdf\_d}
+\DoxyCodeLine{1522         pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},1)  = chm(1)              * swpdf\_c}
+\DoxyCodeLine{1523         pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},1) = chm(1)              * swpdf\_c}
+\DoxyCodeLine{1524         pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},1)  = str(1)              * swpdf\_s}
+\DoxyCodeLine{1525         pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},1) = str(1)              * swpdf\_s}
+\DoxyCodeLine{1526         pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},1)  = bot(1)              * swpdf\_b}
+\DoxyCodeLine{1527         pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},1) = bot(1)              * swpdf\_b}
+\DoxyCodeLine{1528         pdf(0,1)     = glu(1)              * swpdf\_g}
+\DoxyCodeLine{1529 }
+\DoxyCodeLine{1530 \textcolor{comment}{!       ANTI-\/PROTON CONTENT}}
+\DoxyCodeLine{1531         pdf(\mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}},2)   = usea(2)             * swpdf\_u}
+\DoxyCodeLine{1532         pdf(\mbox{\hyperlink{namespacemodparameters_ae17f24074e0214247628cde3f45d1550}{aup\_}},2)  = (upv(2)+usea(2))    * swpdf\_u}
+\DoxyCodeLine{1533         pdf(\mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}},2)   = dsea(2)             * swpdf\_d}
+\DoxyCodeLine{1534         pdf(\mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}},2)  = (dnv(2) + dsea(2))  * swpdf\_d}
+\DoxyCodeLine{1535         pdf(\mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}},2)  = chm(2)              * swpdf\_c}
+\DoxyCodeLine{1536         pdf(\mbox{\hyperlink{namespacemodparameters_a1195156d8231a54ade53db68834b8c89}{achm\_}},2) = chm(2)              * swpdf\_c}
+\DoxyCodeLine{1537         pdf(\mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}},2)  = str(2)              * swpdf\_s}
+\DoxyCodeLine{1538         pdf(\mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}},2) = str(2)              * swpdf\_s}
+\DoxyCodeLine{1539         pdf(\mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}},2)  = bot(2)              * swpdf\_b}
+\DoxyCodeLine{1540         pdf(\mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}},2) = bot(2)              * swpdf\_b}
+\DoxyCodeLine{1541         pdf(0,2)     = glu(2)              * swpdf\_g}
+\DoxyCodeLine{1542 }
+\DoxyCodeLine{1543 \textcolor{keywordflow}{ENDIF}}
+\DoxyCodeLine{1544 }
+\DoxyCodeLine{1545 pdf(:,:) = dabs(pdf(:,:))}
+\DoxyCodeLine{1546 }
+\DoxyCodeLine{1547 }
+\DoxyCodeLine{1548 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a94c61e8d05156e40e4fdf7b9f66911b0}\label{namespacemodkinematics_a94c61e8d05156e40e4fdf7b9f66911b0}} 
 \index{modkinematics@{modkinematics}!setrunningscales@{setrunningscales}}
 \index{setrunningscales@{setrunningscales}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{setrunningscales()}{setrunningscales()}}
 {\footnotesize\ttfamily subroutine, public modkinematics\+::setrunningscales (\begin{DoxyParamCaption}\item[{real(dp), dimension(1\+:4,4\+:6), intent(in)}]{p,  }\item[{integer, dimension(4\+:7), intent(in)}]{id }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1194 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1194 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{1195 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{1196 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1197 \textcolor{keywordtype}{real}(dp), \textcolor{keywordtype}{intent(in)} :: p(1:4,4:6) \textcolor{comment}{! No need to run the second index from 4 to 7: pH, pJ1, pJ2}}
+\DoxyCodeLine{1198 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: id(4:7) \textcolor{comment}{! id\_JJH/id\_JJVV, id\_J1, id\_J2, id\_JJ (if applicable)}}
+\DoxyCodeLine{1199 \textcolor{keywordtype}{real}(8) :: polemass(3:7) \textcolor{comment}{! mJJH, mH, mJ1, mJ2, mJJ (if applicable)}}
+\DoxyCodeLine{1200 \textcolor{keywordtype}{real}(8) :: pJJHstar(4),pHstar(4),pJ(4,2),pJJ(4),pJHstar(4),pTjet(5:6),maxpTjet,minpTjet}
+\DoxyCodeLine{1201 \textcolor{keywordtype}{integer} idx,ip}
+\DoxyCodeLine{1202 }
+\DoxyCodeLine{1203    phstar(:) = 0d0}
+\DoxyCodeLine{1204    pjj(:) = 0d0}
+\DoxyCodeLine{1205    ptjet(:) = 0d0}
+\DoxyCodeLine{1206    polemass(3) = \mbox{\hyperlink{namespacemodparameters_aa978daa58634e2dc64b8b2b474ed5fbe}{getmass}}(id(4)) \textcolor{comment}{! Pole mass of the JJH system}}
+\DoxyCodeLine{1207    polemass(4) = \mbox{\hyperlink{namespacemodparameters_a864e62a91d9315f3d5a88640feb74f48}{m\_reso}}}
+\DoxyCodeLine{1208    \textcolor{keywordflow}{do} idx=4,6}
+\DoxyCodeLine{1209       \textcolor{keywordflow}{if}(idx.eq.4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1210          \textcolor{keywordflow}{do} ip=1,4}
+\DoxyCodeLine{1211             phstar(ip) = phstar(ip) + p(ip,idx)}
+\DoxyCodeLine{1212 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{1213       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1214          polemass(idx) = \mbox{\hyperlink{namespacemodparameters_aa978daa58634e2dc64b8b2b474ed5fbe}{getmass}}(id(idx))}
+\DoxyCodeLine{1215          \textcolor{keywordflow}{do} ip=1,4}
+\DoxyCodeLine{1216             pjj(ip) = pjj(ip) + p(ip,idx)}
+\DoxyCodeLine{1217 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{1218          ptjet(idx) = \mbox{\hyperlink{namespacemodmisc_a16087c52e2af5fad4da5ed6a8698380a}{get\_pt}}(p(1:4,idx))}
+\DoxyCodeLine{1219 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1220 \textcolor{keywordflow}{   enddo}}
+\DoxyCodeLine{1221    maxptjet = maxval(ptjet)}
+\DoxyCodeLine{1222    minptjet = minval(ptjet, mask=.not.all(p(1:4,5:6).eq.0d0, 1))}
+\DoxyCodeLine{1223    polemass(7) = \mbox{\hyperlink{namespacemodparameters_aa978daa58634e2dc64b8b2b474ed5fbe}{getmass}}(id(7)) \textcolor{comment}{! Pole mass of the JJ system}}
+\DoxyCodeLine{1224 }
+\DoxyCodeLine{1225    pjjhstar = pjj + phstar}
+\DoxyCodeLine{1226    \textcolor{keywordflow}{if}(polemass(5).gt.polemass(6)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1227       pj(:,1)=p(:,5)}
+\DoxyCodeLine{1228       pj(:,2)=p(:,6)}
+\DoxyCodeLine{1229    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1230       pj(:,1)=p(:,6)}
+\DoxyCodeLine{1231       pj(:,2)=p(:,5)}
+\DoxyCodeLine{1232       \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a7262c4ef2e4832436c895d154dbe3080}{swapr}}(polemass(5),polemass(6)) \textcolor{comment}{! will use polemass(5) as the greater mass below}}
+\DoxyCodeLine{1233 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1234    pjhstar(1:4) = pj(1:4,1) + phstar(1:4)}
+\DoxyCodeLine{1235 }
+\DoxyCodeLine{1236    \textcolor{comment}{! Determine the appropriate factorization scale for the chosen scheme from pole and invariant masses}}
+\DoxyCodeLine{1237    \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ad08f57ad9411ce78f5c546a688befbd7}{krenfacscheme\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1238       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1239 }
+\DoxyCodeLine{1240    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_ad08f57ad9411ce78f5c546a688befbd7}{krenfacscheme\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1241       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(4)}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_af0a4d708f4f35c74b01a9ef5252dd970}{krenfacscheme\_mjjhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1244       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjjhstar(1:4))}
+\DoxyCodeLine{1245    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_af0a4d708f4f35c74b01a9ef5252dd970}{krenfacscheme\_mjjhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1246       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(3)}
+\DoxyCodeLine{1247 }
+\DoxyCodeLine{1248    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_adb7d78d0476fb505711b54d1407de2f2}{krenfacscheme\_mjj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1249       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjj(1:4))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1250    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_adb7d78d0476fb505711b54d1407de2f2}{krenfacscheme\_mjj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1251       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(4)+polemass(7)}
+\DoxyCodeLine{1252    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_aecad51385768e4ebbdadb35329449d76}{krenfacscheme\_mj\_mj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1253       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,1))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,2))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1254    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_aecad51385768e4ebbdadb35329449d76}{krenfacscheme\_mj\_mj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1255       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(4)+polemass(5)+polemass(6)}
+\DoxyCodeLine{1256 }
+\DoxyCodeLine{1257    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_acc9ed396094e4729a6b13d78d07c5203}{krenfacscheme\_mjj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1258       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjj(1:4))}
+\DoxyCodeLine{1259    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_acc9ed396094e4729a6b13d78d07c5203}{krenfacscheme\_mjj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1260       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(7)}
+\DoxyCodeLine{1261    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ad327805bbadd59afa2fe091db427a336}{krenfacscheme\_mj\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1262       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjj(1:4))}
+\DoxyCodeLine{1263    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_ad327805bbadd59afa2fe091db427a336}{krenfacscheme\_mj\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1264       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(5)+polemass(6)}
+\DoxyCodeLine{1265 }
+\DoxyCodeLine{1266    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ae1ba5f42d1c91bf743c9e5b0db7eb6b1}{krenfacscheme\_mjhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1267       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjhstar(1:4))}
+\DoxyCodeLine{1268    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_a77f45d60beac1d7ecee615fd1b88225e}{krenfacscheme\_mj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1269       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,1))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1270    \textcolor{keywordflow}{elseif}((\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_ae1ba5f42d1c91bf743c9e5b0db7eb6b1}{krenfacscheme\_mjhstar}}) .or. (\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_a77f45d60beac1d7ecee615fd1b88225e}{krenfacscheme\_mj\_mhstar}})) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1271       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(4)+polemass(5)}
+\DoxyCodeLine{1272    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_a710a4f0120da617289897fb93b0748a3}{krenfacscheme\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1273       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,1))}
+\DoxyCodeLine{1274    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_a710a4f0120da617289897fb93b0748a3}{krenfacscheme\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1275       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = polemass(5)}
+\DoxyCodeLine{1276    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ab67f81c332ae5777bd66e6774420d73b}{krenfacscheme\_maxptj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1277       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = maxptjet}
+\DoxyCodeLine{1278    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_a9862ab326e89144156075b8d8663265d}{krenfacscheme\_minptj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1279       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = minptjet}
+\DoxyCodeLine{1280    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a3d97b0e2162b9243abacc32e73d599dd}{facscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ae97699d38756051e2e6eab945f015f31}{krenfacscheme\_custom\_scale}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1281       \textcolor{keyword}{call }random\_number(\mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}})}
+\DoxyCodeLine{1282       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = (\mbox{\hyperlink{namespacemodparameters_aa33455c708a007256e2dca22619cae0f}{customupperscalebound}} -\/ \mbox{\hyperlink{namespacemodparameters_aecacda9de200b7749b3c9c4ac5ea5f63}{customlowerscalebound}})*\mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} + \mbox{\hyperlink{namespacemodparameters_aecacda9de200b7749b3c9c4ac5ea5f63}{customlowerscalebound}}}
+\DoxyCodeLine{1283       \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}}/100 \textcolor{comment}{!correction to make sure that you are operating in single GeVs, not hundreds of GeV}}
+\DoxyCodeLine{1284    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1285       \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"This should never be able to happen."})}
+\DoxyCodeLine{1286 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1287 }
+\DoxyCodeLine{1288    \textcolor{comment}{! Do the same for the renormalization scale}}
+\DoxyCodeLine{1289    \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ad08f57ad9411ce78f5c546a688befbd7}{krenfacscheme\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1290       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1291 }
+\DoxyCodeLine{1292    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_ad08f57ad9411ce78f5c546a688befbd7}{krenfacscheme\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1293       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(4)}
+\DoxyCodeLine{1294 }
+\DoxyCodeLine{1295    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_af0a4d708f4f35c74b01a9ef5252dd970}{krenfacscheme\_mjjhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1296       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjjhstar(1:4))}
+\DoxyCodeLine{1297    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_af0a4d708f4f35c74b01a9ef5252dd970}{krenfacscheme\_mjjhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1298       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(3)}
+\DoxyCodeLine{1299 }
+\DoxyCodeLine{1300    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_adb7d78d0476fb505711b54d1407de2f2}{krenfacscheme\_mjj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1301       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjj(1:4))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1302    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_adb7d78d0476fb505711b54d1407de2f2}{krenfacscheme\_mjj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1303       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(4)+polemass(7)}
+\DoxyCodeLine{1304    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_aecad51385768e4ebbdadb35329449d76}{krenfacscheme\_mj\_mj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1305       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,1))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,2))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1306    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_aecad51385768e4ebbdadb35329449d76}{krenfacscheme\_mj\_mj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1307       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(4)+polemass(5)+polemass(6)}
+\DoxyCodeLine{1308 }
+\DoxyCodeLine{1309    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_acc9ed396094e4729a6b13d78d07c5203}{krenfacscheme\_mjj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1310       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjj(1:4))}
+\DoxyCodeLine{1311    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_acc9ed396094e4729a6b13d78d07c5203}{krenfacscheme\_mjj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1312       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(7)}
+\DoxyCodeLine{1313    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ad327805bbadd59afa2fe091db427a336}{krenfacscheme\_mj\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1314       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjj(1:4))}
+\DoxyCodeLine{1315    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_ad327805bbadd59afa2fe091db427a336}{krenfacscheme\_mj\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1316       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(5)+polemass(6)}
+\DoxyCodeLine{1317 }
+\DoxyCodeLine{1318    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ae1ba5f42d1c91bf743c9e5b0db7eb6b1}{krenfacscheme\_mjhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1319       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pjhstar(1:4))}
+\DoxyCodeLine{1320    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_a77f45d60beac1d7ecee615fd1b88225e}{krenfacscheme\_mj\_mhstar}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1321       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,1))+\mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(phstar(1:4))}
+\DoxyCodeLine{1322    \textcolor{keywordflow}{elseif}((\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_ae1ba5f42d1c91bf743c9e5b0db7eb6b1}{krenfacscheme\_mjhstar}}) .or. (\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_a77f45d60beac1d7ecee615fd1b88225e}{krenfacscheme\_mj\_mhstar}})) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1323       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(4)+polemass(5)}
+\DoxyCodeLine{1324    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_a710a4f0120da617289897fb93b0748a3}{krenfacscheme\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1325       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = \mbox{\hyperlink{namespacemodmisc_adbd3954c2d1c01ab42fcb7689f74bc88}{get\_minv}}(pj(1:4,1))}
+\DoxyCodeLine{1326    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. -\/\mbox{\hyperlink{namespacemodparameters_a710a4f0120da617289897fb93b0748a3}{krenfacscheme\_mj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1327       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = polemass(5)}
+\DoxyCodeLine{1328    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_ab67f81c332ae5777bd66e6774420d73b}{krenfacscheme\_maxptj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1329       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = maxptjet}
+\DoxyCodeLine{1330    \textcolor{keywordflow}{elseif}(\mbox{\hyperlink{namespacemodparameters_a53d2c9ca8d29226b1b9a4a67aeefa8a5}{renscheme}} .eq. \mbox{\hyperlink{namespacemodparameters_a9862ab326e89144156075b8d8663265d}{krenfacscheme\_minptj}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1331       \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = minptjet}
+\DoxyCodeLine{1332    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1333       \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"This should never be able to happen."})}
+\DoxyCodeLine{1334 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1335 }
+\DoxyCodeLine{1336    \textcolor{comment}{! Never ever allow the scales to go negative}}
+\DoxyCodeLine{1337    \mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}} = abs(\mbox{\hyperlink{namespacemodparameters_aeacfc0be71d3171eca52baf16bf67733}{mu\_fact}}) * \mbox{\hyperlink{namespacemodparameters_a4dba182a4788bad17dfc28ddaaeb091f}{mufacmultiplier}}}
+\DoxyCodeLine{1338    \mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}} = abs(\mbox{\hyperlink{namespacemodparameters_a57fbe67f15046f8b4e9c1ad25a665af0}{mu\_ren}}) * \mbox{\hyperlink{namespacemodparameters_acd721cd19a8c20661d3594dc1ed0db13}{murenmultiplier}}}
+\DoxyCodeLine{1339 }
+\DoxyCodeLine{1340 \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a4ee2dbd948c410000d9a876fc4b081e9}\label{namespacemodkinematics_a4ee2dbd948c410000d9a876fc4b081e9}} 
 \index{modkinematics@{modkinematics}!shiftmass@{shiftmass}}
 \index{shiftmass@{shiftmass}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{shiftmass()}{shiftmass()}}
 {\footnotesize\ttfamily subroutine modkinematics\+::shiftmass (\begin{DoxyParamCaption}\item[{real(8), dimension(1\+:4), intent(in)}]{p1,  }\item[{real(8), dimension(1\+:4), intent(in)}]{p2,  }\item[{real(8)}]{m1,  }\item[{real(8)}]{m2,  }\item[{real(8), dimension(1\+:4)}]{p1hat,  }\item[{real(8), dimension(1\+:4)}]{p2hat,  }\item[{real(8), optional}]{Mass\+Weight }\end{DoxyParamCaption})}
 
+
+
+Definition at line 11 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{12 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{13 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{intent(in)} :: p1(1:4),p2(1:4)}
+\DoxyCodeLine{14 \textcolor{keywordtype}{real}(8) :: m1,m2,p1hat(1:4),p2hat(1:4)}
+\DoxyCodeLine{15 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{optional} :: MassWeight}
+\DoxyCodeLine{16 \textcolor{keywordtype}{real}(8) :: xi,eta,a,b,c,p1sq,p2sq,p1p2}
+\DoxyCodeLine{17 \textcolor{keywordtype}{real}(8) :: p1hatsq, p2hatsq, p12hatsq}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19   p1sq = p1(1:4).dot.p1(1:4)}
+\DoxyCodeLine{20   p2sq = p2(1:4).dot.p2(1:4)}
+\DoxyCodeLine{21   p1p2 = p1(1:4).dot.p2(1:4)}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23   a = ( p1sq*p2(1:4) -\/ p2sq*p1(1:4) + p1p2*(p2(1:4)-\/p1(1:4)) ).dot.( p1sq*p2(1:4) -\/ p2sq*p1(1:4) + p1p2*(p2(1:4)-\/p1(1:4)) )}
+\DoxyCodeLine{24   b = ( p1sq+p2sq+2d0*p1p2+m2**2-\/m1**2 ) * ( p1p2**2 -\/ p1sq*p2sq )}
+\DoxyCodeLine{25   c = 0.25d0*( p1sq+p2sq+2d0*p1p2+m2**2-\/m1**2 )**2*p1sq -\/ (p1sq+p1p2)**2*m2**2}
+\DoxyCodeLine{26   eta = 1d0/2d0/a * ( -\/b -\/ dsqrt( dabs(b**2 -\/4d0*a*c) ) )}
+\DoxyCodeLine{27   xi = ( p1sq+p2sq+2d0*p1p2 + m2**2 -\/ m1**2 -\/ 2d0*eta*(p2sq+p1p2) )/2d0/( p1sq + p1p2 )}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   p2hat(1:4) = xi*p1(1:4) + eta*p2(1:4)}
+\DoxyCodeLine{30   p1hat(1:4) = (1d0-\/xi)*p1(1:4) + (1d0-\/eta)*p2(1:4)}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keywordflow}{if}( \textcolor{keyword}{present}(massweight) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{33      p1hatsq = p1hat(1:4).dot.p1hat(1:4)}
+\DoxyCodeLine{34      p2hatsq = p2hat(1:4).dot.p2hat(1:4)}
+\DoxyCodeLine{35      p12hatsq = (p1hat(1:4)+p2hat(1:4)).dot.(p1hat(1:4)+p2hat(1:4)) \textcolor{comment}{! Should be p1p2*2d0, but better to avoid un-\/anticipated uses}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37      \textcolor{comment}{! Below is the same as 2d0/pi/g\_d(p12hatsq,p1hatsq,p2hatsq)}}
+\DoxyCodeLine{38      massweight = (p12hatsq**2+p1hatsq**2+p2hatsq**2-\/2d0*(p1hatsq*p2hatsq+p1hatsq*p12hatsq+p12hatsq*p2hatsq)) \textcolor{comment}{! Writing this way instead of get\_MInv should avoid the issue of -\/ vs + invariant masses}}
+\DoxyCodeLine{39      \textcolor{keywordflow}{if}(massweight.ge.0d0 .and. p12hatsq.ne.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{40         massweight = sqrt(massweight/(p12hatsq**2))}
+\DoxyCodeLine{41      \textcolor{keywordflow}{else}}
+\DoxyCodeLine{42         massweight = 0d0}
+\DoxyCodeLine{43 \textcolor{keywordflow}{     endif}}
+\DoxyCodeLine{44 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{! if( dabs( (p1hat.dot.p1hat)-\/m1**2 )/m1**2.gt.1d-\/3 ) then}}
+\DoxyCodeLine{47 \textcolor{comment}{!     print *, "1",p1hat.dot.p1hat , m1**2}}
+\DoxyCodeLine{48 \textcolor{comment}{!     print *, p1}}
+\DoxyCodeLine{49 \textcolor{comment}{!     print *, p1hat}}
+\DoxyCodeLine{50 \textcolor{comment}{!     print *, a,b,c,eta,xi,p1sq + p1p2}}
+\DoxyCodeLine{51 \textcolor{comment}{!     pause}}
+\DoxyCodeLine{52 \textcolor{comment}{! endif}}
+\DoxyCodeLine{53 \textcolor{comment}{! if( dabs( (p2hat.dot.p2hat)-\/m2**2 )/m2**2.gt.1d-\/3 ) then}}
+\DoxyCodeLine{54 \textcolor{comment}{!     print *, "2",p2hat.dot.p2hat , m2**2}}
+\DoxyCodeLine{55 \textcolor{comment}{!     print *, p2}}
+\DoxyCodeLine{56 \textcolor{comment}{!     print *, p2hat}}
+\DoxyCodeLine{57 \textcolor{comment}{!     print *, a,b,c,eta,xi,p1sq + p1p2}}
+\DoxyCodeLine{58 \textcolor{comment}{!     pause}}
+\DoxyCodeLine{59 \textcolor{comment}{! endif}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_afa417c65878bdb83837316a881eb1680}\label{namespacemodkinematics_afa417c65878bdb83837316a881eb1680}} 
 \index{modkinematics@{modkinematics}!vbranching@{vbranching}}
 \index{vbranching@{vbranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{vbranching()}{vbranching()}}
 {\footnotesize\ttfamily subroutine modkinematics\+::vbranching (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{Decay\+Mode,  }\item[{integer, dimension(1\+:3)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{integer, dimension(1\+:2,1\+:2)}]{I\+C\+O\+L\+UP,  }\item[{real(8), intent(out)}]{Comb\+Weight,  }\item[{integer, optional}]{Color\+Base }\end{DoxyParamCaption})}
 
+
+
+Definition at line 585 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{585 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{586 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{587 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{588 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: DecayMode}
+\DoxyCodeLine{589 \textcolor{keywordtype}{integer} :: MY\_IDUP(1:3),ICOLUP(1:2,1:2),DKFlavor,ICOLUP\_Base}
+\DoxyCodeLine{590 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional} ::ColorBase}
+\DoxyCodeLine{591 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(out)} :: CombWeight}
+\DoxyCodeLine{592 \textcolor{keywordtype}{real}(8) :: DKRnd}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 \textcolor{comment}{!    particle associations:}}
+\DoxyCodeLine{595 \textcolor{comment}{!}}
+\DoxyCodeLine{596 \textcolor{comment}{!    IDUP(6)  -\/-\/>  MomDK(:,2)  -\/-\/>     v-\/spinor}}
+\DoxyCodeLine{597 \textcolor{comment}{!    IDUP(7)  -\/-\/>  MomDK(:,1)  -\/-\/>  ubar-\/spinor}}
+\DoxyCodeLine{598 \textcolor{comment}{!    IDUP(8)  -\/-\/>  MomDK(:,4)  -\/-\/>     v-\/spinor}}
+\DoxyCodeLine{599 \textcolor{comment}{!    IDUP(9)  -\/-\/>  MomDK(:,3)  -\/-\/>  ubar-\/spinor}}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601    \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(colorbase)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{602        icolup\_base = colorbase}
+\DoxyCodeLine{603    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{604        icolup\_base = 800}
+\DoxyCodeLine{605 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{606 }
+\DoxyCodeLine{607    icolup(:,:) = 0}
+\DoxyCodeLine{608    combweight = 1d0}
+\DoxyCodeLine{609    \textcolor{keywordflow}{if}( decaymode.eq.0 ) then\textcolor{comment}{! Z1-\/>2l}}
+\DoxyCodeLine{610         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{611         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{612         dkflavor = \mbox{\hyperlink{namespacemodkinematics_ae07ed8653fe103b4b0aa65660587dd4f}{zlepbranching\_flat}}( dkrnd )\textcolor{comment}{!= ElM or MuM}}
+\DoxyCodeLine{613         my\_idup(2) =-\/dkflavor}
+\DoxyCodeLine{614         my\_idup(3) =+dkflavor}
+\DoxyCodeLine{615         combweight = combweight*2d0}
+\DoxyCodeLine{616    \textcolor{keywordflow}{elseif}( decaymode.eq.1 ) then\textcolor{comment}{! Z1-\/>2q}}
+\DoxyCodeLine{617         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{618         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{619         dkflavor = \mbox{\hyperlink{namespacemodkinematics_ab78f1c72f2361ec70997108ac81c3068}{zquabranching\_flat}}( dkrnd )\textcolor{comment}{!= Up,Dn,Chm,Str,Bot}}
+\DoxyCodeLine{620         my\_idup(2) =-\/dkflavor}
+\DoxyCodeLine{621         my\_idup(3) =+dkflavor}
+\DoxyCodeLine{622         icolup(1:2,1) = (/            0,icolup\_base+3/)}
+\DoxyCodeLine{623         icolup(1:2,2) = (/icolup\_base+3,            0/)}
+\DoxyCodeLine{624         combweight = combweight*5d0*3d0}
+\DoxyCodeLine{625    \textcolor{keywordflow}{elseif}( decaymode.eq.2 ) then\textcolor{comment}{! Z1-\/>2tau}}
+\DoxyCodeLine{626         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{627         my\_idup(2) = \mbox{\hyperlink{namespacemodparameters_a6edec38c1dc30d4be564c439bd5e1402}{tap\_}}}
+\DoxyCodeLine{628         my\_idup(3) = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{629    \textcolor{keywordflow}{elseif}( decaymode.eq.3 ) then\textcolor{comment}{! Z1-\/>2nu}}
+\DoxyCodeLine{630         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{631         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{632         dkflavor = \mbox{\hyperlink{namespacemodkinematics_afbc15878d44bda10618299a1c0c57722}{znubranching\_flat}}( dkrnd )\textcolor{comment}{!= NuE,NuM,NuT}}
+\DoxyCodeLine{633         my\_idup(2) =-\/dkflavor}
+\DoxyCodeLine{634         my\_idup(3) =+dkflavor}
+\DoxyCodeLine{635         combweight = combweight*3d0}
+\DoxyCodeLine{636    \textcolor{keywordflow}{elseif}( decaymode.eq.4 ) then\textcolor{comment}{! W1(+)-\/>lnu}}
+\DoxyCodeLine{637         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{638         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}}}
+\DoxyCodeLine{639         dkflavor = \mbox{\hyperlink{namespacemodkinematics_a598b3f42b6ec9ff2accc3ab4dd33cc96}{wlepbranching\_flat}}( dkrnd )\textcolor{comment}{!= ElM or MuM}}
+\DoxyCodeLine{640         my\_idup(2) = +abs(dkflavor)     \textcolor{comment}{! lepton(+)}}
+\DoxyCodeLine{641         my\_idup(3) = +abs(dkflavor)+7   \textcolor{comment}{! neutrino}}
+\DoxyCodeLine{642         combweight = combweight*2d0}
+\DoxyCodeLine{643    \textcolor{keywordflow}{elseif}( decaymode.eq.5 ) then\textcolor{comment}{! W1(+)-\/>2q}}
+\DoxyCodeLine{644         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{645         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}}}
+\DoxyCodeLine{646         dkflavor = \mbox{\hyperlink{namespacemodkinematics_a3d6970760902231a36eb96aa02970bb1}{wquaupbranching\_flat}}( dkrnd )\textcolor{comment}{!= Up,Chm}}
+\DoxyCodeLine{647         my\_idup(3) = +abs(dkflavor)           \textcolor{comment}{! up flavor}}
+\DoxyCodeLine{648         my\_idup(2) = getckmpartner(my\_idup(3))\textcolor{comment}{! anti-\/dn flavor}}
+\DoxyCodeLine{649         icolup(1:2,1) = (/            0,icolup\_base+3/)}
+\DoxyCodeLine{650         icolup(1:2,2) = (/icolup\_base+3,            0/)}
+\DoxyCodeLine{651         combweight = combweight*2d0*3d0}
+\DoxyCodeLine{652    \textcolor{keywordflow}{elseif}( decaymode.eq.6 ) then\textcolor{comment}{! W1(+)-\/>taunu}}
+\DoxyCodeLine{653         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}}}
+\DoxyCodeLine{654         my\_idup(2) = \mbox{\hyperlink{namespacemodparameters_a6edec38c1dc30d4be564c439bd5e1402}{tap\_}}}
+\DoxyCodeLine{655         my\_idup(3) = \mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}}
+\DoxyCodeLine{656    \textcolor{keywordflow}{elseif}( decaymode.eq.7 ) then\textcolor{comment}{! photon}}
+\DoxyCodeLine{657         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_aa12cca42b0c6dbde3a21f060e1fbb9dd}{pho\_}}}
+\DoxyCodeLine{658         my\_idup(2) = \mbox{\hyperlink{namespacemodparameters_ac0559a78f90b35b3544402c297535c11}{not\_a\_particle\_}}}
+\DoxyCodeLine{659         my\_idup(3) = \mbox{\hyperlink{namespacemodparameters_ac0559a78f90b35b3544402c297535c11}{not\_a\_particle\_}}}
+\DoxyCodeLine{660    \textcolor{keywordflow}{elseif}( decaymode.eq.8 ) then\textcolor{comment}{! Z1-\/>2l+2tau}}
+\DoxyCodeLine{661         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{662         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{663         dkflavor = \mbox{\hyperlink{namespacemodkinematics_a5c24ddbb3078123e2ef308664c10b76a}{zlepplustaubranching\_flat}}( dkrnd )\textcolor{comment}{!= ElM or MuM or TaM}}
+\DoxyCodeLine{664         my\_idup(2) =-\/dkflavor}
+\DoxyCodeLine{665         my\_idup(3) =+dkflavor}
+\DoxyCodeLine{666         combweight = combweight*3d0}
+\DoxyCodeLine{667    \textcolor{keywordflow}{elseif}( decaymode.eq.9 ) then\textcolor{comment}{! Z1-\/> anything}}
+\DoxyCodeLine{668         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{669         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{670         dkflavor = \mbox{\hyperlink{namespacemodkinematics_a45700a42f6ce65b1a7f7d61fbedc42ac}{zanybranching\_flat}}( dkrnd )}
+\DoxyCodeLine{671         my\_idup(2) =-\/dkflavor}
+\DoxyCodeLine{672         my\_idup(3) =+dkflavor}
+\DoxyCodeLine{673         \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespacemodparameters_ab996c40fc17c5961c313410da5812468}{isaquark}}(dkflavor)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{674            icolup(1:2,1) = (/            0,icolup\_base+3/)}
+\DoxyCodeLine{675            icolup(1:2,2) = (/icolup\_base+3,            0/)}
+\DoxyCodeLine{676 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{677         combweight = combweight*21d0\textcolor{comment}{!*(6d0 + 5d0*3d0)}}
+\DoxyCodeLine{678    \textcolor{keywordflow}{elseif}( decaymode.eq.10 ) then\textcolor{comment}{! W1(+)-\/>l+tau  +nu}}
+\DoxyCodeLine{679         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{680         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}}}
+\DoxyCodeLine{681         dkflavor = \mbox{\hyperlink{namespacemodkinematics_abdbd5894eb2df9dee65b26a098b8a665}{wlepplustaubranching\_flat}}( dkrnd )\textcolor{comment}{!= ElM or MuM or TaM}}
+\DoxyCodeLine{682         my\_idup(2) = +abs(dkflavor)     \textcolor{comment}{! lepton(+)}}
+\DoxyCodeLine{683         my\_idup(3) = +abs(dkflavor)+7   \textcolor{comment}{! neutrino}}
+\DoxyCodeLine{684         combweight = combweight*3d0}
+\DoxyCodeLine{685    \textcolor{keywordflow}{elseif}( decaymode.eq.11 ) then\textcolor{comment}{! W1(+)-\/> anything}}
+\DoxyCodeLine{686         \textcolor{keyword}{call }random\_number(dkrnd)}
+\DoxyCodeLine{687         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}}}
+\DoxyCodeLine{688         dkflavor = \mbox{\hyperlink{namespacemodkinematics_aa41977be208015fef7294c2c78b5722d}{wanybranching\_flat}}( dkrnd )}
+\DoxyCodeLine{689         \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespacemodparameters_ab996c40fc17c5961c313410da5812468}{isaquark}}(dkflavor)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{690            my\_idup(3) = +abs(dkflavor)           \textcolor{comment}{! up flavor}}
+\DoxyCodeLine{691            my\_idup(2) = getckmpartner(my\_idup(3))\textcolor{comment}{! anti-\/dn flavor}}
+\DoxyCodeLine{692            icolup(1:2,1) = (/            0,icolup\_base+3/)}
+\DoxyCodeLine{693            icolup(1:2,2) = (/icolup\_base+3,            0/)}
+\DoxyCodeLine{694         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{695            my\_idup(2) = +abs(dkflavor)     \textcolor{comment}{! lepton(+)}}
+\DoxyCodeLine{696            my\_idup(3) = +abs(dkflavor)+7   \textcolor{comment}{! neutrino}}
+\DoxyCodeLine{697 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{698         combweight = combweight*9d0\textcolor{comment}{!*(3d0 + 2d0*3d0)}}
+\DoxyCodeLine{699    \textcolor{comment}{! Exclusive Z1 decay modes}}
+\DoxyCodeLine{700    \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{701       decaymode.eq.-\/2*2   .or. \& \textcolor{comment}{! Z-\/>ee}}
+\DoxyCodeLine{702       decaymode.eq.-\/3*3   .or. \& \textcolor{comment}{! Z-\/>mumu}}
+\DoxyCodeLine{703       decaymode.eq.-\/5*5   .or. \& \textcolor{comment}{! Z-\/>dd}}
+\DoxyCodeLine{704       decaymode.eq.-\/7*7   .or. \& \textcolor{comment}{! Z-\/>uu}}
+\DoxyCodeLine{705       decaymode.eq.-\/11*11 .or. \& \textcolor{comment}{! Z-\/>ss}}
+\DoxyCodeLine{706       decaymode.eq.-\/13*13 .or. \& \textcolor{comment}{! Z-\/>cc}}
+\DoxyCodeLine{707       decaymode.eq.-\/17*17      \& \textcolor{comment}{! Z-\/>bb}}
+\DoxyCodeLine{708       ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{709         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_ade06b4cdcc0c8d9042254e5ff7d46a01}{z0\_}}}
+\DoxyCodeLine{710         dkflavor = (                      \&}
+\DoxyCodeLine{711             \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/2*2)   + \& \textcolor{comment}{! Z-\/>ee}}
+\DoxyCodeLine{712             \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/3*3)   + \& \textcolor{comment}{! Z-\/>mumu}}
+\DoxyCodeLine{713             \mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/5*5)    + \& \textcolor{comment}{! Z-\/>dd}}
+\DoxyCodeLine{714             \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/7*7)    + \& \textcolor{comment}{! Z-\/>uu}}
+\DoxyCodeLine{715             \mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/11*11) + \& \textcolor{comment}{! Z-\/>ss}}
+\DoxyCodeLine{716             \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/13*13) + \& \textcolor{comment}{! Z-\/>cc}}
+\DoxyCodeLine{717             \mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/17*17)   \& \textcolor{comment}{! Z-\/>bb}}
+\DoxyCodeLine{718         )}
+\DoxyCodeLine{719         my\_idup(2) =-\/dkflavor}
+\DoxyCodeLine{720         my\_idup(3) =+dkflavor}
+\DoxyCodeLine{721         \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespacemodparameters_ab996c40fc17c5961c313410da5812468}{isaquark}}(dkflavor)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{722            icolup(1:2,1) = (/            0,icolup\_base+3/)}
+\DoxyCodeLine{723            icolup(1:2,2) = (/icolup\_base+3,            0/)}
+\DoxyCodeLine{724 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{725    \textcolor{comment}{! Exclusive W+ decay modes}}
+\DoxyCodeLine{726    \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{727       decaymode.eq.-\/2*1   .or. \& \textcolor{comment}{! W-\/>enu}}
+\DoxyCodeLine{728       decaymode.eq.-\/3*1   .or. \& \textcolor{comment}{! W-\/>munu}}
+\DoxyCodeLine{729       decaymode.eq.-\/5*7   .or. \& \textcolor{comment}{! W-\/>du}}
+\DoxyCodeLine{730       decaymode.eq.-\/5*13  .or. \& \textcolor{comment}{! W-\/>dc}}
+\DoxyCodeLine{731       decaymode.eq.-\/11*7  .or. \& \textcolor{comment}{! W-\/>su}}
+\DoxyCodeLine{732       decaymode.eq.-\/11*13 .or. \& \textcolor{comment}{! W-\/>sc}}
+\DoxyCodeLine{733       decaymode.eq.-\/17*7  .or. \& \textcolor{comment}{! W-\/>bu}}
+\DoxyCodeLine{734       decaymode.eq.-\/17*13      \& \textcolor{comment}{! W-\/>bc}}
+\DoxyCodeLine{735       ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{736         my\_idup(1) = \mbox{\hyperlink{namespacemodparameters_a66c20534a6c93424c53ba65c5f3e9901}{wp\_}}}
+\DoxyCodeLine{737         my\_idup(2) = (                    \&}
+\DoxyCodeLine{738            \mbox{\hyperlink{namespacemodparameters_a9298a42e5a68fb1f3ea5fb78eb37d0c8}{elp\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/2*1)    + \& \textcolor{comment}{! W-\/>enu}}
+\DoxyCodeLine{739            \mbox{\hyperlink{namespacemodparameters_a3e452fc6cd0bd427c0b6a6ac621cfe91}{mup\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/3*1)    + \& \textcolor{comment}{! W-\/>munu}}
+\DoxyCodeLine{740            \mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/5*7)    + \& \textcolor{comment}{! W-\/>du}}
+\DoxyCodeLine{741            \mbox{\hyperlink{namespacemodparameters_a146dd7d4eb769b5937cde8cb14fc12aa}{adn\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/5*13)   + \& \textcolor{comment}{! W-\/>dc}}
+\DoxyCodeLine{742            \mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/11*7)  + \& \textcolor{comment}{! W-\/>su}}
+\DoxyCodeLine{743            \mbox{\hyperlink{namespacemodparameters_a7a4bb0b10b808e3342c3ac15e009e154}{astr\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/11*13) + \& \textcolor{comment}{! W-\/>sc}}
+\DoxyCodeLine{744            \mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/17*7)  + \& \textcolor{comment}{! W-\/>bu}}
+\DoxyCodeLine{745            \mbox{\hyperlink{namespacemodparameters_a819a7b99b92aeaa18a9d92d247b6bb98}{abot\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/17*13)   \& \textcolor{comment}{! W-\/>bc}}
+\DoxyCodeLine{746         )}
+\DoxyCodeLine{747         my\_idup(3) = (                   \&}
+\DoxyCodeLine{748            \mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/2*1)   + \& \textcolor{comment}{! W-\/>enu}}
+\DoxyCodeLine{749            \mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/3*1)   + \& \textcolor{comment}{! W-\/>munu}}
+\DoxyCodeLine{750            \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/5*7)    + \& \textcolor{comment}{! W-\/>du}}
+\DoxyCodeLine{751            \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/5*13)  + \& \textcolor{comment}{! W-\/>dc}}
+\DoxyCodeLine{752            \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/11*7)   + \& \textcolor{comment}{! W-\/>su}}
+\DoxyCodeLine{753            \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/11*13) + \& \textcolor{comment}{! W-\/>sc}}
+\DoxyCodeLine{754            \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/17*7)   + \& \textcolor{comment}{! W-\/>bu}}
+\DoxyCodeLine{755            \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}*\mbox{\hyperlink{namespacemodmisc_adeda8e85f44e7c660f23fdf3f1889adf}{logicaltointeger}}(decaymode.eq.-\/17*13)   \& \textcolor{comment}{! W-\/>bc}}
+\DoxyCodeLine{756         )}
+\DoxyCodeLine{757         \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespacemodparameters_ab996c40fc17c5961c313410da5812468}{isaquark}}(dkflavor)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{758            icolup(1:2,1) = (/            0,icolup\_base+3/)}
+\DoxyCodeLine{759            icolup(1:2,2) = (/icolup\_base+3,            0/)}
+\DoxyCodeLine{760 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{761 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763 }
+\DoxyCodeLine{764 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_aab84526a59c3d09a36c3a2c979654257}\label{namespacemodkinematics_aab84526a59c3d09a36c3a2c979654257}} 
 \index{modkinematics@{modkinematics}!vvbranchings@{vvbranchings}}
 \index{vvbranchings@{vvbranchings}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{vvbranchings()}{vvbranchings()}}
 {\footnotesize\ttfamily subroutine modkinematics\+::vvbranchings (\begin{DoxyParamCaption}\item[{integer, dimension(4\+:9)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{integer, dimension(1\+:2,6\+:9)}]{I\+C\+O\+L\+UP,  }\item[{real(8), intent(out)}]{Comb\+Weight,  }\item[{integer, optional}]{Color\+Base }\end{DoxyParamCaption})}
 
+
+
+Definition at line 768 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{768 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{769 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{770 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{771 \textcolor{keywordtype}{integer} :: MY\_IDUP(4:9),ICOLUP(1:2,6:9),ICOLUP\_Base}
+\DoxyCodeLine{772 \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional} ::ColorBase}
+\DoxyCodeLine{773 \textcolor{keywordtype}{real}(8), \textcolor{keywordtype}{intent(out)} :: CombWeight}
+\DoxyCodeLine{774 \textcolor{keywordtype}{integer} :: tmp\_idup(1:3),tmp\_icolup(1:2,1:2)}
+\DoxyCodeLine{775 \textcolor{keywordtype}{real}(8) :: tmp\_CombWeight}
+\DoxyCodeLine{776 \textcolor{keywordtype}{real}(8) :: DKRnd}
+\DoxyCodeLine{777 }
+\DoxyCodeLine{778 \textcolor{comment}{!    particle associations:}}
+\DoxyCodeLine{779 \textcolor{comment}{!}}
+\DoxyCodeLine{780 \textcolor{comment}{!    IDUP(6)  -\/-\/>  MomDK(:,2)  -\/-\/>     v-\/spinor}}
+\DoxyCodeLine{781 \textcolor{comment}{!    IDUP(7)  -\/-\/>  MomDK(:,1)  -\/-\/>  ubar-\/spinor}}
+\DoxyCodeLine{782 \textcolor{comment}{!    IDUP(8)  -\/-\/>  MomDK(:,4)  -\/-\/>     v-\/spinor}}
+\DoxyCodeLine{783 \textcolor{comment}{!    IDUP(9)  -\/-\/>  MomDK(:,3)  -\/-\/>  ubar-\/spinor}}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785    \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(colorbase)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{786        icolup\_base = colorbase}
+\DoxyCodeLine{787    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{788        icolup\_base = 800}
+\DoxyCodeLine{789 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{790 }
+\DoxyCodeLine{791    icolup(:,:) = 0}
+\DoxyCodeLine{792    combweight = 1d0}
+\DoxyCodeLine{793 }
+\DoxyCodeLine{794    \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodkinematics_afa417c65878bdb83837316a881eb1680}{vbranching}}(\mbox{\hyperlink{namespacemodparameters_a2aea81d9f9004ec11a67c697fcf4dcb7}{decaymode1}}, tmp\_idup, tmp\_icolup, tmp\_combweight, icolup\_base)}
+\DoxyCodeLine{795    my\_idup(4) = tmp\_idup(1)}
+\DoxyCodeLine{796    my\_idup(6) = tmp\_idup(2)}
+\DoxyCodeLine{797    my\_idup(7) = tmp\_idup(3)}
+\DoxyCodeLine{798    icolup(1:2,6) = tmp\_icolup(1:2,1)}
+\DoxyCodeLine{799    icolup(1:2,7) = tmp\_icolup(1:2,2)}
+\DoxyCodeLine{800    combweight = combweight * tmp\_combweight}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802 }
+\DoxyCodeLine{803    icolup\_base = icolup\_base+1}
+\DoxyCodeLine{804    \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodkinematics_afa417c65878bdb83837316a881eb1680}{vbranching}}(\mbox{\hyperlink{namespacemodparameters_a7c103debcd071078fa1bcf75f6248ba9}{decaymode2}}, tmp\_idup, tmp\_icolup, tmp\_combweight, icolup\_base)}
+\DoxyCodeLine{805    my\_idup(5) = tmp\_idup(1)}
+\DoxyCodeLine{806    my\_idup(8) = tmp\_idup(2)}
+\DoxyCodeLine{807    my\_idup(9) = tmp\_idup(3)}
+\DoxyCodeLine{808    icolup(1:2,8) = tmp\_icolup(1:2,1)}
+\DoxyCodeLine{809    icolup(1:2,9) = tmp\_icolup(1:2,2)}
+\DoxyCodeLine{810    \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacemodparameters_a2edcfa9afc7298dfdf8e93f1d736f159}{isawdecay}}(\mbox{\hyperlink{namespacemodparameters_a7c103debcd071078fa1bcf75f6248ba9}{decaymode2}})) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{811       my\_idup(5) = -\/my\_idup(5)}
+\DoxyCodeLine{812       \textcolor{keyword}{call }\mbox{\hyperlink{interfacemodmisc_1_1swap}{swap}}(my\_idup(8),my\_idup(9))}
+\DoxyCodeLine{813       my\_idup(8) = -\/my\_idup(8)}
+\DoxyCodeLine{814       my\_idup(9) = -\/my\_idup(9)}
+\DoxyCodeLine{815 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{816    \textcolor{keywordflow}{if}( \mbox{\hyperlink{namespacemodparameters_a01230a7892286e381643f0ca4fed5c04}{process}}.lt.110 .or. \mbox{\hyperlink{namespacemodparameters_a01230a7892286e381643f0ca4fed5c04}{process}}.gt.114) \textcolor{keywordflow}{then} \textcolor{comment}{! for tHq processes only one V branching!}}
+\DoxyCodeLine{817      combweight = combweight * tmp\_combweight}
+\DoxyCodeLine{818 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{820 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_ae5f6d6e9da6f9343b1b72aad0e330146}\label{namespacemodkinematics_ae5f6d6e9da6f9343b1b72aad0e330146}} 
 \index{modkinematics@{modkinematics}!wanybranching@{wanybranching}}
 \index{wanybranching@{wanybranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wanybranching()}{wanybranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wanybranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 536 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{536 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{537 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{538 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{539 \textcolor{keywordtype}{integer} :: WAnyBranching}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_a51035236cc30ab28bc6b4e2ce68096a1}{br\_w\_ud}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{543       wanybranching = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{544   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a51035236cc30ab28bc6b4e2ce68096a1}{br\_w\_ud}}+\mbox{\hyperlink{namespacemodparameters_aea29d698ef3f78bad00bafe1a8848fca}{br\_w\_cs}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{545       wanybranching = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{546   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a51035236cc30ab28bc6b4e2ce68096a1}{br\_w\_ud}}+\mbox{\hyperlink{namespacemodparameters_aea29d698ef3f78bad00bafe1a8848fca}{br\_w\_cs}}+\mbox{\hyperlink{namespacemodparameters_afd1325953db264dd96bfcd94429fc3dc}{br\_w\_en}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{547       wanybranching = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{548   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a51035236cc30ab28bc6b4e2ce68096a1}{br\_w\_ud}}+\mbox{\hyperlink{namespacemodparameters_aea29d698ef3f78bad00bafe1a8848fca}{br\_w\_cs}}+\mbox{\hyperlink{namespacemodparameters_afd1325953db264dd96bfcd94429fc3dc}{br\_w\_en}}+\mbox{\hyperlink{namespacemodparameters_a1e03d327d03ecfbdb780c71d5b2024b9}{br\_w\_mn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{549       wanybranching = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{550   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a51035236cc30ab28bc6b4e2ce68096a1}{br\_w\_ud}}+\mbox{\hyperlink{namespacemodparameters_aea29d698ef3f78bad00bafe1a8848fca}{br\_w\_cs}}+\mbox{\hyperlink{namespacemodparameters_afd1325953db264dd96bfcd94429fc3dc}{br\_w\_en}}+\mbox{\hyperlink{namespacemodparameters_a1e03d327d03ecfbdb780c71d5b2024b9}{br\_w\_mn}}+\mbox{\hyperlink{namespacemodparameters_a3d1f021d00fe7cdb416ecf9e2e808f2b}{br\_w\_tn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{551       wanybranching = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{552   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{553       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{554       stop}
+\DoxyCodeLine{555 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558 \textcolor{comment}{!   if( xRnd .le. scale\_alpha\_W\_ud*Br\_W\_ud ) then}}
+\DoxyCodeLine{559 \textcolor{comment}{!       WAnyBranching = Up\_}}
+\DoxyCodeLine{560 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_W\_ud*Br\_W\_ud+scale\_alpha\_W\_cs*Br\_W\_cs ) then}}
+\DoxyCodeLine{561 \textcolor{comment}{!       WAnyBranching = Chm\_}}
+\DoxyCodeLine{562 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_W\_ud*Br\_W\_ud+scale\_alpha\_W\_cs*Br\_W\_cs+scale\_alpha\_W\_ln*Br\_W\_en ) then}}
+\DoxyCodeLine{563 \textcolor{comment}{!       WAnyBranching = ElM\_}}
+\DoxyCodeLine{564 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_W\_ud*Br\_W\_ud+scale\_alpha\_W\_cs*Br\_W\_cs+scale\_alpha\_W\_ln*Br\_W\_en+scale\_alpha\_W\_ln*Br\_W\_mn ) then}}
+\DoxyCodeLine{565 \textcolor{comment}{!       WAnyBranching = MuM\_}}
+\DoxyCodeLine{566 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_W\_ud*Br\_W\_ud+scale\_alpha\_W\_cs*Br\_W\_cs+scale\_alpha\_W\_ln*Br\_W\_en+scale\_alpha\_W\_ln*Br\_W\_mn+scale\_alpha\_W\_ln*Br\_W\_tn ) then}}
+\DoxyCodeLine{567 \textcolor{comment}{!       WAnyBranching = TaM\_}}
+\DoxyCodeLine{568 \textcolor{comment}{!   else}}
+\DoxyCodeLine{569 \textcolor{comment}{!       print *, "error ",xRnd}}
+\DoxyCodeLine{570 \textcolor{comment}{!       stop}}
+\DoxyCodeLine{571 \textcolor{comment}{!   endif}}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{comment}{! print *, "checker 2",Br\_W\_ud+Br\_W\_cs+Br\_W\_en+Br\_W\_mn+Br\_W\_tn}}
+\DoxyCodeLine{574 \textcolor{comment}{! print *, "checker 2",scale\_alpha\_W\_ud*Br\_W\_ud+scale\_alpha\_W\_cs*Br\_W\_cs+scale\_alpha\_W\_ln*Br\_W\_en+scale\_alpha\_W\_ln*Br\_W\_mn+scale\_alpha\_W\_ln*Br\_W\_tn}}
+\DoxyCodeLine{575 \textcolor{comment}{! pause}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_aa41977be208015fef7294c2c78b5722d}\label{namespacemodkinematics_aa41977be208015fef7294c2c78b5722d}} 
 \index{modkinematics@{modkinematics}!wanybranching\_flat@{wanybranching\_flat}}
 \index{wanybranching\_flat@{wanybranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wanybranching\_flat()}{wanybranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wanybranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 508 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{508 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{509 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{510 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{511 \textcolor{keywordtype}{integer} :: WAnyBranching\_flat}
+\DoxyCodeLine{512 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Ncol=3d0}
+\DoxyCodeLine{513 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: xx=1d0/9d0}
+\DoxyCodeLine{514 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: yy=ncol*xx}
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517   \textcolor{keywordflow}{if}( xrnd .le.        yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{518       wanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{519   \textcolor{keywordflow}{elseif}(xrnd .le. 2d0*yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{520       wanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{521   \textcolor{keywordflow}{elseif}(xrnd .le. 2d0*yy +     xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{522       wanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{523   \textcolor{keywordflow}{elseif}(xrnd .le. 2d0*yy + 2d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{524       wanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{525   \textcolor{keywordflow}{elseif}(xrnd .le. 2d0*yy + 3d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{526       wanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{527   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{528       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{529       stop}
+\DoxyCodeLine{530 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_abf311b8ba34a0c44ad741a0b8dc73e3f}\label{namespacemodkinematics_abf311b8ba34a0c44ad741a0b8dc73e3f}} 
 \index{modkinematics@{modkinematics}!wlepbranching@{wlepbranching}}
 \index{wlepbranching@{wlepbranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wlepbranching()}{wlepbranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wlepbranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 394 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{394 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{395 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{396 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{397 \textcolor{keywordtype}{integer} :: WLepBranching}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_aadaae33b3fe61c183036ac4f751b8bec}{brlept\_w\_en}} /(100d0*\mbox{\hyperlink{namespacemodparameters_adc685f6d04de1945aae3f25f0206b3d4}{percent}}-\/\mbox{\hyperlink{namespacemodparameters_abf819a70e4d84233305be82999997969}{brlept\_w\_tn}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{400       wlepbranching = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{401   \textcolor{keywordflow}{elseif}(xrnd .le. (\mbox{\hyperlink{namespacemodparameters_aadaae33b3fe61c183036ac4f751b8bec}{brlept\_w\_en}}+\mbox{\hyperlink{namespacemodparameters_ae38fab5492bca30dfaebeeb0224f2802}{brlept\_w\_mn}})/(100d0*\mbox{\hyperlink{namespacemodparameters_adc685f6d04de1945aae3f25f0206b3d4}{percent}}-\/\mbox{\hyperlink{namespacemodparameters_abf819a70e4d84233305be82999997969}{brlept\_w\_tn}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{402       wlepbranching = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{403   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{404       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{405       stop}
+\DoxyCodeLine{406 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 \textcolor{comment}{!print *, "checker 6",Brlept\_W\_en /(100d0*percent-\/Brlept\_W\_tn)}}
+\DoxyCodeLine{409 \textcolor{comment}{!print *, "checker 6",(Brlept\_W\_en+Brlept\_W\_mn)/(100d0*percent-\/Brlept\_W\_tn)}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a598b3f42b6ec9ff2accc3ab4dd33cc96}\label{namespacemodkinematics_a598b3f42b6ec9ff2accc3ab4dd33cc96}} 
 \index{modkinematics@{modkinematics}!wlepbranching\_flat@{wlepbranching\_flat}}
 \index{wlepbranching\_flat@{wlepbranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wlepbranching\_flat()}{wlepbranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wlepbranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 415 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{415 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{416 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{417 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{418 \textcolor{keywordtype}{integer} :: WLepBranching\_flat}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420   \textcolor{keywordflow}{if}( xrnd .le. 0.5d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{421       wlepbranching\_flat = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{422   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{423       wlepbranching\_flat = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{424 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a9ec0524dc7c88a23c88438b15b2118b6}\label{namespacemodkinematics_a9ec0524dc7c88a23c88438b15b2118b6}} 
 \index{modkinematics@{modkinematics}!wlepplustaubranching@{wlepplustaubranching}}
 \index{wlepplustaubranching@{wlepplustaubranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wlepplustaubranching()}{wlepplustaubranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wlepplustaubranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 430 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{430 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{431 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{432 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{433 \textcolor{keywordtype}{integer} :: WLepPlusTauBranching}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_aadaae33b3fe61c183036ac4f751b8bec}{brlept\_w\_en}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{436       wlepplustaubranching = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{437   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_aadaae33b3fe61c183036ac4f751b8bec}{brlept\_w\_en}}+\mbox{\hyperlink{namespacemodparameters_ae38fab5492bca30dfaebeeb0224f2802}{brlept\_w\_mn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{438       wlepplustaubranching = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{439   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_aadaae33b3fe61c183036ac4f751b8bec}{brlept\_w\_en}}+\mbox{\hyperlink{namespacemodparameters_ae38fab5492bca30dfaebeeb0224f2802}{brlept\_w\_mn}}+\mbox{\hyperlink{namespacemodparameters_abf819a70e4d84233305be82999997969}{brlept\_w\_tn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{440       wlepplustaubranching = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{441   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{442       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{443       stop}
+\DoxyCodeLine{444 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{comment}{! print *, "checker 7",Brlept\_W\_en}}
+\DoxyCodeLine{447 \textcolor{comment}{! print *, "checker 7",Brlept\_W\_en+Brlept\_W\_mn}}
+\DoxyCodeLine{448 \textcolor{comment}{! print *, "checker 7",Brlept\_W\_en+Brlept\_W\_mn+Brlept\_W\_tn}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_abdbd5894eb2df9dee65b26a098b8a665}\label{namespacemodkinematics_abdbd5894eb2df9dee65b26a098b8a665}} 
 \index{modkinematics@{modkinematics}!wlepplustaubranching\_flat@{wlepplustaubranching\_flat}}
 \index{wlepplustaubranching\_flat@{wlepplustaubranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wlepplustaubranching\_flat()}{wlepplustaubranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wlepplustaubranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 454 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{454 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{455 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{456 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{457 \textcolor{keywordtype}{integer} :: WLepPlusTauBranching\_flat}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459   \textcolor{keywordflow}{if}( xrnd .le. (1d0/3d0) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{460       wlepplustaubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{461   \textcolor{keywordflow}{elseif}(xrnd .le. (2d0/3d0) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{462       wlepplustaubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{463   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{464       wlepplustaubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{465 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_af22e9771b35dd895176b8ab3a1b65890}\label{namespacemodkinematics_af22e9771b35dd895176b8ab3a1b65890}} 
 \index{modkinematics@{modkinematics}!wquaupbranching@{wquaupbranching}}
 \index{wquaupbranching@{wquaupbranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wquaupbranching()}{wquaupbranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wquaupbranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 471 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{471 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{472 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{473 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{474 \textcolor{keywordtype}{integer} :: WQuaUpBranching}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_af87b8e8cf579c04e1d30389c613d2cf4}{brhadr\_w\_ud}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{477       wquaupbranching = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{478   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_af87b8e8cf579c04e1d30389c613d2cf4}{brhadr\_w\_ud}}+\mbox{\hyperlink{namespacemodparameters_ab745861451e43f8324b780efaf378aea}{brhadr\_w\_cs}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{479       wquaupbranching = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{480   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{481       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{482       stop}
+\DoxyCodeLine{483 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{comment}{!print *, "checker 8",Brhadr\_W\_ud}}
+\DoxyCodeLine{487 \textcolor{comment}{!print *, "checker 8",Brhadr\_W\_ud+Brhadr\_W\_cs}}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a3d6970760902231a36eb96aa02970bb1}\label{namespacemodkinematics_a3d6970760902231a36eb96aa02970bb1}} 
 \index{modkinematics@{modkinematics}!wquaupbranching\_flat@{wquaupbranching\_flat}}
 \index{wquaupbranching\_flat@{wquaupbranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{wquaupbranching\_flat()}{wquaupbranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::wquaupbranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 493 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{493 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{494 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{495 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{496 \textcolor{keywordtype}{integer} :: WQuaUpBranching\_flat}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498   \textcolor{keywordflow}{if}( xrnd .le. 0.5d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{499       wquaupbranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{500   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{501       wquaupbranching\_flat = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{502 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_af54de841b3f29593e030825ae8d8d293}\label{namespacemodkinematics_af54de841b3f29593e030825ae8d8d293}} 
 \index{modkinematics@{modkinematics}!zanybranching@{zanybranching}}
 \index{zanybranching@{zanybranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zanybranching()}{zanybranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zanybranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 323 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{323 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{324 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{325 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{326 \textcolor{keywordtype}{integer} :: ZAnyBranching}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{330       zanybranching = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{331   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{332       zanybranching = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{333   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{334       zanybranching = \mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}}
+\DoxyCodeLine{335   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{336       zanybranching = \mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}}
+\DoxyCodeLine{337   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{338       zanybranching = \mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}}
+\DoxyCodeLine{339   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}+\mbox{\hyperlink{namespacemodparameters_a42a066c54ebb30047a674b6a4279a699}{br\_z\_ee}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{340       zanybranching = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{341   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}+\mbox{\hyperlink{namespacemodparameters_a42a066c54ebb30047a674b6a4279a699}{br\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a0604b6da6e3d814e187be30f8b3a0cbf}{br\_z\_mm}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{342       zanybranching = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{343   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}+\mbox{\hyperlink{namespacemodparameters_a42a066c54ebb30047a674b6a4279a699}{br\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a0604b6da6e3d814e187be30f8b3a0cbf}{br\_z\_mm}}+\mbox{\hyperlink{namespacemodparameters_afba9771463968c13bf0dc9a5cc1d14ae}{br\_z\_tt}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{344       zanybranching = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{345   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}+\mbox{\hyperlink{namespacemodparameters_a42a066c54ebb30047a674b6a4279a699}{br\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a0604b6da6e3d814e187be30f8b3a0cbf}{br\_z\_mm}}+\mbox{\hyperlink{namespacemodparameters_afba9771463968c13bf0dc9a5cc1d14ae}{br\_z\_tt}}+\mbox{\hyperlink{namespacemodparameters_ac116b826b0b7c6d64db9e0572a996d89}{br\_z\_nn}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{346       zanybranching = \mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}}
+\DoxyCodeLine{347   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}+\mbox{\hyperlink{namespacemodparameters_a42a066c54ebb30047a674b6a4279a699}{br\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a0604b6da6e3d814e187be30f8b3a0cbf}{br\_z\_mm}}+\mbox{\hyperlink{namespacemodparameters_afba9771463968c13bf0dc9a5cc1d14ae}{br\_z\_tt}}+\mbox{\hyperlink{namespacemodparameters_ac116b826b0b7c6d64db9e0572a996d89}{br\_z\_nn}}+\mbox{\hyperlink{namespacemodparameters_ac116b826b0b7c6d64db9e0572a996d89}{br\_z\_nn}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{348       zanybranching = \mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}}
+\DoxyCodeLine{349   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_ad837c6874d4c62b8cb1f71e7e5954104}{br\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_a167c1a8a77e7291c0737f0f5c332fdb6}{br\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_a942c5b91c5d581ae23243410b6eddfa6}{br\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a983de97c3d15d4722d74589e89977558}{br\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_afa72393ccc93063a9354caeb8749fda3}{br\_z\_bb}}+\mbox{\hyperlink{namespacemodparameters_a42a066c54ebb30047a674b6a4279a699}{br\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a0604b6da6e3d814e187be30f8b3a0cbf}{br\_z\_mm}}+\mbox{\hyperlink{namespacemodparameters_afba9771463968c13bf0dc9a5cc1d14ae}{br\_z\_tt}}+\mbox{\hyperlink{namespacemodparameters_ac116b826b0b7c6d64db9e0572a996d89}{br\_z\_nn}}+\mbox{\hyperlink{namespacemodparameters_ac116b826b0b7c6d64db9e0572a996d89}{br\_z\_nn}}+\mbox{\hyperlink{namespacemodparameters_ac116b826b0b7c6d64db9e0572a996d89}{br\_z\_nn}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{350       zanybranching = \mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}}
+\DoxyCodeLine{351   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{352       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{353       stop}
+\DoxyCodeLine{354 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{comment}{!   if( xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu ) then}}
+\DoxyCodeLine{358 \textcolor{comment}{!       ZAnyBranching = Up\_}}
+\DoxyCodeLine{359 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc) then}}
+\DoxyCodeLine{360 \textcolor{comment}{!       ZAnyBranching = Chm\_}}
+\DoxyCodeLine{361 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd) then}}
+\DoxyCodeLine{362 \textcolor{comment}{!       ZAnyBranching = Dn\_}}
+\DoxyCodeLine{363 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss) then}}
+\DoxyCodeLine{364 \textcolor{comment}{!       ZAnyBranching = Str\_}}
+\DoxyCodeLine{365 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb) then}}
+\DoxyCodeLine{366 \textcolor{comment}{!       ZAnyBranching = Bot\_}}
+\DoxyCodeLine{367 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee) then}}
+\DoxyCodeLine{368 \textcolor{comment}{!       ZAnyBranching = ElM\_}}
+\DoxyCodeLine{369 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee+scale\_alpha\_Z\_ll*Br\_Z\_mm) then}}
+\DoxyCodeLine{370 \textcolor{comment}{!       ZAnyBranching = MuM\_}}
+\DoxyCodeLine{371 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee+scale\_alpha\_Z\_ll*Br\_Z\_mm+scale\_alpha\_Z\_ll*Br\_Z\_tt) then}}
+\DoxyCodeLine{372 \textcolor{comment}{!       ZAnyBranching = TaM\_}}
+\DoxyCodeLine{373 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee+scale\_alpha\_Z\_ll*Br\_Z\_mm+scale\_alpha\_Z\_ll*Br\_Z\_tt+scale\_alpha\_Z\_nn*Br\_Z\_nn) then}}
+\DoxyCodeLine{374 \textcolor{comment}{!       ZAnyBranching = NuE\_}}
+\DoxyCodeLine{375 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee+scale\_alpha\_Z\_ll*Br\_Z\_mm+scale\_alpha\_Z\_ll*Br\_Z\_tt+scale\_alpha\_Z\_nn*Br\_Z\_nn+scale\_alpha\_Z\_nn*Br\_Z\_nn) then}}
+\DoxyCodeLine{376 \textcolor{comment}{!       ZAnyBranching = NuM\_}}
+\DoxyCodeLine{377 \textcolor{comment}{!   elseif(xRnd .le. scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee+scale\_alpha\_Z\_ll*Br\_Z\_mm+scale\_alpha\_Z\_ll*Br\_Z\_tt+scale\_alpha\_Z\_nn*Br\_Z\_nn+scale\_alpha\_Z\_nn*Br\_Z\_nn+scale\_alpha\_Z\_nn*Br\_Z\_nn) then}}
+\DoxyCodeLine{378 \textcolor{comment}{!       ZAnyBranching = NuT\_}}
+\DoxyCodeLine{379 \textcolor{comment}{!   else}}
+\DoxyCodeLine{380 \textcolor{comment}{!       print *, "error ",xRnd}}
+\DoxyCodeLine{381 \textcolor{comment}{!       stop}}
+\DoxyCodeLine{382 \textcolor{comment}{!   endif}}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{comment}{! print *, "checker ",Br\_Z\_uu+Br\_Z\_cc+Br\_Z\_dd+Br\_Z\_ss+Br\_Z\_bb+Br\_Z\_ee+Br\_Z\_mm+Br\_Z\_tt+Br\_Z\_nn+Br\_Z\_nn+Br\_Z\_nn}}
+\DoxyCodeLine{386 \textcolor{comment}{! print *, "checker ",scale\_alpha\_Z\_uu*Br\_Z\_uu+scale\_alpha\_Z\_uu*Br\_Z\_cc+scale\_alpha\_Z\_dd*Br\_Z\_dd+scale\_alpha\_Z\_dd*Br\_Z\_ss+scale\_alpha\_Z\_dd*Br\_Z\_bb+scale\_alpha\_Z\_ll*Br\_Z\_ee+scale\_alpha\_Z\_ll*Br\_Z\_mm+scale\_alpha\_Z\_ll*Br\_Z\_tt+scale\_alpha\_Z\_nn*Br\_Z\_nn+scale\_alpha\_Z\_nn*Br\_Z\_nn+scale\_alpha\_Z\_nn*Br\_Z\_nn}}
+\DoxyCodeLine{387 \textcolor{comment}{! pause}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a45700a42f6ce65b1a7f7d61fbedc42ac}\label{namespacemodkinematics_a45700a42f6ce65b1a7f7d61fbedc42ac}} 
 \index{modkinematics@{modkinematics}!zanybranching\_flat@{zanybranching\_flat}}
 \index{zanybranching\_flat@{zanybranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zanybranching\_flat()}{zanybranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zanybranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 247 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{248 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{249 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{250 \textcolor{keywordtype}{integer} :: ZAnyBranching\_flat}
+\DoxyCodeLine{251 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Ncol=3d0}
+\DoxyCodeLine{252 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: xx=1d0/21d0}
+\DoxyCodeLine{253 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: yy=ncol*xx}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{comment}{! real(8),parameter :: xx=1d0/11d0}}
+\DoxyCodeLine{256 \textcolor{comment}{! real(8),parameter :: yy=xx}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259   \textcolor{keywordflow}{if}( xrnd .le. yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{260       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{261   \textcolor{keywordflow}{elseif}(xrnd .le. 2d0*yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{262       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{263   \textcolor{keywordflow}{elseif}(xrnd .le. 3d0*yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{264       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}}
+\DoxyCodeLine{265   \textcolor{keywordflow}{elseif}(xrnd .le. 4d0*yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{266       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}}
+\DoxyCodeLine{267   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{268       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}}
+\DoxyCodeLine{269   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy + xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{270       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{271   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy + 2d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{272       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{273   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy + 3d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{274       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{275   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy + 4d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{276       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}}
+\DoxyCodeLine{277   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy + 5d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{278       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}}
+\DoxyCodeLine{279   \textcolor{keywordflow}{elseif}(xrnd .le. 5d0*yy + 6d0*xx ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{280       zanybranching\_flat = \mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}}
+\DoxyCodeLine{281   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{282       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{283       stop}
+\DoxyCodeLine{284 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{!   if( xRnd .le. yy*scale\_alpha\_Z\_uu ) then}}
+\DoxyCodeLine{291 \textcolor{comment}{!       ZAnyBranching = Up\_}}
+\DoxyCodeLine{292 \textcolor{comment}{!   elseif(xRnd .le. 2*yy*scale\_alpha\_Z\_uu ) then}}
+\DoxyCodeLine{293 \textcolor{comment}{!       ZAnyBranching = Chm\_}}
+\DoxyCodeLine{294 \textcolor{comment}{!   elseif(xRnd .le. 2*yy*scale\_alpha\_Z\_uu+yy*scale\_alpha\_Z\_dd ) then}}
+\DoxyCodeLine{295 \textcolor{comment}{!       ZAnyBranching = Dn\_}}
+\DoxyCodeLine{296 \textcolor{comment}{!   elseif(xRnd .le. 2*yy*scale\_alpha\_Z\_uu+2*yy*scale\_alpha\_Z\_dd ) then}}
+\DoxyCodeLine{297 \textcolor{comment}{!       ZAnyBranching = Str\_}}
+\DoxyCodeLine{298 \textcolor{comment}{!   elseif(xRnd .le. 2*yy*scale\_alpha\_Z\_uu+3*yy*scale\_alpha\_Z\_dd ) then}}
+\DoxyCodeLine{299 \textcolor{comment}{!       ZAnyBranching = Bot\_}}
+\DoxyCodeLine{300 \textcolor{comment}{!   elseif(xRnd .le. yy*(2*scale\_alpha\_Z\_uu+3*scale\_alpha\_Z\_dd) + xx*scale\_alpha\_Z\_ll ) then}}
+\DoxyCodeLine{301 \textcolor{comment}{!       ZAnyBranching = ElM\_}}
+\DoxyCodeLine{302 \textcolor{comment}{!   elseif(xRnd .le. yy*(2*scale\_alpha\_Z\_uu+3*scale\_alpha\_Z\_dd) + xx*2*scale\_alpha\_Z\_ll ) then}}
+\DoxyCodeLine{303 \textcolor{comment}{!       ZAnyBranching = MuM\_}}
+\DoxyCodeLine{304 \textcolor{comment}{!   elseif(xRnd .le. yy*(2*scale\_alpha\_Z\_uu+3*scale\_alpha\_Z\_dd) + xx*3*scale\_alpha\_Z\_ll ) then}}
+\DoxyCodeLine{305 \textcolor{comment}{!       ZAnyBranching = TaM\_}}
+\DoxyCodeLine{306 \textcolor{comment}{!   elseif(xRnd .le. yy*(2*scale\_alpha\_Z\_uu+3*scale\_alpha\_Z\_dd)+xx*3*scale\_alpha\_Z\_ll + xx*scale\_alpha\_Z\_nn ) then}}
+\DoxyCodeLine{307 \textcolor{comment}{!       ZAnyBranching = NuE\_}}
+\DoxyCodeLine{308 \textcolor{comment}{!   elseif(xRnd .le. yy*(2*scale\_alpha\_Z\_uu+3*scale\_alpha\_Z\_dd)+xx*3*scale\_alpha\_Z\_ll + xx*2*scale\_alpha\_Z\_nn ) then}}
+\DoxyCodeLine{309 \textcolor{comment}{!       ZAnyBranching = NuM\_}}
+\DoxyCodeLine{310 \textcolor{comment}{!   elseif(xRnd .le. yy*(2*scale\_alpha\_Z\_uu+3*scale\_alpha\_Z\_dd)+xx*3*scale\_alpha\_Z\_ll + xx*3*scale\_alpha\_Z\_nn ) then}}
+\DoxyCodeLine{311 \textcolor{comment}{!       ZAnyBranching = NuT\_}}
+\DoxyCodeLine{312 \textcolor{comment}{!   else}}
+\DoxyCodeLine{313 \textcolor{comment}{!       print *, "error ",xRnd}}
+\DoxyCodeLine{314 \textcolor{comment}{!       stop}}
+\DoxyCodeLine{315 \textcolor{comment}{!   endif}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_abc28129c8c7833d056327e5c24832691}\label{namespacemodkinematics_abc28129c8c7833d056327e5c24832691}} 
 \index{modkinematics@{modkinematics}!zlepbranching@{zlepbranching}}
 \index{zlepbranching@{zlepbranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zlepbranching()}{zlepbranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zlepbranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 69 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{70 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{71 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{72 \textcolor{keywordtype}{integer} :: ZLepBranching}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_aeb0e1858b2b43e14e2cea03f3ac44290}{brlept\_z\_ee}}/(100d0*\mbox{\hyperlink{namespacemodparameters_adc685f6d04de1945aae3f25f0206b3d4}{percent}}-\/\mbox{\hyperlink{namespacemodparameters_a2de0d794ff2b90fda21822537ebc168b}{brlept\_z\_tt}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{76       zlepbranching = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{77   \textcolor{keywordflow}{elseif}(xrnd .le. (\mbox{\hyperlink{namespacemodparameters_aeb0e1858b2b43e14e2cea03f3ac44290}{brlept\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a9db4c69b807668866e15966962693628}{brlept\_z\_mm}})/(100d0*\mbox{\hyperlink{namespacemodparameters_adc685f6d04de1945aae3f25f0206b3d4}{percent}}-\/\mbox{\hyperlink{namespacemodparameters_a2de0d794ff2b90fda21822537ebc168b}{brlept\_z\_tt}}) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{78       zlepbranching = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{79   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{80       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{81       stop}
+\DoxyCodeLine{82 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{!print *, "checker 2",(Brlept\_Z\_ee)/(100d0*percent-\/Brlept\_Z\_tt)}}
+\DoxyCodeLine{85 \textcolor{comment}{!print *, "checker 2",(Brlept\_Z\_ee+Brlept\_Z\_mm)/(100d0*percent-\/Brlept\_Z\_tt)}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_ae07ed8653fe103b4b0aa65660587dd4f}\label{namespacemodkinematics_ae07ed8653fe103b4b0aa65660587dd4f}} 
 \index{modkinematics@{modkinematics}!zlepbranching\_flat@{zlepbranching\_flat}}
 \index{zlepbranching\_flat@{zlepbranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zlepbranching\_flat()}{zlepbranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zlepbranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 91 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{92 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{93 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{94 \textcolor{keywordtype}{integer} :: ZLepBranching\_flat}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97   \textcolor{keywordflow}{if}( xrnd .le. 0.5d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{98       zlepbranching\_flat = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{99   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{100       zlepbranching\_flat = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{101 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a9fa09fa90ee35ff10d11b8c6983b6ae6}\label{namespacemodkinematics_a9fa09fa90ee35ff10d11b8c6983b6ae6}} 
 \index{modkinematics@{modkinematics}!zlepplustaubranching@{zlepplustaubranching}}
 \index{zlepplustaubranching@{zlepplustaubranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zlepplustaubranching()}{zlepplustaubranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zlepplustaubranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 107 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{108 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{109 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{110 \textcolor{keywordtype}{integer} :: ZLepPlusTauBranching}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_aeb0e1858b2b43e14e2cea03f3ac44290}{brlept\_z\_ee}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{113       zlepplustaubranching = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{114   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_aeb0e1858b2b43e14e2cea03f3ac44290}{brlept\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a9db4c69b807668866e15966962693628}{brlept\_z\_mm}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{115       zlepplustaubranching = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{116   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_aeb0e1858b2b43e14e2cea03f3ac44290}{brlept\_z\_ee}}+\mbox{\hyperlink{namespacemodparameters_a9db4c69b807668866e15966962693628}{brlept\_z\_mm}}+\mbox{\hyperlink{namespacemodparameters_a2de0d794ff2b90fda21822537ebc168b}{brlept\_z\_tt}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{117       zlepplustaubranching = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{118   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{119       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{120       stop}
+\DoxyCodeLine{121 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{comment}{! print *, "checker 3",Brlept\_Z\_ee}}
+\DoxyCodeLine{124 \textcolor{comment}{! print *, "checker 3",Brlept\_Z\_ee+Brlept\_Z\_mm}}
+\DoxyCodeLine{125 \textcolor{comment}{! print *, "checker 3",Brlept\_Z\_ee+Brlept\_Z\_mm+Brlept\_Z\_tt}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a5c24ddbb3078123e2ef308664c10b76a}\label{namespacemodkinematics_a5c24ddbb3078123e2ef308664c10b76a}} 
 \index{modkinematics@{modkinematics}!zlepplustaubranching\_flat@{zlepplustaubranching\_flat}}
 \index{zlepplustaubranching\_flat@{zlepplustaubranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zlepplustaubranching\_flat()}{zlepplustaubranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zlepplustaubranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 131 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{132 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{133 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{134 \textcolor{keywordtype}{integer} :: ZLepPlusTauBranching\_flat}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136   \textcolor{keywordflow}{if}( xrnd .le. (1d0/3d0) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{137       zlepplustaubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a6c51b163c7991daa6581c5ffc4c1173e}{elm\_}}}
+\DoxyCodeLine{138   \textcolor{keywordflow}{elseif}(xrnd .le. (2d0/3d0) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{139       zlepplustaubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a99f82e924c605c6454c9cd9862ab1c1d}{mum\_}}}
+\DoxyCodeLine{140   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{141       zlepplustaubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0e64f50ce2abab9bcf2fae3fa71ff1ea}{tam\_}}}
+\DoxyCodeLine{142 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a9eab328cd541940ccd252388cb3db775}\label{namespacemodkinematics_a9eab328cd541940ccd252388cb3db775}} 
 \index{modkinematics@{modkinematics}!znubranching@{znubranching}}
 \index{znubranching@{znubranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{znubranching()}{znubranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::znubranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 148 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{149 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{150 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{151 \textcolor{keywordtype}{integer} :: ZNuBranching}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_a410e21f3354abe6e0cb3e19658409035}{brlept\_z\_nn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{154       znubranching = \mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}}
+\DoxyCodeLine{155   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a410e21f3354abe6e0cb3e19658409035}{brlept\_z\_nn}}+\mbox{\hyperlink{namespacemodparameters_a410e21f3354abe6e0cb3e19658409035}{brlept\_z\_nn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{156       znubranching = \mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}}
+\DoxyCodeLine{157   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a410e21f3354abe6e0cb3e19658409035}{brlept\_z\_nn}}+\mbox{\hyperlink{namespacemodparameters_a410e21f3354abe6e0cb3e19658409035}{brlept\_z\_nn}}+\mbox{\hyperlink{namespacemodparameters_a410e21f3354abe6e0cb3e19658409035}{brlept\_z\_nn}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{158       znubranching = \mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}}
+\DoxyCodeLine{159   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{160       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{161       stop}
+\DoxyCodeLine{162 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{comment}{!print *, "checker 4",Brlept\_Z\_nn}}
+\DoxyCodeLine{165 \textcolor{comment}{!print *, "checker 4",Brlept\_Z\_nn+Brlept\_Z\_nn}}
+\DoxyCodeLine{166 \textcolor{comment}{!print *, "checker 4",Brlept\_Z\_nn+Brlept\_Z\_nn+Brlept\_Z\_nn}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_afbc15878d44bda10618299a1c0c57722}\label{namespacemodkinematics_afbc15878d44bda10618299a1c0c57722}} 
 \index{modkinematics@{modkinematics}!znubranching\_flat@{znubranching\_flat}}
 \index{znubranching\_flat@{znubranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{znubranching\_flat()}{znubranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::znubranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 172 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{172 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{173 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{174 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{175 \textcolor{keywordtype}{integer} :: ZNuBranching\_flat}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177   \textcolor{keywordflow}{if}( xrnd .le. (1d0/3d0) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{178       znubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a04afbbbfee7e6f6dd9521ba4bd94e2d5}{nue\_}}}
+\DoxyCodeLine{179   \textcolor{keywordflow}{elseif}(xrnd .le. (2d0/3d0) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{180       znubranching\_flat = \mbox{\hyperlink{namespacemodparameters_adc690fa8ed34125aeb4fbe396847bdfc}{num\_}}}
+\DoxyCodeLine{181   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{182       znubranching\_flat = \mbox{\hyperlink{namespacemodparameters_a80aef5853ed4bb931f3cb9c133e0d7de}{nut\_}}}
+\DoxyCodeLine{183 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_a04fafde7bc3c3e27fcfda8982aaba238}\label{namespacemodkinematics_a04fafde7bc3c3e27fcfda8982aaba238}} 
 \index{modkinematics@{modkinematics}!zquabranching@{zquabranching}}
 \index{zquabranching@{zquabranching}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zquabranching()}{zquabranching()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zquabranching (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 219 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{220 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{221 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{222 \textcolor{keywordtype}{integer} :: ZQuaBranching}
+\DoxyCodeLine{223 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Ncol=3d0}
+\DoxyCodeLine{224 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: xxxx=1d0/15d0}
+\DoxyCodeLine{225 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: yyyy=ncol*xxxx}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227   \textcolor{keywordflow}{if}( xrnd .le. \mbox{\hyperlink{namespacemodparameters_a732d6ac8d38d50c68a5dbdd9ab64d1b2}{brhadr\_z\_uu}} ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{228       zquabranching = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{229   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a732d6ac8d38d50c68a5dbdd9ab64d1b2}{brhadr\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_ad6abddbd63bf5ce580e11fd989a8248b}{brhadr\_z\_cc}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{230       zquabranching = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{231   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a732d6ac8d38d50c68a5dbdd9ab64d1b2}{brhadr\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_ad6abddbd63bf5ce580e11fd989a8248b}{brhadr\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_aff8e13abae317ce5129274ffa9714470}{brhadr\_z\_dd}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{232       zquabranching = \mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}}
+\DoxyCodeLine{233   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a732d6ac8d38d50c68a5dbdd9ab64d1b2}{brhadr\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_ad6abddbd63bf5ce580e11fd989a8248b}{brhadr\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_aff8e13abae317ce5129274ffa9714470}{brhadr\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a2ba42e0d67f2c5869c4ab27ca4eb7bee}{brhadr\_z\_ss}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{234       zquabranching = \mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}}
+\DoxyCodeLine{235   \textcolor{keywordflow}{elseif}(xrnd .le. \mbox{\hyperlink{namespacemodparameters_a732d6ac8d38d50c68a5dbdd9ab64d1b2}{brhadr\_z\_uu}}+\mbox{\hyperlink{namespacemodparameters_ad6abddbd63bf5ce580e11fd989a8248b}{brhadr\_z\_cc}}+\mbox{\hyperlink{namespacemodparameters_aff8e13abae317ce5129274ffa9714470}{brhadr\_z\_dd}}+\mbox{\hyperlink{namespacemodparameters_a2ba42e0d67f2c5869c4ab27ca4eb7bee}{brhadr\_z\_ss}}+\mbox{\hyperlink{namespacemodparameters_a878bbd1d199b21bc8d873bb19c37073f}{brhadr\_z\_bb}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{236       zquabranching = \mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}}
+\DoxyCodeLine{237   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{238       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{239       stop}
+\DoxyCodeLine{240 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodkinematics_ab78f1c72f2361ec70997108ac81c3068}\label{namespacemodkinematics_ab78f1c72f2361ec70997108ac81c3068}} 
 \index{modkinematics@{modkinematics}!zquabranching\_flat@{zquabranching\_flat}}
 \index{zquabranching\_flat@{zquabranching\_flat}!modkinematics@{modkinematics}}
 \doxysubsubsection{\texorpdfstring{zquabranching\_flat()}{zquabranching\_flat()}}
 {\footnotesize\ttfamily integer function modkinematics\+::zquabranching\+\_\+flat (\begin{DoxyParamCaption}\item[{real(8)}]{x\+Rnd }\end{DoxyParamCaption})}
 
+
+
+Definition at line 189 of file mod\+\_\+\+Kinematics.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{190 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{191 \textcolor{keywordtype}{real}(8) :: xRnd}
+\DoxyCodeLine{192 \textcolor{keywordtype}{integer} :: ZQuaBranching\_flat}
+\DoxyCodeLine{193 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Ncol=3d0}
+\DoxyCodeLine{194 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: xxxx=1d0/15d0}
+\DoxyCodeLine{195 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: yyyy=ncol*xxxx}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197   \textcolor{keywordflow}{if}( xrnd .le. yyyy ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{198       zquabranching\_flat = \mbox{\hyperlink{namespacemodparameters_a0302d3e17b592a4f2cdb4a893efb7951}{up\_}}}
+\DoxyCodeLine{199   \textcolor{keywordflow}{elseif}(xrnd .le. yyyy+yyyy) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{200       zquabranching\_flat = \mbox{\hyperlink{namespacemodparameters_a266f1b14ea1b54c97bd7fe7c71fa4690}{chm\_}}}
+\DoxyCodeLine{201   \textcolor{keywordflow}{elseif}(xrnd .le. yyyy+yyyy+yyyy) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{202       zquabranching\_flat = \mbox{\hyperlink{namespacemodparameters_acf5cb5ce2e05c0d3e644fc60d4d00369}{dn\_}}}
+\DoxyCodeLine{203   \textcolor{keywordflow}{elseif}(xrnd .le. yyyy+yyyy+yyyy+yyyy) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{204       zquabranching\_flat = \mbox{\hyperlink{namespacemodparameters_a61a0b34437cccbf824947c3333e1ba66}{str\_}}}
+\DoxyCodeLine{205   \textcolor{keywordflow}{elseif}(xrnd .le. yyyy+yyyy+yyyy+yyyy+yyyy) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{206       zquabranching\_flat = \mbox{\hyperlink{namespacemodparameters_ae477e8811c8aec1aaf0cc6c14591a085}{bot\_}}}
+\DoxyCodeLine{207   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{208       print *, \textcolor{stringliteral}{"error "},xrnd}
+\DoxyCodeLine{209       stop}
+\DoxyCodeLine{210 \textcolor{keywordflow}{  endif}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{comment}{!print *, "checker 1",Brhadr\_Z\_uu,Brhadr\_Z\_dd}}
+\DoxyCodeLine{213 \textcolor{comment}{!print *, "checker 1",Brhadr\_Z\_uu+Brhadr\_Z\_cc+Brhadr\_Z\_dd+Brhadr\_Z\_ss+Brhadr\_Z\_bb}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}

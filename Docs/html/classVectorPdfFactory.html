@@ -122,7 +122,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab102cffe3e2f8df6b092c0f6493b7992"><td class="memItemLeft" align="right" valign="top">RooRealVar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVectorPdfFactory.html#ab102cffe3e2f8df6b092c0f6493b7992">aParam</a></td></tr>
 <tr class="separator:ab102cffe3e2f8df6b092c0f6493b7992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00012">12</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a56239337852f9a9c09464c9a159de1c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56239337852f9a9c09464c9a159de1c7">&#9670;&nbsp;</a></span>VectorPdfFactory() <span class="overload">[1/2]</span></h2>
 
@@ -146,6 +149,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00029">29</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adab5608541a1facff46a3f9fcf544c02"></a>
@@ -218,6 +224,29 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00031">31</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                                                                               {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Parameters</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">mZ</a>     = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;mZ&quot;</span>,<span class="stringliteral">&quot;mZ&quot;</span>,91.188);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">gamZ</a>   = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;gamZ&quot;</span>,<span class="stringliteral">&quot;gamZ&quot;</span>,2.5);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// related to tensor structure of V decays</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">R1Val</a>  = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;R1Val&quot;</span>,<span class="stringliteral">&quot;R1Val&quot;</span>,0.15);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classVectorPdfFactory.html#ae8d12bdebaa5a2791bcb4e12a60c4043">R2Val</a>  = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;R2Val&quot;</span>,<span class="stringliteral">&quot;R2Val&quot;</span>,0.15);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// dimensionless couplings</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;g1Val&quot;</span>, <span class="stringliteral">&quot;g1Val&quot;</span>, 0.0);        </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;g2Val&quot;</span>, <span class="stringliteral">&quot;g2Val&quot;</span>, 0.0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// random paramter (?)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classVectorPdfFactory.html#ab102cffe3e2f8df6b092c0f6493b7992">aParam</a> = <span class="keyword">new</span> RooRealVar(<span class="stringliteral">&quot;aParam&quot;</span>,<span class="stringliteral">&quot;aParam&quot;</span>,0.0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a71a2f80e56355af1d60af7baad3a198a">PDF</a> = <span class="keyword">new</span> <a class="code" href="classRooSpinOne__7D.html">RooSpinOne_7D</a>(<span class="stringliteral">&quot;PDF&quot;</span>,<span class="stringliteral">&quot;PDF&quot;</span>, *mZZ, *m1, *m2, *h1, *h2,*hs, *Phi, *Phi1, </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                *<a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a>, *<a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a>, *<a class="code" href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">R1Val</a>, *<a class="code" href="classVectorPdfFactory.html#ae8d12bdebaa5a2791bcb4e12a60c4043">R2Val</a>, *<a class="code" href="classVectorPdfFactory.html#ab102cffe3e2f8df6b092c0f6493b7992">aParam</a>, *<a class="code" href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">mZ</a>, *<a class="code" href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">gamZ</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0cc0c5311d83c5fca4c9d9f22a1c30a7"></a>
@@ -243,6 +272,24 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00053">53</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                     {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a>; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#ab102cffe3e2f8df6b092c0f6493b7992">aParam</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">mZ</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">gamZ</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">R1Val</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#ae8d12bdebaa5a2791bcb4e12a60c4043">R2Val</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">delete</span> <a class="code" href="classVectorPdfFactory.html#a71a2f80e56355af1d60af7baad3a198a">PDF</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -270,6 +317,18 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00070">70</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                   {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">switch</span> (model_){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90">TVar::H1plus</a>: <a class="code" href="classVectorPdfFactory.html#ab30398596b9c6401884de0b895ad6b20">makePseudoZprime</a>(); <span class="keywordflow">return</span> 0; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c">TVar::H1minus</a>: <a class="code" href="classVectorPdfFactory.html#a4328b4ba0edad5cfaadbe8a945a08464">makeZprime</a>(); <span class="keywordflow">return</span> 0; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5">TVar::SelfDefine_spin1</a> : <span class="keywordflow">return</span> 0; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">default</span>: <a class="code" href="classVectorPdfFactory.html#a4328b4ba0edad5cfaadbe8a945a08464">makeZprime</a>(); <span class="keywordflow">return</span> 1; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa104985427fcb164ec22eb0e9ea3871d"></a>
@@ -296,6 +355,30 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00096">96</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                       {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(yesNo){</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a>-&gt;setConstant(kTRUE);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a>-&gt;setConstant(kTRUE);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">gamZ</a>-&gt;setConstant(kTRUE);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">mZ</a>-&gt;setConstant(kTRUE);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <a class="code" href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">R1Val</a>-&gt;setConstant(kTRUE);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <a class="code" href="classVectorPdfFactory.html#ae8d12bdebaa5a2791bcb4e12a60c4043">R2Val</a>-&gt;setConstant(kTRUE);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a>-&gt;setConstant(kFALSE);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a>-&gt;setConstant(kFALSE);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">gamZ</a>-&gt;setConstant(kFALSE);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <a class="code" href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">mZ</a>-&gt;setConstant(kFALSE);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <a class="code" href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">R1Val</a>-&gt;setConstant(kFALSE);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <a class="code" href="classVectorPdfFactory.html#ae8d12bdebaa5a2791bcb4e12a60c4043">R2Val</a>-&gt;setConstant(kFALSE);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab30398596b9c6401884de0b895ad6b20"></a>
@@ -321,6 +404,14 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00082">82</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                         {  <span class="comment">// NEED TO CALCULATE NORMALIZATIONS</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a>-&gt;setVal(0.0);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a>-&gt;setVal(1.0); </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4328b4ba0edad5cfaadbe8a945a08464"></a>
@@ -346,6 +437,14 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00089">89</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                   {  <span class="comment">// NEED TO CALCULATE NORMALIZATIONS</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">g1Val</a>-&gt;setVal(1.0); </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">g2Val</a>-&gt;setVal(0.0); </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af40a46e4e4177739c17af880525d9db6"></a>
@@ -372,6 +471,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00119">119</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{ <a class="code" href="classVectorPdfFactory.html#a71a2f80e56355af1d60af7baad3a198a">PDF</a>-&gt;<a class="code" href="classRooSpinOne__7D.html#a753989b01b09753d8053df57e5862caa">setZZ4fOrdering</a>(flag); }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -387,6 +489,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00027">27</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <a id="a62c670ea918c85372ee30c90520cf9b7"></a>
@@ -400,6 +504,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00024">24</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
 
 </div>
 </div>
@@ -415,6 +521,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00025">25</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <a id="a2bddde3e23536dc725562406d89a068b"></a>
@@ -428,6 +536,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00017">17</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
 
 </div>
 </div>
@@ -443,6 +553,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00016">16</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <a id="a71a2f80e56355af1d60af7baad3a198a"></a>
@@ -456,6 +568,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00022">22</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
 
 </div>
 </div>
@@ -471,6 +585,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00019">19</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <a id="ae8d12bdebaa5a2791bcb4e12a60c4043"></a>
@@ -485,12 +601,29 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="VectorPdfFactory_8h_source.html#l00020">20</a> of file <a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>MELA/interface/<a class="el" href="VectorPdfFactory_8h_source.html">VectorPdfFactory.h</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90">TVar::H1plus</a></div><div class="ttdeci">@ H1plus</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00149">TVar.hh:149</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_ad215517be20ce9c23020c761554471f4"><div class="ttname"><a href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">VectorPdfFactory::R1Val</a></div><div class="ttdeci">RooRealVar * R1Val</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00019">VectorPdfFactory.h:19</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_a62c670ea918c85372ee30c90520cf9b7"><div class="ttname"><a href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">VectorPdfFactory::g1Val</a></div><div class="ttdeci">RooRealVar * g1Val</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00024">VectorPdfFactory.h:24</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_ab30398596b9c6401884de0b895ad6b20"><div class="ttname"><a href="classVectorPdfFactory.html#ab30398596b9c6401884de0b895ad6b20">VectorPdfFactory::makePseudoZprime</a></div><div class="ttdeci">void makePseudoZprime()</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00082">VectorPdfFactory.h:82</a></div></div>
+<div class="ttc" id="aclassRooSpinOne__7D_html_a753989b01b09753d8053df57e5862caa"><div class="ttname"><a href="classRooSpinOne__7D.html#a753989b01b09753d8053df57e5862caa">RooSpinOne_7D::setZZ4fOrdering</a></div><div class="ttdeci">void setZZ4fOrdering(Bool_t flag=true)</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinOne__7D_8cc_source.html#l00460">RooSpinOne_7D.cc:460</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c">TVar::H1minus</a></div><div class="ttdeci">@ H1minus</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00148">TVar.hh:148</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_a2bddde3e23536dc725562406d89a068b"><div class="ttname"><a href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">VectorPdfFactory::gamZ</a></div><div class="ttdeci">RooRealVar * gamZ</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00017">VectorPdfFactory.h:17</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_ab102cffe3e2f8df6b092c0f6493b7992"><div class="ttname"><a href="classVectorPdfFactory.html#ab102cffe3e2f8df6b092c0f6493b7992">VectorPdfFactory::aParam</a></div><div class="ttdeci">RooRealVar * aParam</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00027">VectorPdfFactory.h:27</a></div></div>
+<div class="ttc" id="aclassRooSpinOne__7D_html"><div class="ttname"><a href="classRooSpinOne__7D.html">RooSpinOne_7D</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinOne__7D_8h_source.html#l00018">RooSpinOne_7D.h:18</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_a4328b4ba0edad5cfaadbe8a945a08464"><div class="ttname"><a href="classVectorPdfFactory.html#a4328b4ba0edad5cfaadbe8a945a08464">VectorPdfFactory::makeZprime</a></div><div class="ttdeci">void makeZprime()</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00089">VectorPdfFactory.h:89</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_a71a2f80e56355af1d60af7baad3a198a"><div class="ttname"><a href="classVectorPdfFactory.html#a71a2f80e56355af1d60af7baad3a198a">VectorPdfFactory::PDF</a></div><div class="ttdeci">RooSpinOne_7D * PDF</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00022">VectorPdfFactory.h:22</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_a3d4b00e56e4daa2260c2c211948bd870"><div class="ttname"><a href="classVectorPdfFactory.html#a3d4b00e56e4daa2260c2c211948bd870">VectorPdfFactory::g2Val</a></div><div class="ttdeci">RooRealVar * g2Val</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00025">VectorPdfFactory.h:25</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_ae8d12bdebaa5a2791bcb4e12a60c4043"><div class="ttname"><a href="classVectorPdfFactory.html#ae8d12bdebaa5a2791bcb4e12a60c4043">VectorPdfFactory::R2Val</a></div><div class="ttdeci">RooRealVar * R2Val</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00020">VectorPdfFactory.h:20</a></div></div>
+<div class="ttc" id="aclassVectorPdfFactory_html_a8af07a536dac1763e5bb862bfea790fd"><div class="ttname"><a href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">VectorPdfFactory::mZ</a></div><div class="ttdeci">RooRealVar * mZ</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00016">VectorPdfFactory.h:16</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5">TVar::SelfDefine_spin1</a></div><div class="ttdeci">@ SelfDefine_spin1</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00181">TVar.hh:181</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

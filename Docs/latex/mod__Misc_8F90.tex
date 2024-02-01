@@ -203,9 +203,167 @@ logical function \mbox{\hyperlink{namespacemodmisc_a6ac5e4d5117566541606747e97c2
 \doxysubsubsection{\texorpdfstring{hto\_fmmsplinesingleht()}{hto\_fmmsplinesingleht()}}
 {\footnotesize\ttfamily subroutine evaluatespline\+::hto\+\_\+fmmsplinesingleht (\begin{DoxyParamCaption}\item[{real(8), dimension(gdim)}]{b,  }\item[{real(8), dimension(gdim)}]{c,  }\item[{real(8), dimension(gdim)}]{d,  }\item[{integer}]{top,  }\item[{integer}]{gdim,  }\item[{real(8), dimension(gdim)}]{xc,  }\item[{real(8), dimension(gdim)}]{yc }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1341 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1341 }
+\DoxyCodeLine{1342 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1343 }
+\DoxyCodeLine{1344 \textcolor{keywordtype}{INTEGER} k,n,i,top,gdim,l}
+\DoxyCodeLine{1345 }
+\DoxyCodeLine{1346 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: xc,yc}
+\DoxyCodeLine{1347 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: x,y}
+\DoxyCodeLine{1348 }
+\DoxyCodeLine{1349 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: b}
+\DoxyCodeLine{1350 \textcolor{comment}{! linear coeff}}
+\DoxyCodeLine{1351 }
+\DoxyCodeLine{1352 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: c}
+\DoxyCodeLine{1353 \textcolor{comment}{! quadratic coeff.}}
+\DoxyCodeLine{1354 }
+\DoxyCodeLine{1355 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: d}
+\DoxyCodeLine{1356 \textcolor{comment}{! cubic coeff.}}
+\DoxyCodeLine{1357 }
+\DoxyCodeLine{1358 \textcolor{keywordtype}{REAL}(8) :: t}
+\DoxyCodeLine{1359 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{PARAMETER}:: ZERO=0.0, two=2.0, three=3.0}
+\DoxyCodeLine{1360 }
+\DoxyCodeLine{1361 \textcolor{comment}{! The grid}}
+\DoxyCodeLine{1362 }
+\DoxyCodeLine{1363 }
+\DoxyCodeLine{1364 n= gdim}
+\DoxyCodeLine{1365 \textcolor{keywordflow}{FORALL}(l=1:gdim)}
+\DoxyCodeLine{1366 x(l)= xc(l)}
+\DoxyCodeLine{1367 y(l)= yc(l)}
+\DoxyCodeLine{1368 \textcolor{keywordflow}{ENDFORALL}}
+\DoxyCodeLine{1369 }
+\DoxyCodeLine{1370 \textcolor{comment}{!.....Set up tridiagonal system.........................................}}
+\DoxyCodeLine{1371 \textcolor{comment}{!     b=diagonal, d=offdiagonal, c=right-\/hand side}}
+\DoxyCodeLine{1372 }
+\DoxyCodeLine{1373 d(1)= x(2)-\/x(1)}
+\DoxyCodeLine{1374 c(2)= (y(2)-\/y(1))/d(1)}
+\DoxyCodeLine{1375 \textcolor{keywordflow}{DO} k= 2,n-\/1}
+\DoxyCodeLine{1376 d(k)= x(k+1)-\/x(k)}
+\DoxyCodeLine{1377 b(k)= two*(d(k-\/1)+d(k))}
+\DoxyCodeLine{1378 c(k+1)= (y(k+1)-\/y(k))/d(k)}
+\DoxyCodeLine{1379 c(k)= c(k+1)-\/c(k)}
+\DoxyCodeLine{1380 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1381 }
+\DoxyCodeLine{1382 \textcolor{comment}{!.....End conditions.  third derivatives at x(1) and x(n) obtained}}
+\DoxyCodeLine{1383 \textcolor{comment}{!     from divided differences.......................................}}
+\DoxyCodeLine{1384 }
+\DoxyCodeLine{1385 b(1)= -\/d(1)}
+\DoxyCodeLine{1386 b(n)= -\/d(n-\/1)}
+\DoxyCodeLine{1387 c(1)= \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{1388 c(n)= \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{1389 \textcolor{keywordflow}{IF} (n > 3) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1390 c(1)= c(3)/(x(4)-\/x(2))-\/c(2)/(x(3)-\/x(1))}
+\DoxyCodeLine{1391 c(n)= c(n-\/1)/(x(n)-\/x(n-\/2))-\/c(n-\/2)/(x(n-\/1)-\/x(n-\/3))}
+\DoxyCodeLine{1392 c(1)= c(1)*d(1)*d(1)/(x(4)-\/x(1))}
+\DoxyCodeLine{1393 c(n)= -\/c(n)*d(n-\/1)*d(n-\/1)/(x(n)-\/x(n-\/3))}
+\DoxyCodeLine{1394 \textcolor{keywordflow}{END IF}}
+\DoxyCodeLine{1395 }
+\DoxyCodeLine{1396 \textcolor{keywordflow}{DO} k=2,n    \textcolor{comment}{! forward elimination}}
+\DoxyCodeLine{1397 t= d(k-\/1)/b(k-\/1)}
+\DoxyCodeLine{1398 b(k)= b(k)-\/t*d(k-\/1)}
+\DoxyCodeLine{1399 c(k)= c(k)-\/t*c(k-\/1)}
+\DoxyCodeLine{1400 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1401 }
+\DoxyCodeLine{1402 c(n)= c(n)/b(n)}
+\DoxyCodeLine{1403 }
+\DoxyCodeLine{1404 \textcolor{comment}{! back substitution ( makes c the sigma of text)}}
+\DoxyCodeLine{1405 }
+\DoxyCodeLine{1406 \textcolor{keywordflow}{DO} k=n-\/1,1,-\/1}
+\DoxyCodeLine{1407 c(k)= (c(k)-\/d(k)*c(k+1))/b(k)}
+\DoxyCodeLine{1408 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1409 }
+\DoxyCodeLine{1410 \textcolor{comment}{!.....Compute polynomial coefficients...................................}}
+\DoxyCodeLine{1411 }
+\DoxyCodeLine{1412 b(n)= (y(n)-\/y(n-\/1))/d(n-\/1)+d(n-\/1)*(c(n-\/1)+c(n)+c(n))}
+\DoxyCodeLine{1413 \textcolor{keywordflow}{DO} k=1,n-\/1}
+\DoxyCodeLine{1414 b(k)= (y(k+1)-\/y(k))/d(k)-\/d(k)*(c(k+1)+c(k)+c(k))}
+\DoxyCodeLine{1415 d(k)= (c(k+1)-\/c(k))/d(k)}
+\DoxyCodeLine{1416 c(k)= three*c(k)}
+\DoxyCodeLine{1417 \textcolor{keywordflow}{END DO}}
+\DoxyCodeLine{1418 c(n)= three*c(n)}
+\DoxyCodeLine{1419 d(n)= d(n-\/1)}
+\DoxyCodeLine{1420 }
+\DoxyCodeLine{1421 \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1422 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mod__Misc_8F90_aa91afe68b1537c093c096cdd8f158fed}\label{mod__Misc_8F90_aa91afe68b1537c093c096cdd8f158fed}} 
 \index{mod\_Misc.F90@{mod\_Misc.F90}!hto\_seval3singleht@{hto\_seval3singleht}}
 \index{hto\_seval3singleht@{hto\_seval3singleht}!mod\_Misc.F90@{mod\_Misc.F90}}
 \doxysubsubsection{\texorpdfstring{hto\_seval3singleht()}{hto\_seval3singleht()}}
 {\footnotesize\ttfamily subroutine evaluatespline\+::hto\+\_\+seval3singleht (\begin{DoxyParamCaption}\item[{real(8), intent(in)}]{u,  }\item[{real(8), dimension(gdim)}]{b,  }\item[{real(8), dimension(gdim)}]{c,  }\item[{real(8), dimension(gdim)}]{d,  }\item[{integer}]{top,  }\item[{integer}]{gdim,  }\item[{real(8), intent(out), optional}]{f,  }\item[{real(8), intent(out), optional}]{fp,  }\item[{real(8), intent(out), optional}]{fpp,  }\item[{real(8), intent(out), optional}]{fppp,  }\item[{real(8), dimension(gdim)}]{xc,  }\item[{real(8), dimension(gdim)}]{yc }\end{DoxyParamCaption})}
 
+
+
+Definition at line 1428 of file mod\+\_\+\+Misc.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1428 }
+\DoxyCodeLine{1429 \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1430 }
+\DoxyCodeLine{1431 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{INTENT(IN)} :: u}
+\DoxyCodeLine{1432 \textcolor{comment}{! abscissa at which the spline is to be evaluated}}
+\DoxyCodeLine{1433 }
+\DoxyCodeLine{1434 \textcolor{keywordtype}{INTEGER} j,k,n,l,top,gdim}
+\DoxyCodeLine{1435 }
+\DoxyCodeLine{1436 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: xc,yc}
+\DoxyCodeLine{1437 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{dimension(gdim)} :: x,y}
+\DoxyCodeLine{1438 \textcolor{keywordtype}{REAL}(8), \textcolor{keywordtype}{DIMENSION(gdim)} :: b,c,d}
+\DoxyCodeLine{1439 \textcolor{comment}{! linear,quadratic,cubic coeff}}
+\DoxyCodeLine{1440 }
+\DoxyCodeLine{1441 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{INTENT(OUT)},\textcolor{keywordtype}{OPTIONAL}:: f,fp,fpp,fppp}
+\DoxyCodeLine{1442 \textcolor{comment}{! function, 1st,2nd,3rd deriv}}
+\DoxyCodeLine{1443 }
+\DoxyCodeLine{1444 \textcolor{keywordtype}{INTEGER}, \textcolor{keywordtype}{SAVE} :: i=1}
+\DoxyCodeLine{1445 \textcolor{keywordtype}{REAL}(8)    :: dx}
+\DoxyCodeLine{1446 \textcolor{keywordtype}{REAL}(8),\textcolor{keywordtype}{PARAMETER}:: TWO=2.0, three=3.0, six=6.0}
+\DoxyCodeLine{1447 }
+\DoxyCodeLine{1448 \textcolor{comment}{! The grid}}
+\DoxyCodeLine{1449 }
+\DoxyCodeLine{1450 n= gdim}
+\DoxyCodeLine{1451 \textcolor{keywordflow}{FORALL}(l=1:gdim)}
+\DoxyCodeLine{1452 x(l)= xc(l)}
+\DoxyCodeLine{1453 y(l)= yc(l)}
+\DoxyCodeLine{1454 \textcolor{keywordflow}{ENDFORALL}}
+\DoxyCodeLine{1455 }
+\DoxyCodeLine{1456 \textcolor{comment}{!.....First check if u is in the same interval found on the}}
+\DoxyCodeLine{1457 \textcolor{comment}{!     last call to Seval.............................................}}
+\DoxyCodeLine{1458 }
+\DoxyCodeLine{1459 \textcolor{keywordflow}{IF} (  (i<1) .OR. (i >= n) ) i=1}
+\DoxyCodeLine{1460 \textcolor{keywordflow}{IF} ( (u < x(i))  .OR.  (u >= x(i+1)) ) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1461 i=1}
+\DoxyCodeLine{1462 }
+\DoxyCodeLine{1463 \textcolor{comment}{! binary search}}
+\DoxyCodeLine{1464 }
+\DoxyCodeLine{1465 j= n+1}
+\DoxyCodeLine{1466 \textcolor{keywordflow}{DO}}
+\DoxyCodeLine{1467 k= (i+j)/2}
+\DoxyCodeLine{1468 \textcolor{keywordflow}{IF} (u < x(k)) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1469 j= k}
+\DoxyCodeLine{1470 \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1471 i= k}
+\DoxyCodeLine{1472 \textcolor{keywordflow}{ENDIF}}
+\DoxyCodeLine{1473 \textcolor{keywordflow}{IF} (j <= i+1) \textcolor{keywordflow}{EXIT}}
+\DoxyCodeLine{1474 \textcolor{keywordflow}{ENDDO}}
+\DoxyCodeLine{1475 \textcolor{keywordflow}{ENDIF}}
+\DoxyCodeLine{1476 }
+\DoxyCodeLine{1477 dx= u-\/x(i)}
+\DoxyCodeLine{1478 }
+\DoxyCodeLine{1479 \textcolor{comment}{! evaluate the spline}}
+\DoxyCodeLine{1480 }
+\DoxyCodeLine{1481 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(f))    f= y(i)+dx*(b(i)+dx*(c(i)+dx*d(i)))}
+\DoxyCodeLine{1482 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(fp))   fp= b(i)+dx*(two*c(i) + dx*three*d(i))}
+\DoxyCodeLine{1483 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(fpp))  fpp= two*c(i) + dx*six*d(i)}
+\DoxyCodeLine{1484 \textcolor{keywordflow}{IF} (\textcolor{keyword}{Present}(fppp)) fppp= six*d(i)}
+\DoxyCodeLine{1485 }
+\DoxyCodeLine{1486 \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1487 }
+
+\end{DoxyCode}

@@ -117,7 +117,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a8ebfc4305d4c91818f217935abdacb46 inherit pub_attribs_classlhefile_1_1LHEEvent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlhefile_1_1LHEEvent.html#a8ebfc4305d4c91818f217935abdacb46">inputevent</a></td></tr>
 <tr class="separator:a8ebfc4305d4c91818f217935abdacb46 inherit pub_attribs_classlhefile_1_1LHEEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00050">50</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa338ac45149cf7665c2a2a7d241b4f39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa338ac45149cf7665c2a2a7d241b4f39">&#9670;&nbsp;</a></span>extracteventparticles()</h2>
 
@@ -152,12 +155,43 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classlhefile_1_1LHEEvent.html#a880b1ab270c39604de82d9aa2f4bfe98">lhefile.LHEEvent</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00052">52</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">def </span>extracteventparticles(cls, lines, isgen):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    daughters, mothers, associated = [], [], []</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    ids = [<span class="keywordtype">None</span>]</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mother1s = [<span class="keywordtype">None</span>]</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    mother2s = [<span class="keywordtype">None</span>]</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> line <span class="keywordflow">in</span> lines:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      id, status, mother1, mother2 = (<a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>(_) <span class="keywordflow">for</span> _ <span class="keywordflow">in</span> line.split()[0:4])</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      ids.append(id)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">if</span> (1 &lt;= abs(id) &lt;= 6 <span class="keywordflow">or</span> abs(id) == 21) <span class="keywordflow">and</span> <span class="keywordflow">not</span> isgen:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        line = line.replace(str(id), <span class="stringliteral">&quot;0&quot;</span>, 1)  <span class="comment">#replace the first instance of the jet id with 0, which means unknown jet</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      mother1s.append(mother1)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      mother2s.append(mother2)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">if</span> status == -1:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        mothers.append(line)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">elif</span> status == 1 <span class="keywordflow">and</span> (1 &lt;= abs(id) &lt;= 6 <span class="keywordflow">or</span> 11 &lt;= abs(id) &lt;= 16 <span class="keywordflow">or</span> abs(id) <span class="keywordflow">in</span> (21, 22)):</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">while</span> <span class="keyword">True</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          <span class="keywordflow">if</span> mother1 != mother2 <span class="keywordflow">or</span> mother1 <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            associated.append(line)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;          <span class="keywordflow">if</span> ids[mother1] <span class="keywordflow">in</span> (25, 39):</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            daughters.append(line)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          mother2 = mother2s[mother1]</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;          mother1 = mother1s[mother1]</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> <span class="keywordflow">not</span> isgen: mothers = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> daughters, associated, mothers</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>MELA/python/<a class="el" href="lhefile_8py.html">lhefile.py</a></li>
+<li>MELA/python/<a class="el" href="lhefile_8py_source.html">lhefile.py</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="anamespacetestME__all_html_a2f9c5cba6551dc41bae400ced29c30b3"><div class="ttname"><a href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">testME_all.int</a></div><div class="ttdeci">int</div><div class="ttdef"><b>Definition:</b> <a href="testME__all_8py_source.html#l00013">testME_all.py:13</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

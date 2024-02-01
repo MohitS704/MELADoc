@@ -134,6 +134,13 @@ std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 16 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
+
+
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}\label{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!T@{T}}
@@ -141,17 +148,29 @@ std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a
 \doxysubsubsection{\texorpdfstring{T}{T}}
 {\footnotesize\ttfamily typedef Float\+\_\+t \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}}}
 
+
+
+Definition at line 18 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_a08a91432eef42c1737e8368cd330e25a}\label{classMELANCSplineCore_a08a91432eef42c1737e8368cd330e25a}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!TMatrix\_t@{TMatrix\_t}}
 \index{TMatrix\_t@{TMatrix\_t}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{TMatrix\_t}{TMatrix\_t}}
 {\footnotesize\ttfamily typedef T\+MatrixT$<$\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}$>$ \mbox{\hyperlink{classMELANCSplineCore_a08a91432eef42c1737e8368cd330e25a}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+T\+Matrix\+\_\+t}}}
 
+
+
+Definition at line 19 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_aebc5f10ddc26a57f0c3b2bb8e9969162}\label{classMELANCSplineCore_aebc5f10ddc26a57f0c3b2bb8e9969162}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!TVector\_t@{TVector\_t}}
 \index{TVector\_t@{TVector\_t}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{TVector\_t}{TVector\_t}}
 {\footnotesize\ttfamily typedef T\+VectorT$<$\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}$>$ \mbox{\hyperlink{classMELANCSplineCore_aebc5f10ddc26a57f0c3b2bb8e9969162}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+T\+Vector\+\_\+t}}}
+
+
+
+Definition at line 20 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
 
 
 
@@ -192,6 +211,23 @@ N\+Boundary\+Conditions&\\
 \hline
 
 \end{DoxyEnumFields}
+
+
+Definition at line 28 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                         \{}
+\DoxyCodeLine{29     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910aee5f865563c5f350bdd1adf214dc3390}{bcApproximatedSlope}}, \textcolor{comment}{// D1 is the same as deltaY/deltaX in the first/last segment}}
+\DoxyCodeLine{30     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a925dc2d982c12e9960b414075e316a0a}{bcClamped}}, \textcolor{comment}{// D1=0 at endpoint}}
+\DoxyCodeLine{31     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a0c10b32c1a8c6e7a87ae6ea6fd69a0b5}{bcApproximatedSecondDerivative}}, \textcolor{comment}{// D2 is approximated}}
+\DoxyCodeLine{32     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{bcNaturalSpline}}, \textcolor{comment}{// D2=0 at endpoint}}
+\DoxyCodeLine{33     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}}, \textcolor{comment}{// Coefficient D=0}}
+\DoxyCodeLine{34     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}, \textcolor{comment}{// Coefficient D=0 and D1=0 at endpoint}}
+\DoxyCodeLine{35     \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a6934277ed289d7291fefabab5ba36604}{NBoundaryConditions}}}
+\DoxyCodeLine{36   \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613}\label{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!VerbosityLevel@{VerbosityLevel}}
 \index{VerbosityLevel@{VerbosityLevel}!MELANCSplineCore@{MELANCSplineCore}}
@@ -214,6 +250,19 @@ k\+Verbose&\\
 \end{DoxyEnumFields}
 
 
+Definition at line 22 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                      \{}
+\DoxyCodeLine{23     \mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613aaac30fe5f2dc335e8f6b6d6da14717a7}{kSilent}},}
+\DoxyCodeLine{24     \mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{kError}},}
+\DoxyCodeLine{25     \mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{kVerbose}}}
+\DoxyCodeLine{26   \};}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classMELANCSplineCore_a9d561d07179ecc2a53812027a3c572b7}\label{classMELANCSplineCore_a9d561d07179ecc2a53812027a3c572b7}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!MELANCSplineCore@{MELANCSplineCore}}
@@ -227,24 +276,83 @@ k\+Verbose&\\
 \doxysubsubsection{\texorpdfstring{MELANCSplineCore()}{MELANCSplineCore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+M\+E\+L\+A\+N\+C\+Spline\+Core (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
 
+
+
+Definition at line 24 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27     :}
+\DoxyCodeLine{28   RooAbsReal(name, title),}
+\DoxyCodeLine{29   \mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}(\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613aaac30fe5f2dc335e8f6b6d6da14717a7}{MELANCSplineCore::kSilent}}),}
+\DoxyCodeLine{30   \mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}}(\textcolor{keyword}{true}), \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}}(0), \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}}(0),}
+\DoxyCodeLine{31   \mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}}(1), \mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}}(-\/1),}
+\DoxyCodeLine{32   \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}(\textcolor{stringliteral}{"theXVar"}, \textcolor{stringliteral}{"theXVar"}, \textcolor{keyword}{this}),}
+\DoxyCodeLine{33   \mbox{\hyperlink{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}{leafDepsList}}(\textcolor{stringliteral}{"leafDepsList"}, \textcolor{stringliteral}{"leafDepsList"}, \textcolor{keyword}{this})}
+\DoxyCodeLine{34 \{\}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a59b408e80f0e3c899f2581098a5e60c3}\label{classMELANCSplineCore_a59b408e80f0e3c899f2581098a5e60c3}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!MELANCSplineCore@{MELANCSplineCore}}
 \index{MELANCSplineCore@{MELANCSplineCore}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{MELANCSplineCore()}{MELANCSplineCore()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+M\+E\+L\+A\+N\+C\+Spline\+Core (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title,  }\item[{Roo\+Abs\+Real \&}]{in\+X\+Var,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{in\+X\+List,  }\item[{Bool\+\_\+t}]{in\+Use\+Floor = {\ttfamily true},  }\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}}]{in\+Floor\+Eval = {\ttfamily 1e-\/15},  }\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}}]{in\+Floor\+Int = {\ttfamily 1e-\/10} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 36 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44     :}
+\DoxyCodeLine{45   RooAbsReal(name, title),}
+\DoxyCodeLine{46   \mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}(\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613aaac30fe5f2dc335e8f6b6d6da14717a7}{MELANCSplineCore::kSilent}}),}
+\DoxyCodeLine{47   \mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}}(inUseFloor), \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}}(inFloorEval), \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}}(inFloorInt),}
+\DoxyCodeLine{48   \mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}}(1), \mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}}(-\/1),}
+\DoxyCodeLine{49   \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}(\textcolor{stringliteral}{"theXVar"}, \textcolor{stringliteral}{"theXVar"}, \textcolor{keyword}{this}, inXVar),}
+\DoxyCodeLine{50   \mbox{\hyperlink{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}{leafDepsList}}(\textcolor{stringliteral}{"leafDepsList"}, \textcolor{stringliteral}{"leafDepsList"}, \textcolor{keyword}{this}),}
+\DoxyCodeLine{51   \mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}}(inXList)}
+\DoxyCodeLine{52 \{\}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a4d2bb151717120e4682ba47dfdab430f}\label{classMELANCSplineCore_a4d2bb151717120e4682ba47dfdab430f}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!MELANCSplineCore@{MELANCSplineCore}}
 \index{MELANCSplineCore@{MELANCSplineCore}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{MELANCSplineCore()}{MELANCSplineCore()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+M\+E\+L\+A\+N\+C\+Spline\+Core (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELANCSplineCore}{M\+E\+L\+A\+N\+C\+Spline\+Core}} \&}]{other,  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 54 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57     :}
+\DoxyCodeLine{58   RooAbsReal(other, name),}
+\DoxyCodeLine{59   \mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}(other.\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}),}
+\DoxyCodeLine{60   \mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}}(other.\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}}), \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}}(other.\mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}}), \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}}(other.\mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}}),}
+\DoxyCodeLine{61   \mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}}(other.\mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}}), \mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}}(other.\mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}}),}
+\DoxyCodeLine{62   \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}(\textcolor{stringliteral}{"theXVar"}, \textcolor{keyword}{this}, other.\mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}),}
+\DoxyCodeLine{63   \mbox{\hyperlink{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}{leafDepsList}}(\textcolor{stringliteral}{"leafDepsList"}, \textcolor{keyword}{this}, other.\mbox{\hyperlink{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}{leafDepsList}}),}
+\DoxyCodeLine{64   \mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}}(other.\mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}})}
+\DoxyCodeLine{65 \{\}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_aa2b8ad92b5580ba08f8ae1f7e1e2502b}\label{classMELANCSplineCore_aa2b8ad92b5580ba08f8ae1f7e1e2502b}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!````~MELANCSplineCore@{$\sim$MELANCSplineCore}}
 \index{````~MELANCSplineCore@{$\sim$MELANCSplineCore}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{$\sim$MELANCSplineCore()}{~MELANCSplineCore()}}
 {\footnotesize\ttfamily virtual M\+E\+L\+A\+N\+C\+Spline\+Core\+::$\sim$\+M\+E\+L\+A\+N\+C\+Spline\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 54 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -254,6 +362,20 @@ k\+Verbose&\\
 \doxysubsubsection{\texorpdfstring{addLeafDependents()}{addLeafDependents()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::add\+Leaf\+Dependents (\begin{DoxyParamCaption}\item[{Roo\+Arg\+Set \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 280 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{280                                                       \{}
+\DoxyCodeLine{281   TIterator* iter = set.createIterator();}
+\DoxyCodeLine{282   RooAbsArg* absarg;}
+\DoxyCodeLine{283   \textcolor{keywordflow}{while} ((absarg = (RooAbsArg*)iter-\/>Next()))\{ \textcolor{keywordflow}{if} (\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(absarg)) \mbox{\hyperlink{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}{leafDepsList}}.add(*absarg); \}}
+\DoxyCodeLine{284   \textcolor{keyword}{delete} iter;}
+\DoxyCodeLine{285 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a4152f834a8dde69a8fc0ad02da6c96fb}\label{classMELANCSplineCore_a4152f834a8dde69a8fc0ad02da6c96fb}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!analyticalIntegral@{analyticalIntegral}}
 \index{analyticalIntegral@{analyticalIntegral}!MELANCSplineCore@{MELANCSplineCore}}
@@ -290,6 +412,15 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__1D__fast_ab88b9410a534ab508ae
 \doxysubsubsection{\texorpdfstring{doFloor()}{doFloor()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::do\+Floor (\begin{DoxyParamCaption}\item[{Bool\+\_\+t}]{flag }\end{DoxyParamCaption})}
 
+
+
+Definition at line 70 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70 \{ \mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} = flag; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a6dbd8202aa9824505fbfa7770967d676}\label{classMELANCSplineCore_a6dbd8202aa9824505fbfa7770967d676}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!emptyFcnList@{emptyFcnList}}
 \index{emptyFcnList@{emptyFcnList}!MELANCSplineCore@{MELANCSplineCore}}
@@ -306,6 +437,23 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__3D__fast_a74acb6d8945433eb2d1
 \doxysubsubsection{\texorpdfstring{evalSplineSegment()}{evalSplineSegment()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}} M\+E\+L\+A\+N\+C\+Spline\+Core\+::eval\+Spline\+Segment (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{coefs,  }\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{kappa,  }\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{tup,  }\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{tdn,  }\item[{Bool\+\_\+t}]{do\+Integrate = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 265 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{265                                                                                                                                                                                                                    \{}
+\DoxyCodeLine{266   \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{DefaultAccumulator<MELANCSplineCore::T>}} res;}
+\DoxyCodeLine{267   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ic=0; ic<coefs.size(); ic++)\{}
+\DoxyCodeLine{268     \textcolor{keywordflow}{if} (doIntegrate) res += coefs.at(ic)*(pow(tup, (\textcolor{keywordtype}{int})(ic+1))-\/pow(tdn, (\textcolor{keywordtype}{int})(ic+1)))/((\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}})(ic+1));}
+\DoxyCodeLine{269     \textcolor{keywordflow}{else} res += coefs.at(ic)*pow(tup, (\textcolor{keywordtype}{int})ic);}
+\DoxyCodeLine{270   \}}
+\DoxyCodeLine{271   \textcolor{keywordflow}{if} (doIntegrate) res /= \mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}};}
+\DoxyCodeLine{272   \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{273 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_acbfced658063a55878b12518624af202}\label{classMELANCSplineCore_acbfced658063a55878b12518624af202}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!MELANCSplineCore@{MELANCSplineCore}}
@@ -322,6 +470,73 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__3D__fast_ac8cc216daa4be9712a6
 \doxysubsubsection{\texorpdfstring{getAArray()}{getAArray()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::get\+A\+Array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{kappas,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$$>$ \&}]{A\+Array,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} const \&}]{bc\+Begin,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} const \&}]{bc\+End }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 159 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{159                                                                                                                                                                                          \{}
+\DoxyCodeLine{160   AArray.clear();}
+\DoxyCodeLine{161   Int\_t npoints = kappas.size();}
+\DoxyCodeLine{162   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<npoints; i++)\{}
+\DoxyCodeLine{163     vector<MELANCSplineCore::T> Ai(npoints, 0.);}
+\DoxyCodeLine{164     \textcolor{keywordflow}{if} (npoints==1) Ai[0]=1;}
+\DoxyCodeLine{165     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i==0)\{}
+\DoxyCodeLine{166       \textcolor{keywordflow}{switch}(bcBegin)\{}
+\DoxyCodeLine{167       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{bcNaturalSpline}}:}
+\DoxyCodeLine{168       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a0c10b32c1a8c6e7a87ae6ea6fd69a0b5}{bcApproximatedSecondDerivative}}:}
+\DoxyCodeLine{169         Ai[0]=2; Ai[1]=kappas.at(1)/kappas.at(0);}
+\DoxyCodeLine{170         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{171       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a925dc2d982c12e9960b414075e316a0a}{bcClamped}}:}
+\DoxyCodeLine{172       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910aee5f865563c5f350bdd1adf214dc3390}{bcApproximatedSlope}}:}
+\DoxyCodeLine{173       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}:}
+\DoxyCodeLine{174         Ai[0]=1;}
+\DoxyCodeLine{175         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{176       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}}:}
+\DoxyCodeLine{177         Ai[0]=1; Ai[1]=kappas.at(1)/kappas.at(0);}
+\DoxyCodeLine{178         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{179       \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{180         cerr << \textcolor{stringliteral}{"MELANCSplineCore::getAArray: bcBegin "} << bcBegin << \textcolor{stringliteral}{" is not implemented!"} << endl;}
+\DoxyCodeLine{181         assert(0);}
+\DoxyCodeLine{182       \}}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i==npoints-\/1)\{}
+\DoxyCodeLine{185       \textcolor{keywordflow}{switch}(bcEnd)\{}
+\DoxyCodeLine{186       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{bcNaturalSpline}}:}
+\DoxyCodeLine{187       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a0c10b32c1a8c6e7a87ae6ea6fd69a0b5}{bcApproximatedSecondDerivative}}:}
+\DoxyCodeLine{188         Ai[npoints-\/2]=1; Ai[npoints-\/1]=2.*kappas.at(npoints-\/1)/kappas.at(npoints-\/2);}
+\DoxyCodeLine{189         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{190       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a925dc2d982c12e9960b414075e316a0a}{bcClamped}}:}
+\DoxyCodeLine{191       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910aee5f865563c5f350bdd1adf214dc3390}{bcApproximatedSlope}}:}
+\DoxyCodeLine{192       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}:}
+\DoxyCodeLine{193         Ai[npoints-\/1]=1;}
+\DoxyCodeLine{194         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{195       \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}}:}
+\DoxyCodeLine{196         Ai[npoints-\/2]=1; Ai[npoints-\/1]=kappas.at(npoints-\/1)/kappas.at(npoints-\/2);}
+\DoxyCodeLine{197         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{198       \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{199         cerr << \textcolor{stringliteral}{"MELANCSplineCore::getAArray: bcEnd "} << bcEnd << \textcolor{stringliteral}{" is not implemented!"} << endl;}
+\DoxyCodeLine{200         assert(0);}
+\DoxyCodeLine{201       \}}
+\DoxyCodeLine{202     \}}
+\DoxyCodeLine{203     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{204       \textcolor{keywordflow}{if} ((i==1 \&\& bcBegin==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}) || (i==npoints-\/2 \&\& bcEnd==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}})) Ai[i]=1;}
+\DoxyCodeLine{205       \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{206         \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} kappa\_j = kappas.at(i);}
+\DoxyCodeLine{207         \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} kappa\_jmo = kappas.at(i-\/1);}
+\DoxyCodeLine{208         \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} kappa\_jpo = kappas.at(i+1);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210         Ai[i-\/1]=1;}
+\DoxyCodeLine{211         Ai[i]=2.*kappa\_j/kappa\_jmo*(1.+kappa\_j/kappa\_jmo);}
+\DoxyCodeLine{212         Ai[i+1]=kappa\_j*kappa\_jpo/pow(kappa\_jmo, 2);}
+\DoxyCodeLine{213       \}}
+\DoxyCodeLine{214     \}}
+\DoxyCodeLine{215     AArray.push\_back(Ai);}
+\DoxyCodeLine{216   \}}
+\DoxyCodeLine{217 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_afb4a4385e7ee883b170930fa2e0a4fc6}\label{classMELANCSplineCore_afb4a4385e7ee883b170930fa2e0a4fc6}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!getAnalyticalIntegral@{getAnalyticalIntegral}}
 \index{getAnalyticalIntegral@{getAnalyticalIntegral}!MELANCSplineCore@{MELANCSplineCore}}
@@ -338,18 +553,174 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__3D__fast_a181734b94eeae89962b
 \doxysubsubsection{\texorpdfstring{getBArray()}{getBArray()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::get\+B\+Array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{kappas,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{fcn\+List,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{B\+Array,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} const \&}]{bc\+Begin,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} const \&}]{bc\+End }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 72 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                                                                                                                                                                                                                                  \{}
+\DoxyCodeLine{73   BArray.clear();}
+\DoxyCodeLine{74   \textcolor{keywordtype}{int} npoints=kappas.size();}
+\DoxyCodeLine{75   \textcolor{keywordflow}{if} (npoints!=(\textcolor{keywordtype}{int})fcnList.size())\{}
+\DoxyCodeLine{76     coutE(InputArguments) << \textcolor{stringliteral}{"MELANCSplineCore::getBArray: Dim(kappas)="} << npoints << \textcolor{stringliteral}{" != Dim(fcnList)="} << fcnList.size() << endl;}
+\DoxyCodeLine{77     assert(0);}
+\DoxyCodeLine{78   \}}
+\DoxyCodeLine{79   \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{80     bcBegin==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}} || bcEnd==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}}
+\DoxyCodeLine{81     ||}
+\DoxyCodeLine{82     bcBegin==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}} || bcEnd==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}}}
+\DoxyCodeLine{83     )\{}
+\DoxyCodeLine{84     \textcolor{keywordtype}{int} nthr=1+(bcBegin==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}} || bcBegin==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}} ? 1 : 0) + (bcEnd==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}} || bcEnd==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}} ? 1 : 0);}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (npoints<=nthr)\{}
+\DoxyCodeLine{86       cerr << \textcolor{stringliteral}{"Npoints "} << npoints << \textcolor{stringliteral}{" <= "} << nthr << endl;}
+\DoxyCodeLine{87       assert(0);}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89   \}}
+\DoxyCodeLine{90   \textcolor{keywordflow}{if} (npoints>1)\{}
+\DoxyCodeLine{91     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} bcval=0, ecval=0;}
+\DoxyCodeLine{92     \textcolor{comment}{// First point constraint}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{switch} (bcBegin)\{}
+\DoxyCodeLine{94     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a0c10b32c1a8c6e7a87ae6ea6fd69a0b5}{bcApproximatedSecondDerivative}}:}
+\DoxyCodeLine{95       bcval=(npoints<3 ? 0 : ((fcnList.at(2)-\/fcnList.at(1))*kappas.at(1)-\/(fcnList.at(1)-\/fcnList.at(0))*kappas.at(0))/(0.5/kappas.at(0)+0.5/kappas.at(1)));}
+\DoxyCodeLine{96     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{bcNaturalSpline}}:}
+\DoxyCodeLine{97       BArray.push\_back(3.*(fcnList.at(1)-\/fcnList.at(0)) -\/ bcval/2./pow(kappas.at(0), 2));}
+\DoxyCodeLine{98       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{99     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910aee5f865563c5f350bdd1adf214dc3390}{bcApproximatedSlope}}:}
+\DoxyCodeLine{100       bcval=(fcnList.at(1)-\/fcnList.at(0))*kappas.at(0);}
+\DoxyCodeLine{101     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a925dc2d982c12e9960b414075e316a0a}{bcClamped}}:}
+\DoxyCodeLine{102       BArray.push\_back(bcval/kappas.at(0));}
+\DoxyCodeLine{103       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{104     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}}:}
+\DoxyCodeLine{105       bcval=2.*(fcnList.at(1)-\/fcnList.at(0));}
+\DoxyCodeLine{106       BArray.push\_back(bcval);}
+\DoxyCodeLine{107       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}:}
+\DoxyCodeLine{109       bcval=2.*(fcnList.at(1)-\/fcnList.at(0));}
+\DoxyCodeLine{110       BArray.push\_back(0);}
+\DoxyCodeLine{111       BArray.push\_back(bcval*kappas.at(0)/kappas.at(1));}
+\DoxyCodeLine{112       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{113     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{114       cerr << \textcolor{stringliteral}{"MELANCSplineCore::getBArray: bcBegin "} << bcBegin << \textcolor{stringliteral}{" is not implemented!"} << endl;}
+\DoxyCodeLine{115       assert(0);}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{comment}{// Intermediate point constraint is always D0, D1 and D2 continuous}}
+\DoxyCodeLine{118     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=1; j<npoints-\/1; j++)\{}
+\DoxyCodeLine{119       \textcolor{keywordflow}{if} (j==1 \&\& bcBegin==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{120       \textcolor{keywordflow}{if} (j==npoints-\/2 \&\& bcEnd==\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{121       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} val\_j = fcnList.at(j);}
+\DoxyCodeLine{122       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} val\_jpo = fcnList.at(j+1);}
+\DoxyCodeLine{123       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} val\_jmo = fcnList.at(j-\/1);}
+\DoxyCodeLine{124       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} kappa\_j = kappas.at(j);}
+\DoxyCodeLine{125       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} kappa\_jmo = kappas.at(j-\/1);}
+\DoxyCodeLine{126       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} rsq = pow(kappa\_j/kappa\_jmo, 2);}
+\DoxyCodeLine{127       \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} Bval = val\_jpo*rsq + val\_j*(1.-\/rsq) -\/ val\_jmo;}
+\DoxyCodeLine{128       Bval *= 3.;}
+\DoxyCodeLine{129       BArray.push\_back(Bval);}
+\DoxyCodeLine{130     \}}
+\DoxyCodeLine{131     \textcolor{comment}{// Last point constraint}}
+\DoxyCodeLine{132     \textcolor{keywordflow}{switch} (bcEnd)\{}
+\DoxyCodeLine{133     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a0c10b32c1a8c6e7a87ae6ea6fd69a0b5}{bcApproximatedSecondDerivative}}:}
+\DoxyCodeLine{134       ecval=(npoints<3 ? 0 : ((fcnList.at(npoints-\/1)-\/fcnList.at(npoints-\/2))*kappas.at(npoints-\/2)-\/(fcnList.at(npoints-\/2)-\/fcnList.at(npoints-\/3))*kappas.at(npoints-\/3))/(0.5/kappas.at(npoints-\/3)+0.5/kappas.at(npoints-\/2)));}
+\DoxyCodeLine{135     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{bcNaturalSpline}}:}
+\DoxyCodeLine{136       BArray.push\_back(3.*(fcnList.at(npoints-\/1)-\/fcnList.at(npoints-\/2)) + ecval/2./pow(kappas.at(npoints-\/1), 2));}
+\DoxyCodeLine{137       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{138     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910aee5f865563c5f350bdd1adf214dc3390}{bcApproximatedSlope}}:}
+\DoxyCodeLine{139       ecval=(fcnList.at(npoints-\/1)-\/fcnList.at(npoints-\/2))*kappas.at(npoints-\/2);}
+\DoxyCodeLine{140     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a925dc2d982c12e9960b414075e316a0a}{bcClamped}}:}
+\DoxyCodeLine{141       BArray.push\_back(ecval/kappas.at(npoints-\/1));}
+\DoxyCodeLine{142       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{143     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a52632a94c594cba0d7331e8260405af3}{bcQuadratic}}:}
+\DoxyCodeLine{144       ecval=2.*(fcnList.at(npoints-\/1)-\/fcnList.at(npoints-\/2));}
+\DoxyCodeLine{145       BArray.push\_back(ecval);}
+\DoxyCodeLine{146       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{147     \textcolor{keywordflow}{case} \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a85375c94a7de58666d62130bf353322a}{bcQuadraticWithNullSlope}}:}
+\DoxyCodeLine{148       ecval=2.*(fcnList.at(npoints-\/1)-\/fcnList.at(npoints-\/2));}
+\DoxyCodeLine{149       BArray.push\_back(ecval);}
+\DoxyCodeLine{150       BArray.push\_back(0);}
+\DoxyCodeLine{151       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{152     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{153       cerr << \textcolor{stringliteral}{"MELANCSplineCore::getAArray: bcEnd "} << bcEnd << \textcolor{stringliteral}{" is not implemented!"} << endl;}
+\DoxyCodeLine{154       assert(0);}
+\DoxyCodeLine{155     \}}
+\DoxyCodeLine{156   \}}
+\DoxyCodeLine{157   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (npoints==1) BArray.push\_back(0);}
+\DoxyCodeLine{158 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_ae2d1025614f87408de272862ced81dfe}\label{classMELANCSplineCore_ae2d1025614f87408de272862ced81dfe}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!getCoefficients@{getCoefficients}}
 \index{getCoefficients@{getCoefficients}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{getCoefficients()}{getCoefficients()}}
 {\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}} $>$ M\+E\+L\+A\+N\+C\+Spline\+Core\+::get\+Coefficients (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELANCSplineCore_aebc5f10ddc26a57f0c3b2bb8e9969162}{T\+Vector\+\_\+t}} \&}]{S,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{kappas,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{fcn\+List,  }\item[{const Int\+\_\+t \&}]{bin }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 219 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219                                                                                                                                                                                        \{}
+\DoxyCodeLine{220   \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{DefaultAccumulator<MELANCSplineCore::T>}} A, B, C, D;}
+\DoxyCodeLine{221   vector<MELANCSplineCore::T> res;}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223   \textcolor{keyword}{const} \textcolor{keywordtype}{int} fcnsize = fcnList.size();}
+\DoxyCodeLine{224   \textcolor{keywordflow}{if} (fcnsize>bin)\{}
+\DoxyCodeLine{225     A=fcnList.at(bin);}
+\DoxyCodeLine{226     B=S[bin];}
+\DoxyCodeLine{227     \textcolor{keywordflow}{if} (fcnsize>(bin+1))\{}
+\DoxyCodeLine{228       \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{DefaultAccumulator<MELANCSplineCore::T>}} dFcn = fcnList.at(bin+1);}
+\DoxyCodeLine{229       dFcn -\/= A;}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231       C += \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}}(3.)*dFcn;}
+\DoxyCodeLine{232       C -\/= 2.*B;}
+\DoxyCodeLine{233       C -\/= S[bin+1]*kappas.at(bin+1)/kappas.at(bin);}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235       D += \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}}(-\/2.)*dFcn;}
+\DoxyCodeLine{236       D += B;}
+\DoxyCodeLine{237       D += S[bin+1]*kappas.at(bin+1)/kappas.at(bin);}
+\DoxyCodeLine{238     \}}
+\DoxyCodeLine{239   \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241   res.push\_back(A);}
+\DoxyCodeLine{242   res.push\_back(B);}
+\DoxyCodeLine{243   res.push\_back(C);}
+\DoxyCodeLine{244   res.push\_back(D);}
+\DoxyCodeLine{245   \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{246 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a4ca8fe5de992ddfa3901893601bc0934}\label{classMELANCSplineCore_a4ca8fe5de992ddfa3901893601bc0934}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!getCoefficientsAlongDirection@{getCoefficientsAlongDirection}}
 \index{getCoefficientsAlongDirection@{getCoefficientsAlongDirection}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{getCoefficientsAlongDirection()}{getCoefficientsAlongDirection()}}
 {\footnotesize\ttfamily vector$<$ vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}} $>$ $>$ M\+E\+L\+A\+N\+C\+Spline\+Core\+::get\+Coefficients\+Along\+Direction (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{kappas,  }\item[{const \mbox{\hyperlink{classMELANCSplineCore_a08a91432eef42c1737e8368cd330e25a}{T\+Matrix\+\_\+t}} \&}]{Ainv,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{fcn\+List,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} const \&}]{bc\+Begin,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} const \&}]{bc\+End,  }\item[{const Int\+\_\+t}]{pick\+Bin }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 247 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                                                                                                                                                                                                                                                                                         \{}
+\DoxyCodeLine{248   vector<MELANCSplineCore::T> BArray;}
+\DoxyCodeLine{249   \mbox{\hyperlink{classMELANCSplineCore_a14491f6bdb983298043074ea6fb213dd}{getBArray}}(kappas, fcnList, BArray, bcBegin, bcEnd);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251   Int\_t npoints = BArray.size();}
+\DoxyCodeLine{252   \mbox{\hyperlink{classMELANCSplineCore_aebc5f10ddc26a57f0c3b2bb8e9969162}{TVector\_t}} Btrans(npoints);}
+\DoxyCodeLine{253   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<npoints; i++) Btrans[i]=BArray.at(i);}
+\DoxyCodeLine{254   \mbox{\hyperlink{classMELANCSplineCore_aebc5f10ddc26a57f0c3b2bb8e9969162}{TVector\_t}} Strans = Ainv*Btrans;}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256   vector<vector<MELANCSplineCore::T>> coefs;}
+\DoxyCodeLine{257   \textcolor{keywordflow}{for} (Int\_t bin=0; bin<(npoints>1 ? npoints-\/1 : 1); bin++)\{}
+\DoxyCodeLine{258     \textcolor{keywordflow}{if} (pickBin>=0 \&\& bin!=pickBin) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{259     vector<MELANCSplineCore::T> coef = \mbox{\hyperlink{classMELANCSplineCore_ae2d1025614f87408de272862ced81dfe}{getCoefficients}}(Strans, kappas, fcnList, bin);}
+\DoxyCodeLine{260     coefs.push\_back(coef);}
+\DoxyCodeLine{261   \}}
+\DoxyCodeLine{262   \textcolor{keywordflow}{return} coefs;}
+\DoxyCodeLine{263 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a9a3f25075c8dae1bdb5f38ebaf450555}\label{classMELANCSplineCore_a9a3f25075c8dae1bdb5f38ebaf450555}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!getKappas@{getKappas}}
 \index{getKappas@{getKappas}!MELANCSplineCore@{MELANCSplineCore}}
@@ -366,6 +737,19 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__3D__fast_af0bf895cbb65327b015
 \doxysubsubsection{\texorpdfstring{getLeafDependents()}{getLeafDependents()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::get\+Leaf\+Dependents (\begin{DoxyParamCaption}\item[{Roo\+Real\+Proxy \&}]{proxy,  }\item[{Roo\+Arg\+Set \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 275 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{275                                                                            \{}
+\DoxyCodeLine{276   RooArgSet deps;}
+\DoxyCodeLine{277   proxy.absArg()-\/>leafNodeServerList(\&deps, 0, \textcolor{keyword}{true});}
+\DoxyCodeLine{278   set.add(deps);}
+\DoxyCodeLine{279 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_a267e73e6b6752b22476e8665d24b1100}\label{classMELANCSplineCore_a267e73e6b6752b22476e8665d24b1100}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!getTVar@{getTVar}}
 \index{getTVar@{getTVar}!MELANCSplineCore@{MELANCSplineCore}}
@@ -402,18 +786,45 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__3D__fast_af3826dad6e1c7851073
 \doxysubsubsection{\texorpdfstring{npointsX()}{npointsX()}}
 {\footnotesize\ttfamily unsigned int M\+E\+L\+A\+N\+C\+Spline\+Core\+::npointsX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Definition at line 84 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}}.size(); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_acbd2a3a76bcca4fb0449f4b49a02dc66}\label{classMELANCSplineCore_acbd2a3a76bcca4fb0449f4b49a02dc66}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!setEvalFloor@{setEvalFloor}}
 \index{setEvalFloor@{setEvalFloor}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{setEvalFloor()}{setEvalFloor()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::set\+Eval\+Floor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}}}]{val }\end{DoxyParamCaption})}
 
+
+
+Definition at line 68 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68 \{ \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}} = val; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_aa1825010f45fb185b165506b59792c16}\label{classMELANCSplineCore_aa1825010f45fb185b165506b59792c16}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!setIntFloor@{setIntFloor}}
 \index{setIntFloor@{setIntFloor}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{setIntFloor()}{setIntFloor()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::set\+Int\+Floor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}}}]{val }\end{DoxyParamCaption})}
 
+
+
+Definition at line 69 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \{ \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}} = val; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_aca4506f2d77ad375e7d257ba2d524a79}\label{classMELANCSplineCore_aca4506f2d77ad375e7d257ba2d524a79}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!setRangeValidity@{setRangeValidity}}
 \index{setRangeValidity@{setRangeValidity}!MELANCSplineCore@{MELANCSplineCore}}
@@ -430,6 +841,15 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__1D__fast_a2623be9cafef13f68d6
 \doxysubsubsection{\texorpdfstring{setVerbosity()}{setVerbosity()}}
 {\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+Core\+::set\+Verbosity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613}{Verbosity\+Level}}}]{flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Definition at line 67 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67 \{ \mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}} = flag; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classMELANCSplineCore_ae2f4f6577d8432e2fc72257e1d8cd295}\label{classMELANCSplineCore_ae2f4f6577d8432e2fc72257e1d8cd295}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!testRangeValidity@{testRangeValidity}}
 \index{testRangeValidity@{testRangeValidity}!MELANCSplineCore@{MELANCSplineCore}}
@@ -449,11 +869,19 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e1
 \doxysubsubsection{\texorpdfstring{floorEval}{floorEval}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} M\+E\+L\+A\+N\+C\+Spline\+Core\+::floor\+Eval\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 69 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}\label{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!floorInt@{floorInt}}
 \index{floorInt@{floorInt}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{floorInt}{floorInt}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} M\+E\+L\+A\+N\+C\+Spline\+Core\+::floor\+Int\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
 
 \mbox{\Hypertarget{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}\label{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!leafDepsList@{leafDepsList}}
@@ -461,11 +889,19 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e1
 \doxysubsubsection{\texorpdfstring{leafDepsList}{leafDepsList}}
 {\footnotesize\ttfamily Roo\+List\+Proxy M\+E\+L\+A\+N\+C\+Spline\+Core\+::leaf\+Deps\+List\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 76 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}\label{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!rangeXmax@{rangeXmax}}
 \index{rangeXmax@{rangeXmax}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{rangeXmax}{rangeXmax}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} M\+E\+L\+A\+N\+C\+Spline\+Core\+::range\+Xmax\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 73 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
 
 \mbox{\Hypertarget{classMELANCSplineCore_af9532533981a93114dcbcce595341219}\label{classMELANCSplineCore_af9532533981a93114dcbcce595341219}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!rangeXmin@{rangeXmin}}
@@ -473,11 +909,19 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e1
 \doxysubsubsection{\texorpdfstring{rangeXmin}{rangeXmin}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} M\+E\+L\+A\+N\+C\+Spline\+Core\+::range\+Xmin\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 72 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}\label{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!theXVar@{theXVar}}
 \index{theXVar@{theXVar}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{theXVar}{theXVar}}
 {\footnotesize\ttfamily Roo\+Real\+Proxy M\+E\+L\+A\+N\+C\+Spline\+Core\+::the\+X\+Var\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 75 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
 
 \mbox{\Hypertarget{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}\label{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!useFloor@{useFloor}}
@@ -485,17 +929,29 @@ Implemented in \mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e1
 \doxysubsubsection{\texorpdfstring{useFloor}{useFloor}}
 {\footnotesize\ttfamily Bool\+\_\+t M\+E\+L\+A\+N\+C\+Spline\+Core\+::use\+Floor\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 68 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}\label{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!verbosity@{verbosity}}
 \index{verbosity@{verbosity}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{verbosity}{verbosity}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613}{Verbosity\+Level}} M\+E\+L\+A\+N\+C\+Spline\+Core\+::verbosity\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 67 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
+
 \mbox{\Hypertarget{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}\label{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}} 
 \index{MELANCSplineCore@{MELANCSplineCore}!XList@{XList}}
 \index{XList@{XList}!MELANCSplineCore@{MELANCSplineCore}}
 \doxysubsubsection{\texorpdfstring{XList}{XList}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}$>$ M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+X\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 77 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+h.
 
 
 

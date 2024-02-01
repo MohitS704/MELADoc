@@ -742,7 +742,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7ce8358501fea0786c089b9e1dbd2cfb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmela_1_1Mela.html#a7ce8358501fea0786c089b9e1dbd2cfb">__mela</a></td></tr>
 <tr class="separator:a7ce8358501fea0786c089b9e1dbd2cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00049">49</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a754ac1724aef26d9b94e21653d69c56f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a754ac1724aef26d9b94e21653d69c56f">&#9670;&nbsp;</a></span>__init__()</h2>
 
@@ -775,6 +778,64 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00212">212</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keyword">def </span>__init__(self, *args, **kwargs):</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    self.__mela = ROOT.Mela(*args, **kwargs)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    self.index = self.counter</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="namespacetestME__more.html#ac907bee188310c0dca6544dfebda347d">type</a>(self).counter += 1</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    arrays  = (</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;               (<span class="stringliteral">&quot;selfDHggcoupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HGG, 2)),</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;               (<span class="stringliteral">&quot;selfDHg4g4coupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HGG, 2)),</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;               (<span class="stringliteral">&quot;selfDHqqcoupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HQQ, 2)),</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;               (<span class="stringliteral">&quot;selfDHbbcoupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HQQ, 2)),</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;               (<span class="stringliteral">&quot;selfDHttcoupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HQQ, 2)),</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;               (<span class="stringliteral">&quot;selfDHb4b4coupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HQQ, 2)),</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;               (<span class="stringliteral">&quot;selfDHt4t4coupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HQQ, 2)),</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;               (<span class="stringliteral">&quot;selfDHzzcoupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HVV, 2)),</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;               (<span class="stringliteral">&quot;selfDHwwcoupl&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HVV, 2)),</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;               (<span class="stringliteral">&quot;selfDHzzLambda_qsq&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HVV_LAMBDAQSQ, ROOT.py_SIZE_HVV_CQSQ)),</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;               (<span class="stringliteral">&quot;selfDHwwLambda_qsq&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HVV_LAMBDAQSQ, ROOT.py_SIZE_HVV_CQSQ)),</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;               (<span class="stringliteral">&quot;selfDHzzCLambda_qsq&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HVV_CQSQ)),</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;               (<span class="stringliteral">&quot;selfDHwwCLambda_qsq&quot;</span>, (ROOT.nSupportedHiggses, ROOT.py_SIZE_HVV_CQSQ)),</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;               (<span class="stringliteral">&quot;selfDHzzpcoupl&quot;</span>, (ROOT.py_SIZE_HVV, 2)),</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;               (<span class="stringliteral">&quot;selfDHzpzpcoupl&quot;</span>, (ROOT.py_SIZE_HVV, 2)),</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;               (<span class="stringliteral">&quot;selfDZpffcoupl&quot;</span>, (ROOT.py_SIZE_Vpff, 2)),</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;               (<span class="stringliteral">&quot;selfDHwwpcoupl&quot;</span>, (ROOT.py_SIZE_HVV, 2)),</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;               (<span class="stringliteral">&quot;selfDHwpwpcoupl&quot;</span>, (ROOT.py_SIZE_HVV, 2)),</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;               (<span class="stringliteral">&quot;selfDWpffcoupl&quot;</span>, (ROOT.py_SIZE_Vpff, 2)),</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;               (<span class="stringliteral">&quot;selfDZqqcoupl&quot;</span>, (ROOT.py_SIZE_ZQQ, 2)),</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;               (<span class="stringliteral">&quot;selfDZvvcoupl&quot;</span>, (ROOT.py_SIZE_ZVV, 2)),</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;               (<span class="stringliteral">&quot;selfDGqqcoupl&quot;</span>, (ROOT.py_SIZE_GQQ, 2)),</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;               (<span class="stringliteral">&quot;selfDGggcoupl&quot;</span>, (ROOT.py_SIZE_GGG, 2)),</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;               (<span class="stringliteral">&quot;selfDGvvcoupl&quot;</span>, (ROOT.py_SIZE_GVV, 2)),</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;               (<span class="stringliteral">&quot;selfDGvvpcoupl&quot;</span>, (ROOT.py_SIZE_GVV, 2)),</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;               (<span class="stringliteral">&quot;selfDGvpvpcoupl&quot;</span>, (ROOT.py_SIZE_GVV, 2)),</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;               (<span class="stringliteral">&quot;selfDaTQGCcoupl&quot;</span>, (ROOT.py_SIZE_ATQGC, 2)),</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;              )</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    f = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">for</span> name, dimensions <span class="keywordflow">in</span> arrays:</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        setattr(</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                self,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                name,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                MultiDimensionalCppArray(</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                         <span class="stringliteral">&quot;mela{}{}&quot;</span>.format(self.index, name),</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                         <span class="stringliteral">&quot;mela.{}&quot;</span>.format(name),</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                         [<span class="stringliteral">&quot;Mela.h&quot;</span>],</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                         {<span class="stringliteral">&quot;Mela&amp; mela&quot;</span>: self.__mela},</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                         *dimensions</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                        )</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;               )</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        f = getattr(self, name).writecpp(f)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    bkpgErrorIgnoreLevel, ROOT.gErrorIgnoreLevel = ROOT.gErrorIgnoreLevel, ROOT.kInfo+1</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    f.write(self.computeptemplate)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">for</span> name, dimensions <span class="keywordflow">in</span> arrays:</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        getattr(self, name).compilecpp(f)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    ROOT.gErrorIgnoreLevel = bkpgErrorIgnoreLevel</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    self.doneinit = <span class="keyword">True</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -804,6 +865,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00268">268</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keyword">def </span>__getattr__(self, name):</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> getattr(self.__mela, name)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4aaf40ca1cffda78365bebf9d9db1942"></a>
@@ -838,6 +904,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00271">271</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keyword">def </span>__setattr__(self, name, value):</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">if</span> self.doneinit:</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      <span class="keywordflow">if</span> hasattr(self.__mela, name):</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">return</span> setattr(self.__mela, name, value)</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <span class="keywordflow">elif</span> hasattr(<a class="code" href="namespacetestME__more.html#ac907bee188310c0dca6544dfebda347d">type</a>(self), name) <span class="keywordflow">and</span> hasattr(getattr(<a class="code" href="namespacetestME__more.html#ac907bee188310c0dca6544dfebda347d">type</a>(self), name), <span class="stringliteral">&quot;__set__&quot;</span>):</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">return</span> getattr(<a class="code" href="namespacetestME__more.html#ac907bee188310c0dca6544dfebda347d">type</a>(self), name).__set__(self, value)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;Can&#39;t set attribute &#39;{}&#39; for python Mela, which doesn&#39;t exist for C++ MELA&quot;</span>.format(name))</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      super(Mela, self).__setattr__(name, value)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9cf72866da590a9e409753a9fb6919cb"></a>
@@ -856,6 +935,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00323">323</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keyword">def </span>compute4FermionWeight(self): <span class="keywordflow">return</span> ROOT.compute4FermionWeight(self.__mela)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad85b01ae15a15407606ccf98a545fafe"></a>
@@ -890,6 +972,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00320">320</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keyword">def </span>computeD_CP(self, myME, myType): <span class="keywordflow">return</span> ROOT.computeD_CP(self.__mela, myME, myType)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0fd72dd473caab0b61b8bd7f08564433"></a>
@@ -924,6 +1009,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00326">326</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keyword">def </span>computeD_gg(self, myME, myType): <span class="keywordflow">return</span> ROOT.computeD_gg(self.__mela, myME, myType)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4664ead699c84a183711156d9ed4d7e3"></a>
@@ -942,6 +1030,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00309">309</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keyword">def </span>computeDecayAngles(self): <span class="keywordflow">return</span> self.DecayAngles(*ROOT.computeDecayAngles(self.__mela))</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1178151cb78c7e333db96c0fb21ed324"></a>
@@ -970,6 +1061,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00330">330</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  <span class="keyword">def </span>computeDijetConvBW(self, useTrueBW=False): <span class="keywordflow">return</span> ROOT.computeDijetConvBW(self.__mela, useTrueBW)</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aae5459146b7aa3b582611d9220397d0b"></a>
@@ -998,6 +1093,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00319">319</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keyword">def </span>computeP(self, useConstant=True): <span class="keywordflow">return</span> ROOT.computeP(self.__mela, useConstant)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8ebcbeefa8e452891dfdfe2b55059ad9"></a>
@@ -1026,6 +1124,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00325">325</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keyword">def </span>computePM4l(self, syst): <span class="keywordflow">return</span> ROOT.computePM4l(self.__mela, syst)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a80ffbf362567441990168129de595769"></a>
@@ -1054,6 +1155,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00322">322</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keyword">def </span>computeProdDecP(self, useConstant=True): <span class="keywordflow">return</span> ROOT.computeProdDecP(self.__mela, useConstant)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae07a08adc9b1102d13284b069c2d0bcc"></a>
@@ -1082,6 +1186,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00321">321</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keyword">def </span>computeProdP(self, useConstant=True): <span class="keywordflow">return</span> ROOT.computeProdP(self.__mela, useConstant)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a255246fd2c6a402be27e8d32a968049f"></a>
@@ -1122,6 +1229,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00328">328</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="keyword">def </span>computeProdP_ttH(self, topProcess=2, topDecay=0, useConstant=True): <span class="keywordflow">return</span> ROOT.computeProdP_ttH(self.__mela, topProcess, topDecay, useConstant)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a04ab431aee4af043782ae88a2b7bfec9"></a>
@@ -1156,6 +1266,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00327">327</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keyword">def </span>computeProdP_VH(self, includeHiggsDecay=False, useConstant=True): <span class="keywordflow">return</span> ROOT.computeProdP_VH(self.__mela, includeHiggsDecay, useConstant)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae076d174d158b9f5a2bcf1f5385c2730"></a>
@@ -1174,6 +1287,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00311">311</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keyword">def </span><a class="code" href="namespaceTUtil.html#ac25514d0b4bfda2daae52ee27f8d2fe8">computeVBFAngles</a>(self): <span class="keywordflow">return</span> self.VBFAngles(*ROOT.computeVBFAngles(self.__mela))</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af47847611cfc47749008aa03c00597a0"></a>
@@ -1192,6 +1308,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00312">312</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">def </span><a class="code" href="namespaceTUtil.html#a9a0761a097eca0e6c200ad64ccfdf80f">computeVBFAngles_ComplexBoost</a>(self):</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    result = ROOT.computeVBFAngles_ComplexBoost(self.__mela)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    result = tuple(result)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">return</span> self.VBFAngles(result[0], result[1], result[2]+1j*result[3], result[4]+1j*result[5], *result[6:])</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a53d4e2519060d2d6345b68cee27547d3"></a>
@@ -1220,6 +1342,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00317">317</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keyword">def </span><a class="code" href="namespaceTUtil.html#a928302e7a9815e5777eeea1fcd832a6e">computeVHAngles</a>(self, prod): <span class="keywordflow">return</span> self.VHAngles(*ROOT.computeVHAngles(self.__mela, prod))</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a54956f37efe53fd78d7ad137b5d89e33"></a>
@@ -1238,6 +1364,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00329">329</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keyword">def </span>getConstant(self): <span class="keywordflow">return</span> ROOT.getConstant(self.__mela)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5801367e690d1d974592d0e52746a1c7"></a>
@@ -1256,6 +1385,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00332">332</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keyword">def </span>getIORecord(self): <span class="keywordflow">return</span> self.<a class="code" href="classMelaIO.html">MelaIO</a>(self.__mela.getIORecord())</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab2f31c8c948ef8ab153cd3d48521b5c7"></a>
@@ -1274,6 +1407,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00306">306</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">def </span>getPAux(self): <span class="keywordflow">return</span> ROOT.getPAux(self.__mela)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9f11b60053e2045db95ab2223f00ed7f"></a>
@@ -1302,6 +1439,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00324">324</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keyword">def </span>getXPropagator(self, scheme): <span class="keywordflow">return</span> ROOT.getXPropagator(self.__mela, scheme)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a12c197898c4963499ed738bdef099ec1"></a>
@@ -1348,6 +1488,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00282">282</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keyword">def </span>setInputEvent(self, daughters, associated=None, mothers=None, isGen=False):</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> daughters <span class="keywordflow">is</span> <span class="keywordtype">None</span>: daughters = ROOT.nullptr  <span class="comment">#but ConvertVectorFormat will be unhappy and just return an empty candidate</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span> associated <span class="keywordflow">is</span> <span class="keywordtype">None</span>: associated = ROOT.nullptr</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span> mothers <span class="keywordflow">is</span> <span class="keywordtype">None</span>: mothers = ROOT.nullptr</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    self.__mela.setInputEvent(daughters, associated, mothers, isGen)</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3da069e878db5e57879b5088da477142"></a>
@@ -1382,6 +1531,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00289">289</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keyword">def </span>setInputEvent_fromLHE_Hwithdecay(self, event, isgen=False):</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="stringliteral">&quot;For any LHE event that writes H (id=25 or 39) explicitly and decays it&quot;</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keyword">from</span> lhefile <span class="keyword">import</span> LHEEvent_Hwithdecay</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    self.setInputEvent(*LHEEvent_Hwithdecay(event, isgen))</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0653468101203d754c2872d218bf76ab"></a>
@@ -1416,6 +1571,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00301">301</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keyword">def </span>setInputEvent_fromLHE_JHUGenttH(self, event, isgen=False):</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="stringliteral">&quot;For undecayed JHUGen ttH (same as StableHiggs, but insists on exactly 6 associated particles)&quot;</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">from</span> lhefile <span class="keyword">import</span> LHEEvent_JHUGenttH</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    self.setInputEvent(*LHEEvent_JHUGenttH(event, isgen))</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af8a4ffa81833525ad099be9df029f469"></a>
@@ -1450,6 +1612,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00297">297</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">def </span>setInputEvent_fromLHE_JHUGenVBFVH(self, event, isgen=False):</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="stringliteral">&quot;For undecayed JHUGen VBF and VH (same as StableHiggs, but insists on exactly 2 associated particles)&quot;</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">from</span> lhefile <span class="keyword">import</span> LHEEvent_JHUGenVBFVH</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    self.setInputEvent(*LHEEvent_JHUGenVBFVH(event, isgen))</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3e28767e4bf7fed2bca5cae3919359c5"></a>
@@ -1484,6 +1652,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00293">293</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keyword">def </span>setInputEvent_fromLHE_StableHiggs(self, event, isgen=False):</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="stringliteral">&quot;For any LHE event that writes H (id=25) explicitly and doesn&#39;t decay it&quot;</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">from</span> lhefile <span class="keyword">import</span> LHEEvent_StableHiggs</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    self.setInputEvent(*LHEEvent_StableHiggs(event, isgen))</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1507,6 +1681,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00213">213</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae584ce2d67b977f253e87df6b70a6ff8"></a>
@@ -1528,6 +1704,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00609">609</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1551,6 +1729,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00610">610</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a9df657f06591b775b1400951ca74900e"></a>
@@ -1572,6 +1752,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00611">611</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1595,6 +1777,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00612">612</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af0cbb924eae1a44b62d384f65d59bcfb"></a>
@@ -1616,6 +1800,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00613">613</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1639,6 +1825,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00615">615</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af24786e35475481c1614695867eb444a"></a>
@@ -1660,6 +1848,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00624">624</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1683,6 +1873,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00616">616</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a5560f39faecf94bfc50d3f4fd9405405"></a>
@@ -1704,6 +1896,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00617">617</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1727,6 +1921,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00618">618</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad1393c559f70f544a4f94ba020cdfc65"></a>
@@ -1748,6 +1944,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00619">619</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1771,6 +1969,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00620">620</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad175cfd81dd98e56c4c87a124fba8a1c"></a>
@@ -1792,6 +1992,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00621">621</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1815,6 +2017,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00622">622</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a3708ed89afe6f4d51b8d352e42b672bd"></a>
@@ -1836,6 +2040,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00623">623</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1859,6 +2065,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00632">632</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a8c597aa3913845be4293b04c4b307035"></a>
@@ -1880,6 +2088,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00633">633</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1903,6 +2113,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00634">634</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afe3b52e814e280bc6f60747c8632a382"></a>
@@ -1924,6 +2136,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00635">635</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1947,6 +2161,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00636">636</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad200269350afe7cd96287a9263efad84"></a>
@@ -1968,6 +2184,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00626">626</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -1991,6 +2209,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00627">627</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a4bc388b5b2fef5389c0914aca227a764"></a>
@@ -2012,6 +2232,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00628">628</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2035,6 +2257,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00629">629</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="abc539910a17f58a2e8adf17db874cfad"></a>
@@ -2056,6 +2280,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00630">630</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2079,6 +2305,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00649">649</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a3aac27418dd8572408a7a07e019d6480"></a>
@@ -2100,6 +2328,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00650">650</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2123,6 +2353,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00651">651</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aabc076ae100aeeeaec5e8a6824a26ae0"></a>
@@ -2144,6 +2376,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00652">652</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2167,6 +2401,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00653">653</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aca1f8d7f1f201ca359a683390aa35b72"></a>
@@ -2188,6 +2424,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00655">655</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2211,6 +2449,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00664">664</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae14ecfdc1a72d372e4db7d4522bccc3d"></a>
@@ -2232,6 +2472,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00656">656</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2255,6 +2497,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00657">657</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a84d46de9258e209153c17f9da0ba209b"></a>
@@ -2276,6 +2520,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00658">658</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2299,6 +2545,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00659">659</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae8a3de0b91099a3dab854dbede33a7b1"></a>
@@ -2320,6 +2568,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00660">660</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2343,6 +2593,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00661">661</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afc9ae2cef4d1f022e5e0cfac1881efae"></a>
@@ -2364,6 +2616,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00662">662</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2387,6 +2641,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00663">663</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a7293fc286dc9b51ae760d66f1676a252"></a>
@@ -2408,6 +2664,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00638">638</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2431,6 +2689,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00647">647</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a714123be1b27f48e2fbc88fd70f9b838"></a>
@@ -2452,6 +2712,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00639">639</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2475,6 +2737,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00640">640</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a1d2170f6634654f123e1a7e1789ff7ba"></a>
@@ -2496,6 +2760,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00641">641</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2519,6 +2785,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00642">642</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a319cd70030339a532e71f5344f698360"></a>
@@ -2540,6 +2808,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00643">643</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2563,6 +2833,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00644">644</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a486dfeb92cc925659befcda436644ddb"></a>
@@ -2584,6 +2856,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00645">645</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2607,6 +2881,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00646">646</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a4737c2e4d3bc809880ebca6813597a0d"></a>
@@ -2628,6 +2904,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00052">52</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2651,6 +2929,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00050">50</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac1f3f42e4db0b3b492371ac7c3a7273a"></a>
@@ -2672,6 +2952,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00469">469</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2695,6 +2977,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00457">457</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ab247c6e0754b2696a4f67e3ab0fcd232"></a>
@@ -2716,6 +3000,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00463">463</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2739,6 +3025,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00413">413</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aca2bd33b0ee32daaf2c4f0902034407d"></a>
@@ -2760,6 +3048,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00401">401</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2783,6 +3073,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00407">407</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af54771bf3e96a97ad3b81d81d12728f2"></a>
@@ -2804,6 +3096,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00676">676</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2827,6 +3121,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00308">308</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af0df3291d6f5534a65de5b75d123bb33"></a>
@@ -2848,6 +3144,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00669">669</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2871,6 +3169,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00674">674</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a59aba1619fbbbdcdda7e2c5b26027e41"></a>
@@ -2892,6 +3192,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00668">668</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2915,6 +3217,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00673">673</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a758d7c89991bf94c3d896213b9d606ab"></a>
@@ -2937,6 +3241,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00051">51</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a44a7654c91f7325e5b3f4ff9ac3191a6"></a>
@@ -2950,6 +3256,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00266">266</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -2973,6 +3281,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00667">667</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aefe257933bbdf0be31b019226820bf14"></a>
@@ -2994,6 +3304,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00672">672</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3017,6 +3329,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00666">666</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac9060d68484e10ef1013f8b649b0d7f3"></a>
@@ -3038,6 +3352,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00671">671</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3061,6 +3377,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00677">677</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a4d7bf4ea1c3dc8f399bba7c8cddc6348"></a>
@@ -3082,6 +3400,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00678">678</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3105,6 +3425,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00591">591</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a542973162444414bab3b2128fdc72fad"></a>
@@ -3126,6 +3448,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00592">592</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3149,6 +3473,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00583">583</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afc15ec5bce44a3ab6ee0c48014581c0b"></a>
@@ -3170,6 +3496,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00584">584</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3193,6 +3521,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00585">585</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a18b18194fc7c176ca0ec59a425d1a257"></a>
@@ -3214,6 +3544,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00586">586</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3237,6 +3569,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00587">587</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="adfe6371940b553167d9e0e478eed3b1e"></a>
@@ -3258,6 +3592,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00588">588</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3281,6 +3617,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00593">593</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aeb04e88bdb9d28ac40d8148d660f226b"></a>
@@ -3302,6 +3640,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00594">594</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3325,6 +3665,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00589">589</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a6d24e8a35c69af78719387cd08a77a57"></a>
@@ -3346,6 +3688,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00590">590</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3369,6 +3713,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00576">576</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a51ef8d8db54f936b47b30ad60415b9bd"></a>
@@ -3390,6 +3736,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00577">577</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3413,6 +3761,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00574">574</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a3ab064962e0ea382206e1b3e9980336f"></a>
@@ -3434,6 +3784,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00575">575</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3457,6 +3809,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00568">568</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a48e47910cdadda2eb46fc4e594500393"></a>
@@ -3478,6 +3832,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00569">569</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3501,6 +3857,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00560">560</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a2d5557a3add3195989fb95ffea0b30a9"></a>
@@ -3522,6 +3880,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00561">561</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3545,6 +3905,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00562">562</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a8326702bf5e3dd4e24bb188ec2ffc064"></a>
@@ -3566,6 +3928,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00563">563</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3589,6 +3953,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00566">566</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="abd292475d44c2d8b43568f043fbd1099"></a>
@@ -3610,6 +3976,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00567">567</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3633,6 +4001,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00572">572</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afec299d9e88f38a194fdf7389481e397"></a>
@@ -3654,6 +4024,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00573">573</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3677,6 +4049,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00564">564</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a9e264dbb476cc1475f64ea311fed886e"></a>
@@ -3698,6 +4072,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00565">565</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3721,6 +4097,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00578">578</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aa34fd6d7b12be11b32b70eeb6627f192"></a>
@@ -3742,6 +4120,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00579">579</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3765,6 +4145,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00570">570</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a79a077c98c1e16987c93b942a69cdb31"></a>
@@ -3786,6 +4168,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00571">571</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3809,6 +4193,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00599">599</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a3e360f5f4d8fa2fd52273efc4b0fcd7a"></a>
@@ -3830,6 +4216,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00597">597</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3853,6 +4241,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00349">349</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a015aefffa029c4f56afc3b2be1c19bc3"></a>
@@ -3874,6 +4264,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00350">350</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3897,6 +4289,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00351">351</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a29b6a33815ef444d289759edd9dea818"></a>
@@ -3918,6 +4312,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00362">362</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3941,6 +4337,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00363">363</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aa8b8065733c78df8cd653279ccf4a15d"></a>
@@ -3962,6 +4360,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00364">364</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -3985,6 +4385,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00419">419</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad72fcb407163cf23ae5fa9b55742dd78"></a>
@@ -4006,6 +4408,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00424">424</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4029,6 +4433,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00425">425</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a35404a5add888eabbe34524aac20deae"></a>
@@ -4050,6 +4456,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00426">426</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4073,6 +4481,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00427">427</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad44e5a27ac5d8e8de69ac62c1ad75254"></a>
@@ -4094,6 +4504,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00428">428</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4117,6 +4529,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00448">448</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afc47424faacde4839f1f5b3ad84419ca"></a>
@@ -4138,6 +4552,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00449">449</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4161,6 +4577,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00420">420</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="affd9de9d78bdf80c327f3fbb2cd3ed6c"></a>
@@ -4182,6 +4600,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00430">430</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4205,6 +4625,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00431">431</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af7b2aad40a2a6b4d2ca5f153175ca7b8"></a>
@@ -4226,6 +4648,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00432">432</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4249,6 +4673,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00433">433</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a01632dfc0ce7b6bb45c90c3873a2a2ba"></a>
@@ -4270,6 +4696,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00434">434</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4293,6 +4721,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00450">450</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad5d7c00fed75900d710ed53fa719952a"></a>
@@ -4314,6 +4744,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00451">451</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4337,6 +4769,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00421">421</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad1b6b430fd6befc14dc58e331357444b"></a>
@@ -4358,6 +4792,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00436">436</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4381,6 +4817,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00437">437</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a5c5b191b501c93f24f498ab46c05bc20"></a>
@@ -4402,6 +4840,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00438">438</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4425,6 +4865,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00439">439</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="accca7e1cb49ed007a714107ed823931f"></a>
@@ -4446,6 +4888,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00440">440</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4469,6 +4913,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00452">452</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afe0b61260bb6ed491d81f5266c6ed71c"></a>
@@ -4490,6 +4936,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00453">453</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4513,6 +4961,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00422">422</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="add8d570982b051f6d2c35149c23a47cc"></a>
@@ -4534,6 +4984,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00442">442</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4557,6 +5009,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00443">443</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a093ab63b9a25322047d7927996d7ff6b"></a>
@@ -4578,6 +5032,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00444">444</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4601,6 +5057,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00445">445</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af81751c5c7e979dd726b03a4cfd2065f"></a>
@@ -4622,6 +5080,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00446">446</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4645,6 +5105,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00454">454</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a56464aa8772cd42b67849af1b056f693"></a>
@@ -4666,6 +5128,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00455">455</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4689,6 +5153,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00582">582</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a018420dd4278a7a521e35300d9419e79"></a>
@@ -4710,6 +5176,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00581">581</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4733,6 +5201,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00354">354</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a4690b80fd0823a419ec582ddf1a8fab8"></a>
@@ -4754,6 +5224,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00366">366</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4777,6 +5249,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00367">367</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a88982b79b8a9f90ecc9836855599daf1"></a>
@@ -4798,6 +5272,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00368">368</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4821,6 +5297,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00369">369</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a337893daad60730dd6e7119ce0047ae4"></a>
@@ -4842,6 +5320,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00370">370</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4865,6 +5345,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00392">392</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae3f4e52b2c6dc26dc987fb73a9ad5c28"></a>
@@ -4886,6 +5368,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00393">393</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4909,6 +5393,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00355">355</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="affdc1bc179620b0f870cf9295627e717"></a>
@@ -4930,6 +5416,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00372">372</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4953,6 +5441,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00373">373</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a88cb7ea43d4bc795d9400684b78ca878"></a>
@@ -4974,6 +5464,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00374">374</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -4997,6 +5489,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00375">375</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac589963f2fe3cec3c80839054771d4f0"></a>
@@ -5018,6 +5512,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00376">376</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5041,6 +5537,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00394">394</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af64d5997bed43e056458606dce2811d5"></a>
@@ -5062,6 +5560,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00395">395</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5085,6 +5585,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00356">356</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a1b872ac50b1b92cf2affa0d4c08bc7a2"></a>
@@ -5106,6 +5608,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00378">378</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5129,6 +5633,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00379">379</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad92e0136d373c9da1ff0027266f47c40"></a>
@@ -5150,6 +5656,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00380">380</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5173,6 +5681,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00381">381</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a552a449c66f0e6bb508a9be2273cd768"></a>
@@ -5194,6 +5704,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00382">382</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5217,6 +5729,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00396">396</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ada6ca0818c9f0752b9de16a41ff781a3"></a>
@@ -5238,6 +5752,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00397">397</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5261,6 +5777,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00357">357</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a9f4c0af156f33299ca1d589ed808b6f3"></a>
@@ -5282,6 +5800,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00384">384</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5305,6 +5825,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00385">385</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae9c676f6c162c022183017df8a82eaad"></a>
@@ -5326,6 +5848,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00386">386</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5349,6 +5873,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00387">387</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aedcaec10d50401b44769755e548aa6f2"></a>
@@ -5370,6 +5896,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00388">388</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5393,6 +5921,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00398">398</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac7b2e5e0320c0760fac1dc27c618bfb8"></a>
@@ -5414,6 +5944,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00399">399</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5437,6 +5969,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00390">390</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a768faf4aa0aa7d107547d621cd51ba4b"></a>
@@ -5458,6 +5992,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00359">359</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5481,6 +6017,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00360">360</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="abf6db2be0c5a9633ef64d3232d100c30"></a>
@@ -5502,6 +6040,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00361">361</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5525,6 +6065,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00511">511</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a33495d018f75caeacf73de163aedb483"></a>
@@ -5546,6 +6088,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00483">483</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5569,6 +6113,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00484">484</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a2676bdacee7f980af9a0b9c539a015ef"></a>
@@ -5590,6 +6136,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00485">485</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5613,6 +6161,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00522">522</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae15cd67dfacb429508532274b849793e"></a>
@@ -5634,6 +6184,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00527">527</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5657,6 +6209,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00528">528</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a2cb3b043860d8792a6b4a5f18e39a82b"></a>
@@ -5678,6 +6232,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00529">529</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5701,6 +6257,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00530">530</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a12f724ea365aa7b45caf2da6b00f92b1"></a>
@@ -5722,6 +6280,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00531">531</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5745,6 +6305,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00551">551</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a2ebef02f073bad33400049772f30cb8a"></a>
@@ -5766,6 +6328,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00552">552</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5789,6 +6353,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00523">523</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad297702b78a9e038b609a3f4c1d02fe5"></a>
@@ -5810,6 +6376,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00533">533</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5833,6 +6401,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00534">534</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a8864f147d642caf8068fe0ba2e6b5af3"></a>
@@ -5854,6 +6424,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00535">535</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5877,6 +6449,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00536">536</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a033bc65b716835067da043e6f4ea0a06"></a>
@@ -5898,6 +6472,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00537">537</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5921,6 +6497,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00553">553</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac4f46c12cff604d6c2cf8382ed3aae4a"></a>
@@ -5942,6 +6520,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00554">554</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -5965,6 +6545,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00524">524</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a125ba9cbcb3706a15dce974a14ad4035"></a>
@@ -5986,6 +6568,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00539">539</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6009,6 +6593,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00540">540</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="af8c3610583235672ecff43102a2b56b7"></a>
@@ -6030,6 +6616,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00541">541</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6053,6 +6641,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00542">542</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a0d101912d85801ba46d5860a2afedf70"></a>
@@ -6074,6 +6664,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00543">543</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6097,6 +6689,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00555">555</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a34e4df04359c9748e9f9f3761a844643"></a>
@@ -6118,6 +6712,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00556">556</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6141,6 +6737,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00525">525</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afa3bbeff889ab3597a9d1ea2c7d3d870"></a>
@@ -6162,6 +6760,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00545">545</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6185,6 +6785,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00546">546</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a3a2d075513d0db30de32a9b76babb519"></a>
@@ -6206,6 +6808,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00547">547</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6229,6 +6833,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00548">548</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad2798d14d2248779a5df87270d2dc723"></a>
@@ -6250,6 +6856,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00549">549</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6273,6 +6881,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00557">557</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a4738211cb075bc922c8a9a85752a1401"></a>
@@ -6294,6 +6904,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00558">558</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6317,6 +6929,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00478">478</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a66e93efa8a5e93bd148de91469b62e4e"></a>
@@ -6338,6 +6952,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00487">487</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6361,6 +6977,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00488">488</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a8d1b72f76af2cf35c2f7363c57a94be4"></a>
@@ -6382,6 +7000,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00489">489</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6405,6 +7025,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00490">490</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac14a848fffacc95ba85cc0ab68101ccd"></a>
@@ -6426,6 +7048,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00491">491</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6449,6 +7073,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00513">513</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a1aba60ef0ef92be2890361bdbcb19baa"></a>
@@ -6470,6 +7096,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00514">514</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6493,6 +7121,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00479">479</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a67281223b0142cbda6ef67cd6cd7bd9c"></a>
@@ -6514,6 +7144,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00493">493</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6537,6 +7169,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00494">494</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="add7665ee8a02ce5c2ade8c7f32051aad"></a>
@@ -6558,6 +7192,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00495">495</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6581,6 +7217,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00496">496</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a8c7a11d650a68315d5fb39bf82de6493"></a>
@@ -6602,6 +7240,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00497">497</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6625,6 +7265,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00515">515</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a1a6ed0f47757a98020251cbd7502cd92"></a>
@@ -6646,6 +7288,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00516">516</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6669,6 +7313,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00480">480</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad74d236bcee1a4d337add9765f1ad332"></a>
@@ -6690,6 +7336,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00499">499</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6713,6 +7361,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00500">500</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a7aa637e4b08ca1380b3a81fdee1ebd2a"></a>
@@ -6734,6 +7384,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00501">501</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6757,6 +7409,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00502">502</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afbe166299f7ab484501dfa8badcb4c96"></a>
@@ -6778,6 +7432,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00503">503</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6801,6 +7457,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00517">517</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a25fae90bc66c9b7da6f4f9dca0ca3667"></a>
@@ -6822,6 +7480,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00518">518</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6845,6 +7505,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00481">481</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aefc0b79218cd3fe60b1ed861a57162ca"></a>
@@ -6866,6 +7528,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00505">505</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6889,6 +7553,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00506">506</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a0119f38e196c97c497dded0e17137c9b"></a>
@@ -6910,6 +7576,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00507">507</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6933,6 +7601,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00508">508</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a9e1e935e1501bae14753bca8c96dd4d7"></a>
@@ -6954,6 +7624,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00509">509</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -6977,6 +7649,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00519">519</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a2fae70d912a7b70d2e20b693a21153ca"></a>
@@ -6998,6 +7672,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00520">520</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7021,6 +7697,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00606">606</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac1fe038fdd0058809ac9db3b40ffc79f"></a>
@@ -7043,6 +7721,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00607">607</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a21b8e7add24372989c3db9e342ea22e8"></a>
@@ -7056,6 +7736,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00214">214</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7079,6 +7761,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00475">475</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ab21e970286f6d4359a22a975b8bd2aa4"></a>
@@ -7100,6 +7784,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00476">476</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7123,6 +7809,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00470">470</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ab665deb01d7bd11e172e33b3c2b807a9"></a>
@@ -7144,6 +7832,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00471">471</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7167,6 +7857,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00472">472</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a3a476537312217fe435dc5e686bfd3ac"></a>
@@ -7188,6 +7880,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00473">473</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7211,6 +7905,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00458">458</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac34c96c4721e974120b8f17b9ede1784"></a>
@@ -7232,6 +7928,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00459">459</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7255,6 +7953,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00460">460</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a71ef87c85a9706b0a153ee63b692b59f"></a>
@@ -7276,6 +7976,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00461">461</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7299,6 +8001,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00464">464</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="aa53e28bed3e22d827374cf074eb90006"></a>
@@ -7320,6 +8024,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00465">465</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7343,6 +8049,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00466">466</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a0247f72e23974b3b85a56b3454cf7fa7"></a>
@@ -7364,6 +8072,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00467">467</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7387,6 +8097,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00414">414</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a71f26e6f528fbeb07cf7e683cce2518f"></a>
@@ -7408,6 +8120,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00415">415</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7431,6 +8145,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00416">416</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae781ec451ccd5e51d9325fe71c0851a7"></a>
@@ -7452,6 +8168,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00417">417</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7475,6 +8193,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00402">402</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a38c377db09f6ab43eba88bf4ca097a76"></a>
@@ -7496,6 +8216,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00403">403</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7519,6 +8241,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00404">404</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a445df0dae317aeb9d7a3216a7828abdb"></a>
@@ -7540,6 +8264,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00405">405</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7563,6 +8289,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00408">408</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a66c47ab8dcc1c99ffa5e493d5110d8d7"></a>
@@ -7584,6 +8312,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00409">409</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7607,6 +8337,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00410">410</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ac9927137fce77fabfb041f7fb2d7699e"></a>
@@ -7628,6 +8360,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00411">411</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7651,6 +8385,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00598">598</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a9ce76eb1f8cdefe2c4b7ec2e6cd86e02"></a>
@@ -7672,6 +8408,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00596">596</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7695,6 +8433,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00310">310</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a71ea258adc4071afa29ae71a995f1821"></a>
@@ -7716,6 +8456,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00316">316</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7739,6 +8481,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00601">601</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="afb6b2af2a295a15a34785d64ca5912dc"></a>
@@ -7760,6 +8504,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00602">602</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -7783,6 +8529,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00603">603</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a27a95e40fd5f4261c591c59911504b51"></a>
@@ -7805,12 +8553,19 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00604">604</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>MELA/python/<a class="el" href="mela_8py.html">mela.py</a></li>
+<li>MELA/python/<a class="el" href="mela_8py_source.html">mela.py</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMelaIO_html"><div class="ttname"><a href="classMelaIO.html">MelaIO</a></div><div class="ttdef"><b>Definition:</b> <a href="MelaIO_8h_source.html#l00008">MelaIO.h:8</a></div></div>
+<div class="ttc" id="anamespaceTUtil_html_a928302e7a9815e5777eeea1fcd832a6e"><div class="ttname"><a href="namespaceTUtil.html#a928302e7a9815e5777eeea1fcd832a6e">TUtil::computeVHAngles</a></div><div class="ttdeci">void computeVHAngles(float &amp;costhetastar, float &amp;costheta1, float &amp;costheta2, float &amp;Phi, float &amp;Phi1, float &amp;m1, float &amp;m2, TLorentzVector p4M11, int Z1_lept1Id, TLorentzVector p4M12, int Z1_lept2Id, TLorentzVector p4M21, int Z2_lept1Id, TLorentzVector p4M22, int Z2_lept2Id, TLorentzVector jet1, int jet1Id, TLorentzVector jet2, int jet2Id, TLorentzVector *injet1=0, int injet1Id=0, TLorentzVector *injet2=0, int injet2Id=0)</div><div class="ttdef"><b>Definition:</b> <a href="TUtil_8cc_source.html#l00873">TUtil.cc:873</a></div></div>
+<div class="ttc" id="anamespacetestME__more_html_ac907bee188310c0dca6544dfebda347d"><div class="ttname"><a href="namespacetestME__more.html#ac907bee188310c0dca6544dfebda347d">testME_more.type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="testME__more_8py_source.html#l00010">testME_more.py:10</a></div></div>
+<div class="ttc" id="anamespaceTUtil_html_ac25514d0b4bfda2daae52ee27f8d2fe8"><div class="ttname"><a href="namespaceTUtil.html#ac25514d0b4bfda2daae52ee27f8d2fe8">TUtil::computeVBFAngles</a></div><div class="ttdeci">void computeVBFAngles(float &amp;costhetastar, float &amp;costheta1, float &amp;costheta2, float &amp;Phi, float &amp;Phi1, float &amp;Q2V1, float &amp;Q2V2, TLorentzVector p4M11, int Z1_lept1Id, TLorentzVector p4M12, int Z1_lept2Id, TLorentzVector p4M21, int Z2_lept1Id, TLorentzVector p4M22, int Z2_lept2Id, TLorentzVector jet1, int jet1Id, TLorentzVector jet2, int jet2Id, TLorentzVector *injet1=0, int injet1Id=0, TLorentzVector *injet2=0, int injet2Id=0)</div><div class="ttdef"><b>Definition:</b> <a href="TUtil_8cc_source.html#l00596">TUtil.cc:596</a></div></div>
+<div class="ttc" id="anamespaceTUtil_html_a9a0761a097eca0e6c200ad64ccfdf80f"><div class="ttname"><a href="namespaceTUtil.html#a9a0761a097eca0e6c200ad64ccfdf80f">TUtil::computeVBFAngles_ComplexBoost</a></div><div class="ttdeci">void computeVBFAngles_ComplexBoost(float &amp;costhetastar, float &amp;costheta1_real, float &amp;costheta1_imag, float &amp;costheta2_real, float &amp;costheta2_imag, float &amp;Phi, float &amp;Phi1, float &amp;Q2V1, float &amp;Q2V2, TLorentzVector p4M11, int Z1_lept1Id, TLorentzVector p4M12, int Z1_lept2Id, TLorentzVector p4M21, int Z2_lept1Id, TLorentzVector p4M22, int Z2_lept2Id, TLorentzVector jet1, int jet1Id, TLorentzVector jet2, int jet2Id, TLorentzVector *injet1=0, int injet1Id=0, TLorentzVector *injet2=0, int injet2Id=0)</div><div class="ttdef"><b>Definition:</b> <a href="TUtil_8cc_source.html#l00730">TUtil.cc:730</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

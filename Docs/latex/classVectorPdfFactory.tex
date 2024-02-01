@@ -53,6 +53,13 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 12 of file Vector\+Pdf\+Factory.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classVectorPdfFactory_a56239337852f9a9c09464c9a159de1c7}\label{classVectorPdfFactory_a56239337852f9a9c09464c9a159de1c7}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!VectorPdfFactory@{VectorPdfFactory}}
@@ -60,18 +67,80 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \doxysubsubsection{\texorpdfstring{VectorPdfFactory()}{VectorPdfFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Vector\+Pdf\+Factory\+::\+Vector\+Pdf\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 29 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{\};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classVectorPdfFactory_adab5608541a1facff46a3f9fcf544c02}\label{classVectorPdfFactory_adab5608541a1facff46a3f9fcf544c02}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!VectorPdfFactory@{VectorPdfFactory}}
 \index{VectorPdfFactory@{VectorPdfFactory}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{VectorPdfFactory()}{VectorPdfFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Vector\+Pdf\+Factory\+::\+Vector\+Pdf\+Factory (\begin{DoxyParamCaption}\item[{Roo\+Real\+Var $\ast$}]{m1,  }\item[{Roo\+Real\+Var $\ast$}]{m2,  }\item[{Roo\+Real\+Var $\ast$}]{hs,  }\item[{Roo\+Real\+Var $\ast$}]{h1,  }\item[{Roo\+Real\+Var $\ast$}]{h2,  }\item[{Roo\+Real\+Var $\ast$}]{Phi,  }\item[{Roo\+Real\+Var $\ast$}]{Phi1,  }\item[{Roo\+Real\+Var $\ast$}]{m\+ZZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 31 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                                                                                                                                                \{}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{// Parameters}}
+\DoxyCodeLine{34     \mbox{\hyperlink{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}{mZ}}     = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mZ"},\textcolor{stringliteral}{"mZ"},91.188);}
+\DoxyCodeLine{35     \mbox{\hyperlink{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}{gamZ}}   = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"gamZ"},\textcolor{stringliteral}{"gamZ"},2.5);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{// related to tensor structure of V decays}}
+\DoxyCodeLine{38     \mbox{\hyperlink{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}{R1Val}}  = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"R1Val"},\textcolor{stringliteral}{"R1Val"},0.15);}
+\DoxyCodeLine{39     \mbox{\hyperlink{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}{R2Val}}  = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"R2Val"},\textcolor{stringliteral}{"R2Val"},0.15);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{// dimensionless couplings}}
+\DoxyCodeLine{42     \mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"g1Val"}, \textcolor{stringliteral}{"g1Val"}, 0.0);        }
+\DoxyCodeLine{43     \mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"g2Val"}, \textcolor{stringliteral}{"g2Val"}, 0.0);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{// random paramter (?)}}
+\DoxyCodeLine{46     \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b092c0f6493b7992}{aParam}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aParam"},\textcolor{stringliteral}{"aParam"},0.0);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \mbox{\hyperlink{classVectorPdfFactory_a71a2f80e56355af1d60af7baad3a198a}{PDF}} = \textcolor{keyword}{new} \mbox{\hyperlink{classRooSpinOne__7D}{RooSpinOne\_7D}}(\textcolor{stringliteral}{"PDF"},\textcolor{stringliteral}{"PDF"}, *mZZ, *m1, *m2, *h1, *h2,*hs, *Phi, *Phi1, }
+\DoxyCodeLine{49                 *\mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}}, *\mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}}, *\mbox{\hyperlink{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}{R1Val}}, *\mbox{\hyperlink{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}{R2Val}}, *\mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b092c0f6493b7992}{aParam}}, *\mbox{\hyperlink{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}{mZ}}, *\mbox{\hyperlink{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}{gamZ}});}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51   \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classVectorPdfFactory_a0cc0c5311d83c5fca4c9d9f22a1c30a7}\label{classVectorPdfFactory_a0cc0c5311d83c5fca4c9d9f22a1c30a7}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!````~VectorPdfFactory@{$\sim$VectorPdfFactory}}
 \index{````~VectorPdfFactory@{$\sim$VectorPdfFactory}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{$\sim$VectorPdfFactory()}{~VectorPdfFactory()}}
 {\footnotesize\ttfamily Vector\+Pdf\+Factory\+::$\sim$\+Vector\+Pdf\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 53 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                      \{}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}};}
+\DoxyCodeLine{56     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}}; }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b092c0f6493b7992}{aParam}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}{mZ}};}
+\DoxyCodeLine{61     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}{gamZ}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}{R1Val}};}
+\DoxyCodeLine{64     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}{R2Val}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{delete} \mbox{\hyperlink{classVectorPdfFactory_a71a2f80e56355af1d60af7baad3a198a}{PDF}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \};}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -81,30 +150,115 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \doxysubsubsection{\texorpdfstring{configure()}{configure()}}
 {\footnotesize\ttfamily int Vector\+Pdf\+Factory\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}}}]{model\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 70 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70                                    \{}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordflow}{switch} (model\_)\{}
+\DoxyCodeLine{73     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90}{TVar::H1plus}}: \mbox{\hyperlink{classVectorPdfFactory_ab30398596b9c6401884de0b895ad6b20}{makePseudoZprime}}(); \textcolor{keywordflow}{return} 0; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c}{TVar::H1minus}}: \mbox{\hyperlink{classVectorPdfFactory_a4328b4ba0edad5cfaadbe8a945a08464}{makeZprime}}(); \textcolor{keywordflow}{return} 0; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{75     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5}{TVar::SelfDefine\_spin1}} : \textcolor{keywordflow}{return} 0; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{76     \textcolor{keywordflow}{default}: \mbox{\hyperlink{classVectorPdfFactory_a4328b4ba0edad5cfaadbe8a945a08464}{makeZprime}}(); \textcolor{keywordflow}{return} 1; \textcolor{keywordflow}{break};}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79   \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classVectorPdfFactory_aa104985427fcb164ec22eb0e9ea3871d}\label{classVectorPdfFactory_aa104985427fcb164ec22eb0e9ea3871d}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!makeParamsConst@{makeParamsConst}}
 \index{makeParamsConst@{makeParamsConst}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{makeParamsConst()}{makeParamsConst()}}
 {\footnotesize\ttfamily void Vector\+Pdf\+Factory\+::make\+Params\+Const (\begin{DoxyParamCaption}\item[{bool}]{yes\+No = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 96 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96                                        \{}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if}(yesNo)\{}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99       \mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{100       \mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102       \mbox{\hyperlink{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}{gamZ}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{103       \mbox{\hyperlink{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}{mZ}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{104       \mbox{\hyperlink{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}{R1Val}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{105       \mbox{\hyperlink{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}{R2Val}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109       \mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{110       \mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112       \mbox{\hyperlink{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}{gamZ}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{113       \mbox{\hyperlink{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}{mZ}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{114       \mbox{\hyperlink{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}{R1Val}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{115       \mbox{\hyperlink{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}{R2Val}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117   \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classVectorPdfFactory_ab30398596b9c6401884de0b895ad6b20}\label{classVectorPdfFactory_ab30398596b9c6401884de0b895ad6b20}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!makePseudoZprime@{makePseudoZprime}}
 \index{makePseudoZprime@{makePseudoZprime}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{makePseudoZprime()}{makePseudoZprime()}}
 {\footnotesize\ttfamily void Vector\+Pdf\+Factory\+::make\+Pseudo\+Zprime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 82 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                          \{  \textcolor{comment}{// NEED TO CALCULATE NORMALIZATIONS}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}}-\/>setVal(0.0);}
+\DoxyCodeLine{85     \mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}}-\/>setVal(1.0); }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classVectorPdfFactory_a4328b4ba0edad5cfaadbe8a945a08464}\label{classVectorPdfFactory_a4328b4ba0edad5cfaadbe8a945a08464}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!makeZprime@{makeZprime}}
 \index{makeZprime@{makeZprime}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{makeZprime()}{makeZprime()}}
 {\footnotesize\ttfamily void Vector\+Pdf\+Factory\+::make\+Zprime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 89 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89                    \{  \textcolor{comment}{// NEED TO CALCULATE NORMALIZATIONS}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \mbox{\hyperlink{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}{g1Val}}-\/>setVal(1.0); }
+\DoxyCodeLine{92     \mbox{\hyperlink{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}{g2Val}}-\/>setVal(0.0); }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classVectorPdfFactory_af40a46e4e4177739c17af880525d9db6}\label{classVectorPdfFactory_af40a46e4e4177739c17af880525d9db6}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!setZZ4fOrdering@{setZZ4fOrdering}}
 \index{setZZ4fOrdering@{setZZ4fOrdering}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{setZZ4fOrdering()}{setZZ4fOrdering()}}
 {\footnotesize\ttfamily void Vector\+Pdf\+Factory\+::set\+Z\+Z4f\+Ordering (\begin{DoxyParamCaption}\item[{bool}]{flag = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 119 of file Vector\+Pdf\+Factory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119 \{ \mbox{\hyperlink{classVectorPdfFactory_a71a2f80e56355af1d60af7baad3a198a}{PDF}}-\/>\mbox{\hyperlink{classRooSpinOne__7D_a753989b01b09753d8053df57e5862caa}{setZZ4fOrdering}}(flag); \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -114,11 +268,19 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \doxysubsubsection{\texorpdfstring{aParam}{aParam}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::a\+Param}
 
+
+
+Definition at line 27 of file Vector\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}\label{classVectorPdfFactory_a62c670ea918c85372ee30c90520cf9b7}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!g1Val@{g1Val}}
 \index{g1Val@{g1Val}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{g1Val}{g1Val}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::g1\+Val}
+
+
+
+Definition at line 24 of file Vector\+Pdf\+Factory.\+h.
 
 \mbox{\Hypertarget{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}\label{classVectorPdfFactory_a3d4b00e56e4daa2260c2c211948bd870}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!g2Val@{g2Val}}
@@ -126,11 +288,19 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \doxysubsubsection{\texorpdfstring{g2Val}{g2Val}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::g2\+Val}
 
+
+
+Definition at line 25 of file Vector\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}\label{classVectorPdfFactory_a2bddde3e23536dc725562406d89a068b}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!gamZ@{gamZ}}
 \index{gamZ@{gamZ}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{gamZ}{gamZ}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::gamZ}
+
+
+
+Definition at line 17 of file Vector\+Pdf\+Factory.\+h.
 
 \mbox{\Hypertarget{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}\label{classVectorPdfFactory_a8af07a536dac1763e5bb862bfea790fd}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!mZ@{mZ}}
@@ -138,11 +308,19 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \doxysubsubsection{\texorpdfstring{mZ}{mZ}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::mZ}
 
+
+
+Definition at line 16 of file Vector\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classVectorPdfFactory_a71a2f80e56355af1d60af7baad3a198a}\label{classVectorPdfFactory_a71a2f80e56355af1d60af7baad3a198a}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!PDF@{PDF}}
 \index{PDF@{PDF}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{PDF}{PDF}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpinOne__7D}{Roo\+Spin\+One\+\_\+7D}}$\ast$ Vector\+Pdf\+Factory\+::\+P\+DF}
+
+
+
+Definition at line 22 of file Vector\+Pdf\+Factory.\+h.
 
 \mbox{\Hypertarget{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}\label{classVectorPdfFactory_ad215517be20ce9c23020c761554471f4}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!R1Val@{R1Val}}
@@ -150,11 +328,19 @@ Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classVectorPdfFactory_ab102cffe3e2f8df6b0
 \doxysubsubsection{\texorpdfstring{R1Val}{R1Val}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::\+R1\+Val}
 
+
+
+Definition at line 19 of file Vector\+Pdf\+Factory.\+h.
+
 \mbox{\Hypertarget{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}\label{classVectorPdfFactory_ae8d12bdebaa5a2791bcb4e12a60c4043}} 
 \index{VectorPdfFactory@{VectorPdfFactory}!R2Val@{R2Val}}
 \index{R2Val@{R2Val}!VectorPdfFactory@{VectorPdfFactory}}
 \doxysubsubsection{\texorpdfstring{R2Val}{R2Val}}
 {\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Vector\+Pdf\+Factory\+::\+R2\+Val}
+
+
+
+Definition at line 20 of file Vector\+Pdf\+Factory.\+h.
 
 
 

@@ -51,6 +51,13 @@ Roo\+Real\+Proxy \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 16 of file Roo\+Rapidity\+Sig.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classRooRapiditySig_a06c4be78f31b38501abe98676b7bf510}\label{classRooRapiditySig_a06c4be78f31b38501abe98676b7bf510}} 
 \index{RooRapiditySig@{RooRapiditySig}!RooRapiditySig@{RooRapiditySig}}
@@ -58,24 +65,73 @@ Roo\+Real\+Proxy \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25
 \doxysubsubsection{\texorpdfstring{RooRapiditySig()}{RooRapiditySig()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Roo\+Rapidity\+Sig\+::\+Roo\+Rapidity\+Sig (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 22 of file Roo\+Rapidity\+Sig.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classRooRapiditySig_a06c4be78f31b38501abe98676b7bf510}{RooRapiditySig}}(*\textcolor{keyword}{this},newname); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classRooRapiditySig_a0274c6cc549f65b80de8a0c1166fa1f6}\label{classRooRapiditySig_a0274c6cc549f65b80de8a0c1166fa1f6}} 
 \index{RooRapiditySig@{RooRapiditySig}!RooRapiditySig@{RooRapiditySig}}
 \index{RooRapiditySig@{RooRapiditySig}!RooRapiditySig@{RooRapiditySig}}
 \doxysubsubsection{\texorpdfstring{RooRapiditySig()}{RooRapiditySig()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Roo\+Rapidity\+Sig\+::\+Roo\+Rapidity\+Sig (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title,  }\item[{Roo\+Abs\+Real \&}]{\+\_\+Y,  }\item[{Roo\+Abs\+Real \&}]{\+\_\+m,  }\item[{Roo\+Abs\+Real \&}]{\+\_\+sqrtS }\end{DoxyParamCaption})}
 
+
+
+Definition at line 20 of file Roo\+Rapidity\+Sig.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                                                                    :}
+\DoxyCodeLine{24 RooAbsPdf(name,title), }
+\DoxyCodeLine{25 \mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}}(\textcolor{stringliteral}{"Y"},\textcolor{stringliteral}{"Y"},\textcolor{keyword}{this},\_Y),}
+\DoxyCodeLine{26 \mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}}(\textcolor{stringliteral}{"m"},\textcolor{stringliteral}{"m"},\textcolor{keyword}{this},\_m),}
+\DoxyCodeLine{27 \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}{sqrtS}}(\textcolor{stringliteral}{"sqrtS"},\textcolor{stringliteral}{"sqrtS"},\textcolor{keyword}{this},\_sqrtS)}
+\DoxyCodeLine{28 \{ }
+\DoxyCodeLine{29 \} }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classRooRapiditySig_abf99c307fa24c446df98e765b466dcf8}\label{classRooRapiditySig_abf99c307fa24c446df98e765b466dcf8}} 
 \index{RooRapiditySig@{RooRapiditySig}!RooRapiditySig@{RooRapiditySig}}
 \index{RooRapiditySig@{RooRapiditySig}!RooRapiditySig@{RooRapiditySig}}
 \doxysubsubsection{\texorpdfstring{RooRapiditySig()}{RooRapiditySig()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Roo\+Rapidity\+Sig\+::\+Roo\+Rapidity\+Sig (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRooRapiditySig}{Roo\+Rapidity\+Sig}} \&}]{other,  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 32 of file Roo\+Rapidity\+Sig.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                                                                             :  }
+\DoxyCodeLine{33 RooAbsPdf(other,name), }
+\DoxyCodeLine{34 \mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}}(\textcolor{stringliteral}{"Y"},\textcolor{keyword}{this},other.\mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}}),}
+\DoxyCodeLine{35 \mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}}(\textcolor{stringliteral}{"m"},\textcolor{keyword}{this},other.\mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}}),}
+\DoxyCodeLine{36 \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}{sqrtS}}(\textcolor{stringliteral}{"sqrtS"},\textcolor{keyword}{this},other.\mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}{sqrtS}})}
+\DoxyCodeLine{37 \{ }
+\DoxyCodeLine{38 \} }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classRooRapiditySig_a68e5231785fe2807b601430bd862a339}\label{classRooRapiditySig_a68e5231785fe2807b601430bd862a339}} 
 \index{RooRapiditySig@{RooRapiditySig}!````~RooRapiditySig@{$\sim$RooRapiditySig}}
 \index{````~RooRapiditySig@{$\sim$RooRapiditySig}!RooRapiditySig@{RooRapiditySig}}
 \doxysubsubsection{\texorpdfstring{$\sim$RooRapiditySig()}{~RooRapiditySig()}}
 {\footnotesize\ttfamily virtual Roo\+Rapidity\+Sig\+::$\sim$\+Roo\+Rapidity\+Sig (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 27 of file Roo\+Rapidity\+Sig.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37 :}
+\DoxyCodeLine{38     }
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -85,12 +141,75 @@ Roo\+Real\+Proxy \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25
 \doxysubsubsection{\texorpdfstring{clone()}{clone()}}
 {\footnotesize\ttfamily virtual T\+Object$\ast$ Roo\+Rapidity\+Sig\+::clone (\begin{DoxyParamCaption}\item[{const char $\ast$}]{newname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 26 of file Roo\+Rapidity\+Sig.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 :}
+\DoxyCodeLine{27     }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classRooRapiditySig_a39245d495f264ea04f487018568b8628}\label{classRooRapiditySig_a39245d495f264ea04f487018568b8628}} 
 \index{RooRapiditySig@{RooRapiditySig}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!RooRapiditySig@{RooRapiditySig}}
 \doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
 {\footnotesize\ttfamily Double\+\_\+t Roo\+Rapidity\+Sig\+::evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 42 of file Roo\+Rapidity\+Sig.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{ }
+\DoxyCodeLine{44         Double\_t s0 = \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}{sqrtS}}*\mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}{sqrtS}};}
+\DoxyCodeLine{45     Double\_t s = \mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}}*\mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}};}
+\DoxyCodeLine{46     Double\_t \mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}} = \mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}};}
+\DoxyCodeLine{47     Double\_t xa = exp(\mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}})*sqrt(s/s0);}
+\DoxyCodeLine{48     Double\_t \mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}} = exp(-\/\mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}})*sqrt(s/s0);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     Double\_t weightg = 1.0;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{comment}{//gluon params}}
+\DoxyCodeLine{53     Double\_t g0par0 = 0.2282; Double\_t g0par1 = -\/0.0002252; Double\_t g0par2 = 1.383e-\/07;}
+\DoxyCodeLine{54     Double\_t g1par0 = 0.01968; Double\_t g1par1 = -\/0.0002993; Double\_t g1par2 = 1.986e-\/07;}
+\DoxyCodeLine{55     Double\_t g2par0 = 3.624; Double\_t g2par1 = -\/0.003164; Double\_t g2par2 = 1.941e-\/06;}
+\DoxyCodeLine{56     Double\_t g3par0 = -\/0.578; Double\_t g3par1 = -\/0.0003; Double\_t g3par2 = 1.828e-\/07;}
+\DoxyCodeLine{57     Double\_t g4par0 = -\/7.515; Double\_t g4par1 = -\/0.001355; Double\_t g4par2 = 8.199e-\/07;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     Double\_t gluon0 = g0par0 + g0par1*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}} + g0par2*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}}*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}};}
+\DoxyCodeLine{60     Double\_t gluon1 = g1par0 + g1par1*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}} + g1par2*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}}*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}};}
+\DoxyCodeLine{61     Double\_t gluon2 = g2par0 + g2par1*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}} + g2par2*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}}*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}};}
+\DoxyCodeLine{62     Double\_t gluon3 = g3par0 + g3par1*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}} + g3par2*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}}*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}};}
+\DoxyCodeLine{63     Double\_t gluon4 = g4par0 + g4par1*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}} + g4par2*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}}*\mbox{\hyperlink{TMCFM_8hh_acde6aecebe262c71d1c23d1460186a2e}{Q}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     Double\_t Funcga = (gluon0+gluon1*xa+gluon2*pow(xa,2))*pow((1-\/xa),4)*pow(xa,gluon3)*exp(1.0+gluon4*xa);}
+\DoxyCodeLine{66     Double\_t Funcgb = (gluon0+gluon1*\mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}}+gluon2*pow(\mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}},2))*pow((1-\/\mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}}),4)*pow(\mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}},gluon3)*exp(1.0+gluon4*\mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}});}
+\DoxyCodeLine{67     Double\_t FuncABg = Funcga*Funcgb/xa/\mbox{\hyperlink{namespacehto__aux__hbb_a6d853a4a2e27e4fa4e1d6d3570cb8fe4}{xb}};}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     Double\_t totSec = 2*\mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}}*((FuncABg)*weightg);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordflow}{if}(( \mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}} <= 600. \&\& TMath::Abs(\mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}}) > 20*pow(\mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}},-\/0.32)) || ( \mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}} > 600. \&\& TMath::Abs(\mbox{\hyperlink{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}{Y}}) > 21*pow(\mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}},-\/0.34)))}
+\DoxyCodeLine{72       \{}
+\DoxyCodeLine{73         \textcolor{comment}{//Find totSec when mZZ, Y=0}}
+\DoxyCodeLine{74         Double\_t xa0 = sqrt(s/s0); \textcolor{comment}{//at Y=0 xa=xb}}
+\DoxyCodeLine{75         \textcolor{comment}{//if xa=xb then Funcga=Funcgb}}
+\DoxyCodeLine{76         Funcga = (gluon0+gluon1*xa0+gluon2*pow(xa0,2))*pow((1-\/xa0),4)*pow(xa0,gluon3)*exp(1.0+gluon4*xa0);}
+\DoxyCodeLine{77         FuncABg = Funcga*Funcga/xa0/xa0;}
+\DoxyCodeLine{78         Double\_t totSec0 = 2*\mbox{\hyperlink{classRooRapiditySig_afcdc1a23c2e092d9dd5afff4043a1c65}{m}}*((FuncABg)*weightg);}
+\DoxyCodeLine{79         totSec = 1.e-\/5*totSec0;}
+\DoxyCodeLine{80       \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{keywordflow}{if} (totSec <= 0.) totSec = 0.00001; }
+\DoxyCodeLine{83         \textcolor{keywordflow}{return} totSec;                                          }
+\DoxyCodeLine{84        }
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86     }
+\DoxyCodeLine{87 \} }
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -100,17 +219,29 @@ Roo\+Real\+Proxy \mbox{\hyperlink{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25
 \doxysubsubsection{\texorpdfstring{m}{m}}
 {\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Rapidity\+Sig\+::m\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 33 of file Roo\+Rapidity\+Sig.\+h.
+
 \mbox{\Hypertarget{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}\label{classRooRapiditySig_a5fbaca11e8834ffc7df1f5f25c039676}} 
 \index{RooRapiditySig@{RooRapiditySig}!sqrtS@{sqrtS}}
 \index{sqrtS@{sqrtS}!RooRapiditySig@{RooRapiditySig}}
 \doxysubsubsection{\texorpdfstring{sqrtS}{sqrtS}}
 {\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Rapidity\+Sig\+::sqrtS\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line 34 of file Roo\+Rapidity\+Sig.\+h.
+
 \mbox{\Hypertarget{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}\label{classRooRapiditySig_a0a241032a160597c4b624fead435c59a}} 
 \index{RooRapiditySig@{RooRapiditySig}!Y@{Y}}
 \index{Y@{Y}!RooRapiditySig@{RooRapiditySig}}
 \doxysubsubsection{\texorpdfstring{Y}{Y}}
 {\footnotesize\ttfamily Roo\+Real\+Proxy Roo\+Rapidity\+Sig\+::Y\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 32 of file Roo\+Rapidity\+Sig.\+h.
 
 
 

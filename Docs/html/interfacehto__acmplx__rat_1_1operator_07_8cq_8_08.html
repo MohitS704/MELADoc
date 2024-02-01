@@ -80,7 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2e786ff9a9d1aa76f6ccdf6fd7b1761"><td class="memItemLeft" align="right" valign="top">real *8 function, dimension(2)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacehto__acmplx__rat_1_1operator_07_8cq_8_08.html#af2e786ff9a9d1aa76f6ccdf6fd7b1761">cq</a> (x, y)</td></tr>
 <tr class="separator:af2e786ff9a9d1aa76f6ccdf6fd7b1761"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function/Subroutine Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00293">293</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+</div><h2 class="groupheader">Member Function/Subroutine Documentation</h2>
 <a id="af2e786ff9a9d1aa76f6ccdf6fd7b1761"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2e786ff9a9d1aa76f6ccdf6fd7b1761">&#9670;&nbsp;</a></span>cq()</h2>
 
@@ -107,12 +110,52 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00298">298</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;       <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;       real*8, <span class="keywordtype">dimension(2)</span> :: <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>,z1,z2</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;       real*8, <span class="keywordtype">INTENT(IN)</span>, <span class="keywordtype">dimension(2)</span> :: x,y</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;       real*8 theta</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;       <span class="keywordflow">IF</span>(x(2).eq.0.d0.and.y(2).eq.0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(1)= x(1)/y(1)</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(2)= 0.d0</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">RETURN</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keywordflow">       ENDIF</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;       <span class="keywordflow">IF</span>(abs(x(2)).eq.1.d0.and.abs(y(2)).eq.1.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(1)= x(1)/y(1)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(2)= 0.d0</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;       <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">IF</span>(abs(x(2)).eq.1.d0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;         z1(1)= x(1)</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;         z1(2)= 0.d0</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;         z2(1)= y(1)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;         z2(2)= y(2)         </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">ELSEIF</span>(abs(y(2)).eq.1.d0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;         z1(1)= x(1)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;         z1(2)= x(2)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;         z2(1)= y(1)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;         z2(2)= 0.d0         </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;         z1= x</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;         z2= y</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keywordflow">        ENDIF</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">IF</span>(abs(z2(1)) &gt; abs(z2(2))) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;         theta= z2(2)/z2(1)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;         <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(1)= (z1(1)+theta*z1(2))/(theta*z2(2)+z2(1))</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;         <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(2)= (z1(2)-theta*z1(1))/(theta*z2(2)+z2(1))</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;         theta= z2(1)/z2(2)</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;         <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(1)= (theta*z1(1)+z1(2))/(theta*z2(1)+z2(2))</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;         <a class="code" href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">cq</a>(2)= (theta*z1(2)-z1(1))/(theta*z2(1)+z2(2)) </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keywordflow">        ENDIF</span>     </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keywordflow">       ENDIF</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>MELA/fortran/CPS/<a class="el" href="CALLING__cpHTO_8f.html">CALLING_cpHTO.f</a></li>
+<li>MELA/fortran/CPS/<a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="anamespacehto__acmplx__rat_html_a9770f30fb38b57026940da117162759f"><div class="ttname"><a href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">hto_acmplx_rat::cq</a></div><div class="ttdeci">real *8 function, dimension(2) cq(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00298">CALLING_cpHTO.f:298</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

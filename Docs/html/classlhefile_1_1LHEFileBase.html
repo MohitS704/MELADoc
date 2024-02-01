@@ -164,7 +164,9 @@ with LHEFile("filename.lhe") as f:
     event.ghz4 = 1
     p0minus = event.computeP()
     h2.Fill(p0plus / (p0plus + p0minus))
-</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</pre> 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00142">142</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a23c4cb28397e6f57fee93a97138eddc8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23c4cb28397e6f57fee93a97138eddc8">&#9670;&nbsp;</a></span>__init__()</h2>
 
@@ -203,6 +205,22 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00161">161</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keyword">def </span>__init__(self, filename, *melaargs, **kwargs):</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    self.isgen = kwargs.pop(<span class="stringliteral">&quot;isgen&quot;</span>, <span class="keyword">True</span>)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    reusemela = kwargs.pop(<span class="stringliteral">&quot;reusemela&quot;</span>, <span class="keyword">False</span>)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    gzip = kwargs.pop(<span class="stringliteral">&quot;gzip&quot;</span>, <span class="keyword">False</span>)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> kwargs: <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;Unknown kwargs: &quot;</span> + <span class="stringliteral">&quot;, &quot;</span>.join(kwargs))</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    self.filename = filename</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> reusemela <span class="keywordflow">and</span> melaargs <span class="keywordflow">in</span> self.__melas:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      self.mela = self.__melas[melaargs]</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      self.__melas[melaargs] = self.mela = <a class="code" href="classMela.html">Mela</a>(*melaargs)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    openfunction = open</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> gzip: <span class="keyword">from</span> gzip <span class="keyword">import</span> GzipFile <span class="keyword">as</span> openfunction</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    self.f = openfunction(self.filename)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -238,6 +256,11 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00175">175</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keyword">def </span>__enter__(self, *args, **kwargs):</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    self.f.__enter__(*args, **kwargs)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> self</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a56730ff74ab6b68f6f866b2478518847"></a>
@@ -272,6 +295,11 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00178">178</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keyword">def </span>__exit__(self, *args, **kwargs):</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> self.f.__exit__(*args, **kwargs)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3ac034e0fece5d4f3755b3ff0174f9d5"></a>
@@ -300,6 +328,11 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00216">216</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keyword">def </span>__getattr__(self, attr):</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> attr == <span class="stringliteral">&quot;mela&quot;</span>: <span class="keywordflow">raise</span> RuntimeError(<span class="stringliteral">&quot;Something is wrong, trying to access mela before it&#39;s created&quot;</span>)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> getattr(self.mela, attr)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b607721f99e56bb55e1e84fd82f74c8"></a>
@@ -318,6 +351,30 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00181">181</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keyword">def </span>__iter__(self):</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    event = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">for</span> linenumber, line <span class="keywordflow">in</span> enumerate(self.f, start=1):</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="keywordflow">if</span> <span class="stringliteral">&quot;&lt;event&gt;&quot;</span> <span class="keywordflow">not</span> <span class="keywordflow">in</span> line <span class="keywordflow">and</span> <span class="keywordflow">not</span> event:</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      event += line</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">if</span> <span class="stringliteral">&quot;&lt;/event&gt;&quot;</span> <span class="keywordflow">in</span> line:</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          self._setInputEvent(event)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          <span class="keywordflow">yield</span> self</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          event = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">except</span> GeneratorExit:</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          <span class="keywordflow">raise</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;          print(<span class="stringliteral">&quot;On line&quot;</span>, linenumber)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          <span class="keywordflow">raise</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">finally</span>:</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            self.mela.resetInputEvent()</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          <span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac0c4b80f9f7f8bb5622e27363fc65952"></a>
@@ -352,6 +409,14 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00219">219</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keyword">def </span>__setattr__(self, attr, value):</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> attr <span class="keywordflow">in</span> self._LHEclassattributes():</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      super(LHEFileBase, self).__setattr__(attr, value)</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      setattr(self.mela, attr, value)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae59c143daf611e98a6aee2010cfb28d6"></a>
@@ -378,6 +443,11 @@ with LHEFile("filename.lhe") as f:
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00213">213</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keyword">def </span>_LHEclassattributes(cls):</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;filename&quot;</span>, <span class="stringliteral">&quot;f&quot;</span>, <span class="stringliteral">&quot;mela&quot;</span>, <span class="stringliteral">&quot;isgen&quot;</span>, <span class="stringliteral">&quot;daughters&quot;</span>, <span class="stringliteral">&quot;mothers&quot;</span>, <span class="stringliteral">&quot;associated&quot;</span>, <span class="stringliteral">&quot;weight&quot;</span>, <span class="stringliteral">&quot;weights&quot;</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a625a68d01fcee841b31261789a725a29"></a>
@@ -414,6 +484,17 @@ with LHEFile("filename.lhe") as f:
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00203">203</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keyword">def </span>_setInputEvent(self, event):</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    lheevent = self.lheeventclass(event, self.isgen)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    self.daughters = lheevent.daughters</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    self.associated = lheevent.associated</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    self.mothers = lheevent.mothers</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    self.weight = lheevent.weight</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    self.weights = lheevent.weights</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    self.setInputEvent(*lheevent)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -437,6 +518,8 @@ with LHEFile("filename.lhe") as f:
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00159">159</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <a id="affb0860fc9f437d54d4b202befb5f86b"></a>
@@ -459,6 +542,8 @@ with LHEFile("filename.lhe") as f:
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00157">157</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <a id="a477626bd258d50151df14adace76bb21"></a>
@@ -472,6 +557,8 @@ with LHEFile("filename.lhe") as f:
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00206">206</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
 
 </div>
 </div>
@@ -487,6 +574,8 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00205">205</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <a id="a615b10f37e5c276cf7da68d828da350a"></a>
@@ -500,6 +589,8 @@ with LHEFile("filename.lhe") as f:
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00174">174</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
 
 </div>
 </div>
@@ -515,6 +606,8 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00166">166</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <a id="a4b61ce76b9c779d7a4a8b38682b23386"></a>
@@ -528,6 +621,8 @@ with LHEFile("filename.lhe") as f:
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00162">162</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
 
 </div>
 </div>
@@ -543,6 +638,8 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00168">168</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <a id="acecf0963b833e52556c2b0c06bf8e4ca"></a>
@@ -556,6 +653,8 @@ with LHEFile("filename.lhe") as f:
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00207">207</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
 
 </div>
 </div>
@@ -571,6 +670,8 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00208">208</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <a id="a8bce9698aa1659d2380da7b90e785d6c"></a>
@@ -585,12 +686,15 @@ with LHEFile("filename.lhe") as f:
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="lhefile_8py_source.html#l00209">209</a> of file <a class="el" href="lhefile_8py_source.html">lhefile.py</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>MELA/python/<a class="el" href="lhefile_8py.html">lhefile.py</a></li>
+<li>MELA/python/<a class="el" href="lhefile_8py_source.html">lhefile.py</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassMela_html"><div class="ttname"><a href="classMela.html">Mela</a></div><div class="ttdef"><b>Definition:</b> <a href="Mela_8h_source.html#l00048">Mela.h:48</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,0 +1,26 @@
+var TModJHUGenMELA_8hh =
+[
+    [ "__modjhugenmela_MOD_getalphasalphasmz", "TModJHUGenMELA_8hh.html#aa157e1ca3fd32232d0937bcf2363988c", null ],
+    [ "__modjhugenmela_MOD_getdecaycouplings", "TModJHUGenMELA_8hh.html#a58ed96aa08541deafc3103feb3620675", null ],
+    [ "__modjhugenmela_MOD_getmvgv", "TModJHUGenMELA_8hh.html#a4a1867add3675a9fa2482cff9f4537d3", null ],
+    [ "__modjhugenmela_MOD_getmvprimegvprime", "TModJHUGenMELA_8hh.html#aa6bfa1ec9233870bf10dbaeaa87d4e32", null ],
+    [ "__modjhugenmela_MOD_getpdfconstants", "TModJHUGenMELA_8hh.html#a29aca2f49a54d88d2e382ced2acf1bc0", null ],
+    [ "__modjhugenmela_MOD_resetamplitudeincludes", "TModJHUGenMELA_8hh.html#a16dceeb2bfcab516a854b963eec02e79", null ],
+    [ "__modjhugenmela_MOD_resetmubarhgabarh", "TModJHUGenMELA_8hh.html#a44ca02e7e9531918e7b76e9e6cafb254", null ],
+    [ "__modjhugenmela_MOD_setazffcouplings", "TModJHUGenMELA_8hh.html#a99aa222231438639d87fc30e6c417071", null ],
+    [ "__modjhugenmela_MOD_setdecaymodes", "TModJHUGenMELA_8hh.html#a3edf1b64527ef72ccfa6393ba3740408", null ],
+    [ "__modjhugenmela_MOD_setdistinguishwwcouplingsflag", "TModJHUGenMELA_8hh.html#ad64c7f7d10b1a0ac889b00b32cf1f53f", null ],
+    [ "__modjhugenmela_MOD_setewparameters", "TModJHUGenMELA_8hh.html#a13ab47e1feba00f34a37fe3ffbd6e081", null ],
+    [ "__modjhugenmela_MOD_sethdk", "TModJHUGenMELA_8hh.html#a18c71227d200f0734a5a6f8d08304df7", null ],
+    [ "__modjhugenmela_MOD_sethiggsmasswidth", "TModJHUGenMELA_8hh.html#a94c24efd1a82cedd7e36b24a08741f51", null ],
+    [ "__modjhugenmela_MOD_setmurenfac", "TModJHUGenMELA_8hh.html#a020cbe585463df7e05300b1cb081b4be", null ],
+    [ "__modjhugenmela_MOD_setmvgv", "TModJHUGenMELA_8hh.html#a3297899b13d5781419e18a4a72e7c513", null ],
+    [ "__modjhugenmela_MOD_setmvgvfromvertex", "TModJHUGenMELA_8hh.html#a6b4e541e5fa6c7bb1df419adc36a0189", null ],
+    [ "__modjhugenmela_MOD_setspinonecouplings", "TModJHUGenMELA_8hh.html#a37c6cad193fe8886ac9fc33913b7ace0", null ],
+    [ "__modjhugenmela_MOD_setspintwocouplings", "TModJHUGenMELA_8hh.html#a4e91f71cb0ac836cda7d874438325c2e", null ],
+    [ "__modjhugenmela_MOD_setspinzeroggcouplings", "TModJHUGenMELA_8hh.html#a6400ff69dd1db36c40f04160c8ab9af9", null ],
+    [ "__modjhugenmela_MOD_setspinzeroqqcouplings", "TModJHUGenMELA_8hh.html#a5c02b31b13777e326cdfa9531ba871aa", null ],
+    [ "__modjhugenmela_MOD_setspinzerovvcouplings", "TModJHUGenMELA_8hh.html#a315e4d6c9a7433f82c692166e8da2b9d", null ],
+    [ "__modjhugenmela_MOD_settopdecays", "TModJHUGenMELA_8hh.html#a5ba6679a0f52b8b512295bc107e7bb24", null ],
+    [ "__modjhugenmela_MOD_setvprimecontactcouplings", "TModJHUGenMELA_8hh.html#a75b28dfc18a2abd947beb996f9cf63dd", null ]
+];

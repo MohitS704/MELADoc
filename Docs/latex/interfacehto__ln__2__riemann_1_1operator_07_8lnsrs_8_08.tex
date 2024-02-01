@@ -7,6 +7,13 @@ real $\ast$8 function, dimension(2) \mbox{\hyperlink{interfacehto__ln__2__rieman
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 518 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+
 \doxysubsection{Member Function/\+Subroutine Documentation}
 \mbox{\Hypertarget{interfacehto__ln__2__riemann_1_1operator_07_8lnsrs_8_08_aed96d6acac429ff8b32b239412b53c09}\label{interfacehto__ln__2__riemann_1_1operator_07_8lnsrs_8_08_aed96d6acac429ff8b32b239412b53c09}} 
 \index{hto\_ln\_2\_riemann::operator(.lnsrs.)@{hto\_ln\_2\_riemann::operator(.lnsrs.)}!lnsrs@{lnsrs}}
@@ -14,6 +21,104 @@ real $\ast$8 function, dimension(2) \mbox{\hyperlink{interfacehto__ln__2__rieman
 \doxysubsubsection{\texorpdfstring{lnsrs()}{lnsrs()}}
 {\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+ln\+\_\+2\+\_\+riemann\+::operator(.lnsrs.)\+::lnsrs (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{x,  }\item[{real$\ast$8, dimension(2), intent(in)}]{y }\end{DoxyParamCaption})}
 
+
+
+Definition at line 523 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{523        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{524        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{525        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{526        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{527        real*8, \textcolor{keywordtype}{dimension(2)} :: \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}},x,y,olnsrs}
+\DoxyCodeLine{528        real*8 ax,ay,teta,tnteta,ilnx,sr,si,sx,sy,xms}
+\DoxyCodeLine{529        \textcolor{keywordtype}{INTENT(IN)} x,y}
+\DoxyCodeLine{530 *}
+\DoxyCodeLine{531        \textcolor{keywordflow}{IF}(abs(y(2)).ne.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{532 *}
+\DoxyCodeLine{533         xms= x(1)*x(1)+x(2)*x(2)}
+\DoxyCodeLine{534         \textcolor{keywordflow}{IF}(abs(1.d0-\/sqrt(xms)).lt.1.d-\/12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{535          teta= atan(abs(x(2)/x(1)))}
+\DoxyCodeLine{536          sr= x(1)/abs(x(1))}
+\DoxyCodeLine{537          si= x(2)/abs(x(2))}
+\DoxyCodeLine{538          \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(1)= 0.d0 }
+\DoxyCodeLine{539          \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{540           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= si*teta}
+\DoxyCodeLine{541          \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{542           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= si*(\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/teta)}
+\DoxyCodeLine{543 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{544          \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{545         \textcolor{keywordflow}{ELSE} }
+\DoxyCodeLine{546          \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}= x(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.x(2)}
+\DoxyCodeLine{547          olnsrs= y(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.y(2)}
+\DoxyCodeLine{548          \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{549 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{550 \textcolor{keywordflow}{       ENDIF} }
+\DoxyCodeLine{551 *}
+\DoxyCodeLine{552        \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(1)= 0.5d0*log(x(1)*x(1)+x(2)*x(2))}
+\DoxyCodeLine{553        ax= abs(x(1))}
+\DoxyCodeLine{554        ay= abs(x(2))}
+\DoxyCodeLine{555        \textcolor{keywordflow}{IF}(x(1).eq.0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{556         \textcolor{keywordflow}{IF}(x(2) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{557            teta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/2.d0}
+\DoxyCodeLine{558         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{559            teta= -\/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/2.d0}
+\DoxyCodeLine{560 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{561         ilnx= teta}
+\DoxyCodeLine{562        \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(x(2).eq.0.d0) \textcolor{keywordflow}{THEN} }
+\DoxyCodeLine{563         \textcolor{keywordflow}{IF}(x(1) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{564          teta= 0.d0}
+\DoxyCodeLine{565         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{566          teta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{567 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{568         ilnx= teta}
+\DoxyCodeLine{569        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{570         tnteta= ay/ax}
+\DoxyCodeLine{571         teta= atan(tnteta)}
+\DoxyCodeLine{572         sr= x(1)/ax}
+\DoxyCodeLine{573         si= x(2)/ay}
+\DoxyCodeLine{574         \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{575          ilnx= si*teta}
+\DoxyCodeLine{576         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{577          ilnx= si*(\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/teta)}
+\DoxyCodeLine{578 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{579 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{580 *}
+\DoxyCodeLine{581        \textcolor{keywordflow}{IF}(x(1) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{582         \textcolor{keywordflow}{IF}(y(1) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{583          \textcolor{keywordflow}{IF}((x(2) > 0.d0.and.y(2) > 0).or.}
+\DoxyCodeLine{584      \textcolor{preprocessor}{\#      (x(2) < 0.d0.and.y(2) < 0)) THEN}}
+\DoxyCodeLine{585 \textcolor{preprocessor}{}          \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx}
+\DoxyCodeLine{586          \textcolor{keywordflow}{ELSEIF}(x(2) > 0.d0.and.y(2) < 0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{587           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx-\/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{588          \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{589           print*,\textcolor{stringliteral}{'+++++++++++++++++++++++++++++++++++'}}
+\DoxyCodeLine{590           print*,\textcolor{stringliteral}{' anomaly ln '}}
+\DoxyCodeLine{591           print*,x}
+\DoxyCodeLine{592           print*,y}
+\DoxyCodeLine{593           print*,\textcolor{stringliteral}{'+++++++++++++++++++++++++++++++++++'}}
+\DoxyCodeLine{594 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{595         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{596          \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx}
+\DoxyCodeLine{597 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{598        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{599         \textcolor{keywordflow}{IF}(abs(y(2)).ne.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{600          print*,\textcolor{stringliteral}{' Wrong argument for LNSRS '}}
+\DoxyCodeLine{601          stop}
+\DoxyCodeLine{602         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{603 *}
+\DoxyCodeLine{604          \textcolor{keywordflow}{IF}((x(2)*y(2)) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{605           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx+2.d0*y(2)*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{606          \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{607           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx}
+\DoxyCodeLine{608 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{609 *}
+\DoxyCodeLine{610 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{611 \textcolor{keywordflow}{       ENDIF}       }
+\DoxyCodeLine{612        \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}

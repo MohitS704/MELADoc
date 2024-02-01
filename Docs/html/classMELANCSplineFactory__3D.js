@@ -1,0 +1,27 @@
+var classMELANCSplineFactory__3D =
+[
+    [ "MELANCSplineFactory_3D", "classMELANCSplineFactory__3D.html#a08e80bb18d1f5e89bf3ae70736555c5b", null ],
+    [ "~MELANCSplineFactory_3D", "classMELANCSplineFactory__3D.html#a41014a66eea7b670f4d2cf4d399443c6", null ],
+    [ "addUnique", "classMELANCSplineFactory__3D.html#a31097bc3c6faf08b846d92989d911579", null ],
+    [ "destroyPDF", "classMELANCSplineFactory__3D.html#a0e554e5680a788c892e3d315a4169f84", null ],
+    [ "getFunc", "classMELANCSplineFactory__3D.html#a6de8a219cd258867a1ea8b59cb9ad64d", null ],
+    [ "getPDF", "classMELANCSplineFactory__3D.html#a23884dfb4e9d176dff7660567f104a69", null ],
+    [ "getPoints", "classMELANCSplineFactory__3D.html#ae0f643477de974ecd474c9d528a7ea60", null ],
+    [ "initPDF", "classMELANCSplineFactory__3D.html#a20b969221635eddee310060b0d347567", null ],
+    [ "setEndConditions", "classMELANCSplineFactory__3D.html#a580a374cad9df904fc45663c114ba41e", null ],
+    [ "setPoints", "classMELANCSplineFactory__3D.html#ac6e5014031f2e6f3b301ae380ce1a1b5", null ],
+    [ "setPoints", "classMELANCSplineFactory__3D.html#a2e11213360e0f96fa419d083ef389351", null ],
+    [ "setPoints", "classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1", null ],
+    [ "appendName", "classMELANCSplineFactory__3D.html#abd457492b2f73f522b607c7ff8b1bda7", null ],
+    [ "bcBeginX", "classMELANCSplineFactory__3D.html#af4ee23e4b6d3aea3eb715361bed2a50c", null ],
+    [ "bcBeginY", "classMELANCSplineFactory__3D.html#adbe5976646637abd999c7efb482c3b35", null ],
+    [ "bcBeginZ", "classMELANCSplineFactory__3D.html#a454bc60b1502c27c7693daf34b4baff7", null ],
+    [ "bcEndX", "classMELANCSplineFactory__3D.html#a0156e43dc1dc18a38d38284c4bb10d4e", null ],
+    [ "bcEndY", "classMELANCSplineFactory__3D.html#af2ebafd299c811946c7ff083ceda96d7", null ],
+    [ "bcEndZ", "classMELANCSplineFactory__3D.html#a20c51eba230497d84c0b8edfdd29e53c", null ],
+    [ "fcn", "classMELANCSplineFactory__3D.html#af64ee7b92c45ddfd0867ba556014d09b", null ],
+    [ "PDF", "classMELANCSplineFactory__3D.html#afb8a03c2d889440aa2f642fdff2d637c", null ],
+    [ "XVar", "classMELANCSplineFactory__3D.html#a52adf3a695320f55871a85ca22b54cd2", null ],
+    [ "YVar", "classMELANCSplineFactory__3D.html#ab5f0594341fc8aaa4c445100d7809757", null ],
+    [ "ZVar", "classMELANCSplineFactory__3D.html#ae3530c4dda21a511ea09668456e23ddf", null ]
+];

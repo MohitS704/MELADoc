@@ -24,33 +24,381 @@ subroutine \mbox{\hyperlink{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}{lh
 \doxysubsubsection{\texorpdfstring{lh\_polin2()}{lh\_polin2()}}
 {\footnotesize\ttfamily subroutine lh\+\_\+polin2 (\begin{DoxyParamCaption}\item[{real(8), dimension(mmax)}]{x1a,  }\item[{real(8), dimension(nmax)}]{x2a,  }\item[{real(8), dimension(mmax,nmax)}]{ya,  }\item[{integer}]{m,  }\item[{integer}]{n,  }\item[{real(8)}]{x1,  }\item[{real(8)}]{x2,  }\item[{real(8)}]{y,  }\item[{real(8)}]{dy }\end{DoxyParamCaption})}
 
+
+
+Definition at line 268 of file N\+N\+P\+D\+F\+Driver.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{268       \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{269 \textcolor{comment}{!                                                                       }}
+\DoxyCodeLine{270       \textcolor{keywordtype}{integer} m,n,nmax,mmax }
+\DoxyCodeLine{271       \textcolor{keywordtype}{integer} j,k }
+\DoxyCodeLine{272       parameter(nmax=1e3,mmax=1e3) }
+\DoxyCodeLine{273                                                                         }
+\DoxyCodeLine{274 \textcolor{keywordtype}{      real}(8) dy,x1,x2,y,x1a(mmax),x2a(nmax),ya(mmax,nmax) }
+\DoxyCodeLine{275 \textcolor{keywordtype}{      real}(8) ymtmp(nmax),yntmp(nmax) }
+\DoxyCodeLine{276                                                                         }
+\DoxyCodeLine{277       \textcolor{keywordflow}{do} j=1,m }
+\DoxyCodeLine{278          \textcolor{keywordflow}{do} k=1,n }
+\DoxyCodeLine{279             yntmp(k)=ya(j,k) }
+\DoxyCodeLine{280 \textcolor{keywordflow}{         enddo} }
+\DoxyCodeLine{281          \textcolor{keyword}{call }\mbox{\hyperlink{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}{lh\_polint}}(x2a,yntmp,n,x2,ymtmp(j),dy) }
+\DoxyCodeLine{282 \textcolor{keywordflow}{      enddo} }
+\DoxyCodeLine{283       \textcolor{keyword}{call }\mbox{\hyperlink{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}{lh\_polint}}(x1a,ymtmp,m,x1,y,dy) }
+\DoxyCodeLine{284 \textcolor{comment}{!                                                                       }}
+\DoxyCodeLine{285       \textcolor{keywordflow}{return} }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}\label{NNPDFDriver_8f_abec03bbc6749173078e95e1b539829bc}} 
 \index{NNPDFDriver.f@{NNPDFDriver.f}!lh\_polint@{lh\_polint}}
 \index{lh\_polint@{lh\_polint}!NNPDFDriver.f@{NNPDFDriver.f}}
 \doxysubsubsection{\texorpdfstring{lh\_polint()}{lh\_polint()}}
 {\footnotesize\ttfamily subroutine lh\+\_\+polint (\begin{DoxyParamCaption}\item[{real(8), dimension(nmax)}]{xa,  }\item[{real(8), dimension(nmax)}]{ya,  }\item[{integer}]{n,  }\item[{real(8)}]{x,  }\item[{real(8)}]{y,  }\item[{real(8)}]{dy }\end{DoxyParamCaption})}
 
+
+
+Definition at line 289 of file N\+N\+P\+D\+F\+Driver.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{289       \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{290 \textcolor{comment}{!                                                                       }}
+\DoxyCodeLine{291       \textcolor{keywordtype}{integer} n,NMAX }
+\DoxyCodeLine{292 \textcolor{comment}{!     Largest anticipated value of n                                    }}
+\DoxyCodeLine{293       parameter(nmax=1e3) }
+\DoxyCodeLine{294 \textcolor{keywordtype}{      real}(8) dy,x,y,xa(nmax),ya(nmax) }
+\DoxyCodeLine{295       \textcolor{keywordtype}{integer} i,m,ns }
+\DoxyCodeLine{296 \textcolor{keywordtype}{      real}(8) den,dif,dift,ho,hp,w,c(nmax),d(nmax) }
+\DoxyCodeLine{297       ns=1 }
+\DoxyCodeLine{298       dif=abs(x-\/xa(1)) }
+\DoxyCodeLine{299       \textcolor{keywordflow}{do} 11 i=1,n }
+\DoxyCodeLine{300          dift=abs(x-\/xa(i)) }
+\DoxyCodeLine{301          \textcolor{keywordflow}{if}(dift.lt.dif) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{302             ns=i }
+\DoxyCodeLine{303             dif=dift }
+\DoxyCodeLine{304 \textcolor{keywordflow}{         endif} }
+\DoxyCodeLine{305          c(i)=ya(i) }
+\DoxyCodeLine{306          d(i)=ya(i) }
+\DoxyCodeLine{307    11\textcolor{keywordflow}{ enddo} }
+\DoxyCodeLine{308       y=ya(ns) }
+\DoxyCodeLine{309       ns=ns-\/1 }
+\DoxyCodeLine{310       \textcolor{keywordflow}{do} m=1,n-\/1 }
+\DoxyCodeLine{311          \textcolor{keywordflow}{do} i=1,n-\/m }
+\DoxyCodeLine{312             ho=xa(i)-\/x }
+\DoxyCodeLine{313             hp=xa(i+m)-\/x }
+\DoxyCodeLine{314             w=c(i+1)-\/d(i) }
+\DoxyCodeLine{315             den=ho-\/hp }
+\DoxyCodeLine{316             \textcolor{keywordflow}{if}(den.eq.0) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{317                \textcolor{keyword}{write}(*,*)\textcolor{stringliteral}{'failure in polint'} }
+\DoxyCodeLine{318                stop }
+\DoxyCodeLine{319 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{320             den=w/den }
+\DoxyCodeLine{321             d(i)=hp*den }
+\DoxyCodeLine{322             c(i)=ho*den }
+\DoxyCodeLine{323 \textcolor{keywordflow}{         enddo} }
+\DoxyCodeLine{324          \textcolor{keywordflow}{if}(2*ns.lt.(n-\/m)) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{325             dy=c(ns+1) }
+\DoxyCodeLine{326          \textcolor{keywordflow}{else} }
+\DoxyCodeLine{327             dy=d(ns) }
+\DoxyCodeLine{328             ns=ns-\/1 }
+\DoxyCodeLine{329 \textcolor{keywordflow}{         endif} }
+\DoxyCodeLine{330          y=y+dy }
+\DoxyCodeLine{331 \textcolor{keywordflow}{      enddo} }
+\DoxyCodeLine{332                                                                         }
+\DoxyCodeLine{333       \textcolor{keywordflow}{return} }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}\label{NNPDFDriver_8f_a70da3de6935cd4a8ecdf3a488c8a7c3f}} 
 \index{NNPDFDriver.f@{NNPDFDriver.f}!nnevolvepdf@{nnevolvepdf}}
 \index{nnevolvepdf@{nnevolvepdf}!NNPDFDriver.f@{NNPDFDriver.f}}
 \doxysubsubsection{\texorpdfstring{nnevolvepdf()}{nnevolvepdf()}}
 {\footnotesize\ttfamily subroutine nnevolvepdf (\begin{DoxyParamCaption}\item[{double precision}]{x,  }\item[{double precision}]{Q,  }\item[{double precision, dimension(-\/6\+:7)}]{xpdf }\end{DoxyParamCaption})}
 
+
+
+Definition at line 138 of file N\+N\+P\+D\+F\+Driver.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{139       }
+\DoxyCodeLine{140       \textcolor{keywordtype}{integer} i,j,ix,iq2,M,N,ipdf,fmax}
+\DoxyCodeLine{141       \textcolor{keywordtype}{integer} minx,maxx,midx}
+\DoxyCodeLine{142       \textcolor{keywordtype}{integer} minq,maxq,midq}
+\DoxyCodeLine{143       \textcolor{keywordtype}{double precision} x,Q,xpdf(-\/6:7),Q2}
+\DoxyCodeLine{144       \textcolor{keywordtype}{double precision} xmingrid,xch,x2,x1,dy,y}
+\DoxyCodeLine{145       parameter(m=4, n=2)}
+\DoxyCodeLine{146       parameter(xmingrid=1d-\/7, xch=1d-\/1) }
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148       \textcolor{keywordtype}{integer} nmax,mmax }
+\DoxyCodeLine{149       parameter(nmax=1e3,mmax=1e3)            }
+\DoxyCodeLine{150       \textcolor{keywordtype}{integer} ix1a(mmax), ix2a(nmax)}
+\DoxyCodeLine{151       \textcolor{keywordtype}{double precision} x1a(mmax), x2a(nmax)}
+\DoxyCodeLine{152       \textcolor{keywordtype}{double precision} ya(mmax,nmax)}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154       \textcolor{keywordtype}{integer} nfl,nx,nq2,mem,rep}
+\DoxyCodeLine{155       \textcolor{keywordtype}{double precision} alphas}
+\DoxyCodeLine{156       \textcolor{keywordtype}{double precision} xgrid(100),logxgrid(100)}
+\DoxyCodeLine{157       \textcolor{keywordtype}{double precision} q2grid(50),logq2grid(50)}
+\DoxyCodeLine{158       \textcolor{keywordtype}{double precision} pdfgrid(0:100,14,100,50)}
+\DoxyCodeLine{159       \textcolor{keywordtype}{logical} hasphoton}
+\DoxyCodeLine{160       \textcolor{keyword}{common} /nnpdf/nfl,nx,nq2,mem,rep,hasphoton,alphas,xgrid,logxgrid,}
+\DoxyCodeLine{161      1     q2grid,logq2grid,pdfgrid}
+\DoxyCodeLine{162       }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164       q2 = q*q}
+\DoxyCodeLine{165 \textcolor{comment}{*     check bounds}}
+\DoxyCodeLine{166       \textcolor{keywordflow}{if} (x.lt.xmingrid.or.x.lt.xgrid(1).or.x.gt.xgrid(nx)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{167          \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"Parton interpolation: x out of range -\/-\/ freezed"}}
+\DoxyCodeLine{168          \textcolor{keywordflow}{if} (x.lt.xgrid(1)) x = xgrid(1)}
+\DoxyCodeLine{169          \textcolor{keywordflow}{if} (x.lt.xmingrid) x = xmingrid}
+\DoxyCodeLine{170          \textcolor{keywordflow}{if} (x.gt.xgrid(nx))x = xgrid(nx)}
+\DoxyCodeLine{171 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{172       \textcolor{keywordflow}{if} (q2.lt.q2grid(1).or.q2.gt.q2grid(nq2)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{173          \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"Parton interpolation: Q2 out of range -\/-\/ freezed"}}
+\DoxyCodeLine{174          \textcolor{keywordflow}{if} (q2.lt.q2grid(1)) q2 = q2grid(1)}
+\DoxyCodeLine{175          \textcolor{keywordflow}{if} (q2.gt.q2grid(nq2)) q2 = q2grid(nq2)}
+\DoxyCodeLine{176 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178       minx = 1}
+\DoxyCodeLine{179       maxx = nx+1}
+\DoxyCodeLine{180  10   \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{181       midx = (minx+maxx)/2}
+\DoxyCodeLine{182       \textcolor{keywordflow}{if} (x.lt.xgrid(midx)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{183          maxx=midx}
+\DoxyCodeLine{184       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{185          minx=midx}
+\DoxyCodeLine{186 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{187       \textcolor{keywordflow}{if} ((maxx-\/minx).gt.1) \textcolor{keywordflow}{go to} 10}
+\DoxyCodeLine{188       ix = minx}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190       minq = 1}
+\DoxyCodeLine{191       maxq = nq2+1}
+\DoxyCodeLine{192  20   \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{193       midq = (minq+maxq)/2}
+\DoxyCodeLine{194       \textcolor{keywordflow}{if} (q2.lt.q2grid(midq)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{195          maxq=midq}
+\DoxyCodeLine{196       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{197          minq=midq}
+\DoxyCodeLine{198 \textcolor{keywordflow}{      endif} }
+\DoxyCodeLine{199       \textcolor{keywordflow}{if} ((maxq-\/minq).gt.1) \textcolor{keywordflow}{go to} 20}
+\DoxyCodeLine{200       iq2 = minq}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{comment}{*     Assign grid for interpolation. M, N -\/> order of polyN interpolation      }}
+\DoxyCodeLine{203       \textcolor{keywordflow}{do} i=1,m}
+\DoxyCodeLine{204          \textcolor{keywordflow}{if}(ix.ge.m/2.and.ix.le.(nx-\/m/2)) ix1a(i) = ix -\/ m/2 + i}
+\DoxyCodeLine{205          \textcolor{keywordflow}{if}(ix.lt.m/2) ix1a(i) = i}
+\DoxyCodeLine{206          \textcolor{keywordflow}{if}(ix.gt.(nx-\/m/2)) ix1a(i) = (nx -\/ m) + i}
+\DoxyCodeLine{207          }
+\DoxyCodeLine{208 \textcolor{comment}{*     Check grids}}
+\DoxyCodeLine{209          \textcolor{keywordflow}{if}(ix1a(i).le.0.or.ix1a(i).gt.nx) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{210             \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"Error in grids! "}}
+\DoxyCodeLine{211             \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"I, IXIA(I) = "},i, ix1a(i)}
+\DoxyCodeLine{212             \textcolor{keyword}{call }exit(-\/10)}
+\DoxyCodeLine{213 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{214 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216       \textcolor{keywordflow}{do} j=1,n}
+\DoxyCodeLine{217          \textcolor{keywordflow}{if}(iq2.ge.n/2.and.iq2.le.(nq2-\/n/2)) ix2a(j) = iq2 -\/ n/2 + j}
+\DoxyCodeLine{218          \textcolor{keywordflow}{if}(iq2.lt.n/2) ix2a(j) = j}
+\DoxyCodeLine{219          \textcolor{keywordflow}{if}(iq2.gt.(nq2-\/n/2)) ix2a(j) = (nq2 -\/ n) + j}
+\DoxyCodeLine{220 \textcolor{comment}{*     Check grids}}
+\DoxyCodeLine{221          \textcolor{keywordflow}{if}(ix2a(j).le.0.or.ix2a(j).gt.nq2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{222             \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"Error in grids! "}}
+\DoxyCodeLine{223             \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"J, IXIA(J) = "},j,ix2a(j)}
+\DoxyCodeLine{224             \textcolor{keyword}{call }exit(-\/10)}
+\DoxyCodeLine{225 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{226 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{227             }
+\DoxyCodeLine{228 \textcolor{comment}{*     Define points where to evaluate interpolation}}
+\DoxyCodeLine{229 \textcolor{comment}{*     Choose between linear or logarithmic (x,Q2) interpolation}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231       \textcolor{keywordflow}{IF}(x.LT.xch)\textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{232          x1=dlog(x)          }
+\DoxyCodeLine{233       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{234          x1=x}
+\DoxyCodeLine{235 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{236       x2=dlog(q2)}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{comment}{*     initialize output vector}}
+\DoxyCodeLine{239       \textcolor{keywordflow}{do} i=-\/6,7 }
+\DoxyCodeLine{240          xpdf(i) = 0}
+\DoxyCodeLine{241 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{242             }
+\DoxyCodeLine{243       fmax = 6}
+\DoxyCodeLine{244       \textcolor{keywordflow}{if} (nfl.eq.14) fmax=7}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246       \textcolor{keywordflow}{DO} ipdf = -\/6,fmax,1                 }
+\DoxyCodeLine{247 \textcolor{comment}{*     Choose between linear or logarithmic (x,Q2) interpolation        }}
+\DoxyCodeLine{248          \textcolor{keywordflow}{DO} i=1,m}
+\DoxyCodeLine{249             \textcolor{keywordflow}{IF}(x.LT.xch)\textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{250                x1a(i)= logxgrid(ix1a(i))}
+\DoxyCodeLine{251             \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{252                x1a(i)= xgrid(ix1a(i))}
+\DoxyCodeLine{253 \textcolor{keywordflow}{            ENDIF}}
+\DoxyCodeLine{254             \textcolor{keywordflow}{DO} j=1,n}
+\DoxyCodeLine{255                x2a(j) = logq2grid(ix2a(j))}
+\DoxyCodeLine{256                ya(i,j) = pdfgrid(rep,ipdf+7,ix1a(i),ix2a(j))            \textcolor{comment}{   }}
+\DoxyCodeLine{257 \textcolor{comment}{}\textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{258 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{259          }
+\DoxyCodeLine{260 \textcolor{comment}{!     2D polynomial interpolation}}
+\DoxyCodeLine{261          \textcolor{keyword}{call }\mbox{\hyperlink{NNPDFDriver_8f_a15823352d7ba4c536da9edc5568f33d4}{lh\_polin2}}(x1a,x2a,ya,m,n,x1,x2,y,dy)}
+\DoxyCodeLine{262          xpdf(ipdf) = y}
+\DoxyCodeLine{263 \textcolor{keywordflow}{      enddo}                 }
+\DoxyCodeLine{264 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{NNPDFDriver_8f_a8c9ecfcf06a91da0c8408f3cc8c02a95}\label{NNPDFDriver_8f_a8c9ecfcf06a91da0c8408f3cc8c02a95}} 
 \index{NNPDFDriver.f@{NNPDFDriver.f}!nninitpdf@{nninitpdf}}
 \index{nninitpdf@{nninitpdf}!NNPDFDriver.f@{NNPDFDriver.f}}
 \doxysubsubsection{\texorpdfstring{nninitpdf()}{nninitpdf()}}
 {\footnotesize\ttfamily subroutine nninitpdf (\begin{DoxyParamCaption}\item[{integer}]{irep }\end{DoxyParamCaption})}
 
+
+
+Definition at line 50 of file N\+N\+P\+D\+F\+Driver.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{51       \textcolor{keywordtype}{integer} irep}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53       \textcolor{keywordtype}{integer} nfl,nx,nq2,mem,rep}
+\DoxyCodeLine{54       \textcolor{keywordtype}{double precision} alphas}
+\DoxyCodeLine{55       \textcolor{keywordtype}{double precision} xgrid(100),logxgrid(100)}
+\DoxyCodeLine{56       \textcolor{keywordtype}{double precision} q2grid(50),logq2grid(50)}
+\DoxyCodeLine{57       \textcolor{keywordtype}{double precision} pdfgrid(0:100,14,100,50)}
+\DoxyCodeLine{58       \textcolor{keywordtype}{logical} hasphoton}
+\DoxyCodeLine{59       \textcolor{keyword}{common} /nnpdf/nfl,nx,nq2,mem,rep,hasphoton,alphas,xgrid,logxgrid,}
+\DoxyCodeLine{60      1     q2grid,logq2grid,pdfgrid}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62       \textcolor{keywordflow}{if} (irep.gt.mem.or.irep.lt.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{63          \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"Error: replica out of range [0,"},mem,\textcolor{stringliteral}{"]"}}
+\DoxyCodeLine{64       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{65          rep = irep}
+\DoxyCodeLine{66 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{67       }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{NNPDFDriver_8f_a4632379e514c3dd029fceb3473816cb2}\label{NNPDFDriver_8f_a4632379e514c3dd029fceb3473816cb2}} 
 \index{NNPDFDriver.f@{NNPDFDriver.f}!nnpdfdriver@{nnpdfdriver}}
 \index{nnpdfdriver@{nnpdfdriver}!NNPDFDriver.f@{NNPDFDriver.f}}
 \doxysubsubsection{\texorpdfstring{nnpdfdriver()}{nnpdfdriver()}}
 {\footnotesize\ttfamily subroutine nnpdfdriver (\begin{DoxyParamCaption}\item[{character(len=lenfilename)}]{gridfilename,  }\item[{integer}]{lenfilename }\end{DoxyParamCaption})}
 
+
+
+Definition at line 19 of file N\+N\+P\+D\+F\+Driver.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{20       \textcolor{keywordtype}{integer} nfl,nx,nq2,mem,rep,lenfilename}
+\DoxyCodeLine{21       \textcolor{keywordtype}{double precision} alphas}
+\DoxyCodeLine{22       \textcolor{keywordtype}{double precision} xgrid(100),logxgrid(100)}
+\DoxyCodeLine{23       \textcolor{keywordtype}{double precision} q2grid(50),logq2grid(50)}
+\DoxyCodeLine{24       \textcolor{keywordtype}{double precision} pdfgrid(0:100,14,100,50)}
+\DoxyCodeLine{25       \textcolor{keywordtype}{logical} hasphoton}
+\DoxyCodeLine{26       \textcolor{keyword}{common} /nnpdf/nfl,nx,nq2,mem,rep,hasphoton,alphas,xgrid,logxgrid,}
+\DoxyCodeLine{27      1     q2grid,logq2grid,pdfgrid}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29       \textcolor{keywordtype}{character(len=lenfilename)} gridfilename}
+\DoxyCodeLine{30 \textcolor{comment}{*}}
+\DoxyCodeLine{31       nfl = 13}
+\DoxyCodeLine{32       nx = 100}
+\DoxyCodeLine{33       nq2 = 50}
+\DoxyCodeLine{34       mem = 1}
+\DoxyCodeLine{35       rep = 0}
+\DoxyCodeLine{36       alphas = 0}
+\DoxyCodeLine{37 \textcolor{comment}{*}}
+\DoxyCodeLine{38 \textcolor{comment}{*     Logo}}
+\DoxyCodeLine{39       \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{" ****************************************"}}
+\DoxyCodeLine{40       \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{""}}
+\DoxyCodeLine{41       \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"      NNPDFDriver version 1.0.3"}}
+\DoxyCodeLine{42       \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{"  Grid: "}, gridfilename}
+\DoxyCodeLine{43       \textcolor{keyword}{write}(6,*) \textcolor{stringliteral}{" ****************************************"}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45       \textcolor{keyword}{call }\mbox{\hyperlink{NNPDFDriver_8f_aa7f570bf5ff7ca76ead59e74b3f45f47}{readpdfset}}(gridfilename,lenfilename)}
+\DoxyCodeLine{46       }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{NNPDFDriver_8f_aa7f570bf5ff7ca76ead59e74b3f45f47}\label{NNPDFDriver_8f_aa7f570bf5ff7ca76ead59e74b3f45f47}} 
 \index{NNPDFDriver.f@{NNPDFDriver.f}!readpdfset@{readpdfset}}
 \index{readpdfset@{readpdfset}!NNPDFDriver.f@{NNPDFDriver.f}}
 \doxysubsubsection{\texorpdfstring{readpdfset()}{readpdfset()}}
 {\footnotesize\ttfamily subroutine readpdfset (\begin{DoxyParamCaption}\item[{character(len=lenfilename)}]{gridfilename,  }\item[{integer}]{lenfilename }\end{DoxyParamCaption})}
 
+
+
+Definition at line 71 of file N\+N\+P\+D\+F\+Driver.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{72       \textcolor{keywordtype}{integer} i,ix,iq,fl,imem,lenfilename}
+\DoxyCodeLine{73       \textcolor{keywordtype}{character(len=lenfilename)} gridfilename}
+\DoxyCodeLine{74       \textcolor{keywordtype}{character(len=100)} line}
+\DoxyCodeLine{75 \textcolor{comment}{*}}
+\DoxyCodeLine{76       \textcolor{keywordtype}{integer} nfl,nx,nq2,mem,rep}
+\DoxyCodeLine{77       \textcolor{keywordtype}{double precision} alphas}
+\DoxyCodeLine{78       \textcolor{keywordtype}{double precision} xgrid(100),logxgrid(100)}
+\DoxyCodeLine{79       \textcolor{keywordtype}{double precision} q2grid(50),logq2grid(50)}
+\DoxyCodeLine{80       \textcolor{keywordtype}{double precision} pdfgrid(0:100,14,100,50)}
+\DoxyCodeLine{81       \textcolor{keywordtype}{logical} hasphoton}
+\DoxyCodeLine{82       \textcolor{keyword}{common} /nnpdf/nfl,nx,nq2,mem,rep,hasphoton,alphas,xgrid,logxgrid,}
+\DoxyCodeLine{83      1     q2grid,logq2grid,pdfgrid}
+\DoxyCodeLine{84 \textcolor{comment}{*}}
+\DoxyCodeLine{85       \textcolor{keyword}{open} (20, file=gridfilename, status=\textcolor{stringliteral}{'OLD'})}
+\DoxyCodeLine{86 \textcolor{comment}{*     Read header}}
+\DoxyCodeLine{87       \textcolor{keywordflow}{do} i=1,1000}
+\DoxyCodeLine{88          \textcolor{keyword}{read}(20,*) line}
+\DoxyCodeLine{89          \textcolor{keywordflow}{if} (line(1:14).eq.\textcolor{stringliteral}{'Parameterlist:'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{90             \textcolor{keyword}{read}(20,*) line, mem, line, alphas                        }
+\DoxyCodeLine{91             \textcolor{keywordflow}{exit}}
+\DoxyCodeLine{92 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{93 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{comment}{*     Select driver}}
+\DoxyCodeLine{96       \textcolor{keywordflow}{do} i=1,1000}
+\DoxyCodeLine{97          \textcolor{keyword}{read}(20,*) line}
+\DoxyCodeLine{98          \textcolor{keywordflow}{if} (line(1:13).eq.\textcolor{stringliteral}{'NNPDF20intqed'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{99             hasphoton = .true.}
+\DoxyCodeLine{100             nfl = nfl + 1   }
+\DoxyCodeLine{101             \textcolor{keyword}{read}(20,*) line,line            }
+\DoxyCodeLine{102             \textcolor{keywordflow}{exit}}
+\DoxyCodeLine{103 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{104          \textcolor{keywordflow}{if} (line(1:13).eq.\textcolor{stringliteral}{'NNPDF20int'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{105             hasphoton = .false.            }
+\DoxyCodeLine{106             \textcolor{keyword}{read}(20,*) line,line            }
+\DoxyCodeLine{107             \textcolor{keywordflow}{exit}}
+\DoxyCodeLine{108 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{109 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{110 \textcolor{comment}{*}}
+\DoxyCodeLine{111       \textcolor{keyword}{read}(20,*) nx}
+\DoxyCodeLine{112       \textcolor{keywordflow}{do} ix=1,nx}
+\DoxyCodeLine{113          \textcolor{keyword}{read}(20,*) xgrid(ix)}
+\DoxyCodeLine{114          logxgrid(ix) = dlog(xgrid(ix))}
+\DoxyCodeLine{115 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{116 \textcolor{comment}{*}}
+\DoxyCodeLine{117       \textcolor{keyword}{read}(20,*) nq2}
+\DoxyCodeLine{118       \textcolor{keyword}{read}(20,*) line}
+\DoxyCodeLine{119       \textcolor{keywordflow}{do} iq=1,nq2}
+\DoxyCodeLine{120          \textcolor{keyword}{read}(20,*) q2grid(iq)}
+\DoxyCodeLine{121          logq2grid(iq) = dlog(q2grid(iq))}
+\DoxyCodeLine{122 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{123 \textcolor{comment}{*            }}
+\DoxyCodeLine{124       \textcolor{keyword}{read}(20,*) line      }
+\DoxyCodeLine{125       \textcolor{keywordflow}{do} imem=0,mem}
+\DoxyCodeLine{126          \textcolor{keywordflow}{do} ix=1,nx}
+\DoxyCodeLine{127             \textcolor{keywordflow}{do} iq=1,nq2               }
+\DoxyCodeLine{128                \textcolor{keyword}{read}(20,*) ( pdfgrid(imem,fl,ix,iq), fl=1,nfl,1)         \textcolor{comment}{   }}
+\DoxyCodeLine{129 \textcolor{comment}{}\textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{130 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{131 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133       \textcolor{keyword}{close}(20)}
+\DoxyCodeLine{134 }
+
+\end{DoxyCode}

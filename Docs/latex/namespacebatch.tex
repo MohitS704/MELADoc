@@ -16,9 +16,103 @@ def \mbox{\hyperlink{namespacebatch_a02789d1253a9ff75793036161f1bffc6}{main}} ()
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily def batch.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 73 of file batch.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73 \textcolor{keyword}{def }\mbox{\hyperlink{namespacebatch_a02789d1253a9ff75793036161f1bffc6}{main}}():}
+\DoxyCodeLine{74     base\_dir = \textcolor{stringliteral}{"."}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if} len(sys.argv) > 1:}
+\DoxyCodeLine{76         base\_dir = sys.argv[1]}
+\DoxyCodeLine{77     file = open(\textcolor{stringliteral}{'./batchscript.csh'}, \textcolor{stringliteral}{'w'})}
+\DoxyCodeLine{78     file.write(\textcolor{stringliteral}{"cd "} + sys.argv[2] + \textcolor{stringliteral}{"\(\backslash\)n"})}
+\DoxyCodeLine{79     file.write(\textcolor{stringliteral}{"pwd\(\backslash\)n"})}
+\DoxyCodeLine{80     file.write(\textcolor{stringliteral}{"eval `scramv1 runtime -\/sh`\(\backslash\)n"})}
+\DoxyCodeLine{81     file.write(\textcolor{stringliteral}{"cd -\/ \(\backslash\)n"})}
+\DoxyCodeLine{82     file.write(\textcolor{stringliteral}{"cp "} + sys.argv[2] + \textcolor{stringliteral}{"/addProbtoTree.C .  \(\backslash\)n"})}
+\DoxyCodeLine{83     file.close()}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85     os.path.walk( base\_dir, processDirectory, \textcolor{keywordtype}{None} )}
+\DoxyCodeLine{86 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacebatch_abe99f82869b475d77e13694cc13e91ff}\label{namespacebatch_abe99f82869b475d77e13694cc13e91ff}} 
 \index{batch@{batch}!processDirectory@{processDirectory}}
 \index{processDirectory@{processDirectory}!batch@{batch}}
 \doxysubsubsection{\texorpdfstring{processDirectory()}{processDirectory()}}
 {\footnotesize\ttfamily def batch.\+process\+Directory (\begin{DoxyParamCaption}\item[{}]{args,  }\item[{}]{dirname,  }\item[{}]{filenames }\end{DoxyParamCaption})}
 
+
+
+Definition at line 9 of file batch.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \textcolor{keyword}{def }\mbox{\hyperlink{namespacebatch_abe99f82869b475d77e13694cc13e91ff}{processDirectory}} ( args, dirname, filenames ):}
+\DoxyCodeLine{10     \textcolor{keywordflow}{print} \textcolor{stringliteral}{"processing "} + dirname}
+\DoxyCodeLine{11     \textcolor{keywordflow}{for} filename \textcolor{keywordflow}{in} filenames:}
+\DoxyCodeLine{12         fullname = dirname + \textcolor{stringliteral}{"/"} + filename}
+\DoxyCodeLine{13         }
+\DoxyCodeLine{14         flavor = 10}
+\DoxyCodeLine{15         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"4e"} \textcolor{keywordflow}{in} dirname):}
+\DoxyCodeLine{16             flavor = 1}
+\DoxyCodeLine{17         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"4mu"} \textcolor{keywordflow}{in} dirname):}
+\DoxyCodeLine{18             flavor = 2}
+\DoxyCodeLine{19         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"2mu2e"} \textcolor{keywordflow}{in} dirname) \textcolor{keywordflow}{or} (\textcolor{stringliteral}{"2e2mu"} \textcolor{keywordflow}{in} dirname):}
+\DoxyCodeLine{20             flavor = 3}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"data"} \textcolor{keywordflow}{in}  dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"DoubleEle"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{23             flavor = 1}
+\DoxyCodeLine{24         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"data"} \textcolor{keywordflow}{in}  dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"DoubleMu"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{25             flavor = 2}
+\DoxyCodeLine{26         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"data"} \textcolor{keywordflow}{in}  dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"DoubleOr"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{27             flavor = 3}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in}  dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"DoubleEle"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{30             flavor = 1}
+\DoxyCodeLine{31         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in}  dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"DoubleMu"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{32             flavor = 2}
+\DoxyCodeLine{33         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in}  dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"DoubleOr"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{34             flavor = 3}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in} dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"EEEE"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{37             flavor = 1}
+\DoxyCodeLine{38         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in} dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"MMMM"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{39             flavor = 2}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in} dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"EEMM"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{41             flavor = 3}
+\DoxyCodeLine{42         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"CR"} \textcolor{keywordflow}{in} dirname) \textcolor{keywordflow}{and} (\textcolor{stringliteral}{"MMEE"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{43             flavor = 3}
+\DoxyCodeLine{44                             }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"withProbabilities"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{47             flavor = 10  \textcolor{comment}{\# already processed}}
+\DoxyCodeLine{48                         }
+\DoxyCodeLine{49         \textcolor{keywordflow}{if} not(\textcolor{stringliteral}{".root"} \textcolor{keywordflow}{in} filename):}
+\DoxyCodeLine{50             flavor = 10  \textcolor{comment}{\# only process root files}}
+\DoxyCodeLine{51             }
+\DoxyCodeLine{52         sqrts=7}
+\DoxyCodeLine{53         \textcolor{keywordflow}{if} (\textcolor{stringliteral}{"8TeV"} \textcolor{keywordflow}{in} dirname):}
+\DoxyCodeLine{54             sqrts = 8}
+\DoxyCodeLine{55             }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordflow}{print} \textcolor{stringliteral}{" "} * 4 + filename + \textcolor{stringliteral}{" with flavor "} + str(flavor) + \textcolor{stringliteral}{" and sqrts = "} + str(sqrts) }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordflow}{if} flavor!=10: \textcolor{comment}{\# looks like a valid file, prepare string}}
+\DoxyCodeLine{63             command = \textcolor{stringliteral}{"root -\/q -\/b  addProbtoTree.C\(\backslash\)\(\backslash\)(\(\backslash\)\(\backslash\)\(\backslash\)""} + fullname[:-\/5] + \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)","}+str(flavor)+\textcolor{stringliteral}{",-\/1,"}+str(sqrts)+\textcolor{stringliteral}{"\(\backslash\)\(\backslash\))\(\backslash\)n"}}
+\DoxyCodeLine{64             \textcolor{comment}{\#create batch script}}
+\DoxyCodeLine{65             commands.getstatusoutput(\textcolor{stringliteral}{"cp batchscript.csh batchscript\_tmp.csh"})}
+\DoxyCodeLine{66             file = open(\textcolor{stringliteral}{'batchscript\_tmp.csh'}, \textcolor{stringliteral}{'a'})}
+\DoxyCodeLine{67             file.write(command)}
+\DoxyCodeLine{68             file.close()}
+\DoxyCodeLine{69             commands.getstatusoutput(\textcolor{stringliteral}{"bsub -\/q 8nh < batchscript\_tmp.csh"} )}
+\DoxyCodeLine{70             \textcolor{comment}{\#exit(0)}}
+\DoxyCodeLine{71             }
+\DoxyCodeLine{72 }
+
+\end{DoxyCode}

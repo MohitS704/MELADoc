@@ -19,3 +19,21 @@ real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__cmplx__root_a
 \doxysubsubsection{\texorpdfstring{cr()}{cr()}}
 {\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+cmplx\+\_\+root\+::cr (\begin{DoxyParamCaption}\item[{real$\ast$8, intent(in)}]{x,  }\item[{real$\ast$8, intent(in)}]{ep }\end{DoxyParamCaption})}
 
+
+
+Definition at line 665 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{665        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{666        real*8, \textcolor{keywordtype}{dimension(2)} :: \mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{cr}}}
+\DoxyCodeLine{667        real*8, \textcolor{keywordtype}{INTENT(IN)} :: x,ep}
+\DoxyCodeLine{668        \textcolor{keywordflow}{IF}(x > 0.d0) \textcolor{keywordflow}{THEN} }
+\DoxyCodeLine{669         \mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{cr}}(1)= sqrt(x)}
+\DoxyCodeLine{670         \mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{cr}}(2)= 0.d0       }
+\DoxyCodeLine{671        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{672         \mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{cr}}(1)= 0.d0}
+\DoxyCodeLine{673         \mbox{\hyperlink{namespacehto__cmplx__root_ae578bce5d1d81e9da1e7467d56c0c726}{cr}}(2)= ep*sqrt(abs(x))}
+\DoxyCodeLine{674 \textcolor{keywordflow}{       ENDIF}}
+
+\end{DoxyCode}

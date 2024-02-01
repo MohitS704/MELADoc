@@ -33,36 +33,113 @@ const std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429
 \doxysubsubsection{\texorpdfstring{Get\_JHUGenHash\_OnshellHJJHash()}{Get\_JHUGenHash\_OnshellHJJHash()}}
 {\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{T\+Numeric\+Util\+::int\+Triplet\+\_\+t}} $>$ \& T\+J\+H\+U\+Gen\+Utils\+::\+Get\+\_\+\+J\+H\+U\+Gen\+Hash\+\_\+\+Onshell\+H\+J\+J\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 41 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceTJHUGenUtils_a3f0e0300fdaba66dcba5d9d929091c26}{JHUGenHash\_OnshellHJJHash}}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceTJHUGenUtils_a8fedbfe2e6ef9c40fc9c47d1a21360af}\label{namespaceTJHUGenUtils_a8fedbfe2e6ef9c40fc9c47d1a21360af}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!Get\_JHUGenHash\_OnshellTQHHash@{Get\_JHUGenHash\_OnshellTQHHash}}
 \index{Get\_JHUGenHash\_OnshellTQHHash@{Get\_JHUGenHash\_OnshellTQHHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{Get\_JHUGenHash\_OnshellTQHHash()}{Get\_JHUGenHash\_OnshellTQHHash()}}
 {\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{T\+Numeric\+Util\+::int\+Triplet\+\_\+t}} $>$ \& T\+J\+H\+U\+Gen\+Utils\+::\+Get\+\_\+\+J\+H\+U\+Gen\+Hash\+\_\+\+Onshell\+T\+Q\+H\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 43 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceTJHUGenUtils_aa05be6a01891b0a95661a0814f576273}{JHUGenHash\_OnshellTQHHash}}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceTJHUGenUtils_a2a4e0c526348cefc7b22679883888607}\label{namespaceTJHUGenUtils_a2a4e0c526348cefc7b22679883888607}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!Get\_JHUGenHash\_OnshellVBFHash@{Get\_JHUGenHash\_OnshellVBFHash}}
 \index{Get\_JHUGenHash\_OnshellVBFHash@{Get\_JHUGenHash\_OnshellVBFHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{Get\_JHUGenHash\_OnshellVBFHash()}{Get\_JHUGenHash\_OnshellVBFHash()}}
 {\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{T\+Numeric\+Util\+::int\+Triplet\+\_\+t}} $>$ \& T\+J\+H\+U\+Gen\+Utils\+::\+Get\+\_\+\+J\+H\+U\+Gen\+Hash\+\_\+\+Onshell\+V\+B\+F\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 42 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceTJHUGenUtils_a9e8e72d9f4e29dfdec7a0679f13eba85}{JHUGenHash\_OnshellVBFHash}}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceTJHUGenUtils_a5e284f86863d400735d2f375917151bd}\label{namespaceTJHUGenUtils_a5e284f86863d400735d2f375917151bd}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!Hash\_OnshellHJJHash@{Hash\_OnshellHJJHash}}
 \index{Hash\_OnshellHJJHash@{Hash\_OnshellHJJHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{Hash\_OnshellHJJHash()}{Hash\_OnshellHJJHash()}}
 {\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{int\+Triplet\+\_\+t}} $>$ T\+J\+H\+U\+Gen\+Utils\+::\+Hash\+\_\+\+Onshell\+H\+J\+J\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 14 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                                                          \{}
+\DoxyCodeLine{15   \textcolor{keywordtype}{int} ijsel[3][121];}
+\DoxyCodeLine{16   \textcolor{keywordtype}{int} nijchannels=77;}
+\DoxyCodeLine{17   \mbox{\hyperlink{TModHashCollection_8hh_a8f8b226fcc219a25183bdef332c82f6c}{\_\_modhashcollection\_MOD\_get\_hjjchannelhash\_nosplit}}(ijsel, \&nijchannels);}
+\DoxyCodeLine{18   std::vector<intTriplet\_t> pcfg; pcfg.reserve(nijchannels);}
+\DoxyCodeLine{19   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<nijchannels; ic++) pcfg.emplace\_back(ijsel[0][ic], ijsel[1][ic], ijsel[2][ic]);}
+\DoxyCodeLine{20   \textcolor{keywordflow}{return} pcfg;}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceTJHUGenUtils_a42c6ba4e1bcc5fee83fa289ce635e8f1}\label{namespaceTJHUGenUtils_a42c6ba4e1bcc5fee83fa289ce635e8f1}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!Hash\_OnshellTQHHash@{Hash\_OnshellTQHHash}}
 \index{Hash\_OnshellTQHHash@{Hash\_OnshellTQHHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{Hash\_OnshellTQHHash()}{Hash\_OnshellTQHHash()}}
 {\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{int\+Triplet\+\_\+t}} $>$ T\+J\+H\+U\+Gen\+Utils\+::\+Hash\+\_\+\+Onshell\+T\+Q\+H\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 30 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                                          \{}
+\DoxyCodeLine{31   \textcolor{keywordtype}{int} ijsel[3][121];}
+\DoxyCodeLine{32   \mbox{\hyperlink{TModHashCollection_8hh_a777c9428d044d083976ec934f0fdb6f1}{\_\_modhashcollection\_MOD\_get\_thchannelhash}}(ijsel);}
+\DoxyCodeLine{33   std::vector<intTriplet\_t> pcfg; pcfg.reserve(121);}
+\DoxyCodeLine{34   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<121; ic++)\{}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if} (ijsel[2][ic]>=0) pcfg.emplace\_back(ijsel[0][ic], ijsel[1][ic], ijsel[2][ic]);}
+\DoxyCodeLine{36     \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38   \textcolor{keywordflow}{return} pcfg;}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceTJHUGenUtils_a04bd0f70cdbe74cfd69f86346d3a1e46}\label{namespaceTJHUGenUtils_a04bd0f70cdbe74cfd69f86346d3a1e46}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!Hash\_OnshellVBFHash@{Hash\_OnshellVBFHash}}
 \index{Hash\_OnshellVBFHash@{Hash\_OnshellVBFHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{Hash\_OnshellVBFHash()}{Hash\_OnshellVBFHash()}}
 {\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{int\+Triplet\+\_\+t}} $>$ T\+J\+H\+U\+Gen\+Utils\+::\+Hash\+\_\+\+Onshell\+V\+B\+F\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 22 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                                                          \{}
+\DoxyCodeLine{23   \textcolor{keywordtype}{int} ijsel[3][121];}
+\DoxyCodeLine{24   \textcolor{keywordtype}{int} nijchannels=68;}
+\DoxyCodeLine{25   \mbox{\hyperlink{TModHashCollection_8hh_acacc4ad5673278cf760ae1e0cce578d9}{\_\_modhashcollection\_MOD\_get\_vbfchannelhash\_nosplit}}(ijsel, \&nijchannels);}
+\DoxyCodeLine{26   std::vector<intTriplet\_t> pcfg; pcfg.reserve(nijchannels);}
+\DoxyCodeLine{27   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<nijchannels; ic++) pcfg.emplace\_back(ijsel[0][ic], ijsel[1][ic], ijsel[2][ic]);}
+\DoxyCodeLine{28   \textcolor{keywordflow}{return} pcfg;}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Variable Documentation}
@@ -72,15 +149,27 @@ const std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429
 \doxysubsubsection{\texorpdfstring{JHUGenHash\_OnshellHJJHash}{JHUGenHash\_OnshellHJJHash}}
 {\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{T\+Numeric\+Util\+::int\+Triplet\+\_\+t}}$>$ T\+J\+H\+U\+Gen\+Utils\+::\+J\+H\+U\+Gen\+Hash\+\_\+\+Onshell\+H\+J\+J\+Hash = \mbox{\hyperlink{namespaceTJHUGenUtils_a5e284f86863d400735d2f375917151bd}{Hash\+\_\+\+Onshell\+H\+J\+J\+Hash}}()}
 
+
+
+Definition at line 9 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
 \mbox{\Hypertarget{namespaceTJHUGenUtils_aa05be6a01891b0a95661a0814f576273}\label{namespaceTJHUGenUtils_aa05be6a01891b0a95661a0814f576273}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!JHUGenHash\_OnshellTQHHash@{JHUGenHash\_OnshellTQHHash}}
 \index{JHUGenHash\_OnshellTQHHash@{JHUGenHash\_OnshellTQHHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{JHUGenHash\_OnshellTQHHash}{JHUGenHash\_OnshellTQHHash}}
 {\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{T\+Numeric\+Util\+::int\+Triplet\+\_\+t}}$>$ T\+J\+H\+U\+Gen\+Utils\+::\+J\+H\+U\+Gen\+Hash\+\_\+\+Onshell\+T\+Q\+H\+Hash = \mbox{\hyperlink{namespaceTJHUGenUtils_a42c6ba4e1bcc5fee83fa289ce635e8f1}{Hash\+\_\+\+Onshell\+T\+Q\+H\+Hash}}()}
 
+
+
+Definition at line 11 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
+
 \mbox{\Hypertarget{namespaceTJHUGenUtils_a9e8e72d9f4e29dfdec7a0679f13eba85}\label{namespaceTJHUGenUtils_a9e8e72d9f4e29dfdec7a0679f13eba85}} 
 \index{TJHUGenUtils@{TJHUGenUtils}!JHUGenHash\_OnshellVBFHash@{JHUGenHash\_OnshellVBFHash}}
 \index{JHUGenHash\_OnshellVBFHash@{JHUGenHash\_OnshellVBFHash}!TJHUGenUtils@{TJHUGenUtils}}
 \doxysubsubsection{\texorpdfstring{JHUGenHash\_OnshellVBFHash}{JHUGenHash\_OnshellVBFHash}}
 {\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{namespaceTNumericUtil_af1b809596411a2429ec664843b1bba0a}{T\+Numeric\+Util\+::int\+Triplet\+\_\+t}}$>$ T\+J\+H\+U\+Gen\+Utils\+::\+J\+H\+U\+Gen\+Hash\+\_\+\+Onshell\+V\+B\+F\+Hash = \mbox{\hyperlink{namespaceTJHUGenUtils_a04bd0f70cdbe74cfd69f86346d3a1e46}{Hash\+\_\+\+Onshell\+V\+B\+F\+Hash}}()}
+
+
+
+Definition at line 10 of file T\+J\+H\+U\+Gen\+Utils.\+cc.
 

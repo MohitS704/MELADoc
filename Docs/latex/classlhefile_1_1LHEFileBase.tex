@@ -86,6 +86,10 @@ with LHEFile("filename.lhe") as f:
 \end{DoxyVerb}
  
 
+Definition at line 142 of file lhefile.\+py.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a23c4cb28397e6f57fee93a97138eddc8}\label{classlhefile_1_1LHEFileBase_a23c4cb28397e6f57fee93a97138eddc8}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_init\_\_@{\_\_init\_\_}}
@@ -95,6 +99,28 @@ with LHEFile("filename.lhe") as f:
 
 
 
+Definition at line 161 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{161   \textcolor{keyword}{def }\_\_init\_\_(self, filename, *melaargs, **kwargs):}
+\DoxyCodeLine{162     self.isgen = kwargs.pop(\textcolor{stringliteral}{"isgen"}, \textcolor{keyword}{True})}
+\DoxyCodeLine{163     reusemela = kwargs.pop(\textcolor{stringliteral}{"reusemela"}, \textcolor{keyword}{False})}
+\DoxyCodeLine{164     gzip = kwargs.pop(\textcolor{stringliteral}{"gzip"}, \textcolor{keyword}{False})}
+\DoxyCodeLine{165     \textcolor{keywordflow}{if} kwargs: \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"Unknown kwargs: "} + \textcolor{stringliteral}{", "}.join(kwargs))}
+\DoxyCodeLine{166     self.filename = filename}
+\DoxyCodeLine{167     \textcolor{keywordflow}{if} reusemela \textcolor{keywordflow}{and} melaargs \textcolor{keywordflow}{in} self.\_\_melas:}
+\DoxyCodeLine{168       self.mela = self.\_\_melas[melaargs]}
+\DoxyCodeLine{169     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{170       self.\_\_melas[melaargs] = self.mela = \mbox{\hyperlink{classMela}{Mela}}(*melaargs)}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     openfunction = open}
+\DoxyCodeLine{173     \textcolor{keywordflow}{if} gzip: \textcolor{keyword}{from} gzip \textcolor{keyword}{import} GzipFile \textcolor{keyword}{as} openfunction}
+\DoxyCodeLine{174     self.f = openfunction(self.filename)}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a5c8a03fbf23279ced89001e2d6e0a2cd}\label{classlhefile_1_1LHEFileBase_a5c8a03fbf23279ced89001e2d6e0a2cd}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_enter\_\_@{\_\_enter\_\_}}
@@ -102,42 +128,147 @@ with LHEFile("filename.lhe") as f:
 \doxysubsubsection{\texorpdfstring{\_\_enter\_\_()}{\_\_enter\_\_()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+enter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
 
+
+
+Definition at line 175 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175   \textcolor{keyword}{def }\_\_enter\_\_(self, *args, **kwargs):}
+\DoxyCodeLine{176     self.f.\_\_enter\_\_(*args, **kwargs)}
+\DoxyCodeLine{177     \textcolor{keywordflow}{return} self}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a56730ff74ab6b68f6f866b2478518847}\label{classlhefile_1_1LHEFileBase_a56730ff74ab6b68f6f866b2478518847}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_exit\_\_@{\_\_exit\_\_}}
 \index{\_\_exit\_\_@{\_\_exit\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_\_exit\_\_()}{\_\_exit\_\_()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+exit\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
 
+
+
+Definition at line 178 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{178   \textcolor{keyword}{def }\_\_exit\_\_(self, *args, **kwargs):}
+\DoxyCodeLine{179     \textcolor{keywordflow}{return} self.f.\_\_exit\_\_(*args, **kwargs)}
+\DoxyCodeLine{180 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a3ac034e0fece5d4f3755b3ff0174f9d5}\label{classlhefile_1_1LHEFileBase_a3ac034e0fece5d4f3755b3ff0174f9d5}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_getattr\_\_@{\_\_getattr\_\_}}
 \index{\_\_getattr\_\_@{\_\_getattr\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_\_getattr\_\_()}{\_\_getattr\_\_()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr }\end{DoxyParamCaption})}
 
+
+
+Definition at line 216 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{216   \textcolor{keyword}{def }\_\_getattr\_\_(self, attr):}
+\DoxyCodeLine{217     \textcolor{keywordflow}{if} attr == \textcolor{stringliteral}{"mela"}: \textcolor{keywordflow}{raise} RuntimeError(\textcolor{stringliteral}{"Something is wrong, trying to access mela before it's created"})}
+\DoxyCodeLine{218     \textcolor{keywordflow}{return} getattr(self.mela, attr)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a9b607721f99e56bb55e1e84fd82f74c8}\label{classlhefile_1_1LHEFileBase_a9b607721f99e56bb55e1e84fd82f74c8}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_iter\_\_@{\_\_iter\_\_}}
 \index{\_\_iter\_\_@{\_\_iter\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Definition at line 181 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181   \textcolor{keyword}{def }\_\_iter\_\_(self):}
+\DoxyCodeLine{182     event = \textcolor{stringliteral}{""}}
+\DoxyCodeLine{183     \textcolor{keywordflow}{for} linenumber, line \textcolor{keywordflow}{in} enumerate(self.f, start=1):}
+\DoxyCodeLine{184       \textcolor{keywordflow}{if} \textcolor{stringliteral}{"<event>"} \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} line \textcolor{keywordflow}{and} \textcolor{keywordflow}{not} event:}
+\DoxyCodeLine{185         \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{186       event += line}
+\DoxyCodeLine{187       \textcolor{keywordflow}{if} \textcolor{stringliteral}{"</event>"} \textcolor{keywordflow}{in} line:}
+\DoxyCodeLine{188         \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{189           self.\_setInputEvent(event)}
+\DoxyCodeLine{190           \textcolor{keywordflow}{yield} self}
+\DoxyCodeLine{191           event = \textcolor{stringliteral}{""}}
+\DoxyCodeLine{192         \textcolor{keywordflow}{except} GeneratorExit:}
+\DoxyCodeLine{193           \textcolor{keywordflow}{raise}}
+\DoxyCodeLine{194         \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{195           print(\textcolor{stringliteral}{"On line"}, linenumber)}
+\DoxyCodeLine{196           \textcolor{keywordflow}{raise}}
+\DoxyCodeLine{197         \textcolor{keywordflow}{finally}:}
+\DoxyCodeLine{198           \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{199             self.mela.resetInputEvent()}
+\DoxyCodeLine{200           \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{201             \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{202 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_ac0c4b80f9f7f8bb5622e27363fc65952}\label{classlhefile_1_1LHEFileBase_ac0c4b80f9f7f8bb5622e27363fc65952}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_setattr\_\_@{\_\_setattr\_\_}}
 \index{\_\_setattr\_\_@{\_\_setattr\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_\_setattr\_\_()}{\_\_setattr\_\_()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+setattr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{attr,  }\item[{}]{value }\end{DoxyParamCaption})}
 
+
+
+Definition at line 219 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219   \textcolor{keyword}{def }\_\_setattr\_\_(self, attr, value):}
+\DoxyCodeLine{220     \textcolor{keywordflow}{if} attr \textcolor{keywordflow}{in} self.\_LHEclassattributes():}
+\DoxyCodeLine{221       super(LHEFileBase, self).\_\_setattr\_\_(attr, value)}
+\DoxyCodeLine{222     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{223       setattr(self.mela, attr, value)}
+\DoxyCodeLine{224 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_ae59c143daf611e98a6aee2010cfb28d6}\label{classlhefile_1_1LHEFileBase_ae59c143daf611e98a6aee2010cfb28d6}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_LHEclassattributes@{\_LHEclassattributes}}
 \index{\_LHEclassattributes@{\_LHEclassattributes}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_LHEclassattributes()}{\_LHEclassattributes()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+L\+H\+Eclassattributes (\begin{DoxyParamCaption}\item[{}]{cls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line 213 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{213   \textcolor{keyword}{def }\_LHEclassattributes(cls):}
+\DoxyCodeLine{214     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"filename"}, \textcolor{stringliteral}{"f"}, \textcolor{stringliteral}{"mela"}, \textcolor{stringliteral}{"isgen"}, \textcolor{stringliteral}{"daughters"}, \textcolor{stringliteral}{"mothers"}, \textcolor{stringliteral}{"associated"}, \textcolor{stringliteral}{"weight"}, \textcolor{stringliteral}{"weights"}}
+\DoxyCodeLine{215 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a625a68d01fcee841b31261789a725a29}\label{classlhefile_1_1LHEFileBase_a625a68d01fcee841b31261789a725a29}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_setInputEvent@{\_setInputEvent}}
 \index{\_setInputEvent@{\_setInputEvent}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_setInputEvent()}{\_setInputEvent()}}
 {\footnotesize\ttfamily def lhefile.\+L\+H\+E\+File\+Base.\+\_\+set\+Input\+Event (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line 203 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{203   \textcolor{keyword}{def }\_setInputEvent(self, event):}
+\DoxyCodeLine{204     lheevent = self.lheeventclass(event, self.isgen)}
+\DoxyCodeLine{205     self.daughters = lheevent.daughters}
+\DoxyCodeLine{206     self.associated = lheevent.associated}
+\DoxyCodeLine{207     self.mothers = lheevent.mothers}
+\DoxyCodeLine{208     self.weight = lheevent.weight}
+\DoxyCodeLine{209     self.weights = lheevent.weights}
+\DoxyCodeLine{210     self.setInputEvent(*lheevent)}
+\DoxyCodeLine{211 }
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -147,11 +278,19 @@ with LHEFile("filename.lhe") as f:
 \doxysubsubsection{\texorpdfstring{\_\_melas}{\_\_melas}}
 {\footnotesize\ttfamily dictionary lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+melas = \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
+
+
+Definition at line 159 of file lhefile.\+py.
+
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_affb0860fc9f437d54d4b202befb5f86b}\label{classlhefile_1_1LHEFileBase_affb0860fc9f437d54d4b202befb5f86b}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!\_\_metaclass\_\_@{\_\_metaclass\_\_}}
 \index{\_\_metaclass\_\_@{\_\_metaclass\_\_}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{\_\_metaclass\_\_}{\_\_metaclass\_\_}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+\_\+\+\_\+metaclass\+\_\+\+\_\+ = abc.\+A\+B\+C\+Meta\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 157 of file lhefile.\+py.
 
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a477626bd258d50151df14adace76bb21}\label{classlhefile_1_1LHEFileBase_a477626bd258d50151df14adace76bb21}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!associated@{associated}}
@@ -159,11 +298,19 @@ with LHEFile("filename.lhe") as f:
 \doxysubsubsection{\texorpdfstring{associated}{associated}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+associated}
 
+
+
+Definition at line 206 of file lhefile.\+py.
+
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a565511db801b1cae7b544f4898469835}\label{classlhefile_1_1LHEFileBase_a565511db801b1cae7b544f4898469835}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!daughters@{daughters}}
 \index{daughters@{daughters}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{daughters}{daughters}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+daughters}
+
+
+
+Definition at line 205 of file lhefile.\+py.
 
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a615b10f37e5c276cf7da68d828da350a}\label{classlhefile_1_1LHEFileBase_a615b10f37e5c276cf7da68d828da350a}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!f@{f}}
@@ -171,11 +318,19 @@ with LHEFile("filename.lhe") as f:
 \doxysubsubsection{\texorpdfstring{f}{f}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+f}
 
+
+
+Definition at line 174 of file lhefile.\+py.
+
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_aad2cc1edd802513097a07b6b003c3d0e}\label{classlhefile_1_1LHEFileBase_aad2cc1edd802513097a07b6b003c3d0e}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!filename@{filename}}
 \index{filename@{filename}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{filename}{filename}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+filename}
+
+
+
+Definition at line 166 of file lhefile.\+py.
 
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a4b61ce76b9c779d7a4a8b38682b23386}\label{classlhefile_1_1LHEFileBase_a4b61ce76b9c779d7a4a8b38682b23386}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!isgen@{isgen}}
@@ -183,11 +338,19 @@ with LHEFile("filename.lhe") as f:
 \doxysubsubsection{\texorpdfstring{isgen}{isgen}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+isgen}
 
+
+
+Definition at line 162 of file lhefile.\+py.
+
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_ad2d650469371897e3fa2a562cfb24e27}\label{classlhefile_1_1LHEFileBase_ad2d650469371897e3fa2a562cfb24e27}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!mela@{mela}}
 \index{mela@{mela}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{mela}{mela}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+mela}
+
+
+
+Definition at line 168 of file lhefile.\+py.
 
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_acecf0963b833e52556c2b0c06bf8e4ca}\label{classlhefile_1_1LHEFileBase_acecf0963b833e52556c2b0c06bf8e4ca}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!mothers@{mothers}}
@@ -195,17 +358,29 @@ with LHEFile("filename.lhe") as f:
 \doxysubsubsection{\texorpdfstring{mothers}{mothers}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+mothers}
 
+
+
+Definition at line 207 of file lhefile.\+py.
+
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a36e3d7bb53daa1c2151cb5903569cd45}\label{classlhefile_1_1LHEFileBase_a36e3d7bb53daa1c2151cb5903569cd45}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!weight@{weight}}
 \index{weight@{weight}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{weight}{weight}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+weight}
 
+
+
+Definition at line 208 of file lhefile.\+py.
+
 \mbox{\Hypertarget{classlhefile_1_1LHEFileBase_a8bce9698aa1659d2380da7b90e785d6c}\label{classlhefile_1_1LHEFileBase_a8bce9698aa1659d2380da7b90e785d6c}} 
 \index{lhefile.LHEFileBase@{lhefile.LHEFileBase}!weights@{weights}}
 \index{weights@{weights}!lhefile.LHEFileBase@{lhefile.LHEFileBase}}
 \doxysubsubsection{\texorpdfstring{weights}{weights}}
 {\footnotesize\ttfamily lhefile.\+L\+H\+E\+File\+Base.\+weights}
+
+
+
+Definition at line 209 of file lhefile.\+py.
 
 
 

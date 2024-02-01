@@ -60,57 +60,1542 @@ subroutine \mbox{\hyperlink{namespacemodhiggs_a995340651e4f644c8b35e14349e6efcc}
       pin(2,\+:) = p(\+:,2)
       sp(1,\+:) = pol\+\_\+mless2(dcmplx(p(\+:,1)),-\/3+2$\ast$i1,\textquotesingle{}in\textquotesingle{})}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{}]{p,  }\item[{integer}]{i1,  }\item[{integer}]{i2,  }\item[{integer}]{i3,  }\item[{integer}]{i4,  }\item[{}]{A }\end{DoxyParamCaption})}
 
+
+
+Definition at line 168 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{168       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{169       \textcolor{keywordtype}{integer} :: ordering(1:4),VVMode,i1,i2,i3,i4,l1,l2,l3,l4,MY\_IDUP(6:\textcolor{comment}{9)}}
+\DoxyCodeLine{170 \textcolor{comment}{}\textcolor{keywordtype}{      real}(dp) :: p(1:4,1:6)}
+\DoxyCodeLine{171       \textcolor{keywordtype}{complex(dp)} :: propG}
+\DoxyCodeLine{172 \textcolor{keywordtype}{      real}(dp) :: pin(4,4)}
+\DoxyCodeLine{173       \textcolor{keywordtype}{complex(dp)} :: A(1:1), sp(4,4)}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175       l1=ordering(1)}
+\DoxyCodeLine{176       l2=ordering(2)}
+\DoxyCodeLine{177       l3=ordering(3)}
+\DoxyCodeLine{178       l4=ordering(4)}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180       \textcolor{comment}{!print *,"l1=",l1}}
+\DoxyCodeLine{181       \textcolor{comment}{!print *,"l2=",l2}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_a9a5db877e8a089469707d10ff4ea3a3f}\label{namespacemodhiggs_a9a5db877e8a089469707d10ff4ea3a3f}} 
 \index{modhiggs@{modhiggs}!calchelamp2@{calchelamp2}}
 \index{calchelamp2@{calchelamp2}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{calchelamp2()}{calchelamp2()}}
 {\footnotesize\ttfamily subroutine, public modhiggs\+::calchelamp2 (\begin{DoxyParamCaption}\item[{integer, dimension(1\+:4)}]{ordering,  }\item[{integer}]{V\+V\+Mode,  }\item[{integer, dimension(6\+:9)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{real(dp), dimension(1\+:4,1\+:6)}]{p,  }\item[{integer}]{i3,  }\item[{integer}]{i4,  }\item[{complex(dp), dimension(1\+:1)}]{A }\end{DoxyParamCaption})}
 
+
+
+Definition at line 482 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 \textcolor{comment}{! MADGRAPH CHECK}}
+\DoxyCodeLine{485 \textcolor{comment}{! call coupsm(0)}}
+\DoxyCodeLine{486 \textcolor{comment}{! if( (MY\_IDUP(6).eq.MY\_IDUP(8)) .and. (MY\_IDUP(7).eq.MY\_IDUP(9)) ) then}}
+\DoxyCodeLine{487 \textcolor{comment}{!       call SH\_EMEPEMEP((/-\/P(1:4,1)-\/P(1:4,2),P(1:4,3),P(1:4,4),P(1:4,5),P(1:4,6)/)/GeV,res2)}}
+\DoxyCodeLine{488 \textcolor{comment}{! else}}
+\DoxyCodeLine{489 \textcolor{comment}{!       call SH\_EMEPEMEP\_NOINT((/-\/P(1:4,1)-\/P(1:4,2),P(1:4,3),P(1:4,4),P(1:4,5),P(1:4,6)/)/GeV,res2)}}
+\DoxyCodeLine{490 \textcolor{comment}{! endif}}
+\DoxyCodeLine{491 \textcolor{comment}{! res2=res2* cdabs( (0d0,1d0)/dcmplx(2d0*scr(p(:,1),p(:,2))-\/M\_Reso**2,M\_Reso*Ga\_Reso) *  dconjg((0d0,1d0)/dcmplx(2d0*scr(p(:,1),p(:,2))-\/M\_Reso**2,M\_Reso*Ga\_Reso)) )}}
+\DoxyCodeLine{492 \textcolor{comment}{! res2=res2*GeV**4}}
+\DoxyCodeLine{493 \textcolor{comment}{! pause}}
+\DoxyCodeLine{494 \textcolor{comment}{! res=res2; RETURN}}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496 \textcolor{comment}{! res= res*prefactor}}
+\DoxyCodeLine{497 \textcolor{comment}{! print *, "checker 1",res}}
+\DoxyCodeLine{498 \textcolor{comment}{! print *, "checker 2",res2}}
+\DoxyCodeLine{499 \textcolor{comment}{! print *, "checker 1/2",res/res2}}
+\DoxyCodeLine{500 \textcolor{comment}{! pause}}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_a89c8cd53b17bd58ce16abdf6405444c0}\label{namespacemodhiggs_a89c8cd53b17bd58ce16abdf6405444c0}} 
 \index{modhiggs@{modhiggs}!evalamp\_gg\_h\_vv@{evalamp\_gg\_h\_vv}}
 \index{evalamp\_gg\_h\_vv@{evalamp\_gg\_h\_vv}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{evalamp\_gg\_h\_vv()}{evalamp\_gg\_h\_vv()}}
 {\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+gg\+\_\+h\+\_\+vv (\begin{DoxyParamCaption}\item[{real(dp), dimension(4,6), intent(in)}]{p,  }\item[{integer, dimension(6\+:9), intent(in)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
 
+
+
+Definition at line 21 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{22 \textcolor{keywordtype}{      real}(dp), \textcolor{keywordtype}{intent(out)} ::  res}
+\DoxyCodeLine{23 \textcolor{keywordtype}{      real}(dp), \textcolor{keywordtype}{intent(in)} :: p(4,6)}
+\DoxyCodeLine{24       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: MY\_IDUP(6:9)}
+\DoxyCodeLine{25       \textcolor{keywordtype}{complex(dp)} :: A\_VV(1:18), A0\_VV(1:2)}
+\DoxyCodeLine{26       \textcolor{keywordtype}{integer} :: i1,i2,i3,i4,VVMode,VVmode\_swap}
+\DoxyCodeLine{27 \textcolor{keywordtype}{      real}(dp) :: prefactor\textcolor{comment}{!,res2}}
+\DoxyCodeLine{28 \textcolor{keywordtype}{      real}(dp) :: intcolfac}
+\DoxyCodeLine{29       \textcolor{keywordtype}{integer} :: ordering(1:4),ordering\_swap(1:4)}
+\DoxyCodeLine{30       \textcolor{keywordtype}{logical} :: doInterference}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32       \textcolor{keywordflow}{if}(isaquark(my\_idup(6)) .and. isaquark(my\_idup(8))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{33          intcolfac=1.0\_dp/3.0\_dp}
+\DoxyCodeLine{34       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{35          intcolfac=1.0\_dp}
+\DoxyCodeLine{36 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38       \textcolor{keyword}{call }getdecay\_vvmode\_ordering(my\_idup(6:9),vvmode,ordering,vvmode\_swap\textcolor{comment}{,ordering\_swap)}}
+\DoxyCodeLine{39 \textcolor{comment}{}}
+\DoxyCodeLine{40 \textcolor{comment}{! Global normalization}}
+\DoxyCodeLine{41       \textcolor{keywordflow}{if}( vvmode.eq.zzmode ) then\textcolor{comment}{!  Z decay}}
+\DoxyCodeLine{42          prefactor = 8d0*overallcouplvffsq**2}
+\DoxyCodeLine{43       \textcolor{keywordflow}{elseif}( vvmode.eq.wwmode ) \textcolor{keywordflow}{then} \textcolor{comment}{!  W decay}}
+\DoxyCodeLine{44          prefactor = 8d0*overallcouplvffsq**2}
+\DoxyCodeLine{45       \textcolor{keywordflow}{elseif}( vvmode.eq.zgmode ) \textcolor{keywordflow}{then} \textcolor{comment}{!  Z+photon "decay"}}
+\DoxyCodeLine{46          prefactor = 8d0*overallcouplvffsq \textcolor{comment}{! Only single powers}}
+\DoxyCodeLine{47       \textcolor{keywordflow}{elseif}( vvmode.eq.ggmode ) \textcolor{keywordflow}{then} \textcolor{comment}{!  photon "decay"}}
+\DoxyCodeLine{48          prefactor = 8d0}
+\DoxyCodeLine{49       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{50          prefactor = 0d0}
+\DoxyCodeLine{51 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{52       prefactor = prefactor * (alphas/(3.0\_dp*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}*vev))**2}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{! ! MADGRAPH CHECK}}
+\DoxyCodeLine{56 \textcolor{comment}{! res=0d0}}
+\DoxyCodeLine{57 \textcolor{comment}{! if (MY\_IDUP(6).ne.MY\_IDUP(8) ) return}}
+\DoxyCodeLine{58 \textcolor{comment}{! if (MY\_IDUP(7).ne.MY\_IDUP(9) ) return}}
+\DoxyCodeLine{59 \textcolor{comment}{! if (MY\_IDUP(6).eq.MY\_IDUP(8) ) return}}
+\DoxyCodeLine{60 \textcolor{comment}{! if (MY\_IDUP(7).eq.MY\_IDUP(9) ) return}}
+\DoxyCodeLine{61 \textcolor{comment}{! print *, "MY COUPL",al1*dsqrt(overallCouplVffsq),ar1*dsqrt(overallCouplVffsq)}}
+\DoxyCodeLine{62 \textcolor{comment}{! ar1=-\/0.158480099490745d0! this is MadGraphs gzl(R)  , the MG couplings differ by a global minus sign, relative differences are because of different input parameters}}
+\DoxyCodeLine{63 \textcolor{comment}{! al1=+0.210150647402957d0! this is MadGraphs gzl(L)}}
+\DoxyCodeLine{64 \textcolor{comment}{! al2=al1}}
+\DoxyCodeLine{65 \textcolor{comment}{! ar2=ar1}}
+\DoxyCodeLine{66 \textcolor{comment}{! print *, "MG COUPL",al1,ar1}}
+\DoxyCodeLine{67 \textcolor{comment}{! pause}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69           res = \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{70           a\_vv(:) = 0d0}
+\DoxyCodeLine{71           dointerference = includeinterference .and. (         \&}
+\DoxyCodeLine{72             ((vvmode.eq.zzmode) .and. (vvmode\_swap.eq.zzmode)) \&}
+\DoxyCodeLine{73             )}
+\DoxyCodeLine{74           \textcolor{keywordflow}{if} ( includevprime .and. .not.(vvmode.eq.zzmode .or. vvmode.eq.zgmode\textcolor{comment}{ .or. vvmode.eq.wwmode) ) }\textcolor{keywordflow}{then}}
+\DoxyCodeLine{75               \textcolor{keyword}{call }error(\textcolor{stringliteral}{"Contact terms only for WW, ZZ or Zg!"})}
+\DoxyCodeLine{76 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{77           \textcolor{keywordflow}{do} i1=1,2;  \textcolor{keywordflow}{do} i2=1,2;  \textcolor{keywordflow}{do} i3=1,2;  \textcolor{keywordflow}{do} i4=1,2\textcolor{comment}{!  sum over helicities}}
+\DoxyCodeLine{78                   \textcolor{keyword}{call }calchelamp(ordering,vvmode,my\_idup,p(1:4,1:6),i1,i2\textcolor{comment}{,i3,i4,a\_vv(1))}}
+\DoxyCodeLine{79 \textcolor{comment}{}                  \textcolor{keywordflow}{if}( vvmode.eq.zzmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{80                       \textcolor{keywordflow}{if}( includegammastar ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{81                          \textcolor{keyword}{call }calchelamp(ordering,zgsmode,my\_idup,p(1:4,\textcolor{comment}{1:6),i1,i2,i3,i4,a\_vv(3))}}
+\DoxyCodeLine{82 \textcolor{comment}{}                         \textcolor{keyword}{call }calchelamp(ordering,gszmode,my\_idup,p(1:4,\textcolor{comment}{1:6),i1,i2,i3,i4,a\_vv(5))}}
+\DoxyCodeLine{83 \textcolor{comment}{}                         \textcolor{keyword}{call }calchelamp(ordering,gsgsmode,my\_idup,p(1:4\textcolor{comment}{,1:6),i1,i2,i3,i4,a\_vv(7))}}
+\DoxyCodeLine{84 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{85                       \textcolor{keywordflow}{if}( includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{86                           \textcolor{keyword}{call }calchelamp(ordering,zzpmode,my\_idup,p(1:4\textcolor{comment}{,1:6),i1,i2,i3,i4,a\_vv(9))}}
+\DoxyCodeLine{87 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering,zpzmode,my\_idup,p(1:4\textcolor{comment}{,1:6),i1,i2,i3,i4,a\_vv(11))}}
+\DoxyCodeLine{88 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering,zpzpmode,my\_idup,p(1:\textcolor{comment}{4,1:6),i1,i2,i3,i4,a\_vv(13))}}
+\DoxyCodeLine{89 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{90                       \textcolor{keywordflow}{if}( includegammastar .and. includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{91                           \textcolor{keyword}{call }calchelamp(ordering,gszpmode,my\_idup,p(1:\textcolor{comment}{4,1:6),i1,i2,i3,i4,a\_vv(15))}}
+\DoxyCodeLine{92 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering,zpgsmode,my\_idup,p(1:\textcolor{comment}{4,1:6),i1,i2,i3,i4,a\_vv(17))}}
+\DoxyCodeLine{93 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{94                   \textcolor{keywordflow}{elseif}( vvmode.eq.zgmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{95                       \textcolor{keywordflow}{if}(includegammastar) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{96                           \textcolor{keyword}{call }calchelamp(ordering,gsgmode,my\_idup,p(1:4\textcolor{comment}{,1:6),i1,i2,i3,i4,a\_vv(3))}}
+\DoxyCodeLine{97 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{98                       \textcolor{keywordflow}{if}( includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{99                           \textcolor{keyword}{call }calchelamp(ordering,zpgmode,my\_idup,p(1:4\textcolor{comment}{,1:6),i1,i2,i3,i4,a\_vv(5))}}
+\DoxyCodeLine{100 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{101                   \textcolor{keywordflow}{elseif}( vvmode.eq.wwmode .and. includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{102                       \textcolor{keyword}{call }calchelamp(ordering,wwpmode,my\_idup,p(1:4,1:6\textcolor{comment}{),i1,i2,i3,i4,a\_vv(9))}}
+\DoxyCodeLine{103 \textcolor{comment}{}                      \textcolor{keyword}{call }calchelamp(ordering,wpwmode,my\_idup,p(1:4,1:6\textcolor{comment}{),i1,i2,i3,i4,a\_vv(11))}}
+\DoxyCodeLine{104 \textcolor{comment}{}                      \textcolor{keyword}{call }calchelamp(ordering,wpwpmode,my\_idup,p(1:4,1:\textcolor{comment}{6),i1,i2,i3,i4,a\_vv(13))}}
+\DoxyCodeLine{105 \textcolor{comment}{}\textcolor{keywordflow}{                  endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107                   \textcolor{keywordflow}{if}( dointerference ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{108                       \textcolor{keyword}{call }calchelamp(ordering\_swap,vvmode\_swap,my\_idup,p\textcolor{comment}{(1:4,1:6),i1,i2,i3,i4,a\_vv(2))}}
+\DoxyCodeLine{109 \textcolor{comment}{}                      \textcolor{keywordflow}{if}( includegammastar ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{110                           \textcolor{keyword}{call }calchelamp(ordering\_swap,zgsmode,my\_idup,p\textcolor{comment}{(1:4,1:6),i1,i2,i3,i4,a\_vv(4))}}
+\DoxyCodeLine{111 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering\_swap,gszmode,my\_idup,p\textcolor{comment}{(1:4,1:6),i1,i2,i3,i4,a\_vv(6))}}
+\DoxyCodeLine{112 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering\_swap,gsgsmode,my\_idup\textcolor{comment}{,p(1:4,1:6),i1,i2,i3,i4,a\_vv(8))}}
+\DoxyCodeLine{113 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{114                       \textcolor{keywordflow}{if}( includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{115                           \textcolor{keyword}{call }calchelamp(ordering\_swap,zzpmode,my\_idup,p\textcolor{comment}{(1:4,1:6),i1,i2,i3,i4,a\_vv(10))}}
+\DoxyCodeLine{116 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering\_swap,zpzmode,my\_idup,p\textcolor{comment}{(1:4,1:6),i1,i2,i3,i4,a\_vv(12))}}
+\DoxyCodeLine{117 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering\_swap,zpzpmode,my\_idup\textcolor{comment}{,p(1:4,1:6),i1,i2,i3,i4,a\_vv(14))}}
+\DoxyCodeLine{118 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{119                       \textcolor{keywordflow}{if}( includegammastar .and. includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{120                           \textcolor{keyword}{call }calchelamp(ordering\_swap,gszpmode,my\_idup\textcolor{comment}{,p(1:4,1:6),i1,i2,i3,i4,a\_vv(16))}}
+\DoxyCodeLine{121 \textcolor{comment}{}                          \textcolor{keyword}{call }calchelamp(ordering\_swap,zpgsmode,my\_idup\textcolor{comment}{,p(1:4,1:6),i1,i2,i3,i4,a\_vv(18))}}
+\DoxyCodeLine{122 \textcolor{comment}{}\textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{123 \textcolor{keywordflow}{                  endif}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125                   a0\_vv(1) = a\_vv(1)+a\_vv(3)+a\_vv(5)+a\_vv(7)+a\_vv(9)+a\_vv\textcolor{comment}{(11)+a\_vv(13)+a\_vv(15)+a\_vv(17) ! 3456 pieces}}
+\DoxyCodeLine{126                   a0\_vv(2) = a\_vv(2)+a\_vv(4)+a\_vv(6)+a\_vv(8)+a\_vv(10)+a\_vv\textcolor{comment}{(12)+a\_vv(14)+a\_vv(16)+a\_vv(18) ! 5436 pieces}}
+\DoxyCodeLine{127                   res = res + dreal(a0\_vv(1)*dconjg(a0\_vv(1)))}
+\DoxyCodeLine{128                   res = res + dreal(a0\_vv(2)*dconjg(a0\_vv(2)))}
+\DoxyCodeLine{129                   \textcolor{keywordflow}{if}( dointerference .and. (i3.eq.i4) ) then\textcolor{comment}{! interfere the 3456 with 5436 pieces}}
+\DoxyCodeLine{130                       res = res -\/ 2d0*intcolfac*dreal(  a0\_vv(1)*dconjg(a0\_vv\textcolor{comment}{(2))  ) ! minus from Fermi statistics}}
+\DoxyCodeLine{131 \textcolor{keywordflow}{                  endif}}
+\DoxyCodeLine{132           enddo;  enddo;  enddo;\textcolor{keywordflow}{  enddo}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{! MADGRAPH CHECK}}
+\DoxyCodeLine{136 \textcolor{comment}{! call coupsm(0)}}
+\DoxyCodeLine{137 \textcolor{comment}{! if( (MY\_IDUP(6).eq.MY\_IDUP(8)) .and. (MY\_IDUP(7).eq.MY\_IDUP(9)) ) then}}
+\DoxyCodeLine{138 \textcolor{comment}{!       call SH\_EMEPEMEP((/-\/P(1:4,1)-\/P(1:4,2),P(1:4,3),P(1:4,4),P(1:4,5),P(1:4,6)/)/GeV,res2)}}
+\DoxyCodeLine{139 \textcolor{comment}{! else}}
+\DoxyCodeLine{140 \textcolor{comment}{!       call SH\_EMEPEMEP\_NOINT((/-\/P(1:4,1)-\/P(1:4,2),P(1:4,3),P(1:4,4),P(1:4,5),P(1:4,6)/)/GeV,res2)}}
+\DoxyCodeLine{141 \textcolor{comment}{!       call SH\_TAMTAPTAMTAP\_NOINT((/-\/P(1:4,1)-\/P(1:4,2),P(1:4,3),P(1:4,4),P(1:4,5),P(1:4,6)/)/GeV,res2)}}
+\DoxyCodeLine{142 \textcolor{comment}{! endif}}
+\DoxyCodeLine{143 \textcolor{comment}{! res2=res2* cdabs( (0d0,1d0)/dcmplx(2d0*scr(p(:,1),p(:,2))-\/M\_Reso**2,M\_Reso*Ga\_Reso) *  dconjg((0d0,1d0)/dcmplx(2d0*scr(p(:,1),p(:,2))-\/M\_Reso**2,M\_Reso*Ga\_Reso)) )}}
+\DoxyCodeLine{144 \textcolor{comment}{! res2=res2*GeV**4}}
+\DoxyCodeLine{145 \textcolor{comment}{! pause}}
+\DoxyCodeLine{146 \textcolor{comment}{! res=res2; RETURN}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{! res= res*prefactor}}
+\DoxyCodeLine{149 \textcolor{comment}{! print *, "checker 1",res}}
+\DoxyCodeLine{150 \textcolor{comment}{! print *, "checker 2",res2}}
+\DoxyCodeLine{151 \textcolor{comment}{! print *, "checker 1/2",res/res2}}
+\DoxyCodeLine{152 \textcolor{comment}{! pause}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155           res = res*prefactor}
+\DoxyCodeLine{156           \textcolor{keywordflow}{if}( (vvmode.eq.zzmode) .and. dointerference ) res = res * symmfac}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158          \textcolor{comment}{!print *,"VVmode:",VVmode}}
+\DoxyCodeLine{159          \textcolor{comment}{!print *,"VVmode\_swap:",VVmode\_swap}}
+\DoxyCodeLine{160          \textcolor{comment}{!print *,"ids:",MY\_IDUP}}
+\DoxyCodeLine{161          \textcolor{comment}{!print *,"res:",res}}
+\DoxyCodeLine{162          \textcolor{comment}{!pause}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_af1a8901a3d59d975518c61a630b8df96}\label{namespacemodhiggs_af1a8901a3d59d975518c61a630b8df96}} 
 \index{modhiggs@{modhiggs}!evalamp\_h\_ff@{evalamp\_h\_ff}}
 \index{evalamp\_h\_ff@{evalamp\_h\_ff}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{evalamp\_h\_ff()}{evalamp\_h\_ff()}}
 {\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+h\+\_\+ff (\begin{DoxyParamCaption}\item[{real(dp), dimension(1\+:4,1\+:2), intent(in)}]{pin,  }\item[{real(dp), intent(in)}]{mass\+\_\+F,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
 
+
+
+Definition at line 641 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{641             yyy3 = ahz3}
+\DoxyCodeLine{642          \textcolor{keywordflow}{elseif}( (vvmode.eq.zgmode) .OR. (vvmode.eq.gszmode) .OR. (vvmode.eq.zgsmode) ) then\textcolor{comment}{! decay (Z-\/photon) OR (gamma*-\/Z) OR (Z-\/gamma*)}}
+\DoxyCodeLine{643             yyy1 = ahz1}
+\DoxyCodeLine{644             yyy2 = -\/2*ahz1*q\_q/(q\_q-\/q3\_q3)}
+\DoxyCodeLine{645             yyy3 = ahz3}
+\DoxyCodeLine{646          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{647             yyy1=czero}
+\DoxyCodeLine{648             yyy2=czero}
+\DoxyCodeLine{649             yyy3=czero}
+\DoxyCodeLine{650             print *,\textcolor{stringliteral}{"VVMode"},vvmode,\textcolor{stringliteral}{"not implemented in generate\_as"}}
+\DoxyCodeLine{651 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{652 \textcolor{keywordflow}{      endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_a84249519958e2f7cee236904afef5c3e}\label{namespacemodhiggs_a84249519958e2f7cee236904afef5c3e}} 
 \index{modhiggs@{modhiggs}!evalamp\_h\_tt\_decay@{evalamp\_h\_tt\_decay}}
 \index{evalamp\_h\_tt\_decay@{evalamp\_h\_tt\_decay}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{evalamp\_h\_tt\_decay()}{evalamp\_h\_tt\_decay()}}
 {\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+h\+\_\+tt\+\_\+decay (\begin{DoxyParamCaption}\item[{real(dp), dimension(1\+:4,1\+:6), intent(in)}]{pin,  }\item[{real(dp), intent(in)}]{mass\+\_\+F,  }\item[{real(dp), intent(in)}]{ga\+\_\+F,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
 
+
+
+Definition at line 664 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{664 \textcolor{comment}{! or              H -\/-\/> tbar(p1)  + top(p2)}}
+\DoxyCodeLine{665 \textcolor{comment}{! with tau/top controlled by value of mass\_F}}
+\DoxyCodeLine{666 \textcolor{comment}{! Since this is an isotropic scalar decay, just provide a matrix element SQUARED}}
+\DoxyCodeLine{667 \textcolor{comment}{! R.Rontsch July 2015}}
+\DoxyCodeLine{668    \textcolor{keyword}{SUBROUTINE }evalamp\_h\_ff(pin,mass\_F,res)}
+\DoxyCodeLine{669    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{670 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(out)} ::  res}
+\DoxyCodeLine{671    \textcolor{keywordtype}{complex(dp)} :: amp2}
+\DoxyCodeLine{672 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(in)} :: pin(1:4,1:2),mass\_F}
+\DoxyCodeLine{673 \textcolor{keywordtype}{   real}(dp)             :: s12}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{675       s12=2d0*(pin(1,1)*pin(1,2)-\/pin(2,1)*pin(2,2)-\/pin(3,1)*pin(3,2)-\/pin(4,1)*pin(4,2)) + 2d0*mass\_f**2}
+\DoxyCodeLine{676       amp2 =   2d0*s12*(kappa\_tilde**2 + kappa**2) -\/ 8d0*mass\_f**2*kappa**2}
+\DoxyCodeLine{677       amp2 = amp2*mass\_f**2/vev**2}
+\DoxyCodeLine{678       res = cdabs(amp2)}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{680    \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{681    \textcolor{keyword}{END SUBROUTINE}}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683 }
+\DoxyCodeLine{684 \textcolor{comment}{! Decay amplitude H -\/-\/> tau\string^-\/(-\/-\/>l\string^-\/(p1)+nubar(p2)+nutau(p3))  +  tau\string^+(-\/-\/>nu(p4)+l\string^+(p5)+nutaubar(p6))}}
+\DoxyCodeLine{685 \textcolor{comment}{! or H -\/-\/> tbar\string^-\/(-\/-\/>l\string^-\/(p1)+nubar(p2)+bbar(p3))+top(-\/-\/>nu(p4)+l\string^+(p5)+b(p6))}}
+\DoxyCodeLine{686 \textcolor{comment}{! Note: 1. Value of m allows to change between H-\/>tau\string^+tau\string^-\/ and H-\/>ttbar}}
+\DoxyCodeLine{687 \textcolor{comment}{!       2. Full kinematics of decaying particles -\/-\/ no NWA.}}
+\DoxyCodeLine{688 \textcolor{comment}{!       3. Final state b quark is massless.}}
+\DoxyCodeLine{689 \textcolor{comment}{!       4. At present, no width in the tau/top propagator}}
+\DoxyCodeLine{690 \textcolor{comment}{! R. Rontsch July 2015}}
+\DoxyCodeLine{691    \textcolor{keyword}{SUBROUTINE }evalamp\_h\_tt\_decay(pin,mass\_F,ga\_F,res)}
+\DoxyCodeLine{692    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{693 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(out)} ::  res}
+\DoxyCodeLine{694 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(in)} :: pin(1:4,1:6),mass\_F,ga\_F}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_a0812ada9d21ed68ab46c17688fc21529}\label{namespacemodhiggs_a0812ada9d21ed68ab46c17688fc21529}} 
 \index{modhiggs@{modhiggs}!evalamp\_h\_vv@{evalamp\_h\_vv}}
 \index{evalamp\_h\_vv@{evalamp\_h\_vv}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{evalamp\_h\_vv()}{evalamp\_h\_vv()}}
 {\footnotesize\ttfamily subroutine, public modhiggs\+::evalamp\+\_\+h\+\_\+vv (\begin{DoxyParamCaption}\item[{real(dp), dimension(4,6), intent(in)}]{p,  }\item[{integer, dimension(6\+:9), intent(in)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{real(dp), intent(out)}]{res }\end{DoxyParamCaption})}
 
+
+
+Definition at line 341 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{341             yyy2 = -\/2*ahz1 \textcolor{comment}{!ahz2  ! gauge invariance fixes ahz2 in this case}}
+\DoxyCodeLine{342             yyy3 = ahz3}
+\DoxyCodeLine{343          \textcolor{keywordflow}{elseif}( (vvmode.eq.zgmode) .OR. (vvmode.eq.gszmode) .OR. (vvmode.eq.zgsmode) ) then\textcolor{comment}{! decay (Z-\/photon) OR (gamma*-\/Z) OR (Z-\/gamma*)}}
+\DoxyCodeLine{344             yyy1 = ahz1}
+\DoxyCodeLine{345             yyy2 = -\/2*ahz1*q\_q/(q\_q-\/q3\_q3)}
+\DoxyCodeLine{346             yyy3 = ahz3}
+\DoxyCodeLine{347          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{348             yyy1=czero}
+\DoxyCodeLine{349             yyy2=czero}
+\DoxyCodeLine{350             yyy3=czero}
+\DoxyCodeLine{351             print *,\textcolor{stringliteral}{"VVMode"},vvmode,\textcolor{stringliteral}{"not implemented in generate\_as"}}
+\DoxyCodeLine{352 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{353 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355       res= e1\_e2*e3\_e4*q\_q**2*yyy1*xxx1                  \&}
+\DoxyCodeLine{356          + e1\_e2*e3\_q4*e4\_q3*q\_q*yyy2*xxx1               \&}
+\DoxyCodeLine{357          + et1(e1,e2,q1,q2)*e3\_e4*q\_q*yyy1*xxx3          \&}
+\DoxyCodeLine{358          + et1(e1,e2,q1,q2)*e3\_q4*e4\_q3*yyy2*xxx3        \&}
+\DoxyCodeLine{359          + et1(e1,e2,q1,q2)*et1(e3,e4,q3,q4)*yyy3*xxx3   \&}
+\DoxyCodeLine{360          + et1(e3,e4,q3,q4)*e1\_e2*q\_q*yyy3*xxx1}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362   \textcolor{keyword}{END SUBROUTINE }gghzzampl}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365 \textcolor{comment}{!-\/-\/-\/-\/-\/ a subroutinefor H -\/> (Z+gamma*)(Z+gamma*)/WW/gammagamma}}
+\DoxyCodeLine{366 \textcolor{comment}{!-\/-\/-\/-\/-\/ all outgoing convention and the following momentum assignment}}
+\DoxyCodeLine{367 \textcolor{comment}{!-\/-\/-\/-\/-\/  0 -\/> Higgs(p1) + e-\/(p3) + e+(p4) +mu-\/(p5) +mu+(p6)}}
+\DoxyCodeLine{368       \textcolor{keyword}{subroutine }evalamp\_h\_vv(p,MY\_IDUP,res)}
+\DoxyCodeLine{369       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{370 \textcolor{keywordtype}{      real}(dp), \textcolor{keywordtype}{intent(out)} ::  res}
+\DoxyCodeLine{371 \textcolor{keywordtype}{      real}(dp), \textcolor{keywordtype}{intent(in)} :: p(4,6)}
+\DoxyCodeLine{372       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: MY\_IDUP(6:9)}
+\DoxyCodeLine{373       \textcolor{keywordtype}{complex(dp)} :: A\_VV(1:18),A0\_VV(1:2)}
+\DoxyCodeLine{374       \textcolor{keywordtype}{integer} :: i3,i4,VVMode,VVmode\_swap}
+\DoxyCodeLine{375 \textcolor{keywordtype}{      real}(dp) :: prefactor}
+\DoxyCodeLine{376 \textcolor{keywordtype}{      real}(dp) :: intcolfac}
+\DoxyCodeLine{377       \textcolor{keywordtype}{integer} :: ordering(1:4),ordering\_swap(1:4)}
+\DoxyCodeLine{378       \textcolor{keywordtype}{logical} :: doInterference}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380       \textcolor{keywordflow}{if}(isaquark(my\_idup(6)) .and. isaquark(my\_idup(8))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{381          intcolfac=1.0\_dp/3.0\_dp}
+\DoxyCodeLine{382       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{383          intcolfac=1.0\_dp}
+\DoxyCodeLine{384 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386       \textcolor{keyword}{call }getdecay\_vvmode\_ordering(my\_idup(6:9),vvmode,ordering,vvmode\_swap,ordering\_swap)}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{comment}{! Global normalization}}
+\DoxyCodeLine{389          \textcolor{keywordflow}{if}( vvmode.eq.zzmode ) then\textcolor{comment}{!  Z decay}}
+\DoxyCodeLine{390             prefactor = overallcouplvffsq**2}
+\DoxyCodeLine{391          \textcolor{keywordflow}{elseif}( vvmode.eq.wwmode ) \textcolor{keywordflow}{then} \textcolor{comment}{!  W decay}}
+\DoxyCodeLine{392             prefactor = overallcouplvffsq**2}
+\DoxyCodeLine{393          \textcolor{keywordflow}{elseif}( vvmode.eq.zgmode ) \textcolor{keywordflow}{then} \textcolor{comment}{!  Z+photon "decay"}}
+\DoxyCodeLine{394             prefactor = overallcouplvffsq \textcolor{comment}{! Only single powers}}
+\DoxyCodeLine{395          \textcolor{keywordflow}{elseif}( vvmode.eq.ggmode ) \textcolor{keywordflow}{then} \textcolor{comment}{!  photon "decay"}}
+\DoxyCodeLine{396             prefactor = 1d0}
+\DoxyCodeLine{397          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{398             prefactor = 0d0}
+\DoxyCodeLine{399 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 \textcolor{comment}{! ! MADGRAPH CHECK}}
+\DoxyCodeLine{402 \textcolor{comment}{! res=0d0}}
+\DoxyCodeLine{403 \textcolor{comment}{! if (MY\_IDUP(6).ne.MY\_IDUP(8) ) return}}
+\DoxyCodeLine{404 \textcolor{comment}{! if (MY\_IDUP(7).ne.MY\_IDUP(9) ) return}}
+\DoxyCodeLine{405 \textcolor{comment}{! if (MY\_IDUP(6).eq.MY\_IDUP(8) ) return}}
+\DoxyCodeLine{406 \textcolor{comment}{! if (MY\_IDUP(7).eq.MY\_IDUP(9) ) return}}
+\DoxyCodeLine{407 \textcolor{comment}{! print *, "MY COUPL",al1*dsqrt(overallCouplVffsq),ar1*dsqrt(overallCouplVffsq)}}
+\DoxyCodeLine{408 \textcolor{comment}{! ar1=-\/0.158480099490745d0! this is MadGraphs gzl(R)  , the MG couplings differ by a global minus sign, relative differences are because of different input parameters}}
+\DoxyCodeLine{409 \textcolor{comment}{! al1=+0.210150647402957d0! this is MadGraphs gzl(L)}}
+\DoxyCodeLine{410 \textcolor{comment}{! al2=al1}}
+\DoxyCodeLine{411 \textcolor{comment}{! ar2=ar1}}
+\DoxyCodeLine{412 \textcolor{comment}{! print *, "MG COUPL",al1,ar1}}
+\DoxyCodeLine{413 \textcolor{comment}{! pause}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416           res = \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{417           a\_vv(:) = 0d0}
+\DoxyCodeLine{418           dointerference = includeinterference .and. (         \&}
+\DoxyCodeLine{419             ((vvmode.eq.zzmode) .and. (vvmode\_swap.eq.zzmode)) \&}
+\DoxyCodeLine{420             )}
+\DoxyCodeLine{421           \textcolor{keywordflow}{if} ( includevprime .and. .not.(vvmode.eq.zzmode .or. vvmode.eq.zgmode .or. vvmode.eq.wwmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{422               \textcolor{keyword}{call }error(\textcolor{stringliteral}{"Contact terms only for WW, ZZ or Zg!"})}
+\DoxyCodeLine{423 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{424           \textcolor{keywordflow}{do} i3=1,2;  \textcolor{keywordflow}{do} i4=1,2\textcolor{comment}{!  sum over helicities}}
+\DoxyCodeLine{425                   \textcolor{keyword}{call }calchelamp2(ordering,vvmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(1))}
+\DoxyCodeLine{426                   \textcolor{keywordflow}{if}( vvmode.eq.zzmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{427                       \textcolor{keywordflow}{if}( includegammastar ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{428                          \textcolor{keyword}{call }calchelamp2(ordering,zgsmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(3))}
+\DoxyCodeLine{429                          \textcolor{keyword}{call }calchelamp2(ordering,gszmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(5))}
+\DoxyCodeLine{430                          \textcolor{keyword}{call }calchelamp2(ordering,gsgsmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(7))}
+\DoxyCodeLine{431 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{432                       \textcolor{keywordflow}{if}( includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{433                           \textcolor{keyword}{call }calchelamp2(ordering,zzpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(9))}
+\DoxyCodeLine{434                           \textcolor{keyword}{call }calchelamp2(ordering,zpzmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(11))}
+\DoxyCodeLine{435                           \textcolor{keyword}{call }calchelamp2(ordering,zpzpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(13))}
+\DoxyCodeLine{436 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{437                       \textcolor{keywordflow}{if}( includegammastar .and. includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{438                           \textcolor{keyword}{call }calchelamp2(ordering,gszpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(15))}
+\DoxyCodeLine{439                           \textcolor{keyword}{call }calchelamp2(ordering,zpgsmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(17))}
+\DoxyCodeLine{440 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{441                   \textcolor{keywordflow}{elseif}( vvmode.eq.zgmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{442                       \textcolor{keywordflow}{if}(includegammastar) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{443                           \textcolor{keyword}{call }calchelamp2(ordering,gsgmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(3))}
+\DoxyCodeLine{444 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{445                       \textcolor{keywordflow}{if}( includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{446                           \textcolor{keyword}{call }calchelamp2(ordering,zpgmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(5))}
+\DoxyCodeLine{447 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{448                   \textcolor{keywordflow}{elseif}( vvmode.eq.wwmode .and. includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{449                       \textcolor{keyword}{call }calchelamp2(ordering,wwpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(9))}
+\DoxyCodeLine{450                       \textcolor{keyword}{call }calchelamp2(ordering,wpwmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(11))}
+\DoxyCodeLine{451                       \textcolor{keyword}{call }calchelamp2(ordering,wpwpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(13))}
+\DoxyCodeLine{452 \textcolor{keywordflow}{                  endif}}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454                   \textcolor{keywordflow}{if}( dointerference ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{455                       \textcolor{keyword}{call }calchelamp2(ordering\_swap,vvmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(2))}
+\DoxyCodeLine{456                       \textcolor{keywordflow}{if}( includegammastar ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{457                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,zgsmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(4))}
+\DoxyCodeLine{458                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,gszmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(6))}
+\DoxyCodeLine{459                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,gsgsmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(8))}
+\DoxyCodeLine{460 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{461                       \textcolor{keywordflow}{if}( includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{462                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,zzpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(10))}
+\DoxyCodeLine{463                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,zpzmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(12))}
+\DoxyCodeLine{464                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,zpzpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(14))}
+\DoxyCodeLine{465 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{466                       \textcolor{keywordflow}{if}( includegammastar .and. includevprime ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{467                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,gszpmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(16))}
+\DoxyCodeLine{468                           \textcolor{keyword}{call }calchelamp2(ordering\_swap,zpgsmode,my\_idup,p(1:4,1:6),i3,i4,a\_vv(18))}
+\DoxyCodeLine{469 \textcolor{keywordflow}{                      endif}}
+\DoxyCodeLine{470 \textcolor{keywordflow}{                  endif}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472                   a0\_vv(1) = a\_vv(1)+a\_vv(3)+a\_vv(5)+a\_vv(7)+a\_vv(9)+a\_vv(11)+a\_vv(13)+a\_vv(15)+a\_vv(17) \textcolor{comment}{! 3456 pieces}}
+\DoxyCodeLine{473                   a0\_vv(2) = a\_vv(2)+a\_vv(4)+a\_vv(6)+a\_vv(8)+a\_vv(10)+a\_vv(12)+a\_vv(14)+a\_vv(16)+a\_vv(18) \textcolor{comment}{! 5436 pieces}}
+\DoxyCodeLine{474                   res = res + dreal(a0\_vv(1)*dconjg(a0\_vv(1)))}
+\DoxyCodeLine{475                   res = res + dreal(a0\_vv(2)*dconjg(a0\_vv(2)))}
+\DoxyCodeLine{476                   \textcolor{keywordflow}{if}( dointerference .and. (i3.eq.i4) ) then\textcolor{comment}{! interfere the 3456 with 5436 pieces}}
+\DoxyCodeLine{477                       res = res -\/ 2d0*intcolfac*dreal(  a0\_vv(1)*dconjg(a0\_vv(2))  ) \textcolor{comment}{! minus from Fermi statistics}}
+\DoxyCodeLine{478 \textcolor{keywordflow}{                  endif}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_a151d03fd06095515e0a95e62e236d1bc}\label{namespacemodhiggs_a151d03fd06095515e0a95e62e236d1bc}} 
 \index{modhiggs@{modhiggs}!getdecay\_couplings\_spinors\_props@{getdecay\_couplings\_spinors\_props}}
 \index{getdecay\_couplings\_spinors\_props@{getdecay\_couplings\_spinors\_props}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{getdecay\_couplings\_spinors\_props()}{getdecay\_couplings\_spinors\_props()}}
 {\footnotesize\ttfamily subroutine modhiggs\+::getdecay\+\_\+couplings\+\_\+spinors\+\_\+props (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{integer, dimension(6\+:9), intent(in)}]{idordered,  }\item[{real(dp), dimension(1\+:4,6\+:9), intent(in)}]{pordered,  }\item[{integer, intent(in)}]{h3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line 701 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{701           \textcolor{keyword}{call }convert\_to\_mcfm(pin(1:4,j),p(j,1:4))}
+\DoxyCodeLine{702 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{703 \textcolor{comment}{!       call spinoru(6,p,za,zb,s)}}
+\DoxyCodeLine{704       \textcolor{keyword}{call }spinoru(p,za,zb,s)}
+\DoxyCodeLine{705 }
+\DoxyCodeLine{706       s12=s(1,2)}
+\DoxyCodeLine{707       s45=s(4,5)}
+\DoxyCodeLine{708       s123=s(1,2)+s(1,3)+s(2,3)}
+\DoxyCodeLine{709       s456=s(4,5)+s(4,6)+s(5,6)}
+\DoxyCodeLine{710 }
+\DoxyCodeLine{711       kl=-\/mass\_f/vev*( kappa -\/(0d0,1d0)*kappa\_tilde )}
+\DoxyCodeLine{712       kr=-\/mass\_f/vev*( kappa +(0d0,1d0)*kappa\_tilde )}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714       amp =  + kr * ( za(1,3)*za(1,4)*zb(1,2)*zb(5,6)-\/ za(1,3)*za(3,4)*zb(2,3)*zb(5,6)) \&}
+\DoxyCodeLine{715              + kl * (-\/ za(1,3)*za(4,5)*zb(2,5)*zb(5,6)-\/ za(1,3)*za(4,6)*zb(2,6)*zb(5,6))}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{717 \textcolor{comment}{! overall factors and propagators}}
+\DoxyCodeLine{718       amp=amp/(s123-\/mass\_f**2+\mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{ci}}*mass\_f*ga\_f)/(s456-\/mass\_f**2+\mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{ci}}*mass\_f*ga\_f)/(s12-\/m\_w**2+\mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{ci}}*m\_w*ga\_w)/(s45-\/m\_w**2+\mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{ci}}*m\_w*ga\_w)}
+\DoxyCodeLine{719       amp=amp*16d0*\mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{ci}}*mass\_f*gwsq**2}
+\DoxyCodeLine{720       res = cdabs(amp)**2}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722    \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{723    \textcolor{keyword}{END SUBROUTINE}}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725 }
+\DoxyCodeLine{726 }
+\DoxyCodeLine{727 }
+\DoxyCodeLine{728 \textcolor{keyword}{subroutine }getdecay\_couplings\_spinors\_props(VVMode,idordered,pordered,h3,h4, sp,pV)}
+\DoxyCodeLine{729    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{730    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: VVMode,idordered(6:9),h3,h4}
+\DoxyCodeLine{731 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(in)} :: pordered(1:4,6:9)}
+\DoxyCodeLine{732    \textcolor{keywordtype}{complex(dp)}, \textcolor{keywordtype}{intent(out)} :: sp(3:4,1:4)}
+\DoxyCodeLine{733 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(out)} :: pV(3:4,1:4)}
+\DoxyCodeLine{734 \textcolor{keywordtype}{   real}(dp) :: s}
+\DoxyCodeLine{735    \textcolor{keywordtype}{complex(dp)} :: propV(1:2), aL1,aR1,aL2,aR2}
+\DoxyCodeLine{736 }
+\DoxyCodeLine{737    \textcolor{comment}{!        h3/h4 helicities: -\/1 == left, 1 == right}}
+\DoxyCodeLine{738    \textcolor{keywordflow}{if}( vvmode.eq.zzmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{739    \textcolor{comment}{!        ZZ DECAYS}}
+\DoxyCodeLine{740       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_)  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{741          al1=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{742          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{743       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{744          al1=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{745          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{746       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{747          al1=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{748          ar1=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{749       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{750          al1=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{751          ar1=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{752       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{753          al1=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{754          ar1=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{755       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{756          al1=0d0}
+\DoxyCodeLine{757          ar1=0d0}
+\DoxyCodeLine{758 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{759       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(elm\_) .or. abs(idordered(8)).eq.abs(mum\_)  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{760          al2=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{761          ar2=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{762       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{763          al2=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{764          ar2=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{765       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(nue\_) .or. abs(idordered(8)).eq.abs(num\_) .or. abs(idordered(8)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{766          al2=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{767          ar2=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{768       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(up\_) .or. abs(idordered(8)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{769          al2=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{770          ar2=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{771       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(dn\_) .or. abs(idordered(8)).eq.abs(str\_) .or. abs(idordered(8)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{772          al2=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{773          ar2=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{774       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{775          al2=0d0}
+\DoxyCodeLine{776          ar2=0d0}
+\DoxyCodeLine{777 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{778       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{779       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{780       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{781       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{782       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{783       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{784       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{785       propv(1) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{786       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{787       propv(2) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{788 }
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790 }
+\DoxyCodeLine{791    \textcolor{keywordflow}{elseif}( vvmode.eq.wwmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{792    \textcolor{comment}{!        WW DECAYS}}
+\DoxyCodeLine{793       \textcolor{keywordflow}{if}( isaquark(idordered(6)) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{794          al1 = bl * dsqrt(scale\_alpha\_w\_ud)}
+\DoxyCodeLine{795          ar1 = br * dsqrt(scale\_alpha\_w\_ud)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{796       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{797                (abs(idordered(6)).eq.abs(elp\_) .and. abs(idordered(7)).eq.abs(nue\_)) .or. (abs(idordered(7)).eq.abs(elp\_) .and. abs(idordered(6)).eq.abs(nue\_)) .or. \&}
+\DoxyCodeLine{798                (abs(idordered(6)).eq.abs(mup\_) .and. abs(idordered(7)).eq.abs(num\_)) .or. (abs(idordered(7)).eq.abs(mup\_) .and. abs(idordered(6)).eq.abs(num\_))      \&}
+\DoxyCodeLine{799             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{800          al1 = bl * dsqrt(scale\_alpha\_w\_ln)}
+\DoxyCodeLine{801          ar1 = br * dsqrt(scale\_alpha\_w\_ln)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{802       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{803                (abs(idordered(6)).eq.abs(tap\_) .and. abs(idordered(7)).eq.abs(nut\_)) .or. (abs(idordered(7)).eq.abs(tap\_) .and. abs(idordered(6)).eq.abs(nut\_))      \&}
+\DoxyCodeLine{804             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{805          al1 = bl * dsqrt(scale\_alpha\_w\_tn)}
+\DoxyCodeLine{806          ar1 = br * dsqrt(scale\_alpha\_w\_tn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{807       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{808          al1=0d0}
+\DoxyCodeLine{809          ar1=0d0}
+\DoxyCodeLine{810 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{811       \textcolor{keywordflow}{if}( isaquark(idordered(8)) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{812          al2 = bl * dsqrt(scale\_alpha\_w\_ud)}
+\DoxyCodeLine{813          ar2 = br * dsqrt(scale\_alpha\_w\_ud)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{814       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{815                (abs(idordered(8)).eq.abs(elm\_) .and. abs(idordered(9)).eq.abs(anue\_)) .or. (abs(idordered(9)).eq.abs(elm\_) .and. abs(idordered(8)).eq.abs(anue\_)) .or. \&}
+\DoxyCodeLine{816                (abs(idordered(8)).eq.abs(mum\_) .and. abs(idordered(9)).eq.abs(anum\_)) .or. (abs(idordered(9)).eq.abs(mum\_) .and. abs(idordered(8)).eq.abs(anum\_))      \&}
+\DoxyCodeLine{817             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{818          al2 = bl * dsqrt(scale\_alpha\_w\_ln)}
+\DoxyCodeLine{819          ar2 = br * dsqrt(scale\_alpha\_w\_ln)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{820       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{821                (abs(idordered(8)).eq.abs(tam\_) .and. abs(idordered(9)).eq.abs(anut\_)) .or. (abs(idordered(9)).eq.abs(tam\_) .and. abs(idordered(8)).eq.abs(anut\_))      \&}
+\DoxyCodeLine{822             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{823          al2 = bl * dsqrt(scale\_alpha\_w\_tn)}
+\DoxyCodeLine{824          ar2 = br * dsqrt(scale\_alpha\_w\_tn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{825       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{826          al2=0d0}
+\DoxyCodeLine{827          ar2=0d0}
+\DoxyCodeLine{828 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{829       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{830       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{831       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{832       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{833       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{834       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{835       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{836       propv(1) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{837       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{838       propv(2) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{839 }
+\DoxyCodeLine{840 }
+\DoxyCodeLine{841    \textcolor{keywordflow}{elseif}( vvmode.eq.zgmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{842    \textcolor{comment}{!        Zgamma DECAYS}}
+\DoxyCodeLine{843       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{844          al1=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{845          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{846       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{847          al1=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{848          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{849       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{850          al1=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{851          ar1=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{852       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{853          al1=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{854          ar1=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{855       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{856          al1=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{857          ar1=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{858       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{859          al1=0d0}
+\DoxyCodeLine{860          ar1=0d0}
+\DoxyCodeLine{861 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{862       al2=1d0}
+\DoxyCodeLine{863       ar2=1d0}
+\DoxyCodeLine{864       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{865       pv(4,:) = pordered(:,8)}
+\DoxyCodeLine{866       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{867       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{868       sp(4,:) = pol\_mless2(dcmplx(pordered(:,8)),h4,\textcolor{stringliteral}{'out'})  \textcolor{comment}{! photon}}
+\DoxyCodeLine{869       \textcolor{comment}{!sp(4,1:4)=pV(4,1:4); print *, "this checks gauge invariance"}}
+\DoxyCodeLine{870       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{871       propv(1) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{872       propv(2)=1d0}
+\DoxyCodeLine{873 }
+\DoxyCodeLine{874 }
+\DoxyCodeLine{875    \textcolor{keywordflow}{elseif}( vvmode.eq.ggmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{876    \textcolor{comment}{!        gamma gamma DECAYS}}
+\DoxyCodeLine{877       al1=1d0}
+\DoxyCodeLine{878       ar1=1d0}
+\DoxyCodeLine{879       al2=1d0}
+\DoxyCodeLine{880       ar2=1d0}
+\DoxyCodeLine{881       pv(3,:) = pordered(:,6)}
+\DoxyCodeLine{882       pv(4,:) = pordered(:,8)}
+\DoxyCodeLine{883       sp(3,:) = pol\_mless2(dcmplx(pordered(:,6)),h3,\textcolor{stringliteral}{'out'})  \textcolor{comment}{! photon}}
+\DoxyCodeLine{884       sp(4,:) = pol\_mless2(dcmplx(pordered(:,8)),h4,\textcolor{stringliteral}{'out'})  \textcolor{comment}{! photon}}
+\DoxyCodeLine{885       \textcolor{comment}{!sp(3,1:4)=pV(3,1:4); print *, "this checks gauge invariance"}}
+\DoxyCodeLine{886       \textcolor{comment}{!sp(4,1:4)=pV(4,1:4)}}
+\DoxyCodeLine{887       propv(1)=1d0}
+\DoxyCodeLine{888       propv(2)=1d0}
+\DoxyCodeLine{889 }
+\DoxyCodeLine{890 }
+\DoxyCodeLine{891    \textcolor{keywordflow}{elseif}( vvmode.eq.gsgmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{892    \textcolor{comment}{!        gamma* gamma DECAYS}}
+\DoxyCodeLine{893       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{894          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{895          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{896       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{897          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{898          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{899       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{900          al1=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{901          ar1=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{902       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{903          al1=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{904          ar1=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{905       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{906          al1=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{907          ar1=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{908       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{909          al1=0d0}
+\DoxyCodeLine{910          ar1=0d0}
+\DoxyCodeLine{911 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{912       al2=1d0}
+\DoxyCodeLine{913       ar2=1d0}
+\DoxyCodeLine{914       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{915       pv(4,:) = pordered(:,8)}
+\DoxyCodeLine{916       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{917       sp(3,:) = -\/sp(3,:) \textcolor{comment}{! photon propagator}}
+\DoxyCodeLine{918       sp(4,:) = pol\_mless2(dcmplx(pordered(:,8)),h4,\textcolor{stringliteral}{'out'})  \textcolor{comment}{! photon}}
+\DoxyCodeLine{919       \textcolor{comment}{!sp(4,1:4)=pV(4,1:4); print *, "this checks gauge invariance"}}
+\DoxyCodeLine{920       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{921       propv(1) = 1d0}
+\DoxyCodeLine{922       propv(2) = 1d0}
+\DoxyCodeLine{923       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(1)=czero}
+\DoxyCodeLine{924 }
+\DoxyCodeLine{925 }
+\DoxyCodeLine{926    \textcolor{keywordflow}{elseif}( vvmode.eq.gszmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{927    \textcolor{comment}{!        gamma* Z DECAYS}}
+\DoxyCodeLine{928       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_)  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{929          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{930          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{931       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{932          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{933          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{934       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{935          al1=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{936          ar1=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{937       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{938          al1=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{939          ar1=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{940       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{941          al1=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{942          ar1=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{943       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{944          al1=0d0}
+\DoxyCodeLine{945          ar1=0d0}
+\DoxyCodeLine{946 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{947       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(elm\_) .or. abs(idordered(8)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{948          al2=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{949          ar2=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{950       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{951          al2=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{952          ar2=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{953       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(nue\_) .or. abs(idordered(8)).eq.abs(num\_) .or. abs(idordered(8)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{954          al2=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{955          ar2=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{956       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(up\_) .or. abs(idordered(8)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{957          al2=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{958          ar2=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{959       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(dn\_) .or. abs(idordered(8)).eq.abs(str\_) .or. abs(idordered(8)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{960          al2=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{961          ar2=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{962       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{963          al2=0d0}
+\DoxyCodeLine{964          ar2=0d0}
+\DoxyCodeLine{965 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{966       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{967       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{968       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{969       sp(3,:) = -\/sp(3,:)}
+\DoxyCodeLine{970       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{971       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{972       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{973       propv(1) = 1d0\textcolor{comment}{! = s/dcmplx(s)}}
+\DoxyCodeLine{974       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(1)=czero}
+\DoxyCodeLine{975       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{976       propv(2) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{977 }
+\DoxyCodeLine{978 }
+\DoxyCodeLine{979    \textcolor{keywordflow}{elseif}( vvmode.eq.zgsmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{980    \textcolor{comment}{!        Z gamma* DECAYS}}
+\DoxyCodeLine{981       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{982          al1=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{983          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{984       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{985          al1=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{986          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{987       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{988          al1=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{989          ar1=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{990       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{991          al1=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{992          ar1=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{993       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{994          al1=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{995          ar1=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{996       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{997          al1=0d0}
+\DoxyCodeLine{998          ar1=0d0}
+\DoxyCodeLine{999 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1000       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(elm\_) .or. abs(idordered(8)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1001          al2=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1002          ar2=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1003       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1004          al2=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1005          ar2=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1006       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(nue\_) .or. abs(idordered(8)).eq.abs(num\_) .or. abs(idordered(8)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1007          al2=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1008          ar2=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1009       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(up\_) .or. abs(idordered(8)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1010          al2=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1011          ar2=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1012       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(dn\_) .or. abs(idordered(8)).eq.abs(str\_) .or. abs(idordered(8)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1013          al2=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1014          ar2=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1015       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1016          al2=0d0}
+\DoxyCodeLine{1017          ar2=0d0}
+\DoxyCodeLine{1018 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1019       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1020       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1021       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1022       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1023       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1024       sp(4,:) = -\/sp(4,:)}
+\DoxyCodeLine{1025       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1026       propv(1) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{1027       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1028       propv(2) = 1d0 \textcolor{comment}{! = s/dcmplx(s)}}
+\DoxyCodeLine{1029       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(2)=czero}
+\DoxyCodeLine{1030 }
+\DoxyCodeLine{1031 }
+\DoxyCodeLine{1032    \textcolor{keywordflow}{elseif}( vvmode.eq.gsgsmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1033    \textcolor{comment}{!        gamma* gamma* DECAYS}}
+\DoxyCodeLine{1034       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1035          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1036          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1037       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1038          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1039          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1040       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1041          al1=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1042          ar1=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1043       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1044          al1=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1045          ar1=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1046       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1047          al1=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1048          ar1=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1049       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1050          al1=0d0}
+\DoxyCodeLine{1051          ar1=0d0}
+\DoxyCodeLine{1052 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1053       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(elm\_) .or. abs(idordered(8)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1054          al2=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1055          ar2=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1056       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1057          al2=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1058          ar2=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1059       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(nue\_) .or. abs(idordered(8)).eq.abs(num\_) .or. abs(idordered(8)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1060          al2=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1061          ar2=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1062       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(up\_) .or. abs(idordered(8)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1063          al2=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1064          ar2=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1065       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(dn\_) .or. abs(idordered(8)).eq.abs(str\_) .or. abs(idordered(8)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1066          al2=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1067          ar2=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1068       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1069          al2=0d0}
+\DoxyCodeLine{1070          ar2=0d0}
+\DoxyCodeLine{1071 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1072       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1073       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1074       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1075       sp(3,:) = -\/sp(3,:)}
+\DoxyCodeLine{1076       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1077       sp(4,:) = -\/sp(4,:)}
+\DoxyCodeLine{1078       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1079       propv(1) = 1d0 \textcolor{comment}{! = s/dcmplx(s)}}
+\DoxyCodeLine{1080       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(1)=czero}
+\DoxyCodeLine{1081       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1082       propv(2) = 1d0 \textcolor{comment}{! = s/dcmplx(s)}}
+\DoxyCodeLine{1083       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(2)=czero}
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1085 }
+\DoxyCodeLine{1086    \textcolor{keywordflow}{elseif}( vvmode.eq.zpzmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1087    \textcolor{comment}{!        Z'Z DECAYS}}
+\DoxyCodeLine{1088       al1 = vpffcoupling(idordered(6),-\/1,.false.)}
+\DoxyCodeLine{1089       ar1 = vpffcoupling(idordered(6),+1,.false.)}
+\DoxyCodeLine{1090       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(elm\_) .or. abs(idordered(8)).eq.abs(mum\_)  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1091          al2=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1092          ar2=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1093       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1094          al2=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1095          ar2=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1096       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(nue\_) .or. abs(idordered(8)).eq.abs(num\_) .or. abs(idordered(8)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1097          al2=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{1098          ar2=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{1099       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(up\_) .or. abs(idordered(8)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1100          al2=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1101          ar2=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1102       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(dn\_) .or. abs(idordered(8)).eq.abs(str\_) .or. abs(idordered(8)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1103          al2=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1104          ar2=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1105       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1106          al2=0d0}
+\DoxyCodeLine{1107          ar2=0d0}
+\DoxyCodeLine{1108 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1109 }
+\DoxyCodeLine{1110       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1111       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1112       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1113       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1114       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1115       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1116       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1117       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1118         propv(1) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1119       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1120         propv(1) = 1d0}
+\DoxyCodeLine{1121       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1122         propv(1) = s/m\_z**2}
+\DoxyCodeLine{1123 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1124       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1125       propv(2) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{1126 }
+\DoxyCodeLine{1127 }
+\DoxyCodeLine{1128    \textcolor{keywordflow}{elseif}( vvmode.eq.zzpmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1129    \textcolor{comment}{!        ZZ' DECAYS}}
+\DoxyCodeLine{1130       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_)  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1131          al1=al\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1132          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1133       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1134          al1=al\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1135          ar1=ar\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1136       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1137          al1=al\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{1138          ar1=ar\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{1139       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1140          al1=al\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1141          ar1=ar\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1142       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1143          al1=al\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1144          ar1=ar\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1145       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1146          al1=0d0}
+\DoxyCodeLine{1147          ar1=0d0}
+\DoxyCodeLine{1148 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1149       al2 = vpffcoupling(idordered(8),-\/1,.false.)}
+\DoxyCodeLine{1150       ar2 = vpffcoupling(idordered(8),+1,.false.)}
+\DoxyCodeLine{1151 }
+\DoxyCodeLine{1152       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1153       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1154       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1155       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1156       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1157       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1158       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1159       propv(1) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{1160       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1161       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1162         propv(2) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1163       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1164         propv(2) = 1d0}
+\DoxyCodeLine{1165       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1166         propv(2) = s/m\_z**2}
+\DoxyCodeLine{1167 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1168 }
+\DoxyCodeLine{1169 }
+\DoxyCodeLine{1170    \textcolor{keywordflow}{elseif}( vvmode.eq.zpzpmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1171    \textcolor{comment}{!        Z'Z' DECAYS}}
+\DoxyCodeLine{1172       al1 = vpffcoupling(idordered(6),-\/1,.false.)}
+\DoxyCodeLine{1173       ar1 = vpffcoupling(idordered(6),+1,.false.)}
+\DoxyCodeLine{1174       al2 = vpffcoupling(idordered(8),-\/1,.false.)}
+\DoxyCodeLine{1175       ar2 = vpffcoupling(idordered(8),+1,.false.)}
+\DoxyCodeLine{1176 }
+\DoxyCodeLine{1177       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1178       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1179       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1180       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1181       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1182       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1183       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1184       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1185         propv(1) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1186       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1187         propv(1) = 1d0}
+\DoxyCodeLine{1188       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1189         propv(1) = s/m\_z**2}
+\DoxyCodeLine{1190 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1191       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1192       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1193         propv(2) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1194       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1195         propv(2) = 1d0}
+\DoxyCodeLine{1196       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1197         propv(2) = s/m\_z**2}
+\DoxyCodeLine{1198 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1199 }
+\DoxyCodeLine{1200 }
+\DoxyCodeLine{1201    \textcolor{keywordflow}{elseif}( vvmode.eq.zpgsmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1202    \textcolor{comment}{!        Z' gamma* DECAYS}}
+\DoxyCodeLine{1203       al1 = vpffcoupling(idordered(6),-\/1,.false.)}
+\DoxyCodeLine{1204       ar1 = vpffcoupling(idordered(6),+1,.false.)}
+\DoxyCodeLine{1205       \textcolor{keywordflow}{if}( abs(idordered(8)).eq.abs(elm\_) .or. abs(idordered(8)).eq.abs(mum\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1206          al2=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1207          ar2=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1208       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1209          al2=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1210          ar2=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1211       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(nue\_) .or. abs(idordered(8)).eq.abs(num\_) .or. abs(idordered(8)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1212          al2=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1213          ar2=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1214       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(up\_) .or. abs(idordered(8)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1215          al2=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1216          ar2=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1217       \textcolor{keywordflow}{elseif}( abs(idordered(8)).eq.abs(dn\_) .or. abs(idordered(8)).eq.abs(str\_) .or. abs(idordered(8)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1218          al2=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1219          ar2=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1220       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1221          al2=0d0}
+\DoxyCodeLine{1222          ar2=0d0}
+\DoxyCodeLine{1223 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1224 }
+\DoxyCodeLine{1225       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1226       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1227       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1228       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1229       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1230       sp(4,:) = -\/sp(4,:)}
+\DoxyCodeLine{1231       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1232       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1233         propv(1) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1234       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1235         propv(1) = 1d0}
+\DoxyCodeLine{1236       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1237         propv(1) = s/m\_z**2}
+\DoxyCodeLine{1238 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1239       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1240       propv(2) = 1d0 \textcolor{comment}{! = s/dcmplx(s)}}
+\DoxyCodeLine{1241       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(2)=czero}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243    \textcolor{keywordflow}{elseif}( vvmode.eq.gszpmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1244    \textcolor{comment}{!        gamma* Z' DECAYS}}
+\DoxyCodeLine{1245       \textcolor{keywordflow}{if}( abs(idordered(6)).eq.abs(elm\_) .or. abs(idordered(6)).eq.abs(mum\_)  ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1246          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1247          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_ll)}
+\DoxyCodeLine{1248       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(tam\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1249          al1=cl\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1250          ar1=cr\_lep    * dsqrt(scale\_alpha\_z\_tt)}
+\DoxyCodeLine{1251       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(nue\_) .or. abs(idordered(6)).eq.abs(num\_) .or. abs(idordered(6)).eq.abs(nut\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1252          al1=cl\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{1253          ar1=cr\_neu    * dsqrt(scale\_alpha\_z\_nn)}
+\DoxyCodeLine{1254       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(up\_) .or. abs(idordered(6)).eq.abs(chm\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1255          al1=cl\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1256          ar1=cr\_qup    * dsqrt(scale\_alpha\_z\_uu)}
+\DoxyCodeLine{1257       \textcolor{keywordflow}{elseif}( abs(idordered(6)).eq.abs(dn\_) .or. abs(idordered(6)).eq.abs(str\_) .or. abs(idordered(6)).eq.abs(bot\_) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1258          al1=cl\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1259          ar1=cr\_qdn    * dsqrt(scale\_alpha\_z\_dd)}
+\DoxyCodeLine{1260       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1261          al1=0d0}
+\DoxyCodeLine{1262          ar1=0d0}
+\DoxyCodeLine{1263 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1264       al2 = vpffcoupling(idordered(8),-\/1,.false.)}
+\DoxyCodeLine{1265       ar2 = vpffcoupling(idordered(8),+1,.false.)}
+\DoxyCodeLine{1266 }
+\DoxyCodeLine{1267       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1268       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1269       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1270       sp(3,:) = -\/sp(3,:)}
+\DoxyCodeLine{1271       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1272       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1273       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1274       propv(1) = 1d0\textcolor{comment}{! = s/dcmplx(s)}}
+\DoxyCodeLine{1275       \textcolor{keywordflow}{if}( s.lt.mphotoncutoff**2 ) propv(1)=czero}
+\DoxyCodeLine{1276       s = scr(pordered(:,8)+pordered(:,9),pordered(:,8)+pordered(:,9))}
+\DoxyCodeLine{1277       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1278         propv(2) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1279       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1280         propv(2) = 1d0}
+\DoxyCodeLine{1281       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1282         propv(2) = s/m\_z**2}
+\DoxyCodeLine{1283 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1284 }
+\DoxyCodeLine{1285 }
+\DoxyCodeLine{1286    \textcolor{keywordflow}{elseif}( vvmode.eq.zpgmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1287    \textcolor{comment}{!        Z' gamma DECAYS}}
+\DoxyCodeLine{1288       al1 = vpffcoupling(idordered(6),-\/1,.false.)}
+\DoxyCodeLine{1289       ar1 = vpffcoupling(idordered(6),+1,.false.)}
+\DoxyCodeLine{1290       al2=1d0}
+\DoxyCodeLine{1291       ar2=1d0}
+\DoxyCodeLine{1292       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1293       pv(4,:) = pordered(:,8)}
+\DoxyCodeLine{1294       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1295       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1296       sp(4,:) = pol\_mless2(dcmplx(pordered(:,8)),h4,\textcolor{stringliteral}{'out'})  \textcolor{comment}{! photon}}
+\DoxyCodeLine{1297       s = scr(pordered(:,6)+pordered(:,7),pordered(:,6)+pordered(:,7))}
+\DoxyCodeLine{1298       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1299         propv(1) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1300       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1301         propv(1) = 1d0}
+\DoxyCodeLine{1302       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1303         propv(1) = s/m\_z**2}
+\DoxyCodeLine{1304 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1305       propv(2)=1d0}
+\DoxyCodeLine{1306 }
+\DoxyCodeLine{1307 }
+\DoxyCodeLine{1308    \textcolor{keywordflow}{elseif}( vvmode.eq.wpwmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1309    \textcolor{comment}{!        W'W DECAYS}}
+\DoxyCodeLine{1310       al1 = vpffcoupling(idordered(6),-\/1,.true.)}
+\DoxyCodeLine{1311       ar1 = vpffcoupling(idordered(6),+1,.true.)}
+\DoxyCodeLine{1312       \textcolor{keywordflow}{if}( isaquark(idordered(8)) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1313          al2 = bl * dsqrt(scale\_alpha\_w\_ud)}
+\DoxyCodeLine{1314          ar2 = br * dsqrt(scale\_alpha\_w\_ud)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1315       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{1316                (abs(idordered(8)).eq.abs(elm\_) .and. abs(idordered(9)).eq.abs(anue\_)) .or. (abs(idordered(9)).eq.abs(elm\_) .and. abs(idordered(8)).eq.abs(anue\_)) .or. \&}
+\DoxyCodeLine{1317                (abs(idordered(8)).eq.abs(mum\_) .and. abs(idordered(9)).eq.abs(anum\_)) .or. (abs(idordered(9)).eq.abs(mum\_) .and. abs(idordered(8)).eq.abs(anum\_))      \&}
+\DoxyCodeLine{1318             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1319          al2 = bl * dsqrt(scale\_alpha\_w\_ln)}
+\DoxyCodeLine{1320          ar2 = br * dsqrt(scale\_alpha\_w\_ln)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1321       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{1322                (abs(idordered(8)).eq.abs(tam\_) .and. abs(idordered(9)).eq.abs(anut\_)) .or. (abs(idordered(9)).eq.abs(tam\_) .and. abs(idordered(8)).eq.abs(anut\_))      \&}
+\DoxyCodeLine{1323             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1324          al2 = bl * dsqrt(scale\_alpha\_w\_tn)}
+\DoxyCodeLine{1325          ar2 = br * dsqrt(scale\_alpha\_w\_tn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1326       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1327          al2=0d0}
+\DoxyCodeLine{1328          ar2=0d0}
+\DoxyCodeLine{1329 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1330       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1331       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1332       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1333       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1334       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1335       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1336       s = scr(pv(3,:),pv(3,:))}
+\DoxyCodeLine{1337       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1338         propv(1) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1339       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1340         propv(1) = 1d0}
+\DoxyCodeLine{1341       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1342         propv(1) = s/m\_w**2}
+\DoxyCodeLine{1343 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1344       s = scr(pv(4,:),pv(4,:))}
+\DoxyCodeLine{1345       propv(2) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{1346 }
+\DoxyCodeLine{1347 }
+\DoxyCodeLine{1348    \textcolor{keywordflow}{elseif}( vvmode.eq.wwpmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1349    \textcolor{comment}{!        WW' DECAYS}}
+\DoxyCodeLine{1350       \textcolor{keywordflow}{if}( isaquark(idordered(6)) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1351          al1 = bl * dsqrt(scale\_alpha\_w\_ud)}
+\DoxyCodeLine{1352          ar1 = br * dsqrt(scale\_alpha\_w\_ud)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1353       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{1354                (abs(idordered(6)).eq.abs(elp\_) .and. abs(idordered(7)).eq.abs(nue\_)) .or. (abs(idordered(7)).eq.abs(elp\_) .and. abs(idordered(6)).eq.abs(nue\_)) .or. \&}
+\DoxyCodeLine{1355                (abs(idordered(6)).eq.abs(mup\_) .and. abs(idordered(7)).eq.abs(num\_)) .or. (abs(idordered(7)).eq.abs(mup\_) .and. abs(idordered(6)).eq.abs(num\_))      \&}
+\DoxyCodeLine{1356             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1357          al1 = bl * dsqrt(scale\_alpha\_w\_ln)}
+\DoxyCodeLine{1358          ar1 = br * dsqrt(scale\_alpha\_w\_ln)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1359       \textcolor{keywordflow}{elseif}( \&}
+\DoxyCodeLine{1360                (abs(idordered(6)).eq.abs(tap\_) .and. abs(idordered(7)).eq.abs(nut\_)) .or. (abs(idordered(7)).eq.abs(tap\_) .and. abs(idordered(6)).eq.abs(nut\_))      \&}
+\DoxyCodeLine{1361             ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1362          al1 = bl * dsqrt(scale\_alpha\_w\_tn)}
+\DoxyCodeLine{1363          ar1 = br * dsqrt(scale\_alpha\_w\_tn)\textcolor{comment}{! = 0}}
+\DoxyCodeLine{1364       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1365          al1=0d0}
+\DoxyCodeLine{1366          ar1=0d0}
+\DoxyCodeLine{1367 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1368       al2 = vpffcoupling(idordered(8),-\/1,.true.)}
+\DoxyCodeLine{1369       ar2 = vpffcoupling(idordered(8),+1,.true.)}
+\DoxyCodeLine{1370 }
+\DoxyCodeLine{1371       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1372       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1373       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1374       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1375       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1376       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1377       s = scr(pv(3,:),pv(3,:))}
+\DoxyCodeLine{1378       propv(1) = s/dcmplx(s -\/ m\_v**2,m\_v*ga\_v)}
+\DoxyCodeLine{1379       s = scr(pv(4,:),pv(4,:))}
+\DoxyCodeLine{1380       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1381         propv(2) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1382       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1383         propv(2) = 1d0}
+\DoxyCodeLine{1384       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1385         propv(2) = s/m\_w**2}
+\DoxyCodeLine{1386 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1387 }
+\DoxyCodeLine{1388 }
+\DoxyCodeLine{1389    \textcolor{keywordflow}{elseif}( vvmode.eq.wpwpmode ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1390    \textcolor{comment}{!        W'W' DECAYS}}
+\DoxyCodeLine{1391       al1 = vpffcoupling(idordered(6),-\/1,.true.)}
+\DoxyCodeLine{1392       ar1 = vpffcoupling(idordered(6),+1,.true.)}
+\DoxyCodeLine{1393       al2 = vpffcoupling(idordered(8),-\/1,.true.)}
+\DoxyCodeLine{1394       ar2 = vpffcoupling(idordered(8),+1,.true.)}
+\DoxyCodeLine{1395 }
+\DoxyCodeLine{1396       pv(3,:) = pordered(:,6)+pordered(:,7)}
+\DoxyCodeLine{1397       pv(4,:) = pordered(:,8)+pordered(:,9)}
+\DoxyCodeLine{1398       sp(3,:) = pol\_dk2mom(dcmplx(pordered(:,6)),dcmplx(pordered(:,7)),h3)  \textcolor{comment}{! ubar(l1), v(l2)}}
+\DoxyCodeLine{1399       sp(3,:) = -\/sp(3,:) + pv(3,:)*( sc(sp(3,:),dcmplx(pv(3,:))) )/scr(pv(3,:),pv(3,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1400       sp(4,:) = pol\_dk2mom(dcmplx(pordered(:,8)),dcmplx(pordered(:,9)),h4)  \textcolor{comment}{! ubar(l3), v(l4)}}
+\DoxyCodeLine{1401       sp(4,:) = -\/sp(4,:) + pv(4,:)*( sc(sp(4,:),dcmplx(pv(4,:))) )/scr(pv(4,:),pv(4,:))\textcolor{comment}{! full propagator numerator}}
+\DoxyCodeLine{1402       s = scr(pv(3,:),pv(3,:))}
+\DoxyCodeLine{1403       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1404         propv(1) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1405       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1406         propv(1) = 1d0}
+\DoxyCodeLine{1407       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1408         propv(1) = s/m\_w**2}
+\DoxyCodeLine{1409 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{1410       s = scr(pv(4,:),pv(4,:))}
+\DoxyCodeLine{1411       \textcolor{keywordflow}{if}( m\_vprime .gt. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1412         propv(2) = s/dcmplx(s -\/ m\_vprime**2,m\_vprime*ga\_vprime)}
+\DoxyCodeLine{1413       \textcolor{keywordflow}{elseif}( m\_vprime .eq. 0d0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1414         propv(2) = 1d0}
+\DoxyCodeLine{1415       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1416         propv(2) = s/m\_w**2}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_a995340651e4f644c8b35e14349e6efcc}\label{namespacemodhiggs_a995340651e4f644c8b35e14349e6efcc}} 
 \index{modhiggs@{modhiggs}!getdecay\_vvmode\_ordering@{getdecay\_vvmode\_ordering}}
 \index{getdecay\_vvmode\_ordering@{getdecay\_vvmode\_ordering}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{getdecay\_vvmode\_ordering()}{getdecay\_vvmode\_ordering()}}
 {\footnotesize\ttfamily subroutine modhiggs\+::getdecay\+\_\+vvmode\+\_\+ordering (\begin{DoxyParamCaption}\item[{integer, dimension(6\+:9), intent(in)}]{M\+Y\+\_\+\+I\+D\+UP,  }\item[{integer, intent(out)}]{V\+V\+Mode,  }\item[{integer, dimension(1\+:4), intent(out)}]{ordering,  }\item[{integer, intent(out)}]{V\+V\+Mode\+\_\+swap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line 1420 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1420    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1421       \textcolor{keyword}{call }error(\textcolor{stringliteral}{"Unsupported decay modes"})}
+\DoxyCodeLine{1422 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1423 }
+\DoxyCodeLine{1424    \textcolor{comment}{!print *,"sp(3)=",sp(3,:)}}
+\DoxyCodeLine{1425    \textcolor{comment}{!print *,"propV(1)=",propV(1)}}
+\DoxyCodeLine{1426    \textcolor{comment}{!print *,"aL1,aR1=",aL1,aR1}}
+\DoxyCodeLine{1427    \textcolor{comment}{!print *,"sp(4)=",sp(4,:)}}
+\DoxyCodeLine{1428    \textcolor{comment}{!print *,"propV(2)=",propV(2)}}
+\DoxyCodeLine{1429    \textcolor{comment}{!print *,"aL2,aR2=",aL2,aR2}}
+\DoxyCodeLine{1430 }
+\DoxyCodeLine{1431    sp(3,:) = sp(3,:)*propv(1)}
+\DoxyCodeLine{1432    sp(4,:) = sp(4,:)*propv(2)}
+\DoxyCodeLine{1433    \textcolor{keywordflow}{if} (h3.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1434       sp(3,:) = al1 * sp(3,:)}
+\DoxyCodeLine{1435    \textcolor{keywordflow}{elseif}(h3.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1436       sp(3,:) = ar1 * sp(3,:)}
+\DoxyCodeLine{1437 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1438    \textcolor{keywordflow}{if} (h4.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1439       sp(4,:) = al2 * sp(4,:)}
+\DoxyCodeLine{1440    \textcolor{keywordflow}{elseif}(h4.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1441       sp(4,:) = ar2 * sp(4,:)}
+\DoxyCodeLine{1442 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1443 }
+\DoxyCodeLine{1444    \textcolor{keywordflow}{return}}
+\DoxyCodeLine{1445 \textcolor{keyword}{end subroutine}}
+\DoxyCodeLine{1446 }
+\DoxyCodeLine{1447 \textcolor{keyword}{subroutine }getdecay\_vvmode\_ordering(MY\_IDUP, VVMode,ordering,VVMode\_swap,ordering\_swap)}
+\DoxyCodeLine{1448    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{1449    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: MY\_IDUP(6:9)}
+\DoxyCodeLine{1450    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(out)} :: VVMode,ordering(1:4),VVMode\_swap,ordering\_swap(1:4)}
+\DoxyCodeLine{1451    \textcolor{keywordtype}{integer} :: idV(1:2),idV\_swap(1:2)}
+\DoxyCodeLine{1452 }
+\DoxyCodeLine{1453    ordering=(/3,4,5,6/)}
+\DoxyCodeLine{1454    idv(1)=coupledvertex(my\_idup(6:7),-\/1)}
+\DoxyCodeLine{1455    idv(2)=coupledvertex(my\_idup(8:9),-\/1)}
+\DoxyCodeLine{1456    \textcolor{keywordflow}{if}(my\_idup(6).eq.pho\_ .or. my\_idup(7).eq.pho\_) idv(1)=pho\_}
+\DoxyCodeLine{1457    \textcolor{keywordflow}{if}(my\_idup(8).eq.pho\_ .or. my\_idup(9).eq.pho\_) idv(2)=pho\_}
+\DoxyCodeLine{1458    \textcolor{keywordflow}{if}(convertlhe(my\_idup(6)).lt.0 .or. my\_idup(6).eq.not\_a\_particle\_) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1459       \textcolor{keyword}{call }swap(ordering(1),ordering(2))}
+\DoxyCodeLine{1460 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1461    \textcolor{keywordflow}{if}(convertlhe(my\_idup(8)).lt.0 .or. my\_idup(8).eq.not\_a\_particle\_) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1462       \textcolor{keyword}{call }swap(ordering(3),ordering(4))}
+\DoxyCodeLine{1463 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1464    \textcolor{keywordflow}{if}( \&}
+\DoxyCodeLine{1465          (idv(1).eq.wm\_ .and. idv(2).eq.wp\_) .or. \&}
+\DoxyCodeLine{1466          (idv(2).eq.z0\_ .and. idv(1).eq.pho\_) \&}
+\DoxyCodeLine{1467      ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1468       \textcolor{keyword}{call }swap(ordering(1),ordering(3))}
+\DoxyCodeLine{1469       \textcolor{keyword}{call }swap(ordering(2),ordering(4))}
+\DoxyCodeLine{1470       \textcolor{keyword}{call }swap(idv(1),idv(2))}
+\DoxyCodeLine{1471 \textcolor{keywordflow}{   endif}}
+\DoxyCodeLine{1472    ordering\_swap(:)=ordering(:)}
+\DoxyCodeLine{1473    \textcolor{keyword}{call }swap(ordering\_swap(1),ordering\_swap(3))}
+\DoxyCodeLine{1474 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_aa9c8911ccacc777ecae2067b406ef752}\label{namespacemodhiggs_aa9c8911ccacc777ecae2067b406ef752}} 
 \index{modhiggs@{modhiggs}!gghzzampl@{gghzzampl}}
 \index{gghzzampl@{gghzzampl}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{gghzzampl()}{gghzzampl()}}
 {\footnotesize\ttfamily subroutine modhiggs\+::gghzzampl (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{real(dp), dimension(4,4), intent(in)}]{p,  }\item[{complex(dp), dimension(4,4), intent(in)}]{sp,  }\item[{complex(dp), intent(out)}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line 185 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185       \textcolor{comment}{!print *,"id(7)=",convertLHE(MY\_IDUP(l2))}}
+\DoxyCodeLine{186       \textcolor{comment}{!print *,"id(8)=",convertLHE(MY\_IDUP(l3))}}
+\DoxyCodeLine{187       \textcolor{comment}{!print *,"id(9)=",convertLHE(MY\_IDUP(l4))}}
+\DoxyCodeLine{188       \textcolor{comment}{!print *,"p(6)=",(p(:,l1))}}
+\DoxyCodeLine{189       \textcolor{comment}{!print *,"p(7)=",(p(:,l2))}}
+\DoxyCodeLine{190       \textcolor{comment}{!print *,"p(8)=",(p(:,l3))}}
+\DoxyCodeLine{191       \textcolor{comment}{!print *,"p(9)=",(p(:,l4))}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193       propg = \mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}}/dcmplx(2d0*scr(p(:,1),p(:,2)) -\/ m\_reso**2,m\_reso*ga\_reso\textcolor{comment}{)}}
+\DoxyCodeLine{194 \textcolor{comment}{}}
+\DoxyCodeLine{195       pin(1,:) = p(:,1)}
+\DoxyCodeLine{196       pin(2,:) = p(:,2)}
+\DoxyCodeLine{197       sp(1,:) = pol\_mless2(dcmplx(p(:,1)),-\/3+2*i1,\textcolor{stringliteral}{'in'})  \textcolor{comment}{! gluon}}
+\DoxyCodeLine{198       sp(2,:) = pol\_mless2(dcmplx(p(:,2)),-\/3+2*i2,\textcolor{stringliteral}{'in'})  \textcolor{comment}{! gluon}}
+\DoxyCodeLine{199       \textcolor{comment}{!sp(1,1:4)=pin(1,1:4);print *, "this checks IS gauge invariance"}}
+\DoxyCodeLine{200       \textcolor{comment}{!sp(2,1:4)=pin(2,1:4);print *, "this checks IS gauge invariance"}}
+\DoxyCodeLine{201       \textcolor{keyword}{call }getdecay\_couplings\_spinors\_props(                            \textcolor{comment}{                                 \&}}
+\DoxyCodeLine{202 \textcolor{comment}{}                                       vvmode,                          \textcolor{comment}{                            \&}}
+\DoxyCodeLine{203 \textcolor{comment}{}                                       (/my\_idup(l1+3),my\_idup(l2+3),my\_idup\textcolor{comment}{(l3+3),my\_idup(l4+3)/), \&}}
+\DoxyCodeLine{204 \textcolor{comment}{}                                       (/p(:,l1),p(:,l2),p(:,l3),p(:,l4)\textcolor{comment}{/),                         \&}}
+\DoxyCodeLine{205 \textcolor{comment}{}                                       -\/3+2*i3,-\/3+2*i4,                 \textcolor{comment}{                            \&}}
+\DoxyCodeLine{206 \textcolor{comment}{}                                       sp(3:4,:),pin(3:4,:)             \textcolor{comment}{                            \&}}
+\DoxyCodeLine{207 \textcolor{comment}{}                                      )}
+\DoxyCodeLine{208       \textcolor{keyword}{call }gghzzampl(vvmode,pin,sp,a(1))}
+\DoxyCodeLine{209       a(1) = a(1) * propg}
+\DoxyCodeLine{210    \textcolor{keyword}{end subroutine}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212       \textcolor{keyword}{SUBROUTINE }gghzzampl(VVMode,p,sp,res)}
+\DoxyCodeLine{213       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{214       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: VVMode}
+\DoxyCodeLine{215 \textcolor{keywordtype}{      real}(dp), \textcolor{keywordtype}{intent(in)} :: p(4,4)}
+\DoxyCodeLine{216       \textcolor{keywordtype}{complex(dp)}, \textcolor{keywordtype}{intent(in)} :: sp(4,4)}
+\DoxyCodeLine{217       \textcolor{keywordtype}{complex(dp)}, \textcolor{keywordtype}{intent(out)} :: res}
+\DoxyCodeLine{218       \textcolor{keywordtype}{complex(dp)} :: e1\_e2, e1\_e3, e1\_e4}
+\DoxyCodeLine{219       \textcolor{keywordtype}{complex(dp)} :: e2\_e3, e2\_e4}
+\DoxyCodeLine{220       \textcolor{keywordtype}{complex(dp)} :: e3\_e4}
+\DoxyCodeLine{221       \textcolor{keywordtype}{complex(dp)} :: q1\_e3,q1\_e4,q2\_e3,q2\_e4}
+\DoxyCodeLine{222       \textcolor{keywordtype}{complex(dp)} :: e1\_q3,e1\_q4,e2\_q3,e2\_q4}
+\DoxyCodeLine{223       \textcolor{keywordtype}{complex(dp)} :: e3\_q4,e4\_q3}
+\DoxyCodeLine{224       \textcolor{keywordtype}{complex(dp)} :: q1(4),q2(4),q3(4),q4(4),q(4)}
+\DoxyCodeLine{225       \textcolor{keywordtype}{complex(dp)} :: e1(4),e2(4),e3(4),e4(4)}
+\DoxyCodeLine{226       \textcolor{keywordtype}{complex(dp)} :: xxx1,xxx2,xxx3,yyy1,yyy2,yyy3,yyy4}
+\DoxyCodeLine{227       \textcolor{keywordtype}{complex(dp)} :: ghz1\_dyn,ghz2\_dyn,ghz3\_dyn,ghz4\_dyn}
+\DoxyCodeLine{228 \textcolor{keywordtype}{      real}(dp) :: q34}
+\DoxyCodeLine{229 \textcolor{keywordtype}{      real}(dp) :: q\_q, q3\_q3, q4\_q4}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232       res = 0d0}
+\DoxyCodeLine{233       q1 = dcmplx(p(1,:),0d0)}
+\DoxyCodeLine{234       q2 = dcmplx(p(2,:),0d0)}
+\DoxyCodeLine{235       q3 = dcmplx(p(3,:),0d0)}
+\DoxyCodeLine{236       q4 = dcmplx(p(4,:),0d0)}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238       e1 = sp(1,:)}
+\DoxyCodeLine{239       e2 = sp(2,:)}
+\DoxyCodeLine{240       e3 = sp(3,:)}
+\DoxyCodeLine{241       e4 = sp(4,:)}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243       q = -\/q1-\/q2}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245       q\_q =sc(q,q)}
+\DoxyCodeLine{246       q3\_q3 = sc(q3,q3)}
+\DoxyCodeLine{247       q4\_q4 = sc(q4,q4)}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249       e1\_e2 = sc(e1,e2)}
+\DoxyCodeLine{250       e1\_e3 = sc(e1,e3)}
+\DoxyCodeLine{251       e1\_e4 = sc(e1,e4)}
+\DoxyCodeLine{252       e2\_e3 = sc(e2,e3)}
+\DoxyCodeLine{253       e2\_e4 = sc(e2,e4)}
+\DoxyCodeLine{254       e3\_e4 = sc(e3,e4)}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256       q1\_e3 = sc(q1,e3)}
+\DoxyCodeLine{257       q1\_e4 = sc(q1,e4)}
+\DoxyCodeLine{258       q2\_e3 = sc(q2,e3)}
+\DoxyCodeLine{259       q2\_e4 = sc(q2,e4)}
+\DoxyCodeLine{260       e1\_q3 = sc(e1,q3)}
+\DoxyCodeLine{261       e1\_q4 = sc(e1,q4)}
+\DoxyCodeLine{262       e2\_q3 = sc(e2,q3)}
+\DoxyCodeLine{263       e2\_q4 = sc(e2,q4)}
+\DoxyCodeLine{264       e3\_q4 = sc(e3,q4)}
+\DoxyCodeLine{265       e4\_q3 = sc(e4,q3)}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268       \textcolor{keywordflow}{if} (q\_q.lt.-\/0.1d0 .or. q3\_q3.lt.-\/0.1d0 .or. q4\_q4.lt.-\/0.1d0) \textcolor{keywordflow}{return}\textcolor{comment}{  ! if negative invariant masses return zero}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{comment}{!-\/-\/-\/-\/ data that defines couplings}}
+\DoxyCodeLine{271       \textcolor{keywordflow}{if}( (vvmode.eq.zzmode) .or. (vvmode.eq.wwmode)  ) then\textcolor{comment}{! decay ZZ's or WW's}}
+\DoxyCodeLine{272          ghz1\_dyn = hvvspinzerodynamiccoupling(1,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{273          ghz2\_dyn = hvvspinzerodynamiccoupling(2,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{274          ghz3\_dyn = hvvspinzerodynamiccoupling(3,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{275          ghz4\_dyn = hvvspinzerodynamiccoupling(4,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{276       \textcolor{keywordflow}{elseif}( (vvmode.eq.gszmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{277          ghz1\_dyn = hvvspinzerodynamiccoupling(5,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{278          ghz2\_dyn = hvvspinzerodynamiccoupling(6,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{279          ghz3\_dyn = hvvspinzerodynamiccoupling(7,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{280          ghz4\_dyn = hvvspinzerodynamiccoupling(8,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{281       \textcolor{keywordflow}{elseif}( (vvmode.eq.zgmode) .OR. (vvmode.eq.zgsmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{282          ghz1\_dyn = hvvspinzerodynamiccoupling(5,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{283          ghz2\_dyn = hvvspinzerodynamiccoupling(6,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{284          ghz3\_dyn = hvvspinzerodynamiccoupling(7,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{285          ghz4\_dyn = hvvspinzerodynamiccoupling(8,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{286       \textcolor{keywordflow}{elseif}( (vvmode.eq.ggmode) .or. (vvmode.eq.gsgsmode)  .or. (vvmode.eq.gsgmode\textcolor{comment}{) ) }\textcolor{keywordflow}{then}}
+\DoxyCodeLine{287          ghz1\_dyn = czero}
+\DoxyCodeLine{288          ghz2\_dyn = hvvspinzerodynamiccoupling(9,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{289          ghz3\_dyn = hvvspinzerodynamiccoupling(10,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{290          ghz4\_dyn = hvvspinzerodynamiccoupling(11,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{291       \textcolor{keywordflow}{elseif}( (vvmode.eq.zzpmode) .or. (vvmode.eq.wwpmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{292          ghz1\_dyn = hvvspinzerodynamiccoupling(12,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{293          ghz2\_dyn = hvvspinzerodynamiccoupling(13,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{294          ghz3\_dyn = hvvspinzerodynamiccoupling(14,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{295          ghz4\_dyn = hvvspinzerodynamiccoupling(15,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{296       \textcolor{keywordflow}{elseif}( (vvmode.eq.zpzmode) .or. (vvmode.eq.wpwmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{297          ghz1\_dyn = hvvspinzerodynamiccoupling(12,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{298          ghz2\_dyn = hvvspinzerodynamiccoupling(13,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{299          ghz3\_dyn = hvvspinzerodynamiccoupling(14,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{300          ghz4\_dyn = hvvspinzerodynamiccoupling(15,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{301       \textcolor{keywordflow}{elseif}( (vvmode.eq.zpzpmode) .or. (vvmode.eq.wpwpmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{302          ghz1\_dyn = hvvspinzerodynamiccoupling(16,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{303          ghz2\_dyn = hvvspinzerodynamiccoupling(17,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{304          ghz3\_dyn = hvvspinzerodynamiccoupling(18,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{305          ghz4\_dyn = hvvspinzerodynamiccoupling(19,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{306       \textcolor{keywordflow}{elseif}( (vvmode.eq.gszpmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{307          ghz1\_dyn = hvvspinzerodynamiccoupling(20,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{308          ghz2\_dyn = hvvspinzerodynamiccoupling(21,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{309          ghz3\_dyn = hvvspinzerodynamiccoupling(22,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{310          ghz4\_dyn = hvvspinzerodynamiccoupling(23,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{311       \textcolor{keywordflow}{elseif}( (vvmode.eq.zpgmode) .OR. (vvmode.eq.zpgsmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{312          ghz1\_dyn = hvvspinzerodynamiccoupling(20,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{313          ghz2\_dyn = hvvspinzerodynamiccoupling(21,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{314          ghz3\_dyn = hvvspinzerodynamiccoupling(22,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{315          ghz4\_dyn = hvvspinzerodynamiccoupling(23,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{316       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{317          ghz1\_dyn = czero}
+\DoxyCodeLine{318          ghz2\_dyn = czero}
+\DoxyCodeLine{319          ghz3\_dyn = czero}
+\DoxyCodeLine{320          ghz4\_dyn = czero}
+\DoxyCodeLine{321          print *,\textcolor{stringliteral}{"VVMode"},vvmode,\textcolor{stringliteral}{"not implemented"}}
+\DoxyCodeLine{322 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324       \textcolor{keywordflow}{if}( .not. generate\_as ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{325          xxx1 = ghg2+ghg3/4d0/lambda**2*q\_q}
+\DoxyCodeLine{326          xxx3 = -\/2d0*ghg4}
+\DoxyCodeLine{327          yyy1 = ghz1\_dyn*m\_v**2/q\_q \&  \textcolor{comment}{! in this line M\_V is indeed correct, not a misprint}}
+\DoxyCodeLine{328               + ghz2\_dyn*(q\_q-\/q3\_q3-\/q4\_q4)/q\_q \&}
+\DoxyCodeLine{329               + ghz3\_dyn/lambda**2*(q\_q-\/q3\_q3-\/q4\_q4)*(q\_q-\/q4\_q4-\/q3\_q3)/4d0\textcolor{comment}{/q\_q}}
+\DoxyCodeLine{330 \textcolor{comment}{}         yyy2 = -\/2d0*ghz2\_dyn-\/ghz3\_dyn/2d0/lambda**2*(q\_q-\/q3\_q3-\/q4\_q4)}
+\DoxyCodeLine{331          yyy3 = -\/2d0*ghz4\_dyn}
+\DoxyCodeLine{332       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{333          xxx1 = ahg1}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacemodhiggs_ad4b9ab22b4abbe493625beac223a7a68}\label{namespacemodhiggs_ad4b9ab22b4abbe493625beac223a7a68}} 
 \index{modhiggs@{modhiggs}!hzzampl@{hzzampl}}
 \index{hzzampl@{hzzampl}!modhiggs@{modhiggs}}
 \doxysubsubsection{\texorpdfstring{hzzampl()}{hzzampl()}}
 {\footnotesize\ttfamily subroutine modhiggs\+::hzzampl (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{V\+V\+Mode,  }\item[{real(dp), dimension(4,4), intent(in)}]{p,  }\item[{complex(dp), dimension(3\+:4,4), intent(in)}]{sp,  }\item[{complex(dp), intent(out)}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Definition at line 506 of file mod\+\_\+\+Higgs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{506       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{507       \textcolor{keyword}{END SUBROUTINE}}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509    \textcolor{keyword}{subroutine }calchelamp2(ordering,VVMode,MY\_IDUP,p,i3,i4,A)}
+\DoxyCodeLine{510    \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{511    \textcolor{keywordtype}{integer} :: ordering(1:4),VVMode,i3,i4,l1,l2,l3,l4,MY\_IDUP(6:9)}
+\DoxyCodeLine{512 \textcolor{keywordtype}{   real}(dp) :: p(1:4,1:6)}
+\DoxyCodeLine{513 \textcolor{keywordtype}{   real}(dp) :: pin(4,4)}
+\DoxyCodeLine{514    \textcolor{keywordtype}{complex(dp)} :: A(1:1), sp(3:4,4)}
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516       l1=ordering(1)}
+\DoxyCodeLine{517       l2=ordering(2)}
+\DoxyCodeLine{518       l3=ordering(3)}
+\DoxyCodeLine{519       l4=ordering(4)}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521       pin(1,:) = p(:,1)}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523       \textcolor{keyword}{call }getdecay\_couplings\_spinors\_props(                            \textcolor{comment}{                                 \&}}
+\DoxyCodeLine{524 \textcolor{comment}{}                                       vvmode,                          \textcolor{comment}{                            \&}}
+\DoxyCodeLine{525 \textcolor{comment}{}                                       (/my\_idup(l1+3),my\_idup(l2+3),my\_idup\textcolor{comment}{(l3+3),my\_idup(l4+3)/), \&}}
+\DoxyCodeLine{526 \textcolor{comment}{}                                       (/p(:,l1),p(:,l2),p(:,l3),p(:,l4)\textcolor{comment}{/),                         \&}}
+\DoxyCodeLine{527 \textcolor{comment}{}                                       -\/3+2*i3,-\/3+2*i4,                 \textcolor{comment}{                            \&}}
+\DoxyCodeLine{528 \textcolor{comment}{}                                       sp(3:4,:),pin(3:4,:)             \textcolor{comment}{                            \&}}
+\DoxyCodeLine{529 \textcolor{comment}{}                                      )}
+\DoxyCodeLine{530       \textcolor{keyword}{call }hzzampl(vvmode,pin,sp,a(1))}
+\DoxyCodeLine{531    \textcolor{keyword}{end subroutine}}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533       \textcolor{keyword}{subroutine }hzzampl(VVMode,p,sp,res)}
+\DoxyCodeLine{534       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{535       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: VVMode}
+\DoxyCodeLine{536 \textcolor{keywordtype}{      real}(dp), \textcolor{keywordtype}{intent(in)} :: p(4,4)}
+\DoxyCodeLine{537       \textcolor{keywordtype}{complex(dp)}, \textcolor{keywordtype}{intent(in)} :: sp(3:4,4)}
+\DoxyCodeLine{538       \textcolor{keywordtype}{complex(dp)}, \textcolor{keywordtype}{intent(out)} :: res}
+\DoxyCodeLine{539       \textcolor{keywordtype}{complex(dp)} :: e3\_e4}
+\DoxyCodeLine{540       \textcolor{keywordtype}{complex(dp)} :: e3\_q4,e4\_q3}
+\DoxyCodeLine{541       \textcolor{keywordtype}{complex(dp)} :: q1(4),q3(4),q4(4),q(4)}
+\DoxyCodeLine{542       \textcolor{keywordtype}{complex(dp)} :: e3(4),e4(4)}
+\DoxyCodeLine{543       \textcolor{keywordtype}{complex(dp)} :: yyy1,yyy2,yyy3,yyy4}
+\DoxyCodeLine{544 \textcolor{keywordtype}{      real}(dp) :: q34}
+\DoxyCodeLine{545 \textcolor{keywordtype}{      real}(dp) :: q\_q, q3\_q3, q4\_q4}
+\DoxyCodeLine{546       \textcolor{keywordtype}{complex(dp)} :: ghz1\_dyn,ghz2\_dyn,ghz3\_dyn,ghz4\_dyn}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550       res = 0d0}
+\DoxyCodeLine{551       q1 = dcmplx(p(1,:),0d0)}
+\DoxyCodeLine{552       q3 = dcmplx(p(3,:),0d0)}
+\DoxyCodeLine{553       q4 = dcmplx(p(4,:),0d0)}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556       e3 = sp(3,:)}
+\DoxyCodeLine{557       e4 = sp(4,:)}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559       q = -\/q1}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561       q\_q =sc(q,q)}
+\DoxyCodeLine{562       q3\_q3 = sc(q3,q3)}
+\DoxyCodeLine{563       q4\_q4 = sc(q4,q4)}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565       e3\_e4 = sc(e3,e4)}
+\DoxyCodeLine{566       e3\_q4 = sc(e3,q4)}
+\DoxyCodeLine{567       e4\_q3 = sc(e4,q3)}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570       \textcolor{keywordflow}{if} ((q\_q).lt.-\/0.1d0 .or. (q3\_q3).lt.-\/0.1d0 .or. (q4\_q4).lt.-\/0.1d0)\textcolor{comment}{ }\textcolor{keywordflow}{return}\textcolor{comment}{  ! if negative invariant masses return zero}}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{comment}{!-\/-\/-\/-\/ data that defines couplings}}
+\DoxyCodeLine{574       \textcolor{keywordflow}{if}( (vvmode.eq.zzmode) .or. (vvmode.eq.wwmode)  ) then\textcolor{comment}{! decay ZZ's or WW's}}
+\DoxyCodeLine{575          ghz1\_dyn = hvvspinzerodynamiccoupling(1,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{576          ghz2\_dyn = hvvspinzerodynamiccoupling(2,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{577          ghz3\_dyn = hvvspinzerodynamiccoupling(3,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{578          ghz4\_dyn = hvvspinzerodynamiccoupling(4,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{579       \textcolor{keywordflow}{elseif}( (vvmode.eq.gszmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{580          ghz1\_dyn = hvvspinzerodynamiccoupling(5,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{581          ghz2\_dyn = hvvspinzerodynamiccoupling(6,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{582          ghz3\_dyn = hvvspinzerodynamiccoupling(7,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{583          ghz4\_dyn = hvvspinzerodynamiccoupling(8,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{584       \textcolor{keywordflow}{elseif}( (vvmode.eq.zgmode) .OR. (vvmode.eq.zgsmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{585          ghz1\_dyn = hvvspinzerodynamiccoupling(5,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{586          ghz2\_dyn = hvvspinzerodynamiccoupling(6,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{587          ghz3\_dyn = hvvspinzerodynamiccoupling(7,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{588          ghz4\_dyn = hvvspinzerodynamiccoupling(8,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{589       \textcolor{keywordflow}{elseif}( (vvmode.eq.ggmode) .or. (vvmode.eq.gsgsmode)  .or. (vvmode.eq.gsgmode\textcolor{comment}{) ) }\textcolor{keywordflow}{then}}
+\DoxyCodeLine{590          ghz1\_dyn = czero}
+\DoxyCodeLine{591          ghz2\_dyn = hvvspinzerodynamiccoupling(9,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{592          ghz3\_dyn = hvvspinzerodynamiccoupling(10,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{593          ghz4\_dyn = hvvspinzerodynamiccoupling(11,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{594       \textcolor{keywordflow}{elseif}( (vvmode.eq.zzpmode) .or. (vvmode.eq.wwpmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{595          ghz1\_dyn = hvvspinzerodynamiccoupling(12,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{596          ghz2\_dyn = hvvspinzerodynamiccoupling(13,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{597          ghz3\_dyn = hvvspinzerodynamiccoupling(14,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{598          ghz4\_dyn = hvvspinzerodynamiccoupling(15,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{599       \textcolor{keywordflow}{elseif}( (vvmode.eq.zpzmode) .or. (vvmode.eq.wpwmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{600          ghz1\_dyn = hvvspinzerodynamiccoupling(12,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{601          ghz2\_dyn = hvvspinzerodynamiccoupling(13,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{602          ghz3\_dyn = hvvspinzerodynamiccoupling(14,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{603          ghz4\_dyn = hvvspinzerodynamiccoupling(15,q4\_q4,q3\_q3,q\_q)}
+\DoxyCodeLine{604       \textcolor{keywordflow}{elseif}( (vvmode.eq.zpzpmode) .or. (vvmode.eq.wpwpmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{605          ghz1\_dyn = hvvspinzerodynamiccoupling(16,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{606          ghz2\_dyn = hvvspinzerodynamiccoupling(17,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{607          ghz3\_dyn = hvvspinzerodynamiccoupling(18,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{608          ghz4\_dyn = hvvspinzerodynamiccoupling(19,q3\_q3,q4\_q4,q\_q)}
+\DoxyCodeLine{609       \textcolor{keywordflow}{elseif}( (vvmode.eq.gszpmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{610          ghz1\_dyn = hvvspinzerodynamiccoupling(20,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{611          ghz2\_dyn = hvvspinzerodynamiccoupling(21,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{612          ghz3\_dyn = hvvspinzerodynamiccoupling(22,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{613          ghz4\_dyn = hvvspinzerodynamiccoupling(23,0d0,q3\_q3,q\_q)}
+\DoxyCodeLine{614       \textcolor{keywordflow}{elseif}( (vvmode.eq.zpgmode) .OR. (vvmode.eq.zpgsmode) ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{615          ghz1\_dyn = hvvspinzerodynamiccoupling(20,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{616          ghz2\_dyn = hvvspinzerodynamiccoupling(21,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{617          ghz3\_dyn = hvvspinzerodynamiccoupling(22,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{618          ghz4\_dyn = hvvspinzerodynamiccoupling(23,0d0,q4\_q4,q\_q)}
+\DoxyCodeLine{619       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{620          ghz1\_dyn = czero}
+\DoxyCodeLine{621          ghz2\_dyn = czero}
+\DoxyCodeLine{622          ghz3\_dyn = czero}
+\DoxyCodeLine{623          ghz4\_dyn = czero}
+\DoxyCodeLine{624          print *,\textcolor{stringliteral}{"VVMode"},vvmode,\textcolor{stringliteral}{"not implemented"}}
+\DoxyCodeLine{625 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627       \textcolor{keywordflow}{if}( .not. generate\_as ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{628          yyy1 = ghz1\_dyn*m\_v**2/q\_q \&  \textcolor{comment}{! in this line M\_V is indeed correct, not a misprint}}
+\DoxyCodeLine{629               + ghz2\_dyn*(q\_q-\/q3\_q3-\/q4\_q4)/q\_q \&}
+\DoxyCodeLine{630               + ghz3\_dyn/lambda**2*(q\_q-\/q3\_q3-\/q4\_q4)*(q\_q-\/q4\_q4-\/q3\_q3)/4d0\textcolor{comment}{/q\_q}}
+\textcolor{comment}{}
+\end{DoxyCode}

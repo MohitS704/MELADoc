@@ -34,63 +34,812 @@ integer function \mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{
 \doxysubsubsection{\texorpdfstring{extrapolatepdf()}{extrapolatepdf()}}
 {\footnotesize\ttfamily double precision function extrapolatepdf (\begin{DoxyParamCaption}\item[{integer}]{ip,  }\item[{integer}]{np,  }\item[{integer}]{ih,  }\item[{integer}]{nhess,  }\item[{double precision}]{x,  }\item[{double precision}]{y,  }\item[{integer}]{nx,  }\item[{integer}]{my,  }\item[{double precision, dimension(nx)}]{xx,  }\item[{double precision, dimension(my)}]{yy,  }\item[{double precision, dimension(np,0\+:nhess,nx,my,4,4)}]{cc }\end{DoxyParamCaption})}
 
+
+
+Definition at line 607 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{607       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{608       \textcolor{keywordtype}{integer} ih,nx,my,nhess,locx,n,m,ip,np}
+\DoxyCodeLine{609       \textcolor{keywordtype}{double precision} xx(nx),yy(my),cc(np,0:nhess,nx,my,4,4),}
+\DoxyCodeLine{610      \&     x,y,z,f0,f1,z0,z1,InterpolatePDF}
+\DoxyCodeLine{611       }
+\DoxyCodeLine{612       n=\mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}(xx,nx,x)           \textcolor{comment}{! 0: below xmin, nx: above xmax}}
+\DoxyCodeLine{613       m=\mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}(yy,my,y)           \textcolor{comment}{! 0: below qsqmin, my: above qsqmax}}
+\DoxyCodeLine{614       }
+\DoxyCodeLine{615 \textcolor{comment}{C-\/-\/   If extrapolation in small x only:}}
+\DoxyCodeLine{616       \textcolor{keywordflow}{if} (n.eq.0.and.m.gt.0.and.m.lt.my) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{617          f0 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xx(1),y,nx,my,xx,yy,cc)}
+\DoxyCodeLine{618          f1 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xx(2),y,nx,my,xx,yy,cc)}
+\DoxyCodeLine{619          \textcolor{keywordflow}{if} (f0.gt.1.d-\/3.and.f1.gt.1.d-\/3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{620             z = exp(log(f0)+(log(f1)-\/log(f0))/(xx(2)-\/xx(1))*(x-\/xx(1)))}
+\DoxyCodeLine{621          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{622             z = f0+(f1-\/f0)/(xx(2)-\/xx(1))*(x-\/xx(1))}
+\DoxyCodeLine{623 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{624 \textcolor{comment}{C-\/-\/   If extrapolation into large q only:}}
+\DoxyCodeLine{625       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n.gt.0.and.m.eq.my) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{626          f0 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,x,yy(my),nx,my,xx,yy,cc)}
+\DoxyCodeLine{627          f1 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,x,yy(my-\/1),nx,my,xx,yy,cc)}
+\DoxyCodeLine{628          \textcolor{keywordflow}{if} (f0.gt.1.d-\/3.and.f1.gt.1.d-\/3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{629             z = exp(log(f0)+(log(f0)-\/log(f1))/(yy(my)-\/yy(my-\/1))*}
+\DoxyCodeLine{630      \&           (y-\/yy(my)))}
+\DoxyCodeLine{631          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{632             z = f0+(f0-\/f1)/(yy(my)-\/yy(my-\/1))*(y-\/yy(my))}
+\DoxyCodeLine{633 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{634 \textcolor{comment}{C-\/-\/   If extrapolation into large q AND small x:}}
+\DoxyCodeLine{635       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n.eq.0.and.m.eq.my) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{636          f0 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xx(1),yy(my),nx,my,xx,yy,cc)}
+\DoxyCodeLine{637          f1 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xx(1),yy(my-\/1),nx,my,xx,yy,}
+\DoxyCodeLine{638      \&        cc)}
+\DoxyCodeLine{639          \textcolor{keywordflow}{if} (f0.gt.1.d-\/3.and.f1.gt.1.d-\/3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{640             z0 = exp(log(f0)+(log(f0)-\/log(f1))/(yy(my)-\/yy(my-\/1))*}
+\DoxyCodeLine{641      \&           (y-\/yy(my)))}
+\DoxyCodeLine{642          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{643             z0 = f0+(f0-\/f1)/(yy(my)-\/yy(my-\/1))*(y-\/yy(my))}
+\DoxyCodeLine{644 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{645          f0 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xx(2),yy(my),nx,my,xx,yy,cc)}
+\DoxyCodeLine{646          f1 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xx(2),yy(my-\/1),nx,my,xx,yy,}
+\DoxyCodeLine{647      \&        cc)}
+\DoxyCodeLine{648          \textcolor{keywordflow}{if} (f0.gt.1.d-\/3.and.f1.gt.1.d-\/3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{649             z1 = exp(log(f0)+(log(f0)-\/log(f1))/(yy(my)-\/yy(my-\/1))*}
+\DoxyCodeLine{650      \&           (y-\/yy(my)))}
+\DoxyCodeLine{651          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{652             z1 = f0+(f0-\/f1)/(yy(my)-\/yy(my-\/1))*(y-\/yy(my))}
+\DoxyCodeLine{653 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{654          \textcolor{keywordflow}{if} (z0.gt.1.d-\/3.and.z1.gt.1.d-\/3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{655             z = exp(log(z0)+(log(z1)-\/log(z0))/(xx(2)-\/xx(1))*(x-\/xx(1)))}
+\DoxyCodeLine{656          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{657             z = z0+(z1-\/z0)/(xx(2)-\/xx(1))*(x-\/xx(1))}
+\DoxyCodeLine{658 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{659       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{660          print *,\textcolor{stringliteral}{"Error in ExtrapolatePDF"}}
+\DoxyCodeLine{661          stop}
+\DoxyCodeLine{662 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664       \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}} = z      }
+\DoxyCodeLine{665 }
+\DoxyCodeLine{666       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}\label{mstwpdf_8f_acab373d9361780b7bc84c63f7d0c292d}} 
 \index{mstwpdf.f@{mstwpdf.f}!getallpdfs@{getallpdfs}}
 \index{getallpdfs@{getallpdfs}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{getallpdfs()}{getallpdfs()}}
 {\footnotesize\ttfamily subroutine getallpdfs (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$)}]{prefix,  }\item[{integer}]{ih,  }\item[{double precision}]{x,  }\item[{double precision}]{q,  }\item[{double precision}]{upv,  }\item[{double precision}]{dnv,  }\item[{double precision}]{usea,  }\item[{double precision}]{dsea,  }\item[{double precision}]{str,  }\item[{double precision}]{sbar,  }\item[{double precision}]{chm,  }\item[{double precision}]{cbar,  }\item[{double precision}]{bot,  }\item[{double precision}]{bbar,  }\item[{double precision}]{glu,  }\item[{double precision}]{phot }\end{DoxyParamCaption})}
 
+
+
+Definition at line 22 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{23       \textcolor{keywordtype}{integer} ih}
+\DoxyCodeLine{24       \textcolor{keywordtype}{double precision} x,q,upv,dnv,usea,dsea,str,sbar,chm,cbar,}
+\DoxyCodeLine{25      \&     bot,bbar,glu,phot,GetOnePDF,up,dn,sv,cv,bv}
+\DoxyCodeLine{26       \textcolor{keywordtype}{character*(*)} prefix}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{C-\/-\/   Quarks.}}
+\DoxyCodeLine{29       dn  = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,1)}
+\DoxyCodeLine{30       up  = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,2)}
+\DoxyCodeLine{31       str = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,3)}
+\DoxyCodeLine{32       chm = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,4)}
+\DoxyCodeLine{33       bot = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,5)}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{C-\/-\/   Valence quarks.}}
+\DoxyCodeLine{36       dnv = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,7)}
+\DoxyCodeLine{37       upv = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,8)}
+\DoxyCodeLine{38       sv  = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,9)}
+\DoxyCodeLine{39       cv  = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,10)}
+\DoxyCodeLine{40       bv  = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,11)}
+\DoxyCodeLine{41       }
+\DoxyCodeLine{42 \textcolor{comment}{C-\/-\/   Antiquarks = quarks -\/ valence quarks.}}
+\DoxyCodeLine{43       dsea = dn -\/ dnv}
+\DoxyCodeLine{44       usea = up -\/ upv}
+\DoxyCodeLine{45       sbar = str -\/ sv}
+\DoxyCodeLine{46       cbar = chm -\/ cv}
+\DoxyCodeLine{47       bbar = bot -\/ bv}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{C-\/-\/   Gluon.}}
+\DoxyCodeLine{50       glu = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,0)}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{C-\/-\/   Photon (= zero unless considering QED contributions).}}
+\DoxyCodeLine{53       phot = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,13)}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_a8163352523fbd8d286ba8f69b83ff656}\label{mstwpdf_8f_a8163352523fbd8d286ba8f69b83ff656}} 
 \index{mstwpdf.f@{mstwpdf.f}!getallpdfsalt@{getallpdfsalt}}
 \index{getallpdfsalt@{getallpdfsalt}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{getallpdfsalt()}{getallpdfsalt()}}
 {\footnotesize\ttfamily subroutine getallpdfsalt (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$)}]{prefix,  }\item[{integer}]{ih,  }\item[{double precision}]{x,  }\item[{double precision}]{q,  }\item[{double precision, dimension(-\/6\+:6)}]{xpdf,  }\item[{double precision}]{xphoton }\end{DoxyParamCaption})}
 
+
+
+Definition at line 62 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{63       \textcolor{keywordtype}{integer} ih,f}
+\DoxyCodeLine{64       \textcolor{keywordtype}{double precision} x,q,xpdf(-\/6:6),xphoton,xvalence,GetOnePDF}
+\DoxyCodeLine{65       \textcolor{keywordtype}{character*(*)} prefix}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67       \textcolor{keywordflow}{do} f = 1, 6}
+\DoxyCodeLine{68          xpdf(f) = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,f) \textcolor{comment}{! quarks}}
+\DoxyCodeLine{69          xvalence = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,f+6) \textcolor{comment}{! valence quarks}}
+\DoxyCodeLine{70          xpdf(-\/f) = xpdf(f) -\/ xvalence \textcolor{comment}{! antiquarks}}
+\DoxyCodeLine{71 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{72       xpdf(0) = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,0) \textcolor{comment}{! gluon}}
+\DoxyCodeLine{73       xphoton = \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}}(prefix,ih,x,q,13) \textcolor{comment}{! photon}}
+\DoxyCodeLine{74       }
+\DoxyCodeLine{75       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}\label{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}} 
 \index{mstwpdf.f@{mstwpdf.f}!getonepdf@{getonepdf}}
 \index{getonepdf@{getonepdf}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{getonepdf()}{getonepdf()}}
 {\footnotesize\ttfamily double precision function getonepdf (\begin{DoxyParamCaption}\item[{character, dimension($\ast$)}]{prefix,  }\item[{integer}]{ih,  }\item[{double precision}]{x,  }\item[{double precision}]{q,  }\item[{integer}]{f }\end{DoxyParamCaption})}
 
+
+
+Definition at line 89 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{90       \textcolor{keywordtype}{logical} warn,fatal}
+\DoxyCodeLine{91       parameter(warn=.false.,fatal=.true.)}
+\DoxyCodeLine{92 \textcolor{comment}{C-\/-\/   Set warn=.true. to turn on warnings when extrapolating.}}
+\DoxyCodeLine{93 \textcolor{comment}{C-\/-\/   Set fatal=.false. to return zero instead of terminating when}}
+\DoxyCodeLine{94 \textcolor{comment}{C-\/-\/    invalid input values of x and q are used.}}
+\DoxyCodeLine{95       \textcolor{keywordtype}{integer} ih,f,nhess,nx,nq,np,nqc0,nqb0,n,m,ip,io,}
+\DoxyCodeLine{96      \&     alphaSorder,alphaSnfmax,nExtraFlavours,lentrim}
+\DoxyCodeLine{97       \textcolor{keywordtype}{double precision} x,q,xmin,xmax,qsqmin,qsqmax,mc2,mb2,eps,}
+\DoxyCodeLine{98      \&     dummy,qsq,xlog,qsqlog,res,res1,anom,ExtrapolatePDF,}
+\DoxyCodeLine{99      \&     InterpolatePDF,distance,tolerance,}
+\DoxyCodeLine{100      \&     mCharm,mBottom,alphaSQ0,alphaSMZ}
+\DoxyCodeLine{101       parameter(nx=64,nq=48,np=12)}
+\DoxyCodeLine{102       parameter(xmin=1d-\/6,xmax=1d0,qsqmin=1d0,qsqmax=1d9,\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}=1d-\/6)}
+\DoxyCodeLine{103       parameter(nhess=2*20)}
+\DoxyCodeLine{104       \textcolor{keywordtype}{character} set*2,prefix*(*),filename*60,oldprefix(0:nhess)*50}
+\DoxyCodeLine{105       \textcolor{keywordtype}{character} dummyChar,dummyWord*50}
+\DoxyCodeLine{106       \textcolor{keywordtype}{double precision} ff(np,nx,nq)}
+\DoxyCodeLine{107       \textcolor{keywordtype}{double precision} qqorig(nq),qq(nq),xx(nx),cc(np,0:nhess,nx,nq,4,4)}
+\DoxyCodeLine{108       \textcolor{keywordtype}{double precision} xxl(nx),qql(nq)}
+\DoxyCodeLine{109 \textcolor{comment}{C-\/-\/   Store distance along each eigenvector, tolerance,}}
+\DoxyCodeLine{110 \textcolor{comment}{C-\/-\/   heavy quark masses and alphaS parameters in COMMON block.}}
+\DoxyCodeLine{111       common/mstwcommon/distance,tolerance,}
+\DoxyCodeLine{112      \&     mcharm,mbottom,alphasq0,alphasmz,alphasorder,alphasnfmax}
+\DoxyCodeLine{113       \textcolor{keywordtype}{save}}
+\DoxyCodeLine{114       \textcolor{keyword}{data} xx/1d-\/6,2d-\/6,4d-\/6,6d-\/6,8d-\/6,}
+\DoxyCodeLine{115      \&     1d-\/5,2d-\/5,4d-\/5,6d-\/5,8d-\/5,}
+\DoxyCodeLine{116      \&     1d-\/4,2d-\/4,4d-\/4,6d-\/4,8d-\/4,}
+\DoxyCodeLine{117      \&     1d-\/3,2d-\/3,4d-\/3,6d-\/3,8d-\/3,}
+\DoxyCodeLine{118      \&     1d-\/2,1.4d-\/2,2d-\/2,3d-\/2,4d-\/2,6d-\/2,8d-\/2,}
+\DoxyCodeLine{119      \&     .1d0,.125d0,.15d0,.175d0,.2d0,.225d0,.25d0,.275d0,}
+\DoxyCodeLine{120      \&     .3d0,.325d0,.35d0,.375d0,.4d0,.425d0,.45d0,.475d0,}
+\DoxyCodeLine{121      \&     .5d0,.525d0,.55d0,.575d0,.6d0,.625d0,.65d0,.675d0,}
+\DoxyCodeLine{122      \&     .7d0,.725d0,.75d0,.775d0,.8d0,.825d0,.85d0,.875d0,}
+\DoxyCodeLine{123      \&     .9d0,.925d0,.95d0,.975d0,1d0/}
+\DoxyCodeLine{124       \textcolor{keyword}{data} qqorig/1.d0,}
+\DoxyCodeLine{125      \&     1.25d0,1.5d0,0.d0,0.d0,2.5d0,3.2d0,4d0,5d0,6.4d0,8d0,}
+\DoxyCodeLine{126      \&     1d1,1.2d1,0.d0,0.d0,2.6d1,4d1,6.4d1,1d2,}
+\DoxyCodeLine{127      \&     1.6d2,2.4d2,4d2,6.4d2,1d3,1.8d3,3.2d3,5.6d3,1d4,}
+\DoxyCodeLine{128      \&     1.8d4,3.2d4,5.6d4,1d5,1.8d5,3.2d5,5.6d5,1d6,}
+\DoxyCodeLine{129      \&     1.8d6,3.2d6,5.6d6,1d7,1.8d7,3.2d7,5.6d7,1d8,}
+\DoxyCodeLine{130      \&     1.8d8,3.2d8,5.6d8,1d9/}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132       \textcolor{keywordflow}{if} (f.lt.-\/6.or.f.gt.13) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{133          print *,\textcolor{stringliteral}{"Error: invalid parton flavour = "},f}
+\DoxyCodeLine{134          stop}
+\DoxyCodeLine{135 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137       \textcolor{keywordflow}{if} (ih.lt.0.or.ih.gt.nhess) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{138          print *,\textcolor{stringliteral}{"Error: invalid eigenvector number = "},ih}
+\DoxyCodeLine{139          stop}
+\DoxyCodeLine{140 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{C-\/-\/   Check if the requested parton set is already in memory.}}
+\DoxyCodeLine{143       \textcolor{keywordflow}{if} (oldprefix(ih).ne.prefix) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{comment}{C-\/-\/   Start of initialisation for eigenvector set "i" ...}}
+\DoxyCodeLine{146 \textcolor{comment}{C-\/-\/   Do this only the first time the set "i" is called,}}
+\DoxyCodeLine{147 \textcolor{comment}{C-\/-\/   OR if the prefix has changed from the last time.}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{comment}{C-\/-\/   Check that the character arrays "oldprefix" and "filename"}}
+\DoxyCodeLine{150 \textcolor{comment}{C-\/-\/   are large enough.}}
+\DoxyCodeLine{151          \textcolor{keywordflow}{if} (\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}(prefix).gt.len(oldprefix(ih))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{152             print *,\textcolor{stringliteral}{"Error in GetOnePDF: increase size of oldprefix"}}
+\DoxyCodeLine{153             stop}
+\DoxyCodeLine{154          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}(prefix)+7.gt.len(filename)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{155             print *,\textcolor{stringliteral}{"Error in GetOnePDF: increase size of filename"}}
+\DoxyCodeLine{156             stop}
+\DoxyCodeLine{157 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159          \textcolor{keyword}{write}(set,\textcolor{stringliteral}{'(I2.2)'}) ih  \textcolor{comment}{! convert integer to string}}
+\DoxyCodeLine{160 \textcolor{comment}{C-\/-\/   Remove trailing blanks from prefix before assigning filename.}}
+\DoxyCodeLine{161          filename = prefix(1:\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}(prefix))//\textcolor{stringliteral}{'.'}//set//\textcolor{stringliteral}{'.dat'}}
+\DoxyCodeLine{162 \textcolor{comment}{C-\/-\/   Line below can be commented out if you don't want this message.}}
+\DoxyCodeLine{163          print *,\textcolor{stringliteral}{"Reading PDF grid from "},filename(1:\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}(filename))}
+\DoxyCodeLine{164          \textcolor{keyword}{open}(unit=33,file=filename,iostat=io,status=\textcolor{stringliteral}{'old'})}
+\DoxyCodeLine{165          \textcolor{keywordflow}{if} (io.ne.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{166             print *,\textcolor{stringliteral}{"Error in GetOnePDF: can't open "},}
+\DoxyCodeLine{167      \&           filename(1:\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}(filename))}
+\DoxyCodeLine{168             stop}
+\DoxyCodeLine{169 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{comment}{C-\/-\/   Read header containing heavy quark masses and alphaS values.}}
+\DoxyCodeLine{172          \textcolor{keyword}{read}(33,*) }
+\DoxyCodeLine{173          \textcolor{keyword}{read}(33,*)}
+\DoxyCodeLine{174          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummyword,dummychar,}
+\DoxyCodeLine{175      \&        distance,tolerance}
+\DoxyCodeLine{176          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummychar,mcharm}
+\DoxyCodeLine{177          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummychar,mbottom}
+\DoxyCodeLine{178          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummychar,alphasq0}
+\DoxyCodeLine{179          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummychar,alphasmz}
+\DoxyCodeLine{180          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummyword,dummychar,}
+\DoxyCodeLine{181      \&        alphasorder,alphasnfmax}
+\DoxyCodeLine{182          \textcolor{keyword}{read}(33,*) dummychar,dummyword,dummychar,nextraflavours}
+\DoxyCodeLine{183          \textcolor{keyword}{read}(33,*)}
+\DoxyCodeLine{184          \textcolor{keyword}{read}(33,*)}
+\DoxyCodeLine{185          mc2=mcharm**2}
+\DoxyCodeLine{186          mb2=mbottom**2}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{comment}{C-\/-\/   Check that the heavy quark masses are sensible.}}
+\DoxyCodeLine{189 \textcolor{comment}{C-\/-\/   Redistribute grid points if not in usual range.}}
+\DoxyCodeLine{190          \textcolor{keywordflow}{do} m=1,nq}
+\DoxyCodeLine{191             qq(m) = qqorig(m)}
+\DoxyCodeLine{192 \textcolor{keywordflow}{         end do}}
+\DoxyCodeLine{193          \textcolor{keywordflow}{if} (mc2.le.qq(1).or.mc2+\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}.ge.qq(8)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{194             print *,\textcolor{stringliteral}{"Error in GetOnePDF: invalid mCharm = "},mcharm}
+\DoxyCodeLine{195             stop}
+\DoxyCodeLine{196          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mc2.lt.qq(2)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{197             nqc0=2}
+\DoxyCodeLine{198             qq(4)=qq(2)}
+\DoxyCodeLine{199             qq(5)=qq(3)}
+\DoxyCodeLine{200          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mc2.lt.qq(3)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{201             nqc0=3}
+\DoxyCodeLine{202             qq(5)=qq(3)}
+\DoxyCodeLine{203          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mc2.lt.qq(6)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{204             nqc0=4}
+\DoxyCodeLine{205          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mc2.lt.qq(7)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{206             nqc0=5}
+\DoxyCodeLine{207             qq(4)=qq(6)}
+\DoxyCodeLine{208          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{209             nqc0=6}
+\DoxyCodeLine{210             qq(4)=qq(6)}
+\DoxyCodeLine{211             qq(5)=qq(7)}
+\DoxyCodeLine{212 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{213          \textcolor{keywordflow}{if} (mb2.le.qq(12).or.mb2+\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}.ge.qq(17)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{214             print *,\textcolor{stringliteral}{"Error in GetOnePDF: invalid mBottom = "},mbottom}
+\DoxyCodeLine{215             stop}
+\DoxyCodeLine{216          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mb2.lt.qq(13)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{217             nqb0=13}
+\DoxyCodeLine{218             qq(15)=qq(13)}
+\DoxyCodeLine{219          \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mb2.lt.qq(16)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{220             nqb0=14}
+\DoxyCodeLine{221          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{222             nqb0=15}
+\DoxyCodeLine{223             qq(14)=qq(16)}
+\DoxyCodeLine{224 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{225          qq(nqc0)=mc2}
+\DoxyCodeLine{226          qq(nqc0+1)=mc2+\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}}
+\DoxyCodeLine{227          qq(nqb0)=mb2}
+\DoxyCodeLine{228          qq(nqb0+1)=mb2+\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{comment}{C-\/-\/   The nExtraFlavours variable is provided to aid compatibility}}
+\DoxyCodeLine{231 \textcolor{comment}{C-\/-\/   with future grids where, for example, a photon distribution}}
+\DoxyCodeLine{232 \textcolor{comment}{C-\/-\/   might be provided (cf. the MRST2004QED PDFs).}}
+\DoxyCodeLine{233          \textcolor{keywordflow}{if} (nextraflavours.lt.0.or.nextraflavours.gt.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{234             print *,\textcolor{stringliteral}{"Error in GetOnePDF: invalid nExtraFlavours = "},}
+\DoxyCodeLine{235      \&           nextraflavours}
+\DoxyCodeLine{236             stop}
+\DoxyCodeLine{237 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{comment}{C-\/-\/   Now read in the grids from the grid file.}}
+\DoxyCodeLine{240          \textcolor{keywordflow}{do} n=1,nx-\/1}
+\DoxyCodeLine{241             \textcolor{keywordflow}{do} m=1,nq}
+\DoxyCodeLine{242                \textcolor{keywordflow}{if} (nextraflavours.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{243                   \textcolor{keywordflow}{if} (alphasorder.eq.2) \textcolor{keywordflow}{then} \textcolor{comment}{! NNLO}}
+\DoxyCodeLine{244                      \textcolor{keyword}{read}(33,\textcolor{stringliteral}{'(12(1pe12.4))'},iostat=io)}
+\DoxyCodeLine{245      \&                    (ff(ip,n,m),ip=1,12)}
+\DoxyCodeLine{246                   \textcolor{keywordflow}{else}          \textcolor{comment}{! LO or NLO}}
+\DoxyCodeLine{247                      ff(10,n,m) = 0.d0 \textcolor{comment}{! = chm-\/cbar}}
+\DoxyCodeLine{248                      ff(11,n,m) = 0.d0 \textcolor{comment}{! = bot-\/bbar}}
+\DoxyCodeLine{249                      \textcolor{keyword}{read}(33,\textcolor{stringliteral}{'(10(1pe12.4))'},iostat=io)}
+\DoxyCodeLine{250      \&                    (ff(ip,n,m),ip=1,9),ff(12,n,m)}
+\DoxyCodeLine{251 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{252                \textcolor{keywordflow}{else}             \textcolor{comment}{! nExtraFlavours = 0}}
+\DoxyCodeLine{253                   \textcolor{keywordflow}{if} (alphasorder.eq.2) \textcolor{keywordflow}{then} \textcolor{comment}{! NNLO}}
+\DoxyCodeLine{254                      ff(12,n,m) = 0.d0 \textcolor{comment}{! = photon}}
+\DoxyCodeLine{255                      \textcolor{keyword}{read}(33,\textcolor{stringliteral}{'(11(1pe12.4))'},iostat=io)}
+\DoxyCodeLine{256      \&                 (ff(ip,n,m),ip=1,11)}
+\DoxyCodeLine{257                   \textcolor{keywordflow}{else}          \textcolor{comment}{! LO or NLO}}
+\DoxyCodeLine{258                      ff(10,n,m) = 0.d0 \textcolor{comment}{! = chm-\/cbar}}
+\DoxyCodeLine{259                      ff(11,n,m) = 0.d0 \textcolor{comment}{! = bot-\/bbar}}
+\DoxyCodeLine{260                      ff(12,n,m) = 0.d0 \textcolor{comment}{! = photon}}
+\DoxyCodeLine{261                      \textcolor{keyword}{read}(33,\textcolor{stringliteral}{'(9(1pe12.4))'},iostat=io)}
+\DoxyCodeLine{262      \&                    (ff(ip,n,m),ip=1,9)}
+\DoxyCodeLine{263 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{264 \textcolor{keywordflow}{               end if}}
+\DoxyCodeLine{265                \textcolor{keywordflow}{if} (io.ne.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{266                   print *,\textcolor{stringliteral}{"Error in GetOnePDF reading "},filename}
+\DoxyCodeLine{267                   stop}
+\DoxyCodeLine{268 \textcolor{keywordflow}{               end if}}
+\DoxyCodeLine{269 \textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{270 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{comment}{C-\/-\/   Check that ALL the file contents have been read in.}}
+\DoxyCodeLine{273          \textcolor{keyword}{read}(33,*,iostat=io) dummy}
+\DoxyCodeLine{274          \textcolor{keywordflow}{if} (io.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{275             print *,\textcolor{stringliteral}{"Error in GetOnePDF: not at end of "},filename}
+\DoxyCodeLine{276             stop}
+\DoxyCodeLine{277 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{278          \textcolor{keyword}{close}(unit=33)}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{comment}{C-\/-\/   PDFs are identically zero at x = 1.}}
+\DoxyCodeLine{281          \textcolor{keywordflow}{do} m=1,nq}
+\DoxyCodeLine{282             \textcolor{keywordflow}{do} ip=1,np}
+\DoxyCodeLine{283                ff(ip,nx,m)=0d0}
+\DoxyCodeLine{284 \textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{285 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287          \textcolor{keywordflow}{do} n=1,nx}
+\DoxyCodeLine{288             xxl(n)=log10(xx(n))}
+\DoxyCodeLine{289 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{290          \textcolor{keywordflow}{do} m=1,nq}
+\DoxyCodeLine{291             qql(m)=log10(qq(m))}
+\DoxyCodeLine{292 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294 \textcolor{comment}{C-\/-\/   Initialise all parton flavours.}}
+\DoxyCodeLine{295          \textcolor{keywordflow}{do} ip=1,np}
+\DoxyCodeLine{296             \textcolor{keyword}{call }\mbox{\hyperlink{mstwpdf_8f_a4c579229e3760cca4e906603bc50de60}{initialisepdf}}(ip,np,ih,nhess,nx,nq,nqc0,nqb0,}
+\DoxyCodeLine{297      \&           xxl,qql,ff,cc)}
+\DoxyCodeLine{298 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300          oldprefix(ih) = prefix}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 \textcolor{comment}{C-\/-\/   ... End of initialisation for eigenvector set "ih".}}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{keywordflow}{      end if}                    \textcolor{comment}{! oldprefix(ih).ne.prefix}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 \textcolor{comment}{C-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308       qsq=q*q}
+\DoxyCodeLine{309 \textcolor{comment}{C-\/-\/   If mc2 < qsq < mc2+eps, then qsq = mc2+eps.}}
+\DoxyCodeLine{310       \textcolor{keywordflow}{if} (qsq.gt.qq(nqc0).and.qsq.lt.qq(nqc0+1)) qsq = qq(nqc0+1)}
+\DoxyCodeLine{311 \textcolor{comment}{C-\/-\/   If mb2 < qsq < mb2+eps, then qsq = mb2+eps.}}
+\DoxyCodeLine{312       \textcolor{keywordflow}{if} (qsq.gt.qq(nqb0).and.qsq.lt.qq(nqb0+1)) qsq = qq(nqb0+1)}
+\DoxyCodeLine{313       }
+\DoxyCodeLine{314       xlog=log10(x)}
+\DoxyCodeLine{315       qsqlog=log10(qsq)}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317       res = 0.d0}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319       \textcolor{keywordflow}{if} (f.eq.0) \textcolor{keywordflow}{then}          \textcolor{comment}{! gluon}}
+\DoxyCodeLine{320          ip = 1}
+\DoxyCodeLine{321       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (f.ge.1.and.f.le.5) \textcolor{keywordflow}{then} \textcolor{comment}{! quarks}}
+\DoxyCodeLine{322          ip = f+1}
+\DoxyCodeLine{323       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (f.le.-\/1.and.f.ge.-\/5) \textcolor{keywordflow}{then} \textcolor{comment}{! antiquarks}}
+\DoxyCodeLine{324          ip = -\/f+1}
+\DoxyCodeLine{325       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (f.ge.7.and.f.le.11) \textcolor{keywordflow}{then} \textcolor{comment}{! valence quarks}}
+\DoxyCodeLine{326          ip = f}
+\DoxyCodeLine{327       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (f.eq.13) \textcolor{keywordflow}{then}    \textcolor{comment}{! photon}}
+\DoxyCodeLine{328          ip = 12}
+\DoxyCodeLine{329       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (abs(f).ne.6.and.f.ne.12) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{330          \textcolor{keywordflow}{if} (warn.or.fatal) print *,\textcolor{stringliteral}{"Error in GetOnePDF: f = "},f}
+\DoxyCodeLine{331          \textcolor{keywordflow}{if} (fatal) stop}
+\DoxyCodeLine{332 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{333       }
+\DoxyCodeLine{334       \textcolor{keywordflow}{if} (x.le.0.d0.or.x.gt.xmax.or.q.le.0.d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336          \textcolor{keywordflow}{if} (warn.or.fatal) print *,\textcolor{stringliteral}{"Error in GetOnePDF: x,qsq = "},}
+\DoxyCodeLine{337      \&        x,qsq}
+\DoxyCodeLine{338          \textcolor{keywordflow}{if} (fatal) stop}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (abs(f).eq.6.or.f.eq.12) \textcolor{keywordflow}{then} \textcolor{comment}{! set top quarks to zero}}
+\DoxyCodeLine{341          }
+\DoxyCodeLine{342          res = 0.d0}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (qsq.lt.qsqmin) \textcolor{keywordflow}{then} \textcolor{comment}{! extrapolate to low Q\string^2}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346          \textcolor{keywordflow}{if} (warn) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{347             print *, \textcolor{stringliteral}{"Warning in GetOnePDF, extrapolating: f = "},f,}
+\DoxyCodeLine{348      \&           \textcolor{stringliteral}{", x = "},x,\textcolor{stringliteral}{", q = "},q}
+\DoxyCodeLine{349 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351          \textcolor{keywordflow}{if} (x.lt.xmin) \textcolor{keywordflow}{then}    \textcolor{comment}{! extrapolate to low x}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353             res = \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}}(ip,np,ih,nhess,xlog,}
+\DoxyCodeLine{354      \&           log10(qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{355             res1 = \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}}(ip,np,ih,nhess,xlog,}
+\DoxyCodeLine{356      \&           log10(1.01d0*qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{357             \textcolor{keywordflow}{if} (f.le.-\/1.and.f.ge.-\/5) \textcolor{keywordflow}{then} \textcolor{comment}{! antiquark = quark -\/ valence}}
+\DoxyCodeLine{358                res = res -\/ \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}}(ip+5,np,ih,nhess,xlog,}
+\DoxyCodeLine{359      \&              log10(qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{360                res1 = res1 -\/ \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}}(ip+5,np,ih,nhess,xlog,}
+\DoxyCodeLine{361      \&              log10(1.01d0*qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{362 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{363             }
+\DoxyCodeLine{364          \textcolor{keywordflow}{else}                   \textcolor{comment}{! do usual interpolation}}
+\DoxyCodeLine{365             }
+\DoxyCodeLine{366             res = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xlog,}
+\DoxyCodeLine{367      \&           log10(qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{368             res1 = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xlog,}
+\DoxyCodeLine{369      \&           log10(1.01d0*qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{370             \textcolor{keywordflow}{if} (f.le.-\/1.and.f.ge.-\/5) \textcolor{keywordflow}{then} \textcolor{comment}{! antiquark = quark -\/ valence}}
+\DoxyCodeLine{371                res = res -\/ \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip+5,np,ih,nhess,xlog,}
+\DoxyCodeLine{372      \&              log10(qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{373                res1 = res1 -\/ \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip+5,np,ih,nhess,xlog,}
+\DoxyCodeLine{374      \&              log10(1.01d0*qsqmin),nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{375 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{376             }
+\DoxyCodeLine{377 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 \textcolor{comment}{C-\/-\/   Calculate the anomalous dimension, dlog(xf)/dlog(qsq),}}
+\DoxyCodeLine{380 \textcolor{comment}{C-\/-\/   evaluated at qsqmin.  Then extrapolate the PDFs to low}}
+\DoxyCodeLine{381 \textcolor{comment}{C-\/-\/   qsq < qsqmin by interpolating the anomalous dimenion between}}
+\DoxyCodeLine{382 \textcolor{comment}{C-\/-\/   the value at qsqmin and a value of 1 for qsq << qsqmin.}}
+\DoxyCodeLine{383 \textcolor{comment}{C-\/-\/   If value of PDF at qsqmin is very small, just set}}
+\DoxyCodeLine{384 \textcolor{comment}{C-\/-\/   anomalous dimension to 1 to prevent rounding errors.}}
+\DoxyCodeLine{385 \textcolor{comment}{C-\/-\/   Impose minimum anomalous dimension of -\/2.5.}}
+\DoxyCodeLine{386          \textcolor{keywordflow}{if} (abs(res).ge.1.d-\/5) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{387             anom = max( -\/2.5d0, (res1-\/res)/res/0.01d0 )}
+\DoxyCodeLine{388          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{389             anom = 1.d0}
+\DoxyCodeLine{390 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{391          res = res*(qsq/qsqmin)**(anom*qsq/qsqmin+1.d0-\/qsq/qsqmin)}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x.lt.xmin.or.qsq.gt.qsqmax) \textcolor{keywordflow}{then} \textcolor{comment}{! extrapolate}}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395          \textcolor{keywordflow}{if} (warn) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{396             print *, \textcolor{stringliteral}{"Warning in GetOnePDF, extrapolating: f = "},f,}
+\DoxyCodeLine{397      \&           \textcolor{stringliteral}{", x = "},x,\textcolor{stringliteral}{", q = "},q}
+\DoxyCodeLine{398 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400          res = \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}}(ip,np,ih,nhess,xlog,}
+\DoxyCodeLine{401      \&        qsqlog,nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{402          }
+\DoxyCodeLine{403          \textcolor{keywordflow}{if} (f.le.-\/1.and.f.ge.-\/5) \textcolor{keywordflow}{then} \textcolor{comment}{! antiquark = quark -\/ valence}}
+\DoxyCodeLine{404             res = res -\/ \mbox{\hyperlink{mstwpdf_8f_aece99119868e99cee35bc2923a564ea1}{extrapolatepdf}}(ip+5,np,ih,nhess,xlog,}
+\DoxyCodeLine{405      \&           qsqlog,nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{406 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408       \textcolor{keywordflow}{else}                      \textcolor{comment}{! do usual interpolation}}
+\DoxyCodeLine{409          }
+\DoxyCodeLine{410          res = \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip,np,ih,nhess,xlog,}
+\DoxyCodeLine{411      \&        qsqlog,nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413          \textcolor{keywordflow}{if} (f.le.-\/1.and.f.ge.-\/5) \textcolor{keywordflow}{then} \textcolor{comment}{! antiquark = quark -\/ valence}}
+\DoxyCodeLine{414             res = res -\/ \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}}(ip+5,np,ih,nhess,xlog,}
+\DoxyCodeLine{415      \&           qsqlog,nx,nq,xxl,qql,cc)}
+\DoxyCodeLine{416 \textcolor{keywordflow}{         end if}}
+\DoxyCodeLine{417             }
+\DoxyCodeLine{418 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{419       }
+\DoxyCodeLine{420       \mbox{\hyperlink{mstwpdf_8f_ae58aafec286172ecfbf38f492973872f}{getonepdf}} = res}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_a4c579229e3760cca4e906603bc50de60}\label{mstwpdf_8f_a4c579229e3760cca4e906603bc50de60}} 
 \index{mstwpdf.f@{mstwpdf.f}!initialisepdf@{initialisepdf}}
 \index{initialisepdf@{initialisepdf}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{initialisepdf()}{initialisepdf()}}
 {\footnotesize\ttfamily subroutine initialisepdf (\begin{DoxyParamCaption}\item[{integer}]{ip,  }\item[{integer}]{np,  }\item[{integer}]{ih,  }\item[{integer}]{nhess,  }\item[{integer}]{nx,  }\item[{integer}]{my,  }\item[{integer}]{myc0,  }\item[{integer}]{myb0,  }\item[{double precision, dimension(nx)}]{xx,  }\item[{double precision, dimension(my)}]{yy,  }\item[{double precision, dimension(np,nx,my)}]{ff,  }\item[{double precision, dimension(np,0\+:nhess,nx,my,4,4)}]{cc }\end{DoxyParamCaption})}
 
+
+
+Definition at line 429 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{429       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{430       \textcolor{keywordtype}{integer} nhess,ih,nx,my,myc0,myb0,j,k,l,m,n,ip,np}
+\DoxyCodeLine{431       \textcolor{keywordtype}{double precision} xx(nx),yy(my),ff(np,nx,my),}
+\DoxyCodeLine{432      \&     ff1(nx,my),ff2(nx,my),ff12(nx,my),ff21(nx,my),}
+\DoxyCodeLine{433      \&     yy0(4),yy1(4),yy2(4),yy12(4),z(16),}
+\DoxyCodeLine{434      \&     cl(16),cc(np,0:nhess,nx,my,4,4),iwt(16,16),}
+\DoxyCodeLine{435      \&     polderiv1,polderiv2,polderiv3,d1,d2,d1d2,xxd}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437       \textcolor{keyword}{data} iwt/1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,}
+\DoxyCodeLine{438      \&     0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,}
+\DoxyCodeLine{439      \&     -\/3,0,0,3,0,0,0,0,-\/2,0,0,-\/1,0,0,0,0,}
+\DoxyCodeLine{440      \&     2,0,0,-\/2,0,0,0,0,1,0,0,1,0,0,0,0,}
+\DoxyCodeLine{441      \&     0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,}
+\DoxyCodeLine{442      \&     0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,}
+\DoxyCodeLine{443      \&     0,0,0,0,-\/3,0,0,3,0,0,0,0,-\/2,0,0,-\/1,}
+\DoxyCodeLine{444      \&     0,0,0,0,2,0,0,-\/2,0,0,0,0,1,0,0,1,}
+\DoxyCodeLine{445      \&     -\/3,3,0,0,-\/2,-\/1,0,0,0,0,0,0,0,0,0,0,}
+\DoxyCodeLine{446      \&     0,0,0,0,0,0,0,0,-\/3,3,0,0,-\/2,-\/1,0,0,}
+\DoxyCodeLine{447      \&     9,-\/9,9,-\/9,6,3,-\/3,-\/6,6,-\/6,-\/3,3,4,2,1,2,}
+\DoxyCodeLine{448      \&     -\/6,6,-\/6,6,-\/4,-\/2,2,4,-\/3,3,3,-\/3,-\/2,-\/1,-\/1,-\/2,}
+\DoxyCodeLine{449      \&     2,-\/2,0,0,1,1,0,0,0,0,0,0,0,0,0,0,}
+\DoxyCodeLine{450      \&     0,0,0,0,0,0,0,0,2,-\/2,0,0,1,1,0,0,}
+\DoxyCodeLine{451      \&     -\/6,6,-\/6,6,-\/3,-\/3,3,3,-\/4,4,2,-\/2,-\/2,-\/2,-\/1,-\/1,}
+\DoxyCodeLine{452      \&     4,-\/4,4,-\/4,2,2,-\/2,-\/2,2,-\/2,-\/2,2,1,1,1,1/}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454       \textcolor{keywordflow}{do} m=1,my}
+\DoxyCodeLine{455          ff1(1,m)=\mbox{\hyperlink{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}{polderiv1}}(xx(1),xx(2),xx(3),}
+\DoxyCodeLine{456      \&        ff(ip,1,m),ff(ip,2,m),ff(ip,3,m))}
+\DoxyCodeLine{457          ff1(nx,m)=\mbox{\hyperlink{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}{polderiv3}}(xx(nx-\/2),xx(nx-\/1),xx(nx),}
+\DoxyCodeLine{458      \&        ff(ip,nx-\/2,m),ff(ip,nx-\/1,m),ff(ip,nx,m))}
+\DoxyCodeLine{459          \textcolor{keywordflow}{do} n=2,nx-\/1}
+\DoxyCodeLine{460             ff1(n,m)=\mbox{\hyperlink{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}{polderiv2}}(xx(n-\/1),xx(n),xx(n+1),}
+\DoxyCodeLine{461      \&           ff(ip,n-\/1,m),ff(ip,n,m),ff(ip,n+1,m))}
+\DoxyCodeLine{462 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{463 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 \textcolor{comment}{C-\/-\/   Calculate the derivatives at qsq=mc2,mc2+eps,mb2,mb2+eps}}
+\DoxyCodeLine{466 \textcolor{comment}{C-\/-\/   in a similar way as at the endpoints qsqmin and qsqmax.}}
+\DoxyCodeLine{467       \textcolor{keywordflow}{do} n=1,nx}
+\DoxyCodeLine{468          \textcolor{keywordflow}{do} m=1,my}
+\DoxyCodeLine{469             \textcolor{keywordflow}{if} (myc0.eq.2.and.m.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{470                ff2(n,m)=(ff(ip,n,m+1)-\/ff(ip,n,m))/(yy(m+1)-\/yy(m))}
+\DoxyCodeLine{471             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (myc0.eq.2.and.m.eq.2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{472                ff2(n,m)=(ff(ip,n,m)-\/ff(ip,n,m-\/1))/(yy(m)-\/yy(m-\/1))}
+\DoxyCodeLine{473             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m.eq.1.or.m.eq.myc0+1.or.m.eq.myb0+1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{474                ff2(n,m)=\mbox{\hyperlink{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}{polderiv1}}(yy(m),yy(m+1),yy(m+2),}
+\DoxyCodeLine{475      \&              ff(ip,n,m),ff(ip,n,m+1),ff(ip,n,m+2))}
+\DoxyCodeLine{476             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m.eq.my.or.m.eq.myc0.or.m.eq.myb0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{477                ff2(n,m)=\mbox{\hyperlink{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}{polderiv3}}(yy(m-\/2),yy(m-\/1),yy(m),}
+\DoxyCodeLine{478      \&              ff(ip,n,m-\/2),ff(ip,n,m-\/1),ff(ip,n,m))}
+\DoxyCodeLine{479             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{480                ff2(n,m)=\mbox{\hyperlink{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}{polderiv2}}(yy(m-\/1),yy(m),yy(m+1),}
+\DoxyCodeLine{481      \&              ff(ip,n,m-\/1),ff(ip,n,m),ff(ip,n,m+1))}
+\DoxyCodeLine{482 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{483 \textcolor{keywordflow}{         end do}}
+\DoxyCodeLine{484 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{comment}{C-\/-\/   Calculate the cross derivatives (d/dx)(d/dy).}}
+\DoxyCodeLine{487       \textcolor{keywordflow}{do} m=1,my}
+\DoxyCodeLine{488          ff12(1,m)=\mbox{\hyperlink{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}{polderiv1}}(xx(1),xx(2),xx(3),}
+\DoxyCodeLine{489      \&        ff2(1,m),ff2(2,m),ff2(3,m))}
+\DoxyCodeLine{490          ff12(nx,m)=\mbox{\hyperlink{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}{polderiv3}}(xx(nx-\/2),xx(nx-\/1),xx(nx),}
+\DoxyCodeLine{491      \&        ff2(nx-\/2,m),ff2(nx-\/1,m),ff2(nx,m))}
+\DoxyCodeLine{492          \textcolor{keywordflow}{do} n=2,nx-\/1}
+\DoxyCodeLine{493             ff12(n,m)=\mbox{\hyperlink{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}{polderiv2}}(xx(n-\/1),xx(n),xx(n+1),}
+\DoxyCodeLine{494      \&           ff2(n-\/1,m),ff2(n,m),ff2(n+1,m))}
+\DoxyCodeLine{495 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{496 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 \textcolor{comment}{C-\/-\/   Calculate the cross derivatives (d/dy)(d/dx).}}
+\DoxyCodeLine{499       \textcolor{keywordflow}{do} n=1,nx}
+\DoxyCodeLine{500          \textcolor{keywordflow}{do} m = 1, my}
+\DoxyCodeLine{501             \textcolor{keywordflow}{if} (myc0.eq.2.and.m.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{502                ff21(n,m)=(ff1(n,m+1)-\/ff1(n,m))/(yy(m+1)-\/yy(m))}
+\DoxyCodeLine{503             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (myc0.eq.2.and.m.eq.2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{504                ff21(n,m)=(ff1(n,m)-\/ff1(n,m-\/1))/(yy(m)-\/yy(m-\/1))}
+\DoxyCodeLine{505             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m.eq.1.or.m.eq.myc0+1.or.m.eq.myb0+1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{506                ff21(n,m)=\mbox{\hyperlink{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}{polderiv1}}(yy(m),yy(m+1),yy(m+2),}
+\DoxyCodeLine{507      \&              ff1(n,m),ff1(n,m+1),ff1(n,m+2))}
+\DoxyCodeLine{508             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (m.eq.my.or.m.eq.myc0.or.m.eq.myb0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{509                ff21(n,m)=\mbox{\hyperlink{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}{polderiv3}}(yy(m-\/2),yy(m-\/1),yy(m),}
+\DoxyCodeLine{510      \&              ff1(n,m-\/2),ff1(n,m-\/1),ff1(n,m))}
+\DoxyCodeLine{511             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{512                ff21(n,m)=\mbox{\hyperlink{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}{polderiv2}}(yy(m-\/1),yy(m),yy(m+1),}
+\DoxyCodeLine{513      \&              ff1(n,m-\/1),ff1(n,m),ff1(n,m+1))}
+\DoxyCodeLine{514 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{515 \textcolor{keywordflow}{         end do}}
+\DoxyCodeLine{516 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 \textcolor{comment}{C-\/-\/   Take the average of (d/dx)(d/dy) and (d/dy)(d/dx).}}
+\DoxyCodeLine{519       \textcolor{keywordflow}{do} n=1,nx}
+\DoxyCodeLine{520          \textcolor{keywordflow}{do} m = 1, my}
+\DoxyCodeLine{521             ff12(n,m)=0.5*(ff12(n,m)+ff21(n,m))}
+\DoxyCodeLine{522 \textcolor{keywordflow}{         end do}}
+\DoxyCodeLine{523 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525       \textcolor{keywordflow}{do} n=1,nx-\/1}
+\DoxyCodeLine{526          \textcolor{keywordflow}{do} m=1,my-\/1}
+\DoxyCodeLine{527             d1=xx(n+1)-\/xx(n)}
+\DoxyCodeLine{528             d2=yy(m+1)-\/yy(m)}
+\DoxyCodeLine{529             d1d2=d1*d2}
+\DoxyCodeLine{530             }
+\DoxyCodeLine{531             yy0(1)=ff(ip,n,m)}
+\DoxyCodeLine{532             yy0(2)=ff(ip,n+1,m)}
+\DoxyCodeLine{533             yy0(3)=ff(ip,n+1,m+1)}
+\DoxyCodeLine{534             yy0(4)=ff(ip,n,m+1)}
+\DoxyCodeLine{535             }
+\DoxyCodeLine{536             yy1(1)=ff1(n,m)}
+\DoxyCodeLine{537             yy1(2)=ff1(n+1,m)}
+\DoxyCodeLine{538             yy1(3)=ff1(n+1,m+1)}
+\DoxyCodeLine{539             yy1(4)=ff1(n,m+1)}
+\DoxyCodeLine{540             }
+\DoxyCodeLine{541             yy2(1)=ff2(n,m)}
+\DoxyCodeLine{542             yy2(2)=ff2(n+1,m)}
+\DoxyCodeLine{543             yy2(3)=ff2(n+1,m+1)}
+\DoxyCodeLine{544             yy2(4)=ff2(n,m+1)}
+\DoxyCodeLine{545             }
+\DoxyCodeLine{546             yy12(1)=ff12(n,m)}
+\DoxyCodeLine{547             yy12(2)=ff12(n+1,m)}
+\DoxyCodeLine{548             yy12(3)=ff12(n+1,m+1)}
+\DoxyCodeLine{549             yy12(4)=ff12(n,m+1)}
+\DoxyCodeLine{550             }
+\DoxyCodeLine{551             \textcolor{keywordflow}{do} k=1,4}
+\DoxyCodeLine{552                z(k)=yy0(k)}
+\DoxyCodeLine{553                z(k+4)=yy1(k)*d1}
+\DoxyCodeLine{554                z(k+8)=yy2(k)*d2}
+\DoxyCodeLine{555                z(k+12)=yy12(k)*d1d2}
+\DoxyCodeLine{556 \textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{557             }
+\DoxyCodeLine{558             \textcolor{keywordflow}{do} l=1,16}
+\DoxyCodeLine{559                xxd=0.d0}
+\DoxyCodeLine{560                \textcolor{keywordflow}{do} k=1,16}
+\DoxyCodeLine{561                   xxd=xxd+iwt(k,l)*z(k)}
+\DoxyCodeLine{562 \textcolor{keywordflow}{               enddo}}
+\DoxyCodeLine{563                cl(l)=xxd}
+\DoxyCodeLine{564 \textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{565             l=0}
+\DoxyCodeLine{566             \textcolor{keywordflow}{do} k=1,4}
+\DoxyCodeLine{567                \textcolor{keywordflow}{do} j=1,4}
+\DoxyCodeLine{568                   l=l+1}
+\DoxyCodeLine{569                   cc(ip,ih,n,m,k,j)=cl(l)}
+\DoxyCodeLine{570 \textcolor{keywordflow}{               enddo}}
+\DoxyCodeLine{571 \textcolor{keywordflow}{            enddo}}
+\DoxyCodeLine{572 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{573 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{574       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}\label{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}} 
 \index{mstwpdf.f@{mstwpdf.f}!interpolatepdf@{interpolatepdf}}
 \index{interpolatepdf@{interpolatepdf}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{interpolatepdf()}{interpolatepdf()}}
 {\footnotesize\ttfamily double precision function interpolatepdf (\begin{DoxyParamCaption}\item[{integer}]{ip,  }\item[{integer}]{np,  }\item[{integer}]{ih,  }\item[{integer}]{nhess,  }\item[{double precision}]{x,  }\item[{double precision}]{y,  }\item[{integer}]{nx,  }\item[{integer}]{my,  }\item[{double precision, dimension(nx)}]{xx,  }\item[{double precision, dimension(my)}]{yy,  }\item[{double precision, dimension(np,0\+:nhess,nx,my,4,4)}]{cc }\end{DoxyParamCaption})}
 
+
+
+Definition at line 581 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{581       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{582       \textcolor{keywordtype}{integer} ih,nx,my,nhess,locx,l,m,n,ip,np}
+\DoxyCodeLine{583       \textcolor{keywordtype}{double precision} xx(nx),yy(my),cc(np,0:nhess,nx,my,4,4),}
+\DoxyCodeLine{584      \&     x,y,z,t,u}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586       n=\mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}(xx,nx,x)}
+\DoxyCodeLine{587       m=\mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}(yy,my,y)}
+\DoxyCodeLine{588       }
+\DoxyCodeLine{589       t=(x-\/xx(n))/(xx(n+1)-\/xx(n))}
+\DoxyCodeLine{590       u=(y-\/yy(m))/(yy(m+1)-\/yy(m))}
+\DoxyCodeLine{591       }
+\DoxyCodeLine{592       z=0.d0}
+\DoxyCodeLine{593       \textcolor{keywordflow}{do} l=4,1,-\/1}
+\DoxyCodeLine{594          z=t*z+((cc(ip,ih,n,m,l,4)*u+cc(ip,ih,n,m,l,3))*u}
+\DoxyCodeLine{595      \&        +cc(ip,ih,n,m,l,2))*u+cc(ip,ih,n,m,l,1)}
+\DoxyCodeLine{596 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598       \mbox{\hyperlink{mstwpdf_8f_a4c8de06fcf55ecc29c888aaa74ee8ed7}{interpolatepdf}} = z}
+\DoxyCodeLine{599 }
+\DoxyCodeLine{600       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}\label{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}} 
 \index{mstwpdf.f@{mstwpdf.f}!lentrim@{lentrim}}
 \index{lentrim@{lentrim}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{lentrim()}{lentrim()}}
 {\footnotesize\ttfamily integer function lentrim (\begin{DoxyParamCaption}\item[{character$\ast$($\ast$)}]{s }\end{DoxyParamCaption})}
 
+
+
+Definition at line 737 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{737       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{738       \textcolor{keywordtype}{character*(*)} s}
+\DoxyCodeLine{739       \textcolor{keywordflow}{do} \mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}} = len(s), 1, -\/1}
+\DoxyCodeLine{740          \textcolor{keywordflow}{if} (s(\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}:\mbox{\hyperlink{mstwpdf_8f_a0b637d502e033437ddb2e5b5ddcdec4c}{lentrim}}) .ne. \textcolor{stringliteral}{' '}) \textcolor{keywordflow}{return}}
+\DoxyCodeLine{741 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{742       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}\label{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}} 
 \index{mstwpdf.f@{mstwpdf.f}!locx@{locx}}
 \index{locx@{locx}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{locx()}{locx()}}
 {\footnotesize\ttfamily integer function locx (\begin{DoxyParamCaption}\item[{double precision, dimension(nx)}]{xx,  }\item[{integer}]{nx,  }\item[{double precision}]{x }\end{DoxyParamCaption})}
 
+
+
+Definition at line 672 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{672 \textcolor{comment}{C-\/-\/   returns an integer j such that x lies inbetween xx(j) and xx(j+1).}}
+\DoxyCodeLine{673 \textcolor{comment}{C-\/-\/   nx is the length of the array with xx(nx) the highest element.}}
+\DoxyCodeLine{674       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{675       \textcolor{keywordtype}{integer} nx,jl,ju,jm}
+\DoxyCodeLine{676       \textcolor{keywordtype}{double precision} x,xx(nx)}
+\DoxyCodeLine{677       \textcolor{keywordflow}{if}(x.eq.xx(1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{678          \mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}=1}
+\DoxyCodeLine{679          \textcolor{keywordflow}{return}}
+\DoxyCodeLine{680 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{681       \textcolor{keywordflow}{if}(x.eq.xx(nx)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{682          \mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}=nx-\/1  }
+\DoxyCodeLine{683          \textcolor{keywordflow}{return}}
+\DoxyCodeLine{684 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{685       ju=nx+1}
+\DoxyCodeLine{686       jl=0}
+\DoxyCodeLine{687     1 \textcolor{keywordflow}{if}((ju-\/jl).le.1) \textcolor{keywordflow}{go to} 2}
+\DoxyCodeLine{688       jm=(ju+jl)/2}
+\DoxyCodeLine{689       \textcolor{keywordflow}{if}(x.ge.xx(jm)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{690          jl=jm}
+\DoxyCodeLine{691       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{692          ju=jm}
+\DoxyCodeLine{693 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{694       \textcolor{keywordflow}{go to} 1}
+\DoxyCodeLine{695     2 \mbox{\hyperlink{mstwpdf_8f_aef9e58ad5e0fd0515946bdcb28f3cc98}{locx}}=jl}
+\DoxyCodeLine{696       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}\label{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}} 
 \index{mstwpdf.f@{mstwpdf.f}!polderiv1@{polderiv1}}
 \index{polderiv1@{polderiv1}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{polderiv1()}{polderiv1()}}
 {\footnotesize\ttfamily double precision function polderiv1 (\begin{DoxyParamCaption}\item[{double precision}]{x1,  }\item[{double precision}]{x2,  }\item[{double precision}]{x3,  }\item[{double precision}]{y1,  }\item[{double precision}]{y2,  }\item[{double precision}]{y3 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 702 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{702 \textcolor{comment}{C-\/-\/   returns the estimate of the derivative at x1 obtained by a}}
+\DoxyCodeLine{703 \textcolor{comment}{C-\/-\/   polynomial interpolation using the three points (x\_i,y\_i).}}
+\DoxyCodeLine{704       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{705       \textcolor{keywordtype}{double precision} x1,x2,x3,y1,y2,y3}
+\DoxyCodeLine{706       \mbox{\hyperlink{mstwpdf_8f_a1cada71a1e6e4a1f00c7f075dfda5269}{polderiv1}}=(x3*x3*(y1-\/y2)+2.d0*x1*(x3*(-\/y1+y2)+x2*(y1-\/y3))}
+\DoxyCodeLine{707      \&     +x2*x2*(-\/y1+y3)+x1*x1*(-\/y2+y3))/((x1-\/x2)*(x1-\/x3)*(x2-\/x3))}
+\DoxyCodeLine{708       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}\label{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}} 
 \index{mstwpdf.f@{mstwpdf.f}!polderiv2@{polderiv2}}
 \index{polderiv2@{polderiv2}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{polderiv2()}{polderiv2()}}
 {\footnotesize\ttfamily double precision function polderiv2 (\begin{DoxyParamCaption}\item[{double precision}]{x1,  }\item[{double precision}]{x2,  }\item[{double precision}]{x3,  }\item[{double precision}]{y1,  }\item[{double precision}]{y2,  }\item[{double precision}]{y3 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 712 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{712 \textcolor{comment}{C-\/-\/   returns the estimate of the derivative at x2 obtained by a}}
+\DoxyCodeLine{713 \textcolor{comment}{C-\/-\/   polynomial interpolation using the three points (x\_i,y\_i).}}
+\DoxyCodeLine{714       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{715       \textcolor{keywordtype}{double precision} x1,x2,x3,y1,y2,y3}
+\DoxyCodeLine{716       \mbox{\hyperlink{mstwpdf_8f_ae58ed6df8039a83d94426d7bb25ca1e6}{polderiv2}}=(x3*x3*(y1-\/y2)-\/2.d0*x2*(x3*(y1-\/y2)+x1*(y2-\/y3))}
+\DoxyCodeLine{717      \&     +x2*x2*(y1-\/y3)+x1*x1*(y2-\/y3))/((x1-\/x2)*(x1-\/x3)*(x2-\/x3))}
+\DoxyCodeLine{718       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}\label{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}} 
 \index{mstwpdf.f@{mstwpdf.f}!polderiv3@{polderiv3}}
 \index{polderiv3@{polderiv3}!mstwpdf.f@{mstwpdf.f}}
 \doxysubsubsection{\texorpdfstring{polderiv3()}{polderiv3()}}
 {\footnotesize\ttfamily double precision function polderiv3 (\begin{DoxyParamCaption}\item[{double precision}]{x1,  }\item[{double precision}]{x2,  }\item[{double precision}]{x3,  }\item[{double precision}]{y1,  }\item[{double precision}]{y2,  }\item[{double precision}]{y3 }\end{DoxyParamCaption})}
 
+
+
+Definition at line 722 of file mstwpdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{722 \textcolor{comment}{C-\/-\/   returns the estimate of the derivative at x3 obtained by a}}
+\DoxyCodeLine{723 \textcolor{comment}{C-\/-\/   polynomial interpolation using the three points (x\_i,y\_i).}}
+\DoxyCodeLine{724       \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{725       \textcolor{keywordtype}{double precision} x1,x2,x3,y1,y2,y3}
+\DoxyCodeLine{726       \mbox{\hyperlink{mstwpdf_8f_a9683428a065c3e3c72417a9ca8035a1b}{polderiv3}}=(x3*x3*(-\/y1+y2)+2.d0*x2*x3*(y1-\/y3)+x1*x1*(y2-\/y3)}
+\DoxyCodeLine{727      \&     +x2*x2*(-\/y1+y3)+2.d0*x1*x3*(-\/y2+y3))/}
+\DoxyCodeLine{728      \&     ((x1-\/x2)*(x1-\/x3)*(x2-\/x3))}
+\DoxyCodeLine{729       \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}

@@ -114,6 +114,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="RooSpin_8cc_source.html#l00007">7</a> of file <a class="el" href="RooSpin_8cc_source.html">RooSpin.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                                                                                               {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  resRe=0; resIm=0;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nreals = reals.size();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nimags = imags.size();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nloops = pow(2, min(nreals, nimags));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nterms = max(nreals, nimags);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ic=0; ic&lt;nloops; ic++){</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Double_t termval=1;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nimagsused=0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">bool</span> doSkip=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> it=0; it&lt;nterms; it++){</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> code = (nreals&gt;=nimags ? 0 : 1);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">if</span> (it&lt;nloops) code = (ic &gt;&gt; it);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keywordflow">if</span> (code%2==1){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        nimagsused++;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        termval*=imags.at(it);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">else</span> termval*=reals.at(it);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordflow">if</span> (termval==0.){ doSkip=<span class="keyword">true</span>; <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (doSkip) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (nimagsused%4==0) resRe += termval;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nimagsused%4==1) resIm += termval;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nimagsused%4==2) resRe -= termval;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">else</span> resIm -= termval;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

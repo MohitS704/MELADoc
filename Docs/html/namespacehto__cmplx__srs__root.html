@@ -108,9 +108,45 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l00624">624</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+<div class="fragment"><div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;       <span class="keywordtype">USE </span><a class="code" href="namespacehto__units.html">hto_units</a></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;       <span class="keywordtype">USE </span><a class="code" href="namespacehto__riemann.html">hto_riemann</a></div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;       <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;       real*8 r,rs,u,v </div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;       real*8, <span class="keywordtype">dimension(2)</span> :: <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;       real*8, <span class="keywordtype">INTENT(IN)</span>, <span class="keywordtype">dimension(2)</span>:: x,y</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;*</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;       <span class="keywordflow">IF</span>(x(1) &gt; 0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        rs= x(1)*x(1)+x(2)*x(2)</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        r= sqrt(rs)</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        u= 0.5d0*(r+x(1))</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a>(1)= sqrt(u)</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        r= sqrt(rs)</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        v= 0.5d0*(r-x(1))</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a>(2)= sign(<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>,x(2))*sqrt(v)</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;       <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        rs= x(1)*x(1)+x(2)*x(2)</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        r= sqrt(rs)</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        u= 0.5d0*(r+x(1))</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        v= 0.5d0*(r-x(1))</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;*</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <span class="keywordflow">IF</span>((x(2)*y(2)) &gt; 0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;         <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a>(1)= sqrt(u)</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;         <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a>(2)= sign(<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>,x(2))*sqrt(v)</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        <span class="keywordflow">ELSEIF</span>((x(2)*y(2)) &lt; 0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;         <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a>(1)= -sqrt(u)</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;         <a class="code" href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">crsrs</a>(2)= sign(<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>,x(2))*sqrt(v)</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;<span class="keywordflow">        ENDIF</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;*</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="keywordflow">       ENDIF</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="anamespacehto__units_html_adb7ab93d326f14720c354f68b0f7ee6c"><div class="ttname"><a href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">hto_units::one</a></div><div class="ttdeci">real *8, parameter one</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00184">CALLING_cpHTO.f:184</a></div></div>
+<div class="ttc" id="anamespacehto__riemann_html"><div class="ttname"><a href="namespacehto__riemann.html">hto_riemann</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00195">CALLING_cpHTO.f:195</a></div></div>
+<div class="ttc" id="anamespacehto__units_html"><div class="ttname"><a href="namespacehto__units.html">hto_units</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00179">CALLING_cpHTO.f:179</a></div></div>
+<div class="ttc" id="anamespacehto__cmplx__srs__root_html_a2f9cdb15daf46978bd8e018087e5c067"><div class="ttname"><a href="namespacehto__cmplx__srs__root.html#a2f9cdb15daf46978bd8e018087e5c067">hto_cmplx_srs_root::crsrs</a></div><div class="ttdeci">real *8 function, dimension(2) crsrs(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00624">CALLING_cpHTO.f:624</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -156,6 +156,32 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00690">690</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;<span class="keyword">def </span><a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a>(lineorid, pxortlv=None, py=None, pz=None, e=None):</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;  <span class="keywordflow">if</span> pxortlv <span class="keywordflow">is</span> py <span class="keywordflow">is</span> pz <span class="keywordflow">is</span> e <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordflow">if</span> isinstance(lineorid, ROOT.SimpleParticle_t): <span class="keywordflow">return</span> lineorid</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keywordflow">if</span> isinstance(lineorid, basestring):</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;      lineorid = lineorid.split()</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keywordflow">if</span> len(lineorid) == 13:</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;      id, status, mother1, mother2, color1, color2, px, py, pz, e, m, lifetime, spin = (<a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>(_) <span class="keywordflow">for</span> f, _ <span class="keywordflow">in</span> zip((int, int, int, int, int, int, float, float, float, float, float, float, float), lineorid))</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="keywordflow">elif</span> len(lineorid) == 5:</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;      id, px, py, pz, e = (<a class="code" href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">f</a>(_) <span class="keywordflow">for</span> f, _ <span class="keywordflow">in</span> zip((int, float, float, float, float), lineorid))</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordflow">elif</span> len(lineorid) == 2:</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;      id, pxortlv = lineorid</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;      <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;len(lineorid) has to be 5 or 13, not {}&quot;</span>.format(len(lineorid)))</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;  <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    id = lineorid</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    px = pxortlv</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;  <span class="keywordflow">if</span> py <span class="keywordflow">is</span> pz <span class="keywordflow">is</span> e <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    tlv = pxortlv</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;  <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    tlv = ROOT.TLorentzVector(px, py, pz, e)</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;  <span class="keywordflow">return</span> ROOT.SimpleParticle_t(id, tlv)</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae4405be17771a467e20ffacc3f9f8431"></a>
@@ -174,6 +200,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00683">683</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="keyword">def </span><a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a>(iterable=None):</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;  <span class="keywordflow">if</span> iterable <span class="keywordflow">is</span> <span class="keywordtype">None</span>: <span class="keywordflow">return</span> ROOT.SimpleParticleCollection_t()</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;  result = ROOT.SimpleParticleCollection_t()</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;  <span class="keywordflow">for</span> _ <span class="keywordflow">in</span> iterable:</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    result.push_back(SimpleParticle_t(_))</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;  <span class="keywordflow">return</span> result</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -193,6 +228,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">  2 31.22409920730000010 -37.83127789369999761 1.23465418111000003 49.06805813689999951</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">  &quot;&quot;&quot;</span></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00773">773</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ae50e59d08ecdd9b4c113926a841b76af"></a>
@@ -206,6 +243,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00047">47</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -230,6 +269,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;               (1, 0, 0, -12110.20),</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;              )</div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00791">791</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a0944c7e72a30532e078afc17c62df400"></a>
@@ -250,6 +291,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="stringliteral">  -11 -93.72924763700000028 39.45060783929999815 -92.98363978320000456 137.79506373300000632</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral">  &quot;&quot;&quot;</span></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00767">767</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="acbbd5d6eab0927b6f569e8fc32f9cc4a"></a>
@@ -263,6 +306,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00803">803</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -295,6 +340,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">&lt;/event&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">  &quot;&quot;&quot;</span></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00716">716</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ada98b3dacb0aad4e8296e5cae475dee3"></a>
@@ -326,6 +373,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">&lt;/event&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">  &quot;&quot;&quot;</span></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00733">733</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a03eb7d93b7ac452db2f770ea9b2edc9b"></a>
@@ -356,6 +405,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">&lt;/event&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">  &quot;&quot;&quot;</span></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00750">750</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a6861d4777c76f52ba92f0ddbc706b561"></a>
@@ -370,6 +421,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00801">801</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="a42a9f6ba8d6c9cec91eb11b999fea95e"></a>
@@ -383,6 +436,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00715">715</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
 
 </div>
 </div>
@@ -402,6 +457,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">  2 0.00000000000000000 0.00000000000000000 -451.13974271600000066 451.13974271600000066</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">  &quot;&quot;&quot;</span></div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00777">777</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 <a id="ad931acffcdd325571523d5fc76d67185"></a>
@@ -416,9 +473,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mela_8py_source.html#l00806">806</a> of file <a class="el" href="mela_8py_source.html">mela.py</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aTVar_8hh_html_a2bc0c1a02f5152697e55ab2bbda40aff"><div class="ttname"><a href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a></div><div class="ttdeci">std::pair&lt; int, TLorentzVector &gt; SimpleParticle_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00024">TVar.hh:24</a></div></div>
+<div class="ttc" id="anamespacemodttbhiggs_html_adad982f9354a9487600f7cc5dbc4123c"><div class="ttname"><a href="namespacemodttbhiggs.html#adad982f9354a9487600f7cc5dbc4123c">modttbhiggs::f</a></div><div class="ttdeci">recursive complex(8) function, dimension(size(sp)) f(e, k, sp, p, mass, flout, flin, ms)</div><div class="ttdef"><b>Definition:</b> <a href="mod__TTBHiggs_8F90_source.html#l01783">mod_TTBHiggs.F90:1783</a></div></div>
+<div class="ttc" id="aTVar_8hh_html_ac8ad3b9b9fb4621a213e219ad7289d76"><div class="ttname"><a href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a></div><div class="ttdeci">std::vector&lt; SimpleParticle_t &gt; SimpleParticleCollection_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00025">TVar.hh:25</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

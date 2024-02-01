@@ -29,6 +29,13 @@ def \mbox{\hyperlink{classlhefile_1_1TestLHEFiles_ac2be78e9fe65f6322de8a47b379c2
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 237 of file lhefile.\+py.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classlhefile_1_1TestLHEFiles_a391f9e61c4533d721d16eadc1bf9eb82}\label{classlhefile_1_1TestLHEFiles_a391f9e61c4533d721d16eadc1bf9eb82}} 
 \index{lhefile.TestLHEFiles@{lhefile.TestLHEFiles}!testHwithDecay@{testHwithDecay}}
@@ -36,18 +43,75 @@ def \mbox{\hyperlink{classlhefile_1_1TestLHEFiles_ac2be78e9fe65f6322de8a47b379c2
 \doxysubsubsection{\texorpdfstring{testHwithDecay()}{testHwithDecay()}}
 {\footnotesize\ttfamily def lhefile.\+Test\+L\+H\+E\+Files.\+test\+Hwith\+Decay (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Definition at line 239 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{239     \textcolor{keyword}{def }testHwithDecay(self):}
+\DoxyCodeLine{240       \textcolor{keyword}{with} LHEFile\_Hwithdecay(args.lhefile\_hwithdecay) \textcolor{keyword}{as} f:}
+\DoxyCodeLine{241         \textcolor{keywordflow}{for} event, i \textcolor{keywordflow}{in} itertools.izip(f, range(10)):}
+\DoxyCodeLine{242           event.ghz1 = 1}
+\DoxyCodeLine{243           event.setProcess(TVar.SelfDefine\_spin0, TVar.JHUGen, TVar.ZZINDEPENDENT)}
+\DoxyCodeLine{244           prob = event.computeP()}
+\DoxyCodeLine{245           self.assertNotEqual(prob, 0)}
+\DoxyCodeLine{246           print(prob, event.computeDecayAngles())}
+\DoxyCodeLine{247 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1TestLHEFiles_ac2be78e9fe65f6322de8a47b379c295b}\label{classlhefile_1_1TestLHEFiles_ac2be78e9fe65f6322de8a47b379c295b}} 
 \index{lhefile.TestLHEFiles@{lhefile.TestLHEFiles}!testJHUGenttH@{testJHUGenttH}}
 \index{testJHUGenttH@{testJHUGenttH}!lhefile.TestLHEFiles@{lhefile.TestLHEFiles}}
 \doxysubsubsection{\texorpdfstring{testJHUGenttH()}{testJHUGenttH()}}
 {\footnotesize\ttfamily def lhefile.\+Test\+L\+H\+E\+Files.\+test\+J\+H\+U\+GenttH (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Definition at line 268 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{268     \textcolor{keyword}{def }testJHUGenttH(self):}
+\DoxyCodeLine{269       \textcolor{keyword}{with} LHEFile\_JHUGenttH(args.lhefile\_jhugentth) \textcolor{keyword}{as} f:}
+\DoxyCodeLine{270         \textcolor{keywordflow}{for} event, i \textcolor{keywordflow}{in} itertools.izip(f, range(10)):}
+\DoxyCodeLine{271           \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273   unittest.main(argv=[sys.argv[0]]+args.unittest\_args)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classlhefile_1_1TestLHEFiles_ad4a66a88e070805636ac3d3e739f3c1a}\label{classlhefile_1_1TestLHEFiles_ad4a66a88e070805636ac3d3e739f3c1a}} 
 \index{lhefile.TestLHEFiles@{lhefile.TestLHEFiles}!testJHUGenVBFVH@{testJHUGenVBFVH}}
 \index{testJHUGenVBFVH@{testJHUGenVBFVH}!lhefile.TestLHEFiles@{lhefile.TestLHEFiles}}
 \doxysubsubsection{\texorpdfstring{testJHUGenVBFVH()}{testJHUGenVBFVH()}}
 {\footnotesize\ttfamily def lhefile.\+Test\+L\+H\+E\+Files.\+test\+J\+H\+U\+Gen\+V\+B\+F\+VH (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Definition at line 249 of file lhefile.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{249     \textcolor{keyword}{def }testJHUGenVBFVH(self):}
+\DoxyCodeLine{250       \textcolor{keyword}{with} LHEFile\_JHUGenVBFVH(args.lhefile\_jhugenvbfvh, isgen=\textcolor{keyword}{False}) \textcolor{keyword}{as} f:}
+\DoxyCodeLine{251         \textcolor{keywordflow}{for} event, i \textcolor{keywordflow}{in} itertools.izip(f, range(10)):}
+\DoxyCodeLine{252           event.ghz1 = 1}
+\DoxyCodeLine{253           \textcolor{keywordflow}{if} any(11 <= abs(p.first) <= 16 \textcolor{keywordflow}{for} p \textcolor{keywordflow}{in} event.associated):}
+\DoxyCodeLine{254             \textcolor{keywordflow}{if} sum(p.first \textcolor{keywordflow}{for} p \textcolor{keywordflow}{in} event.associated) == 0:}
+\DoxyCodeLine{255               VHprocess = TVar.Lep\_ZH}
+\DoxyCodeLine{256               event.setProcess(TVar.SelfDefine\_spin0, TVar.JHUGen, TVar.Lep\_ZH)}
+\DoxyCodeLine{257             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{258               VHprocess = TVar.Lep\_WH}
+\DoxyCodeLine{259               event.setProcess(TVar.SelfDefine\_spin0, TVar.JHUGen, TVar.Lep\_WH)}
+\DoxyCodeLine{260           \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{261             VHprocess = TVar.Had\_ZH}
+\DoxyCodeLine{262             event.setProcess(TVar.SelfDefine\_spin0, TVar.JHUGen, TVar.JJVBF)}
+\DoxyCodeLine{263           prob = event.computeProdP()}
+\DoxyCodeLine{264           self.assertNotEqual(prob, 0)}
+\DoxyCodeLine{265           print(prob, event.computeVBFAngles(), event.computeVHAngles(VHprocess))}
+\DoxyCodeLine{266 }
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

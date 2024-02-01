@@ -61,6 +61,13 @@ virtual void \mbox{\hyperlink{classScalarPdfFactory__HVV_af53db96fed745384c91474
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 8 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+h.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a0a971ec34438d2bb6b4f60ccd9c24bbc}\label{classScalarPdfFactory__HVV_a0a971ec34438d2bb6b4f60ccd9c24bbc}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
@@ -68,18 +75,61 @@ virtual void \mbox{\hyperlink{classScalarPdfFactory__HVV_af53db96fed745384c91474
 \doxysubsubsection{\texorpdfstring{ScalarPdfFactory\_HVV()}{ScalarPdfFactory\_HVV()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::\+Scalar\+Pdf\+Factory\+\_\+\+H\+VV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+,  }\item[{bool}]{acceptance\+\_\+ = {\ttfamily false},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V1decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V2decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{Bool\+\_\+t}]{Onshell\+H\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 4 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4                                                                                                                                                                                       :}
+\DoxyCodeLine{5 \mbox{\hyperlink{classScalarPdfFactory_a467f2cc6b625f2a44553e8edce1c8b64}{ScalarPdfFactory}}(measurables\_, acceptance\_, V1decay\_, V2decay\_, OnshellH\_)}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a5af796207b85d31b4f95a4e92253ac39}{Y}}=0;}
+\DoxyCodeLine{8   \mbox{\hyperlink{classScalarPdfFactory__HVV_a1ac76f5ddc9ba142a1f3da7b3a38e82b}{initAcceptanceParams}}();}
+\DoxyCodeLine{9   \mbox{\hyperlink{classScalarPdfFactory__HVV_a90a90e96f6d78a2ac3825613453db34a}{makeParamsConst}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{10   \mbox{\hyperlink{classScalarPdfFactory__HVV_a8dad4b556af55085cbbecbe40bc0c0bd}{initPDF}}();}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a36d429d11c209bc8302202fd553b2082}\label{classScalarPdfFactory__HVV_a36d429d11c209bc8302202fd553b2082}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
 \doxysubsubsection{\texorpdfstring{ScalarPdfFactory\_HVV()}{ScalarPdfFactory\_HVV()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::\+Scalar\+Pdf\+Factory\+\_\+\+H\+VV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+,  }\item[{double}]{g\+Ratio\+\_\+\mbox{[}4\mbox{]}\mbox{[}8\mbox{]},  }\item[{double}]{g\+Z\+Gs\+Ratio\+\_\+\mbox{[}4\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{g\+Gs\+Gs\+Ratio\+\_\+\mbox{[}3\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{g\+V\+Vp\+Ratio\+\_\+\mbox{[}1\mbox{]}\mbox{[}1\mbox{]},  }\item[{double}]{g\+Vp\+Vp\+Ratio\+\_\+\mbox{[}1\mbox{]}\mbox{[}1\mbox{]},  }\item[{bool}]{pmf\+\_\+applied\+\_\+ = {\ttfamily false},  }\item[{bool}]{acceptance\+\_\+ = {\ttfamily false},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V1decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V2decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{Bool\+\_\+t}]{Onshell\+H\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 12 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16   : \mbox{\hyperlink{classScalarPdfFactory_a467f2cc6b625f2a44553e8edce1c8b64}{ScalarPdfFactory}}(measurables\_, gRatio\_, gZGsRatio\_, gGsGsRatio\_, gVVpRatio\_, gVpVpRatio\_, pmf\_applied\_, acceptance\_, V1decay\_, V2decay\_, OnshellH\_)}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18   \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}}.\mbox{\hyperlink{structRooSpin_1_1modelMeasurables_a5af796207b85d31b4f95a4e92253ac39}{Y}}=0;}
+\DoxyCodeLine{19   \mbox{\hyperlink{classScalarPdfFactory__HVV_a1ac76f5ddc9ba142a1f3da7b3a38e82b}{initAcceptanceParams}}();}
+\DoxyCodeLine{20   \mbox{\hyperlink{classScalarPdfFactory__HVV_a90a90e96f6d78a2ac3825613453db34a}{makeParamsConst}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{21   \mbox{\hyperlink{classScalarPdfFactory__HVV_a8dad4b556af55085cbbecbe40bc0c0bd}{initPDF}}();}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a5061f74201d3312685e0b47f5631d126}\label{classScalarPdfFactory__HVV_a5061f74201d3312685e0b47f5631d126}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!````~ScalarPdfFactory\_HVV@{$\sim$ScalarPdfFactory\_HVV}}
 \index{````~ScalarPdfFactory\_HVV@{$\sim$ScalarPdfFactory\_HVV}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
 \doxysubsubsection{\texorpdfstring{$\sim$ScalarPdfFactory\_HVV()}{~ScalarPdfFactory\_HVV()}}
 {\footnotesize\ttfamily Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::$\sim$\+Scalar\+Pdf\+Factory\+\_\+\+H\+VV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 24 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                            \{}
+\DoxyCodeLine{25   \mbox{\hyperlink{classScalarPdfFactory__HVV_af53db96fed745384c91474463649b22c}{destroyPDF}}();}
+\DoxyCodeLine{26   \mbox{\hyperlink{classScalarPdfFactory__HVV_af3059e914528fc0cc81fb21465f1edd7}{destroyAcceptanceParams}}();}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -89,6 +139,49 @@ virtual void \mbox{\hyperlink{classScalarPdfFactory__HVV_af53db96fed745384c91474
 \doxysubsubsection{\texorpdfstring{destroyAcceptanceParams()}{destroyAcceptanceParams()}}
 {\footnotesize\ttfamily void Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::destroy\+Acceptance\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 113 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113                                                   \{}
+\DoxyCodeLine{114   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a1adc8224641af5a7c8b8c8e68e31829f}{aM1}};}
+\DoxyCodeLine{115   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a446affb70a2e2a75183de773c72403f4}{bM1}};}
+\DoxyCodeLine{116   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afae3d3e947d73fa93ff7e8f2c2a86b9c}{cM1}};}
+\DoxyCodeLine{117   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a70f841e359df4eb7ee88fb61208be50a}{dM1}};}
+\DoxyCodeLine{118   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4b869eb3c9c572c6460039322c20cfa4}{aM2}};}
+\DoxyCodeLine{119   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a82292afc70ee4f657d8b5b0315846f1b}{bM2}};}
+\DoxyCodeLine{120   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2b03ff8cf4204ac5df982711aebf7eb5}{cM2}};}
+\DoxyCodeLine{121   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a18ee5eb5953ad10ef36e6a06e2042ff8}{dM2}};}
+\DoxyCodeLine{122   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_af55c8c69a40f9099bdae62996612f83e}{aPhi}};}
+\DoxyCodeLine{123   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a6594543705bd78a804c77cfcc04816e7}{bPhi}};}
+\DoxyCodeLine{124   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a068248ef4313aed7f0390b1b71b12650}{cPhi}};}
+\DoxyCodeLine{125   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afa2ea03fd1a8a922d51e6f954f8b5321}{dPhi}};}
+\DoxyCodeLine{126   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ab1d21a5dd9f989bd9c1549186297c88d}{ePhi}};}
+\DoxyCodeLine{127   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa78efac8389256ff0d2275eb1db67f2e}{aPhi1}};}
+\DoxyCodeLine{128   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a266c06df5fe2d24ccace414c8624d610}{bPhi1}};}
+\DoxyCodeLine{129   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a7604dd4ad9db6c8bc0a9869c0effcf19}{cPhi1}};}
+\DoxyCodeLine{130   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ad069a87eaeae7f7eed49e093cab5e75a}{dPhi1}};}
+\DoxyCodeLine{131   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ae9787f407316e055914f00cefd82efe0}{ePhi1}};}
+\DoxyCodeLine{132   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_adfc13c71a35114abde17830330572e90}{aH1}};}
+\DoxyCodeLine{133   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2c304b1e487a64ad70fa1af6a6b24e55}{bH1}};}
+\DoxyCodeLine{134   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a887f398c5d22cae2b739fb504dd5abc1}{cH1}};}
+\DoxyCodeLine{135   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a55d1873633bd4a3d32b3c58144b2176b}{dH1}};}
+\DoxyCodeLine{136   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aea9d83f2af1480f2683f75f87e677311}{eH1}};}
+\DoxyCodeLine{137   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa14b10f70c7c497d3976c43ee8866839}{aH2}};}
+\DoxyCodeLine{138   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a04d271cfdda994b5087f154a1837ab86}{bH2}};}
+\DoxyCodeLine{139   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a717e241d707fa439c55f2f37310305d9}{cH2}};}
+\DoxyCodeLine{140   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a3f1c2cefab7bc23128db4d8dc1f0eda0}{dH2}};}
+\DoxyCodeLine{141   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a53776370f0d715b89bf6c2a81511b834}{eH2}};}
+\DoxyCodeLine{142   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a5a0776be2e6f14126ac49012ecba416c}{aHs}};}
+\DoxyCodeLine{143   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a699f983229f176a108e2a413ff86693d}{bHs}};}
+\DoxyCodeLine{144   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a01c45ec9e6405cd3c449514725fa5c72}{cHs}};}
+\DoxyCodeLine{145   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4c0476f856c953f9e227f083c1af094e}{dHs}};}
+\DoxyCodeLine{146   \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_abc1a7f5f4331619a92d29bec6d4583cb}{eHs}};}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_af53db96fed745384c91474463649b22c}\label{classScalarPdfFactory__HVV_af53db96fed745384c91474463649b22c}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!destroyPDF@{destroyPDF}}
 \index{destroyPDF@{destroyPDF}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
@@ -99,6 +192,15 @@ virtual void \mbox{\hyperlink{classScalarPdfFactory__HVV_af53db96fed745384c91474
 
 Implements \mbox{\hyperlink{classScalarPdfFactory_a1f0636cd638bc53e990660c52e2b0cf2}{Scalar\+Pdf\+Factory}}.
 
+
+
+Definition at line 31 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \{ \textcolor{keyword}{delete} \mbox{\hyperlink{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}{PDF}}; \mbox{\hyperlink{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}{PDF}}=0; \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}}=0; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_ac1fcb72ce88b98a1b4a54410d41bc035}\label{classScalarPdfFactory__HVV_ac1fcb72ce88b98a1b4a54410d41bc035}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!getPDF@{getPDF}}
 \index{getPDF@{getPDF}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
@@ -109,12 +211,113 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_a1f0636cd638bc53e990660c52e2b0
 
 Implements \mbox{\hyperlink{classScalarPdfFactory_a3a641ea50e2b8b8ab5ff6e8518c8f229}{Scalar\+Pdf\+Factory}}.
 
+
+
+Definition at line 22 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{ \textcolor{keywordflow}{return} (\mbox{\hyperlink{classRooSpinZero}{RooSpinZero}}*)\mbox{\hyperlink{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}{PDF}}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a1ac76f5ddc9ba142a1f3da7b3a38e82b}\label{classScalarPdfFactory__HVV_a1ac76f5ddc9ba142a1f3da7b3a38e82b}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!initAcceptanceParams@{initAcceptanceParams}}
 \index{initAcceptanceParams@{initAcceptanceParams}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
 \doxysubsubsection{\texorpdfstring{initAcceptanceParams()}{initAcceptanceParams()}}
 {\footnotesize\ttfamily void Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::init\+Acceptance\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line 29 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                                \{}
+\DoxyCodeLine{30   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory_a46cc49f22e30a5a609852028f6af220f}{acceptance}})\{}
+\DoxyCodeLine{31     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_af55c8c69a40f9099bdae62996612f83e}{aPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aPhi"}, \textcolor{stringliteral}{"aPhi"}, 1.);}
+\DoxyCodeLine{32     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a6594543705bd78a804c77cfcc04816e7}{bPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bPhi"}, \textcolor{stringliteral}{"bPhi"}, 4.88199e-\/03);}
+\DoxyCodeLine{33     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a068248ef4313aed7f0390b1b71b12650}{cPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cPhi"}, \textcolor{stringliteral}{"cPhi"}, 3.69579e-\/02);}
+\DoxyCodeLine{34     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afa2ea03fd1a8a922d51e6f954f8b5321}{dPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dPhi"}, \textcolor{stringliteral}{"dPhi"}, 0.);}
+\DoxyCodeLine{35     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ab1d21a5dd9f989bd9c1549186297c88d}{ePhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"ePhi"}, \textcolor{stringliteral}{"ePhi"}, 0.);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa78efac8389256ff0d2275eb1db67f2e}{aPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aPhi1"}, \textcolor{stringliteral}{"aPhi1"}, 1.);}
+\DoxyCodeLine{38     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a266c06df5fe2d24ccace414c8624d610}{bPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bPhi1"}, \textcolor{stringliteral}{"bPhi1"}, -\/1.27958e-\/02);}
+\DoxyCodeLine{39     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a7604dd4ad9db6c8bc0a9869c0effcf19}{cPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cPhi1"}, \textcolor{stringliteral}{"cPhi1"}, -\/1.64892e-\/01);}
+\DoxyCodeLine{40     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ad069a87eaeae7f7eed49e093cab5e75a}{dPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dPhi1"}, \textcolor{stringliteral}{"dPhi1"}, 0.);}
+\DoxyCodeLine{41     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ae9787f407316e055914f00cefd82efe0}{ePhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"ePhi1"}, \textcolor{stringliteral}{"ePhi1"}, 0.);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_adfc13c71a35114abde17830330572e90}{aH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aH1"}, \textcolor{stringliteral}{"aH1"}, 1.);}
+\DoxyCodeLine{44     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2c304b1e487a64ad70fa1af6a6b24e55}{bH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bH1"}, \textcolor{stringliteral}{"bH1"}, 2.64540e-\/02);}
+\DoxyCodeLine{45     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a887f398c5d22cae2b739fb504dd5abc1}{cH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cH1"}, \textcolor{stringliteral}{"cH1"}, 0.);}
+\DoxyCodeLine{46     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a55d1873633bd4a3d32b3c58144b2176b}{dH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dH1"}, \textcolor{stringliteral}{"dH1"}, 0.);}
+\DoxyCodeLine{47     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aea9d83f2af1480f2683f75f87e677311}{eH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"eH1"}, \textcolor{stringliteral}{"eH1"}, 0.);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa14b10f70c7c497d3976c43ee8866839}{aH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aH2"}, \textcolor{stringliteral}{"aH2"}, 1.);}
+\DoxyCodeLine{50     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a04d271cfdda994b5087f154a1837ab86}{bH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bH2"}, \textcolor{stringliteral}{"bH2"}, -\/3.73167e-\/01);}
+\DoxyCodeLine{51     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a717e241d707fa439c55f2f37310305d9}{cH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cH2"}, \textcolor{stringliteral}{"cH2"}, 0.);}
+\DoxyCodeLine{52     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a3f1c2cefab7bc23128db4d8dc1f0eda0}{dH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dH2"}, \textcolor{stringliteral}{"dH2"}, 0.);}
+\DoxyCodeLine{53     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a53776370f0d715b89bf6c2a81511b834}{eH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"eH2"}, \textcolor{stringliteral}{"eH2"}, 0.);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a5a0776be2e6f14126ac49012ecba416c}{aHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aHs"}, \textcolor{stringliteral}{"aHs"}, 1.);}
+\DoxyCodeLine{56     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a699f983229f176a108e2a413ff86693d}{bHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bHs"}, \textcolor{stringliteral}{"bHs"}, -\/1.55528e-\/01);}
+\DoxyCodeLine{57     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a01c45ec9e6405cd3c449514725fa5c72}{cHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cHs"}, \textcolor{stringliteral}{"cHs"}, 0.);}
+\DoxyCodeLine{58     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4c0476f856c953f9e227f083c1af094e}{dHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dHs"}, \textcolor{stringliteral}{"dHs"}, 0.);}
+\DoxyCodeLine{59     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_abc1a7f5f4331619a92d29bec6d4583cb}{eHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"eHs"}, \textcolor{stringliteral}{"eHs"}, 0.);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a1adc8224641af5a7c8b8c8e68e31829f}{aM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aM1"}, \textcolor{stringliteral}{"aM1"}, 1.);}
+\DoxyCodeLine{62     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a446affb70a2e2a75183de773c72403f4}{bM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bM1"}, \textcolor{stringliteral}{"bM1"}, -\/1.26554e-\/02);}
+\DoxyCodeLine{63     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afae3d3e947d73fa93ff7e8f2c2a86b9c}{cM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cM1"}, \textcolor{stringliteral}{"cM1"}, 3.13526e-\/05);}
+\DoxyCodeLine{64     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a70f841e359df4eb7ee88fb61208be50a}{dM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dM1"}, \textcolor{stringliteral}{"dM1"}, 0.);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4b869eb3c9c572c6460039322c20cfa4}{aM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aM2"}, \textcolor{stringliteral}{"aM2"}, 1.);}
+\DoxyCodeLine{67     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a82292afc70ee4f657d8b5b0315846f1b}{bM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bM2"}, \textcolor{stringliteral}{"bM2"}, 5.75519e-\/04);}
+\DoxyCodeLine{68     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2b03ff8cf4204ac5df982711aebf7eb5}{cM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cM2"}, \textcolor{stringliteral}{"cM2"}, -\/7.74696e-\/05);}
+\DoxyCodeLine{69     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a18ee5eb5953ad10ef36e6a06e2042ff8}{dM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dM2"}, \textcolor{stringliteral}{"dM2"}, 0.);}
+\DoxyCodeLine{70   \}}
+\DoxyCodeLine{71   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{72     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_af55c8c69a40f9099bdae62996612f83e}{aPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aPhi"}, \textcolor{stringliteral}{"aPhi"}, 1.);}
+\DoxyCodeLine{73     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a6594543705bd78a804c77cfcc04816e7}{bPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bPhi"}, \textcolor{stringliteral}{"bPhi"}, 0.);}
+\DoxyCodeLine{74     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a068248ef4313aed7f0390b1b71b12650}{cPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cPhi"}, \textcolor{stringliteral}{"cPhi"}, 0.);}
+\DoxyCodeLine{75     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afa2ea03fd1a8a922d51e6f954f8b5321}{dPhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dPhi"}, \textcolor{stringliteral}{"dPhi"}, 0.);}
+\DoxyCodeLine{76     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ab1d21a5dd9f989bd9c1549186297c88d}{ePhi}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"ePhi"}, \textcolor{stringliteral}{"ePhi"}, 0.);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa78efac8389256ff0d2275eb1db67f2e}{aPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aPhi1"}, \textcolor{stringliteral}{"aPhi1"}, 1.);}
+\DoxyCodeLine{79     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a266c06df5fe2d24ccace414c8624d610}{bPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bPhi1"}, \textcolor{stringliteral}{"bPhi1"}, 0.);}
+\DoxyCodeLine{80     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a7604dd4ad9db6c8bc0a9869c0effcf19}{cPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cPhi1"}, \textcolor{stringliteral}{"cPhi1"}, 0.);}
+\DoxyCodeLine{81     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ad069a87eaeae7f7eed49e093cab5e75a}{dPhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dPhi1"}, \textcolor{stringliteral}{"dPhi1"}, 0.);}
+\DoxyCodeLine{82     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ae9787f407316e055914f00cefd82efe0}{ePhi1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"ePhi1"}, \textcolor{stringliteral}{"ePhi1"}, 0.);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_adfc13c71a35114abde17830330572e90}{aH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aH1"}, \textcolor{stringliteral}{"aH1"}, 1.);}
+\DoxyCodeLine{85     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2c304b1e487a64ad70fa1af6a6b24e55}{bH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bH1"}, \textcolor{stringliteral}{"bH1"}, 0.);}
+\DoxyCodeLine{86     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a887f398c5d22cae2b739fb504dd5abc1}{cH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cH1"}, \textcolor{stringliteral}{"cH1"}, 0.);}
+\DoxyCodeLine{87     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a55d1873633bd4a3d32b3c58144b2176b}{dH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dH1"}, \textcolor{stringliteral}{"dH1"}, 0.);}
+\DoxyCodeLine{88     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aea9d83f2af1480f2683f75f87e677311}{eH1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"eH1"}, \textcolor{stringliteral}{"eH1"}, 0.);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa14b10f70c7c497d3976c43ee8866839}{aH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aH2"}, \textcolor{stringliteral}{"aH2"}, 1.);}
+\DoxyCodeLine{91     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a04d271cfdda994b5087f154a1837ab86}{bH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bH2"}, \textcolor{stringliteral}{"bH2"}, 0.);}
+\DoxyCodeLine{92     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a717e241d707fa439c55f2f37310305d9}{cH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cH2"}, \textcolor{stringliteral}{"cH2"}, 0.);}
+\DoxyCodeLine{93     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a3f1c2cefab7bc23128db4d8dc1f0eda0}{dH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dH2"}, \textcolor{stringliteral}{"dH2"}, 0.);}
+\DoxyCodeLine{94     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a53776370f0d715b89bf6c2a81511b834}{eH2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"eH2"}, \textcolor{stringliteral}{"eH2"}, 0.);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a5a0776be2e6f14126ac49012ecba416c}{aHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aHs"}, \textcolor{stringliteral}{"aHs"}, 1.);}
+\DoxyCodeLine{97     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a699f983229f176a108e2a413ff86693d}{bHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bHs"}, \textcolor{stringliteral}{"bHs"}, 0.);}
+\DoxyCodeLine{98     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a01c45ec9e6405cd3c449514725fa5c72}{cHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cHs"}, \textcolor{stringliteral}{"cHs"}, 0.);}
+\DoxyCodeLine{99     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4c0476f856c953f9e227f083c1af094e}{dHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dHs"}, \textcolor{stringliteral}{"dHs"}, 0.);}
+\DoxyCodeLine{100     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_abc1a7f5f4331619a92d29bec6d4583cb}{eHs}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"eHs"}, \textcolor{stringliteral}{"eHs"}, 0.);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a1adc8224641af5a7c8b8c8e68e31829f}{aM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aM1"}, \textcolor{stringliteral}{"aM1"}, 0.);}
+\DoxyCodeLine{103     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a446affb70a2e2a75183de773c72403f4}{bM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bM1"}, \textcolor{stringliteral}{"bM1"}, 0.);}
+\DoxyCodeLine{104     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afae3d3e947d73fa93ff7e8f2c2a86b9c}{cM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cM1"}, \textcolor{stringliteral}{"cM1"}, 0.);}
+\DoxyCodeLine{105     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a70f841e359df4eb7ee88fb61208be50a}{dM1}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dM1"}, \textcolor{stringliteral}{"dM1"}, 0.);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4b869eb3c9c572c6460039322c20cfa4}{aM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"aM2"}, \textcolor{stringliteral}{"aM2"}, 0.);}
+\DoxyCodeLine{108     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a82292afc70ee4f657d8b5b0315846f1b}{bM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"bM2"}, \textcolor{stringliteral}{"bM2"}, 0.);}
+\DoxyCodeLine{109     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2b03ff8cf4204ac5df982711aebf7eb5}{cM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"cM2"}, \textcolor{stringliteral}{"cM2"}, 0.);}
+\DoxyCodeLine{110     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a18ee5eb5953ad10ef36e6a06e2042ff8}{dM2}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"dM2"}, \textcolor{stringliteral}{"dM2"}, 0.);}
+\DoxyCodeLine{111   \}}
+\DoxyCodeLine{112 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a8dad4b556af55085cbbecbe40bc0c0bd}\label{classScalarPdfFactory__HVV_a8dad4b556af55085cbbecbe40bc0c0bd}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!initPDF@{initPDF}}
 \index{initPDF@{initPDF}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
@@ -125,6 +328,25 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_a3a641ea50e2b8b8ab5ff6e8518c8f
 
 Implements \mbox{\hyperlink{classScalarPdfFactory_ad5b8690d25e95177ecfe0d3d4fa36179}{Scalar\+Pdf\+Factory}}.
 
+
+
+Definition at line 236 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{236                                   \{}
+\DoxyCodeLine{237   \mbox{\hyperlink{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}{PDF}} = \textcolor{keyword}{new} \mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV}{RooSpinZero\_7DComplex\_withAccep\_HVV}}(}
+\DoxyCodeLine{238     \textcolor{stringliteral}{"PDF"}, \textcolor{stringliteral}{"PDF"},}
+\DoxyCodeLine{239     \mbox{\hyperlink{classSpinPdfFactory_a049d5515269542f4bfc5a4b971a35042}{measurables}},}
+\DoxyCodeLine{240     \mbox{\hyperlink{classSpinPdfFactory_a3f4b1441cab694c933cd1383540c06e0}{parameters}},}
+\DoxyCodeLine{241     \mbox{\hyperlink{classScalarPdfFactory_a0ce27eb1bc06518693ed3b3677ca6ea9}{couplings}},}
+\DoxyCodeLine{242     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}},}
+\DoxyCodeLine{243     \mbox{\hyperlink{classSpinPdfFactory_a31cdbd1e87fe667c360761a75007e7d1}{V1decay}},\mbox{\hyperlink{classSpinPdfFactory_abc28d5256c7b49750335553c2a0d0e92}{V2decay}}}
+\DoxyCodeLine{244     );}
+\DoxyCodeLine{245   \mbox{\hyperlink{classSpinPdfFactory_a0643dc0b0c59ce6745155b9e2f2f165d}{PDF\_base}} = (\mbox{\hyperlink{classRooSpin}{RooSpin}}*)\mbox{\hyperlink{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}{PDF}};}
+\DoxyCodeLine{246 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a90a90e96f6d78a2ac3825613453db34a}\label{classScalarPdfFactory__HVV_a90a90e96f6d78a2ac3825613453db34a}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!makeParamsConst@{makeParamsConst}}
 \index{makeParamsConst@{makeParamsConst}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
@@ -135,12 +357,114 @@ Implements \mbox{\hyperlink{classScalarPdfFactory_ad5b8690d25e95177ecfe0d3d4fa36
 
 Reimplemented from \mbox{\hyperlink{classSpinPdfFactory_a276406a01a911b69ab4de0a7922fdc4b}{Spin\+Pdf\+Factory}}.
 
+
+
+Definition at line 149 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149                                                     \{}
+\DoxyCodeLine{150   \mbox{\hyperlink{classSpinPdfFactory_a276406a01a911b69ab4de0a7922fdc4b}{SpinPdfFactory::makeParamsConst}}(yesNo);}
+\DoxyCodeLine{151   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classScalarPdfFactory_a46cc49f22e30a5a609852028f6af220f}{acceptance}} \&\& !yesNo)\{}
+\DoxyCodeLine{152     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_af55c8c69a40f9099bdae62996612f83e}{aPhi}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{153     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a6594543705bd78a804c77cfcc04816e7}{bPhi}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{154     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a068248ef4313aed7f0390b1b71b12650}{cPhi}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{155     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afa2ea03fd1a8a922d51e6f954f8b5321}{dPhi}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{156     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ab1d21a5dd9f989bd9c1549186297c88d}{ePhi}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa78efac8389256ff0d2275eb1db67f2e}{aPhi1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{159     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a266c06df5fe2d24ccace414c8624d610}{bPhi1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{160     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a7604dd4ad9db6c8bc0a9869c0effcf19}{cPhi1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{161     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ad069a87eaeae7f7eed49e093cab5e75a}{dPhi1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{162     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ae9787f407316e055914f00cefd82efe0}{ePhi1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_adfc13c71a35114abde17830330572e90}{aH1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{165     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2c304b1e487a64ad70fa1af6a6b24e55}{bH1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{166     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a887f398c5d22cae2b739fb504dd5abc1}{cH1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{167     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a55d1873633bd4a3d32b3c58144b2176b}{dH1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{168     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aea9d83f2af1480f2683f75f87e677311}{eH1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa14b10f70c7c497d3976c43ee8866839}{aH2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{171     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a04d271cfdda994b5087f154a1837ab86}{bH2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{172     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a717e241d707fa439c55f2f37310305d9}{cH2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{173     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a3f1c2cefab7bc23128db4d8dc1f0eda0}{dH2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{174     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a53776370f0d715b89bf6c2a81511b834}{eH2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a5a0776be2e6f14126ac49012ecba416c}{aHs}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{177     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a699f983229f176a108e2a413ff86693d}{bHs}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{178     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a01c45ec9e6405cd3c449514725fa5c72}{cHs}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{179     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4c0476f856c953f9e227f083c1af094e}{dHs}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{180     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_abc1a7f5f4331619a92d29bec6d4583cb}{eHs}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a1adc8224641af5a7c8b8c8e68e31829f}{aM1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{183     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a446affb70a2e2a75183de773c72403f4}{bM1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{184     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afae3d3e947d73fa93ff7e8f2c2a86b9c}{cM1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{185     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a70f841e359df4eb7ee88fb61208be50a}{dM1}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4b869eb3c9c572c6460039322c20cfa4}{aM2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{188     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a82292afc70ee4f657d8b5b0315846f1b}{bM2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{189     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2b03ff8cf4204ac5df982711aebf7eb5}{cM2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{190     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a18ee5eb5953ad10ef36e6a06e2042ff8}{dM2}}-\/>setConstant(kFALSE);}
+\DoxyCodeLine{191   \}}
+\DoxyCodeLine{192   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{193     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_af55c8c69a40f9099bdae62996612f83e}{aPhi}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{194     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a6594543705bd78a804c77cfcc04816e7}{bPhi}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{195     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a068248ef4313aed7f0390b1b71b12650}{cPhi}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{196     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afa2ea03fd1a8a922d51e6f954f8b5321}{dPhi}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{197     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ab1d21a5dd9f989bd9c1549186297c88d}{ePhi}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa78efac8389256ff0d2275eb1db67f2e}{aPhi1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{200     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a266c06df5fe2d24ccace414c8624d610}{bPhi1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{201     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a7604dd4ad9db6c8bc0a9869c0effcf19}{cPhi1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{202     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ad069a87eaeae7f7eed49e093cab5e75a}{dPhi1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{203     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_ae9787f407316e055914f00cefd82efe0}{ePhi1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_adfc13c71a35114abde17830330572e90}{aH1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{206     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2c304b1e487a64ad70fa1af6a6b24e55}{bH1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{207     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a887f398c5d22cae2b739fb504dd5abc1}{cH1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{208     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a55d1873633bd4a3d32b3c58144b2176b}{dH1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{209     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aea9d83f2af1480f2683f75f87e677311}{eH1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_aa14b10f70c7c497d3976c43ee8866839}{aH2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{212     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a04d271cfdda994b5087f154a1837ab86}{bH2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{213     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a717e241d707fa439c55f2f37310305d9}{cH2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{214     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a3f1c2cefab7bc23128db4d8dc1f0eda0}{dH2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{215     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a53776370f0d715b89bf6c2a81511b834}{eH2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a5a0776be2e6f14126ac49012ecba416c}{aHs}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{218     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a699f983229f176a108e2a413ff86693d}{bHs}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{219     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a01c45ec9e6405cd3c449514725fa5c72}{cHs}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{220     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4c0476f856c953f9e227f083c1af094e}{dHs}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{221     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_abc1a7f5f4331619a92d29bec6d4583cb}{eHs}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a1adc8224641af5a7c8b8c8e68e31829f}{aM1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{224     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a446affb70a2e2a75183de773c72403f4}{bM1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{225     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_afae3d3e947d73fa93ff7e8f2c2a86b9c}{cM1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{226     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a70f841e359df4eb7ee88fb61208be50a}{dM1}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a4b869eb3c9c572c6460039322c20cfa4}{aM2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{229     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a82292afc70ee4f657d8b5b0315846f1b}{bM2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{230     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a2b03ff8cf4204ac5df982711aebf7eb5}{cM2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{231     \mbox{\hyperlink{classScalarPdfFactory__HVV_a1c8ef22edc96c39bdb13cee5461beb96}{accepParams}}.\mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters_a18ee5eb5953ad10ef36e6a06e2042ff8}{dM2}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{232   \}}
+\DoxyCodeLine{233 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a828707ec7821053f54b7f6250f9c9bcf}\label{classScalarPdfFactory__HVV_a828707ec7821053f54b7f6250f9c9bcf}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!setZZ4fOrdering@{setZZ4fOrdering}}
 \index{setZZ4fOrdering@{setZZ4fOrdering}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
 \doxysubsubsection{\texorpdfstring{setZZ4fOrdering()}{setZZ4fOrdering()}}
 {\footnotesize\ttfamily void Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::set\+Z\+Z4f\+Ordering (\begin{DoxyParamCaption}\item[{bool}]{flag = {\ttfamily true} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 234 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{234 \{ \mbox{\hyperlink{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}{PDF}}-\/>\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_aa364adc45d90af222d250cd4961e914e}{setZZ4fOrdering}}(flag); \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -150,11 +474,19 @@ Reimplemented from \mbox{\hyperlink{classSpinPdfFactory_a276406a01a911b69ab4de0a
 \doxysubsubsection{\texorpdfstring{accepParams}{accepParams}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters}{Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Accep\+\_\+\+H\+V\+V\+::accep\+Parameters}} Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::accep\+Params}
 
+
+
+Definition at line 10 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+h.
+
 \mbox{\Hypertarget{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}\label{classScalarPdfFactory__HVV_a845ebaace3f96c44438c7eb62735fb1e}} 
 \index{ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}!PDF@{PDF}}
 \index{PDF@{PDF}!ScalarPdfFactory\_HVV@{ScalarPdfFactory\_HVV}}
 \doxysubsubsection{\texorpdfstring{PDF}{PDF}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV}{Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Accep\+\_\+\+H\+VV}}$\ast$ Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V\+::\+P\+DF\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 25 of file Scalar\+Pdf\+Factory\+\_\+\+H\+V\+V.\+h.
 
 
 

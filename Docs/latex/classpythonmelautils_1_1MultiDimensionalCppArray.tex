@@ -71,6 +71,13 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 57 of file pythonmelautils.\+py.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a74a380f3c7601761b597537f92ac3f7c}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a74a380f3c7601761b597537f92ac3f7c}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!\_\_init\_\_@{\_\_init\_\_}}
@@ -80,6 +87,52 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 
 
 
+Definition at line 70 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70   \textcolor{keyword}{def }\_\_init\_\_(self, uniqueid, cppvariable, includes, othercppargs, *dimensions):}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     self.uniqueid = uniqueid}
+\DoxyCodeLine{73     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} self.uniqueids:}
+\DoxyCodeLine{74       \textcolor{keywordflow}{if} i == uniqueid:}
+\DoxyCodeLine{75         \textcolor{keywordflow}{raise} ValueError(\textcolor{stringliteral}{"Two MultiDimensionalCppArrays can't have the same id\(\backslash\)n\{\}"}.format(i, self.uniqueid))}
+\DoxyCodeLine{76     self.uniqueids.append(uniqueid)}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     self.cppvariable = cppvariable}
+\DoxyCodeLine{79     self.dimensions = dimensions}
+\DoxyCodeLine{80     self.ndim = len(self.dimensions)}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if} self.ndim == 0:}
+\DoxyCodeLine{82       \textcolor{keywordflow}{raise} TypeError(\textcolor{stringliteral}{"Can't have a 0 dimensional array!"})}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} self.ndim > 1:}
+\DoxyCodeLine{85       self.subarrays = []}
+\DoxyCodeLine{86       \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(dimensions[0]):}
+\DoxyCodeLine{87           othercppargs[\textcolor{stringliteral}{"int index\{\}"}.format(len(dimensions))] = i}
+\DoxyCodeLine{88           self.subarrays.append(}
+\DoxyCodeLine{89                                 MultiDimensionalCppArray(}
+\DoxyCodeLine{90                                                          \textcolor{stringliteral}{"\{\}\_\{\}"}.format(self.uniqueid, i),}
+\DoxyCodeLine{91                                                          \textcolor{stringliteral}{"\{\}[index\{\}]"}.format(cppvariable, len(dimensions)),}
+\DoxyCodeLine{92                                                          includes,}
+\DoxyCodeLine{93                                                          othercppargs,}
+\DoxyCodeLine{94                                                          *dimensions[1:]}
+\DoxyCodeLine{95                                                         )}
+\DoxyCodeLine{96                                )}
+\DoxyCodeLine{97     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{98       self.othercppargs = OrderedDict(othercppargs)}
+\DoxyCodeLine{99       self.functionfilecontents = self.functionfiletemplate.format(}
+\DoxyCodeLine{100                                                                    name=\textcolor{stringliteral}{"NAME"},}
+\DoxyCodeLine{101                                                                    cppvariable=self.cppvariable,}
+\DoxyCodeLine{102                                                                    cppargs=\textcolor{stringliteral}{","}.join([key \textcolor{keywordflow}{for} key \textcolor{keywordflow}{in} self.othercppargs]+[\textcolor{stringliteral}{"int item"}]),}
+\DoxyCodeLine{103                                                                    includes=\textcolor{stringliteral}{"\(\backslash\)n"}.join(\textcolor{stringliteral}{"\#include <\{\}>"}.format(\_) \textcolor{keywordflow}{for} \_ \textcolor{keywordflow}{in} includes),}
+\DoxyCodeLine{104                                                                   )}
+\DoxyCodeLine{105       self.includes = includes}
+\DoxyCodeLine{106       self.functionfile = self.getitem = self.setitem = \textcolor{keywordtype}{None}}
+\DoxyCodeLine{107 }
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a7fc5d200925ac2ceb6ae1db43f81e64e}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a7fc5d200925ac2ceb6ae1db43f81e64e}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!\_\_getitem\_\_@{\_\_getitem\_\_}}
@@ -87,24 +140,106 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{\_\_getitem\_\_()}{\_\_getitem\_\_()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item }\end{DoxyParamCaption})}
 
+
+
+Definition at line 140 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140   \textcolor{keyword}{def }\_\_getitem\_\_(self, item):}
+\DoxyCodeLine{141     \textcolor{keywordflow}{if} self.ndim > 1:}
+\DoxyCodeLine{142       \textcolor{keywordflow}{return} self.subarrays[item]}
+\DoxyCodeLine{143     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{144       \textcolor{keywordflow}{if} self.getitem \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: self.compilecpp(self.writecpp())}
+\DoxyCodeLine{145       \textcolor{keywordflow}{if} item >= self.dimensions[0]:}
+\DoxyCodeLine{146         \textcolor{keywordflow}{raise} IndexError(\textcolor{stringliteral}{"Index \{\} out of range (0-\/\{\})"}.format(item, self.dimensions[0]))}
+\DoxyCodeLine{147       \textcolor{keywordflow}{return} self.getitem(*(list(self.othercppargs.values())+[item]))}
+\DoxyCodeLine{148 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_aacc4de4031e95df40ad35093fdeb397b}\label{classpythonmelautils_1_1MultiDimensionalCppArray_aacc4de4031e95df40ad35093fdeb397b}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!\_\_setitem\_\_@{\_\_setitem\_\_}}
 \index{\_\_setitem\_\_@{\_\_setitem\_\_}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{\_\_setitem\_\_()}{\_\_setitem\_\_()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+\_\+\+\_\+setitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{item,  }\item[{}]{value }\end{DoxyParamCaption})}
 
+
+
+Definition at line 149 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149   \textcolor{keyword}{def }\_\_setitem\_\_(self, item, value):}
+\DoxyCodeLine{150     \textcolor{keywordflow}{if} self.ndim > 1:}
+\DoxyCodeLine{151       \textcolor{keywordflow}{raise} TypeError(\textcolor{stringliteral}{"Need to specify all indices to write to the array."})}
+\DoxyCodeLine{152     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{153       \textcolor{keywordflow}{if} self.setitem \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: self.compilecpp()}
+\DoxyCodeLine{154       \textcolor{keywordflow}{if} item >= self.dimensions[0]:}
+\DoxyCodeLine{155         \textcolor{keywordflow}{raise} IndexError(\textcolor{stringliteral}{"Index \{\} out of range (0-\/\{\})"}.format(item, self.dimensions[0]))}
+\DoxyCodeLine{156       self.setitem(*(list(self.othercppargs.values())+[item, value]))}
+\DoxyCodeLine{157 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a146f93bcacb2ca0a0d330a66098a1380}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a146f93bcacb2ca0a0d330a66098a1380}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!compilecpp@{compilecpp}}
 \index{compilecpp@{compilecpp}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{compilecpp()}{compilecpp()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+compilecpp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{f }\end{DoxyParamCaption})}
 
+
+
+Definition at line 123 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123   \textcolor{keyword}{def }compilecpp(self, f):}
+\DoxyCodeLine{124     \textcolor{keywordflow}{if} self.ndim > 1:}
+\DoxyCodeLine{125       \textcolor{keywordflow}{for} subarray \textcolor{keywordflow}{in} self.subarrays:}
+\DoxyCodeLine{126         subarray.compilecpp(f)}
+\DoxyCodeLine{127       \textcolor{keywordflow}{return}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} self.functionfilecontents \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} self.getitems:}
+\DoxyCodeLine{130       f.compile()}
+\DoxyCodeLine{131       self.functionfiles[self.functionfilecontents] = f}
+\DoxyCodeLine{132       self.getitems[self.functionfilecontents] = getattr(ROOT, \textcolor{stringliteral}{"\{\}\_getitem"}.format(self.uniqueid))}
+\DoxyCodeLine{133       self.setitems[self.functionfilecontents] = getattr(ROOT, \textcolor{stringliteral}{"\{\}\_setitem"}.format(self.uniqueid))}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     self.functionfile = self.functionfiles[self.functionfilecontents]}
+\DoxyCodeLine{136     self.getitem = self.getitems[self.functionfilecontents]}
+\DoxyCodeLine{137     self.setitem = self.setitems[self.functionfilecontents]}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_ab2fe19c60d38d5c9c206d6f365e1f40c}\label{classpythonmelautils_1_1MultiDimensionalCppArray_ab2fe19c60d38d5c9c206d6f365e1f40c}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!writecpp@{writecpp}}
 \index{writecpp@{writecpp}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{writecpp()}{writecpp()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+writecpp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{f = {\ttfamily None} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 108 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108   \textcolor{keyword}{def }writecpp(self, f=None):}
+\DoxyCodeLine{109     \textcolor{keywordflow}{if} self.ndim > 1:}
+\DoxyCodeLine{110       \textcolor{keywordflow}{for} subarray \textcolor{keywordflow}{in} self.subarrays:}
+\DoxyCodeLine{111         f = subarray.writecpp(f)}
+\DoxyCodeLine{112       \textcolor{keywordflow}{return} f}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} self.functionfilecontents \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} self.functionfiles:}
+\DoxyCodeLine{115       \textcolor{keywordflow}{if} f \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{116         f = NamedTemporaryMacro()}
+\DoxyCodeLine{117       self.functionfiles[self.functionfilecontents] = f}
+\DoxyCodeLine{118       f.write(self.functionfilecontents.replace(\textcolor{stringliteral}{"NAME"}, self.uniqueid))}
+\DoxyCodeLine{119       \textcolor{keywordflow}{return} f}
+\DoxyCodeLine{120     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{121       \textcolor{keywordflow}{return} self.functionfiles[self.functionfilecontents]}
+\DoxyCodeLine{122 }
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -114,11 +249,19 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{cppvariable}{cppvariable}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+cppvariable}
 
+
+
+Definition at line 78 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a49e2c722dec488baecf5849f0e66d805}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a49e2c722dec488baecf5849f0e66d805}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!dimensions@{dimensions}}
 \index{dimensions@{dimensions}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{dimensions}{dimensions}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+dimensions}
+
+
+
+Definition at line 79 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a3b54c6419a5ed0cd737d54028a98c53f}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a3b54c6419a5ed0cd737d54028a98c53f}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!functionfile@{functionfile}}
@@ -126,17 +269,29 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{functionfile}{functionfile}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+functionfile}
 
+
+
+Definition at line 106 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a2bba9838f4110fb0eedc04274b0c4159}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a2bba9838f4110fb0eedc04274b0c4159}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!functionfilecontents@{functionfilecontents}}
 \index{functionfilecontents@{functionfilecontents}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{functionfilecontents}{functionfilecontents}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+functionfilecontents}
 
+
+
+Definition at line 99 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a1a157a419cffe0f0317e77bbdaea5ae7}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a1a157a419cffe0f0317e77bbdaea5ae7}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!functionfiles@{functionfiles}}
 \index{functionfiles@{functionfiles}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{functionfiles}{functionfiles}}
 {\footnotesize\ttfamily dictionary pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+functionfiles = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 66 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a032c851dc3fbf62dea4ddf5a11a73daf}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a032c851dc3fbf62dea4ddf5a11a73daf}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!functionfiletemplate@{functionfiletemplate}}
@@ -154,11 +309,19 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \DoxyCodeLine{\textcolor{stringliteral}{"""}}
 
 \end{DoxyCode}
+
+
+Definition at line 58 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_ab578b767b587157894f08ce29d5558ec}\label{classpythonmelautils_1_1MultiDimensionalCppArray_ab578b767b587157894f08ce29d5558ec}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!getitem@{getitem}}
 \index{getitem@{getitem}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{getitem}{getitem}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+getitem}
+
+
+
+Definition at line 106 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a6d930c98f9ea9b766215ecc3ef2504a8}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a6d930c98f9ea9b766215ecc3ef2504a8}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!getitems@{getitems}}
@@ -166,11 +329,19 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{getitems}{getitems}}
 {\footnotesize\ttfamily dictionary pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+getitems = \{\}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Definition at line 67 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_ab5d80869f4a538f794fc4dfdc55c340f}\label{classpythonmelautils_1_1MultiDimensionalCppArray_ab5d80869f4a538f794fc4dfdc55c340f}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!includes@{includes}}
 \index{includes@{includes}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{includes}{includes}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+includes}
+
+
+
+Definition at line 105 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a2ae52c50fada22b8d825110eb1a297f4}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a2ae52c50fada22b8d825110eb1a297f4}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!ndim@{ndim}}
@@ -178,11 +349,19 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{ndim}{ndim}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+ndim}
 
+
+
+Definition at line 80 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a35022c43e5ec17e44b4aa700d82f484e}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a35022c43e5ec17e44b4aa700d82f484e}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!othercppargs@{othercppargs}}
 \index{othercppargs@{othercppargs}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{othercppargs}{othercppargs}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+othercppargs}
+
+
+
+Definition at line 98 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a0c0e1d993959370461d69903350f2d14}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a0c0e1d993959370461d69903350f2d14}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!setitem@{setitem}}
@@ -190,11 +369,19 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{setitem}{setitem}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+setitem}
 
+
+
+Definition at line 106 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_a62f1e7cef80e93aea45846e45f02c8a0}\label{classpythonmelautils_1_1MultiDimensionalCppArray_a62f1e7cef80e93aea45846e45f02c8a0}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!setitems@{setitems}}
 \index{setitems@{setitems}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{setitems}{setitems}}
 {\footnotesize\ttfamily dictionary pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+setitems = \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 68 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_ad87c733add23c582b7c157b965219375}\label{classpythonmelautils_1_1MultiDimensionalCppArray_ad87c733add23c582b7c157b965219375}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!subarrays@{subarrays}}
@@ -202,17 +389,29 @@ dictionary \mbox{\hyperlink{classpythonmelautils_1_1MultiDimensionalCppArray_a62
 \doxysubsubsection{\texorpdfstring{subarrays}{subarrays}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+subarrays}
 
+
+
+Definition at line 85 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_aecd737bc3163f4d824467862b40378c2}\label{classpythonmelautils_1_1MultiDimensionalCppArray_aecd737bc3163f4d824467862b40378c2}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!uniqueid@{uniqueid}}
 \index{uniqueid@{uniqueid}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{uniqueid}{uniqueid}}
 {\footnotesize\ttfamily pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+uniqueid}
 
+
+
+Definition at line 72 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1MultiDimensionalCppArray_af49644f3e59b7fa5c6a97edfc511fd5c}\label{classpythonmelautils_1_1MultiDimensionalCppArray_af49644f3e59b7fa5c6a97edfc511fd5c}} 
 \index{pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}!uniqueids@{uniqueids}}
 \index{uniqueids@{uniqueids}!pythonmelautils.MultiDimensionalCppArray@{pythonmelautils.MultiDimensionalCppArray}}
 \doxysubsubsection{\texorpdfstring{uniqueids}{uniqueids}}
 {\footnotesize\ttfamily list pythonmelautils.\+Multi\+Dimensional\+Cpp\+Array.\+uniqueids = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 65 of file pythonmelautils.\+py.
 
 
 

@@ -120,9 +120,166 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="CALLING__cpHTO_8f_source.html#l03428">3428</a> of file <a class="el" href="CALLING__cpHTO_8f_source.html">CALLING_cpHTO.f</a>.</p>
+<div class="fragment"><div class="line"><a name="l03428"></a><span class="lineno"> 3428</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l03429"></a><span class="lineno"> 3429</span>&#160;      <span class="keywordtype">USE </span><a class="code" href="namespacehto__rootw.html">hto_rootw</a></div>
+<div class="line"><a name="l03430"></a><span class="lineno"> 3430</span>&#160;<span class="comment">* </span></div>
+<div class="line"><a name="l03431"></a><span class="lineno"> 3431</span>&#160;<span class="comment">! Code converted using TO_F90 by Alan Miller</span></div>
+<div class="line"><a name="l03432"></a><span class="lineno"> 3432</span>&#160;<span class="comment">! Date: 2003-07-14  Time: 12:32:54</span></div>
+<div class="line"><a name="l03433"></a><span class="lineno"> 3433</span>&#160; </div>
+<div class="line"><a name="l03434"></a><span class="lineno"> 3434</span>&#160;<span class="comment">!-----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l03435"></a><span class="lineno"> 3435</span>&#160; </div>
+<div class="line"><a name="l03436"></a><span class="lineno"> 3436</span>&#160;<span class="comment">!         FINDING A ZERO OF THE FUNCTION F(X) IN THE INTERVAL (AX,BX)</span></div>
+<div class="line"><a name="l03437"></a><span class="lineno"> 3437</span>&#160; </div>
+<div class="line"><a name="l03438"></a><span class="lineno"> 3438</span>&#160;<span class="comment">!                       ------------------------</span></div>
+<div class="line"><a name="l03439"></a><span class="lineno"> 3439</span>&#160; </div>
+<div class="line"><a name="l03440"></a><span class="lineno"> 3440</span>&#160;<span class="comment">!  INPUT...</span></div>
+<div class="line"><a name="l03441"></a><span class="lineno"> 3441</span>&#160; </div>
+<div class="line"><a name="l03442"></a><span class="lineno"> 3442</span>&#160;<span class="comment">!  F      FUNCTION SUBPROGRAM WHICH EVALUATES F(X) FOR ANY X IN THE</span></div>
+<div class="line"><a name="l03443"></a><span class="lineno"> 3443</span>&#160;<span class="comment">!         CLOSED INTERVAL (AX,BX).  IT IS ASSUMED THAT F IS CONTINUOUS,</span></div>
+<div class="line"><a name="l03444"></a><span class="lineno"> 3444</span>&#160;<span class="comment">!         AND THAT F(AX) AND F(BX) HAVE DIFFERENT SIGNS.</span></div>
+<div class="line"><a name="l03445"></a><span class="lineno"> 3445</span>&#160;<span class="comment">!  AX     LEFT ENDPOINT OF THE INTERVAL</span></div>
+<div class="line"><a name="l03446"></a><span class="lineno"> 3446</span>&#160;<span class="comment">!  BX     RIGHT ENDPOINT OF THE INTERVAL</span></div>
+<div class="line"><a name="l03447"></a><span class="lineno"> 3447</span>&#160;<span class="comment">!  AERR   THE ABSOLUTE ERROR TOLERANCE TO BE SATISFIED</span></div>
+<div class="line"><a name="l03448"></a><span class="lineno"> 3448</span>&#160;<span class="comment">!  RERR   THE RELATIVE ERROR TOLERANCE TO BE SATISFIED</span></div>
+<div class="line"><a name="l03449"></a><span class="lineno"> 3449</span>&#160; </div>
+<div class="line"><a name="l03450"></a><span class="lineno"> 3450</span>&#160;<span class="comment">!  OUTPUT...</span></div>
+<div class="line"><a name="l03451"></a><span class="lineno"> 3451</span>&#160; </div>
+<div class="line"><a name="l03452"></a><span class="lineno"> 3452</span>&#160;<span class="comment">!         ABCISSA APPROXIMATING A ZERO OF F IN THE INTERVAL (AX,BX)</span></div>
+<div class="line"><a name="l03453"></a><span class="lineno"> 3453</span>&#160; </div>
+<div class="line"><a name="l03454"></a><span class="lineno"> 3454</span>&#160;<span class="comment">!-----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l03455"></a><span class="lineno"> 3455</span>&#160;<span class="comment">!  ZEROIN IS A SLIGHTLY MODIFIED TRANSLATION OF THE ALGOL PROCEDURE</span></div>
+<div class="line"><a name="l03456"></a><span class="lineno"> 3456</span>&#160;<span class="comment">!  ZERO GIVEN BY RICHARD BRENT IN ALGORITHMS FOR MINIMIZATION WITHOUT</span></div>
+<div class="line"><a name="l03457"></a><span class="lineno"> 3457</span>&#160;<span class="comment">!  DERIVATIVES, PRENTICE-HALL, INC. (1973).</span></div>
+<div class="line"><a name="l03458"></a><span class="lineno"> 3458</span>&#160;<span class="comment">!-----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l03459"></a><span class="lineno"> 3459</span>&#160;      </div>
+<div class="line"><a name="l03460"></a><span class="lineno"> 3460</span>&#160;      <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l03461"></a><span class="lineno"> 3461</span>&#160;      real*8, <span class="keywordtype">INTENT(IN)</span>  :: ax</div>
+<div class="line"><a name="l03462"></a><span class="lineno"> 3462</span>&#160;      real*8, <span class="keywordtype">INTENT(IN)</span>  :: bx</div>
+<div class="line"><a name="l03463"></a><span class="lineno"> 3463</span>&#160;      real*8, <span class="keywordtype">INTENT(IN)</span>  :: aerr</div>
+<div class="line"><a name="l03464"></a><span class="lineno"> 3464</span>&#160;      real*8, <span class="keywordtype">INTENT(IN)</span>  :: rerr</div>
+<div class="line"><a name="l03465"></a><span class="lineno"> 3465</span>&#160;      real*8              :: fn_val</div>
+<div class="line"><a name="l03466"></a><span class="lineno"> 3466</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l03467"></a><span class="lineno"> 3467</span>&#160;<span class="comment">* EXTERNAL f</span></div>
+<div class="line"><a name="l03468"></a><span class="lineno"> 3468</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l03469"></a><span class="lineno"> 3469</span>&#160;      <span class="keyword">INTERFACE</span></div>
+<div class="line"><a name="l03470"></a><span class="lineno"> 3470</span>&#160;       <span class="keyword">FUNCTION </span>f(x) <span class="keyword">RESULT</span>(fn_val)</div>
+<div class="line"><a name="l03471"></a><span class="lineno"> 3471</span>&#160;       <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l03472"></a><span class="lineno"> 3472</span>&#160;       real*8, <span class="keywordtype">INTENT(IN)</span>  :: x</div>
+<div class="line"><a name="l03473"></a><span class="lineno"> 3473</span>&#160;       real*8              :: fn_val</div>
+<div class="line"><a name="l03474"></a><span class="lineno"> 3474</span>&#160;       <span class="keyword">END FUNCTION </span>f</div>
+<div class="line"><a name="l03475"></a><span class="lineno"> 3475</span>&#160;      <span class="keyword">END INTERFACE</span></div>
+<div class="line"><a name="l03476"></a><span class="lineno"> 3476</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l03477"></a><span class="lineno"> 3477</span>&#160;      real*8 :: a,b,c,d,e,<a class="code" href="namespacehto__units.html#abab92a867fb77543c0c4ff069d1783d4">eps</a>,fa,fb,fc,tol,xm,p,q,r,s,atol,rtol</div>
+<div class="line"><a name="l03478"></a><span class="lineno"> 3478</span>&#160; </div>
+<div class="line"><a name="l03479"></a><span class="lineno"> 3479</span>&#160;<span class="comment">!  COMPUTE EPS, THE RELATIVE MACHINE PRECISION</span></div>
+<div class="line"><a name="l03480"></a><span class="lineno"> 3480</span>&#160; </div>
+<div class="line"><a name="l03481"></a><span class="lineno"> 3481</span>&#160;      <a class="code" href="namespacehto__units.html#abab92a867fb77543c0c4ff069d1783d4">eps</a>= epsilon(0.0d0)</div>
+<div class="line"><a name="l03482"></a><span class="lineno"> 3482</span>&#160; </div>
+<div class="line"><a name="l03483"></a><span class="lineno"> 3483</span>&#160;<span class="comment">! INITIALIZATION</span></div>
+<div class="line"><a name="l03484"></a><span class="lineno"> 3484</span>&#160;      </div>
+<div class="line"><a name="l03485"></a><span class="lineno"> 3485</span>&#160;      a= ax</div>
+<div class="line"><a name="l03486"></a><span class="lineno"> 3486</span>&#160;      b= bx</div>
+<div class="line"><a name="l03487"></a><span class="lineno"> 3487</span>&#160;      fa= f(a)</div>
+<div class="line"><a name="l03488"></a><span class="lineno"> 3488</span>&#160;      fb= f(b)</div>
+<div class="line"><a name="l03489"></a><span class="lineno"> 3489</span>&#160;      <span class="keywordflow">IF</span>(fa*fb.gt.0.d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03490"></a><span class="lineno"> 3490</span>&#160;       <a class="code" href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">inc</a>= 1</div>
+<div class="line"><a name="l03491"></a><span class="lineno"> 3491</span>&#160;<span class="keywordflow">      ENDIF</span></div>
+<div class="line"><a name="l03492"></a><span class="lineno"> 3492</span>&#160;      atol= 0.5d0*aerr</div>
+<div class="line"><a name="l03493"></a><span class="lineno"> 3493</span>&#160;      rtol= max(0.5d0*rerr, 2.0d0*<a class="code" href="namespacehto__units.html#abab92a867fb77543c0c4ff069d1783d4">eps</a>)</div>
+<div class="line"><a name="l03494"></a><span class="lineno"> 3494</span>&#160; </div>
+<div class="line"><a name="l03495"></a><span class="lineno"> 3495</span>&#160;<span class="comment">! BEGIN STEP</span></div>
+<div class="line"><a name="l03496"></a><span class="lineno"> 3496</span>&#160; </div>
+<div class="line"><a name="l03497"></a><span class="lineno"> 3497</span>&#160;   10 c= a</div>
+<div class="line"><a name="l03498"></a><span class="lineno"> 3498</span>&#160;      fc= fa</div>
+<div class="line"><a name="l03499"></a><span class="lineno"> 3499</span>&#160;      d= b-a</div>
+<div class="line"><a name="l03500"></a><span class="lineno"> 3500</span>&#160;      e= d</div>
+<div class="line"><a name="l03501"></a><span class="lineno"> 3501</span>&#160;   20 <span class="keywordflow">IF</span>(abs(fc) &lt; abs(fb)) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03502"></a><span class="lineno"> 3502</span>&#160;         a= b</div>
+<div class="line"><a name="l03503"></a><span class="lineno"> 3503</span>&#160;         b= c</div>
+<div class="line"><a name="l03504"></a><span class="lineno"> 3504</span>&#160;         c= a</div>
+<div class="line"><a name="l03505"></a><span class="lineno"> 3505</span>&#160;         fa= fb</div>
+<div class="line"><a name="l03506"></a><span class="lineno"> 3506</span>&#160;         fb= fc</div>
+<div class="line"><a name="l03507"></a><span class="lineno"> 3507</span>&#160;         fc= fa</div>
+<div class="line"><a name="l03508"></a><span class="lineno"> 3508</span>&#160;<span class="keywordflow">      END IF</span></div>
+<div class="line"><a name="l03509"></a><span class="lineno"> 3509</span>&#160; </div>
+<div class="line"><a name="l03510"></a><span class="lineno"> 3510</span>&#160;<span class="comment">! CONVERGENCE TEST</span></div>
+<div class="line"><a name="l03511"></a><span class="lineno"> 3511</span>&#160; </div>
+<div class="line"><a name="l03512"></a><span class="lineno"> 3512</span>&#160;      tol= rtol*max(abs(b),abs(c))+atol</div>
+<div class="line"><a name="l03513"></a><span class="lineno"> 3513</span>&#160;      xm= 0.5d0*(c-b)</div>
+<div class="line"><a name="l03514"></a><span class="lineno"> 3514</span>&#160;      <span class="keywordflow">IF</span>(abs(xm) &gt; tol) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03515"></a><span class="lineno"> 3515</span>&#160;       <span class="keywordflow">IF</span>(fb /= 0.0d0) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03516"></a><span class="lineno"> 3516</span>&#160;            </div>
+<div class="line"><a name="l03517"></a><span class="lineno"> 3517</span>&#160;<span class="comment">! IS BISECTION NECESSARY</span></div>
+<div class="line"><a name="l03518"></a><span class="lineno"> 3518</span>&#160;    </div>
+<div class="line"><a name="l03519"></a><span class="lineno"> 3519</span>&#160;        <span class="keywordflow">IF</span>(abs(e) &gt;= tol) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03520"></a><span class="lineno"> 3520</span>&#160;         <span class="keywordflow">IF</span>(abs(fa) &gt; abs(fb)) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03521"></a><span class="lineno"> 3521</span>&#160;        </div>
+<div class="line"><a name="l03522"></a><span class="lineno"> 3522</span>&#160;<span class="comment">! IS QUADRATIC INTERPOLATION POSSIBLE</span></div>
+<div class="line"><a name="l03523"></a><span class="lineno"> 3523</span>&#160;        </div>
+<div class="line"><a name="l03524"></a><span class="lineno"> 3524</span>&#160;          <span class="keywordflow">IF</span>(a == c) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03525"></a><span class="lineno"> 3525</span>&#160;          </div>
+<div class="line"><a name="l03526"></a><span class="lineno"> 3526</span>&#160;<span class="comment">! LINEAR INTERPOLATION</span></div>
+<div class="line"><a name="l03527"></a><span class="lineno"> 3527</span>&#160;          </div>
+<div class="line"><a name="l03528"></a><span class="lineno"> 3528</span>&#160;           s= fb/fc</div>
+<div class="line"><a name="l03529"></a><span class="lineno"> 3529</span>&#160;           p= (c-b)*s</div>
+<div class="line"><a name="l03530"></a><span class="lineno"> 3530</span>&#160;           q= 1.0d0-s</div>
+<div class="line"><a name="l03531"></a><span class="lineno"> 3531</span>&#160;          <span class="keywordflow">ELSE</span></div>
+<div class="line"><a name="l03532"></a><span class="lineno"> 3532</span>&#160;          </div>
+<div class="line"><a name="l03533"></a><span class="lineno"> 3533</span>&#160;<span class="comment">! INVERSE QUADRATIC INTERPOLATION</span></div>
+<div class="line"><a name="l03534"></a><span class="lineno"> 3534</span>&#160;          </div>
+<div class="line"><a name="l03535"></a><span class="lineno"> 3535</span>&#160;           q= fa/fc</div>
+<div class="line"><a name="l03536"></a><span class="lineno"> 3536</span>&#160;           r= fb/fc</div>
+<div class="line"><a name="l03537"></a><span class="lineno"> 3537</span>&#160;           s= fb/fa</div>
+<div class="line"><a name="l03538"></a><span class="lineno"> 3538</span>&#160;           p= s*((c-b)*q*(q-r)-(b-a)*(r-1.0d0))</div>
+<div class="line"><a name="l03539"></a><span class="lineno"> 3539</span>&#160;           q= (q-1.0d0)*(r-1.0d0)*(s-1.0d0)</div>
+<div class="line"><a name="l03540"></a><span class="lineno"> 3540</span>&#160;<span class="keywordflow">          ENDIF</span></div>
+<div class="line"><a name="l03541"></a><span class="lineno"> 3541</span>&#160;        </div>
+<div class="line"><a name="l03542"></a><span class="lineno"> 3542</span>&#160;<span class="comment">! ADJUST SIGNS</span></div>
+<div class="line"><a name="l03543"></a><span class="lineno"> 3543</span>&#160;        </div>
+<div class="line"><a name="l03544"></a><span class="lineno"> 3544</span>&#160;          <span class="keywordflow">IF</span>(p &gt; 0.0d0) q= -q</div>
+<div class="line"><a name="l03545"></a><span class="lineno"> 3545</span>&#160;          p= abs(p)</div>
+<div class="line"><a name="l03546"></a><span class="lineno"> 3546</span>&#160;        </div>
+<div class="line"><a name="l03547"></a><span class="lineno"> 3547</span>&#160;<span class="comment">! IS INTERPOLATION ACCEPTABLE</span></div>
+<div class="line"><a name="l03548"></a><span class="lineno"> 3548</span>&#160;        </div>
+<div class="line"><a name="l03549"></a><span class="lineno"> 3549</span>&#160;          <span class="keywordflow">IF</span>(2.0*p &lt; (3.0*xm*q-abs(tol*q))) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03550"></a><span class="lineno"> 3550</span>&#160;           <span class="keywordflow">IF</span>(p &lt; abs(0.5d0*e*q)) <span class="keywordflow">THEN</span></div>
+<div class="line"><a name="l03551"></a><span class="lineno"> 3551</span>&#160;            e= d</div>
+<div class="line"><a name="l03552"></a><span class="lineno"> 3552</span>&#160;            d= p/q</div>
+<div class="line"><a name="l03553"></a><span class="lineno"> 3553</span>&#160;            <span class="keywordflow">GO TO</span> 30</div>
+<div class="line"><a name="l03554"></a><span class="lineno"> 3554</span>&#160;<span class="keywordflow">           ENDIF</span></div>
+<div class="line"><a name="l03555"></a><span class="lineno"> 3555</span>&#160;<span class="keywordflow">          ENDIF</span></div>
+<div class="line"><a name="l03556"></a><span class="lineno"> 3556</span>&#160;<span class="keywordflow">         ENDIF</span></div>
+<div class="line"><a name="l03557"></a><span class="lineno"> 3557</span>&#160;<span class="keywordflow">        ENDIF</span></div>
+<div class="line"><a name="l03558"></a><span class="lineno"> 3558</span>&#160;    </div>
+<div class="line"><a name="l03559"></a><span class="lineno"> 3559</span>&#160;<span class="comment">! BISECTION</span></div>
+<div class="line"><a name="l03560"></a><span class="lineno"> 3560</span>&#160;    </div>
+<div class="line"><a name="l03561"></a><span class="lineno"> 3561</span>&#160;        d= xm</div>
+<div class="line"><a name="l03562"></a><span class="lineno"> 3562</span>&#160;        e= d</div>
+<div class="line"><a name="l03563"></a><span class="lineno"> 3563</span>&#160;    </div>
+<div class="line"><a name="l03564"></a><span class="lineno"> 3564</span>&#160;<span class="comment">! COMPLETE STEP</span></div>
+<div class="line"><a name="l03565"></a><span class="lineno"> 3565</span>&#160;    </div>
+<div class="line"><a name="l03566"></a><span class="lineno"> 3566</span>&#160;  30    a= b</div>
+<div class="line"><a name="l03567"></a><span class="lineno"> 3567</span>&#160;        fa= fb</div>
+<div class="line"><a name="l03568"></a><span class="lineno"> 3568</span>&#160;        <span class="keywordflow">IF</span>(abs(d) &gt; tol) b= b+d</div>
+<div class="line"><a name="l03569"></a><span class="lineno"> 3569</span>&#160;        <span class="keywordflow">IF</span>(abs(d) &lt;= tol) b= b+sign(tol,xm)</div>
+<div class="line"><a name="l03570"></a><span class="lineno"> 3570</span>&#160;        fb= f(b)</div>
+<div class="line"><a name="l03571"></a><span class="lineno"> 3571</span>&#160;        <span class="keywordflow">IF</span>(fb*(fc/abs(fc)) &gt; 0.0d0) <span class="keywordflow">GO TO</span> 10</div>
+<div class="line"><a name="l03572"></a><span class="lineno"> 3572</span>&#160;        <span class="keywordflow">GO TO</span> 20</div>
+<div class="line"><a name="l03573"></a><span class="lineno"> 3573</span>&#160;<span class="keywordflow">       ENDIF</span></div>
+<div class="line"><a name="l03574"></a><span class="lineno"> 3574</span>&#160;<span class="keywordflow">      ENDIF</span></div>
+<div class="line"><a name="l03575"></a><span class="lineno"> 3575</span>&#160; </div>
+<div class="line"><a name="l03576"></a><span class="lineno"> 3576</span>&#160;<span class="comment">! DONE</span></div>
+<div class="line"><a name="l03577"></a><span class="lineno"> 3577</span>&#160; </div>
+<div class="line"><a name="l03578"></a><span class="lineno"> 3578</span>&#160;      fn_val= b</div>
+<div class="line"><a name="l03579"></a><span class="lineno"> 3579</span>&#160;      <span class="keywordflow">RETURN</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="anamespacehto__rootw_html"><div class="ttname"><a href="namespacehto__rootw.html">hto_rootw</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00245">CALLING_cpHTO.f:245</a></div></div>
+<div class="ttc" id="anamespacehto__rootw_html_a51e365cf14dc5783680394486ebc97d7"><div class="ttname"><a href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">hto_rootw::inc</a></div><div class="ttdeci">integer inc</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00246">CALLING_cpHTO.f:246</a></div></div>
+<div class="ttc" id="anamespacehto__units_html_abab92a867fb77543c0c4ff069d1783d4"><div class="ttname"><a href="namespacehto__units.html#abab92a867fb77543c0c4ff069d1783d4">hto_units::eps</a></div><div class="ttdeci">real *8, parameter eps</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00183">CALLING_cpHTO.f:183</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

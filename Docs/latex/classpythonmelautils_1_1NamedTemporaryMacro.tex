@@ -36,6 +36,13 @@ def \mbox{\hyperlink{classpythonmelautils_1_1NamedTemporaryMacro_a1aa4e70d5292cb
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 22 of file pythonmelautils.\+py.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpythonmelautils_1_1NamedTemporaryMacro_abdc6031b31836bf0ac188060beed0e34}\label{classpythonmelautils_1_1NamedTemporaryMacro_abdc6031b31836bf0ac188060beed0e34}} 
 \index{pythonmelautils.NamedTemporaryMacro@{pythonmelautils.NamedTemporaryMacro}!\_\_init\_\_@{\_\_init\_\_}}
@@ -45,6 +52,17 @@ def \mbox{\hyperlink{classpythonmelautils_1_1NamedTemporaryMacro_a1aa4e70d5292cb
 
 
 
+Definition at line 23 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23   \textcolor{keyword}{def }\_\_init\_\_(self):}
+\DoxyCodeLine{24     self.f = tempfile.NamedTemporaryFile(suffix=\textcolor{stringliteral}{".C"}, bufsize=0)}
+\DoxyCodeLine{25     self.compiled = \textcolor{keyword}{False}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classpythonmelautils_1_1NamedTemporaryMacro_a1aa4e70d5292cb3894a6cbde9dccb131}\label{classpythonmelautils_1_1NamedTemporaryMacro_a1aa4e70d5292cb3894a6cbde9dccb131}} 
 \index{pythonmelautils.NamedTemporaryMacro@{pythonmelautils.NamedTemporaryMacro}!compile@{compile}}
@@ -52,12 +70,41 @@ def \mbox{\hyperlink{classpythonmelautils_1_1NamedTemporaryMacro_a1aa4e70d5292cb
 \doxysubsubsection{\texorpdfstring{compile()}{compile()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Named\+Temporary\+Macro.\+compile (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
+
+
+Definition at line 29 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29   \textcolor{keyword}{def }\mbox{\hyperlink{namespacepythonmelautils_a3e54732530a38abe2d0dfef907f0042f}{compile}}(self):}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} self.compiled:}
+\DoxyCodeLine{31       \mbox{\hyperlink{namespacepythonmelautils_a3e54732530a38abe2d0dfef907f0042f}{compile}}(self.f.name)}
+\DoxyCodeLine{32       self.compiled = \textcolor{keyword}{True}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 ROOT.gROOT.Macro(os.path.join(os.path.dirname(\_\_file\_\_), \textcolor{stringliteral}{".."}, \textcolor{stringliteral}{"test"}, \textcolor{stringliteral}{"loadMELA.C+"}))}
+\DoxyCodeLine{35 \mbox{\hyperlink{namespacepythonmelautils_a287a1b28bbcf6d3459f9db8d4b1d43ad}{include}}(\textcolor{stringliteral}{"Mela.h"})}
+\DoxyCodeLine{36 \mbox{\hyperlink{namespacepythonmelautils_a287a1b28bbcf6d3459f9db8d4b1d43ad}{include}}(\textcolor{stringliteral}{"TCouplingsBase.hh"})}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{\#extract all the enums from the anonymous namespace in TCouplingsBase.hh}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classpythonmelautils_1_1NamedTemporaryMacro_aeb0371d845ce2d52cc91ad06d5515539}\label{classpythonmelautils_1_1NamedTemporaryMacro_aeb0371d845ce2d52cc91ad06d5515539}} 
 \index{pythonmelautils.NamedTemporaryMacro@{pythonmelautils.NamedTemporaryMacro}!write@{write}}
 \index{write@{write}!pythonmelautils.NamedTemporaryMacro@{pythonmelautils.NamedTemporaryMacro}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Named\+Temporary\+Macro.\+write (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{contents }\end{DoxyParamCaption})}
 
+
+
+Definition at line 26 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26   \textcolor{keyword}{def }write(self, contents):}
+\DoxyCodeLine{27     self.f.write(contents)}
+\DoxyCodeLine{28     self.compiled = \textcolor{keyword}{False}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -67,11 +114,19 @@ def \mbox{\hyperlink{classpythonmelautils_1_1NamedTemporaryMacro_a1aa4e70d5292cb
 \doxysubsubsection{\texorpdfstring{compiled}{compiled}}
 {\footnotesize\ttfamily pythonmelautils.\+Named\+Temporary\+Macro.\+compiled}
 
+
+
+Definition at line 25 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1NamedTemporaryMacro_a6f9a3125f0c9ad6d42238302d1fb31ac}\label{classpythonmelautils_1_1NamedTemporaryMacro_a6f9a3125f0c9ad6d42238302d1fb31ac}} 
 \index{pythonmelautils.NamedTemporaryMacro@{pythonmelautils.NamedTemporaryMacro}!f@{f}}
 \index{f@{f}!pythonmelautils.NamedTemporaryMacro@{pythonmelautils.NamedTemporaryMacro}}
 \doxysubsubsection{\texorpdfstring{f}{f}}
 {\footnotesize\ttfamily pythonmelautils.\+Named\+Temporary\+Macro.\+f}
+
+
+
+Definition at line 24 of file pythonmelautils.\+py.
 
 
 

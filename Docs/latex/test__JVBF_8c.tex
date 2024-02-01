@@ -56,33 +56,695 @@ void \mbox{\hyperlink{test__JVBF_8c_a8b600efcfd299400e9950c661fe86814}{fit\+\_\+
 \doxysubsubsection{\texorpdfstring{eta\_to\_costheta()}{eta\_to\_costheta()}}
 {\footnotesize\ttfamily double eta\+\_\+to\+\_\+costheta (\begin{DoxyParamCaption}\item[{double}]{eta }\end{DoxyParamCaption})}
 
+
+
+Definition at line 100 of file test\+\_\+\+J\+V\+B\+F.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100 \{ \textcolor{keywordflow}{return} cos(atan(exp(-\/eta))*2.); \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{test__JVBF_8c_a8b600efcfd299400e9950c661fe86814}\label{test__JVBF_8c_a8b600efcfd299400e9950c661fe86814}} 
 \index{test\_JVBF.c@{test\_JVBF.c}!fit\_JVBF@{fit\_JVBF}}
 \index{fit\_JVBF@{fit\_JVBF}!test\_JVBF.c@{test\_JVBF.c}}
 \doxysubsubsection{\texorpdfstring{fit\_JVBF()}{fit\_JVBF()}}
 {\footnotesize\ttfamily void fit\+\_\+\+J\+V\+BF (\begin{DoxyParamCaption}\item[{int}]{erg\+\_\+tev = {\ttfamily 8},  }\item[{float}]{m\+Sample = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 436 of file test\+\_\+\+J\+V\+B\+F.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{436                                              \{}
+\DoxyCodeLine{437   \textcolor{keywordtype}{float} mPOLE=mSample;}
+\DoxyCodeLine{438   \textcolor{keywordflow}{if} (mPOLE<=0) mPOLE=125.6;}
+\DoxyCodeLine{439   \textcolor{keywordtype}{float} wPOLE=4.15e-\/3;}
+\DoxyCodeLine{440   \textcolor{keywordtype}{char} TREE\_NAME[] = \textcolor{stringliteral}{"TestTree"};}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442   TString cinput;}
+\DoxyCodeLine{443   \textcolor{keywordflow}{if} (mSample>0) cinput = Form(\textcolor{stringliteral}{"HZZ4lTree\_jvbfMELA\_H\%.0f\_\%iTeV.root"}, mSample, erg\_tev);}
+\DoxyCodeLine{444   \textcolor{keywordflow}{else} cinput = Form(\textcolor{stringliteral}{"HZZ4lTree\_jvbfMELA\_HAll\_\%iTeV.root"}, erg\_tev);}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446   TFile* foutput;}
+\DoxyCodeLine{447   \textcolor{keywordflow}{if} (mSample>0) foutput = \textcolor{keyword}{new} TFile(Form(\textcolor{stringliteral}{"jvbfMELA\_Fits\_H\%.0f\_\%iTeV.root"}, mSample, erg\_tev), \textcolor{stringliteral}{"recreate"});}
+\DoxyCodeLine{448   \textcolor{keywordflow}{else} foutput = \textcolor{keyword}{new} TFile(Form(\textcolor{stringliteral}{"jvbfMELA\_fits\_wide\_\%iTeV.root"}, erg\_tev), \textcolor{stringliteral}{"recreate"});}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450   TLorentzVector nullFourVector(0, 0, 0, 0);}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452   \textcolor{keywordtype}{float} MC\_weight\_noxsec;}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454   \textcolor{keywordtype}{float} pjvbf\_VAJHU;}
+\DoxyCodeLine{455   \textcolor{keywordtype}{float} pjvbf\_VAJHU\_first;}
+\DoxyCodeLine{456   \textcolor{keywordtype}{float} pjvbf\_VAJHU\_second;}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458   \textcolor{keywordtype}{float} jet1Pt, jet2Pt;}
+\DoxyCodeLine{459   \textcolor{keywordtype}{float} jet1Eta, jet2Eta;}
+\DoxyCodeLine{460   \textcolor{keywordtype}{float} jet1Phi, jet2Phi;}
+\DoxyCodeLine{461   \textcolor{keywordtype}{float} jet1E, jet2E;}
+\DoxyCodeLine{462   \textcolor{keywordtype}{float} jet1Pt\_Fake, jet2Pt\_Fake;}
+\DoxyCodeLine{463   \textcolor{keywordtype}{float} jet1Eta\_Fake, jet2Eta\_Fake;}
+\DoxyCodeLine{464   \textcolor{keywordtype}{float} jet1Phi\_Fake, jet2Phi\_Fake;}
+\DoxyCodeLine{465   \textcolor{keywordtype}{float} jet1E\_Fake, jet2E\_Fake;}
+\DoxyCodeLine{466   \textcolor{keywordtype}{float} jet1px, jet1py, jet1pz;}
+\DoxyCodeLine{467   \textcolor{keywordtype}{float} jet2px, jet2py, jet2pz;}
+\DoxyCodeLine{468   \textcolor{keywordtype}{float} ZZPx, ZZPy, ZZPz, ZZE, dR;}
+\DoxyCodeLine{469   \textcolor{keywordtype}{short} NJets30;}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471   \textcolor{keywordtype}{float} ZZMass;}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473   TChain* tree = \textcolor{keyword}{new} TChain(TREE\_NAME);}
+\DoxyCodeLine{474   tree-\/>Add(cinput);}
+\DoxyCodeLine{475   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"MC\_weight\_noxsec"}, \&MC\_weight\_noxsec);}
+\DoxyCodeLine{476   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"ZZMass"}, \&ZZMass);}
+\DoxyCodeLine{477   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"pjvbf\_VAJHU"}, \&pjvbf\_VAJHU);}
+\DoxyCodeLine{478   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"pjvbf\_VAJHU\_first"}, \&pjvbf\_VAJHU\_first);}
+\DoxyCodeLine{479   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"pjvbf\_VAJHU\_second"}, \&pjvbf\_VAJHU\_second);}
+\DoxyCodeLine{480   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"NJets30"}, \&NJets30);}
+\DoxyCodeLine{481   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1Pt"}, \&jet1Pt);}
+\DoxyCodeLine{482   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1Eta"}, \&jet1Eta);}
+\DoxyCodeLine{483   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1Phi"}, \&jet1Phi);}
+\DoxyCodeLine{484   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1E"}, \&jet1E);}
+\DoxyCodeLine{485   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2Pt"}, \&jet2Pt);}
+\DoxyCodeLine{486   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2Eta"}, \&jet2Eta);}
+\DoxyCodeLine{487   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2Phi"}, \&jet2Phi);}
+\DoxyCodeLine{488   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2E"}, \&jet2E);}
+\DoxyCodeLine{489   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1\_Fake\_Pt"}, \&jet1Pt\_Fake);}
+\DoxyCodeLine{490   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1\_Fake\_Eta"}, \&jet1Eta\_Fake);}
+\DoxyCodeLine{491   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1\_Fake\_Phi"}, \&jet1Phi\_Fake);}
+\DoxyCodeLine{492   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet1\_Fake\_E"}, \&jet1E\_Fake);}
+\DoxyCodeLine{493   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2\_Fake\_Pt"}, \&jet2Pt\_Fake);}
+\DoxyCodeLine{494   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2\_Fake\_Eta"}, \&jet2Eta\_Fake);}
+\DoxyCodeLine{495   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2\_Fake\_Phi"}, \&jet2Phi\_Fake);}
+\DoxyCodeLine{496   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"jet2\_Fake\_E"}, \&jet2E\_Fake);}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499   \textcolor{keyword}{const} \textcolor{keywordtype}{int} nbinsx=6;}
+\DoxyCodeLine{500   \textcolor{keywordtype}{double} bins\_mzz[nbinsx+1]=\{70, 140, 190, 240, 340, 520, 20000\};}
+\DoxyCodeLine{501   \textcolor{keywordtype}{double} sum\_w[nbinsx]=\{ 0 \};}
+\DoxyCodeLine{502   \textcolor{keywordtype}{double} sum\_mzz[nbinsx][2]=\{ \{ 0 \} \};}
+\DoxyCodeLine{503   \textcolor{keyword}{const} \textcolor{keywordtype}{int} nbins\_eta = 8;}
+\DoxyCodeLine{504   \textcolor{keywordtype}{double} bins\_eta[nbins\_eta+1]=\{ 0, 0.75, 1.5, 2.25, 3, 4, 5.5, 10.5, 12 \};}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506   TProfile* hProb[nbinsx];}
+\DoxyCodeLine{507   TH1D* hProb\_all;}
+\DoxyCodeLine{508   TProfile* hEta[nbinsx+1];}
+\DoxyCodeLine{509   TH1D* hDist[nbinsx+1];}
+\DoxyCodeLine{510   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<nbinsx+1; bin++)\{}
+\DoxyCodeLine{511     \textcolor{keywordflow}{if} (bin<nbinsx) hProb[bin] = \textcolor{keyword}{new} TProfile(Form(\textcolor{stringliteral}{"njets1\_pjvbf\_bin\_\%i"}, bin+1), Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[bin], bins\_mzz[bin+1]), nbins\_eta, bins\_eta);}
+\DoxyCodeLine{512     \textcolor{keywordflow}{else} hProb\_all = \textcolor{keyword}{new} TH1D(\textcolor{stringliteral}{"njets1\_pjvbf\_all"}, Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[0], bins\_mzz[nbinsx]), nbins\_eta, bins\_eta);}
+\DoxyCodeLine{513     \textcolor{keywordflow}{if} (bin<nbinsx) hEta[bin] = \textcolor{keyword}{new} TProfile(Form(\textcolor{stringliteral}{"njets1\_eta\_bin\_\%i"}, bin+1), Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[bin], bins\_mzz[bin+1]), nbins\_eta, bins\_eta);}
+\DoxyCodeLine{514     \textcolor{keywordflow}{else} hEta[bin] = \textcolor{keyword}{new} TProfile(\textcolor{stringliteral}{"njets1\_eta\_all"}, Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[0], bins\_mzz[nbinsx]), nbins\_eta, bins\_eta);}
+\DoxyCodeLine{515     \textcolor{keywordflow}{if} (bin<nbinsx) hDist[bin] = \textcolor{keyword}{new} TH1D(Form(\textcolor{stringliteral}{"njets1\_dist\_bin\_\%i"}, bin+1), Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[bin], bins\_mzz[bin+1]), nbins\_eta, bins\_eta);}
+\DoxyCodeLine{516     \textcolor{keywordflow}{else} hDist[bin] = \textcolor{keyword}{new} TH1D(\textcolor{stringliteral}{"njets1\_dist\_all"}, Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[0], bins\_mzz[nbinsx]), nbins\_eta, bins\_eta);}
+\DoxyCodeLine{517     \textcolor{keywordflow}{if} (bin<nbinsx) hProb[bin]-\/>Sumw2();}
+\DoxyCodeLine{518     \textcolor{keywordflow}{else} hProb\_all-\/>Sumw2();}
+\DoxyCodeLine{519     hEta[bin]-\/>Sumw2();}
+\DoxyCodeLine{520     hDist[bin]-\/>Sumw2();}
+\DoxyCodeLine{521   \}}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523   \textcolor{keywordtype}{int} nEntries = tree-\/>GetEntries();}
+\DoxyCodeLine{524   cout << nEntries << endl;}
+\DoxyCodeLine{525   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} = 0; \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} < nEntries; \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}}++)\{}
+\DoxyCodeLine{526     tree-\/>GetEntry(\mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}});}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528     \textcolor{keywordtype}{int} massbin=-\/1;}
+\DoxyCodeLine{529     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<nbinsx; bin++)\{}
+\DoxyCodeLine{530       \textcolor{keywordflow}{if} (ZZMass>=bins\_mzz[bin] \&\& ZZMass<bins\_mzz[bin+1])\{}
+\DoxyCodeLine{531         massbin=bin;}
+\DoxyCodeLine{532       \}}
+\DoxyCodeLine{533     \}}
+\DoxyCodeLine{534     \textcolor{keywordflow}{if} (NJets30==1)\{}
+\DoxyCodeLine{535       hProb[massbin]-\/>Fill(fabs(jet2Eta\_Fake), pjvbf\_VAJHU\_second, MC\_weight\_noxsec);}
+\DoxyCodeLine{536       hEta[massbin]-\/>Fill(fabs(jet2Eta\_Fake), fabs(jet2Eta\_Fake), MC\_weight\_noxsec);}
+\DoxyCodeLine{537       hDist[massbin]-\/>Fill(fabs(jet2Eta\_Fake), MC\_weight\_noxsec);}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539       hEta[nbinsx]-\/>Fill(fabs(jet2Eta\_Fake), fabs(jet2Eta\_Fake), MC\_weight\_noxsec);}
+\DoxyCodeLine{540       hDist[nbinsx]-\/>Fill(fabs(jet2Eta\_Fake), MC\_weight\_noxsec);}
+\DoxyCodeLine{541     \}}
+\DoxyCodeLine{542   \}}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<nbinsx; bin++)\{}
+\DoxyCodeLine{545     hProb[bin]-\/>Scale(1./hProb[bin]-\/>Integral(\textcolor{stringliteral}{"width"}));}
+\DoxyCodeLine{546   \}}
+\DoxyCodeLine{547   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<nbinsx+1; bin++)\{}
+\DoxyCodeLine{548     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bineta=1; bineta<=nbins\_eta; bineta++)\{}
+\DoxyCodeLine{549       \textcolor{keywordtype}{double} bincontent = hDist[bin]-\/>GetBinContent(bineta);}
+\DoxyCodeLine{550       \textcolor{keywordtype}{double} binerror = hDist[bin]-\/>GetBinError(bineta);}
+\DoxyCodeLine{551       \textcolor{keywordtype}{double} binwidth = hDist[bin]-\/>GetXaxis()-\/>GetBinWidth(bineta);}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553       bincontent /= binwidth;}
+\DoxyCodeLine{554       binerror /= binwidth;}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556       hDist[bin]-\/>SetBinContent(bineta, bincontent);}
+\DoxyCodeLine{557       hDist[bin]-\/>SetBinError(bineta, binerror);}
+\DoxyCodeLine{558     \}}
+\DoxyCodeLine{559     hDist[bin]-\/>Scale(1./hDist[bin]-\/>Integral(\textcolor{stringliteral}{"width"}));}
+\DoxyCodeLine{560   \}}
+\DoxyCodeLine{561   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bineta=1; bineta<=nbins\_eta; bineta++)\{}
+\DoxyCodeLine{562     \textcolor{keywordtype}{double} sum\_invwsq=0;}
+\DoxyCodeLine{563     \textcolor{keywordtype}{double} sum\_prob\_invwsq=0;}
+\DoxyCodeLine{564     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<nbinsx; bin++)\{}
+\DoxyCodeLine{565       \textcolor{keywordtype}{double} bincontent = hProb[bin]-\/>GetBinContent(bineta);}
+\DoxyCodeLine{566       \textcolor{keywordtype}{double} binerror = hProb[bin]-\/>GetBinError(bineta);}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568       \textcolor{keywordtype}{double} invwsq = 0, prob\_invwsq = 0;}
+\DoxyCodeLine{569       \textcolor{keywordflow}{if} (binerror!=0)\{}
+\DoxyCodeLine{570         invwsq = 1./pow(binerror, 2);}
+\DoxyCodeLine{571         prob\_invwsq = bincontent*invwsq;}
+\DoxyCodeLine{572       \}}
+\DoxyCodeLine{573       sum\_invwsq += invwsq;}
+\DoxyCodeLine{574       sum\_prob\_invwsq += prob\_invwsq;}
+\DoxyCodeLine{575     \}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577     \textcolor{keywordflow}{if} (sum\_invwsq>0)\{}
+\DoxyCodeLine{578       sum\_prob\_invwsq /= sum\_invwsq;}
+\DoxyCodeLine{579       sum\_invwsq = 1./sqrt(sum\_invwsq);}
+\DoxyCodeLine{580     \}}
+\DoxyCodeLine{581     hProb\_all-\/>SetBinContent(bineta, sum\_prob\_invwsq);}
+\DoxyCodeLine{582     hProb\_all-\/>SetBinError(bineta, sum\_invwsq);}
+\DoxyCodeLine{583   \}}
+\DoxyCodeLine{584   hProb\_all-\/>Scale(1./hProb\_all-\/>Integral(\textcolor{stringliteral}{"width"}));}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586 }
+\DoxyCodeLine{587   \textcolor{keywordtype}{double} eta\_center\_all[nbins\_eta];}
+\DoxyCodeLine{588   \textcolor{keywordtype}{double} prob\_center\_all[nbins\_eta];}
+\DoxyCodeLine{589   \textcolor{keywordtype}{double} eta\_center\_all\_err[nbins\_eta];}
+\DoxyCodeLine{590   \textcolor{keywordtype}{double} prob\_center\_all\_err[nbins\_eta];}
+\DoxyCodeLine{591   \textcolor{keywordtype}{int} nNonEmpty\_all = 0;}
+\DoxyCodeLine{592   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bineta=1; bineta<=nbins\_eta; bineta++)\{}
+\DoxyCodeLine{593     \textcolor{keywordflow}{if} (hProb\_all-\/>GetBinError(bineta)>0)\{}
+\DoxyCodeLine{594       eta\_center\_all[nNonEmpty\_all] = hEta[nbinsx]-\/>GetBinContent(bineta);}
+\DoxyCodeLine{595       eta\_center\_all\_err[nNonEmpty\_all] = hEta[nbinsx]-\/>GetBinError(bineta);}
+\DoxyCodeLine{596       prob\_center\_all[nNonEmpty\_all] = hProb\_all-\/>GetBinContent(bineta);}
+\DoxyCodeLine{597       prob\_center\_all\_err[nNonEmpty\_all] = hProb\_all-\/>GetBinError(bineta);}
+\DoxyCodeLine{598       cout << nNonEmpty\_all << \textcolor{charliteral}{'\(\backslash\)t'} << prob\_center\_all[nNonEmpty\_all] << \textcolor{charliteral}{'\(\backslash\)t'} << prob\_center\_all\_err[nNonEmpty\_all] << endl;}
+\DoxyCodeLine{599       nNonEmpty\_all++;}
+\DoxyCodeLine{600     \}}
+\DoxyCodeLine{601   \}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603   TGraphErrors* tg\_all = \textcolor{keyword}{new} TGraphErrors(nNonEmpty\_all, eta\_center\_all, prob\_center\_all, eta\_center\_all\_err, prob\_center\_all\_err);}
+\DoxyCodeLine{604   tg\_all-\/>SetNameTitle(\textcolor{stringliteral}{"tg\_njets1\_pjvbf\_all"}, Form(\textcolor{stringliteral}{"m\_\{4l\}: [\%.0f, \%.0f] GeV"}, bins\_mzz[0], bins\_mzz[nbinsx]));}
+\DoxyCodeLine{605   tg\_all-\/>GetXaxis()-\/>SetTitle(\textcolor{stringliteral}{"\#eta"});}
+\DoxyCodeLine{606   tg\_all-\/>GetYaxis()-\/>SetTitle(\textcolor{stringliteral}{"<P\_\{VBF\}>"});}
+\DoxyCodeLine{607   }
+\DoxyCodeLine{608   TF1* fit\_tg\_all = \textcolor{keyword}{new} TF1(\textcolor{stringliteral}{"fit\_tg\_njets1\_pjvbf\_all"}, \textcolor{stringliteral}{"gaus*(1+gaus(3))"}, bins\_eta[0], bins\_eta[nbins\_eta]);}
+\DoxyCodeLine{609   \textcolor{keyword}{const} \textcolor{keywordtype}{int} npars = 6;}
+\DoxyCodeLine{610   \textcolor{keywordtype}{double} mypars[npars]=\{ 0.155, 5.193, 1.46, 0.362, 3.524, 0.715 \};}
+\DoxyCodeLine{611   fit\_tg\_all-\/>SetParameters(mypars);}
+\DoxyCodeLine{612   fit\_tg\_all-\/>SetParLimits(0, 0, 1);}
+\DoxyCodeLine{613   fit\_tg\_all-\/>SetParLimits(3, 0, 1);}
+\DoxyCodeLine{614   fit\_tg\_all-\/>SetParLimits(1, 0, 20);}
+\DoxyCodeLine{615   fit\_tg\_all-\/>SetParLimits(4, 0, 20);}
+\DoxyCodeLine{616   fit\_tg\_all-\/>SetParLimits(2, 0, 20);}
+\DoxyCodeLine{617   fit\_tg\_all-\/>SetParLimits(5, 0, 20);}
+\DoxyCodeLine{618   tg\_all-\/>Fit(fit\_tg\_all);}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{620   \textcolor{keywordtype}{double}* par\_postfit = fit\_tg\_all-\/>GetParameters();}
+\DoxyCodeLine{621   \textcolor{keywordtype}{double}* parerr\_postfit = fit\_tg\_all-\/>GetParErrors();}
+\DoxyCodeLine{622   \textcolor{keywordtype}{double} parIndex[npars];}
+\DoxyCodeLine{623   \textcolor{keywordtype}{double} parIndexErr[npars]=\{ 0 \};}
+\DoxyCodeLine{624   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ip=0; ip<npars; ip++) parIndex[ip] = (\textcolor{keywordtype}{double})ip;}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{626   \textcolor{keywordtype}{double} integral = 0.5*par\_postfit[0]*(1.+TMath::Erf(par\_postfit[1]/par\_postfit[2]/TMath::Sqrt(2)));}
+\DoxyCodeLine{627   \textcolor{keywordtype}{double} integral2 = 1./(2.*TMath::Sqrt(2.*TMath::Pi()*(TMath::Power(par\_postfit[2], 2)+TMath::Power(par\_postfit[5], 2))));}
+\DoxyCodeLine{628   integral2 *= par\_postfit[0]*par\_postfit[3]*TMath::Exp(-\/0.5*pow(par\_postfit[1]-\/par\_postfit[4], 2)/(TMath::Power(par\_postfit[2], 2)+TMath::Power(par\_postfit[5], 2)))*}
+\DoxyCodeLine{629     (1.+TMath::Erf((TMath::Power(par\_postfit[2], 2)*par\_postfit[4]+TMath::Power(par\_postfit[5], 2)*par\_postfit[1]) / (par\_postfit[2]*par\_postfit[5]*TMath::Sqrt(2.*(TMath::Power(par\_postfit[2], 2)+TMath::Power(par\_postfit[5], 2))))));}
+\DoxyCodeLine{630   integral += integral2;}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632   cout << integral << endl;}
+\DoxyCodeLine{633   par\_postfit[0] /= integral;}
+\DoxyCodeLine{634   parerr\_postfit[0] /= integral;}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636   TGraphErrors* tg\_pars = \textcolor{keyword}{new} TGraphErrors(npars, parIndex, par\_postfit, parIndexErr, parerr\_postfit);}
+\DoxyCodeLine{637   tg\_pars-\/>SetNameTitle(\textcolor{stringliteral}{"njets1\_pjvbf\_pars"}, \textcolor{stringliteral}{"gaus*(1+gaus(3))"});}
+\DoxyCodeLine{638   tg\_pars-\/>GetXaxis()-\/>SetTitle(\textcolor{stringliteral}{"Parameter index"});}
+\DoxyCodeLine{639   tg\_pars-\/>GetYaxis()-\/>SetTitle(\textcolor{stringliteral}{"Parameter"});}
+\DoxyCodeLine{640   foutput-\/>WriteTObject(tg\_pars);}
+\DoxyCodeLine{641   \textcolor{keyword}{delete} tg\_pars;}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643   foutput-\/>WriteTObject(tg\_all);}
+\DoxyCodeLine{644   \textcolor{keyword}{delete} tg\_all;}
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<nbinsx+1; bin++)\{}
+\DoxyCodeLine{647     \textcolor{keywordflow}{if} (bin<nbinsx) foutput-\/>WriteTObject(hProb[bin]);}
+\DoxyCodeLine{648     \textcolor{keywordflow}{else} foutput-\/>WriteTObject(hProb\_all);}
+\DoxyCodeLine{649     foutput-\/>WriteTObject(hEta[bin]);}
+\DoxyCodeLine{650     foutput-\/>WriteTObject(hDist[bin]);}
+\DoxyCodeLine{651     \textcolor{keyword}{delete} hDist[bin];}
+\DoxyCodeLine{652     \textcolor{keyword}{delete} hEta[bin];}
+\DoxyCodeLine{653     \textcolor{keywordflow}{if} (bin<nbinsx) \textcolor{keyword}{delete} hProb[bin];}
+\DoxyCodeLine{654     \textcolor{keywordflow}{else} \textcolor{keyword}{delete} hProb\_all;}
+\DoxyCodeLine{655   \}}
+\DoxyCodeLine{656   \textcolor{keyword}{delete} tree;}
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658   foutput-\/>Close();}
+\DoxyCodeLine{659 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{test__JVBF_8c_a4e4d84dffe082802bd84887537888dd6}\label{test__JVBF_8c_a4e4d84dffe082802bd84887537888dd6}} 
 \index{test\_JVBF.c@{test\_JVBF.c}!getJHUGenMELAWeight@{getJHUGenMELAWeight}}
 \index{getJHUGenMELAWeight@{getJHUGenMELAWeight}!test\_JVBF.c@{test\_JVBF.c}}
 \doxysubsubsection{\texorpdfstring{getJHUGenMELAWeight()}{getJHUGenMELAWeight()}}
 {\footnotesize\ttfamily float get\+J\+H\+U\+Gen\+M\+E\+L\+A\+Weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMela}{Mela}} \&}]{my\+Mela,  }\item[{int}]{lep\+Id\mbox{[}4\mbox{]},  }\item[{float}]{angular\+Ordered\mbox{[}8\mbox{]},  }\item[{double}]{self\+D\+Hvvcoupl\mbox{[}\+S\+I\+Z\+E\+\_\+\+H\+V\+V\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 62 of file test\+\_\+\+J\+V\+B\+F.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                                                                                                                  \{}
+\DoxyCodeLine{63     \textcolor{keywordtype}{float} myprob=1.0;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{int} myflavor=-\/1;}
+\DoxyCodeLine{65     \textcolor{keywordflow}{if}(abs(lepId[0])==abs(lepId[1]) \&\&}
+\DoxyCodeLine{66         abs(lepId[0])==abs(lepId[2]) \&\&}
+\DoxyCodeLine{67         abs(lepId[0])==abs(lepId[3]))\{}
+\DoxyCodeLine{68             \textcolor{keywordflow}{if}(abs(lepId[0])==11) myflavor=1;}
+\DoxyCodeLine{69             \textcolor{keywordflow}{else} myflavor=2;}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{else} myflavor=3;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordflow}{if}(myflavor>=0) myMela.\mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{computeP}}(angularOrdered[0],angularOrdered[1],angularOrdered[2],angularOrdered[3],}
+\DoxyCodeLine{74         angularOrdered[4],angularOrdered[5],angularOrdered[6],angularOrdered[7],}
+\DoxyCodeLine{75         myflavor,}
+\DoxyCodeLine{76         selfDHvvcoupl,}
+\DoxyCodeLine{77         myprob}
+\DoxyCodeLine{78         );}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} myprob;}
+\DoxyCodeLine{80 \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{test__JVBF_8c_a4f71f9ee244c0848455c24c49d999de9}\label{test__JVBF_8c_a4f71f9ee244c0848455c24c49d999de9}} 
 \index{test\_JVBF.c@{test\_JVBF.c}!getMCFMMELAWeight@{getMCFMMELAWeight}}
 \index{getMCFMMELAWeight@{getMCFMMELAWeight}!test\_JVBF.c@{test\_JVBF.c}}
 \doxysubsubsection{\texorpdfstring{getMCFMMELAWeight()}{getMCFMMELAWeight()}}
 {\footnotesize\ttfamily float get\+M\+C\+F\+M\+M\+E\+L\+A\+Weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMela}{Mela}} \&}]{my\+Mela,  }\item[{int}]{lep\+Id\mbox{[}4\mbox{]},  }\item[{float}]{angular\+Ordered\mbox{[}8\mbox{]},  }\item[{double}]{ggcoupl\mbox{[}2\mbox{]},  }\item[{int}]{use\+Constant = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 43 of file test\+\_\+\+J\+V\+B\+F.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43                                                                                                                  \{}
+\DoxyCodeLine{44     \textcolor{keywordtype}{float} myprob=1.0;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} myflavor=-\/1;}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if}(abs(lepId[0])==abs(lepId[1]) \&\&}
+\DoxyCodeLine{47         abs(lepId[0])==abs(lepId[2]) \&\&}
+\DoxyCodeLine{48         abs(lepId[0])==abs(lepId[3]))\{}
+\DoxyCodeLine{49             \textcolor{keywordflow}{if}(abs(lepId[0])==11) myflavor=1;}
+\DoxyCodeLine{50             \textcolor{keywordflow}{else} myflavor=2;}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{else} myflavor=3;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{if}(myflavor>=0) myMela.\mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{computeP}}(angularOrdered[0],angularOrdered[1],angularOrdered[2],angularOrdered[3],}
+\DoxyCodeLine{55         angularOrdered[4],angularOrdered[5],angularOrdered[6],angularOrdered[7],}
+\DoxyCodeLine{56         myflavor,}
+\DoxyCodeLine{57         myprob,}
+\DoxyCodeLine{58         useConstant}
+\DoxyCodeLine{59         );}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} myprob;}
+\DoxyCodeLine{61 \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{test__JVBF_8c_a99c757a16030538ea0fc163f83c5c91d}\label{test__JVBF_8c_a99c757a16030538ea0fc163f83c5c91d}} 
 \index{test\_JVBF.c@{test\_JVBF.c}!getSuperMELA@{getSuperMELA}}
 \index{getSuperMELA@{getSuperMELA}!test\_JVBF.c@{test\_JVBF.c}}
 \doxysubsubsection{\texorpdfstring{getSuperMELA()}{getSuperMELA()}}
 {\footnotesize\ttfamily float get\+Super\+M\+E\+LA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMela}{Mela}} \&}]{my\+Mela,  }\item[{int}]{lep\+Id\mbox{[}4\mbox{]},  }\item[{float}]{m\+ZZ,  }\item[{\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}}}]{syst }\end{DoxyParamCaption})}
 
+
+
+Definition at line 81 of file test\+\_\+\+J\+V\+B\+F.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                                                                  \{}
+\DoxyCodeLine{82     \textcolor{keywordtype}{float} myprob=1.0;}
+\DoxyCodeLine{83     TVar::LeptonFlavor myflavor=TVar::Flavor\_Dummy;}
+\DoxyCodeLine{84     \textcolor{keywordflow}{if}(abs(lepId[0])==abs(lepId[1]) \&\&}
+\DoxyCodeLine{85         abs(lepId[0])==abs(lepId[2]) \&\&}
+\DoxyCodeLine{86         abs(lepId[0])==abs(lepId[3]))\{}
+\DoxyCodeLine{87             \textcolor{keywordflow}{if}(abs(lepId[0])==11) myflavor=TVar::Flavor\_4e;}
+\DoxyCodeLine{88             \textcolor{keywordflow}{else} myflavor=TVar::Flavor\_4mu;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{else} myflavor=TVar::Flavor\_2e2mu;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordflow}{if}(myflavor!=TVar::Flavor\_Dummy) myMela.\mbox{\hyperlink{classMela_a6e945c3826090ac856f69a32dc6ee3db}{computePM4l}}(mZZ,}
+\DoxyCodeLine{93         myflavor,}
+\DoxyCodeLine{94         syst,}
+\DoxyCodeLine{95         myprob}
+\DoxyCodeLine{96         );}
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} myprob;}
+\DoxyCodeLine{98 \};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{test__JVBF_8c_a9e726053adaf5fd05b933ed25d560727}\label{test__JVBF_8c_a9e726053adaf5fd05b933ed25d560727}} 
 \index{test\_JVBF.c@{test\_JVBF.c}!test\_JVBF@{test\_JVBF}}
 \index{test\_JVBF@{test\_JVBF}!test\_JVBF.c@{test\_JVBF.c}}
 \doxysubsubsection{\texorpdfstring{test\_JVBF()}{test\_JVBF()}}
 {\footnotesize\ttfamily void test\+\_\+\+J\+V\+BF (\begin{DoxyParamCaption}\item[{int}]{erg\+\_\+tev = {\ttfamily 8},  }\item[{float}]{m\+Sample = {\ttfamily 0},  }\item[{bool}]{isggH = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Definition at line 102 of file test\+\_\+\+J\+V\+B\+F.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102                                                                 \{}
+\DoxyCodeLine{103   \textcolor{keywordtype}{float} mPOLE=mSample;}
+\DoxyCodeLine{104   \textcolor{keywordflow}{if} (mPOLE<=0) mPOLE=125.6;}
+\DoxyCodeLine{105   \textcolor{keywordtype}{float} wPOLE=4.15e-\/3;}
+\DoxyCodeLine{106   \textcolor{keywordtype}{char} TREE\_NAME[] = \textcolor{stringliteral}{"SelectedTree"};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108   \textcolor{comment}{//    TVar::VerbosityLevel verbosity = TVar::INFO;}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110   \mbox{\hyperlink{classMela}{Mela}} \mbox{\hyperlink{namespacemela}{mela}}(erg\_tev, mPOLE);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112   TFile* foutput;}
+\DoxyCodeLine{113   \textcolor{keywordflow}{if} (!isggH)\{}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} (mSample>0) foutput = \textcolor{keyword}{new} TFile(Form(\textcolor{stringliteral}{"HZZ4lTree\_jvbfMELA\_H\%.0f\_\%iTeV.root"}, mSample, erg\_tev), \textcolor{stringliteral}{"recreate"});}
+\DoxyCodeLine{115     \textcolor{keywordflow}{else} foutput = \textcolor{keyword}{new} TFile(Form(\textcolor{stringliteral}{"HZZ4lTree\_jvbfMELA\_HAll\_\%iTeV.root"}, erg\_tev), \textcolor{stringliteral}{"recreate"});}
+\DoxyCodeLine{116   \}}
+\DoxyCodeLine{117   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{118     \textcolor{keywordflow}{if} (mSample>0) foutput = \textcolor{keyword}{new} TFile(Form(\textcolor{stringliteral}{"HZZ4lTree\_jvbfMELA\_ggH\%.0f\_\%iTeV.root"}, mSample, erg\_tev), \textcolor{stringliteral}{"recreate"});}
+\DoxyCodeLine{119     \textcolor{keywordflow}{else} foutput = \textcolor{keyword}{new} TFile(Form(\textcolor{stringliteral}{"HZZ4lTree\_jvbfMELA\_ggHAll\_\%iTeV.root"}, erg\_tev), \textcolor{stringliteral}{"recreate"});}
+\DoxyCodeLine{120   \}}
+\DoxyCodeLine{121   TLorentzVector nullFourVector(0, 0, 0, 0);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123   \textcolor{keywordtype}{float} MC\_weight\_noxsec;}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125   \textcolor{keywordtype}{float} pjvbf\_VAJHU;}
+\DoxyCodeLine{126   \textcolor{keywordtype}{float} pjvbf\_VAJHU\_first;}
+\DoxyCodeLine{127   \textcolor{keywordtype}{float} pjvbf\_VAJHU\_second;}
+\DoxyCodeLine{128   \textcolor{keywordtype}{float} phj\_VAJHU\_first;}
+\DoxyCodeLine{129   \textcolor{keywordtype}{float} phj\_VAJHU\_second;}
+\DoxyCodeLine{130   \textcolor{keywordtype}{float} pAux\_vbf;}
+\DoxyCodeLine{131   \textcolor{keywordtype}{float} pAux\_vbf\_first;}
+\DoxyCodeLine{132   \textcolor{keywordtype}{float} pAux\_vbf\_second;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   \textcolor{keywordtype}{float} jet1Pt, jet2Pt;}
+\DoxyCodeLine{135   \textcolor{keywordtype}{float} jet1Eta, jet2Eta;}
+\DoxyCodeLine{136   \textcolor{keywordtype}{float} jet1Phi, jet2Phi;}
+\DoxyCodeLine{137   \textcolor{keywordtype}{float} jet1E, jet2E;}
+\DoxyCodeLine{138   \textcolor{keywordtype}{float} jet1Pt\_Fake, jet2Pt\_Fake;}
+\DoxyCodeLine{139   \textcolor{keywordtype}{float} jet1Eta\_Fake, jet2Eta\_Fake;}
+\DoxyCodeLine{140   \textcolor{keywordtype}{float} jet1Phi\_Fake, jet2Phi\_Fake;}
+\DoxyCodeLine{141   \textcolor{keywordtype}{float} jet1E\_Fake, jet2E\_Fake;}
+\DoxyCodeLine{142   \textcolor{keywordtype}{float} jet1px, jet1py, jet1pz;}
+\DoxyCodeLine{143   \textcolor{keywordtype}{float} jet2px, jet2py, jet2pz;}
+\DoxyCodeLine{144   \textcolor{keywordtype}{float} ZZPx, ZZPy, ZZPz, ZZE, dR;}
+\DoxyCodeLine{145   \textcolor{keywordtype}{short} NJets30;}
+\DoxyCodeLine{146   std::vector<double> * JetPt=0;}
+\DoxyCodeLine{147   std::vector<double> * JetEta=0;}
+\DoxyCodeLine{148   std::vector<double> * JetPhi=0;}
+\DoxyCodeLine{149   std::vector<double> * JetMass=0;}
+\DoxyCodeLine{150   std::vector<double> myJetPt;}
+\DoxyCodeLine{151   std::vector<double> myJetCosTheta;}
+\DoxyCodeLine{152   std::vector<double> myJetEta;}
+\DoxyCodeLine{153   std::vector<double> myJetPhi;}
+\DoxyCodeLine{154   std::vector<double> myJetMass;}
+\DoxyCodeLine{155   TBranch* bJetPt=0;}
+\DoxyCodeLine{156   TBranch* bJetEta=0;}
+\DoxyCodeLine{157   TBranch* bJetPhi=0;}
+\DoxyCodeLine{158   TBranch* bJetMass=0;}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160   \textcolor{keywordtype}{float} ZZMass, ZZPt, ZZPhi, ZZEta;}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162   \textcolor{keywordtype}{int} GenLep1Id, GenLep2Id, GenLep3Id, GenLep4Id;}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164   TChain* tree = \textcolor{keyword}{new} TChain(TREE\_NAME);}
+\DoxyCodeLine{165   \textcolor{keywordtype}{char}* user\_folder[3]=\{ \textcolor{stringliteral}{"4mu"}, \textcolor{stringliteral}{"4e"}, \textcolor{stringliteral}{"2mu2e"} \};}
+\DoxyCodeLine{166   TString cinput\_main = \textcolor{stringliteral}{"/scratch0/hep/ianderso/CJLST/140519/PRODFSR"};}
+\DoxyCodeLine{167   \textcolor{keywordflow}{if} (erg\_tev==8) cinput\_main.Append(\textcolor{stringliteral}{"\_8TeV"});}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{//  TString cinput\_main = "/afs/cern.ch/work/u/usarica/HZZ4l-\/125p6-\/FullAnalysis/LHC\_";}}
+\DoxyCodeLine{170 \textcolor{comment}{//  cinput\_main.Append(Form("\%iTeV", erg\_tev));}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ff=0; ff<3; ff++)\{}
+\DoxyCodeLine{173     \textcolor{keywordflow}{if} (!isggH)\{}
+\DoxyCodeLine{174       \textcolor{keywordflow}{if} (mSample>0) tree-\/>Add(Form(\textcolor{stringliteral}{"\%s/\%s/HZZ4lTree\_VBFH\%.0f.root"}, cinput\_main.Data(), user\_folder[ff], mSample));}
+\DoxyCodeLine{175       \textcolor{keywordflow}{else} tree-\/>Add(Form(\textcolor{stringliteral}{"\%s/\%s/HZZ4lTree\_VBFH*.root"}, cinput\_main.Data(), user\_folder[ff]));}
+\DoxyCodeLine{176     \}}
+\DoxyCodeLine{177     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{178       \textcolor{keywordflow}{if} (mSample>0) tree-\/>Add(Form(\textcolor{stringliteral}{"\%s/\%s/HZZ4lTree\_minloH\%.0f.root"}, cinput\_main.Data(), user\_folder[ff], mSample));}
+\DoxyCodeLine{179       \textcolor{keywordflow}{else} tree-\/>Add(Form(\textcolor{stringliteral}{"\%s/\%s/HZZ4lTree\_minloH*.root"}, cinput\_main.Data(), user\_folder[ff]));}
+\DoxyCodeLine{180     \}}
+\DoxyCodeLine{181   \}}
+\DoxyCodeLine{182   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"MC\_weight\_noxsec"}, \&MC\_weight\_noxsec);}
+\DoxyCodeLine{183   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"NJets30"}, \&NJets30);}
+\DoxyCodeLine{184   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"JetPt"}, \&JetPt, \&bJetPt);}
+\DoxyCodeLine{185   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"JetEta"}, \&JetEta, \&bJetEta);}
+\DoxyCodeLine{186   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"JetPhi"}, \&JetPhi, \&bJetPhi);}
+\DoxyCodeLine{187   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"JetMass"}, \&JetMass, \&bJetMass);}
+\DoxyCodeLine{188   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"ZZMass"}, \&ZZMass);}
+\DoxyCodeLine{189   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"ZZPt"}, \&ZZPt);}
+\DoxyCodeLine{190   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"ZZEta"}, \&ZZEta);}
+\DoxyCodeLine{191   tree-\/>SetBranchAddress(\textcolor{stringliteral}{"ZZPhi"}, \&ZZPhi);}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193   TTree* newtree = \textcolor{keyword}{new} TTree(\textcolor{stringliteral}{"TestTree"}, \textcolor{stringliteral}{""});}
+\DoxyCodeLine{194   newtree-\/>Branch(\textcolor{stringliteral}{"MC\_weight\_noxsec"}, \&MC\_weight\_noxsec);}
+\DoxyCodeLine{195   newtree-\/>Branch(\textcolor{stringliteral}{"ZZMass"}, \&ZZMass);}
+\DoxyCodeLine{196   newtree-\/>Branch(\textcolor{stringliteral}{"pAux\_vbf"}, \&pAux\_vbf);}
+\DoxyCodeLine{197   newtree-\/>Branch(\textcolor{stringliteral}{"pAux\_vbf\_first"}, \&pAux\_vbf\_first);}
+\DoxyCodeLine{198   newtree-\/>Branch(\textcolor{stringliteral}{"pAux\_vbf\_second"}, \&pAux\_vbf\_second);}
+\DoxyCodeLine{199   newtree-\/>Branch(\textcolor{stringliteral}{"pjvbf\_VAJHU"}, \&pjvbf\_VAJHU);}
+\DoxyCodeLine{200   newtree-\/>Branch(\textcolor{stringliteral}{"pjvbf\_VAJHU\_first"}, \&pjvbf\_VAJHU\_first);}
+\DoxyCodeLine{201   newtree-\/>Branch(\textcolor{stringliteral}{"pjvbf\_VAJHU\_second"}, \&pjvbf\_VAJHU\_second);}
+\DoxyCodeLine{202   newtree-\/>Branch(\textcolor{stringliteral}{"phj\_VAJHU\_first"}, \&phj\_VAJHU\_first);}
+\DoxyCodeLine{203   newtree-\/>Branch(\textcolor{stringliteral}{"phj\_VAJHU\_second"}, \&phj\_VAJHU\_second);}
+\DoxyCodeLine{204   newtree-\/>Branch(\textcolor{stringliteral}{"NJets30"}, \&NJets30);}
+\DoxyCodeLine{205   newtree-\/>Branch(\textcolor{stringliteral}{"jet1Pt"}, \&jet1Pt);}
+\DoxyCodeLine{206   newtree-\/>Branch(\textcolor{stringliteral}{"jet1Eta"}, \&jet1Eta);}
+\DoxyCodeLine{207   newtree-\/>Branch(\textcolor{stringliteral}{"jet1Phi"}, \&jet1Phi);}
+\DoxyCodeLine{208   newtree-\/>Branch(\textcolor{stringliteral}{"jet1E"}, \&jet1E);}
+\DoxyCodeLine{209   newtree-\/>Branch(\textcolor{stringliteral}{"jet2Pt"}, \&jet2Pt);}
+\DoxyCodeLine{210   newtree-\/>Branch(\textcolor{stringliteral}{"jet2Eta"}, \&jet2Eta);}
+\DoxyCodeLine{211   newtree-\/>Branch(\textcolor{stringliteral}{"jet2Phi"}, \&jet2Phi);}
+\DoxyCodeLine{212   newtree-\/>Branch(\textcolor{stringliteral}{"jet2E"}, \&jet2E);}
+\DoxyCodeLine{213   newtree-\/>Branch(\textcolor{stringliteral}{"jet1\_Fake\_Pt"}, \&jet1Pt\_Fake);}
+\DoxyCodeLine{214   newtree-\/>Branch(\textcolor{stringliteral}{"jet1\_Fake\_Eta"}, \&jet1Eta\_Fake);}
+\DoxyCodeLine{215   newtree-\/>Branch(\textcolor{stringliteral}{"jet1\_Fake\_Phi"}, \&jet1Phi\_Fake);}
+\DoxyCodeLine{216   newtree-\/>Branch(\textcolor{stringliteral}{"jet1\_Fake\_E"}, \&jet1E\_Fake);}
+\DoxyCodeLine{217   newtree-\/>Branch(\textcolor{stringliteral}{"jet2\_Fake\_Pt"}, \&jet2Pt\_Fake);}
+\DoxyCodeLine{218   newtree-\/>Branch(\textcolor{stringliteral}{"jet2\_Fake\_Eta"}, \&jet2Eta\_Fake);}
+\DoxyCodeLine{219   newtree-\/>Branch(\textcolor{stringliteral}{"jet2\_Fake\_Phi"}, \&jet2Phi\_Fake);}
+\DoxyCodeLine{220   newtree-\/>Branch(\textcolor{stringliteral}{"jet2\_Fake\_E"}, \&jet2E\_Fake);}
+\DoxyCodeLine{221   newtree-\/>Branch(\textcolor{stringliteral}{"JetPt"}, \&myJetPt);}
+\DoxyCodeLine{222 \textcolor{comment}{//  newtree-\/>Branch("JetCosTheta", \&myJetCosTheta);}}
+\DoxyCodeLine{223   newtree-\/>Branch(\textcolor{stringliteral}{"JetPhi"}, \&myJetPhi);}
+\DoxyCodeLine{224   newtree-\/>Branch(\textcolor{stringliteral}{"JetMass"}, \&myJetMass);}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227   \textcolor{keywordtype}{int} nEntries = tree-\/>GetEntries();}
+\DoxyCodeLine{228   \textcolor{keywordtype}{double} selfDHggcoupl[SIZE\_HGG][2] =\{ \{ 0 \} \};}
+\DoxyCodeLine{229   \textcolor{keywordtype}{double} selfDHvvcoupl[SIZE\_HVV\_VBF][2] =\{ \{ 0 \} \};}
+\DoxyCodeLine{230   \textcolor{keywordtype}{double} selfDHwwcoupl[SIZE\_HWW\_VBF][2] =\{ \{ 0 \} \};}
+\DoxyCodeLine{231   \textcolor{keywordtype}{double} ggvvcoupl[2]=\{ 0, 0 \};}
+\DoxyCodeLine{232   \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4850105ad013a92a4c9cbe6cfa97d794}{TVar::SelfDefine\_spin0}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca4539519c2d018fd29228bdd605c76c47}{TVar::ZZGG}});}
+\DoxyCodeLine{233   \textcolor{keywordtype}{int} recorded=0;}
+\DoxyCodeLine{234   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} = 0; \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} < nEntries; \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}}++)\{}
+\DoxyCodeLine{235     pjvbf\_VAJHU=-\/1;}
+\DoxyCodeLine{236     pjvbf\_VAJHU\_first=-\/1;}
+\DoxyCodeLine{237     pjvbf\_VAJHU\_second=-\/1;}
+\DoxyCodeLine{238     jet1Pt=-\/1;}
+\DoxyCodeLine{239     jet2Pt=-\/1;}
+\DoxyCodeLine{240     jet1Eta=0;}
+\DoxyCodeLine{241     jet2Eta=0;}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     tree-\/>GetEntry(\mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}});}
+\DoxyCodeLine{244     GenLep1Id=11;}
+\DoxyCodeLine{245     GenLep2Id=-\/11;}
+\DoxyCodeLine{246     GenLep3Id=11;}
+\DoxyCodeLine{247     GenLep4Id=-\/11;}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     myJetPt.clear();}
+\DoxyCodeLine{250     myJetEta.clear();}
+\DoxyCodeLine{251     myJetPhi.clear();}
+\DoxyCodeLine{252     myJetMass.clear();}
+\DoxyCodeLine{253     myJetCosTheta.clear();}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     TLorentzVector jet1(0, 0, 1e-\/3, 1e-\/3), jet2(0, 0, 1e-\/3, 1e-\/3), higgs(0, 0, 0, 0);}
+\DoxyCodeLine{256     TLorentzVector p4[3], jets[2];}
+\DoxyCodeLine{257     higgs.SetPtEtaPhiM(ZZPt, ZZEta, ZZPhi, ZZMass);}
+\DoxyCodeLine{258     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NJets30; i++)\{}
+\DoxyCodeLine{259       myJetPt.push\_back(JetPt-\/>at(i));}
+\DoxyCodeLine{260       myJetEta.push\_back(JetEta-\/>at(i));}
+\DoxyCodeLine{261       myJetPhi.push\_back(JetPhi-\/>at(i));}
+\DoxyCodeLine{262       myJetMass.push\_back(JetMass-\/>at(i));}
+\DoxyCodeLine{263       myJetCosTheta.push\_back(\mbox{\hyperlink{test__JVBF_8c_a8895809fdf542ca7644e1744fd23fd31}{eta\_to\_costheta}}(JetEta-\/>at(i)));}
+\DoxyCodeLine{264     \}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{keywordtype}{int} filled = 0;}
+\DoxyCodeLine{267     \textcolor{keywordflow}{if} (myJetPt.size()>=1)\{}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269       jets[0].SetPxPyPzE(0, 0, 0, 1);}
+\DoxyCodeLine{270       jets[1].SetPxPyPzE(0, 0, 0, 1);}
+\DoxyCodeLine{271       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < myJetPt.size(); i++)\{}
+\DoxyCodeLine{272         jets[filled].SetPtEtaPhiM(myJetPt[i], myJetEta[i], myJetPhi[i], myJetMass[i]);}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274         \textcolor{keywordflow}{if} (filled==0)\{}
+\DoxyCodeLine{275           \textcolor{keywordtype}{double} jetE = jets[filled].Energy();}
+\DoxyCodeLine{276           \textcolor{keywordtype}{double} jetP = jets[filled].P();}
+\DoxyCodeLine{277           \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}} = (jetP>0 ? jetE/jetP : 1);}
+\DoxyCodeLine{278           \mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}} = 1.;}
+\DoxyCodeLine{279           jet1.SetPxPyPzE(jets[filled].Px()*\mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}}, jets[filled].Py()*\mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}}, jets[filled].Pz()*\mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}}, jetE);}
+\DoxyCodeLine{280           filled++;}
+\DoxyCodeLine{281           jet1Pt = jet1.Pt();}
+\DoxyCodeLine{282           jet1Eta = jet1.Eta();}
+\DoxyCodeLine{283           jet1Phi = jet1.Phi();}
+\DoxyCodeLine{284           jet1E = jet1.E();}
+\DoxyCodeLine{285           jet2.SetXYZT(0, 0, 0, 0);}
+\DoxyCodeLine{286         \}}
+\DoxyCodeLine{287         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(filled==1)\{}
+\DoxyCodeLine{288           \textcolor{keywordtype}{double} jetE = jets[filled].Energy();}
+\DoxyCodeLine{289           \textcolor{keywordtype}{double} jetP = jets[filled].P();}
+\DoxyCodeLine{290           \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}} = (jetP>0 ? jetE/jetP : 1);}
+\DoxyCodeLine{291           \mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}} = 1.;}
+\DoxyCodeLine{292           jet2.SetXYZT(jets[filled].Px()*\mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}}, jets[filled].Py()*\mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}}, jets[filled].Pz()*\mbox{\hyperlink{namespacetestME__all_acfc17ef972d1823c2bdf158421c2caf7}{ratio}}, jetE);}
+\DoxyCodeLine{293           filled++;}
+\DoxyCodeLine{294           jet2Pt = jet2.Pt();}
+\DoxyCodeLine{295           jet2Eta = jet2.Eta();}
+\DoxyCodeLine{296           jet2Phi = jet2.Phi();}
+\DoxyCodeLine{297           jet2E = jet2.E();}
+\DoxyCodeLine{298         \}}
+\DoxyCodeLine{299         \textcolor{keywordflow}{else} \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{comment}{/*}}
+\DoxyCodeLine{302 \textcolor{comment}{        if (filled == 0)\{}}
+\DoxyCodeLine{303 \textcolor{comment}{          if (jets[filled].Pt()>jet1.Pt())\{}}
+\DoxyCodeLine{304 \textcolor{comment}{            jet1.SetPxPyPzE(jets[filled].Px(), jets[filled].Py(), jets[filled].Pz(), jetE);}}
+\DoxyCodeLine{305 \textcolor{comment}{            jet1Pt = jet1.Pt();}}
+\DoxyCodeLine{306 \textcolor{comment}{          \}}}
+\DoxyCodeLine{307 \textcolor{comment}{          if (i == myJetPt.size() -\/ 1)\{}}
+\DoxyCodeLine{308 \textcolor{comment}{            filled++;}}
+\DoxyCodeLine{309 \textcolor{comment}{            i = 0;}}
+\DoxyCodeLine{310 \textcolor{comment}{          \}}}
+\DoxyCodeLine{311 \textcolor{comment}{        \}}}
+\DoxyCodeLine{312 \textcolor{comment}{        else\{}}
+\DoxyCodeLine{313 \textcolor{comment}{          if (jets[filled].Pt()<jet1.Pt() \&\& jets[filled].Pt()>jet2.Pt())\{}}
+\DoxyCodeLine{314 \textcolor{comment}{            jet2.SetPxPyPzE(jets[filled].Px(), jets[filled].Py(), jets[filled].Pz(), jetE);}}
+\DoxyCodeLine{315 \textcolor{comment}{            jet2Pt = jet2.Pt();}}
+\DoxyCodeLine{316 \textcolor{comment}{          \}}}
+\DoxyCodeLine{317 \textcolor{comment}{          if (i == myJetPt.size() -\/ 1)\{}}
+\DoxyCodeLine{318 \textcolor{comment}{            filled++;}}
+\DoxyCodeLine{319 \textcolor{comment}{          \}}}
+\DoxyCodeLine{320 \textcolor{comment}{        \}}}
+\DoxyCodeLine{321 \textcolor{comment}{        if (filled == 2) break;}}
+\DoxyCodeLine{322 \textcolor{comment}{*/}}
+\DoxyCodeLine{323       \}}
+\DoxyCodeLine{324 \textcolor{comment}{//cos(atan(exp(-\/jet2Eta))*2)}}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326       \textcolor{keywordflow}{if} (filled == 2)\{}
+\DoxyCodeLine{327         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{328         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}
+\DoxyCodeLine{329         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf);}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331         TLorentzVector pTotal;}
+\DoxyCodeLine{332         pTotal.SetXYZT(0, 0, 0, 0);}
+\DoxyCodeLine{333         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{334         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, pTotal, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU\_first);}
+\DoxyCodeLine{335         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf\_first);}
+\DoxyCodeLine{336         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
+\DoxyCodeLine{337         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, pTotal, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_first);}
+\DoxyCodeLine{338         \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{mela::computeFakeJet}}(jet1, higgs, pTotal);}
+\DoxyCodeLine{339         jet2Pt\_Fake = pTotal.Pt();}
+\DoxyCodeLine{340         jet2Eta\_Fake = pTotal.Eta();}
+\DoxyCodeLine{341         jet2Phi\_Fake = pTotal.Phi();}
+\DoxyCodeLine{342         jet2E\_Fake = pTotal.E();}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344         pTotal.SetXYZT(0, 0, 0, 0);}
+\DoxyCodeLine{345         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{346         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(pTotal, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU\_second);}
+\DoxyCodeLine{347         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf\_second);}
+\DoxyCodeLine{348         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
+\DoxyCodeLine{349         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(pTotal, 2, jet2, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_second);}
+\DoxyCodeLine{350         \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{mela::computeFakeJet}}(jet2, higgs, pTotal);}
+\DoxyCodeLine{351         jet1Pt\_Fake = pTotal.Pt();}
+\DoxyCodeLine{352         jet1Eta\_Fake = pTotal.Eta();}
+\DoxyCodeLine{353         jet1Phi\_Fake = pTotal.Phi();}
+\DoxyCodeLine{354         jet1E\_Fake = pTotal.E();}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356         newtree-\/>Fill();}
+\DoxyCodeLine{357       \}}
+\DoxyCodeLine{358       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (filled == 1)\{}
+\DoxyCodeLine{359 \textcolor{comment}{/*}}
+\DoxyCodeLine{360 \textcolor{comment}{        TLorentzVector pTotal = higgs+jet1;}}
+\DoxyCodeLine{361 \textcolor{comment}{        pTotal.SetVect(-\/pTotal.Vect());}}
+\DoxyCodeLine{362 \textcolor{comment}{        pTotal.SetE(pTotal.P());}}
+\DoxyCodeLine{363 \textcolor{comment}{        jet2 = pTotal;}}
+\DoxyCodeLine{364 \textcolor{comment}{}}
+\DoxyCodeLine{365 \textcolor{comment}{        jet2Pt = jet2.Pt();}}
+\DoxyCodeLine{366 \textcolor{comment}{        jet2Eta = jet2.Eta();}}
+\DoxyCodeLine{367 \textcolor{comment}{        jet2Phi = jet2.Phi();}}
+\DoxyCodeLine{368 \textcolor{comment}{        jet2E = jet2.E();}}
+\DoxyCodeLine{369 \textcolor{comment}{}}
+\DoxyCodeLine{370 \textcolor{comment}{}}
+\DoxyCodeLine{371 \textcolor{comment}{        jet1Pt\_Fake = jet1.Pt();}}
+\DoxyCodeLine{372 \textcolor{comment}{        jet1Eta\_Fake = jet1.Eta();}}
+\DoxyCodeLine{373 \textcolor{comment}{        jet1Phi\_Fake = jet1.Phi();}}
+\DoxyCodeLine{374 \textcolor{comment}{        jet1E\_Fake = jet1.E();}}
+\DoxyCodeLine{375 \textcolor{comment}{        jet2Pt\_Fake = jet2.Pt();}}
+\DoxyCodeLine{376 \textcolor{comment}{        jet2Eta\_Fake = jet2.Eta();}}
+\DoxyCodeLine{377 \textcolor{comment}{        jet2Phi\_Fake = jet2.Phi();}}
+\DoxyCodeLine{378 \textcolor{comment}{        jet2E\_Fake = jet2.E();}}
+\DoxyCodeLine{379 \textcolor{comment}{}}
+\DoxyCodeLine{380 \textcolor{comment}{        mela.setProcess(TVar::HSMHiggs, TVar::JHUGen, TVar::JJVBF);}}
+\DoxyCodeLine{381 \textcolor{comment}{        mela.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}}
+\DoxyCodeLine{382 \textcolor{comment}{*/}}
+\DoxyCodeLine{383 \textcolor{comment}{//}}
+\DoxyCodeLine{384         jet2.SetXYZT(0,0,0,0);}
+\DoxyCodeLine{385         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{386         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}
+\DoxyCodeLine{387         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf);}
+\DoxyCodeLine{388         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
+\DoxyCodeLine{389         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_first);}
+\DoxyCodeLine{390         \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{mela::computeFakeJet}}(jet1, higgs, jet2);}
+\DoxyCodeLine{391 \textcolor{comment}{/*}}
+\DoxyCodeLine{392 \textcolor{comment}{        cout << "TEST:"}}
+\DoxyCodeLine{393 \textcolor{comment}{          << " Higgs Pz: " <<  higgs.Pz()}}
+\DoxyCodeLine{394 \textcolor{comment}{          << " Higgs P: " <<  higgs.P()}}
+\DoxyCodeLine{395 \textcolor{comment}{          << " Higgs E: " <<  higgs.T()}}
+\DoxyCodeLine{396 \textcolor{comment}{          << " Jet 1 Pz: " <<  jet1.Pz()}}
+\DoxyCodeLine{397 \textcolor{comment}{          << " Jet 1 P: " <<  jet1.P()}}
+\DoxyCodeLine{398 \textcolor{comment}{          << " Jet 1 E: " <<  jet1.T()}}
+\DoxyCodeLine{399 \textcolor{comment}{          << " Jet 2 Pz: " <<  jet2.Pz()}}
+\DoxyCodeLine{400 \textcolor{comment}{          << " Jet 2 P: " <<  jet2.P()}}
+\DoxyCodeLine{401 \textcolor{comment}{          << " Jet 2 E: " <<  jet2.T() << '\(\backslash\)n' << endl;}}
+\DoxyCodeLine{402 \textcolor{comment}{*/}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404         jet2Pt = jet2.Pt();}
+\DoxyCodeLine{405         jet2Eta = jet2.Eta();}
+\DoxyCodeLine{406         jet2Phi = jet2.Phi();}
+\DoxyCodeLine{407         jet2E = jet2.E();}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409         jet1Pt\_Fake = jet1.Pt();}
+\DoxyCodeLine{410         jet1Eta\_Fake = jet1.Eta();}
+\DoxyCodeLine{411         jet1Phi\_Fake = jet1.Phi();}
+\DoxyCodeLine{412         jet1E\_Fake = jet1.E();}
+\DoxyCodeLine{413         jet2Pt\_Fake = jet2.Pt();}
+\DoxyCodeLine{414         jet2Eta\_Fake = jet2.Eta();}
+\DoxyCodeLine{415         jet2Phi\_Fake = jet2.Phi();}
+\DoxyCodeLine{416         jet2E\_Fake = jet2.E();}
+\DoxyCodeLine{417 \textcolor{comment}{//}}
+\DoxyCodeLine{418         pjvbf\_VAJHU\_first = pjvbf\_VAJHU;}
+\DoxyCodeLine{419         pjvbf\_VAJHU\_second = pjvbf\_VAJHU;}
+\DoxyCodeLine{420         pAux\_vbf\_first = pAux\_vbf;}
+\DoxyCodeLine{421         pAux\_vbf\_second = pAux\_vbf;}
+\DoxyCodeLine{422         phj\_VAJHU\_second = phj\_VAJHU\_first;}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424         newtree-\/>Fill();}
+\DoxyCodeLine{425       \}}
+\DoxyCodeLine{426     \}}
+\DoxyCodeLine{427   \}}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430   foutput-\/>WriteTObject(newtree);}
+\DoxyCodeLine{431   \textcolor{keyword}{delete} newtree;}
+\DoxyCodeLine{432   foutput-\/>Close();}
+\DoxyCodeLine{433   \textcolor{keyword}{delete} tree;}
+\DoxyCodeLine{434 \}}
+
+\end{DoxyCode}

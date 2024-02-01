@@ -1,0 +1,25 @@
+var classRooqqZZ__JHU =
+[
+    [ "RooqqZZ_JHU", "classRooqqZZ__JHU.html#a410968bb153f18c5e79de44b50abe423", null ],
+    [ "RooqqZZ_JHU", "classRooqqZZ__JHU.html#a082a60241cdc110687340a88387bb980", null ],
+    [ "RooqqZZ_JHU", "classRooqqZZ__JHU.html#a1c192f9a3647b1e873dec4e4ca649912", null ],
+    [ "~RooqqZZ_JHU", "classRooqqZZ__JHU.html#ac75c3a159fcc5ab1b918c9d5ac5f96d3", null ],
+    [ "analyticalIntegral", "classRooqqZZ__JHU.html#a72ab442897e86c70c2522fd85d746b07", null ],
+    [ "clone", "classRooqqZZ__JHU.html#a6589830249234213daf98bfe9037a751", null ],
+    [ "evaluate", "classRooqqZZ__JHU.html#a9a3394e3d0e0dd448d96d1a934394bef", null ],
+    [ "getAnalyticalIntegral", "classRooqqZZ__JHU.html#af7f89db6864822909219979a8cae7848", null ],
+    [ "integratePartonicXS_Dh1Dh2DPh1_4", "classRooqqZZ__JHU.html#af6ad67446a060609823d72aab966fe91", null ],
+    [ "integratePartonicXS_Dh1Dh2Dph_3", "classRooqqZZ__JHU.html#a34fe157934937fc27d2f6f82d37d01ec", null ],
+    [ "integratePartonicXS_Dh1Dh2DphDPh1_5", "classRooqqZZ__JHU.html#a3c1ba8a6283fc9a25355cafe56cecac5", null ],
+    [ "integratePartonicXS_Dh1DphDPh1_2", "classRooqqZZ__JHU.html#a9e4ee34d5a335e5e79ff8b706c57a011", null ],
+    [ "integratePartonicXS_Dh2DphDPh1_1", "classRooqqZZ__JHU.html#aea4ef9b04f7897dbd553718308aadc1a", null ],
+    [ "partonicXS", "classRooqqZZ__JHU.html#a6d9c469a5cf4c3964d7dd0ff0e2f70fb", null ],
+    [ "h1j", "classRooqqZZ__JHU.html#a8acde112311b56446d7cf732ea2a8345", null ],
+    [ "h2j", "classRooqqZZ__JHU.html#a8453b1b1d066d997ccc0d47cd33fad90", null ],
+    [ "hsj", "classRooqqZZ__JHU.html#ad53695f2960ed95fe18b31abf0814943", null ],
+    [ "m1j", "classRooqqZZ__JHU.html#a9cc6f65282c0e0052844008c65ca3f4d", null ],
+    [ "m2j", "classRooqqZZ__JHU.html#a1d8b8287a8a0438d2b81a12e24f9e5ba", null ],
+    [ "mZZj", "classRooqqZZ__JHU.html#afd4f8cef2ecea61af26c2b53f924afa6", null ],
+    [ "Phi1j", "classRooqqZZ__JHU.html#ac1f3ce07493252359af284db4ccb0225", null ],
+    [ "phij", "classRooqqZZ__JHU.html#a6b9e34af51bdc775b093e55d3056e6b1", null ]
+];

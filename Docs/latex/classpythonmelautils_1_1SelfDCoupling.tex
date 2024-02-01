@@ -40,6 +40,13 @@ def \mbox{\hyperlink{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472a
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 178 of file pythonmelautils.\+py.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classpythonmelautils_1_1SelfDCoupling_a21d2b06e6a968498d35f3b22d2e3992a}\label{classpythonmelautils_1_1SelfDCoupling_a21d2b06e6a968498d35f3b22d2e3992a}} 
 \index{pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}!\_\_init\_\_@{\_\_init\_\_}}
@@ -49,6 +56,20 @@ def \mbox{\hyperlink{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472a
 
 
 
+Definition at line 179 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179   \textcolor{keyword}{def }\_\_init\_\_(self, arrayname, *indices):}
+\DoxyCodeLine{180     self.arrayname = arrayname}
+\DoxyCodeLine{181     self.indices = indices}
+\DoxyCodeLine{182     self.real = SelfDParameter(arrayname, *indices+(0,))}
+\DoxyCodeLine{183     self.imag = SelfDParameter(arrayname, *indices+(1,))}
+\DoxyCodeLine{184 }
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classpythonmelautils_1_1SelfDCoupling_a6f3c6fdcc3f8989426ec3de41f829690}\label{classpythonmelautils_1_1SelfDCoupling_a6f3c6fdcc3f8989426ec3de41f829690}} 
 \index{pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}!\_\_get\_\_@{\_\_get\_\_}}
@@ -56,12 +77,37 @@ def \mbox{\hyperlink{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472a
 \doxysubsubsection{\texorpdfstring{\_\_get\_\_()}{\_\_get\_\_()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Self\+D\+Coupling.\+\_\+\+\_\+get\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{objtype }\end{DoxyParamCaption})}
 
+
+
+Definition at line 185 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185   \textcolor{keyword}{def }\_\_get\_\_(self, obj, objtype):}
+\DoxyCodeLine{186     \textcolor{keywordflow}{if} obj \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{keywordflow}{return} self}
+\DoxyCodeLine{187     \textcolor{comment}{\#self.real does not call \_\_get\_\_ on real, because it's an instance variable not a class variable}}
+\DoxyCodeLine{188     \textcolor{keywordflow}{return} complex(self.real.\_\_get\_\_(obj, objtype), self.imag.\_\_get\_\_(obj, objtype))}
+\DoxyCodeLine{189 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472ac2afc9f6dae6}\label{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472ac2afc9f6dae6}} 
 \index{pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}!\_\_set\_\_@{\_\_set\_\_}}
 \index{\_\_set\_\_@{\_\_set\_\_}!pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}}
 \doxysubsubsection{\texorpdfstring{\_\_set\_\_()}{\_\_set\_\_()}}
 {\footnotesize\ttfamily def pythonmelautils.\+Self\+D\+Coupling.\+\_\+\+\_\+set\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{obj,  }\item[{}]{val }\end{DoxyParamCaption})}
 
+
+
+Definition at line 190 of file pythonmelautils.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{190   \textcolor{keyword}{def }\_\_set\_\_(self, obj, val):}
+\DoxyCodeLine{191     self.real.\_\_set\_\_(obj, val.real)}
+\DoxyCodeLine{192     self.imag.\_\_set\_\_(obj, val.imag)}
+\DoxyCodeLine{193 }
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -71,11 +117,19 @@ def \mbox{\hyperlink{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472a
 \doxysubsubsection{\texorpdfstring{arrayname}{arrayname}}
 {\footnotesize\ttfamily pythonmelautils.\+Self\+D\+Coupling.\+arrayname}
 
+
+
+Definition at line 180 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1SelfDCoupling_ab6d097fb410d5bceff5880a0e5f934d8}\label{classpythonmelautils_1_1SelfDCoupling_ab6d097fb410d5bceff5880a0e5f934d8}} 
 \index{pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}!imag@{imag}}
 \index{imag@{imag}!pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}}
 \doxysubsubsection{\texorpdfstring{imag}{imag}}
 {\footnotesize\ttfamily pythonmelautils.\+Self\+D\+Coupling.\+imag}
+
+
+
+Definition at line 183 of file pythonmelautils.\+py.
 
 \mbox{\Hypertarget{classpythonmelautils_1_1SelfDCoupling_a93fd62cec649655336d07d9d6982cff2}\label{classpythonmelautils_1_1SelfDCoupling_a93fd62cec649655336d07d9d6982cff2}} 
 \index{pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}!indices@{indices}}
@@ -83,11 +137,19 @@ def \mbox{\hyperlink{classpythonmelautils_1_1SelfDCoupling_ac4a0a1b736e415d9472a
 \doxysubsubsection{\texorpdfstring{indices}{indices}}
 {\footnotesize\ttfamily pythonmelautils.\+Self\+D\+Coupling.\+indices}
 
+
+
+Definition at line 181 of file pythonmelautils.\+py.
+
 \mbox{\Hypertarget{classpythonmelautils_1_1SelfDCoupling_a12616b6ee914b307b1ebd0fd62da412b}\label{classpythonmelautils_1_1SelfDCoupling_a12616b6ee914b307b1ebd0fd62da412b}} 
 \index{pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}!real@{real}}
 \index{real@{real}!pythonmelautils.SelfDCoupling@{pythonmelautils.SelfDCoupling}}
 \doxysubsubsection{\texorpdfstring{real}{real}}
 {\footnotesize\ttfamily pythonmelautils.\+Self\+D\+Coupling.\+real}
+
+
+
+Definition at line 182 of file pythonmelautils.\+py.
 
 
 
