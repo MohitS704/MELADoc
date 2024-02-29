@@ -1,0 +1,424 @@
+\hypertarget{namespacereductionab}{}\doxysection{reductionab Module Reference}
+\label{namespacereductionab}\index{reductionab@{reductionab}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacereductionab_a830e147b967aa323197f252813d31b46}{calca}} (A, Auv, m02, rmax, Aerr)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionab_a40a6a12d427c2629c9b244714c2d6568}{calcb}} (B, Buv, p10, m02, m12, rmax, id, Berr)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionab_ab2c1956e06c8f4d33fc193daa4d65acf}{calcbred}} (B, Buv, p10, m02, m12, rmax, id, Berr)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionab_a1fc936c5cff25bbe805906c28d3063c2}{calcdb}} (DB, D\+Buv, p10, m02, m12, rmax, id, D\+Berr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacereductionab_a830e147b967aa323197f252813d31b46}\label{namespacereductionab_a830e147b967aa323197f252813d31b46}} 
+\index{reductionab@{reductionab}!calca@{calca}}
+\index{calca@{calca}!reductionab@{reductionab}}
+\doxysubsubsection{\texorpdfstring{calca()}{calca()}}
+{\footnotesize\ttfamily subroutine reductionab\+::calca (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2), intent(out)}]{A,  }\item[{double complex, dimension(0\+:rmax/2), intent(out)}]{Auv,  }\item[{double complex, intent(in)}]{m02,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Aerr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file reduction\+A\+B.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53   }
+\DoxyCodeLine{54     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{55     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02}
+\DoxyCodeLine{56     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: A(0:rmax/2), Auv(0:rmax/2)}
+\DoxyCodeLine{57     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Aerr(0:rmax)}
+\DoxyCodeLine{58     \textcolor{keywordtype}{double complex} :: A0\_coli, mm02, elimminf2\_coli}
+\DoxyCodeLine{59     \textcolor{keywordtype}{double complex} :: fac, ccc}
+\DoxyCodeLine{60     \textcolor{keywordtype}{integer} :: n0}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordflow}{if}(\textcolor{keyword}{present}(aerr)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{63       aerr = 0d0}
+\DoxyCodeLine{64 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{65     auv(0) = m02}
+\DoxyCodeLine{66     a(0) = a0\_coli(m02)}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     ccc = 2d0}
+\DoxyCodeLine{69     mm02 = elimminf2\_coli(m02)}
+\DoxyCodeLine{70     \textcolor{keywordflow}{do} n0=1,rmax/2}
+\DoxyCodeLine{71       fac = m02/(2*(n0+1))}
+\DoxyCodeLine{72       ccc = ccc*fac}
+\DoxyCodeLine{73       auv(n0) = fac*auv(n0-\/1)}
+\DoxyCodeLine{74       a(n0) = fac*(a(n0-\/1)+ccc)}
+\DoxyCodeLine{75 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if}(\textcolor{keyword}{present}(aerr)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{77       aerr = abs(a(0))*acc\_def\_b}
+\DoxyCodeLine{78 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{79 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionab_a40a6a12d427c2629c9b244714c2d6568}\label{namespacereductionab_a40a6a12d427c2629c9b244714c2d6568}} 
+\index{reductionab@{reductionab}!calcb@{calcb}}
+\index{calcb@{calcb}!reductionab@{reductionab}}
+\doxysubsubsection{\texorpdfstring{calcb()}{calcb()}}
+{\footnotesize\ttfamily subroutine reductionab\+::calcb (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax), intent(inout)}]{B,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax), intent(inout)}]{Buv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Berr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file reduction\+A\+B.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92   }
+\DoxyCodeLine{93     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax, id}
+\DoxyCodeLine{94     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,m02,m12}
+\DoxyCodeLine{95     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(inout)} :: B(0:rmax,0:rmax), Buv(0:rmax,0:rmax) }
+\DoxyCodeLine{96     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Berr(0:rmax)}
+\DoxyCodeLine{97     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: Baux(:,:), Buvaux(:,:),fct(:)}
+\DoxyCodeLine{98     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: Berraux(:)}
+\DoxyCodeLine{99     \textcolor{keywordtype}{double complex} :: x(3)}
+\DoxyCodeLine{100     \textcolor{keywordtype}{integer} :: rank,switch,cnt,n0,n1,r}
+\DoxyCodeLine{101     \textcolor{keywordtype}{logical} :: nocalc,wrica}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{if} (use\_cache\_system) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{104       \textcolor{keywordflow}{if} ((ncache.gt.0).and.(ncache.le.ncache\_max)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{105 \textcolor{comment}{!        if (use\_cache(ncache).ge.2) then}}
+\DoxyCodeLine{106           x(1)=p10}
+\DoxyCodeLine{107           x(2)=m02}
+\DoxyCodeLine{108           x(3)=m12}
+\DoxyCodeLine{109           rank = rmax}
+\DoxyCodeLine{110           switch = 0}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112           \textcolor{keyword}{allocate}(fct(2*ncoefsg(rmax,2)+rmax+1))}
+\DoxyCodeLine{113           \textcolor{keyword}{call }readcache(fct,2*ncoefsg(rmax,2)+rmax+1,x,3,1,id,2,rank,nocalc,wrica)    }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115           \textcolor{keywordflow}{if}(nocalc)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{116             cnt = 0}
+\DoxyCodeLine{117             \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{118               \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{119                 n1 = r-\/n0}
+\DoxyCodeLine{120  }
+\DoxyCodeLine{121                 cnt = cnt+1}
+\DoxyCodeLine{122                 b(n0,n1) = fct(cnt)}
+\DoxyCodeLine{123                 cnt = cnt+1}
+\DoxyCodeLine{124                 buv(n0,n1) = fct(cnt)}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{127               cnt = cnt+1}
+\DoxyCodeLine{128               \textcolor{keywordflow}{if}(\textcolor{keyword}{present}(berr))\textcolor{keywordflow}{then}     }
+\DoxyCodeLine{129                 berr(r) = real(fct(cnt))}
+\DoxyCodeLine{130 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{131 \textcolor{keywordflow}{            end do}     }
+\DoxyCodeLine{132             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{133 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135           }
+\DoxyCodeLine{136           \textcolor{keywordflow}{if}(rank.eq.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138             \textcolor{keyword}{allocate}(berraux(0:rank))}
+\DoxyCodeLine{139             \textcolor{keyword}{call }calcbred(b,buv,p10,m02,m12,rank,id,berraux)}
+\DoxyCodeLine{140             \textcolor{keywordflow}{if}(\textcolor{keyword}{present}(berr)) berr=berraux}
+\DoxyCodeLine{141  }
+\DoxyCodeLine{142             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{143               cnt = 0}
+\DoxyCodeLine{144               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{145                 \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{146                   n1 = r-\/n0}
+\DoxyCodeLine{147  }
+\DoxyCodeLine{148                   cnt = cnt+1}
+\DoxyCodeLine{149                   fct(cnt) = b(n0,n1)}
+\DoxyCodeLine{150                   cnt = cnt+1}
+\DoxyCodeLine{151                   fct(cnt) = buv(n0,n1)}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{154                 cnt = cnt+1}
+\DoxyCodeLine{155                 fct(cnt) = berraux(r)}
+\DoxyCodeLine{156 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{157         }
+\DoxyCodeLine{158               \textcolor{keyword}{call }writecache(fct,2*ncoefsg(rank,2)+rank+1,id,2,rank)}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{163           }
+\DoxyCodeLine{164           }
+\DoxyCodeLine{165           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{166             \textcolor{keyword}{allocate}(baux(0:rank,0:rank))}
+\DoxyCodeLine{167             \textcolor{keyword}{allocate}(buvaux(0:rank,0:rank))}
+\DoxyCodeLine{168             \textcolor{keyword}{allocate}(berraux(0:rank))}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170             \textcolor{keyword}{call }calcbred(baux,buvaux,p10,m02,m12,rank,id,berraux)}
+\DoxyCodeLine{171  }
+\DoxyCodeLine{172             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{173               cnt = 0}
+\DoxyCodeLine{174               \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{175               \textcolor{keyword}{allocate}(fct(2*ncoefsg(rank,2)+rank+1))}
+\DoxyCodeLine{176               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{177                 \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{178                   n1 = r-\/n0}
+\DoxyCodeLine{179  }
+\DoxyCodeLine{180                   cnt = cnt+1}
+\DoxyCodeLine{181                   fct(cnt) = baux(n0,n1)}
+\DoxyCodeLine{182                   cnt = cnt+1}
+\DoxyCodeLine{183                   fct(cnt) = buvaux(n0,n1)}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{186                 cnt = cnt+1}
+\DoxyCodeLine{187                 fct(cnt) = berraux(r)}
+\DoxyCodeLine{188 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{189         }
+\DoxyCodeLine{190               \textcolor{keyword}{call }writecache(fct,2*ncoefsg(rank,2)+rank+1,id,2,rank)}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194             b(0:rmax,0:rmax) = baux(0:rmax,0:rmax)}
+\DoxyCodeLine{195             buv(0:rmax,0:rmax) = buvaux(0:rmax,0:rmax)}
+\DoxyCodeLine{196             \textcolor{keywordflow}{if}(\textcolor{keyword}{present}(berr))\textcolor{keywordflow}{then}}
+\DoxyCodeLine{197               berr = berraux(0:rmax)}
+\DoxyCodeLine{198 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{199             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{200       }
+\DoxyCodeLine{201 \textcolor{keywordflow}{          end if} }
+\DoxyCodeLine{202 \textcolor{comment}{!        end if}}
+\DoxyCodeLine{203 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{204 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \textcolor{keywordflow}{if}(\textcolor{keyword}{present}(berr)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{208       \textcolor{keyword}{call }calcbred(b,buv,p10,m02,m12,rmax,id,berr)}
+\DoxyCodeLine{209     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{210       \textcolor{keyword}{allocate}(berraux(0:rmax))}
+\DoxyCodeLine{211       \textcolor{keyword}{call }calcbred(b,buv,p10,m02,m12,rmax,id,berraux)}
+\DoxyCodeLine{212       \textcolor{keyword}{deallocate}(berraux)}
+\DoxyCodeLine{213 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{214 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionab_ab2c1956e06c8f4d33fc193daa4d65acf}\label{namespacereductionab_ab2c1956e06c8f4d33fc193daa4d65acf}} 
+\index{reductionab@{reductionab}!calcbred@{calcbred}}
+\index{calcbred@{calcbred}!reductionab@{reductionab}}
+\doxysubsubsection{\texorpdfstring{calcbred()}{calcbred()}}
+{\footnotesize\ttfamily subroutine reductionab\+::calcbred (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax), intent(inout)}]{B,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax), intent(inout)}]{Buv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Berr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 227 of file reduction\+A\+B.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{227   }
+\DoxyCodeLine{228     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax, id}
+\DoxyCodeLine{229     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,m02,m12}
+\DoxyCodeLine{230     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(inout)} :: B(0:rmax,0:rmax), Buv(0:rmax,0:rmax) }
+\DoxyCodeLine{231     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}  :: Berr(0:rmax)}
+\DoxyCodeLine{232 \textcolor{comment}{!   double complex, allocatable :: A(:), Auv(:)}}
+\DoxyCodeLine{233     \textcolor{keywordtype}{double complex} :: A(0:rmax-\/1), Auv(0:rmax-\/1)}
+\DoxyCodeLine{234     \textcolor{keywordtype}{double complex} :: q2, mm02, mm12, f1}
+\DoxyCodeLine{235     \textcolor{keywordtype}{double complex} :: Bn\_coli,elimminf2\_coli}
+\DoxyCodeLine{236     \textcolor{keywordtype}{integer} :: rmaxA,n0,n1,r,sgn,k,rid,r0}
+\DoxyCodeLine{237     \textcolor{keywordtype}{logical} :: finarg}
+\DoxyCodeLine{238     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{parameter} :: cd0 = dcmplx(0d0,0d0)  }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     r0 = 0}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{comment}{! r=0}}
+\DoxyCodeLine{243     \textcolor{keywordflow}{if} (r0.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{244       buv(0,0) = 1d0}
+\DoxyCodeLine{245       b(0,0) = bn\_coli(0,p10,m02,m12)}
+\DoxyCodeLine{246 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{comment}{! calculate B(0,n1)}}
+\DoxyCodeLine{249     sgn = (-\/1)**r0}
+\DoxyCodeLine{250     \textcolor{keywordflow}{do} n1=max(r0,1),rmax}
+\DoxyCodeLine{251       sgn = -\/sgn}
+\DoxyCodeLine{252       buv(0,n1) = sgn/(n1+1d0)}
+\DoxyCodeLine{253       b(0,n1) = bn\_coli(n1,p10,m02,m12)}
+\DoxyCodeLine{254 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \textcolor{comment}{! calculate B(n0,n1) for n0=/=0}}
+\DoxyCodeLine{258     \textcolor{keywordflow}{if} (rmax.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{259       }
+\DoxyCodeLine{260       \textcolor{keyword}{call }elminf2iv\_coli(p10,m02,m12,q2,mm02,mm12,finarg)}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{comment}{!      q2 = elimminf2\_coli(p10)}}
+\DoxyCodeLine{263 \textcolor{comment}{!      mm12 = elimminf2\_coli(m12)}}
+\DoxyCodeLine{264 \textcolor{comment}{!      mm02 = elimminf2\_coli(m02)}}
+\DoxyCodeLine{265 \textcolor{comment}{!      finarg=q2.ne.cd0.or.mm12.ne.cd0.or.mm02.ne.cd0}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267       \textcolor{comment}{! at least one of the invariants p10,m02,m12 different from zero}}
+\DoxyCodeLine{268       \textcolor{keywordflow}{if} (finarg) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{269       }
+\DoxyCodeLine{270         \textcolor{comment}{! calculation of A-\/functions}}
+\DoxyCodeLine{271         rmaxa = max(rmax-\/1,0)}
+\DoxyCodeLine{272 \textcolor{comment}{!       allocate(A(0:rmaxA))}}
+\DoxyCodeLine{273 \textcolor{comment}{!       allocate(Auv(0:rmaxA))}}
+\DoxyCodeLine{274         \textcolor{keyword}{call }calca(a,auv,mm12,2*rmaxa)}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276         \textcolor{comment}{! p10 non-\/negligible}}
+\DoxyCodeLine{277         \textcolor{keywordflow}{if} (abs(q2)/(abs(q2)+abs(mm02+mm12)).gt.dprec\_coli) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279           f1 = q2-\/mm12+mm02}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{comment}{!          do n0=1,rmax/2}}
+\DoxyCodeLine{282 \textcolor{comment}{!            k=rmax-\/2*n0}}
+\DoxyCodeLine{283           \textcolor{keywordflow}{do} r=2,2*rmax}
+\DoxyCodeLine{284             \textcolor{keywordflow}{do} n0=max(1,r-\/rmax),r/2}
+\DoxyCodeLine{285               k=r-\/2*n0}
+\DoxyCodeLine{286               \textcolor{keywordflow}{do} n1=max(r0-\/2*n0,0),k}
+\DoxyCodeLine{287                 buv(n0,n1) = ((-\/1)**n1*auv(n0-\/1) + 2*mm02*buv(n0-\/1,n1) \&}
+\DoxyCodeLine{288                     + f1*buv(n0-\/1,n1+1))/(2*n0+n1+1)/2}
+\DoxyCodeLine{289                 b(n0,n1) = ((-\/1)**n1*a(n0-\/1) + 2*mm02*b(n0-\/1,n1) \&}
+\DoxyCodeLine{290                     + f1*b(n0-\/1,n1+1) + 4*buv(n0,n1))/(2*n0+n1+1)/2  }
+\DoxyCodeLine{291 \textcolor{comment}{!                write(*,*) 'CalcBred B(n0,n1)',n0,n1,B(n0,n1)}}
+\DoxyCodeLine{292 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{293 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{294 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296         \textcolor{comment}{! p10 negligible}}
+\DoxyCodeLine{297         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 \textcolor{comment}{!          do n0=1,rmax/2}}
+\DoxyCodeLine{300 \textcolor{comment}{!            k=rmax-\/2*n0}}
+\DoxyCodeLine{301           \textcolor{keywordflow}{do} r=2,2*rmax}
+\DoxyCodeLine{302             \textcolor{keywordflow}{do} n0=max(1,r-\/rmax),r/2}
+\DoxyCodeLine{303               k=r-\/2*n0}
+\DoxyCodeLine{304               \textcolor{keywordflow}{do} n1=max(r0-\/2*n0,0),k}
+\DoxyCodeLine{305              }
+\DoxyCodeLine{306                 buv(n0,n1) = ((-\/1)**n1*auv(n0-\/1) + mm02*buv(n0-\/1,n1))/(n0+n1+1)/2}
+\DoxyCodeLine{307                 b(n0,n1) = ((-\/1)**n1*a(n0-\/1) + mm02*b(n0-\/1,n1) \&}
+\DoxyCodeLine{308                             + 2*buv(n0,n1))/(n0+n1+1)/2  }
+\DoxyCodeLine{309 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{310 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{311 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315       \textcolor{comment}{! p10=m02=m12=0}}
+\DoxyCodeLine{316       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318         buv(1:,:) = 0d0}
+\DoxyCodeLine{319         b(1:,:) = 0d0}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{322 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324     berr(0) = abs(b(0,0))}
+\DoxyCodeLine{325     \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{326       berr(r) = max(berr(r-\/1),abs(b(0,r)))}
+\DoxyCodeLine{327 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{328     berr = berr*acc\_def\_b}
+\DoxyCodeLine{329 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionab_a1fc936c5cff25bbe805906c28d3063c2}\label{namespacereductionab_a1fc936c5cff25bbe805906c28d3063c2}} 
+\index{reductionab@{reductionab}!calcdb@{calcdb}}
+\index{calcdb@{calcdb}!reductionab@{reductionab}}
+\doxysubsubsection{\texorpdfstring{calcdb()}{calcdb()}}
+{\footnotesize\ttfamily subroutine reductionab\+::calcdb (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(inout)}]{DB,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(inout)}]{D\+Buv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{D\+Berr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 341 of file reduction\+A\+B.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{341   }
+\DoxyCodeLine{342     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax, id}
+\DoxyCodeLine{343     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,m02,m12}
+\DoxyCodeLine{344     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(inout)} :: DB(0:rmax/2,0:rmax), DBuv(0:rmax/2,0:rmax) }
+\DoxyCodeLine{345     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)}  :: DBerr(0:rmax)}
+\DoxyCodeLine{346     \textcolor{keywordtype}{double precision}  :: Berr(0:rmax)}
+\DoxyCodeLine{347     \textcolor{keywordtype}{double complex} :: B(0:rmax,0:rmax), Buv(0:rmax,0:rmax) }
+\DoxyCodeLine{348 \textcolor{comment}{!   double complex, allocatable :: A(:), Auv(:)}}
+\DoxyCodeLine{349     \textcolor{keywordtype}{double complex} :: A(0:rmax-\/1), Auv(0:rmax-\/1)}
+\DoxyCodeLine{350     \textcolor{keywordtype}{double complex} :: q2, mm02, mm12, f1}
+\DoxyCodeLine{351     \textcolor{keywordtype}{double complex} :: DBn\_coli,elimminf2\_coli}
+\DoxyCodeLine{352     \textcolor{keywordtype}{integer} :: rmaxA,n0,n1,r,sgn,k,rid}
+\DoxyCodeLine{353     \textcolor{keywordtype}{logical} :: finarg}
+\DoxyCodeLine{354     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{parameter} :: cd0 = dcmplx(0d0,0d0)  }
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{comment}{!    write(*,*) 'CalcDB in',p10,m02,m12,rmax,id}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358     \textcolor{comment}{! r=0}}
+\DoxyCodeLine{359     dbuv(0,0) = 0d0}
+\DoxyCodeLine{360     db(0,0) = dbn\_coli(0,p10,m02,m12)}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362     \textcolor{keyword}{call }calcbred(b,buv,p10,m02,m12,rmax,id,berr)}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364     \textcolor{comment}{! calculate DB(0,n1)}}
+\DoxyCodeLine{365     \textcolor{keywordflow}{do} n1=1,rmax}
+\DoxyCodeLine{366       sgn = -\/sgn}
+\DoxyCodeLine{367       dbuv(0,n1) = 0d0}
+\DoxyCodeLine{368       db(0,n1) = dbn\_coli(n1,p10,m02,m12)}
+\DoxyCodeLine{369 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372     \textcolor{comment}{! calculate DB(n0,n1) for n0=/=0}}
+\DoxyCodeLine{373     \textcolor{keywordflow}{if} (rmax.ge.2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{374       }
+\DoxyCodeLine{375       \textcolor{keyword}{call }elminf2iv\_coli(p10,m02,m12,q2,mm02,mm12,finarg)}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377 \textcolor{comment}{!      q2 = elimminf2\_coli(p10)}}
+\DoxyCodeLine{378 \textcolor{comment}{!      mm12 = elimminf2\_coli(m12)}}
+\DoxyCodeLine{379 \textcolor{comment}{!      mm02 = elimminf2\_coli(m02)}}
+\DoxyCodeLine{380 \textcolor{comment}{!      finarg=q2.ne.cd0.or.mm12.ne.cd0.or.mm02.ne.0d0}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382       \textcolor{comment}{! at least one of the invariants p10,m02,m12 different from zero}}
+\DoxyCodeLine{383       \textcolor{keywordflow}{if} (q2.ne.0d0.or.mm02.ne.0d0.or.mm12.ne.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{384       }
+\DoxyCodeLine{385         \textcolor{comment}{! calculation of A-\/functions}}
+\DoxyCodeLine{386         rmaxa = max(rmax-\/1,0)}
+\DoxyCodeLine{387 \textcolor{comment}{!       allocate(A(0:rmaxA))}}
+\DoxyCodeLine{388 \textcolor{comment}{!       allocate(Auv(0:rmaxA))}}
+\DoxyCodeLine{389         \textcolor{keyword}{call }calca(a,auv,mm12,2*rmaxa)}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391         f1 = q2-\/mm12+mm02}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393         \textcolor{keywordflow}{do} r=2,rmax}
+\DoxyCodeLine{394           \textcolor{keywordflow}{do} n0=max(1,r-\/rmax),r/2}
+\DoxyCodeLine{395             k=r-\/2*n0}
+\DoxyCodeLine{396             \textcolor{keywordflow}{do} n1=0,k}
+\DoxyCodeLine{397               dbuv(n0,n1) = (buv(n0-\/1,n1+1) + 2*mm02*dbuv(n0-\/1,n1) \&}
+\DoxyCodeLine{398                   + f1*dbuv(n0-\/1,n1+1))/(2*n0+n1+1)/2}
+\DoxyCodeLine{399      }
+\DoxyCodeLine{400               db(n0,n1) = b(n0-\/1,n1+1) + 4*dbuv(n0,n1)}
+\DoxyCodeLine{401               \textcolor{keywordflow}{if}(mm02.ne.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{402                 db(n0,n1) = db(n0,n1)  + 2*mm02*db(n0-\/1,n1)}
+\DoxyCodeLine{403 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{404               \textcolor{keywordflow}{if}(f1.ne.0d0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{405                 db(n0,n1) = db(n0,n1)  + f1*db(n0-\/1,n1+1)}
+\DoxyCodeLine{406 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{407               }
+\DoxyCodeLine{408               db(n0,n1) = db(n0,n1) /(2*(2*n0+n1+1))}
+\DoxyCodeLine{409   }
+\DoxyCodeLine{410 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{411 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{412 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414       \textcolor{comment}{! p10=m02=m12=0}}
+\DoxyCodeLine{415       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417         dbuv(1:,:) = 0d0}
+\DoxyCodeLine{418         }
+\DoxyCodeLine{419         \textcolor{keywordflow}{do} r=2,rmax}
+\DoxyCodeLine{420           \textcolor{keywordflow}{do} n0=max(1,r-\/rmax),r/2}
+\DoxyCodeLine{421             k=r-\/2*n0}
+\DoxyCodeLine{422             \textcolor{keywordflow}{do} n1=0,k}
+\DoxyCodeLine{423               \textcolor{keywordflow}{if} (.not.ir\_rational\_terms\_cll) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{424                 dbuv(n0,n1) = buv(n0-\/1,n1+1)/(2*n0+n1+1)/2}
+\DoxyCodeLine{425 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{426               db(n0,n1) = (b(n0-\/1,n1+1) + 4*dbuv(n0,n1))/(2*n0+n1+1)/2  }
+\DoxyCodeLine{427 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{428 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{429 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{430           }
+\DoxyCodeLine{431 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{432 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434     dberr(0) = abs(db(0,0))}
+\DoxyCodeLine{435     \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{436       dberr(r) = max(dberr(r-\/1),abs(db(0,r)))}
+\DoxyCodeLine{437 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{438     dberr = dberr*acc\_def\_b}
+\DoxyCodeLine{439 }
+
+\end{DoxyCode}

@@ -314,7 +314,7 @@ Definition at line 352 of file Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Acc
 \DoxyCodeLine{372   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRooSpin_ada147014e584cb41f2d133391f28eb54}{Vdecay1}}!=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}) term1Coeff = 2.*m1\_*\mbox{\hyperlink{classRooSpin_ac926655ebb69be16dd2af5de93e4d8d8}{GeVunit}}; \textcolor{comment}{// dm**2 = 2m dm}}
 \DoxyCodeLine{373   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRooSpin_a6be7e2229bd99c01fad396c435ad74a1}{Vdecay2}}!=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}) term2Coeff = 2.*m2\_*\mbox{\hyperlink{classRooSpin_ac926655ebb69be16dd2af5de93e4d8d8}{GeVunit}};}
 \DoxyCodeLine{374 }
-\DoxyCodeLine{375   Double\_t value = 0;}
+\DoxyCodeLine{375   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = 0;}
 \DoxyCodeLine{376   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode1=0; VGammaVpmode1<=2; VGammaVpmode1++)\{}
 \DoxyCodeLine{377     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode2=0; VGammaVpmode2<=2; VGammaVpmode2++)\{}
 \DoxyCodeLine{378       \textcolor{keywordflow}{if} (!(}
@@ -334,15 +334,15 @@ Definition at line 352 of file Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Acc
 \DoxyCodeLine{392         )) \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{393       Double\_t val\_A00=0, val\_App=0, val\_Amm=0, val\_A0p=0, val\_A0m=0, val\_Amp=0;}
 \DoxyCodeLine{394       \mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_aa1aedbe3a1fa19fbf74e159dfc3b1916}{evaluatePolarizationTerms}}(val\_A00, val\_App, val\_Amm, val\_A0p, val\_A0m, val\_Amp, code, VGammaVpmode1, VGammaVpmode2);}
-\DoxyCodeLine{395       value += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
+\DoxyCodeLine{395       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
 \DoxyCodeLine{396     \}}
 \DoxyCodeLine{397   \}}
-\DoxyCodeLine{398   value *= betaVal*term1Coeff*term2Coeff}
+\DoxyCodeLine{398   \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} *= betaVal*term1Coeff*term2Coeff}
 \DoxyCodeLine{399     *(1+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a7a20b7c6320a24f02c450ee87002d8ec}{aM1}}*m1\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a0467d58992145cc3ada9cda2dcfe60b2}{bM1}}*m1\_*m1\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_af810da2e6b0edc47ddb442087d80e476}{cM1}}*m1\_*m1\_*m1\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_adca05772f48a24020ae213ad44a70ebf}{dM1}}*m1\_*m1\_*m1\_*m1\_)}
 \DoxyCodeLine{400     *(1+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a0745b1861bfbe7e2440748eb7d60ea8c}{aM2}}*m2\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a7c3242c5c7dcd7c559dab662142b55f2}{bM2}}*m2\_*m2\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_af032cc0a5293f7911a107f03e75fa7c9}{cM2}}*m2\_*m2\_*m2\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a3f5595ba45944503112f339042854cb7}{dM2}}*m2\_*m2\_*m2\_*m2\_);}
 \DoxyCodeLine{401 }
-\DoxyCodeLine{402   \textcolor{keywordflow}{if} (!(value==value))\{}
-\DoxyCodeLine{403     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Integral NaN="} << value << \textcolor{stringliteral}{" at "}}
+\DoxyCodeLine{402   \textcolor{keywordflow}{if} (!(\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}==\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}))\{}
+\DoxyCodeLine{403     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Integral NaN="} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at "}}
 \DoxyCodeLine{404       << \textcolor{stringliteral}{"h1="} << \mbox{\hyperlink{classRooSpin_ae615282974107aede94970f4c5395c27}{h1}} << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{405       << \textcolor{stringliteral}{"h2="} << \mbox{\hyperlink{classRooSpin_a9393141a795033c1c2b6b409ade0ff1f}{h2}} << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{406       << \textcolor{stringliteral}{"hs="} << \mbox{\hyperlink{classRooSpin_a4ab715525af92a66ec3cd209ed493dd0}{hs}} << \textcolor{charliteral}{'\(\backslash\)t'}}
@@ -358,7 +358,7 @@ Definition at line 352 of file Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Acc
 \DoxyCodeLine{416       << \textcolor{stringliteral}{"term2Coeff="} << term2Coeff}
 \DoxyCodeLine{417       << endl;}
 \DoxyCodeLine{418   \}}
-\DoxyCodeLine{419   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{419   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
 \DoxyCodeLine{420 \}}
 
 \end{DoxyCode}
@@ -428,7 +428,7 @@ Definition at line 269 of file Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Acc
 \DoxyCodeLine{297   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRooSpin_ada147014e584cb41f2d133391f28eb54}{Vdecay1}}!=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}) term1Coeff = 2.*m1\_*\mbox{\hyperlink{classRooSpin_ac926655ebb69be16dd2af5de93e4d8d8}{GeVunit}}; \textcolor{comment}{// dm**2 = 2m dm}}
 \DoxyCodeLine{298   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRooSpin_a6be7e2229bd99c01fad396c435ad74a1}{Vdecay2}}!=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}) term2Coeff = 2.*m2\_*\mbox{\hyperlink{classRooSpin_ac926655ebb69be16dd2af5de93e4d8d8}{GeVunit}};}
 \DoxyCodeLine{299 }
-\DoxyCodeLine{300   Double\_t value = 0;}
+\DoxyCodeLine{300   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = 0;}
 \DoxyCodeLine{301   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode1=0; VGammaVpmode1<=2; VGammaVpmode1++)\{}
 \DoxyCodeLine{302     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode2=0; VGammaVpmode2<=2; VGammaVpmode2++)\{}
 \DoxyCodeLine{303       \textcolor{keywordflow}{if} (!(}
@@ -443,15 +443,15 @@ Definition at line 269 of file Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Acc
 \DoxyCodeLine{312         ) \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{313       Double\_t val\_A00=0, val\_App=0, val\_Amm=0, val\_A0p=0, val\_A0m=0, val\_Amp=0;}
 \DoxyCodeLine{314       \mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_aa1aedbe3a1fa19fbf74e159dfc3b1916}{evaluatePolarizationTerms}}(val\_A00, val\_App, val\_Amm, val\_A0p, val\_A0m, val\_Amp, code, VGammaVpmode1, VGammaVpmode2);}
-\DoxyCodeLine{315       value += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
+\DoxyCodeLine{315       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
 \DoxyCodeLine{316     \}}
 \DoxyCodeLine{317   \}}
-\DoxyCodeLine{318   value *= betaVal*term1Coeff*term2Coeff}
+\DoxyCodeLine{318   \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} *= betaVal*term1Coeff*term2Coeff}
 \DoxyCodeLine{319     *(1+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a7a20b7c6320a24f02c450ee87002d8ec}{aM1}}*m1\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a0467d58992145cc3ada9cda2dcfe60b2}{bM1}}*m1\_*m1\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_af810da2e6b0edc47ddb442087d80e476}{cM1}}*m1\_*m1\_*m1\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_adca05772f48a24020ae213ad44a70ebf}{dM1}}*m1\_*m1\_*m1\_*m1\_)}
 \DoxyCodeLine{320     *(1+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a0745b1861bfbe7e2440748eb7d60ea8c}{aM2}}*m2\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a7c3242c5c7dcd7c559dab662142b55f2}{bM2}}*m2\_*m2\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_af032cc0a5293f7911a107f03e75fa7c9}{cM2}}*m2\_*m2\_*m2\_+\mbox{\hyperlink{classRooSpinZero__7DComplex__withAccep__HVV_a3f5595ba45944503112f339042854cb7}{dM2}}*m2\_*m2\_*m2\_*m2\_);}
 \DoxyCodeLine{321 }
-\DoxyCodeLine{322   \textcolor{keywordflow}{if} (!(value==value))\{}
-\DoxyCodeLine{323     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluate NaN="} << value << \textcolor{stringliteral}{" at "}}
+\DoxyCodeLine{322   \textcolor{keywordflow}{if} (!(\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}==\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}))\{}
+\DoxyCodeLine{323     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluate NaN="} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at "}}
 \DoxyCodeLine{324       << \textcolor{stringliteral}{"h1="} << \mbox{\hyperlink{classRooSpin_ae615282974107aede94970f4c5395c27}{h1}} << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{325       << \textcolor{stringliteral}{"h2="} << \mbox{\hyperlink{classRooSpin_a9393141a795033c1c2b6b409ade0ff1f}{h2}} << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{326       << \textcolor{stringliteral}{"hs="} << \mbox{\hyperlink{classRooSpin_a4ab715525af92a66ec3cd209ed493dd0}{hs}} << \textcolor{charliteral}{'\(\backslash\)t'}}
@@ -467,7 +467,7 @@ Definition at line 269 of file Roo\+Spin\+Zero\+\_\+7\+D\+Complex\+\_\+with\+Acc
 \DoxyCodeLine{336       << \textcolor{stringliteral}{"term2Coeff="} << term2Coeff}
 \DoxyCodeLine{337       << endl;}
 \DoxyCodeLine{338   \}}
-\DoxyCodeLine{339   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{339   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
 \DoxyCodeLine{340 \}}
 
 \end{DoxyCode}

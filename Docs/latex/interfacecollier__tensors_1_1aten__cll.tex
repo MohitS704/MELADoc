@@ -1,0 +1,457 @@
+\hypertarget{interfacecollier__tensors_1_1aten__cll}{}\doxysection{collier\+\_\+tensors\+::aten\+\_\+cll Interface Reference}
+\label{interfacecollier__tensors_1_1aten__cll}\index{collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1aten__cll_a777665252aca040a6a38f9cc911232d6}{aten\+\_\+main\+\_\+cll}} (TA, T\+Auv, masses2, rmax, T\+Aerr)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1aten__cll_af51dabc3f890e30f112d6222eb5516ca}{aten\+\_\+list\+\_\+cll}} (TA, T\+Auv, masses2, rmax, T\+Aerr)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1aten__cll_adf2706424212d014c7d566a99eb9b2db}{aten\+\_\+args\+\_\+cll}} (TA, T\+Auv, m02, rmax, T\+Aerr)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1aten__cll_a317aea661b79e6e01a027d7f38c4698d}{aten\+\_\+args\+\_\+list\+\_\+cll}} (TA, T\+Auv, m02, rmax, T\+Aerr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 44 of file collier\+\_\+tensors.\+F90.
+
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacecollier__tensors_1_1aten__cll_adf2706424212d014c7d566a99eb9b2db}\label{interfacecollier__tensors_1_1aten__cll_adf2706424212d014c7d566a99eb9b2db}} 
+\index{collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}!aten\_args\_cll@{aten\_args\_cll}}
+\index{aten\_args\_cll@{aten\_args\_cll}!collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}}
+\doxysubsubsection{\texorpdfstring{aten\_args\_cll()}{aten\_args\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::aten\+\_\+cll\+::aten\+\_\+args\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TA,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Auv,  }\item[{double complex, intent(in)}]{m02,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Aerr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 446 of file collier\+\_\+tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{448     \textcolor{keywordtype}{double complex},\textcolor{keywordtype}{intent(in)} :: m02}
+\DoxyCodeLine{449     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TA(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{450     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TAuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{451     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TAerr(0:rmax)}
+\DoxyCodeLine{452     \textcolor{keywordtype}{double complex} :: TA2(0:rmax,0:rmax,0:rmax,0:rmax), TAuv2(0:rmax,0:rmax,0:rmax,0:rmax)    }
+\DoxyCodeLine{453     \textcolor{keywordtype}{double complex} :: CA(0:rmax/2), CAuv(0:rmax/2)}
+\DoxyCodeLine{454     \textcolor{keywordtype}{double precision} :: CAerr(0:rmax),TAerr\_aux(0:rmax),TAerr\_aux2(0:rmax)}
+\DoxyCodeLine{455     \textcolor{keywordtype}{double complex} :: args(1),masses2(0:0)}
+\DoxyCodeLine{456     \textcolor{keywordtype}{double precision} :: TAdiff(0:rmax),norm(0:rmax),norm\_coli,norm\_dd,TAacc(0:rmax)}
+\DoxyCodeLine{457     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3}
+\DoxyCodeLine{458     \textcolor{keywordtype}{logical} :: eflag}
+\DoxyCodeLine{459     }
+\DoxyCodeLine{460     \textcolor{keywordflow}{if} (1.gt.nmax\_cll) then}
+\DoxyCodeLine{461       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{462       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 1'},eflag,.true.)}
+\DoxyCodeLine{463       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{464       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 1'}}
+\DoxyCodeLine{465       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{466       return}
+\DoxyCodeLine{467 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{468     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{469       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{470       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{471       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{472       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{473       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{474       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{475       return}
+\DoxyCodeLine{476 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478     args(1) = m02}
+\DoxyCodeLine{479     masses2(0) = m02}
+\DoxyCodeLine{480     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'Aten\_cll'})}
+\DoxyCodeLine{481     \textcolor{keyword}{call }setmastern\_cll(1)}
+\DoxyCodeLine{482     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
+\DoxyCodeLine{483     \textcolor{keyword}{call }setmasterargs\_cll(1,args)}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485     \textcolor{keyword}{call }settencache\_cll(tenred\_cll-\/1)}
+\DoxyCodeLine{486     }
+\DoxyCodeLine{487     \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
+\DoxyCodeLine{488       \textcolor{comment}{! calculate tensor with coefficients from COLI}}
+\DoxyCodeLine{489       mode\_cll = 1}
+\DoxyCodeLine{490       \textcolor{keyword}{call }a\_cll(ca,cauv,m02,rmax,caerr,0)}
+\DoxyCodeLine{491       \textcolor{keyword}{call }calctensora(ta,tauv,taerr\_aux,ca,cauv,caerr,rmax)         }
+\DoxyCodeLine{492       }
+\DoxyCodeLine{493       \textcolor{comment}{! calculate tensor with coefficients from DD}}
+\DoxyCodeLine{494       mode\_cll = 2}
+\DoxyCodeLine{495       \textcolor{keyword}{call }a\_cll(ca,cauv,m02,rmax,caerr,0)}
+\DoxyCodeLine{496       \textcolor{keyword}{call }calctensora(ta2,tauv2,taerr\_aux2,ca,cauv,caerr,rmax)          }
+\DoxyCodeLine{497       }
+\DoxyCodeLine{498       \textcolor{comment}{! comparison -\/-\/> take better result}}
+\DoxyCodeLine{499       mode\_cll = 3}
+\DoxyCodeLine{500       \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{501         norm\_coli=0d0}
+\DoxyCodeLine{502         norm\_dd=0d0}
+\DoxyCodeLine{503         \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{504           \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{505             \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{506               n3=r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{507               norm\_coli = max(norm\_coli,abs(ta(n0,n1,n2,n3)))}
+\DoxyCodeLine{508               norm\_dd = max(norm\_dd,abs(ta2(n0,n1,n2,n3)))}
+\DoxyCodeLine{509             \textcolor{keyword}{end }do}
+\DoxyCodeLine{510           \textcolor{keyword}{end }do}
+\DoxyCodeLine{511         \textcolor{keyword}{end }do}
+\DoxyCodeLine{512         \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
+\DoxyCodeLine{513           norm\_coli = abs(masses2(0))}
+\DoxyCodeLine{514           \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
+\DoxyCodeLine{515             norm\_coli=norm\_coli**(1+real(r)/2)}
+\DoxyCodeLine{516           else}
+\DoxyCodeLine{517             norm\_coli=muuv2\_cll**(1+real(r)/2)}
+\DoxyCodeLine{518           \textcolor{keyword}{end }if}
+\DoxyCodeLine{519         \textcolor{keyword}{end }if}
+\DoxyCodeLine{520         \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
+\DoxyCodeLine{521           norm\_dd = abs(masses2(0))}
+\DoxyCodeLine{522           \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
+\DoxyCodeLine{523             norm\_dd=norm\_dd**(1+real(r)/2)}
+\DoxyCodeLine{524           else}
+\DoxyCodeLine{525             norm\_dd=muuv2\_cll**(1+real(r)/2)}
+\DoxyCodeLine{526           \textcolor{keyword}{end }if}
+\DoxyCodeLine{527         \textcolor{keyword}{end }if}
+\DoxyCodeLine{528         norm(r) = min(norm\_coli,norm\_dd)}
+\DoxyCodeLine{529       \textcolor{keyword}{end }do}
+\DoxyCodeLine{530       }
+\DoxyCodeLine{531       \textcolor{keyword}{call }checktena\_cll(ta,ta2,masses2,norm,rmax,tadiff)}
+\DoxyCodeLine{532        }
+\DoxyCodeLine{533       \textcolor{keywordflow}{if} (taerr\_aux(rmax).lt.taerr\_aux2(rmax)) then}
+\DoxyCodeLine{534         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(taerr))  taerr = max(taerr\_aux,tadiff*norm)}
+\DoxyCodeLine{535         \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{536           taacc(r) = max(taerr\_aux(r)/norm(r),tadiff(r))}
+\DoxyCodeLine{537         \textcolor{keyword}{end }do}
+\DoxyCodeLine{538         \textcolor{keywordflow}{if} (monitoring) pointscntaten\_coli =  pointscntaten\_coli + 1}
+\DoxyCodeLine{539       else}
+\DoxyCodeLine{540         ta = ta2}
+\DoxyCodeLine{541         tauv = tauv2        }
+\DoxyCodeLine{542         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(taerr))  taerr = max(taerr\_aux2,tadiff*norm)    }
+\DoxyCodeLine{543         \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{544           taacc(r) = max(taerr\_aux2(r)/norm(r),tadiff(r))}
+\DoxyCodeLine{545         \textcolor{keyword}{end }do}
+\DoxyCodeLine{546         \textcolor{keywordflow}{if} (monitoring) pointscntaten\_dd =  pointscntaten\_dd + 1         }
+\DoxyCodeLine{547 \textcolor{keywordflow}{      end if}      }
+\DoxyCodeLine{548     }
+\DoxyCodeLine{549     else}
+\DoxyCodeLine{550       \textcolor{keyword}{call }a\_cll(ca,cauv,m02,rmax,caerr,0)}
+\DoxyCodeLine{551       \textcolor{keyword}{call }calctensora(ta,tauv,taerr\_aux,ca,cauv,caerr,rmax)}
+\DoxyCodeLine{552       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(taerr)) taerr = taerr\_aux}
+\DoxyCodeLine{553       \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{554         norm(r)=0d0}
+\DoxyCodeLine{555         \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{556           \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{557             \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{558               n3=r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{559               norm(r) = max(norm(r),abs(ta(n0,n1,n2,n3)))}
+\DoxyCodeLine{560             \textcolor{keyword}{end }do}
+\DoxyCodeLine{561           \textcolor{keyword}{end }do}
+\DoxyCodeLine{562         \textcolor{keyword}{end }do}
+\DoxyCodeLine{563         \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
+\DoxyCodeLine{564           norm(r) = abs(masses2(0))}
+\DoxyCodeLine{565           \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
+\DoxyCodeLine{566             norm(r)=norm(r)**(1+real(r)/2)}
+\DoxyCodeLine{567           else}
+\DoxyCodeLine{568             norm(r)=muuv2\_cll**(1+real(r)/2)}
+\DoxyCodeLine{569           \textcolor{keyword}{end }if}
+\DoxyCodeLine{570         \textcolor{keyword}{end }if}
+\DoxyCodeLine{571       \textcolor{keyword}{end }do}
+\DoxyCodeLine{572       \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{573         taacc(r) = taerr\_aux(r)/norm(r)}
+\DoxyCodeLine{574 \textcolor{keywordflow}{      end do}      }
+\DoxyCodeLine{575       }
+\DoxyCodeLine{576     \textcolor{keyword}{end }if}
+\DoxyCodeLine{577 }
+\DoxyCodeLine{578     \textcolor{keyword}{call }propagateaccflag\_cll(taacc,rmax)}
+\DoxyCodeLine{579     \textcolor{keyword}{call }propagateerrflag\_cll    }
+\DoxyCodeLine{580 }
+\DoxyCodeLine{581     \textcolor{keywordflow}{if} (monitoring) then}
+\DoxyCodeLine{582       pointscntaten\_cll =  pointscntaten\_cll + 1}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584       \textcolor{keywordflow}{if}(maxval(taacc).gt.reqacc\_cll) accpointscntaten\_cll = accpointscntaten\_cll + 1}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586       \textcolor{keywordflow}{if}(maxval(taacc).gt.critacc\_cll) then}
+\DoxyCodeLine{587         critpointscntaten\_cll =  critpointscntaten\_cll + 1}
+\DoxyCodeLine{588         \textcolor{keywordflow}{if} ( critpointscntaten\_cll.le.noutcritpointsmax\_cll(1) ) then}
+\DoxyCodeLine{589           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TAten\_cll'},0,maxval(taacc),critpointscntaten\_cll)}
+\DoxyCodeLine{590           \textcolor{keywordflow}{if}( critpointscntaten\_cll.eq.noutcritpointsmax\_cll(1)) then}
+\DoxyCodeLine{591             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TAten\_cll suppressed'}   }
+\DoxyCodeLine{592             \textcolor{keyword}{write}(ncpout\_cll,*)}
+\DoxyCodeLine{593           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#ifdef CritPoints2}}
+\DoxyCodeLine{595 \textcolor{preprocessor}{}          \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'TAten\_cll'},0,maxval(taacc),critpointscntaten\_cll)}
+\DoxyCodeLine{596           \textcolor{keywordflow}{if}( critpointscntaten\_cll.eq.noutcritpointsmax\_cll(1)) then}
+\DoxyCodeLine{597             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TAten\_cll suppressed'}   }
+\DoxyCodeLine{598             \textcolor{keyword}{write}(ncpout2\_cll,*)}
+\DoxyCodeLine{599           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{600 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{601 \textcolor{preprocessor}{}        \textcolor{keyword}{end }if}
+\DoxyCodeLine{602       \textcolor{keyword}{end }if}
+\DoxyCodeLine{603     \textcolor{keyword}{end }if}
+\DoxyCodeLine{604 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__tensors_1_1aten__cll_a317aea661b79e6e01a027d7f38c4698d}\label{interfacecollier__tensors_1_1aten__cll_a317aea661b79e6e01a027d7f38c4698d}} 
+\index{collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}!aten\_args\_list\_cll@{aten\_args\_list\_cll}}
+\index{aten\_args\_list\_cll@{aten\_args\_list\_cll}!collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}}
+\doxysubsubsection{\texorpdfstring{aten\_args\_list\_cll()}{aten\_args\_list\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::aten\+\_\+cll\+::aten\+\_\+args\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{TA,  }\item[{double complex, dimension(\+:), intent(out)}]{T\+Auv,  }\item[{double complex, intent(in)}]{m02,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:), intent(out), optional}]{T\+Aerr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 617 of file collier\+\_\+tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{619     \textcolor{keywordtype}{double complex},\textcolor{keywordtype}{intent(in)} :: m02}
+\DoxyCodeLine{620     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TA(:),TAuv(:)}
+\DoxyCodeLine{621     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TAerr(0:)}
+\DoxyCodeLine{622     \textcolor{keywordtype}{integer} :: r,i    }
+\DoxyCodeLine{623     \textcolor{keywordtype}{logical} :: eflag}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625     \textcolor{keywordflow}{if} (1.gt.nmax\_cll) then}
+\DoxyCodeLine{626       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{627       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 1'},eflag,.true.)}
+\DoxyCodeLine{628       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{629       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 1'}}
+\DoxyCodeLine{630       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{631       return}
+\DoxyCodeLine{632 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{633     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{634       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{635       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{636       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{637       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{638       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{639       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{640       return}
+\DoxyCodeLine{641 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643     \textcolor{keyword}{call }aten\_args\_list\_checked\_cll(ta,tauv,m02,rmax,taerr)}
+\DoxyCodeLine{644 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__tensors_1_1aten__cll_af51dabc3f890e30f112d6222eb5516ca}\label{interfacecollier__tensors_1_1aten__cll_af51dabc3f890e30f112d6222eb5516ca}} 
+\index{collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}!aten\_list\_cll@{aten\_list\_cll}}
+\index{aten\_list\_cll@{aten\_list\_cll}!collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}}
+\doxysubsubsection{\texorpdfstring{aten\_list\_cll()}{aten\_list\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::aten\+\_\+cll\+::aten\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{TA,  }\item[{double complex, dimension(\+:), intent(out)}]{T\+Auv,  }\item[{double complex, dimension(0\+:0), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Aerr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 274 of file collier\+\_\+tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{276     \textcolor{keywordtype}{double complex},\textcolor{keywordtype}{intent(in)} :: masses2(0:0)}
+\DoxyCodeLine{277     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TA(:),TAuv(:)}
+\DoxyCodeLine{278     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TAerr(0:rmax)}
+\DoxyCodeLine{279     \textcolor{keywordtype}{integer} :: r,i}
+\DoxyCodeLine{280     \textcolor{keywordtype}{logical} :: eflag}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282     \textcolor{keywordflow}{if} (1.gt.nmax\_cll) then}
+\DoxyCodeLine{283       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{284       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 1'},eflag,.true.)}
+\DoxyCodeLine{285       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{286       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 1'}}
+\DoxyCodeLine{287       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{288       return}
+\DoxyCodeLine{289 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{290     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{291       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{292       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{293       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{294       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{295       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{296       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{297       return}
+\DoxyCodeLine{298 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300     \textcolor{keyword}{call }aten\_list\_checked\_cll(ta,tauv,masses2,rmax,taerr)}
+\DoxyCodeLine{301 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__tensors_1_1aten__cll_a777665252aca040a6a38f9cc911232d6}\label{interfacecollier__tensors_1_1aten__cll_a777665252aca040a6a38f9cc911232d6}} 
+\index{collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}!aten\_main\_cll@{aten\_main\_cll}}
+\index{aten\_main\_cll@{aten\_main\_cll}!collier\_tensors::aten\_cll@{collier\_tensors::aten\_cll}}
+\doxysubsubsection{\texorpdfstring{aten\_main\_cll()}{aten\_main\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::aten\+\_\+cll\+::aten\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TA,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Auv,  }\item[{double complex, dimension(0\+:0), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Aerr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file collier\+\_\+tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{106     \textcolor{keywordtype}{double complex},\textcolor{keywordtype}{intent(in)} :: masses2(0:0)}
+\DoxyCodeLine{107     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TA(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{108     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TAuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{109     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TAerr(0:rmax)}
+\DoxyCodeLine{110     \textcolor{keywordtype}{double complex} :: TA2(0:rmax,0:rmax,0:rmax,0:rmax), TAuv2(0:rmax,0:rmax,0:rmax,0:rmax)    }
+\DoxyCodeLine{111     \textcolor{keywordtype}{double complex} :: CA(0:rmax/2), CAuv(0:rmax/2)}
+\DoxyCodeLine{112     \textcolor{keywordtype}{double precision} :: CAerr(0:rmax),TAerr\_aux(0:rmax),TAerr\_aux2(0:rmax)}
+\DoxyCodeLine{113     \textcolor{keywordtype}{double complex} :: args(1)    }
+\DoxyCodeLine{114     \textcolor{keywordtype}{double precision} :: TAdiff(0:rmax),norm(0:rmax),norm\_coli,norm\_dd,TAacc(0:rmax)}
+\DoxyCodeLine{115     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3}
+\DoxyCodeLine{116     \textcolor{keywordtype}{logical} :: eflag}
+\DoxyCodeLine{117     }
+\DoxyCodeLine{118     \textcolor{keywordflow}{if} (1.gt.nmax\_cll) then}
+\DoxyCodeLine{119       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{120       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 1'},eflag,.true.)}
+\DoxyCodeLine{121       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{122       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 1'}}
+\DoxyCodeLine{123       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{124       return}
+\DoxyCodeLine{125     \textcolor{keyword}{end }if}
+\DoxyCodeLine{126     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{127       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{128       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Aten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{129       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{130       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{131       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{132       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{133       return}
+\DoxyCodeLine{134 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     args(1) = masses2(0)}
+\DoxyCodeLine{137     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'Aten\_cll'})}
+\DoxyCodeLine{138     \textcolor{keyword}{call }setmastern\_cll(1)}
+\DoxyCodeLine{139     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
+\DoxyCodeLine{140     \textcolor{keyword}{call }setmasterargs\_cll(1,args)}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{keyword}{call }settencache\_cll(tenred\_cll-\/1)}
+\DoxyCodeLine{143     }
+\DoxyCodeLine{144     \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
+\DoxyCodeLine{145       \textcolor{comment}{! calculate tensor with coefficients from COLI}}
+\DoxyCodeLine{146       mode\_cll = 1}
+\DoxyCodeLine{147       \textcolor{keyword}{call }a\_cll(ca,cauv,masses2(0),rmax,caerr,0)}
+\DoxyCodeLine{148       \textcolor{keyword}{call }calctensora(ta,tauv,taerr\_aux,ca,cauv,caerr,rmax)         }
+\DoxyCodeLine{149       }
+\DoxyCodeLine{150       \textcolor{comment}{! calculate tensor with coefficients from DD}}
+\DoxyCodeLine{151       mode\_cll = 2}
+\DoxyCodeLine{152       \textcolor{keyword}{call }a\_cll(ca,cauv,masses2(0),rmax,caerr,0)}
+\DoxyCodeLine{153       \textcolor{keyword}{call }calctensora(ta2,tauv2,taerr\_aux2,ca,cauv,caerr,rmax)          }
+\DoxyCodeLine{154       }
+\DoxyCodeLine{155       \textcolor{comment}{! comparison -\/-\/> take better result}}
+\DoxyCodeLine{156       mode\_cll = 3}
+\DoxyCodeLine{157       \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{158         norm\_coli=0d0}
+\DoxyCodeLine{159         norm\_dd=0d0}
+\DoxyCodeLine{160         \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{161           \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{162             \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{163               n3=r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{164               norm\_coli = max(norm\_coli,abs(ta(n0,n1,n2,n3)))}
+\DoxyCodeLine{165               norm\_dd = max(norm\_dd,abs(ta2(n0,n1,n2,n3)))}
+\DoxyCodeLine{166             \textcolor{keyword}{end }do}
+\DoxyCodeLine{167           \textcolor{keyword}{end }do}
+\DoxyCodeLine{168         \textcolor{keyword}{end }do}
+\DoxyCodeLine{169         \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
+\DoxyCodeLine{170           norm\_coli = abs(masses2(0))}
+\DoxyCodeLine{171           \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
+\DoxyCodeLine{172             norm\_coli=norm\_coli**(1+real(r)/2)}
+\DoxyCodeLine{173           else}
+\DoxyCodeLine{174             norm\_coli=muuv2\_cll**(1+real(r)/2)}
+\DoxyCodeLine{175           \textcolor{keyword}{end }if}
+\DoxyCodeLine{176         \textcolor{keyword}{end }if}
+\DoxyCodeLine{177         \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
+\DoxyCodeLine{178           norm\_dd = abs(masses2(0))}
+\DoxyCodeLine{179           \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
+\DoxyCodeLine{180             norm\_dd=norm\_dd**(1+real(r)/2)}
+\DoxyCodeLine{181           else}
+\DoxyCodeLine{182             norm\_dd=muuv2\_cll**(1+real(r)/2)}
+\DoxyCodeLine{183           \textcolor{keyword}{end }if}
+\DoxyCodeLine{184         \textcolor{keyword}{end }if}
+\DoxyCodeLine{185         norm(r) = min(norm\_coli,norm\_dd)}
+\DoxyCodeLine{186       \textcolor{keyword}{end }do}
+\DoxyCodeLine{187       }
+\DoxyCodeLine{188       \textcolor{keyword}{call }checktena\_cll(ta,ta2,masses2,norm,rmax,tadiff)}
+\DoxyCodeLine{189       }
+\DoxyCodeLine{190       \textcolor{keywordflow}{if} (taerr\_aux(rmax).lt.taerr\_aux2(rmax)) then}
+\DoxyCodeLine{191         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(taerr))  taerr = max(taerr\_aux,tadiff*norm)}
+\DoxyCodeLine{192         \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{193           taacc(r) = max(taerr\_aux(r)/norm(r),tadiff(r))}
+\DoxyCodeLine{194         \textcolor{keyword}{end }do}
+\DoxyCodeLine{195         \textcolor{keywordflow}{if} (monitoring) pointscntaten\_coli =  pointscntaten\_coli + 1}
+\DoxyCodeLine{196       else}
+\DoxyCodeLine{197         ta = ta2}
+\DoxyCodeLine{198         tauv = tauv2        }
+\DoxyCodeLine{199         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(taerr))  taerr = max(taerr\_aux2,tadiff*norm)    }
+\DoxyCodeLine{200         \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{201           taacc(r) = max(taerr\_aux2(r)/norm(r),tadiff(r))}
+\DoxyCodeLine{202 \textcolor{keywordflow}{        end do}         }
+\DoxyCodeLine{203         \textcolor{keywordflow}{if} (monitoring) pointscntaten\_dd =  pointscntaten\_dd + 1}
+\DoxyCodeLine{204 \textcolor{keywordflow}{      end if}       }
+\DoxyCodeLine{205     }
+\DoxyCodeLine{206     else}
+\DoxyCodeLine{207       \textcolor{keyword}{call }a\_cll(ca,cauv,masses2(0),rmax,caerr,0)}
+\DoxyCodeLine{208       \textcolor{keyword}{call }calctensora(ta,tauv,taerr\_aux,ca,cauv,caerr,rmax)}
+\DoxyCodeLine{209       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(taerr)) taerr = taerr\_aux}
+\DoxyCodeLine{210       \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{211         norm(r)=0d0}
+\DoxyCodeLine{212         \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{213           \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{214             \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{215               n3=r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{216               norm(r) = max(norm(r),abs(ta(n0,n1,n2,n3)))}
+\DoxyCodeLine{217             \textcolor{keyword}{end }do}
+\DoxyCodeLine{218           \textcolor{keyword}{end }do}
+\DoxyCodeLine{219         \textcolor{keyword}{end }do}
+\DoxyCodeLine{220         \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
+\DoxyCodeLine{221           norm(r) = abs(masses2(0))}
+\DoxyCodeLine{222           \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
+\DoxyCodeLine{223             norm(r)=norm(r)**(1+real(r)/2)}
+\DoxyCodeLine{224           else}
+\DoxyCodeLine{225             norm(r)=muuv2\_cll**(1+real(r)/2)}
+\DoxyCodeLine{226           \textcolor{keyword}{end }if}
+\DoxyCodeLine{227         \textcolor{keyword}{end }if}
+\DoxyCodeLine{228       \textcolor{keyword}{end }do}
+\DoxyCodeLine{229       \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{230         taacc(r) = taerr\_aux(r)/norm(r)}
+\DoxyCodeLine{231       \textcolor{keyword}{end }do}
+\DoxyCodeLine{232       }
+\DoxyCodeLine{233     \textcolor{keyword}{end }if}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235     \textcolor{keyword}{call }propagateaccflag\_cll(taacc,rmax)}
+\DoxyCodeLine{236     \textcolor{keyword}{call }propagateerrflag\_cll    }
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238     \textcolor{keywordflow}{if} (monitoring) then}
+\DoxyCodeLine{239       pointscntaten\_cll =  pointscntaten\_cll + 1}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241       \textcolor{keywordflow}{if}(maxval(taacc).gt.reqacc\_cll) accpointscntaten\_cll = accpointscntaten\_cll + 1}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243       \textcolor{keywordflow}{if}(maxval(taacc).gt.critacc\_cll) then}
+\DoxyCodeLine{244         critpointscntaten\_cll =  critpointscntaten\_cll + 1}
+\DoxyCodeLine{245         \textcolor{keywordflow}{if} ( critpointscntaten\_cll.le.noutcritpointsmax\_cll(1) ) then}
+\DoxyCodeLine{246           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TAten\_cll'},0,maxval(taacc),critpointscntaten\_cll)}
+\DoxyCodeLine{247           \textcolor{keywordflow}{if}( critpointscntaten\_cll.eq.noutcritpointsmax\_cll(1)) then}
+\DoxyCodeLine{248             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TAten\_cll suppressed'}   }
+\DoxyCodeLine{249             \textcolor{keyword}{write}(ncpout\_cll,*)}
+\DoxyCodeLine{250           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#ifdef CritPoints2}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{}          \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'TAten\_cll'},0,maxval(taacc),critpointscntaten\_cll)}
+\DoxyCodeLine{253           \textcolor{keywordflow}{if}( critpointscntaten\_cll.eq.noutcritpointsmax\_cll(1)) then}
+\DoxyCodeLine{254             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TAten\_cll suppressed'}   }
+\DoxyCodeLine{255             \textcolor{keyword}{write}(ncpout2\_cll,*)}
+\DoxyCodeLine{256           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{}        \textcolor{keyword}{end }if}
+\DoxyCodeLine{259       \textcolor{keyword}{end }if}
+\DoxyCodeLine{260     \textcolor{keyword}{end }if}
+\DoxyCodeLine{261 }
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__tensors_8F90}{collier\+\_\+tensors.\+F90}}\end{DoxyCompactItemize}

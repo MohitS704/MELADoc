@@ -1,0 +1,1730 @@
+\hypertarget{namespacebuildtensors}{}\doxysection{buildtensors Module Reference}
+\label{namespacebuildtensors}\index{buildtensors@{buildtensors}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a97c7a9c15e9607157ea0e30c7cea7bde}{calctensora\+\_\+list}} (TA, T\+Auv, T\+Aerr, CoefsA, Coefs\+Auv, Coefs\+Aerr, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a04f53a09d400f09a383c753ec6bd4728}{calctensora}} (TA, T\+Auv, T\+Aerr, CoefsA, Coefs\+Auv, Coefs\+Aerr, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_aee7c1c86d8ac8e91a60ad33637065c5c}{calctensorb\+\_\+list}} (TB, T\+Buv, T\+Berr, CoefsB, Coefs\+Buv, Coefs\+Berr, mom, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a20e29352ba11d5b26c6801d18321ec69}{calctensorb}} (TB, T\+Buv, T\+Berr, CoefsB, Coefs\+Buv, Coefs\+Berr, mom, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_af8accf70e84867282dc6dadc394b2bbd}{calctensorc\+\_\+list}} (TC, T\+Cuv, T\+Cerr, CoefsC, Coefs\+Cuv, Coefs\+Cerr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_aadb87aa847c62fe0d2cfbaab5449a483}{calctensorc}} (TC, T\+Cuv, T\+Cerr, CoefsC, Coefs\+Cuv, Coefs\+Cerr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_aae01380ddec96c9269985609ea07a5be}{calctensord\+\_\+list}} (TD, T\+Duv, T\+Derr, CoefsD, Coefs\+Duv, Coefs\+Derr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a51a1633784664f84db15c863aee8a364}{calctensord}} (TD, T\+Duv, T\+Derr, CoefsD, Coefs\+Duv, Coefs\+Derr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_ae494340edd37dc2aae70ac4092799240}{calctensore\+\_\+list}} (TE, T\+Euv, T\+Eerr, CoefsE, Coefs\+Euv, Coefs\+Eerr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a90bab531e5c7293311bc95f3d72cbca5}{calctensore}} (TE, T\+Euv, T\+Eerr, CoefsE, Coefs\+Euv, Coefs\+Eerr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a552266b900a0499d1be36c05cb89959c}{calctensorf\+\_\+list}} (TF, T\+Fuv, T\+Ferr, CoefsF, Coefs\+Fuv, Coefs\+Ferr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a8dcef7bd432d2e5cae2043e462003677}{calctensorf}} (TF, T\+Fuv, T\+Ferr, CoefsF, Coefs\+Fuv, Coefs\+Ferr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a8ac5912ff6933d6897226360cdc8023b}{calctensorfuv\+\_\+list}} (T\+Fuv, Coefs\+Fuv, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a6b3aedf5473a517d4c60408202a28f56}{calctensorfuv}} (T\+Fuv, Coefs\+Fuv, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_ae2ca3fbc69a23ec27c309e8c6562ef1d}{calctensorg\+\_\+list}} (TG, T\+Guv, T\+Gerr, CoefsG, Coefs\+Guv, Coefs\+Gerr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_ab80eef54b52d17086ce3dccfd9d73fed}{calctensorg}} (TG, T\+Guv, T\+Gerr, CoefsG, Coefs\+Guv, Coefs\+Gerr, Mom\+Vec, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_ab4692b0ec7e4d4449e9be5581d03730f}{calctensortn\+\_\+list}} (TN, T\+Nuv, T\+Nerr, CoefsN, Coefs\+Nuv, Coefs\+Nerr, Mom\+Vec, N, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_a45b96b15b3bed8d368476c3dc02f0742}{calctensortn}} (TN, T\+Nuv, T\+Nerr, CoefsN, Coefs\+Nuv, Coefs\+Nerr, Mom\+Vec, N, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacebuildtensors_ab1394e89c4c4c530deb2f7a194ee2c76}{calctensortnuv\+\_\+list}} (T\+Nuv, Coefs\+Nuv, Mom\+Vec, N, rmax)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacebuildtensors_a04f53a09d400f09a383c753ec6bd4728}\label{namespacebuildtensors_a04f53a09d400f09a383c753ec6bd4728}} 
+\index{buildtensors@{buildtensors}!calctensora@{calctensora}}
+\index{calctensora@{calctensora}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensora()}{calctensora()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensora (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TA,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Auv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Aerr,  }\item[{double complex, dimension(0\+:rmax/2), intent(in)}]{CoefsA,  }\item[{double complex, dimension(0\+:rmax/2), intent(in)}]{Coefs\+Auv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Aerr,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{91     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsA(0:rmax/2), CoefsAuv(0:rmax/2)}
+\DoxyCodeLine{92     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsAerr(0:rmax)}
+\DoxyCodeLine{93     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TA(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{94     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TAuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{95     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TAerr(0:rmax)}
+\DoxyCodeLine{96     \textcolor{keywordtype}{double complex} :: TA\_aux(RtS(rmax)), TAuv\_aux(RtS(rmax))}
+\DoxyCodeLine{97     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keyword}{call }calctensora\_list(ta\_aux,tauv\_aux,taerr,coefsa,coefsauv,coefsaerr,rmax)}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{102       ta(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = ta\_aux(mu)}
+\DoxyCodeLine{103 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{106       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{107         tauv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tauv\_aux(mu)}
+\DoxyCodeLine{108 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{109 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{110 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a97c7a9c15e9607157ea0e30c7cea7bde}\label{namespacebuildtensors_a97c7a9c15e9607157ea0e30c7cea7bde}} 
+\index{buildtensors@{buildtensors}!calctensora\_list@{calctensora\_list}}
+\index{calctensora\_list@{calctensora\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensora\_list()}{calctensora\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensora\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TA,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Auv,  }\item[{double precision, dimension(0\+:rmax)}]{T\+Aerr,  }\item[{double complex, dimension(0\+:rmax/2), intent(in)}]{CoefsA,  }\item[{double complex, dimension(0\+:rmax/2), intent(in)}]{Coefs\+Auv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Aerr,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{45     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsA(0:rmax/2), CoefsAuv(0:rmax/2)}
+\DoxyCodeLine{46     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsAerr(0:rmax)}
+\DoxyCodeLine{47     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TA(RtS(rmax)), TAuv(RtS(rmax))}
+\DoxyCodeLine{48     \textcolor{keywordtype}{double precision} :: TAerr(0:rmax)}
+\DoxyCodeLine{49     \textcolor{keywordtype}{double complex} :: CA}
+\DoxyCodeLine{50     \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,r,a,cnt}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     ta = 0d0}
+\DoxyCodeLine{53     ta(1) = coefsa(0)}
+\DoxyCodeLine{54     taerr = coefsaerr(0)}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{57       ca = coefsa(nsum)}
+\DoxyCodeLine{58       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{59         ta(addgtab(1,nu)) = ta(addgtab(1,nu)) + ca*cftab(1,nu)}
+\DoxyCodeLine{60 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{61 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{64       tauv = 0d0}
+\DoxyCodeLine{65       tauv(1) = coefsauv(0)}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67       \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{68         ca = coefsauv(nsum)}
+\DoxyCodeLine{69         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{70           tauv(addgtab(1,nu)) = tauv(addgtab(1,nu)) + ca*cftab(1,nu)}
+\DoxyCodeLine{71 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{72 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a20e29352ba11d5b26c6801d18321ec69}\label{namespacebuildtensors_a20e29352ba11d5b26c6801d18321ec69}} 
+\index{buildtensors@{buildtensors}!calctensorb@{calctensorb}}
+\index{calctensorb@{calctensorb}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorb()}{calctensorb()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorb (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TB,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Buv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Berr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(in)}]{CoefsB,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(in)}]{Coefs\+Buv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Berr,  }\item[{double complex, dimension(0\+:3), intent(in)}]{mom,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 229 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{231     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: mom(0:3)}
+\DoxyCodeLine{232     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsB(0:rmax/2,0:rmax), CoefsBuv(0:rmax/2,0:rmax)}
+\DoxyCodeLine{233     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsBerr(0:rmax)}
+\DoxyCodeLine{234     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TB(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{235     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TBuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{236     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TBerr(0:rmax)}
+\DoxyCodeLine{237     \textcolor{keywordtype}{double complex} :: TB\_aux(RtS(rmax)), TBuv\_aux(RtS(rmax))}
+\DoxyCodeLine{238     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{keyword}{call }calctensorb\_list(tb\_aux,tbuv\_aux,tberr,coefsb,coefsbuv,coefsberr,mom,rmax)}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{243       tb(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tb\_aux(mu)}
+\DoxyCodeLine{244 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{247       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{248         tbuv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tbuv\_aux(mu)}
+\DoxyCodeLine{249 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{250 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_aee7c1c86d8ac8e91a60ad33637065c5c}\label{namespacebuildtensors_aee7c1c86d8ac8e91a60ad33637065c5c}} 
+\index{buildtensors@{buildtensors}!calctensorb\_list@{calctensorb\_list}}
+\index{calctensorb\_list@{calctensorb\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorb\_list()}{calctensorb\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorb\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TB,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Buv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Berr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(in)}]{CoefsB,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(in)}]{Coefs\+Buv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Berr,  }\item[{double complex, dimension(0\+:3), intent(in)}]{mom,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{125     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: mom(0:3)}
+\DoxyCodeLine{126     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsB(0:rmax/2,0:rmax), CoefsBuv(0:rmax/2,0:rmax)}
+\DoxyCodeLine{127     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsBerr(0:rmax)}
+\DoxyCodeLine{128     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TB(RtS(rmax)), TBuv(RtS(rmax))}
+\DoxyCodeLine{129     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TBerr(0:rmax)}
+\DoxyCodeLine{130     \textcolor{keywordtype}{double complex} :: MomTen(RtS(rmax)), CB, Pmu}
+\DoxyCodeLine{131     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{132     \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,r,a,cnt}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     tb = 0d0}
+\DoxyCodeLine{136     tb(1) = coefsb(0,0)}
+\DoxyCodeLine{137     tberr = 0d0}
+\DoxyCodeLine{138     tberr(0) = coefsberr(0)}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{141       cb = coefsb(nsum,0)}
+\DoxyCodeLine{142       }
+\DoxyCodeLine{143       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{144         tb(addgtab(1,nu)) = tb(addgtab(1,nu)) + cb*cftab(1,nu)}
+\DoxyCodeLine{145 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{150       tbuv = 0d0}
+\DoxyCodeLine{151       tbuv(1) = coefsbuv(0,0)}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153       \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{154         cb = coefsbuv(nsum,0)}
+\DoxyCodeLine{155       }
+\DoxyCodeLine{156         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{157           tbuv(addgtab(1,nu)) = tbuv(addgtab(1,nu)) + cb*cftab(1,nu)}
+\DoxyCodeLine{158 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{161 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     momten(1) = 1}
+\DoxyCodeLine{164     \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{167       mu2 = rts(r)}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169       cnt = mu1}
+\DoxyCodeLine{170       \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{171         pmu = mom(mu)}
+\DoxyCodeLine{172         \textcolor{keywordflow}{do} a = mu1-\/binomtable(r-\/1,r+2-\/mu),mu1-\/1}
+\DoxyCodeLine{173           momten(cnt)=momten(a)*pmu}
+\DoxyCodeLine{174           cnt = cnt+1}
+\DoxyCodeLine{175 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{176 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178       cb = coefsb(0,r)}
+\DoxyCodeLine{179       tb(mu1:mu2) = tb(mu1:mu2) + cb*momten(mu1:mu2)}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{182         cb = coefsb(nsum,r)}
+\DoxyCodeLine{183       }
+\DoxyCodeLine{184         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{185           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{186             tb(addgtab(mu,nu)) = tb(addgtab(mu,nu)) + cb*momten(mu)*cftab(mu,nu)}
+\DoxyCodeLine{187 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{188 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{keywordflow}{      end do}     }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{193         cb = coefsbuv(0,r)}
+\DoxyCodeLine{194         tbuv(mu1:mu2) = tbuv(mu1:mu2) + cb*momten(mu1:mu2)}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196         \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{197           cb = coefsbuv(nsum,r)}
+\DoxyCodeLine{198       }
+\DoxyCodeLine{199           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{200             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{201               tbuv(addgtab(mu,nu)) = tbuv(addgtab(mu,nu)) + cb*momten(mu)*cftab(mu,nu)}
+\DoxyCodeLine{202 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{203 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{210        }
+\DoxyCodeLine{211     mommax = maxval(abs(mom))}
+\DoxyCodeLine{212     \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{213       tberr(r) = coefsberr(r)*mommax**r}
+\DoxyCodeLine{214 \textcolor{keywordflow}{    end do}    }
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_aadb87aa847c62fe0d2cfbaab5449a483}\label{namespacebuildtensors_aadb87aa847c62fe0d2cfbaab5449a483}} 
+\index{buildtensors@{buildtensors}!calctensorc@{calctensorc}}
+\index{calctensorc@{calctensorc}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorc()}{calctensorc()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorc (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TC,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Cuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Cerr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax), intent(in)}]{CoefsC,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Cuv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Cerr,  }\item[{double complex, dimension(0\+:3,2), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 413 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{415     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,2)}
+\DoxyCodeLine{416     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsC(0:rmax/2,0:rmax,0:rmax)}
+\DoxyCodeLine{417     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsCuv(0:rmax/2,0:rmax,0:rmax)}
+\DoxyCodeLine{418     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsCerr(0:rmax)}
+\DoxyCodeLine{419     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TC(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{420     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TCuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{421     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TCerr(0:rmax)}
+\DoxyCodeLine{422     \textcolor{keywordtype}{double complex} :: TC\_aux(RtS(rmax)), TCuv\_aux(RtS(rmax))}
+\DoxyCodeLine{423     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     \textcolor{keyword}{call }calctensorc\_list(tc\_aux,tcuv\_aux,tcerr,coefsc,coefscuv,coefscerr,momvec,rmax)}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{428       tc(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tc\_aux(mu)}
+\DoxyCodeLine{429 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{432       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{433         tcuv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tcuv\_aux(mu)}
+\DoxyCodeLine{434 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{435     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{436       tcuv = 0d0}
+\DoxyCodeLine{437 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{438     }
+\DoxyCodeLine{439 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_af8accf70e84867282dc6dadc394b2bbd}\label{namespacebuildtensors_af8accf70e84867282dc6dadc394b2bbd}} 
+\index{buildtensors@{buildtensors}!calctensorc\_list@{calctensorc\_list}}
+\index{calctensorc\_list@{calctensorc\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorc\_list()}{calctensorc\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorc\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TC,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Cuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Cerr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax), intent(in)}]{CoefsC,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Cuv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Cerr,  }\item[{double complex, dimension(0\+:3,2), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 265 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{267     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,2)}
+\DoxyCodeLine{268     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsC(0:rmax/2,0:rmax,0:rmax)}
+\DoxyCodeLine{269     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsCuv(0:rmax/2,0:rmax,0:rmax)}
+\DoxyCodeLine{270     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsCerr(0:rmax)}
+\DoxyCodeLine{271     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TC(RtS(rmax)), TCuv(RtS(rmax))}
+\DoxyCodeLine{272     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TCerr(0:rmax)}
+\DoxyCodeLine{273     \textcolor{keywordtype}{double complex} :: MomTen(5), CC, Pmu}
+\DoxyCodeLine{274     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{275     \textcolor{keywordtype}{integer} :: IndsCoef(2),mu1,mu2,nsum,mu,nu,i,a,cnt,r0   }
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     tc = 0d0}
+\DoxyCodeLine{279     tc(1) = coefsc(0,0,0)}
+\DoxyCodeLine{280     tcerr = 0d0}
+\DoxyCodeLine{281     tcerr(0) = coefscerr(0)}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{284       cc = coefsc(nsum,0,0)}
+\DoxyCodeLine{285       }
+\DoxyCodeLine{286       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{287         tc(addgtab(1,nu)) = tc(addgtab(1,nu)) + cc*cftab(1,nu)}
+\DoxyCodeLine{288 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292     tcuv = 0d0}
+\DoxyCodeLine{293     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{294 \textcolor{comment}{!      TCuv(1) = CoefsC(0,0,0)}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296       \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{297         cc = coefscuv(nsum,0,0)}
+\DoxyCodeLine{298       }
+\DoxyCodeLine{299         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{300           tcuv(addgtab(1,nu)) = tcuv(addgtab(1,nu)) + cc*cftab(1,nu)}
+\DoxyCodeLine{301 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{304 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306         }
+\DoxyCodeLine{307     \textcolor{keywordflow}{if} (rmax.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309       indscoef = (/ 1,0 /)}
+\DoxyCodeLine{310       momten(2:5) = momvec(0:3,1)}
+\DoxyCodeLine{311       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a7c4c0b781caefd650fc108cba1410881}{addtotensorc}}(1,momten,indscoef)}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313       indscoef = (/ 0,1 /)}
+\DoxyCodeLine{314       momten(2:5) = momvec(0:3,2)}
+\DoxyCodeLine{315       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a7c4c0b781caefd650fc108cba1410881}{addtotensorc}}(1,momten,indscoef)}
+\DoxyCodeLine{316             }
+\DoxyCodeLine{317       mommax = maxval(abs(momvec))}
+\DoxyCodeLine{318       \textcolor{keywordflow}{do} r0=1,rmax}
+\DoxyCodeLine{319         tcerr(r0) = coefscerr(r0)*mommax**r0}
+\DoxyCodeLine{320 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{keyword}{contains}}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{329     \textcolor{comment}{!  subroutine AddToTensorC}}
+\DoxyCodeLine{330     \textcolor{comment}{!}}
+\DoxyCodeLine{331     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_a7c4c0b781caefd650fc108cba1410881}{addtotensorc}}(r,MomTenRec,IndsCoef)}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{336       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{337       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(inout)} :: IndsCoef(2)}
+\DoxyCodeLine{338       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CC, Pmu}
+\DoxyCodeLine{339       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341       cc = coefsc(0,indscoef(1),indscoef(2))}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{344       mu2 = rts(r)}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346       tc(mu1:mu2) = tc(mu1:mu2) + cc*momtenrec(mu1:mu2)}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{349         cc = coefsc(nsum,indscoef(1),indscoef(2))}
+\DoxyCodeLine{350       }
+\DoxyCodeLine{351         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{352           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{353             tc(addgtab(mu,nu)) = tc(addgtab(mu,nu)) + cc*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{354 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{355 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{360 \textcolor{comment}{!        CC = CoefsCuv(0,IndsCoef(1),IndsCoef(2))}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 \textcolor{comment}{!        TCuv(mu1:mu2) = TCuv(mu1:mu2) + CC*MomTenRec(mu1:mu2)}}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364         \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{365           cc = coefscuv(nsum,indscoef(1),indscoef(2))}
+\DoxyCodeLine{366       }
+\DoxyCodeLine{367           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{368             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{369               tcuv(addgtab(mu,nu)) = tcuv(addgtab(mu,nu)) + cc*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{370 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{371 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{374 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376         }
+\DoxyCodeLine{377       \textcolor{keywordflow}{if} (r.lt.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379         \textcolor{keywordflow}{do} i=1,2}
+\DoxyCodeLine{380           indscoef(i) = indscoef(i)+1}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382           cnt = mu2+1}
+\DoxyCodeLine{383           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{384             pmu = momvec(mu,i)}
+\DoxyCodeLine{385             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{386               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{387               cnt = cnt+1}
+\DoxyCodeLine{388 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{389 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a7c4c0b781caefd650fc108cba1410881}{addtotensorc}}(r+1,momten,indscoef)}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393           indscoef(i) = indscoef(i)-\/1}
+\DoxyCodeLine{394 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_a7c4c0b781caefd650fc108cba1410881}{addtotensorc}}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a51a1633784664f84db15c863aee8a364}\label{namespacebuildtensors_a51a1633784664f84db15c863aee8a364}} 
+\index{buildtensors@{buildtensors}!calctensord@{calctensord}}
+\index{calctensord@{calctensord}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensord()}{calctensord()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensord (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TD,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Duv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Derr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsD,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Duv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Derr,  }\item[{double complex, dimension(0\+:3,3), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 605 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{607     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,3)}
+\DoxyCodeLine{608     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsD(0:rmax/2,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{609     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsDuv(0:rmax/2,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{610     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsDerr(0:rmax) }
+\DoxyCodeLine{611     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TD(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{612     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TDuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{613     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TDerr(0:rmax)}
+\DoxyCodeLine{614     \textcolor{keywordtype}{double complex} :: TD\_aux(RtS(rmax)), TDuv\_aux(RtS(rmax))}
+\DoxyCodeLine{615     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617     \textcolor{keyword}{call }calctensord\_list(td\_aux,tduv\_aux,tderr,coefsd,coefsduv,coefsderr,momvec,rmax)}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{620       td(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = td\_aux(mu)}
+\DoxyCodeLine{621 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{624       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{625         tduv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tduv\_aux(mu)}
+\DoxyCodeLine{626 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{627     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{628       tduv = 0d0}
+\DoxyCodeLine{629 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{630 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_aae01380ddec96c9269985609ea07a5be}\label{namespacebuildtensors_aae01380ddec96c9269985609ea07a5be}} 
+\index{buildtensors@{buildtensors}!calctensord\_list@{calctensord\_list}}
+\index{calctensord\_list@{calctensord\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensord\_list()}{calctensord\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensord\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TD,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Duv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Derr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsD,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Duv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Derr,  }\item[{double complex, dimension(0\+:3,3), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 452 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{454     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,3)}
+\DoxyCodeLine{455     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsD(0:rmax/2,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{456     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsDuv(0:rmax/2,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{457     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsDerr(0:rmax) }
+\DoxyCodeLine{458     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TD(RtS(rmax)), TDuv(RtS(rmax))}
+\DoxyCodeLine{459     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TDerr(0:rmax)}
+\DoxyCodeLine{460     \textcolor{keywordtype}{double complex} :: MomTen(5), CD, Pmu}
+\DoxyCodeLine{461     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{462     \textcolor{keywordtype}{integer} :: IndsCoef(3),mu1,mu2,nsum,mu,nu,i,a,cnt,r0   }
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     td = 0d0}
+\DoxyCodeLine{465     td(1) = coefsd(0,0,0,0)}
+\DoxyCodeLine{466     tderr = 0d0}
+\DoxyCodeLine{467     tderr(0) = coefsderr(0)}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{470       cd = coefsd(nsum,0,0,0)}
+\DoxyCodeLine{471       }
+\DoxyCodeLine{472       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{473         td(addgtab(1,nu)) = td(addgtab(1,nu)) + cd*cftab(1,nu)}
+\DoxyCodeLine{474 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478     tduv = 0d0}
+\DoxyCodeLine{479     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{480 \textcolor{comment}{!      TDuv(1) = CoefsDuv(0,0,0,0)}}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482 \textcolor{comment}{!      do nsum=1,rmax/2}}
+\DoxyCodeLine{483       \textcolor{keywordflow}{do} nsum=2,rmax/2}
+\DoxyCodeLine{484         cd = coefsduv(nsum,0,0,0)}
+\DoxyCodeLine{485       }
+\DoxyCodeLine{486         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{487           tduv(addgtab(1,nu)) = tduv(addgtab(1,nu)) + cd*cftab(1,nu)}
+\DoxyCodeLine{488 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{491 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493         }
+\DoxyCodeLine{494     \textcolor{keywordflow}{if} (rmax.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496       indscoef = (/ 1,0,0 /)}
+\DoxyCodeLine{497       momten(2:5) = momvec(0:3,1)}
+\DoxyCodeLine{498       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_ae4a18d2e6831435301ba0904bba91ca1}{addtotensord}}(momten,indscoef,1)}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{500       indscoef = (/ 0,1,0 /)}
+\DoxyCodeLine{501       momten(2:5) = momvec(0:3,2)}
+\DoxyCodeLine{502       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_ae4a18d2e6831435301ba0904bba91ca1}{addtotensord}}(momten,indscoef,1)}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504       indscoef = (/ 0,0,1 /)}
+\DoxyCodeLine{505       momten(2:5) = momvec(0:3,3)}
+\DoxyCodeLine{506       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_ae4a18d2e6831435301ba0904bba91ca1}{addtotensord}}(momten,indscoef,1)}
+\DoxyCodeLine{507             }
+\DoxyCodeLine{508       mommax = maxval(abs(momvec))}
+\DoxyCodeLine{509       \textcolor{keywordflow}{do} r0=1,rmax}
+\DoxyCodeLine{510         tderr(r0) = coefsderr(r0)*mommax**r0}
+\DoxyCodeLine{511 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{512 }
+\DoxyCodeLine{513 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515 }
+\DoxyCodeLine{516   }
+\DoxyCodeLine{517     \textcolor{keyword}{contains}}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{520     \textcolor{comment}{!  subroutine AddToTensorD}}
+\DoxyCodeLine{521     \textcolor{comment}{!}}
+\DoxyCodeLine{522     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_ae4a18d2e6831435301ba0904bba91ca1}{addtotensord}}(MomTenRec,IndsCoef,r)}
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{527       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(inout)} :: IndsCoef(3)}
+\DoxyCodeLine{528       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{529       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CD, Pmu}
+\DoxyCodeLine{530       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532       cd = coefsd(0,indscoef(1),indscoef(2),indscoef(3))}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{535       mu2 = rts(r)}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537       td(mu1:mu2) = td(mu1:mu2) + cd*momtenrec(mu1:mu2)}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{540         cd = coefsd(nsum,indscoef(1),indscoef(2),indscoef(3))}
+\DoxyCodeLine{541       }
+\DoxyCodeLine{542         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{543           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{544             td(addgtab(mu,nu)) = td(addgtab(mu,nu)) + cd*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{545 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{546 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{551 \textcolor{comment}{!        CD = CoefsDuv(0,IndsCoef(1),IndsCoef(2),IndsCoef(3))}}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 \textcolor{comment}{!        TDuv(mu1:mu2) = TDuv(mu1:mu2) + CD*MomTenRec(mu1:mu2)}}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 \textcolor{comment}{!        do nsum=1,(rmax-\/r)/2}}
+\DoxyCodeLine{556         \textcolor{keywordflow}{do} nsum=2,(rmax-\/r)/2}
+\DoxyCodeLine{557           cd = coefsduv(nsum,indscoef(1),indscoef(2),indscoef(3))}
+\DoxyCodeLine{558       }
+\DoxyCodeLine{559           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{560             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{561               tduv(addgtab(mu,nu)) = tduv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{562                                    + cd*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{563 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{564 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{567 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{569         }
+\DoxyCodeLine{570       \textcolor{keywordflow}{if} (r.lt.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572         \textcolor{keywordflow}{do} i=1,3}
+\DoxyCodeLine{573           indscoef(i) = indscoef(i)+1}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{575           cnt = mu2+1}
+\DoxyCodeLine{576           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{577             pmu = momvec(mu,i)}
+\DoxyCodeLine{578             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{579               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{580               cnt = cnt+1}
+\DoxyCodeLine{581 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{582 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_ae4a18d2e6831435301ba0904bba91ca1}{addtotensord}}(momten,indscoef,r+1)}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586           indscoef(i) = indscoef(i)-\/1}
+\DoxyCodeLine{587 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_ae4a18d2e6831435301ba0904bba91ca1}{addtotensord}}}
+\DoxyCodeLine{592 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a90bab531e5c7293311bc95f3d72cbca5}\label{namespacebuildtensors_a90bab531e5c7293311bc95f3d72cbca5}} 
+\index{buildtensors@{buildtensors}!calctensore@{calctensore}}
+\index{calctensore@{calctensore}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensore()}{calctensore()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensore (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TE,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Euv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Eerr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsE,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Euv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Eerr,  }\item[{double complex, dimension(0\+:3,4), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 804 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{804 }
+\DoxyCodeLine{805     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{806     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,4)}
+\DoxyCodeLine{807     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsE(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{808     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsEuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{809     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsEerr(0:rmax) }
+\DoxyCodeLine{810     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TE(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{811     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TEuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{812     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TEerr(0:rmax)}
+\DoxyCodeLine{813     \textcolor{keywordtype}{double complex} :: TE\_aux(RtS(rmax)), TEuv\_aux(RtS(rmax))}
+\DoxyCodeLine{814     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{816     \textcolor{keyword}{call }calctensore\_list(te\_aux,teuv\_aux,teerr,coefse,coefseuv,coefseerr,momvec,rmax)}
+\DoxyCodeLine{817 }
+\DoxyCodeLine{818     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{819       te(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = te\_aux(mu)}
+\DoxyCodeLine{820 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{821 }
+\DoxyCodeLine{822     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{823       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{824         teuv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = teuv\_aux(mu)}
+\DoxyCodeLine{825 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{826     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{827       teuv = 0d0}
+\DoxyCodeLine{828 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{829 }
+\DoxyCodeLine{830 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_ae494340edd37dc2aae70ac4092799240}\label{namespacebuildtensors_ae494340edd37dc2aae70ac4092799240}} 
+\index{buildtensors@{buildtensors}!calctensore\_list@{calctensore\_list}}
+\index{calctensore\_list@{calctensore\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensore\_list()}{calctensore\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensore\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TE,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Euv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Eerr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsE,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Euv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Eerr,  }\item[{double complex, dimension(0\+:3,4), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 643 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{645     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,4)}
+\DoxyCodeLine{646     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsE(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{647     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsEuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{648     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsEerr(0:rmax) }
+\DoxyCodeLine{649     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TE(RtS(rmax)), TEuv(RtS(rmax))}
+\DoxyCodeLine{650     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TEerr(0:rmax)}
+\DoxyCodeLine{651     \textcolor{keywordtype}{double complex} :: MomTen(5), CE, Pmu}
+\DoxyCodeLine{652     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{653     \textcolor{keywordtype}{integer} :: IndsCoef(4),mu1,mu2,nsum,mu,nu,i,a,cnt,r0}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656     te = 0d0}
+\DoxyCodeLine{657     te(1) = coefse(0,0,0,0,0)}
+\DoxyCodeLine{658     teerr = 0d0}
+\DoxyCodeLine{659     teerr(0) = coefseerr(0)}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{662       ce = coefse(nsum,0,0,0,0)}
+\DoxyCodeLine{663       }
+\DoxyCodeLine{664       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{665         te(addgtab(1,nu)) = te(addgtab(1,nu)) + ce*cftab(1,nu)}
+\DoxyCodeLine{666 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670 }
+\DoxyCodeLine{671     teuv = 0d0    }
+\DoxyCodeLine{672     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{673 \textcolor{comment}{!      TEuv(1) = CoefsEuv(0,0,0,0,0)}}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{675 \textcolor{comment}{!      do nsum=1,rmax/2}}
+\DoxyCodeLine{676       \textcolor{keywordflow}{do} nsum=3,rmax/2}
+\DoxyCodeLine{677         ce = coefseuv(nsum,0,0,0,0)}
+\DoxyCodeLine{678       }
+\DoxyCodeLine{679         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{680           teuv(addgtab(1,nu)) = teuv(addgtab(1,nu)) + ce*cftab(1,nu)}
+\DoxyCodeLine{681 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{684 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{686         }
+\DoxyCodeLine{687     \textcolor{keywordflow}{if} (rmax.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689       indscoef = (/ 1,0,0,0 /)}
+\DoxyCodeLine{690       momten(2:5) = momvec(0:3,1)}
+\DoxyCodeLine{691       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}(momten,indscoef,1)}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693       indscoef = (/ 0,1,0,0 /)}
+\DoxyCodeLine{694       momten(2:5) = momvec(0:3,2)}
+\DoxyCodeLine{695       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}(momten,indscoef,1)}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697       indscoef = (/ 0,0,1,0 /)}
+\DoxyCodeLine{698       momten(2:5) = momvec(0:3,3)}
+\DoxyCodeLine{699       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}(momten,indscoef,1)}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701       indscoef = (/ 0,0,0,1 /)}
+\DoxyCodeLine{702       momten(2:5) = momvec(0:3,4)}
+\DoxyCodeLine{703       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}(momten,indscoef,1)}
+\DoxyCodeLine{704             }
+\DoxyCodeLine{705       mommax = maxval(abs(momvec))}
+\DoxyCodeLine{706       \textcolor{keywordflow}{do} r0=1,rmax}
+\DoxyCodeLine{707         teerr(r0) = coefseerr(r0)*mommax**r0}
+\DoxyCodeLine{708 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712 }
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714     \textcolor{keyword}{contains}}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{717     \textcolor{comment}{!  subroutine AddToTensorE}}
+\DoxyCodeLine{718     \textcolor{comment}{!}}
+\DoxyCodeLine{719     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{720 }
+\DoxyCodeLine{721     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}(MomTenRec,IndsCoef,r)}
+\DoxyCodeLine{722 }
+\DoxyCodeLine{723       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{724       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(inout)} :: IndsCoef(4)}
+\DoxyCodeLine{725       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{726       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CE, Pmu}
+\DoxyCodeLine{727       \textcolor{keywordtype}{double precision} :: CEmax}
+\DoxyCodeLine{728       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730       ce = coefse(0,indscoef(1),indscoef(2),indscoef(3),indscoef(4))}
+\DoxyCodeLine{731       cemax = abs(ce)    \textcolor{comment}{! abs(CoefsE(0,0,0,0,0))}}
+\DoxyCodeLine{732       }
+\DoxyCodeLine{733       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{734       mu2 = rts(r)}
+\DoxyCodeLine{735 }
+\DoxyCodeLine{736       te(mu1:mu2) = te(mu1:mu2) + ce*momtenrec(mu1:mu2)}
+\DoxyCodeLine{737 }
+\DoxyCodeLine{738       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{739         ce = coefse(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4))}
+\DoxyCodeLine{740       }
+\DoxyCodeLine{741         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{742           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{743             te(addgtab(mu,nu)) = te(addgtab(mu,nu)) + ce*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{744 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{745 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{746 }
+\DoxyCodeLine{747 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{750 \textcolor{comment}{!        CE = CoefsEuv(0,IndsCoef(1),IndsCoef(2),IndsCoef(3),IndsCoef(4))}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752 \textcolor{comment}{!        TEuv(mu1:mu2) = TEuv(mu1:mu2) + CE*MomTenRec(mu1:mu2)}}
+\DoxyCodeLine{753 }
+\DoxyCodeLine{754 \textcolor{comment}{!        do nsum=1,(rmax-\/r)/2}}
+\DoxyCodeLine{755         \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{756           ce = coefseuv(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4))}
+\DoxyCodeLine{757       }
+\DoxyCodeLine{758           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{759             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{760               teuv(addgtab(mu,nu)) = teuv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{761                                    + ce*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{762 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{763 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{764 }
+\DoxyCodeLine{765 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{766 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{767 }
+\DoxyCodeLine{768         }
+\DoxyCodeLine{769       \textcolor{keywordflow}{if} (r.lt.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771         \textcolor{keywordflow}{do} i=1,4}
+\DoxyCodeLine{772           indscoef(i) = indscoef(i)+1}
+\DoxyCodeLine{773 }
+\DoxyCodeLine{774           cnt = mu2+1}
+\DoxyCodeLine{775           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{776             pmu = momvec(mu,i)}
+\DoxyCodeLine{777             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{778               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{779               cnt = cnt+1}
+\DoxyCodeLine{780 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{781 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}(momten,indscoef,r+1)}
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785           indscoef(i) = indscoef(i)-\/1}
+\DoxyCodeLine{786 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{787 }
+\DoxyCodeLine{788 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_a0217108bc9dab87941563778a2daf95a}{addtotensore}}}
+\DoxyCodeLine{791 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a8dcef7bd432d2e5cae2043e462003677}\label{namespacebuildtensors_a8dcef7bd432d2e5cae2043e462003677}} 
+\index{buildtensors@{buildtensors}!calctensorf@{calctensorf}}
+\index{calctensorf@{calctensorf}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorf()}{calctensorf()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorf (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TF,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Ferr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsF,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Ferr,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1004 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1005     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{1006     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5)}
+\DoxyCodeLine{1007     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsF(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1008     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1009     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsFerr(0:rmax)}
+\DoxyCodeLine{1010     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1011     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TFuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1012     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TFerr(0:rmax)}
+\DoxyCodeLine{1013     \textcolor{keywordtype}{double complex} :: TF\_aux(RtS(rmax)), TFuv\_aux(RtS(rmax)) }
+\DoxyCodeLine{1014     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{1015 }
+\DoxyCodeLine{1016     \textcolor{keyword}{call }calctensorf\_list(tf\_aux,tfuv\_aux,tferr,coefsf,coefsfuv,coefsferr,momvec,rmax)}
+\DoxyCodeLine{1017 }
+\DoxyCodeLine{1018     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1019       tf(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tf\_aux(mu)}
+\DoxyCodeLine{1020 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1021 }
+\DoxyCodeLine{1022     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1023       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1024         tfuv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tfuv\_aux(mu)}
+\DoxyCodeLine{1025 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1026     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1027       tfuv = 0d0}
+\DoxyCodeLine{1028 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1029 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a552266b900a0499d1be36c05cb89959c}\label{namespacebuildtensors_a552266b900a0499d1be36c05cb89959c}} 
+\index{buildtensors@{buildtensors}!calctensorf\_list@{calctensorf\_list}}
+\index{calctensorf\_list@{calctensorf\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorf\_list()}{calctensorf\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorf\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TF,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Ferr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsF,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Ferr,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 843 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{843 }
+\DoxyCodeLine{844     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{845     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5)}
+\DoxyCodeLine{846     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsF(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{847     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{848     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsFerr(0:rmax)}
+\DoxyCodeLine{849     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(RtS(rmax)), TFuv(RtS(rmax))}
+\DoxyCodeLine{850     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TFerr(0:rmax)}
+\DoxyCodeLine{851     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{852     \textcolor{keywordtype}{double complex} :: MomTen(5), CF, Pmu }
+\DoxyCodeLine{853     \textcolor{keywordtype}{integer} :: IndsCoef(5),mu1,mu2,nsum,mu,nu,i,a,cnt,r0}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855     tf = 0d0}
+\DoxyCodeLine{856     tf(1) = coefsf(0,0,0,0,0,0)}
+\DoxyCodeLine{857     tferr = 0d0}
+\DoxyCodeLine{858     tferr(0) = coefsferr(0)}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{861       cf = coefsf(nsum,0,0,0,0,0)}
+\DoxyCodeLine{862       }
+\DoxyCodeLine{863       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{864         tf(addgtab(1,nu)) = tf(addgtab(1,nu)) + cf*cftab(1,nu)}
+\DoxyCodeLine{865 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{866 }
+\DoxyCodeLine{867 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{868 }
+\DoxyCodeLine{869     tfuv = 0d0}
+\DoxyCodeLine{870     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{871 \textcolor{comment}{!      TFuv(1) = CoefsFuv(0,0,0,0,0,0)}}
+\DoxyCodeLine{872 }
+\DoxyCodeLine{873 \textcolor{comment}{!      do nsum=1,rmax/2}}
+\DoxyCodeLine{874       \textcolor{keywordflow}{do} nsum=4,rmax/2}
+\DoxyCodeLine{875         cf = coefsfuv(nsum,0,0,0,0,0)}
+\DoxyCodeLine{876       }
+\DoxyCodeLine{877         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{878           tfuv(addgtab(1,nu)) = tfuv(addgtab(1,nu)) + cf*cftab(1,nu)}
+\DoxyCodeLine{879 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{880 }
+\DoxyCodeLine{881 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{882 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884         }
+\DoxyCodeLine{885     \textcolor{keywordflow}{if} (rmax.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{886 }
+\DoxyCodeLine{887       indscoef = (/ 1,0,0,0,0 /)}
+\DoxyCodeLine{888       momten(2:5) = momvec(0:3,1)}
+\DoxyCodeLine{889       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(momten,indscoef,1)}
+\DoxyCodeLine{890 }
+\DoxyCodeLine{891       indscoef = (/ 0,1,0,0,0 /)}
+\DoxyCodeLine{892       momten(2:5) = momvec(0:3,2)}
+\DoxyCodeLine{893       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(momten,indscoef,1)}
+\DoxyCodeLine{894 }
+\DoxyCodeLine{895       indscoef = (/ 0,0,1,0,0 /)}
+\DoxyCodeLine{896       momten(2:5) = momvec(0:3,3)}
+\DoxyCodeLine{897       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(momten,indscoef,1)}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{899       indscoef = (/ 0,0,0,1,0 /)}
+\DoxyCodeLine{900       momten(2:5) = momvec(0:3,4)}
+\DoxyCodeLine{901       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(momten,indscoef,1)}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{903       indscoef = (/ 0,0,0,0,1 /)}
+\DoxyCodeLine{904       momten(2:5) = momvec(0:3,5)}
+\DoxyCodeLine{905       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(momten,indscoef,1)}
+\DoxyCodeLine{906       }
+\DoxyCodeLine{907       mommax = maxval(abs(momvec))}
+\DoxyCodeLine{908       \textcolor{keywordflow}{do} r0=1,rmax}
+\DoxyCodeLine{909         tferr(r0) = coefsferr(r0)*mommax**r0}
+\DoxyCodeLine{910 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{911 }
+\DoxyCodeLine{912 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{913 }
+\DoxyCodeLine{914 }
+\DoxyCodeLine{915   }
+\DoxyCodeLine{916     \textcolor{keyword}{contains}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{919     \textcolor{comment}{!  subroutine AddToTensorF}}
+\DoxyCodeLine{920     \textcolor{comment}{!}}
+\DoxyCodeLine{921     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{922 }
+\DoxyCodeLine{923     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(MomTenRec,IndsCoef,r)}
+\DoxyCodeLine{924 }
+\DoxyCodeLine{925       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{926       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(inout)} :: IndsCoef(5)}
+\DoxyCodeLine{927       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{928       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CF, Pmu}
+\DoxyCodeLine{929       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{930 }
+\DoxyCodeLine{931       cf = coefsf(0,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5))}
+\DoxyCodeLine{932 }
+\DoxyCodeLine{933       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{934       mu2 = rts(r)}
+\DoxyCodeLine{935 }
+\DoxyCodeLine{936       tf(mu1:mu2) = tf(mu1:mu2) + cf*momtenrec(mu1:mu2) }
+\DoxyCodeLine{937 }
+\DoxyCodeLine{938       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{939         cf = coefsf(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5))}
+\DoxyCodeLine{940       }
+\DoxyCodeLine{941         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{942           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{943             tf(addgtab(mu,nu)) = tf(addgtab(mu,nu)) + cf*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{944 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{945 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{946 }
+\DoxyCodeLine{947 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{948 }
+\DoxyCodeLine{949       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{950 \textcolor{comment}{!        CF = CoefsFuv(0,IndsCoef(1),IndsCoef(2),IndsCoef(3),IndsCoef(4),IndsCoef(5))}}
+\DoxyCodeLine{951 }
+\DoxyCodeLine{952 \textcolor{comment}{!        TFuv(mu1:mu2) = TFuv(mu1:mu2) + CF*MomTenRec(mu1:mu2)}}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{954 \textcolor{comment}{!        do nsum=1,(rmax-\/r)/2}}
+\DoxyCodeLine{955         \textcolor{keywordflow}{do} nsum=4,(rmax-\/r)/2}
+\DoxyCodeLine{956           cf = coefsfuv(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5))}
+\DoxyCodeLine{957       }
+\DoxyCodeLine{958           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{959             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{960               tfuv(addgtab(mu,nu)) = tfuv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{961                                    + cf*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{962 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{963 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{965 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{966 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{967 }
+\DoxyCodeLine{968         }
+\DoxyCodeLine{969       \textcolor{keywordflow}{if} (r.lt.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{970 }
+\DoxyCodeLine{971         \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{972           indscoef(i) = indscoef(i)+1}
+\DoxyCodeLine{973 }
+\DoxyCodeLine{974           cnt = mu2+1}
+\DoxyCodeLine{975           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{976             pmu = momvec(mu,i)}
+\DoxyCodeLine{977             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{978               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{979               cnt = cnt+1}
+\DoxyCodeLine{980 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{981 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{982 }
+\DoxyCodeLine{983           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}(momten,indscoef,r+1)}
+\DoxyCodeLine{984 }
+\DoxyCodeLine{985           indscoef(i) = indscoef(i)-\/1}
+\DoxyCodeLine{986 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{987 }
+\DoxyCodeLine{988 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{989 }
+\DoxyCodeLine{990     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_abb975fc3ee69b3d13c424f2a93b2b6e4}{addtotensorf}}}
+\DoxyCodeLine{991 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a6b3aedf5473a517d4c60408202a28f56}\label{namespacebuildtensors_a6b3aedf5473a517d4c60408202a28f56}} 
+\index{buildtensors@{buildtensors}!calctensorfuv@{calctensorfuv}}
+\index{calctensorfuv@{calctensorfuv}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorfuv()}{calctensorfuv()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorfuv (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Fuv,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Fuv,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1153 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1153 }
+\DoxyCodeLine{1154     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{1155     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5)}
+\DoxyCodeLine{1156     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1157     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TFuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1158     \textcolor{keywordtype}{double complex} :: TFuv\_aux(RtS(rmax)) }
+\DoxyCodeLine{1159     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{1160 }
+\DoxyCodeLine{1161     \textcolor{keyword}{call }calctensorfuv\_list(tfuv\_aux,coefsfuv,momvec,rmax)}
+\DoxyCodeLine{1162 }
+\DoxyCodeLine{1163     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1164       tfuv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tfuv\_aux(mu)}
+\DoxyCodeLine{1165 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1166 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a8ac5912ff6933d6897226360cdc8023b}\label{namespacebuildtensors_a8ac5912ff6933d6897226360cdc8023b}} 
+\index{buildtensors@{buildtensors}!calctensorfuv\_list@{calctensorfuv\_list}}
+\index{calctensorfuv\_list@{calctensorfuv\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorfuv\_list()}{calctensorfuv\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorfuv\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Fuv,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Fuv,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1042 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1042 }
+\DoxyCodeLine{1043     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{1044     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5)}
+\DoxyCodeLine{1045     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1046     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TFuv(RtS(rmax))}
+\DoxyCodeLine{1047     \textcolor{keywordtype}{double complex} :: MomTen(5), CF, Pmu }
+\DoxyCodeLine{1048     \textcolor{keywordtype}{integer} :: IndsCoef(5),mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{1049 }
+\DoxyCodeLine{1050 }
+\DoxyCodeLine{1051     tfuv = 0d0}
+\DoxyCodeLine{1052     \textcolor{keywordflow}{do} nsum=4,rmax/2}
+\DoxyCodeLine{1053       cf = coefsfuv(nsum,0,0,0,0,0)}
+\DoxyCodeLine{1054       }
+\DoxyCodeLine{1055       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1056         tfuv(addgtab(1,nu)) = tfuv(addgtab(1,nu)) + cf*cftab(1,nu)}
+\DoxyCodeLine{1057 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1058 }
+\DoxyCodeLine{1059 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1060         }
+\DoxyCodeLine{1061     \textcolor{keywordflow}{if} (rmax.gt.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1062 }
+\DoxyCodeLine{1063       indscoef = (/ 1,0,0,0,0 /)}
+\DoxyCodeLine{1064       momten(2:5) = momvec(0:3,1)}
+\DoxyCodeLine{1065       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(momten,indscoef,1)}
+\DoxyCodeLine{1066 }
+\DoxyCodeLine{1067       indscoef = (/ 0,1,0,0,0 /)}
+\DoxyCodeLine{1068       momten(2:5) = momvec(0:3,2)}
+\DoxyCodeLine{1069       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(momten,indscoef,1)}
+\DoxyCodeLine{1070 }
+\DoxyCodeLine{1071       indscoef = (/ 0,0,1,0,0 /)}
+\DoxyCodeLine{1072       momten(2:5) = momvec(0:3,3)}
+\DoxyCodeLine{1073       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(momten,indscoef,1)}
+\DoxyCodeLine{1074 }
+\DoxyCodeLine{1075       indscoef = (/ 0,0,0,1,0 /)}
+\DoxyCodeLine{1076       momten(2:5) = momvec(0:3,4)}
+\DoxyCodeLine{1077       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(momten,indscoef,1)}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1079       indscoef = (/ 0,0,0,0,1 /)}
+\DoxyCodeLine{1080       momten(2:5) = momvec(0:3,5)}
+\DoxyCodeLine{1081       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(momten,indscoef,1)}
+\DoxyCodeLine{1082 }
+\DoxyCodeLine{1083 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1084 }
+\DoxyCodeLine{1085 }
+\DoxyCodeLine{1086   }
+\DoxyCodeLine{1087     \textcolor{keyword}{contains}}
+\DoxyCodeLine{1088 }
+\DoxyCodeLine{1089     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1090     \textcolor{comment}{!  subroutine AddToTensorFuv}}
+\DoxyCodeLine{1091     \textcolor{comment}{!}}
+\DoxyCodeLine{1092     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1093 }
+\DoxyCodeLine{1094     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(MomTenRec,IndsCoef,r)}
+\DoxyCodeLine{1095 }
+\DoxyCodeLine{1096       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{1097       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(inout)} :: IndsCoef(5)}
+\DoxyCodeLine{1098       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{1099       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CF, Pmu}
+\DoxyCodeLine{1100       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{1101 }
+\DoxyCodeLine{1102       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{1103       mu2 = rts(r)}
+\DoxyCodeLine{1104 }
+\DoxyCodeLine{1105       \textcolor{keywordflow}{do} nsum=4,(rmax-\/r)/2}
+\DoxyCodeLine{1106         cf = coefsfuv(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5))}
+\DoxyCodeLine{1107       }
+\DoxyCodeLine{1108         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1109           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{1110             tfuv(addgtab(mu,nu)) = tfuv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{1111                                  + cf*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{1112 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1113 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1114 }
+\DoxyCodeLine{1115 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117         }
+\DoxyCodeLine{1118       \textcolor{keywordflow}{if} (r.lt.rmax-\/8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1119 }
+\DoxyCodeLine{1120         \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1121           indscoef(i) = indscoef(i)+1}
+\DoxyCodeLine{1122 }
+\DoxyCodeLine{1123           cnt = mu2+1}
+\DoxyCodeLine{1124           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{1125             pmu = momvec(mu,i)}
+\DoxyCodeLine{1126             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{1127               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{1128               cnt = cnt+1}
+\DoxyCodeLine{1129 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1130 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1131 }
+\DoxyCodeLine{1132           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}(momten,indscoef,r+1)}
+\DoxyCodeLine{1133 }
+\DoxyCodeLine{1134           indscoef(i) = indscoef(i)-\/1}
+\DoxyCodeLine{1135 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1136 }
+\DoxyCodeLine{1137 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1138 }
+\DoxyCodeLine{1139     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_a475fe133131af7fd9e18f7024369b7c0}{addtotensorfuv}}}
+\DoxyCodeLine{1140 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_ab80eef54b52d17086ce3dccfd9d73fed}\label{namespacebuildtensors_ab80eef54b52d17086ce3dccfd9d73fed}} 
+\index{buildtensors@{buildtensors}!calctensorg@{calctensorg}}
+\index{calctensorg@{calctensorg}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorg()}{calctensorg()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorg (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TG,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Guv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Gerr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsG,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Guv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Gerr,  }\item[{double complex, dimension(0\+:3,6), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1344 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1344 }
+\DoxyCodeLine{1345     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{1346     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,6)}
+\DoxyCodeLine{1347     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsG(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1348     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsGuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1349     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsGerr(0:rmax)}
+\DoxyCodeLine{1350     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TG(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1351     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TGuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1352     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TGerr(0:rmax)}
+\DoxyCodeLine{1353     \textcolor{keywordtype}{double complex} :: TG\_aux(RtS(rmax)), TGuv\_aux(RtS(rmax))}
+\DoxyCodeLine{1354     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{1355 }
+\DoxyCodeLine{1356     \textcolor{keyword}{call }calctensorg\_list(tg\_aux,tguv\_aux,tgerr,coefsg,coefsguv,coefsgerr,momvec,rmax)}
+\DoxyCodeLine{1357 }
+\DoxyCodeLine{1358     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1359       tg(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tg\_aux(mu)}
+\DoxyCodeLine{1360 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1361 }
+\DoxyCodeLine{1362     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1363       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1364         tguv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tguv\_aux(mu)}
+\DoxyCodeLine{1365 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1366     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1367       tguv = 0d0}
+\DoxyCodeLine{1368 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1369 }
+\DoxyCodeLine{1370 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_ae2ca3fbc69a23ec27c309e8c6562ef1d}\label{namespacebuildtensors_ae2ca3fbc69a23ec27c309e8c6562ef1d}} 
+\index{buildtensors@{buildtensors}!calctensorg\_list@{calctensorg\_list}}
+\index{calctensorg\_list@{calctensorg\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensorg\_list()}{calctensorg\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensorg\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TG,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Guv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Gerr,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{CoefsG,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{Coefs\+Guv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Gerr,  }\item[{double complex, dimension(0\+:3,6), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1178 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1178 }
+\DoxyCodeLine{1179     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{1180     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,6)}
+\DoxyCodeLine{1181     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsG(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1182     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsGuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1183     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsGerr(0:rmax)}
+\DoxyCodeLine{1184     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TG(RtS(rmax)), TGuv(RtS(rmax))}
+\DoxyCodeLine{1185     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TGerr(0:rmax)}
+\DoxyCodeLine{1186     \textcolor{keywordtype}{double complex} :: MomTen(5), CG, Pmu}
+\DoxyCodeLine{1187     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{1188     \textcolor{keywordtype}{integer} :: IndsCoef(6),mu1,mu2,nsum,mu,nu,i,a,cnt,r0}
+\DoxyCodeLine{1189 }
+\DoxyCodeLine{1190     }
+\DoxyCodeLine{1191     tg = 0d0}
+\DoxyCodeLine{1192     tg(1) = coefsg(0,0,0,0,0,0,0)}
+\DoxyCodeLine{1193     tgerr = 0d0}
+\DoxyCodeLine{1194     tgerr(0) = coefsgerr(0)}
+\DoxyCodeLine{1195 }
+\DoxyCodeLine{1196     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{1197       cg = coefsg(nsum,0,0,0,0,0,0)}
+\DoxyCodeLine{1198       }
+\DoxyCodeLine{1199       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1200         tg(addgtab(1,nu)) = tg(addgtab(1,nu)) + cg*cftab(1,nu)}
+\DoxyCodeLine{1201 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1202 }
+\DoxyCodeLine{1203 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1204 }
+\DoxyCodeLine{1205     tguv = 0d0}
+\DoxyCodeLine{1206     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1207 \textcolor{comment}{!      TGuv(1) = CoefsGuv(0,0,0,0,0,0,0)}}
+\DoxyCodeLine{1208 }
+\DoxyCodeLine{1209 \textcolor{comment}{!      do nsum=1,rmax/2}}
+\DoxyCodeLine{1210       \textcolor{keywordflow}{do} nsum=5,rmax/2}
+\DoxyCodeLine{1211         cg = coefsguv(nsum,0,0,0,0,0,0)}
+\DoxyCodeLine{1212       }
+\DoxyCodeLine{1213         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1214           tguv(addgtab(1,nu)) = tguv(addgtab(1,nu)) + cg*cftab(1,nu)}
+\DoxyCodeLine{1215 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1216 }
+\DoxyCodeLine{1217 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1218 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1219 }
+\DoxyCodeLine{1220         }
+\DoxyCodeLine{1221     \textcolor{keywordflow}{if} (rmax.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1222 }
+\DoxyCodeLine{1223       indscoef = (/ 1,0,0,0,0,0 /)}
+\DoxyCodeLine{1224       momten(2:5) = momvec(0:3,1)}
+\DoxyCodeLine{1225       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,1)}
+\DoxyCodeLine{1226 }
+\DoxyCodeLine{1227       indscoef = (/ 0,1,0,0,0,0 /)}
+\DoxyCodeLine{1228       momten(2:5) = momvec(0:3,2)}
+\DoxyCodeLine{1229       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,1)}
+\DoxyCodeLine{1230 }
+\DoxyCodeLine{1231       indscoef = (/ 0,0,1,0,0,0 /)}
+\DoxyCodeLine{1232       momten(2:5) = momvec(0:3,3)}
+\DoxyCodeLine{1233       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,1)}
+\DoxyCodeLine{1234 }
+\DoxyCodeLine{1235       indscoef = (/ 0,0,0,1,0,0 /)}
+\DoxyCodeLine{1236       momten(2:5) = momvec(0:3,4)}
+\DoxyCodeLine{1237       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,1)}
+\DoxyCodeLine{1238 }
+\DoxyCodeLine{1239       indscoef = (/ 0,0,0,0,1,0 /)}
+\DoxyCodeLine{1240       momten(2:5) = momvec(0:3,5)}
+\DoxyCodeLine{1241       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,1)}
+\DoxyCodeLine{1242 }
+\DoxyCodeLine{1243       indscoef = (/ 0,0,0,0,0,1 /)}
+\DoxyCodeLine{1244       momten(2:5) = momvec(0:3,6)}
+\DoxyCodeLine{1245       \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,1)}
+\DoxyCodeLine{1246        }
+\DoxyCodeLine{1247       mommax = maxval(abs(momvec))}
+\DoxyCodeLine{1248       \textcolor{keywordflow}{do} r0=1,rmax}
+\DoxyCodeLine{1249         tgerr(r0) = coefsgerr(r0)*mommax**r0}
+\DoxyCodeLine{1250 \textcolor{keywordflow}{      end do}     }
+\DoxyCodeLine{1251 }
+\DoxyCodeLine{1252 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1253 }
+\DoxyCodeLine{1254 }
+\DoxyCodeLine{1255   }
+\DoxyCodeLine{1256     \textcolor{keyword}{contains}}
+\DoxyCodeLine{1257 }
+\DoxyCodeLine{1258     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1259     \textcolor{comment}{!  subroutine AddToTensorG}}
+\DoxyCodeLine{1260     \textcolor{comment}{!}}
+\DoxyCodeLine{1261     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1262 }
+\DoxyCodeLine{1263     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(MomTenRec,IndsCoef,r)}
+\DoxyCodeLine{1264 }
+\DoxyCodeLine{1265       \textcolor{keywordtype}{integer} :: r}
+\DoxyCodeLine{1266       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(inout)} :: IndsCoef(6)}
+\DoxyCodeLine{1267       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{1268       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CG, Pmu}
+\DoxyCodeLine{1269       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt}
+\DoxyCodeLine{1270 }
+\DoxyCodeLine{1271       cg = coefsg(0,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5),indscoef(6))}
+\DoxyCodeLine{1272 }
+\DoxyCodeLine{1273       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{1274       mu2 = rts(r)}
+\DoxyCodeLine{1275 }
+\DoxyCodeLine{1276       tg(mu1:mu2) = tg(mu1:mu2) + cg*momtenrec(mu1:mu2)}
+\DoxyCodeLine{1277 }
+\DoxyCodeLine{1278       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{1279         cg = coefsg(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5),indscoef(6))}
+\DoxyCodeLine{1280       }
+\DoxyCodeLine{1281         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1282           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{1283             tg(addgtab(mu,nu)) = tg(addgtab(mu,nu)) + cg*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{1284 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1285 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1286 }
+\DoxyCodeLine{1287 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1288 }
+\DoxyCodeLine{1289       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1290 \textcolor{comment}{!        CG = CoefsGuv(0,IndsCoef(1),IndsCoef(2),IndsCoef(3),IndsCoef(4),IndsCoef(5),IndsCoef(6))}}
+\DoxyCodeLine{1291 }
+\DoxyCodeLine{1292 \textcolor{comment}{!        TGuv(mu1:mu2) = TGuv(mu1:mu2) + CG*MomTenRec(mu1:mu2)}}
+\DoxyCodeLine{1293 }
+\DoxyCodeLine{1294 \textcolor{comment}{!        do nsum=1,(rmax-\/r)/2}}
+\DoxyCodeLine{1295         \textcolor{keywordflow}{do} nsum=5,(rmax-\/r)/2}
+\DoxyCodeLine{1296           cg = coefsguv(nsum,indscoef(1),indscoef(2),indscoef(3),indscoef(4),indscoef(5),indscoef(6))}
+\DoxyCodeLine{1297       }
+\DoxyCodeLine{1298           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1299             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{1300               tguv(addgtab(mu,nu)) = tguv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{1301                                    + cg*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{1302 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1303 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1304 }
+\DoxyCodeLine{1305 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1306 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1307 }
+\DoxyCodeLine{1308         }
+\DoxyCodeLine{1309       \textcolor{keywordflow}{if} (r.lt.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1310 }
+\DoxyCodeLine{1311         \textcolor{keywordflow}{do} i=1,6}
+\DoxyCodeLine{1312           indscoef(i) = indscoef(i)+1}
+\DoxyCodeLine{1313 }
+\DoxyCodeLine{1314           cnt = mu2+1}
+\DoxyCodeLine{1315           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{1316             pmu = momvec(mu,i)}
+\DoxyCodeLine{1317             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{1318               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{1319               cnt = cnt+1}
+\DoxyCodeLine{1320 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1321 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1322 }
+\DoxyCodeLine{1323           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}(momten,indscoef,r+1)}
+\DoxyCodeLine{1324 }
+\DoxyCodeLine{1325           indscoef(i) = indscoef(i)-\/1}
+\DoxyCodeLine{1326 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1327 }
+\DoxyCodeLine{1328 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1329 }
+\DoxyCodeLine{1330     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_a89dcfe8371c893086d1e25ae13bc0f35}{addtotensorg}}}
+\DoxyCodeLine{1331 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_a45b96b15b3bed8d368476c3dc02f0742}\label{namespacebuildtensors_a45b96b15b3bed8d368476c3dc02f0742}} 
+\index{buildtensors@{buildtensors}!calctensortn@{calctensortn}}
+\index{calctensortn@{calctensortn}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensortn()}{calctensortn()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensortn (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TN,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Nuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Nerr,  }\item[{double complex, dimension(ncoefs(rmax,n)), intent(in)}]{CoefsN,  }\item[{double complex, dimension(ncoefs(rmax,n)), intent(in)}]{Coefs\+Nuv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Nerr,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1546 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1546 }
+\DoxyCodeLine{1547     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax}
+\DoxyCodeLine{1548     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1)}
+\DoxyCodeLine{1549     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsN(NCoefs(rmax,N))}
+\DoxyCodeLine{1550     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{Intent(in)} :: CoefsNuv(NCoefs(rmax,N))}
+\DoxyCodeLine{1551     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsNerr(0:rmax)}
+\DoxyCodeLine{1552     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TN(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1553     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TNuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1554     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TNerr(0:rmax)}
+\DoxyCodeLine{1555     \textcolor{keywordtype}{double complex} :: TN\_aux(RtS(rmax)), TNuv\_aux(RtS(rmax))}
+\DoxyCodeLine{1556     \textcolor{keywordtype}{double complex} :: MomTen(5), CN, Pmu}
+\DoxyCodeLine{1557     \textcolor{keywordtype}{integer} :: IndsCoef(5),mu1,mu2,nsum,mu,nu,ind,a,cnt}
+\DoxyCodeLine{1558 }
+\DoxyCodeLine{1559     \textcolor{keyword}{call }calctensortn\_list(tn\_aux,tnuv\_aux,tnerr,coefsn,coefsnuv,coefsnerr,momvec,n,rmax) }
+\DoxyCodeLine{1560 }
+\DoxyCodeLine{1561     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1562       tn(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tn\_aux(mu)}
+\DoxyCodeLine{1563 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1564 }
+\DoxyCodeLine{1565     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1566       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1567         tnuv(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu)) = tnuv\_aux(mu)}
+\DoxyCodeLine{1568 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1569     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1570       tnuv = 0d0}
+\DoxyCodeLine{1571 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1572 }
+\DoxyCodeLine{1573 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_ab4692b0ec7e4d4449e9be5581d03730f}\label{namespacebuildtensors_ab4692b0ec7e4d4449e9be5581d03730f}} 
+\index{buildtensors@{buildtensors}!calctensortn\_list@{calctensortn\_list}}
+\index{calctensortn\_list@{calctensortn\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensortn\_list()}{calctensortn\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensortn\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TN,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Nuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Nerr,  }\item[{double complex, dimension(ncoefs(rmax,n)), intent(in)}]{CoefsN,  }\item[{double complex, dimension(ncoefs(rmax,n)), intent(in)}]{Coefs\+Nuv,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{Coefs\+Nerr,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1383 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1383 }
+\DoxyCodeLine{1384     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax}
+\DoxyCodeLine{1385     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1)}
+\DoxyCodeLine{1386     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsN(NCoefs(rmax,N)),CoefsNuv(NCoefs(rmax,N))}
+\DoxyCodeLine{1387     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: CoefsNerr(0:rmax)}
+\DoxyCodeLine{1388     \textcolor{keywordtype}{double complex} :: CoefsN\_aux(BinomTable(rmax,max(N+rmax-\/2,0)),0:rmax/2,0:rmax)}
+\DoxyCodeLine{1389     \textcolor{keywordtype}{double complex} :: CoefsNuv\_aux(BinomTable(rmax,max(N+rmax-\/2,0)),0:rmax/2,0:rmax)}
+\DoxyCodeLine{1390     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TN(RtS(rmax)), TNuv(RtS(rmax)) }
+\DoxyCodeLine{1391     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TNerr(0:rmax)}
+\DoxyCodeLine{1392     \textcolor{keywordtype}{double precision} :: MomMax}
+\DoxyCodeLine{1393     \textcolor{keywordtype}{double complex} :: MomTen(5), CN, Pmu}
+\DoxyCodeLine{1394     \textcolor{keywordtype}{integer} :: IndsCoef(5),mu1,mu2,nsum,mu,nu,ind,a,cnt,r0,n0,i,r}
+\DoxyCodeLine{1395 }
+\DoxyCodeLine{1396     cnt = 0}
+\DoxyCodeLine{1397     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{1398       \textcolor{keywordflow}{do} n0=r/2,0,-\/1}
+\DoxyCodeLine{1399         \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{1400 }
+\DoxyCodeLine{1401         cnt = cnt+1}
+\DoxyCodeLine{1402         coefsn\_aux(i,n0,r) = coefsn(cnt)}
+\DoxyCodeLine{1403         coefsnuv\_aux(i,n0,r) = coefsnuv(cnt)}
+\DoxyCodeLine{1404 }
+\DoxyCodeLine{1405 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1406 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1407 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1408     }
+\DoxyCodeLine{1409 }
+\DoxyCodeLine{1410     tn = 0d0}
+\DoxyCodeLine{1411     tn(1) = coefsn\_aux(1,0,0)}
+\DoxyCodeLine{1412     tnerr = 0d0}
+\DoxyCodeLine{1413     tnerr(0) = coefsnerr(0)}
+\DoxyCodeLine{1414 }
+\DoxyCodeLine{1415     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{1416       cn = coefsn\_aux(1,nsum,2*nsum)}
+\DoxyCodeLine{1417       }
+\DoxyCodeLine{1418       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1419         tn(addgtab(1,nu)) = tn(addgtab(1,nu)) + cn*cftab(1,nu)}
+\DoxyCodeLine{1420 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1421 }
+\DoxyCodeLine{1422 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1423 }
+\DoxyCodeLine{1424     tnuv = 0d0}
+\DoxyCodeLine{1425     \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1426 \textcolor{comment}{!      TNuv(1) = CoefsNuv\_aux(1,0,0)}}
+\DoxyCodeLine{1427 }
+\DoxyCodeLine{1428 \textcolor{comment}{!      do nsum=1,rmax/2}}
+\DoxyCodeLine{1429       \textcolor{keywordflow}{do} nsum=max(n-\/2,1),rmax/2}
+\DoxyCodeLine{1430         cn = coefsnuv\_aux(1,nsum,2*nsum)}
+\DoxyCodeLine{1431       }
+\DoxyCodeLine{1432         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1433           tnuv(addgtab(1,nu)) = tnuv(addgtab(1,nu)) + cn*cftab(1,nu)}
+\DoxyCodeLine{1434 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1435 }
+\DoxyCodeLine{1436 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1437 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1438 }
+\DoxyCodeLine{1439         }
+\DoxyCodeLine{1440     \textcolor{keywordflow}{if} (rmax.gt.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1441 }
+\DoxyCodeLine{1442       \textcolor{keywordflow}{do} ind=1,n-\/1}
+\DoxyCodeLine{1443         momten(2:5) = momvec(0:3,ind)}
+\DoxyCodeLine{1444         \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a2043de598d9c295da0e8aaa4b2140ccd}{addtotensortn}}(momten,ind,1)}
+\DoxyCodeLine{1445 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1446       }
+\DoxyCodeLine{1447       mommax = maxval(abs(momvec))}
+\DoxyCodeLine{1448       \textcolor{keywordflow}{do} r0=1,rmax}
+\DoxyCodeLine{1449         tnerr(r0) = coefsnerr(r0)*mommax**r0}
+\DoxyCodeLine{1450 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1451 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1452 }
+\DoxyCodeLine{1453   }
+\DoxyCodeLine{1454 }
+\DoxyCodeLine{1455     \textcolor{keyword}{contains}}
+\DoxyCodeLine{1456 }
+\DoxyCodeLine{1457     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1458     \textcolor{comment}{!  subroutine AddToTensorTN}}
+\DoxyCodeLine{1459     \textcolor{comment}{!}}
+\DoxyCodeLine{1460     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1461 }
+\DoxyCodeLine{1462     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_a2043de598d9c295da0e8aaa4b2140ccd}{addtotensortn}}(MomTenRec,ind,r)}
+\DoxyCodeLine{1463 }
+\DoxyCodeLine{1464       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r,ind}
+\DoxyCodeLine{1465       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{1466       \textcolor{keywordtype}{double complex} :: CN, Pmu}
+\DoxyCodeLine{1467       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: MomTenIt(:)}
+\DoxyCodeLine{1468       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt,nind}
+\DoxyCodeLine{1469       \textcolor{keywordtype}{double precision} :: CNmax }
+\DoxyCodeLine{1470 }
+\DoxyCodeLine{1471       cn = coefsn\_aux(ind,0,r)}
+\DoxyCodeLine{1472 }
+\DoxyCodeLine{1473       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{1474       mu2 = rts(r)}
+\DoxyCodeLine{1475 }
+\DoxyCodeLine{1476       tn(mu1:mu2) = tn(mu1:mu2) + cn*momtenrec(mu1:mu2)}
+\DoxyCodeLine{1477 }
+\DoxyCodeLine{1478       \textcolor{keywordflow}{do} nsum=1,(rmax-\/r)/2}
+\DoxyCodeLine{1479         cn = coefsn\_aux(ind,nsum,r+2*nsum)}
+\DoxyCodeLine{1480       }
+\DoxyCodeLine{1481         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1482           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{1483             tn(addgtab(mu,nu)) = tn(addgtab(mu,nu)) + cn*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{1484 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1485 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1486 }
+\DoxyCodeLine{1487 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1488    }
+\DoxyCodeLine{1489       \textcolor{keywordflow}{if} (calcuv\_ten) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1490 }
+\DoxyCodeLine{1491         \textcolor{keywordflow}{if} (n.le.2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1492           cn = coefsnuv\_aux(ind,0,r)}
+\DoxyCodeLine{1493           tnuv(mu1:mu2) = tnuv(mu1:mu2) + cn*momtenrec(mu1:mu2)}
+\DoxyCodeLine{1494 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{1495 }
+\DoxyCodeLine{1496 \textcolor{comment}{!        do nsum=1,(rmax-\/r)/2}}
+\DoxyCodeLine{1497         \textcolor{keywordflow}{do} nsum=max(n-\/2,1),(rmax-\/r)/2}
+\DoxyCodeLine{1498           cn = coefsnuv\_aux(ind,nsum,r+2*nsum)}
+\DoxyCodeLine{1499       }
+\DoxyCodeLine{1500           \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1501             \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{1502               tnuv(addgtab(mu,nu)) = tnuv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{1503                                    + cn*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{1504 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1505 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1506 }
+\DoxyCodeLine{1507 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1508 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1509 }
+\DoxyCodeLine{1510         }
+\DoxyCodeLine{1511       \textcolor{keywordflow}{if} (r.lt.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1512 }
+\DoxyCodeLine{1513         \textcolor{keyword}{allocate}(momtenit(rts(r+1)))}
+\DoxyCodeLine{1514         \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{1515           nind = indspiprod(0,i,ind,n-\/1)}
+\DoxyCodeLine{1516 }
+\DoxyCodeLine{1517           cnt = mu2+1}
+\DoxyCodeLine{1518           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{1519             pmu = momvec(mu,i)}
+\DoxyCodeLine{1520             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{1521               momtenit(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{1522               cnt = cnt+1}
+\DoxyCodeLine{1523 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1524 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1525 }
+\DoxyCodeLine{1526           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a2043de598d9c295da0e8aaa4b2140ccd}{addtotensortn}}(momtenit,nind,r+1)}
+\DoxyCodeLine{1527 }
+\DoxyCodeLine{1528 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1529 }
+\DoxyCodeLine{1530 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1531 }
+\DoxyCodeLine{1532     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_a2043de598d9c295da0e8aaa4b2140ccd}{addtotensortn}}}
+\DoxyCodeLine{1533 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebuildtensors_ab1394e89c4c4c530deb2f7a194ee2c76}\label{namespacebuildtensors_ab1394e89c4c4c530deb2f7a194ee2c76}} 
+\index{buildtensors@{buildtensors}!calctensortnuv\_list@{calctensortnuv\_list}}
+\index{calctensortnuv\_list@{calctensortnuv\_list}!buildtensors@{buildtensors}}
+\doxysubsubsection{\texorpdfstring{calctensortnuv\_list()}{calctensortnuv\_list()}}
+{\footnotesize\ttfamily subroutine buildtensors\+::calctensortnuv\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Nuv,  }\item[{double complex, dimension(binomtable(rmax-\/2$\ast$n+4,max(rmax-\/n+2,0)),n-\/2\+:rmax/2,2$\ast$n-\/4\+:rmax), intent(in)}]{Coefs\+Nuv,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1586 of file Build\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1586 }
+\DoxyCodeLine{1587     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax}
+\DoxyCodeLine{1588     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1)}
+\DoxyCodeLine{1589     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: CoefsNuv(BinomTable(rmax-\/2*N+4,max(rmax-\/N+2,0)),N-\/2:rmax/2,2*N-\/4:rmax)}
+\DoxyCodeLine{1590     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TNuv(RtS(rmax)) }
+\DoxyCodeLine{1591     \textcolor{keywordtype}{double complex} :: MomTen(5), CN, Pmu}
+\DoxyCodeLine{1592     \textcolor{keywordtype}{integer} :: IndsCoef(5),mu1,mu2,nsum,mu,nu,ind,a,cnt,r,n0,i}
+\DoxyCodeLine{1593 }
+\DoxyCodeLine{1594 }
+\DoxyCodeLine{1595     tnuv = 0d0}
+\DoxyCodeLine{1596     tnuv(rts(2*n-\/5)+1) = coefsnuv(1,n-\/2,2*n-\/4)}
+\DoxyCodeLine{1597 }
+\DoxyCodeLine{1598     \textcolor{keywordflow}{do} nsum=max(n-\/2,1),rmax/2}
+\DoxyCodeLine{1599       cn = coefsnuv(1,nsum,2*nsum)}
+\DoxyCodeLine{1600       }
+\DoxyCodeLine{1601       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1602         tnuv(addgtab(1,nu)) = tnuv(addgtab(1,nu)) + cn*cftab(1,nu)}
+\DoxyCodeLine{1603 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1604 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1605 }
+\DoxyCodeLine{1606         }
+\DoxyCodeLine{1607     \textcolor{keywordflow}{if} (rmax.gt.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1608 }
+\DoxyCodeLine{1609       \textcolor{keywordflow}{do} ind=1,n-\/1}
+\DoxyCodeLine{1610         momten(2:5) = momvec(0:3,ind)}
+\DoxyCodeLine{1611         \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a92d726665618c51b5f6048d00d741458}{addtotensortnuv}}(momten,ind,1)}
+\DoxyCodeLine{1612 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1613 }
+\DoxyCodeLine{1614 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1615 }
+\DoxyCodeLine{1616   }
+\DoxyCodeLine{1617 }
+\DoxyCodeLine{1618     \textcolor{keyword}{contains}}
+\DoxyCodeLine{1619 }
+\DoxyCodeLine{1620     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1621     \textcolor{comment}{!  subroutine AddToTensorTNuv}}
+\DoxyCodeLine{1622     \textcolor{comment}{!}}
+\DoxyCodeLine{1623     \textcolor{comment}{!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}}
+\DoxyCodeLine{1624 }
+\DoxyCodeLine{1625     \textcolor{keywordtype}{recursive} \textcolor{keyword}{subroutine }\mbox{\hyperlink{BuildTensors_8F90_a92d726665618c51b5f6048d00d741458}{addtotensortnuv}}(MomTenRec,ind,r)}
+\DoxyCodeLine{1626 }
+\DoxyCodeLine{1627       \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: r,ind}
+\DoxyCodeLine{1628       \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomTenRec(RtS(r))}
+\DoxyCodeLine{1629       \textcolor{keywordtype}{double complex} :: MomTen(RtS(r+1)), CN, Pmu}
+\DoxyCodeLine{1630       \textcolor{keywordtype}{integer} :: mu1,mu2,nsum,mu,nu,i,a,cnt,nind}
+\DoxyCodeLine{1631       \textcolor{keywordtype}{double precision} :: CNmax }
+\DoxyCodeLine{1632 }
+\DoxyCodeLine{1633       mu1 = rts(r-\/1)+1}
+\DoxyCodeLine{1634       mu2 = rts(r)}
+\DoxyCodeLine{1635 }
+\DoxyCodeLine{1636       \textcolor{keywordflow}{if} (n.le.2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1637         cn = coefsnuv(ind,0,r)}
+\DoxyCodeLine{1638         tnuv(mu1:mu2) = tnuv(mu1:mu2) + cn*momtenrec(mu1:mu2)}
+\DoxyCodeLine{1639 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1640 }
+\DoxyCodeLine{1641       \textcolor{keywordflow}{do} nsum=max(n-\/2,1),(rmax-\/r)/2}
+\DoxyCodeLine{1642         cn = coefsnuv(ind,nsum,r+2*nsum)}
+\DoxyCodeLine{1643       }
+\DoxyCodeLine{1644         \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{1645           \textcolor{keywordflow}{do} mu=mu1,mu2}
+\DoxyCodeLine{1646             tnuv(addgtab(mu,nu)) = tnuv(addgtab(mu,nu))  \&}
+\DoxyCodeLine{1647                                  + cn*momtenrec(mu)*cftab(mu,nu)}
+\DoxyCodeLine{1648 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1649 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1650 }
+\DoxyCodeLine{1651 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1652 }
+\DoxyCodeLine{1653         }
+\DoxyCodeLine{1654       \textcolor{keywordflow}{if} (r.lt.rmax-\/2*n+4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1655 }
+\DoxyCodeLine{1656         \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{1657           nind = indspiprod(0,i,ind,n-\/1)}
+\DoxyCodeLine{1658 }
+\DoxyCodeLine{1659           cnt = mu2+1}
+\DoxyCodeLine{1660           \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{1661             pmu = momvec(mu,i)}
+\DoxyCodeLine{1662             \textcolor{keywordflow}{do} a = mu2-\/binomtable(r,r+3-\/mu)+1,mu2}
+\DoxyCodeLine{1663               momten(cnt)=momtenrec(a)*pmu}
+\DoxyCodeLine{1664               cnt = cnt+1}
+\DoxyCodeLine{1665 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1666 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1667 }
+\DoxyCodeLine{1668           \textcolor{keyword}{call }\mbox{\hyperlink{BuildTensors_8F90_a92d726665618c51b5f6048d00d741458}{addtotensortnuv}}(momten,nind,r+1)}
+\DoxyCodeLine{1669 }
+\DoxyCodeLine{1670 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1671 }
+\DoxyCodeLine{1672 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1673 }
+\DoxyCodeLine{1674     \textcolor{keyword}{end subroutine }\mbox{\hyperlink{BuildTensors_8F90_a92d726665618c51b5f6048d00d741458}{addtotensortnuv}}}
+\DoxyCodeLine{1675 }
+
+\end{DoxyCode}

@@ -112,7 +112,7 @@ Definition at line 3139 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3145        qcdb1= 102.d0-\/38.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
 \DoxyCodeLine{3146        qcdb2= 0.5d0*(2857.d0-\/5033.d0/9.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}+325.d0/27.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}})}
 \DoxyCodeLine{3147        qcda= 2.d0*log(rs/x)}
-\DoxyCodeLine{3148        \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}-\/(4.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
+\DoxyCodeLine{3148        \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}-\/(4.d0*pi/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
 \DoxyCodeLine{3149      \textcolor{preprocessor}{\#             log(qcda)+(qcdb1/qcdb0**2/qcda)**2*((log(qcda)-\/}}
 \DoxyCodeLine{3150 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#             0.5d0)**2+qcdb2*qcdb0/qcdb1**2-\/5.d0/4.d0)))}}
 \DoxyCodeLine{3151 \textcolor{preprocessor}{}       \textcolor{keywordflow}{RETURN}}
@@ -198,7 +198,7 @@ Definition at line 3035 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3100         qcdb2= 0.5d0*(2857.d0-\/5033.d0/9.d0*nfe+325.d0/27.d0*nfe*nfe)}
 \DoxyCodeLine{3101         qcda= 2.d0*log(rs/qcdl)}
 \DoxyCodeLine{3102 *}
-\DoxyCodeLine{3103         \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}= 4.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
+\DoxyCodeLine{3103         \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}= 4.d0*pi/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
 \DoxyCodeLine{3104      \textcolor{preprocessor}{\#           log(qcda)+(qcdb1/qcdb0**2/qcda)**2*((log(qcda)-\/}}
 \DoxyCodeLine{3105 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#           0.5d0)**2+qcdb2*qcdb0/qcdb1**2-\/5.d0/4.d0))}}
 \DoxyCodeLine{3106 \textcolor{preprocessor}{}*}
@@ -279,18 +279,18 @@ Definition at line 3157 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3171 \textcolor{comment}{*}}
 \DoxyCodeLine{3172       scal2= scal*scal}
 \DoxyCodeLine{3173       alsr= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})}
-\DoxyCodeLine{3174       aexps= alsr/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3174       aexps= alsr/pi}
 \DoxyCodeLine{3175 \textcolor{comment}{*}}
 \DoxyCodeLine{3176 \textcolor{comment}{*-\/-\/-\/-\/-\/COMPUTES THE RUNNING CHARM MASS}}
 \DoxyCodeLine{3177 \textcolor{comment}{*}}
 \DoxyCodeLine{3178       scal1g= 1.d0}
-\DoxyCodeLine{3179       als1g= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal1g,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
-\DoxyCodeLine{3180       alsc4= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},\mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3179       als1g= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal1g,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/pi}
+\DoxyCodeLine{3180       alsc4= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},\mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/pi}
 \DoxyCodeLine{3181       alsc42= alsc4*alsc4}
 \DoxyCodeLine{3182       als1g2= als1g*als1g}
-\DoxyCodeLine{3183       alsb= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},\mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{mbq}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3183       alsb= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},\mbox{\hyperlink{namespacehto__masses_ae84fedb64396d70d6493178ea4393e27}{mbq}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/pi}
 \DoxyCodeLine{3184       alsb2= alsb*alsb}
-\DoxyCodeLine{3185       alsz= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{3185       alsz= \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\_ralphas}}(\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},scal,\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}})/pi}
 \DoxyCodeLine{3186       alsz2= alsz*alsz}
 \DoxyCodeLine{3187 \textcolor{comment}{*}}
 \DoxyCodeLine{3188 \textcolor{comment}{*-\/-\/-\/-\/-\/FIRST THE RUNNING OF THE S-\/QUARK MASS}}
@@ -386,8 +386,8 @@ Definition at line 3157 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3278      \#      asldf+0.5d0*cfm15*cfm15*asldf*asldf+0.5d0*cfm25*}
 \DoxyCodeLine{3279      \#      (alsz2-\/alsb2))}
 \DoxyCodeLine{3280 \textcolor{comment}{*}}
-\DoxyCodeLine{3281       value(1)= rcqm}
-\DoxyCodeLine{3282       value(2)= rbqm}
+\DoxyCodeLine{3281       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1)= rcqm}
+\DoxyCodeLine{3282       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(2)= rbqm}
 \DoxyCodeLine{3283 \textcolor{comment}{*}}
 \DoxyCodeLine{3284       \textcolor{keywordflow}{RETURN}}
 

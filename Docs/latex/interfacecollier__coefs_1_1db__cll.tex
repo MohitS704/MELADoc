@@ -1,0 +1,220 @@
+\hypertarget{interfacecollier__coefs_1_1db__cll}{}\doxysection{collier\+\_\+coefs\+::db\+\_\+cll Interface Reference}
+\label{interfacecollier__coefs_1_1db__cll}\index{collier\_coefs::db\_cll@{collier\_coefs::db\_cll}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1db__cll_a29cfbb7dbfc63cf1f25138a56bac19ee}{db\+\_\+main\+\_\+cll}} (DB, D\+Buv, p10, m02, m12, rmax, D\+Berr)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1db__cll_aa5ee6c885bb9df773c52f0a761f1a8b9}{db\+\_\+arrays\+\_\+cll}} (DB, D\+Buv, Mom\+Inv, masses2, rmax, D\+Berr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 126 of file collier\+\_\+coefs.\+F90.
+
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacecollier__coefs_1_1db__cll_aa5ee6c885bb9df773c52f0a761f1a8b9}\label{interfacecollier__coefs_1_1db__cll_aa5ee6c885bb9df773c52f0a761f1a8b9}} 
+\index{collier\_coefs::db\_cll@{collier\_coefs::db\_cll}!db\_arrays\_cll@{db\_arrays\_cll}}
+\index{db\_arrays\_cll@{db\_arrays\_cll}!collier\_coefs::db\_cll@{collier\_coefs::db\_cll}}
+\doxysubsubsection{\texorpdfstring{db\_arrays\_cll()}{db\_arrays\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::db\+\_\+cll\+::db\+\_\+arrays\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(out)}]{DB,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(out)}]{D\+Buv,  }\item[{double complex, dimension(1), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:1), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{D\+Berr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5885 of file collier\+\_\+coefs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5885   }
+\DoxyCodeLine{5886     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{5887     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(1), masses2(0:1)}
+\DoxyCodeLine{5888     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: DBuv(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5889     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: DB(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5890     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: DBerr(0:rmax)}
+\DoxyCodeLine{5891     \textcolor{keywordtype}{double precision} :: DBerraux(0:rmax)}
+\DoxyCodeLine{5892     }
+\DoxyCodeLine{5893     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(dberr)) then}
+\DoxyCodeLine{5894       \textcolor{keyword}{call }db\_main\_cll(db,dbuv,mominv(1),masses2(0),masses2(1),rmax,dberr)}
+\DoxyCodeLine{5895     else}
+\DoxyCodeLine{5896       \textcolor{keyword}{call }db\_main\_cll(db,dbuv,mominv(1),masses2(0),masses2(1),rmax,dberraux)}
+\DoxyCodeLine{5897     \textcolor{keyword}{end }if}
+\DoxyCodeLine{5898 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__coefs_1_1db__cll_a29cfbb7dbfc63cf1f25138a56bac19ee}\label{interfacecollier__coefs_1_1db__cll_a29cfbb7dbfc63cf1f25138a56bac19ee}} 
+\index{collier\_coefs::db\_cll@{collier\_coefs::db\_cll}!db\_main\_cll@{db\_main\_cll}}
+\index{db\_main\_cll@{db\_main\_cll}!collier\_coefs::db\_cll@{collier\_coefs::db\_cll}}
+\doxysubsubsection{\texorpdfstring{db\_main\_cll()}{db\_main\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::db\+\_\+cll\+::db\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(out)}]{DB,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax), intent(out)}]{D\+Buv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{D\+Berr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5721 of file collier\+\_\+coefs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5721   }
+\DoxyCodeLine{5722     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{5723     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,m02,m12}
+\DoxyCodeLine{5724     \textcolor{keywordtype}{double precision} :: q10}
+\DoxyCodeLine{5725     \textcolor{keywordtype}{double complex} :: mm02,mm12}
+\DoxyCodeLine{5726     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: DBuv(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5727     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: DB(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5728     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: DBerr(0:rmax)}
+\DoxyCodeLine{5729     \textcolor{keywordtype}{double precision} :: DBerraux(0:rmax),DBdiff(0:rmax)}
+\DoxyCodeLine{5730     \textcolor{keywordtype}{double complex} :: DB2uv(0:rmax/2,0:rmax), DB2(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5731     \textcolor{keywordtype}{double complex} :: DBcoliuv(0:rmax/2,0:rmax) }
+\DoxyCodeLine{5732     \textcolor{keywordtype}{double complex} :: DBcoli(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5733     \textcolor{keywordtype}{double complex} :: DB0dd,DB1dd}
+\DoxyCodeLine{5734     \textcolor{keywordtype}{double complex} :: args(3)}
+\DoxyCodeLine{5735     \textcolor{keywordtype}{double complex} :: DBdduv(0:rmax,0:rmax)}
+\DoxyCodeLine{5736     \textcolor{keywordtype}{double complex} :: DBdd(0:rmax,0:rmax)}
+\DoxyCodeLine{5737     \textcolor{keywordtype}{double precision} :: accrelDD(0:rmax\_DD),accabsDD(0:rmax\_DD)}
+\DoxyCodeLine{5738     \textcolor{keywordtype}{double precision} :: accrel2DD(0:rmax\_DD),accabs2DD(0:rmax\_DD)}
+\DoxyCodeLine{5739     \textcolor{keywordtype}{double precision} :: DBacc(0:rmax),DBacc2(0:rmax),norm,norm\_coli,norm\_dd}
+\DoxyCodeLine{5740     \textcolor{keywordtype}{integer} :: accflagDD,errflagDD,NDD,rankDD}
+\DoxyCodeLine{5741     \textcolor{keywordtype}{integer} :: n0,rank,errflag,i0,i1,n}
+\DoxyCodeLine{5742     \textcolor{keywordtype}{logical} :: flag = .true.,eflag}
+\DoxyCodeLine{5743 }
+\DoxyCodeLine{5744 \textcolor{comment}{!    write(*,*) 'DB\_main in',p10,m02,m12,rmax}}
+\DoxyCodeLine{5745 }
+\DoxyCodeLine{5746     \textcolor{comment}{! set ID of master call}}
+\DoxyCodeLine{5747     args(1) = p10}
+\DoxyCodeLine{5748     args(2) = m02}
+\DoxyCodeLine{5749     args(3) = m12}
+\DoxyCodeLine{5750     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'DB\_cll'})}
+\DoxyCodeLine{5751     \textcolor{keyword}{call }setmastern\_cll(2)}
+\DoxyCodeLine{5752     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
+\DoxyCodeLine{5753     \textcolor{keyword}{call }setmasterargs\_cll(3,args)}
+\DoxyCodeLine{5754 }
+\DoxyCodeLine{5755     \textcolor{keywordflow}{select case} (mode\_cll)}
+\DoxyCodeLine{5756 }
+\DoxyCodeLine{5757       \textcolor{keywordflow}{case} (1)}
+\DoxyCodeLine{5758         \textcolor{comment}{! calculate loop integral using}}
+\DoxyCodeLine{5759         \textcolor{comment}{! COLI implementation by AD/LH}}
+\DoxyCodeLine{5760 }
+\DoxyCodeLine{5761         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(dberr)) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{5762           \textcolor{keyword}{call }calcdb(dbcoli,dbcoliuv,p10,m02,m12,rmax,0,dberr)}
+\DoxyCodeLine{5763         else}
+\DoxyCodeLine{5764           \textcolor{keyword}{call }calcdb(dbcoli,dbcoliuv,p10,m02,m12,rmax,0,dberraux)}
+\DoxyCodeLine{5765         \textcolor{keyword}{end }if}
+\DoxyCodeLine{5766         db(0:rmax/2,0:rmax) = dbcoli(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5767         dbuv(0:rmax/2,0:rmax) = dbcoliuv(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5768 }
+\DoxyCodeLine{5769       \textcolor{keywordflow}{case} (2)}
+\DoxyCodeLine{5770         \textcolor{comment}{! calculate loop integral using}}
+\DoxyCodeLine{5771         \textcolor{comment}{! DD implementation by SD}}
+\DoxyCodeLine{5772 }
+\DoxyCodeLine{5773         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
+\DoxyCodeLine{5774         q10 = dreal(getminf2dd\_cll(p10))}
+\DoxyCodeLine{5775         mm02 = getminf2dd\_cll(m02)}
+\DoxyCodeLine{5776         mm12 = getminf2dd\_cll(m12)}
+\DoxyCodeLine{5777 }
+\DoxyCodeLine{5778         rank = rmax}
+\DoxyCodeLine{5779 }
+\DoxyCodeLine{5780         \textcolor{comment}{! use\_cache\_system=.false.}}
+\DoxyCodeLine{5781         \textcolor{keyword}{call }db\_dd(dbdd,dbdduv,q10,mm02,mm12,rank)}
+\DoxyCodeLine{5782         \textcolor{comment}{! use\_cache\_system=use\_cache\_system\_save}}
+\DoxyCodeLine{5783 }
+\DoxyCodeLine{5784         db(0:rank/2,0:rank) = dbdd(0:rank/2,0:rank)}
+\DoxyCodeLine{5785         dbuv(0:rank/2,0:rank) = dbdduv(0:rank/2,0:rank)}
+\DoxyCodeLine{5786 }
+\DoxyCodeLine{5787       \textcolor{keywordflow}{case} (3)}
+\DoxyCodeLine{5788         \textcolor{comment}{! cross-\/check mode}}
+\DoxyCodeLine{5789         \textcolor{comment}{! compare results for loop integral}}
+\DoxyCodeLine{5790         \textcolor{comment}{! from COLI implementation by AD/LH and}}
+\DoxyCodeLine{5791         \textcolor{comment}{! from DD implementation by SD}}
+\DoxyCodeLine{5792 }
+\DoxyCodeLine{5793         \textcolor{comment}{! calculate loop integral using COLI}}
+\DoxyCodeLine{5794         \textcolor{keyword}{call }calcdb(dbcoli,dbcoliuv,p10,m02,m12,rmax,0,dberraux)}
+\DoxyCodeLine{5795         db(0:rmax/2,0:rmax) = dbcoli(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5796         dbuv(0:rmax/2,0:rmax) = dbcoliuv(0:rmax/2,0:rmax)}
+\DoxyCodeLine{5797 }
+\DoxyCodeLine{5798         \textcolor{comment}{! calculate loop integral using DD}}
+\DoxyCodeLine{5799 }
+\DoxyCodeLine{5800         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
+\DoxyCodeLine{5801         q10 = dreal(getminf2dd\_cll(p10))}
+\DoxyCodeLine{5802         mm02 = getminf2dd\_cll(m02)}
+\DoxyCodeLine{5803         mm12 = getminf2dd\_cll(m12)}
+\DoxyCodeLine{5804 }
+\DoxyCodeLine{5805         rank = rmax}
+\DoxyCodeLine{5806 }
+\DoxyCodeLine{5807         \textcolor{comment}{! use\_cache\_system=.false.}}
+\DoxyCodeLine{5808         \textcolor{keyword}{call }db\_dd(dbdd,dbdduv,q10,mm02,mm12,rank)}
+\DoxyCodeLine{5809         \textcolor{comment}{! use\_cache\_system=use\_cache\_system\_save}}
+\DoxyCodeLine{5810 }
+\DoxyCodeLine{5811         db2(0:rank/2,0:rank) = dbdd(0:rank/2,0:rank)}
+\DoxyCodeLine{5812         db2uv(0:rank/2,0:rank) = dbdduv(0:rank/2,0:rank)}
+\DoxyCodeLine{5813         \textcolor{keyword}{call }ddgetacc(accreldd,accabsdd,accrel2dd,accabs2dd,ndd,rankdd,accflagdd,errflagdd,0)}
+\DoxyCodeLine{5814 }
+\DoxyCodeLine{5815         norm\_coli = maxval(abs(db(0,0:rmax)))         }
+\DoxyCodeLine{5816         norm\_dd = maxval(abs(db2(0,0:rmax)))         }
+\DoxyCodeLine{5817         \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
+\DoxyCodeLine{5818           norm\_coli = max(abs(p10),abs(m02),abs(m12))}
+\DoxyCodeLine{5819           \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
+\DoxyCodeLine{5820             norm\_coli=1d0/norm\_coli}
+\DoxyCodeLine{5821           else}
+\DoxyCodeLine{5822             norm\_coli=1d0/muir2\_cll}
+\DoxyCodeLine{5823 \textcolor{keywordflow}{          end if} }
+\DoxyCodeLine{5824         \textcolor{keyword}{end }if}
+\DoxyCodeLine{5825         \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
+\DoxyCodeLine{5826           norm\_dd = max(abs(p10),abs(m02),abs(m12))}
+\DoxyCodeLine{5827           \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
+\DoxyCodeLine{5828             norm\_dd=1d0/norm\_dd}
+\DoxyCodeLine{5829           else}
+\DoxyCodeLine{5830             norm\_dd=1d0/muir2\_cll}
+\DoxyCodeLine{5831 \textcolor{keywordflow}{          end if} }
+\DoxyCodeLine{5832         \textcolor{keyword}{end }if}
+\DoxyCodeLine{5833         norm = min(norm\_coli,norm\_dd)}
+\DoxyCodeLine{5834 }
+\DoxyCodeLine{5835         \textcolor{comment}{! cross-\/check}}
+\DoxyCodeLine{5836         \textcolor{keyword}{call }checkcoefsdb\_cll(db,db2,p10,m02,m12,rank,norm,dbdiff)}
+\DoxyCodeLine{5837 }
+\DoxyCodeLine{5838         \textcolor{keywordflow}{if} (dberraux(rmax).lt.accabsdd(rmax)) then}
+\DoxyCodeLine{5839           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(dberr))  dberr = max(dberraux,dbdiff)}
+\DoxyCodeLine{5840           dbacc = max(dberraux/norm\_coli,dbdiff/norm)}
+\DoxyCodeLine{5841           \textcolor{keywordflow}{if} (monitoring) pointscntdb\_coli =  pointscntdb\_coli + 1}
+\DoxyCodeLine{5842         else}
+\DoxyCodeLine{5843           db = db2}
+\DoxyCodeLine{5844           dbuv = db2uv}
+\DoxyCodeLine{5845           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(dberr))  dberr = max(accabsdd(0:rmax),dbdiff)}
+\DoxyCodeLine{5846           dbacc = max(accabsdd(0:rmax)/norm\_dd,dbdiff/norm)}
+\DoxyCodeLine{5847           \textcolor{keywordflow}{if} (monitoring) pointscntdb\_dd =  pointscntdb\_dd + 1}
+\DoxyCodeLine{5848         \textcolor{keyword}{end }if}
+\DoxyCodeLine{5849 }
+\DoxyCodeLine{5850         \textcolor{keyword}{call }propagateaccflag\_cll(dbacc,rmax)}
+\DoxyCodeLine{5851  }
+\DoxyCodeLine{5852     \textcolor{keyword}{end }select}
+\DoxyCodeLine{5853 }
+\DoxyCodeLine{5854     \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{5855 }
+\DoxyCodeLine{5856     \textcolor{keywordflow}{if} (monitoring) then}
+\DoxyCodeLine{5857       pointscntdb\_cll =  pointscntdb\_cll + 1}
+\DoxyCodeLine{5858 }
+\DoxyCodeLine{5859       \textcolor{keywordflow}{if}(maxval(dbacc).gt.reqacc\_cll) accpointscntdb\_cll =  accpointscntdb\_cll + 1}
+\DoxyCodeLine{5860 }
+\DoxyCodeLine{5861       \textcolor{keywordflow}{if}(maxval(dbacc).gt.critacc\_cll) then}
+\DoxyCodeLine{5862         critpointscntdb\_cll =  critpointscntdb\_cll + 1}
+\DoxyCodeLine{5863         \textcolor{keywordflow}{if} ( critpointscntdb\_cll.le.noutcritpointsmaxdb\_cll ) then}
+\DoxyCodeLine{5864           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'DB\_cll'},0,maxval(dbacc), critpointscntdb\_cll)}
+\DoxyCodeLine{5865           \textcolor{keywordflow}{if}( critpointscntdb\_cll.eq.noutcritpointsmaxdb\_cll) then}
+\DoxyCodeLine{5866             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for DB\_cll suppressed '}   }
+\DoxyCodeLine{5867             \textcolor{keyword}{write}(ncpout\_cll,*)}
+\DoxyCodeLine{5868           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{5869         \textcolor{keyword}{end }if}
+\DoxyCodeLine{5870       \textcolor{keyword}{end }if}
+\DoxyCodeLine{5871 }
+\DoxyCodeLine{5872     \textcolor{keyword}{end }if}
+\DoxyCodeLine{5873 }
+\DoxyCodeLine{5874 }
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__coefs_8F90}{collier\+\_\+coefs.\+F90}}\end{DoxyCompactItemize}

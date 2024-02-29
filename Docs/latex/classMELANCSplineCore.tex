@@ -81,9 +81,9 @@ virtual Double\+\_\+t \mbox{\hyperlink{classMELANCSplineCore_a4152f834a8dde69a8f
 \item 
 virtual void \mbox{\hyperlink{classMELANCSplineCore_a6dbd8202aa9824505fbfa7770967d676}{empty\+Fcn\+List}} ()=0
 \item 
-void \mbox{\hyperlink{classMELANCSplineCore_a3c73be7bda1af9d7cf4dd6e113e11fd3}{get\+Leaf\+Dependents}} (Roo\+Real\+Proxy \&proxy, Roo\+Arg\+Set \&set)
+void \mbox{\hyperlink{classMELANCSplineCore_a3c73be7bda1af9d7cf4dd6e113e11fd3}{get\+Leaf\+Dependents}} (Roo\+Real\+Proxy \&proxy, Roo\+Arg\+Set \&\mbox{\hyperlink{CMakeLists_8txt_a66043042eda3597c420d3bbc9afdddc3}{set}})
 \item 
-void \mbox{\hyperlink{classMELANCSplineCore_a70433d5860a7e332db2239bf5bb86d2d}{add\+Leaf\+Dependents}} (Roo\+Arg\+Set \&set)
+void \mbox{\hyperlink{classMELANCSplineCore_a70433d5860a7e332db2239bf5bb86d2d}{add\+Leaf\+Dependents}} (Roo\+Arg\+Set \&\mbox{\hyperlink{CMakeLists_8txt_a66043042eda3597c420d3bbc9afdddc3}{set}})
 \item 
 unsigned int \mbox{\hyperlink{classMELANCSplineCore_ab85b15b7e8b390c9f538f38b6c3f801f}{npointsX}} () const
 \item 
@@ -369,7 +369,7 @@ Definition at line 280 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{280                                                       \{}
-\DoxyCodeLine{281   TIterator* iter = set.createIterator();}
+\DoxyCodeLine{281   TIterator* iter = \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}.createIterator();}
 \DoxyCodeLine{282   RooAbsArg* absarg;}
 \DoxyCodeLine{283   \textcolor{keywordflow}{while} ((absarg = (RooAbsArg*)iter-\/>Next()))\{ \textcolor{keywordflow}{if} (\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(absarg)) \mbox{\hyperlink{classMELANCSplineCore_aafc50217102480214e96d1527f244c27}{leafDepsList}}.add(*absarg); \}}
 \DoxyCodeLine{284   \textcolor{keyword}{delete} iter;}
@@ -746,7 +746,7 @@ Definition at line 275 of file M\+E\+L\+A\+N\+C\+Spline\+Core.\+cc.
 \DoxyCodeLine{275                                                                            \{}
 \DoxyCodeLine{276   RooArgSet deps;}
 \DoxyCodeLine{277   proxy.absArg()-\/>leafNodeServerList(\&deps, 0, \textcolor{keyword}{true});}
-\DoxyCodeLine{278   set.add(deps);}
+\DoxyCodeLine{278   \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}.add(deps);}
 \DoxyCodeLine{279 \}}
 
 \end{DoxyCode}

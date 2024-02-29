@@ -44,7 +44,7 @@ Definition at line 523 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{539          \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{540           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= si*teta}
 \DoxyCodeLine{541          \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{542           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= si*(\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/teta)}
+\DoxyCodeLine{542           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= si*(pi-\/teta)}
 \DoxyCodeLine{543 \textcolor{keywordflow}{         ENDIF}}
 \DoxyCodeLine{544          \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{545         \textcolor{keywordflow}{ELSE} }
@@ -59,16 +59,16 @@ Definition at line 523 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{554        ay= abs(x(2))}
 \DoxyCodeLine{555        \textcolor{keywordflow}{IF}(x(1).eq.0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{556         \textcolor{keywordflow}{IF}(x(2) > 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{557            teta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/2.d0}
+\DoxyCodeLine{557            teta= pi/2.d0}
 \DoxyCodeLine{558         \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{559            teta= -\/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/2.d0}
+\DoxyCodeLine{559            teta= -\/pi/2.d0}
 \DoxyCodeLine{560 \textcolor{keywordflow}{        ENDIF}}
 \DoxyCodeLine{561         ilnx= teta}
 \DoxyCodeLine{562        \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(x(2).eq.0.d0) \textcolor{keywordflow}{THEN} }
 \DoxyCodeLine{563         \textcolor{keywordflow}{IF}(x(1) > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{564          teta= 0.d0}
 \DoxyCodeLine{565         \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{566          teta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{566          teta= pi}
 \DoxyCodeLine{567 \textcolor{keywordflow}{        ENDIF}}
 \DoxyCodeLine{568         ilnx= teta}
 \DoxyCodeLine{569        \textcolor{keywordflow}{ELSE}}
@@ -79,7 +79,7 @@ Definition at line 523 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{574         \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{575          ilnx= si*teta}
 \DoxyCodeLine{576         \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{577          ilnx= si*(\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/teta)}
+\DoxyCodeLine{577          ilnx= si*(pi-\/teta)}
 \DoxyCodeLine{578 \textcolor{keywordflow}{        ENDIF}}
 \DoxyCodeLine{579 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{580 *}
@@ -89,7 +89,7 @@ Definition at line 523 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{584      \textcolor{preprocessor}{\#      (x(2) < 0.d0.and.y(2) < 0)) THEN}}
 \DoxyCodeLine{585 \textcolor{preprocessor}{}          \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx}
 \DoxyCodeLine{586          \textcolor{keywordflow}{ELSEIF}(x(2) > 0.d0.and.y(2) < 0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{587           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx-\/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{587           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx-\/pi}
 \DoxyCodeLine{588          \textcolor{keywordflow}{ELSE}}
 \DoxyCodeLine{589           print*,\textcolor{stringliteral}{'+++++++++++++++++++++++++++++++++++'}}
 \DoxyCodeLine{590           print*,\textcolor{stringliteral}{' anomaly ln '}}
@@ -107,7 +107,7 @@ Definition at line 523 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{602         \textcolor{keywordflow}{ELSE}}
 \DoxyCodeLine{603 *}
 \DoxyCodeLine{604          \textcolor{keywordflow}{IF}((x(2)*y(2)) < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{605           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx+2.d0*y(2)*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{605           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx+2.d0*y(2)*pi}
 \DoxyCodeLine{606          \textcolor{keywordflow}{ELSE}}
 \DoxyCodeLine{607           \mbox{\hyperlink{namespacehto__ln__2__riemann_a568b4862645d55927d1b4287c88f5bee}{lnsrs}}(2)= ilnx}
 \DoxyCodeLine{608 \textcolor{keywordflow}{         ENDIF}}

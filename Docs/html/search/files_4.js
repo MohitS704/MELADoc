@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['higgstotalwidth_5fyr2_2etxt_4142',['HiggsTotalWidth_YR2.txt',['../HiggsTotalWidth__YR2_8txt.html',1,'']]],
-  ['higgstotalwidth_5fyr3_2etxt_4143',['HiggsTotalWidth_YR3.txt',['../HiggsTotalWidth__YR3_8txt.html',1,'']]]
+  ['getresolution_2ec_5398',['getResolution.c',['../getResolution_8c.html',1,'']]],
+  ['global_5fcoli_2eh_5399',['global_coli.h',['../global__coli_8h.html',1,'']]]
 ];

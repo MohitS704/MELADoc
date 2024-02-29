@@ -252,13 +252,13 @@ Definition at line 290 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{290                                                                                        \{}
-\DoxyCodeLine{291   Double\_t value = \mbox{\hyperlink{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}{interpolateFcn}}(code, rangeName);}
-\DoxyCodeLine{292   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}{useFloor}} \&\& value<\mbox{\hyperlink{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}{floorInt}})\{}
-\DoxyCodeLine{293     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}>=\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}{MELALinearInterpFunc::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELALinearInterpFunc ERROR::MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{") integration returned "} << value << \textcolor{stringliteral}{" for code = "} << code << endl;}
-\DoxyCodeLine{294     value = \mbox{\hyperlink{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}{floorInt}};}
+\DoxyCodeLine{291   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}{interpolateFcn}}(code, rangeName);}
+\DoxyCodeLine{292   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}{floorInt}})\{}
+\DoxyCodeLine{293     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}>=\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}{MELALinearInterpFunc::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELALinearInterpFunc ERROR::MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{") integration returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl;}
+\DoxyCodeLine{294     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELALinearInterpFunc_aa50bca7467686abbcd20ff23cf0c6e33}{floorInt}};}
 \DoxyCodeLine{295   \}}
-\DoxyCodeLine{296   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}})\{ cout << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << value << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
-\DoxyCodeLine{297   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{296   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
+\DoxyCodeLine{297   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
 \DoxyCodeLine{298 \}}
 
 \end{DoxyCode}
@@ -327,13 +327,13 @@ Definition at line 222 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{222                                             \{}
-\DoxyCodeLine{223   Double\_t value = \mbox{\hyperlink{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}{interpolateFcn}}(0);}
-\DoxyCodeLine{224   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}{useFloor}} \&\& value<\mbox{\hyperlink{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}{floorEval}})\{}
-\DoxyCodeLine{225     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}>=\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}{MELALinearInterpFunc::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELALinearInterpFunc ERROR::MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << value << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}{theXVar}} << endl;}
-\DoxyCodeLine{226     value = \mbox{\hyperlink{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}{floorEval}};}
+\DoxyCodeLine{223   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELALinearInterpFunc_a64c098b9693a3f095a9384a31e01970d}{interpolateFcn}}(0);}
+\DoxyCodeLine{224   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_a563764d6a63a6e04dc9d796f79d0bf1c}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}{floorEval}})\{}
+\DoxyCodeLine{225     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}>=\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd}{MELALinearInterpFunc::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELALinearInterpFunc ERROR::MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}{theXVar}} << endl;}
+\DoxyCodeLine{226     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELALinearInterpFunc_a4436c39502b948c4187b6fe7829f264c}{floorEval}};}
 \DoxyCodeLine{227   \}}
-\DoxyCodeLine{228   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}})\{ cout << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << value << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}{theXVar}} << endl; \}}
-\DoxyCodeLine{229   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{228   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELALinearInterpFunc_af5c1bc264b83bfd1bfa0b0def9c0138f}{theXVar}} << endl; \}}
+\DoxyCodeLine{229   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
 \DoxyCodeLine{230 \}}
 
 \end{DoxyCode}
@@ -402,7 +402,7 @@ Definition at line 231 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 \DoxyCodeLine{281 }
 \DoxyCodeLine{282   \textcolor{keywordflow}{if} (code==1) code=0;}
 \DoxyCodeLine{283   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}})\{}
-\DoxyCodeLine{284     cout << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::getAnalyticalIntegral code = "} << code << endl;}
+\DoxyCodeLine{284     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::getAnalyticalIntegral code = "} << code << endl;}
 \DoxyCodeLine{285     allVars.Print(\textcolor{stringliteral}{"v"});}
 \DoxyCodeLine{286     analVars.Print(\textcolor{stringliteral}{"v"});}
 \DoxyCodeLine{287   \}}
@@ -510,8 +510,8 @@ Definition at line 147 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 \DoxyCodeLine{153   \textcolor{keywordflow}{if} (coderem==1) coderem=0;}
 \DoxyCodeLine{154 }
 \DoxyCodeLine{155   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}})\{}
-\DoxyCodeLine{156     \textcolor{keywordflow}{if} (intAlongX) cout << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn integrates using code = "} << code << \textcolor{stringliteral}{", coderem = "} << coderem << endl;}
-\DoxyCodeLine{157     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn evaluates using code = "} << code << \textcolor{stringliteral}{", coderem = "} << coderem << endl;}
+\DoxyCodeLine{156     \textcolor{keywordflow}{if} (intAlongX) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn integrates using code = "} << code << \textcolor{stringliteral}{", coderem = "} << coderem << endl;}
+\DoxyCodeLine{157     \textcolor{keywordflow}{else} \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn evaluates using code = "} << code << \textcolor{stringliteral}{", coderem = "} << coderem << endl;}
 \DoxyCodeLine{158   \}}
 \DoxyCodeLine{159 }
 \DoxyCodeLine{160   \textcolor{comment}{// Get bins}}
@@ -567,7 +567,7 @@ Definition at line 147 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 \DoxyCodeLine{210       \textcolor{keywordflow}{else} segval += (fcnval[1] -\/ fcnval[0])*txhigh;}
 \DoxyCodeLine{211       res += segval;}
 \DoxyCodeLine{212 }
-\DoxyCodeLine{213       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}}) cout}
+\DoxyCodeLine{213       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELALinearInterpFunc_ab4fc90d26e384ce5929394e4cd7f2b8d}{verbosity}}==\mbox{\hyperlink{classMELALinearInterpFunc_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46}{MELALinearInterpFunc::kVerbose}}) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}}}
 \DoxyCodeLine{214         << \textcolor{stringliteral}{"MELALinearInterpFunc("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn evaluated bin "} << ix}
 \DoxyCodeLine{215         << \textcolor{stringliteral}{" with txlow = "} << txlow << \textcolor{stringliteral}{", txhigh = "} << txhigh << \textcolor{stringliteral}{", fcnval[0] = "} << fcnval[0] << \textcolor{stringliteral}{", fcnval[1] = "} << fcnval[1]}
 \DoxyCodeLine{216         << endl;}

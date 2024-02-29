@@ -93,7 +93,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa964188c2116027c391aa525fdd6418c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a> [SIZE_AZff][2]</td></tr>
+<tr class="memitem:aa964188c2116027c391aa525fdd6418c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>][2]</td></tr>
 <tr class="separator:aa964188c2116027c391aa525fdd6418c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -189,7 +189,7 @@ Public Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00473">473</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                                  {</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;SIZE_AZff; ic++) <a class="code" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a>[ic][im] = (other.AZffcoupl)[ic][im];</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>; ic++) <a class="code" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a>[ic][im] = (other.AZffcoupl)[ic][im];</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;  }</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;}</div>
 </div><!-- fragment -->
@@ -233,7 +233,7 @@ Public Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00468">468</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                         {</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic = 0; ic &lt; SIZE_AZff; ic++) <a class="code" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a>[ic][im]=0;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic = 0; ic &lt; <a class="code" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>; ic++) <a class="code" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a>[ic][im]=0;</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  }</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;}</div>
 </div><!-- fragment -->
@@ -273,7 +273,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00480">480</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                                                                                    {</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;  <span class="keywordflow">if</span> (index&gt;=SIZE_AZff){ <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;AZffCouplings::SetAZffCouplings: Cannot set index &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;, out of range for the type requested.&quot;</span> &lt;&lt; endl; }</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;  <span class="keywordflow">if</span> (index&gt;=<a class="code" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>){ <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;AZffCouplings::SetAZffCouplings: Cannot set index &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot;, out of range for the type requested.&quot;</span> &lt;&lt; endl; }</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  <span class="keywordflow">else</span>{</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <a class="code" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a>[index][0] = c_real;</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <a class="code" href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffcoupl</a>[index][1] = c_imag;</div>
@@ -290,7 +290,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double AZffCouplings::AZffcoupl[SIZE_AZff][2]</td>
+          <td class="memname">double AZffCouplings::AZffcoupl[<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -306,6 +306,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aclassAZffCouplings_html_aa964188c2116027c391aa525fdd6418c"><div class="ttname"><a href="classAZffCouplings.html#aa964188c2116027c391aa525fdd6418c">AZffCouplings::AZffcoupl</a></div><div class="ttdeci">double AZffcoupl[SIZE_AZff][2]</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8hh_source.html#l00155">TCouplings.hh:155</a></div></div>
 <div class="ttc" id="anamespaceMELAStreamHelpers_html_a48e6b604de686a3c2033bdcf75c51f6f"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAStreamHelpers::MELAerr</a></div><div class="ttdeci">MELAOutputStreamer MELAerr</div></div>
+<div class="ttc" id="araw__couplings_8txt_html_a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e"><div class="ttname"><a href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a></div><div class="ttdeci">@ SIZE_AZff</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00194">raw_couplings.txt:194</a></div></div>
 <div class="ttc" id="aclassAZffCouplings_html_a90872cef827cc5b4273c1b9cf69abfb3"><div class="ttname"><a href="classAZffCouplings.html#a90872cef827cc5b4273c1b9cf69abfb3">AZffCouplings::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8cc_source.html#l00468">TCouplings.cc:468</a></div></div>
 <div class="ttc" id="aclassAZffCouplings_html_abac2a1cdde8c27413fbfd9cd27128a1f"><div class="ttname"><a href="classAZffCouplings.html#abac2a1cdde8c27413fbfd9cd27128a1f">AZffCouplings::copy</a></div><div class="ttdeci">void copy(AZffCouplings const &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8cc_source.html#l00473">TCouplings.cc:473</a></div></div>
 <!-- start footer part -->

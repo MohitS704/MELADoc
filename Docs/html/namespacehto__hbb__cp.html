@@ -132,7 +132,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l03629"></a><span class="lineno"> 3629</span>&#160;       <span class="keywordtype">IMPLICIT NONE</span></div>
 <div class="line"><a name="l03630"></a><span class="lineno"> 3630</span>&#160;*</div>
 <div class="line"><a name="l03631"></a><span class="lineno"> 3631</span>&#160;       <span class="keywordtype">INTEGER</span> nc,iz</div>
-<div class="line"><a name="l03632"></a><span class="lineno"> 3632</span>&#160;       real*8 <a class="code" href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_shh</a>,muhr,rgh,muhs,scal,scals,p2,xm0,str,sti,ewc,</div>
+<div class="line"><a name="l03632"></a><span class="lineno"> 3632</span>&#160;       real*8 hto_shh,muhr,rgh,muhs,scal,scals,p2,xm0,str,sti,ewc,</div>
 <div class="line"><a name="l03633"></a><span class="lineno"> 3633</span>&#160;     <span class="preprocessor">#        sconv,asmur,emc,emb,emt,as_NLO,rmbs,rmcs,rmss,</span></div>
 <div class="line"><a name="l03634"></a><span class="lineno"> 3634</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#        crmbs,crmcs,lcxb,lcxc,lcxbs,lcxcs,lclxb,lclxc,qcdtop,neg</span></div>
 <div class="line"><a name="l03635"></a><span class="lineno"> 3635</span>&#160;<span class="preprocessor"></span>       real*8, <span class="keywordtype">dimension(2)</span> :: axm0</div>
@@ -205,7 +205,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l03702"></a><span class="lineno"> 3702</span>&#160;       iz= 1</div>
 <div class="line"><a name="l03703"></a><span class="lineno"> 3703</span>&#160;       <span class="keyword">CALL </span><a class="code" href="CALLING__cpHTO_8f.html#a31bcaa369fd57a5433768e2fea681711">hto_initalphas</a>(iz,<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>,<a class="code" href="namespacehto__masses.html#aa9e6764720e3ea1122ab5a2f0490504b">mz</a>,asmur,emc,emb,emt)</div>
 <div class="line"><a name="l03704"></a><span class="lineno"> 3704</span>&#160;       <a class="code" href="namespacehto__set__phys__const.html#acefe4c64c5ea3e69c7657084878920cb">als</a>= <a class="code" href="CALLING__cpHTO_8f.html#a9e9857c0067d52b705085796b0b73151">hto_alphas</a>(scal)</div>
-<div class="line"><a name="l03705"></a><span class="lineno"> 3705</span>&#160;       as_nlo= <a class="code" href="namespacehto__set__phys__const.html#acefe4c64c5ea3e69c7657084878920cb">als</a>/<a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a></div>
+<div class="line"><a name="l03705"></a><span class="lineno"> 3705</span>&#160;       as_nlo= <a class="code" href="namespacehto__set__phys__const.html#acefe4c64c5ea3e69c7657084878920cb">als</a>/pi</div>
 <div class="line"><a name="l03706"></a><span class="lineno"> 3706</span>&#160;*</div>
 <div class="line"><a name="l03707"></a><span class="lineno"> 3707</span>&#160;       runbc= <a class="code" href="namespacehto__qcd.html#a56727402fd2ceaa1f03af4e6415f8ae8">hto_run_bc</a>(scal)</div>
 <div class="line"><a name="l03708"></a><span class="lineno"> 3708</span>&#160;       crmbs= runbc(2)*runbc(2)</div>
@@ -220,7 +220,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l03717"></a><span class="lineno"> 3717</span>&#160;       lclxc= log(lcxc)</div>
 <div class="line"><a name="l03718"></a><span class="lineno"> 3718</span>&#160;*</div>
 <div class="line"><a name="l03719"></a><span class="lineno"> 3719</span>&#160;       <span class="keywordflow">IF</span>(<a class="code" href="namespacehto__aux__hcp.html#a6736a2a621a3b459df115cbc30feb04b">gtop</a> == 1) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l03720"></a><span class="lineno"> 3720</span>&#160;        <a class="code" href="namespacehto__set__phys__const.html#a3b3f85b2e5be4ddb1064e979abe8eee3">imt</a>= <a class="code" href="namespacehto__set__phys__const.html#adf97d1bf3a663ded7ef686746aaba509">g_f</a>/(8.d0*sqrt(2.d0)*<a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a>)*(<a class="code" href="namespacehto__masses.html#aac88894e5a12f3e2714f96d1e81c710b">mt</a>*<a class="code" href="namespacehto__masses.html#aac88894e5a12f3e2714f96d1e81c710b">mt</a>-<a class="code" href="namespacehto__masses.html#aafa2253852313b2e36a6fe30d95afb88">mw</a>*<a class="code" href="namespacehto__masses.html#aafa2253852313b2e36a6fe30d95afb88">mw</a>)**2*</div>
+<div class="line"><a name="l03720"></a><span class="lineno"> 3720</span>&#160;        <a class="code" href="namespacehto__set__phys__const.html#a3b3f85b2e5be4ddb1064e979abe8eee3">imt</a>= <a class="code" href="namespacehto__set__phys__const.html#adf97d1bf3a663ded7ef686746aaba509">g_f</a>/(8.d0*sqrt(2.d0)*pi)*(<a class="code" href="namespacehto__masses.html#aac88894e5a12f3e2714f96d1e81c710b">mt</a>*<a class="code" href="namespacehto__masses.html#aac88894e5a12f3e2714f96d1e81c710b">mt</a>-<a class="code" href="namespacehto__masses.html#aafa2253852313b2e36a6fe30d95afb88">mw</a>*<a class="code" href="namespacehto__masses.html#aafa2253852313b2e36a6fe30d95afb88">mw</a>)**2*</div>
 <div class="line"><a name="l03721"></a><span class="lineno"> 3721</span>&#160;     <span class="preprocessor">#      (mt*mt+2.d0*mw*mw)/mt**3</span></div>
 <div class="line"><a name="l03722"></a><span class="lineno"> 3722</span>&#160;<span class="preprocessor"></span>       <span class="keywordflow">ELSEIF</span>(<a class="code" href="namespacehto__aux__hcp.html#a6736a2a621a3b459df115cbc30feb04b">gtop</a> == 0) <span class="keywordflow">THEN</span> </div>
 <div class="line"><a name="l03723"></a><span class="lineno"> 3723</span>&#160;        <a class="code" href="namespacehto__set__phys__const.html#a3b3f85b2e5be4ddb1064e979abe8eee3">imt</a>= 0.d0</div>
@@ -243,7 +243,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l03740"></a><span class="lineno"> 3740</span>&#160;       cmxw= -<a class="code" href="namespacehto__aux__hbb.html#a63703586d88022f920dbba65ebfcbf00">cxw</a></div>
 <div class="line"><a name="l03741"></a><span class="lineno"> 3741</span>&#160;*</div>
 <div class="line"><a name="l03742"></a><span class="lineno"> 3742</span>&#160;       clmw= cmxw(1).<a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>.cmxw(2)</div>
-<div class="line"><a name="l03743"></a><span class="lineno"> 3743</span>&#160;       clmw(2)= clmw(2)-2.d0*<a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a></div>
+<div class="line"><a name="l03743"></a><span class="lineno"> 3743</span>&#160;       clmw(2)= clmw(2)-2.d0*pi</div>
 <div class="line"><a name="l03744"></a><span class="lineno"> 3744</span>&#160;*</div>
 <div class="line"><a name="l03745"></a><span class="lineno"> 3745</span>&#160;       sh(1)= muhs/scals</div>
 <div class="line"><a name="l03746"></a><span class="lineno"> 3746</span>&#160;       sh(2)= -muhr*rgh/scals</div>
@@ -569,7 +569,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l04066"></a><span class="lineno"> 4066</span>&#160;*       dw= 0.d0</div>
 <div class="line"><a name="l04067"></a><span class="lineno"> 4067</span>&#160;*</div>
 <div class="line"><a name="l04068"></a><span class="lineno"> 4068</span>&#160;       <span class="keywordflow">IF</span>(<a class="code" href="namespacehto__ferbos.html#a6a817ba29f4cd27ba4ae451c20b0acf1">ifb</a>.eq.0) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l04069"></a><span class="lineno"> 4069</span>&#160;        <a class="code" href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_shh</a>= rgh/muhr*</div>
+<div class="line"><a name="l04069"></a><span class="lineno"> 4069</span>&#160;        hto_shh= rgh/muhr*</div>
 <div class="line"><a name="l04070"></a><span class="lineno"> 4070</span>&#160;     <span class="preprocessor">#       (1.d0+EWC*(swr*DW(1)-swi*DW(2)))</span></div>
 <div class="line"><a name="l04071"></a><span class="lineno"> 4071</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       -EWC*(swr*total(2)+swi*total(1))/sconv</span></div>
 <div class="line"><a name="l04072"></a><span class="lineno"> 4072</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       +as_NLO*g_f/(sqrt(2.d0)*pis)*</span></div>
@@ -577,18 +577,18 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l04074"></a><span class="lineno"> 4074</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       +qcdtop</span></div>
 <div class="line"><a name="l04075"></a><span class="lineno"> 4075</span>&#160;<span class="preprocessor"></span>*</div>
 <div class="line"><a name="l04076"></a><span class="lineno"> 4076</span>&#160;       <span class="keywordflow">ELSEIF</span>(<a class="code" href="namespacehto__ferbos.html#a6a817ba29f4cd27ba4ae451c20b0acf1">ifb</a>.eq.1) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l04077"></a><span class="lineno"> 4077</span>&#160;        <a class="code" href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_shh</a>= rgh/muhr*</div>
+<div class="line"><a name="l04077"></a><span class="lineno"> 4077</span>&#160;        hto_shh= rgh/muhr*</div>
 <div class="line"><a name="l04078"></a><span class="lineno"> 4078</span>&#160;     <span class="preprocessor">#       (1.d0+EWC*(swr*DW(1)-swi*DW(2)))</span></div>
 <div class="line"><a name="l04079"></a><span class="lineno"> 4079</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       -EWC*(swr*totalf(2)+swi*totalf(1))/sconv</span></div>
 <div class="line"><a name="l04080"></a><span class="lineno"> 4080</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       +as_NLO*g_f/(sqrt(2.d0)*pis)*</span></div>
 <div class="line"><a name="l04081"></a><span class="lineno"> 4081</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       (sh(1)*nloqcd(2)+sh(2)*nloqcd(1))/sconv</span></div>
 <div class="line"><a name="l04082"></a><span class="lineno"> 4082</span>&#160;<span class="preprocessor"></span>       <span class="keywordflow">ELSEIF</span>(<a class="code" href="namespacehto__ferbos.html#a6a817ba29f4cd27ba4ae451c20b0acf1">ifb</a>.eq.2) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l04083"></a><span class="lineno"> 4083</span>&#160;        <a class="code" href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_shh</a>= rgh/muhr*</div>
+<div class="line"><a name="l04083"></a><span class="lineno"> 4083</span>&#160;        hto_shh= rgh/muhr*</div>
 <div class="line"><a name="l04084"></a><span class="lineno"> 4084</span>&#160;     <span class="preprocessor">#       (1.d0+EWC*(swr*DW(1)-swi*DW(2)))</span></div>
 <div class="line"><a name="l04085"></a><span class="lineno"> 4085</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       -EWC*(swr*totalt(2)+swi*totalt(1))/sconv</span></div>
 <div class="line"><a name="l04086"></a><span class="lineno"> 4086</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       +qcdtop</span></div>
 <div class="line"><a name="l04087"></a><span class="lineno"> 4087</span>&#160;<span class="preprocessor"></span>       <span class="keywordflow">ELSEIF</span>(<a class="code" href="namespacehto__ferbos.html#a6a817ba29f4cd27ba4ae451c20b0acf1">ifb</a>.eq.3) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l04088"></a><span class="lineno"> 4088</span>&#160;        <a class="code" href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_shh</a>= rgh/muhr*</div>
+<div class="line"><a name="l04088"></a><span class="lineno"> 4088</span>&#160;        hto_shh= rgh/muhr*</div>
 <div class="line"><a name="l04089"></a><span class="lineno"> 4089</span>&#160;     <span class="preprocessor">#       (1.d0+EWC*(swr*DW(1)-swi*DW(2)))</span></div>
 <div class="line"><a name="l04090"></a><span class="lineno"> 4090</span>&#160;<span class="preprocessor"></span>     <span class="preprocessor">#       -EWC*(swr*totalb(2)+swi*totalb(1))/sconv</span></div>
 <div class="line"><a name="l04091"></a><span class="lineno"> 4091</span>&#160;<span class="preprocessor"></span><span class="keywordflow">       ENDIF</span></div>
@@ -621,14 +621,14 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l03593"></a><span class="lineno"> 3593</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l03594"></a><span class="lineno"> 3594</span>&#160;<span class="comment">c I&#39;ve commented the following line and added the other twos (Carlo Oleari)</span></div>
 <div class="line"><a name="l03595"></a><span class="lineno"> 3595</span>&#160;<span class="comment">c      REAL*8 HTO_SSHH,rgh,muc,scalc,x</span></div>
-<div class="line"><a name="l03596"></a><span class="lineno"> 3596</span>&#160;      real*8 <a class="code" href="namespacehto__hbb__cp.html#a8feffc4d9be4bf53bae92ecfbd1c1200">hto_sshh</a>,rgh,muc,scalc</div>
+<div class="line"><a name="l03596"></a><span class="lineno"> 3596</span>&#160;      real*8 hto_sshh,rgh,muc,scalc</div>
 <div class="line"><a name="l03597"></a><span class="lineno"> 3597</span>&#160;      real*8, <span class="keywordtype">INTENT(IN)</span>  :: x</div>
 <div class="line"><a name="l03598"></a><span class="lineno"> 3598</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l03599"></a><span class="lineno"> 3599</span>&#160;      muc= <a class="code" href="namespacehto__aux__hcp.html#ab3f40e3738ae6befd75d6811ce8846f1">muhcp</a></div>
 <div class="line"><a name="l03600"></a><span class="lineno"> 3600</span>&#160;      scalc= <a class="code" href="namespacehto__aux__hcp.html#aa11378073105ae2f60600fde51820c2f">scalec</a></div>
 <div class="line"><a name="l03601"></a><span class="lineno"> 3601</span>&#160;      rgh= x*muc</div>
 <div class="line"><a name="l03602"></a><span class="lineno"> 3602</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l03603"></a><span class="lineno"> 3603</span>&#160;      <a class="code" href="namespacehto__hbb__cp.html#a8feffc4d9be4bf53bae92ecfbd1c1200">hto_sshh</a>= <a class="code" href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_shh</a>(muc,scalc,rgh)</div>
+<div class="line"><a name="l03603"></a><span class="lineno"> 3603</span>&#160;      hto_sshh= hto_shh(muc,scalc,rgh)</div>
 <div class="line"><a name="l03604"></a><span class="lineno"> 3604</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l03605"></a><span class="lineno"> 3605</span>&#160;      <span class="keywordflow">RETURN</span></div>
 </div><!-- fragment -->
@@ -654,8 +654,6 @@ Functions/Subroutines</h2></td></tr>
 <div class="ttc" id="anamespacehto__acmplx__rat_html_a9770f30fb38b57026940da117162759f"><div class="ttname"><a href="namespacehto__acmplx__rat.html#a9770f30fb38b57026940da117162759f">hto_acmplx_rat::cq</a></div><div class="ttdeci">real *8 function, dimension(2) cq(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00298">CALLING_cpHTO.f:298</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_adabd59fa28ad6f5d2f172ecb70d7d7f0"><div class="ttname"><a href="namespacehto__units.html#adabd59fa28ad6f5d2f172ecb70d7d7f0">hto_units::co</a></div><div class="ttdeci">real *8, dimension(1:2) co</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00188">CALLING_cpHTO.f:188</a></div></div>
 <div class="ttc" id="anamespacehto__set__phys__const_html_adf97d1bf3a663ded7ef686746aaba509"><div class="ttname"><a href="namespacehto__set__phys__const.html#adf97d1bf3a663ded7ef686746aaba509">hto_set_phys_const::g_f</a></div><div class="ttdeci">real *8 g_f</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00240">CALLING_cpHTO.f:240</a></div></div>
-<div class="ttc" id="anamespacehto__hbb__cp_html_a8feffc4d9be4bf53bae92ecfbd1c1200"><div class="ttname"><a href="namespacehto__hbb__cp.html#a8feffc4d9be4bf53bae92ecfbd1c1200">hto_hbb_cp::hto_sshh</a></div><div class="ttdeci">real *8 function hto_sshh(x)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l03590">CALLING_cpHTO.f:3590</a></div></div>
-<div class="ttc" id="anamespacehto__riemann_html_aa29c661c983363871ad0d454f9f954cd"><div class="ttname"><a href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">hto_riemann::pi</a></div><div class="ttdeci">real *8, parameter pi</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00196">CALLING_cpHTO.f:196</a></div></div>
 <div class="ttc" id="anamespacehto__aux__hcp_html_a75b7fb9e7b7ce39379f2e255bdff0d84"><div class="ttname"><a href="namespacehto__aux__hcp.html#a75b7fb9e7b7ce39379f2e255bdff0d84">hto_aux_hcp::cxmu</a></div><div class="ttdeci">real *8 cxmu</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00062">CALLING_cpHTO.f:62</a></div></div>
 <div class="ttc" id="anamespacehto__acmplx__rat_html"><div class="ttname"><a href="namespacehto__acmplx__rat.html">hto_acmplx_rat</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00292">CALLING_cpHTO.f:292</a></div></div>
 <div class="ttc" id="anamespacehto__masses_html_a3684febfe1693403a850a784be51abda"><div class="ttname"><a href="namespacehto__masses.html#a3684febfe1693403a850a784be51abda">hto_masses::msq</a></div><div class="ttdeci">real *8, parameter msq</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00083">CALLING_cpHTO.f:83</a></div></div>
@@ -665,7 +663,6 @@ Functions/Subroutines</h2></td></tr>
 <div class="ttc" id="anamespacehto__ln__2__riemann_html"><div class="ttname"><a href="namespacehto__ln__2__riemann.html">hto_ln_2_riemann</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00517">CALLING_cpHTO.f:517</a></div></div>
 <div class="ttc" id="anamespacehto__asinp_html"><div class="ttname"><a href="namespacehto__asinp.html">hto_asinp</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l02061">CALLING_cpHTO.f:2061</a></div></div>
 <div class="ttc" id="anamespacehto__aux__hcp_html_a3b22c63ad9da5cf620cb0df47e944f59"><div class="ttname"><a href="namespacehto__aux__hcp.html#a3b22c63ad9da5cf620cb0df47e944f59">hto_aux_hcp::cxs</a></div><div class="ttdeci">real *8 cxs</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00062">CALLING_cpHTO.f:62</a></div></div>
-<div class="ttc" id="anamespacehto__hbb__cp_html_acfe90cf9010d4a290c824991a0f12400"><div class="ttname"><a href="namespacehto__hbb__cp.html#acfe90cf9010d4a290c824991a0f12400">hto_hbb_cp::hto_shh</a></div><div class="ttdeci">real *8 function hto_shh(muhr, scal, rgh)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l03611">CALLING_cpHTO.f:3611</a></div></div>
 <div class="ttc" id="anamespacehto__masses_html_a9e5ce64eba03ac7c2469fa572ef29570"><div class="ttname"><a href="namespacehto__masses.html#a9e5ce64eba03ac7c2469fa572ef29570">hto_masses::swi</a></div><div class="ttdeci">real *8, parameter swi</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00090">CALLING_cpHTO.f:90</a></div></div>
 <div class="ttc" id="anamespacehto__masses_html_a423bd562e9f1848ef84bec5cc67485bc"><div class="ttname"><a href="namespacehto__masses.html#a423bd562e9f1848ef84bec5cc67485bc">hto_masses::muq</a></div><div class="ttdeci">real *8, parameter muq</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00080">CALLING_cpHTO.f:80</a></div></div>
 <div class="ttc" id="anamespacehto__aux__hcp_html"><div class="ttname"><a href="namespacehto__aux__hcp.html">hto_aux_hcp</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00060">CALLING_cpHTO.f:60</a></div></div>

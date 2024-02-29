@@ -137,7 +137,7 @@ Definition at line 228 of file get\+Resolution.\+c.
 \DoxyCodeLine{241         )\{}
 \DoxyCodeLine{242         \textcolor{keywordflow}{if} (weight\_entry.at(bin).first==0.) cerr << \textcolor{stringliteral}{"Weight=0!"} << endl;}
 \DoxyCodeLine{243         \mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.at(weight\_entry.at(bin).second).weight = pow(threshold, 2)/weight\_entry.at(bin).first;}
-\DoxyCodeLine{244         cout << \textcolor{stringliteral}{"Adjusting weight for event "} << bin << endl;}
+\DoxyCodeLine{244         \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Adjusting weight for event "} << bin << endl;}
 \DoxyCodeLine{245       \}}
 \DoxyCodeLine{246       bin-\/-\/;}
 \DoxyCodeLine{247     \}}
@@ -184,7 +184,7 @@ Definition at line 158 of file calc\+C\+\_\+lintolog.\+c.
 \DoxyCodeLine{170         threshold*2.<weight\_entry.at(bin).first}
 \DoxyCodeLine{171         )\{}
 \DoxyCodeLine{172         \mbox{\hyperlink{structExtBin_ae2c908d9d8fa13992c2919657e6c67b0}{weights}}.at(weight\_entry.at(bin).second) = pow(threshold, 2)/weight\_entry.at(bin).first;}
-\DoxyCodeLine{173         cout << \textcolor{stringliteral}{"Adjusting weight for event "} << bin << endl;}
+\DoxyCodeLine{173         \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Adjusting weight for event "} << bin << endl;}
 \DoxyCodeLine{174       \}}
 \DoxyCodeLine{175       bin-\/-\/;}
 \DoxyCodeLine{176     \}}
@@ -288,7 +288,7 @@ Definition at line 126 of file calc\+C\+\_\+lintolog.\+c.
 \DoxyCodeLine{145     \}}
 \DoxyCodeLine{146     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=take\_out.size()-\/1; bin>=0; bin-\/-\/)\{}
 \DoxyCodeLine{147       \textcolor{keywordtype}{int} t\_ev = take\_out.at(bin);}
-\DoxyCodeLine{148       cout << \textcolor{stringliteral}{"Discarding event "} << \mbox{\hyperlink{structExtBin_a9237950b87849087a3aebb840b0927be}{events}}.at(t\_ev) << endl;}
+\DoxyCodeLine{148       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Discarding event "} << \mbox{\hyperlink{structExtBin_a9237950b87849087a3aebb840b0927be}{events}}.at(t\_ev) << endl;}
 \DoxyCodeLine{149       vector<int>::iterator itev;}
 \DoxyCodeLine{150       vector<float>::iterator it;}
 \DoxyCodeLine{151       itev=\mbox{\hyperlink{structExtBin_a9237950b87849087a3aebb840b0927be}{events}}.begin()+t\_ev; \mbox{\hyperlink{structExtBin_a9237950b87849087a3aebb840b0927be}{events}}.erase(itev);}
@@ -331,10 +331,10 @@ Definition at line 200 of file get\+Resolution.\+c.
 \DoxyCodeLine{216     \}}
 \DoxyCodeLine{217     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=take\_out.size()-\/1; bin>=0; bin-\/-\/)\{}
 \DoxyCodeLine{218       \textcolor{keywordtype}{int} t\_ev = take\_out.at(bin);}
-\DoxyCodeLine{219       cout << \textcolor{stringliteral}{"Attempting to discard event at position "} << t\_ev << endl;}
+\DoxyCodeLine{219       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Attempting to discard event at position "} << t\_ev << endl;}
 \DoxyCodeLine{220       \textcolor{keywordflow}{if} (t\_ev>=(\textcolor{keywordtype}{int})\mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.size()) cerr << \textcolor{stringliteral}{"Collection size "} << \mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.size() << \textcolor{stringliteral}{" >= "} << t\_ev << endl;}
 \DoxyCodeLine{221       \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{222         cout << \textcolor{stringliteral}{"Discarding event "} << \mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.at(t\_ev).id << \textcolor{stringliteral}{" at position "} << t\_ev << endl;}
+\DoxyCodeLine{222         \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Discarding event "} << \mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.at(t\_ev).id << \textcolor{stringliteral}{" at position "} << t\_ev << endl;}
 \DoxyCodeLine{223         vector<SimpleEntry>::iterator it;}
 \DoxyCodeLine{224         it=\mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.begin()+t\_ev; \mbox{\hyperlink{structExtBin_a29b0511d52f9c56b368ba5230d3b80dd}{collection}}.erase(it);}
 \DoxyCodeLine{225       \}}

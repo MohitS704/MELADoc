@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <span class="keywordflow">IF</span>(x &gt; 0.d0) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;         <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= 0.d0</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="keywordflow">ELSE</span></div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;         <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= y*<a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a></div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;         <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= y*pi</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="keywordflow">        ENDIF</span> </div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;       <span class="keywordflow">ELSE</span></div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(1)= 0.5d0*log(x*x+y*y)</div>
@@ -129,16 +129,16 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        ay= abs(y)</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        <span class="keywordflow">IF</span>(x.eq.0.d0) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;         <span class="keywordflow">IF</span>(y &gt; 0.d0) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;          teta= <a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a>/2.d0</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;          teta= pi/2.d0</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;         <span class="keywordflow">ELSE</span></div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;          teta= -<a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a>/2.d0</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;          teta= -pi/2.d0</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="keywordflow">         ENDIF</span></div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;         <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= teta</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <span class="keywordflow">ELSE</span> <span class="keywordflow">IF</span>(y.eq.0.d0) <span class="keywordflow">THEN</span> </div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;         <span class="keywordflow">IF</span>(x &gt; 0.d0) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;          teta= 0.d0</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;         <span class="keywordflow">ELSE</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;          teta= <a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;          teta= pi</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="keywordflow">         ENDIF</span></div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;         <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= teta</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="keywordflow">ELSE</span></div>
@@ -149,7 +149,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;         <span class="keywordflow">IF</span>(sr &gt; 0.d0) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;          <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= si*teta</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;         <span class="keywordflow">ELSE</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;          <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= si*(<a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a>-teta)</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;          <a class="code" href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">fln</a>(2)= si*(pi-teta)</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="keywordflow">         ENDIF</span></div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="keywordflow">        ENDIF</span></div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="keywordflow">       ENDIF</span></div>
@@ -161,7 +161,6 @@ Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="anamespacehto__riemann_html"><div class="ttname"><a href="namespacehto__riemann.html">hto_riemann</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00195">CALLING_cpHTO.f:195</a></div></div>
-<div class="ttc" id="anamespacehto__riemann_html_aa29c661c983363871ad0d454f9f954cd"><div class="ttname"><a href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">hto_riemann::pi</a></div><div class="ttdeci">real *8, parameter pi</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00196">CALLING_cpHTO.f:196</a></div></div>
 <div class="ttc" id="anamespacehto__full__ln_html_a5ec575d7693b0759eacc711a5e49688e"><div class="ttname"><a href="namespacehto__full__ln.html#a5ec575d7693b0759eacc711a5e49688e">hto_full_ln::fln</a></div><div class="ttdeci">real *8 function, dimension(2) fln(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00470">CALLING_cpHTO.f:470</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,0 +1,357 @@
+\hypertarget{CMakeLists_8txt}{}\doxysection{M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.2/\+C\+Make\+Lists.txt File Reference}
+\label{CMakeLists_8txt}\index{MELA/COLLIER/colliertmp/COLLIER-\/1.2/CMakeLists.txt@{MELA/COLLIER/colliertmp/COLLIER-\/1.2/CMakeLists.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}} (C\+M\+A\+K\+E\+\_\+\+M\+A\+C\+O\+S\+X\+\_\+\+R\+P\+A\+TH 1) set(C\+M\+A\+K\+E\+\_\+\+C\+A\+C\+H\+E\+F\+I\+L\+E\+\_\+\+D\+IR C\+Make\+Files/) cmake\+\_\+minimum\+\_\+required(V\+E\+R\+S\+I\+ON 2.\+8) project(collier) enable\+\_\+language(Fortran) get\+\_\+filename\+\_\+component(Fortran\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+N\+A\+ME \$
+\item 
+N\+A\+ME \mbox{\hyperlink{CMakeLists_8txt_adb95adadaa3b0dd08906205513530585}{message}} (\char`\"{}Using Fortran compiler\+: \$\{Fortran\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+N\+A\+ME\}\char`\"{}) set(basic \char`\"{}-\/Dcollierdd -\/D\+S\+I\+NG\char`\"{}) if(Fortran\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+N\+A\+ME M\+A\+T\+C\+H\+ES \char`\"{}gfortran.$\ast$\char`\"{}) set(basic \char`\"{}\$
+\item 
+ffixed line length fno default integer \mbox{\hyperlink{CMakeLists_8txt_a7963f4fcb83075db8c5c143b18a95bc3}{set}} (opt\+\_\+\+R\+E\+L\+E\+A\+SE \char`\"{}-\/O2 -\/funroll-\/loops -\/ffast-\/math -\/Wtabs\char`\"{}) set(opt\+\_\+\+D\+E\+B\+UG \char`\"{}-\/O0 -\/frange-\/check -\/g -\/fcheck
+\item 
+ffixed line length fno default integer recursion \mbox{\hyperlink{CMakeLists_8txt_ab7e88838d0f6784c2f925a18bf4e1ece}{set}} (opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$\{opt\+\_\+\+D\+E\+B\+UG\} -\/Wall -\/Wtabs -\/Wextra -\/Wno-\/unused\char`\"{}) set(opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$
+\item 
+Wno unused dummy argument \mbox{\hyperlink{CMakeLists_8txt_ab9ba2860f352877645971db1cea9be7f}{set}} (opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$\{opt\+\_\+\+D\+E\+B\+UG\} -\/Wno-\/unused-\/parameter\char`\"{}) set(opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$
+\item 
+Wno compare reals \mbox{\hyperlink{CMakeLists_8txt_ae451a3657f05b0925c637b0f4da66022}{set}} (opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$\{opt\+\_\+\+D\+E\+B\+UG\} -\/ffpe-\/trap=invalid,overflow -\/fdump-\/core -\/fbacktrace\char`\"{}) set(C\+M\+A\+K\+E\+\_\+\+Fortran\+\_\+\+F\+L\+A\+G\+S\+\_\+\+R\+E\+L\+E\+A\+SE \char`\"{}\$
+\item 
+we just try O2 \mbox{\hyperlink{CMakeLists_8txt_ad65e2890297ac680166777d131775bd2}{set}} (C\+M\+A\+K\+E\+\_\+\+Fortran\+\_\+\+F\+L\+A\+G\+S\+\_\+\+R\+E\+L\+E\+A\+SE \char`\"{}\$\{basic\} -\/O2\char`\"{}) set(C\+M\+A\+K\+E\+\_\+\+Fortran\+\_\+\+F\+L\+A\+G\+S\+\_\+\+D\+E\+B\+UG \char`\"{}\$
+\item 
+O0 g \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}} () string(T\+O\+L\+O\+W\+ER \char`\"{}\$
+\item 
+C\+BT \mbox{\hyperlink{CMakeLists_8txt_a6b1ae378d85121122f2ca9615a03d559}{if}} (C\+BT M\+A\+T\+C\+H\+ES debug) \mbox{\hyperlink{CMakeLists_8txt_a2745dd72b263369c2511ea68430a0708}{message}}(\char`\"{}Build type
+\item 
+\mbox{\hyperlink{CMakeLists_8txt_a2745dd72b263369c2511ea68430a0708}{message}} (\char`\"{}          Fortran flags    = \$\{C\+M\+A\+K\+E\+\_\+\+Fortran\+\_\+\+F\+L\+A\+G\+S\+\_\+\+D\+E\+B\+UG\}\char`\"{} \textbackslash{}n) else() message(\char`\"{}Build type
+\item 
+src collier\+\_\+aux F90 \mbox{\hyperlink{CMakeLists_8txt_ac40109d858012f84d40e8fc2651568ea}{set}} (C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$\{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES\} src/collier\+\_\+coefs.\+F90) set(C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$
+\item 
+src collier\+\_\+global F90 \mbox{\hyperlink{CMakeLists_8txt_ab68c8a021305ee3fb6ad7b06037e16a5}{set}} (C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$\{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES\} src/C\+O\+L\+L\+I\+E\+R.\+F90) set(C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$
+\item 
+src collier\+\_\+init F90 \mbox{\hyperlink{CMakeLists_8txt_a532e804d874839a864520713433a52be}{set}} (C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$\{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES\} src/collier\+\_\+tensors.\+F90) set(T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES \char`\"{}\char`\"{}) set(T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES \$
+\item 
+src tensors Init\+Tensors F90 \mbox{\hyperlink{CMakeLists_8txt_a62ae6ed4f664fe579386a88e73c309d0}{set}} (T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES \$\{T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES\} src/tensors/Build\+Tensors.\+F90) set(T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES \$
+\item 
+src tensors Tensor\+Reduction F90 \mbox{\hyperlink{CMakeLists_8txt_a66043042eda3597c420d3bbc9afdddc3}{set}} (A\+U\+X\+\_\+\+F\+I\+L\+ES \char`\"{}\char`\"{}) set(C\+O\+L\+I\+\_\+\+F\+I\+L\+ES \char`\"{}\char`\"{}) set(D\+D\+L\+I\+B\+\_\+\+F\+I\+L\+ES \char`\"{}\char`\"{}) set(S\+O\+U\+R\+CE \$
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ffixed line length fno default integer \mbox{\hyperlink{CMakeLists_8txt_a0df89820c07d487ca90e8e978c204b58}{do}}
+\item 
+ffixed line length fno default integer \mbox{\hyperlink{CMakeLists_8txt_af6fe6d0469113efe6e58f4610daa6d15}{mem}}
+\item 
+ffixed line length fno default integer \mbox{\hyperlink{CMakeLists_8txt_ab3918013fc656baaf3b386cd7736d043}{pointer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}\label{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!endif@{endif}}
+\index{endif@{endif}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{endif()}{endif()}}
+{\footnotesize\ttfamily O0 g endif (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 143 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                  \{CMAKE\_BUILD\_TYPE\}\textcolor{stringliteral}{" CBT)}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_a6b1ae378d85121122f2ca9615a03d559}\label{CMakeLists_8txt_a6b1ae378d85121122f2ca9615a03d559}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!if@{if}}
+\index{if@{if}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{if()}{if()}}
+{\footnotesize\ttfamily C\+BT if (\begin{DoxyParamCaption}\item[{C\+BT M\+A\+T\+C\+H\+ES}]{debug }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147                      : Debug\textcolor{stringliteral}{")}}
+\DoxyCodeLine{148 \textcolor{stringliteral}{  message ("}Collier:  Fortran compiler  = \$\{Fortran\_COMPILER\_NAME\}\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_a2745dd72b263369c2511ea68430a0708}\label{CMakeLists_8txt_a2745dd72b263369c2511ea68430a0708}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!message@{message}}
+\index{message@{message}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{message()}{message()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149                                           \{CMAKE\_Fortran\_FLAGS\_DEBUG\}\textcolor{stringliteral}{" \(\backslash\)n)}}
+\DoxyCodeLine{150 \textcolor{stringliteral}{else()}}
+\DoxyCodeLine{151 \textcolor{stringliteral}{  message("}Build \mbox{\hyperlink{namespacetestME__all_a44bea880a385f77ac70fa0e12fe317b9}{type}}: Release\textcolor{stringliteral}{")}}
+\DoxyCodeLine{152 \textcolor{stringliteral}{  set(CMAKE\_Fortran\_FLAGS \$\{CMAKE\_Fortran\_FLAGS\_RELEASE\})}}
+\DoxyCodeLine{153 \textcolor{stringliteral}{  message ("}Collier:  Fortran compiler  = \$\{Fortran\_COMPILER\_NAME\}\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_adb95adadaa3b0dd08906205513530585}\label{CMakeLists_8txt_adb95adadaa3b0dd08906205513530585}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!message@{message}}
+\index{message@{message}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{message()}{message()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily N\+A\+ME message (\begin{DoxyParamCaption}\item[{\char`\"{}Using Fortran compiler\+: \$\{Fortran\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+N\+A\+ME\}\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83                                : \$\{Fortran\_COMPILER\_NAME\}\textcolor{stringliteral}{")}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{\#=========================\#}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{\#  Setting default Flags  \#}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{\#=========================\#}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{set (basic "}-\/Dcollierdd -\/DSING\textcolor{stringliteral}{")}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{if (Fortran\_COMPILER\_NAME MATCHES "}gfortran.*\textcolor{stringliteral}{")}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{\#==================\#}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{\#  gfortran Flags  \#}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{\#==================\#}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{\#-\/}}
+\DoxyCodeLine{96 \textcolor{stringliteral}{  set (basic "}\$\{basic\} -\/ffixed-\/line-\/length-\/132  -\/fno-\/\textcolor{keywordflow}{default}-\/integer-\/8\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_a66043042eda3597c420d3bbc9afdddc3}\label{CMakeLists_8txt_a66043042eda3597c420d3bbc9afdddc3}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily src tensors Tensor\+Reduction F90 set (\begin{DoxyParamCaption}\item[{A\+U\+X\+\_\+\+F\+I\+L\+ES \char`\"{}\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 174 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175                \{AUX\_FILES\} src/Aux/Combinatorics.F90)}
+\DoxyCodeLine{176 SET(AUX\_FILES \$\{AUX\_FILES\} src/Aux/master.F90)}
+\DoxyCodeLine{177 SET(AUX\_FILES \$\{AUX\_FILES\} src/Aux/cache.F90)}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(COLI\_FILES \textcolor{stringliteral}{""})}
+\DoxyCodeLine{180 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/\mbox{\hyperlink{namespacecoli__stat}{coli\_stat}}.F90)}
+\DoxyCodeLine{181 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/reductionAB.F90)}
+\DoxyCodeLine{182 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/\mbox{\hyperlink{namespacecoli__aux2}{coli\_aux2}}.F90)}
+\DoxyCodeLine{183 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/reductionC.F90)}
+\DoxyCodeLine{184 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/reductionD.F90)}
+\DoxyCodeLine{185 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/reductionEFG.F90)}
+\DoxyCodeLine{186 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/reductionTN.F90)}
+\DoxyCodeLine{187 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/coli\_b0.F)}
+\DoxyCodeLine{188 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/coli\_d0.F)}
+\DoxyCodeLine{189 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/coli\_d0reg.F)}
+\DoxyCodeLine{190 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/coli\_aux.F)}
+\DoxyCodeLine{191 SET(COLI\_FILES \$\{COLI\_FILES\} src/COLI/coli\_c0.F)}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(DDLIB\_FILES \textcolor{stringliteral}{""})}
+\DoxyCodeLine{194 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_global.F90)}
+\DoxyCodeLine{195 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_aux.F)}
+\DoxyCodeLine{196 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_5pt.F)}
+\DoxyCodeLine{197 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_6pt.F)}
+\DoxyCodeLine{198 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_3pt.F)}
+\DoxyCodeLine{199 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_to\_COLLIER.F)}
+\DoxyCodeLine{200 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_2pt.F)}
+\DoxyCodeLine{201 SET(DDLIB\_FILES \$\{DDLIB\_FILES\} src/DDlib/DD\_4pt.F)}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \#=======================\#}
+\DoxyCodeLine{204 \#  Merging the sources  \#}
+\DoxyCodeLine{205 \#=======================\#}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(SOURCE}
+\DoxyCodeLine{208     \$\{COLLIER\_FILES\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_ad65e2890297ac680166777d131775bd2}\label{CMakeLists_8txt_ad65e2890297ac680166777d131775bd2}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily we just try O2 set (\begin{DoxyParamCaption}\item[{C\+M\+A\+K\+E\+\_\+\+Fortran\+\_\+\+F\+L\+A\+G\+S\+\_\+\+R\+E\+L\+E\+A\+SE \char`\"{}\$\{basic\} -\/O2\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 141 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{141                                      \{basic\} -\/O2\textcolor{stringliteral}{")}}
+\DoxyCodeLine{142 \textcolor{stringliteral}{  set (CMAKE\_Fortran\_FLAGS\_DEBUG   "}\$\{basic\} -\/O0 -\/\mbox{\hyperlink{namespacemodttbhiggs_a235b60cc7641638d472db6f260b76d34}{g}}\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}\label{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily set (\begin{DoxyParamCaption}\item[{C\+M\+A\+K\+E\+\_\+\+M\+A\+C\+O\+S\+X\+\_\+\+R\+P\+A\+TH}]{1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                                                \{CMAKE\_Fortran\_COMPILER\} NAME)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_ab68c8a021305ee3fb6ad7b06037e16a5}\label{CMakeLists_8txt_ab68c8a021305ee3fb6ad7b06037e16a5}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily src collier\+\_\+global F90 set (\begin{DoxyParamCaption}\item[{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$\{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES\} src/C\+O\+L\+L\+I\+E\+R.}]{F90 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 165 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                    \{COLLIER\_FILES\} src/COLLIER.F90)}
+\DoxyCodeLine{166 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(COLLIER\_FILES \$\{COLLIER\_FILES\} src/\mbox{\hyperlink{namespacecollier__init}{collier\_init}}.F90)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_ac40109d858012f84d40e8fc2651568ea}\label{CMakeLists_8txt_ac40109d858012f84d40e8fc2651568ea}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily src collier\+\_\+aux F90 set (\begin{DoxyParamCaption}\item[{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$\{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES\} src/collier\+\_\+coefs.}]{F90 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{163                    \{COLLIER\_FILES\} src/\mbox{\hyperlink{namespacecollier__coefs}{collier\_coefs}}.F90)}
+\DoxyCodeLine{164 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(COLLIER\_FILES \$\{COLLIER\_FILES\} src/\mbox{\hyperlink{namespacecollier__global}{collier\_global}}.F90)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_a532e804d874839a864520713433a52be}\label{CMakeLists_8txt_a532e804d874839a864520713433a52be}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily src collier\+\_\+init F90 set (\begin{DoxyParamCaption}\item[{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES \$\{C\+O\+L\+L\+I\+E\+R\+\_\+\+F\+I\+L\+ES\} src/collier\+\_\+tensors.}]{F90 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 167 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{167                    \{COLLIER\_FILES\} src/\mbox{\hyperlink{namespacecollier__tensors}{collier\_tensors}}.F90)}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(TENSOR\_FILES \textcolor{stringliteral}{""})}
+\DoxyCodeLine{170 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(TENSOR\_FILES \$\{TENSOR\_FILES\} src/tensors/InitTensors.F90)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_ae451a3657f05b0925c637b0f4da66022}\label{CMakeLists_8txt_ae451a3657f05b0925c637b0f4da66022}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily Wno compare reals set (\begin{DoxyParamCaption}\item[{opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$\{opt\+\_\+\+D\+E\+B\+UG\} -\/ffpe-\/}]{trap = {\ttfamily invalid},  }\item[{overflow -\/fdump-\/core -\/fbacktrace\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103                    \{opt\_DEBUG\} -\/ffpe-\/trap=invalid,overflow -\/fdump-\/core -\/fbacktrace\textcolor{stringliteral}{")}}
+\DoxyCodeLine{104 \textcolor{stringliteral}{  set (CMAKE\_Fortran\_FLAGS\_RELEASE "}\$\{basic\} \$\{opt\_RELEASE\}\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_ab7e88838d0f6784c2f925a18bf4e1ece}\label{CMakeLists_8txt_ab7e88838d0f6784c2f925a18bf4e1ece}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily ffixed line length fno default integer recursion set (\begin{DoxyParamCaption}\item[{opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$\{opt\+\_\+\+D\+E\+B\+UG\} -\/Wall -\/Wtabs -\/Wextra -\/Wno-\/unused\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99                    \{opt\_DEBUG\} -\/Wall -\/Wtabs -\/Wextra -\/Wno-\/unused\textcolor{stringliteral}{")}}
+\DoxyCodeLine{100 \textcolor{stringliteral}{  set (opt\_DEBUG "}\$\{opt\_DEBUG\} -\/Wno-\/unused-\/dummy-\/argument\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_ab9ba2860f352877645971db1cea9be7f}\label{CMakeLists_8txt_ab9ba2860f352877645971db1cea9be7f}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily Wno unused dummy argument set (\begin{DoxyParamCaption}\item[{opt\+\_\+\+D\+E\+B\+UG \char`\"{}\$\{opt\+\_\+\+D\+E\+B\+UG\} -\/Wno-\/unused-\/parameter\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 101 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                    \{opt\_DEBUG\} -\/Wno-\/unused-\/parameter\textcolor{stringliteral}{")}}
+\DoxyCodeLine{102 \textcolor{stringliteral}{  set (opt\_DEBUG "}\$\{opt\_DEBUG\} -\/Wno-\/compare-\/reals\textcolor{stringliteral}{")}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{CMakeLists_8txt_a7963f4fcb83075db8c5c143b18a95bc3}\label{CMakeLists_8txt_a7963f4fcb83075db8c5c143b18a95bc3}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily ffixed line length fno default integer set (\begin{DoxyParamCaption}\item[{opt\+\_\+\+R\+E\+L\+E\+A\+SE \char`\"{}-\/O2 -\/funroll-\/loops -\/ffast-\/math -\/Wtabs\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{CMakeLists_8txt_a62ae6ed4f664fe579386a88e73c309d0}\label{CMakeLists_8txt_a62ae6ed4f664fe579386a88e73c309d0}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily src tensors Init\+Tensors F90 set (\begin{DoxyParamCaption}\item[{T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES \$\{T\+E\+N\+S\+O\+R\+\_\+\+F\+I\+L\+ES\} src/tensors/Build\+Tensors.}]{F90 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 171 of file C\+Make\+Lists.\+txt.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{171                   \{TENSOR\_FILES\} src/tensors/BuildTensors.F90)}
+\DoxyCodeLine{172 \mbox{\hyperlink{CMakeLists_8txt_a252886e723a8869a453b15634336e8cc}{set}}(TENSOR\_FILES \$\{TENSOR\_FILES\} src/tensors/TensorReduction.F90)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{CMakeLists_8txt_a0df89820c07d487ca90e8e978c204b58}\label{CMakeLists_8txt_a0df89820c07d487ca90e8e978c204b58}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!do@{do}}
+\index{do@{do}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{do}{do}}
+{\footnotesize\ttfamily ffixed line length fno default integer do}
+
+
+
+Definition at line 98 of file C\+Make\+Lists.\+txt.
+
+\mbox{\Hypertarget{CMakeLists_8txt_af6fe6d0469113efe6e58f4610daa6d15}\label{CMakeLists_8txt_af6fe6d0469113efe6e58f4610daa6d15}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!mem@{mem}}
+\index{mem@{mem}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{mem}{mem}}
+{\footnotesize\ttfamily ffixed line length fno default integer mem}
+
+
+
+Definition at line 98 of file C\+Make\+Lists.\+txt.
+
+\mbox{\Hypertarget{CMakeLists_8txt_ab3918013fc656baaf3b386cd7736d043}\label{CMakeLists_8txt_ab3918013fc656baaf3b386cd7736d043}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!pointer@{pointer}}
+\index{pointer@{pointer}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily ffixed line length fno default integer pointer}
+
+
+
+Definition at line 98 of file C\+Make\+Lists.\+txt.
+

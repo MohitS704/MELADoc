@@ -65,7 +65,7 @@ Definition at line 1970 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1996        ares(1)= -\/ares(1)*zm}
 \DoxyCodeLine{1997        ares(2)= -\/ares(2)*zm}
 \DoxyCodeLine{1998       \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1999        ares= \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\_cqlnx}}(omarg)}
+\DoxyCodeLine{1999        ares= hto\_cqlnx(omarg)}
 \DoxyCodeLine{2000 \textcolor{keywordflow}{      ENDIF}}
 \DoxyCodeLine{2001       res= ares}
 \DoxyCodeLine{2002 \textcolor{comment}{*}}
@@ -98,7 +98,7 @@ Definition at line 1912 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1922        \textcolor{keywordflow}{IF}(arg(1) > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1923         res(2)= 0.d0}
 \DoxyCodeLine{1924        \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1925         res(2)= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}*sign(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},arg(2))}
+\DoxyCodeLine{1925         res(2)= pi*sign(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},arg(2))}
 \DoxyCodeLine{1926 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{1927        \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{1928 \textcolor{keywordflow}{      ENDIF}}
@@ -109,9 +109,9 @@ Definition at line 1912 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1933       res(1)= log(zm)}
 \DoxyCodeLine{1934       \textcolor{keywordflow}{IF}(arg(1).eq.0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1935        \textcolor{keywordflow}{IF}(arg(2) > 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1936         teta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/2.d0}
+\DoxyCodeLine{1936         teta= pi/2.d0}
 \DoxyCodeLine{1937        \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1938         teta= -\/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}/2.d0}
+\DoxyCodeLine{1938         teta= -\/pi/2.d0}
 \DoxyCodeLine{1939 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{1940        res(2)= teta}
 \DoxyCodeLine{1941        \textcolor{keywordflow}{RETURN}}
@@ -119,7 +119,7 @@ Definition at line 1912 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1943        \textcolor{keywordflow}{IF}(arg(1) > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1944         teta= 0.d0}
 \DoxyCodeLine{1945        \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1946         teta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
+\DoxyCodeLine{1946         teta= pi}
 \DoxyCodeLine{1947 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{1948        res(2)= teta}
 \DoxyCodeLine{1949        \textcolor{keywordflow}{RETURN}}
@@ -131,7 +131,7 @@ Definition at line 1912 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1955        \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1956         res(2)= si*teta}
 \DoxyCodeLine{1957        \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1958         res(2)= si*(\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/teta)}
+\DoxyCodeLine{1958         res(2)= si*(pi-\/teta)}
 \DoxyCodeLine{1959 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{1960        \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{1961 \textcolor{keywordflow}{      ENDIF}}
@@ -382,23 +382,23 @@ Definition at line 1065 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1089         \textcolor{keywordflow}{IF}(sr > 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1090          theta= atheta}
 \DoxyCodeLine{1091         \textcolor{keywordflow}{ELSEIF}(sr > 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1092          theta= 2.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/atheta}
+\DoxyCodeLine{1092          theta= 2.d0*pi-\/atheta}
 \DoxyCodeLine{1093         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1094          theta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/atheta}
+\DoxyCodeLine{1094          theta= pi-\/atheta}
 \DoxyCodeLine{1095         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1096          theta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}+atheta}
+\DoxyCodeLine{1096          theta= pi+atheta}
 \DoxyCodeLine{1097 \textcolor{keywordflow}{        ENDIF}}
-\DoxyCodeLine{1098          aux= \mbox{\hyperlink{namespacehto__sp__fun_ae00024005793a98a7520e6051a2f6482}{hto\_poly\_unit}}(theta)}
-\DoxyCodeLine{1099          value(1:2)= aux(1,1:2)}
+\DoxyCodeLine{1098          aux= hto\_poly\_unit(theta)}
+\DoxyCodeLine{1099          \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1:2)= aux(1,1:2)}
 \DoxyCodeLine{1100        \textcolor{keywordflow}{ELSE} }
-\DoxyCodeLine{1101         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\_li2}}(x)}
+\DoxyCodeLine{1101         \textcolor{keywordtype}{value}= hto\_li2(x)}
 \DoxyCodeLine{1102 \textcolor{keywordflow}{       ENDIF} }
 \DoxyCodeLine{1103        \textcolor{keywordflow}{RETURN} }
 \DoxyCodeLine{1104 \textcolor{keywordflow}{      ENDIF}}
 \DoxyCodeLine{1105 \textcolor{comment}{*}}
 \DoxyCodeLine{1106       \textcolor{keywordflow}{IF}(x(1) > 1.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1107        \textcolor{keywordflow}{IF}(y(1) < 1.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1108         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\_li2}}(x)}
+\DoxyCodeLine{1108         \textcolor{keywordtype}{value}= hto\_li2(x)}
 \DoxyCodeLine{1109         print*,\textcolor{stringliteral}{'+++++++++++++++++++++++++++++++++++'}}
 \DoxyCodeLine{1110         print*,\textcolor{stringliteral}{' anomaly Li2 '}}
 \DoxyCodeLine{1111         print*,x}
@@ -409,16 +409,16 @@ Definition at line 1065 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1116        add(1)= -\/lnc(2)}
 \DoxyCodeLine{1117        add(2)= lnc(1)}
 \DoxyCodeLine{1118        \textcolor{keywordflow}{IF}(y(2) < 0.d0.and.x(2) > 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1119         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\_li2}}(x)-\/2.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}*add}
+\DoxyCodeLine{1119         \textcolor{keywordtype}{value}= hto\_li2(x)-\/2.d0*pi*add}
 \DoxyCodeLine{1120         \mbox{\hyperlink{namespacehto__kountac_ac66a099c5c995b1f3aeb2584a39f8d45}{km}}= \mbox{\hyperlink{namespacehto__kountac_ac66a099c5c995b1f3aeb2584a39f8d45}{km}}+1}
 \DoxyCodeLine{1121        \textcolor{keywordflow}{ELSEIF}(y(2) > 0.d0.and.x(2) < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1122         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\_li2}}(x)+2.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}*add}
+\DoxyCodeLine{1122         \textcolor{keywordtype}{value}= hto\_li2(x)+2.d0*pi*add}
 \DoxyCodeLine{1123         \mbox{\hyperlink{namespacehto__kountac_a37986cfaf156ed0008c32d07cc119090}{kp}}= \mbox{\hyperlink{namespacehto__kountac_a37986cfaf156ed0008c32d07cc119090}{kp}}+1}
 \DoxyCodeLine{1124        \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1125         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\_li2}}(x)}
+\DoxyCodeLine{1125         \textcolor{keywordtype}{value}= hto\_li2(x)}
 \DoxyCodeLine{1126 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{1127       \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1128        \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\_li2}}(x)}
+\DoxyCodeLine{1128        \textcolor{keywordtype}{value}= hto\_li2(x)}
 \DoxyCodeLine{1129 \textcolor{keywordflow}{      ENDIF}}
 \DoxyCodeLine{1130 \textcolor{comment}{*       }}
 \DoxyCodeLine{1131       \textcolor{keywordflow}{RETURN}}
@@ -443,7 +443,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1404       \textcolor{keywordtype}{IMPLICIT NONE}}
 \DoxyCodeLine{1405 \textcolor{comment}{*}}
 \DoxyCodeLine{1406       real*8, \textcolor{keywordtype}{dimension (:)} :: x}
-\DoxyCodeLine{1407       real*8 \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}(\textcolor{keyword}{size}(x))}
+\DoxyCodeLine{1407       real*8 hto\_li3(\textcolor{keyword}{size}(x))}
 \DoxyCodeLine{1408       \textcolor{keywordtype}{INTENT(IN)} x}
 \DoxyCodeLine{1409       \textcolor{keywordtype}{INTEGER} n}
 \DoxyCodeLine{1410       real*8 xm,xm2,xtst,pr,pj,p2,pm,pr1,pj1,pm1,p12,pr2,pj2,p22,pm2,}
@@ -483,7 +483,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1444        y(1)= x(1)/xm2}
 \DoxyCodeLine{1445        y(2)= -\/x(2)/xm2}
 \DoxyCodeLine{1446        ox= -\/x}
-\DoxyCodeLine{1447        clnx= \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\_cqlnx}}(ox)}
+\DoxyCodeLine{1447        clnx= hto\_cqlnx(ox)}
 \DoxyCodeLine{1448        rln2\_x= clnx(1)*clnx(1)}
 \DoxyCodeLine{1449        iln2\_x= clnx(2)*clnx(2)}
 \DoxyCodeLine{1450        addx(1)= -\/clnx(1)*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+1.d0/6.d0*(rln2\_x-\/3.d0*iln2\_x))}
@@ -501,7 +501,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1462 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(y) is computed}}
 \DoxyCodeLine{1463 \textcolor{comment}{*}}
 \DoxyCodeLine{1464         omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
-\DoxyCodeLine{1465         par= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(y,omy)}
+\DoxyCodeLine{1465         par= hto\_cqlnomx(y,omy)}
 \DoxyCodeLine{1466         pr= -\/par(1)}
 \DoxyCodeLine{1467         pj= -\/par(2)}
 \DoxyCodeLine{1468         p2= pr*pr+pj*pj}
@@ -528,16 +528,16 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1489      \#              (bf(10)*sn(11)+pm*(bf(11)*sn(12)+pm*}
 \DoxyCodeLine{1490      \#              (bf(12)*sn(13)+pm*(bf(13)*sn(14)+pm*}
 \DoxyCodeLine{1491      \#              (bf(14)*sn(15))))))))))))))))}
-\DoxyCodeLine{1492         \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}= res+addx}
+\DoxyCodeLine{1492         hto\_li3= res+addx}
 \DoxyCodeLine{1493         \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{1494        \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(ytst > 1.d-\/20) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1495         ym2= y(1)*y(1)+y(2)*y(2)}
 \DoxyCodeLine{1496         u1(1)= 1.d0-\/y(1)/ym2}
 \DoxyCodeLine{1497         u1(2)= y(2)/ym2}
 \DoxyCodeLine{1498         u2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
-\DoxyCodeLine{1499         ln\_y= \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\_cqlnx}}(y)}
+\DoxyCodeLine{1499         ln\_y= hto\_cqlnx(y)}
 \DoxyCodeLine{1500         omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
-\DoxyCodeLine{1501         ln\_omy= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(y,omy)}
+\DoxyCodeLine{1501         ln\_omy= hto\_cqlnomx(y,omy)}
 \DoxyCodeLine{1502         addy(1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_y(1)+1.d0/6.d0*ln\_y(1)*}
 \DoxyCodeLine{1503      \#               (ln\_y(1)*ln\_y(1)-\/3.d0*ln\_y(2)*ln\_y(2))-\/}
 \DoxyCodeLine{1504      \#               0.5d0*ln\_omy(1)*(ln\_y(1)*ln\_y(1)-\/ln\_y(2)*}
@@ -550,7 +550,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1511 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/1/y) is computed}}
 \DoxyCodeLine{1512 \textcolor{comment}{*}}
 \DoxyCodeLine{1513         omu1= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u1}
-\DoxyCodeLine{1514         par1= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(u1,omu1)}
+\DoxyCodeLine{1514         par1= hto\_cqlnomx(u1,omu1)}
 \DoxyCodeLine{1515         pr1= -\/par1(1)}
 \DoxyCodeLine{1516         pj1= -\/par1(2)}
 \DoxyCodeLine{1517         p12= pr1*pr1+pj1*pj1}
@@ -581,7 +581,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1542 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/y) is computed}}
 \DoxyCodeLine{1543 \textcolor{comment}{*}}
 \DoxyCodeLine{1544         omu2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u2}
-\DoxyCodeLine{1545         par2= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(u2,omu2)}
+\DoxyCodeLine{1545         par2= hto\_cqlnomx(u2,omu2)}
 \DoxyCodeLine{1546         pr2= -\/par2(1)}
 \DoxyCodeLine{1547         pj2= -\/par2(2)}
 \DoxyCodeLine{1548         p22= pr2*pr2+pj2*pj2}
@@ -608,7 +608,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1569      \#               (bf(10)*sn2(11)+pm2*(bf(11)*sn2(12)+pm2*}
 \DoxyCodeLine{1570      \#               (bf(12)*sn2(13)+pm2*(bf(13)*sn2(14)+pm2*}
 \DoxyCodeLine{1571      \#               (bf(14)*sn2(15))))))))))))))))}
-\DoxyCodeLine{1572         \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}= -\/res1-\/res2+addx+addy}
+\DoxyCodeLine{1572         hto\_li3= -\/res1-\/res2+addx+addy}
 \DoxyCodeLine{1573         \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{1574 \textcolor{keywordflow}{       ENDIF}   }
 \DoxyCodeLine{1575 \textcolor{comment}{*}}
@@ -625,7 +625,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1586 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(t) is computed}}
 \DoxyCodeLine{1587 \textcolor{comment}{*}}
 \DoxyCodeLine{1588         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
-\DoxyCodeLine{1589         par= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(t,omt)}
+\DoxyCodeLine{1589         par= hto\_cqlnomx(t,omt)}
 \DoxyCodeLine{1590         pr= -\/par(1)}
 \DoxyCodeLine{1591         pj= -\/par(2)}
 \DoxyCodeLine{1592         p2= pr*pr+pj*pj}
@@ -657,9 +657,9 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1618         u1(1)= 1.d0-\/t(1)/tm2}
 \DoxyCodeLine{1619         u1(2)= t(2)/tm2}
 \DoxyCodeLine{1620         u2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
-\DoxyCodeLine{1621         ln\_t= \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\_cqlnx}}(t)}
+\DoxyCodeLine{1621         ln\_t= hto\_cqlnx(t)}
 \DoxyCodeLine{1622         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
-\DoxyCodeLine{1623         ln\_omt= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(t,omt)}
+\DoxyCodeLine{1623         ln\_omt= hto\_cqlnomx(t,omt)}
 \DoxyCodeLine{1624         addt(1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_t(1)+1.d0/6.d0*ln\_t(1)*}
 \DoxyCodeLine{1625      \#              (ln\_t(1)*ln\_t(1)-\/3.d0*ln\_t(2)*ln\_t(2))-\/}
 \DoxyCodeLine{1626      \#              0.5d0*ln\_omt(1)*(ln\_t(1)*ln\_t(1)-\/ln\_t(2)*}
@@ -672,7 +672,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1633 \textcolor{comment}{*-\/-\/-\/-\/-\/li3(1-\/1/t) is computed}}
 \DoxyCodeLine{1634 \textcolor{comment}{*}}
 \DoxyCodeLine{1635         omu1= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u1}
-\DoxyCodeLine{1636         par1= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(u1,omu1)}
+\DoxyCodeLine{1636         par1= hto\_cqlnomx(u1,omu1)}
 \DoxyCodeLine{1637         pr1= -\/par1(1)}
 \DoxyCodeLine{1638         pj1= -\/par1(2)}
 \DoxyCodeLine{1639         p12= pr1*pr1+pj1*pj1}
@@ -703,7 +703,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1664 \textcolor{comment}{*-\/-\/-\/-\/-\/li3(1-\/t) is computed}}
 \DoxyCodeLine{1665 \textcolor{comment}{*}}
 \DoxyCodeLine{1666         omu2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u2}
-\DoxyCodeLine{1667         par2= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(u2,omu2)}
+\DoxyCodeLine{1667         par2= hto\_cqlnomx(u2,omu2)}
 \DoxyCodeLine{1668         pr2= -\/par2(1)}
 \DoxyCodeLine{1669         pj2= -\/par2(2)}
 \DoxyCodeLine{1670         p22= pr2*pr2+pj2*pj2}
@@ -742,7 +742,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1703 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(t\string^2) is computed}}
 \DoxyCodeLine{1704 \textcolor{comment}{*}}
 \DoxyCodeLine{1705         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
-\DoxyCodeLine{1706         par= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(t,omt)}
+\DoxyCodeLine{1706         par= hto\_cqlnomx(t,omt)}
 \DoxyCodeLine{1707         pr= -\/par(1)}
 \DoxyCodeLine{1708         pj= -\/par(2)}
 \DoxyCodeLine{1709         p2= pr*pr+pj*pj}
@@ -774,9 +774,9 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1735         u1(1)= 1.d0-\/t(1)/tm2}
 \DoxyCodeLine{1736         u1(2)= t(2)/tm2}
 \DoxyCodeLine{1737         u2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
-\DoxyCodeLine{1738         ln\_t= \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\_cqlnx}}(t)}
+\DoxyCodeLine{1738         ln\_t= hto\_cqlnx(t)}
 \DoxyCodeLine{1739         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
-\DoxyCodeLine{1740         ln\_omt= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(t,omt)}
+\DoxyCodeLine{1740         ln\_omt= hto\_cqlnomx(t,omt)}
 \DoxyCodeLine{1741         addt2(1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_t(1)+1.d0/6.d0*ln\_t(1)*}
 \DoxyCodeLine{1742      \#                (ln\_t(1)*ln\_t(1)-\/3.d0*ln\_t(2)*ln\_t(2))-\/}
 \DoxyCodeLine{1743      \#                0.5d0*ln\_omt(1)*(ln\_t(1)*ln\_t(1)-\/ln\_t(2)*}
@@ -789,7 +789,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1750 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/1/t\string^2) is computed}}
 \DoxyCodeLine{1751 \textcolor{comment}{*}}
 \DoxyCodeLine{1752         omu1= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u1}
-\DoxyCodeLine{1753         par1= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(u1,omu1)}
+\DoxyCodeLine{1753         par1= hto\_cqlnomx(u1,omu1)}
 \DoxyCodeLine{1754         pr1= -\/par1(1)}
 \DoxyCodeLine{1755         pj1= -\/par1(2)}
 \DoxyCodeLine{1756         p12= pr1*pr1+pj1*pj1}
@@ -820,7 +820,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1781 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/t\string^2) is computed}}
 \DoxyCodeLine{1782 \textcolor{comment}{*}}
 \DoxyCodeLine{1783         omu2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u2}
-\DoxyCodeLine{1784         par2= \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\_cqlnomx}}(u2,omu2)}
+\DoxyCodeLine{1784         par2= hto\_cqlnomx(u2,omu2)}
 \DoxyCodeLine{1785         pr2= -\/par2(1)}
 \DoxyCodeLine{1786         pj2= -\/par2(2)}
 \DoxyCodeLine{1787         p22= pr2*pr2+pj2*pj2}
@@ -849,7 +849,7 @@ Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1810      \#               (bf(14)*sn2(15))))))))))))))))}
 \DoxyCodeLine{1811         resb= -\/res3-\/res4+addt2}
 \DoxyCodeLine{1812 \textcolor{keywordflow}{       ENDIF}}
-\DoxyCodeLine{1813        \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}= -\/resa+0.25d0*resb+addx}
+\DoxyCodeLine{1813        hto\_li3= -\/resa+0.25d0*resb+addx}
 \DoxyCodeLine{1814        \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{1815 \textcolor{keywordflow}{      ENDIF}}
 \DoxyCodeLine{1816 \textcolor{comment}{*}}
@@ -893,16 +893,16 @@ Definition at line 1138 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1161         \textcolor{keywordflow}{IF}(sr > 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{1162          theta= atheta}
 \DoxyCodeLine{1163         \textcolor{keywordflow}{ELSEIF}(sr > 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1164          theta= 2.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/atheta}
+\DoxyCodeLine{1164          theta= 2.d0*pi-\/atheta}
 \DoxyCodeLine{1165         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1166          theta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}-\/atheta}
+\DoxyCodeLine{1166          theta= pi-\/atheta}
 \DoxyCodeLine{1167         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1168          theta= \mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}+atheta}
+\DoxyCodeLine{1168          theta= pi+atheta}
 \DoxyCodeLine{1169 \textcolor{keywordflow}{        ENDIF}}
-\DoxyCodeLine{1170          aux= \mbox{\hyperlink{namespacehto__sp__fun_ae00024005793a98a7520e6051a2f6482}{hto\_poly\_unit}}(theta)}
-\DoxyCodeLine{1171          value(1:2)= aux(2,1:2)}
+\DoxyCodeLine{1170          aux= hto\_poly\_unit(theta)}
+\DoxyCodeLine{1171          \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1:2)= aux(2,1:2)}
 \DoxyCodeLine{1172        \textcolor{keywordflow}{ELSE} }
-\DoxyCodeLine{1173         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}(x)}
+\DoxyCodeLine{1173         \textcolor{keywordtype}{value}= hto\_li3(x)}
 \DoxyCodeLine{1174 \textcolor{keywordflow}{       ENDIF} }
 \DoxyCodeLine{1175        \textcolor{keywordflow}{RETURN} }
 \DoxyCodeLine{1176 \textcolor{keywordflow}{      ENDIF}}
@@ -919,14 +919,14 @@ Definition at line 1138 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1187        add(1)= -\/lncs(2)}
 \DoxyCodeLine{1188        add(2)= lncs(1)}
 \DoxyCodeLine{1189        \textcolor{keywordflow}{IF}(y(2) < 0.d0.and.x(2) > 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1190         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}(x)-\/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}*add}
+\DoxyCodeLine{1190         \textcolor{keywordtype}{value}= hto\_li3(x)-\/pi*add}
 \DoxyCodeLine{1191        \textcolor{keywordflow}{ELSEIF}(y(2) > 0.d0.and.x(2) < 0.d0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{1192         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}(x)+\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}*add}
+\DoxyCodeLine{1192         \textcolor{keywordtype}{value}= hto\_li3(x)+pi*add}
 \DoxyCodeLine{1193        \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1194         \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}(x)}
+\DoxyCodeLine{1194         \textcolor{keywordtype}{value}= hto\_li3(x)}
 \DoxyCodeLine{1195 \textcolor{keywordflow}{       ENDIF}}
 \DoxyCodeLine{1196       \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{1197        \textcolor{keywordtype}{value}= \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\_li3}}(x)}
+\DoxyCodeLine{1197        \textcolor{keywordtype}{value}= hto\_li3(x)}
 \DoxyCodeLine{1198 \textcolor{keywordflow}{      ENDIF}}
 \DoxyCodeLine{1199 \textcolor{comment}{*       }}
 \DoxyCodeLine{1200       \textcolor{keywordflow}{RETURN}}
@@ -1026,11 +1026,11 @@ Definition at line 1208 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{1286       cb3= pw3.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.cb3}
 \DoxyCodeLine{1287       cb4= pw4.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.cb4}
 \DoxyCodeLine{1288 \textcolor{comment}{*}}
-\DoxyCodeLine{1289       value(1,1:2)= sum2(1:2)+cb2(1:2)}
+\DoxyCodeLine{1289       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1,1:2)= sum2(1:2)+cb2(1:2)}
 \DoxyCodeLine{1290 \textcolor{comment}{*}}
-\DoxyCodeLine{1291       value(2,1:2)= sum3(1:2)+0.5d0*cb3(1:2)}
+\DoxyCodeLine{1291       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(2,1:2)= sum3(1:2)+0.5d0*cb3(1:2)}
 \DoxyCodeLine{1292 \textcolor{comment}{*}}
-\DoxyCodeLine{1293       value(3,1:2)= 1.d0/6.d0*(sum4(1:2)+1.d0/6.d0*cb4(1:2))}
+\DoxyCodeLine{1293       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(3,1:2)= 1.d0/6.d0*(sum4(1:2)+1.d0/6.d0*cb4(1:2))}
 \DoxyCodeLine{1294 \textcolor{comment}{*}}
 \DoxyCodeLine{1295       \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{1296 \textcolor{comment}{*}}
@@ -1121,7 +1121,7 @@ Definition at line 766 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{836        ln2\_omx= ln\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omx}
 \DoxyCodeLine{837        ln3\_omx= ln2\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omx}
 \DoxyCodeLine{838        ln4\_omx= ln3\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omx}
-\DoxyCodeLine{839        aniels= \mbox{\hyperlink{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}{hto\_s\_niels\_up4}}(y) }
+\DoxyCodeLine{839        aniels= hto\_s\_niels\_up4(y) }
 \DoxyCodeLine{840        li2(1:2)= aniels(1,1:2)}
 \DoxyCodeLine{841        li3(1:2)= aniels(2,1:2)}
 \DoxyCodeLine{842        s12(1:2)= aniels(3,1:2)}
@@ -1184,7 +1184,7 @@ Definition at line 766 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{899        ln2\_omy= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
 \DoxyCodeLine{900        ln2\_y= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
 \DoxyCodeLine{901        ln3\_y= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
-\DoxyCodeLine{902        aniels= \mbox{\hyperlink{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}{hto\_s\_niels\_up4}}(omy)}
+\DoxyCodeLine{902        aniels= hto\_s\_niels\_up4(omy)}
 \DoxyCodeLine{903        s12(1:2)= aniels(3,1:2)}
 \DoxyCodeLine{904        li3(1:2)= aniels(2,1:2)}
 \DoxyCodeLine{905        li2(1:2)= aniels(1,1:2)}
@@ -1232,7 +1232,7 @@ Definition at line 766 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{947        ln\_myi= myi(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.myi(2)}
 \DoxyCodeLine{948        ln2\_myi= ln\_myi.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_myi}
 \DoxyCodeLine{949        ln3\_myi= ln2\_myi.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_myi}
-\DoxyCodeLine{950        aniels= \mbox{\hyperlink{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}{hto\_s\_niels\_up4}}(yi)}
+\DoxyCodeLine{950        aniels= hto\_s\_niels\_up4(yi)}
 \DoxyCodeLine{951        li2(1:2)= aniels(1,1:2)}
 \DoxyCodeLine{952        li3(1:2)= aniels(2,1:2)}
 \DoxyCodeLine{953        s12(1:2)= aniels(3,1:2)}
@@ -1271,7 +1271,7 @@ Definition at line 766 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{986        ln2\_my= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
 \DoxyCodeLine{987        ln3\_my= ln2\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
 \DoxyCodeLine{988        ln4\_my= ln3\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
-\DoxyCodeLine{989        aniels= \mbox{\hyperlink{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}{hto\_s\_niels\_up4}}(yt)}
+\DoxyCodeLine{989        aniels= hto\_s\_niels\_up4(yt)}
 \DoxyCodeLine{990        bniels= 0.d0}
 \DoxyCodeLine{991        prod= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
 \DoxyCodeLine{992        bniels(1,1:2)= aniels(1,1:2)-\/prod(1:2)+0.5d0*ln2\_y(1:2)+}

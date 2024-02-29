@@ -187,12 +187,12 @@ Definition at line 341 of file Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+V\+
 \DoxyCodeLine{363 }
 \DoxyCodeLine{364   std::vector<Double\_t> Axxyyterm;}
 \DoxyCodeLine{365   \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_a49d5ffd584d16c65b30aa64f26abbc6b}{evaluatePolarizationTerms}}(Axxyyterm, code);}
-\DoxyCodeLine{366   Double\_t value = 0;}
-\DoxyCodeLine{367   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} s=0; s<Axxyyterm.size(); s++) value += Axxyyterm.at(s);}
-\DoxyCodeLine{368   value *= term1Coeff*term2Coeff*betaVal;}
+\DoxyCodeLine{366   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = 0;}
+\DoxyCodeLine{367   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} s=0; s<Axxyyterm.size(); s++) \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} += Axxyyterm.at(s);}
+\DoxyCodeLine{368   \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} *= term1Coeff*term2Coeff*betaVal;}
 \DoxyCodeLine{369 }
-\DoxyCodeLine{370   \textcolor{keywordflow}{if} (!(value==value))\{}
-\DoxyCodeLine{371     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Integral NaN="} << value << \textcolor{stringliteral}{" at "}}
+\DoxyCodeLine{370   \textcolor{keywordflow}{if} (!(\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}==\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}))\{}
+\DoxyCodeLine{371     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Integral NaN="} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at "}}
 \DoxyCodeLine{372       << \textcolor{stringliteral}{"h1="} << \mbox{\hyperlink{classRooSpin_ae615282974107aede94970f4c5395c27}{h1}} << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{373       << \textcolor{stringliteral}{"h2="} << \mbox{\hyperlink{classRooSpin_a9393141a795033c1c2b6b409ade0ff1f}{h2}} << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{374       << \textcolor{stringliteral}{"hs="} << \mbox{\hyperlink{classRooSpin_a4ab715525af92a66ec3cd209ed493dd0}{hs}} << \textcolor{charliteral}{'\(\backslash\)t'}}
@@ -208,11 +208,11 @@ Definition at line 341 of file Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+V\+
 \DoxyCodeLine{384       << \textcolor{stringliteral}{"term2Coeff="} << term2Coeff << \textcolor{charliteral}{'\(\backslash\)t'}}
 \DoxyCodeLine{385       << endl;}
 \DoxyCodeLine{386   \}}
-\DoxyCodeLine{387   \textcolor{keywordflow}{if} (value<=0.)\{}
-\DoxyCodeLine{388     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluated integral<=0: "} << value << endl;}
-\DoxyCodeLine{389     value=epsilon;}
+\DoxyCodeLine{387   \textcolor{keywordflow}{if} (\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<=0.)\{}
+\DoxyCodeLine{388     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluated integral<=0: "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << endl;}
+\DoxyCodeLine{389     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}=epsilon;}
 \DoxyCodeLine{390   \}}
-\DoxyCodeLine{391   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{391   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
 \DoxyCodeLine{392 \}}
 
 \end{DoxyCode}
@@ -284,16 +284,16 @@ Definition at line 286 of file Roo\+Spin\+Two\+\_\+7\+D\+Complex\+\_\+pp\+H\+V\+
 \DoxyCodeLine{316 }
 \DoxyCodeLine{317   std::vector<Double\_t> Axxyyterm;}
 \DoxyCodeLine{318   \mbox{\hyperlink{classRooSpinTwo__7DComplex__ppHVV_a49d5ffd584d16c65b30aa64f26abbc6b}{evaluatePolarizationTerms}}(Axxyyterm, code);}
-\DoxyCodeLine{319   Double\_t value = 0;}
-\DoxyCodeLine{320   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} s=0; s<Axxyyterm.size(); s++) value += Axxyyterm.at(s);}
-\DoxyCodeLine{321   value *= term1Coeff*term2Coeff*betaVal;}
+\DoxyCodeLine{319   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = 0;}
+\DoxyCodeLine{320   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} s=0; s<Axxyyterm.size(); s++) \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} += Axxyyterm.at(s);}
+\DoxyCodeLine{321   \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} *= term1Coeff*term2Coeff*betaVal;}
 \DoxyCodeLine{322 }
-\DoxyCodeLine{323   \textcolor{keywordflow}{if} (!(value==value)) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluate NaN="} << value << endl;}
-\DoxyCodeLine{324   \textcolor{keywordflow}{if} (value<=0.)\{}
-\DoxyCodeLine{325     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluated value<=0: "} << value << endl;}
-\DoxyCodeLine{326     value=epsilon;}
+\DoxyCodeLine{323   \textcolor{keywordflow}{if} (!(\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}==\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}})) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluate NaN="} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << endl;}
+\DoxyCodeLine{324   \textcolor{keywordflow}{if} (\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<=0.)\{}
+\DoxyCodeLine{325     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Evaluated value<=0: "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << endl;}
+\DoxyCodeLine{326     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}=epsilon;}
 \DoxyCodeLine{327   \}}
-\DoxyCodeLine{328   \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{328   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
 \DoxyCodeLine{329 \}}
 
 \end{DoxyCode}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lhefile_4104',['lhefile',['../namespacelhefile.html',1,'']]]
+  ['globalc_5293',['globalc',['../namespaceglobalc.html',1,'']]],
+  ['globald_5294',['globald',['../namespaceglobald.html',1,'']]]
 ];

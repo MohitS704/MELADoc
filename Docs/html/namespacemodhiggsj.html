@@ -117,7 +117,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">    real</span>(dp) :: restmp<span class="comment">!, restmpid</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">integer</span> :: i,j</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    heftcoupl = gs*alphas/(6.0_dp * <a class="code" href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">pi</a> * vev)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    heftcoupl = gs*alphas/(6.0_dp * pi * vev)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        res=<a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">call </span>spinoru2(3,(/-p(:,1),-p(:,2),p(:,4)/),za,zb,sprod)</div>
@@ -237,7 +237,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">intent(in)</span> :: sprod(3,3)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">intent(out)</span> :: me2</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">   real</span>(dp) :: s12, s13, s23, qsq</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">parameter</span> :: col_gg = 4.0d0 * <a class="code" href="namespacehto__colour.html#a2c9d16838ff6bc6257284d3e0002b886">ca</a>**2 * <a class="code" href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">cf</a></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">parameter</span> :: col_gg = 4.0d0 * ca**2 * cf</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   me2 = <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
@@ -313,7 +313,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">intent(in)</span> :: sprod(3,3)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">intent(out)</span> :: me2</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">   real</span>(dp) :: s12, s13,s23</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">parameter</span> :: col_qg = two * xn * <a class="code" href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">cf</a></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">   real</span>(dp), <span class="keywordtype">parameter</span> :: col_qg = two * xn * cf</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   me2 = <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
@@ -438,10 +438,7 @@ Functions/Subroutines</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="anamespacehto__units_html_adb7ab93d326f14720c354f68b0f7ee6c"><div class="ttname"><a href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">hto_units::one</a></div><div class="ttdeci">real *8, parameter one</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00184">CALLING_cpHTO.f:184</a></div></div>
-<div class="ttc" id="anamespacehto__colour_html_a2c9d16838ff6bc6257284d3e0002b886"><div class="ttname"><a href="namespacehto__colour.html#a2c9d16838ff6bc6257284d3e0002b886">hto_colour::ca</a></div><div class="ttdeci">real *8 ca</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l02059">CALLING_cpHTO.f:2059</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_af02db4603cd8c3f0b97612d4c1b416eb"><div class="ttname"><a href="namespacehto__units.html#af02db4603cd8c3f0b97612d4c1b416eb">hto_units::ci</a></div><div class="ttdeci">real *8, dimension(1:2) ci</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00189">CALLING_cpHTO.f:189</a></div></div>
-<div class="ttc" id="anamespacehto__riemann_html_aa29c661c983363871ad0d454f9f954cd"><div class="ttname"><a href="namespacehto__riemann.html#aa29c661c983363871ad0d454f9f954cd">hto_riemann::pi</a></div><div class="ttdeci">real *8, parameter pi</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00196">CALLING_cpHTO.f:196</a></div></div>
-<div class="ttc" id="anamespacehto__colour_html_a836ff5ae2e2c290b7853e7f53855a2f6"><div class="ttname"><a href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">hto_colour::cf</a></div><div class="ttdeci">real *8 cf</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l02059">CALLING_cpHTO.f:2059</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_a99185641f2fef22fbd699ff69ee64f18"><div class="ttname"><a href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">hto_units::zero</a></div><div class="ttdeci">real *8, parameter zero</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00185">CALLING_cpHTO.f:185</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

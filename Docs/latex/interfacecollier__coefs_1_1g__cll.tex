@@ -1,0 +1,410 @@
+\hypertarget{interfacecollier__coefs_1_1g__cll}{}\doxysection{collier\+\_\+coefs\+::g\+\_\+cll Interface Reference}
+\label{interfacecollier__coefs_1_1g__cll}\index{collier\_coefs::g\_cll@{collier\_coefs::g\_cll}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1g__cll_aab763b0f282b7fcfc78ae796a5211165}{g\+\_\+main\+\_\+cll}} (G, Guv, p10, p21, p32, p43, p54, p65, p60, p20, p31, p42, p53, p64, p50, p61, p30, p41, p52, p63, p40, p51, p62, m02, m12, m22, m32, m42, m52, m62, rmax, Gerr, id\+\_\+in, Gerr2)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1g__cll_a2f5f942c4445c4bc5aa3f781d194c7ef}{g\+\_\+arrays\+\_\+cll}} (G, Guv, Mom\+Inv, masses2, rmax, Gerr, Gerr2)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1g__cll_a1d51b7d60a026923a2552b4b41e0dbbd}{g\+\_\+list\+\_\+cll}} (G, Guv, p10, p21, p32, p43, p54, p65, p60, p20, p31, p42, p53, p64, p50, p61, p30, p41, p52, p63, p40, p51, p62, m02, m12, m22, m32, m42, m52, m62, rmax, Gerr, Gerr2)
+\item 
+subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1g__cll_aef5cfa9308a547f10477e9d5f87ee8c4}{g\+\_\+arrays\+\_\+list\+\_\+cll}} (G, Guv, Mom\+Inv, masses2, rmax, Gerr, Gerr2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 70 of file collier\+\_\+coefs.\+F90.
+
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacecollier__coefs_1_1g__cll_a2f5f942c4445c4bc5aa3f781d194c7ef}\label{interfacecollier__coefs_1_1g__cll_a2f5f942c4445c4bc5aa3f781d194c7ef}} 
+\index{collier\_coefs::g\_cll@{collier\_coefs::g\_cll}!g\_arrays\_cll@{g\_arrays\_cll}}
+\index{g\_arrays\_cll@{g\_arrays\_cll}!collier\_coefs::g\_cll@{collier\_coefs::g\_cll}}
+\doxysubsubsection{\texorpdfstring{g\_arrays\_cll()}{g\_arrays\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::g\+\_\+cll\+::g\+\_\+arrays\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{G,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Guv,  }\item[{double complex, dimension(21), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:6), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3242 of file collier\+\_\+coefs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3242 }
+\DoxyCodeLine{3243     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{3244     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(21), masses2(0:6)}
+\DoxyCodeLine{3245     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: G(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{3246     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Guv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{3247     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Gerr(0:rmax),Gerr2(0:rmax)}
+\DoxyCodeLine{3248     \textcolor{keywordtype}{double precision} :: Gerraux(0:rmax),Gerr2aux(0:rmax)}
+\DoxyCodeLine{3249 }
+\DoxyCodeLine{3250     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr)) then}
+\DoxyCodeLine{3251       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr2)) then}
+\DoxyCodeLine{3252         \textcolor{keyword}{call }g\_main\_cll(g,guv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),mominv(6),  \&}
+\DoxyCodeLine{3253             mominv(7),mominv(8),mominv(9),mominv(10),mominv(11),mominv(12),  \&}
+\DoxyCodeLine{3254             mominv(13),mominv(14),mominv(15),mominv(16),mominv(17),mominv(18),  \&}
+\DoxyCodeLine{3255             mominv(19),mominv(20),mominv(21),masses2(0),masses2(1),  \&}
+\DoxyCodeLine{3256             masses2(2),masses2(3),masses2(4),masses2(5),masses2(6),rmax,gerr,gerr2=gerr2)}
+\DoxyCodeLine{3257       else}
+\DoxyCodeLine{3258         \textcolor{keyword}{call }g\_main\_cll(g,guv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),mominv(6),  \&}
+\DoxyCodeLine{3259             mominv(7),mominv(8),mominv(9),mominv(10),mominv(11),mominv(12),  \&}
+\DoxyCodeLine{3260             mominv(13),mominv(14),mominv(15),mominv(16),mominv(17),mominv(18),  \&}
+\DoxyCodeLine{3261             mominv(19),mominv(20),mominv(21),masses2(0),masses2(1),  \&}
+\DoxyCodeLine{3262             masses2(2),masses2(3),masses2(4),masses2(5),masses2(6),rmax,gerr)}
+\DoxyCodeLine{3263       \textcolor{keyword}{end }if}
+\DoxyCodeLine{3264     else}
+\DoxyCodeLine{3265       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr2)) then}
+\DoxyCodeLine{3266         \textcolor{keyword}{call }g\_main\_cll(g,guv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),mominv(6),  \&}
+\DoxyCodeLine{3267             mominv(7),mominv(8),mominv(9),mominv(10),mominv(11),mominv(12),  \&}
+\DoxyCodeLine{3268             mominv(13),mominv(14),mominv(15),mominv(16),mominv(17),mominv(18),  \&}
+\DoxyCodeLine{3269             mominv(19),mominv(20),mominv(21),masses2(0),masses2(1),  \&}
+\DoxyCodeLine{3270             masses2(2),masses2(3),masses2(4),masses2(5),masses2(6),rmax,gerraux,gerr2=gerr2)}
+\DoxyCodeLine{3271       else}
+\DoxyCodeLine{3272         \textcolor{keyword}{call }g\_main\_cll(g,guv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),mominv(6),  \&}
+\DoxyCodeLine{3273             mominv(7),mominv(8),mominv(9),mominv(10),mominv(11),mominv(12),  \&}
+\DoxyCodeLine{3274             mominv(13),mominv(14),mominv(15),mominv(16),mominv(17),mominv(18),  \&}
+\DoxyCodeLine{3275             mominv(19),mominv(20),mominv(21),masses2(0),masses2(1),  \&}
+\DoxyCodeLine{3276             masses2(2),masses2(3),masses2(4),masses2(5),masses2(6),rmax,gerraux)}
+\DoxyCodeLine{3277       \textcolor{keyword}{end }if}
+\DoxyCodeLine{3278     \textcolor{keyword}{end }if}
+\DoxyCodeLine{3279     }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__coefs_1_1g__cll_aef5cfa9308a547f10477e9d5f87ee8c4}\label{interfacecollier__coefs_1_1g__cll_aef5cfa9308a547f10477e9d5f87ee8c4}} 
+\index{collier\_coefs::g\_cll@{collier\_coefs::g\_cll}!g\_arrays\_list\_cll@{g\_arrays\_list\_cll}}
+\index{g\_arrays\_list\_cll@{g\_arrays\_list\_cll}!collier\_coefs::g\_cll@{collier\_coefs::g\_cll}}
+\doxysubsubsection{\texorpdfstring{g\_arrays\_list\_cll()}{g\_arrays\_list\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::g\+\_\+cll\+::g\+\_\+arrays\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{G,  }\item[{double complex, dimension(\+:), intent(out)}]{Guv,  }\item[{double complex, dimension(21), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:6), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3402 of file collier\+\_\+coefs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3402 }
+\DoxyCodeLine{3403     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{3404     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(21), masses2(0:6)}
+\DoxyCodeLine{3405     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: G(:),Guv(:)}
+\DoxyCodeLine{3406     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Gerr(0:rmax),Gerr2(0:rmax)}
+\DoxyCodeLine{3407     \textcolor{keywordtype}{logical} :: eflag}
+\DoxyCodeLine{3408 }
+\DoxyCodeLine{3409     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
+\DoxyCodeLine{3410       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3411       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
+\DoxyCodeLine{3412       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{3413       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
+\DoxyCodeLine{3414       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3415       return}
+\DoxyCodeLine{3416 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{3417     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{3418       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3419       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{3420       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{3421       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{3422       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{3423       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3424       return}
+\DoxyCodeLine{3425 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{3426 }
+\DoxyCodeLine{3427     \textcolor{keyword}{call }g\_arrays\_list\_checked\_cll(g,guv,mominv,masses2,rmax,gerr,gerr2)}
+\DoxyCodeLine{3428 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__coefs_1_1g__cll_a1d51b7d60a026923a2552b4b41e0dbbd}\label{interfacecollier__coefs_1_1g__cll_a1d51b7d60a026923a2552b4b41e0dbbd}} 
+\index{collier\_coefs::g\_cll@{collier\_coefs::g\_cll}!g\_list\_cll@{g\_list\_cll}}
+\index{g\_list\_cll@{g\_list\_cll}!collier\_coefs::g\_cll@{collier\_coefs::g\_cll}}
+\doxysubsubsection{\texorpdfstring{g\_list\_cll()}{g\_list\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::g\+\_\+cll\+::g\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{G,  }\item[{double complex, dimension(\+:), intent(out)}]{Guv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p65,  }\item[{double complex, intent(in)}]{p60,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p64,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p61,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{p63,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p62,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double complex, intent(in)}]{m62,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3296 of file collier\+\_\+coefs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3296 }
+\DoxyCodeLine{3297     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{3298     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53}
+\DoxyCodeLine{3299     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p64,p50,p61,p30,p41,p52,p63,p40,p51,p62}
+\DoxyCodeLine{3300     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42,m52,m62}
+\DoxyCodeLine{3301     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: G(:),Guv(:)}
+\DoxyCodeLine{3302     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Gerr(0:rmax),Gerr2(0:rmax)}
+\DoxyCodeLine{3303     \textcolor{keywordtype}{logical} :: eflag}
+\DoxyCodeLine{3304 }
+\DoxyCodeLine{3305     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
+\DoxyCodeLine{3306       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3307       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
+\DoxyCodeLine{3308       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{3309       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
+\DoxyCodeLine{3310       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3311       return}
+\DoxyCodeLine{3312 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{3313     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{3314       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3315       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{3316       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{3317       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{3318       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{3319       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3320       return}
+\DoxyCodeLine{3321 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{3322 }
+\DoxyCodeLine{3323     \textcolor{keyword}{call }g\_list\_checked\_cll(g,guv,p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53, \&}
+\DoxyCodeLine{3324                                p64,p50,p61,p30,p41,p52,p63,p40,p51,p62, \&}
+\DoxyCodeLine{3325                                m02,m12,m22,m32,m42,m52,m62,rmax,gerr,gerr2)}
+\DoxyCodeLine{3326 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{interfacecollier__coefs_1_1g__cll_aab763b0f282b7fcfc78ae796a5211165}\label{interfacecollier__coefs_1_1g__cll_aab763b0f282b7fcfc78ae796a5211165}} 
+\index{collier\_coefs::g\_cll@{collier\_coefs::g\_cll}!g\_main\_cll@{g\_main\_cll}}
+\index{g\_main\_cll@{g\_main\_cll}!collier\_coefs::g\_cll@{collier\_coefs::g\_cll}}
+\doxysubsubsection{\texorpdfstring{g\_main\_cll()}{g\_main\_cll()}}
+{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::g\+\_\+cll\+::g\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{G,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Guv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p65,  }\item[{double complex, intent(in)}]{p60,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p64,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p61,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{p63,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p62,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double complex, intent(in)}]{m62,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr,  }\item[{integer, intent(in), optional}]{id\+\_\+in,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Gerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3000 of file collier\+\_\+coefs.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3000   }
+\DoxyCodeLine{3001     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{3002     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53}
+\DoxyCodeLine{3003     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p64,p50,p61,p30,p41,p52,p63,p40,p51,p62}
+\DoxyCodeLine{3004     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42,m52,m62}
+\DoxyCodeLine{3005     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: G(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{3006     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Guv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{3007     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Gerr(0:rmax),Gerr2(0:rmax)}
+\DoxyCodeLine{3008     \textcolor{keywordtype}{double precision} :: Gerraux(0:rmax),Gerr2aux(0:rmax)}
+\DoxyCodeLine{3009     \textcolor{keywordtype}{double precision} :: Gacc(0:rmax), Gacc2(0:rmax),norm,norm\_coli,norm\_dd}
+\DoxyCodeLine{3010     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)} :: id\_in}
+\DoxyCodeLine{3011     \textcolor{keywordtype}{double complex} :: args(28)}
+\DoxyCodeLine{3012     \textcolor{keywordtype}{double complex} :: elimcminf2}
+\DoxyCodeLine{3013     \textcolor{keywordtype}{integer} :: errflag,id}
+\DoxyCodeLine{3014     \textcolor{keywordtype}{logical} :: mflag,eflag}
+\DoxyCodeLine{3015     \textcolor{keywordtype}{integer} :: r,n1,n2,n3,n4,n5,n6}
+\DoxyCodeLine{3016 }
+\DoxyCodeLine{3017     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
+\DoxyCodeLine{3018       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3019       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
+\DoxyCodeLine{3020       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
+\DoxyCodeLine{3021       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
+\DoxyCodeLine{3022       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3023       return}
+\DoxyCodeLine{3024 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{3025     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
+\DoxyCodeLine{3026       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3027       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
+\DoxyCodeLine{3028       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
+\DoxyCodeLine{3029       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
+\DoxyCodeLine{3030       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
+\DoxyCodeLine{3031       \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3032       return}
+\DoxyCodeLine{3033 \textcolor{keywordflow}{    end if}    }
+\DoxyCodeLine{3034 }
+\DoxyCodeLine{3035     mflag=.true.}
+\DoxyCodeLine{3036     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(id\_in)) then}
+\DoxyCodeLine{3037       mflag=.false.}
+\DoxyCodeLine{3038       id = id\_in}
+\DoxyCodeLine{3039     else}
+\DoxyCodeLine{3040       id = 0}
+\DoxyCodeLine{3041     \textcolor{keyword}{end }if}
+\DoxyCodeLine{3042 }
+\DoxyCodeLine{3043     \textcolor{keywordflow}{if} (mflag) then}
+\DoxyCodeLine{3044       \textcolor{comment}{! set ID of master call}}
+\DoxyCodeLine{3045       args(1) = p10}
+\DoxyCodeLine{3046       args(2) = p21}
+\DoxyCodeLine{3047       args(3) = p32}
+\DoxyCodeLine{3048       args(4) = p43}
+\DoxyCodeLine{3049       args(5) = p54}
+\DoxyCodeLine{3050       args(6) = p65}
+\DoxyCodeLine{3051       args(7) = p60}
+\DoxyCodeLine{3052       args(8) = p20}
+\DoxyCodeLine{3053       args(9) = p31}
+\DoxyCodeLine{3054       args(10) = p42}
+\DoxyCodeLine{3055       args(11) = p53}
+\DoxyCodeLine{3056       args(12) = p64}
+\DoxyCodeLine{3057       args(13) = p50}
+\DoxyCodeLine{3058       args(14) = p61}
+\DoxyCodeLine{3059       args(15) = p30}
+\DoxyCodeLine{3060       args(16) = p41}
+\DoxyCodeLine{3061       args(17) = p52}
+\DoxyCodeLine{3062       args(18) = p63}
+\DoxyCodeLine{3063       args(19) = p40}
+\DoxyCodeLine{3064       args(20) = p51}
+\DoxyCodeLine{3065       args(21) = p62}
+\DoxyCodeLine{3066       args(22) = m02}
+\DoxyCodeLine{3067       args(23) = m12}
+\DoxyCodeLine{3068       args(24) = m22}
+\DoxyCodeLine{3069       args(25) = m32}
+\DoxyCodeLine{3070       args(26) = m42}
+\DoxyCodeLine{3071       args(27) = m52}
+\DoxyCodeLine{3072       args(28) = m62}
+\DoxyCodeLine{3073       \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'G\_cll'})}
+\DoxyCodeLine{3074       \textcolor{keyword}{call }setmastern\_cll(7)}
+\DoxyCodeLine{3075       \textcolor{keyword}{call }setmasterr\_cll(rmax)}
+\DoxyCodeLine{3076       \textcolor{keyword}{call }setmasterargs\_cll(28,args)}
+\DoxyCodeLine{3077 }
+\DoxyCodeLine{3078       \textcolor{keyword}{call }settencache\_cll(never\_tenred\_cll)}
+\DoxyCodeLine{3079     \textcolor{keyword}{end }if}
+\DoxyCodeLine{3080 }
+\DoxyCodeLine{3081 }
+\DoxyCodeLine{3082     \textcolor{keywordflow}{select case} (mode\_cll)}
+\DoxyCodeLine{3083 }
+\DoxyCodeLine{3084       \textcolor{keywordflow}{case} (1)}
+\DoxyCodeLine{3085         \textcolor{comment}{! calculate loop integral using}}
+\DoxyCodeLine{3086         \textcolor{comment}{! COLI implementation by AD/LH}}
+\DoxyCodeLine{3087 }
+\DoxyCodeLine{3088         \textcolor{keyword}{call }calcg(g,guv,p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53,  \&}
+\DoxyCodeLine{3089             p64,p50,p61,p30,p41,p52,p63,p40,p51,p62,  \&}
+\DoxyCodeLine{3090             m02,m12,m22,m32,m42,m52,m62,rmax,id,gerraux,gerr2aux)}
+\DoxyCodeLine{3091 }
+\DoxyCodeLine{3092         norm = abs(g(0,0,0,0,0,0,0))}
+\DoxyCodeLine{3093         \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{3094           \textcolor{keywordflow}{do} n1=0,r}
+\DoxyCodeLine{3095             \textcolor{keywordflow}{do} n2=0,r-\/n1}
+\DoxyCodeLine{3096               \textcolor{keywordflow}{do} n3=0,r-\/n1-\/n2}
+\DoxyCodeLine{3097                 \textcolor{keywordflow}{do} n4=0,r-\/n1-\/n2-\/n3}
+\DoxyCodeLine{3098                   \textcolor{keywordflow}{do} n5=0,r-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{3099                     n6=r-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{3100                     norm = max(norm,abs(g(0,n1,n2,n3,n4,n5,n6)))}
+\DoxyCodeLine{3101                   \textcolor{keyword}{end }do}
+\DoxyCodeLine{3102                 \textcolor{keyword}{end }do}
+\DoxyCodeLine{3103               \textcolor{keyword}{end }do}
+\DoxyCodeLine{3104             \textcolor{keyword}{end }do}
+\DoxyCodeLine{3105           \textcolor{keyword}{end }do}
+\DoxyCodeLine{3106         \textcolor{keyword}{end }do}
+\DoxyCodeLine{3107         \textcolor{keywordflow}{if} (norm.eq.0d0) then}
+\DoxyCodeLine{3108           norm = max(abs(p10),abs(p21),abs(p32),abs(p43),abs(p54), \&}
+\DoxyCodeLine{3109                       abs(p65),abs(p60),abs(p20),abs(p31),abs(p42), \&}
+\DoxyCodeLine{3110                       abs(p53),abs(p64),abs(p50),abs(p61),abs(p30), \&}
+\DoxyCodeLine{3111                       abs(p41),abs(p52),abs(p63),abs(p40),abs(p51), \&}
+\DoxyCodeLine{3112                       abs(p62),abs(m02),abs(m12),abs(m22),abs(m32), \&}
+\DoxyCodeLine{3113                       abs(m42),abs(m52),abs(m62))}
+\DoxyCodeLine{3114           \textcolor{keywordflow}{if}(norm.ne.0d0) then}
+\DoxyCodeLine{3115             norm=1d0/norm**5}
+\DoxyCodeLine{3116           else}
+\DoxyCodeLine{3117             norm=1d0/muir2\_cll**4}
+\DoxyCodeLine{3118 \textcolor{keywordflow}{          end if} }
+\DoxyCodeLine{3119         \textcolor{keyword}{end }if}
+\DoxyCodeLine{3120         gacc = gerraux/norm       }
+\DoxyCodeLine{3121         gacc2 = gerr2aux/norm       }
+\DoxyCodeLine{3122 }
+\DoxyCodeLine{3123         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr)) gerr = gerraux}
+\DoxyCodeLine{3124         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr2)) gerr2 = gerr2aux}
+\DoxyCodeLine{3125 }
+\DoxyCodeLine{3126         \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateaccflag\_cll(gacc,rmax)                }
+\DoxyCodeLine{3127 }
+\DoxyCodeLine{3128 }
+\DoxyCodeLine{3129       \textcolor{keywordflow}{case} (2)}
+\DoxyCodeLine{3130         \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3131         \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'7-\/point functions not implemented in DD library'},eflag)}
+\DoxyCodeLine{3132         \textcolor{keywordflow}{if}(eflag) then}
+\DoxyCodeLine{3133           \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'G\_cll: 7-\/point functions not implemented in DD library'}}
+\DoxyCodeLine{3134           \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'G\_cll: -\/-\/> use COLI implementation (mode\_cll=1)'}}
+\DoxyCodeLine{3135         \textcolor{keyword}{end }if}
+\DoxyCodeLine{3136 }
+\DoxyCodeLine{3137 }
+\DoxyCodeLine{3138       \textcolor{keywordflow}{case} (3)}
+\DoxyCodeLine{3139         \textcolor{comment}{! calculate loop integral using}}
+\DoxyCodeLine{3140         \textcolor{comment}{! COLI implementation by AD/LH}}
+\DoxyCodeLine{3141 }
+\DoxyCodeLine{3142         \textcolor{keyword}{call }calcg(g,guv,p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53,  \&}
+\DoxyCodeLine{3143             p64,p50,p61,p30,p41,p52,p63,p40,p51,p62,  \&}
+\DoxyCodeLine{3144             m02,m12,m22,m32,m42,m52,m62,rmax,id,gerraux,gerr2aux)}
+\DoxyCodeLine{3145 }
+\DoxyCodeLine{3146         norm = abs(g(0,0,0,0,0,0,0))}
+\DoxyCodeLine{3147         \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{3148           \textcolor{keywordflow}{do} n1=0,r}
+\DoxyCodeLine{3149             \textcolor{keywordflow}{do} n2=0,r-\/n1}
+\DoxyCodeLine{3150               \textcolor{keywordflow}{do} n3=0,r-\/n1-\/n2}
+\DoxyCodeLine{3151                 \textcolor{keywordflow}{do} n4=0,r-\/n1-\/n2-\/n3}
+\DoxyCodeLine{3152                   \textcolor{keywordflow}{do} n5=0,r-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{3153                     n6=r-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{3154                     norm = max(norm,abs(g(0,n1,n2,n3,n4,n5,n6)))}
+\DoxyCodeLine{3155                   \textcolor{keyword}{end }do}
+\DoxyCodeLine{3156                 \textcolor{keyword}{end }do}
+\DoxyCodeLine{3157               \textcolor{keyword}{end }do}
+\DoxyCodeLine{3158             \textcolor{keyword}{end }do}
+\DoxyCodeLine{3159           \textcolor{keyword}{end }do}
+\DoxyCodeLine{3160         \textcolor{keyword}{end }do}
+\DoxyCodeLine{3161         \textcolor{keywordflow}{if} (norm.eq.0d0) then}
+\DoxyCodeLine{3162           norm = max(abs(p10),abs(p21),abs(p32),abs(p43),abs(p54), \&}
+\DoxyCodeLine{3163                       abs(p65),abs(p60),abs(p20),abs(p31),abs(p42), \&}
+\DoxyCodeLine{3164                       abs(p53),abs(p64),abs(p50),abs(p61),abs(p30), \&}
+\DoxyCodeLine{3165                       abs(p41),abs(p52),abs(p63),abs(p40),abs(p51), \&}
+\DoxyCodeLine{3166                       abs(p62),abs(m02),abs(m12),abs(m22),abs(m32), \&}
+\DoxyCodeLine{3167                       abs(m42),abs(m52),abs(m62))}
+\DoxyCodeLine{3168           \textcolor{keywordflow}{if}(norm.ne.0d0) then}
+\DoxyCodeLine{3169             norm=1d0/norm**5}
+\DoxyCodeLine{3170           else}
+\DoxyCodeLine{3171             norm=1d0/muir2\_cll**4}
+\DoxyCodeLine{3172 \textcolor{keywordflow}{          end if} }
+\DoxyCodeLine{3173         \textcolor{keyword}{end }if}
+\DoxyCodeLine{3174         gacc = gerraux/norm       }
+\DoxyCodeLine{3175         gacc2 = gerr2aux/norm       }
+\DoxyCodeLine{3176 }
+\DoxyCodeLine{3177         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr)) gerr = gerraux}
+\DoxyCodeLine{3178         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(gerr2)) gerr2 = gerr2aux}
+\DoxyCodeLine{3179 }
+\DoxyCodeLine{3180         \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateaccflag\_cll(gacc,rmax)                }
+\DoxyCodeLine{3181 }
+\DoxyCodeLine{3182         \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
+\DoxyCodeLine{3183         \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'G\_cll'},\textcolor{stringliteral}{'7-\/point functions not implemented in DD library'},eflag)}
+\DoxyCodeLine{3184         \textcolor{keywordflow}{if}(eflag) then}
+\DoxyCodeLine{3185           \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'G\_cll: 7-\/point functions not implemented in DD library'}}
+\DoxyCodeLine{3186           \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'G\_cll: -\/-\/> use COLI implementation (mode\_cll=1)'}}
+\DoxyCodeLine{3187         \textcolor{keyword}{end }if}
+\DoxyCodeLine{3188 }
+\DoxyCodeLine{3189 }
+\DoxyCodeLine{3190     \textcolor{keyword}{end }select}
+\DoxyCodeLine{3191 }
+\DoxyCodeLine{3192     \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateerrflag\_cll}
+\DoxyCodeLine{3193 }
+\DoxyCodeLine{3194     \textcolor{keywordflow}{if} (monitoring) then}
+\DoxyCodeLine{3195       pointscntg\_cll =  pointscntg\_cll + 1}
+\DoxyCodeLine{3196 }
+\DoxyCodeLine{3197       \textcolor{keywordflow}{if}(maxval(gacc).gt.reqacc\_cll) accpointscntg\_cll =  accpointscntg\_cll + 1}
+\DoxyCodeLine{3198 }
+\DoxyCodeLine{3199       \textcolor{keywordflow}{if}(maxval(gacc).gt.critacc\_cll) then}
+\DoxyCodeLine{3200         critpointscntg\_cll =  critpointscntg\_cll + 1}
+\DoxyCodeLine{3201         \textcolor{keywordflow}{if} ( critpointscntg\_cll.le.noutcritpointsmax\_cll(7) ) then}
+\DoxyCodeLine{3202           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'G\_cll'},0,maxval(gacc), critpointscntg\_cll)}
+\DoxyCodeLine{3203           \textcolor{keywordflow}{if}( critpointscntg\_cll.eq.noutcritpointsmax\_cll(7)) then}
+\DoxyCodeLine{3204             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for G\_cll suppressed '}   }
+\DoxyCodeLine{3205             \textcolor{keyword}{write}(nerrout\_cll,*)}
+\DoxyCodeLine{3206           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{3207         \textcolor{keyword}{end }if}
+\DoxyCodeLine{3208       \textcolor{keyword}{end }if}
+\DoxyCodeLine{3209 }
+\DoxyCodeLine{3210 \textcolor{preprocessor}{\#ifdef CritPoints2}}
+\DoxyCodeLine{3211 \textcolor{preprocessor}{}      \textcolor{keywordflow}{if} (mode\_cll.ne.2) \textcolor{keywordflow}{then}      }
+\DoxyCodeLine{3212       \textcolor{keywordflow}{if}(maxval(gacc2).gt.reqacc\_cll) accpointscntg2\_cll =  accpointscntg2\_cll + 1}
+\DoxyCodeLine{3213 }
+\DoxyCodeLine{3214       \textcolor{keywordflow}{if}(maxval(gacc2).gt.critacc\_cll) then}
+\DoxyCodeLine{3215         critpointscntg2\_cll =  critpointscntg2\_cll + 1}
+\DoxyCodeLine{3216         \textcolor{keywordflow}{if} ( critpointscntg2\_cll.le.noutcritpointsmax\_cll(7) ) then}
+\DoxyCodeLine{3217           \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'G\_cll'},0,maxval(gacc2), critpointscntg2\_cll)}
+\DoxyCodeLine{3218           \textcolor{keywordflow}{if}( critpointscntg2\_cll.eq.noutcritpointsmax\_cll(7)) then}
+\DoxyCodeLine{3219             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for G\_cll suppressed '}   }
+\DoxyCodeLine{3220             \textcolor{keyword}{write}(ncpout2\_cll,*)}
+\DoxyCodeLine{3221           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{3222         \textcolor{keyword}{end }if}
+\DoxyCodeLine{3223       \textcolor{keyword}{end }if}
+\DoxyCodeLine{3224       \textcolor{keyword}{end }if}
+\DoxyCodeLine{3225 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{3226 \textcolor{preprocessor}{}}
+\DoxyCodeLine{3227     \textcolor{keyword}{end }if}
+\DoxyCodeLine{3228 }
+\DoxyCodeLine{3229 }
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__coefs_8F90}{collier\+\_\+coefs.\+F90}}\end{DoxyCompactItemize}

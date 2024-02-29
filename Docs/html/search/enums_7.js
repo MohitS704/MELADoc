@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resonancepropagatorscheme_7799',['ResonancePropagatorScheme',['../namespaceTVar.html#ac79830020a0eed4f6dcd3a62a496b016',1,'TVar']]]
+  ['leptoninterference_10026',['LeptonInterference',['../namespaceTVar.html#a2599e53f6f03e850b83dd83d6c296fec',1,'TVar']]]
 ];

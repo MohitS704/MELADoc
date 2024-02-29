@@ -28,9 +28,9 @@ void \mbox{\hyperlink{classVprimeCouplings_a8fab5e83a87a240ba58e9bcc31fef259}{Se
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-double \mbox{\hyperlink{classVprimeCouplings_a40e3fa0b1c5983da374a6a594d004c1b}{Zpffcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}
+double \mbox{\hyperlink{classVprimeCouplings_a40e3fa0b1c5983da374a6a594d004c1b}{Zpffcoupl}} \mbox{[}\mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{S\+I\+Z\+E\+\_\+\+Vpff}}\mbox{]}\mbox{[}2\mbox{]}
 \item 
-double \mbox{\hyperlink{classVprimeCouplings_a5736fa2d9f4fc9cc7ffc7104b5df7df9}{Wpffcoupl}} \mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}
+double \mbox{\hyperlink{classVprimeCouplings_a5736fa2d9f4fc9cc7ffc7104b5df7df9}{Wpffcoupl}} \mbox{[}\mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{S\+I\+Z\+E\+\_\+\+Vpff}}\mbox{]}\mbox{[}2\mbox{]}
 \item 
 double \mbox{\hyperlink{classVprimeCouplings_a95df53cef1f6548f6e47daebc3016d3f}{M\+\_\+\+Zprime}}
 \item 
@@ -112,7 +112,7 @@ Definition at line 396 of file T\+Couplings.\+cc.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{396                                                       \{}
 \DoxyCodeLine{397   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
-\DoxyCodeLine{398     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<SIZE\_Vpff; ic++)\{}
+\DoxyCodeLine{398     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<\mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{SIZE\_Vpff}}; ic++)\{}
 \DoxyCodeLine{399       \mbox{\hyperlink{classVprimeCouplings_a40e3fa0b1c5983da374a6a594d004c1b}{Zpffcoupl}}[ic][im] = (other.Zpffcoupl)[ic][im];}
 \DoxyCodeLine{400       \mbox{\hyperlink{classVprimeCouplings_a5736fa2d9f4fc9cc7ffc7104b5df7df9}{Wpffcoupl}}[ic][im] = (other.Wpffcoupl)[ic][im];}
 \DoxyCodeLine{401     \}}
@@ -154,7 +154,7 @@ Definition at line 385 of file T\+Couplings.\+cc.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{385                            \{}
 \DoxyCodeLine{386   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
-\DoxyCodeLine{387     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic = 0; ic < SIZE\_Vpff; ic++)\{}
+\DoxyCodeLine{387     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic = 0; ic < \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{SIZE\_Vpff}}; ic++)\{}
 \DoxyCodeLine{388       \mbox{\hyperlink{classVprimeCouplings_a40e3fa0b1c5983da374a6a594d004c1b}{Zpffcoupl}}[ic][im]=0;}
 \DoxyCodeLine{389       \mbox{\hyperlink{classVprimeCouplings_a5736fa2d9f4fc9cc7ffc7104b5df7df9}{Wpffcoupl}}[ic][im]=0;}
 \DoxyCodeLine{390     \}}
@@ -179,7 +179,7 @@ Definition at line 411 of file T\+Couplings.\+cc.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{411                                                                                                                         \{}
 \DoxyCodeLine{412   \textcolor{keywordflow}{if} (whichResonance!=1)\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"VprimeCouplings::SetVpffCouplings: Contact terms are only for the first resonance"} << endl; \}}
-\DoxyCodeLine{413   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index>=SIZE\_Vpff)\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"VprimeCouplings::SetVpffCouplings: Cannot set index "} << index << \textcolor{stringliteral}{", out of range for the type requested."} << endl; \}}
+\DoxyCodeLine{413   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index>=\mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{SIZE\_Vpff}})\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"VprimeCouplings::SetVpffCouplings: Cannot set index "} << index << \textcolor{stringliteral}{", out of range for the type requested."} << endl; \}}
 \DoxyCodeLine{414   \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{415     \textcolor{keywordflow}{if} (!setWpff)\{}
 \DoxyCodeLine{416       \mbox{\hyperlink{classVprimeCouplings_a40e3fa0b1c5983da374a6a594d004c1b}{Zpffcoupl}}[index][0] = c\_real;}
@@ -187,10 +187,10 @@ Definition at line 411 of file T\+Couplings.\+cc.
 \DoxyCodeLine{418     \}}
 \DoxyCodeLine{419     \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{420       \textcolor{keywordflow}{if} (}
-\DoxyCodeLine{421         (index == gHIGGS\_Vp\_NuE\_left || index == gHIGGS\_Vp\_NuE\_right}
-\DoxyCodeLine{422          || index == gHIGGS\_Vp\_Dn\_left || index == gHIGGS\_Vp\_Dn\_right}
-\DoxyCodeLine{423          || index == gHIGGS\_Vp\_Str\_left || index == gHIGGS\_Vp\_Str\_right}
-\DoxyCodeLine{424          || index == gHIGGS\_Vp\_Bot\_left || index == gHIGGS\_Vp\_Bot\_right}
+\DoxyCodeLine{421         (index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404aa60ca871d2bb8f3547d4935dde8b7396}{gHIGGS\_Vp\_NuE\_left}} || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404add73137ba24bae2b42e4d1d0277e7f28}{gHIGGS\_Vp\_NuE\_right}}}
+\DoxyCodeLine{422          || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a2410ca76dea0aebfe8fc0bb2a2ade9a4}{gHIGGS\_Vp\_Dn\_left}} || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a37be85176c7d6aebfe6d4d15df9eac81}{gHIGGS\_Vp\_Dn\_right}}}
+\DoxyCodeLine{423          || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404ace8324c6bc09ae2b55217d54ea3c103c}{gHIGGS\_Vp\_Str\_left}} || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a60018a81079ae2b09f08733ac9d62078}{gHIGGS\_Vp\_Str\_right}}}
+\DoxyCodeLine{424          || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a831780f498b1ebe98a801d445c0c56a1}{gHIGGS\_Vp\_Bot\_left}} || index == \mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404ae38b0e04d6e9ff3c9d1b0e18cd93ff49}{gHIGGS\_Vp\_Bot\_right}}}
 \DoxyCodeLine{425          ) \&\& (c\_real!=0. || c\_imag!=0.)}
 \DoxyCodeLine{426         ) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"No W' contact terms for neutrino, down, strange, or bottom; use the lepton or up-\/quark versions instead!"} << endl;}
 \DoxyCodeLine{427       \textcolor{keywordflow}{else}\{}
@@ -279,7 +279,7 @@ Definition at line 122 of file T\+Couplings.\+hh.
 \index{VprimeCouplings@{VprimeCouplings}!Wpffcoupl@{Wpffcoupl}}
 \index{Wpffcoupl@{Wpffcoupl}!VprimeCouplings@{VprimeCouplings}}
 \doxysubsubsection{\texorpdfstring{Wpffcoupl}{Wpffcoupl}}
-{\footnotesize\ttfamily double Vprime\+Couplings\+::\+Wpffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}}
+{\footnotesize\ttfamily double Vprime\+Couplings\+::\+Wpffcoupl\mbox{[}\mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{S\+I\+Z\+E\+\_\+\+Vpff}}\mbox{]}\mbox{[}2\mbox{]}}
 
 
 
@@ -289,7 +289,7 @@ Definition at line 120 of file T\+Couplings.\+hh.
 \index{VprimeCouplings@{VprimeCouplings}!Zpffcoupl@{Zpffcoupl}}
 \index{Zpffcoupl@{Zpffcoupl}!VprimeCouplings@{VprimeCouplings}}
 \doxysubsubsection{\texorpdfstring{Zpffcoupl}{Zpffcoupl}}
-{\footnotesize\ttfamily double Vprime\+Couplings\+::\+Zpffcoupl\mbox{[}S\+I\+Z\+E\+\_\+\+Vpff\mbox{]}\mbox{[}2\mbox{]}}
+{\footnotesize\ttfamily double Vprime\+Couplings\+::\+Zpffcoupl\mbox{[}\mbox{\hyperlink{raw__couplings_8txt_ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07}{S\+I\+Z\+E\+\_\+\+Vpff}}\mbox{]}\mbox{[}2\mbox{]}}
 
 
 
