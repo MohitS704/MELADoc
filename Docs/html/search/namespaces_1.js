@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['batch_5275',['batch',['../namespacebatch.html',1,'']]],
-  ['buildtensors_5276',['buildtensors',['../namespacebuildtensors.html',1,'']]]
+  ['batch_5243',['batch',['../namespacebatch.html',1,'']]],
+  ['buildtensors_5244',['buildtensors',['../namespacebuildtensors.html',1,'']]]
 ];

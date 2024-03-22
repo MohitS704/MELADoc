@@ -5,9 +5,9 @@
 \item 
 real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a9e5125aa94301d29442d0cb9f147a2c6}{hto\+\_\+ralphas}} (rs0, rs, als)
 \item 
-real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\+\_\+qcdlam}} (\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}, als, rs, x1, x2, xacc)
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\+\_\+qcdlam}} (\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}, als, rs, x1, x2, xacc)
 \item 
-real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\+\_\+qcdscale}} (\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}, als, rs, x)
+real $\ast$8 function \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\+\_\+qcdscale}} (\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}, als, rs, x)
 \item 
 real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__qcd_a56727402fd2ceaa1f03af4e6415f8ae8}{hto\+\_\+run\+\_\+bc}} (scal)
 \item 
@@ -35,8 +35,8 @@ Definition at line 3114 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3116        real*8 \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x1,x2,xacc,fmid,f,dx,xmid}
 \DoxyCodeLine{3117        \textcolor{keywordtype}{INTEGER}, \textcolor{keywordtype}{parameter} :: jmax=50}
 \DoxyCodeLine{3118 *}
-\DoxyCodeLine{3119        fmid= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x2)}
-\DoxyCodeLine{3120        f= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x1)}
+\DoxyCodeLine{3119        fmid= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x2)}
+\DoxyCodeLine{3120        f= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x1)}
 \DoxyCodeLine{3121        \textcolor{keywordflow}{IF}(f*fmid >= 0.d0) stop}
 \DoxyCodeLine{3122        \textcolor{keywordflow}{IF}(f < 0.d0) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{3123         \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}= x1}
@@ -48,7 +48,7 @@ Definition at line 3114 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3129        \textcolor{keywordflow}{DO} j=1,jmax}
 \DoxyCodeLine{3130         dx= dx*0.5d0}
 \DoxyCodeLine{3131         xmid= \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}+dx}
-\DoxyCodeLine{3132         fmid= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,xmid)}
+\DoxyCodeLine{3132         fmid= \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}(\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,xmid)}
 \DoxyCodeLine{3133         \textcolor{keywordflow}{IF}(fmid <= 0.d0) \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}= xmid}
 \DoxyCodeLine{3134         \textcolor{keywordflow}{IF}(abs(dx) < xacc.or.fmid.eq.0.d0) \textcolor{keywordflow}{RETURN}}
 \DoxyCodeLine{3135 \textcolor{keywordflow}{       ENDDO}}
@@ -108,9 +108,9 @@ Definition at line 3139 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3141        \textcolor{keywordtype}{INTEGER} nf}
 \DoxyCodeLine{3142        real*8 \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs,x,qcdb0,qcdb1,qcdb2,qcda,\mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}}
 \DoxyCodeLine{3143 *}
-\DoxyCodeLine{3144        qcdb0= 11.d0-\/2.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
-\DoxyCodeLine{3145        qcdb1= 102.d0-\/38.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
-\DoxyCodeLine{3146        qcdb2= 0.5d0*(2857.d0-\/5033.d0/9.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}+325.d0/27.d0*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}*\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}})}
+\DoxyCodeLine{3144        qcdb0= 11.d0-\/2.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}}
+\DoxyCodeLine{3145        qcdb1= 102.d0-\/38.d0/3.d0*\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}}
+\DoxyCodeLine{3146        qcdb2= 0.5d0*(2857.d0-\/5033.d0/9.d0*\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}+325.d0/27.d0*\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}*\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}})}
 \DoxyCodeLine{3147        qcda= 2.d0*log(rs/x)}
 \DoxyCodeLine{3148        \mbox{\hyperlink{namespacehto__qcd_ab62f16b48d38eb74f92b2ae5c40d3667}{hto\_qcdscale}}= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}-\/(4.d0*pi/qcdb0/qcda*(1.d0-\/qcdb1/qcdb0**2/qcda*}
 \DoxyCodeLine{3149      \textcolor{preprocessor}{\#             log(qcda)+(qcdb1/qcdb0**2/qcda)**2*((log(qcda)-\/}}
@@ -148,7 +148,7 @@ Definition at line 3035 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3050         x1= 0.001d0}
 \DoxyCodeLine{3051         x2= 10.0d0}
 \DoxyCodeLine{3052         xacc= 1.d-\/12}
-\DoxyCodeLine{3053         qcdl= \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}(\mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs0,x1,x2,xacc)}
+\DoxyCodeLine{3053         qcdl= \mbox{\hyperlink{namespacehto__qcd_a0c785e736bc7369175cb849be3f6e884}{hto\_qcdlam}}(\mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}},\mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}},rs0,x1,x2,xacc)}
 \DoxyCodeLine{3054         pqcdl5= qcdl}
 \DoxyCodeLine{3055         \textcolor{keywordflow}{DO} i=1,5}
 \DoxyCodeLine{3056          b0(i)= (11.d0-\/2.d0/3.d0*i)/4.d0}
@@ -171,7 +171,7 @@ Definition at line 3035 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3073          ratl2= exp(rhs)}
 \DoxyCodeLine{3074          qcdl= qcdl/sqrt(ratl2)      }
 \DoxyCodeLine{3075          pqcdl4= qcdl}
-\DoxyCodeLine{3076          nfe= \mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}-\/1}
+\DoxyCodeLine{3076          nfe= \mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}-\/1}
 \DoxyCodeLine{3077          \textcolor{keywordflow}{IF}(rs < \mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}}) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{3078           rat= \mbox{\hyperlink{namespacehto__masses_ac56338ebebc82161db4bdaac8a8e1956}{mcq}}/qcdl}
 \DoxyCodeLine{3079           rl= 2.d0*log(rat)}
@@ -187,10 +187,10 @@ Definition at line 3035 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3089           ratl2= exp(rhs)}
 \DoxyCodeLine{3090           qcdl= qcdl/sqrt(ratl2)      }
 \DoxyCodeLine{3091           pqcdl3= qcdl}
-\DoxyCodeLine{3092           nfe= \mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}-\/2}
+\DoxyCodeLine{3092           nfe= \mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}-\/2}
 \DoxyCodeLine{3093 \textcolor{keywordflow}{         ENDIF}}
 \DoxyCodeLine{3094         \textcolor{keywordflow}{ELSE}}
-\DoxyCodeLine{3095          nfe= \mbox{\hyperlink{TMCFM_8hh_aba01db17f4a2bfbc3db60dc172972a25a9ef27f05549f71d70319d03789242cea}{nf}}}
+\DoxyCodeLine{3095          nfe= \mbox{\hyperlink{TMCFM_8hh_a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea}{nf}}}
 \DoxyCodeLine{3096 \textcolor{keywordflow}{        ENDIF}}
 \DoxyCodeLine{3097 *}
 \DoxyCodeLine{3098         qcdb0= 11.d0-\/2.d0/3.d0*nfe}

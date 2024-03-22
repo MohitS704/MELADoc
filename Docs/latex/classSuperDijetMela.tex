@@ -135,7 +135,7 @@ Definition at line 64 of file Super\+Dijet\+Mela.\+cc.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{64                                                                                        \{}
 \DoxyCodeLine{65   \textcolor{keywordtype}{float} result=-\/1;}
-\DoxyCodeLine{66   \textcolor{keywordtype}{int} iprod = (\mbox{\hyperlink{namespacetestME__all_a2f9c5cba6551dc41bae400ced29c30b3}{int}})\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}};}
+\DoxyCodeLine{66   \textcolor{keywordtype}{int} iprod = (\mbox{\hyperlink{namespacetestME__all_a2f9c5cba6551dc41bae400ced29c30b3}{int}})prod;}
 \DoxyCodeLine{67   \textcolor{keywordflow}{if} (cand!=0)\{}
 \DoxyCodeLine{68     \textcolor{keywordtype}{float} mJJval=-\/1;}
 \DoxyCodeLine{69     \textcolor{keywordtype}{bool} modelExists = (\mbox{\hyperlink{classSuperDijetMela_aefe925a6076ca6366aa66d7702abe5ab}{ResolutionModelMap}}.find(iprod)!=\mbox{\hyperlink{classSuperDijetMela_aefe925a6076ca6366aa66d7702abe5ab}{ResolutionModelMap}}.end());}
@@ -144,13 +144,13 @@ Definition at line 64 of file Super\+Dijet\+Mela.\+cc.
 \DoxyCodeLine{72     \textcolor{keywordflow}{if} (modelExists || useTrueBW)\{}
 \DoxyCodeLine{73       \textcolor{comment}{// Get a simple event record, safest way to handle jet mass corrections}}
 \DoxyCodeLine{74       \textcolor{keywordtype}{int} nRequested\_AssociatedJets=0;}
-\DoxyCodeLine{75       \textcolor{keywordtype}{int} partIncCode=\mbox{\hyperlink{namespaceTVar_a8dbe2bd8efad9a9d5d55e43c0c6f777bad10522f5bc41f80ca8edf7c195cdb858}{TVar::kNoAssociated}}; \textcolor{comment}{// Just to avoid warnings}}
-\DoxyCodeLine{76       \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}} == \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d}{TVar::Had\_ZH}} || \mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}} == \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a}{TVar::Had\_WH}})\{ \textcolor{comment}{// Only use associated partons}}
-\DoxyCodeLine{77         partIncCode=\mbox{\hyperlink{namespaceTVar_a8dbe2bd8efad9a9d5d55e43c0c6f777ba73861ec433a26ae79407bfe3f2f7b71a}{TVar::kUseAssociated\_Jets}};}
+\DoxyCodeLine{75       \textcolor{keywordtype}{int} partIncCode=\mbox{\hyperlink{namespaceTVar_ac9234ff3a2e4772a5cf9afd478f0a700ad10522f5bc41f80ca8edf7c195cdb858}{TVar::kNoAssociated}}; \textcolor{comment}{// Just to avoid warnings}}
+\DoxyCodeLine{76       \textcolor{keywordflow}{if} (prod == \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d}{TVar::Had\_ZH}} || prod == \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a}{TVar::Had\_WH}})\{ \textcolor{comment}{// Only use associated partons}}
+\DoxyCodeLine{77         partIncCode=\mbox{\hyperlink{namespaceTVar_ac9234ff3a2e4772a5cf9afd478f0a700a73861ec433a26ae79407bfe3f2f7b71a}{TVar::kUseAssociated\_Jets}};}
 \DoxyCodeLine{78         nRequested\_AssociatedJets=2;}
 \DoxyCodeLine{79       \}}
-\DoxyCodeLine{80       \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}==\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a}{TVar::Had\_WH}}) AssociationVCompatibility=24;}
-\DoxyCodeLine{81       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}==\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d}{TVar::Had\_ZH}}) AssociationVCompatibility=23;}
+\DoxyCodeLine{80       \textcolor{keywordflow}{if} (prod==\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a}{TVar::Had\_WH}}) AssociationVCompatibility=24;}
+\DoxyCodeLine{81       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (prod==\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d}{TVar::Had\_ZH}}) AssociationVCompatibility=23;}
 \DoxyCodeLine{82       \mbox{\hyperlink{structTVar_1_1simple__event__record}{simple\_event\_record}} mela\_event;}
 \DoxyCodeLine{83       mela\_event.\mbox{\hyperlink{structTVar_1_1simple__event__record_a743a8c341936dbaa10ce50a5b8d87eba}{AssociationCode}}=partIncCode;}
 \DoxyCodeLine{84       mela\_event.\mbox{\hyperlink{structTVar_1_1simple__event__record_a210cc509a3d155a23d69c94ea4558f87}{AssociationVCompatibility}}=AssociationVCompatibility;}
@@ -190,14 +190,14 @@ Definition at line 64 of file Super\+Dijet\+Mela.\+cc.
 \DoxyCodeLine{118     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (modelExists)\{}
 \DoxyCodeLine{119       result = \mbox{\hyperlink{classSuperDijetMela_aefe925a6076ca6366aa66d7702abe5ab}{ResolutionModelMap}}[iprod]-\/>getVal(mJJval);}
 \DoxyCodeLine{120       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperDijetMela_a2bc0a772602d5d42e39e0c700a6739e4}{verbosity}}>=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce}{TVar::DEBUG}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}}}
-\DoxyCodeLine{121         << \textcolor{stringliteral}{"SuperDijetMela::GetConvBW["} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}) << \textcolor{stringliteral}{"]::"}}
+\DoxyCodeLine{121         << \textcolor{stringliteral}{"SuperDijetMela::GetConvBW["} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(prod) << \textcolor{stringliteral}{"]::"}}
 \DoxyCodeLine{122         << \textcolor{stringliteral}{"sqrt(s) = "} << mJJval}
 \DoxyCodeLine{123         << \textcolor{stringliteral}{", reco BW = "} << result}
 \DoxyCodeLine{124         << endl;}
 \DoxyCodeLine{125     \}}
 \DoxyCodeLine{126     \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{127       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperDijetMela_a2bc0a772602d5d42e39e0c700a6739e4}{verbosity}}>=\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce}{TVar::DEBUG}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}}}
-\DoxyCodeLine{128         << \textcolor{stringliteral}{"SuperDijetMela::GetConvBW:: No method for "} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}) << \textcolor{stringliteral}{" is known. "}}
+\DoxyCodeLine{128         << \textcolor{stringliteral}{"SuperDijetMela::GetConvBW:: No method for "} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(prod) << \textcolor{stringliteral}{" is known. "}}
 \DoxyCodeLine{129         << \textcolor{stringliteral}{"sqrt(s) = "} << mJJval}
 \DoxyCodeLine{130         << \textcolor{stringliteral}{", return value = "} << result}
 \DoxyCodeLine{131         << endl;}
@@ -224,7 +224,7 @@ Definition at line 35 of file Super\+Dijet\+Mela.\+cc.
 \DoxyCodeLine{37   \textcolor{keyword}{const} \textcolor{keywordtype}{string} MELAPKGPATH = \mbox{\hyperlink{namespaceTVar_a06f1ddf9957f91a474c2cf0fbc73caed}{TVar::GetMELAPath}}();}
 \DoxyCodeLine{38   TString path = TString(MELAPKGPATH.c\_str()) + \textcolor{stringliteral}{"data/resolution\_mJJ\_recoVStrue\_"};}
 \DoxyCodeLine{39   TString prodName;}
-\DoxyCodeLine{40   \textcolor{keywordflow}{switch} (\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}})\{}
+\DoxyCodeLine{40   \textcolor{keywordflow}{switch} (prod)\{}
 \DoxyCodeLine{41   \textcolor{keywordflow}{case} \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d}{TVar::Had\_ZH}}:}
 \DoxyCodeLine{42     prodName = \textcolor{stringliteral}{"ZH"};}
 \DoxyCodeLine{43     \textcolor{keywordflow}{break};}
@@ -232,7 +232,7 @@ Definition at line 35 of file Super\+Dijet\+Mela.\+cc.
 \DoxyCodeLine{45     prodName = \textcolor{stringliteral}{"WH"};}
 \DoxyCodeLine{46     \textcolor{keywordflow}{break};}
 \DoxyCodeLine{47   \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{48     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperDijetMela::SetupResolutionModel: Production "} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}) << \textcolor{stringliteral}{" is unknown."} << endl;}
+\DoxyCodeLine{48     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperDijetMela::SetupResolutionModel: Production "} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(prod) << \textcolor{stringliteral}{" is unknown."} << endl;}
 \DoxyCodeLine{49     \textcolor{keywordflow}{return};}
 \DoxyCodeLine{50   \}}
 \DoxyCodeLine{51   \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}} = floor(\mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}}); \textcolor{comment}{// interim solution until 13.6 TeV production is ready}}
@@ -241,12 +241,12 @@ Definition at line 35 of file Super\+Dijet\+Mela.\+cc.
 \DoxyCodeLine{54   path += Form(\textcolor{stringliteral}{"\_\%.0fTeV\%s"}, \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}}, \textcolor{stringliteral}{".root"});}
 \DoxyCodeLine{55 }
 \DoxyCodeLine{56   TString appendName = Form(\textcolor{stringliteral}{"mJJReso\_\%.0fTeV"}, \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}});}
-\DoxyCodeLine{57   \mbox{\hyperlink{classMELADifermionResolutionModel}{MELADifermionResolutionModel}}* model = \textcolor{keyword}{new} \mbox{\hyperlink{classMELADifermionResolutionModel}{MELADifermionResolutionModel}}(\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}, \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}}, path, appendName);}
+\DoxyCodeLine{57   \mbox{\hyperlink{classMELADifermionResolutionModel}{MELADifermionResolutionModel}}* model = \textcolor{keyword}{new} \mbox{\hyperlink{classMELADifermionResolutionModel}{MELADifermionResolutionModel}}(prod, \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}}, path, appendName);}
 \DoxyCodeLine{58   \textcolor{keywordflow}{if} (model-\/>\mbox{\hyperlink{classMELADifermionResolutionModel_a0101dab25cd7cd40b487f4edecae1abf}{isValid}}())\{}
-\DoxyCodeLine{59     \textcolor{keywordtype}{int} iprod = (\mbox{\hyperlink{namespacetestME__all_a2f9c5cba6551dc41bae400ced29c30b3}{int}})\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}};}
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} iprod = (\mbox{\hyperlink{namespacetestME__all_a2f9c5cba6551dc41bae400ced29c30b3}{int}})prod;}
 \DoxyCodeLine{60     \mbox{\hyperlink{classSuperDijetMela_aefe925a6076ca6366aa66d7702abe5ab}{ResolutionModelMap}}[iprod] = model;}
 \DoxyCodeLine{61   \}}
-\DoxyCodeLine{62   \textcolor{keywordflow}{else} \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SuperDijetMela::SetupResolutionModel: Model MELADifermionResolutionModel("} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(\mbox{\hyperlink{namespacemela_ad931acffcdd325571523d5fc76d67185}{prod}}) << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}} << \textcolor{stringliteral}{", "} << path << \textcolor{stringliteral}{", "} << appendName << \textcolor{stringliteral}{") cannot be built."} << endl;}
+\DoxyCodeLine{62   \textcolor{keywordflow}{else} \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SuperDijetMela::SetupResolutionModel: Model MELADifermionResolutionModel("} << \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{TVar::ProductionName}}(prod) << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classSuperDijetMela_abf521ba17f08fcb54b68a6d22650a6b9}{sqrts}} << \textcolor{stringliteral}{", "} << path << \textcolor{stringliteral}{", "} << appendName << \textcolor{stringliteral}{") cannot be built."} << endl;}
 \DoxyCodeLine{63 \}}
 
 \end{DoxyCode}

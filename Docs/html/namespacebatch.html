@@ -72,9 +72,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abe99f82869b475d77e13694cc13e91ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="output_8txt.html#a68c1b60679e9c48eff7fd7455834154b">def</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebatch.html#abe99f82869b475d77e13694cc13e91ff">processDirectory</a> (args, dirname, filenames)</td></tr>
+<tr class="memitem:abe99f82869b475d77e13694cc13e91ff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebatch.html#abe99f82869b475d77e13694cc13e91ff">processDirectory</a> (args, dirname, filenames)</td></tr>
 <tr class="separator:abe99f82869b475d77e13694cc13e91ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02789d1253a9ff75793036161f1bffc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="output_8txt.html#a68c1b60679e9c48eff7fd7455834154b">def</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebatch.html#a02789d1253a9ff75793036161f1bffc6">main</a> ()</td></tr>
+<tr class="memitem:a02789d1253a9ff75793036161f1bffc6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebatch.html#a02789d1253a9ff75793036161f1bffc6">main</a> ()</td></tr>
 <tr class="separator:a02789d1253a9ff75793036161f1bffc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -85,7 +85,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="output_8txt.html#a68c1b60679e9c48eff7fd7455834154b">def</a> batch.main </td>
+          <td class="memname">def batch.main </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -98,7 +98,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    base_dir = <span class="stringliteral">&quot;.&quot;</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> len(sys.argv) &gt; 1:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        base_dir = sys.argv[1]</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    file = <a class="code" href="write__bindings_8txt.html#af3f9bd8a41d0b6d23a3e6c2698179b7e">open</a>(<span class="stringliteral">&#39;./batchscript.csh&#39;</span>, <span class="stringliteral">&#39;w&#39;</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    file = open(<span class="stringliteral">&#39;./batchscript.csh&#39;</span>, <span class="stringliteral">&#39;w&#39;</span>)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    file.write(<span class="stringliteral">&quot;cd &quot;</span> + sys.argv[2] + <span class="stringliteral">&quot;\n&quot;</span>)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    file.write(<span class="stringliteral">&quot;pwd\n&quot;</span>)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    file.write(<span class="stringliteral">&quot;eval `scramv1 runtime -sh`\n&quot;</span>)</div>
@@ -118,7 +118,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="output_8txt.html#a68c1b60679e9c48eff7fd7455834154b">def</a> batch.processDirectory </td>
+          <td class="memname">def batch.processDirectory </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>args</em>, </td>
@@ -201,7 +201,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            command = <span class="stringliteral">&quot;root -q -b  addProbtoTree.C\\(\\\&quot;&quot;</span> + fullname[:-5] + <span class="stringliteral">&quot;\\\&quot;,&quot;</span>+str(flavor)+<span class="stringliteral">&quot;,-1,&quot;</span>+str(sqrts)+<span class="stringliteral">&quot;\\)\n&quot;</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">#create batch script</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            commands.getstatusoutput(<span class="stringliteral">&quot;cp batchscript.csh batchscript_tmp.csh&quot;</span>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            file = <a class="code" href="write__bindings_8txt.html#af3f9bd8a41d0b6d23a3e6c2698179b7e">open</a>(<span class="stringliteral">&#39;batchscript_tmp.csh&#39;</span>, <span class="stringliteral">&#39;a&#39;</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            file = open(<span class="stringliteral">&#39;batchscript_tmp.csh&#39;</span>, <span class="stringliteral">&#39;a&#39;</span>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            file.write(command)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            file.close()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            commands.getstatusoutput(<span class="stringliteral">&quot;bsub -q 8nh &lt; batchscript_tmp.csh&quot;</span> )</div>
@@ -212,7 +212,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="awrite__bindings_8txt_html_af3f9bd8a41d0b6d23a3e6c2698179b7e"><div class="ttname"><a href="write__bindings_8txt.html#af3f9bd8a41d0b6d23a3e6c2698179b7e">open</a></div><div class="ttdeci">with open(&quot;/mnt/sda1/RandomRantings/JHU/Andrei_Research/DocumentingMELA/raw_couplings.txt&quot;) as f</div><div class="ttdef"><b>Definition:</b> <a href="write__bindings_8txt_source.html#l00001">write_bindings.txt:1</a></div></div>
 <div class="ttc" id="anamespacebatch_html_abe99f82869b475d77e13694cc13e91ff"><div class="ttname"><a href="namespacebatch.html#abe99f82869b475d77e13694cc13e91ff">batch.processDirectory</a></div><div class="ttdeci">def processDirectory(args, dirname, filenames)</div><div class="ttdef"><b>Definition:</b> <a href="batch_8py_source.html#l00009">batch.py:9</a></div></div>
 <div class="ttc" id="anamespacebatch_html_a02789d1253a9ff75793036161f1bffc6"><div class="ttname"><a href="namespacebatch.html#a02789d1253a9ff75793036161f1bffc6">batch.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="batch_8py_source.html#l00073">batch.py:73</a></div></div>
 <!-- start footer part -->

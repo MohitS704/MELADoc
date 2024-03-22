@@ -128,9 +128,9 @@ Definition at line 59 of file M\+E\+L\+A\+P\+Constant.\+cc.
 \DoxyCodeLine{68   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMelaPConstant_a65f2a0f47b24135301fde218b612d34c}{fcnLow}}!=0 \&\& candMass<fcnLow-\/>GetXmax()) result = \mbox{\hyperlink{classMelaPConstant_a65f2a0f47b24135301fde218b612d34c}{fcnLow}}-\/>Eval(candMass);}
 \DoxyCodeLine{69   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMelaPConstant_a5f1c4622d8fbc81a6f8c44b15c690676}{fcnHigh}}!=0 \&\& candMass>\mbox{\hyperlink{classMelaPConstant_a5f1c4622d8fbc81a6f8c44b15c690676}{fcnHigh}}-\/>GetXmin()) result = \mbox{\hyperlink{classMelaPConstant_a5f1c4622d8fbc81a6f8c44b15c690676}{fcnHigh}}-\/>Eval(candMass);}
 \DoxyCodeLine{70   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}!=0)\{}
-\DoxyCodeLine{71     \textcolor{keywordtype}{double} var = candMass;}
-\DoxyCodeLine{72     \textcolor{keywordflow}{if} (var<fcnMid-\/>GetXmin()) var = \mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>GetXmin();}
-\DoxyCodeLine{73     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (var>\mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>GetXmax()) var = \mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>GetXmax();}
+\DoxyCodeLine{71     \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}} = candMass;}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if} (var<fcnMid-\/>GetXmin()) \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}} = \mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>GetXmin();}
+\DoxyCodeLine{73     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}>\mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>GetXmax()) \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}} = \mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>GetXmax();}
 \DoxyCodeLine{74     result = \mbox{\hyperlink{classMelaPConstant_a1255d5410a7c162d5602a9ce4f8920d0}{fcnMid}}-\/>Eval(candMass);}
 \DoxyCodeLine{75   \}}
 \DoxyCodeLine{76   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} result;}
@@ -306,7 +306,7 @@ Definition at line 239 of file M\+E\+L\+A\+P\+Constant.\+cc.
 \DoxyCodeLine{246     \textcolor{comment}{// Get a simple event record, safest way to handle jet mass corrections}}
 \DoxyCodeLine{247     \textcolor{keywordtype}{int} nRequested\_AssociatedJets=2;}
 \DoxyCodeLine{248     \textcolor{keywordtype}{int} AssociationVCompatibility=0;}
-\DoxyCodeLine{249     \textcolor{keywordtype}{int} partIncCode=\mbox{\hyperlink{namespaceTVar_a8dbe2bd8efad9a9d5d55e43c0c6f777ba73861ec433a26ae79407bfe3f2f7b71a}{TVar::kUseAssociated\_Jets}};}
+\DoxyCodeLine{249     \textcolor{keywordtype}{int} partIncCode=\mbox{\hyperlink{namespaceTVar_ac9234ff3a2e4772a5cf9afd478f0a700a73861ec433a26ae79407bfe3f2f7b71a}{TVar::kUseAssociated\_Jets}};}
 \DoxyCodeLine{250     \textcolor{keywordtype}{double} mv=0, gav=0;}
 \DoxyCodeLine{251     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMelaPConstant_ac42fd84ec00ed221b2957ea148581d6b}{processProd}}==\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a}{TVar::Had\_WH}} || \mbox{\hyperlink{classMelaPConstant_ac42fd84ec00ed221b2957ea148581d6b}{processProd}}==\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28caeaa3caadaa8c091717a24337287cb6ce}{TVar::Had\_WH\_S}})\{}
 \DoxyCodeLine{252       AssociationVCompatibility=24;}

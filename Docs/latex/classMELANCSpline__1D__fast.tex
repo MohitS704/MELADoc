@@ -309,9 +309,9 @@ Definition at line 170 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc
 \DoxyCodeLine{177     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
 \DoxyCodeLine{178     RooArgSet Xdeps; \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}.absArg()-\/>leafNodeServerList(\&Xdeps, 0, \textcolor{keyword}{true});}
 \DoxyCodeLine{179     TIterator* iter = Xdeps.createIterator();}
-\DoxyCodeLine{180     RooAbsArg* var;}
-\DoxyCodeLine{181     \textcolor{keywordflow}{while} ((var = (RooAbsArg*)iter-\/>Next()))\{}
-\DoxyCodeLine{182       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << var-\/>GetName() << \textcolor{stringliteral}{" value = "} << \textcolor{keyword}{dynamic\_cast<}RooAbsReal*\textcolor{keyword}{>}(var)-\/>getVal() << endl;}
+\DoxyCodeLine{180     RooAbsArg* \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}};}
+\DoxyCodeLine{181     \textcolor{keywordflow}{while} ((\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}} = (RooAbsArg*)iter-\/>Next()))\{}
+\DoxyCodeLine{182       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}-\/>GetName() << \textcolor{stringliteral}{" value = "} << \textcolor{keyword}{dynamic\_cast<}RooAbsReal*\textcolor{keyword}{>}(\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}})-\/>getVal() << endl;}
 \DoxyCodeLine{183     \}}
 \DoxyCodeLine{184     \textcolor{keyword}{delete} iter;}
 \DoxyCodeLine{185     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << endl;}

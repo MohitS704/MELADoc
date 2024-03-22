@@ -191,11 +191,11 @@ Definition at line 83 of file get\+Resolution.\+c.
 \DoxyCodeLine{85   \textcolor{keywordflow}{for} (\textcolor{keyword}{typename} std::vector<std::pair<T, U>>::iterator it = valArray.begin(); it<valArray.end(); it++)\{}
 \DoxyCodeLine{86     \textcolor{keywordflow}{if} ((*it).first>=val)\{}
 \DoxyCodeLine{87       inserted=\textcolor{keyword}{true};}
-\DoxyCodeLine{88       \textcolor{keywordflow}{if} ((*it).second!=index) valArray.insert(it, std::pair<T, U>(val, index));}
+\DoxyCodeLine{88       \textcolor{keywordflow}{if} ((*it).second!=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) valArray.insert(it, std::pair<T, U>(val, \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}));}
 \DoxyCodeLine{89       \textcolor{keywordflow}{break};}
 \DoxyCodeLine{90     \}}
 \DoxyCodeLine{91   \}}
-\DoxyCodeLine{92   \textcolor{keywordflow}{if} (!inserted) valArray.push\_back(std::pair<T, U>(val, index));}
+\DoxyCodeLine{92   \textcolor{keywordflow}{if} (!inserted) valArray.push\_back(std::pair<T, U>(val, \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}));}
 \DoxyCodeLine{93 \}}
 
 \end{DoxyCode}
@@ -366,7 +366,7 @@ Definition at line 146 of file get\+Resolution.\+c.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{146                                                                                 \{}
 \DoxyCodeLine{147   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} v=0; v<list.size(); v++)\{}
-\DoxyCodeLine{148     \textcolor{keywordflow}{if} (list.at(v)==var) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{comment}{// Look for exact match}}
+\DoxyCodeLine{148     \textcolor{keywordflow}{if} (list.at(v)==\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{comment}{// Look for exact match}}
 \DoxyCodeLine{149   \}}
 \DoxyCodeLine{150   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{151 \}}
@@ -840,7 +840,7 @@ Definition at line 819 of file get\+Resolution.\+c.
 \DoxyCodeLine{825   \textcolor{keywordtype}{short} Z1Flav, Z2Flav;}
 \DoxyCodeLine{826   \textcolor{keywordtype}{float} varTrue, varReco;}
 \DoxyCodeLine{827 }
-\DoxyCodeLine{828   vector<SimpleEntry> index[3];}
+\DoxyCodeLine{828   vector<SimpleEntry> \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[3];}
 \DoxyCodeLine{829   TString strchannel[3]=\{ \textcolor{stringliteral}{"4mu"}, \textcolor{stringliteral}{"4e"}, \textcolor{stringliteral}{"2mu2e"} \};}
 \DoxyCodeLine{830 }
 \DoxyCodeLine{831   vector<TString> dumappend;}
@@ -958,26 +958,26 @@ Definition at line 819 of file get\+Resolution.\+c.
 \DoxyCodeLine{943     \textcolor{keywordflow}{if} (ev\_acc\%10000==0) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Pre-\/processing event "} << \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} << endl;}
 \DoxyCodeLine{944     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ic = (Z1Flav*Z2Flav==pow(13, 4))*0 + (Z1Flav*Z2Flav==pow(11, 4))*1 + (Z1Flav*Z2Flav==pow(11*13, 2))*2;}
 \DoxyCodeLine{945     \mbox{\hyperlink{structSimpleEntry}{SimpleEntry}} theEntry(\mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}}, varTrue, varReco, 0, 1);}
-\DoxyCodeLine{946     \mbox{\hyperlink{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}{addByLowest}}(index[ic], theEntry, \textcolor{keyword}{false});}
+\DoxyCodeLine{946     \mbox{\hyperlink{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}{addByLowest}}(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic], theEntry, \textcolor{keyword}{false});}
 \DoxyCodeLine{947     ev\_acc++;}
 \DoxyCodeLine{948   \}}
 \DoxyCodeLine{949   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Number of valid entries: "} << ev\_acc << endl;}
 \DoxyCodeLine{950 }
 \DoxyCodeLine{951   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ic=0; ic<3; ic++)\{}
-\DoxyCodeLine{952     \textcolor{keywordtype}{float} firstVal=index[ic].at(0).trueval;}
-\DoxyCodeLine{953     \textcolor{keywordtype}{float} lastVal=index[ic].at(index[ic].size()-\/1).trueval;}
+\DoxyCodeLine{952     \textcolor{keywordtype}{float} firstVal=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].at(0).trueval;}
+\DoxyCodeLine{953     \textcolor{keywordtype}{float} lastVal=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].size()-\/1).trueval;}
 \DoxyCodeLine{954     \textcolor{keywordtype}{float} infimum = (float)((\textcolor{keywordtype}{int})firstVal); infimum -\/= (float)(((\textcolor{keywordtype}{int})infimum)\%10);}
 \DoxyCodeLine{955     \textcolor{keywordtype}{float} supremum = (float)((\textcolor{keywordtype}{int})(lastVal+0.5)); supremum += (float)(10-\/((\textcolor{keywordtype}{int})supremum)\%10);}
 \DoxyCodeLine{956     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Nentries = "} << nEntries << \textcolor{stringliteral}{" | truth = "} << firstVal << \textcolor{stringliteral}{" -\/ "} << lastVal << \textcolor{stringliteral}{"("} << infimum << \textcolor{stringliteral}{", "} << supremum << \textcolor{stringliteral}{")"} << endl;}
 \DoxyCodeLine{957 }
 \DoxyCodeLine{958     \textcolor{keywordtype}{float} divisor=95000;}
-\DoxyCodeLine{959     \textcolor{keywordtype}{int} nbins = index[ic].size()/divisor;}
+\DoxyCodeLine{959     \textcolor{keywordtype}{int} nbins = \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].size()/divisor;}
 \DoxyCodeLine{960     \textcolor{keyword}{const} \textcolor{keywordtype}{int} nbins\_th=10\textcolor{comment}{/*50*/};}
 \DoxyCodeLine{961     \textcolor{keywordflow}{while} (nbins<nbins\_th)\{}
 \DoxyCodeLine{962       \textcolor{keywordflow}{if} (divisor>1000) divisor -\/= 1000;}
 \DoxyCodeLine{963       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (divisor>100) divisor -\/= 100;}
 \DoxyCodeLine{964       \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
-\DoxyCodeLine{965       nbins=index[ic].size()/divisor;}
+\DoxyCodeLine{965       nbins=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].size()/divisor;}
 \DoxyCodeLine{966     \}}
 \DoxyCodeLine{967     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"nbins="} << nbins << endl;}
 \DoxyCodeLine{968     \textcolor{keywordflow}{if} (nbins<3) cerr << \textcolor{stringliteral}{"Not enough bins!"} << endl;}
@@ -985,20 +985,20 @@ Definition at line 819 of file get\+Resolution.\+c.
 \DoxyCodeLine{970     \textcolor{keywordtype}{float}* binning = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[nbins+1];}
 \DoxyCodeLine{971     binning[0]=infimum;}
 \DoxyCodeLine{972     binning[nbins]=supremum;}
-\DoxyCodeLine{973     \textcolor{keywordtype}{int} ev\_stepsize = index[ic].size()/nbins;}
+\DoxyCodeLine{973     \textcolor{keywordtype}{int} ev\_stepsize = \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].size()/nbins;}
 \DoxyCodeLine{974     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Event step size: "} << ev\_stepsize << endl;}
 \DoxyCodeLine{975     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << 0 << \textcolor{stringliteral}{") = "} << binning[0] << endl;}
 \DoxyCodeLine{976     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ix=1; ix<nbins; ix++)\{}
-\DoxyCodeLine{977       binning[ix]=(index[ic][ix*ev\_stepsize-\/1].trueval+index[ic][ix*ev\_stepsize].trueval)*0.5;}
+\DoxyCodeLine{977       binning[ix]=(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic][ix*ev\_stepsize-\/1].trueval+\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic][ix*ev\_stepsize].trueval)*0.5;}
 \DoxyCodeLine{978       \mbox{\hyperlink{structExtBin}{ExtBin}} tmpbin;}
 \DoxyCodeLine{979       tmpbin.\mbox{\hyperlink{structExtBin_a114648d1cd50630afd465203ba9470c5}{binlow}} = binning[ix-\/1]; tmpbin.\mbox{\hyperlink{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}{binhigh}} = binning[ix];}
-\DoxyCodeLine{980       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<ev\_stepsize; bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(index[ic][(ix-\/1)*ev\_stepsize+bin]); \}}
+\DoxyCodeLine{980       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<ev\_stepsize; bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic][(ix-\/1)*ev\_stepsize+bin]); \}}
 \DoxyCodeLine{981       binList.push\_back(tmpbin);}
-\DoxyCodeLine{982       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << ix << \textcolor{stringliteral}{")= "} << binning[ix] << \textcolor{stringliteral}{" [event "} << index[ic][ix*ev\_stepsize].id << \textcolor{stringliteral}{", step "} << ix*ev\_stepsize << \textcolor{stringliteral}{"]"} << endl;}
+\DoxyCodeLine{982       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << ix << \textcolor{stringliteral}{")= "} << binning[ix] << \textcolor{stringliteral}{" [event "} << \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic][ix*ev\_stepsize].id << \textcolor{stringliteral}{", step "} << ix*ev\_stepsize << \textcolor{stringliteral}{"]"} << endl;}
 \DoxyCodeLine{983     \}}
 \DoxyCodeLine{984     \mbox{\hyperlink{structExtBin}{ExtBin}} tmpbin;}
 \DoxyCodeLine{985     tmpbin.\mbox{\hyperlink{structExtBin_a114648d1cd50630afd465203ba9470c5}{binlow}} = binning[nbins-\/1]; tmpbin.\mbox{\hyperlink{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}{binhigh}} = binning[nbins];}
-\DoxyCodeLine{986     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bin=(nbins-\/1)*ev\_stepsize; bin<index[ic].size(); bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(index[ic][bin]); \}}
+\DoxyCodeLine{986     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bin=(nbins-\/1)*ev\_stepsize; bin<\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic].size(); bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ic][bin]); \}}
 \DoxyCodeLine{987     binList.push\_back(tmpbin);}
 \DoxyCodeLine{988     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << nbins << \textcolor{stringliteral}{") = "} << binning[nbins] << endl;}
 \DoxyCodeLine{989     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Bin list has the following bins:"} << endl;}
@@ -1128,7 +1128,7 @@ Definition at line 1105 of file get\+Resolution.\+c.
 \DoxyCodeLine{1105                                                                       \{}
 \DoxyCodeLine{1106   \textcolor{keywordflow}{if} (\mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}<13) assert(0);}
 \DoxyCodeLine{1107 }
-\DoxyCodeLine{1108   \mbox{\hyperlink{classMela}{Mela}} \mbox{\hyperlink{namespacemela}{mela}}(\mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}, 125);}
+\DoxyCodeLine{1108   Mela mela(\mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}}, 125);}
 \DoxyCodeLine{1109 }
 \DoxyCodeLine{1110   TString TREE\_NAME = \textcolor{stringliteral}{"ZZTree/candTree"};}
 \DoxyCodeLine{1111   TString COUNTERS\_NAME = \textcolor{stringliteral}{"ZZTree/Counters"};}
@@ -1163,7 +1163,7 @@ Definition at line 1105 of file get\+Resolution.\+c.
 \DoxyCodeLine{1140 }
 \DoxyCodeLine{1141   \textcolor{keywordtype}{float} xsec=1, overallEventWeight=1;}
 \DoxyCodeLine{1142 }
-\DoxyCodeLine{1143   vector<SimpleEntry> index;}
+\DoxyCodeLine{1143   vector<SimpleEntry> \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}};}
 \DoxyCodeLine{1144   TString strchannel[3]=\{ \textcolor{stringliteral}{"4mu"}, \textcolor{stringliteral}{"4e"}, \textcolor{stringliteral}{"2mu2e"} \};}
 \DoxyCodeLine{1145 }
 \DoxyCodeLine{1146   vector<TString> dumappend;}
@@ -1694,26 +1694,26 @@ Definition at line 1105 of file get\+Resolution.\+c.
 \DoxyCodeLine{1671     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<partList.size(); i++) \textcolor{keyword}{delete} partList.at(i);}
 \DoxyCodeLine{1672 }
 \DoxyCodeLine{1673     \mbox{\hyperlink{structSimpleEntry}{SimpleEntry}} theEntry(\mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}}, varTrue, varReco, ZZMass, weight);}
-\DoxyCodeLine{1674     \mbox{\hyperlink{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}{addByLowest}}(index, theEntry, \textcolor{keyword}{false});}
+\DoxyCodeLine{1674     \mbox{\hyperlink{getResolution_8c_a3a493f9e23930e7fa6672509f6347800}{addByLowest}}(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}, theEntry, \textcolor{keyword}{false});}
 \DoxyCodeLine{1675 }
 \DoxyCodeLine{1676     ev\_acc++;}
 \DoxyCodeLine{1677   \}}
 \DoxyCodeLine{1678   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Number of valid entries: "} << ev\_acc << endl;}
 \DoxyCodeLine{1679 }
-\DoxyCodeLine{1680   \textcolor{keywordtype}{float} firstVal=index.at(0).trueval;}
-\DoxyCodeLine{1681   \textcolor{keywordtype}{float} lastVal=index.at(index.size()-\/1).trueval;}
+\DoxyCodeLine{1680   \textcolor{keywordtype}{float} firstVal=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.at(0).trueval;}
+\DoxyCodeLine{1681   \textcolor{keywordtype}{float} lastVal=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.size()-\/1).trueval;}
 \DoxyCodeLine{1682   \textcolor{keywordtype}{float} infimum = std::floor(firstVal);}
 \DoxyCodeLine{1683   \textcolor{keywordtype}{float} supremum = std::ceil(lastVal);}
 \DoxyCodeLine{1684   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Nentries = "} << nEntries << \textcolor{stringliteral}{" | truth = "} << firstVal << \textcolor{stringliteral}{" -\/ "} << lastVal << \textcolor{stringliteral}{"("} << infimum << \textcolor{stringliteral}{", "} << supremum << \textcolor{stringliteral}{")"} << endl;}
 \DoxyCodeLine{1685 }
 \DoxyCodeLine{1686   \textcolor{keywordtype}{float} divisor=20000;}
-\DoxyCodeLine{1687   \textcolor{keywordtype}{int} nbins = index.size()/divisor;}
+\DoxyCodeLine{1687   \textcolor{keywordtype}{int} nbins = \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.size()/divisor;}
 \DoxyCodeLine{1688   \textcolor{keyword}{const} \textcolor{keywordtype}{int} nbins\_th=10\textcolor{comment}{/*50*/};}
 \DoxyCodeLine{1689   \textcolor{keywordflow}{while} (nbins<nbins\_th)\{}
 \DoxyCodeLine{1690     \textcolor{keywordflow}{if} (divisor>1000) divisor -\/= 1000;}
 \DoxyCodeLine{1691     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (divisor>100) divisor -\/= 100;}
 \DoxyCodeLine{1692     \textcolor{keywordflow}{else} \textcolor{keywordflow}{break};}
-\DoxyCodeLine{1693     nbins=index.size()/divisor;}
+\DoxyCodeLine{1693     nbins=\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.size()/divisor;}
 \DoxyCodeLine{1694   \}}
 \DoxyCodeLine{1695   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"nbins="} << nbins << endl;}
 \DoxyCodeLine{1696   \textcolor{keywordflow}{if} (nbins<3) cerr << \textcolor{stringliteral}{"Not enough bins!"} << endl;}
@@ -1721,20 +1721,20 @@ Definition at line 1105 of file get\+Resolution.\+c.
 \DoxyCodeLine{1698   \textcolor{keywordtype}{float}* binning = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[nbins+1];}
 \DoxyCodeLine{1699   binning[0]=infimum;}
 \DoxyCodeLine{1700   binning[nbins]=supremum;}
-\DoxyCodeLine{1701   \textcolor{keywordtype}{int} ev\_stepsize = index.size()/nbins;}
+\DoxyCodeLine{1701   \textcolor{keywordtype}{int} ev\_stepsize = \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.size()/nbins;}
 \DoxyCodeLine{1702   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Event step size: "} << ev\_stepsize << endl;}
 \DoxyCodeLine{1703   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << 0 << \textcolor{stringliteral}{") = "} << binning[0] << endl;}
 \DoxyCodeLine{1704   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ix=1; ix<nbins; ix++)\{}
-\DoxyCodeLine{1705     binning[ix]=(index[ix*ev\_stepsize-\/1].trueval+index[ix*ev\_stepsize].trueval)*0.5;}
+\DoxyCodeLine{1705     binning[ix]=(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ix*ev\_stepsize-\/1].trueval+\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ix*ev\_stepsize].trueval)*0.5;}
 \DoxyCodeLine{1706     \mbox{\hyperlink{structExtBin}{ExtBin}} tmpbin;}
 \DoxyCodeLine{1707     tmpbin.\mbox{\hyperlink{structExtBin_a114648d1cd50630afd465203ba9470c5}{binlow}} = binning[ix-\/1]; tmpbin.\mbox{\hyperlink{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}{binhigh}} = binning[ix];}
-\DoxyCodeLine{1708     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<ev\_stepsize; bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(index[(ix-\/1)*ev\_stepsize+bin]); \}}
+\DoxyCodeLine{1708     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bin=0; bin<ev\_stepsize; bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[(ix-\/1)*ev\_stepsize+bin]); \}}
 \DoxyCodeLine{1709     binList.push\_back(tmpbin);}
-\DoxyCodeLine{1710     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << ix << \textcolor{stringliteral}{")= "} << binning[ix] << \textcolor{stringliteral}{" [event "} << index[ix*ev\_stepsize].id << \textcolor{stringliteral}{", step "} << ix*ev\_stepsize << \textcolor{stringliteral}{"]"} << endl;}
+\DoxyCodeLine{1710     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << ix << \textcolor{stringliteral}{")= "} << binning[ix] << \textcolor{stringliteral}{" [event "} << \mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[ix*ev\_stepsize].id << \textcolor{stringliteral}{", step "} << ix*ev\_stepsize << \textcolor{stringliteral}{"]"} << endl;}
 \DoxyCodeLine{1711   \}}
 \DoxyCodeLine{1712   \mbox{\hyperlink{structExtBin}{ExtBin}} tmpbin;}
 \DoxyCodeLine{1713   tmpbin.\mbox{\hyperlink{structExtBin_a114648d1cd50630afd465203ba9470c5}{binlow}} = binning[nbins-\/1]; tmpbin.\mbox{\hyperlink{structExtBin_ad40f196ee57d9420a30c2b7c886589f7}{binhigh}} = binning[nbins];}
-\DoxyCodeLine{1714   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bin=(nbins-\/1)*ev\_stepsize; bin<index.size(); bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(index[bin]); \}}
+\DoxyCodeLine{1714   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bin=(nbins-\/1)*ev\_stepsize; bin<\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}.size(); bin++)\{ tmpbin.\mbox{\hyperlink{structExtBin_ae10153182da2024f6c6f71a9a5382ff3}{addEvent}}(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}[bin]); \}}
 \DoxyCodeLine{1715   binList.push\_back(tmpbin);}
 \DoxyCodeLine{1716   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Boundary ("} << nbins << \textcolor{stringliteral}{") = "} << binning[nbins] << endl;}
 \DoxyCodeLine{1717   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Bin list has the following bins:"} << endl;}
@@ -2098,12 +2098,12 @@ Definition at line 1105 of file get\+Resolution.\+c.
 \DoxyCodeLine{2075     RooRealVar* mV = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mV"}, \textcolor{stringliteral}{""}, 0, 1000.*\mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}});}
 \DoxyCodeLine{2076     RooRealVar* GaV = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"GaV"}, \textcolor{stringliteral}{""}, 0, 1000.*\mbox{\hyperlink{TMCFM_8hh_abf7be34aa9d044bc74b481967e5e1245}{sqrts}});}
 \DoxyCodeLine{2077     \textcolor{keywordflow}{if} (strprod==\textcolor{stringliteral}{"ZH"})\{}
-\DoxyCodeLine{2078       mV-\/>setVal(\mbox{\hyperlink{namespacemela}{mela}}.getPrimaryMass(23));}
-\DoxyCodeLine{2079       GaV-\/>setVal(\mbox{\hyperlink{namespacemela}{mela}}.getPrimaryWidth(23));}
+\DoxyCodeLine{2078       mV-\/>setVal(mela.getPrimaryMass(23));}
+\DoxyCodeLine{2079       GaV-\/>setVal(mela.getPrimaryWidth(23));}
 \DoxyCodeLine{2080     \}}
 \DoxyCodeLine{2081     \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{2082       mV-\/>setVal(\mbox{\hyperlink{namespacemela}{mela}}.getPrimaryMass(24));}
-\DoxyCodeLine{2083       GaV-\/>setVal(\mbox{\hyperlink{namespacemela}{mela}}.getPrimaryWidth(24));}
+\DoxyCodeLine{2082       mV-\/>setVal(mela.getPrimaryMass(24));}
+\DoxyCodeLine{2083       GaV-\/>setVal(mela.getPrimaryWidth(24));}
 \DoxyCodeLine{2084     \}}
 \DoxyCodeLine{2085     mV-\/>setConstant(\textcolor{keyword}{true});}
 \DoxyCodeLine{2086     GaV-\/>setConstant(\textcolor{keyword}{true});}
@@ -2456,18 +2456,18 @@ Definition at line 2236 of file get\+Resolution.\+c.
 \DoxyCodeLine{2242     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} y = 1./(xrange[1]-\/xrange[0]);}
 \DoxyCodeLine{2243     pList.push\_back(pair<MELANCSplineCore::T, MELANCSplineCore::T>(x, y));}
 \DoxyCodeLine{2244   \}}
-\DoxyCodeLine{2245   RooRealVar var(\textcolor{stringliteral}{"var"}, \textcolor{stringliteral}{""}, xrange[0], xrange[1]);}
-\DoxyCodeLine{2246   var.setBins(2);}
-\DoxyCodeLine{2247   \mbox{\hyperlink{classMELANCSplineFactory__1D}{MELANCSplineFactory\_1D}} fac\_sp(var, \textcolor{stringliteral}{"tmp"});}
+\DoxyCodeLine{2245   RooRealVar \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}(\textcolor{stringliteral}{"var"}, \textcolor{stringliteral}{""}, xrange[0], xrange[1]);}
+\DoxyCodeLine{2246   \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}.setBins(2);}
+\DoxyCodeLine{2247   \mbox{\hyperlink{classMELANCSplineFactory__1D}{MELANCSplineFactory\_1D}} fac\_sp(\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}, \textcolor{stringliteral}{"tmp"});}
 \DoxyCodeLine{2248   fac\_sp.setPoints(pList);}
 \DoxyCodeLine{2249   \mbox{\hyperlink{classMELANCSplineCore}{MELANCSplineCore}}* sp = fac\_sp.getFunc();}
 \DoxyCodeLine{2250 }
-\DoxyCodeLine{2251   RooRealIntegral* sp\_int = \textcolor{keyword}{new} RooRealIntegral(\textcolor{stringliteral}{"sp\_int"}, \textcolor{stringliteral}{""}, *sp, RooArgSet(var));}
+\DoxyCodeLine{2251   RooRealIntegral* sp\_int = \textcolor{keyword}{new} RooRealIntegral(\textcolor{stringliteral}{"sp\_int"}, \textcolor{stringliteral}{""}, *sp, RooArgSet(\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}));}
 \DoxyCodeLine{2252   \textcolor{keywordtype}{double} spintval = sp\_int-\/>getVal();}
 \DoxyCodeLine{2253   \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"PDF int: "} << spintval << endl;}
 \DoxyCodeLine{2254   \textcolor{keyword}{delete} sp\_int;}
 \DoxyCodeLine{2255 }
-\DoxyCodeLine{2256   RooPlot* plot = var.frame();}
+\DoxyCodeLine{2256   RooPlot* plot = \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}.frame();}
 \DoxyCodeLine{2257   plot-\/>GetXaxis()-\/>CenterTitle();}
 \DoxyCodeLine{2258   plot-\/>GetYaxis()-\/>SetTitleOffset(1.2);}
 \DoxyCodeLine{2259   plot-\/>GetYaxis()-\/>CenterTitle();}

@@ -367,9 +367,9 @@ Definition at line 231 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 \DoxyCodeLine{246     \textcolor{keywordflow}{if} (ix==0)\{}
 \DoxyCodeLine{247       RooArgSet mirrorvars;}
 \DoxyCodeLine{248       TIterator* iter = allVars.createIterator();}
-\DoxyCodeLine{249       RooAbsArg* var;}
-\DoxyCodeLine{250       \textcolor{keywordflow}{while} ((var = (RooAbsArg*)iter-\/>Next()))\{}
-\DoxyCodeLine{251         RooRealVar* rrv\_tmp = \textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(var);}
+\DoxyCodeLine{249       RooAbsArg* \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}};}
+\DoxyCodeLine{250       \textcolor{keywordflow}{while} ((\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}} = (RooAbsArg*)iter-\/>Next()))\{}
+\DoxyCodeLine{251         RooRealVar* rrv\_tmp = \textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}});}
 \DoxyCodeLine{252         \textcolor{keywordflow}{if} (rrv\_tmp==0) \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{253         \textcolor{keywordtype}{bool} isFound=\textcolor{keyword}{false};}
 \DoxyCodeLine{254         \textcolor{keywordflow}{if} (rrv\_x!=0)\{}
@@ -385,7 +385,7 @@ Definition at line 231 of file M\+E\+L\+A\+Linear\+Interp\+Func.\+cc.
 \DoxyCodeLine{264           \}}
 \DoxyCodeLine{265           \textcolor{keyword}{delete} iter\_deps;}
 \DoxyCodeLine{266         \}}
-\DoxyCodeLine{267         \textcolor{keywordflow}{if} (!isFound) mirrorvars.add(*var);}
+\DoxyCodeLine{267         \textcolor{keywordflow}{if} (!isFound) mirrorvars.add(*\mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}});}
 \DoxyCodeLine{268       \}}
 \DoxyCodeLine{269       \textcolor{keyword}{delete} iter;}
 \DoxyCodeLine{270 }

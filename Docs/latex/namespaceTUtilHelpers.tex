@@ -66,7 +66,7 @@ Definition at line 6 of file T\+Util\+Helpers.\+cc.
 \DoxyCodeLine{6                                                            \{}
 \DoxyCodeLine{7   \textcolor{comment}{// Take care of special characters}}
 \DoxyCodeLine{8   \textcolor{keywordtype}{size\_t} ipos;}
-\DoxyCodeLine{9   std::string strTakeOut, strPutIn;}
+\DoxyCodeLine{9   \mbox{\hyperlink{namespacewrite__bindings_a8f9aa06693c886c4f732a4f71f6ca1a6}{std::string}} strTakeOut, strPutIn;}
 \DoxyCodeLine{10 }
 \DoxyCodeLine{11   strTakeOut = \textcolor{stringliteral}{".oODOLLAROo."};}
 \DoxyCodeLine{12   strPutIn = \textcolor{stringliteral}{"\$"};}
@@ -85,8 +85,8 @@ Definition at line 6 of file T\+Util\+Helpers.\+cc.
 \DoxyCodeLine{25   std::smatch \mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}};}
 \DoxyCodeLine{26   \textcolor{keywordflow}{while} (std::regex\_search(str, \mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}}, env))\{}
 \DoxyCodeLine{27     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* s = getenv(\mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}}[1].str().c\_str());}
-\DoxyCodeLine{28     \textcolor{keyword}{const} std::string var(s == NULL ? \textcolor{stringliteral}{""} : s);}
-\DoxyCodeLine{29     str.replace(\mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}}[0].first, \mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}}[0].\mbox{\hyperlink{namespacemodparameters_ab25730bf36fa1669616bd6fbf66f8614}{second}}, var);}
+\DoxyCodeLine{28     \textcolor{keyword}{const} \mbox{\hyperlink{namespacewrite__bindings_a8f9aa06693c886c4f732a4f71f6ca1a6}{std::string}} \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}}(s == NULL ? \textcolor{stringliteral}{""} : s);}
+\DoxyCodeLine{29     str.replace(\mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}}[0].first, \mbox{\hyperlink{namespacetestME__all_a911918741134891edbb514bd018fd3b5}{match}}[0].\mbox{\hyperlink{namespacemodparameters_ab25730bf36fa1669616bd6fbf66f8614}{second}}, \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}});}
 \DoxyCodeLine{30   \}}
 \DoxyCodeLine{31 \}}
 

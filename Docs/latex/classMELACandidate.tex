@@ -779,7 +779,7 @@ Definition at line 547 of file M\+E\+L\+A\+Candidate.\+cc.
 \DoxyCodeLine{561     \textcolor{keywordflow}{if} (beginWithWPair)\{}
 \DoxyCodeLine{562       TLorentzVector pUU = \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(0)-\/>p4 + \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(3)-\/>p4;}
 \DoxyCodeLine{563       TLorentzVector pDD = \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(2)-\/>p4 + \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(1)-\/>p4;}
-\DoxyCodeLine{564       \textcolor{keywordflow}{return} (index==0 ? pDD : pUU);}
+\DoxyCodeLine{564       \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}==0 ? pDD : pUU);}
 \DoxyCodeLine{565     \}}
 \DoxyCodeLine{566     \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{567       TLorentzVector pWp = \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(2)-\/>p4 + \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(1)-\/>p4;}
@@ -795,13 +795,13 @@ Definition at line 547 of file M\+E\+L\+A\+Candidate.\+cc.
 \DoxyCodeLine{577         \&\&}
 \DoxyCodeLine{578         std::abs(pWp.M() -\/ HVVmass) > std::abs(pWm.M() -\/ HVVmass)}
 \DoxyCodeLine{579         ) std::swap(pWp, pWm);}
-\DoxyCodeLine{580       \textcolor{keywordflow}{return} (index==0 ? pWp : pWm);}
+\DoxyCodeLine{580       \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}==0 ? pWp : pWm);}
 \DoxyCodeLine{581     \}}
 \DoxyCodeLine{582   \}}
 \DoxyCodeLine{583   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.size()==3)\{}
 \DoxyCodeLine{584     TLorentzVector pVa = \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(0)-\/>p4 + \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(2)-\/>p4;}
 \DoxyCodeLine{585     TLorentzVector pVb = \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(1)-\/>p4 + \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(2)-\/>p4;}
-\DoxyCodeLine{586     \textcolor{keywordflow}{return} (index==0 ? pVa : pVb);}
+\DoxyCodeLine{586     \textcolor{keywordflow}{return} (\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}==0 ? pVa : pVb);}
 \DoxyCodeLine{587   \}}
 \DoxyCodeLine{588   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} nullFourVector;}
 \DoxyCodeLine{589 \}}
@@ -820,7 +820,7 @@ Definition at line 168 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{168                                                            \{}
-\DoxyCodeLine{169   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a1326e0d08aff6f57b3c12216f74b9c1f}{associatedJets}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a1326e0d08aff6f57b3c12216f74b9c1f}{associatedJets}}.at(index);}
+\DoxyCodeLine{169   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a1326e0d08aff6f57b3c12216f74b9c1f}{associatedJets}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a1326e0d08aff6f57b3c12216f74b9c1f}{associatedJets}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{170   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{171 \}}
 
@@ -859,7 +859,7 @@ Definition at line 156 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{156                                                               \{}
-\DoxyCodeLine{157   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a86d7aabb7c98883887a2e75cb4aa8940}{associatedLeptons}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a86d7aabb7c98883887a2e75cb4aa8940}{associatedLeptons}}.at(index);}
+\DoxyCodeLine{157   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a86d7aabb7c98883887a2e75cb4aa8940}{associatedLeptons}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a86d7aabb7c98883887a2e75cb4aa8940}{associatedLeptons}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{158   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{159 \}}
 
@@ -898,7 +898,7 @@ Definition at line 160 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{160                                                                 \{}
-\DoxyCodeLine{161   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_ae0d2628dba28ff4e15fc7a55222dd3e6}{associatedNeutrinos}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_ae0d2628dba28ff4e15fc7a55222dd3e6}{associatedNeutrinos}}.at(index);}
+\DoxyCodeLine{161   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_ae0d2628dba28ff4e15fc7a55222dd3e6}{associatedNeutrinos}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_ae0d2628dba28ff4e15fc7a55222dd3e6}{associatedNeutrinos}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{162   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{163 \}}
 
@@ -964,7 +964,7 @@ Definition at line 164 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{164                                                               \{}
-\DoxyCodeLine{165   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_abb83932cfad25fe013ea0447113869ed}{associatedPhotons}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_abb83932cfad25fe013ea0447113869ed}{associatedPhotons}}.at(index);}
+\DoxyCodeLine{165   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_abb83932cfad25fe013ea0447113869ed}{associatedPhotons}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_abb83932cfad25fe013ea0447113869ed}{associatedPhotons}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{166   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{167 \}}
 
@@ -1035,7 +1035,7 @@ Definition at line 172 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{172                                                                  \{}
-\DoxyCodeLine{173   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_af055a79689e34ddd31e3b8c561d27ca8}{associatedTops}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_af055a79689e34ddd31e3b8c561d27ca8}{associatedTops}}.at(index);}
+\DoxyCodeLine{173   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_af055a79689e34ddd31e3b8c561d27ca8}{associatedTops}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_af055a79689e34ddd31e3b8c561d27ca8}{associatedTops}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{174   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{175 \}}
 
@@ -1259,7 +1259,7 @@ Definition at line 148 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{148                                                              \{}
-\DoxyCodeLine{149   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(index);}
+\DoxyCodeLine{149   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a73bdc4409d57771a9bb9d3112f7ecc6a}{sortedDaughters}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{150   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{151 \}}
 
@@ -1298,7 +1298,7 @@ Definition at line 152 of file M\+E\+L\+A\+Candidate.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{152                                                       \{}
-\DoxyCodeLine{153   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a572ee741ab65d1d690b2174f12dbf05b}{sortedVs}}.size()>index) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a572ee741ab65d1d690b2174f12dbf05b}{sortedVs}}.at(index);}
+\DoxyCodeLine{153   \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})\mbox{\hyperlink{classMELACandidate_a572ee741ab65d1d690b2174f12dbf05b}{sortedVs}}.size()>\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELACandidate_a572ee741ab65d1d690b2174f12dbf05b}{sortedVs}}.at(\mbox{\hyperlink{namespacewrite__bindings_a6097550d400b802e021a756ad56fc125}{index}});}
 \DoxyCodeLine{154   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{155 \}}
 

@@ -350,7 +350,7 @@ Definition at line 62 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{70     \}}
 \DoxyCodeLine{71     \textcolor{keywordflow}{else} myflavor=3;}
 \DoxyCodeLine{72 }
-\DoxyCodeLine{73     \textcolor{keywordflow}{if}(myflavor>=0) myMela.\mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{computeP}}(angularOrdered[0],angularOrdered[1],angularOrdered[2],angularOrdered[3],}
+\DoxyCodeLine{73     \textcolor{keywordflow}{if}(myflavor>=0) myMela.computeP(angularOrdered[0],angularOrdered[1],angularOrdered[2],angularOrdered[3],}
 \DoxyCodeLine{74         angularOrdered[4],angularOrdered[5],angularOrdered[6],angularOrdered[7],}
 \DoxyCodeLine{75         myflavor,}
 \DoxyCodeLine{76         selfDHvvcoupl,}
@@ -383,7 +383,7 @@ Definition at line 43 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{51     \}}
 \DoxyCodeLine{52     \textcolor{keywordflow}{else} myflavor=3;}
 \DoxyCodeLine{53 }
-\DoxyCodeLine{54     \textcolor{keywordflow}{if}(myflavor>=0) myMela.\mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{computeP}}(angularOrdered[0],angularOrdered[1],angularOrdered[2],angularOrdered[3],}
+\DoxyCodeLine{54     \textcolor{keywordflow}{if}(myflavor>=0) myMela.computeP(angularOrdered[0],angularOrdered[1],angularOrdered[2],angularOrdered[3],}
 \DoxyCodeLine{55         angularOrdered[4],angularOrdered[5],angularOrdered[6],angularOrdered[7],}
 \DoxyCodeLine{56         myflavor,}
 \DoxyCodeLine{57         myprob,}
@@ -416,7 +416,7 @@ Definition at line 81 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{89     \}}
 \DoxyCodeLine{90     \textcolor{keywordflow}{else} myflavor=TVar::Flavor\_2e2mu;}
 \DoxyCodeLine{91 }
-\DoxyCodeLine{92     \textcolor{keywordflow}{if}(myflavor!=TVar::Flavor\_Dummy) myMela.\mbox{\hyperlink{classMela_a6e945c3826090ac856f69a32dc6ee3db}{computePM4l}}(mZZ,}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if}(myflavor!=TVar::Flavor\_Dummy) myMela.computePM4l(mZZ,}
 \DoxyCodeLine{93         myflavor,}
 \DoxyCodeLine{94         syst,}
 \DoxyCodeLine{95         myprob}
@@ -445,7 +445,7 @@ Definition at line 102 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{107 }
 \DoxyCodeLine{108   \textcolor{comment}{//    TVar::VerbosityLevel verbosity = TVar::INFO;}}
 \DoxyCodeLine{109 }
-\DoxyCodeLine{110   \mbox{\hyperlink{classMela}{Mela}} \mbox{\hyperlink{namespacemela}{mela}}(erg\_tev, mPOLE);}
+\DoxyCodeLine{110   Mela mela(erg\_tev, mPOLE);}
 \DoxyCodeLine{111 }
 \DoxyCodeLine{112   TFile* foutput;}
 \DoxyCodeLine{113   \textcolor{keywordflow}{if} (!isggH)\{}
@@ -563,11 +563,11 @@ Definition at line 102 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{225 }
 \DoxyCodeLine{226 }
 \DoxyCodeLine{227   \textcolor{keywordtype}{int} nEntries = tree-\/>GetEntries();}
-\DoxyCodeLine{228   \textcolor{keywordtype}{double} \mbox{\hyperlink{raw__names_8txt_a322ecd1815b5db307c4e9205c7166803}{selfDHggcoupl}}[\mbox{\hyperlink{namespaceanonymous__namespace_02TCouplingsBase_8hh_03_ad60a0786d00ae2cd4c8fd4b2578b13f2ac6f5899e5a4cbe0755428cb2fe1922b6}{SIZE\_HGG}}][2] =\{ \{ 0 \} \};}
+\DoxyCodeLine{228   \textcolor{keywordtype}{double} \mbox{\hyperlink{raw__names_8txt_a322ecd1815b5db307c4e9205c7166803}{selfDHggcoupl}}[\mbox{\hyperlink{namespaceanonymous__namespace_02TCouplingsBase_8hh_03_a77462076b09e259275cd1c6aedbfcd0fac6f5899e5a4cbe0755428cb2fe1922b6}{SIZE\_HGG}}][2] =\{ \{ 0 \} \};}
 \DoxyCodeLine{229   \textcolor{keywordtype}{double} selfDHvvcoupl[SIZE\_HVV\_VBF][2] =\{ \{ 0 \} \};}
 \DoxyCodeLine{230   \textcolor{keywordtype}{double} \mbox{\hyperlink{raw__names_8txt_a48fdca591b54b10415f95fc0ae9f5d7f}{selfDHwwcoupl}}[SIZE\_HWW\_VBF][2] =\{ \{ 0 \} \};}
 \DoxyCodeLine{231   \textcolor{keywordtype}{double} ggvvcoupl[2]=\{ 0, 0 \};}
-\DoxyCodeLine{232   \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4850105ad013a92a4c9cbe6cfa97d794}{TVar::SelfDefine\_spin0}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca4539519c2d018fd29228bdd605c76c47}{TVar::ZZGG}});}
+\DoxyCodeLine{232   mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4850105ad013a92a4c9cbe6cfa97d794}{TVar::SelfDefine\_spin0}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca4539519c2d018fd29228bdd605c76c47}{TVar::ZZGG}});}
 \DoxyCodeLine{233   \textcolor{keywordtype}{int} recorded=0;}
 \DoxyCodeLine{234   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} = 0; \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}} < nEntries; \mbox{\hyperlink{namespacemodparameters_a4d03a172507fd6727424ee4ba81909e7}{ev}}++)\{}
 \DoxyCodeLine{235     pjvbf\_VAJHU=-\/1;}
@@ -662,17 +662,17 @@ Definition at line 102 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{324 \textcolor{comment}{//cos(atan(exp(-\/jet2Eta))*2)}}
 \DoxyCodeLine{325 }
 \DoxyCodeLine{326       \textcolor{keywordflow}{if} (filled == 2)\{}
-\DoxyCodeLine{327         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
-\DoxyCodeLine{328         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}
-\DoxyCodeLine{329         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf);}
+\DoxyCodeLine{327         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{328         mela.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}
+\DoxyCodeLine{329         mela.get\_PAux(pAux\_vbf);}
 \DoxyCodeLine{330 }
 \DoxyCodeLine{331         TLorentzVector pTotal;}
 \DoxyCodeLine{332         pTotal.SetXYZT(0, 0, 0, 0);}
-\DoxyCodeLine{333         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
-\DoxyCodeLine{334         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, pTotal, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU\_first);}
-\DoxyCodeLine{335         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf\_first);}
-\DoxyCodeLine{336         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
-\DoxyCodeLine{337         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, pTotal, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_first);}
+\DoxyCodeLine{333         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{334         mela.computeProdP(jet1, 2, pTotal, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU\_first);}
+\DoxyCodeLine{335         mela.get\_PAux(pAux\_vbf\_first);}
+\DoxyCodeLine{336         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
+\DoxyCodeLine{337         mela.computeProdP(jet1, 2, pTotal, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_first);}
 \DoxyCodeLine{338         \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{mela::computeFakeJet}}(jet1, higgs, pTotal);}
 \DoxyCodeLine{339         jet2Pt\_Fake = pTotal.Pt();}
 \DoxyCodeLine{340         jet2Eta\_Fake = pTotal.Eta();}
@@ -680,11 +680,11 @@ Definition at line 102 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{342         jet2E\_Fake = pTotal.E();}
 \DoxyCodeLine{343 }
 \DoxyCodeLine{344         pTotal.SetXYZT(0, 0, 0, 0);}
-\DoxyCodeLine{345         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
-\DoxyCodeLine{346         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(pTotal, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU\_second);}
-\DoxyCodeLine{347         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf\_second);}
-\DoxyCodeLine{348         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
-\DoxyCodeLine{349         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(pTotal, 2, jet2, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_second);}
+\DoxyCodeLine{345         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{346         mela.computeProdP(pTotal, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU\_second);}
+\DoxyCodeLine{347         mela.get\_PAux(pAux\_vbf\_second);}
+\DoxyCodeLine{348         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
+\DoxyCodeLine{349         mela.computeProdP(pTotal, 2, jet2, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_second);}
 \DoxyCodeLine{350         \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{mela::computeFakeJet}}(jet2, higgs, pTotal);}
 \DoxyCodeLine{351         jet1Pt\_Fake = pTotal.Pt();}
 \DoxyCodeLine{352         jet1Eta\_Fake = pTotal.Eta();}
@@ -720,11 +720,11 @@ Definition at line 102 of file test\+\_\+\+J\+V\+B\+F.\+c.
 \DoxyCodeLine{382 \textcolor{comment}{*/}}
 \DoxyCodeLine{383 \textcolor{comment}{//}}
 \DoxyCodeLine{384         jet2.SetXYZT(0,0,0,0);}
-\DoxyCodeLine{385         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
-\DoxyCodeLine{386         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}
-\DoxyCodeLine{387         \mbox{\hyperlink{namespacemela}{mela}}.get\_PAux(pAux\_vbf);}
-\DoxyCodeLine{388         \mbox{\hyperlink{namespacemela}{mela}}.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
-\DoxyCodeLine{389         \mbox{\hyperlink{namespacemela}{mela}}.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_first);}
+\DoxyCodeLine{385         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{TVar::JJVBF}});}
+\DoxyCodeLine{386         mela.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, pjvbf\_VAJHU);}
+\DoxyCodeLine{387         mela.get\_PAux(pAux\_vbf);}
+\DoxyCodeLine{388         mela.setProcess(\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{TVar::HSMHiggs}}, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{TVar::JHUGen}}, TVar::JH);}
+\DoxyCodeLine{389         mela.computeProdP(jet1, 2, jet2, 2, higgs, 25, nullFourVector, 0, phj\_VAJHU\_first);}
 \DoxyCodeLine{390         \mbox{\hyperlink{namespaceTUtil_aad23bf004cb07fe852407f58e64dabd1}{mela::computeFakeJet}}(jet1, higgs, jet2);}
 \DoxyCodeLine{391 \textcolor{comment}{/*}}
 \DoxyCodeLine{392 \textcolor{comment}{        cout << "TEST:"}}

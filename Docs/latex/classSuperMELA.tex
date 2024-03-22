@@ -693,16 +693,16 @@ Definition at line 490 of file Super\+M\+E\+L\+A.\+cc.
 \DoxyCodeLine{494   \textcolor{keywordtype}{string} fCardName=\mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}+\textcolor{stringliteral}{"inputs\_"}+\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}+\textcolor{stringliteral}{".txt"};}
 \DoxyCodeLine{495   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Parsing input card "} << fCardName.c\_str() << endl;}
 \DoxyCodeLine{496   ifstream card(fCardName.c\_str(), ios::in);}
-\DoxyCodeLine{497   \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{497   \textcolor{keywordtype}{string} \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}};}
 \DoxyCodeLine{498 }
 \DoxyCodeLine{499   \textcolor{keywordflow}{while} (card.good())\{}
-\DoxyCodeLine{500     getline(card, line);}
+\DoxyCodeLine{500     getline(card, \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}});}
 \DoxyCodeLine{501     vector<string> fields;}
-\DoxyCodeLine{502     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(line, fields, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{502     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(\mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}}, fields, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{503     \textcolor{keywordflow}{if} (fields.size()==0 || fields[0]!=\textcolor{stringliteral}{"qqZZshape"})\textcolor{keywordflow}{continue};}
 \DoxyCodeLine{504 }
 \DoxyCodeLine{505     \textcolor{keywordflow}{if} (fields.size()<3)\{}
-\DoxyCodeLine{506       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigParsFromFile! Incorrect format of line \(\backslash\)'"} << line.c\_str() << \textcolor{stringliteral}{"\(\backslash\)' . It contains "} << fields.size() << \textcolor{stringliteral}{"fields (it should be 3)"} << endl;}
+\DoxyCodeLine{506       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigParsFromFile! Incorrect format of line \(\backslash\)'"} << \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}}.c\_str() << \textcolor{stringliteral}{"\(\backslash\)' . It contains "} << fields.size() << \textcolor{stringliteral}{"fields (it should be 3)"} << endl;}
 \DoxyCodeLine{507       \textcolor{keywordflow}{break};}
 \DoxyCodeLine{508     \}}
 \DoxyCodeLine{509 }
@@ -748,15 +748,15 @@ Definition at line 447 of file Super\+M\+E\+L\+A.\+cc.
 \DoxyCodeLine{457   \textcolor{keywordtype}{string} fCardName=\mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}+\textcolor{stringliteral}{"inputs\_"}+\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}+\textcolor{stringliteral}{".txt"};}
 \DoxyCodeLine{458   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Parsing input card "} << fCardName.c\_str() << endl;}
 \DoxyCodeLine{459   ifstream card(fCardName.c\_str(), ios::in);}
-\DoxyCodeLine{460   \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{460   \textcolor{keywordtype}{string} \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}};}
 \DoxyCodeLine{461   \textcolor{keywordflow}{while} (card.good())\{}
-\DoxyCodeLine{462     getline(card, line);}
+\DoxyCodeLine{462     getline(card, \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}});}
 \DoxyCodeLine{463     vector<string> fields;}
-\DoxyCodeLine{464     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(line, fields, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{464     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(\mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}}, fields, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{465     \textcolor{keywordflow}{if} (fields.size()==0 || fields[0]!=\textcolor{stringliteral}{"signalShape"})\textcolor{keywordflow}{continue};}
 \DoxyCodeLine{466     \textcolor{comment}{//ok, we found somethign interesting}}
 \DoxyCodeLine{467     \textcolor{keywordflow}{if} (fields.size()<3)\{}
-\DoxyCodeLine{468       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigParsFromFile! Incorrect format of line "} << line.c\_str() << \textcolor{stringliteral}{" There should be at least three fields, I could find only "} << fields.size() << \textcolor{stringliteral}{" fields."} << endl;}
+\DoxyCodeLine{468       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigParsFromFile! Incorrect format of line "} << \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}}.c\_str() << \textcolor{stringliteral}{" There should be at least three fields, I could find only "} << fields.size() << \textcolor{stringliteral}{" fields."} << endl;}
 \DoxyCodeLine{469       \textcolor{keywordflow}{break};}
 \DoxyCodeLine{470     \}}
 \DoxyCodeLine{471     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"n\_CB"})\{ str\_n\_CB=fields.at(2); nOK=\textcolor{keyword}{true}; \}}
@@ -805,16 +805,16 @@ Definition at line 383 of file Super\+M\+E\+L\+A.\+cc.
 \DoxyCodeLine{399   \}}
 \DoxyCodeLine{400   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::readSigSystFromFile: Input card "} << fCardName << \textcolor{stringliteral}{" can be read!"} << endl;}
 \DoxyCodeLine{401 }
-\DoxyCodeLine{402   \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{402   \textcolor{keywordtype}{string} \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}};}
 \DoxyCodeLine{403   \textcolor{keywordflow}{while} (card.good())\{}
-\DoxyCodeLine{404     getline(card, line);}
+\DoxyCodeLine{404     getline(card, \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}});}
 \DoxyCodeLine{405     vector<string> fields;}
-\DoxyCodeLine{406     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(line, fields, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{406     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(\mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}}, fields, \textcolor{charliteral}{' '});}
 \DoxyCodeLine{407 }
 \DoxyCodeLine{408     \textcolor{keywordflow}{if} (fields.size()<2 || !(fields[0]==\textcolor{stringliteral}{"systematic"}\&\&fields[1]==\textcolor{stringliteral}{"param"})) \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{409 }
 \DoxyCodeLine{410     \textcolor{keywordflow}{if} (fields.size()!=4)\{}
-\DoxyCodeLine{411       \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigSystFromFile! Incorrect format of line "} << line.c\_str() << endl;}
+\DoxyCodeLine{411       \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigSystFromFile! Incorrect format of line "} << \mbox{\hyperlink{namespacewrite__bindings_adf39df0bcae8519b748e7f722fe08800}{line}}.c\_str() << endl;}
 \DoxyCodeLine{412       \textcolor{keywordflow}{break};}
 \DoxyCodeLine{413     \}}
 \DoxyCodeLine{414 }
