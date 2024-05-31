@@ -209,13 +209,13 @@ Definition at line 197 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{197                                                                                         \{}
-\DoxyCodeLine{198   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolateFcn}}(code, rangeName);}
-\DoxyCodeLine{199   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}})\{}
-\DoxyCodeLine{200     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast ERROR::MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{") integration returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl;}
-\DoxyCodeLine{201     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}};}
+\DoxyCodeLine{198   Double\_t value = \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolateFcn}}(code, rangeName);}
+\DoxyCodeLine{199   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& value<\mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}})\{}
+\DoxyCodeLine{200     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast ERROR::MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{") integration returned "} << value << \textcolor{stringliteral}{" for code = "} << code << endl;}
+\DoxyCodeLine{201     value = \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}};}
 \DoxyCodeLine{202   \}}
-\DoxyCodeLine{203   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
-\DoxyCodeLine{204   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{203   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << value << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
+\DoxyCodeLine{204   \textcolor{keywordflow}{return} value;}
 \DoxyCodeLine{205 \}}
 
 \end{DoxyCode}
@@ -300,13 +300,13 @@ Definition at line 170 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{170                                              \{}
-\DoxyCodeLine{171   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolateFcn}}(0);}
-\DoxyCodeLine{172   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}})\{}
-\DoxyCodeLine{173     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast ERROR::MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
-\DoxyCodeLine{174     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}};}
+\DoxyCodeLine{171   Double\_t value = \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolateFcn}}(0);}
+\DoxyCodeLine{172   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& value<\mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}})\{}
+\DoxyCodeLine{173     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast ERROR::MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << value << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
+\DoxyCodeLine{174     value = \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}};}
 \DoxyCodeLine{175   \}}
 \DoxyCodeLine{176   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{}
-\DoxyCodeLine{177     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
+\DoxyCodeLine{177     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << value << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
 \DoxyCodeLine{178     RooArgSet Xdeps; \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}.absArg()-\/>leafNodeServerList(\&Xdeps, 0, \textcolor{keyword}{true});}
 \DoxyCodeLine{179     TIterator* iter = Xdeps.createIterator();}
 \DoxyCodeLine{180     RooAbsArg* \mbox{\hyperlink{namespacewrite__bindings_a994481cd9776274b1b5f4aa2663f5c9f}{var}};}
@@ -316,7 +316,7 @@ Definition at line 170 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc
 \DoxyCodeLine{184     \textcolor{keyword}{delete} iter;}
 \DoxyCodeLine{185     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << endl;}
 \DoxyCodeLine{186   \}}
-\DoxyCodeLine{187   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{187   \textcolor{keywordflow}{return} value;}
 \DoxyCodeLine{188 \}}
 
 \end{DoxyCode}

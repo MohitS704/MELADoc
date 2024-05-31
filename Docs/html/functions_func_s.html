@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,17 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('functions_func_s.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -157,13 +194,13 @@ $(function() {
 : <a class="el" href="classaTQGCCouplings.html#abbca97b9862ab83c164c5c75ba5f0c16">aTQGCCouplings</a>
 </li>
 <li>setATQGCCouplings()
-: <a class="el" href="group__coupl.html#ga89cd35e50224150c7165224d85a7cefc">Mela</a>
+: <a class="el" href="classMela.html#a89cd35e50224150c7165224d85a7cefc">Mela</a>
 </li>
 <li>SetAZffCouplings()
 : <a class="el" href="classAZffCouplings.html#abfc66f05812bb2e16eed4125a9fc3940">AZffCouplings</a>
 </li>
 <li>setAZffCouplings()
-: <a class="el" href="group__coupl.html#ga44fa3db83a2e94ed04d16e742af80387">Mela</a>
+: <a class="el" href="classMela.html#a44fa3db83a2e94ed04d16e742af80387">Mela</a>
 </li>
 <li>setCandidateDecayMode()
 : <a class="el" href="classMela.html#a56c78e0f627c65fbff7f312ff373bbad">Mela</a>
@@ -172,7 +209,7 @@ $(function() {
 : <a class="el" href="classTEvtProb.html#acf960167b7e18752cff5642df4e6599c">TEvtProb</a>
 </li>
 <li>setConstant()
-: <a class="el" href="group__coupl.html#ga0246097a906e531b16af208d3e1ad974">Mela</a>
+: <a class="el" href="classMela.html#a0246097a906e531b16af208d3e1ad974">Mela</a>
 </li>
 <li>setCurrentCandidate()
 : <a class="el" href="classMela.html#ac6289c43968f54589f1ecfc3192d7349">Mela</a>
@@ -365,13 +402,13 @@ $(function() {
 : <a class="el" href="classMELACandidate.html#ad67f7c630ca2c67efbb265e85680c99a">MELACandidate</a>
 </li>
 <li>setSpinOneCouplings()
-: <a class="el" href="group__coupl.html#ga063525c4c9f007a9136f31aa6cb3915a">Mela</a>
+: <a class="el" href="classMela.html#a063525c4c9f007a9136f31aa6cb3915a">Mela</a>
 </li>
 <li>setSpinTwoCouplings()
-: <a class="el" href="group__coupl.html#ga553694c04f25a8113c10aaa3f1b2711e">Mela</a>
+: <a class="el" href="classMela.html#a553694c04f25a8113c10aaa3f1b2711e">Mela</a>
 </li>
 <li>setSpinZeroCouplings()
-: <a class="el" href="group__coupl.html#ga3d02b2dbebd33da734a14faea9926f51">Mela</a>
+: <a class="el" href="classMela.html#a3d02b2dbebd33da734a14faea9926f51">Mela</a>
 </li>
 <li>setTempCandidate()
 : <a class="el" href="classMela.html#a752922e898b2e456d43d7d16d33c63cd">Mela</a>
@@ -515,11 +552,14 @@ $(function() {
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

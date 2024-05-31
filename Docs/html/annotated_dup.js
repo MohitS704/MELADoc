@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "collier_coefs", "namespacecollier__coefs.html", "namespacecollier__coefs" ],
+    [ "collier_init", "namespacecollier__init.html", "namespacecollier__init" ],
+    [ "collier_tensors", "namespacecollier__tensors.html", "namespacecollier__tensors" ],
     [ "hto_acmplx_pro", "namespacehto__acmplx__pro.html", "namespacehto__acmplx__pro" ],
     [ "hto_acmplx_rat", "namespacehto__acmplx__rat.html", "namespacehto__acmplx__rat" ],
     [ "hto_cmplx_ln", "namespacehto__cmplx__ln.html", "namespacehto__cmplx__ln" ],
@@ -14,10 +17,8 @@ var annotated_dup =
     [ "hto_real_ln", "namespacehto__real__ln.html", "namespacehto__real__ln" ],
     [ "hto_real_lnz", "namespacehto__real__lnz.html", "namespacehto__real__lnz" ],
     [ "lhefile", "namespacelhefile.html", "namespacelhefile" ],
-    [ "mela", "namespacemela.html", "namespacemela" ],
     [ "modmisc", "namespacemodmisc.html", "namespacemodmisc" ],
     [ "modttbhiggs", "namespacemodttbhiggs.html", "namespacemodttbhiggs" ],
-    [ "pythonmelautils", "namespacepythonmelautils.html", "namespacepythonmelautils" ],
     [ "testME_more", "namespacetestME__more.html", "namespacetestME__more" ],
     [ "TNumericUtil", "namespaceTNumericUtil.html", "namespaceTNumericUtil" ],
     [ "TVar", "namespaceTVar.html", "namespaceTVar" ],

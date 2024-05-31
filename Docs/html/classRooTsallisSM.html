@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('classRooTsallisSM.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -82,7 +119,7 @@ Inheritance diagram for RooTsallisSM:</div>
 <area shape="rect" title=" " alt="" coords="5,80,108,107"/>
 <area shape="rect" title=" " alt="" coords="12,5,101,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for RooTsallisSM:</div>
 <div class="dyncontent">
@@ -91,7 +128,7 @@ Collaboration diagram for RooTsallisSM:</div>
 <area shape="rect" title=" " alt="" coords="5,80,108,107"/>
 <area shape="rect" title=" " alt="" coords="12,5,101,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -726,6 +763,7 @@ Protected Attributes</h2></td></tr>
 <li>MELA/src/<a class="el" href="RooTsallis_8cc_source.html">RooTsallis.cc</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassRooTsallisSM_html_ab32656866a41ccfbe519e29bed50258e"><div class="ttname"><a href="classRooTsallisSM.html#ab32656866a41ccfbe519e29bed50258e">RooTsallisSM::mzz</a></div><div class="ttdeci">RooRealProxy mzz</div><div class="ttdef"><b>Definition:</b> <a href="RooTsallis_8h_source.html#l00047">RooTsallis.h:47</a></div></div>
 <div class="ttc" id="aclassRooTsallisSM_html_ad4441553428cd44f7185812ef0422c13"><div class="ttname"><a href="classRooTsallisSM.html#ad4441553428cd44f7185812ef0422c13">RooTsallisSM::x</a></div><div class="ttdeci">RooRealProxy x</div><div class="ttdef"><b>Definition:</b> <a href="RooTsallis_8h_source.html#l00046">RooTsallis.h:46</a></div></div>
 <div class="ttc" id="aclassRooTsallisSM_html_a4b04ad159021d15d0d16ea2cb09f8786"><div class="ttname"><a href="classRooTsallisSM.html#a4b04ad159021d15d0d16ea2cb09f8786">RooTsallisSM::T1</a></div><div class="ttdeci">RooRealProxy T1</div><div class="ttdef"><b>Definition:</b> <a href="RooTsallis_8h_source.html#l00057">RooTsallis.h:57</a></div></div>
@@ -741,10 +779,13 @@ Protected Attributes</h2></td></tr>
 <div class="ttc" id="aclassRooTsallisSM_html_a5029239cb424f7e2221b5f0f7f1eed34"><div class="ttname"><a href="classRooTsallisSM.html#a5029239cb424f7e2221b5f0f7f1eed34">RooTsallisSM::T2</a></div><div class="ttdeci">RooRealProxy T2</div><div class="ttdef"><b>Definition:</b> <a href="RooTsallis_8h_source.html#l00058">RooTsallis.h:58</a></div></div>
 <div class="ttc" id="aclassRooTsallisSM_html_a82e0f75acdaf231a00285d343689013c"><div class="ttname"><a href="classRooTsallisSM.html#a82e0f75acdaf231a00285d343689013c">RooTsallisSM::RooTsallisSM</a></div><div class="ttdeci">RooTsallisSM(const char *name, const char *title, RooAbsReal &amp;_x, RooAbsReal &amp;_mzz, RooAbsReal &amp;_m, RooAbsReal &amp;_n0, RooAbsReal &amp;_n1, RooAbsReal &amp;_n2, RooAbsReal &amp;_ndue, RooAbsReal &amp;_bb0, RooAbsReal &amp;_bb1, RooAbsReal &amp;_bb2, RooAbsReal &amp;_T0, RooAbsReal &amp;_T1, RooAbsReal &amp;_T2)</div><div class="ttdef"><b>Definition:</b> <a href="RooTsallis_8cc_source.html#l00011">RooTsallis.cc:11</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classRooTsallisSM.html">RooTsallisSM</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

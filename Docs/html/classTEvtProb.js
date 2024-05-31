@@ -25,6 +25,7 @@ var classTEvtProb =
     [ "GetPrimaryHiggsMass", "classTEvtProb.html#a6622ed81555a7c7184cbd47fceb5bc8a", null ],
     [ "GetPrimaryMass", "classTEvtProb.html#a952ffe128102021e775cb5a6e4a8c48b", null ],
     [ "GetPrimaryWidth", "classTEvtProb.html#a613202703bbd715e88a43dca1881e2c8", null ],
+    [ "GetRenFacScaleMode", "classTEvtProb.html#a36ca1b7cbe4bcc477e8ec811ac06f4a2", null ],
     [ "GetSelfDaTQGCCouplings", "classTEvtProb.html#ab93eb618bdad04a58f64a25efc8fd0d6", null ],
     [ "GetSelfDAZffCouplings", "classTEvtProb.html#a5679e04e78be4876327bfd81fe4f54aa", null ],
     [ "GetSelfDSpinOneCouplings", "classTEvtProb.html#a4a3edebea545ca830929dd7f6eacea80", null ],

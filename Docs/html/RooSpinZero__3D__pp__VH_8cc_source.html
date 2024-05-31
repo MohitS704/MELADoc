@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('RooSpinZero__3D__pp__VH_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">RooSpinZero_3D_pp_VH.cc</div>  </div>
@@ -255,7 +288,7 @@ $(function() {
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>!=<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) term2Coeff = 2.*m2_*<a class="code" href="classRooSpin.html#ac926655ebb69be16dd2af5de93e4d8d8">GeVunit</a>;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  Double_t plumi = <a class="code" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">partonicLuminosity</a>(m1_, <a class="code" href="classRooSpin.html#a7c157be6d06500537be09c606cc169a9">Y</a>, <a class="code" href="classRooSpinZero__3D__pp__VH.html#aa04b379b7156b6092e98ec9478792b27">sqrts</a>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  Double_t <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = 0;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  Double_t value = 0;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode1=0; VGammaVpmode1&lt;=2; VGammaVpmode1++){</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode2=0; VGammaVpmode2&lt;=2; VGammaVpmode2++){</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">if</span> (!(</div>
@@ -272,11 +305,11 @@ $(function() {
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        ) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      Double_t val_A00=0, val_App=0, val_Amm=0, val_A0p=0, val_A0m=0, val_Amp=0;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <a class="code" href="classRooSpinZero__3D__pp__VH.html#a275d6fbf15da30f1d52ba8db42fb5b79">evaluatePolarizationTerms</a>(val_A00, val_App, val_Amm, val_A0p, val_A0m, val_Amp, code, VGammaVpmode1, VGammaVpmode2);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      value += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> *= betaVal*term1Coeff*term2Coeff*plumi;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  value *= betaVal*term1Coeff*term2Coeff*plumi;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="classRooSpinZero__3D__pp__VH.html#aa7408b13284191b14fba9bc0437e4bcb">  209</a></span>&#160;Int_t <a class="code" href="classRooSpinZero__3D__pp__VH.html#aa7408b13284191b14fba9bc0437e4bcb">RooSpinZero_3D_pp_VH::getAnalyticalIntegral</a>(RooArgSet&amp; allVars, RooArgSet&amp; analVars, <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="comment">/*rangeName*/</span>)<span class="keyword"> const</span>{</div>
@@ -305,7 +338,7 @@ $(function() {
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>!=<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) term2Coeff = 2.*m2_*<a class="code" href="classRooSpin.html#ac926655ebb69be16dd2af5de93e4d8d8">GeVunit</a>;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  Double_t plumi = <a class="code" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">partonicLuminosity</a>(m1_, <a class="code" href="classRooSpin.html#a7c157be6d06500537be09c606cc169a9">Y</a>, <a class="code" href="classRooSpinZero__3D__pp__VH.html#aa04b379b7156b6092e98ec9478792b27">sqrts</a>);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  Double_t <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = 0;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  Double_t value = 0;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode1=0; VGammaVpmode1&lt;=2; VGammaVpmode1++){</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode2=0; VGammaVpmode2&lt;=2; VGammaVpmode2++){</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      <span class="keywordflow">if</span> (!(</div>
@@ -325,11 +358,11 @@ $(function() {
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        )) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      Double_t val_A00=0, val_App=0, val_Amm=0, val_A0p=0, val_A0m=0, val_Amp=0;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <a class="code" href="classRooSpinZero__3D__pp__VH.html#a275d6fbf15da30f1d52ba8db42fb5b79">evaluatePolarizationTerms</a>(val_A00, val_App, val_Amm, val_A0p, val_A0m, val_Amp, code, VGammaVpmode1, VGammaVpmode2);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      value += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> *= betaVal*term1Coeff*term2Coeff*plumi;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  value *= betaVal*term1Coeff*term2Coeff*plumi;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
 <div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">  262</a></span>&#160;Double_t <a class="code" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">RooSpinZero_3D_pp_VH::partonicLuminosity</a>(Double_t mVal, Double_t YVal, Double_t sqrtsVal)<span class="keyword"> const</span>{</div>
@@ -495,7 +528,7 @@ $(function() {
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aoutput_8txt_html_a14cbf2c203e363db8f9aaf1d15b93e1d"><div class="ttname"><a href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a></div><div class="ttdeci">pymela::gHIGGS_KAPPA value(&quot;gHIGGS_KAPPA_TILDE&quot;, pymela::gHIGGS_KAPPA_TILDE) .value(&quot;SIZE_HQQ&quot;</div></div>
+</div><!-- doc-content -->
 <div class="ttc" id="aclassRooSpin_html_a15c542752ae6c419e9b64b9303352af6"><div class="ttname"><a href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">RooSpin::Phi</a></div><div class="ttdeci">RooRealProxy Phi</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00110">RooSpin.h:110</a></div></div>
 <div class="ttc" id="anamespaceTVar_html_a159a43323e3b4e8a2dcfdc2ac09e2049"><div class="ttname"><a href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a></div><div class="ttdeci">VerbosityLevel</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00047">TVar.hh:47</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a62f350bc1e1f9bffe8e2391abf002ce4"><div class="ttname"><a href="classRooSpin.html#a62f350bc1e1f9bffe8e2391abf002ce4">RooSpin::m12</a></div><div class="ttdeci">RooRealProxy m12</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00113">RooSpin.h:113</a></div></div>
@@ -540,10 +573,13 @@ $(function() {
 <div class="ttc" id="aclassRooSpin_html_a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c"><div class="ttname"><a href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">RooSpin::prime_hs</a></div><div class="ttdeci">@ prime_hs</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00041">RooSpin.h:41</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ab5483eaf27e1b34fbd340d203e04d616"><div class="ttname"><a href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">RooSpin::Phi1</a></div><div class="ttdeci">RooRealProxy Phi1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00115">RooSpin.h:115</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li><li class="navelem"><a class="el" href="RooSpinZero__3D__pp__VH_8cc.html">RooSpinZero_3D_pp_VH.cc</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

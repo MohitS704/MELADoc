@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('classMELACandidate.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -83,7 +120,7 @@ Inheritance diagram for MELACandidate:</div>
 <area shape="rect" title=" " alt="" coords="5,80,123,107"/>
 <area shape="rect" href="classMELAParticle.html" title=" " alt="" coords="13,5,115,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for MELACandidate:</div>
 <div class="dyncontent">
@@ -92,7 +129,7 @@ Collaboration diagram for MELACandidate:</div>
 <area shape="rect" title=" " alt="" coords="5,80,123,107"/>
 <area shape="rect" href="classMELAParticle.html" title=" " alt="" coords="13,5,115,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -2964,6 +3001,7 @@ Additional Inherited Members</h2></td></tr>
 <li>MELA/src/<a class="el" href="MELACandidate_8cc_source.html">MELACandidate.cc</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassMELAThreeBodyDecayCandidate_html_a6725c1c5401f5c4aff261e0d215a2dfe"><div class="ttname"><a href="classMELAThreeBodyDecayCandidate.html#a6725c1c5401f5c4aff261e0d215a2dfe">MELAThreeBodyDecayCandidate::getWAntifermion</a></div><div class="ttdeci">MELAParticle * getWAntifermion()</div><div class="ttdef"><b>Definition:</b> <a href="MELAThreeBodyDecayCandidate_8h_source.html#l00023">MELAThreeBodyDecayCandidate.h:23</a></div></div>
 <div class="ttc" id="anamespacePDGHelpers_html_a6f98f45dbd53233287193ec3fe987746"><div class="ttname"><a href="namespacePDGHelpers.html#a6f98f45dbd53233287193ec3fe987746">PDGHelpers::isALepton</a></div><div class="ttdeci">bool isALepton(const int id)</div><div class="ttdef"><b>Definition:</b> <a href="PDGHelpers_8cc_source.html#l00062">PDGHelpers.cc:62</a></div></div>
 <div class="ttc" id="aclassMELAParticle_html_ab9814bc508cf2f1ac422615ec9c1ba9f"><div class="ttname"><a href="classMELAParticle.html#ab9814bc508cf2f1ac422615ec9c1ba9f">MELAParticle::MELAParticle</a></div><div class="ttdeci">MELAParticle()</div><div class="ttdef"><b>Definition:</b> <a href="MELAParticle_8cc_source.html#l00016">MELAParticle.cc:16</a></div></div>
@@ -3051,10 +3089,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassMELACandidate_html_af4b53b3367bbaced90cf7fcbec54f213"><div class="ttname"><a href="classMELACandidate.html#af4b53b3367bbaced90cf7fcbec54f213">MELACandidate::sortDaughtersInitial</a></div><div class="ttdeci">void sortDaughtersInitial()</div><div class="ttdef"><b>Definition:</b> <a href="MELACandidate_8cc_source.html#l00218">MELACandidate.cc:218</a></div></div>
 <div class="ttc" id="anamespaceTVar_html_a71a2597822d7f2646209498585c4bbc4abb1917a08ff9507cf02938700ad23d7a"><div class="ttname"><a href="namespaceTVar.html#a71a2597822d7f2646209498585c4bbc4abb1917a08ff9507cf02938700ad23d7a">TVar::CandidateDecay_GG</a></div><div class="ttdeci">@ CandidateDecay_GG</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00045">TVar.hh:45</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMELACandidate.html">MELACandidate</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

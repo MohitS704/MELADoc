@@ -56,6 +56,24 @@ real(8) function \mbox{\hyperlink{namespacemodmisc_aa2b700cf276ef4d3e4a0fc6f57fd
 \item 
 subroutine \mbox{\hyperlink{namespacemodmisc_a1ac47dc64761009dcc50e57fbbbcf519}{pt\+\_\+order}} (N, Mom)
 \item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a1893505dd44d7785fdbb0205589eae75}{bublesort\+\_\+integerinteger}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_aa2d41111fc8b601b37937e045aee92d6}{bublesort\+\_\+realinteger}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a0201268c995ef0873f96df05efb4585e}{bublesort\+\_\+stringlogical}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_ae0d368ad0f278c05b7c98bce5c121aaa}{bublesort\+\_\+stringinteger}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a5f0698dac2feea5e0305d2e252276602}{bublesort\+\_\+stringreal8}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a1f86966e068da2cadacb4c6bf0d4f488}{bublesort\+\_\+stringcomplex8}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a7332ad8fe3566afa8bbb3b0a047bc57d}{bublesort\+\_\+stringstring}} (N, X, IY)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a99d754212c75d62fd943a63bdfed4ae8}{reorder\+\_\+integerinteger}} (N, iy, x)
+\item 
+subroutine \mbox{\hyperlink{namespacemodmisc_a10c281ae800a3db9140c70680c2be641}{reorder\+\_\+integerreal}} (N, iy, x)
+\item 
 subroutine \mbox{\hyperlink{namespacemodmisc_aace7c4a048eb3cded1072e6e257a1fd9}{printmom}} (Mom)
 \item 
 subroutine \mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}} (Message, Err\+Num)
@@ -115,6 +133,76 @@ logical function \mbox{\hyperlink{namespacemodmisc_a6ac5e4d5117566541606747e97c2
 
 
 \doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemodmisc_a1893505dd44d7785fdbb0205589eae75}\label{namespacemodmisc_a1893505dd44d7785fdbb0205589eae75}} 
+\index{modmisc@{modmisc}!bublesort\_integerinteger@{bublesort\_integerinteger}}
+\index{bublesort\_integerinteger@{bublesort\_integerinteger}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_integerinteger()}{bublesort\_integerinteger()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+integerinteger (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{integer(8), dimension(1\+:n)}]{X,  }\item[{integer, dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 309 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_aa2d41111fc8b601b37937e045aee92d6}\label{namespacemodmisc_aa2d41111fc8b601b37937e045aee92d6}} 
+\index{modmisc@{modmisc}!bublesort\_realinteger@{bublesort\_realinteger}}
+\index{bublesort\_realinteger@{bublesort\_realinteger}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_realinteger()}{bublesort\_realinteger()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+realinteger (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{real(8), dimension(1\+:n)}]{X,  }\item[{integer, dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 310 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_a1f86966e068da2cadacb4c6bf0d4f488}\label{namespacemodmisc_a1f86966e068da2cadacb4c6bf0d4f488}} 
+\index{modmisc@{modmisc}!bublesort\_stringcomplex8@{bublesort\_stringcomplex8}}
+\index{bublesort\_stringcomplex8@{bublesort\_stringcomplex8}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_stringcomplex8()}{bublesort\_stringcomplex8()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+stringcomplex8 (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{character(len=100), dimension(1\+:n)}]{X,  }\item[{complex(8), dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 314 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_ae0d368ad0f278c05b7c98bce5c121aaa}\label{namespacemodmisc_ae0d368ad0f278c05b7c98bce5c121aaa}} 
+\index{modmisc@{modmisc}!bublesort\_stringinteger@{bublesort\_stringinteger}}
+\index{bublesort\_stringinteger@{bublesort\_stringinteger}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_stringinteger()}{bublesort\_stringinteger()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+stringinteger (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{character(len=100), dimension(1\+:n)}]{X,  }\item[{integer, dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 312 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_a0201268c995ef0873f96df05efb4585e}\label{namespacemodmisc_a0201268c995ef0873f96df05efb4585e}} 
+\index{modmisc@{modmisc}!bublesort\_stringlogical@{bublesort\_stringlogical}}
+\index{bublesort\_stringlogical@{bublesort\_stringlogical}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_stringlogical()}{bublesort\_stringlogical()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+stringlogical (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{character(len=100), dimension(1\+:n)}]{X,  }\item[{logical, dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 311 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_a5f0698dac2feea5e0305d2e252276602}\label{namespacemodmisc_a5f0698dac2feea5e0305d2e252276602}} 
+\index{modmisc@{modmisc}!bublesort\_stringreal8@{bublesort\_stringreal8}}
+\index{bublesort\_stringreal8@{bublesort\_stringreal8}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_stringreal8()}{bublesort\_stringreal8()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+stringreal8 (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{character(len=100), dimension(1\+:n)}]{X,  }\item[{real(8), dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 313 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_a7332ad8fe3566afa8bbb3b0a047bc57d}\label{namespacemodmisc_a7332ad8fe3566afa8bbb3b0a047bc57d}} 
+\index{modmisc@{modmisc}!bublesort\_stringstring@{bublesort\_stringstring}}
+\index{bublesort\_stringstring@{bublesort\_stringstring}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{bublesort\_stringstring()}{bublesort\_stringstring()}}
+{\footnotesize\ttfamily subroutine modmisc\+::bublesort\+\_\+stringstring (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{character(len=100), dimension(1\+:n)}]{X,  }\item[{character(len=100), dimension(1\+:n)}]{IY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 315 of file mod\+\_\+\+Misc.\+F90.
+
 \mbox{\Hypertarget{namespacemodmisc_a6ac5e4d5117566541606747e97c289d7}\label{namespacemodmisc_a6ac5e4d5117566541606747e97c289d7}} 
 \index{modmisc@{modmisc}!calculatesxsec@{calculatesxsec}}
 \index{calculatesxsec@{calculatesxsec}!modmisc@{modmisc}}
@@ -1615,6 +1703,26 @@ Definition at line 253 of file mod\+\_\+\+Misc.\+F90.
 \DoxyCodeLine{271 }
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespacemodmisc_a99d754212c75d62fd943a63bdfed4ae8}\label{namespacemodmisc_a99d754212c75d62fd943a63bdfed4ae8}} 
+\index{modmisc@{modmisc}!reorder\_integerinteger@{reorder\_integerinteger}}
+\index{reorder\_integerinteger@{reorder\_integerinteger}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{reorder\_integerinteger()}{reorder\_integerinteger()}}
+{\footnotesize\ttfamily subroutine modmisc\+::reorder\+\_\+integerinteger (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{integer, dimension(1\+:n)}]{iy,  }\item[{integer, dimension(1\+:n)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 346 of file mod\+\_\+\+Misc.\+F90.
+
+\mbox{\Hypertarget{namespacemodmisc_a10c281ae800a3db9140c70680c2be641}\label{namespacemodmisc_a10c281ae800a3db9140c70680c2be641}} 
+\index{modmisc@{modmisc}!reorder\_integerreal@{reorder\_integerreal}}
+\index{reorder\_integerreal@{reorder\_integerreal}!modmisc@{modmisc}}
+\doxysubsubsection{\texorpdfstring{reorder\_integerreal()}{reorder\_integerreal()}}
+{\footnotesize\ttfamily subroutine modmisc\+::reorder\+\_\+integerreal (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{integer, dimension(1\+:n)}]{iy,  }\item[{real(8), dimension(1\+:n)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 347 of file mod\+\_\+\+Misc.\+F90.
+
 \mbox{\Hypertarget{namespacemodmisc_ad7a51fc80e98c8745facacd7104065d5}\label{namespacemodmisc_ad7a51fc80e98c8745facacd7104065d5}} 
 \index{modmisc@{modmisc}!sc@{sc}}
 \index{sc@{sc}!modmisc@{modmisc}}

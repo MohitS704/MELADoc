@@ -125,7 +125,7 @@ var dir_e76e844777b8919c382e03460066671c =
       [ "aTQGCCouplings", "classaTQGCCouplings.html", "classaTQGCCouplings" ],
       [ "AZffCouplings", "classAZffCouplings.html", "classAZffCouplings" ]
     ] ],
-    [ "TCouplingsBase.hh", "TCouplingsBase_8hh.html", null ],
+    [ "TCouplingsBase.hh", "TCouplingsBase_8hh.html", "TCouplingsBase_8hh" ],
     [ "TensorPdfFactory.h", "TensorPdfFactory_8h.html", [
       [ "TensorPdfFactory", "classTensorPdfFactory.html", "classTensorPdfFactory" ]
     ] ],

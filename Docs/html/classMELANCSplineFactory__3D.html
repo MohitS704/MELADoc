@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('classMELANCSplineFactory__3D.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -86,7 +123,7 @@ Collaboration diagram for MELANCSplineFactory_3D:</div>
 <area shape="rect" href="classMELAFuncPdf.html" title=" " alt="" coords="197,157,303,184"/>
 <area shape="rect" title=" " alt="" coords="205,81,295,108"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -1010,6 +1047,7 @@ template&lt;typename inType &gt; </div>
 <li>MELA/src/<a class="el" href="MELANCSplineFactory__3D_8cc_source.html">MELANCSplineFactory_3D.cc</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassMELANCSplineCore_html_a95c39d3f034fd95001c071a73ff2ef99"><div class="ttname"><a href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a></div><div class="ttdeci">Float_t T</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineCore_8h_source.html#l00018">MELANCSplineCore.h:18</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_abd457492b2f73f522b607c7ff8b1bda7"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#abd457492b2f73f522b607c7ff8b1bda7">MELANCSplineFactory_3D::appendName</a></div><div class="ttdeci">TString appendName</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8h_source.html#l00016">MELANCSplineFactory_3D.h:16</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_a20c51eba230497d84c0b8edfdd29e53c"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#a20c51eba230497d84c0b8edfdd29e53c">MELANCSplineFactory_3D::bcEndZ</a></div><div class="ttdeci">MELANCSplineCore::BoundaryCondition bcEndZ</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8h_source.html#l00023">MELANCSplineFactory_3D.h:23</a></div></div>
@@ -1033,10 +1071,13 @@ template&lt;typename inType &gt; </div>
 <div class="ttc" id="anamespaceglobalc_html_a68e62f5d752be9315f909681fa34b5dc"><div class="ttname"><a href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">globalc::z</a></div><div class="ttdeci">double complex, dimension(2, 2) z</div><div class="ttdef"><b>Definition:</b> <a href="reductionC_8F90_source.html#l00050">reductionC.F90:50</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_aac91ce9aca66ebad69904dac7011b5c1"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1">MELANCSplineFactory_3D::setPoints</a></div><div class="ttdeci">void setPoints(TTree *tree)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8cc_source.html#l00112">MELANCSplineFactory_3D.cc:112</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMELANCSplineFactory__3D.html">MELANCSplineFactory_3D</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

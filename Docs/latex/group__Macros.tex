@@ -1,0 +1,327 @@
+\hypertarget{group__Macros}{}\doxysection{Coupling definition Macros}
+\label{group__Macros}\index{Coupling definition Macros@{Coupling definition Macros}}
+
+
+These are C++ macros that define named couplings in the Python code.  
+
+
+Collaboration diagram for Coupling definition Macros\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{group__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__Macros_gadbce8a383a4cf2796780b92b39d58d7b}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+A\+R\+R\+\_\+\+S\+P\+I\+N\+\_\+\+Z\+E\+RO}}(array\+Name,  size,  arr\+Type)
+\begin{DoxyCompactList}\small\item\em Generates the array for spin 0 values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga9f633657006d95e850aeb54f8703afbb}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+A\+R\+R\+\_\+\+S\+P\+I\+N\+\_\+\+O\+N\+E\+T\+WO}}(array\+Name,  size)
+\begin{DoxyCompactList}\small\item\em Generates the array for spin 1 and spin 2 values in J\+H\+U\+Gen. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_gaf01a9cfa945ab415d1055bdcf338482c}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+M\+A\+G\+I\+N\+A\+R\+Y\+\_\+\+S\+P\+I\+N\+\_\+\+Z\+E\+RO}}(array\+Name,  coupling\+Name,  coupling\+Index,  higgs\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for spin 0 values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga7d0ee746b41b9d0ee682dbe0eeb9acb0}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+M\+A\+G\+I\+N\+A\+R\+Y\+\_\+\+S\+P\+I\+N\+\_\+\+O\+N\+E\+T\+WO}}(array\+Name,  coupling\+Name,  coupling\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for spin 1 and spin 2 values in J\+H\+U\+Gen. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_gab42e82b4aafec22a48831d1e65bdbd02}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+C\+\_\+\+L\+A\+M\+B\+DA}}(array\+Name,  coupling\+Name,  coupling\+Index,  higgs\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for C Lambda values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga714cb041e6825c617d24177cfbe14f88}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+L\+A\+M\+B\+DA}}(array\+Name,  coupling\+Name,  coupling\+Index\+\_\+1,  coupling\+Index\+\_\+2,  higgs\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for Lambda values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These are C++ macros that define named couplings in the Python code. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__Macros_ga9f633657006d95e850aeb54f8703afbb}\label{group__Macros_ga9f633657006d95e850aeb54f8703afbb}} 
+\index{Coupling definition Macros@{Coupling definition Macros}!MAKE\_COUPLING\_ARR\_SPIN\_ONETWO@{MAKE\_COUPLING\_ARR\_SPIN\_ONETWO}}
+\index{MAKE\_COUPLING\_ARR\_SPIN\_ONETWO@{MAKE\_COUPLING\_ARR\_SPIN\_ONETWO}!Coupling definition Macros@{Coupling definition Macros}}
+\doxysubsubsection{\texorpdfstring{MAKE\_COUPLING\_ARR\_SPIN\_ONETWO}{MAKE\_COUPLING\_ARR\_SPIN\_ONETWO}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+A\+R\+R\+\_\+\+S\+P\+I\+N\+\_\+\+O\+N\+E\+T\+WO(\begin{DoxyParamCaption}\item[{}]{array\+Name,  }\item[{}]{size }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        .def(\#arrayName, [](py::object \&obj)\{ \(\backslash\)}
+\DoxyCodeLine{            Mela \&D = obj.cast<Mela\&>(); \(\backslash\)}
+\DoxyCodeLine{            return py::array\_t<double>(std::vector<int>\{size, 2\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{double}*) \&D.arrayName, obj); \(\backslash\)}
+\DoxyCodeLine{        \})}
+
+\end{DoxyCode}
+
+
+Generates the array for spin 1 and spin 2 values in J\+H\+U\+Gen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Name} & This is the name of the array containing the coupling \\
+\hline
+{\em size} & This is the size of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+These coupling entries have both a real and an imaginary component. You can set them via\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{m = \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela.Mela}}()}
+\DoxyCodeLine{m.<arrayName>()[<couplingIndex>][0] = <real>}
+\DoxyCodeLine{m.<arrayName>()[<couplingIndex>][1] = <imag>}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+Definition at line 414 of file mela\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{group__Macros_gadbce8a383a4cf2796780b92b39d58d7b}\label{group__Macros_gadbce8a383a4cf2796780b92b39d58d7b}} 
+\index{Coupling definition Macros@{Coupling definition Macros}!MAKE\_COUPLING\_ARR\_SPIN\_ZERO@{MAKE\_COUPLING\_ARR\_SPIN\_ZERO}}
+\index{MAKE\_COUPLING\_ARR\_SPIN\_ZERO@{MAKE\_COUPLING\_ARR\_SPIN\_ZERO}!Coupling definition Macros@{Coupling definition Macros}}
+\doxysubsubsection{\texorpdfstring{MAKE\_COUPLING\_ARR\_SPIN\_ZERO}{MAKE\_COUPLING\_ARR\_SPIN\_ZERO}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+A\+R\+R\+\_\+\+S\+P\+I\+N\+\_\+\+Z\+E\+RO(\begin{DoxyParamCaption}\item[{}]{array\+Name,  }\item[{}]{size,  }\item[{}]{arr\+Type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        .def(\#arrayName, [](py::object \&obj)\{ \(\backslash\)}
+\DoxyCodeLine{            Mela \&D = obj.cast<Mela\&>(); \(\backslash\)}
+\DoxyCodeLine{            return py::array\_t<arrType>(std::vector<int>\{\mbox{\hyperlink{TMCFM_8hh_adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf}{nSupportedHiggses}}, size, 2\}, (\textcolor{keyword}{const} arrType*) \&D.arrayName, obj); \(\backslash\)}
+\DoxyCodeLine{        \})}
+
+\end{DoxyCode}
+
+
+Generates the array for spin 0 values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Name} & This is the name of the array containing the coupling \\
+\hline
+{\em size} & This is the size of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+These coupling entries have both a real and an imaginary component. You can set them via\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{m = \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela.Mela}}()}
+\DoxyCodeLine{m.<arrayName>()[<couplingIndex>][0] = <real>}
+\DoxyCodeLine{m.<arrayName>()[<couplingIndex>][1] = <imag>}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+Definition at line 395 of file mela\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{group__Macros_gab42e82b4aafec22a48831d1e65bdbd02}\label{group__Macros_gab42e82b4aafec22a48831d1e65bdbd02}} 
+\index{Coupling definition Macros@{Coupling definition Macros}!MAKE\_COUPLING\_C\_LAMBDA@{MAKE\_COUPLING\_C\_LAMBDA}}
+\index{MAKE\_COUPLING\_C\_LAMBDA@{MAKE\_COUPLING\_C\_LAMBDA}!Coupling definition Macros@{Coupling definition Macros}}
+\doxysubsubsection{\texorpdfstring{MAKE\_COUPLING\_C\_LAMBDA}{MAKE\_COUPLING\_C\_LAMBDA}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+C\+\_\+\+L\+A\+M\+B\+DA(\begin{DoxyParamCaption}\item[{}]{array\+Name,  }\item[{}]{coupling\+Name,  }\item[{}]{coupling\+Index,  }\item[{}]{higgs\+Index }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        .def\_property(\(\backslash\)}
+\DoxyCodeLine{            \#couplingName, \(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](py::object \&obj)\{\(\backslash\)}
+\DoxyCodeLine{                    Mela\& D = obj.cast<Mela\&>();\(\backslash\)}
+\DoxyCodeLine{                    py::array\_t array\_val = py::array\_t<int>(std::vector<int>\{\mbox{\hyperlink{TMCFM_8hh_adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf}{nSupportedHiggses}},\mbox{\hyperlink{raw__couplings_8txt_a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9}{SIZE\_HVV\_CQSQ}}\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{int}*) \&D.arrayName, obj);\(\backslash\)}
+\DoxyCodeLine{                    return array\_val.at(higgsIndex,couplingIndex);\(\backslash\)}
+\DoxyCodeLine{                \}),\(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](py::object \&obj, \textcolor{keywordtype}{double} coupl)\{\(\backslash\)}
+\DoxyCodeLine{                    Mela \&D = obj.cast<Mela\&>();\(\backslash\)}
+\DoxyCodeLine{                    py::array\_t array\_val = py::array\_t<int>(std::vector<int>\{\mbox{\hyperlink{TMCFM_8hh_adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf}{nSupportedHiggses}},\mbox{\hyperlink{raw__couplings_8txt_a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9}{SIZE\_HVV\_CQSQ}}\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{int}*) \&D.arrayName, obj);\(\backslash\)}
+\DoxyCodeLine{                    array\_val.mutable\_at(higgsIndex,couplingIndex) = coupl;\(\backslash\)}
+\DoxyCodeLine{                \}, py::keep\_alive<0, 1>())\(\backslash\)}
+\DoxyCodeLine{        )}
+
+\end{DoxyCode}
+
+
+Generates the couplings for C Lambda values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Name} & This is the name of the array containing the coupling \\
+\hline
+{\em coupling\+Name} & This is the name of the coupling to set (should be unique for every coupling\+Index/higgs\+Index combination) \\
+\hline
+{\em coupling\+Index} & This is the index at which the name corresponds to the array \\
+\hline
+{\em higgs\+Index} & This is the index of which Higgs to use (M\+C\+FM supports 2 resonances) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+These coupling entries only have a real component. You can set them via\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{m = \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela.Mela}}()}
+\DoxyCodeLine{m.<couplingName> = value}
+\DoxyCodeLine{print(m.<couplingName>) \textcolor{comment}{\#will print the value}}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+Definition at line 494 of file mela\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{group__Macros_ga714cb041e6825c617d24177cfbe14f88}\label{group__Macros_ga714cb041e6825c617d24177cfbe14f88}} 
+\index{Coupling definition Macros@{Coupling definition Macros}!MAKE\_COUPLING\_LAMBDA@{MAKE\_COUPLING\_LAMBDA}}
+\index{MAKE\_COUPLING\_LAMBDA@{MAKE\_COUPLING\_LAMBDA}!Coupling definition Macros@{Coupling definition Macros}}
+\doxysubsubsection{\texorpdfstring{MAKE\_COUPLING\_LAMBDA}{MAKE\_COUPLING\_LAMBDA}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+L\+A\+M\+B\+DA(\begin{DoxyParamCaption}\item[{}]{array\+Name,  }\item[{}]{coupling\+Name,  }\item[{}]{coupling\+Index\+\_\+1,  }\item[{}]{coupling\+Index\+\_\+2,  }\item[{}]{higgs\+Index }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        .def\_property(\(\backslash\)}
+\DoxyCodeLine{            \#couplingName, \(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](py::object \&obj)\{\(\backslash\)}
+\DoxyCodeLine{                    Mela\& D = obj.cast<Mela\&>();\(\backslash\)}
+\DoxyCodeLine{                    py::array\_t array\_val = py::array\_t<int>(std::vector<int>\{\mbox{\hyperlink{TMCFM_8hh_adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf}{nSupportedHiggses}},\mbox{\hyperlink{raw__couplings_8txt_ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca}{SIZE\_HVV\_LAMBDAQSQ}},\mbox{\hyperlink{raw__couplings_8txt_a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9}{SIZE\_HVV\_CQSQ}}\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{int}*) \&D.arrayName, obj);\(\backslash\)}
+\DoxyCodeLine{                    return array\_val.at(higgsIndex,couplingIndex\_1, couplingIndex\_2);\(\backslash\)}
+\DoxyCodeLine{                \}),\(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](py::object \&obj, \textcolor{keywordtype}{double} coupl)\{\(\backslash\)}
+\DoxyCodeLine{                    Mela \&D = obj.cast<Mela\&>();\(\backslash\)}
+\DoxyCodeLine{                    py::array\_t array\_val = py::array\_t<int>(std::vector<int>\{\mbox{\hyperlink{TMCFM_8hh_adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf}{nSupportedHiggses}},\mbox{\hyperlink{raw__couplings_8txt_ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca}{SIZE\_HVV\_LAMBDAQSQ}},\mbox{\hyperlink{raw__couplings_8txt_a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9}{SIZE\_HVV\_CQSQ}}\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{int}*) \&D.arrayName, obj);\(\backslash\)}
+\DoxyCodeLine{                    array\_val.mutable\_at(higgsIndex,couplingIndex\_1, couplingIndex\_2) = coupl;\(\backslash\)}
+\DoxyCodeLine{                \}, py::keep\_alive<0, 1>())\(\backslash\)}
+\DoxyCodeLine{        )}
+
+\end{DoxyCode}
+
+
+Generates the couplings for Lambda values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Name} & This is the name of the array containing the coupling \\
+\hline
+{\em coupling\+Name} & This is the name of the coupling to set (should be unique for every coupling\+Index/higgs\+Index combination) \\
+\hline
+{\em coupling\+Index1} & This is the index at which the name corresponds to the array \\
+\hline
+{\em coupling\+Index2} & This is the index at which the name corresponds to the array \\
+\hline
+{\em higgs\+Index} & This is the index of which Higgs to use (M\+C\+FM supports 2 resonances) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+These coupling entries only have a real component. You can set them via\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{m = \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela.Mela}}()}
+\DoxyCodeLine{m.<couplingName> = value}
+\DoxyCodeLine{print(m.<couplingName>) \textcolor{comment}{\#will print the value}}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+Definition at line 528 of file mela\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{group__Macros_ga7d0ee746b41b9d0ee682dbe0eeb9acb0}\label{group__Macros_ga7d0ee746b41b9d0ee682dbe0eeb9acb0}} 
+\index{Coupling definition Macros@{Coupling definition Macros}!MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ONETWO@{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ONETWO}}
+\index{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ONETWO@{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ONETWO}!Coupling definition Macros@{Coupling definition Macros}}
+\doxysubsubsection{\texorpdfstring{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ONETWO}{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ONETWO}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+M\+A\+G\+I\+N\+A\+R\+Y\+\_\+\+S\+P\+I\+N\+\_\+\+O\+N\+E\+T\+WO(\begin{DoxyParamCaption}\item[{}]{array\+Name,  }\item[{}]{coupling\+Name,  }\item[{}]{coupling\+Index }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        .def\_property(\(\backslash\)}
+\DoxyCodeLine{            \#couplingName,\(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](py::object \&obj)\{\(\backslash\)}
+\DoxyCodeLine{                    Mela \&D = obj.cast<Mela\&>();\(\backslash\)}
+\DoxyCodeLine{                    return py::array\_t<double>(std::vector<int>\{2\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{double}*) \&D.arrayName[couplingIndex], obj);\(\backslash\)}
+\DoxyCodeLine{                \}, py::keep\_alive<0, 1>()),\(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](Mela \&D, std::array<double, 2> coupl)\{\(\backslash\)}
+\DoxyCodeLine{                    D.arrayName[couplingIndex][0] = coupl[0];\(\backslash\)}
+\DoxyCodeLine{                    D.arrayName[couplingIndex][1] = coupl[1];\(\backslash\)}
+\DoxyCodeLine{                \}, py::keep\_alive<0, 1>())\(\backslash\)}
+\DoxyCodeLine{        )}
+
+\end{DoxyCode}
+
+
+Generates the couplings for spin 1 and spin 2 values in J\+H\+U\+Gen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Name} & This is the name of the array containing the coupling \\
+\hline
+{\em coupling\+Name} & This is the name of the coupling to set (should be unique for every coupling\+Index/higgs\+Index combination) \\
+\hline
+{\em coupling\+Index} & This is the index at which the name corresponds to the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+These coupling entries have both a real and an imaginary component. You can set them via\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{m = \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela.Mela}}()}
+\DoxyCodeLine{m.<couplingName> = [real, imag]}
+\DoxyCodeLine{print(m.<couplingName>) \textcolor{comment}{\#will print a list of [real, imag]}}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+Definition at line 464 of file mela\+\_\+binding.\+cpp.
+
+\mbox{\Hypertarget{group__Macros_gaf01a9cfa945ab415d1055bdcf338482c}\label{group__Macros_gaf01a9cfa945ab415d1055bdcf338482c}} 
+\index{Coupling definition Macros@{Coupling definition Macros}!MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ZERO@{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ZERO}}
+\index{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ZERO@{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ZERO}!Coupling definition Macros@{Coupling definition Macros}}
+\doxysubsubsection{\texorpdfstring{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ZERO}{MAKE\_COUPLING\_REAL\_IMAGINARY\_SPIN\_ZERO}}
+{\footnotesize\ttfamily \#define M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+M\+A\+G\+I\+N\+A\+R\+Y\+\_\+\+S\+P\+I\+N\+\_\+\+Z\+E\+RO(\begin{DoxyParamCaption}\item[{}]{array\+Name,  }\item[{}]{coupling\+Name,  }\item[{}]{coupling\+Index,  }\item[{}]{higgs\+Index }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        .def\_property(\(\backslash\)}
+\DoxyCodeLine{            \#couplingName,\(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](py::object \&obj)\{\(\backslash\)}
+\DoxyCodeLine{                    Mela \&D = obj.cast<Mela\&>();\(\backslash\)}
+\DoxyCodeLine{                    return py::array\_t<double>(std::vector<int>\{2\}, (\textcolor{keyword}{const} \textcolor{keywordtype}{double}*) \&D.arrayName[higgsIndex][couplingIndex], obj);\(\backslash\)}
+\DoxyCodeLine{                \}, py::keep\_alive<0, 1>()),\(\backslash\)}
+\DoxyCodeLine{            py::cpp\_function(\(\backslash\)}
+\DoxyCodeLine{                [](Mela \&D, std::array<double, 2> coupl)\{\(\backslash\)}
+\DoxyCodeLine{                    D.arrayName[higgsIndex][couplingIndex][0] = coupl[0];\(\backslash\)}
+\DoxyCodeLine{                    D.arrayName[higgsIndex][couplingIndex][1] = coupl[1];\(\backslash\)}
+\DoxyCodeLine{                \}, py::keep\_alive<0, 1>())\(\backslash\)}
+\DoxyCodeLine{        )}
+
+\end{DoxyCode}
+
+
+Generates the couplings for spin 0 values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Name} & This is the name of the array containing the coupling \\
+\hline
+{\em coupling\+Name} & This is the name of the coupling to set (should be unique for every coupling\+Index/higgs\+Index combination) \\
+\hline
+{\em coupling\+Index} & This is the index at which the name corresponds to the array \\
+\hline
+{\em higgs\+Index} & This is the index of which Higgs to use (M\+C\+FM supports 2 resonances) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+These coupling entries have both a real and an imaginary component. You can set them via\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{m = \mbox{\hyperlink{classMela_aa0d92c0d836f7c720f584dc75a8031fc}{Mela.Mela}}()}
+\DoxyCodeLine{m.<couplingName> = [real, imag]}
+\DoxyCodeLine{print(m.<couplingName>) \textcolor{comment}{\#will print a list of [real, imag]}}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+Definition at line 435 of file mela\+\_\+binding.\+cpp.
+

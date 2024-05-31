@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('common__coli_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="dir_97dcdc0483a27cbec027b7b62fbb001f.html">COLI</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">common_coli.h</div>  </div>
@@ -127,6 +160,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="common__coli_8h.html#a75e09683a24db74097b12371ddd744b2">   54</a></span>&#160;      common /masterpar/ <a class="code" href="common__coli_8h.html#a4854184836b442c3d8f27fe6cd28fb8f">masterargs</a>,<a class="code" href="common__coli_8h.html#a75e09683a24db74097b12371ddd744b2">masterfname</a>,masterrank</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;!c<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="acommon__coli_8h_html_a9a2f3b06a1b613ef4b00988b2060e23c"><div class="ttname"><a href="common__coli_8h.html#a9a2f3b06a1b613ef4b00988b2060e23c">muuv2</a></div><div class="ttdeci">! File common_coli h is part of COLLIER A Complex One Loop Library In Extended Regularizations Ansgar Stefan Lars Hofer ! COLLIER is licenced under the GNU GPL see COPYING for details **Fortran *************************************************************************file common_coli h **contains global common blocks for COLI ****Ansgar Denner last changed ************************************************************************!c information output switch logical coliinfo common info_coli coliinfo !c regularization parameters logical ir_rat_terms real * muuv2</div><div class="ttdef"><b>Definition:</b> <a href="common__coli_8h_source.html#l00031">common_coli.h:31</a></div></div>
 <div class="ttc" id="acommon__coli_8h_html_a4abc06b0c2e1be269139bb2fd65aae90"><div class="ttname"><a href="common__coli_8h.html#a4abc06b0c2e1be269139bb2fd65aae90">Denner</a></div><div class="ttdeci">! File common_coli h is part of COLLIER A Complex One Loop Library In Extended Regularizations Ansgar Denner</div><div class="ttdef"><b>Definition:</b> <a href="common__coli_8h_source.html#l00005">common_coli.h:5</a></div></div>
 <div class="ttc" id="acommon__coli_8h_html_a4514e756c255927db521cfd451f95c16"><div class="ttname"><a href="common__coli_8h.html#a4514e756c255927db521cfd451f95c16">coliminf</a></div><div class="ttdeci">! File common_coli h is part of COLLIER A Complex One Loop Library In Extended Regularizations Ansgar Stefan Lars Hofer ! COLLIER is licenced under the GNU GPL see COPYING for details **Fortran *************************************************************************file common_coli h **contains global common blocks for COLI ****Ansgar Denner last changed ************************************************************************!c information output switch logical coliinfo common info_coli coliinfo !c regularization parameters logical ir_rat_terms real muir2 common dimreg_coli ir_rat_terms !c infinitesimal masses integer ncoliminf common ncoliminf ncoliminf complex * coliminf(100) common/coliminf/coliminf complex *16 coliminf2(100) common/coliminf2/coliminf2 complex *16 coliminffix(100) common/coliminffix/coliminffix complex *16 coliminffix2(100) common/coliminffix2/coliminffix2 !c scaling of infinitesimal masses real *8 coliminfscale</div></div>
@@ -140,10 +174,13 @@ $(function() {
 <div class="ttc" id="acommon__coli_8h_html_a5502bd021937e277eee8db8bbd55a478"><div class="ttname"><a href="common__coli_8h.html#a5502bd021937e277eee8db8bbd55a478">version</a></div><div class="ttdeci">! File common_coli h is part of COLLIER A Complex One Loop Library In Extended Regularizations Ansgar Stefan Lars Hofer ! COLLIER is licenced under the GNU GPL version</div><div class="ttdef"><b>Definition:</b> <a href="common__coli_8h_source.html#l00007">common_coli.h:7</a></div></div>
 <div class="ttc" id="acommon__coli_8h_html_a75e09683a24db74097b12371ddd744b2"><div class="ttname"><a href="common__coli_8h.html#a75e09683a24db74097b12371ddd744b2">masterfname</a></div><div class="ttdeci">! File common_coli h is part of COLLIER A Complex One Loop Library In Extended Regularizations Ansgar Stefan Lars Hofer ! COLLIER is licenced under the GNU GPL see COPYING for details **Fortran *************************************************************************file common_coli h **contains global common blocks for COLI ****Ansgar Denner last changed ************************************************************************!c information output switch logical coliinfo common info_coli coliinfo !c regularization parameters logical ir_rat_terms real muir2 common dimreg_coli ir_rat_terms !c infinitesimal masses integer ncoliminf common ncoliminf ncoliminf complex coliminfscale2 common colimsing coliminfscale2 !c character *masterfname integer masterrank complex masterfname</div><div class="ttdef"><b>Definition:</b> <a href="common__coli_8h_source.html#l00054">common_coli.h:54</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="dir_97dcdc0483a27cbec027b7b62fbb001f.html">COLI</a></li><li class="navelem"><a class="el" href="common__coli_8h.html">common_coli.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

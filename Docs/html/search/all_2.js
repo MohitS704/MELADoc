@@ -247,7 +247,7 @@ var searchData=
   ['aup_5f_330',['aup_',['../namespacemodparameters.html#ae17f24074e0214247628cde3f45d1550',1,'modparameters']]],
   ['auxc_331',['auxc',['../namespacedd__global.html#a2f1f4ab2123e999844ba44dcd3b9fe11',1,'dd_global']]],
   ['auxi_332',['auxi',['../namespacedd__global.html#ae6d6939dcb2f32da9dcf5af40605cabd',1,'dd_global']]],
-  ['auxiliaryprob_333',['auxiliaryProb',['../group__coupl.html#ga32b1d88b009f76e7bbf6a88a4389f287',1,'Mela']]],
+  ['auxiliaryprob_333',['auxiliaryProb',['../classMela.html#a32b1d88b009f76e7bbf6a88a4389f287',1,'Mela']]],
   ['auxr_334',['auxr',['../namespacedd__global.html#a5e060fd074e02cee6f9965e75a2ee994',1,'dd_global']]],
   ['avegg_335',['avegg',['../namespacemodparameters.html#afacba0c32725fa31f12d123b8197afba',1,'modparameters']]],
   ['aveqg_336',['aveqg',['../namespacemodparameters.html#abd475fd9bba8b6a8b5bd86e99e8c05c4',1,'modparameters']]],

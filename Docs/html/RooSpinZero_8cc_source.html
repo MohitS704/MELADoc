@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('RooSpinZero_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">RooSpinZero.cc</div>  </div>
@@ -839,6 +872,7 @@ $(function() {
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;  <a class="code" href="classRooSpin.html#afae43f6172436721c6ec9ec6b20afff4">RooSpin::printParameters</a>();</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassRooSpinZero_html_ab29df7c87dad4d04bfbf467d6c7f7774"><div class="ttname"><a href="classRooSpinZero.html#ab29df7c87dad4d04bfbf467d6c7f7774">RooSpinZero::g3_prime3ValIm</a></div><div class="ttdeci">RooRealProxy g3_prime3ValIm</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8h_source.html#l00119">RooSpinZero.h:119</a></div></div>
 <div class="ttc" id="aclassRooSpinZero_html_a7896d41699635fcb212e5ffa7ad7c67a"><div class="ttname"><a href="classRooSpinZero.html#a7896d41699635fcb212e5ffa7ad7c67a">RooSpinZero::Lambda_z4</a></div><div class="ttdeci">RooRealProxy Lambda_z4</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8h_source.html#l00152">RooSpinZero.h:152</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a9945c621f2036af1757319e48081f1d2"><div class="ttname"><a href="classRooSpin.html#a9945c621f2036af1757319e48081f1d2">RooSpin::calculateAmplitudeScale</a></div><div class="ttdeci">virtual Double_t calculateAmplitudeScale(int VGammaVpmode1=0, int VGammaVpmode2=0) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00366">RooSpin.cc:366</a></div></div>
@@ -995,10 +1029,13 @@ $(function() {
 <div class="ttc" id="aclassRooSpinZero_html_a4f59ba1ecf8101b3709227e665317ef2"><div class="ttname"><a href="classRooSpinZero.html#a4f59ba1ecf8101b3709227e665317ef2">RooSpinZero::g3_prime7ValIm</a></div><div class="ttdeci">RooRealProxy g3_prime7ValIm</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8h_source.html#l00135">RooSpinZero.h:135</a></div></div>
 <div class="ttc" id="aclassRooSpinZero_html_ac77d2e98c921d833ae8197dc2c96dfd4"><div class="ttname"><a href="classRooSpinZero.html#ac77d2e98c921d833ae8197dc2c96dfd4">RooSpinZero::g4_prime4Val</a></div><div class="ttdeci">RooRealProxy g4_prime4Val</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8h_source.html#l00082">RooSpinZero.h:82</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li><li class="navelem"><a class="el" href="RooSpinZero_8cc.html">RooSpinZero.cc</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

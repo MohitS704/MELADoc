@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('COLLIER_8F90_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">COLLIER.F90</div>  </div>
@@ -147,6 +180,7 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">end module </span><a class="code" href="namespacecollier.html">collier</a></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="anamespacecollier__init_html_a4e2c7a184468e2469d80917c37f4381b"><div class="ttname"><a href="namespacecollier__init.html#a4e2c7a184468e2469d80917c37f4381b">collier_init::setncheckout_cll</a></div><div class="ttdeci">subroutine setncheckout_cll(ncheckout)</div><div class="ttdef"><b>Definition:</b> <a href="collier__init_8F90_source.html#l03248">collier_init.F90:3248</a></div></div>
 <div class="ttc" id="ainterfacecollier__coefs_1_1db00__cll_html"><div class="ttname"><a href="interfacecollier__coefs_1_1db00__cll.html">collier_coefs::db00_cll</a></div><div class="ttdef"><b>Definition:</b> <a href="collier__coefs_8F90_source.html#l00116">collier_coefs.F90:116</a></div></div>
 <div class="ttc" id="anamespacecollier__init_html_a4c285adf31ee5941d4f5834790176c83"><div class="ttname"><a href="namespacecollier__init.html#a4c285adf31ee5941d4f5834790176c83">collier_init::setncritpointsout_cll</a></div><div class="ttdeci">subroutine setncritpointsout_cll(ncpout)</div><div class="ttdef"><b>Definition:</b> <a href="collier__init_8F90_source.html#l03432">collier_init.F90:3432</a></div></div>
@@ -252,10 +286,13 @@ $(function() {
 <div class="ttc" id="anamespacecollier__init_html_aaae109da1adacedb5fe5a529f909c715"><div class="ttname"><a href="namespacecollier__init.html#aaae109da1adacedb5fe5a529f909c715">collier_init::getmode_cll</a></div><div class="ttdeci">subroutine getmode_cll(mode)</div><div class="ttdef"><b>Definition:</b> <a href="collier__init_8F90_source.html#l00650">collier_init.F90:650</a></div></div>
 <div class="ttc" id="ainterfacecollier__tensors_1_1tnten__cll_html"><div class="ttname"><a href="interfacecollier__tensors_1_1tnten__cll.html">collier_tensors::tnten_cll</a></div><div class="ttdef"><b>Definition:</b> <a href="collier__tensors_8F90_source.html#l00086">collier_tensors.F90:86</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="COLLIER_8F90.html">COLLIER.F90</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

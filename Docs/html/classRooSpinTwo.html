@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('classRooSpinTwo.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -85,7 +122,7 @@ Inheritance diagram for RooSpinTwo:</div>
 <area shape="rect" href="classRooSpin.html" title=" " alt="" coords="55,80,127,107"/>
 <area shape="rect" title=" " alt="" coords="47,5,136,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for RooSpinTwo:</div>
 <div class="dyncontent">
@@ -95,7 +132,7 @@ Collaboration diagram for RooSpinTwo:</div>
 <area shape="rect" href="classRooSpin.html" title=" " alt="" coords="17,80,89,107"/>
 <area shape="rect" title=" " alt="" coords="9,5,98,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -1938,6 +1975,7 @@ Additional Inherited Members</h2></td></tr>
 <li>MELA/src/<a class="el" href="RooSpinTwo_8cc_source.html">RooSpinTwo.cc</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassRooSpin_html_a9945c621f2036af1757319e48081f1d2"><div class="ttname"><a href="classRooSpin.html#a9945c621f2036af1757319e48081f1d2">RooSpin::calculateAmplitudeScale</a></div><div class="ttdeci">virtual Double_t calculateAmplitudeScale(int VGammaVpmode1=0, int VGammaVpmode2=0) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00366">RooSpin.cc:366</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_afae43f6172436721c6ec9ec6b20afff4"><div class="ttname"><a href="classRooSpin.html#afae43f6172436721c6ec9ec6b20afff4">RooSpin::printParameters</a></div><div class="ttdeci">virtual void printParameters() const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00397">RooSpin.cc:397</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_aa6edad67a9a137a0e82832e6592431c9"><div class="ttname"><a href="classRooSpinTwo.html#aa6edad67a9a137a0e82832e6592431c9">RooSpinTwo::b5ValIm</a></div><div class="ttdeci">RooRealProxy b5ValIm</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00054">RooSpinTwo.h:54</a></div></div>
@@ -1989,10 +2027,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="araw__couplings_8txt_html_a30ec47c3f0ae33b081fa62627a19a676a01ae46fe4ae7d3da7eebd4de27282ae3"><div class="ttname"><a href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a01ae46fe4ae7d3da7eebd4de27282ae3">gGRAVITON_VV_7</a></div><div class="ttdeci">@ gGRAVITON_VV_7</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00141">raw_couplings.txt:141</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_a3ddb1e9ff762ffc6fa4abfd5491fab50"><div class="ttname"><a href="classRooSpinTwo.html#a3ddb1e9ff762ffc6fa4abfd5491fab50">RooSpinTwo::b1Val</a></div><div class="ttdeci">RooRealProxy b1Val</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00039">RooSpinTwo.h:39</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classRooSpinTwo.html">RooSpinTwo</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

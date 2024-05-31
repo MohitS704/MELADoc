@@ -1,0 +1,37 @@
+The Simple\+Particle\+\_\+t for Python is a type definition defined in \mbox{\hyperlink{TVar_8hh}{T\+Var.\+hh}}. These are defined as pairs of an integer and a 4-\/vector, and are the primary input object used for every particle.
+
+Due to difficulties with interfacing between R\+O\+OT\textquotesingle{}s py\+R\+O\+OT implemenetation of \href{https://root.cern.ch/doc/master/classTLorentzVector.html}{\texttt{ T\+Lorentz\+Vector}}, there are new functions that operate as constructors.\hypertarget{SimpleParticle_t_simpleparticle_constructor}{}\doxysection{Constructor}\label{SimpleParticle_t_simpleparticle_constructor}
+There is one constructor defined in the \mbox{\hyperlink{group__Constructors_particle_initializer}{\`{}particle\+\_\+initializer\`{}}} function. This was required due to the incompatibility of py\+R\+O\+OT and C++ based R\+O\+OT. The function takes in 5 required and 1 optional variable that are named as {\ttfamily x}, {\ttfamily y}, {\ttfamily z}, {\ttfamily e}, and {\ttfamily pt\+Eta\+Phi}.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{gluon = Mela.SimpleParticle\_t(id=21, x=0, y=0, z=12, e=12)}
+\DoxyCodeLine{lepton = Mela.SimpleParticle\_t(id=25, x=1, pt=0, eta=0, m=125, ptEtaPhi=\textcolor{keyword}{True})}
+\end{DoxyCode}
+\hypertarget{SimpleParticle_t_simpleparticle_getter}{}\doxysection{Attributes}\label{SimpleParticle_t_simpleparticle_getter}
+There are 2 read-\/only attributes for a Simple\+Particle\+\_\+t. These cannot be edited; make a new object if you want to make a new vector.\hypertarget{SimpleParticle_t_simpleparticle_id}{}\doxysubsection{id}\label{SimpleParticle_t_simpleparticle_id}
+The id returns the P\+DG ID of the particle.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{gluon = Mela.SimpleParticle\_t(id=21, x=0, y=0, z=12, e=12)}
+\DoxyCodeLine{print(gluon.id) \textcolor{comment}{\#will print 21}}
+\end{DoxyCode}
+\hypertarget{SimpleParticle_t_simpleparticle_vector}{}\doxysubsection{vector}\label{SimpleParticle_t_simpleparticle_vector}
+The vector attribute returns a 4-\/vector as a tuple of 4 values, the $P_x$, $P_y$, $P_z$, $E$ of the particle. This representation of the vector will always be printed, even if the Simple\+Particle\+\_\+t was instantiated using Pt, Eta, Phi, and Mass.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{gluon = Mela.SimpleParticle\_t(id=21, x=0, y=0, z=12, e=12)}
+\DoxyCodeLine{print(gluon.vector) \textcolor{comment}{\#will print (0, 0, 12, 12)}}
+\end{DoxyCode}
+ 

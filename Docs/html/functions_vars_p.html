@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,17 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('functions_vars_p.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -108,121 +145,121 @@ $(function() {
 : <a class="el" href="classTEvtProb.html#af554128a09f0ba3efdcb8f01b6d18c60">TEvtProb</a>
 </li>
 <li>pAvgSmooth_JHUGen_Had_WH_HSMHiggs
-: <a class="el" href="group__coupl.html#gaae61d8dc1b66c3cf0a3384aedb80d842">Mela</a>
+: <a class="el" href="classMela.html#aae61d8dc1b66c3cf0a3384aedb80d842">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_Had_ZH_HSMHiggs
-: <a class="el" href="group__coupl.html#ga483534360a2f2682f7da28092500b449">Mela</a>
+: <a class="el" href="classMela.html#a483534360a2f2682f7da28092500b449">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_JJQCD_HSMHiggs
-: <a class="el" href="group__coupl.html#gaea1af3d2b093edeb88d52b64faff9d7e">Mela</a>
+: <a class="el" href="classMela.html#aea1af3d2b093edeb88d52b64faff9d7e">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_JJVBF_HSMHiggs
-: <a class="el" href="group__coupl.html#ga78230ffd64c3b0e1077d704a43e6f96d">Mela</a>
+: <a class="el" href="classMela.html#a78230ffd64c3b0e1077d704a43e6f96d">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_JQCD_HSMHiggs
-: <a class="el" href="group__coupl.html#gaf1a37d9a226b6be31da4e3abcf35adad">Mela</a>
+: <a class="el" href="classMela.html#af1a37d9a226b6be31da4e3abcf35adad">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_ZZGG_HSMHiggs_2mu2e
-: <a class="el" href="group__coupl.html#ga343cdfcb7c46f1d9f1bbe9a1eb793e32">Mela</a>
+: <a class="el" href="classMela.html#a343cdfcb7c46f1d9f1bbe9a1eb793e32">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_ZZGG_HSMHiggs_4e
-: <a class="el" href="group__coupl.html#gabc118762fef9f9078f25c272d5f419cc">Mela</a>
+: <a class="el" href="classMela.html#abc118762fef9f9078f25c272d5f419cc">Mela</a>
 </li>
 <li>pAvgSmooth_JHUGen_ZZGG_HSMHiggs_4mu
-: <a class="el" href="group__coupl.html#ga85d5445420b4799cee5f8332501aab46">Mela</a>
+: <a class="el" href="classMela.html#a85d5445420b4799cee5f8332501aab46">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_WH_bkgZZ_2mu2e
-: <a class="el" href="group__coupl.html#ga3ff39e822543255d1609264013faa78a">Mela</a>
+: <a class="el" href="classMela.html#a3ff39e822543255d1609264013faa78a">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_WH_bkgZZ_4e
-: <a class="el" href="group__coupl.html#ga5e777472d1fc9df76b6aef66b5496395">Mela</a>
+: <a class="el" href="classMela.html#a5e777472d1fc9df76b6aef66b5496395">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_WH_bkgZZ_4mu
-: <a class="el" href="group__coupl.html#ga5b6045b14c7ec1393438ff968f8bd36d">Mela</a>
+: <a class="el" href="classMela.html#a5b6045b14c7ec1393438ff968f8bd36d">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_WH_S_HSMHiggs_2mu2e
-: <a class="el" href="group__coupl.html#ga05e4e6aea578121e1e8f54e0cb4340fa">Mela</a>
+: <a class="el" href="classMela.html#a05e4e6aea578121e1e8f54e0cb4340fa">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_WH_S_HSMHiggs_4e
-: <a class="el" href="group__coupl.html#ga6cb9650c069f4523e17462b52950042a">Mela</a>
+: <a class="el" href="classMela.html#a6cb9650c069f4523e17462b52950042a">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_WH_S_HSMHiggs_4mu
-: <a class="el" href="group__coupl.html#gaf06dddbc57f6daff60fe0f75a75347f4">Mela</a>
+: <a class="el" href="classMela.html#af06dddbc57f6daff60fe0f75a75347f4">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_ZH_bkgZZ_2mu2e
-: <a class="el" href="group__coupl.html#ga3ffd2ae28ea425f4e51f16271164b55f">Mela</a>
+: <a class="el" href="classMela.html#a3ffd2ae28ea425f4e51f16271164b55f">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_ZH_bkgZZ_4e
-: <a class="el" href="group__coupl.html#ga720d26767888770dc8bad0cc24ad9bf8">Mela</a>
+: <a class="el" href="classMela.html#a720d26767888770dc8bad0cc24ad9bf8">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_ZH_bkgZZ_4mu
-: <a class="el" href="group__coupl.html#gaeaafa9f0337b5b4d5cc795966f391fd1">Mela</a>
+: <a class="el" href="classMela.html#aeaafa9f0337b5b4d5cc795966f391fd1">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_ZH_S_HSMHiggs_2mu2e
-: <a class="el" href="group__coupl.html#ga294efb351b3d52917b744f280bafd0c3">Mela</a>
+: <a class="el" href="classMela.html#a294efb351b3d52917b744f280bafd0c3">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_ZH_S_HSMHiggs_4e
-: <a class="el" href="group__coupl.html#ga4871d143247ce9a9559ea303d7ae800a">Mela</a>
+: <a class="el" href="classMela.html#a4871d143247ce9a9559ea303d7ae800a">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_Had_ZH_S_HSMHiggs_4mu
-: <a class="el" href="group__coupl.html#ga904fe5b45598abb06e2aeeada1845592">Mela</a>
+: <a class="el" href="classMela.html#a904fe5b45598abb06e2aeeada1845592">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJQCD_bkgZJets_2l2q
-: <a class="el" href="group__coupl.html#gabcf50b83926051b71352919cdfd603b9">Mela</a>
+: <a class="el" href="classMela.html#abcf50b83926051b71352919cdfd603b9">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJQCD_bkgZZ_2mu2e
-: <a class="el" href="group__coupl.html#gab0a7380fd2984e63cdcd32a325435189">Mela</a>
+: <a class="el" href="classMela.html#ab0a7380fd2984e63cdcd32a325435189">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJQCD_bkgZZ_4e
-: <a class="el" href="group__coupl.html#gabe18cba80223e9c38c4c959a67f9dd84">Mela</a>
+: <a class="el" href="classMela.html#abe18cba80223e9c38c4c959a67f9dd84">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJQCD_bkgZZ_4mu
-: <a class="el" href="group__coupl.html#gab4f02e09aae3923cbc949450f35f4236">Mela</a>
+: <a class="el" href="classMela.html#ab4f02e09aae3923cbc949450f35f4236">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJVBF_bkgZZ_2mu2e
-: <a class="el" href="group__coupl.html#ga74d64ea8cff62604111f7655c6a283da">Mela</a>
+: <a class="el" href="classMela.html#a74d64ea8cff62604111f7655c6a283da">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJVBF_bkgZZ_4e
-: <a class="el" href="group__coupl.html#ga9240fea46abe9f476301488b0d726c6a">Mela</a>
+: <a class="el" href="classMela.html#a9240fea46abe9f476301488b0d726c6a">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJVBF_bkgZZ_4mu
-: <a class="el" href="group__coupl.html#ga1bb1bb714e0a9f0659246674280c394a">Mela</a>
+: <a class="el" href="classMela.html#a1bb1bb714e0a9f0659246674280c394a">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJVBF_S_HSMHiggs_2mu2e
-: <a class="el" href="group__coupl.html#ga70e341b1014ee49899b3d1593d033ab6">Mela</a>
+: <a class="el" href="classMela.html#a70e341b1014ee49899b3d1593d033ab6">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJVBF_S_HSMHiggs_4e
-: <a class="el" href="group__coupl.html#ga4b752bf8fbacec0e3b147d01ec2ad582">Mela</a>
+: <a class="el" href="classMela.html#a4b752bf8fbacec0e3b147d01ec2ad582">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_JJVBF_S_HSMHiggs_4mu
-: <a class="el" href="group__coupl.html#gaaf71b7797d69dd59c4489659570747f8">Mela</a>
+: <a class="el" href="classMela.html#aaf71b7797d69dd59c4489659570747f8">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZGG_bkgZZ_2mu2e
-: <a class="el" href="group__coupl.html#ga86c5c05293b0277f479b817a9b1544b9">Mela</a>
+: <a class="el" href="classMela.html#a86c5c05293b0277f479b817a9b1544b9">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZGG_bkgZZ_4e
-: <a class="el" href="group__coupl.html#gaec5bf7c826c4c2cd0bacd2f5b9f393c7">Mela</a>
+: <a class="el" href="classMela.html#aec5bf7c826c4c2cd0bacd2f5b9f393c7">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZGG_bkgZZ_4mu
-: <a class="el" href="group__coupl.html#ga92cee9b649bbe6e029023ef26c9847c0">Mela</a>
+: <a class="el" href="classMela.html#a92cee9b649bbe6e029023ef26c9847c0">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZGG_HSMHiggs_2mu2e
-: <a class="el" href="group__coupl.html#ga74c5f99fdab8ca468309eec54929b5c8">Mela</a>
+: <a class="el" href="classMela.html#a74c5f99fdab8ca468309eec54929b5c8">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZGG_HSMHiggs_4e
-: <a class="el" href="group__coupl.html#gacc33d036d422dbca1fd28716f2380c66">Mela</a>
+: <a class="el" href="classMela.html#acc33d036d422dbca1fd28716f2380c66">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZGG_HSMHiggs_4mu
-: <a class="el" href="group__coupl.html#gabc2fdbbdb944a83ee31b49edad523639">Mela</a>
+: <a class="el" href="classMela.html#abc2fdbbdb944a83ee31b49edad523639">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZQQB_bkgZZ_2mu2e
-: <a class="el" href="group__coupl.html#ga3d617a238a7259678555d53636f25d3e">Mela</a>
+: <a class="el" href="classMela.html#a3d617a238a7259678555d53636f25d3e">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZQQB_bkgZZ_4e
-: <a class="el" href="group__coupl.html#gaa943203725c83373174bb8157a4beb29">Mela</a>
+: <a class="el" href="classMela.html#aa943203725c83373174bb8157a4beb29">Mela</a>
 </li>
 <li>pAvgSmooth_MCFM_ZZQQB_bkgZZ_4mu
-: <a class="el" href="group__coupl.html#ga0a8191269625a502cdccba7c8e2b0377">Mela</a>
+: <a class="el" href="classMela.html#a0a8191269625a502cdccba7c8e2b0377">Mela</a>
 </li>
 <li>pDaughters
 : <a class="el" href="structTVar_1_1simple__event__record.html#a99f74862afbea6076bb784a3ff2d8af6">TVar::simple_event_record</a>
@@ -339,11 +376,14 @@ $(function() {
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

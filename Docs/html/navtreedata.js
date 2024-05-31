@@ -24,10 +24,11 @@ var NAVTREE =
 [
   [ "JHUGen MELA", "index.html", [
     [ "JHUGenMELA", "index.html", [
-      [ "Introduction", "index.html#intro", null ],
-      [ "Installation", "index.html#install_sec", null ]
+      [ "Installation", "index.html#install_sec", null ],
+      [ "Previous Tutorials", "index.html#prev_tutorials", null ]
     ] ],
-    [ "Instruction for using JHUGenMELA/MELA", "md_MELA_README.html", null ],
+    [ "PyMela", "PyMela_page.html", "PyMela_page" ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -36,7 +37,7 @@ var NAVTREE =
         [ "Variables", "namespacemembers_vars.html", "namespacemembers_vars" ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+        [ "Enumerator", "namespacemembers_eval.html", "namespacemembers_eval" ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -59,6 +60,7 @@ var NAVTREE =
         [ "Functions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", "globals_vars" ],
         [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -68,30 +70,35 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"CALLING__cpHTO_8f.html",
-"MELACombinePdfs_8cc.html#a7525b6a8769d651caafd38924f054a15",
-"TMCFM_8hh.html#a0a013af3f51251118d97e436366df176",
-"TMCFM_8hh.html#a90e9c20c1179ead8bb6ac74e40b09eaa",
-"TModHiggsJJMatEl_8hh.html",
-"TVar_8hh.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca1ae680405479fddfedd3314339a47b01",
-"classMELACandidate.html#a8d1ea43958f7a2ecf1f35006eb8152e8",
-"classMELANCSpline__1D__fast.html#a2623be9cafef13f68d655955e9ca99ab",
-"classMela.html#a0805294fe244e5416e64e50771b1b746",
-"classPseudoMELA.html#acd171320fe4d236aa26b11fae801f7b3",
-"classRooSpinZero.html#aa09b8360ab336846887ea2d14ed7139f",
-"classScalarPdfFactory.html#aba1bf2c4eeb5d5a7441647855906c872",
-"classTEvtProb.html#a605e94a0c6f814e4481fd887d2e65123",
-"classlhefile_1_1LHEFileBase.html#a36e3d7bb53daa1c2151cb5903569cd45",
-"classmela_1_1Mela.html#ac589963f2fe3cec3c80839054771d4f0",
-"functions_vars_u.html",
-"mod__HashCollection_8F90.html#adab7324a8de11a8ec0eb5df85bbe2819",
-"mod__Parameters_8F90.html#a16b6994a69e4fb345820977063e6609d",
-"mod__Parameters_8F90.html#a551e15d2a9e2042b9d6d41df3d40dfd9",
-"mod__Parameters_8F90.html#a99f82e924c605c6454c9cd9862ab1c1d",
-"mod__Parameters_8F90.html#ad88b5140aab1f22f03732e96de5a2ad8",
-"mod__TTBHiggs_8F90.html#addb2d779063d5155da736dd7ed41d091",
-"pythonmelautils_8py.html#a287a1b28bbcf6d3459f9db8d4b1d43ad",
-"testME__all_8py.html#af6b760e5828b5174601d8c46b7e1e2de"
+"BuildTensors_8F90.html",
+"COLLIER_8F90_source.html",
+"MELANCSpline__2D__fast_8h_source.html",
+"TCouplingsBase_8hh.html#a826ba1abcda45f509f3cb9200c15125fa81a3ca03620702dba39c2880b2cbf650",
+"TMCFM_8hh.html#a3e2a9437e77902239002c7003f9db9d2",
+"TMCFM_8hh.html#abe1b3dcbf8e3bf2e85c243d0f49ec14c",
+"TNumericUtil_8hh_source.html",
+"TensorPdfFactory_8cc_source.html",
+"classMELAHXSWidth.html#a962e4bdae075e300242d8a773fb127e0",
+"classMELANCSpline__3D__fast.html#ab406c3bb1f5a2dde82c21aeecd45239e",
+"classMela.html#a85d5445420b4799cee5f8332501aab46",
+"classRooSpinOne__7D.html#a7b225b59d70de5766375bcc01ac879db",
+"classRooTsallisExp.html",
+"classSpinZeroCouplings.html#a1eac9ef9f978c2f17795417163218fc4",
+"classTensorPdfFactory__ppHVV.html#a440e7ab8c17413cecc9cc8c975084890",
+"coli__stat_8F90.html#a8eaea7da4fedf01a262994f08942e660",
+"collier__global_8F90.html#aa203d6a14c11ad9d9d445d3e9625bbdf",
+"collier__tensors_8F90.html#aff310970e3a35e652b807c52bdc2b8d7",
+"globals_vars_w.html",
+"interfacecollier__tensors_1_1dten__cll.html#a2c316249c09565f936e77e7f52e607fd",
+"mod__Kinematics_8F90.html#a5c24ddbb3078123e2ef308664c10b76a",
+"mod__Parameters_8F90.html#a29e9ae0fafe8c5be4d3f65b3f46a1630",
+"mod__Parameters_8F90.html#a6ebd68b753434d0f40aadae3a5d4d975",
+"mod__Parameters_8F90.html#ab25730bf36fa1669616bd6fbf66f8614",
+"mod__Parameters_8F90.html#aeba7292e302d2b3f6a97af5582f95b7b",
+"namespaceTNumericUtil.html",
+"reductionC_8F90.html#a1674eaa05737b52642244de28f3c8452",
+"structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters.html#a6594543705bd78a804c77cfcc04816e7",
+"write__bindings_8py.html#ae1f79c5e058e0283eb0c5cfc30628717"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

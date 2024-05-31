@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('interfacemodmisc_1_1bublesort.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacemodmisc.html">modmisc</a></li><li class="navelem"><a class="el" href="interfacemodmisc_1_1bublesort.html">bublesort</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -77,120 +110,274 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c42fa8bf6808c47bc8467f902bf34d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a3c42fa8bf6808c47bc8467f902bf34d4">bublesort_integerinteger</a></td></tr>
-<tr class="separator:a3c42fa8bf6808c47bc8467f902bf34d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a965a3dee2d8f4b8b4630ca950da5e51d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a965a3dee2d8f4b8b4630ca950da5e51d">bublesort_realinteger</a></td></tr>
-<tr class="separator:a965a3dee2d8f4b8b4630ca950da5e51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2002eef9bc7b0673db177acab70423"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a4f2002eef9bc7b0673db177acab70423">bublesort_stringlogical</a></td></tr>
-<tr class="separator:a4f2002eef9bc7b0673db177acab70423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c0dfeced65a8f57c1ced46c7525e4a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a0c0dfeced65a8f57c1ced46c7525e4a7">bublesort_stringinteger</a></td></tr>
-<tr class="separator:a0c0dfeced65a8f57c1ced46c7525e4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3baa0da6ee3b90999b8532f89861721"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#ae3baa0da6ee3b90999b8532f89861721">bublesort_stringreal8</a></td></tr>
-<tr class="separator:ae3baa0da6ee3b90999b8532f89861721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a016619584406edbcd7979418939134"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a8a016619584406edbcd7979418939134">bublesort_stringcomplex8</a></td></tr>
-<tr class="separator:a8a016619584406edbcd7979418939134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa156aaf54159ad6634858bac86594a18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#aa156aaf54159ad6634858bac86594a18">bublesort_stringstring</a></td></tr>
-<tr class="separator:aa156aaf54159ad6634858bac86594a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac37d1b7790ec9ae70787c426a4da1546"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#ac37d1b7790ec9ae70787c426a4da1546">bublesort_integerinteger</a> (N, X, IY)</td></tr>
+<tr class="separator:ac37d1b7790ec9ae70787c426a4da1546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af834255acd2251701f347aecd128ad54"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#af834255acd2251701f347aecd128ad54">bublesort_realinteger</a> (N, X, IY)</td></tr>
+<tr class="separator:af834255acd2251701f347aecd128ad54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46684cef13710d17f6419d42365dbb48"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a46684cef13710d17f6419d42365dbb48">bublesort_stringlogical</a> (N, X, IY)</td></tr>
+<tr class="separator:a46684cef13710d17f6419d42365dbb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d2d0df5871d57802f7e63cdb587503"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a97d2d0df5871d57802f7e63cdb587503">bublesort_stringinteger</a> (N, X, IY)</td></tr>
+<tr class="separator:a97d2d0df5871d57802f7e63cdb587503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4bb37f20e6276e19519e26e1c70ebef"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#af4bb37f20e6276e19519e26e1c70ebef">bublesort_stringreal8</a> (N, X, IY)</td></tr>
+<tr class="separator:af4bb37f20e6276e19519e26e1c70ebef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b46156b3707d2151bbfd8864975f04"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#a29b46156b3707d2151bbfd8864975f04">bublesort_stringcomplex8</a> (N, X, IY)</td></tr>
+<tr class="separator:a29b46156b3707d2151bbfd8864975f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95aec19dcd8ba5d3403b7d160258383"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacemodmisc_1_1bublesort.html#ac95aec19dcd8ba5d3403b7d160258383">bublesort_stringstring</a> (N, X, IY)</td></tr>
+<tr class="separator:ac95aec19dcd8ba5d3403b7d160258383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00024">24</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
 </div><h2 class="groupheader">Member Function/Subroutine Documentation</h2>
-<a id="a3c42fa8bf6808c47bc8467f902bf34d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c42fa8bf6808c47bc8467f902bf34d4">&#9670;&nbsp;</a></span>bublesort_integerinteger()</h2>
+<a id="ac37d1b7790ec9ae70787c426a4da1546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac37d1b7790ec9ae70787c426a4da1546">&#9670;&nbsp;</a></span>bublesort_integerinteger()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_integerinteger</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_integerinteger </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(8), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00309">309</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+
 </div>
 </div>
-<a id="a965a3dee2d8f4b8b4630ca950da5e51d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a965a3dee2d8f4b8b4630ca950da5e51d">&#9670;&nbsp;</a></span>bublesort_realinteger()</h2>
+<a id="af834255acd2251701f347aecd128ad54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af834255acd2251701f347aecd128ad54">&#9670;&nbsp;</a></span>bublesort_realinteger()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_realinteger</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_realinteger </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(8), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00310">310</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+
 </div>
 </div>
-<a id="a8a016619584406edbcd7979418939134"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a016619584406edbcd7979418939134">&#9670;&nbsp;</a></span>bublesort_stringcomplex8()</h2>
+<a id="a29b46156b3707d2151bbfd8864975f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b46156b3707d2151bbfd8864975f04">&#9670;&nbsp;</a></span>bublesort_stringcomplex8()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_stringcomplex8</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_stringcomplex8 </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=100), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">complex(8), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00314">314</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+
 </div>
 </div>
-<a id="a0c0dfeced65a8f57c1ced46c7525e4a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c0dfeced65a8f57c1ced46c7525e4a7">&#9670;&nbsp;</a></span>bublesort_stringinteger()</h2>
+<a id="a97d2d0df5871d57802f7e63cdb587503"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d2d0df5871d57802f7e63cdb587503">&#9670;&nbsp;</a></span>bublesort_stringinteger()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_stringinteger</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_stringinteger </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=100), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00312">312</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+
 </div>
 </div>
-<a id="a4f2002eef9bc7b0673db177acab70423"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f2002eef9bc7b0673db177acab70423">&#9670;&nbsp;</a></span>bublesort_stringlogical()</h2>
+<a id="a46684cef13710d17f6419d42365dbb48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46684cef13710d17f6419d42365dbb48">&#9670;&nbsp;</a></span>bublesort_stringlogical()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_stringlogical</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_stringlogical </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=100), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">logical, dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00311">311</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+
 </div>
 </div>
-<a id="ae3baa0da6ee3b90999b8532f89861721"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3baa0da6ee3b90999b8532f89861721">&#9670;&nbsp;</a></span>bublesort_stringreal8()</h2>
+<a id="af4bb37f20e6276e19519e26e1c70ebef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4bb37f20e6276e19519e26e1c70ebef">&#9670;&nbsp;</a></span>bublesort_stringreal8()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_stringreal8</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_stringreal8 </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=100), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(8), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00313">313</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
+
 </div>
 </div>
-<a id="aa156aaf54159ad6634858bac86594a18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa156aaf54159ad6634858bac86594a18">&#9670;&nbsp;</a></span>bublesort_stringstring()</h2>
+<a id="ac95aec19dcd8ba5d3403b7d160258383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95aec19dcd8ba5d3403b7d160258383">&#9670;&nbsp;</a></span>bublesort_stringstring()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">modmisc::bublesort::bublesort_stringstring</td>
+          <td class="memname">subroutine modmisc::bublesort::bublesort_stringstring </td>
+          <td>(</td>
+          <td class="paramtype">integer&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=100), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">character(len=100), dimension(1:n)&#160;</td>
+          <td class="paramname"><em>IY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mod__Misc_8F90_source.html#l00315">315</a> of file <a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a>.</p>
 
 </div>
 </div>
@@ -198,11 +385,15 @@ Public Member Functions</h2></td></tr>
 <li>MELA/fortran/<a class="el" href="mod__Misc_8F90_source.html">mod_Misc.F90</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacemodmisc.html">modmisc</a></li><li class="navelem"><a class="el" href="interfacemodmisc_1_1bublesort.html">bublesort</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

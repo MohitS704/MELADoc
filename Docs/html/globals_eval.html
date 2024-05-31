@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,17 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
-</div><!-- top -->
+$(document).ready(function(){initNavTree('globals_eval.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -471,19 +508,19 @@ $(function() {
 : <a class="el" href="raw__couplings_8txt.html#a50157f4ba2e38c8aac06bfb946832003a4452f11be039e44a233dfb55478f2415">raw_couplings.txt</a>
 </li>
 <li>SIZE_AZff
-: <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ace8c60defb066a7372e3061f36832e66">raw_couplings.txt</a>
 </li>
 <li>SIZE_GGG
 : <a class="el" href="raw__couplings_8txt.html#ae719a380dce11b3548f273d353f82ecea0abc79366c3b3af31ec87785c5391601">raw_couplings.txt</a>
 </li>
 <li>SIZE_GQQ
-: <a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a21444768f4d041fb44b25acc6a3984b7">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a24396204804cdacbf9af716d553bda85">raw_couplings.txt</a>
 </li>
 <li>SIZE_GVV
-: <a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">raw_couplings.txt</a>
 </li>
 <li>SIZE_HQQ
-: <a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">raw_couplings.txt</a>
 </li>
 <li>SIZE_HVV
 : <a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">raw_couplings.txt</a>
@@ -492,24 +529,27 @@ $(function() {
 : <a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">raw_couplings.txt</a>
 </li>
 <li>SIZE_HVV_LAMBDAQSQ
-: <a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">raw_couplings.txt</a>
 </li>
 <li>SIZE_Vpff
-: <a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">raw_couplings.txt</a>
 </li>
 <li>SIZE_ZQQ
-: <a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">raw_couplings.txt</a>
 </li>
 <li>SIZE_ZVV
-: <a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">raw_couplings.txt</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('calcC__lintolog_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_3c6c4d13ab6f79d37a060d2ac564a6ee.html">test</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">calcC_lintolog.c</div>  </div>
@@ -158,16 +191,16 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="calcC__lintolog_8c.html#adeef62b6204427efbfaae118249cb4c2">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="calcC__lintolog_8c.html#adeef62b6204427efbfaae118249cb4c2">splitOption</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> rawoption, <span class="keywordtype">string</span>&amp; wish, <span class="keywordtype">string</span>&amp; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>, <span class="keywordtype">char</span> delimiter){</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="calcC__lintolog_8c.html#adeef62b6204427efbfaae118249cb4c2">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="calcC__lintolog_8c.html#adeef62b6204427efbfaae118249cb4c2">splitOption</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> rawoption, <span class="keywordtype">string</span>&amp; wish, <span class="keywordtype">string</span>&amp; value, <span class="keywordtype">char</span> delimiter){</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">size_t</span> posEq = rawoption.find(delimiter);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">if</span> (posEq!=string::npos){</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    wish=rawoption;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>=rawoption.substr(posEq+1);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    value=rawoption.substr(posEq+1);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    wish.erase(wish.begin()+posEq, wish.end());</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">else</span>{</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    wish=<span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>=rawoption;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    value=rawoption;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="calcC__lintolog_8c.html#aa2f38c31cbb69dcdcedb710bf5435660">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="calcC__lintolog_8c.html#aa2f38c31cbb69dcdcedb710bf5435660">splitOptionRecursive</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> rawoption, vector&lt;string&gt;&amp; splitoptions, <span class="keywordtype">char</span> delimiter){</div>
@@ -9610,13 +9643,13 @@ $(function() {
 <div class="line"><a name="l09538"></a><span class="lineno"> 9538</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> it=0; it&lt;nMEs; it++) <span class="keyword">delete</span> tree[it];</div>
 <div class="line"><a name="l09539"></a><span class="lineno"> 9539</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="anamespaceTVar_html_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48"><div class="ttname"><a href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48">TVar::ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00049">TVar.hh:49</a></div></div>
 <div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_ad528de8e4fcbbd3aee5b3ab0ffd7cfa2"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#ad528de8e4fcbbd3aee5b3ab0ffd7cfa2">RooSpin::modelMeasurables::h2</a></div><div class="ttdeci">RooAbsReal * h2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00052">RooSpin.h:52</a></div></div>
 <div class="ttc" id="aTVar_8hh_html_a2bc0c1a02f5152697e55ab2bbda40aff"><div class="ttname"><a href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a></div><div class="ttdeci">std::pair&lt; int, TLorentzVector &gt; SimpleParticle_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00024">TVar.hh:24</a></div></div>
 <div class="ttc" id="anamespaceTVar_html_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c"><div class="ttname"><a href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c">TVar::JJVBF</a></div><div class="ttdeci">@ JJVBF</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00072">TVar.hh:72</a></div></div>
 <div class="ttc" id="acalcC__lintolog_8c_html_a84dc6a6e64c03c90f3bf7f38c709dba4"><div class="ttname"><a href="calcC__lintolog_8c.html#a84dc6a6e64c03c90f3bf7f38c709dba4">get_PAvgProfile_JHUGen_JJQCD_HSMHiggs_7or8TeV</a></div><div class="ttdeci">void get_PAvgProfile_JHUGen_JJQCD_HSMHiggs_7or8TeV(int sqrts=8)</div><div class="ttdef"><b>Definition:</b> <a href="calcC__lintolog_8c_source.html#l00965">calcC_lintolog.c:965</a></div></div>
 <div class="ttc" id="anamespaceTVar_html_a1d885f45cfb17fdc0cb80d0b3dd4f28ca9e87aa5c4ef53a86281b46ffbf67dd3a"><div class="ttname"><a href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28ca9e87aa5c4ef53a86281b46ffbf67dd3a">TVar::Had_ZH_S</a></div><div class="ttdeci">@ Had_ZH_S</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00086">TVar.hh:86</a></div></div>
-<div class="ttc" id="aoutput_8txt_html_a14cbf2c203e363db8f9aaf1d15b93e1d"><div class="ttname"><a href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a></div><div class="ttdeci">pymela::gHIGGS_KAPPA value(&quot;gHIGGS_KAPPA_TILDE&quot;, pymela::gHIGGS_KAPPA_TILDE) .value(&quot;SIZE_HQQ&quot;</div></div>
 <div class="ttc" id="acalcC__lintolog_8c_html_aab953ff5ebb2ea3e45a2549b17186f16"><div class="ttname"><a href="calcC__lintolog_8c.html#aab953ff5ebb2ea3e45a2549b17186f16">get_PAvgProfile_JHUGen_JJQCD_HSMHiggs_13TeV</a></div><div class="ttdeci">void get_PAvgProfile_JHUGen_JJQCD_HSMHiggs_13TeV(int sqrts=13, bool recalculate=true)</div><div class="ttdef"><b>Definition:</b> <a href="calcC__lintolog_8c_source.html#l01875">calcC_lintolog.c:1875</a></div></div>
 <div class="ttc" id="acalcC__lintolog_8c_html_a7bbac523442654341dfb3e27e60630b0"><div class="ttname"><a href="calcC__lintolog_8c.html#a7bbac523442654341dfb3e27e60630b0">check_JQCD_7or8TeV</a></div><div class="ttdeci">void check_JQCD_7or8TeV(int sqrts=8)</div><div class="ttdef"><b>Definition:</b> <a href="calcC__lintolog_8c_source.html#l09239">calcC_lintolog.c:9239</a></div></div>
 <div class="ttc" id="astructRooSpin_1_1modelMeasurables_html_a5af796207b85d31b4f95a4e92253ac39"><div class="ttname"><a href="structRooSpin_1_1modelMeasurables.html#a5af796207b85d31b4f95a4e92253ac39">RooSpin::modelMeasurables::Y</a></div><div class="ttdeci">RooAbsReal * Y</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00059">RooSpin.h:59</a></div></div>
@@ -9775,10 +9808,13 @@ $(function() {
 <div class="ttc" id="aTMCFM_8hh_html_a80d402d10e8341004c0caf10133b80ab"><div class="ttname"><a href="TMCFM_8hh.html#a80d402d10e8341004c0caf10133b80ab">scale</a></div><div class="ttdeci">double scale</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00055">TMCFM.hh:55</a></div></div>
 <div class="ttc" id="acalcC__lintolog_8c_html_ad3bff15e87a76969d92bc00b7411d5e3"><div class="ttname"><a href="calcC__lintolog_8c.html#ad3bff15e87a76969d92bc00b7411d5e3">convertGraphToSpline3_FaithfulSlopes</a></div><div class="ttdeci">TSpline3 * convertGraphToSpline3_FaithfulSlopes(TGraph *tg, double *dfirst=0, double *dlast=0, bool faithfulLow=true, bool faithfulHigh=true)</div><div class="ttdef"><b>Definition:</b> <a href="calcC__lintolog_8c_source.html#l06773">calcC_lintolog.c:6773</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_3c6c4d13ab6f79d37a060d2ac564a6ee.html">test</a></li><li class="navelem"><a class="el" href="calcC__lintolog_8c.html">calcC_lintolog.c</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

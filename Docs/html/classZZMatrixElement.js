@@ -20,6 +20,7 @@ var classZZMatrixElement =
     [ "get_PrimaryHiggsMass", "classZZMatrixElement.html#a1b0893d861298b991f8b57cc17ba4c9a", null ],
     [ "get_PrimaryMass", "classZZMatrixElement.html#a8d9f531ff0d8187396b80bd56f3e989d", null ],
     [ "get_PrimaryWidth", "classZZMatrixElement.html#add67b99dfb68b54825000d1ef75534c7", null ],
+    [ "get_RenFacScaleMode", "classZZMatrixElement.html#af405a9e54aabdce879bc6e55044b293a", null ],
     [ "get_TopCandidateCollection", "classZZMatrixElement.html#a1fb40e8a3887459e99b90e3226b423bf", null ],
     [ "get_XPropagator", "classZZMatrixElement.html#a1bf43928be104817e1da0a37c89af523", null ],
     [ "reset_InputEvent", "classZZMatrixElement.html#a98c614af486d54475c694e421f890512", null ],

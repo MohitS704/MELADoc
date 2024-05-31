@@ -1,0 +1,168 @@
+\hypertarget{group__Constructors}{}\doxysection{Functions that construct objects differently than the C++}
+\label{group__Constructors}\index{Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}}
+
+
+These functions are factories for datatypes that either need to be created differently in Python bindings or make it much easier to do so.  
+
+
+Collaboration diagram for Functions that construct objects differently than the C++\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__Constructors}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}} \mbox{\hyperlink{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}{particle\+\_\+initializer}} (int id, float x, float y, float z, float e, bool pt\+Eta\+Phi=false)
+\begin{DoxyCompactList}\small\item\em This function intializes a single Simple\+Particle\+\_\+t in the Python. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} \mbox{\hyperlink{group__Constructors_ga3628fafc5e9c788fbf3eb77a4d233ebf}{collection\+\_\+initializer\+\_\+from\+\_\+column}} (std\+::vector$<$ int $>$ ids, std\+::vector$<$ double $>$ x, std\+::vector$<$ double $>$ y, std\+::vector$<$ double $>$ z, std\+::vector$<$ double $>$ e, bool pt\+Eta\+Phi=false)
+\begin{DoxyCompactList}\small\item\em This function initializes a single Simple\+Particle\+Collection\+\_\+t (or a list of Simple\+Particle\+\_\+t) in the Python from a series of lists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} \mbox{\hyperlink{group__Constructors_ga998852a6ab36522e70987757f9aa9bf1}{collection\+\_\+initializer}} (py\+::list list\+Of\+Particles)
+\begin{DoxyCompactList}\small\item\em This function initializes a single Simple\+Particle\+Collection\+\_\+t (or a list of Simple\+Particle\+\_\+t) in the Python from a single list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These functions are factories for datatypes that either need to be created differently in Python bindings or make it much easier to do so. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__Constructors_ga998852a6ab36522e70987757f9aa9bf1}\label{group__Constructors_ga998852a6ab36522e70987757f9aa9bf1}} 
+\index{Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}!collection\_initializer@{collection\_initializer}}
+\index{collection\_initializer@{collection\_initializer}!Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}}
+\doxysubsubsection{\texorpdfstring{collection\_initializer()}{collection\_initializer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} collection\+\_\+initializer (\begin{DoxyParamCaption}\item[{py\+::list}]{list\+Of\+Particles }\end{DoxyParamCaption})}
+
+
+
+This function initializes a single Simple\+Particle\+Collection\+\_\+t (or a list of Simple\+Particle\+\_\+t) in the Python from a single list. 
+
+\label{group__Constructors_collection_initializer}%
+\Hypertarget{group__Constructors_collection_initializer}%
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Of\+Particles} & A list of Simple\+Particle\+\_\+t objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A T\+Var\+::\+Simple\+Particle\+Collection\+\_\+t object 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file mela\+\_\+binding.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{365                                                                          \{}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367     \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{SimpleParticleCollection\_t}} collection = \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{SimpleParticleCollection\_t}}();}
+\DoxyCodeLine{368     \textcolor{keywordflow}{for}(py::handle P : listOfParticles)\{}
+\DoxyCodeLine{369         \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{SimpleParticle\_t}} particle = P.cast<\mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{SimpleParticle\_t}}>();}
+\DoxyCodeLine{370         collection.push\_back(particle);}
+\DoxyCodeLine{371     \}}
+\DoxyCodeLine{372     \textcolor{keywordflow}{return} collection;}
+\DoxyCodeLine{373 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__Constructors_ga3628fafc5e9c788fbf3eb77a4d233ebf}\label{group__Constructors_ga3628fafc5e9c788fbf3eb77a4d233ebf}} 
+\index{Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}!collection\_initializer\_from\_column@{collection\_initializer\_from\_column}}
+\index{collection\_initializer\_from\_column@{collection\_initializer\_from\_column}!Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}}
+\doxysubsubsection{\texorpdfstring{collection\_initializer\_from\_column()}{collection\_initializer\_from\_column()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} collection\+\_\+initializer\+\_\+from\+\_\+column (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{ids,  }\item[{std\+::vector$<$ double $>$}]{x,  }\item[{std\+::vector$<$ double $>$}]{y,  }\item[{std\+::vector$<$ double $>$}]{z,  }\item[{std\+::vector$<$ double $>$}]{e,  }\item[{bool}]{pt\+Eta\+Phi = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+This function initializes a single Simple\+Particle\+Collection\+\_\+t (or a list of Simple\+Particle\+\_\+t) in the Python from a series of lists. 
+
+\label{group__Constructors_collection_initializer_from_column}%
+\Hypertarget{group__Constructors_collection_initializer_from_column}%
+\begin{DoxyNote}{Note}
+This function is useful for data in columnar form! One can imagine dumping columns of vector quantities into this function. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em ids} & a list of P\+DG ids \\
+\hline
+{\em x} & A list of either the pX or the pT of the vectors \\
+\hline
+{\em y} & A list of either the pY or the Eta of the vectors \\
+\hline
+{\em z} & A list of either the pZ or the Phi of the Vectors \\
+\hline
+{\em e} & A list of either the Energy or the Mass of the vectors \\
+\hline
+{\em pt\+Eta\+Phi} & if true, interpret the vector using $<$pT, Eta, Phi, m$>$. Otherwise, use $<$pX, pY, pZ, E$>$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A T\+Var\+::\+Simple\+Particle\+Collection\+\_\+t object 
+\end{DoxyReturn}
+
+
+Definition at line 347 of file mela\+\_\+binding.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{347                                                                                                                                                                                           \{}
+\DoxyCodeLine{348     \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{SimpleParticleCollection\_t}} collection = \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{SimpleParticleCollection\_t}}();}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{351     \textcolor{keywordflow}{for}(i = 0; i < ids.size(); i++)\{}
+\DoxyCodeLine{352         collection.push\_back(}
+\DoxyCodeLine{353             \mbox{\hyperlink{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}{particle\_initializer}}(ids[i], x[i], y[i], \mbox{\hyperlink{namespaceglobalc_a68e62f5d752be9315f909681fa34b5dc}{z}}[i], e[i], ptEtaPhi)}
+\DoxyCodeLine{354         );}
+\DoxyCodeLine{355     \}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357     \textcolor{keywordflow}{return} collection;}
+\DoxyCodeLine{358 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}\label{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}} 
+\index{Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}!particle\_initializer@{particle\_initializer}}
+\index{particle\_initializer@{particle\_initializer}!Functions that construct objects differently than the C++@{Functions that construct objects differently than the C++}}
+\doxysubsubsection{\texorpdfstring{particle\_initializer()}{particle\_initializer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}} particle\+\_\+initializer (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{e,  }\item[{bool}]{pt\+Eta\+Phi = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+This function intializes a single Simple\+Particle\+\_\+t in the Python. 
+
+\label{group__Constructors_particle_initializer}%
+\Hypertarget{group__Constructors_particle_initializer}%
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The particle P\+DG ID \\
+\hline
+{\em x} & Either the pX or the pT of the vector \\
+\hline
+{\em y} & Either the pY or the Eta of the vector \\
+\hline
+{\em z} & Either the pZ or the Phi of the Vector \\
+\hline
+{\em e} & Either the Energy or the Mass of the vector \\
+\hline
+{\em pt\+Eta\+Phi} & if true, interpret the vector using $<$pT, Eta, Phi, m$>$. Otherwise, use $<$pX, pY, pZ, E$>$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A T\+Var\+::\+Simpleparticle\+\_\+t with the provided id and Lorentz 4-\/vector. 
+\end{DoxyReturn}
+
+
+Definition at line 326 of file mela\+\_\+binding.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{326                                                                                                       \{}
+\DoxyCodeLine{327     TLorentzVector vec = TLorentzVector();}
+\DoxyCodeLine{328     \textcolor{keywordflow}{if}(ptEtaPhi)\{}
+\DoxyCodeLine{329         vec.SetPtEtaPhiM(x, y, \mbox{\hyperlink{namespaceglobalc_a68e62f5d752be9315f909681fa34b5dc}{z}}, e);}
+\DoxyCodeLine{330     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{331         vec.SetPxPyPzE(x, y, \mbox{\hyperlink{namespaceglobalc_a68e62f5d752be9315f909681fa34b5dc}{z}}, e);}
+\DoxyCodeLine{332     \}}
+\DoxyCodeLine{333     \textcolor{keywordflow}{return} \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{SimpleParticle\_t}}(\textcolor{keywordtype}{id}, vec);}
+\DoxyCodeLine{334 \}}
+
+\end{DoxyCode}

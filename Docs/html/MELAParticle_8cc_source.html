@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('MELAParticle_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">MELAParticle.cc</div>  </div>
@@ -213,6 +246,7 @@ $(function() {
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassMELAParticle_html_a462da92ca58829e33bb27d4b67421355"><div class="ttname"><a href="classMELAParticle.html#a462da92ca58829e33bb27d4b67421355">MELAParticle::operator=</a></div><div class="ttdeci">MELAParticle &amp; operator=(const MELAParticle &amp;particle_)</div><div class="ttdef"><b>Definition:</b> <a href="MELAParticle_8cc_source.html#l00046">MELAParticle.cc:46</a></div></div>
 <div class="ttc" id="anamespacePDGHelpers_html_a6f98f45dbd53233287193ec3fe987746"><div class="ttname"><a href="namespacePDGHelpers.html#a6f98f45dbd53233287193ec3fe987746">PDGHelpers::isALepton</a></div><div class="ttdeci">bool isALepton(const int id)</div><div class="ttdef"><b>Definition:</b> <a href="PDGHelpers_8cc_source.html#l00062">PDGHelpers.cc:62</a></div></div>
 <div class="ttc" id="aclassMELAParticle_html_ab9814bc508cf2f1ac422615ec9c1ba9f"><div class="ttname"><a href="classMELAParticle.html#ab9814bc508cf2f1ac422615ec9c1ba9f">MELAParticle::MELAParticle</a></div><div class="ttdeci">MELAParticle()</div><div class="ttdef"><b>Definition:</b> <a href="MELAParticle_8cc_source.html#l00016">MELAParticle.cc:16</a></div></div>
@@ -256,10 +290,13 @@ $(function() {
 <div class="ttc" id="anamespacePDGHelpers_html_a489c1dbbeb1023de341ae81fd17f50c3"><div class="ttname"><a href="namespacePDGHelpers.html#a489c1dbbeb1023de341ae81fd17f50c3">PDGHelpers::isUpTypeQuark</a></div><div class="ttdeci">bool isUpTypeQuark(const int id)</div><div class="ttdef"><b>Definition:</b> <a href="PDGHelpers_8cc_source.html#l00040">PDGHelpers.cc:40</a></div></div>
 <div class="ttc" id="aclassMELAParticle_html_a555dda1d36e3cf9801de88ad38a6c6de"><div class="ttname"><a href="classMELAParticle.html#a555dda1d36e3cf9801de88ad38a6c6de">MELAParticle::addDaughter</a></div><div class="ttdeci">void addDaughter(MELAParticle *myParticle)</div><div class="ttdef"><b>Definition:</b> <a href="MELAParticle_8cc_source.html#l00063">MELAParticle.cc:63</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li><li class="navelem"><a class="el" href="MELAParticle_8cc.html">MELAParticle.cc</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

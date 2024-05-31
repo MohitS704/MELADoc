@@ -1,0 +1,344 @@
+There exists a Python implementation of M\+E\+LA functions created via Py\+Bind11. These functions are written in \mbox{\hyperlink{mela__binding_8cpp}{mela\+\_\+binding.\+cpp}}. There are three groups of functions that are implemented\+:
+
+
+\begin{DoxyItemize}
+\item Functions that are implemented as pass-\/by-\/reference in C++ that need to be converted to functions that return a value
+\item Functions that don\textquotesingle{}t translate well between Python and C++ that need to be rewritten in a more compatible format
+\item Functions that just need to be referenced within the Py\+Bind framework without any extra overhead
+\end{DoxyItemize}
+
+The first two categories of functions are detailed in the \mbox{\hyperlink{group__Pychanges}{Novel Python Functions}} section. These changes vary, but generally exist for compatibility or ease-\/of-\/use cases.
+
+The following classes in \mbox{\hyperlink{classMela}{Mela}} are encompassed by the Py\+Bind11 module, and are documented in the following subpages\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{SimpleParticle_t}{Mela.Simple\+Particle\+\_\+t}}
+\item \mbox{\hyperlink{SimpleParticleCollection_t}{Mela.Simple\+Particle\+Collection\+\_\+t}}
+\item \mbox{\hyperlink{py_enums}{Enumerations}} 
+\end{DoxyItemize}\hypertarget{SimpleParticle_t}{}\doxysection{Simple\+Particle\+\_\+t}\label{SimpleParticle_t}
+The Simple\+Particle\+\_\+t for Python is a type definition defined in \mbox{\hyperlink{TVar_8hh}{T\+Var.\+hh}}. These are defined as pairs of an integer and a 4-\/vector, and are the primary input object used for every particle.
+
+Due to difficulties with interfacing between R\+O\+OT\textquotesingle{}s py\+R\+O\+OT implemenetation of \href{https://root.cern.ch/doc/master/classTLorentzVector.html}{\texttt{ T\+Lorentz\+Vector}}, there are new functions that operate as constructors.\hypertarget{SimpleParticle_t_simpleparticle_constructor}{}\doxysubsection{Constructor}\label{SimpleParticle_t_simpleparticle_constructor}
+There is one constructor defined in the \mbox{\hyperlink{group__Constructors_particle_initializer}{particle\+\_\+initializer}} function. This was required due to the incompatibility of py\+R\+O\+OT and C++ based R\+O\+OT. The function takes in 5 required and 1 optional variable that are named as {\ttfamily x}, {\ttfamily y}, {\ttfamily z}, {\ttfamily e}, and {\ttfamily pt\+Eta\+Phi}.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{gluon = Mela.SimpleParticle\_t(id=21, x=0, y=0, z=12, e=12)}
+\DoxyCodeLine{lepton = Mela.SimpleParticle\_t(id=25, x=1, pt=0, eta=0, m=125, ptEtaPhi=\textcolor{keyword}{True})}
+\end{DoxyCode}
+\hypertarget{SimpleParticle_t_simpleparticle_getter}{}\doxysubsection{Attributes}\label{SimpleParticle_t_simpleparticle_getter}
+There are 2 read-\/only attributes for a Simple\+Particle\+\_\+t. These cannot be edited; make a new object if you want to make a new vector.\hypertarget{SimpleParticle_t_simpleparticle_id}{}\doxysubsubsection{id}\label{SimpleParticle_t_simpleparticle_id}
+The id returns the P\+DG ID of the particle.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{gluon = Mela.SimpleParticle\_t(id=21, x=0, y=0, z=12, e=12)}
+\DoxyCodeLine{print(gluon.id) \textcolor{comment}{\#will print 21}}
+\end{DoxyCode}
+\hypertarget{SimpleParticle_t_simpleparticle_vector}{}\doxysubsubsection{vector}\label{SimpleParticle_t_simpleparticle_vector}
+The vector attribute returns a 4-\/vector as a tuple of 4 values, the $P_x$, $P_y$, $P_z$, $E$ of the particle. This representation of the vector will always be printed, even if the Simple\+Particle\+\_\+t was instantiated using $P_t$, $\eta$, $\phi$ and mass.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{gluon = Mela.SimpleParticle\_t(id=21, x=0, y=0, z=12, e=12)}
+\DoxyCodeLine{print(gluon.vector) \textcolor{comment}{\#will print (0, 0, 12, 12)}}
+\end{DoxyCode}
+ \hypertarget{SimpleParticleCollection_t}{}\doxysection{Simple\+Particle\+Collection\+\_\+t}\label{SimpleParticleCollection_t}
+The type {\ttfamily Simple\+Particle\+Collection\+\_\+t} is a typedef described in \mbox{\hyperlink{TVar_8hh}{T\+Var.\+hh}}. It is a vector of {\ttfamily Simple\+Particle\+\_\+t} objects. These correspond to the particle lists that are submitted to \mbox{\hyperlink{classMela_a71142f41d44bb42a1cd2be50b3cc8240}{Mela\+::set\+Input\+Event}}. There are a few constructors for this object, each of which depend on what suits your needs.\hypertarget{SimpleParticleCollection_t_simpleparticlecollection_constructor}{}\doxysubsection{Constructors}\label{SimpleParticleCollection_t_simpleparticlecollection_constructor}
+There are 4 different ways to construct the {\ttfamily Simple\+Particle\+Collection\+\_\+t} object. This is due to both the aforementioned py\+R\+O\+OT and C++ R\+O\+OT compatibility issues alongside the usage of syntactic sugar to allow for easier columnar data entry.\hypertarget{SimpleParticleCollection_t_collection_initializer_from_column_doc}{}\doxysubsection{collection\+\_\+initializer\+\_\+from\+\_\+column}\label{SimpleParticleCollection_t_collection_initializer_from_column_doc}
+This initializes a Simple\+Particle\+Collection\+\_\+t from a list of P\+DG ids, and either a set of $P_x$, $P_y$, $P_z$, $E$ {\itshape OR} $P_t$, $\eta$, $\phi$, mass depending on the boolean flag set (just like in \mbox{\hyperlink{group__Constructors_particle_initializer}{particle\+\_\+initializer}}), and is documented \mbox{\hyperlink{group__Constructors_collection_initializer_from_column}{here}}.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{\textcolor{comment}{\# Let's make a pair of opposing gluons and 4 leptons}}
+\DoxyCodeLine{gluon\_Collection = Mela.SimpleParticleCollection\_t([21, 21], [0, 0], [0, 0], [12, -\/12], [12, 12]) \textcolor{comment}{\#px, py, pz, E}}
+\DoxyCodeLine{}
+\DoxyCodeLine{lepton\_Collection = Mela.SimpleParticleCollection\_t(}
+\DoxyCodeLine{     [13, -\/13, 11, -\/11],}
+\DoxyCodeLine{     [pt1, pt2, pt3, pt4],}
+\DoxyCodeLine{     [eta1, eta2, eta3, eta4],}
+\DoxyCodeLine{     [phi1, phi2, phi3, phi4],}
+\DoxyCodeLine{     [mu\_M, mu\_M, e\_M, e\_M],}
+\DoxyCodeLine{     ptEtaPhi=\textcolor{keyword}{True}}
+\DoxyCodeLine{)}
+\end{DoxyCode}
+\hypertarget{SimpleParticleCollection_t_collection_initializer_doc}{}\doxysubsubsection{collection\+\_\+initializer}\label{SimpleParticleCollection_t_collection_initializer_doc}
+This initializes a Simple\+Particle\+Collection\+\_\+t from a list of Simple\+Particle\+\_\+t objects, and is documented \mbox{\hyperlink{group__Constructors_collection_initializer}{here}}. One benefit of operating this way is that you can mix and match particles initialized via \{ $P_x$, $P_y$, $P_z$, $E$\}and those via \{ $P_t$, $\eta$, $\phi$, $m$\}.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{\textcolor{comment}{\# Let's make a pair of opposing gluons and 4 leptons}}
+\DoxyCodeLine{g1 = Mela.SimpleParticle\_t(21, 0, 0, 12, 12)}
+\DoxyCodeLine{g2 = Mela.SimpleParticle\_t(21, 0, 0, -\/12, 12)}
+\DoxyCodeLine{gluon\_Collection = Mela.SimpleParticleCollection\_t([g1, g2])}
+\DoxyCodeLine{}
+\DoxyCodeLine{l1 = Mela.SimpleParticle\_t(13, px1, py1, pz1, E1)}
+\DoxyCodeLine{l2 = Mela.SimpleParticle\_t(-\/13, px2, py2, pz2, E2)}
+\DoxyCodeLine{l3 = Mela.SimpleParticle\_t(11, pt3, eta3, phi3, e\_M) \textcolor{comment}{\#mixing bases!}}
+\DoxyCodeLine{l4 = Mela.SimpleParticle\_t(-\/11, pt4, eta4, phi4, e\_M)}
+\DoxyCodeLine{lepton\_Collection = Mela.SimpleParticleCollection\_t([l1, l2, l3, l4])}
+\end{DoxyCode}
+\hypertarget{SimpleParticleCollection_t_simpleparticlecollection_empty}{}\doxysubsubsection{Default Constructor}\label{SimpleParticleCollection_t_simpleparticlecollection_empty}
+This is an empty initializer that simply creates a \char`\"{}list-\/like\char`\"{} object you can add particles to. You can use the \mbox{\hyperlink{SimpleParticleCollection_t_add_particle}{Mela.Simple\+Particle\+Collection\+\_\+t.add\+\_\+particle}} method to do this. Just like \mbox{[}{\ttfamily collection\+\_\+intializer}\mbox{]}(collection\+\_\+initializer\+\_\+doc), one can mix and match bases of vectors between \{ $P_x$, $P_y$, $P_z$, $E$\}and \{ $P_t$, $\eta$, $\phi$, $m$\}.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{\textcolor{comment}{\# Let's make a pair of opposing gluons and 4 leptons}}
+\DoxyCodeLine{gluon\_Collection = Mela.SimpleParticleCollection\_t()}
+\DoxyCodeLine{gluon\_Collection.add\_particle(Mela.SimpleParticle\_t(21, 0, 0, 12, 12))}
+\DoxyCodeLine{gluon\_Collection.add\_particle(Mela.SimpleParticle\_t(21, 0, 0, -\/12, 12))}
+\DoxyCodeLine{}
+\DoxyCodeLine{lepton\_Collection = Mela.SimpleParticleCollection\_t([l1, l2, l3, l4])}
+\DoxyCodeLine{lepton\_Collection.add\_particle(Mela.SimpleParticle\_t(13, px1, py1, pz1, E1))}
+\DoxyCodeLine{lepton\_Collection.add\_particle(Mela.SimpleParticle\_t(-\/13, px2, py2, pz2, E2))}
+\DoxyCodeLine{lepton\_Collection.add\_particle(Mela.SimpleParticle\_t(11, pt3, eta3, phi3, e\_M))}
+\DoxyCodeLine{lepton\_Collection.add\_particle(Mela.SimpleParticle\_t(-\/11, pt4, eta4, phi4, e\_M))}
+\end{DoxyCode}
+\hypertarget{SimpleParticleCollection_t_simpleparticlecollection_methods}{}\doxysubsection{Methods}\label{SimpleParticleCollection_t_simpleparticlecollection_methods}
+The Simple\+Particle\+Collection\+\_\+t object has a few methods that you can use alongside iteration capabilities.\hypertarget{SimpleParticleCollection_t_add_particle}{}\doxysubsubsection{add\+\_\+particle}\label{SimpleParticleCollection_t_add_particle}
+Simply call {\ttfamily Mela.\+Simple\+Particle\+Collection\+\_\+t.\+add\+\_\+particle(Mela.\+Simple\+Particle\+\_\+t P)} to add a particle to the collection.
+
+Example in the \mbox{\hyperlink{SimpleParticleCollection_t_simpleparticlecollection_empty}{Default Constructor}} section.\hypertarget{SimpleParticleCollection_t_toList}{}\doxysubsubsection{to\+List}\label{SimpleParticleCollection_t_toList}
+Simple call {\ttfamily Mela.\+Simple\+Particle\+Collection\+\_\+t.\+to\+List()} to return a normal Python list of Simple\+Particle objects.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{\textcolor{comment}{\# Let's make a pair of opposing gluons}}
+\DoxyCodeLine{gluon\_Collection = Mela.SimpleParticleCollection\_t()}
+\DoxyCodeLine{gluon\_Collection.add\_particle(Mela.SimpleParticle\_t(21, 0, 0, 12, 12))}
+\DoxyCodeLine{gluon\_Collection.add\_particle(Mela.SimpleParticle\_t(21, 0, 0, -\/12, 12))}
+\DoxyCodeLine{}
+\DoxyCodeLine{print(gluon\_Collection) \textcolor{comment}{\#prints an ugly repr function}}
+\DoxyCodeLine{print(gluon\_Collection.toList) \textcolor{comment}{\#prints a list of SimpleParticles}}
+\end{DoxyCode}
+\hypertarget{SimpleParticleCollection_t_simpleparticlecollection_iter}{}\doxysubsubsection{Iteration}\label{SimpleParticleCollection_t_simpleparticlecollection_iter}
+{\bfseries{Even without converting a Simple\+Particle\+Collection\+\_\+t into a list, one can still iterate over it!}} Iteration over the {\ttfamily Mela.\+Simple\+Particle\+\_\+t} objects stored within can be accessed in a for loop. See the example below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{\textcolor{comment}{\# Let's make a pair of opposing gluons}}
+\DoxyCodeLine{gluon\_Collection = Mela.SimpleParticleCollection\_t()}
+\DoxyCodeLine{gluon\_Collection.add\_particle(Mela.SimpleParticle\_t(21, 0, 0, 12, 12))}
+\DoxyCodeLine{gluon\_Collection.add\_particle(Mela.SimpleParticle\_t(21, 0, 0, -\/12, 12))}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} n, particle \textcolor{keywordflow}{in} enumerate(gluon\_Collection):}
+\DoxyCodeLine{     print(f\textcolor{stringliteral}{"particle \{n\} has an id of \{particle.id\}"})}
+\DoxyCodeLine{     print(f\textcolor{stringliteral}{"with P\_x, P\_y, P\_z, E = \{particle.vector\}"})}
+\end{DoxyCode}
+ \hypertarget{py_enums}{}\doxysection{Stored Enumerations}\label{py_enums}
+There are a variety of enumerated values stored in Py\+M\+E\+LA in order to facilitate running M\+E\+LA successfully. All enumerated values are stored as Py\+Bind11 enumerations, which are documented \href{https://pybind11.readthedocs.io/en/stable/classes.html\#enumerations-and-internal-types}{\texttt{ here}}.
+
+With every enumerated type one can look at all the members and their values as a dictionary via the {\ttfamily enum.\+\_\+\+\_\+members\+\_\+\+\_\+} function for a given enumeration. See the example below for more information.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import} Mela}
+\DoxyCodeLine{print(Mela.MatrixElement.\_\_members\_\_)}
+\end{DoxyCode}
+
+
+There are 2 types of enumerations -\/ those stored in \mbox{\hyperlink{TVar_8hh}{T\+Var.\+hh}}, and those stored in \mbox{\hyperlink{TCouplingsBase_8hh}{T\+Couplings\+Base.\+hh}}. Generally, the former deals with values used to set up M\+E\+LA, and the latter deals with defining where couplings exist. These are tabulated in the following subpages\+:
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{tvar_enums}{T\+Var Enumerations}}
+\item \mbox{\hyperlink{tcoupling_enums}{T\+Couplings\+Base Enumerations}} 
+\end{DoxyItemize}\hypertarget{tvar_enums}{}\doxysubsection{T\+Var Enumerations}\label{tvar_enums}
+These are the enumerated values set in \mbox{\hyperlink{TVar_8hh}{T\+Var.\+hh}}. They are used to set up the settings in M\+E\+LA.\hypertarget{tvar_enums_verbosity_enum}{}\doxysubsubsection{Verbosity Level}\label{tvar_enums_verbosity_enum}
+{\ttfamily Mela.\+Verbosity\+Level} controls how verbose M\+E\+LA can be. These are originally defined in \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}}. Every verbosity level is a subset of the higher one (i.\+e. {\ttfamily Mela.\+Verbosity\+Level.\+E\+R\+R\+OR} contains a subset of the output from {\ttfamily Mela.\+Verbosity\+Level.\+I\+N\+FO}). The values are tabulated below\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-3}
+\endhead
+{\ttfamily Mela.\+Verbosity\+Level.\+S\+I\+L\+E\+NT} &0 &Only {\itshape required} information  \\\cline{1-3}
+{\ttfamily Mela.\+Verbosity\+Level.\+E\+R\+R\+OR} &1 &Only outputs {\itshape unexpected} behavior  \\\cline{1-3}
+{\ttfamily Mela.\+Verbosity\+Level.\+I\+N\+FO} &2 &Outputs out useful information as well  \\\cline{1-3}
+{\ttfamily Mela.\+Verbosity\+Level.\+D\+E\+B\+UG} &3 &Outputs some barebones debugging information  \\\cline{1-3}
+{\ttfamily Mela.\+Verbosity\+Level.\+D\+E\+B\+U\+G\+\_\+\+V\+E\+R\+B\+O\+SE} &4 &Outputs more debugging information  \\\cline{1-3}
+{\ttfamily Mela.\+Verbosity\+Level.\+D\+E\+B\+U\+G\+\_\+\+M\+E\+C\+H\+E\+CK} &5 &Outputs information directly relating to the matrix element  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{tvar_enums_matel_enum}{}\doxysubsubsection{Matrix Element}\label{tvar_enums_matel_enum}
+{\ttfamily Mela.\+Matrix\+Element} controls which matrix element M\+E\+LA is using for its calculation. These are originally defined in \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}}. The values are tabulated below\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-3}
+\endhead
+{\ttfamily Mela.\+Matrix\+Element.\+M\+C\+FM} &0 &Evaluates via J\+H\+U\+Gen-\/\+M\+C\+FM  \\\cline{1-3}
+{\ttfamily Mela.\+Matrix\+Element.\+J\+H\+U\+Gen} &1 &Evaluates via pure J\+H\+U\+Gen  \\\cline{1-3}
+{\ttfamily Mela.\+Matrix\+Element.\+A\+N\+A\+L\+Y\+T\+I\+C\+AL} &2 &Evaluates via analytic methods  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{tvar_enums_prod_enum}{}\doxysubsubsection{Production}\label{tvar_enums_prod_enum}
+{\ttfamily Mela.\+Production} controls what production mode M\+E\+LA is using for its calculations. These are originally defined in \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}}. The values are tabulated below\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-3}
+\endhead
+{\ttfamily Mela.\+Production.\+Z\+Z\+GG} &0 &Gluon Fusion production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Z\+Z\+Q\+QB} &1 &Quark-\/\+Antiquark production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Z\+Z\+Q\+Q\+B\+\_\+\+S\+TU} &2 &Quark-\/\+Antiquark production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Z\+Z\+I\+N\+D\+E\+P\+E\+N\+D\+E\+NT} &3 &Production-\/\+Independent Calculation  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+ttH} &4 &Explicitly only $ t \bar{t} $ production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+bbH} &5 &Explicitly only $ b \bar{b} $ production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+Q\+CD} &6 &Single-\/\+Jet Q\+CD production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+Q\+CD} &7 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+V\+BF} &8 &Double-\/\+Jet V\+BF production (Z\+Z/\+WW Fusion)  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+EW} &9 &Combination of V\+BF and Z\+H/\+WH production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+E\+W\+Q\+CD} &10 &Combination of J\+J\+EW and J\+J\+Q\+CD  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Had\+\_\+\+ZH} &11 &Hadronic ZH production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Had\+\_\+\+WH} &12 &Hadronic WH production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Lep\+\_\+\+ZH} &13 &Leptonic ZH production (i.\+e. $ e^+ e^- $ collisions)  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Lep\+\_\+\+WH} &14 &Leptonic WH production  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Z\+Z\+Q\+Q\+B\+\_\+S} &15 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+Q\+C\+D\+\_\+S} &16 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+V\+B\+F\+\_\+S} &17 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+E\+W\+\_\+S} &18 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+E\+W\+Q\+C\+D\+\_\+S} &19 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Had\+\_\+\+Z\+H\+\_\+S} &20 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Had\+\_\+\+W\+H\+\_\+S} &21 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Lep\+\_\+\+Z\+H\+\_\+S} &22 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Lep\+\_\+\+W\+H\+\_\+S} &23 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Z\+Z\+Q\+Q\+B\+\_\+\+TU} &24 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+Q\+C\+D\+\_\+\+TU} &25 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+V\+B\+F\+\_\+\+TU} &26 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+E\+W\+\_\+\+TU} &27 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+J\+J\+E\+W\+Q\+C\+D\+\_\+\+TU} &28 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Had\+\_\+\+Z\+H\+\_\+\+TU} &29 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Had\+\_\+\+W\+H\+\_\+\+TU} &30 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Lep\+\_\+\+Z\+H\+\_\+\+TU} &31 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+Lep\+\_\+\+W\+H\+\_\+\+TU} &32 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+GammaH} &33 &{\bfseries{I\+DK}}  \\\cline{1-3}
+{\ttfamily Mela.\+Production.\+n\+Productions} &34 &This is the total number of production modes that exist within M\+E\+LA  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{tvar_enums_proc_enum}{}\doxysubsubsection{Process}\label{tvar_enums_proc_enum}
+{\ttfamily Mela.\+Process} controls what process M\+E\+LA is running. This is usually the spin of the particle for J\+H\+U\+Gen, or signal/background for M\+C\+FM.
+
+{\bfseries{By and large, many of the processes are redundant, and can be re-\/created using some combination of couplings and production modes.}} The \char`\"{}minimal basis\char`\"{} for the processes are as follow.
+
+
+\begin{DoxyItemize}
+\item J\+H\+U\+Gen Processes
+\begin{DoxyItemize}
+\item Self\+Define\+\_\+spin0
+\item Self\+Define\+\_\+spin1
+\item Self\+Define\+\_\+spin2
+\end{DoxyItemize}
+\item J\+H\+U\+Gen-\/\+M\+C\+FM Processes
+\begin{DoxyItemize}
+\item H\+S\+M\+Higgs
+\item bkg\+Gamma\+Gamma
+\item bkg\+Z\+Gamma
+\item bkg\+Z\+Jets
+\item bkg\+ZZ
+\item bkg\+WW
+\item bkg\+W\+W\+ZZ
+\item bkg\+Z\+Z\+\_\+\+S\+M\+Higgs
+\item bkg\+W\+W\+\_\+\+S\+M\+Higgs
+\item bkg\+W\+W\+Z\+Z\+\_\+\+S\+M\+Higgs
+\item H\+S\+M\+Higgs\+\_\+\+W\+W\+ZZ
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Matrix Element }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Name }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Matrix Element }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Summary  }\\\cline{1-4}
+\endhead
+{\ttfamily H\+S\+M\+Higgs} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily H0\+\_\+g1prime2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0hplus} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0minus} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0\+\_\+\+Zgsg1prime2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0\+\_\+\+Zgs} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0\+\_\+\+Zgs\+\_\+\+PS} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0\+\_\+gsgs} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H0\+\_\+gsgs\+\_\+\+PS} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+g1g1prime2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+g1g2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+g1g2\+\_\+pi\+\_\+2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+g1g4} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+g1g4\+\_\+pi\+\_\+2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+zzzg} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+zzgg} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+zzzg\+\_\+\+PS} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+zzgg\+\_\+\+PS} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+zzzg\+\_\+g1prime2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily D\+\_\+zzzg\+\_\+g1prime2\+\_\+pi\+\_\+2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H1minus} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H1plus} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g1} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g3} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g4} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g5} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g1g5} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g6} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g7} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g8} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g9} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily H2\+\_\+g10} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily bkg\+Gamma\+Gamma} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+Z\+Gamma} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+Z\+Jets} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+ZZ} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+WW} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+W\+W\+ZZ} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+Z\+Z\+\_\+\+S\+M\+Higgs} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+W\+W\+\_\+\+S\+M\+Higgs} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily bkg\+W\+W\+Z\+Z\+\_\+\+S\+M\+Higgs} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily H\+S\+M\+Higgs\+\_\+\+W\+W\+ZZ} &0 &M\+C\+FM &\\\cline{1-4}
+{\ttfamily D\+\_\+gg10} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily Self\+Define\+\_\+spin0} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily Self\+Define\+\_\+spin1} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily Self\+Define\+\_\+spin2} &0 &J\+H\+U\+Gen &\\\cline{1-4}
+{\ttfamily n\+Processes} &0 &&The total number of processes available to you  \\\cline{1-4}
+\end{longtabu}
+\hypertarget{tcoupling_enums}{}\doxysubsection{T\+Couplings\+Base Enums}\label{tcoupling_enums}

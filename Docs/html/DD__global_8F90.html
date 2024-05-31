@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('DD__global_8F90.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="dir_639230381684761000cc1b1f5892675e.html">DDlib</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Modules</a> &#124;
@@ -599,6 +632,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="anamespacedd__global_html_a45a33b039e2a7433eefc55498c8369e2"><div class="ttname"><a href="namespacedd__global.html#a45a33b039e2a7433eefc55498c8369e2">dd_global::ncoefmax4</a></div><div class="ttdeci">integer(kind=8) ncoefmax4</div><div class="ttdef"><b>Definition:</b> <a href="DD__global_8F90_source.html#l00014">DD_global.F90:14</a></div></div>
 <div class="ttc" id="anamespacedd__global_html_a2fb8b8cab031220c438c804b1bcf1932"><div class="ttname"><a href="namespacedd__global.html#a2fb8b8cab031220c438c804b1bcf1932">dd_global::r2max5</a></div><div class="ttdeci">integer r2max5</div><div class="ttdef"><b>Definition:</b> <a href="DD__global_8F90_source.html#l00013">DD_global.F90:13</a></div></div>
 <div class="ttc" id="anamespacedd__global_html_aaa5fb5c47417f7e907ae1efec114e8d2"><div class="ttname"><a href="namespacedd__global.html#aaa5fb5c47417f7e907ae1efec114e8d2">dd_global::rmax3</a></div><div class="ttdeci">integer rmax3</div><div class="ttdef"><b>Definition:</b> <a href="DD__global_8F90_source.html#l00012">DD_global.F90:12</a></div></div>
@@ -631,10 +665,13 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespacedd__global_html_a73e8442702ac9282a1d19327f0a58996"><div class="ttname"><a href="namespacedd__global.html#a73e8442702ac9282a1d19327f0a58996">dd_global::ncoefmax5</a></div><div class="ttdeci">integer(kind=8) ncoefmax5</div><div class="ttdef"><b>Definition:</b> <a href="DD__global_8F90_source.html#l00014">DD_global.F90:14</a></div></div>
 <div class="ttc" id="anamespacedd__global_html_af4c18efd0b27ef9851ed4b52c8054803"><div class="ttname"><a href="namespacedd__global.html#af4c18efd0b27ef9851ed4b52c8054803">dd_global::binc</a></div><div class="ttdeci">integer(kind=8), dimension(:,:), allocatable binc</div><div class="ttdef"><b>Definition:</b> <a href="DD__global_8F90_source.html#l00017">DD_global.F90:17</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="dir_639230381684761000cc1b1f5892675e.html">DDlib</a></li><li class="navelem"><a class="el" href="DD__global_8F90.html">DD_global.F90</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

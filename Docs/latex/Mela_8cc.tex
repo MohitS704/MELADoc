@@ -1,10 +1,5 @@
 \hypertarget{Mela_8cc}{}\doxysection{M\+E\+L\+A/src/\+Mela.cc File Reference}
 \label{Mela_8cc}\index{MELA/src/Mela.cc@{MELA/src/Mela.cc}}
-
-
-The driving code for the M\+E\+LA interface to M\+C\+F\+M/\+J\+H\+U\+Gen-\/\+M\+E\+LA.  
-
-
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$cstdio$>$}\newline
@@ -36,19 +31,3 @@ Include dependency graph for Mela.\+cc\+:\nopagebreak
 \includegraphics[width=350pt]{Mela_8cc__incl}
 \end{center}
 \end{figure}
-
-
-\doxysubsection{Detailed Description}
-The driving code for the M\+E\+LA interface to M\+C\+F\+M/\+J\+H\+U\+Gen-\/\+M\+E\+LA. 
-
-\begin{DoxyWarning}{Warning}
-Each specific type of compute\+P$\ast$ function comes with its wrapper for common use. 
-
-Removing these wrappers from \mbox{\hyperlink{classMela}{Mela}} will not introduce any bugs, but it might affect packages that depend on it (eg. M\+E\+M\+Calculators). 
-
-Please adhere to the following coding conventions 
-
-Never put return statements in the middle of the compute\+P$\ast$ functions unless it is a wrapper. 
-
-Functions calling the \mbox{\hyperlink{group__coupl_ga81aba2f77ab82a5fc9f50e2d2274a456}{Mela\+::\+Z\+Z\+ME}} member have to reset the couplings, so an abrupt termination does not reset the couplings properly. 
-\end{DoxyWarning}

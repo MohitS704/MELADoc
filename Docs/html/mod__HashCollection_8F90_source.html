@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('mod__HashCollection_8F90_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_1e990d202f380d40186005b13f113cb8.html">fortran</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">mod_HashCollection.F90</div>  </div>
@@ -1415,6 +1448,7 @@ $(function() {
 <div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160; </div>
 <div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;<span class="keyword">END MODULE</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="anamespacemodhashcollection_html_a976da28388e88e0ed1e334903066fad8"><div class="ttname"><a href="namespacemodhashcollection.html#a976da28388e88e0ed1e334903066fad8">modhashcollection::hash_onshellhjj_size</a></div><div class="ttdeci">integer, parameter hash_onshellhjj_size</div><div class="ttdef"><b>Definition:</b> <a href="mod__HashCollection_8F90_source.html#l00037">mod_HashCollection.F90:37</a></div></div>
 <div class="ttc" id="anamespacemodparameters_html_a819a7b99b92aeaa18a9d92d247b6bb98"><div class="ttname"><a href="namespacemodparameters.html#a819a7b99b92aeaa18a9d92d247b6bb98">modparameters::abot_</a></div><div class="ttdeci">integer, target, public abot_</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l01111">mod_Parameters.F90:1111</a></div></div>
 <div class="ttc" id="anamespacemodhashcollection_html_ad92fc0035dacf1ead0376a7e66a908cd"><div class="ttname"><a href="namespacemodhashcollection.html#ad92fc0035dacf1ead0376a7e66a908cd">modhashcollection::get_mcfm_qqvvqq_genhash</a></div><div class="ttdeci">subroutine get_mcfm_qqvvqq_genhash(ijSel)</div><div class="ttdef"><b>Definition:</b> <a href="mod__HashCollection_8F90_source.html#l01093">mod_HashCollection.F90:1093</a></div></div>
@@ -1517,10 +1551,13 @@ $(function() {
 <div class="ttc" id="anamespacemodhashcollection_html_aa08b0dcab95ea2dde2181d42f2e7422b"><div class="ttname"><a href="namespacemodhashcollection.html#aa08b0dcab95ea2dde2181d42f2e7422b">modhashcollection::init_hash_thchannel</a></div><div class="ttdeci">subroutine init_hash_thchannel()</div><div class="ttdef"><b>Definition:</b> <a href="mod__HashCollection_8F90_source.html#l00981">mod_HashCollection.F90:981</a></div></div>
 <div class="ttc" id="anamespacemodparameters_html_a3e452fc6cd0bd427c0b6a6ac621cfe91"><div class="ttname"><a href="namespacemodparameters.html#a3e452fc6cd0bd427c0b6a6ac621cfe91">modparameters::mup_</a></div><div class="ttdeci">integer, target, public mup_</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l01091">mod_Parameters.F90:1091</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_1e990d202f380d40186005b13f113cb8.html">fortran</a></li><li class="navelem"><a class="el" href="mod__HashCollection_8F90.html">mod_HashCollection.F90</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

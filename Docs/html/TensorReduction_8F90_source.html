@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('TensorReduction_8F90_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="dir_5abc452c1106e4f88e58edd6368d7137.html">tensors</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">TensorReduction.F90</div>  </div>
@@ -1657,6 +1690,7 @@ $(function() {
 <div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;<span class="keyword">end module </span><a class="code" href="namespacetensorreduction.html">tensorreduction</a></div>
 <div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="ademocache_8f90_html_aa08ec99fbe2eba620c66f7b0eff1b488"><div class="ttname"><a href="democache_8f90.html#aa08ec99fbe2eba620c66f7b0eff1b488">submasses</a></div><div class="ttdeci">double complex function, dimension(0:n-2) submasses(N, k, masses)</div><div class="ttdef"><b>Definition:</b> <a href="democache_8f90_source.html#l00468">democache.f90:468</a></div></div>
 <div class="ttc" id="anamespacetensorreduction_html_a041f666dd114678cf583cec1fe66aef4"><div class="ttname"><a href="namespacetensorreduction.html#a041f666dd114678cf583cec1fe66aef4">tensorreduction::checktensors</a></div><div class="ttdeci">subroutine checktensors(TN, MomVec, MomInv, masses2, N, rmax, writeout, acc)</div><div class="ttdef"><b>Definition:</b> <a href="TensorReduction_8F90_source.html#l01298">TensorReduction.F90:1298</a></div></div>
 <div class="ttc" id="anamespacecollier__coefs_html_ae92ae0052d5e08ba7fe2299b2b4764af"><div class="ttname"><a href="namespacecollier__coefs.html#ae92ae0052d5e08ba7fe2299b2b4764af">collier_coefs::e_main_cll</a></div><div class="ttdeci">subroutine e_main_cll(E, Euv, p10, p21, p32, p43, p40, p20, p31, p42, p30, p41, m02, m12, m22, m32, m42, rmax, Eerr, id_in, Eerr2)</div><div class="ttdef"><b>Definition:</b> <a href="collier__coefs_8F90_source.html#l01780">collier_coefs.F90:1780</a></div></div>
@@ -1677,10 +1711,13 @@ $(function() {
 <div class="ttc" id="anamespacebuildtensors_html_a45b96b15b3bed8d368476c3dc02f0742"><div class="ttname"><a href="namespacebuildtensors.html#a45b96b15b3bed8d368476c3dc02f0742">buildtensors::calctensortn</a></div><div class="ttdeci">subroutine calctensortn(TN, TNuv, TNerr, CoefsN, CoefsNuv, CoefsNerr, MomVec, N, rmax)</div><div class="ttdef"><b>Definition:</b> <a href="BuildTensors_8F90_source.html#l01546">BuildTensors.F90:1546</a></div></div>
 <div class="ttc" id="anamespacetensorreduction_html_ac885d41ff36dbb96756109346a8d5801"><div class="ttname"><a href="namespacetensorreduction.html#ac885d41ff36dbb96756109346a8d5801">tensorreduction::calctensortnr_list</a></div><div class="ttdeci">subroutine calctensortnr_list(TN, TNuv, TNerr, MomVec, MomInv, masses2, N, rmax)</div><div class="ttdef"><b>Definition:</b> <a href="TensorReduction_8F90_source.html#l01264">TensorReduction.F90:1264</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_73784eee38b7199fcce1119bcd0ed434.html">COLLIER</a></li><li class="navelem"><a class="el" href="dir_85d564155a3312c95add20c7749e0865.html">colliertmp</a></li><li class="navelem"><a class="el" href="dir_977797a4b77dfe96884d7d8d33da88ae.html">COLLIER-1.2</a></li><li class="navelem"><a class="el" href="dir_45a835c03bbb8b999862c7fef50d67a8.html">src</a></li><li class="navelem"><a class="el" href="dir_5abc452c1106e4f88e58edd6368d7137.html">tensors</a></li><li class="navelem"><a class="el" href="TensorReduction_8F90.html">TensorReduction.F90</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

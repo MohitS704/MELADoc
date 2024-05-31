@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('MELALinearInterpFunc_8cc_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">MELALinearInterpFunc.cc</div>  </div>
@@ -293,13 +326,13 @@ $(function() {
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
 <div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="classMELALinearInterpFunc.html#a1a4ce4f2d2bf339beafe3526142bfb2a">  222</a></span>&#160;Double_t <a class="code" href="classMELALinearInterpFunc.html#a1a4ce4f2d2bf339beafe3526142bfb2a">MELALinearInterpFunc::evaluate</a>()<span class="keyword">const</span>{</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  Double_t <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = <a class="code" href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">interpolateFcn</a>(0);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> &amp;&amp; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>&lt;<a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>){</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>&gt;=<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a>) coutE(Eval) &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc ERROR::MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) evaluation returned &quot;</span> &lt;&lt; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = <a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  Double_t value = <a class="code" href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">interpolateFcn</a>(0);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> &amp;&amp; value&lt;<a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>){</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>&gt;=<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a>) coutE(Eval) &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc ERROR::MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) evaluation returned &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    value = <a class="code" href="classMELALinearInterpFunc.html#a4436c39502b948c4187b6fe7829f264c">floorEval</a>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){ <a class="code" href="namespacedd__global.html#aaae36494da03fa13a3685638982a01ae">cout</a> &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::evaluate = &quot;</span> &lt;&lt; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a> &lt;&lt; endl; }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){ <a class="code" href="namespacedd__global.html#aaae36494da03fa13a3685638982a01ae">cout</a> &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::evaluate = &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; at x = &quot;</span> &lt;&lt; <a class="code" href="classMELALinearInterpFunc.html#af5c1bc264b83bfd1bfa0b0def9c0138f">theXVar</a> &lt;&lt; endl; }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classMELALinearInterpFunc.html#a7bc11e6452703aca5312d4f527a15d92">  231</a></span>&#160;Int_t <a class="code" href="classMELALinearInterpFunc.html#a7bc11e6452703aca5312d4f527a15d92">MELALinearInterpFunc::getAnalyticalIntegral</a>(RooArgSet&amp; allVars, RooArgSet&amp; analVars, <span class="keyword">const</span> <span class="keywordtype">char</span>* rangeName)<span class="keyword">const</span>{</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (_forceNumInt) <span class="keywordflow">return</span> 0;</div>
@@ -361,13 +394,13 @@ $(function() {
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">return</span> code;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
 <div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="classMELALinearInterpFunc.html#a30df08cb66c3655f8b363f289f75be0d">  290</a></span>&#160;Double_t <a class="code" href="classMELALinearInterpFunc.html#a30df08cb66c3655f8b363f289f75be0d">MELALinearInterpFunc::analyticalIntegral</a>(Int_t code, <span class="keyword">const</span> <span class="keywordtype">char</span>* rangeName)<span class="keyword">const</span>{</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  Double_t <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = <a class="code" href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">interpolateFcn</a>(code, rangeName);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> &amp;&amp; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>&lt;<a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>){</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>&gt;=<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a>) coutE(Integration) &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc ERROR::MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) integration returned &quot;</span> &lt;&lt; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = <a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  Double_t value = <a class="code" href="classMELALinearInterpFunc.html#a64c098b9693a3f095a9384a31e01970d">interpolateFcn</a>(code, rangeName);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#a563764d6a63a6e04dc9d796f79d0bf1c">useFloor</a> &amp;&amp; value&lt;<a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>){</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>&gt;=<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa5352d3673408b811e5bb2f93825297cd">MELALinearInterpFunc::kError</a>) coutE(Integration) &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc ERROR::MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;) integration returned &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    value = <a class="code" href="classMELALinearInterpFunc.html#aa50bca7467686abbcd20ff23cf0c6e33">floorInt</a>;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){ <a class="code" href="namespacedd__global.html#aaae36494da03fa13a3685638982a01ae">cout</a> &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::analyticalIntegral = &quot;</span> &lt;&lt; <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl; }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">verbosity</a>==<a class="code" href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a>){ <a class="code" href="namespacedd__global.html#aaae36494da03fa13a3685638982a01ae">cout</a> &lt;&lt; <span class="stringliteral">&quot;MELALinearInterpFunc(&quot;</span> &lt;&lt; GetName() &lt;&lt; <span class="stringliteral">&quot;)::analyticalIntegral = &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; for code = &quot;</span> &lt;&lt; code &lt;&lt; endl; }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordflow">return</span> value;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="classMELALinearInterpFunc.html#a23ec7256fa464adb5b852d813e1ae694">  300</a></span>&#160;Bool_t <a class="code" href="classMELALinearInterpFunc.html#a23ec7256fa464adb5b852d813e1ae694">MELALinearInterpFunc::testRangeValidity</a>(<span class="keyword">const</span> <a class="code" href="classMELALinearInterpFunc.html#a2c8810a5b3310a79154eb904152692fc">T</a>&amp; val)<span class="keyword"> const</span>{</div>
@@ -392,11 +425,11 @@ $(function() {
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keywordflow">if</span> (val&gt;*(range[1])) val = *(range[1]);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassMELALinearInterpFunc_html_a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46"><div class="ttname"><a href="classMELALinearInterpFunc.html#a20eccd8e560e1a77785a246d3f240edfa10bf48e5560da74e31974d1ccf5d2c46">MELALinearInterpFunc::kVerbose</a></div><div class="ttdeci">@ kVerbose</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00020">MELALinearInterpFunc.h:20</a></div></div>
 <div class="ttc" id="aclassMELALinearInterpFunc_html_aeaefc297d160fd3b65138b5f02349bd0"><div class="ttname"><a href="classMELALinearInterpFunc.html#aeaefc297d160fd3b65138b5f02349bd0">MELALinearInterpFunc::FcnList</a></div><div class="ttdeci">RooListProxy FcnList</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00064">MELALinearInterpFunc.h:64</a></div></div>
 <div class="ttc" id="aclassMELALinearInterpFunc_html_ab4fc90d26e384ce5929394e4cd7f2b8d"><div class="ttname"><a href="classMELALinearInterpFunc.html#ab4fc90d26e384ce5929394e4cd7f2b8d">MELALinearInterpFunc::verbosity</a></div><div class="ttdeci">VerbosityLevel verbosity</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00054">MELALinearInterpFunc.h:54</a></div></div>
 <div class="ttc" id="aclassMELALinearInterpFunc_html_a399f316445bce2b393ad3a98fc874e98"><div class="ttname"><a href="classMELALinearInterpFunc.html#a399f316445bce2b393ad3a98fc874e98">MELALinearInterpFunc::setVerbosity</a></div><div class="ttdeci">void setVerbosity(VerbosityLevel flag)</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00104">MELALinearInterpFunc.cc:104</a></div></div>
-<div class="ttc" id="aoutput_8txt_html_a14cbf2c203e363db8f9aaf1d15b93e1d"><div class="ttname"><a href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a></div><div class="ttdeci">pymela::gHIGGS_KAPPA value(&quot;gHIGGS_KAPPA_TILDE&quot;, pymela::gHIGGS_KAPPA_TILDE) .value(&quot;SIZE_HQQ&quot;</div></div>
 <div class="ttc" id="aclassMELALinearInterpFunc_html_a7bc11e6452703aca5312d4f527a15d92"><div class="ttname"><a href="classMELALinearInterpFunc.html#a7bc11e6452703aca5312d4f527a15d92">MELALinearInterpFunc::getAnalyticalIntegral</a></div><div class="ttdeci">Int_t getAnalyticalIntegral(RooArgSet &amp;allVars, RooArgSet &amp;analVars, const char *rangeName=0) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00231">MELALinearInterpFunc.cc:231</a></div></div>
 <div class="ttc" id="aclassMELALinearInterpFunc_html_a1a4ce4f2d2bf339beafe3526142bfb2a"><div class="ttname"><a href="classMELALinearInterpFunc.html#a1a4ce4f2d2bf339beafe3526142bfb2a">MELALinearInterpFunc::evaluate</a></div><div class="ttdeci">Double_t evaluate() const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00222">MELALinearInterpFunc.cc:222</a></div></div>
 <div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html">TNumericUtil::KahanAccumulator</a></div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00027">MELAAccumulators.h:27</a></div></div>
@@ -432,10 +465,13 @@ $(function() {
 <div class="ttc" id="aclassMELALinearInterpFunc_html_a23ec7256fa464adb5b852d813e1ae694"><div class="ttname"><a href="classMELALinearInterpFunc.html#a23ec7256fa464adb5b852d813e1ae694">MELALinearInterpFunc::testRangeValidity</a></div><div class="ttdeci">Bool_t testRangeValidity(const T &amp;val) const</div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8cc_source.html#l00300">MELALinearInterpFunc.cc:300</a></div></div>
 <div class="ttc" id="aclassMELALinearInterpFunc_html"><div class="ttname"><a href="classMELALinearInterpFunc.html">MELALinearInterpFunc</a></div><div class="ttdef"><b>Definition:</b> <a href="MELALinearInterpFunc_8h_source.html#l00013">MELALinearInterpFunc.h:13</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li><li class="navelem"><a class="el" href="MELALinearInterpFunc_8cc.html">MELALinearInterpFunc.cc</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

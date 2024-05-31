@@ -66,7 +66,7 @@ struct \mbox{\hyperlink{structExtBin}{Ext\+Bin}}
 \item 
 {\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{getResolution_8c_ac9fdc41deaff5d963cf06dad8f91e869}{check\+List\+Variable}} (const vector$<$ T $>$ \&list, const T \&var)
 \item 
-void \mbox{\hyperlink{getResolution_8c_adeef62b6204427efbfaae118249cb4c2}{split\+Option}} (const string rawoption, string \&wish, string \&\mbox{\hyperlink{output_8txt_a063b7170d86cdd0b4a2cb033ddc94217}{value}}, char delimiter)
+void \mbox{\hyperlink{getResolution_8c_adeef62b6204427efbfaae118249cb4c2}{split\+Option}} (const string rawoption, string \&wish, string \&value, char delimiter)
 \item 
 void \mbox{\hyperlink{getResolution_8c_aa2f38c31cbb69dcdcedb710bf5435660}{split\+Option\+Recursive}} (const string rawoption, vector$<$ string $>$ \&splitoptions, char delimiter)
 \item 
@@ -2401,12 +2401,12 @@ Definition at line 153 of file get\+Resolution.\+c.
 \DoxyCodeLine{154   \textcolor{keywordtype}{size\_t} posEq = rawoption.find(delimiter);}
 \DoxyCodeLine{155   \textcolor{keywordflow}{if} (posEq!=string::npos)\{}
 \DoxyCodeLine{156     wish=rawoption;}
-\DoxyCodeLine{157     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}=rawoption.substr(posEq+1);}
+\DoxyCodeLine{157     value=rawoption.substr(posEq+1);}
 \DoxyCodeLine{158     wish.erase(wish.begin()+posEq, wish.end());}
 \DoxyCodeLine{159   \}}
 \DoxyCodeLine{160   \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{161     wish=\textcolor{stringliteral}{""};}
-\DoxyCodeLine{162     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}=rawoption;}
+\DoxyCodeLine{162     value=rawoption;}
 \DoxyCodeLine{163   \}}
 \DoxyCodeLine{164 \}}
 

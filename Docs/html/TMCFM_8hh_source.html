@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('TMCFM_8hh_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_e76e844777b8919c382e03460066671c.html">interface</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">TMCFM.hh</div>  </div>
@@ -509,6 +542,7 @@ $(function() {
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aTMCFM_8hh_html_a2149e52c0e6c292d8a804fd1401a7ab3"><div class="ttname"><a href="TMCFM_8hh.html#a2149e52c0e6c292d8a804fd1401a7ab3">Lambda2_z31</a></div><div class="ttdeci">double Lambda2_z31</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00176">TMCFM.hh:176</a></div></div>
 <div class="ttc" id="aTMCFM_8hh_html_a9cc084584bf90fa7d980734b251944cd"><div class="ttname"><a href="TMCFM_8hh.html#a9cc084584bf90fa7d980734b251944cd">fdist_</a></div><div class="ttdeci">void fdist_(int *ih1, double *xx, double *pdfscale, double *fx1)</div></div>
 <div class="ttc" id="aTMCFM_8hh_html_a8841f39c2b18e630e7dcae8deaf3dd6f"><div class="ttname"><a href="TMCFM_8hh.html#a8841f39c2b18e630e7dcae8deaf3dd6f">ason4pi</a></div><div class="ttdeci">double ason4pi</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00109">TMCFM.hh:109</a></div></div>
@@ -999,10 +1033,13 @@ $(function() {
 <div class="ttc" id="aTMCFM_8hh_html_ab838fe42f820c45f619e28f9e112936a"><div class="ttname"><a href="TMCFM_8hh.html#ab838fe42f820c45f619e28f9e112936a">clanod</a></div><div class="ttdeci">double clanod</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00259">TMCFM.hh:259</a></div></div>
 <div class="ttc" id="aTMCFM_8hh_html_a80d402d10e8341004c0caf10133b80ab"><div class="ttname"><a href="TMCFM_8hh.html#a80d402d10e8341004c0caf10133b80ab">scale</a></div><div class="ttdeci">double scale</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00055">TMCFM.hh:55</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_e76e844777b8919c382e03460066671c.html">interface</a></li><li class="navelem"><a class="el" href="TMCFM_8hh.html">TMCFM.hh</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,9 +9,25 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +42,21 @@
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -37,16 +68,23 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+$(document).ready(function(){initNavTree('RooqqZZ__JHU__ZgammaZZ__fast_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +99,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_e76e844777b8919c382e03460066671c.html">interface</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">RooqqZZ_JHU_ZgammaZZ_fast.h</div>  </div>
@@ -140,6 +173,7 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <div class="ttc" id="aclassRooqqZZ__JHU__ZgammaZZ__fast_html"><div class="ttname"><a href="classRooqqZZ__JHU__ZgammaZZ__fast.html">RooqqZZ_JHU_ZgammaZZ_fast</a></div><div class="ttdef"><b>Definition:</b> <a href="RooqqZZ__JHU__ZgammaZZ__fast_8h_source.html#l00018">RooqqZZ_JHU_ZgammaZZ_fast.h:18</a></div></div>
 <div class="ttc" id="aclassRooqqZZ__JHU__ZgammaZZ__fast_html_a62f22ef7285d3fe26c80412b772cb5b7"><div class="ttname"><a href="classRooqqZZ__JHU__ZgammaZZ__fast.html#a62f22ef7285d3fe26c80412b772cb5b7">RooqqZZ_JHU_ZgammaZZ_fast::Phi1j</a></div><div class="ttdeci">RooRealProxy Phi1j</div><div class="ttdef"><b>Definition:</b> <a href="RooqqZZ__JHU__ZgammaZZ__fast_8h_source.html#l00054">RooqqZZ_JHU_ZgammaZZ_fast.h:54</a></div></div>
 <div class="ttc" id="aclassRooqqZZ__JHU__ZgammaZZ__fast_html_aaf4b5b8e3112f8b24a0492f706127812"><div class="ttname"><a href="classRooqqZZ__JHU__ZgammaZZ__fast.html#aaf4b5b8e3112f8b24a0492f706127812">RooqqZZ_JHU_ZgammaZZ_fast::RooqqZZ_JHU_ZgammaZZ_fast</a></div><div class="ttdeci">RooqqZZ_JHU_ZgammaZZ_fast()</div><div class="ttdef"><b>Definition:</b> <a href="RooqqZZ__JHU__ZgammaZZ__fast_8h_source.html#l00020">RooqqZZ_JHU_ZgammaZZ_fast.h:20</a></div></div>
@@ -154,10 +188,13 @@ $(function() {
 <div class="ttc" id="aclassRooqqZZ__JHU__ZgammaZZ__fast_html_aa30416438b25d5eeb9a3d7cd0ad66e0f"><div class="ttname"><a href="classRooqqZZ__JHU__ZgammaZZ__fast.html#aa30416438b25d5eeb9a3d7cd0ad66e0f">RooqqZZ_JHU_ZgammaZZ_fast::m1j</a></div><div class="ttdeci">RooRealProxy m1j</div><div class="ttdef"><b>Definition:</b> <a href="RooqqZZ__JHU__ZgammaZZ__fast_8h_source.html#l00048">RooqqZZ_JHU_ZgammaZZ_fast.h:48</a></div></div>
 <div class="ttc" id="aclassRooqqZZ__JHU__ZgammaZZ__fast_html_a0246f6c4c7fa7acd912a1dfad68483b3"><div class="ttname"><a href="classRooqqZZ__JHU__ZgammaZZ__fast.html#a0246f6c4c7fa7acd912a1dfad68483b3">RooqqZZ_JHU_ZgammaZZ_fast::h2j</a></div><div class="ttdeci">RooRealProxy h2j</div><div class="ttdef"><b>Definition:</b> <a href="RooqqZZ__JHU__ZgammaZZ__fast_8h_source.html#l00051">RooqqZZ_JHU_ZgammaZZ_fast.h:51</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_e76e844777b8919c382e03460066671c.html">interface</a></li><li class="navelem"><a class="el" href="RooqqZZ__JHU__ZgammaZZ__fast_8h.html">RooqqZZ_JHU_ZgammaZZ_fast.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>
