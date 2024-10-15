@@ -23,11 +23,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "JHUGen MELA", "index.html", [
-    [ "JHUGenMELA", "index.html", [
-      [ "Installation", "index.html#install_sec", null ],
-      [ "Previous Tutorials", "index.html#prev_tutorials", null ]
-    ] ],
-    [ "PyMela", "PyMela_page.html", "PyMela_page" ],
+    [ "Introduction", "index.html", "index" ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -72,33 +68,33 @@ var NAVTREEINDEX =
 [
 "BuildTensors_8F90.html",
 "COLLIER_8F90_source.html",
-"MELANCSpline__2D__fast_8h_source.html",
-"TCouplingsBase_8hh.html#a826ba1abcda45f509f3cb9200c15125fa81a3ca03620702dba39c2880b2cbf650",
-"TMCFM_8hh.html#a3e2a9437e77902239002c7003f9db9d2",
-"TMCFM_8hh.html#abe1b3dcbf8e3bf2e85c243d0f49ec14c",
-"TNumericUtil_8hh_source.html",
-"TensorPdfFactory_8cc_source.html",
-"classMELAHXSWidth.html#a962e4bdae075e300242d8a773fb127e0",
-"classMELANCSpline__3D__fast.html#ab406c3bb1f5a2dde82c21aeecd45239e",
-"classMela.html#a85d5445420b4799cee5f8332501aab46",
-"classRooSpinOne__7D.html#a7b225b59d70de5766375bcc01ac879db",
-"classRooTsallisExp.html",
-"classSpinZeroCouplings.html#a1eac9ef9f978c2f17795417163218fc4",
-"classTensorPdfFactory__ppHVV.html#a440e7ab8c17413cecc9cc8c975084890",
-"coli__stat_8F90.html#a8eaea7da4fedf01a262994f08942e660",
-"collier__global_8F90.html#aa203d6a14c11ad9d9d445d3e9625bbdf",
-"collier__tensors_8F90.html#aff310970e3a35e652b807c52bdc2b8d7",
-"globals_vars_w.html",
-"interfacecollier__tensors_1_1dten__cll.html#a2c316249c09565f936e77e7f52e607fd",
-"mod__Kinematics_8F90.html#a5c24ddbb3078123e2ef308664c10b76a",
-"mod__Parameters_8F90.html#a29e9ae0fafe8c5be4d3f65b3f46a1630",
-"mod__Parameters_8F90.html#a6ebd68b753434d0f40aadae3a5d4d975",
-"mod__Parameters_8F90.html#ab25730bf36fa1669616bd6fbf66f8614",
-"mod__Parameters_8F90.html#aeba7292e302d2b3f6a97af5582f95b7b",
-"namespaceTNumericUtil.html",
-"reductionC_8F90.html#a1674eaa05737b52642244de28f3c8452",
-"structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters.html#a6594543705bd78a804c77cfcc04816e7",
-"write__bindings_8py.html#ae1f79c5e058e0283eb0c5cfc30628717"
+"MELANCSpline__2D__fast_8cc_source.html",
+"MadMela_8h.html#aafde4321a69e84c557234509d9d5ef9f",
+"TCouplingsBase_8hh.html#a2848812cf31042684189138eef3fb939a372a5d295ae23c117c64a7160c92e612",
+"TMCFMUtils_8hh.html#a6063a1ddbf9725bced1b42cb62c658ca",
+"TMCFM_8hh.html#a7f2c297da5ed971c3a1a5928933858a1",
+"TMCFM_8hh.html#af4dfdea237e5a6af2b4cde8db19e7cef",
+"TVar_8hh.html#a0c6d3acf0d4f0af16181b35a88d813a1a697cce026b792eb83c62dd2477e35d2a",
+"classMELACandidate.html#af38a5ba8b2d5dd793a4939947e533949",
+"classMELANCSpline__2D__fast.html#a104d2f42152df658f52c8f8d29e75714",
+"classMela.html#a39328d800ae0c22a339a416dd8075de0",
+"classRooSpin.html#a85dba5a005573e0929329066716e16fa",
+"classRooSpinZero__3D__pp__VH.html#a85beecf8b896e2eca7f9ecd81e9dcfcd",
+"classSpinOneCouplings.html#ac2f95df73888aaa7e44b82f9973b82a1",
+"classTEvtProb.html#adce9efef7a64a9608c77ffd6b167d90f",
+"collier__aux_8F90.html#a15ded8ae4e0d5e3bc8f0f065cf836c4d",
+"collier__global_8F90.html#aaee0d3bad1dec3875c10f62ff9a11755",
+"common__coli_8h.html#af846440795bbed92d47c7c9dae9731fe",
+"group__ReferenceGroup.html#ga2a62c2a8d9fe332ae15c106cd387354e",
+"interfacecollier__tensors_1_1tnten__cll.html",
+"mod__Misc_8F90.html",
+"mod__Parameters_8F90.html#a30e15e6c861646e51c3445a52d4afcaa",
+"mod__Parameters_8F90.html#a74a99caa598c3575aa68e7226ba05f1e",
+"mod__Parameters_8F90.html#ab705d741a311746791977b2f41bc435b",
+"mod__Parameters_8F90.html#af0d04d7aae7fda34094863fb0ab9a220",
+"namespacedd__5pt.html",
+"reductionC_8F90.html#a67bf8e12b4f3bcee871090152c675f9e",
+"structTNumericUtil_1_1triplet.html#ac8bc9119e60fb92e870f50ce21a7bd5e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

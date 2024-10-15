@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -231,15 +221,15 @@ $(document).ready(function(){initNavTree('VectorPdfFactory_8h_source.html',''); 
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90">TVar::H1plus</a></div><div class="ttdeci">@ H1plus</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00149">TVar.hh:149</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90">TVar::H1plus</a></div><div class="ttdeci">@ H1plus</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00148">TVar.hh:148</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_ad215517be20ce9c23020c761554471f4"><div class="ttname"><a href="classVectorPdfFactory.html#ad215517be20ce9c23020c761554471f4">VectorPdfFactory::R1Val</a></div><div class="ttdeci">RooRealVar * R1Val</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00019">VectorPdfFactory.h:19</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_a0cc0c5311d83c5fca4c9d9f22a1c30a7"><div class="ttname"><a href="classVectorPdfFactory.html#a0cc0c5311d83c5fca4c9d9f22a1c30a7">VectorPdfFactory::~VectorPdfFactory</a></div><div class="ttdeci">~VectorPdfFactory()</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00053">VectorPdfFactory.h:53</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_a62c670ea918c85372ee30c90520cf9b7"><div class="ttname"><a href="classVectorPdfFactory.html#a62c670ea918c85372ee30c90520cf9b7">VectorPdfFactory::g1Val</a></div><div class="ttdeci">RooRealVar * g1Val</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00024">VectorPdfFactory.h:24</a></div></div>
-<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a></div><div class="ttdeci">Process</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00125">TVar.hh:125</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a></div><div class="ttdeci">Process</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00124">TVar.hh:124</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_ab30398596b9c6401884de0b895ad6b20"><div class="ttname"><a href="classVectorPdfFactory.html#ab30398596b9c6401884de0b895ad6b20">VectorPdfFactory::makePseudoZprime</a></div><div class="ttdeci">void makePseudoZprime()</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00082">VectorPdfFactory.h:82</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html"><div class="ttname"><a href="classVectorPdfFactory.html">VectorPdfFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00012">VectorPdfFactory.h:12</a></div></div>
 <div class="ttc" id="aclassRooSpinOne__7D_html_a753989b01b09753d8053df57e5862caa"><div class="ttname"><a href="classRooSpinOne__7D.html#a753989b01b09753d8053df57e5862caa">RooSpinOne_7D::setZZ4fOrdering</a></div><div class="ttdeci">void setZZ4fOrdering(Bool_t flag=true)</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinOne__7D_8cc_source.html#l00460">RooSpinOne_7D.cc:460</a></div></div>
-<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c">TVar::H1minus</a></div><div class="ttdeci">@ H1minus</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00148">TVar.hh:148</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c">TVar::H1minus</a></div><div class="ttdeci">@ H1minus</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00147">TVar.hh:147</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_a2bddde3e23536dc725562406d89a068b"><div class="ttname"><a href="classVectorPdfFactory.html#a2bddde3e23536dc725562406d89a068b">VectorPdfFactory::gamZ</a></div><div class="ttdeci">RooRealVar * gamZ</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00017">VectorPdfFactory.h:17</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_ab102cffe3e2f8df6b092c0f6493b7992"><div class="ttname"><a href="classVectorPdfFactory.html#ab102cffe3e2f8df6b092c0f6493b7992">VectorPdfFactory::aParam</a></div><div class="ttdeci">RooRealVar * aParam</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00027">VectorPdfFactory.h:27</a></div></div>
 <div class="ttc" id="aclassRooSpinOne__7D_html"><div class="ttname"><a href="classRooSpinOne__7D.html">RooSpinOne_7D</a></div><div class="ttdef"><b>Definition:</b> <a href="RooSpinOne__7D_8h_source.html#l00018">RooSpinOne_7D.h:18</a></div></div>
@@ -254,7 +244,7 @@ $(document).ready(function(){initNavTree('VectorPdfFactory_8h_source.html',''); 
 <div class="ttc" id="aTVar_8hh_html"><div class="ttname"><a href="TVar_8hh.html">TVar.hh</a></div></div>
 <div class="ttc" id="aRooSpinOne__7D_8h_html"><div class="ttname"><a href="RooSpinOne__7D_8h.html">RooSpinOne_7D.h</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_a8af07a536dac1763e5bb862bfea790fd"><div class="ttname"><a href="classVectorPdfFactory.html#a8af07a536dac1763e5bb862bfea790fd">VectorPdfFactory::mZ</a></div><div class="ttdeci">RooRealVar * mZ</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00016">VectorPdfFactory.h:16</a></div></div>
-<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5">TVar::SelfDefine_spin1</a></div><div class="ttdeci">@ SelfDefine_spin1</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00181">TVar.hh:181</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5">TVar::SelfDefine_spin1</a></div><div class="ttdeci">@ SelfDefine_spin1</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00180">TVar.hh:180</a></div></div>
 <div class="ttc" id="aclassVectorPdfFactory_html_adab5608541a1facff46a3f9fcf544c02"><div class="ttname"><a href="classVectorPdfFactory.html#adab5608541a1facff46a3f9fcf544c02">VectorPdfFactory::VectorPdfFactory</a></div><div class="ttdeci">VectorPdfFactory(RooRealVar *m1, RooRealVar *m2, RooRealVar *hs, RooRealVar *h1, RooRealVar *h2, RooRealVar *Phi, RooRealVar *Phi1, RooRealVar *mZZ)</div><div class="ttdef"><b>Definition:</b> <a href="VectorPdfFactory_8h_source.html#l00031">VectorPdfFactory.h:31</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

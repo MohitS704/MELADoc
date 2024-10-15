@@ -2,8 +2,6 @@ var namespaces_dup =
 [
     [ "AnaMelaHelpers", "namespaceAnaMelaHelpers.html", null ],
     [ "anonymous_namespace{TCouplingsBase.hh}", "namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html", null ],
-    [ "anonymous_namespace{test_JVBF.c}", "namespaceanonymous__namespace_02test__JVBF_8c_03.html", null ],
-    [ "batch", "namespacebatch.html", null ],
     [ "buildtensors", "namespacebuildtensors.html", null ],
     [ "coli_aux2", "namespacecoli__aux2.html", null ],
     [ "coli_stat", "namespacecoli__stat.html", null ],
@@ -68,7 +66,7 @@ var namespaces_dup =
     [ "hto_units", "namespacehto__units.html", null ],
     [ "hto_varflv", "namespacehto__varflv.html", null ],
     [ "inittensors", "namespaceinittensors.html", null ],
-    [ "lhefile", "namespacelhefile.html", null ],
+    [ "madMela", "namespacemadMela.html", null ],
     [ "MELAStreamHelpers", "namespaceMELAStreamHelpers.html", null ],
     [ "MELASuperMela_n", "namespaceMELASuperMela__n.html", null ],
     [ "modgraviton", "namespacemodgraviton.html", null ],
@@ -93,13 +91,10 @@ var namespaces_dup =
     [ "reductionefg", "namespacereductionefg.html", null ],
     [ "reductiontn", "namespacereductiontn.html", null ],
     [ "tensorreduction", "namespacetensorreduction.html", null ],
-    [ "testME_all", "namespacetestME__all.html", null ],
-    [ "testME_more", "namespacetestME__more.html", null ],
     [ "TJHUGenUtils", "namespaceTJHUGenUtils.html", null ],
     [ "TMCFMUtils", "namespaceTMCFMUtils.html", null ],
     [ "TNumericUtil", "namespaceTNumericUtil.html", null ],
     [ "TUtil", "namespaceTUtil.html", null ],
     [ "TUtilHelpers", "namespaceTUtilHelpers.html", null ],
-    [ "TVar", "namespaceTVar.html", null ],
-    [ "write_bindings", "namespacewrite__bindings.html", null ]
+    [ "TVar", "namespaceTVar.html", null ]
 ];

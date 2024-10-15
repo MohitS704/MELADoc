@@ -29,6 +29,7 @@ var group__coupl =
     [ "selfDHzzpcoupl", "group__coupl.html#gabe1837fec463bb6db0a9b06b2a0f99cf", null ],
     [ "selfDM_Wprime", "group__coupl.html#ga5dfc7a761cf6a244538badbb119bddd8", null ],
     [ "selfDM_Zprime", "group__coupl.html#gab6425a613f155bd0f475ac401419ee2d", null ],
+    [ "selfDSMEFTSimcoupl", "group__coupl.html#ga6da951c74b7a5d16d650fa0dbbb1f6bc", null ],
     [ "selfDWpffcoupl", "group__coupl.html#ga307367d5ff83be80ccfa9e4560507e93", null ],
     [ "selfDZpffcoupl", "group__coupl.html#ga2733b7883767858bb8eed7f30deecd37", null ],
     [ "selfDZqqcoupl", "group__coupl.html#gab85a88a939ee917faef962422de963d4", null ],

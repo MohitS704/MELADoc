@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -304,9 +294,9 @@ Functions/Subroutines</h2></td></tr>
 <tr class="separator:a66be7eda3ac69a6cc955711ff01c717e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e5125aa94301d29442d0cb9f147a2c6"><td class="memItemLeft" align="right" valign="top">real *8 function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehto__qcd.html#a9e5125aa94301d29442d0cb9f147a2c6">hto_qcd::hto_ralphas</a> (rs0, rs, als)</td></tr>
 <tr class="separator:a9e5125aa94301d29442d0cb9f147a2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c785e736bc7369175cb849be3f6e884"><td class="memItemLeft" align="right" valign="top">real *8 function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehto__qcd.html#a0c785e736bc7369175cb849be3f6e884">hto_qcd::hto_qcdlam</a> (<a class="el" href="TMCFM_8hh.html#a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea">nf</a>, als, rs, x1, x2, xacc)</td></tr>
+<tr class="memitem:a0c785e736bc7369175cb849be3f6e884"><td class="memItemLeft" align="right" valign="top">real *8 function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehto__qcd.html#a0c785e736bc7369175cb849be3f6e884">hto_qcd::hto_qcdlam</a> (<a class="el" href="TMCFM_8hh.html#a726ca809ffd3d67ab4b8476646f26635a9ef27f05549f71d70319d03789242cea">nf</a>, als, rs, x1, x2, xacc)</td></tr>
 <tr class="separator:a0c785e736bc7369175cb849be3f6e884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab62f16b48d38eb74f92b2ae5c40d3667"><td class="memItemLeft" align="right" valign="top">real *8 function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehto__qcd.html#ab62f16b48d38eb74f92b2ae5c40d3667">hto_qcd::hto_qcdscale</a> (<a class="el" href="TMCFM_8hh.html#a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea">nf</a>, als, rs, x)</td></tr>
+<tr class="memitem:ab62f16b48d38eb74f92b2ae5c40d3667"><td class="memItemLeft" align="right" valign="top">real *8 function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehto__qcd.html#ab62f16b48d38eb74f92b2ae5c40d3667">hto_qcd::hto_qcdscale</a> (<a class="el" href="TMCFM_8hh.html#a726ca809ffd3d67ab4b8476646f26635a9ef27f05549f71d70319d03789242cea">nf</a>, als, rs, x)</td></tr>
 <tr class="separator:ab62f16b48d38eb74f92b2ae5c40d3667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56727402fd2ceaa1f03af4e6415f8ae8"><td class="memItemLeft" align="right" valign="top">real *8 function, dimension(2)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehto__qcd.html#a56727402fd2ceaa1f03af4e6415f8ae8">hto_qcd::hto_run_bc</a> (scal)</td></tr>
 <tr class="separator:a56727402fd2ceaa1f03af4e6415f8ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2198,16 +2188,16 @@ Variables</h2></td></tr>
 <div class="line"><a name="l05015"></a><span class="lineno"> 5015</span>&#160;     #    - 48.d0*xz*(lbz.<a class="code" href="namespacehto__acmplx__pro.html#af81a898c1ff3e91aa0daa2eed68d8ba2">cp</a>.bz)</div>
 <div class="line"><a name="l05016"></a><span class="lineno"> 5016</span>&#160;     #   +4.d0*(1.d0+42.d0*xz)*<a class="code" href="namespacehto__units.html#adabd59fa28ad6f5d2f172ecb70d7d7f0">co</a>)/(256.d0*xw*xz*ps)</div>
 <div class="line"><a name="l05017"></a><span class="lineno"> 5017</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l05018"></a><span class="lineno"> 5018</span>&#160;      value(1,1:2)= sh(1:2)</div>
-<div class="line"><a name="l05019"></a><span class="lineno"> 5019</span>&#160;      value(2,1:2)= dmh(1:2)</div>
-<div class="line"><a name="l05020"></a><span class="lineno"> 5020</span>&#160;      value(3,1:2)= dmw(1:2)</div>
-<div class="line"><a name="l05021"></a><span class="lineno"> 5021</span>&#160;      value(4,1:2)= dmz(1:2)</div>
-<div class="line"><a name="l05022"></a><span class="lineno"> 5022</span>&#160;      value(5,1:2)= d2mh(1:2)</div>
-<div class="line"><a name="l05023"></a><span class="lineno"> 5023</span>&#160;      value(6,1:2)= dmwh(1:2)</div>
-<div class="line"><a name="l05024"></a><span class="lineno"> 5024</span>&#160;      value(7,1:2)= dmzh(1:2)</div>
-<div class="line"><a name="l05025"></a><span class="lineno"> 5025</span>&#160;      value(8,1:2)= dmzw(1:2)</div>
-<div class="line"><a name="l05026"></a><span class="lineno"> 5026</span>&#160;      value(9,1:2)= dmww(1:2)</div>
-<div class="line"><a name="l05027"></a><span class="lineno"> 5027</span>&#160;      value(10,1:2)= dmzz(1:2)</div>
+<div class="line"><a name="l05018"></a><span class="lineno"> 5018</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(1,1:2)= sh(1:2)</div>
+<div class="line"><a name="l05019"></a><span class="lineno"> 5019</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(2,1:2)= dmh(1:2)</div>
+<div class="line"><a name="l05020"></a><span class="lineno"> 5020</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(3,1:2)= dmw(1:2)</div>
+<div class="line"><a name="l05021"></a><span class="lineno"> 5021</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(4,1:2)= dmz(1:2)</div>
+<div class="line"><a name="l05022"></a><span class="lineno"> 5022</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(5,1:2)= d2mh(1:2)</div>
+<div class="line"><a name="l05023"></a><span class="lineno"> 5023</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(6,1:2)= dmwh(1:2)</div>
+<div class="line"><a name="l05024"></a><span class="lineno"> 5024</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(7,1:2)= dmzh(1:2)</div>
+<div class="line"><a name="l05025"></a><span class="lineno"> 5025</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(8,1:2)= dmzw(1:2)</div>
+<div class="line"><a name="l05026"></a><span class="lineno"> 5026</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(9,1:2)= dmww(1:2)</div>
+<div class="line"><a name="l05027"></a><span class="lineno"> 5027</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>(10,1:2)= dmzz(1:2)</div>
 <div class="line"><a name="l05028"></a><span class="lineno"> 5028</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l05029"></a><span class="lineno"> 5029</span>&#160;      <span class="keywordflow">RETURN</span></div>
 <div class="line"><a name="l05030"></a><span class="lineno"> 5030</span>&#160;<span class="comment">*</span></div>
@@ -5022,6 +5012,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespacehto__masses_html_a30fa4fc095ad54faf010092d8b11677f"><div class="ttname"><a href="namespacehto__masses.html#a30fa4fc095ad54faf010092d8b11677f">hto_masses::mm</a></div><div class="ttdeci">real *8, parameter mm</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00078">CALLING_cpHTO.f:78</a></div></div>
 <div class="ttc" id="anamespacehto__aux__hcp_html_a7b4a7e9b38657664b4b670df637ddc60"><div class="ttname"><a href="namespacehto__aux__hcp.html#a7b4a7e9b38657664b4b670df637ddc60">hto_aux_hcp::cxtmbs</a></div><div class="ttdeci">real *8 cxtmbs</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00062">CALLING_cpHTO.f:62</a></div></div>
 <div class="ttc" id="anamespacehto__cmplx__root_html_ae578bce5d1d81e9da1e7467d56c0c726"><div class="ttname"><a href="namespacehto__cmplx__root.html#ae578bce5d1d81e9da1e7467d56c0c726">hto_cmplx_root::cr</a></div><div class="ttdeci">real *8 function, dimension(2) cr(x, ep)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00665">CALLING_cpHTO.f:665</a></div></div>
+<div class="ttc" id="aoutput_8txt_html_a14cbf2c203e363db8f9aaf1d15b93e1d"><div class="ttname"><a href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a></div><div class="ttdeci">pymela::gHIGGS_KAPPA value(&quot;gHIGGS_KAPPA_TILDE&quot;, pymela::gHIGGS_KAPPA_TILDE) .value(&quot;SIZE_HQQ&quot;</div></div>
 <div class="ttc" id="anamespacehto__asinp_html_a4579954aaddfa1420d3f1132cb9a11dd"><div class="ttname"><a href="namespacehto__asinp.html#a4579954aaddfa1420d3f1132cb9a11dd">hto_asinp::m20</a></div><div class="ttdeci">real *8 m20</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l02062">CALLING_cpHTO.f:2062</a></div></div>
 <div class="ttc" id="anamespacehto__acmplx__pro_html"><div class="ttname"><a href="namespacehto__acmplx__pro.html">hto_acmplx_pro</a></div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00257">CALLING_cpHTO.f:257</a></div></div>
 <div class="ttc" id="anamespacehto__aux__hcp_html_a633c5e4dcba2551dd869132792fdeda0"><div class="ttname"><a href="namespacehto__aux__hcp.html#a633c5e4dcba2551dd869132792fdeda0">hto_aux_hcp::xq</a></div><div class="ttdeci">real *8 xq</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00062">CALLING_cpHTO.f:62</a></div></div>

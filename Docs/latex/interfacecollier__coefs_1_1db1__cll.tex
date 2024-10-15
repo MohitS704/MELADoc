@@ -1,132 +1,0 @@
-\hypertarget{interfacecollier__coefs_1_1db1__cll}{}\doxysection{collier\+\_\+coefs\+::db1\+\_\+cll Interface Reference}
-\label{interfacecollier__coefs_1_1db1__cll}\index{collier\_coefs::db1\_cll@{collier\_coefs::db1\_cll}}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1db1__cll_a13d3459985ce46638ba7747229abb644}{db1\+\_\+main\+\_\+cll}} (D\+B1, p10, m02, m12)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1db1__cll_ab59265903249f800d9c5ecd6310bd896}{db1\+\_\+arrays\+\_\+cll}} (D\+B1, Mom\+Inv, masses2)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 111 of file collier\+\_\+coefs.\+F90.
-
-
-
-\doxysubsection{Member Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1db1__cll_ab59265903249f800d9c5ecd6310bd896}\label{interfacecollier__coefs_1_1db1__cll_ab59265903249f800d9c5ecd6310bd896}} 
-\index{collier\_coefs::db1\_cll@{collier\_coefs::db1\_cll}!db1\_arrays\_cll@{db1\_arrays\_cll}}
-\index{db1\_arrays\_cll@{db1\_arrays\_cll}!collier\_coefs::db1\_cll@{collier\_coefs::db1\_cll}}
-\doxysubsubsection{\texorpdfstring{db1\_arrays\_cll()}{db1\_arrays\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::db1\+\_\+cll\+::db1\+\_\+arrays\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, intent(out)}]{D\+B1,  }\item[{double complex, dimension(1), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:1), intent(in)}]{masses2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5485 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5485   }
-\DoxyCodeLine{5486     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(1), masses2(0:1)}
-\DoxyCodeLine{5487     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: DB1}
-\DoxyCodeLine{5488     }
-\DoxyCodeLine{5489     \textcolor{keyword}{call }db1\_main\_cll(db1,mominv(1),masses2(0),masses2(1))}
-\DoxyCodeLine{5490 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1db1__cll_a13d3459985ce46638ba7747229abb644}\label{interfacecollier__coefs_1_1db1__cll_a13d3459985ce46638ba7747229abb644}} 
-\index{collier\_coefs::db1\_cll@{collier\_coefs::db1\_cll}!db1\_main\_cll@{db1\_main\_cll}}
-\index{db1\_main\_cll@{db1\_main\_cll}!collier\_coefs::db1\_cll@{collier\_coefs::db1\_cll}}
-\doxysubsubsection{\texorpdfstring{db1\_main\_cll()}{db1\_main\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::db1\+\_\+cll\+::db1\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, intent(out)}]{D\+B1,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5399 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5399   }
-\DoxyCodeLine{5400     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,m02,m12}
-\DoxyCodeLine{5401     \textcolor{keywordtype}{double precision} :: q10}
-\DoxyCodeLine{5402     \textcolor{keywordtype}{double complex} :: mm02,mm12}
-\DoxyCodeLine{5403     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: DB1}
-\DoxyCodeLine{5404     \textcolor{keywordtype}{double complex} :: DB0dd, DB1dd }
-\DoxyCodeLine{5405     \textcolor{keywordtype}{double complex} :: DB1\_coli}
-\DoxyCodeLine{5406     \textcolor{keywordtype}{double complex} :: args(3)}
-\DoxyCodeLine{5407     \textcolor{keywordtype}{double complex} :: DBdduv(0:1,0:1)}
-\DoxyCodeLine{5408     \textcolor{keywordtype}{double complex} :: DBdd(0:1,0:1)}
-\DoxyCodeLine{5409     \textcolor{keywordtype}{integer} :: errflag}
-\DoxyCodeLine{5410 }
-\DoxyCodeLine{5411     \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{5412     args(1) = p10}
-\DoxyCodeLine{5413     args(2) = m02}
-\DoxyCodeLine{5414     args(3) = m12}
-\DoxyCodeLine{5415     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'DB1\_cll'})}
-\DoxyCodeLine{5416     \textcolor{keyword}{call }setmastern\_cll(2)}
-\DoxyCodeLine{5417     \textcolor{keyword}{call }setmasterr\_cll(1)}
-\DoxyCodeLine{5418     \textcolor{keyword}{call }setmasterargs\_cll(3,args)}
-\DoxyCodeLine{5419 }
-\DoxyCodeLine{5420 }
-\DoxyCodeLine{5421     \textcolor{keywordflow}{select case} (mode\_cll)}
-\DoxyCodeLine{5422 }
-\DoxyCodeLine{5423       \textcolor{keywordflow}{case} (1)}
-\DoxyCodeLine{5424         \textcolor{comment}{! calculate loop integral using}}
-\DoxyCodeLine{5425         \textcolor{comment}{! COLI implementation by AD/LH}}
-\DoxyCodeLine{5426 }
-\DoxyCodeLine{5427         db1 = db1\_coli(p10,m02,m12)}
-\DoxyCodeLine{5428 }
-\DoxyCodeLine{5429 }
-\DoxyCodeLine{5430       \textcolor{keywordflow}{case} (2)}
-\DoxyCodeLine{5431         \textcolor{comment}{! calculate loop integral using}}
-\DoxyCodeLine{5432         \textcolor{comment}{! DD implementation by SD}}
-\DoxyCodeLine{5433 }
-\DoxyCodeLine{5434         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
-\DoxyCodeLine{5435         q10 = dreal(getminf2dd\_cll(p10))}
-\DoxyCodeLine{5436         mm02 = getminf2dd\_cll(m02)}
-\DoxyCodeLine{5437         mm12 = getminf2dd\_cll(m12)}
-\DoxyCodeLine{5438 }
-\DoxyCodeLine{5439         use\_cache\_system=.false.}
-\DoxyCodeLine{5440         \textcolor{keyword}{call }db\_dd(dbdd,dbdduv,q10,mm02,mm12,1)}
-\DoxyCodeLine{5441         use\_cache\_system=use\_cache\_system\_save}
-\DoxyCodeLine{5442         db1 = dbdd(0,1)}
-\DoxyCodeLine{5443 }
-\DoxyCodeLine{5444 }
-\DoxyCodeLine{5445       \textcolor{keywordflow}{case} (3)}
-\DoxyCodeLine{5446         \textcolor{comment}{! cross-\/check mode}}
-\DoxyCodeLine{5447         \textcolor{comment}{! compare results for loop integral}}
-\DoxyCodeLine{5448         \textcolor{comment}{! from COLI implementation by AD/LH and}}
-\DoxyCodeLine{5449         \textcolor{comment}{! from DD implementation by SD}}
-\DoxyCodeLine{5450 }
-\DoxyCodeLine{5451         \textcolor{comment}{! calculate loop integral using COLI}}
-\DoxyCodeLine{5452         db1 = db1\_coli(p10,m02,m12)}
-\DoxyCodeLine{5453 }
-\DoxyCodeLine{5454         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
-\DoxyCodeLine{5455         q10 = dreal(getminf2dd\_cll(p10))}
-\DoxyCodeLine{5456         mm02 = getminf2dd\_cll(m02)}
-\DoxyCodeLine{5457         mm12 = getminf2dd\_cll(m12)}
-\DoxyCodeLine{5458 }
-\DoxyCodeLine{5459         use\_cache\_system=.false.}
-\DoxyCodeLine{5460         \textcolor{keyword}{call }db\_dd(dbdd,dbdduv,q10,mm02,mm12,1)}
-\DoxyCodeLine{5461         use\_cache\_system=use\_cache\_system\_save}
-\DoxyCodeLine{5462         db1dd = dbdd(0,1)}
-\DoxyCodeLine{5463 }
-\DoxyCodeLine{5464         \textcolor{comment}{! cross-\/check}}
-\DoxyCodeLine{5465         \textcolor{keyword}{call }checkcoefsdbr\_cll(db1,db1dd,p10,m02,m12,1)}
-\DoxyCodeLine{5466 }
-\DoxyCodeLine{5467 }
-\DoxyCodeLine{5468     \textcolor{keyword}{end }select}
-\DoxyCodeLine{5469 }
-\DoxyCodeLine{5470     \textcolor{keyword}{call }propagateerrflag\_cll      }
-\DoxyCodeLine{5471 }
-\DoxyCodeLine{5472 }
-
-\end{DoxyCode}
-
-
-The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__coefs_8F90}{collier\+\_\+coefs.\+F90}}\end{DoxyCompactItemize}

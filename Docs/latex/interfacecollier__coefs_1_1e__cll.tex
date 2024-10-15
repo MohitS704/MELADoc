@@ -1,514 +1,0 @@
-\hypertarget{interfacecollier__coefs_1_1e__cll}{}\doxysection{collier\+\_\+coefs\+::e\+\_\+cll Interface Reference}
-\label{interfacecollier__coefs_1_1e__cll}\index{collier\_coefs::e\_cll@{collier\_coefs::e\_cll}}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1e__cll_aa7f0e85b6d6487e54d93abdb467831c3}{e\+\_\+main\+\_\+cll}} (E, Euv, p10, p21, p32, p43, p40, p20, p31, p42, p30, p41, m02, m12, m22, m32, m42, rmax, Eerr, id\+\_\+in, Eerr2)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1e__cll_a762dd743df2f206c06b01043883aa451}{e\+\_\+arrays\+\_\+cll}} (E, Euv, Mom\+Inv, masses2, rmax, Eerr, Eerr2)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1e__cll_a4fe9cda56757bfbcc665225fc3a30e8b}{e\+\_\+list\+\_\+cll}} (E, Euv, p10, p21, p32, p43, p40, p20, p31, p42, p30, p41, m02, m12, m22, m32, m42, rmax, Eerr, Eerr2)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1e__cll_a264f242693093a970c0f004987536060}{e\+\_\+arrays\+\_\+list\+\_\+cll}} (E, Euv, Mom\+Inv, masses2, rmax, Eerr, Eerr2)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 58 of file collier\+\_\+coefs.\+F90.
-
-
-
-\doxysubsection{Member Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1e__cll_a762dd743df2f206c06b01043883aa451}\label{interfacecollier__coefs_1_1e__cll_a762dd743df2f206c06b01043883aa451}} 
-\index{collier\_coefs::e\_cll@{collier\_coefs::e\_cll}!e\_arrays\_cll@{e\_arrays\_cll}}
-\index{e\_arrays\_cll@{e\_arrays\_cll}!collier\_coefs::e\_cll@{collier\_coefs::e\_cll}}
-\doxysubsubsection{\texorpdfstring{e\_arrays\_cll()}{e\_arrays\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::e\+\_\+cll\+::e\+\_\+arrays\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{E,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Euv,  }\item[{double complex, dimension(10), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:4), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 2137 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2137   }
-\DoxyCodeLine{2138     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{2139     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(10), masses2(0:4)}
-\DoxyCodeLine{2140     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: E(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{2141     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Euv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{2142     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Eerr(0:rmax),Eerr2(0:rmax)}
-\DoxyCodeLine{2143     \textcolor{keywordtype}{double precision} :: Eerraux(0:rmax),Eerr2aux(0:rmax)}
-\DoxyCodeLine{2144     }
-\DoxyCodeLine{2145     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr)) then}
-\DoxyCodeLine{2146       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr2)) then}
-\DoxyCodeLine{2147         \textcolor{keyword}{call }e\_main\_cll(e,euv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),  \&}
-\DoxyCodeLine{2148             mominv(6),mominv(7),mominv(8),mominv(9),mominv(10), \&}
-\DoxyCodeLine{2149             masses2(0),masses2(1),masses2(2),masses2(3),masses2(4),rmax,eerr,eerr2=eerr2)}
-\DoxyCodeLine{2150       else}
-\DoxyCodeLine{2151         \textcolor{keyword}{call }e\_main\_cll(e,euv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),  \&}
-\DoxyCodeLine{2152             mominv(6),mominv(7),mominv(8),mominv(9),mominv(10), \&}
-\DoxyCodeLine{2153             masses2(0),masses2(1),masses2(2),masses2(3),masses2(4),rmax,eerr)}
-\DoxyCodeLine{2154       \textcolor{keyword}{end }if}
-\DoxyCodeLine{2155     else}
-\DoxyCodeLine{2156       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr2)) then}
-\DoxyCodeLine{2157         \textcolor{keyword}{call }e\_main\_cll(e,euv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),  \&}
-\DoxyCodeLine{2158             mominv(6),mominv(7),mominv(8),mominv(9),mominv(10), \&}
-\DoxyCodeLine{2159             masses2(0),masses2(1),masses2(2),masses2(3),masses2(4),rmax,eerraux,eerr2=eerr2)}
-\DoxyCodeLine{2160       else}
-\DoxyCodeLine{2161         \textcolor{keyword}{call }e\_main\_cll(e,euv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),  \&}
-\DoxyCodeLine{2162             mominv(6),mominv(7),mominv(8),mominv(9),mominv(10), \&}
-\DoxyCodeLine{2163             masses2(0),masses2(1),masses2(2),masses2(3),masses2(4),rmax,eerraux)}
-\DoxyCodeLine{2164       \textcolor{keyword}{end }if}
-\DoxyCodeLine{2165     \textcolor{keyword}{end }if}
-\DoxyCodeLine{2166 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1e__cll_a264f242693093a970c0f004987536060}\label{interfacecollier__coefs_1_1e__cll_a264f242693093a970c0f004987536060}} 
-\index{collier\_coefs::e\_cll@{collier\_coefs::e\_cll}!e\_arrays\_list\_cll@{e\_arrays\_list\_cll}}
-\index{e\_arrays\_list\_cll@{e\_arrays\_list\_cll}!collier\_coefs::e\_cll@{collier\_coefs::e\_cll}}
-\doxysubsubsection{\texorpdfstring{e\_arrays\_list\_cll()}{e\_arrays\_list\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::e\+\_\+cll\+::e\+\_\+arrays\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{E,  }\item[{double complex, dimension(\+:), intent(out)}]{Euv,  }\item[{double complex, dimension(10), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:4), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 2276 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2276   }
-\DoxyCodeLine{2277     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{2278     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(10), masses2(0:4)}
-\DoxyCodeLine{2279     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: E(:),Euv(:)}
-\DoxyCodeLine{2280     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Eerr(0:rmax),Eerr2(0:rmax)}
-\DoxyCodeLine{2281     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{2282     }
-\DoxyCodeLine{2283     \textcolor{keywordflow}{if} (5.gt.nmax\_cll) then}
-\DoxyCodeLine{2284       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{2285       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 5'},eflag,.true.)}
-\DoxyCodeLine{2286       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{2287       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 5'}}
-\DoxyCodeLine{2288       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{2289       return}
-\DoxyCodeLine{2290 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{2291     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{2292       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{2293       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{2294       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{2295       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{2296       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{2297       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{2298       return}
-\DoxyCodeLine{2299 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{2300 }
-\DoxyCodeLine{2301     \textcolor{keyword}{call }e\_arrays\_list\_checked\_cll(e,euv,mominv,masses2,rmax,eerr,eerr2)}
-\DoxyCodeLine{2302   }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1e__cll_a4fe9cda56757bfbcc665225fc3a30e8b}\label{interfacecollier__coefs_1_1e__cll_a4fe9cda56757bfbcc665225fc3a30e8b}} 
-\index{collier\_coefs::e\_cll@{collier\_coefs::e\_cll}!e\_list\_cll@{e\_list\_cll}}
-\index{e\_list\_cll@{e\_list\_cll}!collier\_coefs::e\_cll@{collier\_coefs::e\_cll}}
-\doxysubsubsection{\texorpdfstring{e\_list\_cll()}{e\_list\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::e\+\_\+cll\+::e\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{E,  }\item[{double complex, dimension(\+:), intent(out)}]{Euv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 2182 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2182   }
-\DoxyCodeLine{2183     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{2184     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p40,p20,p31,p42,p30,p41}
-\DoxyCodeLine{2185     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42}
-\DoxyCodeLine{2186     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: E(:),Euv(:)}
-\DoxyCodeLine{2187     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Eerr(0:rmax),Eerr2(0:rmax)}
-\DoxyCodeLine{2188     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{2189     }
-\DoxyCodeLine{2190     \textcolor{keywordflow}{if} (5.gt.nmax\_cll) then}
-\DoxyCodeLine{2191       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{2192       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 5'},eflag,.true.)}
-\DoxyCodeLine{2193       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{2194       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 5'}}
-\DoxyCodeLine{2195       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{2196       return}
-\DoxyCodeLine{2197 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{2198     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{2199       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{2200       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{2201       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{2202       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{2203       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{2204       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{2205       return}
-\DoxyCodeLine{2206     \textcolor{keyword}{end }if}
-\DoxyCodeLine{2207     }
-\DoxyCodeLine{2208     \textcolor{keyword}{call }e\_list\_checked\_cll(e,euv,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41,  \&}
-\DoxyCodeLine{2209                                m02,m12,m22,m32,m42,rmax,eerr,eerr2)}
-\DoxyCodeLine{2210   }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1e__cll_aa7f0e85b6d6487e54d93abdb467831c3}\label{interfacecollier__coefs_1_1e__cll_aa7f0e85b6d6487e54d93abdb467831c3}} 
-\index{collier\_coefs::e\_cll@{collier\_coefs::e\_cll}!e\_main\_cll@{e\_main\_cll}}
-\index{e\_main\_cll@{e\_main\_cll}!collier\_coefs::e\_cll@{collier\_coefs::e\_cll}}
-\doxysubsubsection{\texorpdfstring{e\_main\_cll()}{e\_main\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::e\+\_\+cll\+::e\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{E,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Euv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr,  }\item[{integer, intent(in), optional}]{id\+\_\+in,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Eerr2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 1780 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1780   }
-\DoxyCodeLine{1781     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{1782     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p40,p20,p31,p42,p30,p41}
-\DoxyCodeLine{1783     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42}
-\DoxyCodeLine{1784     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: E(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{1785     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Euv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{1786     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Eerr(0:rmax),Eerr2(0:rmax)}
-\DoxyCodeLine{1787     \textcolor{keywordtype}{double precision} :: q10,q21,q32,q43,q40,q20,q31,q42,q30,q41}
-\DoxyCodeLine{1788     \textcolor{keywordtype}{double complex} :: mm02,mm12,mm22,mm32,mm42}
-\DoxyCodeLine{1789     \textcolor{keywordtype}{double precision} :: Eerraux(0:rmax),Eerr2aux(0:rmax),Ediff(0:rmax)}
-\DoxyCodeLine{1790     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)} :: id\_in   }
-\DoxyCodeLine{1791     \textcolor{keywordtype}{double complex} :: E2uv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax) }
-\DoxyCodeLine{1792     \textcolor{keywordtype}{double complex} :: E2(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax) }
-\DoxyCodeLine{1793     \textcolor{keywordtype}{double complex} :: Edd(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{1794     \textcolor{keywordtype}{double complex} :: elimcminf2}
-\DoxyCodeLine{1795     \textcolor{keywordtype}{double complex} :: args(15)}
-\DoxyCodeLine{1796     \textcolor{keywordtype}{integer} :: n0,rank,errflag,id}
-\DoxyCodeLine{1797     \textcolor{keywordtype}{double precision} :: accrelDD(0:rmax\_DD),accabsDD(0:rmax\_DD),Eacc(0:rmax),norm,norm\_coli,norm\_dd,Eacc2(0:rmax)}
-\DoxyCodeLine{1798     \textcolor{keywordtype}{double precision} :: accrel2DD(0:rmax\_DD),accabs2DD(0:rmax\_DD)}
-\DoxyCodeLine{1799     \textcolor{keywordtype}{integer} :: accflagDD,errflagDD,NDD,rankDD}
-\DoxyCodeLine{1800     \textcolor{keywordtype}{logical} :: mflag,eflag}
-\DoxyCodeLine{1801     \textcolor{keywordtype}{integer} :: r,n1,n2,n3,n4}
-\DoxyCodeLine{1802 }
-\DoxyCodeLine{1803     \textcolor{keywordflow}{if} (5.gt.nmax\_cll) then}
-\DoxyCodeLine{1804       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{1805       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 5'},eflag,.true.)}
-\DoxyCodeLine{1806       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{1807       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 5'}}
-\DoxyCodeLine{1808       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{1809       return}
-\DoxyCodeLine{1810 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{1811     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{1812       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{1813       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{1814       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{1815       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{1816       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{1817       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{1818       return}
-\DoxyCodeLine{1819 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{1820 }
-\DoxyCodeLine{1821     mflag=.true.}
-\DoxyCodeLine{1822     \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(id\_in)) then}
-\DoxyCodeLine{1823       mflag=.false.}
-\DoxyCodeLine{1824       id = id\_in}
-\DoxyCodeLine{1825     else}
-\DoxyCodeLine{1826       id = 0}
-\DoxyCodeLine{1827     \textcolor{keyword}{end }if}
-\DoxyCodeLine{1828 }
-\DoxyCodeLine{1829     \textcolor{keywordflow}{if} (mflag) then}
-\DoxyCodeLine{1830       \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{1831       args(1) = p10}
-\DoxyCodeLine{1832       args(2) = p21}
-\DoxyCodeLine{1833       args(3) = p32}
-\DoxyCodeLine{1834       args(4) = p43}
-\DoxyCodeLine{1835       args(5) = p40}
-\DoxyCodeLine{1836       args(6) = p20}
-\DoxyCodeLine{1837       args(7) = p31}
-\DoxyCodeLine{1838       args(8) = p42}
-\DoxyCodeLine{1839       args(9) = p30}
-\DoxyCodeLine{1840       args(10) = p41}
-\DoxyCodeLine{1841       args(11) = m02}
-\DoxyCodeLine{1842       args(12) = m12}
-\DoxyCodeLine{1843       args(13) = m22}
-\DoxyCodeLine{1844       args(14) = m32}
-\DoxyCodeLine{1845       args(15) = m42}
-\DoxyCodeLine{1846       \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'E\_cll'})}
-\DoxyCodeLine{1847       \textcolor{keyword}{call }setmastern\_cll(5)}
-\DoxyCodeLine{1848       \textcolor{keyword}{call }setmasterr\_cll(rmax)}
-\DoxyCodeLine{1849       \textcolor{keyword}{call }setmasterargs\_cll(15,args)}
-\DoxyCodeLine{1850 }
-\DoxyCodeLine{1851       \textcolor{keyword}{call }settencache\_cll(never\_tenred\_cll)}
-\DoxyCodeLine{1852     \textcolor{keyword}{end }if}
-\DoxyCodeLine{1853 }
-\DoxyCodeLine{1854 }
-\DoxyCodeLine{1855     \textcolor{keywordflow}{select case} (mode\_cll)}
-\DoxyCodeLine{1856 }
-\DoxyCodeLine{1857       \textcolor{keywordflow}{case} (1)}
-\DoxyCodeLine{1858         \textcolor{comment}{! calculate loop integral using}}
-\DoxyCodeLine{1859         \textcolor{comment}{! COLI implementation by AD/LH}}
-\DoxyCodeLine{1860 }
-\DoxyCodeLine{1861         \textcolor{keyword}{call }calce(e,euv,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}
-\DoxyCodeLine{1862             m02,m12,m22,m32,m42,rmax,id,eerraux,eerr2aux)}
-\DoxyCodeLine{1863 }
-\DoxyCodeLine{1864         norm = abs(e(0,0,0,0,0))}
-\DoxyCodeLine{1865         \textcolor{keywordflow}{do} r=1,rmax}
-\DoxyCodeLine{1866           \textcolor{keywordflow}{do} n1=0,r}
-\DoxyCodeLine{1867             \textcolor{keywordflow}{do} n2=0,r-\/n1}
-\DoxyCodeLine{1868               \textcolor{keywordflow}{do} n3=0,r-\/n1-\/n2}
-\DoxyCodeLine{1869                 n4=r-\/n1-\/n2-\/n3}
-\DoxyCodeLine{1870                 norm =  max(norm,abs(e(0,n1,n2,n3,n4)))}
-\DoxyCodeLine{1871               \textcolor{keyword}{end }do}
-\DoxyCodeLine{1872             \textcolor{keyword}{end }do}
-\DoxyCodeLine{1873           \textcolor{keyword}{end }do}
-\DoxyCodeLine{1874         \textcolor{keyword}{end }do}
-\DoxyCodeLine{1875         \textcolor{keywordflow}{if} (norm.eq.0d0) then}
-\DoxyCodeLine{1876           norm = max(abs(p10),abs(p21),abs(p32),abs(p43),abs(p40), \&}
-\DoxyCodeLine{1877                       abs(p20),abs(p31),abs(p42),abs(p30),abs(p41), \&}
-\DoxyCodeLine{1878                     abs(m02),abs(m12),abs(m22),abs(m32),abs(m42))}
-\DoxyCodeLine{1879           \textcolor{keywordflow}{if}(norm.ne.0d0) then}
-\DoxyCodeLine{1880             norm=1d0/norm**3}
-\DoxyCodeLine{1881           else}
-\DoxyCodeLine{1882             norm=1d0/muir2\_cll**3}
-\DoxyCodeLine{1883 \textcolor{keywordflow}{          end if} }
-\DoxyCodeLine{1884         \textcolor{keyword}{end }if}
-\DoxyCodeLine{1885         \textcolor{keywordflow}{if} (norm.ne.0d0) then}
-\DoxyCodeLine{1886           eacc = eerraux/norm       }
-\DoxyCodeLine{1887           eacc2 = eerr2aux/norm}
-\DoxyCodeLine{1888         else}
-\DoxyCodeLine{1889           eacc = 0d0}
-\DoxyCodeLine{1890           eacc2 = 0d0}
-\DoxyCodeLine{1891         \textcolor{keyword}{end }if}
-\DoxyCodeLine{1892 }
-\DoxyCodeLine{1893         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr)) eerr = eerraux}
-\DoxyCodeLine{1894         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr2)) eerr2 = eerr2aux}
-\DoxyCodeLine{1895 }
-\DoxyCodeLine{1896         \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateaccflag\_cll(eacc,rmax)            }
-\DoxyCodeLine{1897 }
-\DoxyCodeLine{1898 }
-\DoxyCodeLine{1899       \textcolor{keywordflow}{case} (2)}
-\DoxyCodeLine{1900         \textcolor{comment}{! calculate loop integral using}}
-\DoxyCodeLine{1901         \textcolor{comment}{! DD implementation by SD}}
-\DoxyCodeLine{1902 }
-\DoxyCodeLine{1903         \textcolor{keywordflow}{if} (rmax.gt.5) then}
-\DoxyCodeLine{1904           \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{1905           \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'rank higher than maximum rank implemented in DD library'},eflag)}
-\DoxyCodeLine{1906           \textcolor{keywordflow}{if}(eflag) then}
-\DoxyCodeLine{1907             \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'E\_cll: 5-\/point function of rank>5 not implemented in DD library'}}
-\DoxyCodeLine{1908           \textcolor{keyword}{end }if}
-\DoxyCodeLine{1909         \textcolor{keyword}{end }if}
-\DoxyCodeLine{1910 }
-\DoxyCodeLine{1911 }
-\DoxyCodeLine{1912         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
-\DoxyCodeLine{1913         q10 = dreal(getminf2dd\_cll(p10))}
-\DoxyCodeLine{1914         q21 = dreal(getminf2dd\_cll(p21))}
-\DoxyCodeLine{1915         q32 = dreal(getminf2dd\_cll(p32))}
-\DoxyCodeLine{1916         q43 = dreal(getminf2dd\_cll(p43))}
-\DoxyCodeLine{1917         q40 = dreal(getminf2dd\_cll(p40))}
-\DoxyCodeLine{1918         q20 = dreal(getminf2dd\_cll(p20))}
-\DoxyCodeLine{1919         q31 = dreal(getminf2dd\_cll(p31))}
-\DoxyCodeLine{1920         q42 = dreal(getminf2dd\_cll(p42))}
-\DoxyCodeLine{1921         q30 = dreal(getminf2dd\_cll(p30))}
-\DoxyCodeLine{1922         q41 = dreal(getminf2dd\_cll(p41))}
-\DoxyCodeLine{1923         mm02 = getminf2dd\_cll(m02)}
-\DoxyCodeLine{1924         mm12 = getminf2dd\_cll(m12)}
-\DoxyCodeLine{1925         mm22 = getminf2dd\_cll(m22)}
-\DoxyCodeLine{1926         mm32 = getminf2dd\_cll(m32)}
-\DoxyCodeLine{1927         mm42 = getminf2dd\_cll(m42)}
-\DoxyCodeLine{1928 }
-\DoxyCodeLine{1929         rank = rmax}
-\DoxyCodeLine{1930         \textcolor{keyword}{call }e\_dd(edd,q10,q21,q32,q43,q40,q20,q31,q42,q30,q41,  \&}
-\DoxyCodeLine{1931                   mm02,mm12,mm22,mm32,mm42,rank,id)  }
-\DoxyCodeLine{1932         e(0:rank/2,0:rank,0:rank,0:rank,0:rank) = edd(0:rank/2,0:rank,0:rank,0:rank,0:rank)}
-\DoxyCodeLine{1933         euv = 0d0}
-\DoxyCodeLine{1934 }
-\DoxyCodeLine{1935         \textcolor{keyword}{call }ddgetacc(accreldd,accabsdd,accrel2dd,accabs2dd,ndd,rankdd,accflagdd,errflagdd,id)}
-\DoxyCodeLine{1936         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr)) eerr(0:rmax) = accabsdd(0:rmax)}
-\DoxyCodeLine{1937         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr2)) eerr2(0:rmax) = accabs2dd(0:rmax)}
-\DoxyCodeLine{1938         }
-\DoxyCodeLine{1939         norm = abs(e(0,0,0,0,0))}
-\DoxyCodeLine{1940         \textcolor{keywordflow}{do} r=1,rmax}
-\DoxyCodeLine{1941           \textcolor{keywordflow}{do} n1=0,r}
-\DoxyCodeLine{1942             \textcolor{keywordflow}{do} n2=0,r-\/n1}
-\DoxyCodeLine{1943               \textcolor{keywordflow}{do} n3=0,r-\/n1-\/n2}
-\DoxyCodeLine{1944                 n4=r-\/n1-\/n2-\/n3}
-\DoxyCodeLine{1945                 norm =  max(norm,abs(e(0,n1,n2,n3,n4)))}
-\DoxyCodeLine{1946               \textcolor{keyword}{end }do}
-\DoxyCodeLine{1947             \textcolor{keyword}{end }do}
-\DoxyCodeLine{1948           \textcolor{keyword}{end }do}
-\DoxyCodeLine{1949         \textcolor{keyword}{end }do}
-\DoxyCodeLine{1950         \textcolor{keywordflow}{if} (norm.eq.0d0) then}
-\DoxyCodeLine{1951           norm = max(abs(p10),abs(p21),abs(p32),abs(p43),abs(p40), \&}
-\DoxyCodeLine{1952                       abs(p20),abs(p31),abs(p42),abs(p30),abs(p41), \&}
-\DoxyCodeLine{1953                     abs(m02),abs(m12),abs(m22),abs(m32),abs(m42))}
-\DoxyCodeLine{1954           \textcolor{keywordflow}{if}(norm.ne.0d0) then}
-\DoxyCodeLine{1955             norm=1d0/norm**3}
-\DoxyCodeLine{1956           else}
-\DoxyCodeLine{1957             norm=1d0/muir2\_cll**3}
-\DoxyCodeLine{1958 \textcolor{keywordflow}{          end if} }
-\DoxyCodeLine{1959         \textcolor{keyword}{end }if}
-\DoxyCodeLine{1960         \textcolor{keywordflow}{if} (norm.ne.0d0) then}
-\DoxyCodeLine{1961           eacc = accabsdd(0:rmax)/norm       }
-\DoxyCodeLine{1962           eacc2 = accabs2dd(0:rmax)/norm}
-\DoxyCodeLine{1963         else}
-\DoxyCodeLine{1964           eacc = 0d0}
-\DoxyCodeLine{1965           eacc2 = 0d0}
-\DoxyCodeLine{1966         \textcolor{keyword}{end }if}
-\DoxyCodeLine{1967         \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateaccflag\_cll(eacc,rmax)}
-\DoxyCodeLine{1968 }
-\DoxyCodeLine{1969         }
-\DoxyCodeLine{1970       \textcolor{keywordflow}{case} (3)}
-\DoxyCodeLine{1971         \textcolor{comment}{! cross-\/check mode}}
-\DoxyCodeLine{1972         \textcolor{comment}{! compare results for loop integral}}
-\DoxyCodeLine{1973 }
-\DoxyCodeLine{1974 }
-\DoxyCodeLine{1975         \textcolor{comment}{! from COLI implementation by AD/LH and}}
-\DoxyCodeLine{1976         \textcolor{comment}{! from DD implementation by SD}}
-\DoxyCodeLine{1977 }
-\DoxyCodeLine{1978         \textcolor{comment}{! calculate loop integral}}
-\DoxyCodeLine{1979         \textcolor{keyword}{call }calce(e,euv,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}
-\DoxyCodeLine{1980             m02,m12,m22,m32,m42,rmax,id,eerraux,eerr2aux)           }
-\DoxyCodeLine{1981 }
-\DoxyCodeLine{1982 }
-\DoxyCodeLine{1983         \textcolor{comment}{! calculate loop integral}}
-\DoxyCodeLine{1984         \textcolor{keywordflow}{if} (rmax.gt.5) then}
-\DoxyCodeLine{1985           \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{1986           \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'E\_cll'},\textcolor{stringliteral}{'rank higher than maximum rank implemented in DD library'},eflag)}
-\DoxyCodeLine{1987           \textcolor{keywordflow}{if}(eflag) then}
-\DoxyCodeLine{1988             \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'E\_cll: 5-\/point function of rank>5 not implemented in DD library'}}
-\DoxyCodeLine{1989           \textcolor{keyword}{end }if}
-\DoxyCodeLine{1990         \textcolor{keyword}{end }if}
-\DoxyCodeLine{1991 }
-\DoxyCodeLine{1992 }
-\DoxyCodeLine{1993         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
-\DoxyCodeLine{1994         q10 = dreal(getminf2dd\_cll(p10))}
-\DoxyCodeLine{1995         q21 = dreal(getminf2dd\_cll(p21))}
-\DoxyCodeLine{1996         q32 = dreal(getminf2dd\_cll(p32))}
-\DoxyCodeLine{1997         q43 = dreal(getminf2dd\_cll(p43))}
-\DoxyCodeLine{1998         q40 = dreal(getminf2dd\_cll(p40))}
-\DoxyCodeLine{1999         q20 = dreal(getminf2dd\_cll(p20))}
-\DoxyCodeLine{2000         q31 = dreal(getminf2dd\_cll(p31))}
-\DoxyCodeLine{2001         q42 = dreal(getminf2dd\_cll(p42))}
-\DoxyCodeLine{2002         q30 = dreal(getminf2dd\_cll(p30))}
-\DoxyCodeLine{2003         q41 = dreal(getminf2dd\_cll(p41))}
-\DoxyCodeLine{2004         mm02 = getminf2dd\_cll(m02)}
-\DoxyCodeLine{2005         mm12 = getminf2dd\_cll(m12)}
-\DoxyCodeLine{2006         mm22 = getminf2dd\_cll(m22)}
-\DoxyCodeLine{2007         mm32 = getminf2dd\_cll(m32)}
-\DoxyCodeLine{2008         mm42 = getminf2dd\_cll(m42)}
-\DoxyCodeLine{2009 }
-\DoxyCodeLine{2010         rank = rmax}
-\DoxyCodeLine{2011         \textcolor{keyword}{call }e\_dd(edd,q10,q21,q32,q43,q40,q20,q31,q42,q30,q41,  \&}
-\DoxyCodeLine{2012                   mm02,mm12,mm22,mm32,mm42,rank,id)  }
-\DoxyCodeLine{2013         e2(0:rank/2,0:rank,0:rank,0:rank,0:rank) = edd(0:rank/2,0:rank,0:rank,0:rank,0:rank)}
-\DoxyCodeLine{2014         e2uv = 0d0}
-\DoxyCodeLine{2015 }
-\DoxyCodeLine{2016         \textcolor{keyword}{call }ddgetacc(accreldd,accabsdd,accrel2dd,accabs2dd,ndd,rankdd,accflagdd,errflagdd,id)}
-\DoxyCodeLine{2017 }
-\DoxyCodeLine{2018         norm\_coli = abs(e(0,0,0,0,0))}
-\DoxyCodeLine{2019         norm\_dd = abs(e2(0,0,0,0,0))}
-\DoxyCodeLine{2020         \textcolor{keywordflow}{do} r=1,rmax}
-\DoxyCodeLine{2021           \textcolor{keywordflow}{do} n1=0,r}
-\DoxyCodeLine{2022             \textcolor{keywordflow}{do} n2=0,r-\/n1}
-\DoxyCodeLine{2023               \textcolor{keywordflow}{do} n3=0,r-\/n1-\/n2}
-\DoxyCodeLine{2024                 n4=r-\/n1-\/n2-\/n3}
-\DoxyCodeLine{2025                 norm\_coli =  max(norm\_coli,abs(e(0,n1,n2,n3,n4)))}
-\DoxyCodeLine{2026                 norm\_dd =  max(norm\_dd,abs(e2(0,n1,n2,n3,n4)))}
-\DoxyCodeLine{2027               \textcolor{keyword}{end }do}
-\DoxyCodeLine{2028             \textcolor{keyword}{end }do}
-\DoxyCodeLine{2029           \textcolor{keyword}{end }do}
-\DoxyCodeLine{2030         \textcolor{keyword}{end }do}
-\DoxyCodeLine{2031         \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{2032           norm\_coli = max(abs(p10),abs(p21),abs(p32),abs(p43),abs(p40), \&}
-\DoxyCodeLine{2033                       abs(p20),abs(p31),abs(p42),abs(p30),abs(p41), \&}
-\DoxyCodeLine{2034                     abs(m02),abs(m12),abs(m22),abs(m32),abs(m42))}
-\DoxyCodeLine{2035           \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{2036             norm\_coli=1d0/norm\_coli**3}
-\DoxyCodeLine{2037           else}
-\DoxyCodeLine{2038             norm\_coli=1d0/muir2\_cll**3}
-\DoxyCodeLine{2039 \textcolor{keywordflow}{          end if} }
-\DoxyCodeLine{2040         \textcolor{keyword}{end }if}
-\DoxyCodeLine{2041         \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{2042           norm\_dd = max(abs(p10),abs(p21),abs(p32),abs(p43),abs(p40), \&}
-\DoxyCodeLine{2043                       abs(p20),abs(p31),abs(p42),abs(p30),abs(p41), \&}
-\DoxyCodeLine{2044                     abs(m02),abs(m12),abs(m22),abs(m32),abs(m42))}
-\DoxyCodeLine{2045           \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{2046             norm\_dd=1d0/norm\_dd**3}
-\DoxyCodeLine{2047           else}
-\DoxyCodeLine{2048             norm\_dd=1d0/muir2\_cll**3}
-\DoxyCodeLine{2049 \textcolor{keywordflow}{          end if} }
-\DoxyCodeLine{2050         \textcolor{keyword}{end }if}
-\DoxyCodeLine{2051         norm=min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{2052 }
-\DoxyCodeLine{2053         \textcolor{comment}{! cross-\/check}}
-\DoxyCodeLine{2054         \textcolor{keyword}{call }checkcoefse\_cll(e,e2,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}
-\DoxyCodeLine{2055                    m02,m12,m22,m32,m42,rmax,norm,ediff)}
-\DoxyCodeLine{2056                    }
-\DoxyCodeLine{2057 }
-\DoxyCodeLine{2058         \textcolor{keywordflow}{if} (eerraux(rmax).lt.accabsdd(rmax)) then}
-\DoxyCodeLine{2059           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr))  eerr = max(eerraux,ediff)}
-\DoxyCodeLine{2060           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr2)) eerr2 = eerr2aux}
-\DoxyCodeLine{2061           \textcolor{keywordflow}{if} (norm.ne.0d0) then}
-\DoxyCodeLine{2062             eacc = max(eerraux/norm\_coli,ediff/norm)}
-\DoxyCodeLine{2063             eacc2 = eerr2aux/norm\_coli}
-\DoxyCodeLine{2064           else}
-\DoxyCodeLine{2065             eacc = ediff}
-\DoxyCodeLine{2066             eacc2 = 0d0}
-\DoxyCodeLine{2067           \textcolor{keyword}{end }if}
-\DoxyCodeLine{2068           \textcolor{keywordflow}{if} (monitoring) pointscnte\_coli =  pointscnte\_coli + 1}
-\DoxyCodeLine{2069         else}
-\DoxyCodeLine{2070           e = e2}
-\DoxyCodeLine{2071           euv = e2uv}
-\DoxyCodeLine{2072           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr))  eerr = max(accabsdd(0:rmax),ediff)}
-\DoxyCodeLine{2073           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(eerr2)) eerr2 = accabs2dd(0:rmax)}
-\DoxyCodeLine{2074           \textcolor{keywordflow}{if} (norm.ne.0d0) then}
-\DoxyCodeLine{2075             eacc = max(accabsdd(0:rmax)/norm\_dd,ediff/norm)}
-\DoxyCodeLine{2076             eacc2 = accabs2dd(0:rmax)/norm\_dd}
-\DoxyCodeLine{2077           else}
-\DoxyCodeLine{2078             eacc = ediff}
-\DoxyCodeLine{2079             eacc2 = 0d0}
-\DoxyCodeLine{2080           \textcolor{keyword}{end }if}
-\DoxyCodeLine{2081           \textcolor{keywordflow}{if} (monitoring) pointscnte\_dd =  pointscnte\_dd + 1}
-\DoxyCodeLine{2082         \textcolor{keyword}{end }if}
-\DoxyCodeLine{2083 }
-\DoxyCodeLine{2084         \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateaccflag\_cll(eacc,rmax) }
-\DoxyCodeLine{2085 }
-\DoxyCodeLine{2086     \textcolor{keyword}{end }select}
-\DoxyCodeLine{2087 }
-\DoxyCodeLine{2088     \textcolor{keywordflow}{if} (mflag) \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{2089 }
-\DoxyCodeLine{2090     \textcolor{keywordflow}{if} (monitoring) then}
-\DoxyCodeLine{2091       pointscnte\_cll =  pointscnte\_cll + 1}
-\DoxyCodeLine{2092 }
-\DoxyCodeLine{2093       \textcolor{keywordflow}{if}(maxval(eacc).gt.reqacc\_cll) accpointscnte\_cll =  accpointscnte\_cll + 1}
-\DoxyCodeLine{2094 }
-\DoxyCodeLine{2095       \textcolor{keywordflow}{if}(maxval(eacc).gt.critacc\_cll) then}
-\DoxyCodeLine{2096         critpointscnte\_cll =  critpointscnte\_cll + 1}
-\DoxyCodeLine{2097         \textcolor{keywordflow}{if} ( critpointscnte\_cll.le.noutcritpointsmax\_cll(5) ) then}
-\DoxyCodeLine{2098           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'E\_cll'},0,maxval(eacc), critpointscnte\_cll)}
-\DoxyCodeLine{2099           \textcolor{keywordflow}{if}( critpointscnte\_cll.eq.noutcritpointsmax\_cll(5)) then}
-\DoxyCodeLine{2100             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for E\_cll suppressed '}   }
-\DoxyCodeLine{2101             \textcolor{keyword}{write}(ncpout\_cll,*)}
-\DoxyCodeLine{2102           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{2103         \textcolor{keyword}{end }if}
-\DoxyCodeLine{2104       \textcolor{keyword}{end }if}
-\DoxyCodeLine{2105 }
-\DoxyCodeLine{2106 \textcolor{preprocessor}{\#ifdef CritPoints2}}
-\DoxyCodeLine{2107 \textcolor{preprocessor}{}      \textcolor{keywordflow}{if}(maxval(eacc2).gt.reqacc\_cll) accpointscnte2\_cll =  accpointscnte2\_cll + 1}
-\DoxyCodeLine{2108 }
-\DoxyCodeLine{2109       \textcolor{keywordflow}{if}(maxval(eacc2).gt.critacc\_cll) then}
-\DoxyCodeLine{2110         critpointscnte2\_cll =  critpointscnte2\_cll + 1}
-\DoxyCodeLine{2111         \textcolor{keywordflow}{if} ( critpointscnte2\_cll.le.noutcritpointsmax\_cll(5) ) then}
-\DoxyCodeLine{2112           \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'E\_cll'},0,maxval(eacc2), critpointscnte2\_cll)}
-\DoxyCodeLine{2113           \textcolor{keywordflow}{if}( critpointscnte2\_cll.eq.noutcritpointsmax\_cll(5)) then}
-\DoxyCodeLine{2114             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for E\_cll suppressed '}   }
-\DoxyCodeLine{2115             \textcolor{keyword}{write}(ncpout2\_cll,*)}
-\DoxyCodeLine{2116           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{2117         \textcolor{keyword}{end }if}
-\DoxyCodeLine{2118       \textcolor{keyword}{end }if}
-\DoxyCodeLine{2119 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{2120 \textcolor{preprocessor}{}}
-\DoxyCodeLine{2121     \textcolor{keyword}{end }if}
-\DoxyCodeLine{2122 }
-\DoxyCodeLine{2123 }
-
-\end{DoxyCode}
-
-
-The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__coefs_8F90}{collier\+\_\+coefs.\+F90}}\end{DoxyCompactItemize}

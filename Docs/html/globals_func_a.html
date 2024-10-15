@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -103,17 +93,6 @@ $(document).ready(function(){initNavTree('globals_func_a.html',''); initResizabl
 &#160;
 
 <h3><a id="index_a"></a>- a -</h3><ul>
-<li>addByLowest()
-: <a class="el" href="calcC__lintolog_8c.html#a3a493f9e23930e7fa6672509f6347800">calcC_lintolog.c</a>
-, <a class="el" href="getResolution_8c.html#ac3e4081f3087d4d0f5c8e8d0e9d57ed2">getResolution.c</a>
-</li>
-<li>addPoint()
-: <a class="el" href="getResolution_8c.html#a850ab8285cd924183f360d2dc275dd63">getResolution.c</a>
-, <a class="el" href="calcC__lintolog_8c.html#a5c4568c8b538216172e9ca131d7103b7">calcC_lintolog.c</a>
-</li>
-<li>addPointAfterBin()
-: <a class="el" href="calcC__lintolog_8c.html#ad02b555ee4aacb24e746b8160c868b79">calcC_lintolog.c</a>
-</li>
 <li>addtotensorc()
 : <a class="el" href="BuildTensors_8F90.html#a7c4c0b781caefd650fc108cba1410881">BuildTensors.F90</a>
 </li>
@@ -140,10 +119,6 @@ $(document).ready(function(){initNavTree('globals_func_a.html',''); initResizabl
 </li>
 <li>alphas_()
 : <a class="el" href="TMCFM_8hh.html#a7166ca25e90c8884ec236febf53bf4c4">TMCFM.hh</a>
-</li>
-<li>appendVector()
-: <a class="el" href="getResolution_8c.html#aa43349b52c98662951698d59806dc97e">getResolution.c</a>
-, <a class="el" href="calcC__lintolog_8c.html#aa43349b52c98662951698d59806dc97e">calcC_lintolog.c</a>
 </li>
 </ul>
 </div><!-- contents -->

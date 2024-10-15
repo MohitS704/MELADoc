@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -115,38 +105,11 @@ $(document).ready(function(){initNavTree('functions_func_t.html',''); initResiza
 <li>t1ten_main_cll()
 : <a class="el" href="interfacecollier__tensors_1_1tnten__cll.html#aceadafa52c14320513257dfdd0e42673">collier_tensors::tnten_cll</a>
 </li>
-<li>tearDown()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a662f1f04426e040f4015e11a86fc62fe">testME_more.TestMela</a>
-</li>
 <li>TensorPdfFactory()
 : <a class="el" href="classTensorPdfFactory.html#ac98d01947bcedc363976f9812d881aee">TensorPdfFactory</a>
 </li>
 <li>TensorPdfFactory_ppHVV()
 : <a class="el" href="classTensorPdfFactory__ppHVV.html#aaefba7d0d5319995c93384f81a69bb41">TensorPdfFactory_ppHVV</a>
-</li>
-<li>testcontact_decay()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a4e5a021bc45462275b9d49a1819d5827">testME_more.TestMela</a>
-</li>
-<li>testcontact_VBF()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a4a4a0a6e650fe4bde3b9743aebd56b85">testME_more.TestMela</a>
-</li>
-<li>testcontact_ZH()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a0ec49d54923a2c3520bf3b65016fac7f">testME_more.TestMela</a>
-</li>
-<li>testHwithDecay()
-: <a class="el" href="classlhefile_1_1TestLHEFiles.html#a391f9e61c4533d721d16eadc1bf9eb82">lhefile.TestLHEFiles</a>
-</li>
-<li>testJHUGenttH()
-: <a class="el" href="classlhefile_1_1TestLHEFiles.html#ac2be78e9fe65f6322de8a47b379c295b">lhefile.TestLHEFiles</a>
-</li>
-<li>testJHUGenVBFVH()
-: <a class="el" href="classlhefile_1_1TestLHEFiles.html#ad4a66a88e070805636ac3d3e739f3c1a">lhefile.TestLHEFiles</a>
-</li>
-<li>testmultiplecalls_VBF()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a2c0c0d30b885e5164dcd3a57b6887b25">testME_more.TestMela</a>
-</li>
-<li>testmultiplecalls_ZH()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a9fecc2d69289e2e4e7a5ff05e96191d5">testME_more.TestMela</a>
 </li>
 <li>testPreSelectedDaughters()
 : <a class="el" href="classMELACandidate.html#af38a5ba8b2d5dd793a4939947e533949">MELACandidate</a>
@@ -162,29 +125,8 @@ $(document).ready(function(){initNavTree('functions_func_t.html',''); initResiza
 <li>testShallowCopy()
 : <a class="el" href="classMELACandidate.html#aa83da0bb42d71ada373e3db45cbd685f">MELACandidate</a>
 </li>
-<li>testzp_decay()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a0d7253bfc208feb1ef1665eb141d8a8e">testME_more.TestMela</a>
-</li>
-<li>testzp_spin2()
-: <a class="el" href="classtestME__more_1_1TestMela.html#adaa7ae643f65efd835a1a1b25eed87f6">testME_more.TestMela</a>
-</li>
-<li>testzp_VBF()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a3e15884e817d566bcc1ca15a1bc6ef28">testME_more.TestMela</a>
-</li>
-<li>testzp_ZH()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a8719ac337543393ca955db0e3aa4467c">testME_more.TestMela</a>
-</li>
-<li>testzpzp_decay()
-: <a class="el" href="classtestME__more_1_1TestMela.html#ad23e59f13a2fbce9a24ee7fa88152205">testME_more.TestMela</a>
-</li>
-<li>testzpzp_VBF()
-: <a class="el" href="classtestME__more_1_1TestMela.html#a153908a9bada7291c20bdedad5dc8e9d">testME_more.TestMela</a>
-</li>
-<li>testzpzp_ZH()
-: <a class="el" href="classtestME__more_1_1TestMela.html#ad36de78447ecdff7a7880764e7e9c251">testME_more.TestMela</a>
-</li>
 <li>TEvtProb()
-: <a class="el" href="classTEvtProb.html#aee3ae9ceb4253f426ea312cf70c7b811">TEvtProb</a>
+: <a class="el" href="classTEvtProb.html#a9abfae9dc04e04cb56cb9f684ff4e069">TEvtProb</a>
 </li>
 <li>tn_main_cll()
 : <a class="el" href="interfacecollier__coefs_1_1tn__cll.html#af667fa57b9d1bd34b8c806e6acb87a23">collier_coefs::tn_cll</a>
@@ -196,7 +138,7 @@ $(document).ready(function(){initNavTree('functions_func_t.html',''); initResiza
 : <a class="el" href="interfacecollier__tensors_1_1tnten__cll.html#a71003ce1f776aa1220960a230f5be6cb">collier_tensors::tnten_cll</a>
 </li>
 <li>triplet()
-: <a class="el" href="structTNumericUtil_1_1triplet.html#ab97baa030f19348f51c641a392b34e97">TNumericUtil::triplet&lt; T &gt;</a>
+: <a class="el" href="structTNumericUtil_1_1triplet.html#a53ceac7196da6f670176af80df37186f">TNumericUtil::triplet&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

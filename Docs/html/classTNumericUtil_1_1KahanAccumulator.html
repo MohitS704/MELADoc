@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -115,7 +105,7 @@ $(document).ready(function(){initNavTree('classTNumericUtil_1_1KahanAccumulator.
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a28ff054284c769c926e3be5afb987506"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTNumericUtil_1_1KahanAccumulator.html#a28ff054284c769c926e3be5afb987506">KahanAccumulator</a> ()</td></tr>
 <tr class="separator:a28ff054284c769c926e3be5afb987506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afefe5e72a23762b0f07505670426a877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTNumericUtil_1_1KahanAccumulator.html#afefe5e72a23762b0f07505670426a877">KahanAccumulator</a> (const T &amp;value)</td></tr>
+<tr class="memitem:afefe5e72a23762b0f07505670426a877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTNumericUtil_1_1KahanAccumulator.html#afefe5e72a23762b0f07505670426a877">KahanAccumulator</a> (const T &amp;<a class="el" href="output_8txt.html#a063b7170d86cdd0b4a2cb033ddc94217">value</a>)</td></tr>
 <tr class="separator:afefe5e72a23762b0f07505670426a877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d8f8deeb4aaf1a2afc1051ba683f9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTNumericUtil_1_1KahanAccumulator.html#a16d8f8deeb4aaf1a2afc1051ba683f9b">KahanAccumulator</a> (const <a class="el" href="classTNumericUtil_1_1KahanAccumulator.html">KahanAccumulator</a>&lt; T &gt; &amp;other)</td></tr>
 <tr class="separator:a16d8f8deeb4aaf1a2afc1051ba683f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,7 +201,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="MELAAccumulators_8h_source.html#l00032">32</a> of file <a class="el" href="MELAAccumulators_8h_source.html">MELAAccumulators.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;: <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>(value), <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a>(0) {}</div>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;: <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">sum_</a>(<a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>), <a class="code" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">compensation_</a>(0) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -620,6 +610,7 @@ template&lt;typename T &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aoutput_8txt_html_a14cbf2c203e363db8f9aaf1d15b93e1d"><div class="ttname"><a href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a></div><div class="ttdeci">pymela::gHIGGS_KAPPA value(&quot;gHIGGS_KAPPA_TILDE&quot;, pymela::gHIGGS_KAPPA_TILDE) .value(&quot;SIZE_HQQ&quot;</div></div>
 <div class="ttc" id="anamespacehto__rootw_html_a51e365cf14dc5783680394486ebc97d7"><div class="ttname"><a href="namespacehto__rootw.html#a51e365cf14dc5783680394486ebc97d7">hto_rootw::inc</a></div><div class="ttdeci">integer inc</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00246">CALLING_cpHTO.f:246</a></div></div>
 <div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html_a8d5c710dab9b7f0144660fc657f4ffb3"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html#a8d5c710dab9b7f0144660fc657f4ffb3">TNumericUtil::KahanAccumulator::sum_</a></div><div class="ttdeci">T sum_</div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00029">MELAAccumulators.h:29</a></div></div>
 <div class="ttc" id="aclassTNumericUtil_1_1KahanAccumulator_html_a8555225445ada7a40c7d8c3c1591b159"><div class="ttname"><a href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">TNumericUtil::KahanAccumulator::compensation_</a></div><div class="ttdeci">T compensation_</div><div class="ttdef"><b>Definition:</b> <a href="MELAAccumulators_8h_source.html#l00029">MELAAccumulators.h:29</a></div></div>

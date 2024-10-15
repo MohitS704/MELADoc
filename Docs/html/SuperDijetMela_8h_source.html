@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -148,7 +138,7 @@ $(document).ready(function(){initNavTree('SuperDijetMela_8h_source.html',''); in
 <div class="ttc" id="aclassSuperDijetMela_html_abf521ba17f08fcb54b68a6d22650a6b9"><div class="ttname"><a href="classSuperDijetMela.html#abf521ba17f08fcb54b68a6d22650a6b9">SuperDijetMela::sqrts</a></div><div class="ttdeci">float sqrts</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8h_source.html#l00010">SuperDijetMela.h:10</a></div></div>
 <div class="ttc" id="aclassSuperDijetMela_html_a2bc0a772602d5d42e39e0c700a6739e4"><div class="ttname"><a href="classSuperDijetMela.html#a2bc0a772602d5d42e39e0c700a6739e4">SuperDijetMela::verbosity</a></div><div class="ttdeci">TVar::VerbosityLevel verbosity</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8h_source.html#l00011">SuperDijetMela.h:11</a></div></div>
 <div class="ttc" id="aclassMELACandidate_html"><div class="ttname"><a href="classMELACandidate.html">MELACandidate</a></div><div class="ttdef"><b>Definition:</b> <a href="MELACandidate_8h_source.html#l00007">MELACandidate.h:7</a></div></div>
-<div class="ttc" id="anamespaceTVar_html_a1d885f45cfb17fdc0cb80d0b3dd4f28c"><div class="ttname"><a href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a></div><div class="ttdeci">Production</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00060">TVar.hh:60</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a1d885f45cfb17fdc0cb80d0b3dd4f28c"><div class="ttname"><a href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a></div><div class="ttdeci">Production</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00061">TVar.hh:61</a></div></div>
 <div class="ttc" id="aclassSuperDijetMela_html_ae235ef216f20001fa23c4ac9f0469843"><div class="ttname"><a href="classSuperDijetMela.html#ae235ef216f20001fa23c4ac9f0469843">SuperDijetMela::SetupResolutionModel</a></div><div class="ttdeci">void SetupResolutionModel(TVar::Production prod)</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8cc_source.html#l00035">SuperDijetMela.cc:35</a></div></div>
 <div class="ttc" id="aclassSuperDijetMela_html_a05fb862f6932c48bdf64de203d8291f7"><div class="ttname"><a href="classSuperDijetMela.html#a05fb862f6932c48bdf64de203d8291f7">SuperDijetMela::GetConvBW</a></div><div class="ttdeci">float GetConvBW(TVar::Production prod, MELACandidate *cand, bool useTrueBW)</div><div class="ttdef"><b>Definition:</b> <a href="SuperDijetMela_8cc_source.html#l00064">SuperDijetMela.cc:64</a></div></div>
 <!-- start footer part -->

@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -113,7 +103,7 @@ $(document).ready(function(){initNavTree('globals_p.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#a0969815972fe563faed483bac088ef66">TMCFM.hh</a>
 </li>
 <li>pdlabel_
-: <a class="el" href="TMCFM_8hh.html#a66f7c8ab5bef88d23a3ce529e21cceff">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a824db6c957d02ff31913b6206e7d5a51">TMCFM.hh</a>
 </li>
 <li>phi3m0_()
 : <a class="el" href="TMCFM_8hh.html#a29eccc707ed9974fcabaa5a0dd20186b">TMCFM.hh</a>
@@ -128,7 +118,7 @@ $(document).ready(function(){initNavTree('globals_p.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#ac9afc00c402e59e29e449c2102eac5da">TMCFM.hh</a>
 </li>
 <li>plabel_
-: <a class="el" href="TMCFM_8hh.html#a697315145a66af566bb76cd3ff6e9090">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#aef3d9d549cf04aef0e98ea57cc7dd52d">TMCFM.hh</a>
 </li>
 <li>pointer
 : <a class="el" href="CMakeLists_8txt.html#ab3918013fc656baaf3b386cd7736d043">CMakeLists.txt</a>
@@ -145,42 +135,6 @@ $(document).ready(function(){initNavTree('globals_p.html',''); initResizable(); 
 <li>polint()
 : <a class="el" href="Cteq61Pdf_8f.html#a1428013ed79b43e7e293736d15280439">Cteq61Pdf.f</a>
 </li>
-<li>produce_PAvgSmooth_JHUGen_HadVH_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#ab2ec4b6ebe7fdeac0df6de8c6089ad49">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_JHUGen_JJQCD_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a3db66960f980b1c7745ec9123781c6bf">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_JHUGen_JJVBF_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a1ea27c1e70335e7b5a2a2b254b95b311">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_JHUGen_JQCD_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a9fc6a82ada34d83535da149c3f10776c">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_JHUGen_ZZGG_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a2f5d787361c739bfa8f25807ab44a02e">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_JJPROD_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#ad192f14cd2e5800f134e094c75ee4976">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_JJPROD_S_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a996799d715076960d33682ca147ff525">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_JJQCD_bkgZJets_2l2q()
-: <a class="el" href="calcC__lintolog_8c.html#a0693b0dc6777acfb3a183b3e399f1779">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_JJQCD_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#a80d6fe48b90c02505e64b81f2a74a812">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_ZZGG_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#a45166d294448cac8c63a6d3e8efe0600">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_ZZGG_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a76981dd8d00ad609daa0c6793db0fba2">calcC_lintolog.c</a>
-</li>
-<li>produce_PAvgSmooth_MCFM_ZZQQB_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#aa9718d2df82d1f8beb713bb020a23899">calcC_lintolog.c</a>
-</li>
 <li>PVEST2
 : <a class="el" href="reductionD_8F90.html#a84b6416083f13734817c118d9edf2497">reductionD.F90</a>
 , <a class="el" href="reductionC_8F90.html#a84b6416083f13734817c118d9edf2497">reductionC.F90</a>
@@ -188,8 +142,44 @@ $(document).ready(function(){initNavTree('globals_p.html',''); initResizable(); 
 <li>PVSHIFT
 : <a class="el" href="reductionC_8F90.html#a397b481a1de230ee40b7fc109bc7e797">reductionC.F90</a>
 </li>
+<li>py::enum_&lt; pymela::ATQGC_indices &gt;()
+: <a class="el" href="output_8txt.html#ab9cca3d94d41c350ac717287f715d39b">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::AZff_indices &gt;()
+: <a class="el" href="output_8txt.html#ae1f0292c63179622366389e16694401d">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::GGG_indices &gt;()
+: <a class="el" href="output_8txt.html#a8f2cf7ff37a3c1e9b5595dfbdd6f35a9">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::GQQ_indices &gt;()
+: <a class="el" href="output_8txt.html#ad37d546e2d5cf1231db33c3ef126f3d7">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::GVV_indices &gt;()
+: <a class="el" href="output_8txt.html#ade1942465065dfa75c529e57b76600d2">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::HQQ_indices &gt;()
+: <a class="el" href="output_8txt.html#a4b0e3943a93bacca9cf02c391cd0e943">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::HVV_CQSQ_indices &gt;()
+: <a class="el" href="output_8txt.html#af632055252d723125939604b7b2704d3">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::HVV_indices &gt;()
+: <a class="el" href="output_8txt.html#ada9d738041eb735578b9e18d9630bcce">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::HVV_LAMBDAQSQ_indices &gt;()
+: <a class="el" href="output_8txt.html#a97d5fe8adabc5499d32a91d184b19381">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::VPff_indices &gt;()
+: <a class="el" href="output_8txt.html#a97db575c71c580f24483faac15b3c0b8">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::ZQQ_indices &gt;()
+: <a class="el" href="output_8txt.html#acea07d3f318d13484325a093a4f2ab93">output.txt</a>
+</li>
+<li>py::enum_&lt; pymela::ZVV_indices &gt;()
+: <a class="el" href="output_8txt.html#a12ac3448172a1a0521807a585f651573">output.txt</a>
+</li>
 <li>PYBIND11_MODULE()
-: <a class="el" href="mela__binding_8cpp.html#a712bf232a292f1ea9ae9be7804d4c17e">mela_binding.cpp</a>
+: <a class="el" href="group__Macros.html#ga712bf232a292f1ea9ae9be7804d4c17e">mela_binding.cpp</a>
 </li>
 </ul>
 </div><!-- contents -->

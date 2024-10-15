@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -114,7 +104,7 @@ $(document).ready(function(){initNavTree('RooSpinTwo_8h_source.html',''); initRe
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structRooSpinTwo_1_1modelCouplings.html">   10</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structRooSpinTwo_1_1modelCouplings.html">modelCouplings</a>{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">   11</a></span>&#160;    RooAbsReal* <a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[<a class="code" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2];</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">   11</a></span>&#160;    RooAbsReal* <a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a779cb1fc5486bccaf0c1a3a616e73e95">bList</a>[<a class="code" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2];</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">   12</a></span>&#160;    RooRealVar* <a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">Lambda</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">   13</a></span>&#160;    RooRealVar* <a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a16f9193d7cfafc85a45813731b84cc76">f_spinz1</a>; <span class="comment">// Set to 1 for qqb production</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">   14</a></span>&#160;    RooRealVar* <a class="code" href="structRooSpinTwo_1_1modelCouplings.html#a95812538dbe5ca992085263732f91738">f_spinz2</a>; <span class="comment">// Set to 0 for qqb production</span></div>
@@ -187,6 +177,7 @@ $(document).ready(function(){initNavTree('RooSpinTwo_8h_source.html',''); initRe
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceTVar_html_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48"><div class="ttname"><a href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48">TVar::ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00049">TVar.hh:49</a></div></div>
 <div class="ttc" id="astructRooSpinTwo_1_1modelCouplings_html_a502a3dec26b9952a933432e7e25a4939"><div class="ttname"><a href="structRooSpinTwo_1_1modelCouplings.html#a502a3dec26b9952a933432e7e25a4939">RooSpinTwo::modelCouplings::Lambda</a></div><div class="ttdeci">RooRealVar * Lambda</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00012">RooSpinTwo.h:12</a></div></div>
+<div class="ttc" id="araw__couplings_8txt_html_a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26"><div class="ttname"><a href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a></div><div class="ttdeci">@ SIZE_GVV</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00158">raw_couplings.txt:158</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_afacb322c39619711bee737042b3c6021"><div class="ttname"><a href="classRooSpinTwo.html#afacb322c39619711bee737042b3c6021">RooSpinTwo::~RooSpinTwo</a></div><div class="ttdeci">virtual ~RooSpinTwo()</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00030">RooSpinTwo.h:30</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37">RooSpin::kVdecayType_Zll</a></div><div class="ttdeci">@ kVdecayType_Zll</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00031">RooSpin.h:31</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_aa6edad67a9a137a0e82832e6592431c9"><div class="ttname"><a href="classRooSpinTwo.html#aa6edad67a9a137a0e82832e6592431c9">RooSpinTwo::b5ValIm</a></div><div class="ttdeci">RooRealProxy b5ValIm</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00054">RooSpinTwo.h:54</a></div></div>
@@ -218,7 +209,6 @@ $(document).ready(function(){initNavTree('RooSpinTwo_8h_source.html',''); initRe
 <div class="ttc" id="aclassRooSpinTwo_html_a165bd437d266b88a09ee8aad8b99af02"><div class="ttname"><a href="classRooSpinTwo.html#a165bd437d266b88a09ee8aad8b99af02">RooSpinTwo::b1ValIm</a></div><div class="ttdeci">RooRealProxy b1ValIm</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00050">RooSpinTwo.h:50</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_aeb465254cb341782494c0661a20f637c"><div class="ttname"><a href="classRooSpinTwo.html#aeb465254cb341782494c0661a20f637c">RooSpinTwo::Lambda</a></div><div class="ttdeci">RooRealProxy Lambda</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00061">RooSpinTwo.h:61</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_a0b54384ee2573bf076ece4e532bd7027"><div class="ttname"><a href="classRooSpinTwo.html#a0b54384ee2573bf076ece4e532bd7027">RooSpinTwo::b8Val</a></div><div class="ttdeci">RooRealProxy b8Val</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00046">RooSpinTwo.h:46</a></div></div>
-<div class="ttc" id="araw__couplings_8txt_html_a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7"><div class="ttname"><a href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a></div><div class="ttdeci">@ SIZE_GVV</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00158">raw_couplings.txt:158</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_a0fd1c011abdfd2a938708deb1811c4d4"><div class="ttname"><a href="classRooSpinTwo.html#a0fd1c011abdfd2a938708deb1811c4d4">RooSpinTwo::b3ValIm</a></div><div class="ttdeci">RooRealProxy b3ValIm</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8h_source.html#l00052">RooSpinTwo.h:52</a></div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_ad87be174b5c8e8a64a863cd930a9205c"><div class="ttname"><a href="classRooSpinTwo.html#ad87be174b5c8e8a64a863cd930a9205c">RooSpinTwo::clone</a></div><div class="ttdeci">virtual TObject * clone(const char *newname) const =0</div></div>
 <div class="ttc" id="aclassRooSpinTwo_html_abfd860dfe47e6b220519636b71ccc683"><div class="ttname"><a href="classRooSpinTwo.html#abfd860dfe47e6b220519636b71ccc683">RooSpinTwo::printParameters</a></div><div class="ttdeci">virtual void printParameters() const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinTwo_8cc_source.html#l00502">RooSpinTwo.cc:502</a></div></div>

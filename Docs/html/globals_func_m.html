@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -103,15 +93,6 @@ $(document).ready(function(){initNavTree('globals_func_m.html',''); initResizabl
 &#160;
 
 <h3><a id="index_m"></a>- m -</h3><ul>
-<li>makeGraphFromPair()
-: <a class="el" href="getResolution_8c.html#a582321a752f6c95355f55b8952b3fc36">getResolution.c</a>
-</li>
-<li>makeGraphFromTH1()
-: <a class="el" href="getResolution_8c.html#a85bf9f12555420bb67e71cacbf5a868d">getResolution.c</a>
-</li>
-<li>makemelaptr()
-: <a class="el" href="testME__v2_8c.html#aae7b9cbf800b87a90729b862cfe1be3a">testME_v2.c</a>
-</li>
 <li>masterargs()
 : <a class="el" href="common__coli_8h.html#a4854184836b442c3d8f27fe6cd28fb8f">common_coli.h</a>
 </li>
@@ -122,13 +103,13 @@ $(document).ready(function(){initNavTree('globals_func_m.html',''); initResizabl
 : <a class="el" href="MELAOutputStreamer_8h.html#a70ff4d7d09d80b71a3e77a5a81a184d7">MELAOutputStreamer.h</a>
 </li>
 <li>MELAOutputStreamer::operator&lt;&lt;&lt; std::string &gt;()
-: <a class="el" href="MELAOutputStreamer_8h.html#ab8943cc6ecd27cbdef98656207e0ec4f">MELAOutputStreamer.h</a>
+: <a class="el" href="MELAOutputStreamer_8h.html#adb480c0b747136b07fc1bf459024f484">MELAOutputStreamer.h</a>
 </li>
 <li>MELAOutputStreamer::writeCentered&lt; std::string &gt;()
 : <a class="el" href="MELAOutputStreamer_8h.html#a4cf6be19484a9e98b90c599facf2b620">MELAOutputStreamer.h</a>
 </li>
 <li>message()
-: <a class="el" href="CMakeLists_8txt.html#adb95adadaa3b0dd08906205513530585">CMakeLists.txt</a>
+: <a class="el" href="CMakeLists_8txt.html#a2745dd72b263369c2511ea68430a0708">CMakeLists.txt</a>
 </li>
 </ul>
 </div><!-- contents -->

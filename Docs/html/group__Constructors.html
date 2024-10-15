@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -159,16 +149,16 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A TVar::SimpleParticleCollection_t object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00365">365</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                                                         {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a> collection = <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a>();</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">for</span>(py::handle P : listOfParticles){</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a> particle = P.cast&lt;<a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a>&gt;();</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        collection.push_back(particle);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">return</span> collection;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00367">367</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a> collection = <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a>();</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">for</span>(py::handle P : listOfParticles){</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a> particle = P.cast&lt;<a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a>&gt;();</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        collection.push_back(particle);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">return</span> collection;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,19 +227,19 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A TVar::SimpleParticleCollection_t object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00347">347</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                                                                                                                                                                          {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a> collection = <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a>();</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">for</span>(i = 0; i &lt; ids.size(); i++){</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        collection.push_back(</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <a class="code" href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a>(ids[i], x[i], y[i], <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>[i], e[i], ptEtaPhi)</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        );</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> collection;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00349">349</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                                                                                                                                                          {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a> collection = <a class="code" href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a>();</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">for</span>(i = 0; i &lt; ids.size(); i++){</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        collection.push_back(</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <a class="code" href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a>(ids[i], x[i], y[i], <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>[i], e[i], ptEtaPhi)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        );</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> collection;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,23 +307,23 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A TVar::Simpleparticle_t with the provided id and Lorentz 4-vector. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00326">326</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                                                                                                      {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    TLorentzVector vec = TLorentzVector();</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span>(ptEtaPhi){</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        vec.SetPtEtaPhiM(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, e);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    } <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        vec.SetPxPyPzE(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, e);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a>(<span class="keywordtype">id</span>, vec);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00328">328</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                                                                      {</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    TLorentzVector vec = TLorentzVector();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">if</span>(ptEtaPhi){</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        vec.SetPtEtaPhiM(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, e);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    } <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        vec.SetPxPyPzE(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, e);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a>(<span class="keywordtype">id</span>, vec);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aTVar_8hh_html_a2bc0c1a02f5152697e55ab2bbda40aff"><div class="ttname"><a href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a></div><div class="ttdeci">std::pair&lt; int, TLorentzVector &gt; SimpleParticle_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00024">TVar.hh:24</a></div></div>
-<div class="ttc" id="agroup__Constructors_html_gab37cf49a7626b894bfb27c2b396f5b99"><div class="ttname"><a href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a></div><div class="ttdeci">SimpleParticle_t particle_initializer(int id, float x, float y, float z, float e, bool ptEtaPhi=false)</div><div class="ttdoc">This function intializes a single SimpleParticle_t in the Python.</div><div class="ttdef"><b>Definition:</b> <a href="mela__binding_8cpp_source.html#l00326">mela_binding.cpp:326</a></div></div>
+<div class="ttc" id="agroup__Constructors_html_gab37cf49a7626b894bfb27c2b396f5b99"><div class="ttname"><a href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a></div><div class="ttdeci">SimpleParticle_t particle_initializer(int id, float x, float y, float z, float e, bool ptEtaPhi=false)</div><div class="ttdoc">This function intializes a single SimpleParticle_t in the Python.</div><div class="ttdef"><b>Definition:</b> <a href="mela__binding_8cpp_source.html#l00328">mela_binding.cpp:328</a></div></div>
 <div class="ttc" id="anamespaceglobalc_html_a68e62f5d752be9315f909681fa34b5dc"><div class="ttname"><a href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">globalc::z</a></div><div class="ttdeci">double complex, dimension(2, 2) z</div><div class="ttdef"><b>Definition:</b> <a href="reductionC_8F90_source.html#l00050">reductionC.F90:50</a></div></div>
 <div class="ttc" id="aTVar_8hh_html_ac8ad3b9b9fb4621a213e219ad7289d76"><div class="ttname"><a href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a></div><div class="ttdeci">std::vector&lt; SimpleParticle_t &gt; SimpleParticleCollection_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00025">TVar.hh:25</a></div></div>
 <!-- start footer part -->

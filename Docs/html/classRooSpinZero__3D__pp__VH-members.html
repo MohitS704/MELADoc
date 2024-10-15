@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -262,15 +252,15 @@ $(document).ready(function(){initNavTree('classRooSpinZero__3D__pp__VH.html','')
   <tr class="even"><td class="entry"><a class="el" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">partonicLuminosity</a>(Double_t mVal, Double_t YVal, Double_t sqrts) const</td><td class="entry"><a class="el" href="classRooSpinZero__3D__pp__VH.html">RooSpinZero_3D_pp_VH</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">Phi</a></td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">Phi1</a></td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3aa43e2336d492db68167fc1cee67b3a26">prime_m1</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3af399bf2e7d35b3768faafc5252f15594">prime_m12</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a7ae3ba5819e9118d1deda5aafb58aa7b">prime_m2</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ac90e6d50685439b583fc8e89fdd4fdc6">prime_Y</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edaa43e2336d492db68167fc1cee67b3a26">prime_m1</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edaf399bf2e7d35b3768faafc5252f15594">prime_m12</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda7ae3ba5819e9118d1deda5aafb58aa7b">prime_m2</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edac90e6d50685439b583fc8e89fdd4fdc6">prime_Y</a> enum value</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRooSpinZero.html#adaacb066b5b185bb856fa8ac8df51ede">printParameters</a>() const</td><td class="entry"><a class="el" href="classRooSpinZero.html">RooSpinZero</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classRooSpin.html#a1aef94566cf4701909dcd29723591675">RooSpin</a>()</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRooSpin.html#a1980adbb88594ac5d16e8516f7fb6e5e">RooSpin</a>(const char *name, const char *title, modelMeasurables const &amp;_measurables, modelParameters const &amp;_parameters, RooSpin::VdecayType _Vdecay1=RooSpin::kVdecayType_Zll, RooSpin::VdecayType _Vdecay2=RooSpin::kVdecayType_Zll, TVar::VerbosityLevel verbosity_=TVar::ERROR)</td><td class="entry"><a class="el" href="classRooSpin.html">RooSpin</a></td><td class="entry"></td></tr>

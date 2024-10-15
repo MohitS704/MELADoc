@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -169,6 +159,33 @@ $(document).ready(function(){initNavTree('namespacemembers_q.html',''); initResi
 </li>
 <li>qopened_check
 : <a class="el" href="namespacecollier__global.html#ac0cfa8ad8d170b1129986a089627958f">collier_global</a>
+</li>
+<li>qq4lBKG_get_pdg_order_()
+: <a class="el" href="namespacemadMela.html#a2339e833237c92e70f6c1677260354be">madMela</a>
+</li>
+<li>qq4lBKG_smatrixhel_()
+: <a class="el" href="namespacemadMela.html#a9fbb17b2015c30b5fc5dec24347ae519">madMela</a>
+</li>
+<li>qq4lBKG_update_all_coup_()
+: <a class="el" href="namespacemadMela.html#a52d351102c04a422c3d011a78af2b018">madMela</a>
+</li>
+<li>qq4lBSI_get_pdg_order_()
+: <a class="el" href="namespacemadMela.html#a395503defe42d153c6fbd4b3ecb15335">madMela</a>
+</li>
+<li>qq4lBSI_smatrixhel_()
+: <a class="el" href="namespacemadMela.html#ab78d11fa798570bf9e938ed8e922020a">madMela</a>
+</li>
+<li>qq4lBSI_update_all_coup_()
+: <a class="el" href="namespacemadMela.html#a6a1f856a5b03de9f0e6fff7489367728">madMela</a>
+</li>
+<li>qq4lSIG_get_pdg_order_()
+: <a class="el" href="namespacemadMela.html#a9fc0484d69a5c5b71875ee6cd8035e85">madMela</a>
+</li>
+<li>qq4lSIG_smatrixhel_()
+: <a class="el" href="namespacemadMela.html#ad26a1e6ba8b75f418da69a98df18f67e">madMela</a>
+</li>
+<li>qq4lSIG_update_all_coup_()
+: <a class="el" href="namespacemadMela.html#abf8c2cc3abe9d00982819f30098187b4">madMela</a>
 </li>
 <li>qqgzzampl()
 : <a class="el" href="namespacemodgraviton.html#a1e100858c8488f27e4b16da5abbcd810">modgraviton</a>

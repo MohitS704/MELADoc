@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -104,7 +94,7 @@ $(document).ready(function(){initNavTree('tvar_enums.html',''); initResizable();
 <div class="title"><a class="el" href="namespaceTVar.html">TVar</a> Enumerations </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>These are the enumerated values set in <a class="el" href="TVar_8hh.html">TVar.hh</a>. They are used to set up the settings in MELA.</p>
+<div class="textblock"><p>These are the enumerated values set in <code><a class="el" href="TVar_8hh.html">TVar.hh</a></code>. They are used to set up the settings in MELA.</p>
 <h1><a class="anchor" id="verbosity_enum"></a>
 Verbosity Level</h1>
 <p><code>Mela.VerbosityLevel</code> controls how verbose MELA can be. These are originally defined in <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a>. Every verbosity level is a subset of the higher one (i.e. <code>Mela.VerbosityLevel.ERROR</code> contains a subset of the output from <code>Mela.VerbosityLevel.INFO</code>). The values are tabulated below:</p>
@@ -124,6 +114,7 @@ Verbosity Level</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>Mela.VerbosityLevel.DEBUG_MECHECK</code> </td><td class="markdownTableBodyNone">5 </td><td class="markdownTableBodyNone">Outputs information directly relating to the matrix element  </td></tr>
 </table>
+<p>One can set the verbosity in the <a class="el" href="MELA_python.html#MELA_constructor">MELA constructor</a> to begin with, or use <code>Mela.SetVerbosity(Mela.VerbosityLevel)</code>, which is originally defined in <a class="el" href="classMela.html#a540460c5f493ffa154560ec2d7452799" title="Sets the verbosity for MELA outside of the initial constructor.">Mela::setVerbosity</a>.</p>
 <h1><a class="anchor" id="matel_enum"></a>
 Matrix Element</h1>
 <p><code>Mela.MatrixElement</code> controls which matrix element MELA is using for its calculation. These are originally defined in <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a>. The values are tabulated below:</p>
@@ -136,7 +127,10 @@ Matrix Element</h1>
 <td class="markdownTableBodyNone"><code>Mela.MatrixElement.JHUGen</code> </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">Evaluates via pure JHUGen  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Mela.MatrixElement.ANALYTICAL</code> </td><td class="markdownTableBodyNone">2 </td><td class="markdownTableBodyNone">Evaluates via analytic methods  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.MatrixElement.MADGRAPH</code> </td><td class="markdownTableBodyNone">3 </td><td class="markdownTableBodyNone">Evaluates via the Madgraph matrix element  </td></tr>
 </table>
+<p>One sets the matrix element using <code><a class="el" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904" title="Sets the process, matrix element, and production that MELA is to use for this event....">Mela.setProcess</a>(Mela.Process, Mela.MatrixElement, Mela.Production)</code>, which is originally defined in <a class="el" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904" title="Sets the process, matrix element, and production that MELA is to use for this event....">Mela::setProcess</a>.</p>
 <h1><a class="anchor" id="prod_enum"></a>
 Production</h1>
 <p><code>Mela.Production</code> controls what production mode MELA is using for its calculations. These are originally defined in <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a>. The values are tabulated below:</p>
@@ -158,7 +152,7 @@ Production</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Mela.Production.JQCD</code> </td><td class="markdownTableBodyNone">6 </td><td class="markdownTableBodyNone">Single-Jet QCD production  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJQCD</code> </td><td class="markdownTableBodyNone">7 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJQCD</code> </td><td class="markdownTableBodyNone">7 </td><td class="markdownTableBodyNone">Double-Jet QCD production  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Mela.Production.JJVBF</code> </td><td class="markdownTableBodyNone">8 </td><td class="markdownTableBodyNone">Double-Jet VBF production (ZZ/WW Fusion)  </td></tr>
 <tr class="markdownTableRowEven">
@@ -174,46 +168,47 @@ Production</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Mela.Production.Lep_WH</code> </td><td class="markdownTableBodyNone">14 </td><td class="markdownTableBodyNone">Leptonic WH production  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.ZZQQB_S</code> </td><td class="markdownTableBodyNone">15 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.ZZQQB_S</code> </td><td class="markdownTableBodyNone">15 </td><td class="markdownTableBodyNone">Quark-Antiquark production (S-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJQCD_S</code> </td><td class="markdownTableBodyNone">16 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJQCD_S</code> </td><td class="markdownTableBodyNone">16 </td><td class="markdownTableBodyNone">Double-Jet QCD production (S-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJVBF_S</code> </td><td class="markdownTableBodyNone">17 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJVBF_S</code> </td><td class="markdownTableBodyNone">17 </td><td class="markdownTableBodyNone">Double-Jet VBF production (ZZ/WW Fusion) (S-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJEW_S</code> </td><td class="markdownTableBodyNone">18 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJEW_S</code> </td><td class="markdownTableBodyNone">18 </td><td class="markdownTableBodyNone">Double-Jet EW production (VBF/VH) (S-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJEWQCD_S</code> </td><td class="markdownTableBodyNone">19 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJEWQCD_S</code> </td><td class="markdownTableBodyNone">19 </td><td class="markdownTableBodyNone">Combination of JJEW and JJQCD (S-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.Had_ZH_S</code> </td><td class="markdownTableBodyNone">20 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Had_ZH_S</code> </td><td class="markdownTableBodyNone">20 </td><td class="markdownTableBodyNone">Hadronic ZH production (S-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.Had_WH_S</code> </td><td class="markdownTableBodyNone">21 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Had_WH_S</code> </td><td class="markdownTableBodyNone">21 </td><td class="markdownTableBodyNone">Hadronic WH production (S-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.Lep_ZH_S</code> </td><td class="markdownTableBodyNone">22 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Lep_ZH_S</code> </td><td class="markdownTableBodyNone">22 </td><td class="markdownTableBodyNone">Leptonic ZH production (S-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.Lep_WH_S</code> </td><td class="markdownTableBodyNone">23 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Lep_WH_S</code> </td><td class="markdownTableBodyNone">23 </td><td class="markdownTableBodyNone">Hadronic WH production (S-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.ZZQQB_TU</code> </td><td class="markdownTableBodyNone">24 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.ZZQQB_TU</code> </td><td class="markdownTableBodyNone">24 </td><td class="markdownTableBodyNone">Quark-Antiquark production (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJQCD_TU</code> </td><td class="markdownTableBodyNone">25 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJQCD_TU</code> </td><td class="markdownTableBodyNone">25 </td><td class="markdownTableBodyNone">Double-Jet QCD production (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJVBF_TU</code> </td><td class="markdownTableBodyNone">26 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJVBF_TU</code> </td><td class="markdownTableBodyNone">26 </td><td class="markdownTableBodyNone">Double-Jet VBF production (ZZ/WW Fusion) (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJEW_TU</code> </td><td class="markdownTableBodyNone">27 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJEW_TU</code> </td><td class="markdownTableBodyNone">27 </td><td class="markdownTableBodyNone">Double-Jet EW production (VBF/VH) (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.JJEWQCD_TU</code> </td><td class="markdownTableBodyNone">28 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.JJEWQCD_TU</code> </td><td class="markdownTableBodyNone">28 </td><td class="markdownTableBodyNone">Combination of JJEW and JJQCD (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.Had_ZH_TU</code> </td><td class="markdownTableBodyNone">29 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Had_ZH_TU</code> </td><td class="markdownTableBodyNone">29 </td><td class="markdownTableBodyNone">Hadronic ZH production (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.Had_WH_TU</code> </td><td class="markdownTableBodyNone">30 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Had_WH_TU</code> </td><td class="markdownTableBodyNone">30 </td><td class="markdownTableBodyNone">Hadronic WH production (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.Lep_ZH_TU</code> </td><td class="markdownTableBodyNone">31 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Lep_ZH_TU</code> </td><td class="markdownTableBodyNone">31 </td><td class="markdownTableBodyNone">Leptonic ZH production (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>Mela.Production.Lep_WH_TU</code> </td><td class="markdownTableBodyNone">32 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.Lep_WH_TU</code> </td><td class="markdownTableBodyNone">32 </td><td class="markdownTableBodyNone">Hadronic WH production (T/U-channel only)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>Mela.Production.GammaH</code> </td><td class="markdownTableBodyNone">33 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Production.GammaH</code> </td><td class="markdownTableBodyNone">33 </td><td class="markdownTableBodyNone">Photon production of the Higgs  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Mela.Production.nProductions</code> </td><td class="markdownTableBodyNone">34 </td><td class="markdownTableBodyNone">This is the total number of production modes that exist within MELA  </td></tr>
 </table>
+<p>One sets the production mode using <code><a class="el" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904" title="Sets the process, matrix element, and production that MELA is to use for this event....">Mela.setProcess</a>(Mela.Process, Mela.MatrixElement, Mela.Production)</code>, which is originally defined in <a class="el" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904" title="Sets the process, matrix element, and production that MELA is to use for this event....">Mela::setProcess</a>.</p>
 <h1><a class="anchor" id="proc_enum"></a>
 Process</h1>
 <p><code>Mela.Process</code> controls what process MELA is running. This is usually the spin of the particle for JHUGen, or signal/background for MCFM.</p>
@@ -240,105 +235,189 @@ Process</h1>
 </ul>
 </li>
 </ul>
+<p><b>If you pair a process with the incorrect matrix element there will be an error!</b></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name </th><th class="markdownTableHeadNone">Value </th><th class="markdownTableHeadNone">Matrix Element </th><th class="markdownTableHeadNone">Summary  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>HSMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.HSMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H0_g1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0_g1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H0hplus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0hplus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H0minus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0minus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H0_Zgsg1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0_Zgsg1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H0_Zgs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0_Zgs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H0_Zgs_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0_Zgs_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H0_gsgs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0_gsgs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H0_gsgs_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H0_gsgs_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_g1g1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_g1g1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>D_g1g2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_g1g2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_g1g2_pi_2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_g1g2_pi_2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>D_g1g4</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_g1g4</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_g1g4_pi_2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_g1g4_pi_2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>D_zzzg</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_zzzg</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_zzgg</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_zzgg</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>D_zzzg_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_zzzg_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_zzgg_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_zzgg_PS</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>D_zzzg_g1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_zzzg_g1prime2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_zzzg_g1prime2_pi_2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_zzzg_g1prime2_pi_2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H1minus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H1minus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H1plus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H1plus</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H2_g1</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g1</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H2_g2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H2_g3</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g3</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H2_g4</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g4</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H2_g5</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g5</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H2_g1g5</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g1g5</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H2_g6</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g6</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H2_g7</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g7</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H2_g8</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g8</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>H2_g9</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g9</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>H2_g10</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.H2_g10</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>bkgGammaGamma</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgGammaGamma</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>bkgZGamma</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgZGamma</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>bkgZJets</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgZJets</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>bkgZZ</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgZZ</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>bkgWW</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgWW</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>bkgWWZZ</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgWWZZ</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>bkgZZ_SMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgZZ_SMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>bkgWW_SMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgWW_SMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>bkgWWZZ_SMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.bkgWWZZ_SMHiggs</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>HSMHiggs_WWZZ</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.HSMHiggs_WWZZ</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">MCFM </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>D_gg10</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.D_gg10</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SelfDefine_spin0</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.SelfDefine_spin0</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>SelfDefine_spin1</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.SelfDefine_spin1</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SelfDefine_spin2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.SelfDefine_spin2</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">JHUGen </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>nProcesses</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">The total number of processes available to you  </td></tr>
+<td class="markdownTableBodyNone"><code>Mela.Process.nProcesses</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">The total number of processes available to you  </td></tr>
+</table>
+<p>One sets the process using <code><a class="el" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904" title="Sets the process, matrix element, and production that MELA is to use for this event....">Mela.setProcess</a>(Mela.Process, Mela.MatrixElement, Mela.Production)</code>, which is originally defined in <a class="el" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904" title="Sets the process, matrix element, and production that MELA is to use for this event....">Mela::setProcess</a>.</p>
+<h1><a class="anchor" id="reso_enum"></a>
+Resonance Propagator Scheme</h1>
+<p><code>Mela.ResonancePropagatorScheme</code> controls the scheme that resonances are defined by. This is used to control mass shapes as well as conduct POWHEG high-mass reweighting. This is originally defined in <a class="el" href="namespaceTVar.html#ac79830020a0eed4f6dcd3a62a496b016">TVar::ResonancePropagatorScheme</a>. **<code>Mela.ResonancePropagatorScheme.FixedWidth</code> is set by default**. The values are tabulated below:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name </th><th class="markdownTableHeadNone">Value </th><th class="markdownTableHeadNone">Summary  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.ResonancePropagatorScheme.NoPropagator</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">No propagator is applied to the resonance  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.ResonancePropagatorScheme.RunningWidth</code> </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">A running width scheme is applied to the resonance  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.ResonancePropagatorScheme.FixedWidth</code> </td><td class="markdownTableBodyNone">2 </td><td class="markdownTableBodyNone">A fixed width scheme is applied to the resonance  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.ResonancePropagatorScheme.CPS</code> </td><td class="markdownTableBodyNone">3 </td><td class="markdownTableBodyNone">A Complex-Pole scheme is applied to the resonance  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.ResonancePropagatorScheme.AltRunningWidth</code> </td><td class="markdownTableBodyNone">4 </td><td class="markdownTableBodyNone">An S-Wave Breit-Wigner is applied to the resonance  </td></tr>
+</table>
+<p>These are provided as inputs to <code><a class="el" href="classMela.html#a4683c0250cc1a9c37bccd26ad8f849e9">Mela.getXPropagator</a>(Mela.ResonancePropagatorScheme)</code> to get a value for mass shape reweighting.</p>
+<h1><a class="anchor" id="scale_enum"></a>
+EventScaleScheme</h1>
+<p><code>Mela.EventScaleScheme</code> controls the scaling scheme of the event. You can set it with <code><a class="el" href="classMela.html#a8d7f183b5bcc90bf190e2576ad7ac1a9" title="Sets the renormalization and the factorization schemes.">Mela.setRenFacScaleMode</a></code> (originally defined in <a class="el" href="classMela.html#a8d7f183b5bcc90bf190e2576ad7ac1a9" title="Sets the renormalization and the factorization schemes.">Mela::setRenFacScaleMode</a>), and get the value from <code><a class="el" href="classMela.html#a6a0d3d89877a2c8fb42e9537bafd875f" title="Returns the current RenFac Scale Mode for MELA.">Mela.getRenFacScaleMode</a></code> (originally defined in <a class="el" href="classMela.html#a6a0d3d89877a2c8fb42e9537bafd875f" title="Returns the current RenFac Scale Mode for MELA.">Mela::getRenFacScaleMode</a>).</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name </th><th class="markdownTableHeadNone">Value </th><th class="markdownTableHeadNone">Summary  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.DefaultScaleScheme</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">The default scale factor scheme for the process/production.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_mH</code> </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">A scale based off of the pole mass of \(m_H\)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_mW</code> </td><td class="markdownTableBodyNone">2 </td><td class="markdownTableBodyNone">A scale based off of the pole mass of \(m_Z\)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_mZ</code> </td><td class="markdownTableBodyNone">3 </td><td class="markdownTableBodyNone">A scale based off of the pole mass of \(m_W\)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_mWPlusmH</code> </td><td class="markdownTableBodyNone">4 </td><td class="markdownTableBodyNone">A scale based off of the pole value \(m_W + m_H\)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_mZPlusmH</code> </td><td class="markdownTableBodyNone">5 </td><td class="markdownTableBodyNone">A scale based off of the pole value \(m_Z + m_H\)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_TwomtPlusmH</code> </td><td class="markdownTableBodyNone">6 </td><td class="markdownTableBodyNone">A scale based off of the pole value \(2m_t + m_H\)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Fixed_mtPlusmH</code> </td><td class="markdownTableBodyNone">7 </td><td class="markdownTableBodyNone">A scale based off of the pole value \(m_t + m_H\)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_qH</code> </td><td class="markdownTableBodyNone">8 </td><td class="markdownTableBodyNone">A scale based off of the \(q^2\) of the Higgs  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_qJJH</code> </td><td class="markdownTableBodyNone">9 </td><td class="markdownTableBodyNone">A scale based off of the \(q^2\) of H+2 jets  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_qJJ_qH</code> </td><td class="markdownTableBodyNone">10 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_qJ_qJ_qH</code> </td><td class="markdownTableBodyNone">11 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_HT</code> </td><td class="markdownTableBodyNone">12 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_Leading_pTJ</code> </td><td class="markdownTableBodyNone">13 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_Softest_pTJ</code> </td><td class="markdownTableBodyNone">14 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.Dynamic_RandomUniform_Constrained</code> </td><td class="markdownTableBodyNone">15 </td><td class="markdownTableBodyNone"><b>IDK</b>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.EventScaleScheme.nEventScaleSchemes</code> </td><td class="markdownTableBodyNone">16 </td><td class="markdownTableBodyNone">The number of event scale schemes available to you  </td></tr>
+</table>
+<h1><a class="anchor" id="decmode_enum"></a>
+CandidateDecayMode</h1>
+<p><code>Mela.CandidateDecayMode</code> quantifies the decay mode of the candidate in MELA. This can be a range of things. All the possibilities are listed below:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Name </th><th class="markdownTableHeadNone">Value </th><th class="markdownTableHeadNone">Summary  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_Stable</code> </td><td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">The reconstructed candidate does not decay  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_ff</code> </td><td class="markdownTableBodyNone">1 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to fermions  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_WW</code> </td><td class="markdownTableBodyNone">2 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to 2 W Bosons  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_ZZ</code> </td><td class="markdownTableBodyNone">3 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to 2 Z Bosons  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_ZW</code> </td><td class="markdownTableBodyNone">4 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to a Z and a W (<b>Warning - Untested</b>)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_ZG</code> </td><td class="markdownTableBodyNone">5 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to a Z and a gluon  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_WG</code> </td><td class="markdownTableBodyNone">6 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to a W and a gluon  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Mela.CandidateDecayMode.CandidateDecay_GG</code> </td><td class="markdownTableBodyNone">7 </td><td class="markdownTableBodyNone">The reconstructed candidate decays to 2 gluons  </td></tr>
 </table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -346,6 +425,7 @@ Process</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="PyMela_page.html">PyMela</a></li><li class="navelem"><a class="el" href="py_enums.html">Stored Enumerations</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

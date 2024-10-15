@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -184,9 +174,6 @@ $(document).ready(function(){initNavTree('namespacemembers_vars_d.html',''); ini
 <li>decaymode2
 : <a class="el" href="namespacemodparameters.html#a7c103debcd071078fa1bcf75f6248ba9">modparameters</a>
 </li>
-<li>default
-: <a class="el" href="namespacetestME__all.html#a01b3c8666c6fc050ccc58405f5afa8f0">testME_all</a>
-</li>
 <li>defaultseeds
 : <a class="el" href="namespacemodparameters.html#a7879d1ab58c0ba0ca8378a157d7262e5">modparameters</a>
 </li>
@@ -268,9 +255,6 @@ $(document).ready(function(){initNavTree('namespacemembers_vars_d.html',''); ini
 <li>diffcntten_cll
 : <a class="el" href="namespacecollier__global.html#a1396fc3664c20586eca842032eba9c54">collier_global</a>
 </li>
-<li>different
-: <a class="el" href="namespacetestME__all.html#abe2bf588d624887e3af12f73ebb410cb">testME_all</a>
-</li>
 <li>dij_err
 : <a class="el" href="namespacedd__4pt.html#a0f5985f24296745f1bc08d809c3e712e">dd_4pt</a>
 </li>
@@ -279,9 +263,6 @@ $(document).ready(function(){initNavTree('namespacemembers_vars_d.html',''); ini
 </li>
 <li>dij_err_new
 : <a class="el" href="namespacedd__4pt.html#a7f9a3088332a166c7263b1a7f38d3ca4">dd_4pt</a>
-</li>
-<li>dimension
-: <a class="el" href="namespacewrite__bindings.html#ae7af386c5aa4bc86e905bcb7d7e403f0">write_bindings</a>
 </li>
 <li>distinguish_hwwcouplings
 : <a class="el" href="namespacemodparameters.html#a7920005de2c2f3f6feaf8cd2a34586db">modparameters</a>

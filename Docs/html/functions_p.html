@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -337,9 +327,6 @@ $(document).ready(function(){initNavTree('functions_p.html',''); initResizable()
 <li>pMothers
 : <a class="el" href="structTVar_1_1simple__event__record.html#a5ad00c4240605d33b10f082d06796865">TVar::simple_event_record</a>
 </li>
-<li>PointRedivision()
-: <a class="el" href="structPointRedivision.html#a3376bd675108adb204d043da5a204191">PointRedivision</a>
-</li>
 <li>pol
 : <a class="el" href="structmodttbhiggs_1_1particle.html#ab909d3ed82dd1aa5ac4fa1718e7b3a56">modttbhiggs::particle</a>
 , <a class="el" href="structmodttbhiggs_1_1ptrtoparticle.html#a1ee0cde63ea39b9296987bc4e6ad441c">modttbhiggs::ptrtoparticle</a>
@@ -348,31 +335,31 @@ $(document).ready(function(){initNavTree('functions_p.html',''); initResizable()
 : <a class="el" href="classTEvtProb.html#aee1896ee5c4f6c27a0c35a73d2635489">TEvtProb</a>
 </li>
 <li>prime_h1
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d">RooSpin</a>
 </li>
 <li>prime_h2
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">RooSpin</a>
 </li>
 <li>prime_hs
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c">RooSpin</a>
 </li>
 <li>prime_m1
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3aa43e2336d492db68167fc1cee67b3a26">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edaa43e2336d492db68167fc1cee67b3a26">RooSpin</a>
 </li>
 <li>prime_m12
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3af399bf2e7d35b3768faafc5252f15594">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edaf399bf2e7d35b3768faafc5252f15594">RooSpin</a>
 </li>
 <li>prime_m2
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a7ae3ba5819e9118d1deda5aafb58aa7b">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda7ae3ba5819e9118d1deda5aafb58aa7b">RooSpin</a>
 </li>
 <li>prime_Phi
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">RooSpin</a>
 </li>
 <li>prime_Phi1
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154">RooSpin</a>
 </li>
 <li>prime_Y
-: <a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ac90e6d50685439b583fc8e89fdd4fdc6">RooSpin</a>
+: <a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edac90e6d50685439b583fc8e89fdd4fdc6">RooSpin</a>
 </li>
 <li>printLogo()
 : <a class="el" href="classMela.html#aedb1835333ea82e0bc2186e8920b514d">Mela</a>

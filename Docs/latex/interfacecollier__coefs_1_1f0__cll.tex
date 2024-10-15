@@ -1,230 +1,0 @@
-\hypertarget{interfacecollier__coefs_1_1f0__cll}{}\doxysection{collier\+\_\+coefs\+::f0\+\_\+cll Interface Reference}
-\label{interfacecollier__coefs_1_1f0__cll}\index{collier\_coefs::f0\_cll@{collier\_coefs::f0\_cll}}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1f0__cll_a7977dec95645f9c740b3beb3957aeb9c}{f0\+\_\+main\+\_\+cll}} (F0, p10, p21, p32, p43, p54, p50, p20, p31, p42, p53, p40, p51, p30, p41, p52, m02, m12, m22, m32, m42, m52, Ferr, Ferr2)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1f0__cll_ad1e9433d02137a41e2308e1b660678cd}{f0\+\_\+arrays\+\_\+cll}} (F0, Mom\+Inv, masses2)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 101 of file collier\+\_\+coefs.\+F90.
-
-
-
-\doxysubsection{Member Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1f0__cll_ad1e9433d02137a41e2308e1b660678cd}\label{interfacecollier__coefs_1_1f0__cll_ad1e9433d02137a41e2308e1b660678cd}} 
-\index{collier\_coefs::f0\_cll@{collier\_coefs::f0\_cll}!f0\_arrays\_cll@{f0\_arrays\_cll}}
-\index{f0\_arrays\_cll@{f0\_arrays\_cll}!collier\_coefs::f0\_cll@{collier\_coefs::f0\_cll}}
-\doxysubsubsection{\texorpdfstring{f0\_arrays\_cll()}{f0\_arrays\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::f0\+\_\+cll\+::f0\+\_\+arrays\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, intent(out)}]{F0,  }\item[{double complex, dimension(15), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:5), intent(in)}]{masses2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5274 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5274   }
-\DoxyCodeLine{5275     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(15), masses2(0:5)}
-\DoxyCodeLine{5276     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: F0}
-\DoxyCodeLine{5277     }
-\DoxyCodeLine{5278     \textcolor{keyword}{call }f0\_main\_cll(f0,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{5279         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),  \&}
-\DoxyCodeLine{5280         mominv(11),mominv(12),mominv(13),mominv(14),mominv(15),  \&}
-\DoxyCodeLine{5281         masses2(0),masses2(1),masses2(2),masses2(3),masses2(4),masses2(5))}
-\DoxyCodeLine{5282 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1f0__cll_a7977dec95645f9c740b3beb3957aeb9c}\label{interfacecollier__coefs_1_1f0__cll_a7977dec95645f9c740b3beb3957aeb9c}} 
-\index{collier\_coefs::f0\_cll@{collier\_coefs::f0\_cll}!f0\_main\_cll@{f0\_main\_cll}}
-\index{f0\_main\_cll@{f0\_main\_cll}!collier\_coefs::f0\_cll@{collier\_coefs::f0\_cll}}
-\doxysubsubsection{\texorpdfstring{f0\_main\_cll()}{f0\_main\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::f0\+\_\+cll\+::f0\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, intent(out)}]{F0,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double precision, dimension(0\+:0), intent(out), optional}]{Ferr,  }\item[{double precision, dimension(0\+:0), intent(out), optional}]{Ferr2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5094 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5094   }
-\DoxyCodeLine{5095     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40}
-\DoxyCodeLine{5096     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p51,p30,p41,p52,m02,m12,m22,m32,m42,m52}
-\DoxyCodeLine{5097     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: F0}
-\DoxyCodeLine{5098     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Ferr(0:0),Ferr2(0:0)}
-\DoxyCodeLine{5099     \textcolor{keywordtype}{double precision} :: Ferraux(0:0),Ferr2aux(0:0),Fdiff(0:0)}
-\DoxyCodeLine{5100     \textcolor{keywordtype}{double precision} :: q10,q21,q32,q43,q54,q50,q20,q31,q42,q53,q40}
-\DoxyCodeLine{5101     \textcolor{keywordtype}{double precision} :: q51,q30,q41,q52}
-\DoxyCodeLine{5102     \textcolor{keywordtype}{double complex} :: mm02,mm12,mm22,mm32,mm42,mm52}
-\DoxyCodeLine{5103     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: rmax=0, rank=0}
-\DoxyCodeLine{5104     \textcolor{keywordtype}{double complex} :: F(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5105     \textcolor{keywordtype}{double complex} :: Fuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5106     \textcolor{keywordtype}{double complex} :: F2uv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax) }
-\DoxyCodeLine{5107     \textcolor{keywordtype}{double complex} :: F2(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax) }
-\DoxyCodeLine{5108     \textcolor{keywordtype}{double complex} :: Fdd(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5109     \textcolor{keywordtype}{double complex} :: elimcminf2}
-\DoxyCodeLine{5110     \textcolor{keywordtype}{double complex} :: args(21)}
-\DoxyCodeLine{5111     \textcolor{keywordtype}{double precision} :: norm}
-\DoxyCodeLine{5112 }
-\DoxyCodeLine{5113     \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{5114     args(1) = p10}
-\DoxyCodeLine{5115     args(2) = p21}
-\DoxyCodeLine{5116     args(3) = p32}
-\DoxyCodeLine{5117     args(4) = p43}
-\DoxyCodeLine{5118     args(5) = p54}
-\DoxyCodeLine{5119     args(6) = p50}
-\DoxyCodeLine{5120     args(7) = p20}
-\DoxyCodeLine{5121     args(8) = p31}
-\DoxyCodeLine{5122     args(9) = p42}
-\DoxyCodeLine{5123     args(10) = p53}
-\DoxyCodeLine{5124     args(11) = p40}
-\DoxyCodeLine{5125     args(12) = p51}
-\DoxyCodeLine{5126     args(13) = p30}
-\DoxyCodeLine{5127     args(14) = p41}
-\DoxyCodeLine{5128     args(15) = p52}
-\DoxyCodeLine{5129     args(16) = m02}
-\DoxyCodeLine{5130     args(17) = m12}
-\DoxyCodeLine{5131     args(18) = m22}
-\DoxyCodeLine{5132     args(19) = m32}
-\DoxyCodeLine{5133     args(20) = m42}
-\DoxyCodeLine{5134     args(21) = m52}
-\DoxyCodeLine{5135     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'F0\_cll'})}
-\DoxyCodeLine{5136     \textcolor{keyword}{call }setmastern\_cll(6)}
-\DoxyCodeLine{5137     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
-\DoxyCodeLine{5138     \textcolor{keyword}{call }setmasterargs\_cll(21,args)}
-\DoxyCodeLine{5139 }
-\DoxyCodeLine{5140 \textcolor{comment}{!    write(*,*) 'F\_main\_cll mode',mode\_cll}}
-\DoxyCodeLine{5141 }
-\DoxyCodeLine{5142     \textcolor{keywordflow}{select case} (mode\_cll)}
-\DoxyCodeLine{5143 }
-\DoxyCodeLine{5144       \textcolor{keywordflow}{case} (1)}
-\DoxyCodeLine{5145         \textcolor{comment}{! calculate loop integral using}}
-\DoxyCodeLine{5146         \textcolor{comment}{! COLI implementation by AD/LH}}
-\DoxyCodeLine{5147 }
-\DoxyCodeLine{5148         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(ferr)) then}
-\DoxyCodeLine{5149           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(ferr2)) then}
-\DoxyCodeLine{5150             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5151                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,0,0,ferr,ferr2)}
-\DoxyCodeLine{5152           else}
-\DoxyCodeLine{5153             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5154                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferr,ferr2aux)}
-\DoxyCodeLine{5155           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5156         else}
-\DoxyCodeLine{5157           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(ferr2)) then}
-\DoxyCodeLine{5158             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5159                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferraux,ferr2)}
-\DoxyCodeLine{5160           else}
-\DoxyCodeLine{5161             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5162                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferraux,ferr2aux)}
-\DoxyCodeLine{5163           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5164         \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5165         f0 = f(0,0,0,0,0,0)}
-\DoxyCodeLine{5166 }
-\DoxyCodeLine{5167       \textcolor{keywordflow}{case} (2)}
-\DoxyCodeLine{5168         \textcolor{comment}{! calculate loop integral using}}
-\DoxyCodeLine{5169         \textcolor{comment}{! DD implementation by SD}}
-\DoxyCodeLine{5170 }
-\DoxyCodeLine{5171         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
-\DoxyCodeLine{5172         q10 = dreal(getminf2dd\_cll(p10))}
-\DoxyCodeLine{5173         q21 = dreal(getminf2dd\_cll(p21))}
-\DoxyCodeLine{5174         q32 = dreal(getminf2dd\_cll(p32))}
-\DoxyCodeLine{5175         q43 = dreal(getminf2dd\_cll(p43))}
-\DoxyCodeLine{5176         q54 = dreal(getminf2dd\_cll(p54))}
-\DoxyCodeLine{5177         q50 = dreal(getminf2dd\_cll(p50))}
-\DoxyCodeLine{5178         q20 = dreal(getminf2dd\_cll(p20))}
-\DoxyCodeLine{5179         q31 = dreal(getminf2dd\_cll(p31))}
-\DoxyCodeLine{5180         q42 = dreal(getminf2dd\_cll(p42))}
-\DoxyCodeLine{5181         q53 = dreal(getminf2dd\_cll(p53))}
-\DoxyCodeLine{5182         q40 = dreal(getminf2dd\_cll(p40))}
-\DoxyCodeLine{5183         q51 = dreal(getminf2dd\_cll(p51))}
-\DoxyCodeLine{5184         q30 = dreal(getminf2dd\_cll(p30))}
-\DoxyCodeLine{5185         q41 = dreal(getminf2dd\_cll(p41))}
-\DoxyCodeLine{5186         q52 = dreal(getminf2dd\_cll(p52))}
-\DoxyCodeLine{5187         mm02 = getminf2dd\_cll(m02)}
-\DoxyCodeLine{5188         mm12 = getminf2dd\_cll(m12)}
-\DoxyCodeLine{5189         mm22 = getminf2dd\_cll(m22)}
-\DoxyCodeLine{5190         mm32 = getminf2dd\_cll(m32)}
-\DoxyCodeLine{5191         mm42 = getminf2dd\_cll(m42)}
-\DoxyCodeLine{5192         mm52 = getminf2dd\_cll(m52)}
-\DoxyCodeLine{5193 }
-\DoxyCodeLine{5194         \textcolor{keyword}{call }f\_dd(fdd,q10,q21,q32,q43,q54,q50,q20,q31,q42,q53,q40,  \&}
-\DoxyCodeLine{5195                   q51,q30,q41,q52,mm02,mm12,mm22,mm32,mm42,mm52,rank,0)  }
-\DoxyCodeLine{5196 }
-\DoxyCodeLine{5197         f0 = fdd(0,0,0,0,0,0)}
-\DoxyCodeLine{5198 }
-\DoxyCodeLine{5199       \textcolor{keywordflow}{case} (3)}
-\DoxyCodeLine{5200         \textcolor{comment}{! cross-\/check mode}}
-\DoxyCodeLine{5201         \textcolor{comment}{! compare results for loop integral}}
-\DoxyCodeLine{5202         \textcolor{comment}{! from COLI implementation by AD/LH and}}
-\DoxyCodeLine{5203         \textcolor{comment}{! from DD implementation by SD}}
-\DoxyCodeLine{5204 }
-\DoxyCodeLine{5205         \textcolor{comment}{! calculate loop integral}}
-\DoxyCodeLine{5206         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(ferr)) then}
-\DoxyCodeLine{5207           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(ferr2)) then}
-\DoxyCodeLine{5208             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5209                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferr,ferr2)}
-\DoxyCodeLine{5210           else}
-\DoxyCodeLine{5211             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5212                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferr,ferr2aux)}
-\DoxyCodeLine{5213           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5214         else}
-\DoxyCodeLine{5215           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(ferr2)) then}
-\DoxyCodeLine{5216             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5217                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferraux,ferr2)}
-\DoxyCodeLine{5218           else}
-\DoxyCodeLine{5219             \textcolor{keyword}{call }calcf(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5220                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,0,ferraux,ferr2aux)}
-\DoxyCodeLine{5221           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5222         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5223         f0 = f(0,0,0,0,0,0)}
-\DoxyCodeLine{5224 }
-\DoxyCodeLine{5225         \textcolor{comment}{! replace small masses by DD-\/identifiers    }}
-\DoxyCodeLine{5226         q10 = dreal(getminf2dd\_cll(p10))}
-\DoxyCodeLine{5227         q21 = dreal(getminf2dd\_cll(p21))}
-\DoxyCodeLine{5228         q32 = dreal(getminf2dd\_cll(p32))}
-\DoxyCodeLine{5229         q43 = dreal(getminf2dd\_cll(p43))}
-\DoxyCodeLine{5230         q54 = dreal(getminf2dd\_cll(p54))}
-\DoxyCodeLine{5231         q50 = dreal(getminf2dd\_cll(p50))}
-\DoxyCodeLine{5232         q20 = dreal(getminf2dd\_cll(p20))}
-\DoxyCodeLine{5233         q31 = dreal(getminf2dd\_cll(p31))}
-\DoxyCodeLine{5234         q42 = dreal(getminf2dd\_cll(p42))}
-\DoxyCodeLine{5235         q53 = dreal(getminf2dd\_cll(p53))}
-\DoxyCodeLine{5236         q40 = dreal(getminf2dd\_cll(p40))}
-\DoxyCodeLine{5237         q51 = dreal(getminf2dd\_cll(p51))}
-\DoxyCodeLine{5238         q30 = dreal(getminf2dd\_cll(p30))}
-\DoxyCodeLine{5239         q41 = dreal(getminf2dd\_cll(p41))}
-\DoxyCodeLine{5240         q52 = dreal(getminf2dd\_cll(p52))}
-\DoxyCodeLine{5241         mm02 = getminf2dd\_cll(m02)}
-\DoxyCodeLine{5242         mm12 = getminf2dd\_cll(m12)}
-\DoxyCodeLine{5243         mm22 = getminf2dd\_cll(m22)}
-\DoxyCodeLine{5244         mm32 = getminf2dd\_cll(m32)}
-\DoxyCodeLine{5245         mm42 = getminf2dd\_cll(m42)}
-\DoxyCodeLine{5246         mm52 = getminf2dd\_cll(m52)}
-\DoxyCodeLine{5247 }
-\DoxyCodeLine{5248         \textcolor{keyword}{call }f\_dd(fdd,q10,q21,q32,q43,q54,q50,q20,q31,q42,q53,q40,  \&}
-\DoxyCodeLine{5249                   q51,q30,q41,q52,mm02,mm12,mm22,mm32,mm42,mm52,rank,0)  }
-\DoxyCodeLine{5250         f2(0,0,0,0,0,0) = fdd(0,0,0,0,0,0)}
-\DoxyCodeLine{5251 }
-\DoxyCodeLine{5252         norm=max(abs(f(0,0,0,0,0,0)),abs(f2(0,0,0,0,0,0)))}
-\DoxyCodeLine{5253 }
-\DoxyCodeLine{5254         \textcolor{comment}{! cross-\/check}}
-\DoxyCodeLine{5255         \textcolor{keyword}{call }checkcoefsf\_cll(f,f2,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{5256             p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,norm,fdiff)}
-\DoxyCodeLine{5257 }
-\DoxyCodeLine{5258     \textcolor{keyword}{end }select}
-\DoxyCodeLine{5259 }
-\DoxyCodeLine{5260     \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5261 }
-\DoxyCodeLine{5262 }
-
-\end{DoxyCode}
-
-
-The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__coefs_8F90}{collier\+\_\+coefs.\+F90}}\end{DoxyCompactItemize}

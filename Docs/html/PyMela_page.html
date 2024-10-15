@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -111,18 +101,33 @@ $(document).ready(function(){initNavTree('PyMela_page.html',''); initResizable()
 <li>Functions that just need to be referenced within the PyBind framework without any extra overhead</li>
 </ul>
 <p>The first two categories of functions are detailed in the <a class="el" href="group__Pychanges.html">Novel Python Functions</a> section. These changes vary, but generally exist for compatibility or ease-of-use cases.</p>
-<p>The following classes in <a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a> are encompassed by the PyBind11 module, and are documented in the following subpages:</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Other Classes Encompassed</h1>
+<p>The following classes in the C++ implementation are encompassed by the PyBind11 module, and are documented in the following subpages:</p>
 <ul>
 <li><a class="el" href="SimpleParticle_t.html">Mela.SimpleParticle_t</a></li>
 <li><a class="el" href="SimpleParticleCollection_t.html">Mela.SimpleParticleCollection_t</a></li>
-<li><a class="el" href="py_enums.html">Enumerations</a> </li>
+<li><a class="el" href="event_scales_type.html">Mela.event_scales_type</a></li>
+<li><a class="el" href="MELAParticle.html">Mela.MELAParticle</a></li>
+<li><a class="el" href="MELAThreeBodyDecayCandidate.html">Mela.MELAThreeBodyDecayCandidate</a></li>
+<li><a class="el" href="MELACandidate.html">Mela.MELACandidate</a></li>
+<li><a class="el" href="py_enums.html">Coupling Enumerations</a></li>
 </ul>
+<p>These classes serve to help the functionality of MELA such as providing an avenue to input vectors, index values through enumerations, etc.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Novel Python Functions</h1>
+<p>There are a series of functions that are re-defined within the Python MELA bindings for a variety of reasons, mostly to convert function from pass-by-reference to pass-by-value. These are referenced <a class="el" href="group__Pychanges.html">here</a>.</p>
+<h1><a class="anchor" id="PyMela_doc"></a>
+MELA itself</h1>
+<p>MELA in Python is a (quite large!) class within the PyBind11 module stated at the top of the page. All the functions are either defined at <a class="el" href="group__Pychanges.html">the top of the file</a>, or is taken directly from the header, <a class="el" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM-JHUGen and pure JHUGen.">Mela.h</a>. They are defined in the <a class="el" href="MELA_python.html">following subpage</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassMela_html_aa0d92c0d836f7c720f584dc75a8031fc"><div class="ttname"><a href="classMela.html#aa0d92c0d836f7c720f584dc75a8031fc">Mela::Mela</a></div><div class="ttdeci">Mela(double LHCsqrts_=13., double mh_=125., TVar::VerbosityLevel verbosity_=TVar::ERROR)</div><div class="ttdoc">the MELA constructor</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00053">Mela.cc:53</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="index.html">Introduction</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

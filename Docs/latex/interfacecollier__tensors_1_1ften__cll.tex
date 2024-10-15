@@ -1,708 +1,0 @@
-\hypertarget{interfacecollier__tensors_1_1ften__cll}{}\doxysection{collier\+\_\+tensors\+::ften\+\_\+cll Interface Reference}
-\label{interfacecollier__tensors_1_1ften__cll}\index{collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1ften__cll_a576ec4afcdefebf32a2ab291614c046d}{ften\+\_\+main\+\_\+cll}} (TF, T\+Fuv, Mom\+Vec, Mom\+Inv, masses2, rmax, T\+Ferr)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1ften__cll_a313d6d7be83a62c31b1c616fded8e638}{ften\+\_\+list\+\_\+cll}} (TF, T\+Fuv, Mom\+Vec, Mom\+Inv, masses2, rmax, T\+Ferr)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1ften__cll_aae6ae027e9d4651e860842f6bfe456c9}{ften\+\_\+args\+\_\+cll}} (TF, T\+Fuv, p1vec, p2vec, p3vec, p4vec, p5vec, p10, p21, p32, p43, p54, p50, p20, p31, p42, p53, p40, p51, p30, p41, p52, m02, m12, m22, m32, m42, m52, rmax, T\+Ferr)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1ften__cll_a7868ad0ba1aae982bd6998b571589856}{ften\+\_\+args\+\_\+list\+\_\+cll}} (TF, T\+Fuv, p1vec, p2vec, p3vec, p4vec, p5vec, p10, p21, p32, p43, p54, p50, p20, p31, p42, p53, p40, p51, p30, p41, p52, m02, m12, m22, m32, m42, m52, rmax, T\+Ferr)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 74 of file collier\+\_\+tensors.\+F90.
-
-
-
-\doxysubsection{Member Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1ften__cll_aae6ae027e9d4651e860842f6bfe456c9}\label{interfacecollier__tensors_1_1ften__cll_aae6ae027e9d4651e860842f6bfe456c9}} 
-\index{collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}!ften\_args\_cll@{ften\_args\_cll}}
-\index{ften\_args\_cll@{ften\_args\_cll}!collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}}
-\doxysubsubsection{\texorpdfstring{ften\_args\_cll()}{ften\_args\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::ften\+\_\+cll\+::ften\+\_\+args\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TF,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Fuv,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p1vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p2vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p3vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p4vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p5vec,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Ferr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 4325 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{4325     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{4326     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p1vec(0:3),p2vec(0:3),p3vec(0:3),p4vec(0:3)}
-\DoxyCodeLine{4327     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p5vec(0:3)}
-\DoxyCodeLine{4328     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40}
-\DoxyCodeLine{4329     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p51,p30,p41,p52,m02,m12,m22,m32,m42,m52}
-\DoxyCodeLine{4330     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4331     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TFuv(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4332     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TFerr(0:rmax)}
-\DoxyCodeLine{4333     \textcolor{keywordtype}{double complex} :: TF2(0:rmax,0:rmax,0:rmax,0:rmax), TFuv2(0:rmax,0:rmax,0:rmax,0:rmax)    }
-\DoxyCodeLine{4334     \textcolor{keywordtype}{double complex} :: MomVec(0:3,5), MomInv(15), masses2(0:5)}
-\DoxyCodeLine{4335     \textcolor{keywordtype}{double complex} :: CF(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax) }
-\DoxyCodeLine{4336     \textcolor{keywordtype}{double complex} :: CFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4337     \textcolor{keywordtype}{double precision} :: CFerr(0:rmax), TFerr\_aux(0:rmax), TFerr\_aux2(0:rmax)}
-\DoxyCodeLine{4338     \textcolor{keywordtype}{double complex} :: args(41)}
-\DoxyCodeLine{4339     \textcolor{keywordtype}{double precision} :: TFdiff(0:rmax),norm(0:rmax),norm\_coli,norm\_dd,TFacc(0:rmax)}
-\DoxyCodeLine{4340     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3   }
-\DoxyCodeLine{4341     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{4342 }
-\DoxyCodeLine{4343     \textcolor{keywordflow}{if} (6.gt.nmax\_cll) then}
-\DoxyCodeLine{4344       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4345       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 6'},eflag,.true.)}
-\DoxyCodeLine{4346       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{4347       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 6'}}
-\DoxyCodeLine{4348       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4349       return}
-\DoxyCodeLine{4350 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4351     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{4352       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4353       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{4354       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{4355       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{4356       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{4357       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4358       return}
-\DoxyCodeLine{4359 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4360 }
-\DoxyCodeLine{4361     momvec(0:,1) = p1vec}
-\DoxyCodeLine{4362     momvec(0:,2) = p2vec}
-\DoxyCodeLine{4363     momvec(0:,3) = p3vec}
-\DoxyCodeLine{4364     momvec(0:,4) = p4vec}
-\DoxyCodeLine{4365     momvec(0:,5) = p5vec}
-\DoxyCodeLine{4366     mominv(1) = p10}
-\DoxyCodeLine{4367     mominv(2) = p21}
-\DoxyCodeLine{4368     mominv(3) = p32}
-\DoxyCodeLine{4369     mominv(4) = p43}
-\DoxyCodeLine{4370     mominv(5) = p54}
-\DoxyCodeLine{4371     mominv(6) = p50}
-\DoxyCodeLine{4372     mominv(7) = p20}
-\DoxyCodeLine{4373     mominv(8) = p31}
-\DoxyCodeLine{4374     mominv(9) = p42}
-\DoxyCodeLine{4375     mominv(10) = p53}
-\DoxyCodeLine{4376     mominv(11) = p40}
-\DoxyCodeLine{4377     mominv(12) = p51}
-\DoxyCodeLine{4378     mominv(13) = p30}
-\DoxyCodeLine{4379     mominv(14) = p41}
-\DoxyCodeLine{4380     mominv(15) = p52}
-\DoxyCodeLine{4381     masses2(0) = m02}
-\DoxyCodeLine{4382     masses2(1) = m12}
-\DoxyCodeLine{4383     masses2(2) = m22}
-\DoxyCodeLine{4384     masses2(3) = m32}
-\DoxyCodeLine{4385     masses2(4) = m42}
-\DoxyCodeLine{4386     masses2(5) = m52}
-\DoxyCodeLine{4387 }
-\DoxyCodeLine{4388     \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{4389     args(1:4) = momvec(0:,1)}
-\DoxyCodeLine{4390     args(5:8) = momvec(0:,2)}
-\DoxyCodeLine{4391     args(9:12) = momvec(0:,3)}
-\DoxyCodeLine{4392     args(13:16) = momvec(0:,4)}
-\DoxyCodeLine{4393     args(17:20) = momvec(0:,5)}
-\DoxyCodeLine{4394     args(21:35) = mominv}
-\DoxyCodeLine{4395     args(36:41) = masses2(0:)}
-\DoxyCodeLine{4396     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'Ften\_cll'})}
-\DoxyCodeLine{4397     \textcolor{keyword}{call }setmastern\_cll(6)}
-\DoxyCodeLine{4398     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
-\DoxyCodeLine{4399     \textcolor{keyword}{call }setmasterargs\_cll(41,args)}
-\DoxyCodeLine{4400 }
-\DoxyCodeLine{4401     \textcolor{keyword}{call }settencache\_cll(tenred\_cll-\/1)}
-\DoxyCodeLine{4402 }
-\DoxyCodeLine{4403     \textcolor{keywordflow}{if} (tenred\_cll.le.6) then}
-\DoxyCodeLine{4404     }
-\DoxyCodeLine{4405       \textcolor{keywordflow}{if} (mode\_cll.gt.1) \textcolor{keyword}{call }f\_dd\_dummy(rmax)}
-\DoxyCodeLine{4406       }
-\DoxyCodeLine{4407       \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
-\DoxyCodeLine{4408         \textcolor{comment}{! calculate tensor with coefficients from COLI}}
-\DoxyCodeLine{4409         mode\_cll = 1}
-\DoxyCodeLine{4410         \textcolor{keyword}{call }calctensorfr(tf,tfuv,tferr\_aux,momvec,mominv,masses2,rmax)                                     }
-\DoxyCodeLine{4411       }
-\DoxyCodeLine{4412         \textcolor{comment}{! calculate tensor with coefficients from DD}}
-\DoxyCodeLine{4413         mode\_cll = 2}
-\DoxyCodeLine{4414         \textcolor{keyword}{call }calctensorfr(tf2,tfuv2,tferr\_aux2,momvec,mominv,masses2,rmax)                               }
-\DoxyCodeLine{4415       }
-\DoxyCodeLine{4416         \textcolor{comment}{! comparison -\/-\/> take better result}}
-\DoxyCodeLine{4417         mode\_cll = 3}
-\DoxyCodeLine{4418         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4419           norm\_coli=0d0}
-\DoxyCodeLine{4420           norm\_dd=0d0}
-\DoxyCodeLine{4421           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{4422             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{4423               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{4424                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{4425                 norm\_coli = max(norm\_coli,abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{4426                 norm\_dd = max(norm\_dd,abs(tf2(n0,n1,n2,n3)))}
-\DoxyCodeLine{4427               \textcolor{keyword}{end }do}
-\DoxyCodeLine{4428             \textcolor{keyword}{end }do}
-\DoxyCodeLine{4429           \textcolor{keyword}{end }do}
-\DoxyCodeLine{4430           \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{4431             norm\_coli = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{4432             \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{4433               norm\_coli=1d0/norm\_coli**(4-\/real(r)/2)}
-\DoxyCodeLine{4434             else}
-\DoxyCodeLine{4435               norm\_coli=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4436             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4437           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4438           \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{4439             norm\_dd = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{4440             \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{4441               norm\_dd=1d0/norm\_dd**(4-\/real(r)/2)}
-\DoxyCodeLine{4442             else}
-\DoxyCodeLine{4443               norm\_dd=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4444             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4445           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4446           norm(r) = min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{4447         \textcolor{keyword}{end }do}
-\DoxyCodeLine{4448       }
-\DoxyCodeLine{4449         \textcolor{keyword}{call }checktensors\_cll(tf,tf2,momvec,mominv,masses2,norm,6,rmax,tfdiff)        }
-\DoxyCodeLine{4450        }
-\DoxyCodeLine{4451         \textcolor{keywordflow}{if} (tferr\_aux(rmax).lt.tferr\_aux2(rmax)) then}
-\DoxyCodeLine{4452           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux,tfdiff*norm)}
-\DoxyCodeLine{4453           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4454             tfacc(r) = max(tferr\_aux(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{4455           \textcolor{keyword}{end }do}
-\DoxyCodeLine{4456           \textcolor{keywordflow}{if} (monitoring) pointscntften\_coli =  pointscntften\_coli + 1}
-\DoxyCodeLine{4457         else}
-\DoxyCodeLine{4458           tf = tf2}
-\DoxyCodeLine{4459           tfuv = tfuv2        }
-\DoxyCodeLine{4460           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux2,tfdiff*norm)    }
-\DoxyCodeLine{4461           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4462             tfacc(r) = max(tferr\_aux2(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{4463 \textcolor{keywordflow}{          end do}         }
-\DoxyCodeLine{4464           \textcolor{keywordflow}{if} (monitoring) pointscntften\_dd =  pointscntften\_dd + 1}
-\DoxyCodeLine{4465         \textcolor{keyword}{end }if}
-\DoxyCodeLine{4466         }
-\DoxyCodeLine{4467       \textcolor{keywordflow}{else}       }
-\DoxyCodeLine{4468         \textcolor{keyword}{call }calctensorfr(tf,tfuv,tferr\_aux,momvec,mominv,masses2,rmax)}
-\DoxyCodeLine{4469         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr)) tferr = tferr\_aux}
-\DoxyCodeLine{4470         norm = 0d0}
-\DoxyCodeLine{4471         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4472           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{4473             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{4474               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{4475                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{4476                 norm(r) = max(norm(r),abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{4477               \textcolor{keyword}{end }do}
-\DoxyCodeLine{4478             \textcolor{keyword}{end }do}
-\DoxyCodeLine{4479           \textcolor{keyword}{end }do}
-\DoxyCodeLine{4480           \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{4481             norm(r) = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{4482             \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{4483               norm(r)=1d0/norm(r)**(4-\/real(r)/2)}
-\DoxyCodeLine{4484             else}
-\DoxyCodeLine{4485               norm(r)=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4486             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4487           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4488           tfacc(r) = tferr\_aux(r)/norm(r)}
-\DoxyCodeLine{4489 \textcolor{keywordflow}{        end do}        }
-\DoxyCodeLine{4490         }
-\DoxyCodeLine{4491       \textcolor{keyword}{end }if}
-\DoxyCodeLine{4492       }
-\DoxyCodeLine{4493     else}
-\DoxyCodeLine{4494        }
-\DoxyCodeLine{4495       \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
-\DoxyCodeLine{4496         \textcolor{comment}{! calculate tensor with coefficients from COLI}}
-\DoxyCodeLine{4497         mode\_cll = 1}
-\DoxyCodeLine{4498         \textcolor{keyword}{call }f\_main\_cll(cf,cfuv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{4499                         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),mominv(11), \&}
-\DoxyCodeLine{4500                         mominv(12),mominv(13),mominv(14),mominv(15),masses2(0),masses2(1), \&}
-\DoxyCodeLine{4501                         masses2(2),masses2(3),masses2(4),masses2(5),rmax,ferr2=cferr,id\_in=0) }
-\DoxyCodeLine{4502         \textcolor{keyword}{call }calctensorf(tf,tfuv,tferr\_aux,cf,cfuv,cferr,momvec,rmax)                                     }
-\DoxyCodeLine{4503       }
-\DoxyCodeLine{4504         \textcolor{comment}{! calculate tensor with coefficients from DD}}
-\DoxyCodeLine{4505         mode\_cll = 2}
-\DoxyCodeLine{4506         \textcolor{keyword}{call }f\_main\_cll(cf,cfuv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{4507                         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),mominv(11), \&}
-\DoxyCodeLine{4508                         mominv(12),mominv(13),mominv(14),mominv(15),masses2(0),masses2(1), \&}
-\DoxyCodeLine{4509                         masses2(2),masses2(3),masses2(4),masses2(5),rmax,ferr2=cferr,id\_in=0) }
-\DoxyCodeLine{4510         \textcolor{keyword}{call }calctensorf(tf2,tfuv2,tferr\_aux2,cf,cfuv,cferr,momvec,rmax)                                }
-\DoxyCodeLine{4511           }
-\DoxyCodeLine{4512         \textcolor{comment}{! comparison -\/-\/> take better result}}
-\DoxyCodeLine{4513         mode\_cll = 3}
-\DoxyCodeLine{4514         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4515           norm\_coli=0d0}
-\DoxyCodeLine{4516           norm\_dd=0d0}
-\DoxyCodeLine{4517           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{4518             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{4519               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{4520                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{4521                 norm\_coli = max(norm\_coli,abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{4522                 norm\_dd = max(norm\_dd,abs(tf2(n0,n1,n2,n3)))}
-\DoxyCodeLine{4523               \textcolor{keyword}{end }do}
-\DoxyCodeLine{4524             \textcolor{keyword}{end }do}
-\DoxyCodeLine{4525           \textcolor{keyword}{end }do}
-\DoxyCodeLine{4526           \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{4527             norm\_coli = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{4528             \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{4529               norm\_coli=1d0/norm\_coli**(4-\/real(r)/2)}
-\DoxyCodeLine{4530             else}
-\DoxyCodeLine{4531               norm\_coli=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4532             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4533           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4534           \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{4535             norm\_dd = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{4536             \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{4537               norm\_dd=1d0/norm\_dd**(4-\/real(r)/2)}
-\DoxyCodeLine{4538             else}
-\DoxyCodeLine{4539               norm\_dd=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4540             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4541           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4542           norm(r) = min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{4543         \textcolor{keyword}{end }do}
-\DoxyCodeLine{4544       }
-\DoxyCodeLine{4545         \textcolor{keyword}{call }checktensors\_cll(tf,tf2,momvec,mominv,masses2,norm,6,rmax,tfdiff)         }
-\DoxyCodeLine{4546        }
-\DoxyCodeLine{4547         \textcolor{keywordflow}{if} (tferr\_aux(rmax).lt.tferr\_aux2(rmax)) then}
-\DoxyCodeLine{4548           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux,tfdiff*norm)}
-\DoxyCodeLine{4549           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4550             tfacc(r) = max(tferr\_aux(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{4551           \textcolor{keyword}{end }do}
-\DoxyCodeLine{4552           \textcolor{keywordflow}{if} (monitoring) pointscntften\_coli =  pointscntften\_coli + 1}
-\DoxyCodeLine{4553         else}
-\DoxyCodeLine{4554           tf = tf2}
-\DoxyCodeLine{4555           tfuv = tfuv2        }
-\DoxyCodeLine{4556           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux2,tfdiff*norm)    }
-\DoxyCodeLine{4557           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4558             tfacc(r) = max(tferr\_aux2(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{4559 \textcolor{keywordflow}{          end do}         }
-\DoxyCodeLine{4560           \textcolor{keywordflow}{if} (monitoring) pointscntften\_dd =  pointscntften\_dd + 1}
-\DoxyCodeLine{4561         \textcolor{keyword}{end }if}
-\DoxyCodeLine{4562         }
-\DoxyCodeLine{4563       \textcolor{keywordflow}{else}    }
-\DoxyCodeLine{4564         \textcolor{keyword}{call }f\_main\_cll(cf,cfuv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{4565                         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),mominv(11), \&}
-\DoxyCodeLine{4566                         mominv(12),mominv(13),mominv(14),mominv(15),masses2(0),masses2(1), \&}
-\DoxyCodeLine{4567                         masses2(2),masses2(3),masses2(4),masses2(5),rmax,ferr2=cferr,id\_in=0)}
-\DoxyCodeLine{4568         \textcolor{keyword}{call }calctensorf(tf,tfuv,tferr\_aux,cf,cfuv,cferr,momvec,rmax)}
-\DoxyCodeLine{4569         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr)) tferr = tferr\_aux}
-\DoxyCodeLine{4570         norm = 0d0}
-\DoxyCodeLine{4571         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{4572           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{4573             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{4574               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{4575                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{4576                 norm(r) = max(norm(r),abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{4577               \textcolor{keyword}{end }do}
-\DoxyCodeLine{4578             \textcolor{keyword}{end }do}
-\DoxyCodeLine{4579           \textcolor{keyword}{end }do}
-\DoxyCodeLine{4580           \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{4581             norm(r) = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{4582             \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{4583               norm(r)=1d0/norm(r)**(4-\/real(r)/2)}
-\DoxyCodeLine{4584             else}
-\DoxyCodeLine{4585               norm(r)=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4586             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4587           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4588           tfacc(r) = tferr\_aux(r)/norm(r)}
-\DoxyCodeLine{4589 \textcolor{keywordflow}{        end do}        }
-\DoxyCodeLine{4590         }
-\DoxyCodeLine{4591       \textcolor{keyword}{end }if}
-\DoxyCodeLine{4592     }
-\DoxyCodeLine{4593     \textcolor{keyword}{end }if}
-\DoxyCodeLine{4594  }
-\DoxyCodeLine{4595     \textcolor{keyword}{call }propagateaccflag\_cll(tfacc,rmax)}
-\DoxyCodeLine{4596     \textcolor{keyword}{call }propagateerrflag\_cll   }
-\DoxyCodeLine{4597 }
-\DoxyCodeLine{4598     \textcolor{keywordflow}{if} (monitoring) then}
-\DoxyCodeLine{4599       pointscntften\_cll =  pointscntften\_cll + 1}
-\DoxyCodeLine{4600 }
-\DoxyCodeLine{4601       \textcolor{keywordflow}{if}(maxval(tfacc).gt.reqacc\_cll) accpointscntften\_cll = accpointscntften\_cll + 1}
-\DoxyCodeLine{4602 }
-\DoxyCodeLine{4603       \textcolor{keywordflow}{if}(maxval(tfacc).gt.critacc\_cll) then}
-\DoxyCodeLine{4604         critpointscntften\_cll =  critpointscntften\_cll + 1}
-\DoxyCodeLine{4605         \textcolor{keywordflow}{if} ( critpointscntften\_cll.le.noutcritpointsmax\_cll(6) ) then}
-\DoxyCodeLine{4606           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TFten\_cll'},0,maxval(tfacc),critpointscntften\_cll)}
-\DoxyCodeLine{4607           \textcolor{keywordflow}{if}( critpointscntften\_cll.eq.noutcritpointsmax\_cll(6)) then}
-\DoxyCodeLine{4608             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TFten\_cll suppressed'}   }
-\DoxyCodeLine{4609             \textcolor{keyword}{write}(ncpout\_cll,*)}
-\DoxyCodeLine{4610           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{4611 \textcolor{preprocessor}{\#ifdef CritPoints2}}
-\DoxyCodeLine{4612 \textcolor{preprocessor}{}          \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'TFten\_cll'},0,maxval(tfacc),critpointscntften\_cll)}
-\DoxyCodeLine{4613           \textcolor{keywordflow}{if}( critpointscntften\_cll.eq.noutcritpointsmax\_cll(6)) then}
-\DoxyCodeLine{4614             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TFten\_cll suppressed'}   }
-\DoxyCodeLine{4615             \textcolor{keyword}{write}(ncpout2\_cll,*)}
-\DoxyCodeLine{4616           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{4617 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{4618 \textcolor{preprocessor}{}        \textcolor{keyword}{end }if}
-\DoxyCodeLine{4619       \textcolor{keyword}{end }if}
-\DoxyCodeLine{4620     \textcolor{keyword}{end }if}
-\DoxyCodeLine{4621 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1ften__cll_a7868ad0ba1aae982bd6998b571589856}\label{interfacecollier__tensors_1_1ften__cll_a7868ad0ba1aae982bd6998b571589856}} 
-\index{collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}!ften\_args\_list\_cll@{ften\_args\_list\_cll}}
-\index{ften\_args\_list\_cll@{ften\_args\_list\_cll}!collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}}
-\doxysubsubsection{\texorpdfstring{ften\_args\_list\_cll()}{ften\_args\_list\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::ften\+\_\+cll\+::ften\+\_\+args\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{TF,  }\item[{double complex, dimension(\+:), intent(out)}]{T\+Fuv,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p1vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p2vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p3vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p4vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p5vec,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Ferr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 4638 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{4638     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{4639     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p1vec(0:3),p2vec(0:3),p3vec(0:3),p4vec(0:3)}
-\DoxyCodeLine{4640     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p5vec(0:3)}
-\DoxyCodeLine{4641     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40}
-\DoxyCodeLine{4642     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p51,p30,p41,p52,m02,m12,m22,m32,m42,m52}
-\DoxyCodeLine{4643     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(:),TFuv(:)}
-\DoxyCodeLine{4644     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TFerr(0:rmax)}
-\DoxyCodeLine{4645     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{4646 }
-\DoxyCodeLine{4647     \textcolor{keywordflow}{if} (6.gt.nmax\_cll) then}
-\DoxyCodeLine{4648       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4649       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 6'},eflag,.true.)}
-\DoxyCodeLine{4650       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{4651       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 6'}}
-\DoxyCodeLine{4652       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4653       return}
-\DoxyCodeLine{4654 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4655     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{4656       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4657       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{4658       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{4659       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{4660       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{4661       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4662       return}
-\DoxyCodeLine{4663 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4664 }
-\DoxyCodeLine{4665     \textcolor{keyword}{call }ften\_args\_list\_checked\_cll(tf,tfuv,p1vec,p2vec,p3vec,p4vec,p5vec,  \&}
-\DoxyCodeLine{4666                            p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
-\DoxyCodeLine{4667                            p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,tferr)}
-\DoxyCodeLine{4668 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1ften__cll_a313d6d7be83a62c31b1c616fded8e638}\label{interfacecollier__tensors_1_1ften__cll_a313d6d7be83a62c31b1c616fded8e638}} 
-\index{collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}!ften\_list\_cll@{ften\_list\_cll}}
-\index{ften\_list\_cll@{ften\_list\_cll}!collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}}
-\doxysubsubsection{\texorpdfstring{ften\_list\_cll()}{ften\_list\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::ften\+\_\+cll\+::ften\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{TF,  }\item[{double complex, dimension(\+:), intent(out)}]{T\+Fuv,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(15), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:5), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Ferr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 4049 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{4049 }
-\DoxyCodeLine{4050     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{4051     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5), MomInv(15), masses2(0:5)}
-\DoxyCodeLine{4052     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(:), TFuv(:)}
-\DoxyCodeLine{4053     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TFerr(0:rmax)}
-\DoxyCodeLine{4054     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{4055 }
-\DoxyCodeLine{4056     \textcolor{keywordflow}{if} (6.gt.nmax\_cll) then}
-\DoxyCodeLine{4057       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4058       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 6'},eflag,.true.)}
-\DoxyCodeLine{4059       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{4060       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 6'}}
-\DoxyCodeLine{4061       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4062       return}
-\DoxyCodeLine{4063 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4064     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{4065       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4066       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{4067       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{4068       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{4069       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{4070       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4071       return}
-\DoxyCodeLine{4072 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4073 }
-\DoxyCodeLine{4074     \textcolor{keyword}{call }ften\_list\_checked\_cll(tf,tfuv,momvec,mominv,masses2,rmax,tferr)}
-\DoxyCodeLine{4075 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1ften__cll_a576ec4afcdefebf32a2ab291614c046d}\label{interfacecollier__tensors_1_1ften__cll_a576ec4afcdefebf32a2ab291614c046d}} 
-\index{collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}!ften\_main\_cll@{ften\_main\_cll}}
-\index{ften\_main\_cll@{ften\_main\_cll}!collier\_tensors::ften\_cll@{collier\_tensors::ften\_cll}}
-\doxysubsubsection{\texorpdfstring{ften\_main\_cll()}{ften\_main\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::ften\+\_\+cll\+::ften\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TF,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Fuv,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(15), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:5), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Ferr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 3768 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3768 }
-\DoxyCodeLine{3769     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{3770     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5), MomInv(15), masses2(0:5)}
-\DoxyCodeLine{3771     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{3772     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TFuv(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{3773     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TFerr(0:rmax)}
-\DoxyCodeLine{3774     \textcolor{keywordtype}{double complex} :: TF2(0:rmax,0:rmax,0:rmax,0:rmax), TFuv2(0:rmax,0:rmax,0:rmax,0:rmax)    }
-\DoxyCodeLine{3775     \textcolor{keywordtype}{double complex} :: CF(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{3776     \textcolor{keywordtype}{double complex} :: CFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{3777     \textcolor{keywordtype}{double precision} :: CFerr(0:rmax), TFerr\_aux(0:rmax), TFerr\_aux2(0:rmax) }
-\DoxyCodeLine{3778     \textcolor{keywordtype}{double complex} :: args(41)}
-\DoxyCodeLine{3779     \textcolor{keywordtype}{double precision} :: TFdiff(0:rmax),norm(0:rmax),norm\_coli,norm\_dd,TFacc(0:rmax)}
-\DoxyCodeLine{3780     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3    }
-\DoxyCodeLine{3781     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{3782 }
-\DoxyCodeLine{3783     \textcolor{keywordflow}{if} (6.gt.nmax\_cll) then}
-\DoxyCodeLine{3784       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{3785       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 6'},eflag,.true.)}
-\DoxyCodeLine{3786       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{3787       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 6'}}
-\DoxyCodeLine{3788       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{3789       return}
-\DoxyCodeLine{3790 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{3791     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{3792       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{3793       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Ften\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{3794       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{3795       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{3796       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{3797       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{3798       return}
-\DoxyCodeLine{3799 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{3800 }
-\DoxyCodeLine{3801     \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{3802     args(1:4) = momvec(0:,1)}
-\DoxyCodeLine{3803     args(5:8) = momvec(0:,2)}
-\DoxyCodeLine{3804     args(9:12) = momvec(0:,3)}
-\DoxyCodeLine{3805     args(13:16) = momvec(0:,4)}
-\DoxyCodeLine{3806     args(17:20) = momvec(0:,5)}
-\DoxyCodeLine{3807     args(21:35) = mominv}
-\DoxyCodeLine{3808     args(36:41) = masses2(0:)}
-\DoxyCodeLine{3809     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'Ften\_cll'})}
-\DoxyCodeLine{3810     \textcolor{keyword}{call }setmastern\_cll(6)}
-\DoxyCodeLine{3811     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
-\DoxyCodeLine{3812     \textcolor{keyword}{call }setmasterargs\_cll(41,args)}
-\DoxyCodeLine{3813 }
-\DoxyCodeLine{3814     \textcolor{keyword}{call }settencache\_cll(tenred\_cll-\/1)}
-\DoxyCodeLine{3815 }
-\DoxyCodeLine{3816 }
-\DoxyCodeLine{3817     \textcolor{keywordflow}{if} (tenred\_cll.le.6) then}
-\DoxyCodeLine{3818     }
-\DoxyCodeLine{3819       \textcolor{keywordflow}{if} (mode\_cll.gt.1) \textcolor{keyword}{call }f\_dd\_dummy(rmax)}
-\DoxyCodeLine{3820              }
-\DoxyCodeLine{3821       \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
-\DoxyCodeLine{3822         \textcolor{comment}{! calculate tensor with coefficients from COLI}}
-\DoxyCodeLine{3823         mode\_cll = 1}
-\DoxyCodeLine{3824         \textcolor{keyword}{call }calctensorfr(tf,tfuv,tferr\_aux,momvec,mominv,masses2,rmax)                                     }
-\DoxyCodeLine{3825       }
-\DoxyCodeLine{3826         \textcolor{comment}{! calculate tensor with coefficients from DD}}
-\DoxyCodeLine{3827         mode\_cll = 2}
-\DoxyCodeLine{3828         \textcolor{keyword}{call }calctensorfr(tf2,tfuv2,tferr\_aux2,momvec,mominv,masses2,rmax)                               }
-\DoxyCodeLine{3829       }
-\DoxyCodeLine{3830         \textcolor{comment}{! comparison -\/-\/> take better result}}
-\DoxyCodeLine{3831         mode\_cll = 3}
-\DoxyCodeLine{3832         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3833           norm\_coli=0d0}
-\DoxyCodeLine{3834           norm\_dd=0d0}
-\DoxyCodeLine{3835           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{3836             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{3837               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{3838                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{3839                 norm\_coli = max(norm\_coli,abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{3840                 norm\_dd = max(norm\_dd,abs(tf2(n0,n1,n2,n3)))}
-\DoxyCodeLine{3841               \textcolor{keyword}{end }do}
-\DoxyCodeLine{3842             \textcolor{keyword}{end }do}
-\DoxyCodeLine{3843           \textcolor{keyword}{end }do}
-\DoxyCodeLine{3844           \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{3845             norm\_coli = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{3846             \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{3847               norm\_coli=1d0/norm\_coli**(4-\/real(r)/2)}
-\DoxyCodeLine{3848             else}
-\DoxyCodeLine{3849               norm\_coli=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{3850             \textcolor{keyword}{end }if}
-\DoxyCodeLine{3851           \textcolor{keyword}{end }if}
-\DoxyCodeLine{3852           \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{3853             norm\_dd = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{3854             \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{3855               norm\_dd=1d0/norm\_dd**(4-\/real(r)/2)}
-\DoxyCodeLine{3856             else}
-\DoxyCodeLine{3857               norm\_dd=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{3858             \textcolor{keyword}{end }if}
-\DoxyCodeLine{3859           \textcolor{keyword}{end }if}
-\DoxyCodeLine{3860           norm(r) = min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{3861         \textcolor{keyword}{end }do}
-\DoxyCodeLine{3862       }
-\DoxyCodeLine{3863         \textcolor{keyword}{call }checktensors\_cll(tf,tf2,momvec,mominv,masses2,norm,6,rmax,tfdiff)        }
-\DoxyCodeLine{3864        }
-\DoxyCodeLine{3865         \textcolor{keywordflow}{if} (tferr\_aux(rmax).lt.tferr\_aux2(rmax)) then}
-\DoxyCodeLine{3866           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux,tfdiff*norm)}
-\DoxyCodeLine{3867           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3868             tfacc(r) = max(tferr\_aux(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{3869           \textcolor{keyword}{end }do}
-\DoxyCodeLine{3870           \textcolor{keywordflow}{if} (monitoring) pointscntften\_coli =  pointscntften\_coli + 1}
-\DoxyCodeLine{3871         else}
-\DoxyCodeLine{3872           tf = tf2}
-\DoxyCodeLine{3873           tfuv = tfuv2        }
-\DoxyCodeLine{3874           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux2,tfdiff*norm)    }
-\DoxyCodeLine{3875           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3876             tfacc(r) = max(tferr\_aux2(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{3877 \textcolor{keywordflow}{          end do}         }
-\DoxyCodeLine{3878           \textcolor{keywordflow}{if} (monitoring) pointscntften\_dd =  pointscntften\_dd + 1}
-\DoxyCodeLine{3879         \textcolor{keyword}{end }if}
-\DoxyCodeLine{3880         }
-\DoxyCodeLine{3881       \textcolor{keywordflow}{else}      }
-\DoxyCodeLine{3882         \textcolor{keyword}{call }calctensorfr(tf,tfuv,tferr\_aux,momvec,mominv,masses2,rmax)}
-\DoxyCodeLine{3883         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr)) tferr = tferr\_aux}
-\DoxyCodeLine{3884         norm = 0d0}
-\DoxyCodeLine{3885         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3886           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{3887             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{3888               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{3889                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{3890                 norm(r) = max(norm(r),abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{3891               \textcolor{keyword}{end }do}
-\DoxyCodeLine{3892             \textcolor{keyword}{end }do}
-\DoxyCodeLine{3893 \textcolor{keywordflow}{          end do}       }
-\DoxyCodeLine{3894           \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{3895             norm(r) = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{3896             \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{3897               norm(r)=1d0/norm(r)**(4-\/real(r)/2)}
-\DoxyCodeLine{3898             else}
-\DoxyCodeLine{3899               norm(r)=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{3900             \textcolor{keyword}{end }if}
-\DoxyCodeLine{3901           \textcolor{keyword}{end }if}
-\DoxyCodeLine{3902           tfacc(r) = tferr\_aux(r)/norm(r)}
-\DoxyCodeLine{3903 \textcolor{keywordflow}{        end do}      }
-\DoxyCodeLine{3904       }
-\DoxyCodeLine{3905       \textcolor{keyword}{end }if}
-\DoxyCodeLine{3906     }
-\DoxyCodeLine{3907     }
-\DoxyCodeLine{3908     else}
-\DoxyCodeLine{3909        }
-\DoxyCodeLine{3910       \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
-\DoxyCodeLine{3911         \textcolor{comment}{! calculate tensor with coefficients from COLI}}
-\DoxyCodeLine{3912         mode\_cll = 1}
-\DoxyCodeLine{3913         \textcolor{keyword}{call }f\_main\_cll(cf,cfuv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{3914                         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),mominv(11), \&}
-\DoxyCodeLine{3915                         mominv(12),mominv(13),mominv(14),mominv(15),masses2(0),masses2(1), \&}
-\DoxyCodeLine{3916                         masses2(2),masses2(3),masses2(4),masses2(5),rmax,ferr2=cferr,id\_in=0) }
-\DoxyCodeLine{3917         \textcolor{keyword}{call }calctensorf(tf,tfuv,tferr\_aux,cf,cfuv,cferr,momvec,rmax)                                     }
-\DoxyCodeLine{3918       }
-\DoxyCodeLine{3919         \textcolor{comment}{! calculate tensor with coefficients from DD}}
-\DoxyCodeLine{3920         mode\_cll = 2}
-\DoxyCodeLine{3921         \textcolor{keyword}{call }f\_main\_cll(cf,cfuv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{3922                         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),mominv(11), \&}
-\DoxyCodeLine{3923                         mominv(12),mominv(13),mominv(14),mominv(15),masses2(0),masses2(1), \&}
-\DoxyCodeLine{3924                         masses2(2),masses2(3),masses2(4),masses2(5),rmax,ferr2=cferr,id\_in=0) }
-\DoxyCodeLine{3925         \textcolor{keyword}{call }calctensorf(tf2,tfuv2,tferr\_aux2,cf,cfuv,cferr,momvec,rmax)                                }
-\DoxyCodeLine{3926       }
-\DoxyCodeLine{3927         \textcolor{comment}{! comparison -\/-\/> take better result}}
-\DoxyCodeLine{3928         mode\_cll = 3}
-\DoxyCodeLine{3929         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3930           norm\_coli=0d0}
-\DoxyCodeLine{3931           norm\_dd=0d0}
-\DoxyCodeLine{3932           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{3933             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{3934               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{3935                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{3936                 norm\_coli = max(norm\_coli,abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{3937                 norm\_dd = max(norm\_dd,abs(tf2(n0,n1,n2,n3)))}
-\DoxyCodeLine{3938               \textcolor{keyword}{end }do}
-\DoxyCodeLine{3939             \textcolor{keyword}{end }do}
-\DoxyCodeLine{3940           \textcolor{keyword}{end }do}
-\DoxyCodeLine{3941           \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{3942             norm\_coli = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{3943             \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{3944               norm\_coli=1d0/norm\_coli**(4-\/real(r)/2)}
-\DoxyCodeLine{3945             else}
-\DoxyCodeLine{3946               norm\_coli=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{3947             \textcolor{keyword}{end }if}
-\DoxyCodeLine{3948           \textcolor{keyword}{end }if}
-\DoxyCodeLine{3949           \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{3950             norm\_dd = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{3951             \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{3952               norm\_dd=1d0/norm\_dd**(4-\/real(r)/2)}
-\DoxyCodeLine{3953             else}
-\DoxyCodeLine{3954               norm\_dd=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{3955             \textcolor{keyword}{end }if}
-\DoxyCodeLine{3956           \textcolor{keyword}{end }if}
-\DoxyCodeLine{3957           norm(r) = min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{3958         \textcolor{keyword}{end }do}
-\DoxyCodeLine{3959       }
-\DoxyCodeLine{3960         \textcolor{keyword}{call }checktensors\_cll(tf,tf2,momvec,mominv,masses2,norm,6,rmax,tfdiff)        }
-\DoxyCodeLine{3961        }
-\DoxyCodeLine{3962         \textcolor{keywordflow}{if} (tferr\_aux(rmax).lt.tferr\_aux2(rmax)) then}
-\DoxyCodeLine{3963           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux,tfdiff*norm)}
-\DoxyCodeLine{3964           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3965             tfacc(r) = max(tferr\_aux(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{3966           \textcolor{keyword}{end }do}
-\DoxyCodeLine{3967           \textcolor{keywordflow}{if} (monitoring) pointscntften\_coli =  pointscntften\_coli + 1}
-\DoxyCodeLine{3968         else}
-\DoxyCodeLine{3969           tf = tf2}
-\DoxyCodeLine{3970           tfuv = tfuv2        }
-\DoxyCodeLine{3971           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr))  tferr = max(tferr\_aux2,tfdiff*norm)    }
-\DoxyCodeLine{3972           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3973             tfacc(r) = max(tferr\_aux2(r)/norm(r),tfdiff(r))}
-\DoxyCodeLine{3974 \textcolor{keywordflow}{          end do}         }
-\DoxyCodeLine{3975           \textcolor{keywordflow}{if} (monitoring) pointscntften\_dd =  pointscntften\_dd + 1}
-\DoxyCodeLine{3976         \textcolor{keyword}{end }if}
-\DoxyCodeLine{3977         }
-\DoxyCodeLine{3978       else}
-\DoxyCodeLine{3979         \textcolor{keyword}{call }f\_main\_cll(cf,cfuv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5), \&}
-\DoxyCodeLine{3980                         mominv(6),mominv(7),mominv(8),mominv(9),mominv(10),mominv(11), \&}
-\DoxyCodeLine{3981                         mominv(12),mominv(13),mominv(14),mominv(15),masses2(0),masses2(1), \&}
-\DoxyCodeLine{3982                         masses2(2),masses2(3),masses2(4),masses2(5),rmax,ferr2=cferr,id\_in=0)}
-\DoxyCodeLine{3983         \textcolor{keyword}{call }calctensorf(tf,tfuv,tferr\_aux,cf,cfuv,cferr,momvec,rmax)}
-\DoxyCodeLine{3984         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tferr)) tferr = tferr\_aux       }
-\DoxyCodeLine{3985         norm = 0d0}
-\DoxyCodeLine{3986         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{3987           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{3988             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{3989               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{3990                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{3991                 norm(r) = max(norm(r),abs(tf(n0,n1,n2,n3)))}
-\DoxyCodeLine{3992               \textcolor{keyword}{end }do}
-\DoxyCodeLine{3993             \textcolor{keyword}{end }do}
-\DoxyCodeLine{3994 \textcolor{keywordflow}{          end do}        }
-\DoxyCodeLine{3995           \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{3996             norm(r) = max(maxval(abs(mominv(1:15))),maxval(abs(masses2(0:5))))}
-\DoxyCodeLine{3997             \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{3998               norm(r)=1d0/norm(r)**(4-\/real(r)/2)}
-\DoxyCodeLine{3999             else}
-\DoxyCodeLine{4000               norm(r)=1d0/muir2\_cll**(4-\/real(r)/2)}
-\DoxyCodeLine{4001             \textcolor{keyword}{end }if}
-\DoxyCodeLine{4002           \textcolor{keyword}{end }if}
-\DoxyCodeLine{4003           tfacc(r) = tferr\_aux(r)/norm(r)}
-\DoxyCodeLine{4004 \textcolor{keywordflow}{        end do}        }
-\DoxyCodeLine{4005         }
-\DoxyCodeLine{4006       \textcolor{keyword}{end }if}
-\DoxyCodeLine{4007       }
-\DoxyCodeLine{4008     \textcolor{keyword}{end }if}
-\DoxyCodeLine{4009 }
-\DoxyCodeLine{4010     \textcolor{keyword}{call }propagateaccflag\_cll(tfacc,rmax)}
-\DoxyCodeLine{4011     \textcolor{keyword}{call }propagateerrflag\_cll    }
-\DoxyCodeLine{4012 }
-\DoxyCodeLine{4013     \textcolor{keywordflow}{if} (monitoring) then}
-\DoxyCodeLine{4014       pointscntften\_cll =  pointscntften\_cll + 1}
-\DoxyCodeLine{4015 }
-\DoxyCodeLine{4016       \textcolor{keywordflow}{if}(maxval(tfacc).gt.reqacc\_cll) accpointscntften\_cll = accpointscntften\_cll + 1}
-\DoxyCodeLine{4017 }
-\DoxyCodeLine{4018       \textcolor{keywordflow}{if}(maxval(tfacc).gt.critacc\_cll) then}
-\DoxyCodeLine{4019         critpointscntften\_cll =  critpointscntften\_cll + 1}
-\DoxyCodeLine{4020         \textcolor{keywordflow}{if} ( critpointscntften\_cll.le.noutcritpointsmax\_cll(6) ) then}
-\DoxyCodeLine{4021           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TFten\_cll'},0,maxval(tfacc),critpointscntften\_cll)}
-\DoxyCodeLine{4022           \textcolor{keywordflow}{if}( critpointscntften\_cll.eq.noutcritpointsmax\_cll(6)) then}
-\DoxyCodeLine{4023             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TFten\_cll suppressed'}   }
-\DoxyCodeLine{4024             \textcolor{keyword}{write}(ncpout\_cll,*)}
-\DoxyCodeLine{4025           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{4026 \textcolor{preprocessor}{\#ifdef CritPoints2}}
-\DoxyCodeLine{4027 \textcolor{preprocessor}{}          \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'TFten\_cll'},0,maxval(tfacc),critpointscntften\_cll)}
-\DoxyCodeLine{4028           \textcolor{keywordflow}{if}( critpointscntften\_cll.eq.noutcritpointsmax\_cll(6)) then}
-\DoxyCodeLine{4029             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TFten\_cll suppressed'}   }
-\DoxyCodeLine{4030             \textcolor{keyword}{write}(ncpout2\_cll,*)}
-\DoxyCodeLine{4031           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{4032 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{4033 \textcolor{preprocessor}{}        \textcolor{keyword}{end }if}
-\DoxyCodeLine{4034       \textcolor{keyword}{end }if}
-\DoxyCodeLine{4035     \textcolor{keyword}{end }if}
-\DoxyCodeLine{4036 }
-
-\end{DoxyCode}
-
-
-The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__tensors_8F90}{collier\+\_\+tensors.\+F90}}\end{DoxyCompactItemize}

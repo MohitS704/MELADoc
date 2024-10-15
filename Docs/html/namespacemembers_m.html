@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -145,24 +135,15 @@ $(document).ready(function(){initNavTree('namespacemembers_m.html',''); initResi
 : <a class="el" href="namespacemodparameters.html#afe5340bc57a0fc10348fabc1ea66cc8b">modparameters</a>
 , <a class="el" href="namespacePDGHelpers.html#a5bd91e476142300e381e0729c23fca85">PDGHelpers</a>
 </li>
-<li>M_electron
-: <a class="el" href="namespaceanonymous__namespace_02test__JVBF_8c_03.html#a93419727f3bcfa8a420187c7395c9128">anonymous_namespace{test_JVBF.c}</a>
-</li>
 <li>m_mu
 : <a class="el" href="namespacemodparameters.html#ab2c89c9e4d8124dc3aa9cb46600f31ae">modparameters</a>
 , <a class="el" href="namespacePDGHelpers.html#aad8c010f54c11e91d58485d45d6b68cd">PDGHelpers</a>
-</li>
-<li>M_muon
-: <a class="el" href="namespaceanonymous__namespace_02test__JVBF_8c_03.html#a6b8de482cc03d452dab2480ac9622b53">anonymous_namespace{test_JVBF.c}</a>
 </li>
 <li>m_reso
 : <a class="el" href="namespacemodparameters.html#a864e62a91d9315f3d5a88640feb74f48">modparameters</a>
 </li>
 <li>m_reso2
 : <a class="el" href="namespacemodparameters.html#ac4b6c07b7269c21bffe5b32019a374f6">modparameters</a>
-</li>
-<li>M_tau
-: <a class="el" href="namespaceanonymous__namespace_02test__JVBF_8c_03.html#a86c58d1bb4f951aa58200e478920df24">anonymous_namespace{test_JVBF.c}</a>
 </li>
 <li>m_tau
 : <a class="el" href="namespacemodparameters.html#a0dd9751a8ebce2529a4dc2a59c67560e">modparameters</a>
@@ -201,14 +182,17 @@ $(document).ready(function(){initNavTree('namespacemembers_m.html',''); initResi
 <li>m_zprime
 : <a class="el" href="namespacemodparameters.html#ae598e8880f4a32df8ac0bd1e5e6eb9b3">modparameters</a>
 </li>
-<li>main()
-: <a class="el" href="namespacebatch.html#a02789d1253a9ff75793036161f1bffc6">batch</a>
+<li>mad_masses_
+: <a class="el" href="namespacemadMela.html#aa9ca0dee335963161b5f91c9a559e3c3">madMela</a>
+</li>
+<li>MADGRAPH
+: <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815fadb50039bcd84bf9df73b46f05b16c7a9">TVar</a>
+</li>
+<li>MadgraphMatEl()
+: <a class="el" href="namespaceTUtil.html#a7b7548e5b7817a71f00dd4a62c1fa00f">TUtil</a>
 </li>
 <li>massfrun()
 : <a class="el" href="namespacemodparameters.html#a1c56c5d462fbf8db77dc24fb99e7af06">modparameters</a>
-</li>
-<li>match
-: <a class="el" href="namespacetestME__all.html#a911918741134891edbb514bd018fd3b5">testME_all</a>
 </li>
 <li>MatrixElement
 : <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar</a>
@@ -338,6 +322,753 @@ $(document).ready(function(){initNavTree('namespacemembers_m.html',''); initResi
 <li>mcq
 : <a class="el" href="namespacehto__masses.html#ac56338ebebc82161db4bdaac8a8e1956">hto_masses</a>
 </li>
+<li>mdl_aew
+: <a class="el" href="namespacemadMela.html#a8d90b60498bc27945c1d390a8e4fb188">madMela</a>
+</li>
+<li>mdl_barlam
+: <a class="el" href="namespacemadMela.html#aa8becfe1ca741045e42924ab3b04129d">madMela</a>
+</li>
+<li>mdl_cdb
+: <a class="el" href="namespacemadMela.html#a3c8f7d518fb4eec33943589c9404e6d5">madMela</a>
+</li>
+<li>mdl_cdbim
+: <a class="el" href="namespacemadMela.html#aaa5c8f6b5b10df91aa68b59ebfd719ca">madMela</a>
+</li>
+<li>mdl_cdbre
+: <a class="el" href="namespacemadMela.html#acacc51692a039ab38f70053bc0e3776c">madMela</a>
+</li>
+<li>mdl_cdd
+: <a class="el" href="namespacemadMela.html#a25cfe1b76ccd1acdcbefa52bab135f9b">madMela</a>
+</li>
+<li>mdl_cdd1
+: <a class="el" href="namespacemadMela.html#a1d5c9dada5c1a8b8db8e9aa18095e10c">madMela</a>
+</li>
+<li>mdl_cdg
+: <a class="el" href="namespacemadMela.html#ad81e5bcb773af66ab6c44eba12e5174c">madMela</a>
+</li>
+<li>mdl_cdgim
+: <a class="el" href="namespacemadMela.html#a4aafdab12d8a97df66014f8cb2b3df8c">madMela</a>
+</li>
+<li>mdl_cdgre
+: <a class="el" href="namespacemadMela.html#a6eab1739ca40707fcb32d435b5090478">madMela</a>
+</li>
+<li>mdl_cdh
+: <a class="el" href="namespacemadMela.html#a51c730f62dc87915621adad987e17188">madMela</a>
+</li>
+<li>mdl_cdhim
+: <a class="el" href="namespacemadMela.html#aec2acbcc54668e35dcca80865fd9412c">madMela</a>
+</li>
+<li>mdl_cdhre
+: <a class="el" href="namespacemadMela.html#a2f6bb1086d4e86955cfee1be024bb4b8">madMela</a>
+</li>
+<li>mdl_cdw
+: <a class="el" href="namespacemadMela.html#a7c4939f38b426b5aff59b76cfe1238cc">madMela</a>
+</li>
+<li>mdl_cdwim
+: <a class="el" href="namespacemadMela.html#ad9c65f4622e281aaab026f98205bf338">madMela</a>
+</li>
+<li>mdl_cdwre
+: <a class="el" href="namespacemadMela.html#a3320b25da31f3fb1a86b9d783451bcaf">madMela</a>
+</li>
+<li>mdl_ceb
+: <a class="el" href="namespacemadMela.html#a333e4a32ea439fcbf6f17110b768b31d">madMela</a>
+</li>
+<li>mdl_cebim
+: <a class="el" href="namespacemadMela.html#a73852e6e95fe7523783cb86f3080c469">madMela</a>
+</li>
+<li>mdl_cebre
+: <a class="el" href="namespacemadMela.html#ac0e6da15c3be652fa9c954ffa27d0205">madMela</a>
+</li>
+<li>mdl_ced
+: <a class="el" href="namespacemadMela.html#a27d2233d0f809ed785433a91c6d01f44">madMela</a>
+</li>
+<li>mdl_cee
+: <a class="el" href="namespacemadMela.html#a5a68ba3f1162dbba3787e4496eeb6232">madMela</a>
+</li>
+<li>mdl_ceh
+: <a class="el" href="namespacemadMela.html#a328fd3ed16af0f0e0a2f38b81b98b483">madMela</a>
+</li>
+<li>mdl_cehim
+: <a class="el" href="namespacemadMela.html#a2b6b277daff373f08c82bcf5c8ee1e3e">madMela</a>
+</li>
+<li>mdl_cehre
+: <a class="el" href="namespacemadMela.html#a1a4e1da22e05318ddfb93f462df70d27">madMela</a>
+</li>
+<li>mdl_ceu
+: <a class="el" href="namespacemadMela.html#ae651e4f6b15e70b2fbcc175e27fe3968">madMela</a>
+</li>
+<li>mdl_cew
+: <a class="el" href="namespacemadMela.html#aeac1927ad3f3c5374e957b7b8f3b0ee1">madMela</a>
+</li>
+<li>mdl_cewim
+: <a class="el" href="namespacemadMela.html#a2751d2f2e1d9556815581b516a38ceac">madMela</a>
+</li>
+<li>mdl_cewre
+: <a class="el" href="namespacemadMela.html#a28dcdf8382eccb6519ca3dd52b529bc6">madMela</a>
+</li>
+<li>mdl_cg
+: <a class="el" href="namespacemadMela.html#a2684b7b55b33818a0f482345ba8a9550">madMela</a>
+</li>
+<li>mdl_cgtil
+: <a class="el" href="namespacemadMela.html#a478ffdb2cd458102429d7a245c625bc1">madMela</a>
+</li>
+<li>mdl_ch
+: <a class="el" href="namespacemadMela.html#aaed21436a5b232280d9d92352066d7d2">madMela</a>
+</li>
+<li>mdl_chb
+: <a class="el" href="namespacemadMela.html#a079f77786511d9e2f59f0d862a24bc37">madMela</a>
+</li>
+<li>mdl_chbox
+: <a class="el" href="namespacemadMela.html#aed035ad24d137de3f3f3eb34e7e4e369">madMela</a>
+</li>
+<li>mdl_chbtil
+: <a class="el" href="namespacemadMela.html#a608036f08adc70c1349940ba9a7b841e">madMela</a>
+</li>
+<li>mdl_chd
+: <a class="el" href="namespacemadMela.html#a96f7c30ceb4e52d759ab67000cef3ad6">madMela</a>
+</li>
+<li>mdl_chdd
+: <a class="el" href="namespacemadMela.html#a5e4add73349ef2c9b62d2f626861b9f0">madMela</a>
+</li>
+<li>mdl_che
+: <a class="el" href="namespacemadMela.html#a250664a9eca7eb3cb1cc8ddefad84ed2">madMela</a>
+</li>
+<li>mdl_chg
+: <a class="el" href="namespacemadMela.html#acd53d678d8f9b3d746a95cade390f95f">madMela</a>
+</li>
+<li>mdl_chgtil
+: <a class="el" href="namespacemadMela.html#adeec138d1964b4a9393fcb277af83506">madMela</a>
+</li>
+<li>mdl_chl1
+: <a class="el" href="namespacemadMela.html#a9a71256f1dc872b1d8609cdc64eee624">madMela</a>
+</li>
+<li>mdl_chl3
+: <a class="el" href="namespacemadMela.html#a9308fb475a12b0304bb11ea068035e3f">madMela</a>
+</li>
+<li>mdl_chq1
+: <a class="el" href="namespacemadMela.html#a06eafc2d6e98113f0981a7247586aef8">madMela</a>
+</li>
+<li>mdl_chq3
+: <a class="el" href="namespacemadMela.html#a06f68a3eee4a81cd80c2ef94714b3fc2">madMela</a>
+</li>
+<li>mdl_chu
+: <a class="el" href="namespacemadMela.html#a89a5d3c49f36d1e98d181ebff3815557">madMela</a>
+</li>
+<li>mdl_chud
+: <a class="el" href="namespacemadMela.html#a52a21899ed5f0de14be067980963bd4e">madMela</a>
+</li>
+<li>mdl_chudim
+: <a class="el" href="namespacemadMela.html#a45e4a38c939a6cff7eb79f13752f6ba6">madMela</a>
+</li>
+<li>mdl_chudre
+: <a class="el" href="namespacemadMela.html#a8dd01b3860e4ece6533134e59047da97">madMela</a>
+</li>
+<li>mdl_chw
+: <a class="el" href="namespacemadMela.html#a3d3a33f53e0a9e67317f4a1f7259aa85">madMela</a>
+</li>
+<li>mdl_chwb
+: <a class="el" href="namespacemadMela.html#a5816c9a066dd4a36a0b0668f84d8b368">madMela</a>
+</li>
+<li>mdl_chwbtil
+: <a class="el" href="namespacemadMela.html#ab1cfa35d70b3210b5e7c7179e295e05a">madMela</a>
+</li>
+<li>mdl_chwtil
+: <a class="el" href="namespacemadMela.html#a5dd9ddd8ea1b2f6ebf349028a92c05fa">madMela</a>
+</li>
+<li>mdl_ckm1x1
+: <a class="el" href="namespacemadMela.html#ad5265bb52154430c1037156526779f83">madMela</a>
+</li>
+<li>mdl_ckm1x2
+: <a class="el" href="namespacemadMela.html#a3e27ba443dc9c07195421719b1fe40f5">madMela</a>
+</li>
+<li>mdl_ckm1x3
+: <a class="el" href="namespacemadMela.html#a5a918b707e85e5d62d5e5ba76209214b">madMela</a>
+</li>
+<li>mdl_ckm2x1
+: <a class="el" href="namespacemadMela.html#a10d3b0edbd9493ec4e955f5c943aa17f">madMela</a>
+</li>
+<li>mdl_ckm2x2
+: <a class="el" href="namespacemadMela.html#a0f37c197c30ae20a919ea22c8a513ef5">madMela</a>
+</li>
+<li>mdl_ckm2x3
+: <a class="el" href="namespacemadMela.html#a27055be12a4e7db0d69f0818faf58604">madMela</a>
+</li>
+<li>mdl_ckm3x1
+: <a class="el" href="namespacemadMela.html#a7ebdda053aaacdf0f9d6fa8207705de8">madMela</a>
+</li>
+<li>mdl_ckm3x2
+: <a class="el" href="namespacemadMela.html#a542db9ee2ea601311612f11e49fa575f">madMela</a>
+</li>
+<li>mdl_ckm3x3
+: <a class="el" href="namespacemadMela.html#acb39687d895d38834c85ce292be89d0e">madMela</a>
+</li>
+<li>mdl_ckma
+: <a class="el" href="namespacemadMela.html#ab663bc0d68c4c2cd30055c3d3c82db9c">madMela</a>
+</li>
+<li>mdl_ckmeta
+: <a class="el" href="namespacemadMela.html#a9cc379c1414c8db2f49872ebbc63ed43">madMela</a>
+</li>
+<li>mdl_ckmlambda
+: <a class="el" href="namespacemadMela.html#acf6eb0c80afc4f1509bf330d1fc9593a">madMela</a>
+</li>
+<li>mdl_ckmlambda__exp__2
+: <a class="el" href="namespacemadMela.html#a25f977a642f9842e9a831e59d9bf5204">madMela</a>
+</li>
+<li>mdl_ckmlambda__exp__3
+: <a class="el" href="namespacemadMela.html#adaf13e5fa16aeb10bcbdec12ef71d27b">madMela</a>
+</li>
+<li>mdl_ckmrho
+: <a class="el" href="namespacemadMela.html#abceaec8d12ed523b887d4b511f504bd6">madMela</a>
+</li>
+<li>mdl_cld
+: <a class="el" href="namespacemadMela.html#a87c0a43e6f8027ef7c442df7b36cdc81">madMela</a>
+</li>
+<li>mdl_cle
+: <a class="el" href="namespacemadMela.html#a80cab5b25c5d7d736f7aa5dd01939b0b">madMela</a>
+</li>
+<li>mdl_cledq
+: <a class="el" href="namespacemadMela.html#a0bab2aebe9a9b97ce1185279766818d0">madMela</a>
+</li>
+<li>mdl_cledqim
+: <a class="el" href="namespacemadMela.html#a0a9739279ad5fa97ef34d4ad0b5589d1">madMela</a>
+</li>
+<li>mdl_cledqre
+: <a class="el" href="namespacemadMela.html#aa05bd365217b5db7edd57a379cb9c9e4">madMela</a>
+</li>
+<li>mdl_clequ1
+: <a class="el" href="namespacemadMela.html#a42705edd7f7569b32ca766582a5a4874">madMela</a>
+</li>
+<li>mdl_clequ1im
+: <a class="el" href="namespacemadMela.html#a440ff06631d2dbc6461cb7add87fb8a8">madMela</a>
+</li>
+<li>mdl_clequ1re
+: <a class="el" href="namespacemadMela.html#a9a0029532adecbba3df3f071eb96515a">madMela</a>
+</li>
+<li>mdl_clequ3
+: <a class="el" href="namespacemadMela.html#a224642e86b4214ccae5e858851296938">madMela</a>
+</li>
+<li>mdl_clequ3im
+: <a class="el" href="namespacemadMela.html#adb65a8c7677e1890303afdda335b81b2">madMela</a>
+</li>
+<li>mdl_clequ3re
+: <a class="el" href="namespacemadMela.html#aab87d4301299126fe23fca1ddf51ede0">madMela</a>
+</li>
+<li>mdl_cll
+: <a class="el" href="namespacemadMela.html#a00f9cb8a3dab31f014f9db9cbf6b0983">madMela</a>
+</li>
+<li>mdl_cll1
+: <a class="el" href="namespacemadMela.html#a7e3d3346c2aa61d5765276fe731222bb">madMela</a>
+</li>
+<li>mdl_clq1
+: <a class="el" href="namespacemadMela.html#a26a7bf90bcd97d104682c9bf8d64557c">madMela</a>
+</li>
+<li>mdl_clq3
+: <a class="el" href="namespacemadMela.html#a2603ba6f02622d0f95056288972ddb31">madMela</a>
+</li>
+<li>mdl_clu
+: <a class="el" href="namespacemadMela.html#a59373a0ae334cd18fd35c1f25545e9ac">madMela</a>
+</li>
+<li>mdl_complexi
+: <a class="el" href="namespacemadMela.html#ab776e98efded2f0a4b297faa46e0f382">madMela</a>
+</li>
+<li>mdl_conjg__ckm1x1
+: <a class="el" href="namespacemadMela.html#afb38da2feb9db5d801c2f34873dc677f">madMela</a>
+</li>
+<li>mdl_conjg__ckm1x2
+: <a class="el" href="namespacemadMela.html#a4563c5c8c1287f958cf0998a2694fe1a">madMela</a>
+</li>
+<li>mdl_conjg__ckm1x3
+: <a class="el" href="namespacemadMela.html#a4fd7083385c1972c5308e0f1490cb605">madMela</a>
+</li>
+<li>mdl_conjg__ckm2x1
+: <a class="el" href="namespacemadMela.html#ad9a6ca378bd43b6fdfc7f6b34c6bafec">madMela</a>
+</li>
+<li>mdl_conjg__ckm2x2
+: <a class="el" href="namespacemadMela.html#a1f388dea61c6b67b37cb31e1c8c2a398">madMela</a>
+</li>
+<li>mdl_conjg__ckm2x3
+: <a class="el" href="namespacemadMela.html#a1b6f66286ee01ca1c860afafb01e4ae8">madMela</a>
+</li>
+<li>mdl_conjg__ckm3x1
+: <a class="el" href="namespacemadMela.html#a31aeee3ffbd65f0c034bc06d60d4dab3">madMela</a>
+</li>
+<li>mdl_conjg__ckm3x2
+: <a class="el" href="namespacemadMela.html#a721efb67f55160bc92d633cbd28d53a6">madMela</a>
+</li>
+<li>mdl_conjg__ckm3x3
+: <a class="el" href="namespacemadMela.html#a4ef9c5b379679c574809f31cc4e2ebdb">madMela</a>
+</li>
+<li>mdl_cqd1
+: <a class="el" href="namespacemadMela.html#a3f972bfea6443089c6a7f4e14b4b09b5">madMela</a>
+</li>
+<li>mdl_cqd8
+: <a class="el" href="namespacemadMela.html#a7380fca4399e0433f2195d7567d46e9d">madMela</a>
+</li>
+<li>mdl_cqe
+: <a class="el" href="namespacemadMela.html#a18b84bfd4d7a71f7c823940d426476b4">madMela</a>
+</li>
+<li>mdl_cqq1
+: <a class="el" href="namespacemadMela.html#a8115680f1f61f32d8002c2f7418012ed">madMela</a>
+</li>
+<li>mdl_cqq11
+: <a class="el" href="namespacemadMela.html#a77c39e5d3a0dc0709b0deba160e06f67">madMela</a>
+</li>
+<li>mdl_cqq3
+: <a class="el" href="namespacemadMela.html#a09e3f1196c87712734cb6b8f34123d1b">madMela</a>
+</li>
+<li>mdl_cqq31
+: <a class="el" href="namespacemadMela.html#a52428291d64d73542500f8488427f999">madMela</a>
+</li>
+<li>mdl_cqu1
+: <a class="el" href="namespacemadMela.html#a9dffbcf0d4c2a70634e92b3d17b9e306">madMela</a>
+</li>
+<li>mdl_cqu8
+: <a class="el" href="namespacemadMela.html#ab2460d61a95666469f66b035ff8c0333">madMela</a>
+</li>
+<li>mdl_cquqd1
+: <a class="el" href="namespacemadMela.html#a8b8f7e7602abc3694c3756b4a8229faa">madMela</a>
+</li>
+<li>mdl_cquqd11
+: <a class="el" href="namespacemadMela.html#a55768088107508a1205f6c626cbb3c37">madMela</a>
+</li>
+<li>mdl_cquqd11im
+: <a class="el" href="namespacemadMela.html#a2cddb6ad2de7d24ab596477b2dd89973">madMela</a>
+</li>
+<li>mdl_cquqd11re
+: <a class="el" href="namespacemadMela.html#a1c51a304f994fa35075f2f9574bb8439">madMela</a>
+</li>
+<li>mdl_cquqd1im
+: <a class="el" href="namespacemadMela.html#a0585d2ba15f69b1dfb8ddcbaace46069">madMela</a>
+</li>
+<li>mdl_cquqd1re
+: <a class="el" href="namespacemadMela.html#acd3350586735e86bb95f2bc6acc52741">madMela</a>
+</li>
+<li>mdl_cquqd8
+: <a class="el" href="namespacemadMela.html#aabe47977e683fc924b1eab6cd37b6157">madMela</a>
+</li>
+<li>mdl_cquqd81
+: <a class="el" href="namespacemadMela.html#ae3d0a1b2406bd5b76ed9ed476201fc08">madMela</a>
+</li>
+<li>mdl_cquqd81im
+: <a class="el" href="namespacemadMela.html#a5c74834a71d0537770e2a006c0b9cc72">madMela</a>
+</li>
+<li>mdl_cquqd81re
+: <a class="el" href="namespacemadMela.html#a3735eadfb82ef32e917931ef925b1085">madMela</a>
+</li>
+<li>mdl_cquqd8im
+: <a class="el" href="namespacemadMela.html#a71a4d9ac43e61fe303578e582435219a">madMela</a>
+</li>
+<li>mdl_cquqd8re
+: <a class="el" href="namespacemadMela.html#acabd96440057d085194df9d3430ed841">madMela</a>
+</li>
+<li>mdl_cth
+: <a class="el" href="namespacemadMela.html#ab4771e33ff15fad298685dca312472b8">madMela</a>
+</li>
+<li>mdl_cth__exp__2
+: <a class="el" href="namespacemadMela.html#a728adf91d1b64211fa10fc8c0283d46c">madMela</a>
+</li>
+<li>mdl_cth__exp__3
+: <a class="el" href="namespacemadMela.html#ad402237415bf3ef9b9218b687913264d">madMela</a>
+</li>
+<li>mdl_cth__exp__4
+: <a class="el" href="namespacemadMela.html#ad7b53622c6704c0bc160de896acc788f">madMela</a>
+</li>
+<li>mdl_cth__exp__5
+: <a class="el" href="namespacemadMela.html#a1596f36e94ce6a725a79b7649e5fa73e">madMela</a>
+</li>
+<li>mdl_cub
+: <a class="el" href="namespacemadMela.html#ae62597c6c3427efb6436d926166286aa">madMela</a>
+</li>
+<li>mdl_cubim
+: <a class="el" href="namespacemadMela.html#adc19fb7c917a2e79a1050f3da22b92fa">madMela</a>
+</li>
+<li>mdl_cubre
+: <a class="el" href="namespacemadMela.html#ad88ec5f0608977d60f4303460b0c7cb4">madMela</a>
+</li>
+<li>mdl_cud1
+: <a class="el" href="namespacemadMela.html#a7366181081d016252eca3815f2bba6db">madMela</a>
+</li>
+<li>mdl_cud8
+: <a class="el" href="namespacemadMela.html#a692b668f7857281e2500cd0e9b87602a">madMela</a>
+</li>
+<li>mdl_cug
+: <a class="el" href="namespacemadMela.html#abe255e3f9f39f2731bcfc00d5c69d339">madMela</a>
+</li>
+<li>mdl_cugim
+: <a class="el" href="namespacemadMela.html#a18e0a3b72324c6efc45e2bb4458bbf86">madMela</a>
+</li>
+<li>mdl_cugre
+: <a class="el" href="namespacemadMela.html#a730d089e093b41c6e7f32b300eed694a">madMela</a>
+</li>
+<li>mdl_cuh
+: <a class="el" href="namespacemadMela.html#a4292a2430c817ebda2728da0bef1a18b">madMela</a>
+</li>
+<li>mdl_cuhim
+: <a class="el" href="namespacemadMela.html#a084fe3133c681cd8ab68ac1094064aea">madMela</a>
+</li>
+<li>mdl_cuhre
+: <a class="el" href="namespacemadMela.html#a7761fed3ef9a73af151bd466016b4dfb">madMela</a>
+</li>
+<li>mdl_cuu
+: <a class="el" href="namespacemadMela.html#a7d7dd4a8b4db1c522f6fb7d7bd8da30a">madMela</a>
+</li>
+<li>mdl_cuu1
+: <a class="el" href="namespacemadMela.html#a2542620b6b9d2f72d2a0334284a46d9b">madMela</a>
+</li>
+<li>mdl_cuw
+: <a class="el" href="namespacemadMela.html#a63727f11e946196a75b667dbff4fe6a5">madMela</a>
+</li>
+<li>mdl_cuwim
+: <a class="el" href="namespacemadMela.html#aca1a8269053cf877bf9a13061a83702f">madMela</a>
+</li>
+<li>mdl_cuwre
+: <a class="el" href="namespacemadMela.html#a70992550706f86ed39d077c1eed341fa">madMela</a>
+</li>
+<li>mdl_cw
+: <a class="el" href="namespacemadMela.html#af26e8329408982eaa838be27bb66d566">madMela</a>
+</li>
+<li>mdl_cwtil
+: <a class="el" href="namespacemadMela.html#a327589f8ff568b6a0d2d6e7f03e12355">madMela</a>
+</li>
+<li>mdl_dg1
+: <a class="el" href="namespacemadMela.html#a15db9c463341f9663237d2af16991c71">madMela</a>
+</li>
+<li>mdl_dgf
+: <a class="el" href="namespacemadMela.html#a166496de8448458f95b6a49f4bd581b8">madMela</a>
+</li>
+<li>mdl_dgw
+: <a class="el" href="namespacemadMela.html#a9ca325374ae698d536b1e2c4b423649d">madMela</a>
+</li>
+<li>mdl_dkh
+: <a class="el" href="namespacemadMela.html#abf525e20147e4b7b67c3540672576ba5">madMela</a>
+</li>
+<li>mdl_dmh2
+: <a class="el" href="namespacemadMela.html#a8e1991e623de4844071271833caf63be">madMela</a>
+</li>
+<li>mdl_dmw
+: <a class="el" href="namespacemadMela.html#a234267dd824e8e57a6620c26b393238a">madMela</a>
+</li>
+<li>mdl_dmz2
+: <a class="el" href="namespacemadMela.html#a073b936a4ddbad8f70ed69baa0e19dad">madMela</a>
+</li>
+<li>mdl_dwh
+: <a class="el" href="namespacemadMela.html#a50d5f9f2b3232018de989243718321d2">madMela</a>
+</li>
+<li>mdl_dwhb
+: <a class="el" href="namespacemadMela.html#a3df7efe45241999ece8f81424fdcc05b">madMela</a>
+</li>
+<li>mdl_dwhc
+: <a class="el" href="namespacemadMela.html#a52c635dd1309274c734e8b6b08c0d7d3">madMela</a>
+</li>
+<li>mdl_dwhta
+: <a class="el" href="namespacemadMela.html#af958c093bba74dfb6408f89c45b781d5">madMela</a>
+</li>
+<li>mdl_dwt
+: <a class="el" href="namespacemadMela.html#af837b63ab83e83e3139fb0be86e7c534">madMela</a>
+</li>
+<li>mdl_dww
+: <a class="el" href="namespacemadMela.html#ae29afb3e98a38c2c272c4c71439ef3c0">madMela</a>
+</li>
+<li>mdl_dwz
+: <a class="el" href="namespacemadMela.html#abeed18cff0aed678334da420310b6033">madMela</a>
+</li>
+<li>mdl_ee
+: <a class="el" href="namespacemadMela.html#a2414355c6b8053ae1d3ca662d53e3cfa">madMela</a>
+</li>
+<li>mdl_ee__exp__2
+: <a class="el" href="namespacemadMela.html#ad68733b846bdaec45eb7d87291f70162">madMela</a>
+</li>
+<li>mdl_ee__exp__3
+: <a class="el" href="namespacemadMela.html#a62fb18135ae4b2c626c5f8ebbfaca149">madMela</a>
+</li>
+<li>mdl_g1
+: <a class="el" href="namespacemadMela.html#a35a23059f065506cabed52e3714b6561">madMela</a>
+</li>
+<li>mdl_g1sh
+: <a class="el" href="namespacemadMela.html#acb005c7807ed0feb06310767a45c1359">madMela</a>
+</li>
+<li>mdl_g__exp__2
+: <a class="el" href="namespacemadMela.html#a56773eed1d6402a9c6913fc23b7b3926">madMela</a>
+</li>
+<li>mdl_g__exp__3
+: <a class="el" href="namespacemadMela.html#ac20bdd982ce2fca4a709ee561760be44">madMela</a>
+</li>
+<li>mdl_gf
+: <a class="el" href="namespacemadMela.html#a5d40c52afb3762827546638d3966c055">madMela</a>
+</li>
+<li>mdl_ghaa
+: <a class="el" href="namespacemadMela.html#a1cc20f77d6cbbbd5b5eead6461aae87f">madMela</a>
+</li>
+<li>mdl_ghgg1
+: <a class="el" href="namespacemadMela.html#a6f2d6cd9ab0291f8ec1d013812d45398">madMela</a>
+</li>
+<li>mdl_ghgg2
+: <a class="el" href="namespacemadMela.html#a6296e3f8f4a0dcd1eed81b7f7cc936bf">madMela</a>
+</li>
+<li>mdl_ghgg3
+: <a class="el" href="namespacemadMela.html#ac1025b5e5e3eceadc8796f175ad2deea">madMela</a>
+</li>
+<li>mdl_ghgg4
+: <a class="el" href="namespacemadMela.html#a0a47485c22f13ffbf0fe5441003cc8f2">madMela</a>
+</li>
+<li>mdl_ghgg5
+: <a class="el" href="namespacemadMela.html#a0a66a443c639527a63d92ac7d9e5682b">madMela</a>
+</li>
+<li>mdl_ghza
+: <a class="el" href="namespacemadMela.html#aa977bd6933388a5734aba5ec496bbb06">madMela</a>
+</li>
+<li>mdl_gw
+: <a class="el" href="namespacemadMela.html#a5dfcf8ce3f7ab2acbab9e2468e7f3e51">madMela</a>
+</li>
+<li>mdl_gwsh
+: <a class="el" href="namespacemadMela.html#af3e416eee739c639288be97e62c1e51d">madMela</a>
+</li>
+<li>mdl_lam
+: <a class="el" href="namespacemadMela.html#a521d0cbf10857616cd4064a14411652c">madMela</a>
+</li>
+<li>mdl_lambdasmeft
+: <a class="el" href="namespacemadMela.html#a86aba43fbda34a75b14ac6656e75406e">madMela</a>
+</li>
+<li>mdl_lambdasmeft__exp__2
+: <a class="el" href="namespacemadMela.html#a0f40d19117c887676d5e831078e0a195">madMela</a>
+</li>
+<li>mdl_linearpropcorrections
+: <a class="el" href="namespacemadMela.html#a2e1528b6fe9a92415a51df3954a69d16">madMela</a>
+</li>
+<li>mdl_mb
+: <a class="el" href="namespacemadMela.html#a7ff4dec0f699abcddc5077363dad3d83">madMela</a>
+</li>
+<li>mdl_mb__exp__2
+: <a class="el" href="namespacemadMela.html#a77ae30b66773d8d7df1b01fc7be0296a">madMela</a>
+</li>
+<li>mdl_mc
+: <a class="el" href="namespacemadMela.html#a1516489649c469f38f177c077c9f7dc8">madMela</a>
+</li>
+<li>mdl_md
+: <a class="el" href="namespacemadMela.html#a56b13b6cbf95e45fee7af2b847caeb5b">madMela</a>
+</li>
+<li>mdl_me
+: <a class="el" href="namespacemadMela.html#a5dedd9eed1a4b6141060d4ff1cf27bca">madMela</a>
+</li>
+<li>mdl_mh
+: <a class="el" href="namespacemadMela.html#aa4cd51baab03586b2c035338487e6231">madMela</a>
+</li>
+<li>mdl_mh1
+: <a class="el" href="namespacemadMela.html#af774467d321496b01af4dade378d3dbb">madMela</a>
+</li>
+<li>mdl_mh__exp__2
+: <a class="el" href="namespacemadMela.html#a4e1f5da27b0abf9d25772a2a1aa50f6b">madMela</a>
+</li>
+<li>mdl_mh__exp__4
+: <a class="el" href="namespacemadMela.html#af4a7373546d90d9ce700b840503a8138">madMela</a>
+</li>
+<li>mdl_mh__exp__6
+: <a class="el" href="namespacemadMela.html#ae320b25e3e9da2b83e6e74a25436c5e7">madMela</a>
+</li>
+<li>mdl_mmu
+: <a class="el" href="namespacemadMela.html#a4a651db891c2412f25047fd4fb25df10">madMela</a>
+</li>
+<li>mdl_ms
+: <a class="el" href="namespacemadMela.html#a4b3e2238f58e5380c91737eb626923e3">madMela</a>
+</li>
+<li>mdl_mt
+: <a class="el" href="namespacemadMela.html#a8a6e282e64b8c65c1f75d4bf6e373df0">madMela</a>
+</li>
+<li>mdl_mt1
+: <a class="el" href="namespacemadMela.html#aedbc927d32bf0e551980caec0dc4f606">madMela</a>
+</li>
+<li>mdl_mt__exp__2
+: <a class="el" href="namespacemadMela.html#a9005e56693abee13abc5098bef0f048f">madMela</a>
+</li>
+<li>mdl_mta
+: <a class="el" href="namespacemadMela.html#a19274766fa1b952e65ad57d619ef21b2">madMela</a>
+</li>
+<li>mdl_mu
+: <a class="el" href="namespacemadMela.html#af82b0cfd486fe59d504911c9d64977f1">madMela</a>
+</li>
+<li>mdl_mw
+: <a class="el" href="namespacemadMela.html#a253d2b0fcebe0e52c10def8af5e34810">madMela</a>
+</li>
+<li>mdl_mw1
+: <a class="el" href="namespacemadMela.html#a645edd58adfb4b85c1826421be8a9d34">madMela</a>
+</li>
+<li>mdl_mwsm
+: <a class="el" href="namespacemadMela.html#a684f15080641a1d4efc71af7c46c59cb">madMela</a>
+</li>
+<li>mdl_mwsm__exp__2
+: <a class="el" href="namespacemadMela.html#acc9ed3224cd0ed5d667fc000dfbc9ec1">madMela</a>
+</li>
+<li>mdl_mwsm__exp__4
+: <a class="el" href="namespacemadMela.html#ab6777c984ce84f6d8a2c63beefe5efcc">madMela</a>
+</li>
+<li>mdl_mwsm__exp__6
+: <a class="el" href="namespacemadMela.html#aff6dda5877cc07e2c4be6d0bd9f5b495">madMela</a>
+</li>
+<li>mdl_mz
+: <a class="el" href="namespacemadMela.html#ab99b27b96b59764abcd8231e67ff6c35">madMela</a>
+</li>
+<li>mdl_mz1
+: <a class="el" href="namespacemadMela.html#aeed1d9e40c1e9f5df6ce64d7dfeb0ef6">madMela</a>
+</li>
+<li>mdl_mz__exp__2
+: <a class="el" href="namespacemadMela.html#a89b28328e12d02bbdb9b8d67a84c88a0">madMela</a>
+</li>
+<li>mdl_mz__exp__3
+: <a class="el" href="namespacemadMela.html#a41c5c3f1648863fc3888d5e95a1691be">madMela</a>
+</li>
+<li>mdl_mz__exp__4
+: <a class="el" href="namespacemadMela.html#a9e2ad3f1464507ce13605cae170a3b4e">madMela</a>
+</li>
+<li>mdl_mz__exp__6
+: <a class="el" href="namespacemadMela.html#a2291a03f441a9c2313f81fe7ca4d83fe">madMela</a>
+</li>
+<li>mdl_nb__10__exp___m_40
+: <a class="el" href="namespacemadMela.html#af263a95db72a496bcd5278fd8e0531d7">madMela</a>
+</li>
+<li>mdl_nb__2__exp__0_25
+: <a class="el" href="namespacemadMela.html#aa975fe85b6cc0a9b8a4114de85f02f10">madMela</a>
+</li>
+<li>mdl_propcorr
+: <a class="el" href="namespacemadMela.html#acd33183fdbc89a8d3a67b0eb2b1d6472">madMela</a>
+</li>
+<li>mdl_propcorr__exp__2
+: <a class="el" href="namespacemadMela.html#a5794ce2876bae6125eae5414e1ed3710">madMela</a>
+</li>
+<li>mdl_propcorr__exp__3
+: <a class="el" href="namespacemadMela.html#ade347f690c81de54fc72ad328a2f781c">madMela</a>
+</li>
+<li>mdl_propcorr__exp__4
+: <a class="el" href="namespacemadMela.html#a4a00ffab4b0fcb0d555eec955ce3f949">madMela</a>
+</li>
+<li>mdl_sqrt__2
+: <a class="el" href="namespacemadMela.html#a6fd2d983b4febf63c1b9f56805903f80">madMela</a>
+</li>
+<li>mdl_sqrt__aew
+: <a class="el" href="namespacemadMela.html#a32434ac07ff52acde163077a6766a9d8">madMela</a>
+</li>
+<li>mdl_sqrt__as
+: <a class="el" href="namespacemadMela.html#ae4037bbaa8f59c744022fa6014957293">madMela</a>
+</li>
+<li>mdl_sqrt__gf
+: <a class="el" href="namespacemadMela.html#ae567d49428ccd604dbd55debd6c636ee">madMela</a>
+</li>
+<li>mdl_sqrt__sth2
+: <a class="el" href="namespacemadMela.html#ac0231296d4de36adef7df4d264d98cce">madMela</a>
+</li>
+<li>mdl_sth
+: <a class="el" href="namespacemadMela.html#a766d1f3c19be8ce5a121dba3c8313c3a">madMela</a>
+</li>
+<li>mdl_sth2
+: <a class="el" href="namespacemadMela.html#a47ac59627a2fb465b83db005bf75457e">madMela</a>
+</li>
+<li>mdl_sth__exp__2
+: <a class="el" href="namespacemadMela.html#a8dc7e16619821ac044fb5fab2e4a1422">madMela</a>
+</li>
+<li>mdl_sth__exp__3
+: <a class="el" href="namespacemadMela.html#a2aa255eae388ed1a725c337c93470bbf">madMela</a>
+</li>
+<li>mdl_sth__exp__4
+: <a class="el" href="namespacemadMela.html#ace875cda8d744c4749fd41c712efe7ee">madMela</a>
+</li>
+<li>mdl_sth__exp__5
+: <a class="el" href="namespacemadMela.html#a21b0f5ef484d6b317eab5f9d0b5f0776">madMela</a>
+</li>
+<li>mdl_sth__exp__6
+: <a class="el" href="namespacemadMela.html#a42ee8fd498f8c952c297c90182ca73a3">madMela</a>
+</li>
+<li>mdl_vev
+: <a class="el" href="namespacemadMela.html#a9eb849333cdbd632616198f74c1b58f2">madMela</a>
+</li>
+<li>mdl_vevhat
+: <a class="el" href="namespacemadMela.html#a8c7fabc4973a038ec28017c30d332fbc">madMela</a>
+</li>
+<li>mdl_vevhat__exp__2
+: <a class="el" href="namespacemadMela.html#ae7efb2f7854000c358d1c3873e8aaf4b">madMela</a>
+</li>
+<li>mdl_vevhat__exp__3
+: <a class="el" href="namespacemadMela.html#a3effd6bf92c28cf89a3e4fbe9c14cd7d">madMela</a>
+</li>
+<li>mdl_vevt
+: <a class="el" href="namespacemadMela.html#a02113a47a1af533182f4b13ccf784b16">madMela</a>
+</li>
+<li>mdl_wh
+: <a class="el" href="namespacemadMela.html#a4f097335e357d3aa4e3c8535169846c4">madMela</a>
+</li>
+<li>mdl_wh1
+: <a class="el" href="namespacemadMela.html#a84e888359be9f68f4aa5c9019cbdc203">madMela</a>
+</li>
+<li>mdl_wt
+: <a class="el" href="namespacemadMela.html#a9edca7cc177ac7ea072bbda7bf4a1d2f">madMela</a>
+</li>
+<li>mdl_wt1
+: <a class="el" href="namespacemadMela.html#a3ccedb37e0ec0bbc21cc4a4ea7fcdf9c">madMela</a>
+</li>
+<li>mdl_ww
+: <a class="el" href="namespacemadMela.html#a4e9d098071a2697e214f66493b355aa6">madMela</a>
+</li>
+<li>mdl_ww1
+: <a class="el" href="namespacemadMela.html#a1fb47ca71c95ffbc337103de09d7faf3">madMela</a>
+</li>
+<li>mdl_wz
+: <a class="el" href="namespacemadMela.html#a5f6e1968d0c410481da8f1cd53664a1a">madMela</a>
+</li>
+<li>mdl_wz1
+: <a class="el" href="namespacemadMela.html#a573d32f4bcbe7767d2655abded3dbcdd">madMela</a>
+</li>
+<li>mdl_yb
+: <a class="el" href="namespacemadMela.html#a97275219c3fb0ab1ae808ba32814918a">madMela</a>
+</li>
+<li>mdl_yc
+: <a class="el" href="namespacemadMela.html#ad1bf5387130d2fefc500ac90e19d22f0">madMela</a>
+</li>
+<li>mdl_ydo
+: <a class="el" href="namespacemadMela.html#a103e88cefa3966dbada10baa2b4bd3a0">madMela</a>
+</li>
+<li>mdl_ye
+: <a class="el" href="namespacemadMela.html#a30f742a37cdcf47d089a41e05aa42e40">madMela</a>
+</li>
+<li>mdl_ym
+: <a class="el" href="namespacemadMela.html#aa2b3b13a0cd0f186d885824507014d75">madMela</a>
+</li>
+<li>mdl_ymb
+: <a class="el" href="namespacemadMela.html#af78529ed25971b7b417036c8fdc16146">madMela</a>
+</li>
+<li>mdl_ymc
+: <a class="el" href="namespacemadMela.html#a3a230e1e498a93e779cd87f782923108">madMela</a>
+</li>
+<li>mdl_ymdo
+: <a class="el" href="namespacemadMela.html#a002b6d606ef6d94565207478e2748c3e">madMela</a>
+</li>
+<li>mdl_yme
+: <a class="el" href="namespacemadMela.html#a53acd8cf36522a30537aa958d815240a">madMela</a>
+</li>
+<li>mdl_ymm
+: <a class="el" href="namespacemadMela.html#a780cb3e7c0ccb416836fd15771ae85e7">madMela</a>
+</li>
+<li>mdl_yms
+: <a class="el" href="namespacemadMela.html#aea49694bca1f9bd1939e94275cb4dcce">madMela</a>
+</li>
+<li>mdl_ymt
+: <a class="el" href="namespacemadMela.html#aafde4321a69e84c557234509d9d5ef9f">madMela</a>
+</li>
+<li>mdl_ymtau
+: <a class="el" href="namespacemadMela.html#ab337fbf2305dd6397f1bc3b75b1b7c88">madMela</a>
+</li>
+<li>mdl_ymup
+: <a class="el" href="namespacemadMela.html#a06246d9ef06421a2bfb010a8b2666753">madMela</a>
+</li>
+<li>mdl_ys
+: <a class="el" href="namespacemadMela.html#a9db5023f92a8ca077325d5f1f6b2f398">madMela</a>
+</li>
+<li>mdl_yt
+: <a class="el" href="namespacemadMela.html#aca1d0fb79d9702c45e52d94a534ad7cc">madMela</a>
+</li>
+<li>mdl_ytau
+: <a class="el" href="namespacemadMela.html#aaa57a2581cc988e498b00e8ac8628681">madMela</a>
+</li>
+<li>mdl_yup
+: <a class="el" href="namespacemadMela.html#a358f67286a48c1b4a88ecfa0310a37d4">madMela</a>
+</li>
 <li>mdq
 : <a class="el" href="namespacehto__masses.html#a5062584c1079be33f5b496e800e5dac8">hto_masses</a>
 </li>
@@ -362,23 +1093,11 @@ $(document).ready(function(){initNavTree('namespacemembers_m.html',''); initResi
 <li>mean()
 : <a class="el" href="namespaceMELASuperMela__n.html#af0e655d5dab0085261d897900975d908">MELASuperMela_n</a>
 </li>
-<li>mela_name
-: <a class="el" href="namespacewrite__bindings.html#ac686688d6c008adb8ca5d3b40c5a74f4">write_bindings</a>
+<li>MELAerr()
+: <a class="el" href="namespaceMELAStreamHelpers.html#a9925dd3448efa44e8dfe6048fc9d149f">MELAStreamHelpers</a>
 </li>
-<li>MELAerr
-: <a class="el" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAStreamHelpers</a>
-</li>
-<li>melaline
-: <a class="el" href="namespacetestME__all.html#a7db2ce18cbb41a84c0da4c12208c59bd">testME_all</a>
-</li>
-<li>MELAout
-: <a class="el" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAStreamHelpers</a>
-</li>
-<li>melaptr
-: <a class="el" href="namespacetestME__all.html#a27f4652a2b05b756f4cbd1ace910fbfc">testME_all</a>
-</li>
-<li>messedup
-: <a class="el" href="namespacetestME__all.html#abd2077662bffd169606f0ef6ea841166">testME_all</a>
+<li>MELAout()
+: <a class="el" href="namespaceMELAStreamHelpers.html#a8e343b70efad7aa3487a72a44485232f">MELAStreamHelpers</a>
 </li>
 <li>meter
 : <a class="el" href="namespacemodparameters.html#a0a8701a1ba0f19c4022cfc7bba1c17f9">modparameters</a>
@@ -388,6 +1107,9 @@ $(document).ready(function(){initNavTree('namespacemembers_m.html',''); initResi
 </li>
 <li>mev
 : <a class="el" href="namespacemodparameters.html#a717e77e72d43f3bca9928719a2711c3e">modparameters</a>
+</li>
+<li>MG_process_double
+: <a class="el" href="namespacemadMela.html#ac1cf87ea45b67e95e635c855adf3f47f">madMela</a>
 </li>
 <li>mhstarforphasespace
 : <a class="el" href="namespacemodparameters.html#ac72a6a9662a9939dbe8ba2de98ea23e5">modparameters</a>

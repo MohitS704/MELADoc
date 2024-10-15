@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -101,7 +91,8 @@ $(document).ready(function(){initNavTree('output_8txt.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">output.txt File Reference</div>  </div>
 </div><!--header-->
@@ -259,8 +250,523 @@ Functions</h2></td></tr>
 <tr class="separator:af65849a2aa773b6c4eada982ed0452cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a063b7170d86cdd0b4a2cb033ddc94217"><td class="memItemLeft" align="right" valign="top"><a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55a30e8b6bf7253c52a966c40d9332ee68f">pymela::gAZff_ZllRH</a> <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55a22aaee41d276b37b332540dd02c1b98f">pymela::gAZff_ZuuRH</a> <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ae54417550ec06a9f3426953f6bdfa43f">pymela::gAZff_ZddRH</a> <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55a84bc14f4e0ae3626775adc12dbaf6e52">pymela::gAZff_ZnunuRH</a> <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55a56e9cecf3a91e6a9dbfc63a64c201489">pymela::gAZff_uZRH</a> <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55a9526f9d739163b7a28adf3563a6cc3ab">pymela::gAZff_dZRH</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a063b7170d86cdd0b4a2cb033ddc94217">value</a> (&quot;gAZff_dZLH&quot;, pymela::gAZff_dZLH) .value(&quot;SIZE_AZff&quot;</td></tr>
 <tr class="separator:a063b7170d86cdd0b4a2cb033ddc94217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48ea4b877a758f18494e1dda26fecba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#ad48ea4b877a758f18494e1dda26fecba">def</a> (&quot;selfDHggcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a322ecd1815b5db307c4e9205c7166803">D.selfDHggcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHg4g4coupl&quot;</td></tr>
+<tr class="separator:ad48ea4b877a758f18494e1dda26fecba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc50b9c2a833483f5d94fe61be948c52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#afc50b9c2a833483f5d94fe61be948c52">def</a> (&quot;selfDHqqcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#ab164be1fa296ee9dbb1793c9ab6e68ca">D.selfDHqqcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHbbcoupl&quot;</td></tr>
+<tr class="separator:afc50b9c2a833483f5d94fe61be948c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8dab78c717f48bf36b75800aea84831"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#aa8dab78c717f48bf36b75800aea84831">def</a> (&quot;selfDHttcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a71318d21c0728e9e62873d9f8b4ae5c2">D.selfDHttcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHb4b4coupl&quot;</td></tr>
+<tr class="separator:aa8dab78c717f48bf36b75800aea84831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811fd2a4bbc1e8f8c258015e7c160156"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a811fd2a4bbc1e8f8c258015e7c160156">def</a> (&quot;selfDHt4t4coupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#ab4228415f67c20795735c520b9381d5c">D.selfDHt4t4coupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHzzcoupl&quot;</td></tr>
+<tr class="separator:a811fd2a4bbc1e8f8c258015e7c160156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83412634db9d0dadf62c7904a55c9a66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a83412634db9d0dadf62c7904a55c9a66">def</a> (&quot;selfDHwwcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a48fdca591b54b10415f95fc0ae9f5d7f">D.selfDHwwcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHzzLambda_qsq&quot;</td></tr>
+<tr class="separator:a83412634db9d0dadf62c7904a55c9a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69648bf097535691db27994a00d4474f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a69648bf097535691db27994a00d4474f">def</a> (&quot;selfDHwwLambda_qsq&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a15dc1127111e623c11a76230816d631c">D.selfDHwwLambda_qsq</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHzzCLambda_qsq&quot;</td></tr>
+<tr class="separator:a69648bf097535691db27994a00d4474f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8b80bf4f905b257ac86ebebcb5e82b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a6e8b80bf4f905b257ac86ebebcb5e82b">def</a> (&quot;selfDHwwCLambda_qsq&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a3d2f72c685c1e85a8928f419d5a9f306">D.selfDHwwCLambda_qsq</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;differentiate_HWW_HZZ&quot;</td></tr>
+<tr class="separator:a6e8b80bf4f905b257ac86ebebcb5e82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb07701f535487c5642267890fc7bd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a5fb07701f535487c5642267890fc7bd6">def</a> (&quot;selfDHzzpcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#aa650a369178f61723c71a8ce49240bbf">D.selfDHzzpcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHzpzpcoupl&quot;</td></tr>
+<tr class="separator:a5fb07701f535487c5642267890fc7bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e267bfd7416b9132f6cd6c25c7408c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#ae9e267bfd7416b9132f6cd6c25c7408c">def</a> (&quot;selfDZpffcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a26d02ef222dff3c05b5c55c855ed55bc">D.selfDZpffcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDHwwpcoupl&quot;</td></tr>
+<tr class="separator:ae9e267bfd7416b9132f6cd6c25c7408c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62251d7ce74d6653fcf8ab50b3f2effe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a62251d7ce74d6653fcf8ab50b3f2effe">def</a> (&quot;selfDHwpwpcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a9c38aa6f85cde49d0743cb404e1fa575">D.selfDHwpwpcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDWpffcoupl&quot;</td></tr>
+<tr class="separator:a62251d7ce74d6653fcf8ab50b3f2effe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e50b0cb4cc8f689889dfda964964cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a62e50b0cb4cc8f689889dfda964964cf">def</a> (&quot;selfDM_Zprime&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#aac0b8432243a31217468bbbee186cced">D.selfDM_Zprime</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDGa_Zprime&quot;</td></tr>
+<tr class="separator:a62e50b0cb4cc8f689889dfda964964cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2730e143daa3405b1d7d4e61d28206"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a3c2730e143daa3405b1d7d4e61d28206">def</a> (&quot;selfDM_Wprime&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#ac043836b15c9fe73adcc465f19234490">D.selfDM_Wprime</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDGa_Wprime&quot;</td></tr>
+<tr class="separator:a3c2730e143daa3405b1d7d4e61d28206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3f1be52c28d380f1652df935424792"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#acf3f1be52c28d380f1652df935424792">def</a> (&quot;selfDZqqcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a8f068da593669f20fc8e003bed148f66">D.selfDZqqcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDZvvcoupl&quot;</td></tr>
+<tr class="separator:acf3f1be52c28d380f1652df935424792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60297944cd6380745785f76379f40ba5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a60297944cd6380745785f76379f40ba5">def</a> (&quot;selfDGqqcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a989374ffe0c07c15df9eefad8731281a">D.selfDGqqcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDGggcoupl&quot;</td></tr>
+<tr class="separator:a60297944cd6380745785f76379f40ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af384b9dddcb544d093033eaad9f423df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#af384b9dddcb544d093033eaad9f423df">def</a> (&quot;selfDGvvcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a4d0cdbc69c469f3e75be28e396152c1a">D.selfDGvvcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDGvvpcoupl&quot;</td></tr>
+<tr class="separator:af384b9dddcb544d093033eaad9f423df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53001556609b5bcd756aaeafb3cc5ebc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a53001556609b5bcd756aaeafb3cc5ebc">def</a> (&quot;selfDGvpvpcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a806f7957cd62f58677ed870b73ab7537">D.selfDGvpvpcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def(&quot;selfDaTQGCcoupl&quot;</td></tr>
+<tr class="separator:a53001556609b5bcd756aaeafb3cc5ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c1b60679e9c48eff7fd7455834154b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a68c1b60679e9c48eff7fd7455834154b">def</a> (&quot;selfDAZffcoupl&quot;, [](py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a08de9d27de8a418f55f91936a34157e9">D.selfDAZffcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}) .def_property(&quot;ghg2&quot;</td></tr>
+<tr class="separator:a68c1b60679e9c48eff7fd7455834154b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1f47b4293a5265addb2fa11f0e261ad1"><td class="memItemLeft" align="right" valign="top">py::object &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a></td></tr>
+<tr class="separator:a1f47b4293a5265addb2fa11f0e261ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a68c1b60679e9c48eff7fd7455834154b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c1b60679e9c48eff7fd7455834154b">&#9670;&nbsp;</a></span>def() <span class="overload">[1/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDAZffcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a08de9d27de8a418f55f91936a34157e9">D.selfDAZffcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60297944cd6380745785f76379f40ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60297944cd6380745785f76379f40ba5">&#9670;&nbsp;</a></span>def() <span class="overload">[2/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDGqqcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a989374ffe0c07c15df9eefad8731281a">D.selfDGqqcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53001556609b5bcd756aaeafb3cc5ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53001556609b5bcd756aaeafb3cc5ebc">&#9670;&nbsp;</a></span>def() <span class="overload">[3/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDGvpvpcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a806f7957cd62f58677ed870b73ab7537">D.selfDGvpvpcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af384b9dddcb544d093033eaad9f423df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af384b9dddcb544d093033eaad9f423df">&#9670;&nbsp;</a></span>def() <span class="overload">[4/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDGvvcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a4d0cdbc69c469f3e75be28e396152c1a">D.selfDGvvcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad48ea4b877a758f18494e1dda26fecba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48ea4b877a758f18494e1dda26fecba">&#9670;&nbsp;</a></span>def() <span class="overload">[5/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHggcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a322ecd1815b5db307c4e9205c7166803">D.selfDHggcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc50b9c2a833483f5d94fe61be948c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc50b9c2a833483f5d94fe61be948c52">&#9670;&nbsp;</a></span>def() <span class="overload">[6/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHqqcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#ab164be1fa296ee9dbb1793c9ab6e68ca">D.selfDHqqcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a811fd2a4bbc1e8f8c258015e7c160156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a811fd2a4bbc1e8f8c258015e7c160156">&#9670;&nbsp;</a></span>def() <span class="overload">[7/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHt4t4coupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#ab4228415f67c20795735c520b9381d5c">D.selfDHt4t4coupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8dab78c717f48bf36b75800aea84831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8dab78c717f48bf36b75800aea84831">&#9670;&nbsp;</a></span>def() <span class="overload">[8/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHttcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a71318d21c0728e9e62873d9f8b4ae5c2">D.selfDHttcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62251d7ce74d6653fcf8ab50b3f2effe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62251d7ce74d6653fcf8ab50b3f2effe">&#9670;&nbsp;</a></span>def() <span class="overload">[9/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHwpwpcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a9c38aa6f85cde49d0743cb404e1fa575">D.selfDHwpwpcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e8b80bf4f905b257ac86ebebcb5e82b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8b80bf4f905b257ac86ebebcb5e82b">&#9670;&nbsp;</a></span>def() <span class="overload">[10/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHwwCLambda_qsq&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a3d2f72c685c1e85a8928f419d5a9f306">D.selfDHwwCLambda_qsq</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83412634db9d0dadf62c7904a55c9a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83412634db9d0dadf62c7904a55c9a66">&#9670;&nbsp;</a></span>def() <span class="overload">[11/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHwwcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a48fdca591b54b10415f95fc0ae9f5d7f">D.selfDHwwcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69648bf097535691db27994a00d4474f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69648bf097535691db27994a00d4474f">&#9670;&nbsp;</a></span>def() <span class="overload">[12/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHwwLambda_qsq&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a15dc1127111e623c11a76230816d631c">D.selfDHwwLambda_qsq</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fb07701f535487c5642267890fc7bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb07701f535487c5642267890fc7bd6">&#9670;&nbsp;</a></span>def() <span class="overload">[13/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDHzzpcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#aa650a369178f61723c71a8ce49240bbf">D.selfDHzzpcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c2730e143daa3405b1d7d4e61d28206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c2730e143daa3405b1d7d4e61d28206">&#9670;&nbsp;</a></span>def() <span class="overload">[14/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDM_Wprime&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#ac043836b15c9fe73adcc465f19234490">D.selfDM_Wprime</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62e50b0cb4cc8f689889dfda964964cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e50b0cb4cc8f689889dfda964964cf">&#9670;&nbsp;</a></span>def() <span class="overload">[15/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDM_Zprime&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#aac0b8432243a31217468bbbee186cced">D.selfDM_Zprime</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9e267bfd7416b9132f6cd6c25c7408c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e267bfd7416b9132f6cd6c25c7408c">&#9670;&nbsp;</a></span>def() <span class="overload">[16/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDZpffcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a26d02ef222dff3c05b5c55c855ed55bc">D.selfDZpffcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf3f1be52c28d380f1652df935424792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3f1be52c28d380f1652df935424792">&#9670;&nbsp;</a></span>def() <span class="overload">[17/17]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def </td>
+          <td>(</td>
+          <td class="paramtype">&quot;selfDZqqcoupl&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[] (py::object &amp;<a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>){ <a class="el" href="classMela.html">Mela</a> &amp;D=obj.cast&lt; <a class="el" href="classMela.html">Mela</a> &amp; &gt;();return py::array_t&lt; double &gt;(std::vector&lt; int &gt;{<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>, SIZE_HGG, 2},(const double *) &amp;<a class="el" href="raw__names_8txt.html#a8f068da593669f20fc8e003bed148f66">D.selfDZqqcoupl</a>, <a class="el" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>);}&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab9cca3d94d41c350ac717287f715d39b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9cca3d94d41c350ac717287f715d39b">&#9670;&nbsp;</a></span>py::enum_&lt; pymela::ATQGC_indices &gt;()</h2>
 
@@ -2361,8 +2867,29 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a1f47b4293a5265addb2fa11f0e261ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f47b4293a5265addb2fa11f0e261ad1">&#9670;&nbsp;</a></span>obj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">py::object &amp; obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    <a class="code" href="classMela.html">Mela</a> &amp;D = <a class="code" href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a>.cast&lt;<a class="code" href="classMela.html">Mela</a>&amp;&gt;()</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="output_8txt_source.html#l00166">166</a> of file <a class="el" href="output_8txt_source.html">output.txt</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aoutput_8txt_html_a1f47b4293a5265addb2fa11f0e261ad1"><div class="ttname"><a href="output_8txt.html#a1f47b4293a5265addb2fa11f0e261ad1">obj</a></div><div class="ttdeci">py::object &amp; obj</div><div class="ttdef"><b>Definition:</b> <a href="output_8txt_source.html#l00166">output.txt:166</a></div></div>
+<div class="ttc" id="aclassMela_html"><div class="ttname"><a href="classMela.html">Mela</a></div><div class="ttdoc">This is the main Mela object!</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8h_source.html#l00054">Mela.h:54</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

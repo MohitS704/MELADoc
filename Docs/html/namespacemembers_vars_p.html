@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -103,12 +93,11 @@ $(document).ready(function(){initNavTree('namespacemembers_vars_p.html',''); ini
 &#160;
 
 <h3><a id="index_p"></a>- p -</h3><ul>
-<li>p
-: <a class="el" href="namespacetestME__all.html#abd1c8f4cc0e2aff091dcab1c877bdf9b">testME_all</a>
+<li>params_c_
+: <a class="el" href="namespacemadMela.html#a11eea838fab7ee175981504696078ac5">madMela</a>
 </li>
-<li>parser
-: <a class="el" href="namespacelhefile.html#a55a8633cffe0a2f6ef2b92e4c3a93a65">lhefile</a>
-, <a class="el" href="namespacetestME__more.html#a74448de8e77a5ec8522421ac2324394b">testME_more</a>
+<li>params_r_
+: <a class="el" href="namespacemadMela.html#ac27e20e9ce82027612057e50a681e58a">madMela</a>
 </li>
 <li>pchannel
 : <a class="el" href="namespacemodparameters.html#a1f72bdfb77d81c77645c2851527515f3">modparameters</a>
@@ -157,18 +146,6 @@ $(document).ready(function(){initNavTree('namespacemembers_vars_p.html',''); ini
 </li>
 <li>pdfup_
 : <a class="el" href="namespacemodparameters.html#afd0aa518bc0b1ed4cf46232e6ec085de">modparameters</a>
-</li>
-<li>PDG_electron
-: <a class="el" href="namespaceanonymous__namespace_02test__JVBF_8c_03.html#a88ae2150e7e85e6fefa68313966dae9b">anonymous_namespace{test_JVBF.c}</a>
-</li>
-<li>PDG_muon
-: <a class="el" href="namespaceanonymous__namespace_02test__JVBF_8c_03.html#aaba25f750a471e4dbdcc77ee1a94c2a2">anonymous_namespace{test_JVBF.c}</a>
-</li>
-<li>PDG_tau
-: <a class="el" href="namespaceanonymous__namespace_02test__JVBF_8c_03.html#aeaa6c922140ca05b09141eb7d459ebd8">anonymous_namespace{test_JVBF.c}</a>
-</li>
-<li>pendingselfD
-: <a class="el" href="namespacetestME__all.html#a5a212d857f7dde7672218843ca4ca67e">testME_all</a>
 </li>
 <li>percent
 : <a class="el" href="namespacemodparameters.html#adc685f6d04de1945aae3f25f0206b3d4">modparameters</a>
@@ -425,9 +402,6 @@ $(document).ready(function(){initNavTree('namespacemembers_vars_p.html',''); ini
 </li>
 <li>process
 : <a class="el" href="namespacemodparameters.html#a01230a7892286e381643f0ca4fed5c04">modparameters</a>
-</li>
-<li>production
-: <a class="el" href="namespacetestME__all.html#ad8d22342dc3abc8c0fff43d649ac4655">testME_all</a>
 </li>
 <li>propcut
 : <a class="el" href="namespacemodttbhiggs.html#abbd7324dda04127446e49c1c30e969c2">modttbhiggs</a>

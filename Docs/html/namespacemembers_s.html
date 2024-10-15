@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -169,18 +159,6 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 <li>second
 : <a class="el" href="namespacemodparameters.html#ab25730bf36fa1669616bd6fbf66f8614">modparameters</a>
 </li>
-<li>second_higgs_name
-: <a class="el" href="namespacewrite__bindings.html#a6325662e5eef9324dbfcbb06268d6974">write_bindings</a>
-</li>
-<li>sectioncontent
-: <a class="el" href="namespacetestME__all.html#a579c57c5e3249dfea2eff7d397ce3b6d">testME_all</a>
-</li>
-<li>sections
-: <a class="el" href="namespacetestME__all.html#a41b8cf350adbc714e860243fe0059ddb">testME_all</a>
-</li>
-<li>seed
-: <a class="el" href="namespacetestME__more.html#a8d02b26a34d852b54f29aa1cc2783a59">testME_more</a>
-</li>
 <li>SelfDefine_spin0
 : <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a4850105ad013a92a4c9cbe6cfa97d794">TVar</a>
 </li>
@@ -240,6 +218,9 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 </li>
 <li>setdefaultckm()
 : <a class="el" href="namespacemodparameters.html#ab60da36b3fd15052f765cdee85880cc2">modparameters</a>
+</li>
+<li>setDefaultMadgraphValues()
+: <a class="el" href="namespacemadMela.html#abe1eebfc8f99e0e0159e814228f1b372">madMela</a>
 </li>
 <li>setdeltair_cll()
 : <a class="el" href="namespacecollier__init.html#a3e07fc40ba4c56de65b7114dbfd35d89">collier_init</a>
@@ -330,6 +311,12 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 </li>
 <li>setlorindtab()
 : <a class="el" href="namespaceinittensors.html#a23053b101e7180c949c566206018b7a5">inittensors</a>
+</li>
+<li>SetMadgraphCKMElements()
+: <a class="el" href="namespaceTUtil.html#ae896ae140c141b04f19b2b0bb6b9b068">TUtil</a>
+</li>
+<li>SetMadgraphSpinZeroCouplings()
+: <a class="el" href="namespaceTUtil.html#a15b596060ceaec9c4ed2233a8ba95121">TUtil</a>
 </li>
 <li>setmass()
 : <a class="el" href="namespacemodparameters.html#a630da8487bf990b04b213e41d87eee42">modparameters</a>
@@ -547,8 +534,8 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 <li>SIZE_HVV_LAMBDAQSQ
 : <a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ac5ccba37d05000fe5a8f00f9b907dcd9aa871d876116d263cc4b428c9165d84d6">anonymous_namespace{TCouplingsBase.hh}</a>
 </li>
-<li>size_term
-: <a class="el" href="namespacewrite__bindings.html#a62585fb6d2ddf899a0f5cb49595fc505">write_bindings</a>
+<li>SIZE_SMEFT
+: <a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4660668b2d23894c616511e73622ebfb">anonymous_namespace{TCouplingsBase.hh}</a>
 </li>
 <li>SIZE_Vpff
 : <a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#a2848812cf31042684189138eef3fb939ab8ff29576de048a5e3884827943840b9">anonymous_namespace{TCouplingsBase.hh}</a>
@@ -558,6 +545,9 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 </li>
 <li>SIZE_ZVV
 : <a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#a00e25c13d48ce75e295b2563b533321ea0ec6ad7c6053205f26cddfc7fda42e27">anonymous_namespace{TCouplingsBase.hh}</a>
+</li>
+<li>smatrixhel()
+: <a class="el" href="namespacemadMela.html#a625dda00104def95ff458b6319a3f8f0">madMela</a>
 </li>
 <li>SMSyst_None
 : <a class="el" href="namespaceTVar.html#ab4e6f4908dbdc9191d8833fa1007a328a1e28f3a001e1b85a474479708d78c4dd">TVar</a>
@@ -606,17 +596,11 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 , <a class="el" href="namespacemodhiggsjj.html#af118eaf44cb23560f80332fc25cc5741">modhiggsjj</a>
 , <a class="el" href="namespacemodvhiggs.html#a728feac63aa7cfbfe30b08c7ed244389">modvhiggs</a>
 </li>
-<li>spinzero
-: <a class="el" href="namespacewrite__bindings.html#ab52d756bace1f910bf921527cef18920">write_bindings</a>
-</li>
 <li>spivl()
 : <a class="el" href="namespacemodttbhiggs.html#ad5dba1690a2142af045213493a451f7a">modttbhiggs</a>
 </li>
 <li>sqrt2
 : <a class="el" href="namespacemodparameters.html#a7fef6e0c72e2bba26422e1f6024bb965">modparameters</a>
-</li>
-<li>start
-: <a class="el" href="namespacetestME__all.html#a21264282b1fdd710a2bd7268eb1f1962">testME_all</a>
 </li>
 <li>stdout_cll
 : <a class="el" href="namespacecollier__global.html#a748abc97132a321580a1c395a2b9a6ca">collier_global</a>
@@ -635,9 +619,6 @@ $(document).ready(function(){initNavTree('namespacemembers_s.html',''); initResi
 </li>
 <li>str_
 : <a class="el" href="namespacemodparameters.html#a61a0b34437cccbf824947c3333e1ba66">modparameters</a>
-</li>
-<li>string
-: <a class="el" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">write_bindings</a>
 </li>
 <li>su2flip()
 : <a class="el" href="namespacemodparameters.html#a51b5267762b7f6b774ba462c6e2cdf1b">modparameters</a>

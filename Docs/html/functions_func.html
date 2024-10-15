@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -102,32 +92,118 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <div class="contents">
 &#160;
 
-<h3><a id="index__5F"></a>- _ -</h3><ul>
-<li>__enter__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a5c8a03fbf23279ced89001e2d6e0a2cd">lhefile.LHEFileBase</a>
+<h3><a id="index_a"></a>- a -</h3><ul>
+<li>addAssociatedJet()
+: <a class="el" href="classMELACandidate.html#a2b0f61b5ae35b253e222278710e40e06">MELACandidate</a>
 </li>
-<li>__exit__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a56730ff74ab6b68f6f866b2478518847">lhefile.LHEFileBase</a>
+<li>addAssociatedLepton()
+: <a class="el" href="classMELACandidate.html#a349e3a335ea7e75dbbee3d558c6aa2c3">MELACandidate</a>
 </li>
-<li>__getattr__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a3ac034e0fece5d4f3755b3ff0174f9d5">lhefile.LHEFileBase</a>
+<li>addAssociatedNeutrino()
+: <a class="el" href="classMELACandidate.html#ade6ff983fa4cd82b8c1102ed1688d985">MELACandidate</a>
 </li>
-<li>__init__()
-: <a class="el" href="classlhefile_1_1LHEEvent.html#a7b162fd286c3491cad3f2c1f4e10ee1b">lhefile.LHEEvent</a>
-, <a class="el" href="classlhefile_1_1LHEFileBase.html#a23c4cb28397e6f57fee93a97138eddc8">lhefile.LHEFileBase</a>
+<li>addAssociatedParticleToArray()
+: <a class="el" href="classMELACandidate.html#af531aa6368465820243c1b1a4ff9543c">MELACandidate</a>
 </li>
-<li>__iter__()
-: <a class="el" href="classlhefile_1_1LHEEvent.html#abcd64fd743066a400818b426276a609f">lhefile.LHEEvent</a>
-, <a class="el" href="classlhefile_1_1LHEFileBase.html#a9b607721f99e56bb55e1e84fd82f74c8">lhefile.LHEFileBase</a>
+<li>addAssociatedPhoton()
+: <a class="el" href="classMELACandidate.html#a3debcffc164edcc882df3cc60fbb059d">MELACandidate</a>
 </li>
-<li>__setattr__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#ac0c4b80f9f7f8bb5622e27363fc65952">lhefile.LHEFileBase</a>
+<li>addAssociatedTop()
+: <a class="el" href="classMELACandidate.html#a22361d11e8a08d4f60e8653b9cc42cee">MELACandidate</a>
 </li>
-<li>_LHEclassattributes()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#ae59c143daf611e98a6aee2010cfb28d6">lhefile.LHEFileBase</a>
+<li>addAssociatedVs()
+: <a class="el" href="classMELACandidate.html#a2bc7e8b045eea81dcf096502f8079d45">MELACandidate</a>
 </li>
-<li>_setInputEvent()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a625a68d01fcee841b31261789a725a29">lhefile.LHEFileBase</a>
+<li>addByHighestPt()
+: <a class="el" href="classMELACandidate.html#a2e1024273f1d6c02c6a28a96af172d69">MELACandidate</a>
+</li>
+<li>addDaughter()
+: <a class="el" href="classMELAParticle.html#a555dda1d36e3cf9801de88ad38a6c6de">MELAParticle</a>
+</li>
+<li>addHypothesis()
+: <a class="el" href="classScalarPdfFactory.html#a2c50885b5fd9958a624e95ba19946ba8">ScalarPdfFactory</a>
+, <a class="el" href="classTensorPdfFactory.html#aa536a03b1965aa4d2052462bc22c8078">TensorPdfFactory</a>
+</li>
+<li>addLeafDependents()
+: <a class="el" href="classMELANCSplineCore.html#a70433d5860a7e332db2239bf5bb86d2d">MELANCSplineCore</a>
+</li>
+<li>addMEArray()
+: <a class="el" href="classMelaIO.html#a4be3290d4a0f36803ba95241080a038b">MelaIO</a>
+</li>
+<li>addMERecord()
+: <a class="el" href="classMelaIO.html#a5dd2e8f8783e3fbc1da8f3035501ef1b">MelaIO</a>
+</li>
+<li>addMother()
+: <a class="el" href="classMELAParticle.html#a842ee69ede2f6fbdd62517bc4bcf8946">MELAParticle</a>
+</li>
+<li>addSortedV()
+: <a class="el" href="classMELACandidate.html#a95442ed3a107d7f9c920db17ad3aefc4">MELACandidate</a>
+</li>
+<li>addUnique()
+: <a class="el" href="classMELANCSplineFactory__2D.html#a721126c8f05a4c8800a219a944729d41">MELANCSplineFactory_2D</a>
+, <a class="el" href="classMELANCSplineFactory__3D.html#a31097bc3c6faf08b846d92989d911579">MELANCSplineFactory_3D</a>
+</li>
+<li>addUnordered()
+: <a class="el" href="classMELACandidate.html#ae996c7128b2722902e11412be8562607">MELACandidate</a>
+</li>
+<li>allow_WWZZSeparation()
+: <a class="el" href="classSpinZeroCouplings.html#a45089901818f718080ca643e973e97c0">SpinZeroCouplings</a>
+</li>
+<li>AllowSeparateWWCouplings()
+: <a class="el" href="classTEvtProb.html#a8d0ea9443455472c405a006038a47393">TEvtProb</a>
+</li>
+<li>alwaysIntegrate()
+: <a class="el" href="classRooSpin.html#a40db25f08c8a1c56fc0bd327e48e94fa">RooSpin</a>
+, <a class="el" href="classSpinPdfFactory.html#a9d84f5beb69e53f53fd68a84b5c66ce0">SpinPdfFactory</a>
+</li>
+<li>analyticalIntegral()
+: <a class="el" href="classMELADoubleCB.html#ac74b16aff7000ffd2a021b9419008ace">MELADoubleCB</a>
+, <a class="el" href="classMELAFuncPdf.html#a7f6d13e2eccf8e6a355bd7b110297a57">MELAFuncPdf</a>
+, <a class="el" href="classMELALinearInterpFunc.html#a30df08cb66c3655f8b363f289f75be0d">MELALinearInterpFunc</a>
+, <a class="el" href="classMELANCSpline__1D__fast.html#ac114dcdbf7ef68ff46acf74e6c6886f4">MELANCSpline_1D_fast</a>
+, <a class="el" href="classMELANCSpline__2D__fast.html#a4a6371edf84476abd35cbd94a85ce60f">MELANCSpline_2D_fast</a>
+, <a class="el" href="classMELANCSpline__3D__fast.html#a013e334fe20396c412d4f936c50e5b21">MELANCSpline_3D_fast</a>
+, <a class="el" href="classMELANCSplineCore.html#a4152f834a8dde69a8fc0ad02da6c96fb">MELANCSplineCore</a>
+, <a class="el" href="classRooqqZZ__JHU.html#a72ab442897e86c70c2522fd85d746b07">RooqqZZ_JHU</a>
+, <a class="el" href="classRooqqZZ__JHU__ZgammaZZ__fast.html#a41e0e3cafb1060d59a851e66b037d05c">RooqqZZ_JHU_ZgammaZZ_fast</a>
+, <a class="el" href="classRooSpin.html#aaeb2f240fbc7994ea710e4118dfc6c77">RooSpin</a>
+, <a class="el" href="classRooSpinOne__7D.html#ae3648f7e2a63f4e1e6d2ef58c58ed408">RooSpinOne_7D</a>
+, <a class="el" href="classRooSpinTwo.html#a65707b816509dd1df63006915e672997">RooSpinTwo</a>
+, <a class="el" href="classRooSpinTwo__7DComplex__ppHVV.html#ac02a0de58ecc54dc683e1448c79575dc">RooSpinTwo_7DComplex_ppHVV</a>
+, <a class="el" href="classRooSpinZero.html#a01f5ac13349bf3cd1e573bb0eafa2aff">RooSpinZero</a>
+, <a class="el" href="classRooSpinZero__3D__pp__VH.html#a5a8e60c70612d706a8c830b87d0c59f1">RooSpinZero_3D_pp_VH</a>
+, <a class="el" href="classRooSpinZero__5D__VH.html#aa1d02c15e34aa7073ae972cd854a65b7">RooSpinZero_5D_VH</a>
+, <a class="el" href="classRooSpinZero__7DComplex__withAccep__HVV.html#afb6952ce2570126f4138307dbcdaa970">RooSpinZero_7DComplex_withAccep_HVV</a>
+</li>
+<li>analyticalIntegralWN()
+: <a class="el" href="classMELAFuncPdf.html#a6d9e38ba55f715bda47062770e078281">MELAFuncPdf</a>
+</li>
+<li>append_TopCandidate()
+: <a class="el" href="classZZMatrixElement.html#aeba1d231d6af1393ca02688c26d59dc8">ZZMatrixElement</a>
+</li>
+<li>appendTopCandidate()
+: <a class="el" href="classMela.html#abeaf8019f374bd300a1262f67fd58b89">Mela</a>
+</li>
+<li>AppendTopCandidate()
+: <a class="el" href="classTEvtProb.html#a605e94a0c6f814e4481fd887d2e65123">TEvtProb</a>
+</li>
+<li>aten_args_cll()
+: <a class="el" href="interfacecollier__tensors_1_1aten__cll.html#adf2706424212d014c7d566a99eb9b2db">collier_tensors::aten_cll</a>
+</li>
+<li>aten_args_list_cll()
+: <a class="el" href="interfacecollier__tensors_1_1aten__cll.html#a317aea661b79e6e01a027d7f38c4698d">collier_tensors::aten_cll</a>
+</li>
+<li>aten_list_cll()
+: <a class="el" href="interfacecollier__tensors_1_1aten__cll.html#af51dabc3f890e30f112d6222eb5516ca">collier_tensors::aten_cll</a>
+</li>
+<li>aten_main_cll()
+: <a class="el" href="interfacecollier__tensors_1_1aten__cll.html#a777665252aca040a6a38f9cc911232d6">collier_tensors::aten_cll</a>
+</li>
+<li>aTQGCCouplings()
+: <a class="el" href="classaTQGCCouplings.html#a6f68c526a73f7551d6f25c3f74d85acb">aTQGCCouplings</a>
+</li>
+<li>AZffCouplings()
+: <a class="el" href="classAZffCouplings.html#a597edbb1044efca75095e1d779051109">AZffCouplings</a>
 </li>
 </ul>
 </div><!-- contents -->

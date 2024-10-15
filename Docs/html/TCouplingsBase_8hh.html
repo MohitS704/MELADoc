@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -113,55 +103,53 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="TCouplingsBase_8hh__dep__incl.png" border="0" usemap="#MELA_2interface_2TCouplingsBase_8hhdep" alt=""/></div>
 <map name="MELA_2interface_2TCouplingsBase_8hhdep" id="MELA_2interface_2TCouplingsBase_8hhdep">
 <area shape="rect" title=" " alt="" coords="382,5,565,47"/>
-<area shape="rect" href="TCouplings_8hh.html" title=" " alt="" coords="261,102,461,129"/>
-<area shape="rect" href="mela__binding_8cpp.html" title=" " alt="" coords="430,541,637,568"/>
-<area shape="rect" href="TModJHUGenMELA_8hh.html" title=" " alt="" coords="485,95,685,136"/>
-<area shape="rect" href="RooSpin_8h.html" title=" " alt="" coords="2339,102,2517,129"/>
-<area shape="rect" href="TEvtProb_8hh.html" title=" " alt="" coords="261,266,451,293"/>
+<area shape="rect" href="TCouplings_8hh.html" title=" " alt="" coords="262,102,462,129"/>
+<area shape="rect" href="mela__binding_8cpp.html" title=" " alt="" coords="477,541,684,568"/>
+<area shape="rect" href="TModJHUGenMELA_8hh.html" title=" " alt="" coords="486,95,686,136"/>
+<area shape="rect" href="RooSpin_8h.html" title=" " alt="" coords="2377,102,2554,129"/>
+<area shape="rect" href="TEvtProb_8hh.html" title=" " alt="" coords="244,266,434,293"/>
 <area shape="rect" href="TUtil_8hh.html" title=" " alt="" coords="504,184,667,211"/>
 <area shape="rect" href="TCouplings_8cc.html" title=" " alt="" coords="156,184,324,211"/>
-<area shape="rect" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM&#45;JHUGen and pure JHUGen." alt="" coords="1201,459,1356,486"/>
-<area shape="rect" href="ZZMatrixElement_8h.html" title=" " alt="" coords="224,363,451,389"/>
-<area shape="rect" href="TEvtProb_8cc.html" title=" " alt="" coords="43,363,200,389"/>
-<area shape="rect" href="SuperMELA_8h.html" title=" " alt="" coords="879,541,1076,568"/>
-<area shape="rect" href="Mela_8cc.html" title=" " alt="" coords="1263,616,1393,643"/>
-<area shape="rect" href="calcC__lintolog_8c.html" title=" " alt="" coords="1875,541,2056,568"/>
-<area shape="rect" href="getResolution_8c.html" title=" " alt="" coords="1287,541,1465,568"/>
-<area shape="rect" href="testME__v2_8c.html" title=" " alt="" coords="1100,541,1263,568"/>
-<area shape="rect" href="SuperMELA_8cc.html" title=" " alt="" coords="891,616,1063,643"/>
-<area shape="rect" href="ZZMatrixElement_8cc.html" title=" " alt="" coords="152,459,355,486"/>
-<area shape="rect" href="MelaPConstant_8h.html" title=" " alt="" coords="1033,266,1250,293"/>
-<area shape="rect" href="MELADifermionResolutionModel_8h.html" title=" " alt="" coords="680,259,888,300"/>
-<area shape="rect" href="TUtil_8cc.html" title=" " alt="" coords="525,266,656,293"/>
-<area shape="rect" href="MELAPConstant_8cc.html" title=" " alt="" coords="1041,363,1241,389"/>
-<area shape="rect" href="SuperDijetMela_8h.html" title=" " alt="" coords="577,355,754,397"/>
-<area shape="rect" href="MELADifermionResolutionModel_8cc.html" title=" " alt="" coords="778,355,1017,397"/>
-<area shape="rect" href="SuperDijetMela_8cc.html" title=" " alt="" coords="570,459,761,486"/>
-<area shape="rect" href="RooSpinZero_8h.html" title=" " alt="" coords="1815,184,2017,211"/>
-<area shape="rect" href="SpinPdfFactory_8h.html" title=" " alt="" coords="2321,184,2535,211"/>
-<area shape="rect" href="RooSpinTwo_8h.html" title=" " alt="" coords="2559,184,2761,211"/>
-<area shape="rect" href="RooSpin_8cc.html" title=" " alt="" coords="2785,184,2937,211"/>
-<area shape="rect" href="ScalarPdfFactory_8h.html" title=" " alt="" coords="1932,259,2105,300"/>
-<area shape="rect" href="RooSpinZero__7DComplex__withAccep__HVV_8h.html" title=" " alt="" coords="1279,259,1489,300"/>
-<area shape="rect" href="RooSpinZero__3D__pp__VH_8h.html" title=" " alt="" coords="2129,259,2321,300"/>
-<area shape="rect" href="RooSpinZero__5D__VH_8h.html" title=" " alt="" coords="1716,259,1908,300"/>
-<area shape="rect" href="RooSpinZero_8cc.html" title=" " alt="" coords="1513,266,1692,293"/>
-<area shape="rect" href="ScalarPdfFactory__HVV_8h.html" title=" " alt="" coords="1692,355,1865,397"/>
-<area shape="rect" href="ScalarPdfFactory__VH_8h.html" title=" " alt="" coords="2116,355,2289,397"/>
-<area shape="rect" href="ScalarPdfFactory_8cc.html" title=" " alt="" coords="1890,363,2091,389"/>
-<area shape="rect" href="ScalarPdfFactory__HVV_8cc.html" title=" " alt="" coords="1686,452,1871,493"/>
-<area shape="rect" href="ScalarPdfFactory__VH_8cc.html" title=" " alt="" coords="1979,452,2165,493"/>
-<area shape="rect" href="RooSpinZero__7DComplex__withAccep__HVV_8cc.html" title=" " alt="" coords="1317,348,1483,404"/>
-<area shape="rect" href="RooSpinZero__3D__pp__VH_8cc.html" title=" " alt="" coords="2313,355,2473,397"/>
-<area shape="rect" href="RooSpinZero__5D__VH_8cc.html" title=" " alt="" coords="1508,355,1668,397"/>
-<area shape="rect" href="TensorPdfFactory_8h.html" title=" " alt="" coords="2561,259,2735,300"/>
-<area shape="rect" href="SpinPdfFactory_8cc.html" title=" " alt="" coords="2346,266,2537,293"/>
-<area shape="rect" href="TensorPdfFactory__ppHVV_8h.html" title=" " alt="" coords="2775,355,2950,397"/>
-<area shape="rect" href="TensorPdfFactory_8cc.html" title=" " alt="" coords="2548,363,2751,389"/>
-<area shape="rect" href="TensorPdfFactory__ppHVV_8cc.html" title=" " alt="" coords="2769,452,2956,493"/>
-<area shape="rect" href="RooSpinTwo__7DComplex__ppHVV_8h.html" title=" " alt="" coords="2961,259,3151,300"/>
-<area shape="rect" href="RooSpinTwo_8cc.html" title=" " alt="" coords="2760,266,2936,293"/>
-<area shape="rect" href="RooSpinTwo__7DComplex__ppHVV_8cc.html" title=" " alt="" coords="2975,355,3137,397"/>
+<area shape="rect" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM&#45;JHUGen and pure JHUGen." alt="" coords="1068,459,1223,486"/>
+<area shape="rect" href="ZZMatrixElement_8h.html" title=" " alt="" coords="226,363,452,389"/>
+<area shape="rect" href="TEvtProb_8cc.html" title=" " alt="" coords="44,363,202,389"/>
+<area shape="rect" href="SuperMELA_8h.html" title=" " alt="" coords="979,541,1176,568"/>
+<area shape="rect" href="Mela_8cc.html" title=" " alt="" coords="1148,616,1279,643"/>
+<area shape="rect" href="SuperMELA_8cc.html" title=" " alt="" coords="952,616,1124,643"/>
+<area shape="rect" href="ZZMatrixElement_8cc.html" title=" " alt="" coords="199,459,402,486"/>
+<area shape="rect" href="MelaPConstant_8h.html" title=" " alt="" coords="1074,266,1292,293"/>
+<area shape="rect" href="MELADifermionResolutionModel_8h.html" title=" " alt="" coords="842,259,1050,300"/>
+<area shape="rect" href="MadMela_8cc.html" title=" " alt="" coords="508,266,663,293"/>
+<area shape="rect" href="TUtil_8cc.html" title=" " alt="" coords="687,266,818,293"/>
+<area shape="rect" href="MELAPConstant_8cc.html" title=" " alt="" coords="1071,363,1271,389"/>
+<area shape="rect" href="SuperDijetMela_8h.html" title=" " alt="" coords="606,355,784,397"/>
+<area shape="rect" href="MELADifermionResolutionModel_8cc.html" title=" " alt="" coords="808,355,1046,397"/>
+<area shape="rect" href="SuperDijetMela_8cc.html" title=" " alt="" coords="600,459,790,486"/>
+<area shape="rect" href="RooSpinZero_8h.html" title=" " alt="" coords="1852,184,2055,211"/>
+<area shape="rect" href="SpinPdfFactory_8h.html" title=" " alt="" coords="2358,184,2573,211"/>
+<area shape="rect" href="RooSpinTwo_8h.html" title=" " alt="" coords="2597,184,2798,211"/>
+<area shape="rect" href="RooSpin_8cc.html" title=" " alt="" coords="2823,184,2975,211"/>
+<area shape="rect" href="ScalarPdfFactory_8h.html" title=" " alt="" coords="1970,259,2143,300"/>
+<area shape="rect" href="RooSpinZero__7DComplex__withAccep__HVV_8h.html" title=" " alt="" coords="1519,259,1730,300"/>
+<area shape="rect" href="RooSpinZero__3D__pp__VH_8h.html" title=" " alt="" coords="1754,259,1946,300"/>
+<area shape="rect" href="RooSpinZero__5D__VH_8h.html" title=" " alt="" coords="2167,259,2359,300"/>
+<area shape="rect" href="RooSpinZero_8cc.html" title=" " alt="" coords="1316,266,1495,293"/>
+<area shape="rect" href="ScalarPdfFactory__HVV_8h.html" title=" " alt="" coords="1722,355,1895,397"/>
+<area shape="rect" href="ScalarPdfFactory__VH_8h.html" title=" " alt="" coords="2146,355,2319,397"/>
+<area shape="rect" href="ScalarPdfFactory_8cc.html" title=" " alt="" coords="1920,363,2121,389"/>
+<area shape="rect" href="ScalarPdfFactory__HVV_8cc.html" title=" " alt="" coords="1716,452,1901,493"/>
+<area shape="rect" href="ScalarPdfFactory__VH_8cc.html" title=" " alt="" coords="2140,452,2325,493"/>
+<area shape="rect" href="RooSpinZero__7DComplex__withAccep__HVV_8cc.html" title=" " alt="" coords="1346,348,1513,404"/>
+<area shape="rect" href="RooSpinZero__3D__pp__VH_8cc.html" title=" " alt="" coords="1538,355,1698,397"/>
+<area shape="rect" href="RooSpinZero__5D__VH_8cc.html" title=" " alt="" coords="2343,355,2503,397"/>
+<area shape="rect" href="TensorPdfFactory_8h.html" title=" " alt="" coords="2598,259,2773,300"/>
+<area shape="rect" href="SpinPdfFactory_8cc.html" title=" " alt="" coords="2384,266,2574,293"/>
+<area shape="rect" href="TensorPdfFactory__ppHVV_8h.html" title=" " alt="" coords="2805,355,2980,397"/>
+<area shape="rect" href="TensorPdfFactory_8cc.html" title=" " alt="" coords="2578,363,2780,389"/>
+<area shape="rect" href="TensorPdfFactory__ppHVV_8cc.html" title=" " alt="" coords="2799,452,2986,493"/>
+<area shape="rect" href="RooSpinTwo__7DComplex__ppHVV_8h.html" title=" " alt="" coords="2797,259,2988,300"/>
+<area shape="rect" href="RooSpinTwo_8cc.html" title=" " alt="" coords="3012,266,3188,293"/>
+<area shape="rect" href="RooSpinTwo__7DComplex__ppHVV_8cc.html" title=" " alt="" coords="3004,355,3167,397"/>
 </map>
 </div>
 </div>
@@ -382,6 +370,114 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a826ba1abcda45f509f3cb9200c15125f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b2e5c68543290b21d832f81e77670a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670a">anonymous_namespace{TCouplingsBase.hh}::CouplingIndex_SMEFT</a> { <br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaf9454afac274b4858250d6f9b19a7418">anonymous_namespace{TCouplingsBase.hh}::gMDL_ch</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aabe8ce22e9d7e0c2cd6d306798919170f">anonymous_namespace{TCouplingsBase.hh}::gMDL_chbox</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aab67fbe7e588219296dd494a8310c3e87">anonymous_namespace{TCouplingsBase.hh}::gMDL_chdd</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa8d91250cda1dbcbb4e001214e11a1ccb">anonymous_namespace{TCouplingsBase.hh}::gMDL_chg</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aae6b237451bdc1984c78eef236ac7e99c">anonymous_namespace{TCouplingsBase.hh}::gMDL_chw</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aacf727192910cc3e07cbf004a590438dd">anonymous_namespace{TCouplingsBase.hh}::gMDL_chb</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa3da6240450042a6f74a8445ed8085694">anonymous_namespace{TCouplingsBase.hh}::gMDL_chwb</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4aa357e1c5e75d13389464b3b453c0a7">anonymous_namespace{TCouplingsBase.hh}::gMDL_cehre</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa236335099e7bb05a2382c891ed3ddef5">anonymous_namespace{TCouplingsBase.hh}::gMDL_cuhre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa8b25705896a87a41db0f2092da2b9fc3">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdhre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa30d87c22185aa51cc7410fad8293d79c">anonymous_namespace{TCouplingsBase.hh}::gMDL_cewre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa5e2fe2b0eba2c5f08cabd152d6ef73fd">anonymous_namespace{TCouplingsBase.hh}::gMDL_cebre</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa04dd0af391af0ea0a9ddf3135d9e9fcf">anonymous_namespace{TCouplingsBase.hh}::gMDL_cugre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa19ebe3c796359f1ef554bb9e63f07ff3">anonymous_namespace{TCouplingsBase.hh}::gMDL_cuwre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aabe13b3e394c265ec9d13917b5ce98a1c">anonymous_namespace{TCouplingsBase.hh}::gMDL_cubre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa55285ce2d7fb3f16d18183f4bbfb81f2">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdgre</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa9a1422620e18ebb873c20ac30f3eeb58">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdwre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa66d6b94537a31f9f7840741870bf0dbe">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdbre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aac14f9016a24569fae6ae477fbf694e16">anonymous_namespace{TCouplingsBase.hh}::gMDL_chl1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa8623808d7c93fcf6b952925dc9df0ea4">anonymous_namespace{TCouplingsBase.hh}::gMDL_chl3</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa44ad4bb0a5567c8393e95171a6cdba2f">anonymous_namespace{TCouplingsBase.hh}::gMDL_che</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa17c7afe79cdc8c88f88f87840d699621">anonymous_namespace{TCouplingsBase.hh}::gMDL_chq1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4a0565429cd8d750d34f507f35438e8a">anonymous_namespace{TCouplingsBase.hh}::gMDL_chq3</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aab0e706218a9d10a9dc5de142b7ab3159">anonymous_namespace{TCouplingsBase.hh}::gMDL_chu</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aad43ae1bd63e44d6bc51b1d2b9eb924a4">anonymous_namespace{TCouplingsBase.hh}::gMDL_chd</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aafef07dc4080a723b39da01091ebfce55">anonymous_namespace{TCouplingsBase.hh}::gMDL_chudre</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa6234f5207e3bacaa9d2c1d0b153bc2b9">anonymous_namespace{TCouplingsBase.hh}::gMDL_cll</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa8cee1ce762930399991ca624eaca0773">anonymous_namespace{TCouplingsBase.hh}::gMDL_cll1</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aabf6354a4c3efbf211de900b71a09c31e">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqq1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa59471f9c31052857c7998805f32426c8">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqq11</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaa9b4fde4e034a3578964fca88536dd4a">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqq3</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa5d5995b19f4d6350f891207331bb2a86">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqq31</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa074347593a12a3d3f7cc0f7a9f399bb2">anonymous_namespace{TCouplingsBase.hh}::gMDL_clq1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaa59fc5c9048202d7e9efcc726608e3ff">anonymous_namespace{TCouplingsBase.hh}::gMDL_clq3</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aacc7fc5c236942ed1ff0f8bf2ab87143e">anonymous_namespace{TCouplingsBase.hh}::gMDL_cee</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aabe3ab8373f21883586c07f60e33a40f0">anonymous_namespace{TCouplingsBase.hh}::gMDL_cuu</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa604481e439af3345e94e34ebc56bb99f">anonymous_namespace{TCouplingsBase.hh}::gMDL_cuu1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa2c8287714449ac9be1aa963d77925f86">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdd</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4404f15580a0f8f30ec7ccc8ef1f8f3b">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdd1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa602b5fe96801040ae6ab7c7d9d7e7bd0">anonymous_namespace{TCouplingsBase.hh}::gMDL_ceu</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa2edf8e08120f68add75c7fdf1f52fe3d">anonymous_namespace{TCouplingsBase.hh}::gMDL_ced</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4dca6eb19cfd29fb1e6eebeebc9b20a9">anonymous_namespace{TCouplingsBase.hh}::gMDL_cud1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaf6f146983586bfec34b91b0e182cb97f">anonymous_namespace{TCouplingsBase.hh}::gMDL_cud8</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aae211ba03cb2eb9c40343ee28d61da909">anonymous_namespace{TCouplingsBase.hh}::gMDL_cle</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa5f402221b69d339b84f4683b9d72482f">anonymous_namespace{TCouplingsBase.hh}::gMDL_clu</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aac6525b99629cd90174fffece4f69d423">anonymous_namespace{TCouplingsBase.hh}::gMDL_cld</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa885fcbe938d0050198cda6d5338f3e8f">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqe</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaea6d096c1b7521940f6ba9aa87b42d1f">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqu1</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaee141f16678cc32a6775b3837866fd07">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqu8</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaa83817daaedfacfbffb69c46cc2d0f55">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqd1</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa54e1fc975504081202e294219766604a">anonymous_namespace{TCouplingsBase.hh}::gMDL_cqd8</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa6975f6b859946ffe253091557bdbdd60">anonymous_namespace{TCouplingsBase.hh}::gMDL_cledqre</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa52f8e273afe9bfdbcd1f7aa25f5879cf">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd1re</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa185f6e0dcd044f8a55f44b496e776ecd">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd11re</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa7a26a26d1593bde2ff8c78a82c42c51c">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd8re</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa683a9705f244e890db46a4d431bb003a">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd81re</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa9dd5747a3af5433dddcc59ae06013aa7">anonymous_namespace{TCouplingsBase.hh}::gMDL_clequ1re</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaf654f1b5d749f439769901326f0d0ca5">anonymous_namespace{TCouplingsBase.hh}::gMDL_clequ3re</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa82e3287340f22c7df84abb7f2e64889c">anonymous_namespace{TCouplingsBase.hh}::gMDL_cgtil</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa881104cd7c1ea9482927da32dde829ff">anonymous_namespace{TCouplingsBase.hh}::gMDL_cwtil</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa0a02c8bd2c9d935fd53cd71dd0519499">anonymous_namespace{TCouplingsBase.hh}::gMDL_chgtil</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa8ffc07c0fd4c180907e6b436bffb60f2">anonymous_namespace{TCouplingsBase.hh}::gMDL_chwtil</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaea2e742dad086a605d80f0eddb3fd7eb">anonymous_namespace{TCouplingsBase.hh}::gMDL_chbtil</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaf538e21dafd826ec5263946d4a0fed5f">anonymous_namespace{TCouplingsBase.hh}::gMDL_chwbtil</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4ae214ee94cdb475decccfb4da258d24">anonymous_namespace{TCouplingsBase.hh}::gMDL_cewim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aadf4e743db7073c59ece5103d9ac95961">anonymous_namespace{TCouplingsBase.hh}::gMDL_cebim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa9449ac302960db72c8a418d5125c6b61">anonymous_namespace{TCouplingsBase.hh}::gMDL_cugim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa3217f6bad9a9d4bf68955146258d22a9">anonymous_namespace{TCouplingsBase.hh}::gMDL_cuwim</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa89fb65562432a6b5863e7c78c37d9a14">anonymous_namespace{TCouplingsBase.hh}::gMDL_cubim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aab4b9e2f6c8da10f42e5a30cfc0de0461">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdgim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa7a94ba3d712136805f920f0b5ddca935">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdwim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa6b6bdcec313d40ff1b23f56f23ad5c1d">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdbim</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa7510ec24528660be941f6581cd7560cc">anonymous_namespace{TCouplingsBase.hh}::gMDL_chudim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaf737c983455b8ee6caa25c3ac826112f">anonymous_namespace{TCouplingsBase.hh}::gMDL_cehim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aaa400c446d444fca82858f87018ef2625">anonymous_namespace{TCouplingsBase.hh}::gMDL_cuhim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa15defe5f9dd9e228706aeeddf8f5be94">anonymous_namespace{TCouplingsBase.hh}::gMDL_cdhim</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa0403b6c1d6d1388a4b6e4254b01a7fa0">anonymous_namespace{TCouplingsBase.hh}::gMDL_cledqim</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa05ce4e17c1de4d71e88104b063e76933">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd1im</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aacbffab4ea7fe98e80810229f68b91212">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd8im</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa62ecf70abf8eec5e479a21a449c32c3f">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd11im</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa6eddc6d2a645c2515875141d01ceb616">anonymous_namespace{TCouplingsBase.hh}::gMDL_cquqd81im</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa1bde62c15f369285842a1113547e5094">anonymous_namespace{TCouplingsBase.hh}::gMDL_clequ1im</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa591a51e2eb54b9edae64734c17f9a84d">anonymous_namespace{TCouplingsBase.hh}::gMDL_clequ3im</a>, 
+<a class="el" href="namespaceanonymous__namespace_02TCouplingsBase_8hh_03.html#ad8b2e5c68543290b21d832f81e77670aa4660668b2d23894c616511e73622ebfb">anonymous_namespace{TCouplingsBase.hh}::SIZE_SMEFT</a>
+<br />
+ }</td></tr>
+<tr class="separator:ad8b2e5c68543290b21d832f81e77670a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file defines the indices for different couplings in MELA </p>

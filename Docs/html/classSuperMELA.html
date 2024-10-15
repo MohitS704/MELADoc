@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -460,8 +450,8 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;  <span class="keywordflow">if</span> (mHVal &gt;= 275){ lowside = 180.; }</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;  <span class="keywordflow">else</span> { lowside = 100.; }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  <span class="comment">// Apply rounding</span></div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  low_M = <a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>(max((mHVal - 20.*windowVal), lowside)+0.5);</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  high_M = <a class="code" href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">int</a>(min((mHVal + 15.*windowVal), <a class="code" href="classSuperMELA.html#a58412faf9b43be8502790fb28baf95df">sqrts_</a>*1000.)+0.5);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  low_M = int(max((mHVal - 20.*windowVal), lowside)+0.5);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  high_M = int(min((mHVal + 15.*windowVal), <a class="code" href="classSuperMELA.html#a58412faf9b43be8502790fb28baf95df">sqrts_</a>*1000.)+0.5);</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -908,16 +898,16 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  <span class="keywordtype">string</span> fCardName=<a class="code" href="classSuperMELA.html#a660f834688bfce1cb92f730db419dc8b">pathToCards_</a>+<span class="stringliteral">&quot;inputs_&quot;</span>+<a class="code" href="classSuperMELA.html#a61450a444b820301db09c716e92496bc">strChan_</a>+<span class="stringliteral">&quot;.txt&quot;</span>;</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classSuperMELA.html#aa74212a291c1513ea12244cdcc93f8d5">verbose_</a>)<a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;Parsing input card &quot;</span> &lt;&lt; fCardName.c_str() &lt;&lt; endl;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  ifstream card(fCardName.c_str(), ios::in);</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;  <span class="keywordtype">string</span> <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;  <span class="keywordtype">string</span> line;</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;  <span class="keywordflow">while</span> (card.good()){</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    getline(card, <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    getline(card, line);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    vector&lt;string&gt; fields;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(<a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>, fields, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(line, fields, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keywordflow">if</span> (fields.size()==0 || fields[0]!=<span class="stringliteral">&quot;qqZZshape&quot;</span>)<span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">if</span> (fields.size()&lt;3){</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;      <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;Error in SuperMELA::readSigParsFromFile! Incorrect format of line \&#39;&quot;</span> &lt;&lt; <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>.c_str() &lt;&lt; <span class="stringliteral">&quot;\&#39; . It contains &quot;</span> &lt;&lt; fields.size() &lt;&lt; <span class="stringliteral">&quot;fields (it should be 3)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;      <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;Error in SuperMELA::readSigParsFromFile! Incorrect format of line \&#39;&quot;</span> &lt;&lt; line.c_str() &lt;&lt; <span class="stringliteral">&quot;\&#39; . It contains &quot;</span> &lt;&lt; fields.size() &lt;&lt; <span class="stringliteral">&quot;fields (it should be 3)&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    }</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
@@ -1011,15 +1001,15 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;  <span class="keywordtype">string</span> fCardName=<a class="code" href="classSuperMELA.html#a660f834688bfce1cb92f730db419dc8b">pathToCards_</a>+<span class="stringliteral">&quot;inputs_&quot;</span>+<a class="code" href="classSuperMELA.html#a61450a444b820301db09c716e92496bc">strChan_</a>+<span class="stringliteral">&quot;.txt&quot;</span>;</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classSuperMELA.html#aa74212a291c1513ea12244cdcc93f8d5">verbose_</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;Parsing input card &quot;</span> &lt;&lt; fCardName.c_str() &lt;&lt; endl;</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;  ifstream card(fCardName.c_str(), ios::in);</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="keywordtype">string</span> <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="keywordtype">string</span> line;</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  <span class="keywordflow">while</span> (card.good()){</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    getline(card, <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    getline(card, line);</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    vector&lt;string&gt; fields;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(<a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>, fields, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(line, fields, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordflow">if</span> (fields.size()==0 || fields[0]!=<span class="stringliteral">&quot;signalShape&quot;</span>)<span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="comment">//ok, we found somethign interesting</span></div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">if</span> (fields.size()&lt;3){</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;      <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;Error in SuperMELA::readSigParsFromFile! Incorrect format of line &quot;</span> &lt;&lt; <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>.c_str() &lt;&lt; <span class="stringliteral">&quot; There should be at least three fields, I could find only &quot;</span> &lt;&lt; fields.size() &lt;&lt; <span class="stringliteral">&quot; fields.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;      <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;Error in SuperMELA::readSigParsFromFile! Incorrect format of line &quot;</span> &lt;&lt; line.c_str() &lt;&lt; <span class="stringliteral">&quot; There should be at least three fields, I could find only &quot;</span> &lt;&lt; fields.size() &lt;&lt; <span class="stringliteral">&quot; fields.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    }</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">if</span> (fields.at(1)==<span class="stringliteral">&quot;n_CB&quot;</span>){ str_n_CB=fields.at(2); nOK=<span class="keyword">true</span>; }</div>
@@ -1104,16 +1094,16 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  }</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSuperMELA.html#aa74212a291c1513ea12244cdcc93f8d5">verbose_</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAout</a> &lt;&lt; <span class="stringliteral">&quot;SuperMELA::readSigSystFromFile: Input card &quot;</span> &lt;&lt; fCardName &lt;&lt; <span class="stringliteral">&quot; can be read!&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  <span class="keywordtype">string</span> <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  <span class="keywordtype">string</span> line;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  <span class="keywordflow">while</span> (card.good()){</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    getline(card, <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    getline(card, line);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    vector&lt;string&gt; fields;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(<a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>, fields, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(line, fields, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (fields.size()&lt;2 || !(fields[0]==<span class="stringliteral">&quot;systematic&quot;</span>&amp;&amp;fields[1]==<span class="stringliteral">&quot;param&quot;</span>)) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">if</span> (fields.size()!=4){</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;      <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Error in SuperMELA::readSigSystFromFile! Incorrect format of line &quot;</span> &lt;&lt; <a class="code" href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">line</a>.c_str() &lt;&lt; endl;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;      <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Error in SuperMELA::readSigSystFromFile! Incorrect format of line &quot;</span> &lt;&lt; line.c_str() &lt;&lt; endl;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
@@ -2413,10 +2403,9 @@ Protected Attributes</h2></td></tr>
 <div class="ttc" id="anamespaceMELAStreamHelpers_html_a540da07450fb5154e684e182766cd72d"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a540da07450fb5154e684e182766cd72d">MELAStreamHelpers::MELAout</a></div><div class="ttdeci">MELAOutputStreamer MELAout</div></div>
 <div class="ttc" id="aclassSuperMELA_html_a6575228e41f1fbde80920be34139d34c"><div class="ttname"><a href="classSuperMELA.html#a6575228e41f1fbde80920be34139d34c">SuperMELA::a3_qqZZ_</a></div><div class="ttdeci">RooRealVar * a3_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00091">SuperMELA.h:91</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a0772b16725b5d6f2df5cdd6a8f5d296a"><div class="ttname"><a href="classSuperMELA.html#a0772b16725b5d6f2df5cdd6a8f5d296a">SuperMELA::a4_qqZZ_</a></div><div class="ttdeci">RooRealVar * a4_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00092">SuperMELA.h:92</a></div></div>
-<div class="ttc" id="anamespacetestME__all_html_a2f9c5cba6551dc41bae400ced29c30b3"><div class="ttname"><a href="namespacetestME__all.html#a2f9c5cba6551dc41bae400ced29c30b3">testME_all.int</a></div><div class="ttdeci">int</div><div class="ttdef"><b>Definition:</b> <a href="testME__all_8py_source.html#l00013">testME_all.py:13</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a58f258ddc4c0bf9f820667cba0e9bd4c"><div class="ttname"><a href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">SuperMELA::splitLine</a></div><div class="ttdeci">void splitLine(const std::string &amp;rawoption, std::vector&lt; std::string &gt; &amp;splitoptions, char delimiter)</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8cc_source.html#l00363">SuperMELA.cc:363</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a61f0414e3be1fe9905f7cae8e757cd00"><div class="ttname"><a href="classSuperMELA.html#a61f0414e3be1fe9905f7cae8e757cd00">SuperMELA::sig_FFT_</a></div><div class="ttdeci">RooFFTConvPdf * sig_FFT_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00082">SuperMELA.h:82</a></div></div>
-<div class="ttc" id="anamespaceTVar_html_a06f1ddf9957f91a474c2cf0fbc73caed"><div class="ttname"><a href="namespaceTVar.html#a06f1ddf9957f91a474c2cf0fbc73caed">TVar::GetMELAPath</a></div><div class="ttdeci">std::string GetMELAPath()</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8cc_source.html#l00121">TVar.cc:121</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a06f1ddf9957f91a474c2cf0fbc73caed"><div class="ttname"><a href="namespaceTVar.html#a06f1ddf9957f91a474c2cf0fbc73caed">TVar::GetMELAPath</a></div><div class="ttdeci">std::string GetMELAPath()</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8cc_source.html#l00122">TVar.cc:122</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a668ff5647e7f74da3214d141a61c6bbd"><div class="ttname"><a href="classSuperMELA.html#a668ff5647e7f74da3214d141a61c6bbd">SuperMELA::a5_qqZZ_</a></div><div class="ttdeci">RooRealVar * a5_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00093">SuperMELA.h:93</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_ae5f03fa071a899662bddae2eb50f9f4f"><div class="ttname"><a href="classSuperMELA.html#ae5f03fa071a899662bddae2eb50f9f4f">SuperMELA::a9_qqZZ_</a></div><div class="ttdeci">RooRealVar * a9_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00097">SuperMELA.h:97</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_aa36beab86d66f22a8c843074fbb0e08e"><div class="ttname"><a href="classSuperMELA.html#aa36beab86d66f22a8c843074fbb0e08e">SuperMELA::mean_CB_err_</a></div><div class="ttdeci">RooRealVar * mean_CB_err_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00074">SuperMELA.h:74</a></div></div>
@@ -2444,7 +2433,6 @@ Protected Attributes</h2></td></tr>
 <div class="ttc" id="aclassSuperMELA_html_a9b1a4e6ae0e462ad215cc7739f06666f"><div class="ttname"><a href="classSuperMELA.html#a9b1a4e6ae0e462ad215cc7739f06666f">SuperMELA::mean_BW_</a></div><div class="ttdeci">RooRealVar * mean_BW_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00083">SuperMELA.h:83</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_aee1505a1fb006d2c53343d32c1d2ce4a"><div class="ttname"><a href="classSuperMELA.html#aee1505a1fb006d2c53343d32c1d2ce4a">SuperMELA::a2_qqZZ_</a></div><div class="ttdeci">RooRealVar * a2_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00090">SuperMELA.h:90</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a1b7f84a3ed1a3bdad0d55b2c9981a822"><div class="ttname"><a href="classSuperMELA.html#a1b7f84a3ed1a3bdad0d55b2c9981a822">SuperMELA::alpha_CB_</a></div><div class="ttdeci">RooFormulaVar * alpha_CB_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00067">SuperMELA.h:67</a></div></div>
-<div class="ttc" id="anamespacewrite__bindings_html_adf39df0bcae8519b748e7f722fe08800"><div class="ttname"><a href="namespacewrite__bindings.html#adf39df0bcae8519b748e7f722fe08800">write_bindings.line</a></div><div class="ttdeci">line</div><div class="ttdef"><b>Definition:</b> <a href="write__bindings_8py_source.html#l00057">write_bindings.py:57</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_adef332e518c8b19309c0e121df15c82d"><div class="ttname"><a href="classSuperMELA.html#adef332e518c8b19309c0e121df15c82d">SuperMELA::checkChannel</a></div><div class="ttdeci">bool checkChannel()</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8cc_source.html#l00598">SuperMELA.cc:598</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -14,6 +14,7 @@ var classSpinZeroCouplings =
     [ "SetHVVLambdaQ2", "classSpinZeroCouplings.html#a7d628c4955a88d0bdb10ee1b48242f77", null ],
     [ "SetHVVpCouplings", "classSpinZeroCouplings.html#a6c5a6ea4b95bb9d9e4bc931f619f61ff", null ],
     [ "SetHVVSignCQ2", "classSpinZeroCouplings.html#a09cfe4c968cc2d82941e438fcc37c224", null ],
+    [ "SetSMEFTSimCouplings", "classSpinZeroCouplings.html#aca0d5957cd5f72bf232c7fe157730466", null ],
     [ "H2b4b4coupl", "classSpinZeroCouplings.html#a3a28fafa6eb3b86527ab7eab167f5101", null ],
     [ "H2bbcoupl", "classSpinZeroCouplings.html#a9a17477cf1cc3230436d923bbce9bc9b", null ],
     [ "H2g4g4coupl", "classSpinZeroCouplings.html#af5be27557b712d2424494e8ef8933e08", null ],
@@ -44,5 +45,6 @@ var classSpinZeroCouplings =
     [ "Hzzcoupl", "classSpinZeroCouplings.html#a94a2a3ef54a3db5d3f9dc105bf66457f", null ],
     [ "HzzLambda_qsq", "classSpinZeroCouplings.html#a533523154894dc5ceaf772026c431bd0", null ],
     [ "Hzzpcoupl", "classSpinZeroCouplings.html#a2a1405a913060c16a341faaa26b92df0", null ],
-    [ "separateWWZZcouplings", "classSpinZeroCouplings.html#acf09ac549e89a616531ccb0e4a40fb1c", null ]
+    [ "separateWWZZcouplings", "classSpinZeroCouplings.html#acf09ac549e89a616531ccb0e4a40fb1c", null ],
+    [ "SMEFTSimcoupl", "classSpinZeroCouplings.html#a5e1fcda26033aa1e0d9a39c9afe83f9f", null ]
 ];

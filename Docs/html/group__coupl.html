@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -112,31 +102,31 @@ $(document).ready(function(){initNavTree('group__coupl.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga3a9d214b2e2a9afa49b839248dfe8ba8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga3a9d214b2e2a9afa49b839248dfe8ba8">Mela::selfDHggcoupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td></tr>
+<tr class="memitem:ga3a9d214b2e2a9afa49b839248dfe8ba8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga3a9d214b2e2a9afa49b839248dfe8ba8">Mela::selfDHggcoupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td></tr>
 <tr class="separator:ga3a9d214b2e2a9afa49b839248dfe8ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e0bfe7507d06900d2032e1f5ba2909e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga5e0bfe7507d06900d2032e1f5ba2909e">Mela::selfDHg4g4coupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td></tr>
+<tr class="memitem:ga5e0bfe7507d06900d2032e1f5ba2909e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga5e0bfe7507d06900d2032e1f5ba2909e">Mela::selfDHg4g4coupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td></tr>
 <tr class="separator:ga5e0bfe7507d06900d2032e1f5ba2909e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafacb62e24d7e84e904b258b2f4cf5dd4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gafacb62e24d7e84e904b258b2f4cf5dd4">Mela::selfDHqqcoupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td></tr>
+<tr class="memitem:gafacb62e24d7e84e904b258b2f4cf5dd4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gafacb62e24d7e84e904b258b2f4cf5dd4">Mela::selfDHqqcoupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td></tr>
 <tr class="separator:gafacb62e24d7e84e904b258b2f4cf5dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga56487cd83fb61f1c5e566b537367974b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga56487cd83fb61f1c5e566b537367974b">Mela::selfDHbbcoupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td></tr>
+<tr class="memitem:ga56487cd83fb61f1c5e566b537367974b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga56487cd83fb61f1c5e566b537367974b">Mela::selfDHbbcoupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td></tr>
 <tr class="separator:ga56487cd83fb61f1c5e566b537367974b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa9d3f00febdb8e0e5a0635f22d922300"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gaa9d3f00febdb8e0e5a0635f22d922300">Mela::selfDHttcoupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td></tr>
+<tr class="memitem:gaa9d3f00febdb8e0e5a0635f22d922300"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gaa9d3f00febdb8e0e5a0635f22d922300">Mela::selfDHttcoupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td></tr>
 <tr class="separator:gaa9d3f00febdb8e0e5a0635f22d922300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00b434f82a9936a60740368a2ae0f5c8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga00b434f82a9936a60740368a2ae0f5c8">Mela::selfDHb4b4coupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td></tr>
+<tr class="memitem:ga00b434f82a9936a60740368a2ae0f5c8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga00b434f82a9936a60740368a2ae0f5c8">Mela::selfDHb4b4coupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td></tr>
 <tr class="separator:ga00b434f82a9936a60740368a2ae0f5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa379a951d01d24a9c7761012ab633550"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gaa379a951d01d24a9c7761012ab633550">Mela::selfDHt4t4coupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td></tr>
+<tr class="memitem:gaa379a951d01d24a9c7761012ab633550"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gaa379a951d01d24a9c7761012ab633550">Mela::selfDHt4t4coupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td></tr>
 <tr class="separator:gaa379a951d01d24a9c7761012ab633550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabeedcc146fa604a15f16780b99057f89"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gabeedcc146fa604a15f16780b99057f89">Mela::selfDHzzcoupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
+<tr class="memitem:gabeedcc146fa604a15f16780b99057f89"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gabeedcc146fa604a15f16780b99057f89">Mela::selfDHzzcoupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
 <tr class="separator:gabeedcc146fa604a15f16780b99057f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5239be5ef69410296d18070ff68c0f3e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga5239be5ef69410296d18070ff68c0f3e">Mela::selfDHwwcoupl</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
+<tr class="memitem:ga5239be5ef69410296d18070ff68c0f3e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga5239be5ef69410296d18070ff68c0f3e">Mela::selfDHwwcoupl</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
 <tr class="separator:ga5239be5ef69410296d18070ff68c0f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga718a857f441d077c9042c1d73942c308"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga718a857f441d077c9042c1d73942c308">Mela::selfDHzzLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
+<tr class="memitem:ga718a857f441d077c9042c1d73942c308"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga718a857f441d077c9042c1d73942c308">Mela::selfDHzzLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
 <tr class="separator:ga718a857f441d077c9042c1d73942c308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae3c3c9f0cdf07f409dc78176ba1e997c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gae3c3c9f0cdf07f409dc78176ba1e997c">Mela::selfDHwwLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
+<tr class="memitem:gae3c3c9f0cdf07f409dc78176ba1e997c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gae3c3c9f0cdf07f409dc78176ba1e997c">Mela::selfDHwwLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
 <tr class="separator:gae3c3c9f0cdf07f409dc78176ba1e997c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga634ce2f63e0a3cd23aa185c19e62a734"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga634ce2f63e0a3cd23aa185c19e62a734">Mela::selfDHzzCLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
+<tr class="memitem:ga634ce2f63e0a3cd23aa185c19e62a734"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga634ce2f63e0a3cd23aa185c19e62a734">Mela::selfDHzzCLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
 <tr class="separator:ga634ce2f63e0a3cd23aa185c19e62a734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7302f7a0b838c2a3f3e9d0a598a25043"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga7302f7a0b838c2a3f3e9d0a598a25043">Mela::selfDHwwCLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
+<tr class="memitem:ga7302f7a0b838c2a3f3e9d0a598a25043"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga7302f7a0b838c2a3f3e9d0a598a25043">Mela::selfDHwwCLambda_qsq</a> [<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td></tr>
 <tr class="separator:ga7302f7a0b838c2a3f3e9d0a598a25043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae9ddd93244ff8ccf95fd50699679d7c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gae9ddd93244ff8ccf95fd50699679d7c7">Mela::differentiate_HWW_HZZ</a></td></tr>
 <tr class="separator:gae9ddd93244ff8ccf95fd50699679d7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,13 +134,13 @@ Variables</h2></td></tr>
 <tr class="separator:gabe1837fec463bb6db0a9b06b2a0f99cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa8fde8a0cbfa680a5c8f9312c480974c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gaa8fde8a0cbfa680a5c8f9312c480974c">Mela::selfDHzpzpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
 <tr class="separator:gaa8fde8a0cbfa680a5c8f9312c480974c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2733b7883767858bb8eed7f30deecd37"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga2733b7883767858bb8eed7f30deecd37">Mela::selfDZpffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">SIZE_Vpff</a>][2]</td></tr>
+<tr class="memitem:ga2733b7883767858bb8eed7f30deecd37"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga2733b7883767858bb8eed7f30deecd37">Mela::selfDZpffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">SIZE_Vpff</a>][2]</td></tr>
 <tr class="separator:ga2733b7883767858bb8eed7f30deecd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga63c7ad8ae502940286f274c4b6e3df54"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga63c7ad8ae502940286f274c4b6e3df54">Mela::selfDHwwpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
 <tr class="separator:ga63c7ad8ae502940286f274c4b6e3df54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8893f0c52513afd8bb64c37024d6ba60"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga8893f0c52513afd8bb64c37024d6ba60">Mela::selfDHwpwpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td></tr>
 <tr class="separator:ga8893f0c52513afd8bb64c37024d6ba60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga307367d5ff83be80ccfa9e4560507e93"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga307367d5ff83be80ccfa9e4560507e93">Mela::selfDWpffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">SIZE_Vpff</a>][2]</td></tr>
+<tr class="memitem:ga307367d5ff83be80ccfa9e4560507e93"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga307367d5ff83be80ccfa9e4560507e93">Mela::selfDWpffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">SIZE_Vpff</a>][2]</td></tr>
 <tr class="separator:ga307367d5ff83be80ccfa9e4560507e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6425a613f155bd0f475ac401419ee2d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gab6425a613f155bd0f475ac401419ee2d">Mela::selfDM_Zprime</a></td></tr>
 <tr class="separator:gab6425a613f155bd0f475ac401419ee2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,24 +150,26 @@ Variables</h2></td></tr>
 <tr class="separator:ga5dfc7a761cf6a244538badbb119bddd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga645a36dde08b0c5dd392da0ad8d07455"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga645a36dde08b0c5dd392da0ad8d07455">Mela::selfDGa_Wprime</a></td></tr>
 <tr class="separator:ga645a36dde08b0c5dd392da0ad8d07455"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab85a88a939ee917faef962422de963d4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gab85a88a939ee917faef962422de963d4">Mela::selfDZqqcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>][2]</td></tr>
+<tr class="memitem:gab85a88a939ee917faef962422de963d4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gab85a88a939ee917faef962422de963d4">Mela::selfDZqqcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>][2]</td></tr>
 <tr class="separator:gab85a88a939ee917faef962422de963d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga337ba964ea97fee3e619f4dbbc4f2f20"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga337ba964ea97fee3e619f4dbbc4f2f20">Mela::selfDZvvcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>][2]</td></tr>
+<tr class="memitem:ga337ba964ea97fee3e619f4dbbc4f2f20"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga337ba964ea97fee3e619f4dbbc4f2f20">Mela::selfDZvvcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>][2]</td></tr>
 <tr class="separator:ga337ba964ea97fee3e619f4dbbc4f2f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1f4517c76fb7156a1ae14ed919f7dba5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga1f4517c76fb7156a1ae14ed919f7dba5">Mela::selfDGqqcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a24396204804cdacbf9af716d553bda85">SIZE_GQQ</a>][2]</td></tr>
+<tr class="memitem:ga1f4517c76fb7156a1ae14ed919f7dba5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga1f4517c76fb7156a1ae14ed919f7dba5">Mela::selfDGqqcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a21444768f4d041fb44b25acc6a3984b7">SIZE_GQQ</a>][2]</td></tr>
 <tr class="separator:ga1f4517c76fb7156a1ae14ed919f7dba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85f5106df0e28980c367be244565621f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga85f5106df0e28980c367be244565621f">Mela::selfDGggcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ae719a380dce11b3548f273d353f82ecea0abc79366c3b3af31ec87785c5391601">SIZE_GGG</a>][2]</td></tr>
 <tr class="separator:ga85f5106df0e28980c367be244565621f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32c366f920eebdfa928bd46e1b25cf08"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga32c366f920eebdfa928bd46e1b25cf08">Mela::selfDGvvcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2]</td></tr>
+<tr class="memitem:ga32c366f920eebdfa928bd46e1b25cf08"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga32c366f920eebdfa928bd46e1b25cf08">Mela::selfDGvvcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2]</td></tr>
 <tr class="separator:ga32c366f920eebdfa928bd46e1b25cf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe5090af92bd5c4a51542088eea21e45"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gabe5090af92bd5c4a51542088eea21e45">Mela::selfDGvvpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2]</td></tr>
+<tr class="memitem:gabe5090af92bd5c4a51542088eea21e45"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#gabe5090af92bd5c4a51542088eea21e45">Mela::selfDGvvpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2]</td></tr>
 <tr class="separator:gabe5090af92bd5c4a51542088eea21e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga07963e57e278d7aaf10e414faa351cf5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga07963e57e278d7aaf10e414faa351cf5">Mela::selfDGvpvpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2]</td></tr>
+<tr class="memitem:ga07963e57e278d7aaf10e414faa351cf5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga07963e57e278d7aaf10e414faa351cf5">Mela::selfDGvpvpcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2]</td></tr>
 <tr class="separator:ga07963e57e278d7aaf10e414faa351cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0053ba2b1f0c4b065ed2a3786c0b8abd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga0053ba2b1f0c4b065ed2a3786c0b8abd">Mela::selfDaTQGCcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a50157f4ba2e38c8aac06bfb946832003a4452f11be039e44a233dfb55478f2415">SIZE_ATQGC</a>][2]</td></tr>
 <tr class="separator:ga0053ba2b1f0c4b065ed2a3786c0b8abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga925b9b1fbafe7a9ea436364090c0db03"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga925b9b1fbafe7a9ea436364090c0db03">Mela::selfDAZffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ace8c60defb066a7372e3061f36832e66">SIZE_AZff</a>][2]</td></tr>
+<tr class="memitem:ga925b9b1fbafe7a9ea436364090c0db03"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga925b9b1fbafe7a9ea436364090c0db03">Mela::selfDAZffcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>][2]</td></tr>
 <tr class="separator:ga925b9b1fbafe7a9ea436364090c0db03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6da951c74b7a5d16d650fa0dbbb1f6bc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__coupl.html#ga6da951c74b7a5d16d650fa0dbbb1f6bc">Mela::selfDSMEFTSimcoupl</a> [SIZE_SMEFT]</td></tr>
+<tr class="separator:ga6da951c74b7a5d16d650fa0dbbb1f6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Self-defined quantities for MELA. These control behavior. </p>
@@ -195,7 +187,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00999">999</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01070">1070</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -211,7 +203,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01020">1020</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01095">1095</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -222,12 +214,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDAZffcoupl[<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ace8c60defb066a7372e3061f36832e66">SIZE_AZff</a>][2]</td>
+          <td class="memname">double Mela::selfDAZffcoupl[<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01022">1022</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01097">1097</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -243,7 +235,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01009">1009</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01084">1084</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -259,7 +251,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01007">1007</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01082">1082</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +267,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01015">1015</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01090">1090</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -286,12 +278,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDGqqcoupl[<a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a24396204804cdacbf9af716d553bda85">SIZE_GQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDGqqcoupl[<a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a21444768f4d041fb44b25acc6a3984b7">SIZE_GQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01014">1014</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01089">1089</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -302,12 +294,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDGvpvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2]</td>
+          <td class="memname">double Mela::selfDGvpvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01018">1018</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01093">1093</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -318,12 +310,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDGvvcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2]</td>
+          <td class="memname">double Mela::selfDGvvcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01016">1016</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01091">1091</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -334,12 +326,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDGvvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2]</td>
+          <td class="memname">double Mela::selfDGvvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01017">1017</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01092">1092</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -350,13 +342,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHb4b4coupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDHb4b4coupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and bPrime quarks </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00988">988</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01059">1059</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -367,13 +359,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHbbcoupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDHbbcoupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and botton quarks </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00984">984</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01055">1055</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -384,13 +376,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHg4g4coupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td>
+          <td class="memname">double Mela::selfDHg4g4coupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and <b>PLACEHOLDER</b> </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00980">980</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01051">1051</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -401,13 +393,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHggcoupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td>
+          <td class="memname">double Mela::selfDHggcoupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][SIZE_HGG][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the higgs and gluons. </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00978">978</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01049">1049</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -418,13 +410,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHqqcoupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDHqqcoupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and quarks </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00982">982</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01053">1053</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -435,13 +427,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHt4t4coupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDHt4t4coupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and tPrime quarks </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00990">990</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01061">1061</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -452,13 +444,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHttcoupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDHttcoupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and top quarks </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00986">986</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01057">1057</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -473,8 +465,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Couplings between the Higgs and the W-Prime Boson </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01004">1004</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01079">1079</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -485,12 +478,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Mela::selfDHwwCLambda_qsq[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
+          <td class="memname">int Mela::selfDHwwCLambda_qsq[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00998">998</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01069">1069</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -501,13 +494,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHwwcoupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td>
+          <td class="memname">double Mela::selfDHwwcoupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and the W Boson </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00994">994</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01065">1065</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -518,12 +511,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHwwLambda_qsq[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
+          <td class="memname">double Mela::selfDHwwLambda_qsq[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00996">996</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01067">1067</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -538,8 +531,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Couplings between the Higgs and the W/W-Prime Boson </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01003">1003</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01077">1077</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -554,8 +548,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Couplings between the Higgs and the Z-Prime Boson </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01001">1001</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01074">1074</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -566,12 +561,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Mela::selfDHzzCLambda_qsq[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
+          <td class="memname">int Mela::selfDHzzCLambda_qsq[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00997">997</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01068">1068</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -582,13 +577,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHzzcoupl[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td>
+          <td class="memname">double Mela::selfDHzzcoupl[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Couplings between the Higgs and the Z Boson </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00992">992</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01063">1063</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -599,12 +594,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDHzzLambda_qsq[<a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
+          <td class="memname">double Mela::selfDHzzLambda_qsq[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">nSupportedHiggses</a>][<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l00995">995</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01066">1066</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -619,8 +614,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Couplings between the Higgs and the Z/Z-Prime Boson </p>
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01000">1000</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01072">1072</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -636,7 +632,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01008">1008</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01083">1083</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -652,7 +648,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01006">1006</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01081">1081</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6da951c74b7a5d16d650fa0dbbb1f6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6da951c74b7a5d16d650fa0dbbb1f6bc">&#9670;&nbsp;</a></span>selfDSMEFTSimcoupl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Mela::selfDSMEFTSimcoupl[SIZE_SMEFT]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wilson Coefficients from SMEFTsim used in madMELA </p>
+
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01100">1100</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -663,12 +676,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDWpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">SIZE_Vpff</a>][2]</td>
+          <td class="memname">double Mela::selfDWpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">SIZE_Vpff</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01005">1005</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01080">1080</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -679,12 +692,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDZpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">SIZE_Vpff</a>][2]</td>
+          <td class="memname">double Mela::selfDZpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">SIZE_Vpff</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01002">1002</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01075">1075</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -695,12 +708,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDZqqcoupl[<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>][2]</td>
+          <td class="memname">double Mela::selfDZqqcoupl[<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01011">1011</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01086">1086</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>
@@ -711,12 +724,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Mela::selfDZvvcoupl[<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>][2]</td>
+          <td class="memname">double Mela::selfDZvvcoupl[<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01012">1012</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Mela_8h_source.html#l01087">1087</a> of file <a class="el" href="Mela_8h_source.html">Mela.h</a>.</p>
 
 </div>
 </div>

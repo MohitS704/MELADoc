@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -107,7 +97,7 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#a80d402d10e8341004c0caf10133b80ab">TMCFM.hh</a>
 </li>
 <li>scale_
-: <a class="el" href="TMCFM_8hh.html#af321314cb20e8224bcb0ec6b51522aa2">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#ada732df8cd9429c792fb881173e9a530">TMCFM.hh</a>
 </li>
 <li>selfDaTQGCcoupl
 : <a class="el" href="raw__names_8txt.html#ae22811d64c08fe83ee0489d5100c7b46">raw_names.txt</a>
@@ -206,7 +196,7 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="raw__names_8txt.html#ab33c1279b896bb55e5e8b9f70a49f0d1">raw_names.txt</a>
 </li>
 <li>set()
-: <a class="el" href="CMakeLists_8txt.html#a252886e723a8869a453b15634336e8cc">CMakeLists.txt</a>
+: <a class="el" href="CMakeLists_8txt.html#a532e804d874839a864520713433a52be">CMakeLists.txt</a>
 </li>
 <li>setctq6()
 : <a class="el" href="Cteq61Pdf_8f.html#a9fd96a0329f646170f46a5a614bfdaca">Cteq61Pdf.f</a>
@@ -236,19 +226,19 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="raw__couplings_8txt.html#a50157f4ba2e38c8aac06bfb946832003a4452f11be039e44a233dfb55478f2415">raw_couplings.txt</a>
 </li>
 <li>SIZE_AZff
-: <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ace8c60defb066a7372e3061f36832e66">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">raw_couplings.txt</a>
 </li>
 <li>SIZE_GGG
 : <a class="el" href="raw__couplings_8txt.html#ae719a380dce11b3548f273d353f82ecea0abc79366c3b3af31ec87785c5391601">raw_couplings.txt</a>
 </li>
 <li>SIZE_GQQ
-: <a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a24396204804cdacbf9af716d553bda85">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a21444768f4d041fb44b25acc6a3984b7">raw_couplings.txt</a>
 </li>
 <li>SIZE_GVV
-: <a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">raw_couplings.txt</a>
 </li>
 <li>SIZE_HQQ
-: <a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">raw_couplings.txt</a>
 </li>
 <li>SIZE_HVV
 : <a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">raw_couplings.txt</a>
@@ -257,39 +247,25 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">raw_couplings.txt</a>
 </li>
 <li>SIZE_HVV_LAMBDAQSQ
-: <a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">raw_couplings.txt</a>
 </li>
 <li>SIZE_Vpff
-: <a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">raw_couplings.txt</a>
 </li>
 <li>SIZE_ZQQ
-: <a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">raw_couplings.txt</a>
+: <a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">raw_couplings.txt</a>
 </li>
 <li>SIZE_ZVV
-: <a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">raw_couplings.txt</a>
-</li>
-<li>solveGaussian()
-: <a class="el" href="getResolution_8c.html#ac7910d0f4f528c86866c70f0e01fb066">getResolution.c</a>
-</li>
-<li>solveQuadratic()
-: <a class="el" href="getResolution_8c.html#ae8cc52e3e8edee332e79545882d03afb">getResolution.c</a>
+: <a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">raw_couplings.txt</a>
 </li>
 <li>spinzerohiggs_anomcoupl_
-: <a class="el" href="TMCFM_8hh.html#af37ca08bbf0cc0bd20cad11fbe37b1e6">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#ab2bc8b7466bf8da27b5d14310e7b8d2b">TMCFM.hh</a>
 </li>
 <li>splineQuadruplet_t
 : <a class="el" href="MELANCSplineFactory__3D_8h.html#a3c4f33e2459c98d793be09ce3e50e0e0">MELANCSplineFactory_3D.h</a>
 </li>
 <li>splineTriplet_t
 : <a class="el" href="MELANCSplineFactory__2D_8h.html#a19b716f6c590bf6b550622e87e0517c0">MELANCSplineFactory_2D.h</a>
-</li>
-<li>splitOption()
-: <a class="el" href="calcC__lintolog_8c.html#adeef62b6204427efbfaae118249cb4c2">calcC_lintolog.c</a>
-, <a class="el" href="getResolution_8c.html#adeef62b6204427efbfaae118249cb4c2">getResolution.c</a>
-</li>
-<li>splitOptionRecursive()
-: <a class="el" href="calcC__lintolog_8c.html#aa2f38c31cbb69dcdcedb710bf5435660">calcC_lintolog.c</a>
-, <a class="el" href="getResolution_8c.html#aa2f38c31cbb69dcdcedb710bf5435660">getResolution.c</a>
 </li>
 <li>sqrts
 : <a class="el" href="TMCFM_8hh.html#abf7be34aa9d044bc74b481967e5e1245">TMCFM.hh</a>
@@ -298,7 +274,7 @@ $(document).ready(function(){initNavTree('globals_s.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#ab83afb15694cb43b778406c0005ebf36">TMCFM.hh</a>
 </li>
 <li>srdiags_
-: <a class="el" href="TMCFM_8hh.html#aebfbd67abfa0727c7966f11b983c754a">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a2af261b3bf29584e6c5ad2903ba40329">TMCFM.hh</a>
 </li>
 <li>str_lit
 : <a class="el" href="TVar_8hh.html#ad2742321ec1ec623a41364b8b8690e1e">TVar.hh</a>

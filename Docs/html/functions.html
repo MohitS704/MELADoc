@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -103,33 +93,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index__5F"></a>- _ -</h3><ul>
-<li>__enter__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a5c8a03fbf23279ced89001e2d6e0a2cd">lhefile.LHEFileBase</a>
-</li>
-<li>__exit__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a56730ff74ab6b68f6f866b2478518847">lhefile.LHEFileBase</a>
-</li>
-<li>__getattr__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a3ac034e0fece5d4f3755b3ff0174f9d5">lhefile.LHEFileBase</a>
-</li>
-<li>__init__()
-: <a class="el" href="classlhefile_1_1LHEEvent.html#a7b162fd286c3491cad3f2c1f4e10ee1b">lhefile.LHEEvent</a>
-, <a class="el" href="classlhefile_1_1LHEFileBase.html#a23c4cb28397e6f57fee93a97138eddc8">lhefile.LHEFileBase</a>
-</li>
-<li>__iter__()
-: <a class="el" href="classlhefile_1_1LHEEvent.html#abcd64fd743066a400818b426276a609f">lhefile.LHEEvent</a>
-, <a class="el" href="classlhefile_1_1LHEFileBase.html#a9b607721f99e56bb55e1e84fd82f74c8">lhefile.LHEFileBase</a>
-</li>
-<li>__melas
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a1ba43826ed2a031be2d785478de7254d">lhefile.LHEFileBase</a>
-</li>
-<li>__metaclass__
-: <a class="el" href="classlhefile_1_1LHEEvent.html#afba62ae960c6068705e036e041ebb5d7">lhefile.LHEEvent</a>
-, <a class="el" href="classlhefile_1_1LHEFileBase.html#affb0860fc9f437d54d4b202befb5f86b">lhefile.LHEFileBase</a>
-</li>
-<li>__setattr__()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#ac0c4b80f9f7f8bb5622e27363fc65952">lhefile.LHEFileBase</a>
-</li>
 <li>_h2mass
 : <a class="el" href="classTEvtProb.html#a35b7b19b1d4674c0764026bd5de4a133">TEvtProb</a>
 </li>
@@ -141,12 +104,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_hwidth
 : <a class="el" href="classTEvtProb.html#a2d1f6a8c51c6da2533e894464c8570ad">TEvtProb</a>
-</li>
-<li>_LHEclassattributes()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#ae59c143daf611e98a6aee2010cfb28d6">lhefile.LHEFileBase</a>
-</li>
-<li>_setInputEvent()
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a625a68d01fcee841b31261789a725a29">lhefile.LHEFileBase</a>
 </li>
 </ul>
 </div><!-- contents -->

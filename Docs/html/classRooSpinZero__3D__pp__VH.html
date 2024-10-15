@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -238,21 +228,21 @@ Additional Inherited Members</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ac6122b9b6a334da66a3eea86e30d7723 inherit pub_types_classRooSpin"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bc1387d438c31ffcc1f852e3c105fb3 inherit pub_types_classRooSpin"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a> =2, 
-<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a> =3, 
-<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a> =5, 
-<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a> =7, 
+<tr class="memitem:ab5280c88ee5a1bccd736983fc77406ed inherit pub_types_classRooSpin"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a> =2, 
+<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a> =3, 
+<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a> =5, 
+<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a> =7, 
 <br />
-&#160;&#160;<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a> =11, 
-<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3aa43e2336d492db68167fc1cee67b3a26">prime_m1</a> =13, 
-<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a7ae3ba5819e9118d1deda5aafb58aa7b">prime_m2</a> =17, 
-<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3af399bf2e7d35b3768faafc5252f15594">prime_m12</a> =19, 
+&#160;&#160;<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a> =11, 
+<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edaa43e2336d492db68167fc1cee67b3a26">prime_m1</a> =13, 
+<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda7ae3ba5819e9118d1deda5aafb58aa7b">prime_m2</a> =17, 
+<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edaf399bf2e7d35b3768faafc5252f15594">prime_m12</a> =19, 
 <br />
-&#160;&#160;<a class="el" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ac90e6d50685439b583fc8e89fdd4fdc6">prime_Y</a> =23
+&#160;&#160;<a class="el" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edac90e6d50685439b583fc8e89fdd4fdc6">prime_Y</a> =23
 <br />
  }</td></tr>
-<tr class="separator:a7bc1387d438c31ffcc1f852e3c105fb3 inherit pub_types_classRooSpin"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ab5280c88ee5a1bccd736983fc77406ed inherit pub_types_classRooSpin"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classRooSpinZero"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classRooSpinZero')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classRooSpinZero.html">RooSpinZero</a></td></tr>
 <tr class="memitem:a8d927d923f48a688bde9d6c73bb23752 inherit pro_attribs_classRooSpinZero"><td class="memItemLeft" align="right" valign="top">RooRealProxy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRooSpinZero.html#a8d927d923f48a688bde9d6c73bb23752">g1Val</a></td></tr>
 <tr class="separator:a8d927d923f48a688bde9d6c73bb23752 inherit pro_attribs_classRooSpinZero"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -746,7 +736,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>!=<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) term2Coeff = 2.*m2_*<a class="code" href="classRooSpin.html#ac926655ebb69be16dd2af5de93e4d8d8">GeVunit</a>;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  Double_t plumi = <a class="code" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">partonicLuminosity</a>(m1_, <a class="code" href="classRooSpin.html#a7c157be6d06500537be09c606cc169a9">Y</a>, <a class="code" href="classRooSpinZero__3D__pp__VH.html#aa04b379b7156b6092e98ec9478792b27">sqrts</a>);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  Double_t value = 0;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  Double_t <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = 0;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode1=0; VGammaVpmode1&lt;=2; VGammaVpmode1++){</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode2=0; VGammaVpmode2&lt;=2; VGammaVpmode2++){</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      <span class="keywordflow">if</span> (!(</div>
@@ -766,11 +756,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        )) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      Double_t val_A00=0, val_App=0, val_Amm=0, val_A0p=0, val_A0m=0, val_Amp=0;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <a class="code" href="classRooSpinZero__3D__pp__VH.html#a275d6fbf15da30f1d52ba8db42fb5b79">evaluatePolarizationTerms</a>(val_A00, val_App, val_Amm, val_A0p, val_A0m, val_Amp, code, VGammaVpmode1, VGammaVpmode2);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      value += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  value *= betaVal*term1Coeff*term2Coeff*plumi;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> *= betaVal*term1Coeff*term2Coeff*plumi;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -839,7 +829,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordflow">if</span> ((<a class="code" href="classRooSpin.html#a62f350bc1e1f9bffe8e2391abf002ce4">m12</a>+m2_) &gt; m1_ || (m2_ &lt;= 0. &amp;&amp; <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>!=<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) || m1_ &lt;= 0.) <span class="keywordflow">return</span> epsilon;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  Int_t code = <a class="code" href="classRooSpin.html#aae1cabdae7000004885e9f83bf979ae1">intCodeStart</a>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a>*<a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a>*<a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a>;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  Double_t betaValSq = (1.-(pow(<a class="code" href="classRooSpin.html#a62f350bc1e1f9bffe8e2391abf002ce4">m12</a>-m2_, 2)/pow(m1_, 2)))*(1.-(pow(<a class="code" href="classRooSpin.html#a62f350bc1e1f9bffe8e2391abf002ce4">m12</a>+m2_, 2)/pow(m1_, 2)));</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">if</span> (betaValSq&lt;=0.) <span class="keywordflow">return</span> epsilon;</div>
@@ -851,7 +841,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>!=<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) term2Coeff = 2.*m2_*<a class="code" href="classRooSpin.html#ac926655ebb69be16dd2af5de93e4d8d8">GeVunit</a>;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  Double_t plumi = <a class="code" href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">partonicLuminosity</a>(m1_, <a class="code" href="classRooSpin.html#a7c157be6d06500537be09c606cc169a9">Y</a>, <a class="code" href="classRooSpinZero__3D__pp__VH.html#aa04b379b7156b6092e98ec9478792b27">sqrts</a>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  Double_t value = 0;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  Double_t <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> = 0;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode1=0; VGammaVpmode1&lt;=2; VGammaVpmode1++){</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> VGammaVpmode2=0; VGammaVpmode2&lt;=2; VGammaVpmode2++){</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">if</span> (!(</div>
@@ -868,11 +858,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        ) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      Double_t val_A00=0, val_App=0, val_Amm=0, val_A0p=0, val_A0m=0, val_Amp=0;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <a class="code" href="classRooSpinZero__3D__pp__VH.html#a275d6fbf15da30f1d52ba8db42fb5b79">evaluatePolarizationTerms</a>(val_A00, val_App, val_Amm, val_A0p, val_A0m, val_Amp, code, VGammaVpmode1, VGammaVpmode2);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      value += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> += val_A00 + val_App + val_Amm + val_A0p + val_A0m + val_Amp;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  value *= betaVal*term1Coeff*term2Coeff*plumi;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a> *= betaVal*term1Coeff*term2Coeff*plumi;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a>;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -992,7 +982,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  A00mmterm = sqrt(A00*Amm)*A00mm_prefactor;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  Appmmterm = sqrt(Amm*App)*Ammpp_prefactor;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a>)==0){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a>)==0){</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    Double_t A00_h1int = 4./3.;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Double_t Ammpp_h1int = 8./3.;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Double_t A0m_h1int = Pi/2.*R1Val;</div>
@@ -1015,7 +1005,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (Appmmterm!=0) Appmmterm *= (1. - pow(<a class="code" href="classRooSpin.html#ae615282974107aede94970f4c5395c27">h1</a>, 2));</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a>)==0){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a>)==0){</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    Double_t A00_h2int = 4./3.;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Double_t Ammpp_h2int = 8./3.;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    Double_t A0m_h2int = Pi/2.*R2Val;</div>
@@ -1038,7 +1028,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (Appmmterm!=0) Appmmterm *= (1. - pow(<a class="code" href="classRooSpin.html#a9393141a795033c1c2b6b409ade0ff1f">h2</a>, 2));</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a>)==0){</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a>)==0){</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    Double_t A_hsint = 2.;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (A00term!=0) A00term *= A_hsint;</div>
@@ -1049,7 +1039,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (Appmmterm!=0) Appmmterm *= A_hsint;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  } <span class="comment">// else *= 1</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a>)==0){</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a>)==0){</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    Double_t A00mmpp_phiint = 2.*Pi;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    Double_t A0p_phiint = 0;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    Double_t A0m_phiint = 0;</div>
@@ -1071,7 +1061,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (Appmmterm!=0) Appmmterm *= cos(2*<a class="code" href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">Phi</a> - phimm + phipp);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a>)==0){</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">if</span> ((code % <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a>)==0){</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    Double_t A_phi1int = 2.*Pi;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (A00term!=0) A00term *= A_phi1int;</div>
@@ -1131,11 +1121,11 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="RooSpinZero__3D__pp__VH_8cc_source.html#l00209">209</a> of file <a class="el" href="RooSpinZero__3D__pp__VH_8cc_source.html">RooSpinZero_3D_pp_VH.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                                                                                             {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  Int_t code = <a class="code" href="classRooSpin.html#aae1cabdae7000004885e9f83bf979ae1">intCodeStart</a>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#ae615282974107aede94970f4c5395c27">h1</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#ae615282974107aede94970f4c5395c27">h1</a>)) code *= <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a>; }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#a9393141a795033c1c2b6b409ade0ff1f">h2</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#a9393141a795033c1c2b6b409ade0ff1f">h2</a>) || <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a>; }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#a4ab715525af92a66ec3cd209ed493dd0">hs</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#a4ab715525af92a66ec3cd209ed493dd0">hs</a>)) code *= <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a>; }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">Phi</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">Phi</a>) || <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a>; }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">Phi1</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">Phi1</a>) || <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a>; }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#ae615282974107aede94970f4c5395c27">h1</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#ae615282974107aede94970f4c5395c27">h1</a>)) code *= <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d">prime_h1</a>; }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#a9393141a795033c1c2b6b409ade0ff1f">h2</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#a9393141a795033c1c2b6b409ade0ff1f">h2</a>) || <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">prime_h2</a>; }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#a4ab715525af92a66ec3cd209ed493dd0">hs</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#a4ab715525af92a66ec3cd209ed493dd0">hs</a>)) code *= <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c">prime_hs</a>; }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">Phi</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">Phi</a>) || <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">prime_Phi</a>; }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">checkFundamentalType</a>(<a class="code" href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">Phi1</a>)){ <span class="keywordflow">if</span> (matchArgs(allVars, analVars, <a class="code" href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">Phi1</a>) || <a class="code" href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">Vdecay2</a>==<a class="code" href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a>) code *= <a class="code" href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154">prime_Phi1</a>; }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keywordflow">if</span> (code==1) code=0;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> code;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
@@ -1368,21 +1358,21 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aoutput_8txt_html_a14cbf2c203e363db8f9aaf1d15b93e1d"><div class="ttname"><a href="output_8txt.html#a14cbf2c203e363db8f9aaf1d15b93e1d">value</a></div><div class="ttdeci">pymela::gHIGGS_KAPPA value(&quot;gHIGGS_KAPPA_TILDE&quot;, pymela::gHIGGS_KAPPA_TILDE) .value(&quot;SIZE_HQQ&quot;</div></div>
 <div class="ttc" id="aclassRooSpin_html_a15c542752ae6c419e9b64b9303352af6"><div class="ttname"><a href="classRooSpin.html#a15c542752ae6c419e9b64b9303352af6">RooSpin::Phi</a></div><div class="ttdeci">RooRealProxy Phi</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00110">RooSpin.h:110</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c"><div class="ttname"><a href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda8c2a72e7ecfae2f87e5c4a7ffc1f607c">RooSpin::prime_hs</a></div><div class="ttdeci">@ prime_hs</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00041">RooSpin.h:41</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a62f350bc1e1f9bffe8e2391abf002ce4"><div class="ttname"><a href="classRooSpin.html#a62f350bc1e1f9bffe8e2391abf002ce4">RooSpin::m12</a></div><div class="ttdeci">RooRealProxy m12</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00113">RooSpin.h:113</a></div></div>
-<div class="ttc" id="aclassRooSpin_html_a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d"><div class="ttname"><a href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3ab2b4f188e65e3a84dec3eeef41f7f05d">RooSpin::prime_h1</a></div><div class="ttdeci">@ prime_h1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00039">RooSpin.h:39</a></div></div>
-<div class="ttc" id="aclassRooSpin_html_a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3"><div class="ttname"><a href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0097e03be9d6528523f4f0fadb636cc3">RooSpin::prime_Phi</a></div><div class="ttdeci">@ prime_Phi</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00042">RooSpin.h:42</a></div></div>
-<div class="ttc" id="aclassRooSpin_html_a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154"><div class="ttname"><a href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a0c1335221e6fe46605c8a360bbf4b154">RooSpin::prime_Phi1</a></div><div class="ttdeci">@ prime_Phi1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00043">RooSpin.h:43</a></div></div>
 <div class="ttc" id="aclassRooSpinZero_html_a65ef78fca61875ab57c82ed1486082ea"><div class="ttname"><a href="classRooSpinZero.html#a65ef78fca61875ab57c82ed1486082ea">RooSpinZero::RooSpinZero</a></div><div class="ttdeci">RooSpinZero()</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8cc_source.html#l00008">RooSpinZero.cc:8</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_aef514f53de01596afb3dba206db613e3"><div class="ttname"><a href="classRooSpin.html#aef514f53de01596afb3dba206db613e3">RooSpin::m1</a></div><div class="ttdeci">RooRealProxy m1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00111">RooSpin.h:111</a></div></div>
 <div class="ttc" id="aclassRooSpinZero_html_abdcdc4fa1390557bdb078db860f3d8ff"><div class="ttname"><a href="classRooSpinZero.html#abdcdc4fa1390557bdb078db860f3d8ff">RooSpinZero::computeNeededAmplitude</a></div><div class="ttdeci">virtual Bool_t computeNeededAmplitude(int VGammaVpmode1, int VGammaVpmode2) const final</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8cc_source.html#l00583">RooSpinZero.cc:583</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ad751d67be48b78132f79d7c262dccb1f"><div class="ttname"><a href="classRooSpin.html#ad751d67be48b78132f79d7c262dccb1f">RooSpin::calculateVprimeffR1R2</a></div><div class="ttdeci">virtual void calculateVprimeffR1R2(Double_t &amp;R1Val, Double_t &amp;R2Val) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00343">RooSpin.cc:343</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3"><div class="ttname"><a href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0097e03be9d6528523f4f0fadb636cc3">RooSpin::prime_Phi</a></div><div class="ttdeci">@ prime_Phi</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00042">RooSpin.h:42</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a70f70ab69e21dc5ada5ff4aa121a5019"><div class="ttname"><a href="classRooSpin.html#a70f70ab69e21dc5ada5ff4aa121a5019">RooSpin::checkFundamentalType</a></div><div class="ttdeci">virtual Bool_t checkFundamentalType(const RooRealProxy &amp;proxy) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00392">RooSpin.cc:392</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac"><div class="ttname"><a href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda4ba6d719484f2f92548e066b9a0fbaac">RooSpin::prime_h2</a></div><div class="ttdeci">@ prime_h2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00040">RooSpin.h:40</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a7c157be6d06500537be09c606cc169a9"><div class="ttname"><a href="classRooSpin.html#a7c157be6d06500537be09c606cc169a9">RooSpin::Y</a></div><div class="ttdeci">RooRealProxy Y</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00116">RooSpin.h:116</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a6be7e2229bd99c01fad396c435ad74a1"><div class="ttname"><a href="classRooSpin.html#a6be7e2229bd99c01fad396c435ad74a1">RooSpin::Vdecay2</a></div><div class="ttdeci">RooSpin::VdecayType Vdecay2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00136">RooSpin.h:136</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_aae1cabdae7000004885e9f83bf979ae1"><div class="ttname"><a href="classRooSpin.html#aae1cabdae7000004885e9f83bf979ae1">RooSpin::intCodeStart</a></div><div class="ttdeci">Int_t intCodeStart</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00138">RooSpin.h:138</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd">RooSpin::kVdecayType_GammaOnshell</a></div><div class="ttdeci">@ kVdecayType_GammaOnshell</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00030">RooSpin.h:30</a></div></div>
-<div class="ttc" id="aclassRooSpin_html_a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac"><div class="ttname"><a href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a4ba6d719484f2f92548e066b9a0fbaac">RooSpin::prime_h2</a></div><div class="ttdeci">@ prime_h2</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00040">RooSpin.h:40</a></div></div>
 <div class="ttc" id="aclassRooSpinZero__3D__pp__VH_html_aa04b379b7156b6092e98ec9478792b27"><div class="ttname"><a href="classRooSpinZero__3D__pp__VH.html#aa04b379b7156b6092e98ec9478792b27">RooSpinZero_3D_pp_VH::sqrts</a></div><div class="ttdeci">Double_t sqrts</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero__3D__pp__VH_8h_source.html#l00012">RooSpinZero_3D_pp_VH.h:12</a></div></div>
 <div class="ttc" id="anamespacehto__aux__hbb_html_a6d853a4a2e27e4fa4e1d6d3570cb8fe4"><div class="ttname"><a href="namespacehto__aux__hbb.html#a6d853a4a2e27e4fa4e1d6d3570cb8fe4">hto_aux_hbb::xb</a></div><div class="ttdeci">real *8 xb</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00226">CALLING_cpHTO.f:226</a></div></div>
 <div class="ttc" id="aclassRooSpinZero__3D__pp__VH_html_ac87d9eb87534962dbbac946de1ae20ea"><div class="ttname"><a href="classRooSpinZero__3D__pp__VH.html#ac87d9eb87534962dbbac946de1ae20ea">RooSpinZero_3D_pp_VH::partonicLuminosity</a></div><div class="ttdeci">Double_t partonicLuminosity(Double_t mVal, Double_t YVal, Double_t sqrts) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero__3D__pp__VH_8cc_source.html#l00262">RooSpinZero_3D_pp_VH.cc:262</a></div></div>
@@ -1391,14 +1381,15 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassRooSpinZero_html_aec0ffbc38df06aed2c74695195b6b1a4"><div class="ttname"><a href="classRooSpinZero.html#aec0ffbc38df06aed2c74695195b6b1a4">RooSpinZero::calculateAmplitudes</a></div><div class="ttdeci">virtual void calculateAmplitudes(Double_t &amp;A00Re, Double_t &amp;A00Im, Double_t &amp;AppRe, Double_t &amp;AppIm, Double_t &amp;AmmRe, Double_t &amp;AmmIm, int VGammaVpmode1=0, int VGammaVpmode2=0) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero_8cc_source.html#l00477">RooSpinZero.cc:477</a></div></div>
 <div class="ttc" id="aclassRooSpinZero__3D__pp__VH_html_a275d6fbf15da30f1d52ba8db42fb5b79"><div class="ttname"><a href="classRooSpinZero__3D__pp__VH.html#a275d6fbf15da30f1d52ba8db42fb5b79">RooSpinZero_3D_pp_VH::evaluatePolarizationTerms</a></div><div class="ttdeci">void evaluatePolarizationTerms(Double_t &amp;A00term, Double_t &amp;Appterm, Double_t &amp;Ammterm, Double_t &amp;A00ppterm, Double_t &amp;A00mmterm, Double_t &amp;Appmmterm, const Int_t code, int VGammaVpmode1=0, int VGammaVpmode2=0) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero__3D__pp__VH_8cc_source.html#l00032">RooSpinZero_3D_pp_VH.cc:32</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a4ab715525af92a66ec3cd209ed493dd0"><div class="ttname"><a href="classRooSpin.html#a4ab715525af92a66ec3cd209ed493dd0">RooSpin::hs</a></div><div class="ttdeci">RooRealProxy hs</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00114">RooSpin.h:114</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d"><div class="ttname"><a href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406edab2b4f188e65e3a84dec3eeef41f7f05d">RooSpin::prime_h1</a></div><div class="ttdeci">@ prime_h1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00039">RooSpin.h:39</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ac926655ebb69be16dd2af5de93e4d8d8"><div class="ttname"><a href="classRooSpin.html#ac926655ebb69be16dd2af5de93e4d8d8">RooSpin::GeVunit</a></div><div class="ttdeci">static constexpr Double_t GeVunit</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00141">RooSpin.h:141</a></div></div>
 <div class="ttc" id="aTMCFM_8hh_html_acde6aecebe262c71d1c23d1460186a2e"><div class="ttname"><a href="TMCFM_8hh.html#acde6aecebe262c71d1c23d1460186a2e">Q</a></div><div class="ttdeci">double Q[11]</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00121">TMCFM.hh:121</a></div></div>
+<div class="ttc" id="aclassRooSpin_html_ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154"><div class="ttname"><a href="classRooSpin.html#ab5280c88ee5a1bccd736983fc77406eda0c1335221e6fe46605c8a360bbf4b154">RooSpin::prime_Phi1</a></div><div class="ttdeci">@ prime_Phi1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00043">RooSpin.h:43</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ada147014e584cb41f2d133391f28eb54"><div class="ttname"><a href="classRooSpin.html#ada147014e584cb41f2d133391f28eb54">RooSpin::Vdecay1</a></div><div class="ttdeci">RooSpin::VdecayType Vdecay1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00135">RooSpin.h:135</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91"><div class="ttname"><a href="classRooSpin.html#ac6122b9b6a334da66a3eea86e30d7723a83404b84278ad8192a4ac4494a24fe91">RooSpin::kVdecayType_Wany</a></div><div class="ttdeci">@ kVdecayType_Wany</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00029">RooSpin.h:29</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ae615282974107aede94970f4c5395c27"><div class="ttname"><a href="classRooSpin.html#ae615282974107aede94970f4c5395c27">RooSpin::h1</a></div><div class="ttdeci">RooRealProxy h1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00108">RooSpin.h:108</a></div></div>
 <div class="ttc" id="aclassRooSpinZero__3D__pp__VH_html_a6bcf29593122c438402261c5212afd92"><div class="ttname"><a href="classRooSpinZero__3D__pp__VH.html#a6bcf29593122c438402261c5212afd92">RooSpinZero_3D_pp_VH::RooSpinZero_3D_pp_VH</a></div><div class="ttdeci">RooSpinZero_3D_pp_VH()</div><div class="ttdef"><b>Definition:</b> <a href="RooSpinZero__3D__pp__VH_8cc_source.html#l00004">RooSpinZero_3D_pp_VH.cc:4</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_a4a5133eb78867931cf4ea39a32a4cb06"><div class="ttname"><a href="classRooSpin.html#a4a5133eb78867931cf4ea39a32a4cb06">RooSpin::calculateVffR1R2</a></div><div class="ttdeci">virtual void calculateVffR1R2(Double_t &amp;R1Val, Double_t &amp;R2Val, bool isGammaV1=false, bool isGammaV2=false) const</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8cc_source.html#l00297">RooSpin.cc:297</a></div></div>
-<div class="ttc" id="aclassRooSpin_html_a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c"><div class="ttname"><a href="classRooSpin.html#a7bc1387d438c31ffcc1f852e3c105fb3a8c2a72e7ecfae2f87e5c4a7ffc1f607c">RooSpin::prime_hs</a></div><div class="ttdeci">@ prime_hs</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00041">RooSpin.h:41</a></div></div>
 <div class="ttc" id="aclassRooSpin_html_ab5483eaf27e1b34fbd340d203e04d616"><div class="ttname"><a href="classRooSpin.html#ab5483eaf27e1b34fbd340d203e04d616">RooSpin::Phi1</a></div><div class="ttdeci">RooRealProxy Phi1</div><div class="ttdef"><b>Definition:</b> <a href="RooSpin_8h_source.html#l00115">RooSpin.h:115</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

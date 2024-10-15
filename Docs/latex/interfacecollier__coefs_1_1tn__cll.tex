@@ -1,123 +1,0 @@
-\hypertarget{interfacecollier__coefs_1_1tn__cll}{}\doxysection{collier\+\_\+coefs\+::tn\+\_\+cll Interface Reference}
-\label{interfacecollier__coefs_1_1tn__cll}\index{collier\_coefs::tn\_cll@{collier\_coefs::tn\_cll}}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1tn__cll_af667fa57b9d1bd34b8c806e6acb87a23}{tn\+\_\+main\+\_\+cll}} (TN, T\+Nuv, Mom\+Inv, masses2, N, rmax, T\+Nerr, id\+\_\+in, T\+Nerr2)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__coefs_1_1tn__cll_ab1f57173b66fa200412c64311519bbc9}{t1\+\_\+cll}} (A, Auv, masses2, N, rmax, Aerr, id\+\_\+in)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 76 of file collier\+\_\+coefs.\+F90.
-
-
-
-\doxysubsection{Member Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1tn__cll_ab1f57173b66fa200412c64311519bbc9}\label{interfacecollier__coefs_1_1tn__cll_ab1f57173b66fa200412c64311519bbc9}} 
-\index{collier\_coefs::tn\_cll@{collier\_coefs::tn\_cll}!t1\_cll@{t1\_cll}}
-\index{t1\_cll@{t1\_cll}!collier\_coefs::tn\_cll@{collier\_coefs::tn\_cll}}
-\doxysubsubsection{\texorpdfstring{t1\_cll()}{t1\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::tn\+\_\+cll\+::t1\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{A,  }\item[{double complex, dimension(\+:), intent(out)}]{Auv,  }\item[{double complex, dimension(0\+:0), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{Aerr,  }\item[{integer, intent(in), optional}]{id\+\_\+in }\end{DoxyParamCaption})}
-
-
-
-Definition at line 4262 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{4262 }
-\DoxyCodeLine{4263     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax}
-\DoxyCodeLine{4264     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: masses2(0:0)}
-\DoxyCodeLine{4265     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: A(:)}
-\DoxyCodeLine{4266     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Auv(:)}
-\DoxyCodeLine{4267     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)} :: id\_in}
-\DoxyCodeLine{4268     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: Aerr(0:rmax)}
-\DoxyCodeLine{4269     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{4270     }
-\DoxyCodeLine{4271     \textcolor{keywordflow}{if} (n.ne.1) then}
-\DoxyCodeLine{4272       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4273       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'TN\_cll'},\textcolor{stringliteral}{'subroutine called with inconsistent arguments'},eflag)}
-\DoxyCodeLine{4274       return}
-\DoxyCodeLine{4275     \textcolor{keyword}{end }if}
-\DoxyCodeLine{4276     \textcolor{keywordflow}{if} (n.gt.nmax\_cll) then}
-\DoxyCodeLine{4277       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4278       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'TN\_cll'},\textcolor{stringliteral}{'argument N larger than Nmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{4279       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'N        ='},n}
-\DoxyCodeLine{4280       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{4281       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= '},n}
-\DoxyCodeLine{4282       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4283       return}
-\DoxyCodeLine{4284 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4285     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{4286       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4287       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'TN\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{4288       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{4289       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{4290       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{4291       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4292       return}
-\DoxyCodeLine{4293 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4294     }
-\DoxyCodeLine{4295     \textcolor{keyword}{call }t1\_checked\_cll(a,auv,masses2,n,rmax,aerr,id\_in)}
-\DoxyCodeLine{4296 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__coefs_1_1tn__cll_af667fa57b9d1bd34b8c806e6acb87a23}\label{interfacecollier__coefs_1_1tn__cll_af667fa57b9d1bd34b8c806e6acb87a23}} 
-\index{collier\_coefs::tn\_cll@{collier\_coefs::tn\_cll}!tn\_main\_cll@{tn\_main\_cll}}
-\index{tn\_main\_cll@{tn\_main\_cll}!collier\_coefs::tn\_cll@{collier\_coefs::tn\_cll}}
-\doxysubsubsection{\texorpdfstring{tn\_main\_cll()}{tn\_main\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+coefs\+::tn\+\_\+cll\+::tn\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{TN,  }\item[{double complex, dimension(\+:), intent(out)}]{T\+Nuv,  }\item[{double complex, dimension(\+:), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:), intent(out), optional}]{T\+Nerr,  }\item[{integer, intent(in), optional}]{id\+\_\+in,  }\item[{double precision, dimension(0\+:), intent(out), optional}]{T\+Nerr2 }\end{DoxyParamCaption})}
-
-
-
-Definition at line 3508 of file collier\+\_\+coefs.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3508 }
-\DoxyCodeLine{3509     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax}
-\DoxyCodeLine{3510     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(:), masses2(0:)}
-\DoxyCodeLine{3511     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TN(:)}
-\DoxyCodeLine{3512     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TNuv(:)}
-\DoxyCodeLine{3513     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)} :: id\_in}
-\DoxyCodeLine{3514     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(out)} :: TNerr(0:),TNerr2(0:)}
-\DoxyCodeLine{3515     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{3516 }
-\DoxyCodeLine{3517     \textcolor{keywordflow}{if} (n.eq.1) then}
-\DoxyCodeLine{3518       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{3519       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'TN\_cll'},\textcolor{stringliteral}{'subroutine called with wrong number of arguments for N=1'},eflag,.true.)}
-\DoxyCodeLine{3520       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{3521       return}
-\DoxyCodeLine{3522 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{3523     \textcolor{keywordflow}{if} (n.gt.nmax\_cll) then}
-\DoxyCodeLine{3524       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{3525       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'TN\_cll'},\textcolor{stringliteral}{'argument N larger than Nmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{3526       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'N        ='},n}
-\DoxyCodeLine{3527       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{3528       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= '},n}
-\DoxyCodeLine{3529       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{3530       return}
-\DoxyCodeLine{3531 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{3532     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{3533       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{3534       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'TN\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{3535       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{3536       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{3537       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{3538       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{3539       return}
-\DoxyCodeLine{3540 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{3541     }
-\DoxyCodeLine{3542     \textcolor{keyword}{call }tn\_main\_checked\_cll(tn,tnuv,mominv,masses2,n,rmax,tnerr,id\_in,tnerr2)}
-\DoxyCodeLine{3543 }
-
-\end{DoxyCode}
-
-
-The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__coefs_8F90}{collier\+\_\+coefs.\+F90}}\end{DoxyCompactItemize}

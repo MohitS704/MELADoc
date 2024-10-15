@@ -23,7 +23,6 @@ var hierarchy =
     [ "collier_coefs::e_cll", "interfacecollier__coefs_1_1e__cll.html", null ],
     [ "collier_tensors::eten_cll", "interfacecollier__tensors_1_1eten__cll.html", null ],
     [ "TVar::event_scales_type", "structTVar_1_1event__scales__type.html", null ],
-    [ "ExtBin", "structExtBin.html", null ],
     [ "collier_coefs::f0_cll", "interfacecollier__coefs_1_1f0__cll.html", null ],
     [ "collier_coefs::f_cll", "interfacecollier__coefs_1_1f__cll.html", null ],
     [ "collier_tensors::ften_cll", "interfacecollier__tensors_1_1ften__cll.html", null ],
@@ -43,29 +42,11 @@ var hierarchy =
       [ "MELAThreeBodyDecayCandidate", "classMELAThreeBodyDecayCandidate.html", null ]
     ] ],
     [ "MelaPConstant", "classMelaPConstant.html", null ],
-    [ "MELAwithOptions", "structMELAwithOptions.html", null ],
     [ "RooSpinTwo::modelCouplings", "structRooSpinTwo_1_1modelCouplings.html", null ],
     [ "RooSpinZero::modelCouplings", "structRooSpinZero_1_1modelCouplings.html", null ],
     [ "RooSpin::modelMeasurables", "structRooSpin_1_1modelMeasurables.html", null ],
     [ "RooSpin::modelParameters", "structRooSpin_1_1modelParameters.html", null ],
     [ "TNumericUtil::NaiveAccumulator< T >", "classTNumericUtil_1_1NaiveAccumulator.html", null ],
-    [ "object", null, [
-      [ "lhefile.LHEEvent", "classlhefile_1_1LHEEvent.html", [
-        [ "lhefile.LHEEvent_Hwithdecay", "classlhefile_1_1LHEEvent__Hwithdecay.html", null ],
-        [ "lhefile.LHEEvent_Offshell4l", "classlhefile_1_1LHEEvent__Offshell4l.html", null ],
-        [ "lhefile.LHEEvent_StableHiggs", "classlhefile_1_1LHEEvent__StableHiggs.html", [
-          [ "lhefile.LHEEvent_JHUGenttH", "classlhefile_1_1LHEEvent__JHUGenttH.html", null ],
-          [ "lhefile.LHEEvent_JHUGenVBFVH", "classlhefile_1_1LHEEvent__JHUGenVBFVH.html", null ]
-        ] ]
-      ] ],
-      [ "lhefile.LHEFileBase", "classlhefile_1_1LHEFileBase.html", [
-        [ "lhefile.LHEFile_Hwithdecay", "classlhefile_1_1LHEFile__Hwithdecay.html", null ],
-        [ "lhefile.LHEFile_JHUGenttH", "classlhefile_1_1LHEFile__JHUGenttH.html", null ],
-        [ "lhefile.LHEFile_JHUGenVBFVH", "classlhefile_1_1LHEFile__JHUGenVBFVH.html", null ],
-        [ "lhefile.LHEFile_Offshell4l", "classlhefile_1_1LHEFile__Offshell4l.html", null ],
-        [ "lhefile.LHEFile_StableHiggs", "classlhefile_1_1LHEFile__StableHiggs.html", null ]
-      ] ]
-    ] ],
     [ "hto_cmplx_ln::operator(.cln.)", "interfacehto__cmplx__ln_1_1operator_07_8cln_8_08.html", null ],
     [ "hto_acmplx_pro::operator(.cp.)", "interfacehto__acmplx__pro_1_1operator_07_8cp_8_08.html", null ],
     [ "hto_acmplx_rat::operator(.cq.)", "interfacehto__acmplx__rat_1_1operator_07_8cq_8_08.html", null ],
@@ -83,9 +64,8 @@ var hierarchy =
     [ "hto_real_ln::operator(.rln.)", "interfacehto__real__ln_1_1operator_07_8rln_8_08.html", null ],
     [ "hto_real_lnz::operator(.rlnz.)", "interfacehto__real__lnz_1_1operator_07_8rlnz_8_08.html", null ],
     [ "modttbhiggs::particle", "structmodttbhiggs_1_1particle.html", null ],
-    [ "PointRedivision", "structPointRedivision.html", null ],
-    [ "PseudoMela", "classPseudoMela.html", null ],
     [ "PseudoMELA", "classPseudoMELA.html", null ],
+    [ "PseudoMela", "classPseudoMela.html", null ],
     [ "modttbhiggs::ptrtoparticle", "structmodttbhiggs_1_1ptrtoparticle.html", null ],
     [ "TNumericUtil::quadruplet< T >", "structTNumericUtil_1_1quadruplet.html", null ],
     [ "modmisc::reorder", "interfacemodmisc_1_1reorder.html", null ],
@@ -124,7 +104,6 @@ var hierarchy =
     [ "collier_init::setmaxcheck_cll", "interfacecollier__init_1_1setmaxcheck__cll.html", null ],
     [ "collier_init::setmaxcritpoints_cll", "interfacecollier__init_1_1setmaxcritpoints__cll.html", null ],
     [ "TVar::simple_event_record", "structTVar_1_1simple__event__record.html", null ],
-    [ "SimpleEntry", "structSimpleEntry.html", null ],
     [ "SpinOneCouplings", "classSpinOneCouplings.html", null ],
     [ "SpinPdfFactory", "classSpinPdfFactory.html", [
       [ "ScalarPdfFactory", "classScalarPdfFactory.html", [
@@ -140,10 +119,6 @@ var hierarchy =
     [ "SuperDijetMela", "classSuperDijetMela.html", null ],
     [ "SuperMELA", "classSuperMELA.html", null ],
     [ "modmisc::swap", "interfacemodmisc_1_1swap.html", null ],
-    [ "TestCase", null, [
-      [ "lhefile.TestLHEFiles", "classlhefile_1_1TestLHEFiles.html", null ],
-      [ "testME_more.TestMela", "classtestME__more_1_1TestMela.html", null ]
-    ] ],
     [ "TEvtProb", "classTEvtProb.html", null ],
     [ "collier_coefs::tn_cll", "interfacecollier__coefs_1_1tn__cll.html", null ],
     [ "collier_tensors::tnten_cll", "interfacecollier__tensors_1_1tnten__cll.html", null ],

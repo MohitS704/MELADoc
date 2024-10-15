@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -123,12 +113,6 @@ $(document).ready(function(){initNavTree('functions_vars_n.html',''); initResiza
 <li>n_CB_
 : <a class="el" href="classSuperMELA.html#ac37297e042a0c99e32bdadc94f3ea369">SuperMELA</a>
 </li>
-<li>nassociatedparticles
-: <a class="el" href="classlhefile_1_1LHEEvent__JHUGenttH.html#a6d15654dae7318131ee446bb314aca51">lhefile.LHEEvent_JHUGenttH</a>
-, <a class="el" href="classlhefile_1_1LHEEvent__JHUGenVBFVH.html#af9be35c9486aa992995a09d0c76e6736">lhefile.LHEEvent_JHUGenVBFVH</a>
-, <a class="el" href="classlhefile_1_1LHEEvent__Offshell4l.html#a739b54b79d04de121e3c044431bfd546">lhefile.LHEEvent_Offshell4l</a>
-, <a class="el" href="classlhefile_1_1LHEEvent__StableHiggs.html#a047b24577dee085a068b771eca546332">lhefile.LHEEvent_StableHiggs</a>
-</li>
 <li>ndue
 : <a class="el" href="classRooTsallisExp.html#aacc87695af974429a227f56083039239">RooTsallisExp</a>
 , <a class="el" href="classRooTsallisSM.html#a0d511706793bc7c816ea8188ae66a188">RooTsallisSM</a>
@@ -141,9 +125,6 @@ $(document).ready(function(){initNavTree('functions_vars_n.html',''); initResiza
 </li>
 <li>norm_sig_FFT_
 : <a class="el" href="classSuperMELA.html#a63f9ebbd13e25138aa14d60de76943a0">SuperMELA</a>
-</li>
-<li>npoints
-: <a class="el" href="structPointRedivision.html#a1ca891291c8259b9c96721622137e619">PointRedivision</a>
 </li>
 <li>nRequested_Antitops
 : <a class="el" href="structTVar_1_1simple__event__record.html#a5885d87c8c2e5dd520b9541e479d71bd">TVar::simple_event_record</a>

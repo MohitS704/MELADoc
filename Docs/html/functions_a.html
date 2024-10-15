@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -230,9 +220,6 @@ $(document).ready(function(){initNavTree('functions_a.html',''); initResizable()
 <li>addDaughter()
 : <a class="el" href="classMELAParticle.html#a555dda1d36e3cf9801de88ad38a6c6de">MELAParticle</a>
 </li>
-<li>addEvent()
-: <a class="el" href="structExtBin.html#ae10153182da2024f6c6f71a9a5382ff3">ExtBin</a>
-</li>
 <li>addHypothesis()
 : <a class="el" href="classScalarPdfFactory.html#a2c50885b5fd9958a624e95ba19946ba8">ScalarPdfFactory</a>
 , <a class="el" href="classTensorPdfFactory.html#aa536a03b1965aa4d2052462bc22c8078">TensorPdfFactory</a>
@@ -258,9 +245,6 @@ $(document).ready(function(){initNavTree('functions_a.html',''); initResizable()
 </li>
 <li>addUnordered()
 : <a class="el" href="classMELACandidate.html#ae996c7128b2722902e11412be8562607">MELACandidate</a>
-</li>
-<li>adjustWeights()
-: <a class="el" href="structExtBin.html#a37cd8e32daa1b715edaacb27ae542a00">ExtBin</a>
 </li>
 <li>aH1
 : <a class="el" href="structRooSpinZero__7DComplex__withAccep__HVV_1_1accepParameters.html#adfc13c71a35114abde17830330572e90">RooSpinZero_7DComplex_withAccep_HVV::accepParameters</a>
@@ -358,9 +342,6 @@ $(document).ready(function(){initNavTree('functions_a.html',''); initResizable()
 <li>AppendTopCandidate()
 : <a class="el" href="classTEvtProb.html#a605e94a0c6f814e4481fd887d2e65123">TEvtProb</a>
 </li>
-<li>associated
-: <a class="el" href="classlhefile_1_1LHEFileBase.html#a477626bd258d50151df14adace76bb21">lhefile.LHEFileBase</a>
-</li>
 <li>associatedByHighestPt
 : <a class="el" href="classMELACandidate.html#a7216d023a648e68297317fedbd59f8d0">MELACandidate</a>
 </li>
@@ -401,7 +382,7 @@ $(document).ready(function(){initNavTree('functions_a.html',''); initResizable()
 : <a class="el" href="classaTQGCCouplings.html#ab90473f8613a7b3240bf8d9e67a18dfa">aTQGCCouplings</a>
 </li>
 <li>aTQGCCouplings()
-: <a class="el" href="classaTQGCCouplings.html#a16e83cd2650f46a75c2793a32744e054">aTQGCCouplings</a>
+: <a class="el" href="classaTQGCCouplings.html#a6f68c526a73f7551d6f25c3f74d85acb">aTQGCCouplings</a>
 </li>
 <li>auxiliaryProb
 : <a class="el" href="classMela.html#a32b1d88b009f76e7bbf6a88a4389f287">Mela</a>

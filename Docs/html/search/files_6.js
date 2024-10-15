@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['higgstotalwidth_5fyr2_2etxt_5371',['HiggsTotalWidth_YR2.txt',['../HiggsTotalWidth__YR2_8txt.html',1,'']]],
-  ['higgstotalwidth_5fyr3_2etxt_5372',['HiggsTotalWidth_YR3.txt',['../HiggsTotalWidth__YR3_8txt.html',1,'']]]
+  ['linkdef_2eh_5453',['LinkDef.h',['../LinkDef_8h.html',1,'']]],
+  ['log_2etxt_5454',['log.txt',['../log_8txt.html',1,'']]]
 ];

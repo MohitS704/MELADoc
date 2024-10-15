@@ -1,6 +1,7 @@
 var dir_a4d860b944a98453144538543559cfe2 =
 [
     [ "LinkDef.h", "LinkDef_8h.html", null ],
+    [ "MadMela.cc", "MadMela_8cc.html", null ],
     [ "Mela.cc", "Mela_8cc.html", null ],
     [ "MELACandidate.cc", "MELACandidate_8cc.html", null ],
     [ "MELACombinePdfs.cc", "MELACombinePdfs_8cc.html", "MELACombinePdfs_8cc" ],

@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -167,7 +157,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 : <a class="el" href="classZZMatrixElement.html#a7c6b9f4feb84b69f2f7008131494acb5">ZZMatrixElement</a>
 </li>
 <li>set_SpinZeroCouplings()
-: <a class="el" href="classZZMatrixElement.html#ad554c5bffa65ce17b75013c5bfdbf2a5">ZZMatrixElement</a>
+: <a class="el" href="classZZMatrixElement.html#a0f75bcba03c4687398644d461dd04fc4">ZZMatrixElement</a>
 </li>
 <li>set_TempCandidate()
 : <a class="el" href="classZZMatrixElement.html#a6fec23332f9bd6a332527b91ad1a3748">ZZMatrixElement</a>
@@ -305,6 +295,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>setLifetime()
 : <a class="el" href="classMELAParticle.html#a707668177b5002cfb78a6f6c69e0b5bd">MELAParticle</a>
 </li>
+<li>SetMadgraphCKMElements()
+: <a class="el" href="classMela.html#a38c10339e87a95c638500ffe05552c97">Mela</a>
+</li>
 <li>setmaxcheckarray_cll()
 : <a class="el" href="interfacecollier__init_1_1setmaxcheck__cll.html#a3bc762db8a97629a401f67e7c123d180">collier_init::setmaxcheck_cll</a>
 </li>
@@ -352,7 +345,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 </li>
 <li>setPoints()
 : <a class="el" href="classMELANCSplineFactory__1D.html#a33646a710123db10f84f991f19226bd9">MELANCSplineFactory_1D</a>
-, <a class="el" href="classMELANCSplineFactory__2D.html#a9b59aa4b1c90b3539478e7030d164126">MELANCSplineFactory_2D</a>
+, <a class="el" href="classMELANCSplineFactory__2D.html#a2ba5f8a579b25c92c11980b9d42ae29e">MELANCSplineFactory_2D</a>
 , <a class="el" href="classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1">MELANCSplineFactory_3D</a>
 </li>
 <li>SetPrimaryHiggsMass()
@@ -401,6 +394,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>setShallowCopy()
 : <a class="el" href="classMELACandidate.html#ad67f7c630ca2c67efbb265e85680c99a">MELACandidate</a>
 </li>
+<li>SetSMEFTSimCouplings()
+: <a class="el" href="classSpinZeroCouplings.html#aca0d5957cd5f72bf232c7fe157730466">SpinZeroCouplings</a>
+</li>
 <li>setSpinOneCouplings()
 : <a class="el" href="classMela.html#a063525c4c9f007a9136f31aa6cb3915a">Mela</a>
 </li>
@@ -415,12 +411,6 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 </li>
 <li>setTensorPolarization()
 : <a class="el" href="classTensorPdfFactory.html#a8b64df02be5754db5b5f59ecf40c5573">TensorPdfFactory</a>
-</li>
-<li>setUp()
-: <a class="el" href="classtestME__more_1_1TestMela.html#af023575e274c1f81f6f17be21c2f1fd5">testME_more.TestMela</a>
-</li>
-<li>setUpClass()
-: <a class="el" href="classtestME__more_1_1TestMela.html#ada19243030de9f10cb2910110d2e4114">testME_more.TestMela</a>
 </li>
 <li>SetupResolutionModel()
 : <a class="el" href="classSuperDijetMela.html#ae235ef216f20001fa23c4ac9f0469843">SuperDijetMela</a>
@@ -481,20 +471,8 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 <li>shallowCopy()
 : <a class="el" href="classMELACandidate.html#aff02b2585d7d13b950091fc695795fb1">MELACandidate</a>
 </li>
-<li>sift()
-: <a class="el" href="structExtBin.html#a9a587e8a2cd99e748eb1d6d87350e94c">ExtBin</a>
-</li>
 <li>simple_event_record()
 : <a class="el" href="structTVar_1_1simple__event__record.html#a612e9234abd1b3e6676619e1c7f16db6">TVar::simple_event_record</a>
-</li>
-<li>SimpleEntry()
-: <a class="el" href="structSimpleEntry.html#a0597966241b643d72904731fc77886dc">SimpleEntry</a>
-</li>
-<li>sortByRecoMinusTrueVals()
-: <a class="el" href="structExtBin.html#a091da5b69b06767ea062d7a980f6ac97">ExtBin</a>
-</li>
-<li>sortByRecoVals()
-: <a class="el" href="structExtBin.html#a1c3ed08105425ac2f6d51c5d3ad1ed18">ExtBin</a>
 </li>
 <li>sortDaughters()
 : <a class="el" href="classMELACandidate.html#a85ab0d1d29d443ea8fa3957e7262e57e">MELACandidate</a>
@@ -506,7 +484,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 : <a class="el" href="classMELACandidate.html#af4b53b3367bbaced90cf7fcbec54f213">MELACandidate</a>
 </li>
 <li>SpinOneCouplings()
-: <a class="el" href="classSpinOneCouplings.html#a1e882bf509925d5bc3a9152abb0329db">SpinOneCouplings</a>
+: <a class="el" href="classSpinOneCouplings.html#a5835e29c742766dc5b1f963dbbccec1a">SpinOneCouplings</a>
 </li>
 <li>SpinPdfFactory()
 : <a class="el" href="classSpinPdfFactory.html#ad10e24b0b56d547bae5ec802402b5da3">SpinPdfFactory</a>
@@ -525,7 +503,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html',''); initResiza
 , <a class="el" href="classTNumericUtil_1_1NaiveAccumulator.html#a35b19e77c0860adfa45d44544f997339">TNumericUtil::NaiveAccumulator&lt; T &gt;</a>
 </li>
 <li>SuperDijetMela()
-: <a class="el" href="classSuperDijetMela.html#a8ced861e2a72c66a896dea5f8aa062ad">SuperDijetMela</a>
+: <a class="el" href="classSuperDijetMela.html#a6a17c34fca05264604d57069bef160f7">SuperDijetMela</a>
 </li>
 <li>SuperMELA()
 : <a class="el" href="classSuperMELA.html#a47caf178fb85ed97dbf5f948104e1bf7">SuperMELA</a>

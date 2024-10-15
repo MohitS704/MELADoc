@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -278,9 +268,6 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 , <a class="el" href="classMELANCSpline__2D__fast.html#a41b425b1b732be54d31b849ed0bd7794">MELANCSpline_2D_fast</a>
 , <a class="el" href="classMELANCSpline__3D__fast.html#a594b7949b84f16abb75cafa771e12195">MELANCSpline_3D_fast</a>
 </li>
-<li>collection
-: <a class="el" href="structExtBin.html#a29b0511d52f9c56b368ba5230d3b80dd">ExtBin</a>
-</li>
 <li>compensation_
 : <a class="el" href="classTNumericUtil_1_1KahanAccumulator.html#a8555225445ada7a40c7d8c3c1591b159">TNumericUtil::KahanAccumulator&lt; T &gt;</a>
 </li>
@@ -316,7 +303,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 : <a class="el" href="classMela.html#a13db15a91b1f78acdd79cb57e299b4a8">Mela</a>
 </li>
 <li>computeP_selfDspin1()
-: <a class="el" href="classMela.html#a97b814512ac9c9d1431a81e5a2c69bd4">Mela</a>
+: <a class="el" href="classMela.html#ae4e4f7ad7abdc513ae9bfd9e8f7cae93">Mela</a>
 </li>
 <li>computeP_selfDspin2()
 : <a class="el" href="classMela.html#af89095e77f63251cb489e2a96dace213">Mela</a>
@@ -334,7 +321,7 @@ $(document).ready(function(){initNavTree('functions_c.html',''); initResizable()
 : <a class="el" href="classMela.html#a92651068b8ec1788d274900a99c4a9b9">Mela</a>
 </li>
 <li>computeProdP_VH()
-: <a class="el" href="classMela.html#a817d72f9d39bf2bb0747d4d77dc811a1">Mela</a>
+: <a class="el" href="classMela.html#a53c470859a7a8f59f1247d3a32eac090">Mela</a>
 </li>
 <li>computeProdXS_JH()
 : <a class="el" href="classZZMatrixElement.html#a3dce6e1587be78db2ed8e7aea4468ca2">ZZMatrixElement</a>

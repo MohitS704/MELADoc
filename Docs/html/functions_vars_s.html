@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -220,6 +210,9 @@ $(document).ready(function(){initNavTree('functions_vars_s.html',''); initResiza
 <li>selfDM_Zprime
 : <a class="el" href="group__coupl.html#gab6425a613f155bd0f475ac401419ee2d">Mela</a>
 </li>
+<li>selfDSMEFTSimcoupl
+: <a class="el" href="group__coupl.html#ga6da951c74b7a5d16d650fa0dbbb1f6bc">Mela</a>
+</li>
 <li>selfDSpinOneCoupl
 : <a class="el" href="classTEvtProb.html#aacce422170b27ee4d35791eb1df6e624">TEvtProb</a>
 </li>
@@ -269,6 +262,9 @@ $(document).ready(function(){initNavTree('functions_vars_s.html',''); initResiza
 : <a class="el" href="structRooSpin_1_1modelParameters.html#a1a3992ec2ea1de40e4f2f9578c19b062">RooSpin::modelParameters</a>
 , <a class="el" href="classRooSpin.html#addc8b4a8b9936d21b5d82e9051333a14">RooSpin</a>
 </li>
+<li>SMEFTSimcoupl
+: <a class="el" href="classSpinZeroCouplings.html#a5e1fcda26033aa1e0d9a39c9afe83f9f">SpinZeroCouplings</a>
+</li>
 <li>SMHiggs
 : <a class="el" href="classPseudoMELA.html#a34a6d16304b76d982f4cef03b7a9ebab">PseudoMELA</a>
 </li>
@@ -292,7 +288,6 @@ $(document).ready(function(){initNavTree('functions_vars_s.html',''); initResiza
 </li>
 <li>sqrts
 : <a class="el" href="classMELADifermionResolutionModel.html#a8409106afbc44cf324848683e0ede1fc">MELADifermionResolutionModel</a>
-, <a class="el" href="structMELAwithOptions.html#a8a2fa3e8d191148e67033eb06a39e905">MELAwithOptions</a>
 </li>
 <li>sqrtS
 : <a class="el" href="classRooRapidityBkg.html#a9408c4e0ac7fa3567516b96cf0e359b4">RooRapidityBkg</a>

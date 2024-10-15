@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -110,6 +100,7 @@ $(document).ready(function(){initNavTree('TUtil_8hh.html',''); initResizable(); 
 <div class="contents">
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;complex&gt;</code><br />
 <code>#include &quot;<a class="el" href="MelaIO_8h_source.html">MelaIO.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TMCFMUtils_8hh_source.html">TMCFMUtils.hh</a>&quot;</code><br />
@@ -138,46 +129,47 @@ Include dependency graph for TUtil.hh:</div>
 <div class="dyncontent">
 <div class="center"><img src="TUtil_8hh__incl.png" border="0" usemap="#MELA_2interface_2TUtil_8hh" alt=""/></div>
 <map name="MELA_2interface_2TUtil_8hh" id="MELA_2interface_2TUtil_8hh">
-<area shape="rect" title=" " alt="" coords="1648,5,1811,32"/>
-<area shape="rect" title=" " alt="" coords="17,528,71,555"/>
-<area shape="rect" title=" " alt="" coords="575,528,633,555"/>
-<area shape="rect" href="MelaIO_8h.html" title=" " alt="" coords="605,80,680,107"/>
-<area shape="rect" href="TModParameters_8hh.html" title=" " alt="" coords="667,453,807,480"/>
-<area shape="rect" title=" " alt="" coords="780,528,844,555"/>
-<area shape="rect" title=" " alt="" coords="929,528,993,555"/>
-<area shape="rect" title=" " alt="" coords="95,528,217,555"/>
-<area shape="rect" href="TCouplings_8hh.html" title=" " alt="" coords="1219,80,1325,107"/>
-<area shape="rect" href="TMCFMUtils_8hh.html" title=" " alt="" coords="325,304,440,331"/>
-<area shape="rect" href="TNNPDFDriver_8hh.html" title=" " alt="" coords="1350,80,1479,107"/>
-<area shape="rect" href="TModKinematics_8hh.html" title=" " alt="" coords="1504,80,1643,107"/>
-<area shape="rect" href="TModJHUGen_8hh.html" title=" " alt="" coords="1667,80,1791,107"/>
-<area shape="rect" href="TModJHUGenMELA_8hh.html" title=" " alt="" coords="1035,80,1195,107"/>
-<area shape="rect" href="TModHiggsMatEl_8hh.html" title=" " alt="" coords="1816,80,1957,107"/>
-<area shape="rect" href="TModGravitonMatEl_8hh.html" title=" " alt="" coords="1982,80,2138,107"/>
-<area shape="rect" href="TModZprimeMatEl_8hh.html" title=" " alt="" coords="2163,80,2309,107"/>
-<area shape="rect" href="TModHiggsJJMatEl_8hh.html" title=" " alt="" coords="2333,80,2488,107"/>
-<area shape="rect" href="TModHiggsJMatEl_8hh.html" title=" " alt="" coords="2513,80,2661,107"/>
-<area shape="rect" href="TModVHiggsMatEl_8hh.html" title=" " alt="" coords="2685,80,2835,107"/>
-<area shape="rect" href="TModTTBHMatEl_8hh.html" title=" " alt="" coords="2859,80,3002,107"/>
-<area shape="rect" title=" " alt="" coords="3027,80,3093,107"/>
-<area shape="rect" title=" " alt="" coords="3118,80,3186,107"/>
-<area shape="rect" title=" " alt="" coords="3210,80,3278,107"/>
-<area shape="rect" title=" " alt="" coords="3302,80,3365,107"/>
-<area shape="rect" title=" " alt="" coords="3389,80,3445,107"/>
-<area shape="rect" href="TMCFM_8hh.html" title=" " alt="" coords="467,155,555,181"/>
-<area shape="rect" href="MELACandidate_8h.html" title=" " alt="" coords="579,155,707,181"/>
-<area shape="rect" href="MELAParticle_8h.html" title=" " alt="" coords="515,304,629,331"/>
-<area shape="rect" href="MELAThreeBodyDecayCandidate_8h.html" title=" " alt="" coords="529,229,757,256"/>
+<area shape="rect" title=" " alt="" coords="1496,5,1659,32"/>
+<area shape="rect" title=" " alt="" coords="515,528,570,555"/>
+<area shape="rect" title=" " alt="" coords="236,528,295,555"/>
+<area shape="rect" title=" " alt="" coords="94,80,165,107"/>
+<area shape="rect" href="MelaIO_8h.html" title=" " alt="" coords="676,80,751,107"/>
+<area shape="rect" href="TModParameters_8hh.html" title=" " alt="" coords="195,453,335,480"/>
+<area shape="rect" title=" " alt="" coords="115,528,179,555"/>
+<area shape="rect" title=" " alt="" coords="856,528,920,555"/>
+<area shape="rect" title=" " alt="" coords="945,528,1066,555"/>
+<area shape="rect" href="TCouplings_8hh.html" title=" " alt="" coords="984,80,1091,107"/>
+<area shape="rect" href="TMCFMUtils_8hh.html" title=" " alt="" coords="567,304,681,331"/>
+<area shape="rect" href="TNNPDFDriver_8hh.html" title=" " alt="" coords="1115,80,1245,107"/>
+<area shape="rect" href="TModKinematics_8hh.html" title=" " alt="" coords="1269,80,1408,107"/>
+<area shape="rect" href="TModJHUGen_8hh.html" title=" " alt="" coords="1433,80,1557,107"/>
+<area shape="rect" href="TModJHUGenMELA_8hh.html" title=" " alt="" coords="1581,80,1741,107"/>
+<area shape="rect" href="TModHiggsMatEl_8hh.html" title=" " alt="" coords="1765,80,1907,107"/>
+<area shape="rect" href="TModGravitonMatEl_8hh.html" title=" " alt="" coords="1931,80,2087,107"/>
+<area shape="rect" href="TModZprimeMatEl_8hh.html" title=" " alt="" coords="2112,80,2259,107"/>
+<area shape="rect" href="TModHiggsJJMatEl_8hh.html" title=" " alt="" coords="2283,80,2437,107"/>
+<area shape="rect" href="TModHiggsJMatEl_8hh.html" title=" " alt="" coords="2462,80,2610,107"/>
+<area shape="rect" href="TModVHiggsMatEl_8hh.html" title=" " alt="" coords="2634,80,2785,107"/>
+<area shape="rect" href="TModTTBHMatEl_8hh.html" title=" " alt="" coords="2809,80,2951,107"/>
+<area shape="rect" title=" " alt="" coords="2976,80,3043,107"/>
+<area shape="rect" title=" " alt="" coords="3067,80,3135,107"/>
+<area shape="rect" title=" " alt="" coords="3159,80,3227,107"/>
+<area shape="rect" title=" " alt="" coords="3251,80,3314,107"/>
+<area shape="rect" title=" " alt="" coords="3339,80,3395,107"/>
+<area shape="rect" href="TMCFM_8hh.html" title=" " alt="" coords="669,155,757,181"/>
+<area shape="rect" href="MELACandidate_8h.html" title=" " alt="" coords="517,155,645,181"/>
+<area shape="rect" href="MELAParticle_8h.html" title=" " alt="" coords="411,304,525,331"/>
+<area shape="rect" href="MELAThreeBodyDecayCandidate_8h.html" title=" " alt="" coords="487,229,715,256"/>
 <area shape="rect" href="PDGHelpers_8h.html" title=" " alt="" coords="459,379,565,405"/>
-<area shape="rect" title=" " alt="" coords="667,379,754,405"/>
-<area shape="rect" title=" " alt="" coords="387,453,459,480"/>
-<area shape="rect" title=" " alt="" coords="483,453,541,480"/>
-<area shape="rect" href="TVar_8hh.html" title=" " alt="" coords="245,453,312,480"/>
-<area shape="rect" title=" " alt="" coords="340,528,401,555"/>
-<area shape="rect" title=" " alt="" coords="425,528,479,555"/>
-<area shape="rect" title=" " alt="" coords="241,528,316,555"/>
-<area shape="rect" href="TCouplingsBase_8hh.html" title=" " alt="" coords="1125,155,1261,181"/>
-<area shape="rect" href="TNumericUtil_8hh.html" title=" " alt="" coords="304,379,421,405"/>
+<area shape="rect" title=" " alt="" coords="206,379,293,405"/>
+<area shape="rect" title=" " alt="" coords="411,453,483,480"/>
+<area shape="rect" title=" " alt="" coords="507,453,565,480"/>
+<area shape="rect" href="TVar_8hh.html" title=" " alt="" coords="741,453,808,480"/>
+<area shape="rect" title=" " alt="" coords="595,528,656,555"/>
+<area shape="rect" title=" " alt="" coords="680,528,733,555"/>
+<area shape="rect" title=" " alt="" coords="757,528,832,555"/>
+<area shape="rect" href="TCouplingsBase_8hh.html" title=" " alt="" coords="1301,155,1437,181"/>
+<area shape="rect" href="TNumericUtil_8hh.html" title=" " alt="" coords="317,379,435,405"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -185,26 +177,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TUtil_8hh__dep__incl.png" border="0" usemap="#MELA_2interface_2TUtil_8hhdep" alt=""/></div>
 <map name="MELA_2interface_2TUtil_8hhdep" id="MELA_2interface_2TUtil_8hhdep">
-<area shape="rect" title=" " alt="" coords="879,5,1041,32"/>
-<area shape="rect" href="TEvtProb_8hh.html" title=" " alt="" coords="255,177,444,203"/>
-<area shape="rect" href="mela__binding_8cpp.html" title=" " alt="" coords="1118,333,1325,360"/>
-<area shape="rect" href="MelaPConstant_8h.html" title=" " alt="" coords="510,87,727,114"/>
-<area shape="rect" href="MELADifermionResolutionModel_8h.html" title=" " alt="" coords="856,80,1064,121"/>
-<area shape="rect" href="TUtil_8cc.html" title=" " alt="" coords="1259,87,1389,114"/>
-<area shape="rect" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM&#45;JHUGen and pure JHUGen." alt="" coords="536,259,691,285"/>
-<area shape="rect" href="ZZMatrixElement_8h.html" title=" " alt="" coords="12,259,239,285"/>
-<area shape="rect" href="TEvtProb_8cc.html" title=" " alt="" coords="271,259,428,285"/>
-<area shape="rect" href="SuperMELA_8h.html" title=" " alt="" coords="301,333,499,360"/>
-<area shape="rect" href="Mela_8cc.html" title=" " alt="" coords="179,408,309,435"/>
-<area shape="rect" href="calcC__lintolog_8c.html" title=" " alt="" coords="523,333,704,360"/>
-<area shape="rect" href="getResolution_8c.html" title=" " alt="" coords="728,333,907,360"/>
-<area shape="rect" href="testME__v2_8c.html" title=" " alt="" coords="931,333,1093,360"/>
-<area shape="rect" href="SuperMELA_8cc.html" title=" " alt="" coords="334,408,506,435"/>
-<area shape="rect" href="ZZMatrixElement_8cc.html" title=" " alt="" coords="24,333,227,360"/>
-<area shape="rect" href="MELAPConstant_8cc.html" title=" " alt="" coords="519,177,719,203"/>
-<area shape="rect" href="SuperDijetMela_8h.html" title=" " alt="" coords="743,169,921,211"/>
-<area shape="rect" href="MELADifermionResolutionModel_8cc.html" title=" " alt="" coords="945,169,1183,211"/>
-<area shape="rect" href="SuperDijetMela_8cc.html" title=" " alt="" coords="737,259,927,285"/>
+<area shape="rect" title=" " alt="" coords="993,5,1156,32"/>
+<area shape="rect" href="TEvtProb_8hh.html" title=" " alt="" coords="187,177,376,203"/>
+<area shape="rect" href="mela__binding_8cpp.html" title=" " alt="" coords="890,333,1097,360"/>
+<area shape="rect" href="MelaPConstant_8h.html" title=" " alt="" coords="442,87,659,114"/>
+<area shape="rect" href="MELADifermionResolutionModel_8h.html" title=" " alt="" coords="892,80,1100,121"/>
+<area shape="rect" href="MadMela_8cc.html" title=" " alt="" coords="1191,87,1345,114"/>
+<area shape="rect" href="TUtil_8cc.html" title=" " alt="" coords="1369,87,1500,114"/>
+<area shape="rect" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM&#45;JHUGen and pure JHUGen." alt="" coords="472,259,627,285"/>
+<area shape="rect" href="ZZMatrixElement_8h.html" title=" " alt="" coords="187,259,413,285"/>
+<area shape="rect" href="TEvtProb_8cc.html" title=" " alt="" coords="5,259,163,285"/>
+<area shape="rect" href="SuperMELA_8h.html" title=" " alt="" coords="488,333,685,360"/>
+<area shape="rect" href="Mela_8cc.html" title=" " alt="" coords="365,408,496,435"/>
+<area shape="rect" href="SuperMELA_8cc.html" title=" " alt="" coords="521,408,693,435"/>
+<area shape="rect" href="ZZMatrixElement_8cc.html" title=" " alt="" coords="160,333,363,360"/>
+<area shape="rect" href="MELAPConstant_8cc.html" title=" " alt="" coords="451,177,651,203"/>
+<area shape="rect" href="SuperDijetMela_8h.html" title=" " alt="" coords="675,169,853,211"/>
+<area shape="rect" href="MELADifermionResolutionModel_8cc.html" title=" " alt="" coords="877,169,1115,211"/>
+<area shape="rect" href="SuperDijetMela_8cc.html" title=" " alt="" coords="669,259,859,285"/>
 </map>
 </div>
 </div>
@@ -269,9 +259,13 @@ Functions</h2></td></tr>
 <tr class="separator:a6e9f4b3d6db136b1bca9f7f7642565cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9082c83a90005205bb355123c1c24875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a9082c83a90005205bb355123c1c24875">TUtil::SetCKMElements</a> (double *invckm_ud, double *invckm_us, double *invckm_cd, double *invckm_cs, double *invckm_ts, double *invckm_tb, double *invckm_ub=0, double *invckm_cb=0, double *invckm_td=0)</td></tr>
 <tr class="separator:a9082c83a90005205bb355123c1c24875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae896ae140c141b04f19b2b0bb6b9b068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ae896ae140c141b04f19b2b0bb6b9b068">TUtil::SetMadgraphCKMElements</a> (double ckmlambda=0.2265, double ckma=0.79, double ckmrho=0.141, double ckmeta=0)</td></tr>
+<tr class="separator:ae896ae140c141b04f19b2b0bb6b9b068"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cff275aa36f42dd114b266e6f8dcd74"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a8cff275aa36f42dd114b266e6f8dcd74">TUtil::GetCKMElement</a> (int iquark, int jquark)</td></tr>
 <tr class="separator:a8cff275aa36f42dd114b266e6f8dcd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a00d03fa1abeb4335b6abd9fae90663"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a4a00d03fa1abeb4335b6abd9fae90663">TUtil::InterpretScaleScheme</a> (const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, const <a class="el" href="namespaceTVar.html#ab9fe70f6c2d4abb0f3fa561abc04805c">TVar::EventScaleScheme</a> &amp;scheme, TLorentzVector p[<a class="el" href="TMCFM_8hh.html#abc6126af1d45847bc59afa0aa3216b04aa807e6e258b5a07d460f300f873eab10">mxpart</a>])</td></tr>
+<tr class="memitem:ac3fb491c934f4a009e9881f5aef5ba47"><td class="memItemLeft" align="right" valign="top">std::complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ac3fb491c934f4a009e9881f5aef5ba47">TUtil::GetMadgraphCKMElement</a> (int iquark, int jquark)</td></tr>
+<tr class="separator:ac3fb491c934f4a009e9881f5aef5ba47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a00d03fa1abeb4335b6abd9fae90663"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a4a00d03fa1abeb4335b6abd9fae90663">TUtil::InterpretScaleScheme</a> (const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, const <a class="el" href="namespaceTVar.html#ab9fe70f6c2d4abb0f3fa561abc04805c">TVar::EventScaleScheme</a> &amp;scheme, TLorentzVector p[<a class="el" href="TMCFM_8hh.html#a0411cd49bb5b71852cecd93bcbf0ca2daa807e6e258b5a07d460f300f873eab10">mxpart</a>])</td></tr>
 <tr class="separator:a4a00d03fa1abeb4335b6abd9fae90663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab551562aaa197841cd0a638f1f38b0ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ab551562aaa197841cd0a638f1f38b0ff">TUtil::SetAlphaS</a> (double &amp;Q_ren, double &amp;Q_fac, double multiplier_ren, double multiplier_fac, int mynloop, int mynflav, std::string mypartons)</td></tr>
 <tr class="separator:ab551562aaa197841cd0a638f1f38b0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -291,34 +285,38 @@ Functions</h2></td></tr>
 <tr class="separator:ac6fdb5a1ca4802adaaee14c1c052efd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e1b502237f00dd823a0ef37b49e7aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a2e1b502237f00dd823a0ef37b49e7aaa">TUtil::ResetAmplitudeIncludes</a> ()</td></tr>
 <tr class="separator:a2e1b502237f00dd823a0ef37b49e7aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b596060ceaec9c4ed2233a8ba95121"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a15b596060ceaec9c4ed2233a8ba95121">TUtil::SetMadgraphSpinZeroCouplings</a> (<a class="el" href="classSpinZeroCouplings.html">SpinZeroCouplings</a> const *Hcouplings)</td></tr>
+<tr class="separator:a15b596060ceaec9c4ed2233a8ba95121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45366db1a43b30a467e146dc8477f771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a45366db1a43b30a467e146dc8477f771">TUtil::SetMCFMSpinZeroCouplings</a> (bool useBSM, <a class="el" href="classSpinZeroCouplings.html">SpinZeroCouplings</a> const *Hcouplings, bool forceZZ)</td></tr>
 <tr class="separator:a45366db1a43b30a467e146dc8477f771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac48c90afbcdf62150abcc380ea428eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ac48c90afbcdf62150abcc380ea428eef">TUtil::SetMCFMaTQGCCouplings</a> (bool useBSM, <a class="el" href="classaTQGCCouplings.html">aTQGCCouplings</a> const *couplings)</td></tr>
 <tr class="separator:ac48c90afbcdf62150abcc380ea428eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1706a661b9c70c8a8e5e3180e8ff676f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a1706a661b9c70c8a8e5e3180e8ff676f">TUtil::SetJHUGenSpinZeroVVCouplings</a> (double Hvvcoupl[<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2], double Hvvpcoupl[<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2], double Hvpvpcoupl[<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2], int Hvvcoupl_cqsq[<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>], double HvvLambda_qsq[<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3ba8b5ef52da7d1d223bbd05cc32a97f4ca">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>], bool useWWcoupl)</td></tr>
+<tr class="memitem:a1706a661b9c70c8a8e5e3180e8ff676f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a1706a661b9c70c8a8e5e3180e8ff676f">TUtil::SetJHUGenSpinZeroVVCouplings</a> (double Hvvcoupl[<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2], double Hvvpcoupl[<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2], double Hvpvpcoupl[<a class="el" href="raw__couplings_8txt.html#a40cd98906129c24df4a5ed813a8060e1accffd66fc8d93f9c87aaac37f26b45ef">SIZE_HVV</a>][2], int Hvvcoupl_cqsq[<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>], double HvvLambda_qsq[<a class="el" href="raw__couplings_8txt.html#ab788f424dac7bdf962872a3e8e676f3babc412e699f1b6619289e00b1560e36f6">SIZE_HVV_LAMBDAQSQ</a>][<a class="el" href="raw__couplings_8txt.html#a3ab892fd01f16264d6035fb3683e5c54a7c11ee2d55209891d275746edcb1eea9">SIZE_HVV_CQSQ</a>], bool useWWcoupl)</td></tr>
 <tr class="separator:a1706a661b9c70c8a8e5e3180e8ff676f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a534d1442fc379e1a036eb23050c13c5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a534d1442fc379e1a036eb23050c13c5b">TUtil::SetJHUGenSpinZeroGGCouplings</a> (double Hggcoupl[SIZE_HGG][2])</td></tr>
 <tr class="separator:a534d1442fc379e1a036eb23050c13c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5984b5d69c38cd854dc9368ba0d66ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ac5984b5d69c38cd854dc9368ba0d66ef">TUtil::SetJHUGenSpinZeroQQCouplings</a> (double Hqqcoupl[<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aa62729effc21343d780ebbba8dde4a4e6">SIZE_HQQ</a>][2])</td></tr>
+<tr class="memitem:ac5984b5d69c38cd854dc9368ba0d66ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ac5984b5d69c38cd854dc9368ba0d66ef">TUtil::SetJHUGenSpinZeroQQCouplings</a> (double Hqqcoupl[<a class="el" href="raw__couplings_8txt.html#a5e5cc435113c0e11debd2063ea73703aab767b9ac3fa70062b419afa11cc02af5">SIZE_HQQ</a>][2])</td></tr>
 <tr class="separator:ac5984b5d69c38cd854dc9368ba0d66ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7944801377c33a4e6b405058c03e1c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#aa7944801377c33a4e6b405058c03e1c7">TUtil::SetJHUGenSpinOneCouplings</a> (double Zqqcoupl[<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>][2], double Zvvcoupl[<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>][2])</td></tr>
+<tr class="memitem:aa7944801377c33a4e6b405058c03e1c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#aa7944801377c33a4e6b405058c03e1c7">TUtil::SetJHUGenSpinOneCouplings</a> (double Zqqcoupl[<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>][2], double Zvvcoupl[<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>][2])</td></tr>
 <tr class="separator:aa7944801377c33a4e6b405058c03e1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9153965831508e074e8ef8fdc0c261b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a9153965831508e074e8ef8fdc0c261b8">TUtil::SetJHUGenSpinTwoCouplings</a> (double Gacoupl[<a class="el" href="raw__couplings_8txt.html#ae719a380dce11b3548f273d353f82ecea0abc79366c3b3af31ec87785c5391601">SIZE_GGG</a>][2], double Gvvcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2], double Gvvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2], double Gvpvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676aa4a1e790ba1c8e347fb9ebdc85fb8da7">SIZE_GVV</a>][2], double qLeftRightcoupl[<a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a24396204804cdacbf9af716d553bda85">SIZE_GQQ</a>][2])</td></tr>
+<tr class="memitem:a9153965831508e074e8ef8fdc0c261b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a9153965831508e074e8ef8fdc0c261b8">TUtil::SetJHUGenSpinTwoCouplings</a> (double Gacoupl[<a class="el" href="raw__couplings_8txt.html#ae719a380dce11b3548f273d353f82ecea0abc79366c3b3af31ec87785c5391601">SIZE_GGG</a>][2], double Gvvcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2], double Gvvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2], double Gvpvpcoupl[<a class="el" href="raw__couplings_8txt.html#a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26">SIZE_GVV</a>][2], double qLeftRightcoupl[<a class="el" href="raw__couplings_8txt.html#ad453db2f3845e4ea3aec5eeb98903fb9a21444768f4d041fb44b25acc6a3984b7">SIZE_GQQ</a>][2])</td></tr>
 <tr class="separator:a9153965831508e074e8ef8fdc0c261b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c600f2c3dcc37a9512d659f46a364aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a1c600f2c3dcc37a9512d659f46a364aa">TUtil::SetJHUGenVprimeContactCouplings</a> (double Zpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">SIZE_Vpff</a>][2], double Wpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a29e0ca7af543460292ce71b23e0978dc">SIZE_Vpff</a>][2])</td></tr>
+<tr class="memitem:a1c600f2c3dcc37a9512d659f46a364aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a1c600f2c3dcc37a9512d659f46a364aa">TUtil::SetJHUGenVprimeContactCouplings</a> (double Zpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">SIZE_Vpff</a>][2], double Wpffcoupl[<a class="el" href="raw__couplings_8txt.html#ae8989aa46c9c56ce6570565041d0c404a4e2b3dfda04460db4356ac31634b2e07">SIZE_Vpff</a>][2])</td></tr>
 <tr class="separator:a1c600f2c3dcc37a9512d659f46a364aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a345c5ae46930918d36cb7ca55b01c853"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a345c5ae46930918d36cb7ca55b01c853">TUtil::SetMCFMAZffCouplings</a> (bool useBSM, <a class="el" href="classAZffCouplings.html">AZffCouplings</a> const *Zcouplings)</td></tr>
 <tr class="separator:a345c5ae46930918d36cb7ca55b01c853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89b248250ed67dd79baf7e0a911473d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a89b248250ed67dd79baf7e0a911473d2">TUtil::SetJHUGenAZffCouplings</a> (bool needAZff, double AZffcoupl[<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ace8c60defb066a7372e3061f36832e66">SIZE_AZff</a>][2])</td></tr>
+<tr class="memitem:a89b248250ed67dd79baf7e0a911473d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a89b248250ed67dd79baf7e0a911473d2">TUtil::SetJHUGenAZffCouplings</a> (bool needAZff, double AZffcoupl[<a class="el" href="raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55ad8d92f3b0efcdd564d4a94e7c20e900e">SIZE_AZff</a>][2])</td></tr>
 <tr class="separator:a89b248250ed67dd79baf7e0a911473d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2cf0c66b72320a09e280aa5681d4f19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ae2cf0c66b72320a09e280aa5681d4f19">TUtil::MCFM_masscuts</a> (double s[][<a class="el" href="TMCFM_8hh.html#abc6126af1d45847bc59afa0aa3216b04aa807e6e258b5a07d460f300f873eab10">mxpart</a>], const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process)</td></tr>
+<tr class="memitem:ae2cf0c66b72320a09e280aa5681d4f19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ae2cf0c66b72320a09e280aa5681d4f19">TUtil::MCFM_masscuts</a> (double s[][<a class="el" href="TMCFM_8hh.html#a0411cd49bb5b71852cecd93bcbf0ca2daa807e6e258b5a07d460f300f873eab10">mxpart</a>], const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process)</td></tr>
 <tr class="separator:ae2cf0c66b72320a09e280aa5681d4f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a009f1369c2ba692d3fa2ceb2097ef2cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a009f1369c2ba692d3fa2ceb2097ef2cc">TUtil::MCFM_smalls</a> (double s[][<a class="el" href="TMCFM_8hh.html#abc6126af1d45847bc59afa0aa3216b04aa807e6e258b5a07d460f300f873eab10">mxpart</a>], int <a class="el" href="TMCFM_8hh.html#a8852a945ad0b8536ee161f7ddb1e4be0">npart</a>)</td></tr>
+<tr class="memitem:a009f1369c2ba692d3fa2ceb2097ef2cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a009f1369c2ba692d3fa2ceb2097ef2cc">TUtil::MCFM_smalls</a> (double s[][<a class="el" href="TMCFM_8hh.html#a0411cd49bb5b71852cecd93bcbf0ca2daa807e6e258b5a07d460f300f873eab10">mxpart</a>], int <a class="el" href="TMCFM_8hh.html#a8852a945ad0b8536ee161f7ddb1e4be0">npart</a>)</td></tr>
 <tr class="separator:a009f1369c2ba692d3fa2ceb2097ef2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a460b9061f340996162890fcbdbef34b9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a460b9061f340996162890fcbdbef34b9">TUtil::SumMatrixElementPDF</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, const <a class="el" href="namespaceTVar.html#a2599e53f6f03e850b83dd83d6c296fec">TVar::LeptonInterference</a> &amp;leptonInterf, <a class="el" href="structTVar_1_1event__scales__type.html">TVar::event_scales_type</a> *event_scales, <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> verbosity)</td></tr>
 <tr class="separator:a460b9061f340996162890fcbdbef34b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f4fde8f2c90dadebec96378b36144d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ad2f4fde8f2c90dadebec96378b36144d">TUtil::JHUGenMatEl</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, <a class="el" href="structTVar_1_1event__scales__type.html">TVar::event_scales_type</a> *event_scales, <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> verbosity)</td></tr>
 <tr class="separator:ad2f4fde8f2c90dadebec96378b36144d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7548e5b7817a71f00dd4a62c1fa00f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a7b7548e5b7817a71f00dd4a62c1fa00f">TUtil::MadgraphMatEl</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, <a class="el" href="structTVar_1_1event__scales__type.html">TVar::event_scales_type</a> *event_scales, <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> verbosity)</td></tr>
+<tr class="separator:a7b7548e5b7817a71f00dd4a62c1fa00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae53582caadc4362e0dc6f9519dede582"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#ae53582caadc4362e0dc6f9519dede582">TUtil::HJJMatEl</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, <a class="el" href="structTVar_1_1event__scales__type.html">TVar::event_scales_type</a> *event_scales, <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> verbosity)</td></tr>
 <tr class="separator:ae53582caadc4362e0dc6f9519dede582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30b0f3cd4082fab9f6d057b0243f26de"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a30b0f3cd4082fab9f6d057b0243f26de">TUtil::VHiggsMatEl</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, <a class="el" href="structTVar_1_1event__scales__type.html">TVar::event_scales_type</a> *event_scales, <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, bool includeHiggsDecay, <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> verbosity)</td></tr>
@@ -327,13 +325,13 @@ Functions</h2></td></tr>
 <tr class="separator:ae18db0378d82ee0e0efb6dab7216690b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4812281815c3cd3df59c9575878c76e6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a4812281815c3cd3df59c9575878c76e6">TUtil::BBHiggsMatEl</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const <a class="el" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815f">TVar::MatrixElement</a> &amp;matrixElement, <a class="el" href="structTVar_1_1event__scales__type.html">TVar::event_scales_type</a> *event_scales, <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, int botProcess, <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> verbosity)</td></tr>
 <tr class="separator:a4812281815c3cd3df59c9575878c76e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e24aa1f4311876d507e30ff4162a1db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a3e24aa1f4311876d507e30ff4162a1db">TUtil::WipeMEArray</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const int id[<a class="el" href="TMCFM_8hh.html#abc6126af1d45847bc59afa0aa3216b04aa807e6e258b5a07d460f300f873eab10">mxpart</a>], double msq[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>][<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>], const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
+<tr class="memitem:a3e24aa1f4311876d507e30ff4162a1db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a3e24aa1f4311876d507e30ff4162a1db">TUtil::WipeMEArray</a> (const <a class="el" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1">TVar::Process</a> &amp;process, const <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> &amp;production, const int id[<a class="el" href="TMCFM_8hh.html#a0411cd49bb5b71852cecd93bcbf0ca2daa807e6e258b5a07d460f300f873eab10">mxpart</a>], double msq[<a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>][<a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>], const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
 <tr class="separator:a3e24aa1f4311876d507e30ff4162a1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6d616d949d1a340c25d2ed39edd5ddd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#af6d616d949d1a340c25d2ed39edd5ddd">TUtil::CheckPartonMomFraction</a> (const TLorentzVector &amp;p0, const TLorentzVector &amp;p1, double xx[2], const double &amp;EBEAM, const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
 <tr class="separator:af6d616d949d1a340c25d2ed39edd5ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90b6428b41acb4a3ca30d2307d1de436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a90b6428b41acb4a3ca30d2307d1de436">TUtil::ComputePDF</a> (const TLorentzVector &amp;p0, const TLorentzVector &amp;p1, double fx1[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>], double fx2[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>], const double &amp;EBEAM, const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
+<tr class="memitem:a90b6428b41acb4a3ca30d2307d1de436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a90b6428b41acb4a3ca30d2307d1de436">TUtil::ComputePDF</a> (const TLorentzVector &amp;p0, const TLorentzVector &amp;p1, double fx1[<a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>], double fx2[<a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>], const double &amp;EBEAM, const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
 <tr class="separator:a90b6428b41acb4a3ca30d2307d1de436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf7b61bc902b23177090ce6b48a7f026"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#adf7b61bc902b23177090ce6b48a7f026">TUtil::SumMEPDF</a> (const TLorentzVector &amp;p0, const TLorentzVector &amp;p1, double msq[<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>][<a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>], <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
+<tr class="memitem:adf7b61bc902b23177090ce6b48a7f026"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#adf7b61bc902b23177090ce6b48a7f026">TUtil::SumMEPDF</a> (const TLorentzVector &amp;p0, const TLorentzVector &amp;p1, double msq[<a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>][<a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>], <a class="el" href="classMelaIO.html">MelaIO</a> *RcdME, const double &amp;EBEAM, const <a class="el" href="namespaceTVar.html#a159a43323e3b4e8a2dcfdc2ac09e2049">TVar::VerbosityLevel</a> &amp;verbosity)</td></tr>
 <tr class="separator:adf7b61bc902b23177090ce6b48a7f026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ed7b2d062c0a1fbb809e065e6752cce"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTUtil.html#a7ed7b2d062c0a1fbb809e065e6752cce">TUtil::ResonancePropagator</a> (double const &amp;<a class="el" href="TMCFM_8hh.html#abf7be34aa9d044bc74b481967e5e1245">sqrts</a>, <a class="el" href="namespaceTVar.html#ac79830020a0eed4f6dcd3a62a496b016">TVar::ResonancePropagatorScheme</a> scheme)</td></tr>
 <tr class="separator:a7ed7b2d062c0a1fbb809e065e6752cce"><td class="memSeparator" colspan="2">&#160;</td></tr>

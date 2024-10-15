@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -141,33 +131,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="MELANCSplineCore_8h__dep__incl.png" border="0" usemap="#MELA_2interface_2MELANCSplineCore_8hdep" alt=""/></div>
 <map name="MELA_2interface_2MELANCSplineCore_8hdep" id="MELA_2interface_2MELANCSplineCore_8hdep">
-<area shape="rect" title=" " alt="" coords="1284,5,1492,47"/>
-<area shape="rect" href="MELANCSpline__1D__fast_8h.html" title=" " alt="" coords="752,95,960,136"/>
-<area shape="rect" href="MELANCSpline__2D__fast_8h.html" title=" " alt="" coords="1168,95,1376,136"/>
-<area shape="rect" href="MELANCSpline__3D__fast_8h.html" title=" " alt="" coords="1400,95,1608,136"/>
-<area shape="rect" href="MELANCSplineCore_8cc.html" title=" " alt="" coords="1633,102,1855,129"/>
-<area shape="rect" href="MELANCSplineFactory__1D_8h.html" title=" " alt="" coords="536,184,744,225"/>
-<area shape="rect" href="MELANCSpline__1D__fast_8cc.html" title=" " alt="" coords="768,184,944,225"/>
-<area shape="rect" href="MELADifermionResolutionModel_8h.html" title=" " alt="" coords="525,273,733,315"/>
-<area shape="rect" href="getResolution_8c.html" title=" " alt="" coords="901,527,1080,553"/>
-<area shape="rect" href="LinkDef_8h.html" title=" " alt="" coords="809,281,949,307"/>
-<area shape="rect" href="MELANCSplineFactory__1D_8cc.html" title=" " alt="" coords="281,273,501,315"/>
-<area shape="rect" href="SuperDijetMela_8h.html" title=" " alt="" coords="549,363,726,404"/>
-<area shape="rect" href="MELADifermionResolutionModel_8cc.html" title=" " alt="" coords="286,363,525,404"/>
-<area shape="rect" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM&#45;JHUGen and pure JHUGen." alt="" coords="569,452,724,479"/>
-<area shape="rect" href="SuperDijetMela_8cc.html" title=" " alt="" coords="354,452,545,479"/>
-<area shape="rect" href="SuperMELA_8h.html" title=" " alt="" coords="5,527,203,553"/>
-<area shape="rect" href="Mela_8cc.html" title=" " alt="" coords="507,601,637,628"/>
-<area shape="rect" href="mela__binding_8cpp.html" title=" " alt="" coords="227,527,434,553"/>
-<area shape="rect" href="calcC__lintolog_8c.html" title=" " alt="" coords="459,527,640,553"/>
-<area shape="rect" href="testME__v2_8c.html" title=" " alt="" coords="664,527,827,553"/>
-<area shape="rect" href="SuperMELA_8cc.html" title=" " alt="" coords="18,601,190,628"/>
-<area shape="rect" href="MELANCSplineFactory__2D_8h.html" title=" " alt="" coords="968,184,1176,225"/>
-<area shape="rect" href="MELANCSpline__2D__fast_8cc.html" title=" " alt="" coords="1200,184,1376,225"/>
-<area shape="rect" href="MELANCSplineFactory__2D_8cc.html" title=" " alt="" coords="973,273,1193,315"/>
-<area shape="rect" href="MELANCSplineFactory__3D_8h.html" title=" " alt="" coords="1400,184,1608,225"/>
-<area shape="rect" href="MELANCSpline__3D__fast_8cc.html" title=" " alt="" coords="1632,184,1808,225"/>
-<area shape="rect" href="MELANCSplineFactory__3D_8cc.html" title=" " alt="" coords="1394,273,1614,315"/>
+<area shape="rect" title=" " alt="" coords="1016,5,1224,47"/>
+<area shape="rect" href="MELANCSpline__1D__fast_8h.html" title=" " alt="" coords="484,95,692,136"/>
+<area shape="rect" href="MELANCSpline__2D__fast_8h.html" title=" " alt="" coords="900,95,1108,136"/>
+<area shape="rect" href="MELANCSpline__3D__fast_8h.html" title=" " alt="" coords="1132,95,1340,136"/>
+<area shape="rect" href="MELANCSplineCore_8cc.html" title=" " alt="" coords="1365,102,1587,129"/>
+<area shape="rect" href="MELANCSplineFactory__1D_8h.html" title=" " alt="" coords="268,184,476,225"/>
+<area shape="rect" href="MELANCSpline__1D__fast_8cc.html" title=" " alt="" coords="500,184,676,225"/>
+<area shape="rect" href="MELADifermionResolutionModel_8h.html" title=" " alt="" coords="317,273,525,315"/>
+<area shape="rect" href="LinkDef_8h.html" title=" " alt="" coords="890,281,1030,307"/>
+<area shape="rect" href="MELANCSplineFactory__1D_8cc.html" title=" " alt="" coords="73,273,293,315"/>
+<area shape="rect" href="SuperDijetMela_8h.html" title=" " alt="" coords="217,363,394,404"/>
+<area shape="rect" href="MELADifermionResolutionModel_8cc.html" title=" " alt="" coords="418,363,657,404"/>
+<area shape="rect" href="Mela_8h.html" title="This is the &quot;MELA&quot; object that interfaces with the Fortran code in both MCFM&#45;JHUGen and pure JHUGen." alt="" coords="129,452,284,479"/>
+<area shape="rect" href="SuperDijetMela_8cc.html" title=" " alt="" coords="309,452,499,479"/>
+<area shape="rect" href="SuperMELA_8h.html" title=" " alt="" coords="108,527,305,553"/>
+<area shape="rect" href="Mela_8cc.html" title=" " alt="" coords="5,601,136,628"/>
+<area shape="rect" href="mela__binding_8cpp.html" title=" " alt="" coords="330,527,537,553"/>
+<area shape="rect" href="SuperMELA_8cc.html" title=" " alt="" coords="161,601,333,628"/>
+<area shape="rect" href="MELANCSplineFactory__2D_8h.html" title=" " alt="" coords="700,184,908,225"/>
+<area shape="rect" href="MELANCSpline__2D__fast_8cc.html" title=" " alt="" coords="932,184,1108,225"/>
+<area shape="rect" href="MELANCSplineFactory__2D_8cc.html" title=" " alt="" coords="646,273,866,315"/>
+<area shape="rect" href="MELANCSplineFactory__3D_8h.html" title=" " alt="" coords="1132,184,1340,225"/>
+<area shape="rect" href="MELANCSpline__3D__fast_8cc.html" title=" " alt="" coords="1364,184,1540,225"/>
+<area shape="rect" href="MELANCSplineFactory__3D_8cc.html" title=" " alt="" coords="1126,273,1346,315"/>
 </map>
 </div>
 </div>

@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -116,28 +106,28 @@ $(document).ready(function(){initNavTree('globals_n.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#a0d9c8cbc461c7cf86cad8e548f195bd1">TMCFM.hh</a>
 </li>
 <li>ndims
-: <a class="el" href="TMCFM_8hh.html#adc29c2ff13d900c2f185ee95427fb06cab928ca9fd90a0756a8b16b1a62197cb9">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#abed82baf7f470b522273a3e37c24c600ab928ca9fd90a0756a8b16b1a62197cb9">TMCFM.hh</a>
 </li>
 <li>nextun()
 : <a class="el" href="Cteq61Pdf_8f.html#a5d509963c0431fd3abcf31c7d313e4f6">Cteq61Pdf.f</a>
 </li>
 <li>nf
-: <a class="el" href="TMCFM_8hh.html#a99fb83031ce9923c84392b4e92f956b5a9ef27f05549f71d70319d03789242cea">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a726ca809ffd3d67ab4b8476646f26635a9ef27f05549f71d70319d03789242cea">TMCFM.hh</a>
 </li>
 <li>nflav
 : <a class="el" href="TMCFM_8hh.html#a5d7f8497f9278858a2d19fc9b9062e25">TMCFM.hh</a>
 </li>
 <li>nflav_
-: <a class="el" href="TMCFM_8hh.html#a2f3582e7e511621b523f2705536d2427">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a698a8f135e3a9492e88b99c648ebfab8">TMCFM.hh</a>
 </li>
 <li>nlooprun
 : <a class="el" href="TMCFM_8hh.html#af4dfdea237e5a6af2b4cde8db19e7cef">TMCFM.hh</a>
 </li>
 <li>nlooprun_
-: <a class="el" href="TMCFM_8hh.html#adc2aafc62bc61f183ffa4dee86c60d57">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a2e11634db62ab5f21e0cd12a07fddab5">TMCFM.hh</a>
 </li>
 <li>nmsq
-: <a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">TMCFM.hh</a>
 </li>
 <li>nnevolvepdf()
 : <a class="el" href="NNPDFDriver_8f.html#a70da3de6935cd4a8ecdf3a488c8a7c3f">NNPDFDriver.f</a>
@@ -158,13 +148,13 @@ $(document).ready(function(){initNavTree('globals_n.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#a42acba1fe12de73d64bd840182799861">TMCFM.hh</a>
 </li>
 <li>noglue_
-: <a class="el" href="TMCFM_8hh.html#a61a9d20b4215c1f6ff372455d564de82">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a66b4190a4411936776234b36958644f9">TMCFM.hh</a>
 </li>
 <li>npart
 : <a class="el" href="TMCFM_8hh.html#a8852a945ad0b8536ee161f7ddb1e4be0">TMCFM.hh</a>
 </li>
 <li>npart_
-: <a class="el" href="TMCFM_8hh.html#ad14a4b45215390e1821b60a576e28c66">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#af38446b35cda83aa05b289553d74d9ed">TMCFM.hh</a>
 </li>
 <li>nprn
 : <a class="el" href="TMCFM_8hh.html#a7eac50effdcfb872b2469cb07432cc8f">TMCFM.hh</a>
@@ -173,31 +163,31 @@ $(document).ready(function(){initNavTree('globals_n.html',''); initResizable(); 
 : <a class="el" href="TMCFM_8hh.html#ae68326adc3b3862f1162832f70727b06">TMCFM.hh</a>
 </li>
 <li>nproc_
-: <a class="el" href="TMCFM_8hh.html#acac6038f213f8d7185a9cade9200e5b7">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#abbb93385f8c7eef170be05a261002db1">TMCFM.hh</a>
 </li>
 <li>nqcdjets
 : <a class="el" href="TMCFM_8hh.html#aee6319bfb50b5d5494b45ecd4b903630">TMCFM.hh</a>
 </li>
 <li>nqcdjets_
-: <a class="el" href="TMCFM_8hh.html#ae2f223e40b9a4478e304002075e1a220">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#aac63d5ca8ca5b5fcb07f759499634517">TMCFM.hh</a>
 </li>
 <li>nqcdstart
 : <a class="el" href="TMCFM_8hh.html#a0e2f853589519c627c7c44b013630df1">TMCFM.hh</a>
 </li>
 <li>nSupportedHiggses
-: <a class="el" href="TMCFM_8hh.html#adf764cbdea00d65edcd07bb9953ad2b7a6454e2bc65b0a38b32bc9b8ca8a34faf">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea6454e2bc65b0a38b32bc9b8ca8a34faf">TMCFM.hh</a>
 </li>
 <li>nuflav
 : <a class="el" href="TMCFM_8hh.html#ab2754abc3b7f2efa21538ba5480154b3">TMCFM.hh</a>
 </li>
 <li>nuflav_
-: <a class="el" href="TMCFM_8hh.html#a0bfa6627cd41299c1cd2035c6113172f">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#aa01afc7a61cc5e4d263bdccc73c26619">TMCFM.hh</a>
 </li>
 <li>nwz
 : <a class="el" href="TMCFM_8hh.html#a6f2b49a725432f9f9c115125df797cc5">TMCFM.hh</a>
 </li>
 <li>nwz_
-: <a class="el" href="TMCFM_8hh.html#a30351ed48d3965241fb1e3dfbdcce641">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a621487d051cd0ce917cef6400a965e68">TMCFM.hh</a>
 </li>
 </ul>
 </div><!-- contents -->

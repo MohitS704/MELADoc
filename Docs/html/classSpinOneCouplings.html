@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -132,14 +122,14 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae892bd28e0e8ac4ab6bfcc0b5433c789"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>][2]</td></tr>
+<tr class="memitem:ae892bd28e0e8ac4ab6bfcc0b5433c789"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a> [<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>][2]</td></tr>
 <tr class="separator:ae892bd28e0e8ac4ab6bfcc0b5433c789"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a736cb93b8069bf2589d021060674e8c0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>][2]</td></tr>
+<tr class="memitem:a736cb93b8069bf2589d021060674e8c0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a> [<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>][2]</td></tr>
 <tr class="separator:a736cb93b8069bf2589d021060674e8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TCouplings_8hh_source.html#l00065">65</a> of file <a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8hh_source.html#l00068">68</a> of file <a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5835e29c742766dc5b1f963dbbccec1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5835e29c742766dc5b1f963dbbccec1a">&#9670;&nbsp;</a></span>SpinOneCouplings() <span class="overload">[1/2]</span></h2>
@@ -156,8 +146,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00273">273</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{ <a class="code" href="classSpinOneCouplings.html#a93e5a21d94aaea00672ad59f8bf2a2d9">reset</a>(); }</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00281">281</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{ <a class="code" href="classSpinOneCouplings.html#a93e5a21d94aaea00672ad59f8bf2a2d9">reset</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -177,8 +167,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00274">274</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{ this-&gt;<a class="code" href="classSpinOneCouplings.html#ac2f95df73888aaa7e44b82f9973b82a1">copy</a>(other); }</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00282">282</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{ this-&gt;<a class="code" href="classSpinOneCouplings.html#ac2f95df73888aaa7e44b82f9973b82a1">copy</a>(other); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,8 +195,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00275">275</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{}</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00283">283</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,13 +217,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00288">288</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                                        {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>; ic++) <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[ic][im] = (other.Zvvcoupl)[ic][im];</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>; ic++) <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[ic][im] = (other.Zqqcoupl)[ic][im];</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00296">296</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                                        {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>; ic++) <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[ic][im] = (other.Zvvcoupl)[ic][im];</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>; ic++) <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[ic][im] = (other.Zqqcoupl)[ic][im];</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -252,8 +242,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00294">294</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">this</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00302">302</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">this</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -272,18 +262,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00277">277</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                            {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>; ic++) <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[ic][im] = 0;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>; ic++) <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[ic][im] = 0;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="comment">/*</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">  Zvvcoupl[0][0]=1.0;</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">  Zqqcoupl[0][0]=1.0;</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">  Zqqcoupl[1][0]=1.0;</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00285">285</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                            {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> im=0; im&lt;2; im++){</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>; ic++) <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[ic][im] = 0;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ic=0; ic&lt;<a class="code" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>; ic++) <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[ic][im] = 0;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="comment">/*</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">  Zvvcoupl[0][0]=1.0;</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">  Zqqcoupl[0][0]=1.0;</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="comment">  Zqqcoupl[1][0]=1.0;</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">  */</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,14 +309,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00303">303</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                                                                                      {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a>&gt;=<a class="code" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Cannot set index &quot;</span> &lt;&lt; <a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a> &lt;&lt; <span class="stringliteral">&quot; for the Zqqcoupl, out of range.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[<a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a>][0] = c_real;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[<a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a>][1] = c_imag;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00311">311</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                                                                      {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keywordflow">if</span> (index&gt;=<a class="code" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Cannot set index &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot; for the Zqqcoupl, out of range.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[index][0] = c_real;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">Zqqcoupl</a>[index][1] = c_imag;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,14 +352,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00296">296</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                                                                      {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a>&gt;=<a class="code" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Cannot set index &quot;</span> &lt;&lt; <a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a> &lt;&lt; <span class="stringliteral">&quot; for the Zvvcoupl, out of range.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[<a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a>][0] = c_real;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[<a class="code" href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">index</a>][1] = c_imag;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8cc_source.html#l00304">304</a> of file <a class="el" href="TCouplings_8cc_source.html">TCouplings.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                                                                      {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordflow">if</span> (index&gt;=<a class="code" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>) <a class="code" href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAerr</a> &lt;&lt; <span class="stringliteral">&quot;Cannot set index &quot;</span> &lt;&lt; index &lt;&lt; <span class="stringliteral">&quot; for the Zvvcoupl, out of range.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[index][0] = c_real;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">Zvvcoupl</a>[index][1] = c_imag;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -381,12 +371,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double SpinOneCouplings::Zqqcoupl[<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a>][2]</td>
+          <td class="memname">double SpinOneCouplings::Zqqcoupl[<a class="el" href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8hh_source.html#l00079">79</a> of file <a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8hh_source.html#l00082">82</a> of file <a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>.</p>
 
 </div>
 </div>
@@ -397,12 +387,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double SpinOneCouplings::Zvvcoupl[<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a>][2]</td>
+          <td class="memname">double SpinOneCouplings::Zvvcoupl[<a class="el" href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a>][2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TCouplings_8hh_source.html#l00078">78</a> of file <a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TCouplings_8hh_source.html#l00081">81</a> of file <a class="el" href="TCouplings_8hh_source.html">TCouplings.hh</a>.</p>
 
 </div>
 </div>
@@ -412,14 +402,13 @@ Public Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassSpinOneCouplings_html_a736cb93b8069bf2589d021060674e8c0"><div class="ttname"><a href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">SpinOneCouplings::Zqqcoupl</a></div><div class="ttdeci">double Zqqcoupl[SIZE_ZQQ][2]</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8hh_source.html#l00079">TCouplings.hh:79</a></div></div>
-<div class="ttc" id="aclassSpinOneCouplings_html_ae892bd28e0e8ac4ab6bfcc0b5433c789"><div class="ttname"><a href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">SpinOneCouplings::Zvvcoupl</a></div><div class="ttdeci">double Zvvcoupl[SIZE_ZVV][2]</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8hh_source.html#l00078">TCouplings.hh:78</a></div></div>
-<div class="ttc" id="anamespacewrite__bindings_html_a6097550d400b802e021a756ad56fc125"><div class="ttname"><a href="namespacewrite__bindings.html#a6097550d400b802e021a756ad56fc125">write_bindings.index</a></div><div class="ttdeci">index</div><div class="ttdef"><b>Definition:</b> <a href="write__bindings_8py_source.html#l00074">write_bindings.py:74</a></div></div>
-<div class="ttc" id="aclassSpinOneCouplings_html_ac2f95df73888aaa7e44b82f9973b82a1"><div class="ttname"><a href="classSpinOneCouplings.html#ac2f95df73888aaa7e44b82f9973b82a1">SpinOneCouplings::copy</a></div><div class="ttdeci">void copy(SpinOneCouplings const &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8cc_source.html#l00288">TCouplings.cc:288</a></div></div>
+<div class="ttc" id="aclassSpinOneCouplings_html_a736cb93b8069bf2589d021060674e8c0"><div class="ttname"><a href="classSpinOneCouplings.html#a736cb93b8069bf2589d021060674e8c0">SpinOneCouplings::Zqqcoupl</a></div><div class="ttdeci">double Zqqcoupl[SIZE_ZQQ][2]</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8hh_source.html#l00082">TCouplings.hh:82</a></div></div>
+<div class="ttc" id="araw__couplings_8txt_html_ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250"><div class="ttname"><a href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3acef42ea3c19d2ce8dfec841795534250">SIZE_ZQQ</a></div><div class="ttdeci">@ SIZE_ZQQ</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00107">raw_couplings.txt:107</a></div></div>
+<div class="ttc" id="aclassSpinOneCouplings_html_ae892bd28e0e8ac4ab6bfcc0b5433c789"><div class="ttname"><a href="classSpinOneCouplings.html#ae892bd28e0e8ac4ab6bfcc0b5433c789">SpinOneCouplings::Zvvcoupl</a></div><div class="ttdeci">double Zvvcoupl[SIZE_ZVV][2]</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8hh_source.html#l00081">TCouplings.hh:81</a></div></div>
+<div class="ttc" id="araw__couplings_8txt_html_a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04"><div class="ttname"><a href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094eac0b8cfa7b9b56f02e5a8481c9fb1cb04">SIZE_ZVV</a></div><div class="ttdeci">@ SIZE_ZVV</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00114">raw_couplings.txt:114</a></div></div>
+<div class="ttc" id="aclassSpinOneCouplings_html_ac2f95df73888aaa7e44b82f9973b82a1"><div class="ttname"><a href="classSpinOneCouplings.html#ac2f95df73888aaa7e44b82f9973b82a1">SpinOneCouplings::copy</a></div><div class="ttdeci">void copy(SpinOneCouplings const &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8cc_source.html#l00296">TCouplings.cc:296</a></div></div>
 <div class="ttc" id="anamespaceMELAStreamHelpers_html_a48e6b604de686a3c2033bdcf75c51f6f"><div class="ttname"><a href="namespaceMELAStreamHelpers.html#a48e6b604de686a3c2033bdcf75c51f6f">MELAStreamHelpers::MELAerr</a></div><div class="ttdeci">MELAOutputStreamer MELAerr</div></div>
-<div class="ttc" id="araw__couplings_8txt_html_ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce"><div class="ttname"><a href="raw__couplings_8txt.html#ac90eba43a47a3e1f57995b3192ef1be3a89c903f8ab9825dddd6cdb0795d93cce">SIZE_ZQQ</a></div><div class="ttdeci">@ SIZE_ZQQ</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00107">raw_couplings.txt:107</a></div></div>
-<div class="ttc" id="araw__couplings_8txt_html_a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5"><div class="ttname"><a href="raw__couplings_8txt.html#a775f93095743c1389b1d9bac1b92094ea96e13b105c4614941b7c1a4a9613cce5">SIZE_ZVV</a></div><div class="ttdeci">@ SIZE_ZVV</div><div class="ttdef"><b>Definition:</b> <a href="raw__couplings_8txt_source.html#l00114">raw_couplings.txt:114</a></div></div>
-<div class="ttc" id="aclassSpinOneCouplings_html_a93e5a21d94aaea00672ad59f8bf2a2d9"><div class="ttname"><a href="classSpinOneCouplings.html#a93e5a21d94aaea00672ad59f8bf2a2d9">SpinOneCouplings::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8cc_source.html#l00277">TCouplings.cc:277</a></div></div>
+<div class="ttc" id="aclassSpinOneCouplings_html_a93e5a21d94aaea00672ad59f8bf2a2d9"><div class="ttname"><a href="classSpinOneCouplings.html#a93e5a21d94aaea00672ad59f8bf2a2d9">SpinOneCouplings::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> <a href="TCouplings_8cc_source.html#l00285">TCouplings.cc:285</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

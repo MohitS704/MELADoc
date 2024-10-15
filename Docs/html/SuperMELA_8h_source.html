@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -122,30 +112,30 @@ $(document).ready(function(){initNavTree('SuperMELA_8h_source.html',''); initRes
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classSuperMELA.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSuperMELA.html">SuperMELA</a>{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classSuperMELA.html#a47caf178fb85ed97dbf5f948104e1bf7">SuperMELA</a>(<span class="keywordtype">double</span> mH=125, <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> channel=<span class="stringliteral">&quot;4mu&quot;</span>, <span class="keywordtype">double</span> LHCsqrts=8.);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classSuperMELA.html#a47caf178fb85ed97dbf5f948104e1bf7">SuperMELA</a>(<span class="keywordtype">double</span> mH=125, std::string channel=<span class="stringliteral">&quot;4mu&quot;</span>, <span class="keywordtype">double</span> LHCsqrts=8.);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="classSuperMELA.html#aae2e4f55e2bbeceac2db6037fd585bd0">~SuperMELA</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a67b59e01e34b08f47c949b3ccc9e0ee7">init</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a59d3d5c494b39d1fcd2bd993532e7bd1">GetSigShapeSystematic</a>(<a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> parName);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a8e20aafc31dea57f87e1f6aadb7c61ae">GetSigShapeParameter</a>(<a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> parName);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a59d3d5c494b39d1fcd2bd993532e7bd1">GetSigShapeSystematic</a>(std::string parName);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a8e20aafc31dea57f87e1f6aadb7c61ae">GetSigShapeParameter</a>(std::string parName);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classSuperMELA.html#ade312a7527d2ecbca8c9e7bdae420c1c">   26</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#ade312a7527d2ecbca8c9e7bdae420c1c">SetVerbosity</a>(<span class="keywordtype">bool</span> verb=<span class="keyword">true</span>){ <a class="code" href="classSuperMELA.html#aa74212a291c1513ea12244cdcc93f8d5">verbose_</a>=verb; }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#abea01fd34de4b48193fbdb03237ff60e">SetDecayChannel</a>(<a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> myChan);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#abea01fd34de4b48193fbdb03237ff60e">SetDecayChannel</a>(std::string myChan);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#aefd6caea7259f692a61bd70e389c390c">SetMH</a>(<span class="keywordtype">double</span> myMH);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a744c109c2010edf3b094d6093ac9b152">SetPathToCards</a>(<a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> dirToCards);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a744c109c2010edf3b094d6093ac9b152">SetPathToCards</a>(std::string dirToCards);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  std::pair&lt;double, double&gt; <a class="code" href="classSuperMELA.html#a4964cef54e1a2d9675e5a7c8c126328c">M4lProb</a>(<span class="keywordtype">double</span> m4l);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  std::pair&lt;double, double&gt; <a class="code" href="classSuperMELA.html#a4964cef54e1a2d9675e5a7c8c126328c">M4lProb</a>(std::pair&lt;double, double&gt; <span class="keyword">const</span>&amp;);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(<span class="keyword">const</span> <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; rawoption, std::vector&lt;std::string&gt;&amp; splitoptions, <span class="keywordtype">char</span> delimiter);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a58f258ddc4c0bf9f820667cba0e9bd4c">splitLine</a>(<span class="keyword">const</span> std::string&amp; rawoption, std::vector&lt;std::string&gt;&amp; splitoptions, <span class="keywordtype">char</span> delimiter);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a9392bc7b7e52f3ad4caaf8830d531622">readSigParsFromFile</a>(</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; str_mean_CB,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; str_sigma_CB,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; str_n_CB,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; str_alpha_CB,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; str_n2_CB,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a>&amp; str_alpha2_CB</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string&amp; str_mean_CB,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string&amp; str_sigma_CB,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string&amp; str_n_CB,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::string&amp; str_alpha_CB,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string&amp; str_n2_CB,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::string&amp; str_alpha2_CB</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    );</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a0d0c15daf51a3e2282bb1d5761162f73">readBkgParsFromFile</a>(std::vector&lt;double&gt;&amp; apars);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSuperMELA.html#a5a3d479b7b6acf5f77e4509a1b7d6878">readSigSystFromFile</a>(</div>
@@ -161,10 +151,10 @@ $(document).ready(function(){initNavTree('SuperMELA_8h_source.html',''); initRes
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a4f01782fa8d526c7fd47f9e19bc3657b">   55</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a4f01782fa8d526c7fd47f9e19bc3657b">mHVal_</a>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a58412faf9b43be8502790fb28baf95df">   56</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a58412faf9b43be8502790fb28baf95df">sqrts_</a>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a7a2a9897fbe3c58ee898428652b3a23d">   57</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classSuperMELA.html#a7a2a9897fbe3c58ee898428652b3a23d">lowMH_</a>, <a class="code" href="classSuperMELA.html#a58284faaa0de8d1e257f4e31c17f66b1">highMH_</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a61450a444b820301db09c716e92496bc">   58</a></span>&#160;  <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> <a class="code" href="classSuperMELA.html#a61450a444b820301db09c716e92496bc">strChan_</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a61450a444b820301db09c716e92496bc">   58</a></span>&#160;  std::string <a class="code" href="classSuperMELA.html#a61450a444b820301db09c716e92496bc">strChan_</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a83f97355315dc8b5215c094e0ebb448a">   59</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classSuperMELA.html#a83f97355315dc8b5215c094e0ebb448a">ch_</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classSuperMELA.html#aa74212a291c1513ea12244cdcc93f8d5">   60</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classSuperMELA.html#aa74212a291c1513ea12244cdcc93f8d5">verbose_</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a660f834688bfce1cb92f730db419dc8b">   61</a></span>&#160;  <a class="code" href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">std::string</a> <a class="code" href="classSuperMELA.html#a660f834688bfce1cb92f730db419dc8b">pathToCards_</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a660f834688bfce1cb92f730db419dc8b">   61</a></span>&#160;  std::string <a class="code" href="classSuperMELA.html#a660f834688bfce1cb92f730db419dc8b">pathToCards_</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classSuperMELA.html#a61f6fe4302b9efd7b6a88d22572d259a">   63</a></span>&#160;  RooRealVar* <a class="code" href="classSuperMELA.html#a61f6fe4302b9efd7b6a88d22572d259a">m4l_rrv_</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classSuperMELA.html#ad821105a6c148635038c34b51403e7d5">   64</a></span>&#160;  RooRealVar* <a class="code" href="classSuperMELA.html#ad821105a6c148635038c34b51403e7d5">mH_rrv_</a>;</div>
@@ -218,7 +208,6 @@ $(document).ready(function(){initNavTree('SuperMELA_8h_source.html',''); initRes
 <div class="ttc" id="aclassSuperMELA_html_a16a7b0312695a7097428c0debfe3c34f"><div class="ttname"><a href="classSuperMELA.html#a16a7b0312695a7097428c0debfe3c34f">SuperMELA::sigma_CB_err_</a></div><div class="ttdeci">RooRealVar * sigma_CB_err_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00075">SuperMELA.h:75</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a58412faf9b43be8502790fb28baf95df"><div class="ttname"><a href="classSuperMELA.html#a58412faf9b43be8502790fb28baf95df">SuperMELA::sqrts_</a></div><div class="ttdeci">double sqrts_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00056">SuperMELA.h:56</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a1726beba7512f7cfdfe1f644ebc5dc19"><div class="ttname"><a href="classSuperMELA.html#a1726beba7512f7cfdfe1f644ebc5dc19">SuperMELA::a13_qqZZ_</a></div><div class="ttdeci">RooRealVar * a13_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00101">SuperMELA.h:101</a></div></div>
-<div class="ttc" id="anamespacewrite__bindings_html_a8f9aa06693c886c4f732a4f71f6ca1a6"><div class="ttname"><a href="namespacewrite__bindings.html#a8f9aa06693c886c4f732a4f71f6ca1a6">write_bindings.string</a></div><div class="ttdeci">string</div><div class="ttdef"><b>Definition:</b> <a href="write__bindings_8py_source.html#l00046">write_bindings.py:46</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a47caf178fb85ed97dbf5f948104e1bf7"><div class="ttname"><a href="classSuperMELA.html#a47caf178fb85ed97dbf5f948104e1bf7">SuperMELA::SuperMELA</a></div><div class="ttdeci">SuperMELA(double mH=125, std::string channel=&quot;4mu&quot;, double LHCsqrts=8.)</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8cc_source.html#l00018">SuperMELA.cc:18</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a051a8804eecfec531e3d78163de52206"><div class="ttname"><a href="classSuperMELA.html#a051a8804eecfec531e3d78163de52206">SuperMELA::a11_qqZZ_</a></div><div class="ttdeci">RooRealVar * a11_qqZZ_</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8h_source.html#l00099">SuperMELA.h:99</a></div></div>
 <div class="ttc" id="aclassSuperMELA_html_a0d0c15daf51a3e2282bb1d5761162f73"><div class="ttname"><a href="classSuperMELA.html#a0d0c15daf51a3e2282bb1d5761162f73">SuperMELA::readBkgParsFromFile</a></div><div class="ttdeci">void readBkgParsFromFile(std::vector&lt; double &gt; &amp;apars)</div><div class="ttdef"><b>Definition:</b> <a href="SuperMELA_8cc_source.html#l00490">SuperMELA.cc:490</a></div></div>

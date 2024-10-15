@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -435,23 +425,8 @@ $(document).ready(function(){initNavTree('namespacemembers.html',''); initResiza
 <li>ar_qup
 : <a class="el" href="namespacemodparameters.html#a8bbf1e148575e0979d27af2162b6ce00">modparameters</a>
 </li>
-<li>args
-: <a class="el" href="namespacelhefile.html#a06c6458c3f9c09e313de667748297aee">lhefile</a>
-, <a class="el" href="namespacetestME__all.html#a5ec968c74655698c223fffc5927547db">testME_all</a>
-, <a class="el" href="namespacetestME__more.html#ae58aacea23b2ba754f7e33f2205299ec">testME_more</a>
-</li>
-<li>arguments
-: <a class="el" href="namespacetestME__all.html#a77e61fe2fc5db12eba2c723336cc914d">testME_all</a>
-</li>
-<li>argv
-: <a class="el" href="namespacelhefile.html#ab0a5485057d67b41213100e1bc64bd51">lhefile</a>
-, <a class="el" href="namespacetestME__more.html#ae5e70d8e24166e88ff96826ae3bccf41">testME_more</a>
-</li>
-<li>array_name
-: <a class="el" href="namespacewrite__bindings.html#aa6e5f0e3dec4c7315c198930f2bae72a">write_bindings</a>
-</li>
-<li>array_name_and_index
-: <a class="el" href="namespacewrite__bindings.html#ad83945d09acd33ed67b495e8c5d5aa39">write_bindings</a>
+<li>as
+: <a class="el" href="namespacemadMela.html#a6b16dcd1dec223c738fc15027214beb9">madMela</a>
 </li>
 <li>as0
 : <a class="el" href="namespacehto__asinp.html#ad4e09d92d68a407f5b566f3fdb48546c">hto_asinp</a>

@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -164,7 +154,7 @@ $(document).ready(function(){initNavTree('classZZMatrixElement.html',''); initRe
   <tr class="even"><td class="entry"><a class="el" href="classZZMatrixElement.html#a39f6db6d02c2025c8ec5029a165a36b4">set_SpinTwoContact</a>(double selfDGvvpcoupl[SIZE_GVV][2], double selfDGvpvpcoupl[SIZE_GVV][2])</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classZZMatrixElement.html#a73013b864b85a4bb86baabaef15832f4">set_SpinTwoCouplings</a>(double selfDGqqcoupl[SIZE_GQQ][2], double selfDGggcoupl[SIZE_GGG][2], double selfDGvvcoupl[SIZE_GVV][2])</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classZZMatrixElement.html#a7c6b9f4feb84b69f2f7008131494acb5">set_SpinZeroContact</a>(double selfDHzzpcoupl[SIZE_HVV][2], double selfDHzpzpcoupl[SIZE_HVV][2], double selfDHwwpcoupl[SIZE_HVV][2], double selfDHwpwpcoupl[SIZE_HVV][2])</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classZZMatrixElement.html#ad554c5bffa65ce17b75013c5bfdbf2a5">set_SpinZeroCouplings</a>(double selfDHggcoupl[nSupportedHiggses][SIZE_HGG][2], double selfDHg4g4coupl[nSupportedHiggses][SIZE_HGG][2], double selfDHqqcoupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHbbcoupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHttcoupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHb4b4coupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHt4t4coupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHzzcoupl[nSupportedHiggses][SIZE_HVV][2], double selfDHwwcoupl[nSupportedHiggses][SIZE_HVV][2], double selfDHzzLambda_qsq[nSupportedHiggses][SIZE_HVV_LAMBDAQSQ][SIZE_HVV_CQSQ], double selfDHwwLambda_qsq[nSupportedHiggses][SIZE_HVV_LAMBDAQSQ][SIZE_HVV_CQSQ], int selfDHzzCLambda_qsq[nSupportedHiggses][SIZE_HVV_CQSQ], int selfDHwwCLambda_qsq[nSupportedHiggses][SIZE_HVV_CQSQ], bool diffHWW=false)</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classZZMatrixElement.html#a0f75bcba03c4687398644d461dd04fc4">set_SpinZeroCouplings</a>(double selfDHggcoupl[nSupportedHiggses][SIZE_HGG][2], double selfDHg4g4coupl[nSupportedHiggses][SIZE_HGG][2], double selfDHqqcoupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHbbcoupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHttcoupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHb4b4coupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHt4t4coupl[nSupportedHiggses][SIZE_HQQ][2], double selfDHzzcoupl[nSupportedHiggses][SIZE_HVV][2], double selfDHwwcoupl[nSupportedHiggses][SIZE_HVV][2], double selfDHzzLambda_qsq[nSupportedHiggses][SIZE_HVV_LAMBDAQSQ][SIZE_HVV_CQSQ], double selfDHwwLambda_qsq[nSupportedHiggses][SIZE_HVV_LAMBDAQSQ][SIZE_HVV_CQSQ], int selfDHzzCLambda_qsq[nSupportedHiggses][SIZE_HVV_CQSQ], int selfDHwwCLambda_qsq[nSupportedHiggses][SIZE_HVV_CQSQ], double selfDSMEFTSimcoupl[SIZE_SMEFT], bool diffHWW=false)</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classZZMatrixElement.html#a6fec23332f9bd6a332527b91ad1a3748">set_TempCandidate</a>(SimpleParticleCollection_t *pDaughters, SimpleParticleCollection_t *pAssociated=0, SimpleParticleCollection_t *pMothers=0, bool isGen=false)</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classZZMatrixElement.html#a1b5fb27ebe3fe65ef236f2766471a857">set_Verbosity</a>(TVar::VerbosityLevel verbosity_)</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classZZMatrixElement.html#a108a0a31d7185e3e87ddaecd2a4acd1b">set_VprimeContactCouplings</a>(double selfDZpffcoupl[SIZE_Vpff][2], double selfDWpffcoupl[SIZE_Vpff][2], double M_Zprime, double Ga_Zprime, double M_Wprime, double Ga_Wprime)</td><td class="entry"><a class="el" href="classZZMatrixElement.html">ZZMatrixElement</a></td><td class="entry"></td></tr>

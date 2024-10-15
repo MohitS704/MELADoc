@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -190,69 +180,6 @@ $(document).ready(function(){initNavTree('globals_g.html',''); initResizable(); 
 <li>gen_njets_()
 : <a class="el" href="TMCFM_8hh.html#a6b4890b4656d748352d129e3f6ddaa65">TMCFM.hh</a>
 </li>
-<li>generic_PAvgSmoothProducer()
-: <a class="el" href="calcC__lintolog_8c.html#a8f0f643f05367f75985c2d7f3fa07062">calcC_lintolog.c</a>
-</li>
-<li>generic_PAvgSmoothProducer_withDecay()
-: <a class="el" href="calcC__lintolog_8c.html#afbced57a7077c690345af85ef34d0ca4">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_ANALYTICAL_HadVH_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a33c65eecf83260556068c5d2a84acfeb">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_ANALYTICAL_ZZGG_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a2b9383546c9f8970ebfc6d57a1027684">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_ANALYTICAL_ZZQQB_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#a24cb970d55f94f523fc020a948b1093e">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_HadVH_HSMHiggs_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a398134b22108b206297d76d076a3f907">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_JJQCD_HSMHiggs_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#aab953ff5ebb2ea3e45a2549b17186f16">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_JJQCD_HSMHiggs_7or8TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a84dc6a6e64c03c90f3bf7f38c709dba4">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_JJVBF_HSMHiggs_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a22f2e290fe28461b6c6b0403f754d882">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_JJVBF_HSMHiggs_7or8TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a079f3455b27c8a4761ec6c90c1830499">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_JQCD_HSMHiggs_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a0ae4bbca109ea8b92093b71e5d375dda">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_JQCD_HSMHiggs_7or8TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a3c3ba12061485db264cd866010bd4638">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_ZZGG_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a3d4560436158ecde957f5eb15623340a">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_JHUGen_ZZINDEPENDENT_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#a1cd893d1b20a9d957098ed8b0a18508e">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_JJPROD_bkgZZ_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#af8f21f7c12750bebdcbb4c34786ac9b5">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_JJPROD_S_HSMHiggs_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a4e0460ddc9f959523dd24fcdd51147e5">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_JJQCD_bkgZJets_13TeV_2l2q()
-: <a class="el" href="calcC__lintolog_8c.html#ab1be664873e412656b70371b0d96f2ee">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_JJQCD_bkgZZ_13TeV()
-: <a class="el" href="calcC__lintolog_8c.html#a77f5dab7573e5de04ed9635eae68524d">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_ZZGG_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#a99e74d0c63266c4ab31c36d19016a3fa">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_ZZGG_HSMHiggs()
-: <a class="el" href="calcC__lintolog_8c.html#aab79622f08c976cf7a30638f17e065c2">calcC_lintolog.c</a>
-</li>
-<li>get_PAvgProfile_MCFM_ZZQQB_bkgZZ()
-: <a class="el" href="calcC__lintolog_8c.html#a9a9d4c132284051fd2c4c901628bf514">calcC_lintolog.c</a>
-</li>
 <li>getallpdfs()
 : <a class="el" href="mstwpdf_8f.html#acab373d9361780b7bc84c63f7d0c292d">mstwpdf.f</a>
 </li>
@@ -262,46 +189,9 @@ $(document).ready(function(){initNavTree('globals_g.html',''); initResizable(); 
 <li>getConstant()
 : <a class="el" href="group__ReferenceGroup.html#ga35a42d893f650474799372f6f73797a9">mela_binding.cpp</a>
 </li>
-<li>getEntry()
-: <a class="el" href="calcC__lintolog_8c.html#ad02f8aac427884f95d9cfd7014636b98">calcC_lintolog.c</a>
-, <a class="el" href="getResolution_8c.html#ad02f8aac427884f95d9cfd7014636b98">getResolution.c</a>
-</li>
-<li>getFcn_a0()
-: <a class="el" href="calcC__lintolog_8c.html#ac60163de274b558ad0ffaea560fc18ba">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0overX2minusa1overX()
-: <a class="el" href="calcC__lintolog_8c.html#ae3ef6ebb7012fdb8ed5bbc0970926bd3">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0plusa1expX()
-: <a class="el" href="calcC__lintolog_8c.html#a70195c1e0b5bbeae27e40a15a36c0d6e">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0plusa1overX()
-: <a class="el" href="calcC__lintolog_8c.html#aeb28eb09bea582409639c28ee0bbab17">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0plusa1timesX()
-: <a class="el" href="calcC__lintolog_8c.html#ad75a06867d62de5e3ef58e152a681cf8">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0plusa1timesXplusa2overX2()
-: <a class="el" href="calcC__lintolog_8c.html#ad9413873fd5ae6a0f6254c3f49e3ceea">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0plusa1timesXplusa2timesX2()
-: <a class="el" href="calcC__lintolog_8c.html#a797c2f34081dcab551229e0c33134599">calcC_lintolog.c</a>
-</li>
-<li>getFcn_a0plusXPinvminusXpsqinv()
-: <a class="el" href="calcC__lintolog_8c.html#a574246155eeaecebeff28c86bb4854e1">calcC_lintolog.c</a>
-</li>
 <li>getinvariants()
 : <a class="el" href="demo_8f90.html#aff3f33b64b397d298d23b55d42293713">demo.f90</a>
 , <a class="el" href="democache_8f90.html#a4c1ca8e11a504981ad0152608c737953">democache.f90</a>
-</li>
-<li>getJHUGenMELAWeight()
-: <a class="el" href="test__JVBF_8c.html#a4e4d84dffe082802bd84887537888dd6">test_JVBF.c</a>
-</li>
-<li>getMCFMMELAWeight()
-: <a class="el" href="test__JVBF_8c.html#a4f71f9ee244c0848455c24c49d999de9">test_JVBF.c</a>
-</li>
-<li>getMela()
-: <a class="el" href="testME__v2_8c.html#a0d23a6acaaada5350dca894d6c52cb65">testME_v2.c</a>
 </li>
 <li>getonepdf()
 : <a class="el" href="mstwpdf_8f.html#ae58aafec286172ecfbf38f492973872f">mstwpdf.f</a>
@@ -309,29 +199,8 @@ $(document).ready(function(){initNavTree('globals_g.html',''); initResizable(); 
 <li>getPartonWeights()
 : <a class="el" href="group__ReferenceGroup.html#ga658c6176dfa92eae5a20bf7f9c1087b6">mela_binding.cpp</a>
 </li>
-<li>getPatch_a0a1()
-: <a class="el" href="calcC__lintolog_8c.html#aa12795571583bfb827e6be250484e508">calcC_lintolog.c</a>
-</li>
-<li>getPatch_a0expa1timesX()
-: <a class="el" href="calcC__lintolog_8c.html#a0cfe36570dba9b00260af61079d7b8c9">calcC_lintolog.c</a>
-</li>
-<li>getPatch_a0plusa1overX()
-: <a class="el" href="calcC__lintolog_8c.html#ae78c0baaad2839c185466db32ee24000">calcC_lintolog.c</a>
-</li>
-<li>getPatch_a0plusa1timesX()
-: <a class="el" href="calcC__lintolog_8c.html#a92d08f41c1858517d171accb1c505096">calcC_lintolog.c</a>
-</li>
 <li>getPAux()
 : <a class="el" href="group__ReferenceGroup.html#ga70d67bcfd72657c96a4b663637449627">mela_binding.cpp</a>
-</li>
-<li>getResolution_mH_signal()
-: <a class="el" href="getResolution_8c.html#af5c4994b7bdb6db66572ee03c33ace69">getResolution.c</a>
-</li>
-<li>getResolution_mJJ()
-: <a class="el" href="getResolution_8c.html#a1288bb3f73703b062dfa02288bc58e2c">getResolution.c</a>
-</li>
-<li>getSuperMELA()
-: <a class="el" href="test__JVBF_8c.html#a99c757a16030538ea0fc163f83c5c91d">test_JVBF.c</a>
 </li>
 <li>getUnweightedMEArray()
 : <a class="el" href="group__ReferenceGroup.html#ga54444a31b98e2314f14d635729bb8de6">mela_binding.cpp</a>
@@ -1106,9 +975,6 @@ $(document).ready(function(){initNavTree('globals_g.html',''); initResizable(); 
 </li>
 <li>ghzgs4
 : <a class="el" href="TMCFM_8hh.html#a1f6327d465474297c56911e041df669e">TMCFM.hh</a>
-</li>
-<li>global_mela_list
-: <a class="el" href="testME__v2_8c.html#afc9a23508ec508e668798870b7866975">testME_v2.c</a>
 </li>
 <li>gqonly
 : <a class="el" href="TMCFM_8hh.html#ab68cf4eb7a2d9a54b539f47ce25ffab4">TMCFM.hh</a>

@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -122,7 +112,7 @@ $(document).ready(function(){initNavTree('globals_vars_c.html',''); initResizabl
 : <a class="el" href="TMCFM_8hh.html#a55782bc1064cd2ea3f71d38cde4b7308">TMCFM.hh</a>
 </li>
 <li>cabib_
-: <a class="el" href="TMCFM_8hh.html#a12f3954e92d81ea3c838e0a0627bce14">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#af5db737b913155d6f75d218ab3853146">TMCFM.hh</a>
 </li>
 <li>cd0
 : <a class="el" href="params__coli_8h.html#aee6c3039300848f178a6ba7f822906e8">params_coli.h</a>
@@ -143,7 +133,7 @@ $(document).ready(function(){initNavTree('globals_vars_c.html',''); initResizabl
 : <a class="el" href="common__coli_8h.html#ac01f9175eae2c2fe7f8ab19f2eca2201">common_coli.h</a>
 </li>
 <li>couple_
-: <a class="el" href="TMCFM_8hh.html#aac6da8e3f855c9a5260ffab30b1eeb9d">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a634c29794398ad63f0808734ef315341">TMCFM.hh</a>
 </li>
 <li>cranod
 : <a class="el" href="TMCFM_8hh.html#a15359031795611482b9913192bb19ed1">TMCFM.hh</a>
@@ -155,7 +145,7 @@ $(document).ready(function(){initNavTree('globals_vars_c.html',''); initResizabl
 : <a class="el" href="TMCFM_8hh.html#a034fbedcce0aee66ee125138543e2703">TMCFM.hh</a>
 </li>
 <li>cutoff_
-: <a class="el" href="TMCFM_8hh.html#ac3ac2f7f955bfb128986c4695214438a">TMCFM.hh</a>
+: <a class="el" href="TMCFM_8hh.html#a41b1dcd8fdfd32b1e0c3b439619e78ab">TMCFM.hh</a>
 </li>
 <li>cw_q12sq
 : <a class="el" href="TMCFM_8hh.html#a9c1d44f61cdda39a164ba0041e675bbf">TMCFM.hh</a>

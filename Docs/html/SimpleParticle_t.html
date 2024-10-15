@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -111,8 +101,10 @@ Constructor</h1>
 <p>There is one constructor defined in the <a class="el" href="group__Constructors.html#particle_initializer">particle_initializer</a> function. This was required due to the incompatibility of pyROOT and C++ based ROOT. The function takes in 5 required and 1 optional variable that are named as <code>x</code>, <code>y</code>, <code>z</code>, <code>e</code>, and <code>ptEtaPhi</code>.</p>
 <p>Example:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> Mela</div>
+<div class="line"><span class="comment">#creates a gluon with a 4-vector defined by x,y,z,E</span></div>
 <div class="line">gluon = Mela.SimpleParticle_t(id=21, x=0, y=0, z=12, e=12)</div>
-<div class="line">lepton = Mela.SimpleParticle_t(id=25, x=1, pt=0, eta=0, m=125, ptEtaPhi=<span class="keyword">True</span>)</div>
+<div class="line"><span class="comment">#creates an electron with a 4-vector defined by pt, eta, phi, mass</span></div>
+<div class="line">lepton = Mela.SimpleParticle_t(id=13, x=1, pt=0, eta=0, m=125, ptEtaPhi=<span class="keyword">True</span>)</div>
 </div><!-- fragment --><h1><a class="anchor" id="simpleparticle_getter"></a>
 Attributes</h1>
 <p>There are 2 read-only attributes for a SimpleParticle_t. These cannot be edited; make a new object if you want to make a new vector.</p>
@@ -124,18 +116,25 @@ id</h2>
 <div class="line">gluon = Mela.SimpleParticle_t(id=21, x=0, y=0, z=12, e=12)</div>
 <div class="line">print(gluon.id) <span class="comment">#will print 21</span></div>
 </div><!-- fragment --><h2><a class="anchor" id="simpleparticle_vector"></a>
-vector</h2>
-<p>The vector attribute returns a 4-vector as a tuple of 4 values, the \(P_x\), \(P_y\), \(P_z\), \(E\) of the particle. This representation of the vector will always be printed, even if the SimpleParticle_t was instantiated using \(P_t\), \(\eta\), \(\phi\) and mass.</p>
+Vectors</h2>
+<p>There are 2 vector attributes that you can use to see the value of the vector stored inside the class. There is <code>PxPyPzE_vector</code>, and there is <code>PtEtaPhiM_vector</code>. Both will return a 4-vector as a tuple of 4-values. <code>PxPyPzE_vector</code> returns the \(P_x\), \(P_y\), \(P_z\), \(E\) of the particle. <code>PtEtaPhiM_vector</code> returns the \(P_t\), \(\eta\), \(\phi\) and mass of the particle.</p>
+<p>Vectors can also be set using <code>setVector</code>, which takes in the \(P_x\), \(P_y\), \(P_z\), \(E\) of the particle and sets the value of the 4-vector stored in the class to those quantities.</p>
 <p>Example:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> Mela</div>
 <div class="line">gluon = Mela.SimpleParticle_t(id=21, x=0, y=0, z=12, e=12)</div>
-<div class="line">print(gluon.vector) <span class="comment">#will print (0, 0, 12, 12)</span></div>
+<div class="line">print(gluon.PxPyPzE_vector) <span class="comment">#will print (0, 0, 12, 12)</span></div>
+<div class="line">gluon.SetVector(0,0,0,0)</div>
+<div class="line">print(gluon.PxPyPzE_vector) <span class="comment">#will print (0, 0, 0, 0)</span></div>
+<div class="line"> </div>
+<div class="line">gluon2 = Mela.SimpleParticle_t(id=13, x=12, y=0, z=0, e=0, ptEtaPhi=<span class="keyword">True</span>)</div>
+<div class="line">print(gluon.PtEtaPhiM_vector) <span class="comment">#will print (12, 0, 0, 0)</span></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="index.html">Introduction</a></li><li class="navelem"><a class="el" href="PyMela_page.html">PyMela</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

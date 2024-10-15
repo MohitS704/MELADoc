@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>JHUGen MELA: JHUGenMELA</title>
+<title>JHUGen MELA: Introduction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -101,20 +91,23 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">JHUGenMELA </div>  </div>
+<div class="title">Introduction </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><dl class="section author"><dt>Authors</dt><dd>I. Anderson, S. Bolognesi, F. Caola, J. Davis, Y. Gao, A. V. Gritsan, </dd>
+<div class="textblock"><p>MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the <a href="https://spin.pha.jhu.edu/">website</a> and papers cited there for more details, and kindly cite those papers when using this code.</p>
+<dl class="section author"><dt>Authors</dt><dd>I. Anderson, S. Bolognesi, F. Caola, J. Davis, Y. Gao, A. V. Gritsan, </dd>
 <dd>
 L. S. Mandacaru Guerra, Z. Guo, L. Kang, S. Kyriacou, C. B. Martin, T. Martini, </dd>
 <dd>
 K. Melnikov, R. Pan, M. Panagiotou, R. Rontsch, J. Roskes, U. Sarica, </dd>
 <dd>
 M. Schulze, M. V. Srivastav, N. V. Tran, A. Whitbeck, M. Xiao, Y. Zhou</dd></dl>
-<p>This is the documentation for JHUGenMELA, a package that produces Matrix Element Calculations as used in JHUGen and MCFM-JHUGen. The main user-interface in C++ can be found at the documentation for the <a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a> class, while the Python can be found in the PyMela section.</p>
-<p>Documentation written by Mohit Srivastav in 2024.</p>
+<p>This is the documentation for JHUGenMELA, a package that produces Matrix Element Calculations as used in JHUGen, MCFM-JHUGen, and Madgraph.</p>
+<p>The main user-interface in C++ can be found at the documentation for the <a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a> class, while the Python can be found in the <a class="el" href="PyMela_page.html">PyMela</a> section.</p>
+<p><b>Documentation written by Mohit Srivastav in 2024.</b></p>
 <h1><a class="anchor" id="install_sec"></a>
 Installation</h1>
+<p><a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a> is a part of the JHUGen package, and is installed by downloading a tar file located on the <a href="https://spin.pha.jhu.edu/">website</a>. Once you have un-tar'd the file, you will have to compile JHUGenMELA (alongside JHUGen, MCFM, and anything else you wish to use within the JHUGen package).</p>
 <p>Compile using</p>
 <div class="fragment"><div class="line">./setup.sh -j N # (N being the number of cores to compile, or blank for max. allowed)</div>
 </div><!-- fragment --><ul>
@@ -129,8 +122,129 @@ Previous Tutorials</h1>
 <p>There are a few tutorials lying around for MELA. They are listed below:</p>
 <ul>
 <li><a href="https://indico.cern.ch/event/1378665/timetable/?view=standard#30-mela-tools">LPC EFT Workshop Notre Dame</a></li>
-<li><a href="https://indico.cern.ch/event/1375252/timetable/#8-mc-generators-2-mela-tools">LPC Offshell Workshop at Fermilab</a> </li>
+<li><a href="https://indico.cern.ch/event/1375252/timetable/#8-mc-generators-2-mela-tools">LPC Offshell Workshop at Fermilab</a></li>
 </ul>
+<h1><a class="anchor" id="prev_presentations"></a>
+Other Presentations involving MELA</h1>
+<p>There have also been a few presentations regarding improvements to MELA, and about the MELA package in general. Refer to these presentations for more information.</p>
+<ul>
+<li><a href="https://indico.cern.ch/event/1316531/#42-new-features-in-the-jhugen">CMS GEN Meeting September 2023</a></li>
+</ul>
+<h1><a class="anchor" id="MELA_examples"></a>
+Code Examples</h1>
+<p>There are also examples that may prove useful in your own MELA endeavors. The repository for the aforementioned MELA tutorials are located below:</p>
+<ul>
+<li><a href="https://github.com/MohitS704/EFT-Workshop-JHUGenMELA-tutorial/blob/main/">LPC EFT Workshop Repo</a></li>
+<li><a href="https://github.com/Offshell-Workshop-LPC/JHUGen-MELA-tutorial">LPC Off-Shell Higgs Workshop Repo <b>WARNING BUGS</b></a></li>
+</ul>
+<p>On a more general note - the steps to begin re-weighting events with MELA are as follows:</p>
+<ol type="1">
+<li>Set the process, production, and matrix element. These values are defined for both <a class="el" href="tvar_enums.html">Python</a> and in the <code>C++</code> in the <a class="el" href="namespaceTVar.html">TVar</a> namespace. Use Mela::SetProcess to do this step.</li>
+</ol>
+<ol type="1">
+<li>Set the input event using Mela::SetInputEvent.</li>
+<li>Set coupling values for MELA (examples for Python are available in documentation found <a class="el" href="MELA_python.html">here</a>)</li>
+</ol>
+<ol type="1">
+<li>Call a compute function of some kind. This is either:<ul>
+<li><a class="el" href="classMela.html#a8503608babd744076ebe4f173b519844" title="Computes the probability for the probabilities on the decay side of things using the constituent daug...">Mela::computeP</a></li>
+<li><a class="el" href="classMela.html#a2e5af4f25feb182e3d68a7b651d45dcc" title="computes Production side probabilities while taking in coupling arrays">Mela::computeProdP</a></li>
+<li><a class="el" href="classMela.html#a2a7cdd6ed1feba898cd58e99d75269fa" title="computes the combined production and decay probability while taking in coupling arrays">Mela::computeProdDecP</a></li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="MELA_interface"></a>
+Known Interfaces</h1>
+<p>There are also two MELA interfaces. These interfaces are two different methods of configuring MELA and utilizing it, usually starting from a ROOT file.</p>
+<h2><a class="anchor" id="MELAcalc"></a>
+MELACalc</h2>
+<p>MELAcalc is a fully Pythonic interface to using ROOT files reweighted with MELA. One does not need <code>CERN ROOT</code>, only <code>uproot</code>, <code>numpy</code>, and <code>MELA</code> itself. MELAcalc is currently on version 3 - you can find it <a href="https://github.com/hexutils/MELAcalc/blob/main/">here</a>. The configuration for the interface is done through <code>.json</code> files. You can find the documentation for MELAcalc here: <b>TODO: MELACALC DOCS</b>.</p>
+<h2><a class="anchor" id="MELAAnalytics"></a>
+MELAAnalytics</h2>
+<p>MELAAnalytics is a <code>C++</code> based interface to MELA that utilizes csv files as configurations to MELA. MELAAnalytics has been used for analyses in the past. You can find it <a href="https://github.com/MELALabs/MelaAnalytics/">here</a></p>
+<h1><a class="anchor" id="MELA_structure"></a>
+Structure</h1>
+<p>The root of MELA is underlying FORTRAN code. From there, there is a <code>C++</code> interface that adds a variety of functionality such as angle calculation, and the ability to interface to other different matrix-element calculators like <code>MCFM</code> or <code>Madgraph</code>. The functions in the <code>C++</code> implementation are documented throughout this page, but especially in the source code documentation for <a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a>.</p>
+<p>From there, there is a Python implementation that utilizes <code>PyBind11</code> to generate the Python package. It is somewhat unique in nature, and so is documented differently <a class="el" href="PyMela_page.html">here</a></p>
+<h1><a class="anchor" id="Other_Packages"></a>
+Acknowledgements</h1>
+<p>JHUGenMELA is a tool that also builds off of the work of others. Their work is credited here.</p>
+<h2><a class="anchor" id="MCFM"></a>
+MCFM</h2>
+<p>MCFM-JHUGen is built off of MCFM, and its printout is shown below:</p>
+<div class="fragment"><div class="line">************** MCFM - version 7.0 ****************</div>
+<div class="line">*                                                *</div>
+<div class="line">* MCFM, v7.0                   March 20th, 2015  *</div>
+<div class="line">*                                                *</div>
+<div class="line">* Authors: John Campbell, Keith Ellis,           *</div>
+<div class="line">*          Walter Giele, Ciaran Williams         *</div>
+<div class="line">*         (johnmc@fnal.gov, ellis@fnal.gov,      *</div>
+<div class="line">*          giele@fnal.gov,ciaran@fnal.gov)       *</div>
+<div class="line">*                                                *</div>
+<div class="line">* For details see:                               *</div>
+<div class="line">*                                                *</div>
+<div class="line">*  arXiv:1502.02990 (VBF and VBS Higgs)          *</div>
+<div class="line">*  arXiv:1403.2641  (Triphoton production)       *</div>
+<div class="line">*  arXiv:1312.1628  (gg-&gt;WW, Higgs interference) *</div>
+<div class="line">*  arXiv:1311.3589  (gg-&gt;ZZ, Higgs interference) *</div>
+<div class="line">*  Phys.Rev.D87:114006, arXiv:1302.3856          *</div>
+<div class="line">*  (tZ, tH -- with R. Rontsch)                   *</div>
+<div class="line">*  arXiv:1211.6390 (DM, P. Fox and C. Williams)  *</div>
+<div class="line">*  JHEP 1211:162 (2012), arXiv:1208.0566         *</div>
+<div class="line">*  (Z+gam+jet,Z+gam+gam -- with H. Hartanto)     *</div>
+<div class="line">*  arXiv:1204.1513 (top production+decay)        *</div>
+<div class="line">*  JHEP 1207:052 (2012), arXiv:1204.5678 (ttW)   *</div>
+<div class="line">*  JHEP 1110:005 (2011), arXiv:1107.5569         *</div>
+<div class="line">*         (gg-&gt;WW,Higgs intference)              *</div>
+<div class="line">*  JHEP 1107:018 (2011), arXiv:1105.0020         *</div>
+<div class="line">*         (diboson update)                       *</div>
+<div class="line">*  JHEP 1103:027 (2011), arXiv:1011.6647         *</div>
+<div class="line">*         (Wbb for mb&gt;0, with S. Badger)         *</div>
+<div class="line">*  Phys.Rev.D81:074023, arXiv:1001.4495 (H+2jet) *</div>
+<div class="line">*                                                *</div>
+<div class="line">*  P.R.L. 102:142001, arXiv:0903.0005 [hep-ph]   *</div>
+<div class="line">*    (t-channel single top + explicit b,         *</div>
+<div class="line">*      JC, R.Frederix, F.Maltoni, F.Tramontano)  *</div>
+<div class="line">*  N.P.B 726:109(2005), hep-ph/0506289 (W+t)     *</div>
+<div class="line">*  Phys.Rev.D70:094012, hep-ph/0408158 (Sngl Top)*</div>
+<div class="line">*       (with Francesco Tramontano)              *</div>
+<div class="line">*                                                *</div>
+<div class="line">*  Phys.Rev.D65:113007, hep-ph/0202176 (W,Z+2j)  *</div>
+<div class="line">*  Phys.Rev.D62:114012, hep-ph/0006304 (W,Z+bb)  *</div>
+<div class="line">*  Phys.Rev.D60:113006, hep-ph/9905386 (diboson) *</div>
+<div class="line">*                                                *</div>
+<div class="line">* On the web:  http://mcfm.fnal.gov/             *</div>
+<div class="line">*                                                *</div>
+<div class="line">*  With modifications from the JHUGen Team:      *</div>
+<div class="line">*  https://spin.pha.jhu.edu/                     *</div>
+<div class="line">*                                                *</div>
+<div class="line">*  Special thanks from JHUGen Team               *</div>
+<div class="line">*  to Oscar Eboli for anomalous Zqq couplings    *</div>
+<div class="line">*  in ggZZ process                               *</div>
+<div class="line">**************************************************</div>
+</div><!-- fragment --><p>MCFM matrix elements are used in a variety of different calculations, and can be compiled in the JHUGen package by calling <code>./compile.sh</code> within the MCFM-JHUGen folder.</p>
+<h2><a class="anchor" id="Madgraph"></a>
+Madgraph</h2>
+<p>There are certain processes that are use matrix elements generated with Madgraph utilizing the SMEFTsim package. MG5_aMC@nlo is used to generate these matrix elements, with all of them being at leading order. The printout for Madgraph with SMEFTsim is located below:</p>
+<div class="fragment"><div class="line">**********************************************************</div>
+<div class="line">*                   MadGraph5_aMC@NLO                    *</div>
+<div class="line">**********************************************************</div>
+<div class="line">*                                                        *</div>
+<div class="line">*                      Going Beyond                      *</div>
+<div class="line">*                                                        *</div>
+<div class="line">*              http://madgraph.hep.uiuc.edu              *</div>
+<div class="line">*             http://madgraph.phys.ucl.ac.be             *</div>
+<div class="line">*                http://amcatnlo.cern.ch                 *</div>
+<div class="line">*                                                        *</div>
+<div class="line">*               The MadGraph5_aMC@NLO team               *</div>
+<div class="line">*                                                        *</div>
+<div class="line">*             Utilizing the SMEFTsim Package             *</div>
+<div class="line">*    I. Brivio, Y. Jiang, M. Trott, arXiv: 1709.06492    *</div>
+<div class="line">*              I. Brivio, arXiv: 2012.11343              *</div>
+<div class="line">*                                                        *</div>
+<div class="line">**********************************************************</div>
+</div><!-- fragment --><p>Madgraph matrix elements are currently used to reweight processes that were generated via Madgraph, colloquially referred to as "MadMELA", (which will be the preferred nomenclature moving forward). The Madgraph matrix elements that we provide are generated using the <code>SMEFTsim</code> package.</p>
+<p>Information about "MadMELA" can be found <a class="el" href="madMELA.html">here</a>. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -173,13 +163,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae2dd2dc5ce6cd622604bf07e125e21b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">the analog of <a class="el" href="classMela.html#a7ed076cbbb4121926e53f56cb4d56bab" title="computes the decay angles for gg -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1001.3396">Mela::computeDecayAngles</a>  <a href="group__ReferenceGroup.html#gae2dd2dc5ce6cd622604bf07e125e21b6">More...</a><br /></td></tr>
 <tr class="separator:gae2dd2dc5ce6cd622604bf07e125e21b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3e5c80c3083a841c93748bc7ad7a4c81"><td class="memItemLeft" align="right" valign="top">array&lt; float, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ReferenceGroup.html#ga3e5c80c3083a841c93748bc7ad7a4c81">computeVBFAngles</a> (<a class="el" href="classMela.html">Mela</a> &amp;mela)</td></tr>
-<tr class="memdesc:ga3e5c80c3083a841c93748bc7ad7a4c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">analog of <a class="el" href="classMela.html#a888f07999471870590557aa4fec74caa" title="computes the decay angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:12...">Mela::computeVBFAngles</a>  <a href="group__ReferenceGroup.html#ga3e5c80c3083a841c93748bc7ad7a4c81">More...</a><br /></td></tr>
+<tr class="memdesc:ga3e5c80c3083a841c93748bc7ad7a4c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">analog of <a class="el" href="classMela.html#a888f07999471870590557aa4fec74caa" title="computes the production angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arX...">Mela::computeVBFAngles</a>  <a href="group__ReferenceGroup.html#ga3e5c80c3083a841c93748bc7ad7a4c81">More...</a><br /></td></tr>
 <tr class="separator:ga3e5c80c3083a841c93748bc7ad7a4c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99a4f44b673b208276ee858af78f0792"><td class="memItemLeft" align="right" valign="top">array&lt; float, 9 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ReferenceGroup.html#ga99a4f44b673b208276ee858af78f0792">computeVBFAngles_ComplexBoost</a> (<a class="el" href="classMela.html">Mela</a> &amp;mela)</td></tr>
 <tr class="memdesc:ga99a4f44b673b208276ee858af78f0792"><td class="mdescLeft">&#160;</td><td class="mdescRight">analog of <a class="el" href="classMela.html#a30000328153231efb52ec54cafca4e4f">Mela::computeVBFAngles_ComplexBoost</a>  <a href="group__ReferenceGroup.html#ga99a4f44b673b208276ee858af78f0792">More...</a><br /></td></tr>
 <tr class="separator:ga99a4f44b673b208276ee858af78f0792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3bbbf01f4886dbaa99dde6f4aef486ca"><td class="memItemLeft" align="right" valign="top">array&lt; float, 7 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ReferenceGroup.html#ga3bbbf01f4886dbaa99dde6f4aef486ca">computeVHAngles</a> (<a class="el" href="classMela.html">Mela</a> &amp;mela, <a class="el" href="namespaceTVar.html#a1d885f45cfb17fdc0cb80d0b3dd4f28c">TVar::Production</a> prod)</td></tr>
-<tr class="memdesc:ga3bbbf01f4886dbaa99dde6f4aef486ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">analog of <a class="el" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88" title="computes the decay angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:12...">Mela::computeVHAngles</a>  <a href="group__ReferenceGroup.html#ga3bbbf01f4886dbaa99dde6f4aef486ca">More...</a><br /></td></tr>
+<tr class="memdesc:ga3bbbf01f4886dbaa99dde6f4aef486ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">analog of <a class="el" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88" title="computes the production for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1208...">Mela::computeVHAngles</a>  <a href="group__ReferenceGroup.html#ga3bbbf01f4886dbaa99dde6f4aef486ca">More...</a><br /></td></tr>
 <tr class="separator:ga3bbbf01f4886dbaa99dde6f4aef486ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -210,12 +200,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a59d1a090a31df4b2825526d62c7d7024">Mela::compute4FermionWeight</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00105">105</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    mela.compute4FermionWeight(result);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00107">107</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    mela.<a class="code" href="classMela.html#a59d1a090a31df4b2825526d62c7d7024">compute4FermionWeight</a>(result);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,12 +252,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#ad935ce70f751c6bc0ea90ce45cbf0f3d" title="computes the value of D_CP">Mela::computeD_CP</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00070">70</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    mela.computeD_CP(myME, myType, result);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00072">72</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    mela.<a class="code" href="classMela.html#ad935ce70f751c6bc0ea90ce45cbf0f3d">computeD_CP</a>(myME, myType, result);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -314,12 +304,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a00a769b235fa9dc161cc1c25d74b5f0e">Mela::computeD_gg</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00139">139</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    mela.computeD_gg(myME, myType, result);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00141">141</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    mela.<a class="code" href="classMela.html#a00a769b235fa9dc161cc1c25d74b5f0e">computeD_gg</a>(myME, myType, result);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -349,21 +339,21 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The order of the values is mH, m1, m2 (usually Z1 and Z2), cos(theta1), cos(theta2), phi, cos(theta-star), phi1 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a7ed076cbbb4121926e53f56cb4d56bab" title="computes the decay angles for gg -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1001.3396">Mela::computeDecayAngles</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00235">235</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                               {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    array&lt;float, 8&gt; result;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    mela.computeDecayAngles(</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        result[0],</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        result[1],</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        result[2],</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        result[3],</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        result[4],</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        result[5],</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        result[6],</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        result[7]</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    );</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00237">237</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                               {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    array&lt;float, 8&gt; result;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    mela.<a class="code" href="classMela.html#a7ed076cbbb4121926e53f56cb4d56bab">computeDecayAngles</a>(</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        result[0],</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        result[1],</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        result[2],</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        result[3],</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        result[4],</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        result[5],</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        result[6],</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        result[7]</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    );</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,12 +393,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a29e05816b98616ecfe3d8e623e8eac82">Mela::computeDijetConvBW</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00160">160</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                                     {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    mela.computeDijetConvBW(result, useTrueBW);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00162">162</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                     {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    mela.<a class="code" href="classMela.html#a29e05816b98616ecfe3d8e623e8eac82">computeDijetConvBW</a>(result, useTrueBW);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -448,12 +438,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a8503608babd744076ebe4f173b519844" title="Computes the probability for the probabilities on the decay side of things using the constituent daug...">Mela::computeP</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00036">36</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                 {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mela.computeP(result, useConstant);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00038">38</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                 {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    mela.<a class="code" href="classMela.html#a8503608babd744076ebe4f173b519844">computeP</a>(result, useConstant);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -493,12 +483,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a6e945c3826090ac856f69a32dc6ee3db">Mela::computePM4l</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00127">127</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                      {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    mela.computePM4l(syst, result);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00129">129</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                                      {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    mela.<a class="code" href="classMela.html#a6e945c3826090ac856f69a32dc6ee3db">computePM4l</a>(syst, result);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -538,12 +528,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a2a7cdd6ed1feba898cd58e99d75269fa" title="computes the combined production and decay probability while taking in coupling arrays">Mela::computeProdDecP</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00058">58</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                         {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mela.computeProdDecP(result, useConstant);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00060">60</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                         {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    mela.<a class="code" href="classMela.html#a2a7cdd6ed1feba898cd58e99d75269fa">computeProdDecP</a>(result, useConstant);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -583,12 +573,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a2e5af4f25feb182e3d68a7b651d45dcc" title="computes Production side probabilities while taking in coupling arrays">Mela::computeProdP</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00047">47</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                      {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    mela.computeProdP(result, useConstant);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00049">49</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                      {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mela.<a class="code" href="classMela.html#a2e5af4f25feb182e3d68a7b651d45dcc">computeProdP</a>(result, useConstant);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -642,12 +632,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a92651068b8ec1788d274900a99c4a9b9">Mela::computeProdP_ttH</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00095">95</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                                                   {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    mela.computeProdP_ttH(result, topProcess, topDecay, useConstant);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00097">97</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                                   {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    mela.<a class="code" href="classMela.html#a92651068b8ec1788d274900a99c4a9b9">computeProdP_ttH</a>(result, topProcess, topDecay, useConstant);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -694,12 +684,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of Mela::computePropP_VH </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00082">82</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                                            {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    mela.computeProdP_VH(result, includeHiggsDecay, useConstant);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00084">84</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                                            {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    mela.<a class="code" href="classMela.html#a817d72f9d39bf2bb0747d4d77dc811a1">computeProdP_VH</a>(result, includeHiggsDecay, useConstant);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -719,29 +709,29 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>analog of <a class="el" href="classMela.html#a888f07999471870590557aa4fec74caa" title="computes the decay angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:12...">Mela::computeVBFAngles</a> </p>
+<p>analog of <a class="el" href="classMela.html#a888f07999471870590557aa4fec74caa" title="computes the production angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arX...">Mela::computeVBFAngles</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mela</td><td><a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a> object instance (for python function calling using obj.&lt;function&gt;) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a888f07999471870590557aa4fec74caa" title="computes the decay angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:12...">Mela::computeVBFAngles</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a888f07999471870590557aa4fec74caa" title="computes the production angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arX...">Mela::computeVBFAngles</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00254">254</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                             {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    array&lt;float, 7&gt; result;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    mela.computeVBFAngles(</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        result[0],</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        result[1],</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        result[2],</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        result[3],</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        result[4],</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        result[5],</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        result[6]</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    );</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00256">256</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                                             {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    array&lt;float, 7&gt; result;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    mela.<a class="code" href="classMela.html#a888f07999471870590557aa4fec74caa">computeVBFAngles</a>(</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        result[0],</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        result[1],</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        result[2],</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        result[3],</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        result[4],</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        result[5],</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        result[6]</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    );</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -770,22 +760,22 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a30000328153231efb52ec54cafca4e4f">Mela::computeVBFAngles_ComplexBoost</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00272">272</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                                          {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    array&lt;float, 9&gt; result;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    mela.computeVBFAngles_ComplexBoost(</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        result[0],</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        result[1],</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        result[2],</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        result[3],</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        result[4],</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        result[5],</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        result[6],</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        result[7],</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        result[8]</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    );</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00274">274</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                                          {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    array&lt;float, 9&gt; result;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    mela.<a class="code" href="classMela.html#a30000328153231efb52ec54cafca4e4f">computeVBFAngles_ComplexBoost</a>(</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        result[0],</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        result[1],</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        result[2],</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        result[3],</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        result[4],</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        result[5],</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        result[6],</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        result[7],</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        result[8]</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    );</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -815,32 +805,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>analog of <a class="el" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88" title="computes the decay angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:12...">Mela::computeVHAngles</a> </p>
+<p>analog of <a class="el" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88" title="computes the production for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1208...">Mela::computeVHAngles</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mela</td><td><a class="el" href="classMela.html" title="This is the main Mela object!">Mela</a> object instance (for python function calling using obj.&lt;function&gt;) </td></tr>
-    <tr><td class="paramname">prod</td><td>the result of <a class="el" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88" title="computes the decay angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:12...">Mela::computeVHAngles</a> </td></tr>
+    <tr><td class="paramname">prod</td><td>the result of <a class="el" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88" title="computes the production for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1208...">Mela::computeVHAngles</a> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00293">293</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    mela.setProcess(<a class="code" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681">TVar::HSMHiggs</a>, <a class="code" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03">TVar::JHUGen</a>, prod);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    array&lt;float, 7&gt; result;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    mela.computeVHAngles(</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        result[0],</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        result[1],</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        result[2],</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        result[3],</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        result[4],</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        result[5],</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        result[6]</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    );</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00295">295</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    mela.<a class="code" href="classMela.html#addbf65232c5fa5bf44cf8180b543b904">setProcess</a>(<a class="code" href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681">TVar::HSMHiggs</a>, <a class="code" href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03">TVar::JHUGen</a>, prod);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    array&lt;float, 7&gt; result;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    mela.<a class="code" href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88">computeVHAngles</a>(</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        result[0],</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        result[1],</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        result[2],</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        result[3],</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        result[4],</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        result[5],</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        result[6]</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    );</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -869,12 +859,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a40221b711597c6c682e2283692255f18" title="This function returns a multiplicative constant to the matrix element calculation.">Mela::getConstant</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00149">149</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                              {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    mela.getConstant(result);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00151">151</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                              {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    mela.<a class="code" href="classMela.html#a40221b711597c6c682e2283692255f18">getConstant</a>(result);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -903,16 +893,16 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMelaIO.html#ad4b7a6968711dc50b2053baa6a1ab640">MelaIO::getPartonWeights</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00210">210</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                     {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    std::pair&lt;vector&lt;double&gt;, vector&lt;double&gt;&gt; result;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    result.first.resize(<a class="code" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    result.second.resize(<a class="code" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <a class="code" href="classMelaIO.html">MelaIO</a>* melaio = mela.getIORecord();</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    melaio-&gt;<a class="code" href="classMelaIO.html#ad4b7a6968711dc50b2053baa6a1ab640">getPartonWeights</a>(result.first.data(), result.second.data());</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    py::tuple py_result = py::make_tuple(py::cast(result.first), py::cast(result.second));</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> py_result;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00212">212</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                     {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    std::pair&lt;vector&lt;double&gt;, vector&lt;double&gt;&gt; result;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    result.first.resize(<a class="code" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    result.second.resize(<a class="code" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <a class="code" href="classMelaIO.html">MelaIO</a>* melaio = mela.<a class="code" href="classMela.html#aedae1c57a3a6029bf103dcf4223c3fd5">getIORecord</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    melaio-&gt;<a class="code" href="classMelaIO.html#ad4b7a6968711dc50b2053baa6a1ab640">getPartonWeights</a>(result.first.data(), result.second.data());</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    py::tuple py_result = py::make_tuple(py::cast(result.first), py::cast(result.second));</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> py_result;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -941,12 +931,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a1094cda5be40b685507ec9f720fa57f2">Mela::getPAux</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00224">224</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                          {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    mela.getPAux(result);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00226">226</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                          {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    mela.<a class="code" href="classMela.html#a1094cda5be40b685507ec9f720fa57f2">getPAux</a>(result);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -975,22 +965,22 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMelaIO.html#ad97cca34dde69f8fff28d569163f9c6b">MelaIO::getUnweightedMEArray</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00190">190</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                         {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">double</span> resultarray[<a class="code" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>][<a class="code" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>];</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="classMelaIO.html">MelaIO</a>* melaio = mela.getIORecord();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    melaio-&gt;<a class="code" href="classMelaIO.html#ad97cca34dde69f8fff28d569163f9c6b">getUnweightedMEArray</a>(resultarray);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    vector&lt;vector&lt;double&gt;&gt; result;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lst : resultarray) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        vector&lt;double&gt; vctr;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; number : lst) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            vctr.push_back(number);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        result.push_back(vctr);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    py::array py_result = py::cast(result);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">return</span> py_result;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00192">192</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                         {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">double</span> resultarray[<a class="code" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>][<a class="code" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>];</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classMelaIO.html">MelaIO</a>* melaio = mela.<a class="code" href="classMela.html#aedae1c57a3a6029bf103dcf4223c3fd5">getIORecord</a>();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    melaio-&gt;<a class="code" href="classMelaIO.html#ad97cca34dde69f8fff28d569163f9c6b">getUnweightedMEArray</a>(resultarray);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    vector&lt;vector&lt;double&gt;&gt; result;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lst : resultarray) {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        vector&lt;double&gt; vctr;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; number : lst) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            vctr.push_back(number);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        result.push_back(vctr);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    py::array py_result = py::cast(result);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> py_result;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1019,22 +1009,22 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMelaIO.html#ab4e957236cbbf6ade45aeb417cefece4">MelaIO::getWeightedMEArray</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00170">170</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                       {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">double</span> resultarray[<a class="code" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>][<a class="code" href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a>] = {{0}};</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classMelaIO.html">MelaIO</a>* melaio = mela.getIORecord();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    melaio-&gt;<a class="code" href="classMelaIO.html#ab4e957236cbbf6ade45aeb417cefece4">getWeightedMEArray</a>(resultarray);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    vector&lt;vector&lt;double&gt;&gt; result;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lst : resultarray) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        vector&lt;double&gt; vctr;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; number : lst) {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            vctr.push_back(number);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        result.push_back(vctr);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    py::array py_result = py::cast(result);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> py_result;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00172">172</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                       {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">double</span> resultarray[<a class="code" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>][<a class="code" href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a>] = {{0}};</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="classMelaIO.html">MelaIO</a>* melaio = mela.<a class="code" href="classMela.html#aedae1c57a3a6029bf103dcf4223c3fd5">getIORecord</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    melaio-&gt;<a class="code" href="classMelaIO.html#ab4e957236cbbf6ade45aeb417cefece4">getWeightedMEArray</a>(resultarray);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    vector&lt;vector&lt;double&gt;&gt; result;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lst : resultarray) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        vector&lt;double&gt; vctr;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; number : lst) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            vctr.push_back(number);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        result.push_back(vctr);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    py::array py_result = py::cast(result);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> py_result;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1074,23 +1064,42 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the result of <a class="el" href="classMela.html#a4683c0250cc1a9c37bccd26ad8f849e9">Mela::getXPropagator</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00116">116</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    mela.getXPropagator(scheme, result);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mela__binding_8cpp_source.html#l00118">118</a> of file <a class="el" href="mela__binding_8cpp_source.html">mela_binding.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    mela.<a class="code" href="classMela.html#a4683c0250cc1a9c37bccd26ad8f849e9">getXPropagator</a>(scheme, result);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassMela_html_a40221b711597c6c682e2283692255f18"><div class="ttname"><a href="classMela.html#a40221b711597c6c682e2283692255f18">Mela::getConstant</a></div><div class="ttdeci">void getConstant(float &amp;prob)</div><div class="ttdoc">This function returns a multiplicative constant to the matrix element calculation.</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l02207">Mela.cc:2207</a></div></div>
 <div class="ttc" id="aclassMelaIO_html_ad97cca34dde69f8fff28d569163f9c6b"><div class="ttname"><a href="classMelaIO.html#ad97cca34dde69f8fff28d569163f9c6b">MelaIO::getUnweightedMEArray</a></div><div class="ttdeci">void getUnweightedMEArray(double MEsq_[nmsq][nmsq]) const</div><div class="ttdef"><b>Definition:</b> <a href="MelaIO_8h_source.html#l00116">MelaIO.h:116</a></div></div>
 <div class="ttc" id="aclassMelaIO_html"><div class="ttname"><a href="classMelaIO.html">MelaIO</a></div><div class="ttdef"><b>Definition:</b> <a href="MelaIO_8h_source.html#l00008">MelaIO.h:8</a></div></div>
-<div class="ttc" id="aTMCFM_8hh_html_a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111"><div class="ttname"><a href="TMCFM_8hh.html#a61dadd085c1777f559549e05962b2c9ea0e114837eeba529282c4225945283111">nmsq</a></div><div class="ttdeci">@ nmsq</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00024">TMCFM.hh:24</a></div></div>
-<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681">TVar::HSMHiggs</a></div><div class="ttdeci">@ HSMHiggs</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00126">TVar.hh:126</a></div></div>
+<div class="ttc" id="aclassMela_html_a7ed076cbbb4121926e53f56cb4d56bab"><div class="ttname"><a href="classMela.html#a7ed076cbbb4121926e53f56cb4d56bab">Mela::computeDecayAngles</a></div><div class="ttdeci">void computeDecayAngles(float &amp;qH, float &amp;m1, float &amp;m2, float &amp;costheta1, float &amp;costheta2, float &amp;Phi, float &amp;costhetastar, float &amp;Phi1)</div><div class="ttdoc">computes the decay angles for gg -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1001.3396</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00598">Mela.cc:598</a></div></div>
+<div class="ttc" id="aclassMela_html_a817d72f9d39bf2bb0747d4d77dc811a1"><div class="ttname"><a href="classMela.html#a817d72f9d39bf2bb0747d4d77dc811a1">Mela::computeProdP_VH</a></div><div class="ttdeci">void computeProdP_VH(double selfDHvvcoupl_input[nSupportedHiggses][SIZE_HVV][2], float &amp;prob, bool includeHiggsDecay=false, bool useConstant=true)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01769">Mela.cc:1769</a></div></div>
+<div class="ttc" id="aclassMela_html_a59d1a090a31df4b2825526d62c7d7024"><div class="ttname"><a href="classMela.html#a59d1a090a31df4b2825526d62c7d7024">Mela::compute4FermionWeight</a></div><div class="ttdeci">void compute4FermionWeight(float &amp;w)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01846">Mela.cc:1846</a></div></div>
+<div class="ttc" id="aclassMela_html_aedae1c57a3a6029bf103dcf4223c3fd5"><div class="ttname"><a href="classMela.html#aedae1c57a3a6029bf103dcf4223c3fd5">Mela::getIORecord</a></div><div class="ttdeci">MelaIO * getIORecord()</div><div class="ttdoc">Returns the MELAIO object, and by consequence, the entire parton-by-parton matrix element record.</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00584">Mela.cc:584</a></div></div>
+<div class="ttc" id="aclassMela_html_a1094cda5be40b685507ec9f720fa57f2"><div class="ttname"><a href="classMela.html#a1094cda5be40b685507ec9f720fa57f2">Mela::getPAux</a></div><div class="ttdeci">void getPAux(float &amp;prob)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00594">Mela.cc:594</a></div></div>
+<div class="ttc" id="aTMCFM_8hh_html_ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111"><div class="ttname"><a href="TMCFM_8hh.html#ab04a0655cd1e3bcac5e8f48c18df1a57a0e114837eeba529282c4225945283111">nmsq</a></div><div class="ttdeci">@ nmsq</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00024">TMCFM.hh:24</a></div></div>
+<div class="ttc" id="aclassMela_html_ad935ce70f751c6bc0ea90ce45cbf0f3d"><div class="ttname"><a href="classMela.html#ad935ce70f751c6bc0ea90ce45cbf0f3d">Mela::computeD_CP</a></div><div class="ttdeci">void computeD_CP(TVar::MatrixElement myME, TVar::Process myType, float &amp;prob)</div><div class="ttdoc">computes the value of D_CP</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01378">Mela.cc:1378</a></div></div>
+<div class="ttc" id="aclassMela_html_a2e5af4f25feb182e3d68a7b651d45dcc"><div class="ttname"><a href="classMela.html#a2e5af4f25feb182e3d68a7b651d45dcc">Mela::computeProdP</a></div><div class="ttdeci">void computeProdP(double selfDHggcoupl_input[SIZE_HGG][2], double selfDHvvcoupl_input[nSupportedHiggses][SIZE_HVV][2], double selfDHwwcoupl_input[nSupportedHiggses][SIZE_HVV][2], float &amp;prob, bool useConstant=true)</div><div class="ttdoc">computes Production side probabilities while taking in coupling arrays</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01540">Mela.cc:1540</a></div></div>
+<div class="ttc" id="aclassMela_html_a888f07999471870590557aa4fec74caa"><div class="ttname"><a href="classMela.html#a888f07999471870590557aa4fec74caa">Mela::computeVBFAngles</a></div><div class="ttdeci">void computeVBFAngles(float &amp;Q2V1, float &amp;Q2V2, float &amp;costheta1, float &amp;costheta2, float &amp;Phi, float &amp;costhetastar, float &amp;Phi1)</div><div class="ttdoc">computes the production angles for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arX...</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00660">Mela.cc:660</a></div></div>
+<div class="ttc" id="aclassMela_html_addbf65232c5fa5bf44cf8180b543b904"><div class="ttname"><a href="classMela.html#addbf65232c5fa5bf44cf8180b543b904">Mela::setProcess</a></div><div class="ttdeci">void setProcess(TVar::Process myModel, TVar::MatrixElement myME, TVar::Production myProduction)</div><div class="ttdoc">Sets the process, matrix element, and production that MELA is to use for this event....</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00309">Mela.cc:309</a></div></div>
+<div class="ttc" id="aclassMela_html_a4b68e6c2c5b1f430d6f88bc048137e88"><div class="ttname"><a href="classMela.html#a4b68e6c2c5b1f430d6f88bc048137e88">Mela::computeVHAngles</a></div><div class="ttdeci">void computeVHAngles(float &amp;mVstar, float &amp;mV, float &amp;costheta1, float &amp;costheta2, float &amp;Phi, float &amp;costhetastar, float &amp;Phi1)</div><div class="ttdoc">computes the production for Vector Boson Fusion (VBF) -&gt; H -&gt; ZZ as defined in Figure 1 of arXiv:1208...</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00826">Mela.cc:826</a></div></div>
+<div class="ttc" id="aclassMela_html_a8503608babd744076ebe4f173b519844"><div class="ttname"><a href="classMela.html#a8503608babd744076ebe4f173b519844">Mela::computeP</a></div><div class="ttdeci">void computeP(float &amp;prob, bool useConstant=true)</div><div class="ttdoc">Computes the probability for the probabilities on the decay side of things using the constituent daug...</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01223">Mela.cc:1223</a></div></div>
+<div class="ttc" id="anamespaceTVar_html_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681"><div class="ttname"><a href="namespaceTVar.html#a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681">TVar::HSMHiggs</a></div><div class="ttdeci">@ HSMHiggs</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00125">TVar.hh:125</a></div></div>
+<div class="ttc" id="aclassMela_html_a6e945c3826090ac856f69a32dc6ee3db"><div class="ttname"><a href="classMela.html#a6e945c3826090ac856f69a32dc6ee3db">Mela::computePM4l</a></div><div class="ttdeci">void computePM4l(TVar::SuperMelaSyst syst, float &amp;prob)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01903">Mela.cc:1903</a></div></div>
 <div class="ttc" id="aclassMelaIO_html_ab4e957236cbbf6ade45aeb417cefece4"><div class="ttname"><a href="classMelaIO.html#ab4e957236cbbf6ade45aeb417cefece4">MelaIO::getWeightedMEArray</a></div><div class="ttdeci">void getWeightedMEArray(double MEsq_[nmsq][nmsq])</div><div class="ttdef"><b>Definition:</b> <a href="MelaIO_8h_source.html#l00111">MelaIO.h:111</a></div></div>
+<div class="ttc" id="aclassMela_html_a4683c0250cc1a9c37bccd26ad8f849e9"><div class="ttname"><a href="classMela.html#a4683c0250cc1a9c37bccd26ad8f849e9">Mela::getXPropagator</a></div><div class="ttdeci">void getXPropagator(TVar::ResonancePropagatorScheme scheme, float &amp;prop)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01838">Mela.cc:1838</a></div></div>
+<div class="ttc" id="aclassMela_html_a2a7cdd6ed1feba898cd58e99d75269fa"><div class="ttname"><a href="classMela.html#a2a7cdd6ed1feba898cd58e99d75269fa">Mela::computeProdDecP</a></div><div class="ttdeci">void computeProdDecP(double selfDHvvcoupl_input[nSupportedHiggses][SIZE_HVV][2], double selfDHwwcoupl_input[nSupportedHiggses][SIZE_HVV][2], double selfDaTQGCcoupl_input[SIZE_ATQGC][2], double selfDAZffcoupl_input[SIZE_AZff][2], float &amp;prob, bool useConstant=true)</div><div class="ttdoc">computes the combined production and decay probability while taking in coupling arrays</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01469">Mela.cc:1469</a></div></div>
 <div class="ttc" id="anamespaceTVar_html_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03"><div class="ttname"><a href="namespaceTVar.html#a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03">TVar::JHUGen</a></div><div class="ttdeci">@ JHUGen</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00057">TVar.hh:57</a></div></div>
+<div class="ttc" id="aclassMela_html_a30000328153231efb52ec54cafca4e4f"><div class="ttname"><a href="classMela.html#a30000328153231efb52ec54cafca4e4f">Mela::computeVBFAngles_ComplexBoost</a></div><div class="ttdeci">void computeVBFAngles_ComplexBoost(float &amp;Q2V1, float &amp;Q2V2, float &amp;costheta1_real, float &amp;costheta1_imag, float &amp;costheta2_real, float &amp;costheta2_imag, float &amp;Phi, float &amp;costhetastar, float &amp;Phi1)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l00742">Mela.cc:742</a></div></div>
+<div class="ttc" id="aclassMela_html_a92651068b8ec1788d274900a99c4a9b9"><div class="ttname"><a href="classMela.html#a92651068b8ec1788d274900a99c4a9b9">Mela::computeProdP_ttH</a></div><div class="ttdeci">void computeProdP_ttH(float &amp;prob, int topProcess=2, int topDecay=0, bool useConstant=true)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01817">Mela.cc:1817</a></div></div>
+<div class="ttc" id="aclassMela_html_a00a769b235fa9dc161cc1c25d74b5f0e"><div class="ttname"><a href="classMela.html#a00a769b235fa9dc161cc1c25d74b5f0e">Mela::computeD_gg</a></div><div class="ttdeci">void computeD_gg(TVar::MatrixElement myME, TVar::Process myType, float &amp;prob)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l01973">Mela.cc:1973</a></div></div>
+<div class="ttc" id="aclassMela_html_a29e05816b98616ecfe3d8e623e8eac82"><div class="ttname"><a href="classMela.html#a29e05816b98616ecfe3d8e623e8eac82">Mela::computeDijetConvBW</a></div><div class="ttdeci">void computeDijetConvBW(float &amp;prob, bool useTrueBW=false)</div><div class="ttdef"><b>Definition:</b> <a href="Mela_8cc_source.html#l02831">Mela.cc:2831</a></div></div>
 <div class="ttc" id="aclassMelaIO_html_ad4b7a6968711dc50b2053baa6a1ab640"><div class="ttname"><a href="classMelaIO.html#ad4b7a6968711dc50b2053baa6a1ab640">MelaIO::getPartonWeights</a></div><div class="ttdeci">void getPartonWeights(double partonOneWeight_[nmsq], double partonTwoWeight_[nmsq]) const</div><div class="ttdef"><b>Definition:</b> <a href="MelaIO_8h_source.html#l00121">MelaIO.h:121</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

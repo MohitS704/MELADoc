@@ -8,12 +8,12 @@ var TVar_8hh =
     [ "xstr_lit", "TVar_8hh.html#a70eecd39bee9bdde6a1c379e7f56b64e", null ],
     [ "SimpleParticle_t", "TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff", null ],
     [ "SimpleParticleCollection_t", "TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76", null ],
-    [ "kNoAssociated", "TVar_8hh.html#ac9234ff3a2e4772a5cf9afd478f0a700ad10522f5bc41f80ca8edf7c195cdb858", null ],
-    [ "kUseAssociated_Leptons", "TVar_8hh.html#ac9234ff3a2e4772a5cf9afd478f0a700ad693ed4c2007493918e2772261311b29", null ],
-    [ "kUseAssociated_Photons", "TVar_8hh.html#ac9234ff3a2e4772a5cf9afd478f0a700ae499e0ec0e4765de3a71e6e6d13eb535", null ],
-    [ "kUseAssociated_Jets", "TVar_8hh.html#ac9234ff3a2e4772a5cf9afd478f0a700a73861ec433a26ae79407bfe3f2f7b71a", null ],
-    [ "kUseAssociated_UnstableTops", "TVar_8hh.html#ac9234ff3a2e4772a5cf9afd478f0a700a9dc7858ba1f4e25c5a0d3d914dcda75f", null ],
-    [ "kUseAssociated_StableTops", "TVar_8hh.html#ac9234ff3a2e4772a5cf9afd478f0a700a4551ea50273466da7a30f958650ebfe7", null ],
+    [ "kNoAssociated", "TVar_8hh.html#a290092a36e3c1430e8c51fc764bd3504ad10522f5bc41f80ca8edf7c195cdb858", null ],
+    [ "kUseAssociated_Leptons", "TVar_8hh.html#a290092a36e3c1430e8c51fc764bd3504ad693ed4c2007493918e2772261311b29", null ],
+    [ "kUseAssociated_Photons", "TVar_8hh.html#a290092a36e3c1430e8c51fc764bd3504ae499e0ec0e4765de3a71e6e6d13eb535", null ],
+    [ "kUseAssociated_Jets", "TVar_8hh.html#a290092a36e3c1430e8c51fc764bd3504a73861ec433a26ae79407bfe3f2f7b71a", null ],
+    [ "kUseAssociated_UnstableTops", "TVar_8hh.html#a290092a36e3c1430e8c51fc764bd3504a9dc7858ba1f4e25c5a0d3d914dcda75f", null ],
+    [ "kUseAssociated_StableTops", "TVar_8hh.html#a290092a36e3c1430e8c51fc764bd3504a4551ea50273466da7a30f958650ebfe7", null ],
     [ "CandidateDecayMode", "TVar_8hh.html#a71a2597822d7f2646209498585c4bbc4", [
       [ "CandidateDecay_Stable", "TVar_8hh.html#a71a2597822d7f2646209498585c4bbc4a309d83a82eccce4e136622efb4b6271f", null ],
       [ "CandidateDecay_ff", "TVar_8hh.html#a71a2597822d7f2646209498585c4bbc4abf438fbd5ea78acf6ed796714b309583", null ],
@@ -57,7 +57,8 @@ var TVar_8hh =
     [ "MatrixElement", "TVar_8hh.html#a3d91617913b8024e8b41f4711196815f", [
       [ "MCFM", "TVar_8hh.html#a3d91617913b8024e8b41f4711196815fa23f6a5a26e1e59a26957f95f3b252455", null ],
       [ "JHUGen", "TVar_8hh.html#a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03", null ],
-      [ "ANALYTICAL", "TVar_8hh.html#a3d91617913b8024e8b41f4711196815fa9fdc837342593f106136aa5de019149b", null ]
+      [ "ANALYTICAL", "TVar_8hh.html#a3d91617913b8024e8b41f4711196815fa9fdc837342593f106136aa5de019149b", null ],
+      [ "MADGRAPH", "TVar_8hh.html#a3d91617913b8024e8b41f4711196815fadb50039bcd84bf9df73b46f05b16c7a9", null ]
     ] ],
     [ "Process", "TVar_8hh.html#a0c6d3acf0d4f0af16181b35a88d813a1", [
       [ "HSMHiggs", "TVar_8hh.html#a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681", null ],

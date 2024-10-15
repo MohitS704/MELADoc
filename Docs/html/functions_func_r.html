@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -40,23 +35,8 @@
    <div id="projectname">JHUGen MELA
    &#160;<span id="projectnumber">v2.4.1</span>
    </div>
-   <div id="projectbrief">Matrix element calculations as used in JHUGen. MELA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the website https://spin.pha.jhu.edu/ and papers cited there for more details, and kindly cite those papers when using this code.</div>
+   <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +48,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -222,6 +212,9 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 <li>ResetWidth()
 : <a class="el" href="classTEvtProb.html#a8ad3590f69842c1b09ee364ab59e311c">TEvtProb</a>
 </li>
+<li>resetYukawaMass()
+: <a class="el" href="classMela.html#a76b6e3207d747e233f4fe6c60c837d6f">Mela</a>
+</li>
 <li>rln()
 : <a class="el" href="interfacehto__real__ln_1_1operator_07_8rln_8_08.html#a229bf85fe01ff1e7c3f0949a076ce307">hto_real_ln::operator(.rln.)</a>
 </li>
@@ -235,22 +228,22 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 : <a class="el" href="classRooqqZZ__JHU__ZgammaZZ__fast.html#aaf4b5b8e3112f8b24a0492f706127812">RooqqZZ_JHU_ZgammaZZ_fast</a>
 </li>
 <li>RooRapidityBkg()
-: <a class="el" href="classRooRapidityBkg.html#a5bfe98bd14c1aa0d7cdf0440a4c1970b">RooRapidityBkg</a>
+: <a class="el" href="classRooRapidityBkg.html#a991640b95cc7de8fc41011edac068d04">RooRapidityBkg</a>
 </li>
 <li>RooRapiditySig()
-: <a class="el" href="classRooRapiditySig.html#abf99c307fa24c446df98e765b466dcf8">RooRapiditySig</a>
+: <a class="el" href="classRooRapiditySig.html#a0274c6cc549f65b80de8a0c1166fa1f6">RooRapiditySig</a>
 </li>
 <li>RooSpin()
-: <a class="el" href="classRooSpin.html#a1aef94566cf4701909dcd29723591675">RooSpin</a>
+: <a class="el" href="classRooSpin.html#a1980adbb88594ac5d16e8516f7fb6e5e">RooSpin</a>
 </li>
 <li>RooSpinOne_7D()
-: <a class="el" href="classRooSpinOne__7D.html#a5554a5e754fde6e6f410a6bac4eb81b1">RooSpinOne_7D</a>
+: <a class="el" href="classRooSpinOne__7D.html#a91335c9be6bdc0b00dc4a26972bcaef8">RooSpinOne_7D</a>
 </li>
 <li>RooSpinTwo()
-: <a class="el" href="classRooSpinTwo.html#ade715a299515de8ff4f578592f57b888">RooSpinTwo</a>
+: <a class="el" href="classRooSpinTwo.html#a7c1780f0b1503e2330580c0f0210eaeb">RooSpinTwo</a>
 </li>
 <li>RooSpinTwo_7DComplex_ppHVV()
-: <a class="el" href="classRooSpinTwo__7DComplex__ppHVV.html#a0c3edce347cc7d5ff3227f06bf594b3c">RooSpinTwo_7DComplex_ppHVV</a>
+: <a class="el" href="classRooSpinTwo__7DComplex__ppHVV.html#ae1255b8427ada2f2e579b542d608cd27">RooSpinTwo_7DComplex_ppHVV</a>
 </li>
 <li>RooSpinZero()
 : <a class="el" href="classRooSpinZero.html#a65ef78fca61875ab57c82ed1486082ea">RooSpinZero</a>
@@ -259,7 +252,7 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 : <a class="el" href="classRooSpinZero__3D__pp__VH.html#a5f49b88f33ad85ba8d5f44507ecaecea">RooSpinZero_3D_pp_VH</a>
 </li>
 <li>RooSpinZero_5D_VH()
-: <a class="el" href="classRooSpinZero__5D__VH.html#aa3ae48c017783a3ca3c0e2723cdeb2e3">RooSpinZero_5D_VH</a>
+: <a class="el" href="classRooSpinZero__5D__VH.html#a2616a78d170cab72f4a613798311a80f">RooSpinZero_5D_VH</a>
 </li>
 <li>RooSpinZero_7DComplex_withAccep_HVV()
 : <a class="el" href="classRooSpinZero__7DComplex__withAccep__HVV.html#a6323da87eec1bb46e042579975c307e9">RooSpinZero_7DComplex_withAccep_HVV</a>
@@ -268,16 +261,7 @@ $(document).ready(function(){initNavTree('functions_func_r.html',''); initResiza
 : <a class="el" href="classRooTsallisExp.html#a5b239947eb0509d54a5c7a37fc32020b">RooTsallisExp</a>
 </li>
 <li>RooTsallisSM()
-: <a class="el" href="classRooTsallisSM.html#a558cf662104cc360556816a616f0c823">RooTsallisSM</a>
-</li>
-<li>runcontact()
-: <a class="el" href="classtestME__more_1_1TestMela.html#acb68efa534d38071817429fe846a4447">testME_more.TestMela</a>
-</li>
-<li>runmultiplecalls()
-: <a class="el" href="classtestME__more_1_1TestMela.html#ab778267b02a1fa3defd532492e4e037c">testME_more.TestMela</a>
-</li>
-<li>runVprime()
-: <a class="el" href="classtestME__more_1_1TestMela.html#aa11e48c944a2e8faecc1199b7fbed64b">testME_more.TestMela</a>
+: <a class="el" href="classRooTsallisSM.html#a82e0f75acdaf231a00285d343689013c">RooTsallisSM</a>
 </li>
 </ul>
 </div><!-- contents -->
