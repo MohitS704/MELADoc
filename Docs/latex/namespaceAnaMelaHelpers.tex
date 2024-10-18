@@ -1,0 +1,52 @@
+\hypertarget{namespaceAnaMelaHelpers}{}\doxysection{Ana\+Mela\+Helpers Namespace Reference}
+\label{namespaceAnaMelaHelpers}\index{AnaMelaHelpers@{AnaMelaHelpers}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceAnaMelaHelpers_aaa72df10fd41d86862cfa1d7e00a83e9}{multiply\+Complex\+Numbers}} (std\+::vector$<$ Double\+\_\+t $>$ const \&reals, std\+::vector$<$ Double\+\_\+t $>$ const \&imags, Double\+\_\+t \&res\+Re, Double\+\_\+t \&res\+Im)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceAnaMelaHelpers_aaa72df10fd41d86862cfa1d7e00a83e9}\label{namespaceAnaMelaHelpers_aaa72df10fd41d86862cfa1d7e00a83e9}} 
+\index{AnaMelaHelpers@{AnaMelaHelpers}!multiplyComplexNumbers@{multiplyComplexNumbers}}
+\index{multiplyComplexNumbers@{multiplyComplexNumbers}!AnaMelaHelpers@{AnaMelaHelpers}}
+\doxysubsubsection{\texorpdfstring{multiplyComplexNumbers()}{multiplyComplexNumbers()}}
+{\footnotesize\ttfamily void Ana\+Mela\+Helpers\+::multiply\+Complex\+Numbers (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Double\+\_\+t $>$ const \&}]{reals,  }\item[{std\+::vector$<$ Double\+\_\+t $>$ const \&}]{imags,  }\item[{Double\+\_\+t \&}]{res\+Re,  }\item[{Double\+\_\+t \&}]{res\+Im }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Roo\+Spin.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                                                                                                                                                \{}
+\DoxyCodeLine{8   resRe=0; resIm=0;}
+\DoxyCodeLine{9   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nreals = reals.size();}
+\DoxyCodeLine{10   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nimags = imags.size();}
+\DoxyCodeLine{11   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nloops = pow(2, min(nreals, nimags));}
+\DoxyCodeLine{12   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nterms = max(nreals, nimags);}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ic=0; ic<nloops; ic++)\{}
+\DoxyCodeLine{15     Double\_t termval=1;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nimagsused=0;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{bool} doSkip=\textcolor{keyword}{false};}
+\DoxyCodeLine{18     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} it=0; it<nterms; it++)\{}
+\DoxyCodeLine{19       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} code = (nreals>=nimags ? 0 : 1);}
+\DoxyCodeLine{20       \textcolor{keywordflow}{if} (it<nloops) code = (ic >> it);}
+\DoxyCodeLine{21       \textcolor{keywordflow}{if} (code\%2==1)\{}
+\DoxyCodeLine{22         nimagsused++;}
+\DoxyCodeLine{23         termval*=imags.at(it);}
+\DoxyCodeLine{24       \}}
+\DoxyCodeLine{25       \textcolor{keywordflow}{else} termval*=reals.at(it);}
+\DoxyCodeLine{26       \textcolor{keywordflow}{if} (termval==0.)\{ doSkip=\textcolor{keyword}{true}; \textcolor{keywordflow}{break}; \}}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if} (doSkip) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{29     \textcolor{keywordflow}{if} (nimagsused\%4==0) resRe += termval;}
+\DoxyCodeLine{30     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nimagsused\%4==1) resIm += termval;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nimagsused\%4==2) resRe -\/= termval;}
+\DoxyCodeLine{32     \textcolor{keywordflow}{else} resIm -\/= termval;}
+\DoxyCodeLine{33   \}}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\hypertarget{namespacehto__cmplx__srs__root}{}\doxysection{hto\+\_\+cmplx\+\_\+srs\+\_\+root Module Reference}
+\label{namespacehto__cmplx__srs__root}\index{hto\_cmplx\_srs\_root@{hto\_cmplx\_srs\_root}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacehto__cmplx__srs__root_1_1operator_07_8crsrs_8_08}{operator(.\+crsrs.)}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}} (x, y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}\label{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}} 
+\index{hto\_cmplx\_srs\_root@{hto\_cmplx\_srs\_root}!crsrs@{crsrs}}
+\index{crsrs@{crsrs}!hto\_cmplx\_srs\_root@{hto\_cmplx\_srs\_root}}
+\doxysubsubsection{\texorpdfstring{crsrs()}{crsrs()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+cmplx\+\_\+srs\+\_\+root\+::crsrs (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{x,  }\item[{real$\ast$8, dimension(2), intent(in)}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 624 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{624        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{625        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{626        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{627        real*8 r,rs,u,v }
+\DoxyCodeLine{628        real*8, \textcolor{keywordtype}{dimension(2)} :: \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}}
+\DoxyCodeLine{629        real*8, \textcolor{keywordtype}{INTENT(IN)}, \textcolor{keywordtype}{dimension(2)}:: x,y}
+\DoxyCodeLine{630 *}
+\DoxyCodeLine{631        \textcolor{keywordflow}{IF}(x(1) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{632         rs= x(1)*x(1)+x(2)*x(2)}
+\DoxyCodeLine{633         r= sqrt(rs)}
+\DoxyCodeLine{634         u= 0.5d0*(r+x(1))}
+\DoxyCodeLine{635         \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}(1)= sqrt(u)}
+\DoxyCodeLine{636         r= sqrt(rs)}
+\DoxyCodeLine{637         v= 0.5d0*(r-\/x(1))}
+\DoxyCodeLine{638         \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}(2)= sign(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},x(2))*sqrt(v)}
+\DoxyCodeLine{639        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{640         rs= x(1)*x(1)+x(2)*x(2)}
+\DoxyCodeLine{641         r= sqrt(rs)}
+\DoxyCodeLine{642         u= 0.5d0*(r+x(1))}
+\DoxyCodeLine{643         v= 0.5d0*(r-\/x(1))}
+\DoxyCodeLine{644 *}
+\DoxyCodeLine{645         \textcolor{keywordflow}{IF}((x(2)*y(2)) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{646          \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}(1)= sqrt(u)}
+\DoxyCodeLine{647          \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}(2)= sign(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},x(2))*sqrt(v)}
+\DoxyCodeLine{648         \textcolor{keywordflow}{ELSEIF}((x(2)*y(2)) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{649          \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}(1)= -\/sqrt(u)}
+\DoxyCodeLine{650          \mbox{\hyperlink{namespacehto__cmplx__srs__root_a2f9cdb15daf46978bd8e018087e5c067}{crsrs}}(2)= sign(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},x(2))*sqrt(v)}
+\DoxyCodeLine{651 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{652 *}
+\DoxyCodeLine{653 \textcolor{keywordflow}{       ENDIF}}
+
+\end{DoxyCode}

@@ -1,0 +1,303 @@
+\hypertarget{classTNumericUtil_1_1KahanAccumulator}{}\doxysection{T\+Numeric\+Util\+::Kahan\+Accumulator$<$ T $>$ Class Template Reference}
+\label{classTNumericUtil_1_1KahanAccumulator}\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$M\+E\+L\+A\+Accumulators.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a28ff054284c769c926e3be5afb987506}{Kahan\+Accumulator}} ()
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_afefe5e72a23762b0f07505670426a877}{Kahan\+Accumulator}} (const T \&\mbox{\hyperlink{output_8txt_a063b7170d86cdd0b4a2cb033ddc94217}{value}})
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a16d8f8deeb4aaf1a2afc1051ba683f9b}{Kahan\+Accumulator}} (const \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}}$<$ T $>$ \&other)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_aa3f2c622d10b26b29ab5a71c4645dd2b}{operator+=}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a4e8afb940b05a04746fc0fb8f2a326a6}{operator-\/=}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a24a959cb5472d240abbe167a90b7f2bd}{operator$\ast$=}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a23ea71be1d56cb94cf3236b20e60ef40}{operator/=}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a4c3a6bf4bbf30efc9980dc215cf3dc7a}{operator+}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_ae93d4998558b4477035ea7378b3125ea}{operator-\/}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a4a9ea7e8e7a378179609dbe249ecf6a7}{operator$\ast$}} (const T \&inc)
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a81b2f73f06e42e476d9cdefa78782cdb}{operator/}} (const T \&inc)
+\item 
+T \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_ab7f4a5f8ee41fb82545950d4d831fc06}{sum}} () const
+\item 
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a687d80cc47f8187a7ecc0ad1bf104172}{operator T}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\+\_\+}}
+\item 
+T \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class T\+Numeric\+Util\+::\+Kahan\+Accumulator$<$ T $>$}
+
+
+
+Definition at line 27 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a28ff054284c769c926e3be5afb987506}\label{classTNumericUtil_1_1KahanAccumulator_a28ff054284c769c926e3be5afb987506}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!KahanAccumulator@{KahanAccumulator}}
+\index{KahanAccumulator@{KahanAccumulator}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{KahanAccumulator()}{KahanAccumulator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 31 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 : \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}}(0), \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}}(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_afefe5e72a23762b0f07505670426a877}\label{classTNumericUtil_1_1KahanAccumulator_afefe5e72a23762b0f07505670426a877}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!KahanAccumulator@{KahanAccumulator}}
+\index{KahanAccumulator@{KahanAccumulator}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{KahanAccumulator()}{KahanAccumulator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 32 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 : \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}}(\mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}), \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}}(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a16d8f8deeb4aaf1a2afc1051ba683f9b}\label{classTNumericUtil_1_1KahanAccumulator_a16d8f8deeb4aaf1a2afc1051ba683f9b}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!KahanAccumulator@{KahanAccumulator}}
+\index{KahanAccumulator@{KahanAccumulator}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{KahanAccumulator()}{KahanAccumulator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 : \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}}(other.sum\_), \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}}(other.compensation\_)\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a687d80cc47f8187a7ecc0ad1bf104172}\label{classTNumericUtil_1_1KahanAccumulator_a687d80cc47f8187a7ecc0ad1bf104172}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator T@{operator T}}
+\index{operator T@{operator T}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator T()}{operator T()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 50 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a4a9ea7e8e7a378179609dbe249ecf6a7}\label{classTNumericUtil_1_1KahanAccumulator_a4a9ea7e8e7a378179609dbe249ecf6a7}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 47 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47 \{ KahanAccumulator<T> tmp(*\textcolor{keyword}{this});  tmp *= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \textcolor{keywordflow}{return} tmp; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a24a959cb5472d240abbe167a90b7f2bd}\label{classTNumericUtil_1_1KahanAccumulator_a24a959cb5472d240abbe167a90b7f2bd}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}}\& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 43 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{ \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}} *= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}} *= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a4c3a6bf4bbf30efc9980dc215cf3dc7a}\label{classTNumericUtil_1_1KahanAccumulator_a4c3a6bf4bbf30efc9980dc215cf3dc7a}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 45 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 \{ KahanAccumulator<T> tmp(*\textcolor{keyword}{this});  tmp += \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \textcolor{keywordflow}{return} tmp; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_aa3f2c622d10b26b29ab5a71c4645dd2b}\label{classTNumericUtil_1_1KahanAccumulator_aa3f2c622d10b26b29ab5a71c4645dd2b}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}}\& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 34 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                                               \{}
+\DoxyCodeLine{35       T y = \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}} -\/ \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}};}
+\DoxyCodeLine{36       T sumnew = \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}} + y;}
+\DoxyCodeLine{37       T sumerr = (sumnew -\/ \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}});}
+\DoxyCodeLine{38       \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}} = sumerr -\/ y;}
+\DoxyCodeLine{39       \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}} = sumnew;}
+\DoxyCodeLine{40       \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{41     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_ae93d4998558b4477035ea7378b3125ea}\label{classTNumericUtil_1_1KahanAccumulator_ae93d4998558b4477035ea7378b3125ea}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 46 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \{ KahanAccumulator<T> tmp(*\textcolor{keyword}{this});  tmp -\/= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \textcolor{keywordflow}{return} tmp; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a4e8afb940b05a04746fc0fb8f2a326a6}\label{classTNumericUtil_1_1KahanAccumulator_a4e8afb940b05a04746fc0fb8f2a326a6}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}}\& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 42 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \{ this-\/>\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_aa3f2c622d10b26b29ab5a71c4645dd2b}{operator+=}}(-\/\mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}); \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a81b2f73f06e42e476d9cdefa78782cdb}\label{classTNumericUtil_1_1KahanAccumulator_a81b2f73f06e42e476d9cdefa78782cdb}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 48 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{ KahanAccumulator<T> tmp(*\textcolor{keyword}{this});  tmp /= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \textcolor{keywordflow}{return} tmp; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a23ea71be1d56cb94cf3236b20e60ef40}\label{classTNumericUtil_1_1KahanAccumulator_a23ea71be1d56cb94cf3236b20e60ef40}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{Kahan\+Accumulator}}\& \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 44 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{ \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}} /= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}{compensation\_}} /= \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}; \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_ab7f4a5f8ee41fb82545950d4d831fc06}\label{classTNumericUtil_1_1KahanAccumulator_ab7f4a5f8ee41fb82545950d4d831fc06}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!sum@{sum}}
+\index{sum@{sum}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::sum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 49 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}{sum\_}}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}\label{classTNumericUtil_1_1KahanAccumulator_a8555225445ada7a40c7d8c3c1591b159}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!compensation\_@{compensation\_}}
+\index{compensation\_@{compensation\_}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{compensation\_}{compensation\_}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::compensation\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file M\+E\+L\+A\+Accumulators.\+h.
+
+\mbox{\Hypertarget{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}\label{classTNumericUtil_1_1KahanAccumulator_a8d5c710dab9b7f0144660fc657f4ffb3}} 
+\index{TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}!sum\_@{sum\_}}
+\index{sum\_@{sum\_}!TNumericUtil::KahanAccumulator$<$ T $>$@{TNumericUtil::KahanAccumulator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sum\_}{sum\_}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{T\+Numeric\+Util\+::\+Kahan\+Accumulator}}$<$ T $>$\+::sum\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file M\+E\+L\+A\+Accumulators.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{MELAAccumulators_8h}{M\+E\+L\+A\+Accumulators.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,335 @@
+\hypertarget{TVar_8hh}{}\doxysection{M\+E\+L\+A/interface/\+T\+Var.hh File Reference}
+\label{TVar_8hh}\index{MELA/interface/TVar.hh@{MELA/interface/TVar.hh}}
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}T\+String.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H1\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+H2\+F.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Vector.\+h\char`\"{}}\newline
+Include dependency graph for T\+Var.\+hh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TVar_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TVar_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structTVar_1_1simple__event__record}{T\+Var\+::simple\+\_\+event\+\_\+record}}
+\item 
+struct \mbox{\hyperlink{structTVar_1_1event__scales__type}{T\+Var\+::event\+\_\+scales\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceTVar}{T\+Var}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TVar_8hh_a70eecd39bee9bdde6a1c379e7f56b64e}{xstr\+\_\+lit}}(s)~\mbox{\hyperlink{TVar_8hh_ad2742321ec1ec623a41364b8b8690e1e}{str\+\_\+lit}}(s)
+\item 
+\#define \mbox{\hyperlink{TVar_8hh_ad2742321ec1ec623a41364b8b8690e1e}{str\+\_\+lit}}(s)~\#s
+\item 
+\#define \mbox{\hyperlink{TVar_8hh_afd8b6684df3ac1195f7774b80c669374}{\+\_\+melapkgpath\+\_\+}}~./
+\item 
+\#define \mbox{\hyperlink{TVar_8hh_ac9f3e5172b70566e19496bc7b3faacdb}{\+\_\+melapkgpathstr\+\_\+}}~\mbox{\hyperlink{TVar_8hh_a70eecd39bee9bdde6a1c379e7f56b64e}{xstr\+\_\+lit}}(\mbox{\hyperlink{TVar_8hh_afd8b6684df3ac1195f7774b80c669374}{\+\_\+melapkgpath\+\_\+}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ int, T\+Lorentz\+Vector $>$ \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}} $>$ \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{namespaceTVar_a290092a36e3c1430e8c51fc764bd3504ad10522f5bc41f80ca8edf7c195cdb858}{T\+Var\+::k\+No\+Associated}} =1, 
+\mbox{\hyperlink{namespaceTVar_a290092a36e3c1430e8c51fc764bd3504ad693ed4c2007493918e2772261311b29}{T\+Var\+::k\+Use\+Associated\+\_\+\+Leptons}} =2, 
+\mbox{\hyperlink{namespaceTVar_a290092a36e3c1430e8c51fc764bd3504ae499e0ec0e4765de3a71e6e6d13eb535}{T\+Var\+::k\+Use\+Associated\+\_\+\+Photons}} =3, 
+\mbox{\hyperlink{namespaceTVar_a290092a36e3c1430e8c51fc764bd3504a73861ec433a26ae79407bfe3f2f7b71a}{T\+Var\+::k\+Use\+Associated\+\_\+\+Jets}} =5, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a290092a36e3c1430e8c51fc764bd3504a9dc7858ba1f4e25c5a0d3d914dcda75f}{T\+Var\+::k\+Use\+Associated\+\_\+\+Unstable\+Tops}} =7, 
+\mbox{\hyperlink{namespaceTVar_a290092a36e3c1430e8c51fc764bd3504a4551ea50273466da7a30f958650ebfe7}{T\+Var\+::k\+Use\+Associated\+\_\+\+Stable\+Tops}} =11
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4a309d83a82eccce4e136622efb4b6271f}{T\+Var\+::\+Candidate\+Decay\+\_\+\+Stable}}, 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4abf438fbd5ea78acf6ed796714b309583}{T\+Var\+::\+Candidate\+Decay\+\_\+ff}}, 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4a772474648ce9adde8a9266b2de923dcb}{T\+Var\+::\+Candidate\+Decay\+\_\+\+WW}}, 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4ac0c27bc9239fab096f3b6efefd813036}{T\+Var\+::\+Candidate\+Decay\+\_\+\+ZZ}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4aa5f0b613a63c439258383fba8746376a}{T\+Var\+::\+Candidate\+Decay\+\_\+\+ZW}}, 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4af659c7d971f5ab1b23825efde3335ccf}{T\+Var\+::\+Candidate\+Decay\+\_\+\+ZG}}, 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4aac6fd43f6de5b9ae55ebf0c6e8e11a8f}{T\+Var\+::\+Candidate\+Decay\+\_\+\+WG}}, 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4abb1917a08ff9507cf02938700ad23d7a}{T\+Var\+::\+Candidate\+Decay\+\_\+\+GG}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049}{T\+Var\+::\+Verbosity\+Level}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a8dce5af53ebe70dd509f25cc149f9c28}{T\+Var\+::\+S\+I\+L\+E\+NT}} = 0, 
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049af5804d7b9529b89da002d2092242cc48}{T\+Var\+::\+E\+R\+R\+OR}} = 1, 
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a55570e17cba7f10ab11173ebb9d25125}{T\+Var\+::\+I\+N\+FO}} = 2, 
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a27ff6de5b957337eb890e47b185ed3ce}{T\+Var\+::\+D\+E\+B\+UG}} = 3, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049aa3c1f17028cdaf8d06a2c69be73084b4}{T\+Var\+::\+D\+E\+B\+U\+G\+\_\+\+V\+E\+R\+B\+O\+SE}} = 4, 
+\mbox{\hyperlink{namespaceTVar_a159a43323e3b4e8a2dcfdc2ac09e2049a9d8647a4242d832fcecc1592b8d4fdfc}{T\+Var\+::\+D\+E\+B\+U\+G\+\_\+\+M\+E\+C\+H\+E\+CK}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} \{ \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815fa23f6a5a26e1e59a26957f95f3b252455}{T\+Var\+::\+M\+C\+FM}} = 0, 
+\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815faba6e6b23b0115bbaa919563a0626be03}{T\+Var\+::\+J\+H\+U\+Gen}} = 1, 
+\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815fa9fdc837342593f106136aa5de019149b}{T\+Var\+::\+A\+N\+A\+L\+Y\+T\+I\+C\+AL}} = 2, 
+\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815fadb50039bcd84bf9df73b46f05b16c7a9}{T\+Var\+::\+M\+A\+D\+G\+R\+A\+PH}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca4539519c2d018fd29228bdd605c76c47}{T\+Var\+::\+Z\+Z\+GG}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28caadcf7f0a83b7115068947fc704e41aea}{T\+Var\+::\+Z\+Z\+Q\+QB}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca7f06d733c2cecc34c7fcd2b665ff8b79}{T\+Var\+::\+Z\+Z\+Q\+Q\+B\+\_\+\+S\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cae2cc1a38671c72b7bdf657180d1e16f4}{T\+Var\+::\+Z\+Z\+I\+N\+D\+E\+P\+E\+N\+D\+E\+NT}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca57c0e01faf9fc912284d7b1951fee889}{T\+Var\+::ttH}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca1ae680405479fddfedd3314339a47b01}{T\+Var\+::bbH}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca3706a5c493f245b1f6231e93e31383ea}{T\+Var\+::\+J\+Q\+CD}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cac0c573d4bbf26795b6c05f5ad5036309}{T\+Var\+::\+J\+J\+Q\+CD}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cabc07d9db0167d4ad17cc45036802280c}{T\+Var\+::\+J\+J\+V\+BF}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca89a5439f5d7527b48dfb23d3042e8d29}{T\+Var\+::\+J\+J\+EW}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca936aef1ef89c04b5586ccb862544363a}{T\+Var\+::\+J\+J\+E\+W\+Q\+CD}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca2323942ae07ec12f3d8188e2122b189d}{T\+Var\+::\+Had\+\_\+\+ZH}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca97ce0d58eebcc5155081864c77b0a19a}{T\+Var\+::\+Had\+\_\+\+WH}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca161513eec8128c71971167ddb7e373bd}{T\+Var\+::\+Lep\+\_\+\+ZH}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28caab9dfee3e5e0a6cb283bc7c1cca8de5d}{T\+Var\+::\+Lep\+\_\+\+WH}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca3ae97ff9bcb97541f88b75dc6b28c2af}{T\+Var\+::\+Z\+Z\+Q\+Q\+B\+\_\+S}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cac09ee14d8ad516b27397f28eee642c62}{T\+Var\+::\+J\+J\+Q\+C\+D\+\_\+S}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca902db21776e8b4069184189a3d35976a}{T\+Var\+::\+J\+J\+V\+B\+F\+\_\+S}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca78112f139715de80da62332b06c94926}{T\+Var\+::\+J\+J\+E\+W\+\_\+S}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cada9ae823e21061c18721960aadabee2c}{T\+Var\+::\+J\+J\+E\+W\+Q\+C\+D\+\_\+S}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca9e87aa5c4ef53a86281b46ffbf67dd3a}{T\+Var\+::\+Had\+\_\+\+Z\+H\+\_\+S}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28caeaa3caadaa8c091717a24337287cb6ce}{T\+Var\+::\+Had\+\_\+\+W\+H\+\_\+S}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca3783c9d76eb247e970204db132f049b2}{T\+Var\+::\+Lep\+\_\+\+Z\+H\+\_\+S}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca7191ba68085050421169c48d03c81948}{T\+Var\+::\+Lep\+\_\+\+W\+H\+\_\+S}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28caa8167833dfafdcfe495089716e6c1e0b}{T\+Var\+::\+Z\+Z\+Q\+Q\+B\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca832b9995c64912826d4e5f60e86f35ed}{T\+Var\+::\+J\+J\+Q\+C\+D\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca100a3d28b2ee4efd9227a4068543848f}{T\+Var\+::\+J\+J\+V\+B\+F\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28caf04b7e8e4c0900b0206ceaa88dc50271}{T\+Var\+::\+J\+J\+E\+W\+\_\+\+TU}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca4c10b0b90ea432d42a32a4ac8a099a1b}{T\+Var\+::\+J\+J\+E\+W\+Q\+C\+D\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cafdcc8966139806d683f19545622485c2}{T\+Var\+::\+Had\+\_\+\+Z\+H\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cae32695dfc129ff6200862b4da8c94f90}{T\+Var\+::\+Had\+\_\+\+W\+H\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca843cb3a0a0c8f423befc9c7781a3eee7}{T\+Var\+::\+Lep\+\_\+\+Z\+H\+\_\+\+TU}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cac8b095c1530f65c8e129bf0ea249c11c}{T\+Var\+::\+Lep\+\_\+\+W\+H\+\_\+\+TU}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28cae9bc4589f789547d42910a3b6128d225}{T\+Var\+::\+GammaH}}, 
+\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28ca107e0182e8d88040d01d158d2f6f381f}{T\+Var\+::n\+Productions}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296fec}{T\+Var\+::\+Lepton\+Interference}} \{ \mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca92cbe92f4215368249033082e6671aa6}{T\+Var\+::\+Default\+Lepton\+Interf}}, 
+\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca45bd1efd7db2e2687aa602c8a5d1b890}{T\+Var\+::\+Interf\+On}}, 
+\mbox{\hyperlink{namespaceTVar_a2599e53f6f03e850b83dd83d6c296feca9e7952f7764d3dbff4bc9ac46b43d441}{T\+Var\+::\+Interf\+Off}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288}{T\+Var\+::\+Fermion\+Mass\+Removal}} \{ \mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a504d28683182f56661c4f1a590419ff2}{T\+Var\+::\+No\+Removal}}, 
+\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a170700978feec9d94d7fadfdbf36161d}{T\+Var\+::\+Conserve\+Difermion\+Mass}}, 
+\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a92ca30ccc4c56e5c0bb63fd87c1a4c87}{T\+Var\+::\+Momentum\+To\+Energy}}, 
+\mbox{\hyperlink{namespaceTVar_a9725014132a3701b15e4b3b0ae454288a1752a1ce1dd8f587c1f53e5fe3142ab9}{T\+Var\+::n\+Fermion\+Mass\+Removal\+Schemes}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016}{T\+Var\+::\+Resonance\+Propagator\+Scheme}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016a0730f7b0d30d7559cef4f727cd4533e1}{T\+Var\+::\+No\+Propagator}} =0, 
+\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016a180350116744172da8109fd71c04cdf9}{T\+Var\+::\+Running\+Width}} =1, 
+\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016a26e7ccfa800314db5b0ceea6b9310241}{T\+Var\+::\+Fixed\+Width}} =2, 
+\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016a847c0a50a6360f7b89307920b6b7fcf1}{T\+Var\+::\+C\+PS}} =3, 
+\newline
+\mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016a88701c699b87b16dcc6ea4a49537554c}{T\+Var\+::\+Alt\+Running\+Width}} =4
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a698cab07ea0defb1d164f4cd17d8b681}{T\+Var\+::\+H\+S\+M\+Higgs}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a1bae49de3ea6edb6a11ac5666243fb0f}{T\+Var\+::\+H0\+\_\+g1prime2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a3d026c66fd17c64c1d9d03653cc1b6a8}{T\+Var\+::\+H0hplus}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a5f54fad3934038d99814fd0d7a56d4d6}{T\+Var\+::\+H0minus}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a697cce026b792eb83c62dd2477e35d2a}{T\+Var\+::\+H0\+\_\+\+Zgsg1prime2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a803fb6597b0bc5a5e0e2c4b88c57307a}{T\+Var\+::\+H0\+\_\+\+Zgs}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a3484bfea5cba3a35baf703d223bacbe1}{T\+Var\+::\+H0\+\_\+\+Zgs\+\_\+\+PS}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ad029c08e5a58a9284a29aff6fe95ffe1}{T\+Var\+::\+H0\+\_\+gsgs}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a0a95bcbfd8f979abb0469b6c1b33f7dc}{T\+Var\+::\+H0\+\_\+gsgs\+\_\+\+PS}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a75ee9445cf354be1b8e66c060c1246d8}{T\+Var\+::\+D\+\_\+g1g1prime2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a2cfce4e0c3cddd5fad3cebeed28e03a9}{T\+Var\+::\+D\+\_\+g1g2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a74a4f3a25324c18fc18997aa1fb99c4e}{T\+Var\+::\+D\+\_\+g1g2\+\_\+pi\+\_\+2}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a3342a0f2099d839199a9aa2eff0bc3f7}{T\+Var\+::\+D\+\_\+g1g4}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a2efdb0a05269f3dc9a7a2cc750b57a02}{T\+Var\+::\+D\+\_\+g1g4\+\_\+pi\+\_\+2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ad67df149ff1e93d6c4401bc81cbf3f2f}{T\+Var\+::\+D\+\_\+zzzg}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a7efc3b021d906d2d3457e442cc888440}{T\+Var\+::\+D\+\_\+zzgg}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a404a18c4a4d2d02f767b5dc086adbc00}{T\+Var\+::\+D\+\_\+zzzg\+\_\+\+PS}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a2b1b0c61cfb4439379f9aa0391d7bb3d}{T\+Var\+::\+D\+\_\+zzgg\+\_\+\+PS}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1aafcd2b6a0bf9625b7995340cf5db9163}{T\+Var\+::\+D\+\_\+zzzg\+\_\+g1prime2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a114c251ba6f7c756281ac3fb79d942d0}{T\+Var\+::\+D\+\_\+zzzg\+\_\+g1prime2\+\_\+pi\+\_\+2}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ad581500114c5f4c08a35a82589bede5c}{T\+Var\+::\+H1minus}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a9d1a9f8e0e916dae095df1c0cf76ce90}{T\+Var\+::\+H1plus}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a0df8e93cbad9c2badc80d38e677517ce}{T\+Var\+::\+H2\+\_\+g1}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ad4bc4f19b5b7ed614451e7e9dd9ebfec}{T\+Var\+::\+H2\+\_\+g2}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1aa86ee768bc80563b0b09ea31c387a9b1}{T\+Var\+::\+H2\+\_\+g3}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a256dab2b7cb0550c98a8956864c9c70c}{T\+Var\+::\+H2\+\_\+g4}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a90b871bcf11dd29b846ec66ff1d149c1}{T\+Var\+::\+H2\+\_\+g5}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a76d1115e990c3f9eaf2133cd840229e0}{T\+Var\+::\+H2\+\_\+g1g5}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a9648f270b230cc027d720bbc5bb0b160}{T\+Var\+::\+H2\+\_\+g6}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a28527257e5f1be3c6702dfbb44104c9b}{T\+Var\+::\+H2\+\_\+g7}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a0f52c7dfb21e373a1e23e0741a82b1a5}{T\+Var\+::\+H2\+\_\+g8}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a37afc06e4c298802bcf3594eef50e7c1}{T\+Var\+::\+H2\+\_\+g9}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a9eaf6c4583168f2e344e0f51dd24378d}{T\+Var\+::\+H2\+\_\+g10}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4baafc289948916b0b531aa85e8f896f}{T\+Var\+::bkg\+Gamma\+Gamma}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a2f26259ffb9387326573b0b1c4f2c700}{T\+Var\+::bkg\+Z\+Gamma}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ad2933b84082d269af9a836d4646aeefd}{T\+Var\+::bkg\+Z\+Jets}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a86a446def8e436c64eed71210f26c8c8}{T\+Var\+::bkg\+ZZ}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4c7f8e84ec90eb05c2f94e765fe27ef4}{T\+Var\+::bkg\+WW}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a1d06d440023ad1c1f2a417f80ef3f1b4}{T\+Var\+::bkg\+W\+W\+ZZ}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4cc74ca92572b408de0ce370a51f64e5}{T\+Var\+::bkg\+Z\+Z\+\_\+\+S\+M\+Higgs}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1ac616ffacd90b7e38f875512989d62e5d}{T\+Var\+::bkg\+W\+W\+\_\+\+S\+M\+Higgs}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a3b5f612a62ae6eb227bd26af17375655}{T\+Var\+::bkg\+W\+W\+Z\+Z\+\_\+\+S\+M\+Higgs}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a6ef8ab8d12864b3376f525ab0bcccff7}{T\+Var\+::\+H\+S\+M\+Higgs\+\_\+\+W\+W\+ZZ}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a714b9f3859bd9f0f053ed0171ea63483}{T\+Var\+::\+D\+\_\+gg10}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a4850105ad013a92a4c9cbe6cfa97d794}{T\+Var\+::\+Self\+Define\+\_\+spin0}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a76543bd66713a065a73ac619127b52e5}{T\+Var\+::\+Self\+Define\+\_\+spin1}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1a793e5b93f6642e3b03340b1a44711c90}{T\+Var\+::\+Self\+Define\+\_\+spin2}}, 
+\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1add1a7e053093ec4cadf2585c5808d5a3}{T\+Var\+::n\+Processes}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328a1e28f3a001e1b85a474479708d78c4dd}{T\+Var\+::\+S\+M\+Syst\+\_\+\+None}} = 0, 
+\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328a1f992c5f323bd789218d9c5f0a6156d7}{T\+Var\+::\+S\+M\+Syst\+\_\+\+Scale\+Up}} = 1, 
+\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328a8880a4f7f4eb35592f4f0ea0e1915cb4}{T\+Var\+::\+S\+M\+Syst\+\_\+\+Scale\+Down}} = 2, 
+\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328a66f2136c23d59351e24298cc17f01b57}{T\+Var\+::\+S\+M\+Syst\+\_\+\+Res\+Up}} = 3, 
+\newline
+\mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328ab04dcd79e01ccbf16989739c46c87c61}{T\+Var\+::\+S\+M\+Syst\+\_\+\+Res\+Down}} = 4
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805c}{T\+Var\+::\+Event\+Scale\+Scheme}} \{ \newline
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805cabff9613912b7618ad30a4c8360ec9dea}{T\+Var\+::\+Default\+Scale\+Scheme}} = 0, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca6072646de5d43decee41caf8444bb209}{T\+Var\+::\+Fixed\+\_\+mH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca81c1d236842e99c1fb6180ad5cb17639}{T\+Var\+::\+Fixed\+\_\+mW}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca910aef428690314035df7e6f359f4f61}{T\+Var\+::\+Fixed\+\_\+mZ}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca42a0672e541b92585667e2df57b4d958}{T\+Var\+::\+Fixed\+\_\+m\+W\+PlusmH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805caa8b7f54e0391e3747b7565a584f57acb}{T\+Var\+::\+Fixed\+\_\+m\+Z\+PlusmH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca2413e8a5281007717850721f61459dc3}{T\+Var\+::\+Fixed\+\_\+\+Twomt\+PlusmH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca0d937411470defd3a6e748a4e8bfcc62}{T\+Var\+::\+Fixed\+\_\+mt\+PlusmH}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805cabc1bc15cd2b43d878d0f3b433cafb392}{T\+Var\+::\+Dynamic\+\_\+qH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805cacf38211651fe3f026d3323b90762b955}{T\+Var\+::\+Dynamic\+\_\+q\+J\+JH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca0e0dbb110275d4b68b0696ec0d4fbcb6}{T\+Var\+::\+Dynamic\+\_\+q\+J\+J\+\_\+qH}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805caeddd119fddfd7123176ceb49cf90d1a0}{T\+Var\+::\+Dynamic\+\_\+q\+J\+\_\+q\+J\+\_\+qH}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805cace84f5ea3afdb116da2543edbad91560}{T\+Var\+::\+Dynamic\+\_\+\+HT}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805cae313d1a3b64c3b8b487652aa346ec57b}{T\+Var\+::\+Dynamic\+\_\+\+Leading\+\_\+p\+TJ}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca9e7d08a46d59cf452ead5bcb211f8e45}{T\+Var\+::\+Dynamic\+\_\+\+Softest\+\_\+p\+TJ}}, 
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805ca2f1cae1d76f73d7919d6e8ab874b1016}{T\+Var\+::\+Dynamic\+\_\+\+Random\+Uniform\+\_\+\+Constrained}}, 
+\newline
+\mbox{\hyperlink{namespaceTVar_ab9fe70f6c2d4abb0f3fa561abc04805cabccda2777965b6c88705ee2079c73c8c}{T\+Var\+::n\+Event\+Scale\+Schemes}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+T\+String \mbox{\hyperlink{namespaceTVar_a77f3e2ffaa541eb39f8540eaf69dd8ad}{T\+Var\+::\+Process\+Name}} (\mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} temp)
+\item 
+T\+String \mbox{\hyperlink{namespaceTVar_a1225a4280a727b6456d225d3493e0e66}{T\+Var\+::\+Production\+Name}} (\mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} temp)
+\item 
+T\+String \mbox{\hyperlink{namespaceTVar_a170954e4cd60cc3756fafa22aa1c7d05}{T\+Var\+::\+Matrix\+Element\+Name}} (\mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} temp)
+\item 
+std\+::string \mbox{\hyperlink{namespaceTVar_a13f5eea3906ad9948c60ee587860a145}{T\+Var\+::\+Get\+M\+E\+L\+A\+Path\+\_\+\+No\+Env\+Expansion}} ()
+\item 
+std\+::string \mbox{\hyperlink{namespaceTVar_a06f1ddf9957f91a474c2cf0fbc73caed}{T\+Var\+::\+Get\+M\+E\+L\+A\+Path}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{TVar_8hh_afd8b6684df3ac1195f7774b80c669374}\label{TVar_8hh_afd8b6684df3ac1195f7774b80c669374}} 
+\index{TVar.hh@{TVar.hh}!\_melapkgpath\_@{\_melapkgpath\_}}
+\index{\_melapkgpath\_@{\_melapkgpath\_}!TVar.hh@{TVar.hh}}
+\doxysubsubsection{\texorpdfstring{\_melapkgpath\_}{\_melapkgpath\_}}
+{\footnotesize\ttfamily \#define \+\_\+melapkgpath\+\_\+~./}
+
+
+
+Definition at line 8 of file T\+Var.\+hh.
+
+\mbox{\Hypertarget{TVar_8hh_ac9f3e5172b70566e19496bc7b3faacdb}\label{TVar_8hh_ac9f3e5172b70566e19496bc7b3faacdb}} 
+\index{TVar.hh@{TVar.hh}!\_melapkgpathstr\_@{\_melapkgpathstr\_}}
+\index{\_melapkgpathstr\_@{\_melapkgpathstr\_}!TVar.hh@{TVar.hh}}
+\doxysubsubsection{\texorpdfstring{\_melapkgpathstr\_}{\_melapkgpathstr\_}}
+{\footnotesize\ttfamily \#define \+\_\+melapkgpathstr\+\_\+~\mbox{\hyperlink{TVar_8hh_a70eecd39bee9bdde6a1c379e7f56b64e}{xstr\+\_\+lit}}(\mbox{\hyperlink{TVar_8hh_afd8b6684df3ac1195f7774b80c669374}{\+\_\+melapkgpath\+\_\+}})}
+
+
+
+Definition at line 10 of file T\+Var.\+hh.
+
+\mbox{\Hypertarget{TVar_8hh_ad2742321ec1ec623a41364b8b8690e1e}\label{TVar_8hh_ad2742321ec1ec623a41364b8b8690e1e}} 
+\index{TVar.hh@{TVar.hh}!str\_lit@{str\_lit}}
+\index{str\_lit@{str\_lit}!TVar.hh@{TVar.hh}}
+\doxysubsubsection{\texorpdfstring{str\_lit}{str\_lit}}
+{\footnotesize\ttfamily \#define str\+\_\+lit(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~\#s}
+
+
+
+Definition at line 5 of file T\+Var.\+hh.
+
+\mbox{\Hypertarget{TVar_8hh_a70eecd39bee9bdde6a1c379e7f56b64e}\label{TVar_8hh_a70eecd39bee9bdde6a1c379e7f56b64e}} 
+\index{TVar.hh@{TVar.hh}!xstr\_lit@{xstr\_lit}}
+\index{xstr\_lit@{xstr\_lit}!TVar.hh@{TVar.hh}}
+\doxysubsubsection{\texorpdfstring{xstr\_lit}{xstr\_lit}}
+{\footnotesize\ttfamily \#define xstr\+\_\+lit(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})~\mbox{\hyperlink{TVar_8hh_ad2742321ec1ec623a41364b8b8690e1e}{str\+\_\+lit}}(s)}
+
+
+
+Definition at line 4 of file T\+Var.\+hh.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}\label{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}} 
+\index{TVar.hh@{TVar.hh}!SimpleParticle\_t@{SimpleParticle\_t}}
+\index{SimpleParticle\_t@{SimpleParticle\_t}!TVar.hh@{TVar.hh}}
+\doxysubsubsection{\texorpdfstring{SimpleParticle\_t}{SimpleParticle\_t}}
+{\footnotesize\ttfamily typedef std\+::pair$<$int, T\+Lorentz\+Vector$>$ \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}}}
+
+
+
+Definition at line 24 of file T\+Var.\+hh.
+
+\mbox{\Hypertarget{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}\label{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}} 
+\index{TVar.hh@{TVar.hh}!SimpleParticleCollection\_t@{SimpleParticleCollection\_t}}
+\index{SimpleParticleCollection\_t@{SimpleParticleCollection\_t}!TVar.hh@{TVar.hh}}
+\doxysubsubsection{\texorpdfstring{SimpleParticleCollection\_t}{SimpleParticleCollection\_t}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}}$>$ \mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}}}
+
+
+
+Definition at line 25 of file T\+Var.\+hh.
+

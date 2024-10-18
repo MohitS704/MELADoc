@@ -1,0 +1,374 @@
+\hypertarget{classMELAOutputStreamer}{}\doxysection{M\+E\+L\+A\+Output\+Streamer Class Reference}
+\label{classMELAOutputStreamer}\index{MELAOutputStreamer@{MELAOutputStreamer}}
+
+
+{\ttfamily \#include $<$M\+E\+L\+A\+Output\+Streamer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMELAOutputStreamer_a286924e788a93a6b4c43e6e052662ff3}{M\+E\+L\+A\+Output\+Streamer}} (const char $\ast$fname, std\+::ios\+\_\+base\+::openmode fmode=std\+::ios\+\_\+base\+::out, bool print\+Error=false)
+\item 
+\mbox{\hyperlink{classMELAOutputStreamer_a0799f92f2d62c5d7a41391c97193205b}{$\sim$\+M\+E\+L\+A\+Output\+Streamer}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& \mbox{\hyperlink{classMELAOutputStreamer_a52b0a3316a7ecc60bd09f492dccb568f}{operator$<$$<$}} (T const \&val)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& \mbox{\hyperlink{classMELAOutputStreamer_ab71f46911360bce430a7feac25b213ac}{operator$<$$<$}} (std\+::pair$<$ T, U $>$ const \&val)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& \mbox{\hyperlink{classMELAOutputStreamer_a12fd625961bed688131da2ef26a95bc0}{operator$<$$<$}} (std\+::vector$<$ T $>$ const \&val)
+\item 
+\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& \mbox{\hyperlink{classMELAOutputStreamer_a194360ba1299ff139bf9c784f6412a82}{operator$<$$<$}} (std\+::ostream \&($\ast$fcn)(std\+::ostream \&))
+\item 
+\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& \mbox{\hyperlink{classMELAOutputStreamer_a23221e66df1f847c7d4f4b57b12a6c12}{operator$<$$<$}} (std\+::ios \&($\ast$fcn)(std\+::ios \&))
+\item 
+\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& \mbox{\hyperlink{classMELAOutputStreamer_a915c54086ed707dd7516ff5bb77552f7}{operator$<$$<$}} (std\+::ios\+\_\+base \&($\ast$fcn)(std\+::ios\+\_\+base \&))
+\item 
+std\+::streamsize \mbox{\hyperlink{classMELAOutputStreamer_aeb688254b59671637ee465a6c4d522a3}{width}} () const
+\item 
+std\+::streamsize \mbox{\hyperlink{classMELAOutputStreamer_a3b9e4878755b2b6765d1b6a32ea83e53}{width}} (std\+::streamsize wide)
+\item 
+char \mbox{\hyperlink{classMELAOutputStreamer_a9f6fcb2a456eb679106359c7a5d35793}{fill}} () const
+\item 
+char \mbox{\hyperlink{classMELAOutputStreamer_a3f0146724aa67fe574b1f4f318e60773}{fill}} (char fillch)
+\item 
+void \mbox{\hyperlink{classMELAOutputStreamer_aaee2287900058a9969b2ccafb3fc94f5}{open}} (const char $\ast$fname, std\+::ios\+\_\+base\+::openmode fmode=std\+::ios\+\_\+base\+::out)
+\item 
+void \mbox{\hyperlink{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}{close}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classMELAOutputStreamer_a8ed58ad93845b32f784574d3b2be568e}{write\+Centered}} (const T \&val, char fillch=\textquotesingle{} \textquotesingle{}, std\+::streamsize gapsize=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ofstream \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{the\+File}}
+\item 
+std\+::ostream $\ast$ \mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\+\_\+ptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMELAOutputStreamer_a286924e788a93a6b4c43e6e052662ff3}\label{classMELAOutputStreamer_a286924e788a93a6b4c43e6e052662ff3}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!MELAOutputStreamer@{MELAOutputStreamer}}
+\index{MELAOutputStreamer@{MELAOutputStreamer}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{MELAOutputStreamer()}{MELAOutputStreamer()}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Output\+Streamer\+::\+M\+E\+L\+A\+Output\+Streamer (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{std\+::ios\+\_\+base\+::openmode}]{fmode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out},  }\item[{bool}]{print\+Error = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                                                                                                     :}
+\DoxyCodeLine{8 \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}(fname, fmode)}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10   \textcolor{keywordflow}{if} (!printError) \mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}} = \&\mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{std::cout}};}
+\DoxyCodeLine{11   \textcolor{keywordflow}{else} \mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}} = \&std::cerr;}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a0799f92f2d62c5d7a41391c97193205b}\label{classMELAOutputStreamer_a0799f92f2d62c5d7a41391c97193205b}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!````~MELAOutputStreamer@{$\sim$MELAOutputStreamer}}
+\index{````~MELAOutputStreamer@{$\sim$MELAOutputStreamer}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{$\sim$MELAOutputStreamer()}{~MELAOutputStreamer()}}
+{\footnotesize\ttfamily M\+E\+L\+A\+Output\+Streamer\+::$\sim$\+M\+E\+L\+A\+Output\+Streamer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{ this-\/>\mbox{\hyperlink{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}{close}}(); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}\label{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!close@{close}}
+\index{close@{close}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Output\+Streamer\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 145 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{145                               \{}
+\DoxyCodeLine{146   \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}.close();}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a9f6fcb2a456eb679106359c7a5d35793}\label{classMELAOutputStreamer_a9f6fcb2a456eb679106359c7a5d35793}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!fill@{fill}}
+\index{fill@{fill}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char M\+E\+L\+A\+Output\+Streamer\+::fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 139 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{139 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}.fill(); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a3f0146724aa67fe574b1f4f318e60773}\label{classMELAOutputStreamer_a3f0146724aa67fe574b1f4f318e60773}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!fill@{fill}}
+\index{fill@{fill}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char M\+E\+L\+A\+Output\+Streamer\+::fill (\begin{DoxyParamCaption}\item[{char}]{fillch }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140                                         \{}
+\DoxyCodeLine{141   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}) \mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}-\/>fill(fillch);}
+\DoxyCodeLine{142   \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}.fill(fillch);}
+\DoxyCodeLine{143 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_aaee2287900058a9969b2ccafb3fc94f5}\label{classMELAOutputStreamer_aaee2287900058a9969b2ccafb3fc94f5}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!open@{open}}
+\index{open@{open}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+Output\+Streamer\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{std\+::ios\+\_\+base\+::openmode}]{fmode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 148 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148                                                                          \{}
+\DoxyCodeLine{149   this-\/>\mbox{\hyperlink{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}{close}}();}
+\DoxyCodeLine{150   \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}.open(fname, fmode);}
+\DoxyCodeLine{151 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a23221e66df1f847c7d4f4b57b12a6c12}\label{classMELAOutputStreamer_a23221e66df1f847c7d4f4b57b12a6c12}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& M\+E\+L\+A\+Output\+Streamer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ios \&($\ast$)(std\+::ios \&)}]{fcn }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                                                                          \{}
+\DoxyCodeLine{21   fcn(\mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}});}
+\DoxyCodeLine{22   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}) fcn(*\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}});}
+\DoxyCodeLine{23   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a915c54086ed707dd7516ff5bb77552f7}\label{classMELAOutputStreamer_a915c54086ed707dd7516ff5bb77552f7}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& M\+E\+L\+A\+Output\+Streamer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ios\+\_\+base \&($\ast$)(std\+::ios\+\_\+base \&)}]{fcn }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                                                                                    \{}
+\DoxyCodeLine{26   fcn(\mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}});}
+\DoxyCodeLine{27   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}) fcn(*\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}});}
+\DoxyCodeLine{28   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a194360ba1299ff139bf9c784f6412a82}\label{classMELAOutputStreamer_a194360ba1299ff139bf9c784f6412a82}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& M\+E\+L\+A\+Output\+Streamer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&($\ast$)(std\+::ostream \&)}]{fcn }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                                                                                  \{}
+\DoxyCodeLine{16   fcn(\mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}});}
+\DoxyCodeLine{17   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}) fcn(*\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}});}
+\DoxyCodeLine{18   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_ab71f46911360bce430a7feac25b213ac}\label{classMELAOutputStreamer_ab71f46911360bce430a7feac25b213ac}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& M\+E\+L\+A\+Output\+Streamer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::pair$<$ T, U $>$ const \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                                                                                                            \{}
+\DoxyCodeLine{91   *\textcolor{keyword}{this} << \textcolor{stringliteral}{"("} << val.first << \textcolor{stringliteral}{", "} << val.second << \textcolor{stringliteral}{")"};}
+\DoxyCodeLine{92   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{93 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a12fd625961bed688131da2ef26a95bc0}\label{classMELAOutputStreamer_a12fd625961bed688131da2ef26a95bc0}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& M\+E\+L\+A\+Output\+Streamer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ const \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 97 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97                                                                                               \{}
+\DoxyCodeLine{98   \textcolor{keywordflow}{for} (\textcolor{keyword}{typename} std::vector<T>::const\_iterator it=val.cbegin(); it!=val.cend(); it++)\{}
+\DoxyCodeLine{99     *\textcolor{keyword}{this} << *it;}
+\DoxyCodeLine{100     \textcolor{keywordflow}{if} (it!=val.cend()-\/1) *\textcolor{keyword}{this} << \textcolor{stringliteral}{", "};}
+\DoxyCodeLine{101   \}}
+\DoxyCodeLine{102   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a52b0a3316a7ecc60bd09f492dccb568f}\label{classMELAOutputStreamer_a52b0a3316a7ecc60bd09f492dccb568f}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMELAOutputStreamer}{M\+E\+L\+A\+Output\+Streamer}} \& M\+E\+L\+A\+Output\+Streamer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{T const \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                                                                    \{}
+\DoxyCodeLine{51   \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}} << val;}
+\DoxyCodeLine{52   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}) *\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}} << val;}
+\DoxyCodeLine{53   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_aeb688254b59671637ee465a6c4d522a3}\label{classMELAOutputStreamer_aeb688254b59671637ee465a6c4d522a3}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!width@{width}}
+\index{width@{width}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::streamsize M\+E\+L\+A\+Output\+Streamer\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 133 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{133 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}.width(); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a3b9e4878755b2b6765d1b6a32ea83e53}\label{classMELAOutputStreamer_a3b9e4878755b2b6765d1b6a32ea83e53}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!width@{width}}
+\index{width@{width}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::streamsize M\+E\+L\+A\+Output\+Streamer\+::width (\begin{DoxyParamCaption}\item[{std\+::streamsize}]{wide }\end{DoxyParamCaption})}
+
+
+
+Definition at line 134 of file M\+E\+L\+A\+Output\+Streamer.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{134                                                          \{}
+\DoxyCodeLine{135   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}) \mbox{\hyperlink{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}{stdout\_ptr}}-\/>width(wide);}
+\DoxyCodeLine{136   \textcolor{keywordflow}{return} \mbox{\hyperlink{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}{theFile}}.width(wide);}
+\DoxyCodeLine{137 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELAOutputStreamer_a8ed58ad93845b32f784574d3b2be568e}\label{classMELAOutputStreamer_a8ed58ad93845b32f784574d3b2be568e}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!writeCentered@{writeCentered}}
+\index{writeCentered@{writeCentered}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{writeCentered()}{writeCentered()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template void M\+E\+L\+A\+Output\+Streamer\+::write\+Centered$<$ T\+String $>$ (\begin{DoxyParamCaption}\item[{const T \&}]{val,  }\item[{char}]{fillch = {\ttfamily \textquotesingle{}~\textquotesingle{}},  }\item[{std\+::streamsize}]{gapsize = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131                                                                                                            \{}
+\DoxyCodeLine{132   \textcolor{keywordtype}{char} deffillch = this-\/>\mbox{\hyperlink{classMELAOutputStreamer_a9f6fcb2a456eb679106359c7a5d35793}{fill}}(fillch);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134   std::stringstream tmpss;}
+\DoxyCodeLine{135   tmpss << val;}
+\DoxyCodeLine{136   std::string tmpstr = tmpss.str();}
+\DoxyCodeLine{137   std::streamsize strlength = (std::streamsize) tmpstr.length();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139   \textcolor{keywordflow}{if} (strlength>gapsize) *\textcolor{keyword}{this} << std::setw(gapsize) << \textcolor{stringliteral}{""};}
+\DoxyCodeLine{140   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{141     std::streamsize leftgap = (gapsize+strlength)/2;}
+\DoxyCodeLine{142     std::streamsize rightgap = gapsize-\/leftgap;}
+\DoxyCodeLine{143     *\textcolor{keyword}{this} << std::setw(leftgap) << tmpstr << std::setw(rightgap) << \textcolor{stringliteral}{""};}
+\DoxyCodeLine{144   \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146   this-\/>\mbox{\hyperlink{classMELAOutputStreamer_a9f6fcb2a456eb679106359c7a5d35793}{fill}}(deffillch);}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}\label{classMELAOutputStreamer_a0bc46b66128216e7c7ad88c52ce936e8}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!stdout\_ptr@{stdout\_ptr}}
+\index{stdout\_ptr@{stdout\_ptr}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{stdout\_ptr}{stdout\_ptr}}
+{\footnotesize\ttfamily std\+::ostream$\ast$ M\+E\+L\+A\+Output\+Streamer\+::stdout\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 24 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+\mbox{\Hypertarget{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}\label{classMELAOutputStreamer_abe29ee4a84ed53e474ff2ce2dfb1ca3c}} 
+\index{MELAOutputStreamer@{MELAOutputStreamer}!theFile@{theFile}}
+\index{theFile@{theFile}!MELAOutputStreamer@{MELAOutputStreamer}}
+\doxysubsubsection{\texorpdfstring{theFile}{theFile}}
+{\footnotesize\ttfamily std\+::ofstream M\+E\+L\+A\+Output\+Streamer\+::the\+File\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 23 of file M\+E\+L\+A\+Output\+Streamer.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{MELAOutputStreamer_8h}{M\+E\+L\+A\+Output\+Streamer.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{MELAOutputStreamer_8cc}{M\+E\+L\+A\+Output\+Streamer.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,2012 @@
+\hypertarget{namespacereductionefg}{}\doxysection{reductionefg Module Reference}
+\label{namespacereductionefg}\index{reductionefg@{reductionefg}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacereductionefg_a84ae620df4bea321bcde71cad53ef6df}{calce}} (E, Euv, p10, p21, p32, p43, p40, p20, p31, p42, p30, p41, m02, m12, m22, m32, m42, rmax, id, Eerr, Eerr2)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionefg_a7deb0d963951cc3b755225b88a361609}{calcered}} (E, Euv, p10, p21, p32, p43, p40, p20, p31, p42, p30, p41, m02, m12, m22, m32, m42, rmax, id, Eerr, Eerr2)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionefg_ad04e7bd83b688e157b92ce508c107100}{calcf}} (F, Fuv, p10, p21, p32, p43, p54, p50, p20, p31, p42, p53, p40, p51, p30, p41, p52, m02, m12, m22, m32, m42, m52, rmax, id, Ferr, Ferr2)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionefg_a9b58fe277e9ae173f65914e9034b7db8}{calcfred}} (F, Fuv, p10, p21, p32, p43, p54, p50, p20, p31, p42, p53, p40, p51, p30, p41, p52, m02, m12, m22, m32, m42, m52, rmax, id, Ferr, Ferr2)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionefg_aeb3fa4f20322318f3908b946cb9002cf}{calcg}} (G, Guv, p10, p21, p32, p43, p54, p65, p60, p20, p31, p42, p53, p64, p50, p61, p30, p41, p52, p63, p40, p51, p62, m02, m12, m22, m32, m42, m52, m62, rmax, id, Gerr, Gerr2)
+\item 
+subroutine \mbox{\hyperlink{namespacereductionefg_a390896f0be7b7e150987c9ff215bf4de}{calcgred}} (G, Guv, p10, p21, p32, p43, p54, p65, p60, p20, p31, p42, p53, p64, p50, p61, p30, p41, p52, p63, p40, p51, p62, m02, m12, m22, m32, m42, m52, m62, rmax, id, Gerr, Gerr2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacereductionefg_a84ae620df4bea321bcde71cad53ef6df}\label{namespacereductionefg_a84ae620df4bea321bcde71cad53ef6df}} 
+\index{reductionefg@{reductionefg}!calce@{calce}}
+\index{calce@{calce}!reductionefg@{reductionefg}}
+\doxysubsubsection{\texorpdfstring{calce()}{calce()}}
+{\footnotesize\ttfamily subroutine reductionefg\+::calce (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{E,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Euv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax)}]{Eerr,  }\item[{double precision, dimension(0\+:rmax)}]{Eerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file reduction\+E\+F\+G.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax,id}
+\DoxyCodeLine{45     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p40,p20,p31,p42,p30,p41}
+\DoxyCodeLine{46     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42}
+\DoxyCodeLine{47     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: E(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{48     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Euv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{49     \textcolor{keywordtype}{double precision} :: Eerr(0:rmax),Eerr2(0:rmax)}
+\DoxyCodeLine{50     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: Eaux(:,:,:,:,:), Euvaux(:,:,:,:,:), fct(:)}
+\DoxyCodeLine{51     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: Eerraux(:),Eerr2aux(:)}
+\DoxyCodeLine{52     \textcolor{keywordtype}{double complex} :: x(15)}
+\DoxyCodeLine{53     \textcolor{keywordtype}{integer} :: rank,switch,cnt,n0,n1,n2,n3,n4,r}
+\DoxyCodeLine{54     \textcolor{keywordtype}{logical} :: nocalc,wrica}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keywordflow}{if} ((use\_cache\_system).and.(tencache.gt.5)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{58       \textcolor{keywordflow}{if} ((ncache.gt.0).and.(ncache.le.ncache\_max)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{59 \textcolor{comment}{!        if (use\_cache(ncache).ge.5) then}}
+\DoxyCodeLine{60           x(1)=p10}
+\DoxyCodeLine{61           x(2)=p21}
+\DoxyCodeLine{62           x(3)=p32}
+\DoxyCodeLine{63           x(4)=p43}
+\DoxyCodeLine{64           x(5)=p40}
+\DoxyCodeLine{65           x(6)=p20}
+\DoxyCodeLine{66           x(7)=p31}
+\DoxyCodeLine{67           x(8)=p42 }
+\DoxyCodeLine{68           x(9)=p30}
+\DoxyCodeLine{69           x(10)=p41}
+\DoxyCodeLine{70           x(11)=m02}
+\DoxyCodeLine{71           x(12)=m12}
+\DoxyCodeLine{72           x(13)=m22}
+\DoxyCodeLine{73           x(14)=m32}
+\DoxyCodeLine{74           x(15)=m42}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76           rank = rmax}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78           \textcolor{keywordflow}{if} (rmax.ge.6) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{79             \textcolor{keyword}{allocate}(fct(ncoefs(rmax,5)+ncoefs(rmax-\/6,5)+2*(rmax+1)))}
+\DoxyCodeLine{80             \textcolor{keyword}{call }readcache(fct,ncoefs(rmax,5)+ncoefs(rmax-\/6,5)+2*(rmax+1),x,15,1,id,5,rank,nocalc,wrica)}
+\DoxyCodeLine{81           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{82             \textcolor{keyword}{allocate}(fct(ncoefs(rmax,5)+2*(rmax+1)))}
+\DoxyCodeLine{83             \textcolor{keyword}{call }readcache(fct,ncoefs(rmax,5)+2*(rmax+1),x,15,1,id,5,rank,nocalc,wrica)}
+\DoxyCodeLine{84 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86           \textcolor{keywordflow}{if}(nocalc)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{87             cnt = 0}
+\DoxyCodeLine{88             euv(0:min(rmax/2,2),:,:,:,:) = 0d0}
+\DoxyCodeLine{89             \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{90               \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{91                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{92                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{93                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{94                       n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{95  }
+\DoxyCodeLine{96                       cnt = cnt+1}
+\DoxyCodeLine{97                       e(n0,n1,n2,n3,n4) = fct(cnt)}
+\DoxyCodeLine{98               }
+\DoxyCodeLine{99 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{100 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{101 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{102 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{103               \textcolor{keywordflow}{do} n0=3,r/2}
+\DoxyCodeLine{104                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{105                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{106                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{107                       n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{108  }
+\DoxyCodeLine{109                       cnt = cnt+1}
+\DoxyCodeLine{110                       euv(n0,n1,n2,n3,n4) = fct(cnt)}
+\DoxyCodeLine{111               }
+\DoxyCodeLine{112 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{113 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{114 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{115 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{116               cnt = cnt+1}
+\DoxyCodeLine{117               eerr(r) = real(fct(cnt))}
+\DoxyCodeLine{118               cnt = cnt+1}
+\DoxyCodeLine{119               eerr2(r) = real(fct(cnt))}
+\DoxyCodeLine{120 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{121             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{122 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125           \textcolor{keywordflow}{if}(rank.eq.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127             \textcolor{keyword}{call }calcered(e,euv,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}
+\DoxyCodeLine{128                            m02,m12,m22,m32,m42,rank,id,eerr,eerr2)}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{131               cnt = 0}
+\DoxyCodeLine{132               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{134                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{135                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{136                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{137                         n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{138  }
+\DoxyCodeLine{139                         cnt = cnt+1}
+\DoxyCodeLine{140                         fct(cnt) = e(n0,n1,n2,n3,n4)}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{143 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{144 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{145 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{146                 \textcolor{keywordflow}{do} n0=3,r/2}
+\DoxyCodeLine{147                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{148                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{149                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{150                         n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{151  }
+\DoxyCodeLine{152                         cnt = cnt+1}
+\DoxyCodeLine{153                         fct(cnt) = euv(n0,n1,n2,n3,n4)}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{156 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{157 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{158 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{159                 cnt = cnt+1}
+\DoxyCodeLine{160                 fct(cnt) = eerr(r)}
+\DoxyCodeLine{161                 cnt = cnt+1}
+\DoxyCodeLine{162                 fct(cnt) = eerr2(r)}
+\DoxyCodeLine{163 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{164       }
+\DoxyCodeLine{165               \textcolor{keywordflow}{if} (rank.ge.6) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{166                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,5)+ncoefs(rank-\/6,5)+2*(rank+1),id,5,rank)}
+\DoxyCodeLine{167               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{168                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,5)+2*(rank+1),id,5,rank)}
+\DoxyCodeLine{169 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173           \textcolor{keywordflow}{return}}
+\DoxyCodeLine{174           }
+\DoxyCodeLine{175           }
+\DoxyCodeLine{176           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{177             \textcolor{keyword}{allocate}(eaux(0:rank/2,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{178             \textcolor{keyword}{allocate}(euvaux(0:rank/2,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{179             \textcolor{keyword}{allocate}(eerraux(0:rank))}
+\DoxyCodeLine{180             \textcolor{keyword}{allocate}(eerr2aux(0:rank))}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182             \textcolor{keyword}{call }calcered(eaux,euvaux,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}
+\DoxyCodeLine{183                            m02,m12,m22,m32,m42,rank,id,eerraux,eerr2aux)}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{186               cnt = 0}
+\DoxyCodeLine{187               \textcolor{keywordflow}{if} (rank.ge.6) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{188                 \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{189                 \textcolor{keyword}{allocate}(fct(ncoefs(rank,5)+ncoefs(rank-\/6,5)+2*(rank+1)))}
+\DoxyCodeLine{190               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{191                 \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{192                 \textcolor{keyword}{allocate}(fct(ncoefs(rank,5)+2*(rank+1)))}
+\DoxyCodeLine{193 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{194               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{195                 \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{196                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{197                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{198                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{199                         n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{200  }
+\DoxyCodeLine{201                         cnt = cnt+1}
+\DoxyCodeLine{202                         fct(cnt) = eaux(n0,n1,n2,n3,n4)}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{205 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{206 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{207 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{208                 \textcolor{keywordflow}{do} n0=3,r/2}
+\DoxyCodeLine{209                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{210                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{211                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{212                         n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{213  }
+\DoxyCodeLine{214                         cnt = cnt+1}
+\DoxyCodeLine{215                         fct(cnt) = euvaux(n0,n1,n2,n3,n4)}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{218 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{219 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{220 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{221                 cnt = cnt+1}
+\DoxyCodeLine{222                 fct(cnt) = eerraux(r)}
+\DoxyCodeLine{223                 cnt = cnt+1}
+\DoxyCodeLine{224                 fct(cnt) = eerr2aux(r)}
+\DoxyCodeLine{225 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{226       }
+\DoxyCodeLine{227               \textcolor{keywordflow}{if} (rank.ge.6) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{228                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,5)+ncoefs(rank-\/6,5)+2*(rank+1),id,5,rank)}
+\DoxyCodeLine{229               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{230                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,5)+2*(rank+1),id,5,rank)}
+\DoxyCodeLine{231 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235             e = eaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{236             euv = euvaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{237             eerr = eerraux(0:rmax)}
+\DoxyCodeLine{238             eerr2 = eerr2aux(0:rmax)}
+\DoxyCodeLine{239             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{242             }
+\DoxyCodeLine{243 \textcolor{comment}{!        end if}}
+\DoxyCodeLine{244 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{245 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{keyword}{call }calcered(e,euv,p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}
+\DoxyCodeLine{249                      m02,m12,m22,m32,m42,rmax,id,eerr,eerr2)}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionefg_a7deb0d963951cc3b755225b88a361609}\label{namespacereductionefg_a7deb0d963951cc3b755225b88a361609}} 
+\index{reductionefg@{reductionefg}!calcered@{calcered}}
+\index{calcered@{calcered}!reductionefg@{reductionefg}}
+\doxysubsubsection{\texorpdfstring{calcered()}{calcered()}}
+{\footnotesize\ttfamily subroutine reductionefg\+::calcered (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{E,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Euv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Eerr,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Eerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 265 of file reduction\+E\+F\+G.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax,id}
+\DoxyCodeLine{267     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p40,p20,p31,p42,p30,p41}
+\DoxyCodeLine{268     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42}
+\DoxyCodeLine{269     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Eerr(0:rmax),Eerr2(0:rmax)}
+\DoxyCodeLine{270     \textcolor{keywordtype}{double complex} :: q10,q21,q32,q43,q40,q20,q31,q42,q30,q41}
+\DoxyCodeLine{271     \textcolor{keywordtype}{double complex} :: mm02,mm12,mm22,mm32,mm42}
+\DoxyCodeLine{272     \textcolor{keywordtype}{double complex} :: mx(0:4,0:4), mxinv(0:4,0:4), f(4),mxinvs(0:4)}
+\DoxyCodeLine{273     \textcolor{keywordtype}{double complex} :: zmxinv(4,0:4),Z(4,4),zmxinvs(4)}
+\DoxyCodeLine{274     \textcolor{keywordtype}{double precision} :: maxZ,maxzmxinv(0:4),maxzmxinvs}
+\DoxyCodeLine{275     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: E(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{276     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Euv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{277     \textcolor{keywordtype}{double complex} :: Euv\_aux(0:(rmax+1)/2,0:(rmax+1),0:(rmax+1),0:(rmax+1),0:(rmax+1))}
+\DoxyCodeLine{278     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: D\_0(:,:,:,:,:), Duv\_0(:,:,:,:,:)}
+\DoxyCodeLine{279     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: D\_i(:,:,:,:,:), Duv\_i(:,:,:,:,:)}
+\DoxyCodeLine{280 \textcolor{comment}{!    double complex :: D\_0(0:rmaxD,0:rmaxD,0:rmaxD,0:rmaxD,0:rmaxD)}}
+\DoxyCodeLine{281 \textcolor{comment}{!    double complex :: Duv\_0(0:rmaxD,0:rmaxD,0:rmaxD,0:rmaxD,0:rmaxD)}}
+\DoxyCodeLine{282 \textcolor{comment}{!    double complex :: D\_i(0:rmaxD,0:rmaxD,0:rmaxD,0:rmaxD,4)}}
+\DoxyCodeLine{283 \textcolor{comment}{!    double complex :: Duv\_i(0:rmaxD,0:rmaxD,0:rmaxD,0:rmaxD,4)}}
+\DoxyCodeLine{284     \textcolor{keywordtype}{double complex} :: S(0:4), S2(4,4), Eaux(4), Eaux2, Eaux3, elimminf2\_coli}
+\DoxyCodeLine{285     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: Derr(:,:),Derr2(:,:)}
+\DoxyCodeLine{286 \textcolor{comment}{!    double precision :: Derr(0:4,0:rmaxD)}}
+\DoxyCodeLine{287     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,i,n,k,nid(0:4),rid,r0,bin,rBCD,rmaxD}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{comment}{!    write(*,*) 'CalcEred in',p10,p21,p32,p43,p40,p20,p31,p42,p30,p41, \&}}
+\DoxyCodeLine{290 \textcolor{comment}{!                   m02,m12,m22,m32,m42,rmax,id}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292     rmaxd = max(rmax-\/1,0)}
+\DoxyCodeLine{293 \textcolor{comment}{!    rmaxD = rmax}}
+\DoxyCodeLine{294     \textcolor{keyword}{allocate}(d\_0(0:rmaxd,0:rmaxd,0:rmaxd,0:rmaxd,0:rmaxd))}
+\DoxyCodeLine{295     \textcolor{keyword}{allocate}(duv\_0(0:rmaxd,0:rmaxd,0:rmaxd,0:rmaxd,0:rmaxd))}
+\DoxyCodeLine{296     \textcolor{keyword}{allocate}(d\_i(0:rmaxd,0:rmaxd,0:rmaxd,0:rmaxd,4))}
+\DoxyCodeLine{297     \textcolor{keyword}{allocate}(duv\_i(0:rmaxd,0:rmaxd,0:rmaxd,0:rmaxd,4))}
+\DoxyCodeLine{298     \textcolor{keyword}{allocate}(derr(0:4,0:rmaxd))}
+\DoxyCodeLine{299     \textcolor{keyword}{allocate}(derr2(0:4,0:rmaxd))}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     r0 = 0}
+\DoxyCodeLine{302     \textcolor{comment}{! write(*,*) 'CalcE', id, rmax\_cp(id)}}
+\DoxyCodeLine{303     \textcolor{comment}{! determine binaries for B-\/coefficients}}
+\DoxyCodeLine{304     k=0}
+\DoxyCodeLine{305     bin = 1}
+\DoxyCodeLine{306     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (k.le.4)}
+\DoxyCodeLine{307       \textcolor{keywordflow}{if} (mod(id/bin,2).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{308         nid(k) = id+bin}
+\DoxyCodeLine{309         k = k+1}
+\DoxyCodeLine{310 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{311       bin = 2*bin}
+\DoxyCodeLine{312 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314     \textcolor{keyword}{call }calcd(d\_0(:,0,:,:,:),duv\_0(:,0,:,:,:),p21,p32,p43,p41,p31,p42,  \&}
+\DoxyCodeLine{315         m12,m22,m32,m42,rmaxd,nid(0),derr(0,0:rmaxd),derr2(0,0:rmaxd))}
+\DoxyCodeLine{316     \textcolor{keyword}{call }calcd(d\_i(:,:,:,:,1),duv\_i(:,:,:,:,1),p20,p32,p43,p40,p30,p42,  \&}
+\DoxyCodeLine{317         m02,m22,m32,m42,rmaxd,nid(1),derr(1,0:rmaxd),derr2(1,0:rmaxd))}
+\DoxyCodeLine{318     \textcolor{keyword}{call }calcd(d\_i(:,:,:,:,2),duv\_i(:,:,:,:,2),p10,p31,p43,p40,p30,p41,  \&}
+\DoxyCodeLine{319         m02,m12,m32,m42,rmaxd,nid(2),derr(2,0:rmaxd),derr2(2,0:rmaxd))     }
+\DoxyCodeLine{320     \textcolor{keyword}{call }calcd(d\_i(:,:,:,:,3),duv\_i(:,:,:,:,3),p10,p21,p42,p40,p20,p41,  \&}
+\DoxyCodeLine{321         m02,m12,m22,m42,rmaxd,nid(3),derr(3,0:rmaxd),derr2(3,0:rmaxd))}
+\DoxyCodeLine{322     \textcolor{keyword}{call }calcd(d\_i(:,:,:,:,4),duv\_i(:,:,:,:,4),p10,p21,p32,p30,p20,p31,  \&}
+\DoxyCodeLine{323         m02,m12,m22,m32,rmaxd,nid(4),derr(4,0:rmaxd),derr2(4,0:rmaxd))}
+\DoxyCodeLine{324     }
+\DoxyCodeLine{325     \textcolor{comment}{! shift of integration momentum in C\(\backslash\)\{0\}}}
+\DoxyCodeLine{326     \textcolor{keywordflow}{do} n1=1,rmaxd}
+\DoxyCodeLine{327       \textcolor{keywordflow}{do} n2=0,rmaxd-\/n1}
+\DoxyCodeLine{328         \textcolor{keywordflow}{do} n3=0,rmaxd-\/n1-\/n2}
+\DoxyCodeLine{329           \textcolor{keywordflow}{do} n4=0,rmaxd-\/n1-\/n2-\/n3}
+\DoxyCodeLine{330             n0 = (rmaxd-\/n1-\/n2-\/n3-\/n4)}
+\DoxyCodeLine{331             duv\_0(0:n0,n1,n2,n3,n4) = -\/duv\_0(0:n0,n1-\/1,n2,n3,n4)-\/duv\_0(0:n0,n1-\/1,n2+1,n3,n4) \&}
+\DoxyCodeLine{332                                       -\/duv\_0(0:n0,n1-\/1,n2,n3+1,n4)-\/duv\_0(0:n0,n1-\/1,n2,n3,n4+1)}
+\DoxyCodeLine{333             d\_0(0:n0,n1,n2,n3,n4) = -\/d\_0(0:n0,n1-\/1,n2,n3,n4)-\/d\_0(0:n0,n1-\/1,n2+1,n3,n4) \&}
+\DoxyCodeLine{334                                     -\/d\_0(0:n0,n1-\/1,n2,n3+1,n4)-\/d\_0(0:n0,n1-\/1,n2,n3,n4+1)}
+\DoxyCodeLine{335 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{336 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{337 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{338 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341     \textcolor{comment}{! determine inverse modified Caley matrix}}
+\DoxyCodeLine{342     mm02 = elimminf2\_coli(m02)}
+\DoxyCodeLine{343     mm12 = elimminf2\_coli(m12)}
+\DoxyCodeLine{344     mm22 = elimminf2\_coli(m22)}
+\DoxyCodeLine{345     mm32 = elimminf2\_coli(m32)}
+\DoxyCodeLine{346     mm42 = elimminf2\_coli(m42)}
+\DoxyCodeLine{347     q10  = elimminf2\_coli(p10)}
+\DoxyCodeLine{348     q21  = elimminf2\_coli(p21)}
+\DoxyCodeLine{349     q32  = elimminf2\_coli(p32)}
+\DoxyCodeLine{350     q43  = elimminf2\_coli(p43)}
+\DoxyCodeLine{351     q40  = elimminf2\_coli(p40)}
+\DoxyCodeLine{352     q31  = elimminf2\_coli(p31)}
+\DoxyCodeLine{353     q42  = elimminf2\_coli(p42)}
+\DoxyCodeLine{354     q30  = elimminf2\_coli(p30)}
+\DoxyCodeLine{355     q41  = elimminf2\_coli(p41)}
+\DoxyCodeLine{356     q20  = elimminf2\_coli(p20)}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358     f(1) = q10+mm02-\/mm12}
+\DoxyCodeLine{359     f(2) = q20+mm02-\/mm22}
+\DoxyCodeLine{360     f(3) = q30+mm02-\/mm32}
+\DoxyCodeLine{361     f(4) = q40+mm02-\/mm42   }
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363     mx(0,0) = 2d0*mm02}
+\DoxyCodeLine{364     mx(1,0) = q10 -\/ mm12 + mm02}
+\DoxyCodeLine{365     mx(2,0) = q20 -\/ mm22 + mm02}
+\DoxyCodeLine{366     mx(3,0) = q30 -\/ mm32 + mm02}
+\DoxyCodeLine{367     mx(4,0) = q40 -\/ mm42 + mm02}
+\DoxyCodeLine{368     mx(0,1) = mx(1,0)}
+\DoxyCodeLine{369     mx(0,2) = mx(2,0)}
+\DoxyCodeLine{370     mx(0,3) = mx(3,0)}
+\DoxyCodeLine{371     mx(0,4) = mx(4,0)}
+\DoxyCodeLine{372     mx(1,1) = 2d0*q10}
+\DoxyCodeLine{373     mx(2,2) = 2d0*q20}
+\DoxyCodeLine{374     mx(3,3) = 2d0*q30}
+\DoxyCodeLine{375     mx(4,4) = 2d0*q40}
+\DoxyCodeLine{376     mx(1,2) = q10+q20-\/q21}
+\DoxyCodeLine{377     mx(1,3) = q10+q30-\/q31}
+\DoxyCodeLine{378     mx(1,4) = q10+q40-\/q41}
+\DoxyCodeLine{379     mx(2,3) = q20+q30-\/q32}
+\DoxyCodeLine{380     mx(2,4) = q20+q40-\/q42}
+\DoxyCodeLine{381     mx(3,4) = q30+q40-\/q43}
+\DoxyCodeLine{382     mx(2,1) = mx(1,2)}
+\DoxyCodeLine{383     mx(3,1) = mx(1,3)}
+\DoxyCodeLine{384     mx(4,1) = mx(1,4)}
+\DoxyCodeLine{385     mx(3,2) = mx(2,3)}
+\DoxyCodeLine{386     mx(4,2) = mx(2,4)}
+\DoxyCodeLine{387     mx(4,3) = mx(3,4)}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389     \textcolor{keyword}{call }chinv(5,mx,mxinv)}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391     \textcolor{keywordflow}{do} i=0,4}
+\DoxyCodeLine{392       mxinvs(i) = sum(mxinv(i,0:4))}
+\DoxyCodeLine{393 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395     \textcolor{comment}{! for alternative error estimate}}
+\DoxyCodeLine{396     z(1:4,1:4) = mx(1:4,1:4)}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398     zmxinv = matmul(z,mxinv(1:4,0:4)) }
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400     \textcolor{keywordflow}{do} i=0,4}
+\DoxyCodeLine{401       maxzmxinv(i) = maxval(abs(zmxinv(1:4,i)))}
+\DoxyCodeLine{402 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404     \textcolor{keywordflow}{do} i=1,4}
+\DoxyCodeLine{405       zmxinvs(i) = sum(zmxinv(i,0:4))}
+\DoxyCodeLine{406 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     maxzmxinvs = maxval(abs(zmxinvs(1:4)))}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410     maxz = maxval(abs(z))}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413     \textcolor{comment}{! calculation of UV-\/divergent parts      }}
+\DoxyCodeLine{414     \textcolor{comment}{! E\_(n0,n1,n2,n3) UV-\/finite for n0<3}}
+\DoxyCodeLine{415     euv\_aux(0:min((rmax+1)/2,2),:,:,:,:) = 0d0}
+\DoxyCodeLine{416     euv(0:min(rmax/2,2),:,:,:,:) = 0d0}
+\DoxyCodeLine{417     }
+\DoxyCodeLine{418     \textcolor{comment}{! PV reduction (5.10)}}
+\DoxyCodeLine{419     \textcolor{keywordflow}{do} r=max(r0,6),rmax+1}
+\DoxyCodeLine{420       \textcolor{keywordflow}{do} n0=3,r/2}
+\DoxyCodeLine{421         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{422           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{423             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{424               n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{425         }
+\DoxyCodeLine{426               euv\_aux(n0,n1,n2,n3,n4) = (duv\_0(n0-\/1,n1,n2,n3,n4)  \& }
+\DoxyCodeLine{427                                       + 2*m02*euv\_aux(n0-\/1,n1,n2,n3,n4)  \&}
+\DoxyCodeLine{428                                       + f(1)*euv\_aux(n0-\/1,n1+1,n2,n3,n4)  \& }
+\DoxyCodeLine{429                                       + f(2)*euv\_aux(n0-\/1,n1,n2+1,n3,n4)  \& }
+\DoxyCodeLine{430                                       + f(3)*euv\_aux(n0-\/1,n1,n2,n3+1,n4)  \&}
+\DoxyCodeLine{431                                       + f(4)*euv\_aux(n0-\/1,n1,n2,n3,n4+1)) / (2*(r-\/2))}
+\DoxyCodeLine{432               \textcolor{keywordflow}{if} (r.le.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{433                 euv(n0,n1,n2,n3,n4) = euv\_aux(n0,n1,n2,n3,n4)}
+\DoxyCodeLine{434 \textcolor{keywordflow}{              end if} }
+\DoxyCodeLine{435     }
+\DoxyCodeLine{436 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{437 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{438 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{439 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{440 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 \textcolor{comment}{!    write(*,*) 'CalcEred E0', -\/mxinv(0,0) -\/mxinv(1,0)  -\/mxinv(2,0) -\/mxinv(3,0)-\/mxinv(4,0)}}
+\DoxyCodeLine{443 \textcolor{comment}{!    write(*,*) 'CalcEred E0', -\/mxinvs(0)}}
+\DoxyCodeLine{444 \textcolor{comment}{!    write(*,*) 'CalcEred E0', -\/mxinvs(0)+mxinv(0,0),mxinv(0,0)}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446     \textcolor{comment}{! scalar coefficient}}
+\DoxyCodeLine{447     \textcolor{keywordflow}{if} (r0.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{448       e = 0d0}
+\DoxyCodeLine{449 \textcolor{comment}{!      E(0,0,0,0,0) = -\/mxinv(0,0)*D\_0(0,0,0,0,0)}}
+\DoxyCodeLine{450 \textcolor{comment}{!      do k=1,4}}
+\DoxyCodeLine{451 \textcolor{comment}{!        E(0,0,0,0,0) = E(0,0,0,0,0) \&}}
+\DoxyCodeLine{452 \textcolor{comment}{!           + mxinv(k,0)*(D\_i(0,0,0,0,k)-\/D\_0(0,0,0,0,0))}}
+\DoxyCodeLine{453 \textcolor{comment}{!      end do}}
+\DoxyCodeLine{454       e(0,0,0,0,0) = -\/mxinvs(0)*d\_0(0,0,0,0,0)}
+\DoxyCodeLine{455       \textcolor{keywordflow}{do} k=1,4}
+\DoxyCodeLine{456         e(0,0,0,0,0) = e(0,0,0,0,0) + mxinv(k,0)*d\_i(0,0,0,0,k)}
+\DoxyCodeLine{457 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{458 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460 \textcolor{comment}{!    Eerr(0) = max( maxval(abs(mxinv(0:4,0)))*Derr(0,0), \&}}
+\DoxyCodeLine{461     eerr(0) = max( abs(mxinvs(0))*derr(0,0), \&}
+\DoxyCodeLine{462                    abs(mxinv(1,0))*derr(1,0) , \&}
+\DoxyCodeLine{463                    abs(mxinv(2,0))*derr(2,0) , \&}
+\DoxyCodeLine{464                    abs(mxinv(3,0))*derr(3,0) , \&}
+\DoxyCodeLine{465                    abs(mxinv(4,0))*derr(4,0) )}
+\DoxyCodeLine{466     eerr2(0) = max( abs(mxinvs(0))*derr2(0,0), \&}
+\DoxyCodeLine{467                    abs(mxinv(1,0))*derr2(1,0) , \&}
+\DoxyCodeLine{468                    abs(mxinv(2,0))*derr2(2,0) , \&}
+\DoxyCodeLine{469                    abs(mxinv(3,0))*derr2(3,0) , \&}
+\DoxyCodeLine{470                    abs(mxinv(4,0))*derr2(4,0) )}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \textcolor{comment}{!    do k=1,4}}
+\DoxyCodeLine{473 \textcolor{comment}{!    write(*,*) 'CalcEred En', -\/mxinv(0,k) -\/mxinv(1,k)  -\/mxinv(2,k) -\/mxinv(3,k)-\/mxinv(4,k)}}
+\DoxyCodeLine{474 \textcolor{comment}{!    write(*,*) 'CalcEred En', -\/mxinvs(k)}}
+\DoxyCodeLine{475 \textcolor{comment}{!    end do}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477     \textcolor{comment}{! formula (6.12) and (6.13)}}
+\DoxyCodeLine{478     \textcolor{keywordflow}{do} r=r0,rmax}
+\DoxyCodeLine{479       \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{480         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{481           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{482             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{483               n4 = r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{484             }
+\DoxyCodeLine{485               \textcolor{keywordflow}{if} (n0.gt.0.or.r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{486                 \textcolor{keywordflow}{do} n=0,4}
+\DoxyCodeLine{487 \textcolor{comment}{!                  S(n) = -\/D\_0(n0,n1,n2,n3,n4)}}
+\DoxyCodeLine{488                   s(n) = 0d0}
+\DoxyCodeLine{489 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{490 \textcolor{keywordflow}{              endif}}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492               \textcolor{keywordflow}{if} (n1.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{493                 \textcolor{keywordflow}{if} (n0.gt.0.or.r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{494                   s(1) = s(1) + d\_i(n0,n2,n3,n4,1)}
+\DoxyCodeLine{495                   s2(:,1) = 0d0}
+\DoxyCodeLine{496 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{497               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{498                 \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{499                   s2(:,1) = -\/n1*d\_0(n0+1,n1-\/1,n2,n3,n4)}
+\DoxyCodeLine{500                   \textcolor{keywordflow}{if} (n2.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{501                     s2(2,1) = s2(2,1) + n1*d\_i(n0+1,n1-\/1,n3,n4,2)}
+\DoxyCodeLine{502 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{503                   \textcolor{keywordflow}{if} (n3.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{504                     s2(3,1) = s2(3,1) + n1*d\_i(n0+1,n1-\/1,n2,n4,3)}
+\DoxyCodeLine{505 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{506                   \textcolor{keywordflow}{if} (n4.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{507                     s2(4,1) = s2(4,1) + n1*d\_i(n0+1,n1-\/1,n2,n3,4)}
+\DoxyCodeLine{508 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{509 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{510 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512               \textcolor{keywordflow}{if} (n2.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{513                 \textcolor{keywordflow}{if} (n0.gt.0.or.r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{514                   s(2) = s(2) + d\_i(n0,n1,n3,n4,2)}
+\DoxyCodeLine{515                   s2(:,2) = 0d0}
+\DoxyCodeLine{516 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{517               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{518                 \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{519                   s2(:,2) = -\/n2*d\_0(n0+1,n1,n2-\/1,n3,n4)}
+\DoxyCodeLine{520                   \textcolor{keywordflow}{if} (n1.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{521                     s2(1,2) = s2(1,2) + n2*d\_i(n0+1,n2-\/1,n3,n4,1)}
+\DoxyCodeLine{522 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{523                   \textcolor{keywordflow}{if} (n3.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{524                     s2(3,2) = s2(3,2) + n2*d\_i(n0+1,n1,n2-\/1,n4,3)}
+\DoxyCodeLine{525 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{526                   \textcolor{keywordflow}{if} (n4.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{527                     s2(4,2) = s2(4,2) + n2*d\_i(n0+1,n1,n2-\/1,n3,4)}
+\DoxyCodeLine{528 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{529 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{530 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532               \textcolor{keywordflow}{if} (n3.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{533                 \textcolor{keywordflow}{if} (n0.gt.0.or.r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{534                   s(3) = s(3) + d\_i(n0,n1,n2,n4,3)}
+\DoxyCodeLine{535                   s2(:,3) = 0d0}
+\DoxyCodeLine{536 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{537               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{538                 \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{539                   s2(:,3) = -\/n3*d\_0(n0+1,n1,n2,n3-\/1,n4)}
+\DoxyCodeLine{540                   \textcolor{keywordflow}{if} (n1.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{541                     s2(1,3) = s2(1,3) + n3*d\_i(n0+1,n2,n3-\/1,n4,1)}
+\DoxyCodeLine{542 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{543                   \textcolor{keywordflow}{if} (n2.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{544                     s2(2,3) = s2(2,3) + n3*d\_i(n0+1,n1,n3-\/1,n4,2)}
+\DoxyCodeLine{545 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{546                   \textcolor{keywordflow}{if} (n4.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{547                     s2(4,3) = s2(4,3) + n3*d\_i(n0+1,n1,n2,n3-\/1,4)}
+\DoxyCodeLine{548 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{549 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{550 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552               \textcolor{keywordflow}{if} (n4.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{553                 \textcolor{keywordflow}{if} (n0.gt.0.or.r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{554                   s(4) = s(4) + d\_i(n0,n1,n2,n3,4)}
+\DoxyCodeLine{555                   s2(:,4) = 0d0}
+\DoxyCodeLine{556 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{557               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{558                 \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{559                   s2(:,4) = -\/n4*d\_0(n0+1,n1,n2,n3,n4-\/1)}
+\DoxyCodeLine{560                   \textcolor{keywordflow}{if} (n1.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{561                     s2(1,4) = s2(1,4) + n4*d\_i(n0+1,n2,n3,n4-\/1,1)}
+\DoxyCodeLine{562 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{563                   \textcolor{keywordflow}{if} (n2.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{564                     s2(2,4) = s2(2,4) + n4*d\_i(n0+1,n1,n3,n4-\/1,2)}
+\DoxyCodeLine{565 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{566                   \textcolor{keywordflow}{if} (n3.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{567                     s2(3,4) = s2(3,4) + n4*d\_i(n0+1,n1,n2,n4-\/1,3)}
+\DoxyCodeLine{568 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{569 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{570 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572               \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{573                 }
+\DoxyCodeLine{574                 \textcolor{comment}{! rational term}}
+\DoxyCodeLine{575                 s(0) = s(0) -\/ 4d0*euv\_aux(n0+1,n1,n2,n3,n4)}
+\DoxyCodeLine{576                 }
+\DoxyCodeLine{577                 \textcolor{keywordflow}{do} k=1,4}
+\DoxyCodeLine{578                   eaux(k) = mxinv(0,k)*s(0)+mxinv(1,k)*s(1)+mxinv(2,k)*s(2) \&}
+\DoxyCodeLine{579                           + mxinv(3,k)*s(3)+mxinv(4,k)*s(4) \&}
+\DoxyCodeLine{580                           -\/ mxinvs(k) * d\_0(n0,n1,n2,n3,n4) \&}
+\DoxyCodeLine{581                           + ((mxinv(1,k)*mxinv(2,0)-\/mxinv(2,k)*mxinv(1,0))*(s2(1,2)-\/s2(2,1)) \&}
+\DoxyCodeLine{582                           +  (mxinv(1,k)*mxinv(3,0)-\/mxinv(3,k)*mxinv(1,0))*(s2(1,3)-\/s2(3,1)) \&}
+\DoxyCodeLine{583                           +  (mxinv(1,k)*mxinv(4,0)-\/mxinv(4,k)*mxinv(1,0))*(s2(1,4)-\/s2(4,1)) \&}
+\DoxyCodeLine{584                           +  (mxinv(2,k)*mxinv(3,0)-\/mxinv(3,k)*mxinv(2,0))*(s2(2,3)-\/s2(3,2)) \&}
+\DoxyCodeLine{585                           +  (mxinv(2,k)*mxinv(4,0)-\/mxinv(4,k)*mxinv(2,0))*(s2(2,4)-\/s2(4,2)) \&}
+\DoxyCodeLine{586                           +  (mxinv(3,k)*mxinv(4,0)-\/mxinv(4,k)*mxinv(3,0))*(s2(3,4)-\/s2(4,3)))*2}
+\DoxyCodeLine{587 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589                 e(n0,n1+1,n2,n3,n4) = e(n0,n1+1,n2,n3,n4) + (n1+1)*eaux(1)/(r+1)}
+\DoxyCodeLine{590                 e(n0,n1,n2+1,n3,n4) = e(n0,n1,n2+1,n3,n4) + (n2+1)*eaux(2)/(r+1)}
+\DoxyCodeLine{591                 e(n0,n1,n2,n3+1,n4) = e(n0,n1,n2,n3+1,n4) + (n3+1)*eaux(3)/(r+1)}
+\DoxyCodeLine{592                 e(n0,n1,n2,n3,n4+1) = e(n0,n1,n2,n3,n4+1) + (n4+1)*eaux(4)/(r+1)}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596               \textcolor{keywordflow}{if} (n0.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{597                 eaux2 = mxinv(1,0)*s(1)+mxinv(2,0)*s(2) \&}
+\DoxyCodeLine{598                       + mxinv(3,0)*s(3)+mxinv(4,0)*s(4) \&}
+\DoxyCodeLine{599                       -\/ (mxinvs(0)-\/mxinv(0,0)) * d\_0(n0,n1,n2,n3,n4) }
+\DoxyCodeLine{600                       }
+\DoxyCodeLine{601                 e(n0,n1,n2,n3,n4) = e(n0,n1,n2,n3,n4) + 2*n0*eaux2/r}
+\DoxyCodeLine{602 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{605 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{606 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{607 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609       \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}  }
+\DoxyCodeLine{610 \textcolor{comment}{!        Eerr(r+1) = max( maxval(abs(mxinv(0:4,1:4)))*Derr(0,r), \&}}
+\DoxyCodeLine{611         eerr(r+1) = max( maxval(abs(mxinvs(1:4)))*derr(0,r), \&}
+\DoxyCodeLine{612                    maxval(abs(mxinv(1,1:4)))*derr(1,r) , \&}
+\DoxyCodeLine{613                    maxval(abs(mxinv(2,1:4)))*derr(2,r) , \&}
+\DoxyCodeLine{614                    maxval(abs(mxinv(3,1:4)))*derr(3,r) , \&}
+\DoxyCodeLine{615                    maxval(abs(mxinv(4,1:4)))*derr(4,r) )}
+\DoxyCodeLine{616         eerr2(r+1) = max( abs(maxzmxinvs)*derr2(0,r), \&}
+\DoxyCodeLine{617                    abs(maxzmxinv(1))*derr2(1,r) , \&}
+\DoxyCodeLine{618                    abs(maxzmxinv(2))*derr2(2,r) , \&}
+\DoxyCodeLine{619                    abs(maxzmxinv(3))*derr2(3,r) , \&}
+\DoxyCodeLine{620                    abs(maxzmxinv(4))*derr2(4,r) ) /maxz}
+\DoxyCodeLine{621 }
+\DoxyCodeLine{622 \textcolor{comment}{!        write(*,*) 'CalcEred   s  ', maxval(abs(mxinvs(1:4)))}}
+\DoxyCodeLine{623 \textcolor{comment}{!        write(*,*) 'CalcEred   1  ', maxval(abs(mxinv(1,1:4)))}}
+\DoxyCodeLine{624 \textcolor{comment}{!        write(*,*) 'CalcEred   2  ', maxval(abs(mxinv(2,1:4)))}}
+\DoxyCodeLine{625 \textcolor{comment}{!        write(*,*) 'CalcEred   3  ', maxval(abs(mxinv(3,1:4)))}}
+\DoxyCodeLine{626 \textcolor{comment}{!        write(*,*) 'CalcEred   4  ', maxval(abs(mxinv(4,1:4)))}}
+\DoxyCodeLine{627 \textcolor{comment}{!        write(*,*) 'CalcEred err ',r,Eerr(r+1)}}
+\DoxyCodeLine{628 \textcolor{comment}{!        if (r.gt.0) write(*,*) 'CalcEred err ',1,Eerr(2)}}
+\DoxyCodeLine{629 \textcolor{comment}{!        write(*,*) 'CalcEred err ',Derr(0:4,r)}}
+\DoxyCodeLine{630 \textcolor{comment}{!        write(*,*) 'CalcEred err2',r,Eerr2(r+1)}}
+\DoxyCodeLine{631 \textcolor{comment}{!        write(*,*) 'CalcEred err2',Derr2(0:4,r)}}
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638     \textcolor{comment}{! write(*,*) 'E', id, E(0,0,0,0,2)}}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionefg_ad04e7bd83b688e157b92ce508c107100}\label{namespacereductionefg_ad04e7bd83b688e157b92ce508c107100}} 
+\index{reductionefg@{reductionefg}!calcf@{calcf}}
+\index{calcf@{calcf}!reductionefg@{reductionefg}}
+\doxysubsubsection{\texorpdfstring{calcf()}{calcf()}}
+{\footnotesize\ttfamily subroutine reductionefg\+::calcf (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{F,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Fuv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Ferr,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Ferr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 657 of file reduction\+E\+F\+G.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{657 }
+\DoxyCodeLine{658     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax,id}
+\DoxyCodeLine{659     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40}
+\DoxyCodeLine{660     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p51,p30,p41,p52,m02,m12,m22,m32,m42,m52}
+\DoxyCodeLine{661     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: F(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{662     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Fuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{663     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Ferr(0:rmax),Ferr2(0:rmax)}
+\DoxyCodeLine{664     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: Faux(:,:,:,:,:,:), Fuvaux(:,:,:,:,:,:), fct(:)}
+\DoxyCodeLine{665     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: Ferraux(:),Ferr2aux(:)}
+\DoxyCodeLine{666     \textcolor{keywordtype}{double complex} :: x(21)}
+\DoxyCodeLine{667     \textcolor{keywordtype}{integer} :: rank,switch,cnt,n0,n1,n2,n3,n4,n5,r}
+\DoxyCodeLine{668     \textcolor{keywordtype}{logical} :: nocalc,wrica}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670 \textcolor{comment}{!    write(*,*) 'CalcF in'}}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672     \textcolor{keywordflow}{if} ((use\_cache\_system).and.(tencache.gt.6)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{673       \textcolor{keywordflow}{if} ((ncache.gt.0).and.(ncache.le.ncache\_max)) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{674 \textcolor{comment}{!        if (use\_cache(ncache).ge.6) then}}
+\DoxyCodeLine{675           x(1)=p10}
+\DoxyCodeLine{676           x(2)=p21}
+\DoxyCodeLine{677           x(3)=p32}
+\DoxyCodeLine{678           x(4)=p43}
+\DoxyCodeLine{679           x(5)=p54}
+\DoxyCodeLine{680           x(6)=p50}
+\DoxyCodeLine{681           x(7)=p20}
+\DoxyCodeLine{682           x(8)=p31}
+\DoxyCodeLine{683           x(9)=p42}
+\DoxyCodeLine{684           x(10)=p53}
+\DoxyCodeLine{685           x(11)=p40}
+\DoxyCodeLine{686           x(12)=p51}
+\DoxyCodeLine{687           x(13)=p30}
+\DoxyCodeLine{688           x(14)=p41}
+\DoxyCodeLine{689           x(15)=p52}
+\DoxyCodeLine{690           x(16)=m02}
+\DoxyCodeLine{691           x(17)=m12}
+\DoxyCodeLine{692           x(18)=m22}
+\DoxyCodeLine{693           x(19)=m32}
+\DoxyCodeLine{694           x(20)=m42}
+\DoxyCodeLine{695           x(21)=m52}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697           rank = rmax}
+\DoxyCodeLine{698  }
+\DoxyCodeLine{699           \textcolor{keywordflow}{if} (rmax.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{700             \textcolor{keyword}{allocate}(fct(ncoefs(rmax,6)+ncoefs(rmax-\/8,6)+2*(rmax+1)))}
+\DoxyCodeLine{701             \textcolor{keyword}{call }readcache(fct,ncoefs(rmax,6)+ncoefs(rmax-\/8,6)+2*(rmax+1),x,21,1,id,6,rank,nocalc,wrica)}
+\DoxyCodeLine{702           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{703             \textcolor{keyword}{allocate}(fct(ncoefs(rmax,6)+2*(rmax+1)))}
+\DoxyCodeLine{704             \textcolor{keyword}{call }readcache(fct,ncoefs(rmax,6)+2*(rmax+1),x,21,1,id,6,rank,nocalc,wrica)}
+\DoxyCodeLine{705 \textcolor{keywordflow}{          end if}    }
+\DoxyCodeLine{706 }
+\DoxyCodeLine{707           \textcolor{keywordflow}{if}(nocalc) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{708             cnt = 0}
+\DoxyCodeLine{709             fuv(0:min(rmax/2,3),:,:,:,:,:) = 0d0}
+\DoxyCodeLine{710             \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{711               \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{712                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{713                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{714                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{715                       \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{716                         n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{717  }
+\DoxyCodeLine{718                         cnt = cnt+1}
+\DoxyCodeLine{719                         f(n0,n1,n2,n3,n4,n5) = fct(cnt)}
+\DoxyCodeLine{720               }
+\DoxyCodeLine{721 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{722 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{723 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{724 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{725 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{726               \textcolor{keywordflow}{do} n0=4,r/2}
+\DoxyCodeLine{727                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{728                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{729                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{730                       \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{731                         n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{732  }
+\DoxyCodeLine{733                         cnt = cnt+1}
+\DoxyCodeLine{734                         fuv(n0,n1,n2,n3,n4,n5) = fct(cnt)}
+\DoxyCodeLine{735               }
+\DoxyCodeLine{736 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{737 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{738 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{739 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{740 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{741               cnt = cnt+1}
+\DoxyCodeLine{742               ferr(r) = real(fct(cnt))}
+\DoxyCodeLine{743               cnt = cnt+1}
+\DoxyCodeLine{744               ferr2(r) = real(fct(cnt))}
+\DoxyCodeLine{745 \textcolor{keywordflow}{            end do}    }
+\DoxyCodeLine{746             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{747 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749 }
+\DoxyCodeLine{750           \textcolor{keywordflow}{if}(rank.eq.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752             \textcolor{keyword}{call }calcfred(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
+\DoxyCodeLine{753                                 p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rank,id,ferr,ferr2)}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{756               cnt = 0}
+\DoxyCodeLine{757               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{758                 \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{759                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{760                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{761                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{762                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{763                           n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{764  }
+\DoxyCodeLine{765                           cnt = cnt+1}
+\DoxyCodeLine{766                           fct(cnt) = f(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{767 }
+\DoxyCodeLine{768 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{769 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{770 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{771 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{772 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{773                 \textcolor{keywordflow}{do} n0=4,r/2}
+\DoxyCodeLine{774                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{775                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{776                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{777                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{778                           n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{779  }
+\DoxyCodeLine{780                           cnt = cnt+1}
+\DoxyCodeLine{781                           fct(cnt) = fuv(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{784 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{785 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{786 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{787 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{788                 cnt = cnt+1}
+\DoxyCodeLine{789                 fct(cnt) = ferr(r)}
+\DoxyCodeLine{790                 cnt = cnt+1}
+\DoxyCodeLine{791                 fct(cnt) = ferr2(r)}
+\DoxyCodeLine{792 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{793    }
+\DoxyCodeLine{794               \textcolor{keywordflow}{if} (rank.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{795                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,6)+ncoefs(rank-\/8,6)+2*(rank+1),id,6,rank)}
+\DoxyCodeLine{796               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{797                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,6)+2*(rank+1),id,6,rank)}
+\DoxyCodeLine{798 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{803           }
+\DoxyCodeLine{804           }
+\DoxyCodeLine{805           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{806             \textcolor{keyword}{allocate}(faux(0:rank/2,0:rank,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{807             \textcolor{keyword}{allocate}(fuvaux(0:rank/2,0:rank,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{808             \textcolor{keyword}{allocate}(ferraux(0:rank))}
+\DoxyCodeLine{809             \textcolor{keyword}{allocate}(ferr2aux(0:rank))}
+\DoxyCodeLine{810 }
+\DoxyCodeLine{811             \textcolor{keyword}{call }calcfred(faux,fuvaux,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
+\DoxyCodeLine{812                                       p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rank,id,ferraux,ferr2aux)}
+\DoxyCodeLine{813 }
+\DoxyCodeLine{814 }
+\DoxyCodeLine{815             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{816               cnt = 0}
+\DoxyCodeLine{817               \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{818               \textcolor{keywordflow}{if} (rank.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{819                 \textcolor{keyword}{allocate}(fct(ncoefs(rank,6)+ncoefs(rank-\/8,6)+2*(rank+1)))}
+\DoxyCodeLine{820               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{821                 \textcolor{keyword}{allocate}(fct(ncoefs(rank,6)+2*(rank+1)))}
+\DoxyCodeLine{822 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{823               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{824                 \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{825                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{826                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{827                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{828                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{829                           n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{830  }
+\DoxyCodeLine{831                           cnt = cnt+1}
+\DoxyCodeLine{832                           fct(cnt) = faux(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{833 }
+\DoxyCodeLine{834 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{835 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{836 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{837 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{838 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{839                 \textcolor{keywordflow}{do} n0=4,r/2}
+\DoxyCodeLine{840                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{841                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{842                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{843                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{844                           n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{845  }
+\DoxyCodeLine{846                           cnt = cnt+1}
+\DoxyCodeLine{847                           fct(cnt) = fuvaux(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{850 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{851 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{852 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{853 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{854                 cnt = cnt+1}
+\DoxyCodeLine{855                 fct(cnt) = ferraux(r)}
+\DoxyCodeLine{856                 cnt = cnt+1}
+\DoxyCodeLine{857                 fct(cnt) = ferr2aux(r)}
+\DoxyCodeLine{858 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{859    }
+\DoxyCodeLine{860               \textcolor{keywordflow}{if} (rank.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{861                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,6)+ncoefs(rank-\/8,6)+2*(rank+1),id,6,rank)}
+\DoxyCodeLine{862               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{863                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,6)+2*(rank+1),id,6,rank)}
+\DoxyCodeLine{864 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{865 }
+\DoxyCodeLine{866 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{868             f = faux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{869             fuv = fuvaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{870             ferr = ferraux(0:rmax)}
+\DoxyCodeLine{871             ferr2 = ferr2aux(0:rmax)}
+\DoxyCodeLine{872             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{873 }
+\DoxyCodeLine{874 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{875             }
+\DoxyCodeLine{876 \textcolor{comment}{!        end if}}
+\DoxyCodeLine{877 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{878 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{879     }
+\DoxyCodeLine{880 }
+\DoxyCodeLine{881     \textcolor{keyword}{call }calcfred(f,fuv,p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40,  \&}
+\DoxyCodeLine{882                         p51,p30,p41,p52,m02,m12,m22,m32,m42,m52,rmax,id,ferr,ferr2)}
+\DoxyCodeLine{883     }
+\DoxyCodeLine{884 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionefg_a9b58fe277e9ae173f65914e9034b7db8}\label{namespacereductionefg_a9b58fe277e9ae173f65914e9034b7db8}} 
+\index{reductionefg@{reductionefg}!calcfred@{calcfred}}
+\index{calcfred@{calcfred}!reductionefg@{reductionefg}}
+\doxysubsubsection{\texorpdfstring{calcfred()}{calcfred()}}
+{\footnotesize\ttfamily subroutine reductionefg\+::calcfred (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{F,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Fuv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Ferr,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Ferr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 901 of file reduction\+E\+F\+G.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{901 }
+\DoxyCodeLine{902     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax,id}
+\DoxyCodeLine{903     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p50,p20,p31,p42,p53,p40}
+\DoxyCodeLine{904     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p51,p30,p41,p52,m02,m12,m22,m32,m42,m52}
+\DoxyCodeLine{905     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Ferr(0:rmax),Ferr2(0:rmax)}
+\DoxyCodeLine{906     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: F(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{907     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Fuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{908     \textcolor{keywordtype}{double complex} :: q10,q21,q32,q43,q54,q50,q20,q31,q42,q53,q40}
+\DoxyCodeLine{909     \textcolor{keywordtype}{double complex} :: q51,q30,q41,q52,mm02,mm12,mm22,mm32,mm42,mm52}
+\DoxyCodeLine{910     \textcolor{keywordtype}{double complex} :: mx(0:5,0:5), mxinv(0:5,0:5),mx0k(5,5),mx0kinv(5,5),ff(5)}
+\DoxyCodeLine{911     \textcolor{keywordtype}{double complex} :: det,newdet,mxinvs,mx0kinvs(5)}
+\DoxyCodeLine{912     \textcolor{keywordtype}{double complex} :: zmx0kinv(5,5),Z(5,5),zmx0kinvs(5)}
+\DoxyCodeLine{913     \textcolor{keywordtype}{double precision} :: maxZ,maxzmx0kinv(5),maxzmx0kinvs}
+\DoxyCodeLine{914     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: E\_0(:,:,:,:,:,:), E\_i(:,:,:,:,:,:)}
+\DoxyCodeLine{915     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: Euv\_0(:,:,:,:,:,:), Euv\_i(:,:,:,:,:,:)}
+\DoxyCodeLine{916     \textcolor{keywordtype}{double complex} :: S(5), Faux(5), elimminf2\_coli,chdet,gram(1:5,1:5),gramdet}
+\DoxyCodeLine{917     \textcolor{keywordtype}{double precision} :: Eerr(0:5,0:rmax),Eerr2(0:5,0:rmax)}
+\DoxyCodeLine{918     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,n5,n,k,i,j,nid(0:5),r0,bin,kbest,rmaxE,rBCD}
+\DoxyCodeLine{919     \textcolor{keywordtype}{logical} :: errorwriteflag}
+\DoxyCodeLine{920     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt10 = \textcolor{stringliteral}{"(A17,'(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{921 }
+\DoxyCodeLine{922 \textcolor{comment}{!    write(*,*) 'CalcFred in'}}
+\DoxyCodeLine{923 }
+\DoxyCodeLine{924     r0 = 0}
+\DoxyCodeLine{925 }
+\DoxyCodeLine{926     \textcolor{comment}{! allocation of C functions}}
+\DoxyCodeLine{927     rmaxe = max(rmax-\/1,0)}
+\DoxyCodeLine{928     \textcolor{keyword}{allocate}(e\_0(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{929     \textcolor{keyword}{allocate}(e\_i(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,5))}
+\DoxyCodeLine{930     \textcolor{keyword}{allocate}(euv\_0(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{931     \textcolor{keyword}{allocate}(euv\_i(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,5))}
+\DoxyCodeLine{932 }
+\DoxyCodeLine{933 }
+\DoxyCodeLine{934     \textcolor{comment}{! determine binaries for B-\/coefficients}}
+\DoxyCodeLine{935     k=0}
+\DoxyCodeLine{936     bin = 1}
+\DoxyCodeLine{937     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (k.le.5)}
+\DoxyCodeLine{938       \textcolor{keywordflow}{if} (mod(id/bin,2).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{939         nid(k) = id+bin}
+\DoxyCodeLine{940         k = k+1}
+\DoxyCodeLine{941 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{942       bin = 2*bin}
+\DoxyCodeLine{943 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{944 }
+\DoxyCodeLine{945 }
+\DoxyCodeLine{946     \textcolor{keyword}{call }calce(e\_0(:,0,:,:,:,:),euv\_0(:,0,:,:,:,:),p21,p32,p43,p54,p51,p31,p42,p53,p41,p52,  \&}
+\DoxyCodeLine{947                          m12,m22,m32,m42,m52,rmaxe,nid(0),eerr=eerr(0,0:rmaxe),eerr2=eerr2(0,0:rmaxe))}
+\DoxyCodeLine{948     \textcolor{keyword}{call }calce(e\_i(:,:,:,:,:,1),euv\_i(:,:,:,:,:,1),p20,p32,p43,p54,p50,p30,  \&}
+\DoxyCodeLine{949                          p42,p53,p40,p52,m02,m22,m32,m42,m52,rmaxe,nid(1),eerr=eerr(1,0:rmaxe),eerr2=eerr2(1,0:rmaxe))}
+\DoxyCodeLine{950     \textcolor{keyword}{call }calce(e\_i(:,:,:,:,:,2),euv\_i(:,:,:,:,:,2),p10,p31,p43,p54,p50,p30,  \&}
+\DoxyCodeLine{951                          p41,p53,p40,p51,m02,m12,m32,m42,m52,rmaxe,nid(2),eerr=eerr(2,0:rmaxe),eerr2=eerr2(2,0:rmaxe))}
+\DoxyCodeLine{952     \textcolor{keyword}{call }calce(e\_i(:,:,:,:,:,3),euv\_i(:,:,:,:,:,3),p10,p21,p42,p54,p50,p20,  \&}
+\DoxyCodeLine{953                          p41,p52,p40,p51,m02,m12,m22,m42,m52,rmaxe,nid(3),eerr=eerr(3,0:rmaxe),eerr2=eerr2(3,0:rmaxe)) }
+\DoxyCodeLine{954     \textcolor{keyword}{call }calce(e\_i(:,:,:,:,:,4),euv\_i(:,:,:,:,:,4),p10,p21,p32,p53,p50,p20,  \&}
+\DoxyCodeLine{955                          p31,p52,p30,p51,m02,m12,m22,m32,m52,rmaxe,nid(4),eerr=eerr(4,0:rmaxe),eerr2=eerr2(4,0:rmaxe))}
+\DoxyCodeLine{956     \textcolor{keyword}{call }calce(e\_i(:,:,:,:,:,5),euv\_i(:,:,:,:,:,5),p10,p21,p32,p43,p40,p20,  \&}
+\DoxyCodeLine{957                          p31,p42,p30,p41,m02,m12,m22,m32,m42,rmaxe,nid(5),eerr=eerr(5,0:rmaxe),eerr2=eerr2(5,0:rmaxe))}
+\DoxyCodeLine{958 }
+\DoxyCodeLine{959     \textcolor{comment}{! shift of integration momentum in E\(\backslash\)\{0\}}}
+\DoxyCodeLine{960     \textcolor{keywordflow}{do} n1=1,rmaxe}
+\DoxyCodeLine{961       \textcolor{keywordflow}{do} n2=0,rmaxe-\/n1}
+\DoxyCodeLine{962         \textcolor{keywordflow}{do} n3=0,rmaxe-\/n1-\/n2}
+\DoxyCodeLine{963           \textcolor{keywordflow}{do} n4=0,rmaxe-\/n1-\/n2-\/n3}
+\DoxyCodeLine{964             \textcolor{keywordflow}{do} n5=0,rmaxe-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{965               n0 = (rmaxe-\/n1-\/n2-\/n3-\/n4-\/n5)/2}
+\DoxyCodeLine{966               e\_0(0:n0,n1,n2,n3,n4,n5) = -\/e\_0(0:n0,n1-\/1,n2,n3,n4,n5)-\/e\_0(0:n0,n1-\/1,n2+1,n3,n4,n5) \&}
+\DoxyCodeLine{967                                          -\/e\_0(0:n0,n1-\/1,n2,n3+1,n4,n5)-\/e\_0(0:n0,n1-\/1,n2,n3,n4+1,n5)  \&}
+\DoxyCodeLine{968                                          -\/e\_0(0:n0,n1-\/1,n2,n3,n4,n5+1)}
+\DoxyCodeLine{969 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{970 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{971 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{972 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{973 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{974     \textcolor{keywordflow}{do} n1=1,rmaxe-\/6}
+\DoxyCodeLine{975       \textcolor{keywordflow}{do} n2=0,rmaxe-\/n1-\/6}
+\DoxyCodeLine{976         \textcolor{keywordflow}{do} n3=0,rmaxe-\/n1-\/n2-\/6}
+\DoxyCodeLine{977           \textcolor{keywordflow}{do} n4=0,rmaxe-\/n1-\/n2-\/n3-\/6}
+\DoxyCodeLine{978             \textcolor{keywordflow}{do} n5=0,rmaxe-\/n1-\/n2-\/n3-\/n4-\/6}
+\DoxyCodeLine{979               n0 = (rmaxe-\/n1-\/n2-\/n3-\/n4-\/n5)/2}
+\DoxyCodeLine{980               euv\_0(0:n0,n1,n2,n3,n4,n5) = -\/euv\_0(0:n0,n1-\/1,n2,n3,n4,n5)-\/euv\_0(0:n0,n1-\/1,n2+1,n3,n4,n5) \&}
+\DoxyCodeLine{981                                            -\/euv\_0(0:n0,n1-\/1,n2,n3+1,n4,n5)-\/euv\_0(0:n0,n1-\/1,n2,n3,n4+1,n5)  \&}
+\DoxyCodeLine{982                                            -\/euv\_0(0:n0,n1-\/1,n2,n3,n4,n5+1)}
+\DoxyCodeLine{983 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{984 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{985 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{986 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{987 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{988 }
+\DoxyCodeLine{989 }
+\DoxyCodeLine{990 }
+\DoxyCodeLine{991     \textcolor{comment}{! determine inverse modified Caley matrix}}
+\DoxyCodeLine{992     mm02 = elimminf2\_coli(m02)}
+\DoxyCodeLine{993     mm12 = elimminf2\_coli(m12)}
+\DoxyCodeLine{994     mm22 = elimminf2\_coli(m22)}
+\DoxyCodeLine{995     mm32 = elimminf2\_coli(m32)}
+\DoxyCodeLine{996     mm42 = elimminf2\_coli(m42)}
+\DoxyCodeLine{997     mm52 = elimminf2\_coli(m52)}
+\DoxyCodeLine{998     q10  = elimminf2\_coli(p10)}
+\DoxyCodeLine{999     q21  = elimminf2\_coli(p21)}
+\DoxyCodeLine{1000     q32  = elimminf2\_coli(p32)}
+\DoxyCodeLine{1001     q43  = elimminf2\_coli(p43)}
+\DoxyCodeLine{1002     q54  = elimminf2\_coli(p54)}
+\DoxyCodeLine{1003     q50  = elimminf2\_coli(p50)}
+\DoxyCodeLine{1004     q20  = elimminf2\_coli(p20)}
+\DoxyCodeLine{1005     q31  = elimminf2\_coli(p31)}
+\DoxyCodeLine{1006     q42  = elimminf2\_coli(p42)}
+\DoxyCodeLine{1007     q53  = elimminf2\_coli(p53)}
+\DoxyCodeLine{1008     q40  = elimminf2\_coli(p40)}
+\DoxyCodeLine{1009     q51  = elimminf2\_coli(p51)}
+\DoxyCodeLine{1010     q30  = elimminf2\_coli(p30)}
+\DoxyCodeLine{1011     q41  = elimminf2\_coli(p41)}
+\DoxyCodeLine{1012     q52  = elimminf2\_coli(p52)}
+\DoxyCodeLine{1013 }
+\DoxyCodeLine{1014     ff(1) = q10+mm02-\/mm12}
+\DoxyCodeLine{1015     ff(2) = q20+mm02-\/mm22}
+\DoxyCodeLine{1016     ff(3) = q30+mm02-\/mm32}
+\DoxyCodeLine{1017     ff(4) = q40+mm02-\/mm42}
+\DoxyCodeLine{1018     ff(5) = q50+mm02-\/mm52}
+\DoxyCodeLine{1019  }
+\DoxyCodeLine{1020     mx(0,0) = 2d0*mm02}
+\DoxyCodeLine{1021     mx(1,0) = q10 -\/ mm12 + mm02}
+\DoxyCodeLine{1022     mx(2,0) = q20 -\/ mm22 + mm02}
+\DoxyCodeLine{1023     mx(3,0) = q30 -\/ mm32 + mm02}
+\DoxyCodeLine{1024     mx(4,0) = q40 -\/ mm42 + mm02}
+\DoxyCodeLine{1025     mx(5,0) = q50 -\/ mm52 + mm02}
+\DoxyCodeLine{1026     mx(0,1) = mx(1,0)}
+\DoxyCodeLine{1027     mx(1,1) = 2d0*q10}
+\DoxyCodeLine{1028     mx(2,1) = q10+q20-\/q21}
+\DoxyCodeLine{1029     mx(3,1) = q10+q30-\/q31}
+\DoxyCodeLine{1030     mx(4,1) = q10+q40-\/q41}
+\DoxyCodeLine{1031     mx(5,1) = q10+q50-\/q51}
+\DoxyCodeLine{1032     mx(0,2) = mx(2,0)}
+\DoxyCodeLine{1033     mx(1,2) = mx(2,1)}
+\DoxyCodeLine{1034     mx(2,2) = 2d0*q20}
+\DoxyCodeLine{1035     mx(3,2) = q20+q30-\/q32}
+\DoxyCodeLine{1036     mx(4,2) = q20+q40-\/q42}
+\DoxyCodeLine{1037     mx(5,2) = q20+q50-\/q52}
+\DoxyCodeLine{1038     mx(0,3) = mx(3,0)}
+\DoxyCodeLine{1039     mx(1,3) = mx(3,1)}
+\DoxyCodeLine{1040     mx(2,3) = mx(3,2)}
+\DoxyCodeLine{1041     mx(3,3) = 2d0*q30}
+\DoxyCodeLine{1042     mx(4,3) = q30+q40-\/q43}
+\DoxyCodeLine{1043     mx(5,3) = q30+q50-\/q53}
+\DoxyCodeLine{1044     mx(0,4) = mx(4,0)}
+\DoxyCodeLine{1045     mx(1,4) = mx(4,1)}
+\DoxyCodeLine{1046     mx(2,4) = mx(4,2)}
+\DoxyCodeLine{1047     mx(3,4) = mx(4,3)}
+\DoxyCodeLine{1048     mx(4,4) = 2d0*q40}
+\DoxyCodeLine{1049     mx(5,4) = q40+q50-\/q54}
+\DoxyCodeLine{1050     mx(0,5) = mx(5,0)}
+\DoxyCodeLine{1051     mx(1,5) = mx(5,1)}
+\DoxyCodeLine{1052     mx(2,5) = mx(5,2)}
+\DoxyCodeLine{1053     mx(3,5) = mx(5,3)}
+\DoxyCodeLine{1054     mx(4,5) = mx(5,4)}
+\DoxyCodeLine{1055     mx(5,5) = 2d0*q50}
+\DoxyCodeLine{1056 }
+\DoxyCodeLine{1057     \textcolor{keyword}{call }chinv(6,mx,mxinv)}
+\DoxyCodeLine{1058 }
+\DoxyCodeLine{1059     \textcolor{comment}{! determine X\_(0,5)}}
+\DoxyCodeLine{1060     \textcolor{keywordflow}{do} j=1,5}
+\DoxyCodeLine{1061       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1062         mx0k(i,j) = mx(i,j-\/1)}
+\DoxyCodeLine{1063 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1064 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1065 }
+\DoxyCodeLine{1066     \textcolor{comment}{! determine best reduction matrix}}
+\DoxyCodeLine{1067     det = chdet(5,mx0k)}
+\DoxyCodeLine{1068     kbest = 5}
+\DoxyCodeLine{1069     }
+\DoxyCodeLine{1070 \textcolor{comment}{!    write(*,*) 'Fred det',5,det}}
+\DoxyCodeLine{1071 }
+\DoxyCodeLine{1072     \textcolor{keywordflow}{do} j=5,2,-\/1}
+\DoxyCodeLine{1073       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1074         mx0k(i,j) = mx(i,j)}
+\DoxyCodeLine{1075 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1076 }
+\DoxyCodeLine{1077       newdet =  chdet(5,mx0k)}
+\DoxyCodeLine{1078 }
+\DoxyCodeLine{1079 \textcolor{comment}{!      write(*,*) 'Fred det',j-\/1,newdet}}
+\DoxyCodeLine{1080 }
+\DoxyCodeLine{1081       \textcolor{keywordflow}{if} (abs(newdet).gt.abs(det)) \textcolor{keywordflow}{then}          }
+\DoxyCodeLine{1082         kbest = j-\/1}
+\DoxyCodeLine{1083         det = newdet}
+\DoxyCodeLine{1084 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1085     }
+\DoxyCodeLine{1086 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1087 }
+\DoxyCodeLine{1088 \textcolor{comment}{!    write(*,*) 'Fred kbest',kbest}}
+\DoxyCodeLine{1089     }
+\DoxyCodeLine{1090     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1091       mx0k(i,1) = mx(i,1)}
+\DoxyCodeLine{1092       mx0k(i,kbest) = mx(i,0)}
+\DoxyCodeLine{1093 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1094 }
+\DoxyCodeLine{1095     \textcolor{keyword}{call }chinv(5,mx0k,mx0kinv)}
+\DoxyCodeLine{1096     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1097       mx0kinv(kbest,i) = 0d0}
+\DoxyCodeLine{1098 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1099 }
+\DoxyCodeLine{1100     mxinvs = sum(mxinv(0:5,0))}
+\DoxyCodeLine{1101     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1102       mx0kinvs(i) = sum(mx0kinv(i,1:5))}
+\DoxyCodeLine{1103 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1104 }
+\DoxyCodeLine{1105     \textcolor{comment}{! for alternative error estimate}}
+\DoxyCodeLine{1106     z(1:5,1:5) = mx(1:5,1:5)}
+\DoxyCodeLine{1107 }
+\DoxyCodeLine{1108     zmx0kinv = matmul(z,mx0kinv) }
+\DoxyCodeLine{1109 }
+\DoxyCodeLine{1110     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1111       maxzmx0kinv(i) = maxval(abs(zmx0kinv(1:5,i)))}
+\DoxyCodeLine{1112       zmx0kinvs(i) = sum(zmx0kinv(i,1:5))}
+\DoxyCodeLine{1113 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1114 }
+\DoxyCodeLine{1115     maxzmx0kinvs = maxval(abs(zmx0kinvs(1:5)))}
+\DoxyCodeLine{1116 }
+\DoxyCodeLine{1117     maxz = maxval(abs(z))}
+\DoxyCodeLine{1118 }
+\DoxyCodeLine{1119 }
+\DoxyCodeLine{1120 }
+\DoxyCodeLine{1121     \textcolor{comment}{! calculation of UV-\/divergent parts      }}
+\DoxyCodeLine{1122     \textcolor{comment}{! F\_(n0,n1,n2,n3) UV-\/finite for n0<4}}
+\DoxyCodeLine{1123     fuv(0:min(rmax/2,3),:,:,:,:,:) = 0d0}
+\DoxyCodeLine{1124     }
+\DoxyCodeLine{1125     \textcolor{comment}{! PV reduction (5.10)}}
+\DoxyCodeLine{1126     \textcolor{keywordflow}{do} r=max(r0,8),rmax}
+\DoxyCodeLine{1127       \textcolor{keywordflow}{do} n0=3,r/2}
+\DoxyCodeLine{1128         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1129           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1130             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1131               \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1132                 n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1133         }
+\DoxyCodeLine{1134                 fuv(n0,n1,n2,n3,n4,n5) = (euv\_0(n0-\/1,n1,n2,n3,n4,n5)  \& }
+\DoxyCodeLine{1135                                        + 2*m02*fuv(n0-\/1,n1,n2,n3,n4,n5)  \&}
+\DoxyCodeLine{1136                                        + ff(1)*fuv(n0-\/1,n1+1,n2,n3,n4,n5)  \& }
+\DoxyCodeLine{1137                                        + ff(2)*fuv(n0-\/1,n1,n2+1,n3,n4,n5)  \& }
+\DoxyCodeLine{1138                                        + ff(3)*fuv(n0-\/1,n1,n2,n3+1,n4,n5)  \&}
+\DoxyCodeLine{1139                                        + ff(4)*fuv(n0-\/1,n1,n2,n3,n4+1,n5)  \&}
+\DoxyCodeLine{1140                                        + ff(5)*fuv(n0-\/1,n1,n2,n3,n4,n5+1))/ (2*(r-\/3))}
+\DoxyCodeLine{1141     }
+\DoxyCodeLine{1142 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1143 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1144 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1145 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1146 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1147 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1148 }
+\DoxyCodeLine{1149     \textcolor{comment}{! scalar coefficient}}
+\DoxyCodeLine{1150     \textcolor{keywordflow}{if} (r0.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1151       f = 0d0}
+\DoxyCodeLine{1152       f(0,0,0,0,0,0) = -\/mxinv(0,0)*e\_0(0,0,0,0,0,0)}
+\DoxyCodeLine{1153       \textcolor{keywordflow}{do} k=1,5}
+\DoxyCodeLine{1154         f(0,0,0,0,0,0) = f(0,0,0,0,0,0) \&}
+\DoxyCodeLine{1155              + mxinv(k,0)*(e\_i(0,0,0,0,0,k)-\/e\_0(0,0,0,0,0,0))}
+\DoxyCodeLine{1156 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1157 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1158 }
+\DoxyCodeLine{1159 \textcolor{comment}{!    write(*,*) 'CalcFred: Eerr(0)',Eerr(0,0:rmaxE)}}
+\DoxyCodeLine{1160 \textcolor{comment}{!    write(*,*) 'CalcFred: Eerr(1)',Eerr(1,0:rmaxE)}}
+\DoxyCodeLine{1161 \textcolor{comment}{!    write(*,*) 'CalcFred: Eerr(2)',Eerr(2,0:rmaxE)}}
+\DoxyCodeLine{1162 \textcolor{comment}{!    write(*,*) 'CalcFred: Eerr(3)',Eerr(3,0:rmaxE)}}
+\DoxyCodeLine{1163 \textcolor{comment}{!    write(*,*) 'CalcFred: Eerr(4)',Eerr(4,0:rmaxE)}}
+\DoxyCodeLine{1164 \textcolor{comment}{!    write(*,*) 'CalcFred: Eerr(5)',Eerr(5,0:rmaxE)}}
+\DoxyCodeLine{1165 \textcolor{comment}{!    write(*,*) 'CalcFred: mxinv(0)',mxinv(0,0)}}
+\DoxyCodeLine{1166 \textcolor{comment}{!    write(*,*) 'CalcFred: mxinv(1)',mxinv(1,0)}}
+\DoxyCodeLine{1167 \textcolor{comment}{!    write(*,*) 'CalcFred: mxinv(2)',mxinv(2,0)}}
+\DoxyCodeLine{1168 \textcolor{comment}{!    write(*,*) 'CalcFred: mxinv(3)',mxinv(3,0)}}
+\DoxyCodeLine{1169 \textcolor{comment}{!    write(*,*) 'CalcFred: mxinv(4)',mxinv(4,0)}}
+\DoxyCodeLine{1170 \textcolor{comment}{!    write(*,*) 'CalcFred: mxinv(5)',mxinv(5,0)}}
+\DoxyCodeLine{1171 }
+\DoxyCodeLine{1172     ferr(0) = max( abs(mxinvs)*eerr(0,0), \&}
+\DoxyCodeLine{1173                    abs(mxinv(1,0))*eerr(1,0) , \&}
+\DoxyCodeLine{1174                    abs(mxinv(2,0))*eerr(2,0) , \&}
+\DoxyCodeLine{1175                    abs(mxinv(3,0))*eerr(3,0) , \&}
+\DoxyCodeLine{1176                    abs(mxinv(4,0))*eerr(4,0) , \&}
+\DoxyCodeLine{1177                    abs(mxinv(5,0))*eerr(5,0) )}
+\DoxyCodeLine{1178     ferr2(0) = max( abs(mxinvs)*eerr2(0,0), \&}
+\DoxyCodeLine{1179                    abs(mxinv(1,0))*eerr2(1,0) , \&}
+\DoxyCodeLine{1180                    abs(mxinv(2,0))*eerr2(2,0) , \&}
+\DoxyCodeLine{1181                    abs(mxinv(3,0))*eerr2(3,0) , \&}
+\DoxyCodeLine{1182                    abs(mxinv(4,0))*eerr2(4,0) , \&}
+\DoxyCodeLine{1183                    abs(mxinv(5,0))*eerr2(5,0) )}
+\DoxyCodeLine{1184 }
+\DoxyCodeLine{1185 \textcolor{comment}{!    write(*,*) 'CalcFred: Ferr(0)',Ferr(0)}}
+\DoxyCodeLine{1186 }
+\DoxyCodeLine{1187     \textcolor{comment}{! formula (7.13)}}
+\DoxyCodeLine{1188     \textcolor{keywordflow}{do} r=r0,rmax-\/1}
+\DoxyCodeLine{1189       \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{1190         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1191           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1192             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1193               \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1194                 n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1195             }
+\DoxyCodeLine{1196                 \textcolor{keywordflow}{do} n=1,5}
+\DoxyCodeLine{1197                   s(n) = -\/e\_0(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{1198 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1199 }
+\DoxyCodeLine{1200                 \textcolor{keywordflow}{if} (n1.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1201                   s(1) = s(1) + e\_i(n0,n2,n3,n4,n5,1)}
+\DoxyCodeLine{1202 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{1203                 \textcolor{keywordflow}{if} (n2.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1204                   s(2) = s(2) + e\_i(n0,n1,n3,n4,n5,2)}
+\DoxyCodeLine{1205 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{1206                 \textcolor{keywordflow}{if} (n3.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1207                   s(3) = s(3) + e\_i(n0,n1,n2,n4,n5,3)}
+\DoxyCodeLine{1208 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{1209                 \textcolor{keywordflow}{if} (n4.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1210                   s(4) = s(4) + e\_i(n0,n1,n2,n3,n5,4)}
+\DoxyCodeLine{1211 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{1212                 \textcolor{keywordflow}{if} (n5.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1213                   s(5) = s(5) + e\_i(n0,n1,n2,n3,n4,5)}
+\DoxyCodeLine{1214 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{1215 }
+\DoxyCodeLine{1216                 \textcolor{keywordflow}{do} k=1,5}
+\DoxyCodeLine{1217                   faux(k) = mx0kinv(k,1)*s(1)+mx0kinv(k,2)*s(2) \&}
+\DoxyCodeLine{1218                           + mx0kinv(k,3)*s(3)+mx0kinv(k,4)*s(4)+mx0kinv(k,5)*s(5)}
+\DoxyCodeLine{1219 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1220 }
+\DoxyCodeLine{1221                 f(n0,n1+1,n2,n3,n4,n5) = f(n0,n1+1,n2,n3,n4,n5) + (n1+1)*faux(1)/(r+1)}
+\DoxyCodeLine{1222                 f(n0,n1,n2+1,n3,n4,n5) = f(n0,n1,n2+1,n3,n4,n5) + (n2+1)*faux(2)/(r+1)}
+\DoxyCodeLine{1223                 f(n0,n1,n2,n3+1,n4,n5) = f(n0,n1,n2,n3+1,n4,n5) + (n3+1)*faux(3)/(r+1)}
+\DoxyCodeLine{1224                 f(n0,n1,n2,n3,n4+1,n5) = f(n0,n1,n2,n3,n4+1,n5) + (n4+1)*faux(4)/(r+1)}
+\DoxyCodeLine{1225                 f(n0,n1,n2,n3,n4,n5+1) = f(n0,n1,n2,n3,n4,n5+1) + (n5+1)*faux(5)/(r+1)}
+\DoxyCodeLine{1226 }
+\DoxyCodeLine{1227 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1228 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1229 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1230 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1231 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1232 }
+\DoxyCodeLine{1233       \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}  }
+\DoxyCodeLine{1234         ferr(r+1) = max( maxval(abs(mx0kinvs(1:5)))*eerr(0,r), \&}
+\DoxyCodeLine{1235                    maxval(abs(mx0kinv(1:5,1)))*eerr(1,r) , \&}
+\DoxyCodeLine{1236                    maxval(abs(mx0kinv(1:5,2)))*eerr(2,r) , \&}
+\DoxyCodeLine{1237                    maxval(abs(mx0kinv(1:5,3)))*eerr(3,r) , \&}
+\DoxyCodeLine{1238                    maxval(abs(mx0kinv(1:5,4)))*eerr(4,r) , \&}
+\DoxyCodeLine{1239                    maxval(abs(mx0kinv(1:5,5)))*eerr(5,r) )}
+\DoxyCodeLine{1240         ferr2(r+1) = max( abs(maxzmx0kinvs)*eerr2(0,r), \&}
+\DoxyCodeLine{1241                    abs(maxzmx0kinv(1))*eerr2(1,r) , \&}
+\DoxyCodeLine{1242                    abs(maxzmx0kinv(2))*eerr2(2,r) , \&}
+\DoxyCodeLine{1243                    abs(maxzmx0kinv(3))*eerr2(3,r) , \&}
+\DoxyCodeLine{1244                    abs(maxzmx0kinv(4))*eerr2(4,r) , \&}
+\DoxyCodeLine{1245                    abs(maxzmx0kinv(5))*eerr2(5,r) )/maxz}
+\DoxyCodeLine{1246 }
+\DoxyCodeLine{1247 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr',r, Ferr(r+1) }}
+\DoxyCodeLine{1248 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr',Eerr(0:5,r) }}
+\DoxyCodeLine{1249 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr2',r, Ferr2(r+1) }}
+\DoxyCodeLine{1250 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr2',Eerr2(0:5,r) }}
+\DoxyCodeLine{1251 \textcolor{comment}{!         write(*,*) 'CalcFred Ferr',maxval(abs(mx0kinv(1:5,1:5))),maxval(abs(mx0kinvs(1:5)))}}
+\DoxyCodeLine{1252 \textcolor{comment}{!         write(*,*) 'CalcFred Ferr',maxval(abs(mx0kinvs(1:5)))*Eerr(0,r)}}
+\DoxyCodeLine{1253 \textcolor{comment}{!         write(*,*) 'CalcFred Ferr',maxval(abs(mx0kinv(1:5,1:5)))*Eerr(0,r), \&}}
+\DoxyCodeLine{1254 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,1)))*Eerr(1,r) , \&}}
+\DoxyCodeLine{1255 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,2)))*Eerr(2,r) , \&}}
+\DoxyCodeLine{1256 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,3)))*Eerr(3,r) , \&}}
+\DoxyCodeLine{1257 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,4)))*Eerr(4,r) , \&}}
+\DoxyCodeLine{1258 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,5)))*Eerr(5,r) }}
+\DoxyCodeLine{1259 \textcolor{comment}{!         write(*,*) 'CalcFred Ferr',Eerr(0,r), \&}}
+\DoxyCodeLine{1260 \textcolor{comment}{!                   Eerr(1,r) , \&}}
+\DoxyCodeLine{1261 \textcolor{comment}{!                   Eerr(2,r) , \&}}
+\DoxyCodeLine{1262 \textcolor{comment}{!                   Eerr(3,r) , \&}}
+\DoxyCodeLine{1263 \textcolor{comment}{!                   Eerr(4,r) , \&}}
+\DoxyCodeLine{1264 \textcolor{comment}{!                   Eerr(5,r) }}
+\DoxyCodeLine{1265 \textcolor{comment}{!         write(*,*) 'CalcFred Ferr',maxval(abs(mxinv(1:5,1:5))), \&}}
+\DoxyCodeLine{1266 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,1))), \&}}
+\DoxyCodeLine{1267 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,2))), \&}}
+\DoxyCodeLine{1268 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,3))), \&}}
+\DoxyCodeLine{1269 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,4))), \&}}
+\DoxyCodeLine{1270 \textcolor{comment}{!                   maxval(abs(mx0kinv(1:5,5))) }}
+\DoxyCodeLine{1271 }
+\DoxyCodeLine{1272         \textcolor{keywordflow}{if} (mode\_coli.lt.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1273           gram= mx(1:5,1:5)}
+\DoxyCodeLine{1274           }
+\DoxyCodeLine{1275           gramdet= chdet(5,gram)}
+\DoxyCodeLine{1276           }
+\DoxyCodeLine{1277 \textcolor{comment}{!         write(*,*) 'CalcFred gram=',det}}
+\DoxyCodeLine{1278 }
+\DoxyCodeLine{1279           \textcolor{keywordflow}{if} (max(abs(f(0,0,0,0,0,0)),abs(f(0,1,0,0,0,0)),abs(f(0,0,1,0,0,0)),  \&}
+\DoxyCodeLine{1280               abs(f(0,0,0,1,0,0)),abs(f(0,0,0,0,1,0)),abs(f(0,0,0,0,0,1))      \&}
+\DoxyCodeLine{1281               )*abs(gramdet/det).gt. ferr(r+1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1282             }
+\DoxyCodeLine{1283 }
+\DoxyCodeLine{1284 \textcolor{comment}{!          write(*,*) 'CalcFred Ferr=',r+1,Ferr(r+1)}}
+\DoxyCodeLine{1285 }
+\DoxyCodeLine{1286             ferr(r+1)=max(ferr(r+1),max(                   \&}
+\DoxyCodeLine{1287                 abs(f(0,0,0,0,0,0)),abs(f(0,1,0,0,0,0)),   \&}
+\DoxyCodeLine{1288                 abs(f(0,0,1,0,0,0)), abs(f(0,0,0,1,0,0)),  \&}
+\DoxyCodeLine{1289                 abs(f(0,0,0,0,1,0)),abs(f(0,0,0,0,0,1))      \&}
+\DoxyCodeLine{1290                 )*abs(gramdet/det) )}
+\DoxyCodeLine{1291             }
+\DoxyCodeLine{1292             ferr2(r+1)=max(ferr2(r+1),max(                   \&}
+\DoxyCodeLine{1293                 abs(f(0,0,0,0,0,0)),abs(f(0,1,0,0,0,0)),   \&}
+\DoxyCodeLine{1294                 abs(f(0,0,1,0,0,0)), abs(f(0,0,0,1,0,0)),  \&}
+\DoxyCodeLine{1295                 abs(f(0,0,0,0,1,0)),abs(f(0,0,0,0,0,1))      \&}
+\DoxyCodeLine{1296                 )*abs(gramdet/det) )}
+\DoxyCodeLine{1297 }
+\DoxyCodeLine{1298 \textcolor{comment}{!          write(*,*) 'CalcFred ',abs(F(0,0,0,0,0,0)),abs(F(0,1,0,0,0,0)),       \&}}
+\DoxyCodeLine{1299 \textcolor{comment}{!              abs(F(0,0,1,0,0,0)), abs(F(0,0,0,1,0,0)),  \&}}
+\DoxyCodeLine{1300 \textcolor{comment}{!              abs(F(0,0,0,0,1,0)),abs(F(0,0,0,0,0,1)),abs(gramdet/det)}}
+\DoxyCodeLine{1301 \textcolor{comment}{!          write(*,*) 'CalcFred Ferr=',r+1,Ferr(r+1)}}
+\DoxyCodeLine{1302 }
+\DoxyCodeLine{1303             \textcolor{keywordflow}{if} (abs(gramdet/det).gt.reqacc\_coli) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1304               \textcolor{keyword}{call }seterrflag\_coli(-\/6)}
+\DoxyCodeLine{1305               \textcolor{keyword}{call }errout\_coli(\textcolor{stringliteral}{'CalcFred'}, \&}
+\DoxyCodeLine{1306                   \textcolor{stringliteral}{'input momenta inconsistent! (not 4-\/dimensional)'},  \&}
+\DoxyCodeLine{1307                   errorwriteflag)}
+\DoxyCodeLine{1308               \textcolor{keywordflow}{if} (errorwriteflag) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1309                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q10 = '},q10}
+\DoxyCodeLine{1310                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q21 = '},q21}
+\DoxyCodeLine{1311                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q32 = '},q32}
+\DoxyCodeLine{1312                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q43 = '},q43}
+\DoxyCodeLine{1313                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q54 = '},q54}
+\DoxyCodeLine{1314                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q50 = '},q50}
+\DoxyCodeLine{1315                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q20 = '},q10}
+\DoxyCodeLine{1316                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q31 = '},q31}
+\DoxyCodeLine{1317                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q42 = '},q42}
+\DoxyCodeLine{1318                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q53 = '},q53}
+\DoxyCodeLine{1319                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q40 = '},q40}
+\DoxyCodeLine{1320                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q51 = '},q51}
+\DoxyCodeLine{1321                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q30 = '},q30}
+\DoxyCodeLine{1322                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q41 = '},q41}
+\DoxyCodeLine{1323                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: q52 = '},q52}
+\DoxyCodeLine{1324                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: mm02 = '},mm02}
+\DoxyCodeLine{1325                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: mm12 = '},mm12}
+\DoxyCodeLine{1326                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: mm22 = '},mm22   }
+\DoxyCodeLine{1327                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: mm32 = '},mm32   }
+\DoxyCodeLine{1328                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: mm42 = '},mm42   }
+\DoxyCodeLine{1329                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: mm52 = '},mm52   }
+\DoxyCodeLine{1330                 \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcFred: gram = '},gramdet/det  }
+\DoxyCodeLine{1331 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{1332 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{1333             }
+\DoxyCodeLine{1334 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{1335 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{1336 }
+\DoxyCodeLine{1337 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr',r, Ferr(r+1) }}
+\DoxyCodeLine{1338 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr',Eerr(0:5,r) }}
+\DoxyCodeLine{1339 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr2',r, Ferr2(r+1) }}
+\DoxyCodeLine{1340 \textcolor{comment}{!        write(*,*) 'CalcFred Ferr2',Eerr2(0:5,r) }}
+\DoxyCodeLine{1341 }
+\DoxyCodeLine{1342 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1343 }
+\DoxyCodeLine{1344 \textcolor{keywordflow}{    end do}                       }
+\DoxyCodeLine{1345 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionefg_aeb3fa4f20322318f3908b946cb9002cf}\label{namespacereductionefg_aeb3fa4f20322318f3908b946cb9002cf}} 
+\index{reductionefg@{reductionefg}!calcg@{calcg}}
+\index{calcg@{calcg}!reductionefg@{reductionefg}}
+\doxysubsubsection{\texorpdfstring{calcg()}{calcg()}}
+{\footnotesize\ttfamily subroutine reductionefg\+::calcg (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{G,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Guv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p65,  }\item[{double complex, intent(in)}]{p60,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p64,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p61,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{p63,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p62,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double complex, intent(in)}]{m62,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Gerr,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Gerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1361 of file reduction\+E\+F\+G.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1361 }
+\DoxyCodeLine{1362     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax,id}
+\DoxyCodeLine{1363     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53}
+\DoxyCodeLine{1364     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p64,p50,p61,p30,p41,p52,p63,p40,p51,p62}
+\DoxyCodeLine{1365     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42,m52,m62}
+\DoxyCodeLine{1366     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: G(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1367     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Guv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1368     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Gerr(0:rmax),Gerr2(0:rmax)}
+\DoxyCodeLine{1369     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: Gaux(:,:,:,:,:,:,:), Guvaux(:,:,:,:,:,:,:), fct(:)}
+\DoxyCodeLine{1370     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: Gerraux(:),Gerr2aux(:)}
+\DoxyCodeLine{1371     \textcolor{keywordtype}{double complex} :: x(28)}
+\DoxyCodeLine{1372     \textcolor{keywordtype}{integer} :: rank,switch,cnt,n0,n1,n2,n3,n4,n5,n6,r,r0}
+\DoxyCodeLine{1373     \textcolor{keywordtype}{logical} :: nocalc,wrica,noten}
+\DoxyCodeLine{1374 }
+\DoxyCodeLine{1375     r0 = 0}
+\DoxyCodeLine{1376 }
+\DoxyCodeLine{1377     \textcolor{keywordflow}{if} ((use\_cache\_system).and.(tencache.gt.7)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1378       \textcolor{keywordflow}{if} ((ncache.gt.0).and.(ncache.le.ncache\_max)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1379 \textcolor{comment}{!        if (use\_cache(ncache).ge.7) then }}
+\DoxyCodeLine{1380           x(1) = p10}
+\DoxyCodeLine{1381           x(2) = p21}
+\DoxyCodeLine{1382           x(3) = p32}
+\DoxyCodeLine{1383           x(4) = p43}
+\DoxyCodeLine{1384           x(5) = p54}
+\DoxyCodeLine{1385           x(6) = p65}
+\DoxyCodeLine{1386           x(7) = p60}
+\DoxyCodeLine{1387           x(8) = p20}
+\DoxyCodeLine{1388           x(9) = p31}
+\DoxyCodeLine{1389           x(10) = p42}
+\DoxyCodeLine{1390           x(11) = p53}
+\DoxyCodeLine{1391           x(12) = p64}
+\DoxyCodeLine{1392           x(13) = p50}
+\DoxyCodeLine{1393           x(14) = p61}
+\DoxyCodeLine{1394           x(15) = p30}
+\DoxyCodeLine{1395           x(16) = p41}
+\DoxyCodeLine{1396           x(17) = p52}
+\DoxyCodeLine{1397           x(18) = p63}
+\DoxyCodeLine{1398           x(19) = p40}
+\DoxyCodeLine{1399           x(20) = p51}
+\DoxyCodeLine{1400           x(21) = p62}
+\DoxyCodeLine{1401           x(22) = m02}
+\DoxyCodeLine{1402           x(23) = m12}
+\DoxyCodeLine{1403           x(24) = m22}
+\DoxyCodeLine{1404           x(25) = m32}
+\DoxyCodeLine{1405           x(26) = m42}
+\DoxyCodeLine{1406           x(27) = m52}
+\DoxyCodeLine{1407           x(28) = m62}
+\DoxyCodeLine{1408 }
+\DoxyCodeLine{1409           rank = rmax}
+\DoxyCodeLine{1410 }
+\DoxyCodeLine{1411           \textcolor{keywordflow}{if} (rmax.ge.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1412             \textcolor{keyword}{allocate}(fct(ncoefs(rmax,7)+ncoefs(rmax-\/10,7)+2*(rmax+1)))}
+\DoxyCodeLine{1413             \textcolor{keyword}{call }readcache(fct,ncoefs(rmax,7)+ncoefs(rmax-\/10,7)+2*(rmax+1),x,28,1,id,7,rank,nocalc,wrica)}
+\DoxyCodeLine{1414           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1415             \textcolor{keyword}{allocate}(fct(ncoefs(rmax,7)+2*(rmax+1)))}
+\DoxyCodeLine{1416             \textcolor{keyword}{call }readcache(fct,ncoefs(rmax,7)+2*(rmax+1),x,28,1,id,7,rank,nocalc,wrica)}
+\DoxyCodeLine{1417 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{1418     }
+\DoxyCodeLine{1419           \textcolor{keywordflow}{if}(nocalc) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1420             cnt = 0}
+\DoxyCodeLine{1421             guv(0:min(rmax/2,4),:,:,:,:,:,:) = 0d0}
+\DoxyCodeLine{1422             \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{1423               \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{1424                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1425                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1426                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1427                       \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1428                         \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1429                           n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1430  }
+\DoxyCodeLine{1431                           cnt = cnt+1}
+\DoxyCodeLine{1432                           g(n0,n1,n2,n3,n4,n5,n6) = fct(cnt)}
+\DoxyCodeLine{1433               }
+\DoxyCodeLine{1434 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{1435 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{1436 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{1437 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1438 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1439 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1440               \textcolor{keywordflow}{do} n0=5,r/2}
+\DoxyCodeLine{1441                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1442                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1443                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1444                       \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1445                         \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1446                           n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1447  }
+\DoxyCodeLine{1448                           cnt = cnt+1}
+\DoxyCodeLine{1449                           guv(n0,n1,n2,n3,n4,n5,n6) = fct(cnt)}
+\DoxyCodeLine{1450               }
+\DoxyCodeLine{1451 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{1452 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{1453 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{1454 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1455 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1456 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1457               cnt = cnt+1}
+\DoxyCodeLine{1458               gerr(r) = real(fct(cnt))}
+\DoxyCodeLine{1459               cnt = cnt+1}
+\DoxyCodeLine{1460               gerr2(r) = real(fct(cnt))}
+\DoxyCodeLine{1461 \textcolor{keywordflow}{            end do}     }
+\DoxyCodeLine{1462             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{1463 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{1464 }
+\DoxyCodeLine{1465 }
+\DoxyCodeLine{1466           \textcolor{keywordflow}{if}(rank.eq.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1467 }
+\DoxyCodeLine{1468             \textcolor{keyword}{call }calcgred(g,guv,p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53,  \&}
+\DoxyCodeLine{1469                                 p64,p50,p61,p30,p41,p52,p63,p40,p51,p62,  \&}
+\DoxyCodeLine{1470                                 m02,m12,m22,m32,m42,m52,m62,rank,id,gerr,gerr2)}
+\DoxyCodeLine{1471 }
+\DoxyCodeLine{1472             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1473               cnt = 0}
+\DoxyCodeLine{1474               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{1475                 \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{1476                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1477                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1478                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1479                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1480                           \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1481                             n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1482  }
+\DoxyCodeLine{1483                             cnt = cnt+1}
+\DoxyCodeLine{1484                             fct(cnt) = g(n0,n1,n2,n3,n4,n5,n6)}
+\DoxyCodeLine{1485 }
+\DoxyCodeLine{1486 \textcolor{keywordflow}{                          end do}}
+\DoxyCodeLine{1487 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{1488 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{1489 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{1490 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1491 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1492                 \textcolor{keywordflow}{do} n0=5,r/2}
+\DoxyCodeLine{1493                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1494                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1495                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1496                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1497                           \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1498                             n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1499  }
+\DoxyCodeLine{1500                             cnt = cnt+1}
+\DoxyCodeLine{1501                             fct(cnt) = guv(n0,n1,n2,n3,n4,n5,n6)}
+\DoxyCodeLine{1502 }
+\DoxyCodeLine{1503 \textcolor{keywordflow}{                          end do}}
+\DoxyCodeLine{1504 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{1505 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{1506 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{1507 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1508 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1509                 cnt = cnt+1}
+\DoxyCodeLine{1510                 fct(cnt) = gerr(r)}
+\DoxyCodeLine{1511                 cnt = cnt+1}
+\DoxyCodeLine{1512                 fct(cnt) = gerr2(r)}
+\DoxyCodeLine{1513 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1514 }
+\DoxyCodeLine{1515               \textcolor{keywordflow}{if} (rmax.ge.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1516                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,7)+ncoefs(rank-\/10,7)+2*(rank+1),id,7,rank)}
+\DoxyCodeLine{1517               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1518                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,7)+2*(rank+1),id,7,rank)}
+\DoxyCodeLine{1519 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{1520       }
+\DoxyCodeLine{1521 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{1522 }
+\DoxyCodeLine{1523             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{1524           }
+\DoxyCodeLine{1525           }
+\DoxyCodeLine{1526           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1527             \textcolor{keyword}{allocate}(gaux(0:rank/2,0:rank,0:rank,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{1528             \textcolor{keyword}{allocate}(guvaux(0:rank/2,0:rank,0:rank,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{1529             \textcolor{keyword}{allocate}(gerraux(0:rank))}
+\DoxyCodeLine{1530             \textcolor{keyword}{allocate}(gerr2aux(0:rank))}
+\DoxyCodeLine{1531 }
+\DoxyCodeLine{1532             \textcolor{keyword}{call }calcgred(gaux,guvaux,p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53,  \&}
+\DoxyCodeLine{1533                                       p64,p50,p61,p30,p41,p52,p63,p40,p51,p62,  \&}
+\DoxyCodeLine{1534                                       m02,m12,m22,m32,m42,m52,m62,rank,id,gerraux,gerr2aux)}
+\DoxyCodeLine{1535 }
+\DoxyCodeLine{1536             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1537               cnt = 0}
+\DoxyCodeLine{1538               \textcolor{keywordflow}{if} (rmax.ge.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1539                 \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{1540                 \textcolor{keyword}{allocate}(fct(ncoefs(rank,7)+ncoefs(rank-\/10,7)+2*(rank+1)))}
+\DoxyCodeLine{1541               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1542                 \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{1543                 \textcolor{keyword}{allocate}(fct(ncoefs(rank,7)+2*(rank+1)))}
+\DoxyCodeLine{1544 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{1545               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{1546                 \textcolor{keywordflow}{do} n0=0,r/2}
+\DoxyCodeLine{1547                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1548                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1549                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1550                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1551                           \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1552                             n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1553  }
+\DoxyCodeLine{1554                             cnt = cnt+1}
+\DoxyCodeLine{1555                             fct(cnt) = gaux(n0,n1,n2,n3,n4,n5,n6)}
+\DoxyCodeLine{1556 }
+\DoxyCodeLine{1557 \textcolor{keywordflow}{                          end do}}
+\DoxyCodeLine{1558 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{1559 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{1560 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{1561 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1562 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1563                 \textcolor{keywordflow}{do} n0=5,r/2}
+\DoxyCodeLine{1564                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1565                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1566                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1567                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1568                           \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1569                             n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1570  }
+\DoxyCodeLine{1571                             cnt = cnt+1}
+\DoxyCodeLine{1572                             fct(cnt) = guvaux(n0,n1,n2,n3,n4,n5,n6)}
+\DoxyCodeLine{1573 }
+\DoxyCodeLine{1574 \textcolor{keywordflow}{                          end do}}
+\DoxyCodeLine{1575 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{1576 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{1577 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{1578 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1579 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1580                 cnt = cnt+1}
+\DoxyCodeLine{1581                 fct(cnt) = gerraux(r)}
+\DoxyCodeLine{1582                 cnt = cnt+1}
+\DoxyCodeLine{1583                 fct(cnt) = gerr2aux(r)}
+\DoxyCodeLine{1584 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1585 }
+\DoxyCodeLine{1586               \textcolor{keywordflow}{if} (rmax.ge.10) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1587                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,7)+ncoefs(rank-\/10,7)+2*(rank+1),id,7,rank)}
+\DoxyCodeLine{1588               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1589                 \textcolor{keyword}{call }writecache(fct,ncoefs(rank,7)+2*(rank+1),id,7,rank)}
+\DoxyCodeLine{1590 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{1591       }
+\DoxyCodeLine{1592 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{1593    }
+\DoxyCodeLine{1594             g = gaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1595             guv = guvaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1596             gerr = gerraux(0:rmax)}
+\DoxyCodeLine{1597             gerr2 = gerr2aux(0:rmax)}
+\DoxyCodeLine{1598             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{1599             }
+\DoxyCodeLine{1600 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{1601 }
+\DoxyCodeLine{1602 \textcolor{comment}{!        end if}}
+\DoxyCodeLine{1603 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1604 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1605 }
+\DoxyCodeLine{1606 }
+\DoxyCodeLine{1607     \textcolor{keyword}{call }calcgred(g,guv,p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53,  \&}
+\DoxyCodeLine{1608                         p64,p50,p61,p30,p41,p52,p63,p40,p51,p62,  \&}
+\DoxyCodeLine{1609                         m02,m12,m22,m32,m42,m52,m62,rmax,id,gerr,gerr2)}
+\DoxyCodeLine{1610 }
+\DoxyCodeLine{1611 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacereductionefg_a390896f0be7b7e150987c9ff215bf4de}\label{namespacereductionefg_a390896f0be7b7e150987c9ff215bf4de}} 
+\index{reductionefg@{reductionefg}!calcgred@{calcgred}}
+\index{calcgred@{calcgred}!reductionefg@{reductionefg}}
+\doxysubsubsection{\texorpdfstring{calcgred()}{calcgred()}}
+{\footnotesize\ttfamily subroutine reductionefg\+::calcgred (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{G,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{Guv,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p65,  }\item[{double complex, intent(in)}]{p60,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p64,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p61,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{p63,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p62,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double complex, intent(in)}]{m62,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Gerr,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Gerr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1628 of file reduction\+E\+F\+G.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1628 }
+\DoxyCodeLine{1629     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax,id}
+\DoxyCodeLine{1630     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53}
+\DoxyCodeLine{1631     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p64,p50,p61,p30,p41,p52,p63,p40,p51,p62}
+\DoxyCodeLine{1632     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42,m52,m62}
+\DoxyCodeLine{1633     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Gerr(0:rmax),Gerr2(0:rmax)}
+\DoxyCodeLine{1634     \textcolor{keywordtype}{double complex} :: q10,q21,q32,q43,q54,q20,q31,q42,q53,q50,q30,q41,q52,q40,q51,q60}
+\DoxyCodeLine{1635     \textcolor{keywordtype}{double complex} :: mm02,mm12,mm22,mm32,mm42,mm52,mm62}
+\DoxyCodeLine{1636     \textcolor{keywordtype}{double complex} :: mx(0:5,0:5), mxinv(0:5,0:5),mx0k(5,5),mx0kinv(5,5), f(6)}
+\DoxyCodeLine{1637     \textcolor{keywordtype}{double complex} :: det,newdet,mxinvs,mx0kinvs(5)}
+\DoxyCodeLine{1638     \textcolor{keywordtype}{double complex} :: zmx0kinv(5,5),Z(5,5),zmx0kinvs(5)}
+\DoxyCodeLine{1639     \textcolor{keywordtype}{double precision} :: maxZ,maxzmx0kinv(5),maxzmx0kinvs}
+\DoxyCodeLine{1640     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: G(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1641     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: Guv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1642     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: F\_0(:,:,:,:,:,:,:), F\_i(:,:,:,:,:,:,:)}
+\DoxyCodeLine{1643     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: Fuv\_0(:,:,:,:,:,:,:), Fuv\_i(:,:,:,:,:,:,:)  }
+\DoxyCodeLine{1644     \textcolor{keywordtype}{double complex} :: S(5), Gaux(5), elimminf2\_coli,chdet,gram(1:5,1:5),gramdet}
+\DoxyCodeLine{1645     \textcolor{keywordtype}{double precision} :: Ferr(0:5,0:rmax), Ferr2(0:5,0:rmax)}
+\DoxyCodeLine{1646     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,n5,n6,n,k,i,j,nid(0:5),r0,bin,kbest,rmaxF,rBCD,up}
+\DoxyCodeLine{1647     \textcolor{keywordtype}{logical} :: errorwriteflag}
+\DoxyCodeLine{1648     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt10 = \textcolor{stringliteral}{"(A17,'(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{1649 }
+\DoxyCodeLine{1650     r0=0}
+\DoxyCodeLine{1651 }
+\DoxyCodeLine{1652     \textcolor{comment}{! allocation of F functions}}
+\DoxyCodeLine{1653     rmaxf = max(rmax-\/1,0)}
+\DoxyCodeLine{1654     \textcolor{keyword}{allocate}(f\_0(0:rmaxf/2,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf))}
+\DoxyCodeLine{1655     \textcolor{keyword}{allocate}(f\_i(0:rmaxf/2,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,5))}
+\DoxyCodeLine{1656     \textcolor{keyword}{allocate}(fuv\_0(0:rmaxf/2,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf))}
+\DoxyCodeLine{1657     \textcolor{keyword}{allocate}(fuv\_i(0:rmaxf/2,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,0:rmaxf,5))}
+\DoxyCodeLine{1658 }
+\DoxyCodeLine{1659 }
+\DoxyCodeLine{1660     \textcolor{comment}{! determine binaries for F-\/coefficients}}
+\DoxyCodeLine{1661     k=0}
+\DoxyCodeLine{1662     bin = 1}
+\DoxyCodeLine{1663     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (k.le.5)}
+\DoxyCodeLine{1664       \textcolor{keywordflow}{if} (mod(id/bin,2).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1665         nid(k) = id+bin}
+\DoxyCodeLine{1666         k = k+1}
+\DoxyCodeLine{1667 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1668       bin = 2*bin}
+\DoxyCodeLine{1669 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1670 }
+\DoxyCodeLine{1671     \textcolor{keyword}{call }calcf(f\_0(:,0,:,:,:,:,:),fuv\_0(:,0,:,:,:,:,:),p21,p32,p43,p54,p65,p61,  \&}
+\DoxyCodeLine{1672         p31,p42,p53,p64,p51,p62,p41,p52,p63,m12,m22,m32,m42,m52,m62,    \&  }
+\DoxyCodeLine{1673         rmaxf,nid(0),ferr=ferr(0,0:rmax),ferr2=ferr2(0,0:rmax))}
+\DoxyCodeLine{1674     \textcolor{keyword}{call }calcf(f\_i(:,:,:,:,:,:,1),fuv\_i(:,:,:,:,:,:,1),p20,p32,p43,p54,p65,p60,  \&}
+\DoxyCodeLine{1675         p30,p42,p53,p64,p50,p62,p40,p52,p63,m02,m22,m32,m42,m52,m62,    \&}
+\DoxyCodeLine{1676         rmaxf,nid(1),ferr=ferr(1,0:rmax),ferr2=ferr2(1,0:rmax))}
+\DoxyCodeLine{1677     \textcolor{keyword}{call }calcf(f\_i(:,:,:,:,:,:,2),fuv\_i(:,:,:,:,:,:,2),p10,p31,p43,p54,p65,p60,  \&}
+\DoxyCodeLine{1678         p30,p41,p53,p64,p50,p61,p40,p51,p63,m02,m12,m32,m42,m52,m62,    \&}
+\DoxyCodeLine{1679         rmaxf,nid(2),ferr=ferr(2,0:rmax),ferr2=ferr(2,0:rmax))}
+\DoxyCodeLine{1680     \textcolor{keyword}{call }calcf(f\_i(:,:,:,:,:,:,3),fuv\_i(:,:,:,:,:,:,3),p10,p21,p42,p54,p65,p60,  \&}
+\DoxyCodeLine{1681         p20,p41,p52,p64,p50,p61,p40,p51,p62,m02,m12,m22,m42,m52,m62,    \&}
+\DoxyCodeLine{1682         rmaxf,nid(3),ferr=ferr(3,0:rmax),ferr2=ferr2(3,0:rmax))}
+\DoxyCodeLine{1683     \textcolor{keyword}{call }calcf(f\_i(:,:,:,:,:,:,4),fuv\_i(:,:,:,:,:,:,4),p10,p21,p32,p53,p65,p60,  \&}
+\DoxyCodeLine{1684         p20,p31,p52,p63,p50,p61,p30,p51,p62,m02,m12,m22,m32,m52,m62,    \&}
+\DoxyCodeLine{1685         rmaxf,nid(4),ferr=ferr(4,0:rmax),ferr2=ferr2(4,0:rmax))}
+\DoxyCodeLine{1686     \textcolor{keyword}{call }calcf(f\_i(:,:,:,:,:,:,5),fuv\_i(:,:,:,:,:,:,5),p10,p21,p32,p43,p64,p60,  \&}
+\DoxyCodeLine{1687         p20,p31,p42,p63,p40,p61,p30,p41,p62,m02,m12,m22,m32,m42,m62,    \&}
+\DoxyCodeLine{1688         rmaxf,nid(5),ferr=ferr(5,0:rmax),ferr2=ferr2(5,0:rmax))}
+\DoxyCodeLine{1689 }
+\DoxyCodeLine{1690     \textcolor{comment}{! shift of integration momentum in F\(\backslash\)\{0\}}}
+\DoxyCodeLine{1691     \textcolor{keywordflow}{do} n1=1,rmaxf}
+\DoxyCodeLine{1692       \textcolor{keywordflow}{do} n2=0,rmaxf-\/n1}
+\DoxyCodeLine{1693         \textcolor{keywordflow}{do} n3=0,rmaxf-\/n1-\/n2}
+\DoxyCodeLine{1694           \textcolor{keywordflow}{do} n4=0,rmaxf-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1695             \textcolor{keywordflow}{do} n5=0,rmaxf-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1696               \textcolor{keywordflow}{do} n6=0,rmaxf-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1697                 n0 = (rmaxf-\/n1-\/n2-\/n3-\/n4-\/n5-\/n6)/2}
+\DoxyCodeLine{1698                 fuv\_0(0:n0,n1,n2,n3,n4,n5,n6) = -\/fuv\_0(0:n0,n1-\/1,n2,n3,n4,n5,n6)  \&}
+\DoxyCodeLine{1699                                                 -\/fuv\_0(0:n0,n1-\/1,n2+1,n3,n4,n5,n6)  \&}
+\DoxyCodeLine{1700                                                 -\/fuv\_0(0:n0,n1-\/1,n2,n3+1,n4,n5,n6)  \&}
+\DoxyCodeLine{1701                                                 -\/fuv\_0(0:n0,n1-\/1,n2,n3,n4+1,n5,n6)  \&}
+\DoxyCodeLine{1702                                                 -\/fuv\_0(0:n0,n1-\/1,n2,n3,n4,n5+1,n6)  \&}
+\DoxyCodeLine{1703                                                 -\/fuv\_0(0:n0,n1-\/1,n2,n3,n4,n5,n6+1)}
+\DoxyCodeLine{1704                 f\_0(0:n0,n1,n2,n3,n4,n5,n6) = -\/f\_0(0:n0,n1-\/1,n2,n3,n4,n5,n6)  \&}
+\DoxyCodeLine{1705                                               -\/f\_0(0:n0,n1-\/1,n2+1,n3,n4,n5,n6)  \&}
+\DoxyCodeLine{1706                                               -\/f\_0(0:n0,n1-\/1,n2,n3+1,n4,n5,n6)  \&}
+\DoxyCodeLine{1707                                               -\/f\_0(0:n0,n1-\/1,n2,n3,n4+1,n5,n6)  \&}
+\DoxyCodeLine{1708                                               -\/f\_0(0:n0,n1-\/1,n2,n3,n4,n5+1,n6)  \&}
+\DoxyCodeLine{1709                                               -\/f\_0(0:n0,n1-\/1,n2,n3,n4,n5,n6+1)}
+\DoxyCodeLine{1710 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1711 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1712 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1713 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1714 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1715 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1716 }
+\DoxyCodeLine{1717 }
+\DoxyCodeLine{1718     \textcolor{comment}{! determine inverse modified Caley matrix}}
+\DoxyCodeLine{1719     mm02 = elimminf2\_coli(m02)}
+\DoxyCodeLine{1720     mm12 = elimminf2\_coli(m12)}
+\DoxyCodeLine{1721     mm22 = elimminf2\_coli(m22)}
+\DoxyCodeLine{1722     mm32 = elimminf2\_coli(m32)}
+\DoxyCodeLine{1723     mm42 = elimminf2\_coli(m42)}
+\DoxyCodeLine{1724     mm52 = elimminf2\_coli(m52)}
+\DoxyCodeLine{1725     mm62 = elimminf2\_coli(m62)}
+\DoxyCodeLine{1726     q10  = elimminf2\_coli(p10)}
+\DoxyCodeLine{1727     q21  = elimminf2\_coli(p21)}
+\DoxyCodeLine{1728     q32  = elimminf2\_coli(p32)}
+\DoxyCodeLine{1729     q43  = elimminf2\_coli(p43)}
+\DoxyCodeLine{1730     q54  = elimminf2\_coli(p54)}
+\DoxyCodeLine{1731     q50  = elimminf2\_coli(p50)}
+\DoxyCodeLine{1732     q20  = elimminf2\_coli(p20)}
+\DoxyCodeLine{1733     q31  = elimminf2\_coli(p31)}
+\DoxyCodeLine{1734     q42  = elimminf2\_coli(p42)}
+\DoxyCodeLine{1735     q53  = elimminf2\_coli(p53)}
+\DoxyCodeLine{1736     q40  = elimminf2\_coli(p40)}
+\DoxyCodeLine{1737     q51  = elimminf2\_coli(p51)}
+\DoxyCodeLine{1738     q30  = elimminf2\_coli(p30)}
+\DoxyCodeLine{1739     q41  = elimminf2\_coli(p41)}
+\DoxyCodeLine{1740     q52  = elimminf2\_coli(p52)}
+\DoxyCodeLine{1741     q60  = elimminf2\_coli(p60)}
+\DoxyCodeLine{1742 }
+\DoxyCodeLine{1743     f(1) = q10+mm02-\/mm12}
+\DoxyCodeLine{1744     f(2) = q20+mm02-\/mm22}
+\DoxyCodeLine{1745     f(3) = q30+mm02-\/mm32}
+\DoxyCodeLine{1746     f(4) = q40+mm02-\/mm42}
+\DoxyCodeLine{1747     f(5) = q50+mm02-\/mm52}
+\DoxyCodeLine{1748     f(6) = q60+mm02-\/mm62}
+\DoxyCodeLine{1749  }
+\DoxyCodeLine{1750     mx(0,0) = 2d0*mm02}
+\DoxyCodeLine{1751     mx(1,0) = q10 -\/ mm12 + mm02}
+\DoxyCodeLine{1752     mx(2,0) = q20 -\/ mm22 + mm02}
+\DoxyCodeLine{1753     mx(3,0) = q30 -\/ mm32 + mm02}
+\DoxyCodeLine{1754     mx(4,0) = q40 -\/ mm42 + mm02}
+\DoxyCodeLine{1755     mx(5,0) = q50 -\/ mm52 + mm02}
+\DoxyCodeLine{1756     mx(0,1) = mx(1,0)}
+\DoxyCodeLine{1757     mx(1,1) = 2d0*q10}
+\DoxyCodeLine{1758     mx(2,1) = q10+q20-\/q21}
+\DoxyCodeLine{1759     mx(3,1) = q10+q30-\/q31}
+\DoxyCodeLine{1760     mx(4,1) = q10+q40-\/q41}
+\DoxyCodeLine{1761     mx(5,1) = q10+q50-\/q51}
+\DoxyCodeLine{1762     mx(0,2) = mx(2,0)}
+\DoxyCodeLine{1763     mx(1,2) = mx(2,1)}
+\DoxyCodeLine{1764     mx(2,2) = 2d0*q20}
+\DoxyCodeLine{1765     mx(3,2) = q20+q30-\/q32}
+\DoxyCodeLine{1766     mx(4,2) = q20+q40-\/q42}
+\DoxyCodeLine{1767     mx(5,2) = q20+q50-\/q52}
+\DoxyCodeLine{1768     mx(0,3) = mx(3,0)}
+\DoxyCodeLine{1769     mx(1,3) = mx(3,1)}
+\DoxyCodeLine{1770     mx(2,3) = mx(3,2)}
+\DoxyCodeLine{1771     mx(3,3) = 2d0*q30}
+\DoxyCodeLine{1772     mx(4,3) = q30+q40-\/q43}
+\DoxyCodeLine{1773     mx(5,3) = q30+q50-\/q53}
+\DoxyCodeLine{1774     mx(0,4) = mx(4,0)}
+\DoxyCodeLine{1775     mx(1,4) = mx(4,1)}
+\DoxyCodeLine{1776     mx(2,4) = mx(4,2)}
+\DoxyCodeLine{1777     mx(3,4) = mx(4,3)}
+\DoxyCodeLine{1778     mx(4,4) = 2d0*q40}
+\DoxyCodeLine{1779     mx(5,4) = q40+q50-\/q54}
+\DoxyCodeLine{1780     mx(0,5) = mx(5,0)}
+\DoxyCodeLine{1781     mx(1,5) = mx(5,1)}
+\DoxyCodeLine{1782     mx(2,5) = mx(5,2)}
+\DoxyCodeLine{1783     mx(3,5) = mx(5,3)}
+\DoxyCodeLine{1784     mx(4,5) = mx(5,4)}
+\DoxyCodeLine{1785     mx(5,5) = 2d0*q50}
+\DoxyCodeLine{1786 }
+\DoxyCodeLine{1787     \textcolor{keyword}{call }chinv(6,mx,mxinv)}
+\DoxyCodeLine{1788 }
+\DoxyCodeLine{1789     \textcolor{comment}{! determine X\_(0,5)}}
+\DoxyCodeLine{1790     \textcolor{keywordflow}{do} j=1,5}
+\DoxyCodeLine{1791       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1792         mx0k(i,j) = mx(i,j-\/1)}
+\DoxyCodeLine{1793 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1794 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1795 }
+\DoxyCodeLine{1796     det = chdet(5,mx0k)}
+\DoxyCodeLine{1797     kbest = 5}
+\DoxyCodeLine{1798 }
+\DoxyCodeLine{1799     \textcolor{keywordflow}{do} j=5,2,-\/1}
+\DoxyCodeLine{1800       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1801         mx0k(i,j) = mx(i,j)}
+\DoxyCodeLine{1802 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1803 }
+\DoxyCodeLine{1804       newdet =  chdet(5,mx0k)}
+\DoxyCodeLine{1805       \textcolor{keywordflow}{if} (abs(newdet).gt.abs(det)) \textcolor{keywordflow}{then}          }
+\DoxyCodeLine{1806         kbest = j-\/1}
+\DoxyCodeLine{1807         det = newdet}
+\DoxyCodeLine{1808 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1809     }
+\DoxyCodeLine{1810 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1811     }
+\DoxyCodeLine{1812     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1813       mx0k(i,1) = mx(i,1)}
+\DoxyCodeLine{1814       mx0k(i,kbest) = mx(i,0)}
+\DoxyCodeLine{1815 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1816 }
+\DoxyCodeLine{1817     \textcolor{keyword}{call }chinv(5,mx0k,mx0kinv)}
+\DoxyCodeLine{1818     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1819       mx0kinv(kbest,i) = 0d0}
+\DoxyCodeLine{1820 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1821 }
+\DoxyCodeLine{1822     mxinvs = sum(mxinv(0:5,0))}
+\DoxyCodeLine{1823     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1824       mx0kinvs(i) = sum(mx0kinv(i,1:5))}
+\DoxyCodeLine{1825 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1826 }
+\DoxyCodeLine{1827     \textcolor{comment}{! for alternative error estimate}}
+\DoxyCodeLine{1828     z(1:5,1:5) = mx(1:5,1:5)}
+\DoxyCodeLine{1829 }
+\DoxyCodeLine{1830     zmx0kinv = matmul(z,mx0kinv) }
+\DoxyCodeLine{1831 }
+\DoxyCodeLine{1832     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1833       maxzmx0kinv(i) = maxval(abs(zmx0kinv(1:5,i)))}
+\DoxyCodeLine{1834       zmx0kinvs(i) = sum(zmx0kinv(i,1:5))}
+\DoxyCodeLine{1835 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1836 }
+\DoxyCodeLine{1837     maxzmx0kinvs = maxval(abs(zmx0kinvs(1:5)))}
+\DoxyCodeLine{1838 }
+\DoxyCodeLine{1839     maxz = maxval(abs(z))}
+\DoxyCodeLine{1840 }
+\DoxyCodeLine{1841 }
+\DoxyCodeLine{1842     \textcolor{comment}{! calculation of UV-\/divergent parts      }}
+\DoxyCodeLine{1843     \textcolor{comment}{! G\_(n0,n1,n2,n3) UV-\/finite for n0<5}}
+\DoxyCodeLine{1844     guv(0:min(rmax/2,4),:,:,:,:,:,:) = 0d0}
+\DoxyCodeLine{1845     }
+\DoxyCodeLine{1846     \textcolor{comment}{! PV reduction (5.10)}}
+\DoxyCodeLine{1847     \textcolor{keywordflow}{do} r=max(r0,10),rmax}
+\DoxyCodeLine{1848       \textcolor{keywordflow}{do} n0=5,r/2}
+\DoxyCodeLine{1849         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1850           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1851             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1852               \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1853                 \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1854                   n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1855         }
+\DoxyCodeLine{1856                   guv(n0,n1,n2,n3,n4,n5,n6) = (fuv\_0(n0-\/1,n1,n2,n3,n4,n5,n6)  \& }
+\DoxyCodeLine{1857                                             + 2*m02*guv(n0-\/1,n1,n2,n3,n4,n5,n6)  \&}
+\DoxyCodeLine{1858                                             + f(1)*guv(n0-\/1,n1+1,n2,n3,n4,n5,n6)  \& }
+\DoxyCodeLine{1859                                             + f(2)*guv(n0-\/1,n1,n2+1,n3,n4,n5,n6)  \& }
+\DoxyCodeLine{1860                                             + f(3)*guv(n0-\/1,n1,n2,n3+1,n4,n5,n6)  \&}
+\DoxyCodeLine{1861                                             + f(4)*guv(n0-\/1,n1,n2,n3,n4+1,n5,n6)  \&}
+\DoxyCodeLine{1862                                             + f(5)*guv(n0-\/1,n1,n2,n3,n4,n5+1,n6)  \&}
+\DoxyCodeLine{1863                                             + f(6)*guv(n0-\/1,n1,n2,n3,n4,n5,n6+1))/ (2*(r-\/4))}
+\DoxyCodeLine{1864     }
+\DoxyCodeLine{1865 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1866 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1867 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1868 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1869 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1870 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1871 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1872 }
+\DoxyCodeLine{1873 }
+\DoxyCodeLine{1874     \textcolor{comment}{! scalar coefficient}}
+\DoxyCodeLine{1875     \textcolor{keywordflow}{if} (r0.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1876       g = 0d0}
+\DoxyCodeLine{1877       g(0,0,0,0,0,0,0) = -\/mxinv(0,0)*f\_0(0,0,0,0,0,0,0)}
+\DoxyCodeLine{1878       \textcolor{keywordflow}{do} k=1,5}
+\DoxyCodeLine{1879         g(0,0,0,0,0,0,0) = g(0,0,0,0,0,0,0) \&}
+\DoxyCodeLine{1880              + mxinv(k,0)*(f\_i(0,0,0,0,0,0,k)-\/f\_0(0,0,0,0,0,0,0))}
+\DoxyCodeLine{1881 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1882 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1883 }
+\DoxyCodeLine{1884 \textcolor{comment}{!   Gerr(0) = max( maxval(abs(mxinv(0:5,0)))*Ferr(0,0), \&}}
+\DoxyCodeLine{1885     gerr(0) = max( abs(mxinvs)*ferr(0,0), \&}
+\DoxyCodeLine{1886                    abs(mxinv(1,0))*ferr(1,0) , \&}
+\DoxyCodeLine{1887                    abs(mxinv(2,0))*ferr(2,0) , \&}
+\DoxyCodeLine{1888                    abs(mxinv(3,0))*ferr(3,0) , \&}
+\DoxyCodeLine{1889                    abs(mxinv(4,0))*ferr(4,0) , \&}
+\DoxyCodeLine{1890                    abs(mxinv(5,0))*ferr(5,0) )}
+\DoxyCodeLine{1891     gerr2(0) = max(abs(mxinvs)*ferr2(0,0), \&}
+\DoxyCodeLine{1892                    abs(mxinv(1,0))*ferr2(1,0) , \&}
+\DoxyCodeLine{1893                    abs(mxinv(2,0))*ferr2(2,0) , \&}
+\DoxyCodeLine{1894                    abs(mxinv(3,0))*ferr2(3,0) , \&}
+\DoxyCodeLine{1895                    abs(mxinv(4,0))*ferr2(4,0) , \&}
+\DoxyCodeLine{1896                    abs(mxinv(5,0))*ferr2(5,0) )}
+\DoxyCodeLine{1897 }
+\DoxyCodeLine{1898     \textcolor{comment}{! formula (7.13) extended to N=7}}
+\DoxyCodeLine{1899     \textcolor{keywordflow}{do} r=r0,rmax-\/1}
+\DoxyCodeLine{1900       \textcolor{keywordflow}{do} n0=0,max((r-\/1)/2,0)}
+\DoxyCodeLine{1901         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{1902           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{1903             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{1904               \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{1905                 \textcolor{keywordflow}{do} n5=0,r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{1906                   n6 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4-\/n5}
+\DoxyCodeLine{1907             }
+\DoxyCodeLine{1908                   \textcolor{keywordflow}{do} n=1,5}
+\DoxyCodeLine{1909                     s(n) = -\/f\_0(n0,n1,n2,n3,n4,n5,n6)}
+\DoxyCodeLine{1910 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1911 }
+\DoxyCodeLine{1912                   \textcolor{keywordflow}{if} (n1.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1913                     s(1) = s(1) + f\_i(n0,n2,n3,n4,n5,n6,1)}
+\DoxyCodeLine{1914 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{1915                   \textcolor{keywordflow}{if} (n2.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1916                     s(2) = s(2) + f\_i(n0,n1,n3,n4,n5,n6,2)}
+\DoxyCodeLine{1917 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{1918                   \textcolor{keywordflow}{if} (n3.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1919                     s(3) = s(3) + f\_i(n0,n1,n2,n4,n5,n6,3)}
+\DoxyCodeLine{1920 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{1921                   \textcolor{keywordflow}{if} (n4.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1922                     s(4) = s(4) + f\_i(n0,n1,n2,n3,n5,n6,4)}
+\DoxyCodeLine{1923 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{1924                   \textcolor{keywordflow}{if} (n5.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1925                     s(5) = s(5) + f\_i(n0,n1,n2,n3,n4,n6,5)}
+\DoxyCodeLine{1926 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{1927 }
+\DoxyCodeLine{1928                   \textcolor{keywordflow}{do} k=1,5}
+\DoxyCodeLine{1929                     gaux(k) = mx0kinv(k,1)*s(1)+mx0kinv(k,2)*s(2) \&}
+\DoxyCodeLine{1930                             + mx0kinv(k,3)*s(3)+mx0kinv(k,4)*s(4)+mx0kinv(k,5)*s(5)}
+\DoxyCodeLine{1931 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1932 }
+\DoxyCodeLine{1933                   g(n0,n1+1,n2,n3,n4,n5,n6) = g(n0,n1+1,n2,n3,n4,n5,n6) + (n1+1)*gaux(1)/(r+1)}
+\DoxyCodeLine{1934                   g(n0,n1,n2+1,n3,n4,n5,n6) = g(n0,n1,n2+1,n3,n4,n5,n6) + (n2+1)*gaux(2)/(r+1)}
+\DoxyCodeLine{1935                   g(n0,n1,n2,n3+1,n4,n5,n6) = g(n0,n1,n2,n3+1,n4,n5,n6) + (n3+1)*gaux(3)/(r+1)}
+\DoxyCodeLine{1936                   g(n0,n1,n2,n3,n4+1,n5,n6) = g(n0,n1,n2,n3,n4+1,n5,n6) + (n4+1)*gaux(4)/(r+1)}
+\DoxyCodeLine{1937                   g(n0,n1,n2,n3,n4,n5+1,n6) = g(n0,n1,n2,n3,n4,n5+1,n6) + (n5+1)*gaux(5)/(r+1)}
+\DoxyCodeLine{1938 }
+\DoxyCodeLine{1939 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1940 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1941 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1942 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1943 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1944 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1945 }
+\DoxyCodeLine{1946       \textcolor{keywordflow}{if} (r.le.rmax-\/1) \textcolor{keywordflow}{then}  }
+\DoxyCodeLine{1947 \textcolor{comment}{!        Gerr(r+1) = max( maxval(abs(mx0kinv(1:5,1:5)))*Ferr(0,r), \&}}
+\DoxyCodeLine{1948         gerr(r+1) = max( maxval(abs(mx0kinvs(1:5)))*ferr(0,r), \&}
+\DoxyCodeLine{1949                    maxval(abs(mx0kinv(1:5,1)))*ferr(1,r) , \&}
+\DoxyCodeLine{1950                    maxval(abs(mx0kinv(1:5,2)))*ferr(2,r) , \&}
+\DoxyCodeLine{1951                    maxval(abs(mx0kinv(1:5,3)))*ferr(3,r) , \&}
+\DoxyCodeLine{1952                    maxval(abs(mx0kinv(1:5,4)))*ferr(4,r) , \&}
+\DoxyCodeLine{1953                    maxval(abs(mx0kinv(1:5,5)))*ferr(5,r) )}
+\DoxyCodeLine{1954         gerr2(r+1) = max( abs(maxzmx0kinvs)*ferr2(0,r), \&}
+\DoxyCodeLine{1955                    abs(maxzmx0kinv(1))*ferr2(1,r) , \&}
+\DoxyCodeLine{1956                    abs(maxzmx0kinv(2))*ferr2(2,r) , \&}
+\DoxyCodeLine{1957                    abs(maxzmx0kinv(3))*ferr2(3,r) , \&}
+\DoxyCodeLine{1958                    abs(maxzmx0kinv(4))*ferr2(4,r) , \&}
+\DoxyCodeLine{1959                    abs(maxzmx0kinv(5))*ferr2(5,r) ) /maxz}
+\DoxyCodeLine{1960 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1961 }
+\DoxyCodeLine{1962       \textcolor{keywordflow}{if} (mode\_coli.lt.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1963         gram= mx(1:5,1:5)}
+\DoxyCodeLine{1964         }
+\DoxyCodeLine{1965         gramdet= chdet(5,gram)}
+\DoxyCodeLine{1966         }
+\DoxyCodeLine{1967         \textcolor{keywordflow}{if} (max(abs(g(0,0,0,0,0,0,0)),abs(g(0,1,0,0,0,0,0)),abs(g(0,0,1,0,0,0,0)),  \&}
+\DoxyCodeLine{1968             abs(g(0,0,0,1,0,0,0)),abs(g(0,0,0,0,1,0,0)),abs(g(0,0,0,0,0,1,0)),      \&}
+\DoxyCodeLine{1969             abs(g(0,0,0,0,0,0,1)))*abs(gramdet/det).gt. gerr(r+1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1970 }
+\DoxyCodeLine{1971 }
+\DoxyCodeLine{1972 \textcolor{comment}{!          write(*,*) 'CalcGred Gerr=',r+1,Gerr(r+1)}}
+\DoxyCodeLine{1973 }
+\DoxyCodeLine{1974           gerr(r+1)=max(gerr(r+1),max(                   \&}
+\DoxyCodeLine{1975               abs(g(0,0,0,0,0,0,0)),abs(g(0,1,0,0,0,0,0)),   \&}
+\DoxyCodeLine{1976               abs(g(0,0,1,0,0,0,0)), abs(g(0,0,0,1,0,0,0)),  \&}
+\DoxyCodeLine{1977               abs(g(0,0,0,0,1,0,0)),abs(g(0,0,0,0,0,1,0)),      \&}
+\DoxyCodeLine{1978               abs(g(0,0,0,0,0,0,1)))*abs(gramdet/det) )}
+\DoxyCodeLine{1979 }
+\DoxyCodeLine{1980           gerr2(r+1)=max(gerr2(r+1),max(                   \&}
+\DoxyCodeLine{1981               abs(g(0,0,0,0,0,0,0)),abs(g(0,1,0,0,0,0,0)),   \&}
+\DoxyCodeLine{1982               abs(g(0,0,1,0,0,0,0)), abs(g(0,0,0,1,0,0,0)),  \&}
+\DoxyCodeLine{1983               abs(g(0,0,0,0,1,0,0)),abs(g(0,0,0,0,0,1,0)),      \&}
+\DoxyCodeLine{1984               abs(g(0,0,0,0,0,0,1)))*abs(gramdet/det) )}
+\DoxyCodeLine{1985 }
+\DoxyCodeLine{1986 \textcolor{comment}{!          write(*,*) 'CalcGred ',abs(G(0,0,0,0,0,0)),abs(G(0,1,0,0,0,0)),       \&}}
+\DoxyCodeLine{1987 \textcolor{comment}{!              abs(G(0,0,1,0,0,0)), abs(G(0,0,0,1,0,0)),  \&}}
+\DoxyCodeLine{1988 \textcolor{comment}{!              abs(G(0,0,0,0,1,0)),abs(G(0,0,0,0,0,1)),abs(gramdet/det)}}
+\DoxyCodeLine{1989 \textcolor{comment}{!          write(*,*) 'CalcGred Gerr=',r+1,Gerr(r+1)}}
+\DoxyCodeLine{1990 }
+\DoxyCodeLine{1991           \textcolor{keywordflow}{if} (abs(gramdet/det).gt.reqacc\_coli) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1992             \textcolor{keyword}{call }seterrflag\_coli(-\/6)}
+\DoxyCodeLine{1993             \textcolor{keyword}{call }errout\_coli(\textcolor{stringliteral}{'CalcGred'}, \&}
+\DoxyCodeLine{1994                 \textcolor{stringliteral}{'input momenta inconsistent! (not 4-\/dimensional)'},  \&}
+\DoxyCodeLine{1995                 errorwriteflag)}
+\DoxyCodeLine{1996             \textcolor{keywordflow}{if} (errorwriteflag) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1997               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q10 = '},q10}
+\DoxyCodeLine{1998               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q21 = '},q21}
+\DoxyCodeLine{1999               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q32 = '},q32}
+\DoxyCodeLine{2000               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q43 = '},q43}
+\DoxyCodeLine{2001               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q54 = '},q54}
+\DoxyCodeLine{2002               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q50 = '},q50}
+\DoxyCodeLine{2003               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q20 = '},q10}
+\DoxyCodeLine{2004               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q31 = '},q31}
+\DoxyCodeLine{2005               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q42 = '},q42}
+\DoxyCodeLine{2006               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q53 = '},q53}
+\DoxyCodeLine{2007               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q40 = '},q40}
+\DoxyCodeLine{2008               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q51 = '},q51}
+\DoxyCodeLine{2009               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q30 = '},q30}
+\DoxyCodeLine{2010               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q41 = '},q41}
+\DoxyCodeLine{2011               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: q52 = '},q52}
+\DoxyCodeLine{2012               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: mm02 = '},mm02}
+\DoxyCodeLine{2013               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: mm12 = '},mm12}
+\DoxyCodeLine{2014               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: mm22 = '},mm22   }
+\DoxyCodeLine{2015               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: mm32 = '},mm32   }
+\DoxyCodeLine{2016               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: mm42 = '},mm42   }
+\DoxyCodeLine{2017               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: mm52 = '},mm52   }
+\DoxyCodeLine{2018               \textcolor{keyword}{write}(nerrout\_coli,fmt10) \textcolor{stringliteral}{' CalcGred: gram = '},gramdet/det  }
+\DoxyCodeLine{2019 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{2020 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{2021 }
+\DoxyCodeLine{2022 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{2023 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{2024 }
+\DoxyCodeLine{2025 \textcolor{keywordflow}{    end do}                       }
+\DoxyCodeLine{2026 }
+
+\end{DoxyCode}

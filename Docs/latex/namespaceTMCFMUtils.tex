@@ -1,0 +1,304 @@
+\hypertarget{namespaceTMCFMUtils}{}\doxysection{T\+M\+C\+F\+M\+Utils Namespace Reference}
+\label{namespaceTMCFMUtils}\index{TMCFMUtils@{TMCFMUtils}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceTMCFMUtils_aef81a55fd97ffadcaabc57015b59e4ee}{Associated\+Particle\+Ordering\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any}} (int i\+Sel, int j\+Sel, int r\+Sel, int s\+Sel, int order\mbox{[}2\mbox{]})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ \mbox{\hyperlink{namespaceTMCFMUtils_a2fc52292a6c36284b9feedf644460e3e}{Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ \mbox{\hyperlink{namespaceTMCFMUtils_a6063a1ddbf9725bced1b42cb62c658ca}{Hash\+\_\+\+Q\+Q\+V\+V\+QQ}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{T\+Numeric\+Util\+::int\+Quad\+\_\+t}} $>$ \mbox{\hyperlink{namespaceTMCFMUtils_ab8cb87b33459c0b6dd3e5035072ea47f}{Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Strong}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{int\+Quad\+\_\+t}} $>$ \mbox{\hyperlink{namespaceTMCFMUtils_a8562ec676d23b996449b5b8d68bb9e04}{M\+C\+F\+M\+Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any}} = \mbox{\hyperlink{namespaceTMCFMUtils_a2fc52292a6c36284b9feedf644460e3e}{Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceTMCFMUtils_aef81a55fd97ffadcaabc57015b59e4ee}\label{namespaceTMCFMUtils_aef81a55fd97ffadcaabc57015b59e4ee}} 
+\index{TMCFMUtils@{TMCFMUtils}!AssociatedParticleOrdering\_QQVVQQAny@{AssociatedParticleOrdering\_QQVVQQAny}}
+\index{AssociatedParticleOrdering\_QQVVQQAny@{AssociatedParticleOrdering\_QQVVQQAny}!TMCFMUtils@{TMCFMUtils}}
+\doxysubsubsection{\texorpdfstring{AssociatedParticleOrdering\_QQVVQQAny()}{AssociatedParticleOrdering\_QQVVQQAny()}}
+{\footnotesize\ttfamily void T\+M\+C\+F\+M\+Utils\+::\+Associated\+Particle\+Ordering\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any (\begin{DoxyParamCaption}\item[{int}]{i\+Sel,  }\item[{int}]{j\+Sel,  }\item[{int}]{r\+Sel,  }\item[{int}]{s\+Sel,  }\item[{int}]{order\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file T\+M\+C\+F\+M\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                                                                                                          \{}
+\DoxyCodeLine{19   \textcolor{keyword}{const} std::vector<intQuad\_t>\& hash = \mbox{\hyperlink{namespaceTMCFMUtils_a8562ec676d23b996449b5b8d68bb9e04}{MCFMHash\_QQVVQQAny}};}
+\DoxyCodeLine{20   \textcolor{keywordtype}{bool} outFound=\textcolor{keyword}{false};}
+\DoxyCodeLine{21   \textcolor{keywordflow}{for} (\mbox{\hyperlink{structTNumericUtil_1_1quadruplet}{intQuad\_t}} \textcolor{keyword}{const}\& hashel:hash)\{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{23       !(}
+\DoxyCodeLine{24       (\mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{PDGHelpers::isAnUnknownJet}}(iSel) || iSel==hashel[0])}
+\DoxyCodeLine{25       \&\&}
+\DoxyCodeLine{26       (\mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{PDGHelpers::isAnUnknownJet}}(jSel) || jSel==hashel[1])}
+\DoxyCodeLine{27       )}
+\DoxyCodeLine{28       ) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{29     \textcolor{comment}{// Final particles are q}}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePDGHelpers_a70d454afa0ba8867880810d0a527e4e5}{PDGHelpers::isAJet}}(rSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_a70d454afa0ba8867880810d0a527e4e5}{PDGHelpers::isAJet}}(sSel))\{}
+\DoxyCodeLine{31       \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{32         (\mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{PDGHelpers::isAnUnknownJet}}(rSel) || rSel==hashel[2])}
+\DoxyCodeLine{33         \&\&}
+\DoxyCodeLine{34         (\mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{PDGHelpers::isAnUnknownJet}}(sSel) || sSel==hashel[3])}
+\DoxyCodeLine{35         )\{}
+\DoxyCodeLine{36         order[0]=0;}
+\DoxyCodeLine{37         order[1]=1;}
+\DoxyCodeLine{38         outFound=\textcolor{keyword}{true};}
+\DoxyCodeLine{39         \textcolor{comment}{//MELAout << "Hash requested outgoing "<< hashel[2] << " " << hashel[3] << ", unswapped r, s = " << rSel << " " << sSel << endl;}}
+\DoxyCodeLine{40       \}}
+\DoxyCodeLine{41       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{42         (\mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{PDGHelpers::isAnUnknownJet}}(rSel) || rSel==hashel[3])}
+\DoxyCodeLine{43         \&\&}
+\DoxyCodeLine{44         (\mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{PDGHelpers::isAnUnknownJet}}(sSel) || sSel==hashel[2])}
+\DoxyCodeLine{45         )\{}
+\DoxyCodeLine{46         order[0]=1;}
+\DoxyCodeLine{47         order[1]=0;}
+\DoxyCodeLine{48         outFound=\textcolor{keyword}{true};}
+\DoxyCodeLine{49         \textcolor{comment}{//MELAout << "Hash requested outgoing "<< hashel[2] << " " << hashel[3] << ", swapped r, s = " << rSel << " " << sSel << endl;}}
+\DoxyCodeLine{50       \}}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{comment}{// Final particles l/nu}}
+\DoxyCodeLine{53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((\mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{PDGHelpers::isALepton}}(rSel) || \mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{PDGHelpers::isANeutrino}}(rSel)) \&\& (\mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{PDGHelpers::isALepton}}(sSel) || \mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{PDGHelpers::isANeutrino}}(sSel)))\{}
+\DoxyCodeLine{54       \textcolor{keywordflow}{if} (abs(hashel[0])==abs(hashel[1]) \&\& abs(hashel[0])==abs(hashel[2]) \&\& abs(hashel[0])==abs(hashel[3])) \textcolor{keywordflow}{continue}; \textcolor{comment}{// Do not consider the ordering in uquq\_uquq or dqdq\_dqdq}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56       \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{57         (}
+\DoxyCodeLine{58         TMath::Sign(1, rSel)==TMath::Sign(1, hashel[2]) \&\&}
+\DoxyCodeLine{59         ((\mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{PDGHelpers::isALepton}}(rSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}{PDGHelpers::isDownTypeQuark}}(hashel[2])) || (\mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{PDGHelpers::isANeutrino}}(rSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}{PDGHelpers::isUpTypeQuark}}(hashel[2])))}
+\DoxyCodeLine{60         )}
+\DoxyCodeLine{61         \&\&}
+\DoxyCodeLine{62         (}
+\DoxyCodeLine{63         TMath::Sign(1, sSel)==TMath::Sign(1, hashel[3]) \&\&}
+\DoxyCodeLine{64         ((\mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{PDGHelpers::isALepton}}(sSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}{PDGHelpers::isDownTypeQuark}}(hashel[3])) || (\mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{PDGHelpers::isANeutrino}}(sSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}{PDGHelpers::isUpTypeQuark}}(hashel[3])))}
+\DoxyCodeLine{65         )}
+\DoxyCodeLine{66         )\{}
+\DoxyCodeLine{67         order[0]=0;}
+\DoxyCodeLine{68         order[1]=1;}
+\DoxyCodeLine{69         outFound=\textcolor{keyword}{true};}
+\DoxyCodeLine{70         \textcolor{comment}{//MELAout << "Hash requested outgoing "<< hashel[2] << " " << hashel[3] << ", unswapped r, s = " << rSel << " " << sSel << endl;}}
+\DoxyCodeLine{71       \}}
+\DoxyCodeLine{72       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{73         (}
+\DoxyCodeLine{74         TMath::Sign(1, rSel)==TMath::Sign(1, hashel[3]) \&\&}
+\DoxyCodeLine{75         ((\mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{PDGHelpers::isALepton}}(rSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}{PDGHelpers::isDownTypeQuark}}(hashel[3])) || (\mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{PDGHelpers::isANeutrino}}(rSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}{PDGHelpers::isUpTypeQuark}}(hashel[3])))}
+\DoxyCodeLine{76         )}
+\DoxyCodeLine{77         \&\&}
+\DoxyCodeLine{78         (}
+\DoxyCodeLine{79         TMath::Sign(1, sSel)==TMath::Sign(1, hashel[2]) \&\&}
+\DoxyCodeLine{80         ((\mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{PDGHelpers::isALepton}}(sSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}{PDGHelpers::isDownTypeQuark}}(hashel[2])) || (\mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{PDGHelpers::isANeutrino}}(sSel) \&\& \mbox{\hyperlink{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}{PDGHelpers::isUpTypeQuark}}(hashel[2])))}
+\DoxyCodeLine{81         )}
+\DoxyCodeLine{82         )\{}
+\DoxyCodeLine{83         order[0]=1;}
+\DoxyCodeLine{84         order[1]=0;}
+\DoxyCodeLine{85         outFound=\textcolor{keyword}{true};}
+\DoxyCodeLine{86         \textcolor{comment}{//MELAout << "Hash requested outgoing "<< hashel[2] << " " << hashel[3] << ", swapped r, s = " << rSel << " " << sSel << endl;}}
+\DoxyCodeLine{87       \}}
+\DoxyCodeLine{88       \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePDGHelpers_a524d028bd6c958101639b40c8bfc5622}{PDGHelpers::getCoupledVertex}}(rSel, sSel)!=\mbox{\hyperlink{namespacePDGHelpers_a524d028bd6c958101639b40c8bfc5622}{PDGHelpers::getCoupledVertex}}(hashel[2], hashel[3])) outFound=\textcolor{keyword}{false};}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (outFound) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{91   \}}
+\DoxyCodeLine{92   \textcolor{keywordflow}{if} (!outFound)\{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ip=0; ip<2; ip++) order[ip]=-\/1; \}}
+\DoxyCodeLine{93 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceTMCFMUtils_a6063a1ddbf9725bced1b42cb62c658ca}\label{namespaceTMCFMUtils_a6063a1ddbf9725bced1b42cb62c658ca}} 
+\index{TMCFMUtils@{TMCFMUtils}!Hash\_QQVVQQ@{Hash\_QQVVQQ}}
+\index{Hash\_QQVVQQ@{Hash\_QQVVQQ}!TMCFMUtils@{TMCFMUtils}}
+\doxysubsubsection{\texorpdfstring{Hash\_QQVVQQ()}{Hash\_QQVVQQ()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{int\+Quad\+\_\+t}} $>$ T\+M\+C\+F\+M\+Utils\+::\+Hash\+\_\+\+Q\+Q\+V\+V\+QQ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file T\+M\+C\+F\+M\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102                                             \{}
+\DoxyCodeLine{103   \textcolor{comment}{/*}}
+\DoxyCodeLine{104 \textcolor{comment}{  Based on the following cases in MCFM:}}
+\DoxyCodeLine{105 \textcolor{comment}{  parameter(}}
+\DoxyCodeLine{106 \textcolor{comment}{  \& uqcq\_uqcq=1,uquq\_uquq=2,dqsq\_dqsq=3,}}
+\DoxyCodeLine{107 \textcolor{comment}{  \& dqdq\_dqdq=4,uqbq\_uqbq=5,dqcq\_dqcq=6,}}
+\DoxyCodeLine{108 \textcolor{comment}{  \& dquq\_dquq=7,dqcq\_uqsq=8,uqsq\_dqcq=9}}
+\DoxyCodeLine{109 \textcolor{comment}{  \& jmax=12)}}
+\DoxyCodeLine{110 \textcolor{comment}{  integer,parameter:: j1(jmax)=(/1,2,8,8, 7,2,7,1, 1,7,2,7/)}}
+\DoxyCodeLine{111 \textcolor{comment}{  integer,parameter:: j2(jmax)=(/2,1,7,7, 2,7,1,7, 7,1,7,2/)}}
+\DoxyCodeLine{112 \textcolor{comment}{  integer,parameter:: j7(jmax)=(/7,7,2,1, 1,8,2,8, 2,8,1,8/)}}
+\DoxyCodeLine{113 \textcolor{comment}{  integer,parameter:: j8(jmax)=(/8,8,1,2, 8,1,8,2, 8,2,8,1/)}}
+\DoxyCodeLine{114 \textcolor{comment}{  */}}
+\DoxyCodeLine{115   std::vector<intQuad\_t> base\_cfg; base\_cfg.reserve(17);}
+\DoxyCodeLine{116   \textcolor{comment}{// uc\_uc}}
+\DoxyCodeLine{117   base\_cfg.emplace\_back(2, 4, 2, 4);}
+\DoxyCodeLine{118   \textcolor{comment}{// ds\_ds}}
+\DoxyCodeLine{119   base\_cfg.emplace\_back(1, 3, 1, 3);}
+\DoxyCodeLine{120   base\_cfg.emplace\_back(1, 5, 1, 5);}
+\DoxyCodeLine{121   base\_cfg.emplace\_back(3, 5, 3, 5);}
+\DoxyCodeLine{122   \textcolor{comment}{// ub\_ub}}
+\DoxyCodeLine{123   base\_cfg.emplace\_back(2, 3, 2, 3);}
+\DoxyCodeLine{124   base\_cfg.emplace\_back(2, 5, 2, 5);}
+\DoxyCodeLine{125   base\_cfg.emplace\_back(4, 5, 4, 5);}
+\DoxyCodeLine{126   \textcolor{comment}{// dc\_dc}}
+\DoxyCodeLine{127   base\_cfg.emplace\_back(1, 4, 1, 4);}
+\DoxyCodeLine{128   \textcolor{comment}{// du\_du}}
+\DoxyCodeLine{129   base\_cfg.emplace\_back(1, 2, 1, 2);}
+\DoxyCodeLine{130   base\_cfg.emplace\_back(3, 4, 3, 4);}
+\DoxyCodeLine{131   \textcolor{comment}{// dc\_us}}
+\DoxyCodeLine{132   base\_cfg.emplace\_back(1, 4, 2, 3);}
+\DoxyCodeLine{133   \textcolor{comment}{// us\_dc}}
+\DoxyCodeLine{134   base\_cfg.emplace\_back(2, 3, 1, 4);}
+\DoxyCodeLine{135   \textcolor{comment}{// uu\_uu}}
+\DoxyCodeLine{136   base\_cfg.emplace\_back(2);}
+\DoxyCodeLine{137   base\_cfg.emplace\_back(4);}
+\DoxyCodeLine{138   \textcolor{comment}{// dd\_dd}}
+\DoxyCodeLine{139   base\_cfg.emplace\_back(1);}
+\DoxyCodeLine{140   base\_cfg.emplace\_back(3);}
+\DoxyCodeLine{141   base\_cfg.emplace\_back(5);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143   std::vector<intQuad\_t> jcfg; jcfg.reserve(12);}
+\DoxyCodeLine{144   jcfg.emplace\_back(0, 1, 2, 3);}
+\DoxyCodeLine{145   jcfg.emplace\_back(1, 0, 2, 3);}
+\DoxyCodeLine{146   jcfg.emplace\_back(3, 2, 1, 0);}
+\DoxyCodeLine{147   jcfg.emplace\_back(3, 2, 0, 1);}
+\DoxyCodeLine{148   jcfg.emplace\_back(2, 1, 0, 3);}
+\DoxyCodeLine{149   jcfg.emplace\_back(1, 2, 3, 0);}
+\DoxyCodeLine{150   jcfg.emplace\_back(2, 0, 1, 3);}
+\DoxyCodeLine{151   jcfg.emplace\_back(0, 2, 3, 1);}
+\DoxyCodeLine{152   jcfg.emplace\_back(0, 2, 1, 3);}
+\DoxyCodeLine{153   jcfg.emplace\_back(2, 0, 3, 1);}
+\DoxyCodeLine{154   jcfg.emplace\_back(1, 2, 0, 3);}
+\DoxyCodeLine{155   jcfg.emplace\_back(2, 1, 3, 0);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   std::vector<intQuad\_t> pcfg;}
+\DoxyCodeLine{158   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0; j<jcfg.size(); j++)\{}
+\DoxyCodeLine{159     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p=0; p<base\_cfg.size(); p++)\{}
+\DoxyCodeLine{160       \mbox{\hyperlink{structTNumericUtil_1_1quadruplet}{intQuad\_t}} cfg;}
+\DoxyCodeLine{161       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ipos=0; ipos<4; ipos++)\{}
+\DoxyCodeLine{162         \textcolor{keywordtype}{int} idpos = jcfg.at(j)[ipos];}
+\DoxyCodeLine{163         \textcolor{keywordtype}{int} idAssigned = base\_cfg.at(p)[ipos];}
+\DoxyCodeLine{164         \textcolor{keywordflow}{if} ((idpos<2 \&\& ipos>=2) || (idpos>=2 \&\& ipos<2)) idAssigned = -\/idAssigned;}
+\DoxyCodeLine{165         cfg[jcfg.at(j)[ipos]] = idAssigned;}
+\DoxyCodeLine{166       \}}
+\DoxyCodeLine{167       \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}{TUtilHelpers::checkElementExists}}(cfg, pcfg)) pcfg.push\_back(cfg);}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169   \}}
+\DoxyCodeLine{170   \textcolor{comment}{// Uncommenting the lines below prints out the hash when the library is loaded.}}
+\DoxyCodeLine{171   \textcolor{comment}{/*}}
+\DoxyCodeLine{172 \textcolor{comment}{  for (unsigned int ic=0; ic<pcfg.size(); ic++) MELAout}}
+\DoxyCodeLine{173 \textcolor{comment}{  << "TMCFMUtils::Hash\_QQVVQQAny: Hash configuration " << ic << " requests ids=( "}}
+\DoxyCodeLine{174 \textcolor{comment}{  << pcfg.at(ic)[0] << ", " << pcfg.at(ic)[1] << ", " << pcfg.at(ic)[2] << ", " << pcfg.at(ic)[3]}}
+\DoxyCodeLine{175 \textcolor{comment}{  << ")" << endl;}}
+\DoxyCodeLine{176 \textcolor{comment}{  */}}
+\DoxyCodeLine{177   \textcolor{keywordflow}{return} pcfg;}
+\DoxyCodeLine{178 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceTMCFMUtils_a2fc52292a6c36284b9feedf644460e3e}\label{namespaceTMCFMUtils_a2fc52292a6c36284b9feedf644460e3e}} 
+\index{TMCFMUtils@{TMCFMUtils}!Hash\_QQVVQQAny@{Hash\_QQVVQQAny}}
+\index{Hash\_QQVVQQAny@{Hash\_QQVVQQAny}!TMCFMUtils@{TMCFMUtils}}
+\doxysubsubsection{\texorpdfstring{Hash\_QQVVQQAny()}{Hash\_QQVVQQAny()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{int\+Quad\+\_\+t}} $>$ T\+M\+C\+F\+M\+Utils\+::\+Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file T\+M\+C\+F\+M\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94                                                \{}
+\DoxyCodeLine{95   std::vector<intQuad\_t> pcfg;}
+\DoxyCodeLine{96   std::vector<intQuad\_t> hash\_qqvvqq = \mbox{\hyperlink{namespaceTMCFMUtils_a6063a1ddbf9725bced1b42cb62c658ca}{TMCFMUtils::Hash\_QQVVQQ}}();}
+\DoxyCodeLine{97   std::vector<intQuad\_t> hash\_qqvvqqstrong = \mbox{\hyperlink{namespaceTMCFMUtils_ab8cb87b33459c0b6dd3e5035072ea47f}{TMCFMUtils::Hash\_QQVVQQStrong}}();}
+\DoxyCodeLine{98   \mbox{\hyperlink{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}{TUtilHelpers::copyVector}}(hash\_qqvvqq, pcfg);}
+\DoxyCodeLine{99   \mbox{\hyperlink{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}{TUtilHelpers::copyVector}}(hash\_qqvvqqstrong, pcfg);}
+\DoxyCodeLine{100   \textcolor{keywordflow}{return} pcfg;}
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceTMCFMUtils_ab8cb87b33459c0b6dd3e5035072ea47f}\label{namespaceTMCFMUtils_ab8cb87b33459c0b6dd3e5035072ea47f}} 
+\index{TMCFMUtils@{TMCFMUtils}!Hash\_QQVVQQStrong@{Hash\_QQVVQQStrong}}
+\index{Hash\_QQVVQQStrong@{Hash\_QQVVQQStrong}!TMCFMUtils@{TMCFMUtils}}
+\doxysubsubsection{\texorpdfstring{Hash\_QQVVQQStrong()}{Hash\_QQVVQQStrong()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{int\+Quad\+\_\+t}} $>$ T\+M\+C\+F\+M\+Utils\+::\+Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Strong (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 179 of file T\+M\+C\+F\+M\+Utils.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179                                                   \{}
+\DoxyCodeLine{180   \textcolor{comment}{/*}}
+\DoxyCodeLine{181 \textcolor{comment}{  Based on the following cases in MCFM:}}
+\DoxyCodeLine{182 \textcolor{comment}{  call qq4lggampf(1,2,3,4,5,6,7,8,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{183 \textcolor{comment}{  msq(1,-\/1)=msq(1,-\/1)+stat*aveqq*msqgg(1)}}
+\DoxyCodeLine{184 \textcolor{comment}{  call qq4lggampf(2,1,3,4,5,6,7,8,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{185 \textcolor{comment}{  msq(-\/1,1)=msq(-\/1,1)+stat*aveqq*msqgg(1)}}
+\DoxyCodeLine{186 \textcolor{comment}{  call qq4lggampf(7,8,3,4,5,6,1,2,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{187 \textcolor{comment}{  msq(0,0)=msq(0,0)+avegg*(3d0*msqgg(1)+2d0*msqgg(2))}}
+\DoxyCodeLine{188 \textcolor{comment}{  call qq4lggampf(7,2,3,4,5,6,1,8,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{189 \textcolor{comment}{  msq(0,-\/1)=msq(0,-\/1)+aveqg*msqgg(1)}}
+\DoxyCodeLine{190 \textcolor{comment}{  call qq4lggampf(7,1,3,4,5,6,2,8,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{191 \textcolor{comment}{  msq(-\/1,0)=msq(-\/1,0)+aveqg*msqgg(1)}}
+\DoxyCodeLine{192 \textcolor{comment}{  call qq4lggampf(2,8,3,4,5,6,1,7,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{193 \textcolor{comment}{  msq(0,1)=msq(0,1)+aveqg*msqgg(1)}}
+\DoxyCodeLine{194 \textcolor{comment}{  call qq4lggampf(1,8,3,4,5,6,2,7,3,4,za,zb,msqgg)}}
+\DoxyCodeLine{195 \textcolor{comment}{  msq(1,0)=msq(1,0)+aveqg*msqgg(1)}}
+\DoxyCodeLine{196 \textcolor{comment}{  */}}
+\DoxyCodeLine{197   std::vector<intQuad\_t> base\_cfg; base\_cfg.reserve(5);}
+\DoxyCodeLine{198   \textcolor{comment}{// Start with qqb\_gg}}
+\DoxyCodeLine{199   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} iq=1; iq<=5; iq++) base\_cfg.emplace\_back(iq, -\/iq, 21, 21);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201   std::vector<intQuad\_t> jcfg; jcfg.reserve(7);}
+\DoxyCodeLine{202   jcfg.emplace\_back(0, 1, 2, 3); \textcolor{comment}{// qqb-\/>gg}}
+\DoxyCodeLine{203   jcfg.emplace\_back(1, 0, 2, 3); \textcolor{comment}{// qbq-\/>gg}}
+\DoxyCodeLine{204   jcfg.emplace\_back(2, 3, 0, 1); \textcolor{comment}{// gg-\/>qbq}}
+\DoxyCodeLine{205   jcfg.emplace\_back(2, 1, 0, 3); \textcolor{comment}{// gqb-\/>qbg}}
+\DoxyCodeLine{206   jcfg.emplace\_back(2, 0, 1, 3); \textcolor{comment}{// qbg-\/>qbg}}
+\DoxyCodeLine{207   jcfg.emplace\_back(1, 3, 2, 0); \textcolor{comment}{// gq-\/>gq}}
+\DoxyCodeLine{208   jcfg.emplace\_back(0, 3, 2, 1); \textcolor{comment}{// qg-\/>gq}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210   std::vector<intQuad\_t> pcfg;}
+\DoxyCodeLine{211   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0; j<jcfg.size(); j++)\{}
+\DoxyCodeLine{212     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p=0; p<base\_cfg.size(); p++)\{}
+\DoxyCodeLine{213       \mbox{\hyperlink{structTNumericUtil_1_1quadruplet}{intQuad\_t}} cfg;}
+\DoxyCodeLine{214       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ipos=0; ipos<4; ipos++)\{}
+\DoxyCodeLine{215         \textcolor{keywordtype}{int} idpos = jcfg.at(j)[ipos];}
+\DoxyCodeLine{216         \textcolor{keywordtype}{int} idAssigned = base\_cfg.at(p)[ipos];}
+\DoxyCodeLine{217         \textcolor{keywordflow}{if} (((idpos<2 \&\& ipos>=2) || (idpos>=2 \&\& ipos<2)) \&\& !\mbox{\hyperlink{namespacePDGHelpers_aa131c0152ebf5bd159b177834aebc66f}{PDGHelpers::isAGluon}}(idAssigned)) idAssigned = -\/idAssigned;}
+\DoxyCodeLine{218         cfg[jcfg.at(j)[ipos]] = idAssigned;}
+\DoxyCodeLine{219       \}}
+\DoxyCodeLine{220       \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}{TUtilHelpers::checkElementExists}}(cfg, pcfg)) pcfg.push\_back(cfg);}
+\DoxyCodeLine{221     \}}
+\DoxyCodeLine{222   \}}
+\DoxyCodeLine{223   \textcolor{comment}{// Uncommenting the lines below prints out the hash when the library is loaded.}}
+\DoxyCodeLine{224   \textcolor{comment}{/*}}
+\DoxyCodeLine{225 \textcolor{comment}{  for (unsigned int ic=0; ic<pcfg.size(); ic++) MELAout}}
+\DoxyCodeLine{226 \textcolor{comment}{  << "TMCFMUtils::Hash\_QQVVQQAny: Hash configuration " << ic << " requests ids=( "}}
+\DoxyCodeLine{227 \textcolor{comment}{  << pcfg.at(ic)[0] << ", " << pcfg.at(ic)[1] << ", " << pcfg.at(ic)[2] << ", " << pcfg.at(ic)[3]}}
+\DoxyCodeLine{228 \textcolor{comment}{  << ")" << endl;}}
+\DoxyCodeLine{229 \textcolor{comment}{  */}}
+\DoxyCodeLine{230   \textcolor{keywordflow}{return} pcfg;}
+\DoxyCodeLine{231 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceTMCFMUtils_a8562ec676d23b996449b5b8d68bb9e04}\label{namespaceTMCFMUtils_a8562ec676d23b996449b5b8d68bb9e04}} 
+\index{TMCFMUtils@{TMCFMUtils}!MCFMHash\_QQVVQQAny@{MCFMHash\_QQVVQQAny}}
+\index{MCFMHash\_QQVVQQAny@{MCFMHash\_QQVVQQAny}!TMCFMUtils@{TMCFMUtils}}
+\doxysubsubsection{\texorpdfstring{MCFMHash\_QQVVQQAny}{MCFMHash\_QQVVQQAny}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{namespaceTNumericUtil_aa03419ce07c4e0bbf6a430e46cbf10f1}{int\+Quad\+\_\+t}}$>$ T\+M\+C\+F\+M\+Utils\+::\+M\+C\+F\+M\+Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any = \mbox{\hyperlink{namespaceTMCFMUtils_a2fc52292a6c36284b9feedf644460e3e}{Hash\+\_\+\+Q\+Q\+V\+V\+Q\+Q\+Any}}()}
+
+
+
+Definition at line 14 of file T\+M\+C\+F\+M\+Utils.\+cc.
+

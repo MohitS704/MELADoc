@@ -1,0 +1,104 @@
+\hypertarget{PDGHelpers_8h}{}\doxysection{M\+E\+L\+A/interface/\+P\+D\+G\+Helpers.h File Reference}
+\label{PDGHelpers_8h}\index{MELA/interface/PDGHelpers.h@{MELA/interface/PDGHelpers.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}T\+Mod\+Parameters.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Var.\+hh\char`\"{}}\newline
+Include dependency graph for P\+D\+G\+Helpers.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PDGHelpers_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PDGHelpers_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacePDGHelpers}{P\+D\+G\+Helpers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a6f98f45dbd53233287193ec3fe987746}{P\+D\+G\+Helpers\+::is\+A\+Lepton}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a68ffb179226737e2006fb7b0870dae6a}{P\+D\+G\+Helpers\+::is\+A\+Neutrino}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a59b8114b6bae55ada5228045303defa7}{P\+D\+G\+Helpers\+::is\+An\+Unknown\+Jet}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a5df90e9bb7f9a1c9e0431aed9ab6281c}{P\+D\+G\+Helpers\+::is\+A\+Known\+Jet}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a70d454afa0ba8867880810d0a527e4e5}{P\+D\+G\+Helpers\+::is\+A\+Jet}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aede37ff1f5e2de0fa895b4d995c98b46}{P\+D\+G\+Helpers\+::is\+Invalid}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a01f8690aaafe2c1d9b2497a41270f56a}{P\+D\+G\+Helpers\+::is\+A\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aa742c7a0d0c0a6abdd6fb7f137d9b300}{P\+D\+G\+Helpers\+::is\+A\+Light\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a489c1dbbeb1023de341ae81fd17f50c3}{P\+D\+G\+Helpers\+::is\+Up\+Type\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aee1aa3a1dad6c5368cd3334202096328}{P\+D\+G\+Helpers\+::is\+Down\+Type\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_ab98f91f00daa234b2d34eaec820cf49f}{P\+D\+G\+Helpers\+::is\+A\+Top\+Quark}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a794b5a5be20c1b6004500abb9938deec}{P\+D\+G\+Helpers\+::is\+A\+Tau\+Lepton}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aa131c0152ebf5bd159b177834aebc66f}{P\+D\+G\+Helpers\+::is\+A\+Gluon}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_af9c70c52922e73d3870e6111c1c02a5f}{P\+D\+G\+Helpers\+::is\+A\+Photon}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a46f4e810ad2fb213e757e3e76499900a}{P\+D\+G\+Helpers\+::is\+A\+Z\+Boson}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_a1af3488542122be4701bbdbc558d8bc9}{P\+D\+G\+Helpers\+::is\+A\+W\+Boson}} (const int id)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_aaac73ca6f564f311d27776c534b7ab0d}{P\+D\+G\+Helpers\+::is\+A\+Higgs}} (const int id)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_a9199e7e413b6d357651085ce2b6eddf2}{P\+D\+G\+Helpers\+::order\+Particles}} (const std\+::vector$<$ int $>$ \&idlist, const std\+::vector$<$ bool($\ast$)(const int)$>$ \&testlist, std\+::vector$<$ int $>$ \&ordering, bool allow\+Unknown=false)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_a0d4831415fa8b5d2ac0d4d65e7f44f24}{P\+D\+G\+Helpers\+::group\+Identical\+Particles}} (const std\+::vector$<$ int $>$ \&ids, std\+::vector$<$ std\+::vector$<$ int $>$$>$ \&ordering, bool $\ast$has\+Unknown\+Particles=0)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_a501cd0c6500f40c6ec8ac50a7eb69e6d}{P\+D\+G\+Helpers\+::pair\+Identical\+Particles}} (const std\+::vector$<$ int $>$ \&ids, std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ \&ordering, bool allow\+Unknown=false)
+\item 
+bool \mbox{\hyperlink{namespacePDGHelpers_ada65c143a77a2a790135be88683df66a}{P\+D\+G\+Helpers\+::all\+Equivalent}} (std\+::vector$<$ int $>$ const \&ids, bool allow\+Unknown=false)
+\item 
+void \mbox{\hyperlink{namespacePDGHelpers_af92acaa64c96e22a6dca8b60076a40ec}{P\+D\+G\+Helpers\+::set\+Candidate\+Decay\+Mode}} (\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} mode)
+\item 
+int \mbox{\hyperlink{namespacePDGHelpers_a524d028bd6c958101639b40c8bfc5622}{P\+D\+G\+Helpers\+::get\+Coupled\+Vertex}} (const int idfirst, const int idsecond, int $\ast$hel=0, int $\ast$use\+A\+Hcoupl=0)
+\item 
+int \mbox{\hyperlink{namespacePDGHelpers_a8df93769d72030417c55edd7396816ec}{P\+D\+G\+Helpers\+::convert\+Pythia\+Status}} (int p\+St)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_aef56d30802022f90e495c826b45da30f}{P\+D\+G\+Helpers\+::\+Wmass}} = 80.\+399
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a389baabd05c060ec6ed14e0354118c8d}{P\+D\+G\+Helpers\+::\+Zmass}} = 91.\+1876
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a4ac4e98677ff93090e659bbc1e652533}{P\+D\+G\+Helpers\+::\+Topmass}} = 173.\+2
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a40fcf29893a1771d79c3e391ae057df5}{P\+D\+G\+Helpers\+::\+Bottommass}} = 4.\+75
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a4672126d5b27c5e95d0e2572b63eb36e}{P\+D\+G\+Helpers\+::\+Zeromass}} = 0
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a5bd91e476142300e381e0729c23fca85}{P\+D\+G\+Helpers\+::m\+\_\+el}} = 0.\+00051100
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_aad8c010f54c11e91d58485d45d6b68cd}{P\+D\+G\+Helpers\+::m\+\_\+mu}} = 0.\+10566
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_a371324b6062c44fb304aa0b25ab886b4}{P\+D\+G\+Helpers\+::m\+\_\+tau}} = 1.\+7768
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_af33845852f7da2b6c8e0243a0faddf17}{P\+D\+G\+Helpers\+::\+Wwidth}} = 2.\+085
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_aeb9b5319d1610d5b7cae2e523689e07c}{P\+D\+G\+Helpers\+::\+Zwidth}} = 2.\+4952
+\item 
+const double \mbox{\hyperlink{namespacePDGHelpers_ac9029100a1af4e7fe4bec221ccf4eb4f}{P\+D\+G\+Helpers\+::\+Topwidth}} = 2.
+\item 
+\mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4}{T\+Var\+::\+Candidate\+Decay\+Mode}} \mbox{\hyperlink{namespacePDGHelpers_ad093a6206d20114f4716a631777a93ff}{P\+D\+G\+Helpers\+::\+H\+Decay\+Mode}} = \mbox{\hyperlink{namespaceTVar_a71a2597822d7f2646209498585c4bbc4ac0c27bc9239fab096f3b6efefd813036}{T\+Var\+::\+Candidate\+Decay\+\_\+\+ZZ}}
+\end{DoxyCompactItemize}

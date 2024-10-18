@@ -1,0 +1,540 @@
+\hypertarget{namespacehto__hbb__cp}{}\doxysection{hto\+\_\+hbb\+\_\+cp Module Reference}
+\label{namespacehto__hbb__cp}\index{hto\_hbb\_cp@{hto\_hbb\_cp}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__hbb__cp_a8feffc4d9be4bf53bae92ecfbd1c1200}{hto\+\_\+sshh}} (x)
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\+\_\+shh}} (muhr, scal, rgh)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}\label{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}} 
+\index{hto\_hbb\_cp@{hto\_hbb\_cp}!hto\_shh@{hto\_shh}}
+\index{hto\_shh@{hto\_shh}!hto\_hbb\_cp@{hto\_hbb\_cp}}
+\doxysubsubsection{\texorpdfstring{hto\_shh()}{hto\_shh()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+hbb\+\_\+cp\+::hto\+\_\+shh (\begin{DoxyParamCaption}\item[{real$\ast$8}]{muhr,  }\item[{real$\ast$8}]{scal,  }\item[{real$\ast$8}]{rgh }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3611        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__ferbos}{hto\_ferbos}}}
+\DoxyCodeLine{3612        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__a__cmplx}{hto\_a\_cmplx}}}
+\DoxyCodeLine{3613        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__aux__hcp}{hto\_aux\_hcp}}}
+\DoxyCodeLine{3614        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__aux__hbb}{hto\_aux\_hbb}}}
+\DoxyCodeLine{3615        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{3616        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{3617        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__rat}{hto\_acmplx\_rat}}}
+\DoxyCodeLine{3618        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{3619        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__ln__2__riemann}{hto\_ln\_2\_riemann}}}
+\DoxyCodeLine{3620        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__masses}{hto\_masses}}}
+\DoxyCodeLine{3621        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__set__phys__const}{hto\_set\_phys\_const}}}
+\DoxyCodeLine{3622        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{3623        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__optcp}{hto\_optcp}}}
+\DoxyCodeLine{3624        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__olas}{hto\_olas}}}
+\DoxyCodeLine{3625        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__common__niels}{hto\_common\_niels}}}
+\DoxyCodeLine{3626        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__qcd}{hto\_qcd}}}
+\DoxyCodeLine{3627        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__rootz}{hto\_cmplx\_rootz}}}
+\DoxyCodeLine{3628 *}
+\DoxyCodeLine{3629        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3630 *}
+\DoxyCodeLine{3631        \textcolor{keywordtype}{INTEGER} nc,iz}
+\DoxyCodeLine{3632        real*8 hto\_shh,muhr,rgh,muhs,scal,scals,p2,xm0,str,sti,ewc,}
+\DoxyCodeLine{3633      \textcolor{preprocessor}{\#        sconv,asmur,emc,emb,emt,as\_NLO,rmbs,rmcs,rmss,}}
+\DoxyCodeLine{3634 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#        crmbs,crmcs,lcxb,lcxc,lcxbs,lcxcs,lclxb,lclxc,qcdtop,neg}}
+\DoxyCodeLine{3635 \textcolor{preprocessor}{}       real*8, \textcolor{keywordtype}{dimension(2)} :: axm0}
+\DoxyCodeLine{3636        real*8, \textcolor{keywordtype}{dimension(2,2)} :: axms}
+\DoxyCodeLine{3637        real*8, \textcolor{keywordtype}{dimension(3,2,2)} :: bmcb}
+\DoxyCodeLine{3638        real*8, \textcolor{keywordtype}{dimension(8,2,2)} :: bmcf}
+\DoxyCodeLine{3639        real*8, \textcolor{keywordtype}{dimension(1,2,2)} :: bmct}
+\DoxyCodeLine{3640        real*8, \textcolor{keywordtype}{dimension(3,2)} :: bm0b,coefbb}
+\DoxyCodeLine{3641        real*8, \textcolor{keywordtype}{dimension(8,2)} :: bm0f,coefbf}
+\DoxyCodeLine{3642        real*8, \textcolor{keywordtype}{dimension(1,2)} :: bm0t,coefbt}
+\DoxyCodeLine{3643        real*8, \textcolor{keywordtype}{dimension(2)} :: sh,shs,clh,b0sumb,b0sumf,cxp,ksumb,}
+\DoxyCodeLine{3644      \textcolor{preprocessor}{\#         ksumf,coefB1,coefB2,coefB3,coefB4,coefB5,coefB6,coefB7,}}
+\DoxyCodeLine{3645 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         coefB8,coefB9,coefB10,coefB11,coefB12,ab2,ab3,}}
+\DoxyCodeLine{3646 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         totalf,totalt,totalb,total,b0sumt,ksumt,xms,}}
+\DoxyCodeLine{3647 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         b0part,cpt,ccxt,deltag,sww0,coefW1,coefW2,}}
+\DoxyCodeLine{3648 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         ksumw,ccxts,cctsi,shi,clt,cxhw,cstsi,csmcts,cltmw,}}
+\DoxyCodeLine{3649 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         b0sumw,sww,DW,b0sumw1,b0sumw2,cmxw,clmw,cxtw,}}
+\DoxyCodeLine{3650 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         kfmsb,ktmsb,kbmsb,nloqcd,runbc,ttqcd,wccxt,wclt,wccxts,}}
+\DoxyCodeLine{3651 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#         wcxtw,wcltmw,ascal}}
+\DoxyCodeLine{3652 \textcolor{preprocessor}{}*     }
+\DoxyCodeLine{3653        \textcolor{keyword}{INTERFACE}}
+\DoxyCodeLine{3654         \textcolor{keyword}{SUBROUTINE }\mbox{\hyperlink{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}{hto\_initalphas}}(asord,FR2,MUR,asmur,emc,emb,emt)}
+\DoxyCodeLine{3655         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__dzpar}{hto\_dzpar}} }
+\DoxyCodeLine{3656         \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3657         \textcolor{keywordtype}{INTEGER} asord}
+\DoxyCodeLine{3658         real*8 fr2,mur,asmur,emc,emb,emt,\mbox{\hyperlink{CALLING__cpHTO_8f_a3052dded3815a1f698b9467fc22dc3fe}{hto\_findalphasr0}}}
+\DoxyCodeLine{3659         \textcolor{keywordtype}{EXTERNAL} \mbox{\hyperlink{CALLING__cpHTO_8f_a3052dded3815a1f698b9467fc22dc3fe}{hto\_findalphasr0}}}
+\DoxyCodeLine{3660         \textcolor{keyword}{END SUBROUTINE }\mbox{\hyperlink{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}{hto\_initalphas}}}
+\DoxyCodeLine{3661        \textcolor{keyword}{END INTERFACE}}
+\DoxyCodeLine{3662 *}
+\DoxyCodeLine{3663        \textcolor{keyword}{INTERFACE}}
+\DoxyCodeLine{3664         \textcolor{keyword}{FUNCTION }\mbox{\hyperlink{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}{hto\_alphas}}(MUR)}
+\DoxyCodeLine{3665         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__nffix}{hto\_nffix}}  }
+\DoxyCodeLine{3666         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__varflv}{hto\_varflv}} }
+\DoxyCodeLine{3667         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__frrat}{hto\_frrat}}  }
+\DoxyCodeLine{3668         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__asinp}{hto\_asinp}}  }
+\DoxyCodeLine{3669         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__asfthr}{hto\_asfthr}} }
+\DoxyCodeLine{3670         \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3671         real*8 mur,\mbox{\hyperlink{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}{hto\_alphas}}}
+\DoxyCodeLine{3672         \textcolor{keyword}{END FUNCTION }\mbox{\hyperlink{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}{hto\_alphas}}}
+\DoxyCodeLine{3673        \textcolor{keyword}{END INTERFACE}}
+\DoxyCodeLine{3674 *}
+\DoxyCodeLine{3675        \textcolor{keyword}{INTERFACE}}
+\DoxyCodeLine{3676         \textcolor{keyword}{FUNCTION }\mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,psi,ps0i,xmsi,xm0i,type) }
+\DoxyCodeLine{3677      \textcolor{preprocessor}{\#                        RESULT(value)}}
+\DoxyCodeLine{3678 \textcolor{preprocessor}{}        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{3679         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{3680         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__rat}{hto\_acmplx\_rat}}}
+\DoxyCodeLine{3681         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__root}{hto\_cmplx\_root}}}
+\DoxyCodeLine{3682         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__rootz}{hto\_cmplx\_rootz}}}
+\DoxyCodeLine{3683         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__srs__root}{hto\_cmplx\_srs\_root}}}
+\DoxyCodeLine{3684         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__ln__2__riemann}{hto\_ln\_2\_riemann}}}
+\DoxyCodeLine{3685         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{3686         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__sp__fun}{hto\_sp\_fun}}}
+\DoxyCodeLine{3687         \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{3688         \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3689         \textcolor{keywordtype}{INTEGER} type}
+\DoxyCodeLine{3690         real*8 scal,ps0i,xm0i}
+\DoxyCodeLine{3691         real*8, \textcolor{keywordtype}{dimension(2)} :: \textcolor{keywordtype}{value},psi,xmsi}
+\DoxyCodeLine{3692         \textcolor{keyword}{END FUNCTION }\mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}}
+\DoxyCodeLine{3693        \textcolor{keyword}{END INTERFACE}}
+\DoxyCodeLine{3694 *}
+\DoxyCodeLine{3695        muhs= muhr*muhr}
+\DoxyCodeLine{3696        scals= scal*scal}
+\DoxyCodeLine{3697 *}
+\DoxyCodeLine{3698        asmur= 0.12018d0}
+\DoxyCodeLine{3699        emc= 1.4d0}
+\DoxyCodeLine{3700        emb= 4.75d0}
+\DoxyCodeLine{3701        emt= \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}}
+\DoxyCodeLine{3702        iz= 1}
+\DoxyCodeLine{3703        \textcolor{keyword}{CALL }\mbox{\hyperlink{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}{hto\_initalphas}}(iz,\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},asmur,emc,emb,emt)}
+\DoxyCodeLine{3704        \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}= \mbox{\hyperlink{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}{hto\_alphas}}(scal)}
+\DoxyCodeLine{3705        as\_nlo= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}/pi}
+\DoxyCodeLine{3706 *}
+\DoxyCodeLine{3707        runbc= \mbox{\hyperlink{namespacehto__qcd_a56727402fd2ceaa1f03af4e6415f8ae8}{hto\_run\_bc}}(scal)}
+\DoxyCodeLine{3708        crmbs= runbc(2)*runbc(2)}
+\DoxyCodeLine{3709        crmcs= runbc(1)*runbc(1)         }
+\DoxyCodeLine{3710 *}
+\DoxyCodeLine{3711        lcxb= crmbs/scals}
+\DoxyCodeLine{3712        lcxc= crmcs/scals}
+\DoxyCodeLine{3713 *}
+\DoxyCodeLine{3714        lcxbs= lcxb*lcxb}
+\DoxyCodeLine{3715        lcxcs= lcxc*lcxc}
+\DoxyCodeLine{3716        lclxb= log(lcxb)}
+\DoxyCodeLine{3717        lclxc= log(lcxc)}
+\DoxyCodeLine{3718 *}
+\DoxyCodeLine{3719        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__aux__hcp_a6736a2a621a3b459df115cbc30feb04b}{gtop}} == 1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3720         \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}= \mbox{\hyperlink{namespacehto__set__phys__const_adf97d1bf3a663ded7ef686746aaba509}{g\_f}}/(8.d0*sqrt(2.d0)*pi)*(\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}*\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}-\/\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}*\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}})**2*}
+\DoxyCodeLine{3721      \textcolor{preprocessor}{\#      (mt*mt+2.d0*mw*mw)/mt**3}}
+\DoxyCodeLine{3722 \textcolor{preprocessor}{}       \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__aux__hcp_a6736a2a621a3b459df115cbc30feb04b}{gtop}} == 0) \textcolor{keywordflow}{THEN} }
+\DoxyCodeLine{3723         \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}= 0.d0}
+\DoxyCodeLine{3724        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3725         \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}= \mbox{\hyperlink{namespacehto__aux__hcp_a3e5df8d349c3ab794ef8239014e6ed25}{yimt}}}
+\DoxyCodeLine{3726 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3727 *}
+\DoxyCodeLine{3728        str= \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}*\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}-\/0.25d0*\mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}*\mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}}
+\DoxyCodeLine{3729        sti= -\/\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}*\mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}}
+\DoxyCodeLine{3730        cpt(1)= str}
+\DoxyCodeLine{3731        cpt(2)= sti}
+\DoxyCodeLine{3732        wccxt= cpt/scals}
+\DoxyCodeLine{3733        wccxts= wccxt.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.wccxt}
+\DoxyCodeLine{3734        ccxt= cpt/scals}
+\DoxyCodeLine{3735        ccxts= ccxt.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ccxt}
+\DoxyCodeLine{3736 *}
+\DoxyCodeLine{3737        cctsi= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_aca6b9e835eee8d56ee76ae5d729cb307}{ccts}}}
+\DoxyCodeLine{3738        cstsi= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a0d7d235a092cb5ab08adf56cc930e6f9}{csts}}}
+\DoxyCodeLine{3739        csmcts= \mbox{\hyperlink{namespacehto__aux__hbb_a0d7d235a092cb5ab08adf56cc930e6f9}{csts}}-\/\mbox{\hyperlink{namespacehto__aux__hbb_aca6b9e835eee8d56ee76ae5d729cb307}{ccts}}}
+\DoxyCodeLine{3740        cmxw= -\/\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}}
+\DoxyCodeLine{3741 *}
+\DoxyCodeLine{3742        clmw= cmxw(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.cmxw(2)}
+\DoxyCodeLine{3743        clmw(2)= clmw(2)-\/2.d0*pi}
+\DoxyCodeLine{3744 *}
+\DoxyCodeLine{3745        sh(1)= muhs/scals}
+\DoxyCodeLine{3746        sh(2)= -\/muhr*rgh/scals}
+\DoxyCodeLine{3747 *}
+\DoxyCodeLine{3748        cxhw= sh-\/\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}} }
+\DoxyCodeLine{3749        shs= sh.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.sh}
+\DoxyCodeLine{3750        shi= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.sh}
+\DoxyCodeLine{3751 *}
+\DoxyCodeLine{3752        clh= sh(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.sh(2)}
+\DoxyCodeLine{3753        clt= ccxt(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.ccxt(2)}
+\DoxyCodeLine{3754        wclt= wccxt(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.wccxt(2)}
+\DoxyCodeLine{3755        cxtw= ccxt-\/\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}}
+\DoxyCodeLine{3756        wcxtw= wccxt-\/\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}}
+\DoxyCodeLine{3757        cltmw= cxtw(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.cxtw(2)}
+\DoxyCodeLine{3758        wcltmw= wcxtw(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.wcxtw(2)}
+\DoxyCodeLine{3759 *}
+\DoxyCodeLine{3760 * w}
+\DoxyCodeLine{3761        coefb1= (12.d0*\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}-\/4.d0*sh+(shs.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}))/64.d0}
+\DoxyCodeLine{3762 *}
+\DoxyCodeLine{3763 * z}
+\DoxyCodeLine{3764        coefb2= (-\/4.d0*(sh.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_aca6b9e835eee8d56ee76ae5d729cb307}{ccts}})+(shs.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})+}
+\DoxyCodeLine{3765      \textcolor{preprocessor}{\#         12.d0*(cxw.cq.cctq))/128.d0}}
+\DoxyCodeLine{3766 \textcolor{preprocessor}{}*  }
+\DoxyCodeLine{3767 * h}
+\DoxyCodeLine{3768        coefb3= 9.d0/128.d0*(shs.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})}
+\DoxyCodeLine{3769 *}
+\DoxyCodeLine{3770 * top}
+\DoxyCodeLine{3771        coefb4= -\/3.d0/32.d0*((4.d0*ccxt-\/sh).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.(ccxt.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}))}
+\DoxyCodeLine{3772 *}
+\DoxyCodeLine{3773 * light fermions}
+\DoxyCodeLine{3774 *}
+\DoxyCodeLine{3775        coefb5= -\/3.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*lcxb-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*lcxb}
+\DoxyCodeLine{3776 *}
+\DoxyCodeLine{3777        coefb6= -\/1.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*\mbox{\hyperlink{namespacehto__aux__hcp_ae4e838250158e1c37e0df143a8579c43}{cxtau}}-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*\mbox{\hyperlink{namespacehto__aux__hcp_ae4e838250158e1c37e0df143a8579c43}{cxtau}}}
+\DoxyCodeLine{3778 *}
+\DoxyCodeLine{3779        coefb7= -\/3.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*lcxc-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*lcxc}
+\DoxyCodeLine{3780 *}
+\DoxyCodeLine{3781        coefb8= -\/1.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*\mbox{\hyperlink{namespacehto__aux__hcp_a75b7fb9e7b7ce39379f2e255bdff0d84}{cxmu}}-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*\mbox{\hyperlink{namespacehto__aux__hcp_a75b7fb9e7b7ce39379f2e255bdff0d84}{cxmu}}}
+\DoxyCodeLine{3782 *}
+\DoxyCodeLine{3783        coefb9= -\/3.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*\mbox{\hyperlink{namespacehto__aux__hcp_a3b22c63ad9da5cf620cb0df47e944f59}{cxs}}-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*\mbox{\hyperlink{namespacehto__aux__hcp_a3b22c63ad9da5cf620cb0df47e944f59}{cxs}}}
+\DoxyCodeLine{3784 *}
+\DoxyCodeLine{3785        coefb10= -\/3.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*\mbox{\hyperlink{namespacehto__aux__hcp_a049b756a199db407e68e16c592af58a6}{cxd}}-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*\mbox{\hyperlink{namespacehto__aux__hcp_a049b756a199db407e68e16c592af58a6}{cxd}}}
+\DoxyCodeLine{3786 *}
+\DoxyCodeLine{3787        coefb11= -\/3.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*\mbox{\hyperlink{namespacehto__aux__hcp_a20815704597665ac1f4c9f2f8d39ca60}{cxu}}-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*\mbox{\hyperlink{namespacehto__aux__hcp_a20815704597665ac1f4c9f2f8d39ca60}{cxu}}}
+\DoxyCodeLine{3788 *}
+\DoxyCodeLine{3789        coefb12= -\/1.d0/32.d0*((4.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}*\mbox{\hyperlink{namespacehto__aux__hcp_ae353ce339bb2473a6ab3bb01df6c1673}{cxe}}-\/sh).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*\mbox{\hyperlink{namespacehto__aux__hcp_ae353ce339bb2473a6ab3bb01df6c1673}{cxe}}}
+\DoxyCodeLine{3790 *}
+\DoxyCodeLine{3791        cxp(1)= muhs}
+\DoxyCodeLine{3792        cxp(2)= -\/muhr*rgh}
+\DoxyCodeLine{3793        p2= muhs}
+\DoxyCodeLine{3794 *}
+\DoxyCodeLine{3795        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3796 *}
+\DoxyCodeLine{3797         xms(1)= \mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}}
+\DoxyCodeLine{3798         xms(2)= \mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}}
+\DoxyCodeLine{3799         xm0= \mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}}
+\DoxyCodeLine{3800         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3801         b0sumb= (coefb1.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3802         xms(1)= \mbox{\hyperlink{namespacehto__masses_a4b61b92f994a0d83a9e3678a08b731a9}{szr}}}
+\DoxyCodeLine{3803         xms(2)= \mbox{\hyperlink{namespacehto__masses_aa72db3d9eb68c74aad41f46ca475a6d9}{szi}}}
+\DoxyCodeLine{3804         xm0= \mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}}}
+\DoxyCodeLine{3805         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3806         b0sumb= b0sumb+(coefb2.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3807         xms(1)= muhs}
+\DoxyCodeLine{3808         xms(2)= -\/muhr*rgh}
+\DoxyCodeLine{3809         xm0= muhr}
+\DoxyCodeLine{3810         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3811         b0sumb= b0sumb+(coefb3.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3812 *}
+\DoxyCodeLine{3813         xms(1:2)= crmbs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3814         xm0= sqrt(crmbs)}
+\DoxyCodeLine{3815         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3816         b0sumf= (coefb5.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3817         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{mtl}}*\mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{mtl}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3818         xm0= \mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{mtl}}}
+\DoxyCodeLine{3819         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3820         b0sumf= b0sumf+(coefb6.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3821         xms(1:2)= crmcs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3822         xm0= sqrt(crmcs)}
+\DoxyCodeLine{3823         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3824         b0sumf= b0sumf+(coefb7.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3825         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}*\mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3826         xm0= \mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}}
+\DoxyCodeLine{3827         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3828         b0sumf= b0sumf+(coefb8.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3829         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{msq}}*\mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{msq}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3830         xm0= \mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{msq}}}
+\DoxyCodeLine{3831         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3832         b0sumf= b0sumf+(coefb9.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3833         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{mdq}}*\mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{mdq}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3834         xm0= \mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{mdq}}}
+\DoxyCodeLine{3835         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3836         b0sumf= b0sumf+(coefb10.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3837         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{muq}}*\mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{muq}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3838         xm0= \mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{muq}}}
+\DoxyCodeLine{3839         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3840         b0sumf= b0sumf+(coefb11.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3841         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{me}}*\mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{me}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3842         xm0= \mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{me}}}
+\DoxyCodeLine{3843         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3844         b0sumf= b0sumf+(coefb12.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3845 *}
+\DoxyCodeLine{3846         xms(1:2)= cpt(1:2)}
+\DoxyCodeLine{3847         xm0= \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}}
+\DoxyCodeLine{3848         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3849         b0sumt= (coefb4.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3850 *}
+\DoxyCodeLine{3851         iz= 0}
+\DoxyCodeLine{3852         xms(1:2)= crmbs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3853         xm0= sqrt(crmbs)}
+\DoxyCodeLine{3854         nloqcd= crmbs*\mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,cxp,p2,xms,xm0,iz)}
+\DoxyCodeLine{3855         xms(1:2)= crmcs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3856         xm0= sqrt(crmcs)}
+\DoxyCodeLine{3857         nloqcd= nloqcd+crmcs*\mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,cxp,p2,xms,xm0,iz)}
+\DoxyCodeLine{3858         \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__aux__hcp_a0d3a2b5d51e5c4c54cb15ec7ad539726}{qcdc}}==0) nloqcd= 0.d0}
+\DoxyCodeLine{3859 *}
+\DoxyCodeLine{3860         xms(1:2)= cpt(1:2)}
+\DoxyCodeLine{3861         xm0= \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}}
+\DoxyCodeLine{3862         iz= 1}
+\DoxyCodeLine{3863         ttqcd= \mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,cxp,p2,xms,xm0,iz)}
+\DoxyCodeLine{3864         ttqcd= cpt.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ttqcd}
+\DoxyCodeLine{3865         \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__aux__hcp_a0d3a2b5d51e5c4c54cb15ec7ad539726}{qcdc}}==0) ttqcd= 0.d0}
+\DoxyCodeLine{3866 *}
+\DoxyCodeLine{3867        \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3868 *}
+\DoxyCodeLine{3869         xms(1:2)= crmbs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3870         xm0= sqrt(crmbs)}
+\DoxyCodeLine{3871         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3872         b0sumf= (coefb5.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3873         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{mtl}}*\mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{mtl}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3874         xm0= \mbox{\hyperlink{namespacehto__masses_ae6b0fba1edf7a6ffd7f2626941bd9da7}{mtl}}}
+\DoxyCodeLine{3875         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3876         b0sumf= b0sumf+(coefb6.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3877         xms(1:2)= crmcs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3878         xm0= sqrt(crmcs)}
+\DoxyCodeLine{3879         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3880         b0sumf= b0sumf+(coefb7.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3881         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}*\mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3882         xm0= \mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}}
+\DoxyCodeLine{3883         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3884         b0sumf= b0sumf+(coefb8.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3885         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{msq}}*\mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{msq}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3886         xm0= \mbox{\hyperlink{namespacehto__masses_a3684febfe1693403a850a784be51abda}{msq}}}
+\DoxyCodeLine{3887         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3888         b0sumf= b0sumf+(coefb9.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3889         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{mdq}}*\mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{mdq}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3890         xm0= \mbox{\hyperlink{namespacehto__masses_a5062584c1079be33f5b496e800e5dac8}{mdq}}}
+\DoxyCodeLine{3891         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3892         b0sumf= b0sumf+(coefb10.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3893         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{muq}}*\mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{muq}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3894         xm0= \mbox{\hyperlink{namespacehto__masses_a423bd562e9f1848ef84bec5cc67485bc}{muq}}}
+\DoxyCodeLine{3895         b0part=\mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3896         b0sumf= b0sumf+(coefb11.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3897         xms(1:2)= \mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{me}}*\mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{me}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3898         xm0= \mbox{\hyperlink{namespacehto__masses_a81e62ddac2d100de24622e34d115eae9}{me}}}
+\DoxyCodeLine{3899         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3900         b0sumf= b0sumf+(coefb12.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3901 *}
+\DoxyCodeLine{3902         iz= 0}
+\DoxyCodeLine{3903         xms(1:2)= crmbs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3904         xm0= sqrt(crmbs)}
+\DoxyCodeLine{3905         nloqcd= crmbs*\mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,cxp,p2,xms,xm0,iz)}
+\DoxyCodeLine{3906         xms(1:2)= crmcs*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{3907         xm0= sqrt(crmcs)}
+\DoxyCodeLine{3908         nloqcd= nloqcd+crmcs*\mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,cxp,p2,xms,xm0,iz)}
+\DoxyCodeLine{3909         \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__aux__hcp_a0d3a2b5d51e5c4c54cb15ec7ad539726}{qcdc}}==0) nloqcd= 0.d0}
+\DoxyCodeLine{3910 *}
+\DoxyCodeLine{3911        \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.2) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3912 *}
+\DoxyCodeLine{3913         xms(1:2)= cpt(1:2)}
+\DoxyCodeLine{3914         xm0= \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}}
+\DoxyCodeLine{3915         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3916         b0sumt= (coefb4.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3917 *    }
+\DoxyCodeLine{3918         xms(1:2)= cpt(1:2)}
+\DoxyCodeLine{3919         xm0= \mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}}
+\DoxyCodeLine{3920         iz= 1}
+\DoxyCodeLine{3921         ttqcd= \mbox{\hyperlink{CALLING__cpHTO_8f_a66be7eda3ac69a6cc955711ff01c717e}{hto\_quarkqcd}}(scal,cxp,p2,xms,xm0,iz)}
+\DoxyCodeLine{3922         ttqcd= cpt.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ttqcd}
+\DoxyCodeLine{3923         \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__aux__hcp_a0d3a2b5d51e5c4c54cb15ec7ad539726}{qcdc}}==0) ttqcd= 0.d0}
+\DoxyCodeLine{3924 *}
+\DoxyCodeLine{3925        \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.3) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3926 *}
+\DoxyCodeLine{3927         xms(1)= \mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}}
+\DoxyCodeLine{3928         xms(2)= \mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}}
+\DoxyCodeLine{3929         xm0= \mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}}
+\DoxyCodeLine{3930         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3931         b0sumb= (coefb1.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3932         xms(1)= \mbox{\hyperlink{namespacehto__masses_a4b61b92f994a0d83a9e3678a08b731a9}{szr}}}
+\DoxyCodeLine{3933         xms(2)= \mbox{\hyperlink{namespacehto__masses_aa72db3d9eb68c74aad41f46ca475a6d9}{szi}}}
+\DoxyCodeLine{3934         xm0= \mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}}}
+\DoxyCodeLine{3935         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3936         b0sumb= b0sumb+(coefb2.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3937         xms(1)= muhs}
+\DoxyCodeLine{3938         xms(2)= -\/muhr*rgh}
+\DoxyCodeLine{3939         xm0= muhr}
+\DoxyCodeLine{3940         b0part= \mbox{\hyperlink{namespacehto__olas_a2913b9e4962793e24e33b3c682e93a25}{hto\_b0af\_em}}(scal,cxp,p2,xms,xm0)}
+\DoxyCodeLine{3941         b0sumb= b0sumb+(coefb3.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{3942 *}
+\DoxyCodeLine{3943 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3944 *}
+\DoxyCodeLine{3945        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0.or.\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3946         ksumf= -\/(sh.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})*(\mbox{\hyperlink{namespacehto__aux__hcp_ae353ce339bb2473a6ab3bb01df6c1673}{cxe}}*\mbox{\hyperlink{namespacehto__aux__hcp_a9ee3ef8bae95f46472ba2fed0ec2cc54}{clxe}}+\mbox{\hyperlink{namespacehto__aux__hcp_a75b7fb9e7b7ce39379f2e255bdff0d84}{cxmu}}*\mbox{\hyperlink{namespacehto__aux__hcp_afda016249568de8fbcdcc55d5703538e}{clxmu}}+}
+\DoxyCodeLine{3947      \textcolor{preprocessor}{\#        cxtau*clxtau+3.d0*(cxd*clxd+cxs*clxs+lcxb*lclxb+}}
+\DoxyCodeLine{3948 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#        cxu*clxu+lcxc*lclxc))/32.d0+}}
+\DoxyCodeLine{3949 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#        cxwi*(cxes+cxmus+cxtaus+3.d0*(}}
+\DoxyCodeLine{3950 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#        cxds+cxss+lcxbs+cxus+lcxcs))/8.d0}}
+\DoxyCodeLine{3951 \textcolor{preprocessor}{}\textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3952        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0.or.\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.2) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3953         ksumt= 3.d0/32.d0*(4.d0*((ccxt.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ccxt)}
+\DoxyCodeLine{3954      \textcolor{preprocessor}{\#        -\/(clt.cp.((sh.cq.cxw).cp.ccxt)))}}
+\DoxyCodeLine{3955 \textcolor{preprocessor}{}\textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3956 *}
+\DoxyCodeLine{3957        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0.or.\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.3) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3958 *}
+\DoxyCodeLine{3959         ksumb= (-\/2.d0*((2.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}+cctsi+3.d0*(sh.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.sh)}
+\DoxyCodeLine{3960      \textcolor{preprocessor}{\#  -\/(clcts.cp.((6.d0*cctsi-\/(sh.cq.cxw)).cp.sh))}}
+\DoxyCodeLine{3961 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#  +3.d0*(clw.cp.((4.d0*co+2.d0*cctsi-\/(sh.cq.cxw)).cp.sh))}}
+\DoxyCodeLine{3962 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#  -\/3.d0*(clh.cp.(shs.cq.cxw)))/128.d0}}
+\DoxyCodeLine{3963 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{3964 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3965 *}
+\DoxyCodeLine{3966        ewc= 4.d0*sqrt(2.d0)*\mbox{\hyperlink{namespacehto__set__phys__const_adf97d1bf3a663ded7ef686746aaba509}{g\_f}}/\mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}}}
+\DoxyCodeLine{3967        sconv= muhs/scals}
+\DoxyCodeLine{3968 *}
+\DoxyCodeLine{3969        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0.or.\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3970         totalf= b0sumf+ksumf}
+\DoxyCodeLine{3971 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3972 *}
+\DoxyCodeLine{3973        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0.or.\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.2) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3974         totalt= b0sumt+ksumt}
+\DoxyCodeLine{3975 *}
+\DoxyCodeLine{3976         neg= ewc*(\mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}*totalt(2)+\mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}*totalt(1))/sconv}
+\DoxyCodeLine{3977      \textcolor{preprocessor}{\#      -\/as\_NLO*g\_f/(sqrt(2.d0)*pis)*}}
+\DoxyCodeLine{3978 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#      (sh(1)*ttqcd(2)+sh(2)*ttqcd(1))/sconv}}
+\DoxyCodeLine{3979 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{3980         \textcolor{keywordflow}{IF}(neg < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3981          totalt= 0.d0}
+\DoxyCodeLine{3982          qcdtop= 0.d0}
+\DoxyCodeLine{3983          \mbox{\hyperlink{namespacehto__aux__hcp_a7f219e54879b211be5a8f01ee3ab9626}{pcnt}}= -\/1}
+\DoxyCodeLine{3984         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3985          qcdtop= as\_nlo*\mbox{\hyperlink{namespacehto__set__phys__const_adf97d1bf3a663ded7ef686746aaba509}{g\_f}}/(sqrt(2.d0)*\mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}})*}
+\DoxyCodeLine{3986      \textcolor{preprocessor}{\#          (sh(1)*ttqcd(2)+sh(2)*ttqcd(1))/sconv}}
+\DoxyCodeLine{3987 \textcolor{preprocessor}{}         \mbox{\hyperlink{namespacehto__aux__hcp_a7f219e54879b211be5a8f01ee3ab9626}{pcnt}}= 1}
+\DoxyCodeLine{3988 \textcolor{keywordflow}{        ENDIF}       }
+\DoxyCodeLine{3989 *}
+\DoxyCodeLine{3990 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3991 *}
+\DoxyCodeLine{3992        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0.or.\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.3) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3993         totalb= b0sumb+ksumb}
+\DoxyCodeLine{3994         \textcolor{keywordflow}{IF}((\mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}*totalb(2)+\mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}*totalb(1)) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3995          totalb= 0.d0}
+\DoxyCodeLine{3996          \mbox{\hyperlink{namespacehto__aux__hcp_a7f219e54879b211be5a8f01ee3ab9626}{pcnt}}= -\/1}
+\DoxyCodeLine{3997         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3998          \mbox{\hyperlink{namespacehto__aux__hcp_a7f219e54879b211be5a8f01ee3ab9626}{pcnt}}= 1}
+\DoxyCodeLine{3999 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{4000 \textcolor{keywordflow}{       ENDIF} }
+\DoxyCodeLine{4001 *}
+\DoxyCodeLine{4002        total= totalf+totalt+totalb}
+\DoxyCodeLine{4003 *}
+\DoxyCodeLine{4004 *-\/-\/-\/ w self energies}
+\DoxyCodeLine{4005 *}
+\DoxyCodeLine{4006        deltag= 6.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}+0.5d0*(((7.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/4.d0*\mbox{\hyperlink{namespacehto__aux__hbb_a0d7d235a092cb5ab08adf56cc930e6f9}{csts}}).\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a0d7d235a092cb5ab08adf56cc930e6f9}{csts}}).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.\mbox{\hyperlink{namespacehto__aux__hcp_aeec513e43593eed175976a7318ee1af0}{clcts}})}
+\DoxyCodeLine{4007 *}
+\DoxyCodeLine{4008        sww0= -\/(38.d0*\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}+6.d0*wccxt+7.d0*sh}
+\DoxyCodeLine{4009      \textcolor{preprocessor}{\# -\/48.d0*(((wccxt.cq.sh).cq.cxw).cp.wccxt)+8.d0*(cxw.cq.sh))/128.d0}}
+\DoxyCodeLine{4010 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\# -\/3.d0/64.d0*((cxw-\/sh+(cxws.cq.cxhw)).cp.clh)}}
+\DoxyCodeLine{4011 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\# +3.d0/32.d0*(((co-\/4.d0*((wccxt.cq.sh).cq.cxw).cp.wccxt)).cp.wclt)}}
+\DoxyCodeLine{4012 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\# +((((8.d0*co-\/17.d0*cstsi+3.d0*cctsi).cp.cxw)}}
+\DoxyCodeLine{4013 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\# -\/6.d0*((cxw.cq.sh).cq.cctq)).cp.clcts)/64.d0}}
+\DoxyCodeLine{4014 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\# -\/((cxw.cq.sh).cq.cctq)/32.d0+5.d0/128.d0*(cxw.cq.ccts)}}
+\DoxyCodeLine{4015 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{4016        coefw1= -\/(((8.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/(sh.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}})).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.sh)*sh}
+\DoxyCodeLine{4017      \textcolor{preprocessor}{\#       -\/4.d0*((-\/12.d0*cxw+7.d0*sh).cp.cxw))/192.d0}}
+\DoxyCodeLine{4018 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{4019        coefw2= -\/((\mbox{\hyperlink{namespacehto__aux__hbb_ad666a0a8b5430f4c98abc53f89e3275b}{cxws}}.\mbox{\hyperlink{namespacehto__acmplx__rat_a9770f30fb38b57026940da117162759f}{cq}}.csmcts).\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.(416.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/192.d0*\mbox{\hyperlink{namespacehto__aux__hbb_a0d7d235a092cb5ab08adf56cc930e6f9}{csts}} }
+\DoxyCodeLine{4020      \textcolor{preprocessor}{\#       -\/((132.d0*co-\/((12.d0*co+cctsi).cq.ccts)).cq.ccts)))/192.d0}}
+\DoxyCodeLine{4021 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{4022        cxp(1)= \mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}}
+\DoxyCodeLine{4023        cxp(2)= \mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}}
+\DoxyCodeLine{4024        p2= \mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}*\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}}
+\DoxyCodeLine{4025 *}
+\DoxyCodeLine{4026        axms(1,1)= \mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}}
+\DoxyCodeLine{4027        axms(1,2)= \mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}}
+\DoxyCodeLine{4028        axm0(1)= \mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}}
+\DoxyCodeLine{4029        axms(2,1)= muhs}
+\DoxyCodeLine{4030        axms(2,2)= -\/muhr*rgh}
+\DoxyCodeLine{4031        axm0(2)= muhr}
+\DoxyCodeLine{4032        b0part= \mbox{\hyperlink{namespacehto__a__cmplx_aaac6b4eaa10f4705abb364aee1ad8deb}{hto\_b021\_dm\_cp}}(scal,cxp,p2,axms,axm0)}
+\DoxyCodeLine{4033        b0sumw1= (coefw1.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{4034        b0sumw= (coefw1.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{4035 *}
+\DoxyCodeLine{4036        axms(1,1)= \mbox{\hyperlink{namespacehto__masses_a4b61b92f994a0d83a9e3678a08b731a9}{szr}}}
+\DoxyCodeLine{4037        axms(1,2)= \mbox{\hyperlink{namespacehto__masses_aa72db3d9eb68c74aad41f46ca475a6d9}{szi}}}
+\DoxyCodeLine{4038        axm0(1)= \mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}}}
+\DoxyCodeLine{4039        axms(2,1)= \mbox{\hyperlink{namespacehto__masses_acb8ffaa8f06c2f181f2bcac6e7b06500}{swr}}}
+\DoxyCodeLine{4040        axms(2,2)= \mbox{\hyperlink{namespacehto__masses_a9e5ce64eba03ac7c2469fa572ef29570}{swi}}}
+\DoxyCodeLine{4041        axm0(2)= \mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}}
+\DoxyCodeLine{4042        b0part= \mbox{\hyperlink{namespacehto__a__cmplx_aaac6b4eaa10f4705abb364aee1ad8deb}{hto\_b021\_dm\_cp}}(scal,cxp,p2,axms,axm0)}
+\DoxyCodeLine{4043        b0sumw2= (coefw2.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{4044        b0sumw= b0sumw+(coefw2.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.b0part)}
+\DoxyCodeLine{4045 *}
+\DoxyCodeLine{4046        ksumw= -\/12.d0*((\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}}
+\DoxyCodeLine{4047      \textcolor{preprocessor}{\#    -\/0.5d0*((3.d0*co-\/(wccxts.cq.cxws)).cp.wccxt)).cp.wcltmw)}}
+\DoxyCodeLine{4048 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    -\/((24.d0*cxw-\/((14.d0*co-\/(sh.cq.cxw)).cp.sh)).cp.clh)}}
+\DoxyCodeLine{4049 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    +((36.d0*cxw-\/14.d0*sh-\/18.d0*((co-\/4.d0*(wccxt.cq.sh)).cp.wccxt)}}
+\DoxyCodeLine{4050 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    +(shs.cq.cxw)).cp.clw)}}
+\DoxyCodeLine{4051 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    -\/6.d0*(((2.d0*co+((cxwi-\/12.d0*shi).cp.wccxt)).cp.wccxt)}}
+\DoxyCodeLine{4052 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    +1.d0/6.d0*((15.d0*co-\/(sh.cq.cxw)).cp.sh)}}
+\DoxyCodeLine{4053 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    +2.d0/9.d0*((97.d0*co+9.d0*(cxw.cq.sh)).cp.cxw))}}
+\DoxyCodeLine{4054 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    +(((cxw.cq.ccts).cp.(co-\/6.d0*(cxw.cq.sh))).cq.ccts)}}
+\DoxyCodeLine{4055 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    -\/2.d0*(((cxw.cq.csmcts).cp.clcts).cp.(62.d0*co}}
+\DoxyCodeLine{4056 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    -\/48.d0*csts-\/5.d0*cctsi))}}
+\DoxyCodeLine{4057 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    -\/18.d0*(((cxws.cq.sh).cq.cctq).cp.clcts)}}
+\DoxyCodeLine{4058 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    -\/72.d0*((wclt.cp.wccxts).cp.(shi-\/1.d0/12.d0*(wccxt.cq.cxws)))}}
+\DoxyCodeLine{4059 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#    +23.d0*(cxw.cq.ccts)}}
+\DoxyCodeLine{4060 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{4061        ksumw= ksumw/192.d0+3.d0/16.d0*(\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.(\mbox{\hyperlink{namespacehto__aux__hbb_aedd955f4c5ac4ace27874f441817671a}{clw}}-\/clmw))}
+\DoxyCodeLine{4062 *}
+\DoxyCodeLine{4063        sww= b0sumw+ksumw}
+\DoxyCodeLine{4064 *}
+\DoxyCodeLine{4065        dw= (-\/sww+sww0)/sconv+deltag/16.d0}
+\DoxyCodeLine{4066 *       dw= 0.d0}
+\DoxyCodeLine{4067 *}
+\DoxyCodeLine{4068        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{4069         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4070      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
+\DoxyCodeLine{4071 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*total(2)+swi*total(1))/sconv}}
+\DoxyCodeLine{4072 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +as\_NLO*g\_f/(sqrt(2.d0)*pis)*}}
+\DoxyCodeLine{4073 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       (sh(1)*nloqcd(2)+sh(2)*nloqcd(1))/sconv}}
+\DoxyCodeLine{4074 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +qcdtop}}
+\DoxyCodeLine{4075 \textcolor{preprocessor}{}*}
+\DoxyCodeLine{4076        \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{4077         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4078      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
+\DoxyCodeLine{4079 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*totalf(2)+swi*totalf(1))/sconv}}
+\DoxyCodeLine{4080 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +as\_NLO*g\_f/(sqrt(2.d0)*pis)*}}
+\DoxyCodeLine{4081 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       (sh(1)*nloqcd(2)+sh(2)*nloqcd(1))/sconv}}
+\DoxyCodeLine{4082 \textcolor{preprocessor}{}       \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.2) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{4083         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4084      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
+\DoxyCodeLine{4085 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*totalt(2)+swi*totalt(1))/sconv}}
+\DoxyCodeLine{4086 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +qcdtop}}
+\DoxyCodeLine{4087 \textcolor{preprocessor}{}       \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.3) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{4088         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4089      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
+\DoxyCodeLine{4090 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*totalb(2)+swi*totalb(1))/sconv}}
+\DoxyCodeLine{4091 \textcolor{preprocessor}{}\textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{4092 *}
+\DoxyCodeLine{4093        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{4094 *}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__hbb__cp_a8feffc4d9be4bf53bae92ecfbd1c1200}\label{namespacehto__hbb__cp_a8feffc4d9be4bf53bae92ecfbd1c1200}} 
+\index{hto\_hbb\_cp@{hto\_hbb\_cp}!hto\_sshh@{hto\_sshh}}
+\index{hto\_sshh@{hto\_sshh}!hto\_hbb\_cp@{hto\_hbb\_cp}}
+\doxysubsubsection{\texorpdfstring{hto\_sshh()}{hto\_sshh()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+hbb\+\_\+cp\+::hto\+\_\+sshh (\begin{DoxyParamCaption}\item[{real$\ast$8, intent(in)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3590 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3590       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__aux__hcp}{hto\_aux\_hcp}}}
+\DoxyCodeLine{3591 \textcolor{comment}{*}}
+\DoxyCodeLine{3592       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3593 \textcolor{comment}{*}}
+\DoxyCodeLine{3594 \textcolor{comment}{c I've commented the following line and added the other twos (Carlo Oleari)}}
+\DoxyCodeLine{3595 \textcolor{comment}{c      REAL*8 HTO\_SSHH,rgh,muc,scalc,x}}
+\DoxyCodeLine{3596       real*8 hto\_sshh,rgh,muc,scalc}
+\DoxyCodeLine{3597       real*8, \textcolor{keywordtype}{INTENT(IN)}  :: x}
+\DoxyCodeLine{3598 \textcolor{comment}{*}}
+\DoxyCodeLine{3599       muc= \mbox{\hyperlink{namespacehto__aux__hcp_ab3f40e3738ae6befd75d6811ce8846f1}{muhcp}}}
+\DoxyCodeLine{3600       scalc= \mbox{\hyperlink{namespacehto__aux__hcp_aa11378073105ae2f60600fde51820c2f}{scalec}}}
+\DoxyCodeLine{3601       rgh= x*muc}
+\DoxyCodeLine{3602 \textcolor{comment}{*}}
+\DoxyCodeLine{3603       hto\_sshh= hto\_shh(muc,scalc,rgh)}
+\DoxyCodeLine{3604 \textcolor{comment}{*}}
+\DoxyCodeLine{3605       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}

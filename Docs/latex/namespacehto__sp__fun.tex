@@ -1,0 +1,1346 @@
+\hypertarget{namespacehto__sp__fun}{}\doxysection{hto\+\_\+sp\+\_\+fun Module Reference}
+\label{namespacehto__sp__fun}\index{hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+recursive real $\ast$8 function, dimension(6, 2) \mbox{\hyperlink{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}{hto\+\_\+s\+\_\+niels\+\_\+up4}} (x)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_ad1509c1703a2f91ac6473d42b78adc21}{hto\+\_\+li2\+\_\+srsz}} (x, y, unit)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_a3cd8ec48b6a81b6d803b3fcfa614eeea}{hto\+\_\+li3\+\_\+srsz}} (x, y, unit)
+\item 
+real $\ast$8 function, dimension(3, 2) \mbox{\hyperlink{namespacehto__sp__fun_ae00024005793a98a7520e6051a2f6482}{hto\+\_\+poly\+\_\+unit}} (theta)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}{hto\+\_\+li2}} (x)
+\item 
+real $\ast$8 function, dimension(size(x)) \mbox{\hyperlink{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}{hto\+\_\+li3}} (x)
+\item 
+subroutine \mbox{\hyperlink{namespacehto__sp__fun_a4bee27933857d07ff259f76be1059c1d}{hto\+\_\+init\+\_\+niels}}
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}{hto\+\_\+cqlnx}} (arg)
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}{hto\+\_\+cqlnomx}} (arg, omarg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}\label{namespacehto__sp__fun_a1bd47318fc020c69325c31009a5d39fe}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_cqlnomx@{hto\_cqlnomx}}
+\index{hto\_cqlnomx@{hto\_cqlnomx}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_cqlnomx()}{hto\_cqlnomx()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+cqlnomx (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{arg,  }\item[{real$\ast$8, dimension(2), intent(in)}]{omarg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1970 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1970 \textcolor{comment}{*}}
+\DoxyCodeLine{1971       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1972 \textcolor{comment}{*}}
+\DoxyCodeLine{1973       \textcolor{keywordtype}{INTEGER} n,k}
+\DoxyCodeLine{1974       real*8 zr,zi,zm2,zm}
+\DoxyCodeLine{1975       real*8, \textcolor{keywordtype}{dimension(2)} :: arg,omarg,res,ares}
+\DoxyCodeLine{1976       real*8, \textcolor{keywordtype}{dimension(10)} :: ct,sn}
+\DoxyCodeLine{1977       \textcolor{keywordtype}{INTENT(IN)} arg,omarg}
+\DoxyCodeLine{1978 \textcolor{comment}{*}}
+\DoxyCodeLine{1979       zr= arg(1)}
+\DoxyCodeLine{1980       zi= arg(2)}
+\DoxyCodeLine{1981       zm2= zr*zr+zi*zi}
+\DoxyCodeLine{1982       zm= sqrt(zm2)}
+\DoxyCodeLine{1983       \textcolor{keywordflow}{IF}(zm < 1.d-\/7) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1984        ct(1)= zr/zm}
+\DoxyCodeLine{1985        sn(1)= zi/zm}
+\DoxyCodeLine{1986        \textcolor{keywordflow}{DO} n=2,10}
+\DoxyCodeLine{1987         ct(n)= ct(1)*ct(n-\/1)-\/sn(1)*sn(n-\/1)}
+\DoxyCodeLine{1988         sn(n)= sn(1)*ct(n-\/1)+ct(1)*sn(n-\/1)}
+\DoxyCodeLine{1989 \textcolor{keywordflow}{       ENDDO}}
+\DoxyCodeLine{1990        ares(1)= ct(10)/10.d0}
+\DoxyCodeLine{1991        ares(2)= sn(10)/10.d0}
+\DoxyCodeLine{1992        \textcolor{keywordflow}{DO} k=9,1,-\/1}
+\DoxyCodeLine{1993         ares(1)= ares(1)*zm+ct(k)/k}
+\DoxyCodeLine{1994         ares(2)= ares(2)*zm+sn(k)/k}
+\DoxyCodeLine{1995 \textcolor{keywordflow}{       ENDDO}}
+\DoxyCodeLine{1996        ares(1)= -\/ares(1)*zm}
+\DoxyCodeLine{1997        ares(2)= -\/ares(2)*zm}
+\DoxyCodeLine{1998       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1999        ares= hto\_cqlnx(omarg)}
+\DoxyCodeLine{2000 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{2001       res= ares}
+\DoxyCodeLine{2002 \textcolor{comment}{*}}
+\DoxyCodeLine{2003       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{2004 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}\label{namespacehto__sp__fun_abc8d9d77b409fbcec8a45e542999fa73}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_cqlnx@{hto\_cqlnx}}
+\index{hto\_cqlnx@{hto\_cqlnx}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_cqlnx()}{hto\_cqlnx()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+cqlnx (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{arg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1912 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1912       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{1913       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{1914       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1915 \textcolor{comment}{*}}
+\DoxyCodeLine{1916       real*8 teta,zm,zm2,tnteta,sr,si}
+\DoxyCodeLine{1917       real*8, \textcolor{keywordtype}{dimension(2)} :: arg,aarg,res}
+\DoxyCodeLine{1918       \textcolor{keywordtype}{INTENT(IN)} arg}
+\DoxyCodeLine{1919 \textcolor{comment}{*}}
+\DoxyCodeLine{1920       \textcolor{keywordflow}{IF}((abs(arg(2))-\/\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}).eq.0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1921        res(1)= log(abs(arg(1)))}
+\DoxyCodeLine{1922        \textcolor{keywordflow}{IF}(arg(1) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1923         res(2)= 0.d0}
+\DoxyCodeLine{1924        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1925         res(2)= pi*sign(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},arg(2))}
+\DoxyCodeLine{1926 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1927        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1928 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1929 \textcolor{comment}{*}}
+\DoxyCodeLine{1930       aarg= abs(arg)}
+\DoxyCodeLine{1931       zm2= (arg(1))**2+(arg(2))**2}
+\DoxyCodeLine{1932       zm= sqrt(zm2)}
+\DoxyCodeLine{1933       res(1)= log(zm)}
+\DoxyCodeLine{1934       \textcolor{keywordflow}{IF}(arg(1).eq.0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1935        \textcolor{keywordflow}{IF}(arg(2) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1936         teta= pi/2.d0}
+\DoxyCodeLine{1937        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1938         teta= -\/pi/2.d0}
+\DoxyCodeLine{1939 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1940        res(2)= teta}
+\DoxyCodeLine{1941        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1942       \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(arg(2).eq.0.d0) \textcolor{keywordflow}{THEN} }
+\DoxyCodeLine{1943        \textcolor{keywordflow}{IF}(arg(1) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1944         teta= 0.d0}
+\DoxyCodeLine{1945        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1946         teta= pi}
+\DoxyCodeLine{1947 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1948        res(2)= teta}
+\DoxyCodeLine{1949        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1950       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1951        tnteta= aarg(2)/aarg(1)}
+\DoxyCodeLine{1952        teta= atan(tnteta)}
+\DoxyCodeLine{1953        sr= arg(1)/aarg(1)}
+\DoxyCodeLine{1954        si= arg(2)/aarg(2)}
+\DoxyCodeLine{1955        \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1956         res(2)= si*teta}
+\DoxyCodeLine{1957        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1958         res(2)= si*(pi-\/teta)}
+\DoxyCodeLine{1959 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1960        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1961 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1962 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_a4bee27933857d07ff259f76be1059c1d}\label{namespacehto__sp__fun_a4bee27933857d07ff259f76be1059c1d}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_init\_niels@{hto\_init\_niels}}
+\index{hto\_init\_niels@{hto\_init\_niels}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_init\_niels()}{hto\_init\_niels()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+sp\+\_\+fun\+::hto\+\_\+init\+\_\+niels}
+
+
+
+Definition at line 1822 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1822       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__common__niels}{hto\_common\_niels}}}
+\DoxyCodeLine{1823 \textcolor{comment}{*}}
+\DoxyCodeLine{1824       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}= 0.d0}
+\DoxyCodeLine{1825 \textcolor{comment}{*}}
+\DoxyCodeLine{1826       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,1)= 1.d0}
+\DoxyCodeLine{1827       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,2)= -\/2.5d-\/1}
+\DoxyCodeLine{1828       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,3)= 2.77777777777777777d-\/2}
+\DoxyCodeLine{1829       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,5)= -\/2.77777777777777777d-\/4}
+\DoxyCodeLine{1830       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,7)= 4.72411186696900982d-\/6}
+\DoxyCodeLine{1831       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,9)= -\/9.18577307466196355d-\/8}
+\DoxyCodeLine{1832       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,11)= 1.89788699889709990d-\/9}
+\DoxyCodeLine{1833       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,13)= -\/4.06476164514422552d-\/11}
+\DoxyCodeLine{1834       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(1,15)= 8.92169102045645255d-\/13}
+\DoxyCodeLine{1835 \textcolor{comment}{*}}
+\DoxyCodeLine{1836       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,1)= 1.d0}
+\DoxyCodeLine{1837       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,2)= -\/3.75d-\/1}
+\DoxyCodeLine{1838       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,3)= 7.87037037037037037d-\/2}
+\DoxyCodeLine{1839       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,4)= -\/8.68055555555555555d-\/3}
+\DoxyCodeLine{1840       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,5)= 1.29629629629629629d-\/4}
+\DoxyCodeLine{1841       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,6)= 8.10185185185185185d-\/5}
+\DoxyCodeLine{1842       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,7)= -\/3.41935716085375949d-\/6}
+\DoxyCodeLine{1843       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,8)= -\/1.32865646258503401d-\/6}
+\DoxyCodeLine{1844       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,9)= 8.66087175610985134d-\/8}
+\DoxyCodeLine{1845       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,10)= 2.52608759553203997d-\/8}
+\DoxyCodeLine{1846       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,11)= -\/2.14469446836406476d-\/9}
+\DoxyCodeLine{1847       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,12)= -\/5.14011062201297891d-\/10}
+\DoxyCodeLine{1848       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,13)= 5.24958211460082943d-\/11}
+\DoxyCodeLine{1849       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,14)= 1.08877544066363183d-\/11}
+\DoxyCodeLine{1850       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(2,15)= -\/1.27793960944936953d-\/12}
+\DoxyCodeLine{1851 \textcolor{comment}{*}}
+\DoxyCodeLine{1852       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,2)= 2.5d-\/1}
+\DoxyCodeLine{1853       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,3)= -\/8.33333333333333333d-\/2}
+\DoxyCodeLine{1854       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,4)= 1.04166666666666666d-\/2}
+\DoxyCodeLine{1855       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,6)= -\/1.15740740740740740d-\/4}
+\DoxyCodeLine{1856       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,8)= 2.06679894179894179d-\/6}
+\DoxyCodeLine{1857       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,10)= -\/4.13359788359788359d-\/8}
+\DoxyCodeLine{1858       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,12)= 8.69864874494504124d-\/10}
+\DoxyCodeLine{1859       \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(3,14)= -\/1.88721076381696185d-\/11}
+\DoxyCodeLine{1860 \textcolor{comment}{*}}
+\DoxyCodeLine{1861       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}= 0.d0}
+\DoxyCodeLine{1862 \textcolor{comment}{*}}
+\DoxyCodeLine{1863       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,1)= 1.d0}
+\DoxyCodeLine{1864       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,2)= -\/4.375d-\/1}
+\DoxyCodeLine{1865       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,3)= 1.16512345679012345d-\/1}
+\DoxyCodeLine{1866       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,4)= -\/1.98206018518518518d-\/2}
+\DoxyCodeLine{1867       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,5)= 1.92793209876543209d-\/3}
+\DoxyCodeLine{1868       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,6)= -\/3.10570987654320987d-\/5}
+\DoxyCodeLine{1869       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,7)= -\/1.56240091148578352d-\/5}
+\DoxyCodeLine{1870       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,8)= 8.48512354677320663d-\/7}
+\DoxyCodeLine{1871       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,9)= 2.29096166031897114d-\/7}
+\DoxyCodeLine{1872       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,10)= -\/2.18326142185269169d-\/8}
+\DoxyCodeLine{1873       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,11)= -\/3.88282487917201557d-\/9}
+\DoxyCodeLine{1874       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,12)= 5.44629210322033211d-\/10}
+\DoxyCodeLine{1875       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,13)= 6.96080521068272540d-\/11}
+\DoxyCodeLine{1876       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,14)= -\/1.33757376864452151d-\/11}
+\DoxyCodeLine{1877       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(1,15)= -\/1.27848526852665716d-\/12}
+\DoxyCodeLine{1878 \textcolor{comment}{*}}
+\DoxyCodeLine{1879       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,2)= 2.5d-\/1}
+\DoxyCodeLine{1880       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,3)= -\/1.25d-\/1}
+\DoxyCodeLine{1881       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,4)= 2.95138888888888888d-\/2}
+\DoxyCodeLine{1882       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,5)= -\/3.47222222222222222d-\/3}
+\DoxyCodeLine{1883       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,6)= 5.40123456790123456d-\/5}
+\DoxyCodeLine{1884       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,7)= 3.47222222222222222d-\/5}
+\DoxyCodeLine{1885       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,8)= -\/1.49596875787351977d-\/6}
+\DoxyCodeLine{1886       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,9)= -\/5.90513983371126228d-\/7}
+\DoxyCodeLine{1887       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,10)= 3.89739229024943310d-\/8}
+\DoxyCodeLine{1888       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,11)= 1.14822163433274544d-\/8}
+\DoxyCodeLine{1889       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,12)= -\/9.82984964666863015d-\/10}
+\DoxyCodeLine{1890       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,13)= -\/2.37235874862137488d-\/10}
+\DoxyCodeLine{1891       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,14)= 2.43730598177895652d-\/11}
+\DoxyCodeLine{1892       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(2,15)= 5.08095205643028190d-\/12}
+\DoxyCodeLine{1893 \textcolor{comment}{*}}
+\DoxyCodeLine{1894       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,2)= 5.55555555555555555d-\/2}
+\DoxyCodeLine{1895       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,3)= -\/2.08333333333333333d-\/2}
+\DoxyCodeLine{1896       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,4)= 2.77777777777777777d-\/3}
+\DoxyCodeLine{1897       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,6)= -\/3.30687830687830687d-\/5}
+\DoxyCodeLine{1898       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,8)= 6.12384871644130903d-\/7}
+\DoxyCodeLine{1899       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,10)= -\/1.25260541927208593d-\/8}
+\DoxyCodeLine{1900       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,12)= 2.67650730613693576d-\/10}
+\DoxyCodeLine{1901       \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(3,14)= -\/5.87132237631943687d-\/12}
+\DoxyCodeLine{1902 \textcolor{comment}{*}}
+\DoxyCodeLine{1903       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1904 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}\label{namespacehto__sp__fun_afb53b5b01a47dc535e3e0f751b5cf52f}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_li2@{hto\_li2}}
+\index{hto\_li2@{hto\_li2}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_li2()}{hto\_li2()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li2 (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1302 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1302       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{1303       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__rat}{hto\_acmplx\_rat}}}
+\DoxyCodeLine{1304       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{1305       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__bernoulli}{hto\_bernoulli}}}
+\DoxyCodeLine{1306       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{1307       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{1308 \textcolor{comment}{*}}
+\DoxyCodeLine{1309       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1310 \textcolor{comment}{*}}
+\DoxyCodeLine{1311       real*8, \textcolor{keywordtype}{dimension(2)} ::x,\textcolor{keywordtype}{value}}
+\DoxyCodeLine{1312       \textcolor{keywordtype}{INTENT(IN)} x}
+\DoxyCodeLine{1313 \textcolor{comment}{*}}
+\DoxyCodeLine{1314       \textcolor{keywordtype}{INTEGER} n}
+\DoxyCodeLine{1315       real*8 ym,ym2,sign1,sign2,sign3,fact, parr,pari,parm,parm2,zr}
+\DoxyCodeLine{1316       real*8, \textcolor{keywordtype}{dimension(2)} :: clnx,clnomx,clnoy,clnz,clnomz,}
+\DoxyCodeLine{1317      \#        add1,add2,add3,par,res}
+\DoxyCodeLine{1318       real*8, \textcolor{keywordtype}{dimension(0:14)} :: bf}
+\DoxyCodeLine{1319       real*8, \textcolor{keywordtype}{dimension(15)} :: ct,sn}
+\DoxyCodeLine{1320       real*8, \textcolor{keywordtype}{dimension(2)} :: omx,y,oy,omy,z,omz,t,omt}
+\DoxyCodeLine{1321 \textcolor{comment}{*}}
+\DoxyCodeLine{1322       omx= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/x}
+\DoxyCodeLine{1323       \textcolor{keywordflow}{IF}(x(1) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1324        y= omx}
+\DoxyCodeLine{1325        sign1= -\/1.d0}
+\DoxyCodeLine{1326        clnx= x(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.x(2)}
+\DoxyCodeLine{1327        clnomx= omx(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.omx(2)}
+\DoxyCodeLine{1328        add1= \mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}}/6.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/(clnx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.clnomx)}
+\DoxyCodeLine{1329       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1330        y= x}
+\DoxyCodeLine{1331        sign1= 1.d0}
+\DoxyCodeLine{1332        add1= 0.d0}
+\DoxyCodeLine{1333 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1334       omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{1335       ym2= y(1)*y(1)+y(2)*y(2)}
+\DoxyCodeLine{1336       ym= sqrt(ym2)}
+\DoxyCodeLine{1337       \textcolor{keywordflow}{IF}(ym > 1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1338        z(1)= y(1)/ym2}
+\DoxyCodeLine{1339        z(2)= -\/y(2)/ym2}
+\DoxyCodeLine{1340        sign2= -\/1.d0}
+\DoxyCodeLine{1341        oy= -\/y}
+\DoxyCodeLine{1342        clnoy= oy(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.oy(2)}
+\DoxyCodeLine{1343        add2= -\/\mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}}/6.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/0.5d0*(clnoy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.clnoy)}
+\DoxyCodeLine{1344       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1345        z= y}
+\DoxyCodeLine{1346        sign2= 1.d0}
+\DoxyCodeLine{1347        add2= 0.d0}
+\DoxyCodeLine{1348 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1349       omz= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/z}
+\DoxyCodeLine{1350       zr= z(1)}
+\DoxyCodeLine{1351       \textcolor{keywordflow}{IF}(zr > 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1352        t= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/z}
+\DoxyCodeLine{1353        omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1354        sign3= -\/1.d0}
+\DoxyCodeLine{1355        clnz= z(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.z(2)}
+\DoxyCodeLine{1356        clnomz= omz(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.omz(2)}
+\DoxyCodeLine{1357        add3= \mbox{\hyperlink{namespacehto__riemann_a241ac9d284c9eabd9a03c8a375ee89cf}{pis}}/6.d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/(clnz.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.clnomz)}
+\DoxyCodeLine{1358       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1359        t= z}
+\DoxyCodeLine{1360        omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1361        sign3= 1.d0}
+\DoxyCodeLine{1362        add3= 0.d0}
+\DoxyCodeLine{1363 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1364       par= omt(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.omt(2)}
+\DoxyCodeLine{1365       fact= 1.d0}
+\DoxyCodeLine{1366       \textcolor{keywordflow}{DO} n=0,14}
+\DoxyCodeLine{1367        bf(n)= \mbox{\hyperlink{namespacehto__bernoulli_a6f6dec1d767b85a16c78cdf79c31a935}{b\_num}}(n)/fact}
+\DoxyCodeLine{1368        fact= fact*(n+2.d0)}
+\DoxyCodeLine{1369 \textcolor{keywordflow}{      ENDDO}}
+\DoxyCodeLine{1370       parr= par(1)}
+\DoxyCodeLine{1371       pari= par(2)}
+\DoxyCodeLine{1372       parm2= parr*parr+pari*pari}
+\DoxyCodeLine{1373       parm= sqrt(parm2)}
+\DoxyCodeLine{1374       ct(1)= parr/parm}
+\DoxyCodeLine{1375       sn(1)= pari/parm}
+\DoxyCodeLine{1376       \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1377        ct(n)= ct(1)*ct(n-\/1)-\/sn(1)*sn(n-\/1)}
+\DoxyCodeLine{1378        sn(n)= sn(1)*ct(n-\/1)+ct(1)*sn(n-\/1)}
+\DoxyCodeLine{1379 \textcolor{keywordflow}{      ENDDO}}
+\DoxyCodeLine{1380 \textcolor{comment}{*      }}
+\DoxyCodeLine{1381       res(1)= -\/((((((((bf(14)*ct(15)*parm2+bf(12)*ct(13))*parm2+}
+\DoxyCodeLine{1382      \#                 bf(10)*ct(11))*parm2+bf(8)*ct(9))*parm2+}
+\DoxyCodeLine{1383      \#                 bf(6)*ct(7))*parm2+bf(4)*ct(5))*parm2+}
+\DoxyCodeLine{1384      \#                 bf(2)*ct(3))*(-\/parm)+bf(1)*ct(2))*(-\/parm)+}
+\DoxyCodeLine{1385      \#                 bf(0)*ct(1))*parm }
+\DoxyCodeLine{1386       res(2)= -\/((((((((bf(14)*sn(15)*parm2+bf(12)*sn(13))*parm2+}
+\DoxyCodeLine{1387      \#                 bf(10)*sn(11))*parm2+bf(8)*sn(9))*parm2+}
+\DoxyCodeLine{1388      \#                 bf(6)*sn(7))*parm2+bf(4)*sn(5))*parm2+}
+\DoxyCodeLine{1389      \#                 bf(2)*sn(3))*(-\/parm)+bf(1)*sn(2))*(-\/parm)+}
+\DoxyCodeLine{1390      \#                 bf(0)*sn(1))*parm }
+\DoxyCodeLine{1391 \textcolor{comment}{*}}
+\DoxyCodeLine{1392       \textcolor{keywordtype}{value}= sign1*(sign2*(sign3*res+add3)+add2)+add1}
+\DoxyCodeLine{1393 \textcolor{comment}{*}}
+\DoxyCodeLine{1394       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1395 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_ad1509c1703a2f91ac6473d42b78adc21}\label{namespacehto__sp__fun_ad1509c1703a2f91ac6473d42b78adc21}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_li2\_srsz@{hto\_li2\_srsz}}
+\index{hto\_li2\_srsz@{hto\_li2\_srsz}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_li2\_srsz()}{hto\_li2\_srsz()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li2\+\_\+srsz (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension (\+:), intent(in)}]{x,  }\item[{real$\ast$8, dimension (\+:), intent(in)}]{y,  }\item[{integer}]{unit }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1065 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1065       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{1066       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{1067       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{1068       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{1069       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__kountac}{hto\_kountac}}}
+\DoxyCodeLine{1070 \textcolor{comment}{*}}
+\DoxyCodeLine{1071       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1072 \textcolor{comment}{*}}
+\DoxyCodeLine{1073       \textcolor{keywordtype}{INTEGER} unit}
+\DoxyCodeLine{1074       real*8 xms,atheta,theta,sr,si}
+\DoxyCodeLine{1075       real*8, \textcolor{keywordtype}{dimension (:)} :: x,y}
+\DoxyCodeLine{1076       real*8, \textcolor{keywordtype}{dimension(3,2)} :: aux}
+\DoxyCodeLine{1077       real*8, \textcolor{keywordtype}{dimension(2)} :: lnc,add,\textcolor{keywordtype}{value}}
+\DoxyCodeLine{1078       \textcolor{keywordtype}{INTENT(IN)} x,y}
+\DoxyCodeLine{1079 \textcolor{comment}{*}}
+\DoxyCodeLine{1080       \textcolor{keywordflow}{IF}(abs(y(2)).ne.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1081        \textcolor{keywordflow}{IF}(unit.eq.1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1082         xms= x(1)*x(1)+x(2)*x(2)}
+\DoxyCodeLine{1083         \textcolor{keywordflow}{IF}(abs(1.d0-\/sqrt(xms)).gt.1.d-\/12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1084          print*,\textcolor{stringliteral}{' apparent inconsistency '}}
+\DoxyCodeLine{1085 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{1086         atheta= atan(abs(x(2)/x(1)))}
+\DoxyCodeLine{1087         sr= x(1)/abs(x(1))}
+\DoxyCodeLine{1088         si= x(2)/abs(x(2))}
+\DoxyCodeLine{1089         \textcolor{keywordflow}{IF}(sr > 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1090          theta= atheta}
+\DoxyCodeLine{1091         \textcolor{keywordflow}{ELSEIF}(sr > 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1092          theta= 2.d0*pi-\/atheta}
+\DoxyCodeLine{1093         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1094          theta= pi-\/atheta}
+\DoxyCodeLine{1095         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1096          theta= pi+atheta}
+\DoxyCodeLine{1097 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{1098          aux= hto\_poly\_unit(theta)}
+\DoxyCodeLine{1099          \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1:2)= aux(1,1:2)}
+\DoxyCodeLine{1100        \textcolor{keywordflow}{ELSE} }
+\DoxyCodeLine{1101         \textcolor{keywordtype}{value}= hto\_li2(x)}
+\DoxyCodeLine{1102 \textcolor{keywordflow}{       ENDIF} }
+\DoxyCodeLine{1103        \textcolor{keywordflow}{RETURN} }
+\DoxyCodeLine{1104 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1105 \textcolor{comment}{*}}
+\DoxyCodeLine{1106       \textcolor{keywordflow}{IF}(x(1) > 1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1107        \textcolor{keywordflow}{IF}(y(1) < 1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1108         \textcolor{keywordtype}{value}= hto\_li2(x)}
+\DoxyCodeLine{1109         print*,\textcolor{stringliteral}{'+++++++++++++++++++++++++++++++++++'}}
+\DoxyCodeLine{1110         print*,\textcolor{stringliteral}{' anomaly Li2 '}}
+\DoxyCodeLine{1111         print*,x}
+\DoxyCodeLine{1112         print*,y}
+\DoxyCodeLine{1113         print*,\textcolor{stringliteral}{'+++++++++++++++++++++++++++++++++++'}}
+\DoxyCodeLine{1114 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1115        lnc= x(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.x(2)}
+\DoxyCodeLine{1116        add(1)= -\/lnc(2)}
+\DoxyCodeLine{1117        add(2)= lnc(1)}
+\DoxyCodeLine{1118        \textcolor{keywordflow}{IF}(y(2) < 0.d0.and.x(2) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1119         \textcolor{keywordtype}{value}= hto\_li2(x)-\/2.d0*pi*add}
+\DoxyCodeLine{1120         \mbox{\hyperlink{namespacehto__kountac_ac66a099c5c995b1f3aeb2584a39f8d45}{km}}= \mbox{\hyperlink{namespacehto__kountac_ac66a099c5c995b1f3aeb2584a39f8d45}{km}}+1}
+\DoxyCodeLine{1121        \textcolor{keywordflow}{ELSEIF}(y(2) > 0.d0.and.x(2) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1122         \textcolor{keywordtype}{value}= hto\_li2(x)+2.d0*pi*add}
+\DoxyCodeLine{1123         \mbox{\hyperlink{namespacehto__kountac_a37986cfaf156ed0008c32d07cc119090}{kp}}= \mbox{\hyperlink{namespacehto__kountac_a37986cfaf156ed0008c32d07cc119090}{kp}}+1}
+\DoxyCodeLine{1124        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1125         \textcolor{keywordtype}{value}= hto\_li2(x)}
+\DoxyCodeLine{1126 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1127       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1128        \textcolor{keywordtype}{value}= hto\_li2(x)}
+\DoxyCodeLine{1129 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1130 \textcolor{comment}{*       }}
+\DoxyCodeLine{1131       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1132 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}\label{namespacehto__sp__fun_aa52f808764316f97348327bed5756651}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_li3@{hto\_li3}}
+\index{hto\_li3@{hto\_li3}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_li3()}{hto\_li3()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(size(x)) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li3 (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension (\+:), intent(in)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1401 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1401       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{1402       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{1403 \textcolor{comment}{*}}
+\DoxyCodeLine{1404       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1405 \textcolor{comment}{*}}
+\DoxyCodeLine{1406       real*8, \textcolor{keywordtype}{dimension (:)} :: x}
+\DoxyCodeLine{1407       real*8 hto\_li3(\textcolor{keyword}{size}(x))}
+\DoxyCodeLine{1408       \textcolor{keywordtype}{INTENT(IN)} x}
+\DoxyCodeLine{1409       \textcolor{keywordtype}{INTEGER} n}
+\DoxyCodeLine{1410       real*8 xm,xm2,xtst,pr,pj,p2,pm,pr1,pj1,pm1,p12,pr2,pj2,p22,pm2,}
+\DoxyCodeLine{1411      \#       rln2\_x,iln2\_x,tm2,y2r,ym2,ytst}
+\DoxyCodeLine{1412       real*8, \textcolor{keywordtype}{dimension(0:14)} :: bf}
+\DoxyCodeLine{1413       real*8, \textcolor{keywordtype}{dimension(15)} :: ct,sn,ct1,sn1,ct2,sn2}
+\DoxyCodeLine{1414       real*8, \textcolor{keywordtype}{dimension(2)} :: y,addx,ox,clnx,par,res,u1,u2,ln\_y,omy,}
+\DoxyCodeLine{1415      \#  ln\_omy,addy,par1,par2,res1,res2,t,resa,resb,ln\_t,res3,res4,}
+\DoxyCodeLine{1416      \#  ln\_omt,addt,addt2,omt,omu1,omu2}
+\DoxyCodeLine{1417       real*8 :: b(0:14)=(/1.d0,-\/0.75d0,}
+\DoxyCodeLine{1418      \#       0.236111111111111111111111111111111d0,}
+\DoxyCodeLine{1419      \#       -\/3.472222222222222222222222222222222d-\/2,}
+\DoxyCodeLine{1420      \#       6.481481481481481481481481481481482d-\/4,}
+\DoxyCodeLine{1421      \#       4.861111111111111111111111111111111d-\/4,}
+\DoxyCodeLine{1422      \#       -\/2.393550012597631645250692869740488d-\/5,}
+\DoxyCodeLine{1423      \#       -\/1.062925170068027210884353741496599d-\/5,}
+\DoxyCodeLine{1424      \#       7.794784580498866213151927437641723d-\/7,}
+\DoxyCodeLine{1425      \#       2.526087595532039976484420928865373d-\/7,}
+\DoxyCodeLine{1426      \#       -\/2.359163915200471237027273583310139d-\/8,}
+\DoxyCodeLine{1427      \#       -\/6.168132746415574698402981231264060d-\/9,}
+\DoxyCodeLine{1428      \#       6.824456748981078267312315451125495d-\/10,}
+\DoxyCodeLine{1429      \#       1.524285616929084572552216019859487d-\/10,}
+\DoxyCodeLine{1430      \#       -\/1.916909414174054295837274763110831d-\/11/)}
+\DoxyCodeLine{1431 \textcolor{comment}{*}}
+\DoxyCodeLine{1432       \textcolor{keywordflow}{FORALL} (n=0:14) bf(n)= b(n)/(n+1.d0)}
+\DoxyCodeLine{1433 \textcolor{comment}{*}}
+\DoxyCodeLine{1434       xm2= x(1)*x(1)+x(2)*x(2)}
+\DoxyCodeLine{1435       xm= sqrt(xm2)}
+\DoxyCodeLine{1436 \textcolor{comment}{*}}
+\DoxyCodeLine{1437 \textcolor{comment}{*-\/-\/-\/-\/-\/the modulus of x is checked}}
+\DoxyCodeLine{1438 \textcolor{comment}{*}}
+\DoxyCodeLine{1439       xtst= xm-\/1.d0}
+\DoxyCodeLine{1440       \textcolor{keywordflow}{IF}(xtst <= 1.d-\/20) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1441        y= x}
+\DoxyCodeLine{1442        addx= 0.d0        }
+\DoxyCodeLine{1443       \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(xm > 1.d-\/20) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1444        y(1)= x(1)/xm2}
+\DoxyCodeLine{1445        y(2)= -\/x(2)/xm2}
+\DoxyCodeLine{1446        ox= -\/x}
+\DoxyCodeLine{1447        clnx= hto\_cqlnx(ox)}
+\DoxyCodeLine{1448        rln2\_x= clnx(1)*clnx(1)}
+\DoxyCodeLine{1449        iln2\_x= clnx(2)*clnx(2)}
+\DoxyCodeLine{1450        addx(1)= -\/clnx(1)*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+1.d0/6.d0*(rln2\_x-\/3.d0*iln2\_x))}
+\DoxyCodeLine{1451        addx(2)= -\/clnx(2)*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+1.d0/6.d0*(3.d0*rln2\_x-\/iln2\_x))}
+\DoxyCodeLine{1452 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1453 \textcolor{comment}{*}}
+\DoxyCodeLine{1454 \textcolor{comment}{*-\/-\/-\/-\/-\/once x -\/-\/> y, |y|<1 the sign of re(y) is checked}}
+\DoxyCodeLine{1455 \textcolor{comment}{*     if re(y)>0 a transformation is required for re(y)>1/2}}
+\DoxyCodeLine{1456 \textcolor{comment}{*}}
+\DoxyCodeLine{1457       y2r= y(1)*y(1)-\/y(2)*y(2) }
+\DoxyCodeLine{1458       \textcolor{keywordflow}{IF}(y(1) >= 0.d0.or.y2r < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1459        ytst= y(1)-\/0.5d0}
+\DoxyCodeLine{1460        \textcolor{keywordflow}{IF}(ytst <= 1.d-\/20) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1461 \textcolor{comment}{*}}
+\DoxyCodeLine{1462 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(y) is computed}}
+\DoxyCodeLine{1463 \textcolor{comment}{*}}
+\DoxyCodeLine{1464         omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{1465         par= hto\_cqlnomx(y,omy)}
+\DoxyCodeLine{1466         pr= -\/par(1)}
+\DoxyCodeLine{1467         pj= -\/par(2)}
+\DoxyCodeLine{1468         p2= pr*pr+pj*pj}
+\DoxyCodeLine{1469         pm= sqrt(p2)}
+\DoxyCodeLine{1470         ct(1)= pr/pm}
+\DoxyCodeLine{1471         sn(1)= pj/pm}
+\DoxyCodeLine{1472         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1473          ct(n)= ct(1)*ct(n-\/1)-\/sn(1)*sn(n-\/1)}
+\DoxyCodeLine{1474          sn(n)= sn(1)*ct(n-\/1)+ct(1)*sn(n-\/1)}
+\DoxyCodeLine{1475 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1476         res(1)= pm*(bf(0)*ct(1)+pm*(bf(1)*ct(2)+pm*}
+\DoxyCodeLine{1477      \#              (bf(2)*ct(3)+pm*(bf(3)*ct(4)+pm*}
+\DoxyCodeLine{1478      \#              (bf(4)*ct(5)+pm*(bf(5)*ct(6)+pm*}
+\DoxyCodeLine{1479      \#              (bf(6)*ct(7)+pm*(bf(7)*ct(8)+pm*}
+\DoxyCodeLine{1480      \#              (bf(8)*ct(9)+pm*(bf(9)*ct(10)+pm*}
+\DoxyCodeLine{1481      \#              (bf(10)*ct(11)+pm*(bf(11)*ct(12)+pm*}
+\DoxyCodeLine{1482      \#              (bf(12)*ct(13)+pm*(bf(13)*ct(14)+pm*}
+\DoxyCodeLine{1483      \#              (bf(14)*ct(15))))))))))))))))}
+\DoxyCodeLine{1484         res(2)= pm*(bf(0)*sn(1)+pm*(bf(1)*sn(2)+pm*}
+\DoxyCodeLine{1485      \#              (bf(2)*sn(3)+pm*(bf(3)*sn(4)+pm*}
+\DoxyCodeLine{1486      \#              (bf(4)*sn(5)+pm*(bf(5)*sn(6)+pm*}
+\DoxyCodeLine{1487      \#              (bf(6)*sn(7)+pm*(bf(7)*sn(8)+pm*}
+\DoxyCodeLine{1488      \#              (bf(8)*sn(9)+pm*(bf(9)*sn(10)+pm*}
+\DoxyCodeLine{1489      \#              (bf(10)*sn(11)+pm*(bf(11)*sn(12)+pm*}
+\DoxyCodeLine{1490      \#              (bf(12)*sn(13)+pm*(bf(13)*sn(14)+pm*}
+\DoxyCodeLine{1491      \#              (bf(14)*sn(15))))))))))))))))}
+\DoxyCodeLine{1492         hto\_li3= res+addx}
+\DoxyCodeLine{1493         \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1494        \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(ytst > 1.d-\/20) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1495         ym2= y(1)*y(1)+y(2)*y(2)}
+\DoxyCodeLine{1496         u1(1)= 1.d0-\/y(1)/ym2}
+\DoxyCodeLine{1497         u1(2)= y(2)/ym2}
+\DoxyCodeLine{1498         u2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{1499         ln\_y= hto\_cqlnx(y)}
+\DoxyCodeLine{1500         omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{1501         ln\_omy= hto\_cqlnomx(y,omy)}
+\DoxyCodeLine{1502         addy(1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_y(1)+1.d0/6.d0*ln\_y(1)*}
+\DoxyCodeLine{1503      \#               (ln\_y(1)*ln\_y(1)-\/3.d0*ln\_y(2)*ln\_y(2))-\/}
+\DoxyCodeLine{1504      \#               0.5d0*ln\_omy(1)*(ln\_y(1)*ln\_y(1)-\/ln\_y(2)*}
+\DoxyCodeLine{1505      \#               ln\_y(2))+ln\_y(1)*ln\_y(2)*ln\_omy(2)}
+\DoxyCodeLine{1506         addy(2)= \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_y(2)+1.d0/6.d0*ln\_y(2)*(3.d0*}
+\DoxyCodeLine{1507      \#               ln\_y(1)*ln\_y(1)-\/ln\_y(2)*ln\_y(2))-\/0.5d0*}
+\DoxyCodeLine{1508      \#               ln\_omy(2)*(ln\_y(1)*ln\_y(1)-\/ln\_y(2)*ln\_y(2))-\/}
+\DoxyCodeLine{1509      \#               ln\_y(1)*ln\_omy(1)*ln\_y(2)}
+\DoxyCodeLine{1510 \textcolor{comment}{*}}
+\DoxyCodeLine{1511 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/1/y) is computed}}
+\DoxyCodeLine{1512 \textcolor{comment}{*}}
+\DoxyCodeLine{1513         omu1= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u1}
+\DoxyCodeLine{1514         par1= hto\_cqlnomx(u1,omu1)}
+\DoxyCodeLine{1515         pr1= -\/par1(1)}
+\DoxyCodeLine{1516         pj1= -\/par1(2)}
+\DoxyCodeLine{1517         p12= pr1*pr1+pj1*pj1}
+\DoxyCodeLine{1518         pm1= sqrt(p12)}
+\DoxyCodeLine{1519         ct1(1)= pr1/pm1}
+\DoxyCodeLine{1520         sn1(1)= pj1/pm1}
+\DoxyCodeLine{1521         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1522          ct1(n)= ct1(1)*ct1(n-\/1)-\/sn1(1)*sn1(n-\/1)}
+\DoxyCodeLine{1523          sn1(n)= sn1(1)*ct1(n-\/1)+ct1(1)*sn1(n-\/1)}
+\DoxyCodeLine{1524 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1525         res1(1)= pm1*(bf(0)*ct1(1)+pm1*(bf(1)*ct1(2)+pm1*}
+\DoxyCodeLine{1526      \#               (bf(2)*ct1(3)+pm1*(bf(3)*ct1(4)+pm1*}
+\DoxyCodeLine{1527      \#               (bf(4)*ct1(5)+pm1*(bf(5)*ct1(6)+pm1*}
+\DoxyCodeLine{1528      \#               (bf(6)*ct1(7)+pm1*(bf(7)*ct1(8)+pm1*}
+\DoxyCodeLine{1529      \#               (bf(8)*ct1(9)+pm1*(bf(9)*ct1(10)+pm1*}
+\DoxyCodeLine{1530      \#               (bf(10)*ct1(11)+pm1*(bf(11)*ct1(12)+pm1*}
+\DoxyCodeLine{1531      \#               (bf(12)*ct1(13)+pm1*(bf(13)*ct1(14)+pm1*}
+\DoxyCodeLine{1532      \#               (bf(14)*ct1(15))))))))))))))))}
+\DoxyCodeLine{1533         res1(2)= pm1*(bf(0)*sn1(1)+pm1*(bf(1)*sn1(2)+pm1*}
+\DoxyCodeLine{1534      \#               (bf(2)*sn1(3)+pm1*(bf(3)*sn1(4)+pm1*}
+\DoxyCodeLine{1535      \#               (bf(4)*sn1(5)+pm1*(bf(5)*sn1(6)+pm1*}
+\DoxyCodeLine{1536      \#               (bf(6)*sn1(7)+pm1*(bf(7)*sn1(8)+pm1*}
+\DoxyCodeLine{1537      \#               (bf(8)*sn1(9)+pm1*(bf(9)*sn1(10)+pm1*}
+\DoxyCodeLine{1538      \#               (bf(10)*sn1(11)+pm1*(bf(11)*sn1(12)+pm1*}
+\DoxyCodeLine{1539      \#               (bf(12)*sn1(13)+pm1*(bf(13)*sn1(14)+pm1*}
+\DoxyCodeLine{1540      \#               (bf(14)*sn1(15))))))))))))))))}
+\DoxyCodeLine{1541 \textcolor{comment}{*}}
+\DoxyCodeLine{1542 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/y) is computed}}
+\DoxyCodeLine{1543 \textcolor{comment}{*}}
+\DoxyCodeLine{1544         omu2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u2}
+\DoxyCodeLine{1545         par2= hto\_cqlnomx(u2,omu2)}
+\DoxyCodeLine{1546         pr2= -\/par2(1)}
+\DoxyCodeLine{1547         pj2= -\/par2(2)}
+\DoxyCodeLine{1548         p22= pr2*pr2+pj2*pj2}
+\DoxyCodeLine{1549         pm2= sqrt(p22)}
+\DoxyCodeLine{1550         ct2(1)= pr2/pm2}
+\DoxyCodeLine{1551         sn2(1)= pj2/pm2}
+\DoxyCodeLine{1552         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1553          ct2(n)= ct2(1)*ct2(n-\/1)-\/sn2(1)*sn2(n-\/1)}
+\DoxyCodeLine{1554          sn2(n)= sn2(1)*ct2(n-\/1)+ct2(1)*sn2(n-\/1)}
+\DoxyCodeLine{1555 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1556         res2(1)= pm2*(bf(0)*ct2(1)+pm2*(bf(1)*ct2(2)+pm2*}
+\DoxyCodeLine{1557      \#               (bf(2)*ct2(3)+pm2*(bf(3)*ct2(4)+pm2*}
+\DoxyCodeLine{1558      \#               (bf(4)*ct2(5)+pm2*(bf(5)*ct2(6)+pm2*}
+\DoxyCodeLine{1559      \#               (bf(6)*ct2(7)+pm2*(bf(7)*ct2(8)+pm2*}
+\DoxyCodeLine{1560      \#               (bf(8)*ct2(9)+pm2*(bf(9)*ct2(10)+pm2*}
+\DoxyCodeLine{1561      \#               (bf(10)*ct2(11)+pm2*(bf(11)*ct2(12)+pm2*}
+\DoxyCodeLine{1562      \#               (bf(12)*ct2(13)+pm2*(bf(13)*ct2(14)+pm2*}
+\DoxyCodeLine{1563      \#               (bf(14)*ct2(15))))))))))))))))}
+\DoxyCodeLine{1564         res2(2)= pm2*(bf(0)*sn2(1)+pm2*(bf(1)*sn2(2)+pm2*}
+\DoxyCodeLine{1565      \#               (bf(2)*sn2(3)+pm2*(bf(3)*sn2(4)+pm2*}
+\DoxyCodeLine{1566      \#               (bf(4)*sn2(5)+pm2*(bf(5)*sn2(6)+pm2*}
+\DoxyCodeLine{1567      \#               (bf(6)*sn2(7)+pm2*(bf(7)*sn2(8)+pm2*}
+\DoxyCodeLine{1568      \#               (bf(8)*sn2(9)+pm2*(bf(9)*sn2(10)+pm2*}
+\DoxyCodeLine{1569      \#               (bf(10)*sn2(11)+pm2*(bf(11)*sn2(12)+pm2*}
+\DoxyCodeLine{1570      \#               (bf(12)*sn2(13)+pm2*(bf(13)*sn2(14)+pm2*}
+\DoxyCodeLine{1571      \#               (bf(14)*sn2(15))))))))))))))))}
+\DoxyCodeLine{1572         hto\_li3= -\/res1-\/res2+addx+addy}
+\DoxyCodeLine{1573         \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1574 \textcolor{keywordflow}{       ENDIF}   }
+\DoxyCodeLine{1575 \textcolor{comment}{*}}
+\DoxyCodeLine{1576 \textcolor{comment}{*-\/-\/-\/-\/-\/if re(y)<0 a transformation is required in terms of t = -\/y }}
+\DoxyCodeLine{1577 \textcolor{comment}{*     and of t\string^2}}
+\DoxyCodeLine{1578 \textcolor{comment}{*}}
+\DoxyCodeLine{1579       \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(y(1) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1580 \textcolor{comment}{*}}
+\DoxyCodeLine{1581 \textcolor{comment}{*-\/-\/-\/-\/-\/first t}}
+\DoxyCodeLine{1582 \textcolor{comment}{*}}
+\DoxyCodeLine{1583        t= -\/y}
+\DoxyCodeLine{1584        \textcolor{keywordflow}{IF}(t(1) <= 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1585 \textcolor{comment}{*}}
+\DoxyCodeLine{1586 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(t) is computed}}
+\DoxyCodeLine{1587 \textcolor{comment}{*}}
+\DoxyCodeLine{1588         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1589         par= hto\_cqlnomx(t,omt)}
+\DoxyCodeLine{1590         pr= -\/par(1)}
+\DoxyCodeLine{1591         pj= -\/par(2)}
+\DoxyCodeLine{1592         p2= pr*pr+pj*pj}
+\DoxyCodeLine{1593         pm= sqrt(p2)}
+\DoxyCodeLine{1594         ct(1)= pr/pm}
+\DoxyCodeLine{1595         sn(1)= pj/pm}
+\DoxyCodeLine{1596         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1597          ct(n)= ct(1)*ct(n-\/1)-\/sn(1)*sn(n-\/1)}
+\DoxyCodeLine{1598          sn(n)= sn(1)*ct(n-\/1)+ct(1)*sn(n-\/1)}
+\DoxyCodeLine{1599 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1600         resa(1)= pm*(bf(0)*ct(1)+pm*(bf(1)*ct(2)+pm*}
+\DoxyCodeLine{1601      \#              (bf(2)*ct(3)+pm*(bf(3)*ct(4)+pm*}
+\DoxyCodeLine{1602      \#              (bf(4)*ct(5)+pm*(bf(5)*ct(6)+pm*}
+\DoxyCodeLine{1603      \#              (bf(6)*ct(7)+pm*(bf(7)*ct(8)+pm*}
+\DoxyCodeLine{1604      \#              (bf(8)*ct(9)+pm*(bf(9)*ct(10)+pm*}
+\DoxyCodeLine{1605      \#              (bf(10)*ct(11)+pm*(bf(11)*ct(12)+pm*}
+\DoxyCodeLine{1606      \#              (bf(12)*ct(13)+pm*(bf(13)*ct(14)+pm*}
+\DoxyCodeLine{1607      \#              (bf(14)*ct(15))))))))))))))))}
+\DoxyCodeLine{1608         resa(2)= pm*(bf(0)*sn(1)+pm*(bf(1)*sn(2)+pm*}
+\DoxyCodeLine{1609      \#              (bf(2)*sn(3)+pm*(bf(3)*sn(4)+pm*}
+\DoxyCodeLine{1610      \#              (bf(4)*sn(5)+pm*(bf(5)*sn(6)+pm*}
+\DoxyCodeLine{1611      \#              (bf(6)*sn(7)+pm*(bf(7)*sn(8)+pm*}
+\DoxyCodeLine{1612      \#              (bf(8)*sn(9)+pm*(bf(9)*sn(10)+pm*}
+\DoxyCodeLine{1613      \#              (bf(10)*sn(11)+pm*(bf(11)*sn(12)+pm*}
+\DoxyCodeLine{1614      \#              (bf(12)*sn(13)+pm*(bf(13)*sn(14)+pm*}
+\DoxyCodeLine{1615      \#              (bf(14)*sn(15))))))))))))))))}
+\DoxyCodeLine{1616        \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(t(1) > 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1617         tm2= t(1)*t(1)+t(2)*t(2)}
+\DoxyCodeLine{1618         u1(1)= 1.d0-\/t(1)/tm2}
+\DoxyCodeLine{1619         u1(2)= t(2)/tm2}
+\DoxyCodeLine{1620         u2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1621         ln\_t= hto\_cqlnx(t)}
+\DoxyCodeLine{1622         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1623         ln\_omt= hto\_cqlnomx(t,omt)}
+\DoxyCodeLine{1624         addt(1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_t(1)+1.d0/6.d0*ln\_t(1)*}
+\DoxyCodeLine{1625      \#              (ln\_t(1)*ln\_t(1)-\/3.d0*ln\_t(2)*ln\_t(2))-\/}
+\DoxyCodeLine{1626      \#              0.5d0*ln\_omt(1)*(ln\_t(1)*ln\_t(1)-\/ln\_t(2)*}
+\DoxyCodeLine{1627      \#              ln\_t(2))+ln\_t(1)*ln\_t(2)*ln\_omt(2)}
+\DoxyCodeLine{1628         addt(2)= \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_t(2)+1.d0/6.d0*ln\_t(2)*(3.d0*}
+\DoxyCodeLine{1629      \#               ln\_t(1)*ln\_t(1)-\/ln\_t(2)*ln\_t(2))-\/0.5d0*}
+\DoxyCodeLine{1630      \#               ln\_omt(2)*(ln\_t(1)*ln\_t(1)-\/ln\_t(2)*ln\_t(2))-\/}
+\DoxyCodeLine{1631      \#               ln\_t(1)*ln\_omt(1)*ln\_t(2)}
+\DoxyCodeLine{1632 \textcolor{comment}{*}}
+\DoxyCodeLine{1633 \textcolor{comment}{*-\/-\/-\/-\/-\/li3(1-\/1/t) is computed}}
+\DoxyCodeLine{1634 \textcolor{comment}{*}}
+\DoxyCodeLine{1635         omu1= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u1}
+\DoxyCodeLine{1636         par1= hto\_cqlnomx(u1,omu1)}
+\DoxyCodeLine{1637         pr1= -\/par1(1)}
+\DoxyCodeLine{1638         pj1= -\/par1(2)}
+\DoxyCodeLine{1639         p12= pr1*pr1+pj1*pj1}
+\DoxyCodeLine{1640         pm1= sqrt(p12)}
+\DoxyCodeLine{1641         ct1(1)= pr1/pm1}
+\DoxyCodeLine{1642         sn1(1)= pj1/pm1}
+\DoxyCodeLine{1643         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1644          ct1(n)= ct1(1)*ct1(n-\/1)-\/sn1(1)*sn1(n-\/1)}
+\DoxyCodeLine{1645          sn1(n)= sn1(1)*ct1(n-\/1)+ct1(1)*sn1(n-\/1)}
+\DoxyCodeLine{1646 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1647         res1(1)= pm1*(bf(0)*ct1(1)+pm1*(bf(1)*ct1(2)+pm1*}
+\DoxyCodeLine{1648      \#               (bf(2)*ct1(3)+pm1*(bf(3)*ct1(4)+pm1*}
+\DoxyCodeLine{1649      \#               (bf(4)*ct1(5)+pm1*(bf(5)*ct1(6)+pm1*}
+\DoxyCodeLine{1650      \#               (bf(6)*ct1(7)+pm1*(bf(7)*ct1(8)+pm1*}
+\DoxyCodeLine{1651      \#               (bf(8)*ct1(9)+pm1*(bf(9)*ct1(10)+pm1*}
+\DoxyCodeLine{1652      \#               (bf(10)*ct1(11)+pm1*(bf(11)*ct1(12)+pm1*}
+\DoxyCodeLine{1653      \#               (bf(12)*ct1(13)+pm1*(bf(13)*ct1(14)+pm1*}
+\DoxyCodeLine{1654      \#               (bf(14)*ct1(15))))))))))))))))}
+\DoxyCodeLine{1655         res1(2)= pm1*(bf(0)*sn1(1)+pm1*(bf(1)*sn1(2)+pm1*}
+\DoxyCodeLine{1656      \#               (bf(2)*sn1(3)+pm1*(bf(3)*sn1(4)+pm1*}
+\DoxyCodeLine{1657      \#               (bf(4)*sn1(5)+pm1*(bf(5)*sn1(6)+pm1*}
+\DoxyCodeLine{1658      \#               (bf(6)*sn1(7)+pm1*(bf(7)*sn1(8)+pm1*}
+\DoxyCodeLine{1659      \#               (bf(8)*sn1(9)+pm1*(bf(9)*sn1(10)+pm1*}
+\DoxyCodeLine{1660      \#               (bf(10)*sn1(11)+pm1*(bf(11)*sn1(12)+pm1*}
+\DoxyCodeLine{1661      \#               (bf(12)*sn1(13)+pm1*(bf(13)*sn1(14)+pm1*}
+\DoxyCodeLine{1662      \#               (bf(14)*sn1(15))))))))))))))))}
+\DoxyCodeLine{1663 \textcolor{comment}{*}}
+\DoxyCodeLine{1664 \textcolor{comment}{*-\/-\/-\/-\/-\/li3(1-\/t) is computed}}
+\DoxyCodeLine{1665 \textcolor{comment}{*}}
+\DoxyCodeLine{1666         omu2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u2}
+\DoxyCodeLine{1667         par2= hto\_cqlnomx(u2,omu2)}
+\DoxyCodeLine{1668         pr2= -\/par2(1)}
+\DoxyCodeLine{1669         pj2= -\/par2(2)}
+\DoxyCodeLine{1670         p22= pr2*pr2+pj2*pj2}
+\DoxyCodeLine{1671         pm2= sqrt(p22)}
+\DoxyCodeLine{1672         ct2(1)= pr2/pm2}
+\DoxyCodeLine{1673         sn2(1)= pj2/pm2}
+\DoxyCodeLine{1674         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1675          ct2(n)= ct2(1)*ct2(n-\/1)-\/sn2(1)*sn2(n-\/1)}
+\DoxyCodeLine{1676          sn2(n)= sn2(1)*ct2(n-\/1)+ct2(1)*sn2(n-\/1)}
+\DoxyCodeLine{1677 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1678         res2(1)= pm2*(bf(0)*ct2(1)+pm2*(bf(1)*ct2(2)+pm2*}
+\DoxyCodeLine{1679      \#               (bf(2)*ct2(3)+pm2*(bf(3)*ct2(4)+pm2*}
+\DoxyCodeLine{1680      \#               (bf(4)*ct2(5)+pm2*(bf(5)*ct2(6)+pm2*}
+\DoxyCodeLine{1681      \#               (bf(6)*ct2(7)+pm2*(bf(7)*ct2(8)+pm2*}
+\DoxyCodeLine{1682      \#               (bf(8)*ct2(9)+pm2*(bf(9)*ct2(10)+pm2*}
+\DoxyCodeLine{1683      \#               (bf(10)*ct2(11)+pm2*(bf(11)*ct2(12)+pm2*}
+\DoxyCodeLine{1684      \#               (bf(12)*ct2(13)+pm2*(bf(13)*ct2(14)+pm2*}
+\DoxyCodeLine{1685      \#               (bf(14)*ct2(15))))))))))))))))}
+\DoxyCodeLine{1686         res2(2)= pm2*(bf(0)*sn2(1)+pm2*(bf(1)*sn2(2)+pm2*}
+\DoxyCodeLine{1687      \#               (bf(2)*sn2(3)+pm2*(bf(3)*sn2(4)+pm2*}
+\DoxyCodeLine{1688      \#               (bf(4)*sn2(5)+pm2*(bf(5)*sn2(6)+pm2*}
+\DoxyCodeLine{1689      \#               (bf(6)*sn2(7)+pm2*(bf(7)*sn2(8)+pm2*}
+\DoxyCodeLine{1690      \#               (bf(8)*sn2(9)+pm2*(bf(9)*sn2(10)+pm2*}
+\DoxyCodeLine{1691      \#               (bf(10)*sn2(11)+pm2*(bf(11)*sn2(12)+pm2*}
+\DoxyCodeLine{1692      \#               (bf(12)*sn2(13)+pm2*(bf(13)*sn2(14)+pm2*}
+\DoxyCodeLine{1693      \#               (bf(14)*sn2(15))))))))))))))))}
+\DoxyCodeLine{1694         resa= -\/res1-\/res2+addt}
+\DoxyCodeLine{1695 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1696 \textcolor{comment}{*}}
+\DoxyCodeLine{1697 \textcolor{comment}{*-\/-\/-\/-\/-\/THEN t\string^2}}
+\DoxyCodeLine{1698 \textcolor{comment}{*}}
+\DoxyCodeLine{1699        t(1)= y(1)*y(1)-\/y(2)*y(2)}
+\DoxyCodeLine{1700        t(2)= 2.d0*y(1)*y(2)}
+\DoxyCodeLine{1701        \textcolor{keywordflow}{IF}(t(1) <= 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1702 \textcolor{comment}{*}}
+\DoxyCodeLine{1703 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(t\string^2) is computed}}
+\DoxyCodeLine{1704 \textcolor{comment}{*}}
+\DoxyCodeLine{1705         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1706         par= hto\_cqlnomx(t,omt)}
+\DoxyCodeLine{1707         pr= -\/par(1)}
+\DoxyCodeLine{1708         pj= -\/par(2)}
+\DoxyCodeLine{1709         p2= pr*pr+pj*pj}
+\DoxyCodeLine{1710         pm= sqrt(p2)}
+\DoxyCodeLine{1711         ct(1)= pr/pm}
+\DoxyCodeLine{1712         sn(1)= pj/pm}
+\DoxyCodeLine{1713         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1714          ct(n)= ct(1)*ct(n-\/1)-\/sn(1)*sn(n-\/1)}
+\DoxyCodeLine{1715          sn(n)= sn(1)*ct(n-\/1)+ct(1)*sn(n-\/1)}
+\DoxyCodeLine{1716 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1717         resb(1)= pm*(bf(0)*ct(1)+pm*(bf(1)*ct(2)+pm*}
+\DoxyCodeLine{1718      \#              (bf(2)*ct(3)+pm*(bf(3)*ct(4)+pm*}
+\DoxyCodeLine{1719      \#              (bf(4)*ct(5)+pm*(bf(5)*ct(6)+pm*}
+\DoxyCodeLine{1720      \#              (bf(6)*ct(7)+pm*(bf(7)*ct(8)+pm*}
+\DoxyCodeLine{1721      \#              (bf(8)*ct(9)+pm*(bf(9)*ct(10)+pm*}
+\DoxyCodeLine{1722      \#              (bf(10)*ct(11)+pm*(bf(11)*ct(12)+pm*}
+\DoxyCodeLine{1723      \#              (bf(12)*ct(13)+pm*(bf(13)*ct(14)+pm*}
+\DoxyCodeLine{1724      \#              (bf(14)*ct(15))))))))))))))))}
+\DoxyCodeLine{1725         resb(2)= pm*(bf(0)*sn(1)+pm*(bf(1)*sn(2)+pm*}
+\DoxyCodeLine{1726      \#              (bf(2)*sn(3)+pm*(bf(3)*sn(4)+pm*}
+\DoxyCodeLine{1727      \#              (bf(4)*sn(5)+pm*(bf(5)*sn(6)+pm*}
+\DoxyCodeLine{1728      \#              (bf(6)*sn(7)+pm*(bf(7)*sn(8)+pm*}
+\DoxyCodeLine{1729      \#              (bf(8)*sn(9)+pm*(bf(9)*sn(10)+pm*}
+\DoxyCodeLine{1730      \#              (bf(10)*sn(11)+pm*(bf(11)*sn(12)+pm*}
+\DoxyCodeLine{1731      \#              (bf(12)*sn(13)+pm*(bf(13)*sn(14)+pm*}
+\DoxyCodeLine{1732      \#              (bf(14)*sn(15))))))))))))))))}
+\DoxyCodeLine{1733        \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(t(1) > 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1734         tm2= t(1)*t(1)+t(2)*t(2)}
+\DoxyCodeLine{1735         u1(1)= 1.d0-\/t(1)/tm2}
+\DoxyCodeLine{1736         u1(2)= t(2)/tm2}
+\DoxyCodeLine{1737         u2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1738         ln\_t= hto\_cqlnx(t)}
+\DoxyCodeLine{1739         omt= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/t}
+\DoxyCodeLine{1740         ln\_omt= hto\_cqlnomx(t,omt)}
+\DoxyCodeLine{1741         addt2(1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_t(1)+1.d0/6.d0*ln\_t(1)*}
+\DoxyCodeLine{1742      \#                (ln\_t(1)*ln\_t(1)-\/3.d0*ln\_t(2)*ln\_t(2))-\/}
+\DoxyCodeLine{1743      \#                0.5d0*ln\_omt(1)*(ln\_t(1)*ln\_t(1)-\/ln\_t(2)*}
+\DoxyCodeLine{1744      \#                ln\_t(2))+ln\_t(1)*ln\_t(2)*ln\_omt(2)}
+\DoxyCodeLine{1745         addt2(2)= \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_t(2)+1.d0/6.d0*ln\_t(2)*(3.d0*}
+\DoxyCodeLine{1746      \#                ln\_t(1)*ln\_t(1)-\/ln\_t(2)*ln\_t(2))-\/0.5d0*}
+\DoxyCodeLine{1747      \#                ln\_omt(2)*(ln\_t(1)*ln\_t(1)-\/ln\_t(2)*ln\_t(2))-\/}
+\DoxyCodeLine{1748      \#                ln\_t(1)*ln\_omt(1)*ln\_t(2)}
+\DoxyCodeLine{1749 \textcolor{comment}{*}}
+\DoxyCodeLine{1750 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/1/t\string^2) is computed}}
+\DoxyCodeLine{1751 \textcolor{comment}{*}}
+\DoxyCodeLine{1752         omu1= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u1}
+\DoxyCodeLine{1753         par1= hto\_cqlnomx(u1,omu1)}
+\DoxyCodeLine{1754         pr1= -\/par1(1)}
+\DoxyCodeLine{1755         pj1= -\/par1(2)}
+\DoxyCodeLine{1756         p12= pr1*pr1+pj1*pj1}
+\DoxyCodeLine{1757         pm1= sqrt(p12)}
+\DoxyCodeLine{1758         ct1(1)= pr1/pm1}
+\DoxyCodeLine{1759         sn1(1)= pj1/pm1}
+\DoxyCodeLine{1760         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1761          ct1(n)= ct1(1)*ct1(n-\/1)-\/sn1(1)*sn1(n-\/1)}
+\DoxyCodeLine{1762          sn1(n)= sn1(1)*ct1(n-\/1)+ct1(1)*sn1(n-\/1)}
+\DoxyCodeLine{1763 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1764         res3(1)= pm1*(bf(0)*ct1(1)+pm1*(bf(1)*ct1(2)+pm1*}
+\DoxyCodeLine{1765      \#               (bf(2)*ct1(3)+pm1*(bf(3)*ct1(4)+pm1*}
+\DoxyCodeLine{1766      \#               (bf(4)*ct1(5)+pm1*(bf(5)*ct1(6)+pm1*}
+\DoxyCodeLine{1767      \#               (bf(6)*ct1(7)+pm1*(bf(7)*ct1(8)+pm1*}
+\DoxyCodeLine{1768      \#               (bf(8)*ct1(9)+pm1*(bf(9)*ct1(10)+pm1*}
+\DoxyCodeLine{1769      \#               (bf(10)*ct1(11)+pm1*(bf(11)*ct1(12)+pm1*}
+\DoxyCodeLine{1770      \#               (bf(12)*ct1(13)+pm1*(bf(13)*ct1(14)+pm1*}
+\DoxyCodeLine{1771      \#               (bf(14)*ct1(15))))))))))))))))}
+\DoxyCodeLine{1772         res3(2)= pm1*(bf(0)*sn1(1)+pm1*(bf(1)*sn1(2)+pm1*}
+\DoxyCodeLine{1773      \#               (bf(2)*sn1(3)+pm1*(bf(3)*sn1(4)+pm1*}
+\DoxyCodeLine{1774      \#               (bf(4)*sn1(5)+pm1*(bf(5)*sn1(6)+pm1*}
+\DoxyCodeLine{1775      \#               (bf(6)*sn1(7)+pm1*(bf(7)*sn1(8)+pm1*}
+\DoxyCodeLine{1776      \#               (bf(8)*sn1(9)+pm1*(bf(9)*sn1(10)+pm1*}
+\DoxyCodeLine{1777      \#               (bf(10)*sn1(11)+pm1*(bf(11)*sn1(12)+pm1*}
+\DoxyCodeLine{1778      \#               (bf(12)*sn1(13)+pm1*(bf(13)*sn1(14)+pm1*}
+\DoxyCodeLine{1779      \#               (bf(14)*sn1(15))))))))))))))))}
+\DoxyCodeLine{1780 \textcolor{comment}{*}}
+\DoxyCodeLine{1781 \textcolor{comment}{*-\/-\/-\/-\/-\/li\_3(1-\/t\string^2) is computed}}
+\DoxyCodeLine{1782 \textcolor{comment}{*}}
+\DoxyCodeLine{1783         omu2= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/u2}
+\DoxyCodeLine{1784         par2= hto\_cqlnomx(u2,omu2)}
+\DoxyCodeLine{1785         pr2= -\/par2(1)}
+\DoxyCodeLine{1786         pj2= -\/par2(2)}
+\DoxyCodeLine{1787         p22= pr2*pr2+pj2*pj2}
+\DoxyCodeLine{1788         pm2= sqrt(p22)}
+\DoxyCodeLine{1789         ct2(1)= pr2/pm2}
+\DoxyCodeLine{1790         sn2(1)= pj2/pm2}
+\DoxyCodeLine{1791         \textcolor{keywordflow}{DO} n=2,15}
+\DoxyCodeLine{1792          ct2(n)= ct2(1)*ct2(n-\/1)-\/sn2(1)*sn2(n-\/1)}
+\DoxyCodeLine{1793          sn2(n)= sn2(1)*ct2(n-\/1)+ct2(1)*sn2(n-\/1)}
+\DoxyCodeLine{1794 \textcolor{keywordflow}{        ENDDO}}
+\DoxyCodeLine{1795         res4(1)= pm2*(bf(0)*ct2(1)+pm2*(bf(1)*ct2(2)+pm2*}
+\DoxyCodeLine{1796      \#               (bf(2)*ct2(3)+pm2*(bf(3)*ct2(4)+pm2*}
+\DoxyCodeLine{1797      \#               (bf(4)*ct2(5)+pm2*(bf(5)*ct2(6)+pm2*}
+\DoxyCodeLine{1798      \#               (bf(6)*ct2(7)+pm2*(bf(7)*ct2(8)+pm2*}
+\DoxyCodeLine{1799      \#               (bf(8)*ct2(9)+pm2*(bf(9)*ct2(10)+pm2*}
+\DoxyCodeLine{1800      \#               (bf(10)*ct2(11)+pm2*(bf(11)*ct2(12)+pm2*}
+\DoxyCodeLine{1801      \#               (bf(12)*ct2(13)+pm2*(bf(13)*ct2(14)+pm2*}
+\DoxyCodeLine{1802      \#               (bf(14)*ct2(15))))))))))))))))}
+\DoxyCodeLine{1803         res4(2)= pm2*(bf(0)*sn2(1)+pm2*(bf(1)*sn2(2)+pm2*}
+\DoxyCodeLine{1804      \#               (bf(2)*sn2(3)+pm2*(bf(3)*sn2(4)+pm2*}
+\DoxyCodeLine{1805      \#               (bf(4)*sn2(5)+pm2*(bf(5)*sn2(6)+pm2*}
+\DoxyCodeLine{1806      \#               (bf(6)*sn2(7)+pm2*(bf(7)*sn2(8)+pm2*}
+\DoxyCodeLine{1807      \#               (bf(8)*sn2(9)+pm2*(bf(9)*sn2(10)+pm2*}
+\DoxyCodeLine{1808      \#               (bf(10)*sn2(11)+pm2*(bf(11)*sn2(12)+pm2*}
+\DoxyCodeLine{1809      \#               (bf(12)*sn2(13)+pm2*(bf(13)*sn2(14)+pm2*}
+\DoxyCodeLine{1810      \#               (bf(14)*sn2(15))))))))))))))))}
+\DoxyCodeLine{1811         resb= -\/res3-\/res4+addt2}
+\DoxyCodeLine{1812 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1813        hto\_li3= -\/resa+0.25d0*resb+addx}
+\DoxyCodeLine{1814        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1815 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1816 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_a3cd8ec48b6a81b6d803b3fcfa614eeea}\label{namespacehto__sp__fun_a3cd8ec48b6a81b6d803b3fcfa614eeea}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_li3\_srsz@{hto\_li3\_srsz}}
+\index{hto\_li3\_srsz@{hto\_li3\_srsz}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_li3\_srsz()}{hto\_li3\_srsz()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+li3\+\_\+srsz (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension (\+:), intent(in)}]{x,  }\item[{real$\ast$8, dimension (\+:), intent(in)}]{y,  }\item[{integer}]{unit }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1138 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1138       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{1139       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{1140       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{1141       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{1142 \textcolor{comment}{*}}
+\DoxyCodeLine{1143       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1144 \textcolor{comment}{*}}
+\DoxyCodeLine{1145       \textcolor{keywordtype}{INTEGER} unit}
+\DoxyCodeLine{1146       real*8 xms,atheta,theta,sr,si}
+\DoxyCodeLine{1147       real*8, \textcolor{keywordtype}{dimension (:)} :: x,y}
+\DoxyCodeLine{1148       real*8, \textcolor{keywordtype}{dimension(3,2)} :: aux}
+\DoxyCodeLine{1149       real*8, \textcolor{keywordtype}{dimension(2)} :: lnc,lncs,add,\textcolor{keywordtype}{value}}
+\DoxyCodeLine{1150       \textcolor{keywordtype}{INTENT(IN)} x,y}
+\DoxyCodeLine{1151 \textcolor{comment}{*}}
+\DoxyCodeLine{1152       \textcolor{keywordflow}{IF}(abs(y(2)).ne.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1153        \textcolor{keywordflow}{IF}(unit.eq.1) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1154         xms= x(1)*x(1)+x(2)*x(2)}
+\DoxyCodeLine{1155         \textcolor{keywordflow}{IF}(abs(1.d0-\/sqrt(xms)).gt.1.d-\/12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1156          print*,\textcolor{stringliteral}{' apparent inconsistency '}}
+\DoxyCodeLine{1157 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{1158         atheta= atan(abs(x(2)/x(1)))}
+\DoxyCodeLine{1159         sr= x(1)/abs(x(1))}
+\DoxyCodeLine{1160         si= x(2)/abs(x(2))}
+\DoxyCodeLine{1161         \textcolor{keywordflow}{IF}(sr > 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1162          theta= atheta}
+\DoxyCodeLine{1163         \textcolor{keywordflow}{ELSEIF}(sr > 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1164          theta= 2.d0*pi-\/atheta}
+\DoxyCodeLine{1165         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1166          theta= pi-\/atheta}
+\DoxyCodeLine{1167         \textcolor{keywordflow}{ELSEIF}(sr < 0.d0.and.si < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1168          theta= pi+atheta}
+\DoxyCodeLine{1169 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{1170          aux= hto\_poly\_unit(theta)}
+\DoxyCodeLine{1171          \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1:2)= aux(2,1:2)}
+\DoxyCodeLine{1172        \textcolor{keywordflow}{ELSE} }
+\DoxyCodeLine{1173         \textcolor{keywordtype}{value}= hto\_li3(x)}
+\DoxyCodeLine{1174 \textcolor{keywordflow}{       ENDIF} }
+\DoxyCodeLine{1175        \textcolor{keywordflow}{RETURN} }
+\DoxyCodeLine{1176 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1177 \textcolor{comment}{*}}
+\DoxyCodeLine{1178       \textcolor{keywordflow}{IF}(x(1) > 1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1179        \textcolor{keywordflow}{IF}(y(1) < 1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1180         print*,\textcolor{stringliteral}{' anomaly'}}
+\DoxyCodeLine{1181         print*,x}
+\DoxyCodeLine{1182         print*,y}
+\DoxyCodeLine{1183         stop}
+\DoxyCodeLine{1184 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1185        lnc= x(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.x(2)}
+\DoxyCodeLine{1186        lncs= lnc.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.lnc}
+\DoxyCodeLine{1187        add(1)= -\/lncs(2)}
+\DoxyCodeLine{1188        add(2)= lncs(1)}
+\DoxyCodeLine{1189        \textcolor{keywordflow}{IF}(y(2) < 0.d0.and.x(2) > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1190         \textcolor{keywordtype}{value}= hto\_li3(x)-\/pi*add}
+\DoxyCodeLine{1191        \textcolor{keywordflow}{ELSEIF}(y(2) > 0.d0.and.x(2) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1192         \textcolor{keywordtype}{value}= hto\_li3(x)+pi*add}
+\DoxyCodeLine{1193        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1194         \textcolor{keywordtype}{value}= hto\_li3(x)}
+\DoxyCodeLine{1195 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1196       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1197        \textcolor{keywordtype}{value}= hto\_li3(x)}
+\DoxyCodeLine{1198 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1199 \textcolor{comment}{*       }}
+\DoxyCodeLine{1200       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1201 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_ae00024005793a98a7520e6051a2f6482}\label{namespacehto__sp__fun_ae00024005793a98a7520e6051a2f6482}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_poly\_unit@{hto\_poly\_unit}}
+\index{hto\_poly\_unit@{hto\_poly\_unit}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_poly\_unit()}{hto\_poly\_unit()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(3,2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+poly\+\_\+unit (\begin{DoxyParamCaption}\item[{real$\ast$8}]{theta }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1208 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1208       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{1209       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__full__ln}{hto\_full\_ln}}}
+\DoxyCodeLine{1210       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__real__lnz}{hto\_real\_lnz}}}
+\DoxyCodeLine{1211       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__imag__lnz}{hto\_imag\_lnz}}}
+\DoxyCodeLine{1212       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__linear__comb__c}{hto\_linear\_comb\_c}}}
+\DoxyCodeLine{1213       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{1214       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__bernoulli}{hto\_bernoulli}}}
+\DoxyCodeLine{1215       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{1216 \textcolor{comment}{*}}
+\DoxyCodeLine{1217       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{1218 \textcolor{comment}{*}}
+\DoxyCodeLine{1219       \textcolor{keywordtype}{INTEGER} n,i}
+\DoxyCodeLine{1220       real*8 theta}
+\DoxyCodeLine{1221       real*8, \textcolor{keywordtype}{dimension(2)} :: arg,ln,z,sum2,sum3,sum4,pw2,pw3,pw4,}
+\DoxyCodeLine{1222      \#        cb2,cb3,cb4}
+\DoxyCodeLine{1223       real*8, \textcolor{keywordtype}{dimension(4)} :: psi}
+\DoxyCodeLine{1224       real*8, \textcolor{keywordtype}{dimension(0:15)} :: rzf}
+\DoxyCodeLine{1225       real*8, \textcolor{keywordtype}{dimension(3,2)} :: \textcolor{keywordtype}{value}}
+\DoxyCodeLine{1226       real*8, \textcolor{keywordtype}{dimension(0:17)} :: c2,c3,c4,fac}
+\DoxyCodeLine{1227 \textcolor{comment}{*}}
+\DoxyCodeLine{1228       \textcolor{keyword}{data} rzf(0:15) /-\/0.5d0,0.d0,1.644934066848226d0,}
+\DoxyCodeLine{1229      \#     1.202056903159594d0,1.082323233711138d0,}
+\DoxyCodeLine{1230      \#     1.036927755143370d0,1.017343061984449d0,}
+\DoxyCodeLine{1231      \#     1.008349277381923d0,1.004077356197944d0,}
+\DoxyCodeLine{1232      \#     1.002008392826082d0,1.000994575127818d0,}
+\DoxyCodeLine{1233      \#     1.000494188604119d0,1.000246086553308d0,}
+\DoxyCodeLine{1234      \#     1.000122713346578d0,1.000061248135059d0,}
+\DoxyCodeLine{1235      \#     1.000030588236307d0/}
+\DoxyCodeLine{1236 \textcolor{comment}{*}}
+\DoxyCodeLine{1237       psi(1)= \mbox{\hyperlink{namespacehto__riemann_aba1aa536747a88812dd7733f2f6e75b4}{eg}}}
+\DoxyCodeLine{1238       psi(2)= psi(1)+1.d0}
+\DoxyCodeLine{1239       psi(3)= psi(2)+0.5d0}
+\DoxyCodeLine{1240       psi(4)= psi(3)+1.d0/3.d0}
+\DoxyCodeLine{1241 \textcolor{comment}{*}}
+\DoxyCodeLine{1242       fac(0)= 1.d0}
+\DoxyCodeLine{1243       \textcolor{keywordflow}{DO} n=1,17}
+\DoxyCodeLine{1244        fac(n)= n*fac(n-\/1)}
+\DoxyCodeLine{1245 \textcolor{keywordflow}{      ENDDO}}
+\DoxyCodeLine{1246 \textcolor{comment}{*}}
+\DoxyCodeLine{1247       arg(1)= 0.d0}
+\DoxyCodeLine{1248       arg(2)= -\/theta}
+\DoxyCodeLine{1249 \textcolor{comment}{*}}
+\DoxyCodeLine{1250       ln= arg(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.arg(2)}
+\DoxyCodeLine{1251 \textcolor{comment}{*}}
+\DoxyCodeLine{1252       \textcolor{keywordflow}{DO} n=0,17}
+\DoxyCodeLine{1253        \textcolor{keywordflow}{IF}((2-\/n) >= 0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1254         c2(n)= rzf(2-\/n)/fac(n)}
+\DoxyCodeLine{1255        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1256         c2(n)= -\/\mbox{\hyperlink{namespacehto__bernoulli_a6f6dec1d767b85a16c78cdf79c31a935}{b\_num}}(n-\/1)/(n-\/1)/fac(n)}
+\DoxyCodeLine{1257 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1258        \textcolor{keywordflow}{IF}((3-\/n) >= 0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1259         c3(n)= rzf(3-\/n)/fac(n)}
+\DoxyCodeLine{1260        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1261         c3(n)= -\/\mbox{\hyperlink{namespacehto__bernoulli_a6f6dec1d767b85a16c78cdf79c31a935}{b\_num}}(n-\/2)/(n-\/2)/fac(n)}
+\DoxyCodeLine{1262 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1263        \textcolor{keywordflow}{IF}((4-\/n) >= 0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{1264         c4(n)= rzf(4-\/n)/fac(n)}
+\DoxyCodeLine{1265        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{1266         c4(n)= -\/\mbox{\hyperlink{namespacehto__bernoulli_a6f6dec1d767b85a16c78cdf79c31a935}{b\_num}}(n-\/3)/(n-\/3)/fac(n)}
+\DoxyCodeLine{1267 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{1268 \textcolor{keywordflow}{      ENDDO} }
+\DoxyCodeLine{1269 \textcolor{comment}{*}}
+\DoxyCodeLine{1270       z(1)= 0.d0}
+\DoxyCodeLine{1271       z(2)= theta}
+\DoxyCodeLine{1272 \textcolor{comment}{*}}
+\DoxyCodeLine{1273       sum2= c2.\mbox{\hyperlink{namespacehto__linear__comb__c_a5dcd513468424c144e752e8c3b74f99b}{lcc}}.z}
+\DoxyCodeLine{1274       sum3= c3.\mbox{\hyperlink{namespacehto__linear__comb__c_a5dcd513468424c144e752e8c3b74f99b}{lcc}}.z}
+\DoxyCodeLine{1275       sum4= c4.\mbox{\hyperlink{namespacehto__linear__comb__c_a5dcd513468424c144e752e8c3b74f99b}{lcc}}.z}
+\DoxyCodeLine{1276 \textcolor{comment}{*}}
+\DoxyCodeLine{1277       pw2= z}
+\DoxyCodeLine{1278       pw3= z.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.pw2}
+\DoxyCodeLine{1279       pw4= z.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.pw3}
+\DoxyCodeLine{1280 \textcolor{comment}{*}}
+\DoxyCodeLine{1281       cb2(1:2)= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(psi(2)-\/psi(1))-\/ln(1:2)}
+\DoxyCodeLine{1282       cb3(1:2)= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(psi(3)-\/psi(1))-\/ln(1:2)}
+\DoxyCodeLine{1283       cb4(1:2)= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(psi(4)-\/psi(1))-\/ln(1:2)}
+\DoxyCodeLine{1284 \textcolor{comment}{*}}
+\DoxyCodeLine{1285       cb2= pw2.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.cb2}
+\DoxyCodeLine{1286       cb3= pw3.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.cb3}
+\DoxyCodeLine{1287       cb4= pw4.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.cb4}
+\DoxyCodeLine{1288 \textcolor{comment}{*}}
+\DoxyCodeLine{1289       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(1,1:2)= sum2(1:2)+cb2(1:2)}
+\DoxyCodeLine{1290 \textcolor{comment}{*}}
+\DoxyCodeLine{1291       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(2,1:2)= sum3(1:2)+0.5d0*cb3(1:2)}
+\DoxyCodeLine{1292 \textcolor{comment}{*}}
+\DoxyCodeLine{1293       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}(3,1:2)= 1.d0/6.d0*(sum4(1:2)+1.d0/6.d0*cb4(1:2))}
+\DoxyCodeLine{1294 \textcolor{comment}{*}}
+\DoxyCodeLine{1295       \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1296 \textcolor{comment}{*}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}\label{namespacehto__sp__fun_aa810f34ff027054dc60c65fcd7d30bb6}} 
+\index{hto\_sp\_fun@{hto\_sp\_fun}!hto\_s\_niels\_up4@{hto\_s\_niels\_up4}}
+\index{hto\_s\_niels\_up4@{hto\_s\_niels\_up4}!hto\_sp\_fun@{hto\_sp\_fun}}
+\doxysubsubsection{\texorpdfstring{hto\_s\_niels\_up4()}{hto\_s\_niels\_up4()}}
+{\footnotesize\ttfamily recursive real$\ast$8 function, dimension(6,2) hto\+\_\+sp\+\_\+fun\+::hto\+\_\+s\+\_\+niels\+\_\+up4 (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 766 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{766       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{767       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__acmplx__pro}{hto\_acmplx\_pro}}}
+\DoxyCodeLine{768       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__cmplx__ln}{hto\_cmplx\_ln}}}
+\DoxyCodeLine{769       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__real__ln}{hto\_real\_ln}}}
+\DoxyCodeLine{770       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__common__niels}{hto\_common\_niels}}}
+\DoxyCodeLine{771       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__linear__comb}{hto\_linear\_comb}}}
+\DoxyCodeLine{772       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{773 \textcolor{comment}{*}}
+\DoxyCodeLine{774       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{775 \textcolor{comment}{*}}
+\DoxyCodeLine{776       real*8, \textcolor{keywordtype}{dimension(6,2)} :: res}
+\DoxyCodeLine{777       real*8, \textcolor{keywordtype}{dimension(2)} :: x}
+\DoxyCodeLine{778       \textcolor{keywordtype}{INTENT(IN)} x}
+\DoxyCodeLine{779 \textcolor{comment}{*}}
+\DoxyCodeLine{780       \textcolor{keywordtype}{INTEGER} i,j,l}
+\DoxyCodeLine{781       real*8 ym,ym2,ymod,s1,s2,s3,l2,xmo,z\_exp,sum,s13m1,s22m1}
+\DoxyCodeLine{782       real*8, \textcolor{keywordtype}{dimension(6)} :: sign}
+\DoxyCodeLine{783       real*8, \textcolor{keywordtype}{dimension(0:15)} :: sumr}
+\DoxyCodeLine{784       real*8, \textcolor{keywordtype}{dimension(6,2)} :: aniels,bniels,add}
+\DoxyCodeLine{785       real*8, \textcolor{keywordtype}{dimension(2)} :: ln\_omx,ln2\_omx,ln3\_omx,ln\_omy,ln2\_omy,}
+\DoxyCodeLine{786      \#  ln3\_omy,ln\_y,ln2\_y,ln3\_y,ln\_yi,ln\_myi,ln2\_myi,ln3\_myi,ln4\_y,}
+\DoxyCodeLine{787      \#  y,omy,yi,yt,omx,myi,prod,li2,li3,s12,prod1,prod2,prodl,}
+\DoxyCodeLine{788      \#  prodl1,prodl2,add1,add2,add3,add4,add5,add6,add7,add8,add9,}
+\DoxyCodeLine{789      \#  add10,ln\_my,ln2\_my,ln3\_my,ln4\_my,add11,add12,add13,add14,}
+\DoxyCodeLine{790      \#  add15,add16,add17,add18,add19,add20,add21,ln4\_omx,ln\_ymo,}
+\DoxyCodeLine{791      \#  ln2\_ymo,ln3\_ymo,ln4\_ymo}
+\DoxyCodeLine{792       real*8, \textcolor{keywordtype}{parameter} :: li4h=6.72510831970049127d-\/2}
+\DoxyCodeLine{793 \textcolor{comment}{*}}
+\DoxyCodeLine{794       \textcolor{keywordflow}{IF}(abs(x(2)).ne.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{795        print 1,x}
+\DoxyCodeLine{796        stop}
+\DoxyCodeLine{797 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{798     1 \textcolor{keyword}{format}(\textcolor{stringliteral}{' wrong input for niels '},2e20.5)}
+\DoxyCodeLine{799 \textcolor{comment}{*}}
+\DoxyCodeLine{800       l2= log(2.d0)}
+\DoxyCodeLine{801       s13m1= li4h+l2*(7.d0/8.d0*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}-\/\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*l2/4.d0+l2*l2*l2/24.d0)-\/\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}}
+\DoxyCodeLine{802       s22m1= 2.d0*li4h+l2*(7.d0/4.d0*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}-\/0.5d0*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*l2+l2*l2*l2/12.d0)-\/}
+\DoxyCodeLine{803      \#       15.d0/8.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}}
+\DoxyCodeLine{804 \textcolor{comment}{*}}
+\DoxyCodeLine{805       \textcolor{keywordflow}{IF}(x(1).eq.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{806        res(1,1)= \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}}
+\DoxyCodeLine{807        res(2,1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}}
+\DoxyCodeLine{808        res(3,1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}}
+\DoxyCodeLine{809        res(4,1)= \mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}}
+\DoxyCodeLine{810        res(5,1)= -\/1/2*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}**2-\/3.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{811        res(6,1)= \mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}} }
+\DoxyCodeLine{812        \textcolor{keywordflow}{FORALL} (i=1:6) res(i,2)= 0.d0}
+\DoxyCodeLine{813        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{814 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{815       \textcolor{keywordflow}{IF}(x(1).eq.0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{816        res(1,1)= 0.5d0*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}-\/l2*l2)}
+\DoxyCodeLine{817        res(2,1)= 7.d0/8.d0*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}-\/l2*(0.5d0*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}-\/l2*l2/6.d0)}
+\DoxyCodeLine{818        res(3,1)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}/8.d0-\/l2*l2*l2/6.d0}
+\DoxyCodeLine{819        res(4,1)= li4h}
+\DoxyCodeLine{820        res(5,1)= -\/l2*res(3,1)-\/l2**4/8.d0-\/\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}/4.d0+3.d0/4.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}}
+\DoxyCodeLine{821        res(6,1)= -\/res(4,1)+l2*res(3,1)+l2**2/4.d0*(1.d0/3.d0+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}})-\/}
+\DoxyCodeLine{822      \#           l2*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}-\/\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}}
+\DoxyCodeLine{823        \textcolor{keywordflow}{FORALL} (i=1:6) res(i,2)= 0.d0}
+\DoxyCodeLine{824        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{825 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{826 \textcolor{comment}{*}}
+\DoxyCodeLine{827 \textcolor{comment}{* gets rid of arguments with negative real part}}
+\DoxyCodeLine{828 \textcolor{comment}{*}}
+\DoxyCodeLine{829       \textcolor{keywordflow}{IF}(x(1) < 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{830        xmo= x(1)-\/1.d0}
+\DoxyCodeLine{831        ymod= xmo*xmo}
+\DoxyCodeLine{832        y(1)= x(1)*xmo/ymod}
+\DoxyCodeLine{833        y(2)= -\/x(2)}
+\DoxyCodeLine{834        omx= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/x}
+\DoxyCodeLine{835        ln\_omx= omx(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.omx(2)}
+\DoxyCodeLine{836        ln2\_omx= ln\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omx}
+\DoxyCodeLine{837        ln3\_omx= ln2\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omx}
+\DoxyCodeLine{838        ln4\_omx= ln3\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omx}
+\DoxyCodeLine{839        aniels= hto\_s\_niels\_up4(y) }
+\DoxyCodeLine{840        li2(1:2)= aniels(1,1:2)}
+\DoxyCodeLine{841        li3(1:2)= aniels(2,1:2)}
+\DoxyCodeLine{842        s12(1:2)= aniels(3,1:2)}
+\DoxyCodeLine{843        add1= ln2\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{844        add2= ln\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{845        add3= ln\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{846        add(1,1:2)= -\/0.5d0*ln2\_omx(1:2)}
+\DoxyCodeLine{847        sign(1)= -\/1.d0}
+\DoxyCodeLine{848        prod= ln\_omx.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{849        add(2,1:2)= aniels(3,1:2)-\/ln3\_omx(1:2)/6.d0-\/prod(1:2)}
+\DoxyCodeLine{850        sign(2)= -\/1.d0}
+\DoxyCodeLine{851        add(3,1:2)= ln3\_omx(1:2)/6.d0}
+\DoxyCodeLine{852        sign(3)= 1.d0}
+\DoxyCodeLine{853        add(4,1:2)= -\/0.5d0*add1(1:2)-\/add2(1:2)+add3(1:2)}
+\DoxyCodeLine{854      \#      -\/1.d0/24.d0*ln4\_omx(1:2)-\/aniels(6,1:2)+aniels(5,1:2)}
+\DoxyCodeLine{855      \#      +\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(2.d0*s13m1-\/s22m1+1.d0/8.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{856        sign(4)= -\/1.d0}
+\DoxyCodeLine{857        add(5,1:2)= add3(1:2)+1.d0/24.d0*ln4\_omx(1:2)}
+\DoxyCodeLine{858      \#      -\/2.d0*aniels(6,1:2)+aniels(5,1:2)+\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(4.d0*s13m1}
+\DoxyCodeLine{859      \#      -\/2.d0*s22m1+0.25d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{860        sign(5)= 1.d0}
+\DoxyCodeLine{861        add(6,1:2)= -\/1.d0/24.d0*ln4\_omx(1:2)-\/aniels(6,1:2)+}
+\DoxyCodeLine{862      \#       \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(4.d0*s13m1-\/2.d0*s22m1+0.25d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{863        sign(6)= -\/1.d0}
+\DoxyCodeLine{864       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{865        y= x}
+\DoxyCodeLine{866        add= 0.d0}
+\DoxyCodeLine{867        sign= 1.d0}
+\DoxyCodeLine{868 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{869 \textcolor{comment}{*}}
+\DoxyCodeLine{870       ym2= y(1)*y(1)}
+\DoxyCodeLine{871       ym= abs(y(1))}
+\DoxyCodeLine{872 \textcolor{comment}{*}}
+\DoxyCodeLine{873 \textcolor{comment}{* |y| < 1 \& Re(y) < 1/2}}
+\DoxyCodeLine{874 \textcolor{comment}{*}}
+\DoxyCodeLine{875       \textcolor{keywordflow}{IF}(ym < 1.d0.and.y(1) < 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{876        omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{877        z\_exp= -\/(omy(1).\mbox{\hyperlink{namespacehto__real__ln_a8e33bb717adbc2f3565c8adb112014c4}{rln}}.omy(2))}
+\DoxyCodeLine{878        \textcolor{keywordflow}{DO} l=1,3}
+\DoxyCodeLine{879         sumr(0:15)= \mbox{\hyperlink{namespacehto__common__niels_ab05b27f2ad3e05a8cb4a04073cb5ea7b}{plr}}(l,0:15)}
+\DoxyCodeLine{880         sum= sumr.\mbox{\hyperlink{namespacehto__linear__comb_a3a6d4c769508942bb56a51af0df73841}{lc}}.z\_exp}
+\DoxyCodeLine{881         res(l,1)= sum}
+\DoxyCodeLine{882         res(l,2)= 0.d0}
+\DoxyCodeLine{883 \textcolor{keywordflow}{       ENDDO}}
+\DoxyCodeLine{884        \textcolor{keywordflow}{DO} l=4,6}
+\DoxyCodeLine{885         sumr(0:15)= \mbox{\hyperlink{namespacehto__common__niels_adfa0c4ab50380ab3461d469bc2188dc3}{plr\_4}}(l-\/3,0:15)}
+\DoxyCodeLine{886         sum= sumr.\mbox{\hyperlink{namespacehto__linear__comb_a3a6d4c769508942bb56a51af0df73841}{lc}}.z\_exp}
+\DoxyCodeLine{887         res(l,1)= sum}
+\DoxyCodeLine{888         res(l,2)= 0.d0}
+\DoxyCodeLine{889 \textcolor{keywordflow}{       ENDDO}}
+\DoxyCodeLine{890        \textcolor{keywordflow}{FORALL} (i=1:6,j=1:2) res(i,j)= sign(i)*res(i,j)+add(i,j)}
+\DoxyCodeLine{891        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{892 \textcolor{comment}{*}}
+\DoxyCodeLine{893 \textcolor{comment}{* |y| < 1 \& Re(y) > 1/2}}
+\DoxyCodeLine{894 \textcolor{comment}{*}}
+\DoxyCodeLine{895       \textcolor{keywordflow}{ELSEIF}(ym < 1.d0.and.y(1) > 0.5d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{896        omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{897        ln\_omy= omy(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.omy(2)}
+\DoxyCodeLine{898        ln\_y= y(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.y(2)}
+\DoxyCodeLine{899        ln2\_omy= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
+\DoxyCodeLine{900        ln2\_y= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
+\DoxyCodeLine{901        ln3\_y= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
+\DoxyCodeLine{902        aniels= hto\_s\_niels\_up4(omy)}
+\DoxyCodeLine{903        s12(1:2)= aniels(3,1:2)}
+\DoxyCodeLine{904        li3(1:2)= aniels(2,1:2)}
+\DoxyCodeLine{905        li2(1:2)= aniels(1,1:2)}
+\DoxyCodeLine{906        prodl= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
+\DoxyCodeLine{907        res(1,1:2)= -\/li2(1:2)-\/prodl(1:2)+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{908        prodl= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_y}
+\DoxyCodeLine{909        prod= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{910        res(2,1:2)= -\/s12(1:2)-\/prod(1:2)-\/0.5d0*prodl(1:2)+}
+\DoxyCodeLine{911      \#             \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_y(1:2)+\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{912        prodl= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_omy}
+\DoxyCodeLine{913        prod= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{914        res(3,1:2)= -\/li3(1:2)+prod(1:2)+0.5d0*prodl(1:2)+\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{915        add1= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2       }
+\DoxyCodeLine{916        add2= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{917        add3= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln3\_y}
+\DoxyCodeLine{918        add4= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{919        add5= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
+\DoxyCodeLine{920        add5= add5.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{921        add6= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{922        add7= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_omy}
+\DoxyCodeLine{923        add8= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{924        add9= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln3\_omy}
+\DoxyCodeLine{925        add10= ln2\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{926        res(4,1:2)= -\/aniels(6,1:2)-\/0.5d0*add1(1:2)-\/add2(1:2)-\/}
+\DoxyCodeLine{927      \#     add3(1:2)/6.d0+\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*ln\_y(1:2)+0.5d0*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln2\_y+\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{928        res(5,1:2)= aniels(5,1:2)-\/add4(1:2)-\/add5(1:2)+add6(1:2)}
+\DoxyCodeLine{929      \#    -\/add2(1:2)-\/0.25d0*add7(1:2)+0.5d0*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}-\/3.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{930        res(6,1:2)= aniels(4,1:2)-\/add8(1:2)+add9(1:2)/6.d0+}
+\DoxyCodeLine{931      \#     0.5d0*add10(1:2)-\/\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*s13m1}
+\DoxyCodeLine{932        \textcolor{keywordflow}{FORALL} (i=1:6,j=1:2) res(i,j)= sign(i)*res(i,j)+add(i,j)}
+\DoxyCodeLine{933        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{934 \textcolor{comment}{*}}
+\DoxyCodeLine{935 \textcolor{comment}{* |y| > 1 \& Re(y\string^-\/1) < 1/2}}
+\DoxyCodeLine{936 \textcolor{comment}{*}}
+\DoxyCodeLine{937       \textcolor{keywordflow}{ELSEIF}(ym > 1.d0.and.y(1) >= 2.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{938        yi(1)= y(1)/ym2}
+\DoxyCodeLine{939        yi(2)= -\/y(2)}
+\DoxyCodeLine{940        ln\_yi= yi(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.yi(2)}
+\DoxyCodeLine{941        ln\_my= (-\/y(1)).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.(-\/y(2))}
+\DoxyCodeLine{942        ln2\_my= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{943        ln3\_my= ln3\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{944        ln4\_my= ln3\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{945        myi(1)= -\/y(1)/ym2}
+\DoxyCodeLine{946        myi(2)= y(2)}
+\DoxyCodeLine{947        ln\_myi= myi(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.myi(2)}
+\DoxyCodeLine{948        ln2\_myi= ln\_myi.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_myi}
+\DoxyCodeLine{949        ln3\_myi= ln2\_myi.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_myi}
+\DoxyCodeLine{950        aniels= hto\_s\_niels\_up4(yi)}
+\DoxyCodeLine{951        li2(1:2)= aniels(1,1:2)}
+\DoxyCodeLine{952        li3(1:2)= aniels(2,1:2)}
+\DoxyCodeLine{953        s12(1:2)= aniels(3,1:2)}
+\DoxyCodeLine{954        res(1,1:2)= -\/aniels(1,1:2)-\/0.5d0*ln2\_myi(1:2)-\/\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{955        res(2,1:2)= aniels(2,1:2)+ln3\_myi(1:2)/6.d0+\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln\_myi(1:2)}
+\DoxyCodeLine{956        li2(1:2)= aniels(1,1:2)}
+\DoxyCodeLine{957        prod= ln\_myi.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{958        res(3,1:2)= aniels(2,1:2)-\/aniels(3,1:2)-\/ln3\_myi(1:2)/6.d0-\/}
+\DoxyCodeLine{959      \#             prod(1:2)+\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{960        res(4,1:2)= aniels(4,1:2)+0.5d0*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*ln2\_my(1:2)+}
+\DoxyCodeLine{961      \#     1.d0/24.d0*ln4\_my+7.d0/4.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{962        add1= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{963        add1= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{964        add3= ln2\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{965        res(5,1:2)= -\/aniels(5,1:2)+2.d0*aniels(4,1:2)+add1(1:2)-\/}
+\DoxyCodeLine{966      \#     \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*ln\_my-\/ln4\_my/24.d0+7.d0/4.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{967        res(6,1:2)= aniels(4,1:2)+aniels(6,1:2)-\/aniels(5,1:2)+}
+\DoxyCodeLine{968      \#     add1(1:2)-\/add2(1:2)+0.5d0*add3(1:2)+ln4\_my/24.d0+}
+\DoxyCodeLine{969      \#     \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(-\/2.d0*s13m1+s22m1+7.d0/8.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{970        \textcolor{keywordflow}{FORALL} (i=1:6,j=1:2) res(i,j)= sign(i)*res(i,j)+add(i,j)}
+\DoxyCodeLine{971        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{972 \textcolor{comment}{*}}
+\DoxyCodeLine{973 \textcolor{comment}{* |y| > 1 \& Re(y\string^-\/1) > 1/2}}
+\DoxyCodeLine{974 \textcolor{comment}{*}}
+\DoxyCodeLine{975       \textcolor{keywordflow}{ELSEIF}(ym > 1.d0.and.y(1) < 2.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{976        yt(1)= (y(1)-\/1.d0)/y(1)}
+\DoxyCodeLine{977        yt(2)= y(2)}
+\DoxyCodeLine{978        omy= \mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}-\/y}
+\DoxyCodeLine{979        ln\_y= y(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.y(2)}
+\DoxyCodeLine{980        ln\_omy= omy(1).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.omy(2)}
+\DoxyCodeLine{981        ln2\_y= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
+\DoxyCodeLine{982        ln3\_y= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
+\DoxyCodeLine{983        ln4\_y= ln3\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_y}
+\DoxyCodeLine{984        ln2\_omy= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
+\DoxyCodeLine{985        ln\_my= (-\/y(1)).\mbox{\hyperlink{namespacehto__cmplx__ln_a717773e85a261190737f52e4022d1296}{cln}}.(-\/y(2))}
+\DoxyCodeLine{986        ln2\_my= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{987        ln3\_my= ln2\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{988        ln4\_my= ln3\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{989        aniels= hto\_s\_niels\_up4(yt)}
+\DoxyCodeLine{990        bniels= 0.d0}
+\DoxyCodeLine{991        prod= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
+\DoxyCodeLine{992        bniels(1,1:2)= aniels(1,1:2)-\/prod(1:2)+0.5d0*ln2\_y(1:2)+}
+\DoxyCodeLine{993      \#                \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{994        res(1,1:2)= aniels(1,1:2)-\/prod(1:2)+0.5d0*ln2\_y(1:2)+}
+\DoxyCodeLine{995      \#             \mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{996        prodl= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_omy}
+\DoxyCodeLine{997        li2(1:2)= bniels(1,1:2)}
+\DoxyCodeLine{998        prod= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2  }
+\DoxyCodeLine{999        res(2,1:2)= -\/aniels(3,1:2)+prod(1:2)+0.5d0*prodl(1:2)-\/}
+\DoxyCodeLine{1000      \#             ln3\_y(1:2)/6.d0+\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{1001        li2(1:2)= aniels(1,1:2)}
+\DoxyCodeLine{1002        prodl1= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_y}
+\DoxyCodeLine{1003        prodl2= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_omy}
+\DoxyCodeLine{1004        prod1= ln\_omy.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1005        prod2= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1006        res(3,1:2)= \mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)-\/0.5d0*prodl1(1:2)-\/prod1(1:2)+}
+\DoxyCodeLine{1007      \#             0.5d0*prodl2(1:2)+ln3\_y(1:2)/6.d0+prod2(1:2)+}
+\DoxyCodeLine{1008      \#             aniels(2,1:2)-\/aniels(3,1:2)}
+\DoxyCodeLine{1009        add1= ln\_ymo.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln3\_y}
+\DoxyCodeLine{1010        add2= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{1011        add3= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1012        add4= ln\_ymo.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{1013        add5= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_ymo}
+\DoxyCodeLine{1014        add5= add5.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_y}
+\DoxyCodeLine{1015        add6= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.s12}
+\DoxyCodeLine{1016        add7= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_ymo}
+\DoxyCodeLine{1017        add7= add7.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1018        add8= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln3\_y}
+\DoxyCodeLine{1019        add9= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{1020        add9= add9.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1021        add10= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{1022        add11= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{1023        add12= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_ymo}
+\DoxyCodeLine{1024        add13= ln\_ymo.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{1025        add14= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_ymo}
+\DoxyCodeLine{1026        add14= add14.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1027        add15= ln\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li3}
+\DoxyCodeLine{1028        add16= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_ymo}
+\DoxyCodeLine{1029        add16= add16.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_my}
+\DoxyCodeLine{1030        add17= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln\_my}
+\DoxyCodeLine{1031        add17= add17.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_ymo    }
+\DoxyCodeLine{1032        add18= ln\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln3\_ymo}
+\DoxyCodeLine{1033        add19= ln2\_ymo.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1034        add20= ln2\_my.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.li2}
+\DoxyCodeLine{1035        add21= ln2\_y.\mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}.ln2\_my}
+\DoxyCodeLine{1036        res(4,1:2)= -\/1.d0/6.d0*add1(1:2)-\/add2(1:2)+ln\_y(1:2)*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}}
+\DoxyCodeLine{1037      \#  -\/0.5d0*ln2\_my*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+0.5d0*add3(1:2)-\/0.5d0*ln2\_y(1:2)*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}}
+\DoxyCodeLine{1038      \#  -\/1.d0/24.d0*ln4\_my(1:2)+1.d0/6.d0*ln4\_y(1:2)+aniels(6,1:2)}
+\DoxyCodeLine{1039      \#  -\/11.d0/4.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{1040        res(5,1:2)= -\/5.d0/6.d0*add1(1:2)+add4(1:2)+0.5d0*add5(1:2)}
+\DoxyCodeLine{1041      \#  -\/0.5d0*add8(1:2)+add6(1:2)-\/add7(1:2)-\/add9(1:2)}
+\DoxyCodeLine{1042      \#  +add10(1:2)*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+add11(1:2)-\/3.d0*add2(1:2)+ln\_y(1:2)*\mbox{\hyperlink{namespacehto__riemann_aff8f16fd9b60817f4d4c7c74373c57f2}{rz3}}}
+\DoxyCodeLine{1043      \#  +1.d0/4.d0*add12(1:2)+2.d0*add3(1:2)-\/ln2\_y(1:2)*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}}
+\DoxyCodeLine{1044      \#  +1.d0/24.d0*ln4\_my(1:2)+7.d0/12.d0*ln4\_y(1:2)}
+\DoxyCodeLine{1045      \#  +2.d0*aniels(6,1:2)-\/aniels(5,1:2)-\/7.d0/2.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}}*\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)}
+\DoxyCodeLine{1046        res(6,1:2)= -\/7.d0/6.d0*add1(1:2)-\/add13(1:2)+add4(1:2)}
+\DoxyCodeLine{1047      \#  +3.d0/2.d0*add5(1:2)+add14(1:2)-\/add8(1:2)-\/add15(1:2)}
+\DoxyCodeLine{1048      \#  +add6(1:2)-\/0.5d0*add16(1:2)-\/2.d0*add7(1:2)-\/0.5d0*add17(1:2)}
+\DoxyCodeLine{1049      \#  -\/2.d0*add9(1:2)+add10(1:2)*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}-\/1.d0/6.d0*add18(1:2)}
+\DoxyCodeLine{1050      \#  +2.d0*add11(1:2)-\/2.d0*add2(1:2)+0.5d0*add19(1:2)}
+\DoxyCodeLine{1051      \#  +0.5d0*add20(1:2)-\/0.5d0*ln2\_my*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}+3.d0/4.d0*add12(1:2)}
+\DoxyCodeLine{1052      \#  +0.5d0*add21(1:2)+2.d0*add3(1:2)-\/0.5d0*ln2\_y(1:2)*\mbox{\hyperlink{namespacehto__riemann_a6239c2ae1d2d5c86449947c390bb8ef8}{rz2}}}
+\DoxyCodeLine{1053      \#  -\/1.d0/24.d0*ln4\_my(1:2)+ 7.d0/12.d0*ln4\_y(1:2)+aniels(4,1:2)}
+\DoxyCodeLine{1054      \#  +aniels(6,1:2)-\/aniels(5,1:2)+\mbox{\hyperlink{namespacehto__units_adabd59fa28ad6f5d2f172ecb70d7d7f0}{co}}(1:2)*(2.d0*s13m1-\/s22m1}
+\DoxyCodeLine{1055      \#  -\/21.d0/8.d0*\mbox{\hyperlink{namespacehto__riemann_a19091838443360c3d0385827afb6f959}{rz4}})}
+\DoxyCodeLine{1056        \textcolor{keywordflow}{FORALL} (i=1:6,j=1:2) res(i,j)= sign(i)*res(i,j)+add(i,j)}
+\DoxyCodeLine{1057        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{1058 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{1059 \textcolor{comment}{*}}
+
+\end{DoxyCode}

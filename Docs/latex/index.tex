@@ -1,0 +1,167 @@
+M\+E\+LA is an important tool that was used for the Higgs boson discovery and for precise measurements of its structure and interactions. Please see the \href{https://spin.pha.jhu.edu/}{\texttt{ website}} and papers cited there for more details, and kindly cite those papers when using this code.
+
+\begin{DoxyAuthor}{Authors}
+I. Anderson, S. Bolognesi, F. Caola, J. Davis, Y. Gao, A. V. Gritsan, 
+
+L. S. Mandacaru Guerra, Z. Guo, L. Kang, S. Kyriacou, C. B. Martin, T. Martini, 
+
+K. Melnikov, R. Pan, M. Panagiotou, R. Rontsch, J. Roskes, U. Sarica, 
+
+M. Schulze, M. V. Srivastav, N. V. Tran, A. Whitbeck, M. Xiao, Y. Zhou
+\end{DoxyAuthor}
+This is the documentation for J\+H\+U\+Gen\+M\+E\+LA, a package that produces Matrix Element Calculations as used in J\+H\+U\+Gen, M\+C\+F\+M-\/\+J\+H\+U\+Gen, and Madgraph.
+
+The main user-\/interface in C++ can be found at the documentation for the \mbox{\hyperlink{classMela}{Mela}} class, while the Python can be found in the \mbox{\hyperlink{PyMela_page}{Py\+Mela}} section.
+
+{\bfseries{Documentation written by Mohit Srivastav in 2024.}}\hypertarget{index_install_sec}{}\doxysection{Installation}\label{index_install_sec}
+\mbox{\hyperlink{classMela}{Mela}} is a part of the J\+H\+U\+Gen package, and is installed by downloading a tar file located on the \href{https://spin.pha.jhu.edu/}{\texttt{ website}}. Once you have un-\/tar\textquotesingle{}d the file, you will have to compile J\+H\+U\+Gen\+M\+E\+LA (alongside J\+H\+U\+Gen, M\+C\+FM, and anything else you wish to use within the J\+H\+U\+Gen package).
+
+Compile using
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./setup.sh -\/j N \# (N being the number of cores to compile, or blank for max. allowed)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item The script decides whether to use integration with the experiments\textquotesingle{} software.
+\item Either the one in this folder, or that in the main J\+H\+U\+Gen\+M\+E\+LA folder works; they do the same thing.
+\item Feedback on how this script works in different environments is appreciated.
+\end{DoxyItemize}
+
+Once you compile, make sure to follow the on-\/screen instructions to set up all extra environment variables, i.\+e., run
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{eval \$(./setup.sh env) \# or equivalents in non-\/bash shells}
+\end{DoxyCode}
+\hypertarget{index_prev_tutorials}{}\doxysection{Previous Tutorials}\label{index_prev_tutorials}
+There are a few tutorials lying around for M\+E\+LA. They are listed below\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://indico.cern.ch/event/1378665/timetable/?view=standard\#30-mela-tools}{\texttt{ L\+PC E\+FT Workshop Notre Dame}}
+\item \href{https://indico.cern.ch/event/1375252/timetable/\#8-mc-generators-2-mela-tools}{\texttt{ L\+PC Offshell Workshop at Fermilab}}
+\end{DoxyItemize}\hypertarget{index_prev_presentations}{}\doxysection{Other Presentations involving M\+E\+LA}\label{index_prev_presentations}
+There have also been a few presentations regarding improvements to M\+E\+LA, and about the M\+E\+LA package in general. Refer to these presentations for more information.
+
+
+\begin{DoxyItemize}
+\item \href{https://indico.cern.ch/event/1316531/\#42-new-features-in-the-jhugen}{\texttt{ C\+MS G\+EN Meeting September 2023}}
+\end{DoxyItemize}\hypertarget{index_MELA_examples}{}\doxysection{Code Examples}\label{index_MELA_examples}
+There are also examples that may prove useful in your own M\+E\+LA endeavors. The repository for the aforementioned M\+E\+LA tutorials are located below\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/MohitS704/EFT-Workshop-JHUGenMELA-tutorial/blob/main/}{\texttt{ L\+PC E\+FT Workshop Repo}}
+\item \href{https://github.com/Offshell-Workshop-LPC/JHUGen-MELA-tutorial}{\texttt{ L\+PC Off-\/\+Shell Higgs Workshop Repo {\bfseries{W\+A\+R\+N\+I\+NG B\+U\+GS}}}}
+\end{DoxyItemize}
+
+On a more general note -\/ the steps to begin re-\/weighting events with M\+E\+LA are as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Set the process, production, and matrix element. These values are defined for both \mbox{\hyperlink{tvar_enums}{Python}} and in the {\ttfamily C++} in the \mbox{\hyperlink{namespaceTVar}{T\+Var}} namespace. Use Mela\+::\+Set\+Process to do this step.
+\item Set the input event using Mela\+::\+Set\+Input\+Event.
+\item Set coupling values for M\+E\+LA (examples for Python are available in documentation found \mbox{\hyperlink{MELA_python}{here}})
+\item Call a compute function of some kind. This is either\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{Mela\+::computeP}}
+\item \mbox{\hyperlink{classMela_a2e5af4f25feb182e3d68a7b651d45dcc}{Mela\+::compute\+ProdP}}
+\item \mbox{\hyperlink{classMela_a2a7cdd6ed1feba898cd58e99d75269fa}{Mela\+::compute\+Prod\+DecP}}
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_MELA_interface}{}\doxysection{Known Interfaces}\label{index_MELA_interface}
+There are also two M\+E\+LA interfaces. These interfaces are two different methods of configuring M\+E\+LA and utilizing it, usually starting from a R\+O\+OT file.\hypertarget{index_MELAcalc}{}\doxysubsection{M\+E\+L\+A\+Calc}\label{index_MELAcalc}
+M\+E\+L\+Acalc is a fully Pythonic interface to using R\+O\+OT files reweighted with M\+E\+LA. One does not need {\ttfamily C\+E\+RN R\+O\+OT}, only {\ttfamily uproot}, {\ttfamily numpy}, and {\ttfamily M\+E\+LA} itself. M\+E\+L\+Acalc is currently on version 3 -\/ you can find it \href{https://github.com/hexutils/MELAcalc/blob/main/}{\texttt{ here}}. The configuration for the interface is done through {\ttfamily .json} files. You can find the documentation for M\+E\+L\+Acalc here\+: {\bfseries{T\+O\+DO\+: M\+E\+L\+A\+C\+A\+LC D\+O\+CS}}.\hypertarget{index_MELAAnalytics}{}\doxysubsection{M\+E\+L\+A\+Analytics}\label{index_MELAAnalytics}
+M\+E\+L\+A\+Analytics is a {\ttfamily C++} based interface to M\+E\+LA that utilizes csv files as configurations to M\+E\+LA. M\+E\+L\+A\+Analytics has been used for analyses in the past. You can find it \href{https://github.com/MELALabs/MelaAnalytics/}{\texttt{ here}}\hypertarget{index_MELA_structure}{}\doxysection{Structure}\label{index_MELA_structure}
+The root of M\+E\+LA is underlying F\+O\+R\+T\+R\+AN code. From there, there is a {\ttfamily C++} interface that adds a variety of functionality such as angle calculation, and the ability to interface to other different matrix-\/element calculators like {\ttfamily M\+C\+FM} or {\ttfamily Madgraph}. The functions in the {\ttfamily C++} implementation are documented throughout this page, but especially in the source code documentation for \mbox{\hyperlink{classMela}{Mela}}.
+
+From there, there is a Python implementation that utilizes {\ttfamily Py\+Bind11} to generate the Python package. It is somewhat unique in nature, and so is documented differently \mbox{\hyperlink{PyMela_page}{here}}\hypertarget{index_Other_Packages}{}\doxysection{Acknowledgements}\label{index_Other_Packages}
+J\+H\+U\+Gen\+M\+E\+LA is a tool that also builds off of the work of others. Their work is credited here.\hypertarget{index_MCFM}{}\doxysubsection{M\+C\+FM}\label{index_MCFM}
+M\+C\+F\+M-\/\+J\+H\+U\+Gen is built off of M\+C\+FM, and its printout is shown below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{************** MCFM -\/ version 7.0 ****************}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{* MCFM, v7.0                   March 20th, 2015  *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{* Authors: John Campbell, Keith Ellis,           *}
+\DoxyCodeLine{*          Walter Giele, Ciaran Williams         *}
+\DoxyCodeLine{*         (johnmc@fnal.gov, ellis@fnal.gov,      *}
+\DoxyCodeLine{*          giele@fnal.gov,ciaran@fnal.gov)       *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{* For details see:                               *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{*  arXiv:1502.02990 (VBF and VBS Higgs)          *}
+\DoxyCodeLine{*  arXiv:1403.2641  (Triphoton production)       *}
+\DoxyCodeLine{*  arXiv:1312.1628  (gg-\/>WW, Higgs interference) *}
+\DoxyCodeLine{*  arXiv:1311.3589  (gg-\/>ZZ, Higgs interference) *}
+\DoxyCodeLine{*  Phys.Rev.D87:114006, arXiv:1302.3856          *}
+\DoxyCodeLine{*  (tZ, tH -\/-\/ with R. Rontsch)                   *}
+\DoxyCodeLine{*  arXiv:1211.6390 (DM, P. Fox and C. Williams)  *}
+\DoxyCodeLine{*  JHEP 1211:162 (2012), arXiv:1208.0566         *}
+\DoxyCodeLine{*  (Z+gam+jet,Z+gam+gam -\/-\/ with H. Hartanto)     *}
+\DoxyCodeLine{*  arXiv:1204.1513 (top production+decay)        *}
+\DoxyCodeLine{*  JHEP 1207:052 (2012), arXiv:1204.5678 (ttW)   *}
+\DoxyCodeLine{*  JHEP 1110:005 (2011), arXiv:1107.5569         *}
+\DoxyCodeLine{*         (gg-\/>WW,Higgs intference)              *}
+\DoxyCodeLine{*  JHEP 1107:018 (2011), arXiv:1105.0020         *}
+\DoxyCodeLine{*         (diboson update)                       *}
+\DoxyCodeLine{*  JHEP 1103:027 (2011), arXiv:1011.6647         *}
+\DoxyCodeLine{*         (Wbb for mb>0, with S. Badger)         *}
+\DoxyCodeLine{*  Phys.Rev.D81:074023, arXiv:1001.4495 (H+2jet) *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{*  P.R.L. 102:142001, arXiv:0903.0005 [hep-\/ph]   *}
+\DoxyCodeLine{*    (t-\/channel single top + explicit b,         *}
+\DoxyCodeLine{*      JC, R.Frederix, F.Maltoni, F.Tramontano)  *}
+\DoxyCodeLine{*  N.P.B 726:109(2005), hep-\/ph/0506289 (W+t)     *}
+\DoxyCodeLine{*  Phys.Rev.D70:094012, hep-\/ph/0408158 (Sngl Top)*}
+\DoxyCodeLine{*       (with Francesco Tramontano)              *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{*  Phys.Rev.D65:113007, hep-\/ph/0202176 (W,Z+2j)  *}
+\DoxyCodeLine{*  Phys.Rev.D62:114012, hep-\/ph/0006304 (W,Z+bb)  *}
+\DoxyCodeLine{*  Phys.Rev.D60:113006, hep-\/ph/9905386 (diboson) *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{* On the web:  http://mcfm.fnal.gov/             *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{*  With modifications from the JHUGen Team:      *}
+\DoxyCodeLine{*  https://spin.pha.jhu.edu/                     *}
+\DoxyCodeLine{*                                                *}
+\DoxyCodeLine{*  Special thanks from JHUGen Team               *}
+\DoxyCodeLine{*  to Oscar Eboli for anomalous Zqq couplings    *}
+\DoxyCodeLine{*  in ggZZ process                               *}
+\DoxyCodeLine{**************************************************}
+\end{DoxyCode}
+
+
+M\+C\+FM matrix elements are used in a variety of different calculations, and can be compiled in the J\+H\+U\+Gen package by calling {\ttfamily ./compile.sh} within the M\+C\+F\+M-\/\+J\+H\+U\+Gen folder.\hypertarget{index_Madgraph}{}\doxysubsection{Madgraph}\label{index_Madgraph}
+There are certain processes that are use matrix elements generated with Madgraph utilizing the S\+M\+E\+F\+Tsim package. M\+G5\+\_\+a\+MC@nlo is used to generate these matrix elements, with all of them being at leading order. The printout for Madgraph with S\+M\+E\+F\+Tsim is located below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{**********************************************************}
+\DoxyCodeLine{*                   MadGraph5\_aMC@NLO                    *}
+\DoxyCodeLine{**********************************************************}
+\DoxyCodeLine{*                                                        *}
+\DoxyCodeLine{*                      Going Beyond                      *}
+\DoxyCodeLine{*                                                        *}
+\DoxyCodeLine{*              http://madgraph.hep.uiuc.edu              *}
+\DoxyCodeLine{*             http://madgraph.phys.ucl.ac.be             *}
+\DoxyCodeLine{*                http://amcatnlo.cern.ch                 *}
+\DoxyCodeLine{*                                                        *}
+\DoxyCodeLine{*               The MadGraph5\_aMC@NLO team               *}
+\DoxyCodeLine{*                                                        *}
+\DoxyCodeLine{*             Utilizing the SMEFTsim Package             *}
+\DoxyCodeLine{*    I. Brivio, Y. Jiang, M. Trott, arXiv: 1709.06492    *}
+\DoxyCodeLine{*              I. Brivio, arXiv: 2012.11343              *}
+\DoxyCodeLine{*                                                        *}
+\DoxyCodeLine{**********************************************************}
+\end{DoxyCode}
+
+
+Madgraph matrix elements are currently used to reweight processes that were generated via Madgraph, colloquially referred to as \char`\"{}\+Mad\+M\+E\+L\+A\char`\"{}, (which will be the preferred nomenclature moving forward). The Madgraph matrix elements that we provide are generated using the {\ttfamily S\+M\+E\+F\+Tsim} package.
+
+Information about \char`\"{}\+Mad\+M\+E\+L\+A\char`\"{} can be found \mbox{\hyperlink{madMELA}{here}}. 

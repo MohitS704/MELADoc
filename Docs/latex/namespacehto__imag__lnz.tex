@@ -1,0 +1,63 @@
+\hypertarget{namespacehto__imag__lnz}{}\doxysection{hto\+\_\+imag\+\_\+lnz Module Reference}
+\label{namespacehto__imag__lnz}\index{hto\_imag\_lnz@{hto\_imag\_lnz}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacehto__imag__lnz_1_1operator_07_8ilnz_8_08}{operator(.\+ilnz.)}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__imag__lnz_ab2cf7932bc14b87dcd9f0a0b43916299}{ilnz}} (x, y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__imag__lnz_ab2cf7932bc14b87dcd9f0a0b43916299}\label{namespacehto__imag__lnz_ab2cf7932bc14b87dcd9f0a0b43916299}} 
+\index{hto\_imag\_lnz@{hto\_imag\_lnz}!ilnz@{ilnz}}
+\index{ilnz@{ilnz}!hto\_imag\_lnz@{hto\_imag\_lnz}}
+\doxysubsubsection{\texorpdfstring{ilnz()}{ilnz()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+imag\+\_\+lnz\+::ilnz (\begin{DoxyParamCaption}\item[{real$\ast$8, intent(in)}]{x,  }\item[{real$\ast$8, intent(in)}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 385 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{385       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{386       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{387       real*8, \textcolor{keywordtype}{INTENT(IN)} :: x,y}
+\DoxyCodeLine{388       real*8 teta,tnteta,sr,si,ax,ay,ilnz}
+\DoxyCodeLine{389       ax= abs(x)}
+\DoxyCodeLine{390       ay= abs(y)}
+\DoxyCodeLine{391       \textcolor{keywordflow}{IF}(x.eq.0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{392        \textcolor{keywordflow}{IF}(y > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{393           teta= pi/2.d0}
+\DoxyCodeLine{394        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{395           teta= -\/pi/2.d0}
+\DoxyCodeLine{396 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{397        ilnz= teta}
+\DoxyCodeLine{398        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{399       \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF}(y.eq.0.d0) \textcolor{keywordflow}{THEN} }
+\DoxyCodeLine{400        \textcolor{keywordflow}{IF}(x > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{401           teta= 0.d0}
+\DoxyCodeLine{402        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{403           teta= pi}
+\DoxyCodeLine{404 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{405        ilnz= teta}
+\DoxyCodeLine{406        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{407       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{408        tnteta= ay/ax}
+\DoxyCodeLine{409        teta= atan(tnteta)}
+\DoxyCodeLine{410        sr= x/ax}
+\DoxyCodeLine{411        si= y/ay}
+\DoxyCodeLine{412        \textcolor{keywordflow}{IF}(sr > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{413         ilnz= si*teta}
+\DoxyCodeLine{414        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{415         ilnz= si*(pi-\/teta)}
+\DoxyCodeLine{416 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{417        \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{418 \textcolor{keywordflow}{      ENDIF}}
+
+\end{DoxyCode}

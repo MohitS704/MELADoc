@@ -1,0 +1,616 @@
+\hypertarget{classMELANCSpline__1D__fast}{}\doxysection{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast Class Reference}
+\label{classMELANCSpline__1D__fast}\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+
+
+{\ttfamily \#include $<$M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h$>$}
+
+
+
+Inheritance diagram for M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classMELANCSpline__1D__fast__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classMELANCSpline__1D__fast__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMELANCSpline__1D__fast_a9098e4c7f5283a43a1bac240eeb88fc9}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} ()
+\item 
+\mbox{\hyperlink{classMELANCSpline__1D__fast_af412110455b8e18254ad8d82e296451e}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} (const char $\ast$name, const char $\ast$title)
+\item 
+\mbox{\hyperlink{classMELANCSpline__1D__fast_a5579fecd1ffef6f2270c923bf9f8dee1}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} (const char $\ast$name, const char $\ast$title, Roo\+Abs\+Real \&in\+X\+Var, const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&in\+X\+List, const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&in\+Fcn\+List, \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+Boundary\+Condition}} const bc\+Begin\+X\+\_\+=\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::bc\+Natural\+Spline}}, \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+Boundary\+Condition}} const bc\+End\+X\+\_\+=\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::bc\+Natural\+Spline}}, Bool\+\_\+t in\+Use\+Floor=true, \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} in\+Floor\+Eval=0, \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} in\+Floor\+Int=0)
+\item 
+\mbox{\hyperlink{classMELANCSpline__1D__fast_ae8f35c7939c050351d70c7a2d18453dd}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} (const \mbox{\hyperlink{classMELANCSpline__1D__fast}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} \&other, const char $\ast$name=0)
+\item 
+virtual T\+Object $\ast$ \mbox{\hyperlink{classMELANCSpline__1D__fast_a753fe8801b3d359e73a0d8bb94314f15}{clone}} (const char $\ast$newname) const
+\item 
+virtual \mbox{\hyperlink{classMELANCSpline__1D__fast_a9b37b26f6a5107902a3fc20ebd0dac74}{$\sim$\+M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} ()
+\item 
+void \mbox{\hyperlink{classMELANCSpline__1D__fast_a2623be9cafef13f68d655955e9ca99ab}{set\+Range\+Validity}} (const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} valmin, const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} valmax, const Int\+\_\+t which\+Direction=0)
+\item 
+virtual Int\+\_\+t \mbox{\hyperlink{classMELANCSpline__1D__fast_a2611a4f9d34d0a657ccefeee3ca1a3f4}{get\+Analytical\+Integral}} (Roo\+Arg\+Set \&all\+Vars, Roo\+Arg\+Set \&anal\+Vars, const char $\ast$range\+Name=0) const
+\item 
+virtual Double\+\_\+t \mbox{\hyperlink{classMELANCSpline__1D__fast_ac114dcdbf7ef68ff46acf74e6c6886f4}{analytical\+Integral}} (Int\+\_\+t code, const char $\ast$range\+Name=0) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMELANCSpline__1D__fast_aeda656dab01c7795e1e710ded190e1df}{empty\+Fcn\+List}} ()
+\item 
+virtual Int\+\_\+t \mbox{\hyperlink{classMELANCSpline__1D__fast_a30d5e03635a1db4c2e9e5f41d07cd911}{get\+Which\+Bin}} (const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&val, const Int\+\_\+t which\+Direction) const
+\item 
+virtual \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \mbox{\hyperlink{classMELANCSpline__1D__fast_a20d422b52d0d76ad8c3d3b0b3ceadee5}{get\+T\+Var}} (const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&kappas, const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&val, const Int\+\_\+t \&bin, const Int\+\_\+t which\+Direction) const
+\item 
+virtual void \mbox{\hyperlink{classMELANCSpline__1D__fast_a2072dd16dcadba22fe77d50c7b3b7fa1}{get\+Kappas}} (std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&kappas, const Int\+\_\+t which\+Direction)
+\item 
+Bool\+\_\+t \mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e137568d422bf3b}{test\+Range\+Validity}} (const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&val, const Int\+\_\+t which\+Direction=0) const
+\item 
+void \mbox{\hyperlink{classMELANCSpline__1D__fast_ab88b9410a534ab508aeccf38d5f518fd}{crop\+Value\+For\+Range}} (\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&val, const Int\+\_\+t which\+Direction=0) const
+\item 
+virtual \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolate\+Fcn}} (Int\+\_\+t code, const char $\ast$range\+Name=0) const
+\item 
+virtual Double\+\_\+t \mbox{\hyperlink{classMELANCSpline__1D__fast_a6ad1c31b038d97d53735340494d27afb}{evaluate}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} \mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bc\+BeginX}}
+\item 
+const \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} \mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bc\+EndX}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \mbox{\hyperlink{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}{Fcn\+List}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ $>$ \mbox{\hyperlink{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}{coefficients}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 12 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a9098e4c7f5283a43a1bac240eeb88fc9}\label{classMELANCSpline__1D__fast_a9098e4c7f5283a43a1bac240eeb88fc9}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{MELANCSpline\_1D\_fast()}{MELANCSpline\_1D\_fast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::\+M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_af412110455b8e18254ad8d82e296451e}\label{classMELANCSpline__1D__fast_af412110455b8e18254ad8d82e296451e}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{MELANCSpline\_1D\_fast()}{MELANCSpline\_1D\_fast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::\+M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23     :}
+\DoxyCodeLine{24   \mbox{\hyperlink{classMELANCSplineCore_a9d561d07179ecc2a53812027a3c572b7}{MELANCSplineCore}}(name, title),}
+\DoxyCodeLine{25   \mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bcBeginX}}(\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{MELANCSplineCore::bcNaturalSpline}}), \mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bcEndX}}(\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{MELANCSplineCore::bcNaturalSpline}})}
+\DoxyCodeLine{26 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a5579fecd1ffef6f2270c923bf9f8dee1}\label{classMELANCSpline__1D__fast_a5579fecd1ffef6f2270c923bf9f8dee1}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{MELANCSpline\_1D\_fast()}{MELANCSpline\_1D\_fast()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::\+M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{title,  }\item[{Roo\+Abs\+Real \&}]{in\+X\+Var,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{in\+X\+List,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{in\+Fcn\+List,  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+Boundary\+Condition}} const}]{bc\+Begin\+X\+\_\+ = {\ttfamily \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::bc\+Natural\+Spline}}},  }\item[{\mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::\+Boundary\+Condition}} const}]{bc\+End\+X\+\_\+ = {\ttfamily \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910a49d9eb23bc77e945202b2d97910b0937}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::bc\+Natural\+Spline}}},  }\item[{Bool\+\_\+t}]{in\+Use\+Floor = {\ttfamily true},  }\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}}]{in\+Floor\+Eval = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}}]{in\+Floor\+Int = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39     :}
+\DoxyCodeLine{40   \mbox{\hyperlink{classMELANCSplineCore_a9d561d07179ecc2a53812027a3c572b7}{MELANCSplineCore}}(name, title, inXVar, inXList, inUseFloor, inFloorEval, inFloorInt),}
+\DoxyCodeLine{41   \mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bcBeginX}}(bcBeginX\_), \mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bcEndX}}(bcEndX\_),}
+\DoxyCodeLine{42   \mbox{\hyperlink{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}{FcnList}}(inFcnList)}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ab85b15b7e8b390c9f538f38b6c3f801f}{npointsX}}()>1)\{}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} npoints;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     vector<vector<MELANCSplineCore::T>> xA; \mbox{\hyperlink{classMELANCSpline__1D__fast_a2072dd16dcadba22fe77d50c7b3b7fa1}{getKappas}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}, 0); \mbox{\hyperlink{classMELANCSplineCore_a49f714cbe9ef9d4eb15312080d8d0a04}{getAArray}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}, xA, \mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bcBeginX}}, \mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bcEndX}});}
+\DoxyCodeLine{48     npoints=\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}.size();}
+\DoxyCodeLine{49     \mbox{\hyperlink{classMELANCSplineCore_a08a91432eef42c1737e8368cd330e25a}{TMatrix\_t}} xAtrans(npoints, npoints);}
+\DoxyCodeLine{50     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<npoints; i++)\{ \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<npoints; j++)\{ xAtrans[i][j]=xA.at(i).at(j); \} \}}
+\DoxyCodeLine{51     Double\_t det=0;}
+\DoxyCodeLine{52     \mbox{\hyperlink{classMELANCSplineCore_a08a91432eef42c1737e8368cd330e25a}{TMatrix\_t}} xAinv = xAtrans.Invert(\&det);}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if} (det==0.)\{}
+\DoxyCodeLine{54       coutE(InputArguments) << \textcolor{stringliteral}{"MELANCSpline\_1D::interpolateFcn: Matrix xA could not be inverted. Something is wrong with the x coordinates of points!"} << endl;}
+\DoxyCodeLine{55       assert(0);}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \mbox{\hyperlink{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}{coefficients}} = \mbox{\hyperlink{classMELANCSplineCore_a4ca8fe5de992ddfa3901893601bc0934}{getCoefficientsAlongDirection}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}, xAinv, \mbox{\hyperlink{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}{FcnList}}, \mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bcBeginX}}, \mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bcEndX}}, -\/1);}
+\DoxyCodeLine{59   \}}
+\DoxyCodeLine{60   \textcolor{keywordflow}{else} assert(0);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   RooArgSet leafset;}
+\DoxyCodeLine{63   \mbox{\hyperlink{classMELANCSplineCore_a3c73be7bda1af9d7cf4dd6e113e11fd3}{getLeafDependents}}(\mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}, leafset);}
+\DoxyCodeLine{64   \mbox{\hyperlink{classMELANCSplineCore_a70433d5860a7e332db2239bf5bb86d2d}{addLeafDependents}}(leafset);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \mbox{\hyperlink{classMELANCSpline__1D__fast_aeda656dab01c7795e1e710ded190e1df}{emptyFcnList}}();}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_ae8f35c7939c050351d70c7a2d18453dd}\label{classMELANCSpline__1D__fast_ae8f35c7939c050351d70c7a2d18453dd}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{MELANCSpline\_1D\_fast()}{MELANCSpline\_1D\_fast()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::\+M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELANCSpline__1D__fast}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast}} \&}]{other,  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72     :}
+\DoxyCodeLine{73   \mbox{\hyperlink{classMELANCSplineCore_a9d561d07179ecc2a53812027a3c572b7}{MELANCSplineCore}}(other, name),}
+\DoxyCodeLine{74   \mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bcBeginX}}(other.\mbox{\hyperlink{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}{bcBeginX}}), \mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bcEndX}}(other.\mbox{\hyperlink{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}{bcEndX}}),}
+\DoxyCodeLine{75   \mbox{\hyperlink{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}{FcnList}}(other.\mbox{\hyperlink{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}{FcnList}}),}
+\DoxyCodeLine{76   \mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}(other.\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}),}
+\DoxyCodeLine{77   \mbox{\hyperlink{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}{coefficients}}(other.\mbox{\hyperlink{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}{coefficients}})}
+\DoxyCodeLine{78 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a9b37b26f6a5107902a3fc20ebd0dac74}\label{classMELANCSpline__1D__fast_a9b37b26f6a5107902a3fc20ebd0dac74}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!````~MELANCSpline\_1D\_fast@{$\sim$MELANCSpline\_1D\_fast}}
+\index{````~MELANCSpline\_1D\_fast@{$\sim$MELANCSpline\_1D\_fast}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{$\sim$MELANCSpline\_1D\_fast()}{~MELANCSpline\_1D\_fast()}}
+{\footnotesize\ttfamily virtual M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::$\sim$\+M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 42 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_ac114dcdbf7ef68ff46acf74e6c6886f4}\label{classMELANCSpline__1D__fast_ac114dcdbf7ef68ff46acf74e6c6886f4}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!analyticalIntegral@{analyticalIntegral}}
+\index{analyticalIntegral@{analyticalIntegral}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{analyticalIntegral()}{analyticalIntegral()}}
+{\footnotesize\ttfamily Double\+\_\+t M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::analytical\+Integral (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{code,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a4152f834a8dde69a8fc0ad02da6c96fb}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 197 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{197                                                                                         \{}
+\DoxyCodeLine{198   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolateFcn}}(code, rangeName);}
+\DoxyCodeLine{199   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}})\{}
+\DoxyCodeLine{200     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast ERROR::MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{") integration returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl;}
+\DoxyCodeLine{201     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}};}
+\DoxyCodeLine{202   \}}
+\DoxyCodeLine{203   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
+\DoxyCodeLine{204   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{205 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a753fe8801b3d359e73a0d8bb94314f15}\label{classMELANCSpline__1D__fast_a753fe8801b3d359e73a0d8bb94314f15}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!clone@{clone}}
+\index{clone@{clone}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual T\+Object$\ast$ M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::clone (\begin{DoxyParamCaption}\item[{const char $\ast$}]{newname }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_ac4108ed3ea23dc9c017db1608e6e909d}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 41 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{classMELANCSpline__1D__fast_a9098e4c7f5283a43a1bac240eeb88fc9}{MELANCSpline\_1D\_fast}}(*\textcolor{keyword}{this}, newname); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_ab88b9410a534ab508aeccf38d5f518fd}\label{classMELANCSpline__1D__fast_ab88b9410a534ab508aeccf38d5f518fd}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!cropValueForRange@{cropValueForRange}}
+\index{cropValueForRange@{cropValueForRange}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{cropValueForRange()}{cropValueForRange()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::crop\+Value\+For\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{val,  }\item[{const Int\+\_\+t}]{which\+Direction = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a5cf7c32aae0d2a6f038d59fccc7b5183}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 220 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{220                                                                       \{}
+\DoxyCodeLine{221   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e137568d422bf3b}{testRangeValidity}}(val)) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{222   \textcolor{keyword}{const} \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}* range[2];}
+\DoxyCodeLine{223   range[0] = \&\mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}};}
+\DoxyCodeLine{224   range[1] = \&\mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}};}
+\DoxyCodeLine{225   \textcolor{keywordflow}{if} (val<*(range[0])) val = *(range[0]);}
+\DoxyCodeLine{226   \textcolor{keywordflow}{if} (val>*(range[1])) val = *(range[1]);}
+\DoxyCodeLine{227 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_aeda656dab01c7795e1e710ded190e1df}\label{classMELANCSpline__1D__fast_aeda656dab01c7795e1e710ded190e1df}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!emptyFcnList@{emptyFcnList}}
+\index{emptyFcnList@{emptyFcnList}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{emptyFcnList()}{emptyFcnList()}}
+{\footnotesize\ttfamily virtual void M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::empty\+Fcn\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a6dbd8202aa9824505fbfa7770967d676}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 50 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \{ std::vector<T> tmp; \mbox{\hyperlink{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}{FcnList}}.swap(tmp); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a6ad1c31b038d97d53735340494d27afb}\label{classMELANCSpline__1D__fast_a6ad1c31b038d97d53735340494d27afb}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily Double\+\_\+t M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_acbfced658063a55878b12518624af202}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 170 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{170                                              \{}
+\DoxyCodeLine{171   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}{interpolateFcn}}(0);}
+\DoxyCodeLine{172   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}})\{}
+\DoxyCodeLine{173     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast ERROR::MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
+\DoxyCodeLine{174     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}};}
+\DoxyCodeLine{175   \}}
+\DoxyCodeLine{176   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{}
+\DoxyCodeLine{177     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at x = "} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << endl;}
+\DoxyCodeLine{178     RooArgSet Xdeps; \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}.absArg()-\/>leafNodeServerList(\&Xdeps, 0, \textcolor{keyword}{true});}
+\DoxyCodeLine{179     TIterator* iter = Xdeps.createIterator();}
+\DoxyCodeLine{180     RooAbsArg* var;}
+\DoxyCodeLine{181     \textcolor{keywordflow}{while} ((var = (RooAbsArg*)iter-\/>Next()))\{}
+\DoxyCodeLine{182       \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << var-\/>GetName() << \textcolor{stringliteral}{" value = "} << \textcolor{keyword}{dynamic\_cast<}RooAbsReal*\textcolor{keyword}{>}(var)-\/>getVal() << endl;}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184     \textcolor{keyword}{delete} iter;}
+\DoxyCodeLine{185     \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << endl;}
+\DoxyCodeLine{186   \}}
+\DoxyCodeLine{187   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{188 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a2611a4f9d34d0a657ccefeee3ca1a3f4}\label{classMELANCSpline__1D__fast_a2611a4f9d34d0a657ccefeee3ca1a3f4}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!getAnalyticalIntegral@{getAnalyticalIntegral}}
+\index{getAnalyticalIntegral@{getAnalyticalIntegral}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{getAnalyticalIntegral()}{getAnalyticalIntegral()}}
+{\footnotesize\ttfamily Int\+\_\+t M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::get\+Analytical\+Integral (\begin{DoxyParamCaption}\item[{Roo\+Arg\+Set \&}]{all\+Vars,  }\item[{Roo\+Arg\+Set \&}]{anal\+Vars,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_afb4a4385e7ee883b170930fa2e0a4fc6}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 189 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189                                                                                                              \{}
+\DoxyCodeLine{190   \textcolor{keywordflow}{if} (\_forceNumInt) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{191   Int\_t code=0;}
+\DoxyCodeLine{192   \textcolor{keywordflow}{if} (\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}.absArg())!=0)\{}
+\DoxyCodeLine{193     \textcolor{keywordflow}{if} (matchArgs(allVars, analVars, \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}})) code=2;}
+\DoxyCodeLine{194   \}}
+\DoxyCodeLine{195   \textcolor{keywordflow}{return} code;}
+\DoxyCodeLine{196 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a2072dd16dcadba22fe77d50c7b3b7fa1}\label{classMELANCSpline__1D__fast_a2072dd16dcadba22fe77d50c7b3b7fa1}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!getKappas@{getKappas}}
+\index{getKappas@{getKappas}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{getKappas()}{getKappas()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::get\+Kappas (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{kappas,  }\item[{const Int\+\_\+t}]{which\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a9a3f25075c8dae1bdb5f38ebaf450555}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 124 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124                                                                                     \{}
+\DoxyCodeLine{125   kappas.clear();}
+\DoxyCodeLine{126   \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} \mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}}=1;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   Int\_t npoints;}
+\DoxyCodeLine{129   vector<MELANCSplineCore::T> \textcolor{keyword}{const}* coord;}
+\DoxyCodeLine{130   npoints=\mbox{\hyperlink{classMELANCSplineCore_ab85b15b7e8b390c9f538f38b6c3f801f}{npointsX}}();}
+\DoxyCodeLine{131   coord=\&\mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133   \textcolor{keywordflow}{for} (Int\_t j=0; j<npoints-\/1; j++)\{}
+\DoxyCodeLine{134     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} val\_j = coord-\/>at(j);}
+\DoxyCodeLine{135     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} val\_jpo = coord-\/>at(j+1);}
+\DoxyCodeLine{136     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} val\_diff = (val\_jpo-\/val\_j);}
+\DoxyCodeLine{137     \textcolor{keywordflow}{if} (fabs(val\_diff)>\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}}(0)) \mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}} = 1./val\_diff;}
+\DoxyCodeLine{138     \textcolor{keywordflow}{else} \mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}} = 0;}
+\DoxyCodeLine{139     kappas.push\_back(\mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}});}
+\DoxyCodeLine{140   \}}
+\DoxyCodeLine{141   kappas.push\_back(\mbox{\hyperlink{namespacemodparameters_a222bf0bdea155ccb3ee2be242af4eee8}{kappa}}); \textcolor{comment}{// Push the same kappa\_(N-\/1)=kappa\_(N-\/2) at the end point}}
+\DoxyCodeLine{142 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a20d422b52d0d76ad8c3d3b0b3ceadee5}\label{classMELANCSpline__1D__fast_a20d422b52d0d76ad8c3d3b0b3ceadee5}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!getTVar@{getTVar}}
+\index{getTVar@{getTVar}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{getTVar()}{getTVar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}} M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::get\+T\+Var (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} $>$ \&}]{kappas,  }\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{val,  }\item[{const Int\+\_\+t \&}]{bin,  }\item[{const Int\+\_\+t}]{which\+Direction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a267e73e6b6752b22476e8665d24b1100}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 165 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                                                                                                                                                           \{}
+\DoxyCodeLine{166   \textcolor{keyword}{const} \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}}\& K=kappas.at(bin);}
+\DoxyCodeLine{167   \textcolor{keywordflow}{return} (val-\/\mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}}.at(bin))*K;}
+\DoxyCodeLine{168 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a30d5e03635a1db4c2e9e5f41d07cd911}\label{classMELANCSpline__1D__fast_a30d5e03635a1db4c2e9e5f41d07cd911}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!getWhichBin@{getWhichBin}}
+\index{getWhichBin@{getWhichBin}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{getWhichBin()}{getWhichBin()}}
+{\footnotesize\ttfamily Int\+\_\+t M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::get\+Which\+Bin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{val,  }\item[{const Int\+\_\+t}]{which\+Direction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a32bca8b4a1b5a25ddbc6157a6fc860ef}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 143 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143                                                                                        \{}
+\DoxyCodeLine{144   Int\_t bin=-\/1;}
+\DoxyCodeLine{145   \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} valj, valjpo;}
+\DoxyCodeLine{146   Int\_t npoints;}
+\DoxyCodeLine{147   vector<MELANCSplineCore::T> \textcolor{keyword}{const}* coord;}
+\DoxyCodeLine{148   coord=\&\mbox{\hyperlink{classMELANCSplineCore_a5e2644c4546eb70631d80943698830a7}{XList}};}
+\DoxyCodeLine{149   npoints=\mbox{\hyperlink{classMELANCSplineCore_ab85b15b7e8b390c9f538f38b6c3f801f}{npointsX}}();}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151   \textcolor{keywordflow}{if} (npoints<=1) bin=0;}
+\DoxyCodeLine{152   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{153     valjpo = coord-\/>at(0);}
+\DoxyCodeLine{154     \textcolor{keywordflow}{for} (Int\_t j=0; j<npoints-\/1; j++)\{}
+\DoxyCodeLine{155       valj = coord-\/>at(j);}
+\DoxyCodeLine{156       valjpo = coord-\/>at(j+1);}
+\DoxyCodeLine{157       \textcolor{keywordflow}{if} (val<valjpo \&\& val>=valj)\{ bin=j; \textcolor{keywordflow}{break}; \}}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159     \textcolor{keywordflow}{if} (bin==-\/1 \&\& val>=valjpo) bin=npoints-\/2;}
+\DoxyCodeLine{160     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (bin==-\/1) bin=0;}
+\DoxyCodeLine{161   \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163   \textcolor{keywordflow}{return} bin;}
+\DoxyCodeLine{164 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}\label{classMELANCSpline__1D__fast_a0289bf60ae925490f713b93c3e7e5018}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!interpolateFcn@{interpolateFcn}}
+\index{interpolateFcn@{interpolateFcn}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{interpolateFcn()}{interpolateFcn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{M\+E\+L\+A\+N\+C\+Spline\+Core\+::T}} M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::interpolate\+Fcn (\begin{DoxyParamCaption}\item[{Int\+\_\+t}]{code,  }\item[{const char $\ast$}]{range\+Name = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_a3803793855a30ad0862383a031cc8647}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 80 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                                                                                             \{}
+\DoxyCodeLine{81   \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{DefaultAccumulator<MELANCSplineCore::T>}} res;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}}) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_1D\_fast("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn begin with code: "} << code << endl;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{comment}{// Get bins}}
+\DoxyCodeLine{86   Int\_t xbin=-\/1, xbinmin=-\/1, xbinmax=-\/1;}
+\DoxyCodeLine{87   \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} tx=0, txmin=0, txmax=0;}
+\DoxyCodeLine{88   \textcolor{keywordflow}{if} (code==0 || code\%2!=0)\{ \textcolor{comment}{// Case to just compute the value at x}}
+\DoxyCodeLine{89     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classMELANCSpline__1D__fast_a403ad050d169bd234e137568d422bf3b}{testRangeValidity}}(\mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}})) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{90     xbin = \mbox{\hyperlink{classMELANCSpline__1D__fast_a30d5e03635a1db4c2e9e5f41d07cd911}{getWhichBin}}(\mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}, 0);}
+\DoxyCodeLine{91     tx = \mbox{\hyperlink{classMELANCSpline__1D__fast_a20d422b52d0d76ad8c3d3b0b3ceadee5}{getTVar}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}, \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}, xbin, 0);}
+\DoxyCodeLine{92   \}}
+\DoxyCodeLine{93   \textcolor{keywordflow}{else}\{ \textcolor{comment}{// Case to integrate along x}}
+\DoxyCodeLine{94     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} coordmin = \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}.min(rangeName); \mbox{\hyperlink{classMELANCSpline__1D__fast_ab88b9410a534ab508aeccf38d5f518fd}{cropValueForRange}}(coordmin);}
+\DoxyCodeLine{95     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} coordmax = \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}}.max(rangeName); \mbox{\hyperlink{classMELANCSpline__1D__fast_ab88b9410a534ab508aeccf38d5f518fd}{cropValueForRange}}(coordmax);}
+\DoxyCodeLine{96     xbinmin = \mbox{\hyperlink{classMELANCSpline__1D__fast_a30d5e03635a1db4c2e9e5f41d07cd911}{getWhichBin}}(coordmin, 0);}
+\DoxyCodeLine{97     txmin = \mbox{\hyperlink{classMELANCSpline__1D__fast_a20d422b52d0d76ad8c3d3b0b3ceadee5}{getTVar}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}, coordmin, xbinmin, 0);}
+\DoxyCodeLine{98     xbinmax = \mbox{\hyperlink{classMELANCSpline__1D__fast_a30d5e03635a1db4c2e9e5f41d07cd911}{getWhichBin}}(coordmax, 0);}
+\DoxyCodeLine{99     txmax = \mbox{\hyperlink{classMELANCSpline__1D__fast_a20d422b52d0d76ad8c3d3b0b3ceadee5}{getTVar}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}, coordmax, xbinmax, 0);}
+\DoxyCodeLine{100   \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102   \textcolor{keywordtype}{int} nxbins = (int)\mbox{\hyperlink{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}{coefficients}}.size();}
+\DoxyCodeLine{103   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ix=0; ix<nxbins; ix++)\{}
+\DoxyCodeLine{104     \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{105       (xbin>=0 \&\& ix!=xbin)}
+\DoxyCodeLine{106       ||}
+\DoxyCodeLine{107       (xbinmin>=0 \&\& xbinmax>=xbinmin \&\& !(xbinmin<=ix \&\& ix<=xbinmax))}
+\DoxyCodeLine{108       ) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{MELANCSplineCore::T}} txlow=0, txhigh=1;}
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (code>0 \&\& code\%2==0)\{}
+\DoxyCodeLine{112       \textcolor{keywordflow}{if} (ix==xbinmin) txlow=txmin;}
+\DoxyCodeLine{113       \textcolor{keywordflow}{if} (ix==xbinmax) txhigh=txmax;}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     \textcolor{keywordflow}{else} txhigh=tx;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{// Get the x coefficients at bin ix and evaluate value of spline at x}}
+\DoxyCodeLine{118     res += \mbox{\hyperlink{classMELANCSplineCore_a3236653994df040165ec3785ea381b1e}{evalSplineSegment}}(\mbox{\hyperlink{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}{coefficients}}.at(ix), \mbox{\hyperlink{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}{kappaX}}.at(ix), txhigh, txlow, (code>0 \&\& code\%2==0));}
+\DoxyCodeLine{119   \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a2623be9cafef13f68d655955e9ca99ab}\label{classMELANCSpline__1D__fast_a2623be9cafef13f68d655955e9ca99ab}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!setRangeValidity@{setRangeValidity}}
+\index{setRangeValidity@{setRangeValidity}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{setRangeValidity()}{setRangeValidity()}}
+{\footnotesize\ttfamily void M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::set\+Range\+Validity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}}]{valmin,  }\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}}]{valmax,  }\item[{const Int\+\_\+t}]{which\+Direction = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_aca4506f2d77ad375e7d257ba2d524a79}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 213 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{213                                                                                         \{}
+\DoxyCodeLine{214   \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}* range[2];}
+\DoxyCodeLine{215   range[0] = \&\mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}};}
+\DoxyCodeLine{216   range[1] = \&\mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}};}
+\DoxyCodeLine{217   *(range[0])=valmin;}
+\DoxyCodeLine{218   *(range[1])=valmax;}
+\DoxyCodeLine{219 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a403ad050d169bd234e137568d422bf3b}\label{classMELANCSpline__1D__fast_a403ad050d169bd234e137568d422bf3b}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!testRangeValidity@{testRangeValidity}}
+\index{testRangeValidity@{testRangeValidity}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{testRangeValidity()}{testRangeValidity()}}
+{\footnotesize\ttfamily Bool\+\_\+t M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::test\+Range\+Validity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}} \&}]{val,  }\item[{const Int\+\_\+t}]{which\+Direction = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMELANCSplineCore_ae2f4f6577d8432e2fc72257e1d8cd295}{M\+E\+L\+A\+N\+C\+Spline\+Core}}.
+
+
+
+Definition at line 207 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{207                                                                                \{}
+\DoxyCodeLine{208   \textcolor{keyword}{const} \mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}* range[2];}
+\DoxyCodeLine{209   range[0] = \&\mbox{\hyperlink{classMELANCSplineCore_af9532533981a93114dcbcce595341219}{rangeXmin}};}
+\DoxyCodeLine{210   range[1] = \&\mbox{\hyperlink{classMELANCSplineCore_a08fe9bb66a90fa755b7ca55ec8350244}{rangeXmax}};}
+\DoxyCodeLine{211   \textcolor{keywordflow}{return} (*(range[0])>*(range[1]) || (val>=*(range[0]) \&\& val<=*(range[1])));}
+\DoxyCodeLine{212 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}\label{classMELANCSpline__1D__fast_aebe51f523f743b412af4cffa5a7eb462}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!bcBeginX@{bcBeginX}}
+\index{bcBeginX@{bcBeginX}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{bcBeginX}{bcBeginX}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::bc\+BeginX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 14 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}\label{classMELANCSpline__1D__fast_a249d0d81a4ab3a0564cd3d143271a129}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!bcEndX@{bcEndX}}
+\index{bcEndX@{bcEndX}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{bcEndX}{bcEndX}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classMELANCSplineCore_aa2f429fca01ad9fe299b8806db643910}{Boundary\+Condition}} M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::bc\+EndX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}\label{classMELANCSpline__1D__fast_a977e61de13d0cdd008cb91a7057e8b06}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!coefficients@{coefficients}}
+\index{coefficients@{coefficients}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{coefficients}{coefficients}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}$>$ $>$ M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::coefficients\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 20 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}\label{classMELANCSpline__1D__fast_a2a7daacf1ec3d330fabc610dc26da2c9}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!FcnList@{FcnList}}
+\index{FcnList@{FcnList}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{FcnList}{FcnList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}$>$ M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::\+Fcn\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 17 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+\mbox{\Hypertarget{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}\label{classMELANCSpline__1D__fast_a1babec345a963b49c1ef54d2dcfbc9a3}} 
+\index{MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}!kappaX@{kappaX}}
+\index{kappaX@{kappaX}!MELANCSpline\_1D\_fast@{MELANCSpline\_1D\_fast}}
+\doxysubsubsection{\texorpdfstring{kappaX}{kappaX}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classMELANCSplineCore_a95c39d3f034fd95001c071a73ff2ef99}{T}}$>$ M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast\+::kappaX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 19 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{MELANCSpline__1D__fast_8h}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{MELANCSpline__1D__fast_8cc}{M\+E\+L\+A\+N\+C\+Spline\+\_\+1\+D\+\_\+fast.\+cc}}\end{DoxyCompactItemize}

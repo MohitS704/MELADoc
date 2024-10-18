@@ -1,0 +1,400 @@
+\hypertarget{democache_8f90}{}\doxysection{M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.2/demos/democache.f90 File Reference}
+\label{democache_8f90}\index{MELA/COLLIER/colliertmp/COLLIER-\/1.2/demos/democache.f90@{MELA/COLLIER/colliertmp/COLLIER-\/1.2/demos/democache.f90}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+program \mbox{\hyperlink{democache_8f90_a3dfc388fc853bd97ff849c7b56f28b7d}{democache}}
+\item 
+subroutine \mbox{\hyperlink{democache_8f90_a4c1ca8e11a504981ad0152608c737953}{getinvariants}} (Mom\+Inv6, ievent)
+\item 
+double complex function, dimension(0\+:n-\/2) \mbox{\hyperlink{democache_8f90_aa08ec99fbe2eba620c66f7b0eff1b488}{submasses}} (N, k, masses)
+\item 
+double complex function, dimension((n-\/1) $\ast$(n-\/2)/2) \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}} (N, k, Mom\+Inv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{democache_8f90_a3dfc388fc853bd97ff849c7b56f28b7d}\label{democache_8f90_a3dfc388fc853bd97ff849c7b56f28b7d}} 
+\index{democache.f90@{democache.f90}!democache@{democache}}
+\index{democache@{democache}!democache.f90@{democache.f90}}
+\doxysubsubsection{\texorpdfstring{democache()}{democache()}}
+{\footnotesize\ttfamily program democache}
+
+
+
+Definition at line 10 of file democache.\+f90.
+
+\mbox{\Hypertarget{democache_8f90_a4c1ca8e11a504981ad0152608c737953}\label{democache_8f90_a4c1ca8e11a504981ad0152608c737953}} 
+\index{democache.f90@{democache.f90}!getinvariants@{getinvariants}}
+\index{getinvariants@{getinvariants}!democache.f90@{democache.f90}}
+\doxysubsubsection{\texorpdfstring{getinvariants()}{getinvariants()}}
+{\footnotesize\ttfamily subroutine democache\+::getinvariants (\begin{DoxyParamCaption}\item[{double complex, dimension(1\+:15)}]{Mom\+Inv6,  }\item[{integer}]{ievent }\end{DoxyParamCaption})}
+
+
+
+Definition at line 198 of file democache.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{200     }
+\DoxyCodeLine{201     \textcolor{keywordtype}{double precision} p(1:6,0:3) }
+\DoxyCodeLine{202     \textcolor{keywordtype}{double complex} MomInv6(1:15) }
+\DoxyCodeLine{203     \textcolor{keywordtype}{double precision} :: s(0:5,0:5),fact=47d0/49d0}
+\DoxyCodeLine{204     \textcolor{keywordtype}{integer} :: N=6,k,i,newmom,ievent}
+\DoxyCodeLine{205     \textcolor{keywordtype}{save} s,fact,n}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     newmom=0}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keywordflow}{if} (ievent.eq.1) then}
+\DoxyCodeLine{210       newmom=1}
+\DoxyCodeLine{211 \textcolor{comment}{! use momentum set from Racoon}}
+\DoxyCodeLine{212       p(1,0) =   -\/0.9500000000000000d+02}
+\DoxyCodeLine{213       p(1,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{214       p(1,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{215       p(1,3) =    0.9500000000000000d+02}
+\DoxyCodeLine{216       }
+\DoxyCodeLine{217       p(2,0) =   -\/0.9500000000000000d+02}
+\DoxyCodeLine{218       p(2,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{219       p(2,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{220       p(2,3) =   -\/0.9500000000000000d+02}
+\DoxyCodeLine{221       }
+\DoxyCodeLine{222       p(3,0) =    0.2046111001757171d+02}
+\DoxyCodeLine{223       p(3,1) =    0.1057734233089455d+02}
+\DoxyCodeLine{224       p(3,2) =   -\/0.2324961261504543d+01}
+\DoxyCodeLine{225       p(3,3) =    0.1736005205921753d+02}
+\DoxyCodeLine{226       }
+\DoxyCodeLine{227       p(4,0) =    0.3558305163378869d+01}
+\DoxyCodeLine{228       p(4,1) =    0.1436222934374051d+01}
+\DoxyCodeLine{229       p(4,2) =   -\/0.2174258125294355d+01}
+\DoxyCodeLine{230       p(4,3) =   -\/0.2423097382091398d+01}
+\DoxyCodeLine{231       }
+\DoxyCodeLine{232       p(5,0) =    0.8154540918019539d+02}
+\DoxyCodeLine{233       p(5,1) =   -\/0.5230395944682889d+02}
+\DoxyCodeLine{234       p(5,2) =    0.3083642435466509d+02}
+\DoxyCodeLine{235       p(5,3) =    0.5443403822581044d+02}
+\DoxyCodeLine{236       }
+\DoxyCodeLine{237       p(6,0) =    0.8443517563885433d+02}
+\DoxyCodeLine{238       p(6,1) =    0.4029039418156027d+02}
+\DoxyCodeLine{239       p(6,2) =   -\/0.2633720496786619d+02}
+\DoxyCodeLine{240       p(6,3) =   -\/0.6937099290293661d+02}
+\DoxyCodeLine{241       }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ievent.eq.50) then}
+\DoxyCodeLine{244       newmom=1}
+\DoxyCodeLine{245 \textcolor{comment}{! set with small momentum   1.9 versus 3.0 seconds}}
+\DoxyCodeLine{246       p(1,0) =   -\/250.0000000000000d0       }
+\DoxyCodeLine{247       p(1,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{248       p(1,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{249       p(1,3) =   -\/250.0000000000000d0}
+\DoxyCodeLine{250       }
+\DoxyCodeLine{251       p(2,0) =   -\/250.0000000000000d0}
+\DoxyCodeLine{252       p(2,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{253       p(2,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{254       p(2,3) =    250.0000000000000d0}
+\DoxyCodeLine{255       }
+\DoxyCodeLine{256       p(3,0) =    239.91697591218110d0}
+\DoxyCodeLine{257       p(3,1) =   31.640107125154238d0}
+\DoxyCodeLine{258       p(3,2) =   -\/116.12928664566658d0}
+\DoxyCodeLine{259       p(3,3) =   -\/207.54047252312847d0}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261       p(4,0) =    10.276659578244022d0}
+\DoxyCodeLine{262       p(4,1) =    1.2584629023924521d0}
+\DoxyCodeLine{263       p(4,2) =    10.131487190720421d0}
+\DoxyCodeLine{264       p(4,3) =   -\/1.1742957526504370d0}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266       p(5,0) =    181.18800109198216d0}
+\DoxyCodeLine{267       p(5,1) =    -\/35.098898474333737d0}
+\DoxyCodeLine{268       p(5,2) =    109.26326872331617d0}
+\DoxyCodeLine{269       p(5,3) =    140.20947604742324d0}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271       p(6,0) =      68.618363417592718d0}
+\DoxyCodeLine{272       p(6,1) =    2.2003284467870472d0}
+\DoxyCodeLine{273       p(6,2) =    -\/3.2654692683700119d0}
+\DoxyCodeLine{274       p(6,3) =    68.505292228355671d0}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ievent.eq.100) then}
+\DoxyCodeLine{277       newmom=1}
+\DoxyCodeLine{278         p(1,0) = -\/100.0000000000000d0}
+\DoxyCodeLine{279         p(1,1) = 0.000000000000000d0}
+\DoxyCodeLine{280         p(1,2) = 0.000000000000000d0}
+\DoxyCodeLine{281         p(1,3) = -\/100.0000000000000d0}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283         p(2,0) = -\/100.0000000000000d0}
+\DoxyCodeLine{284         p(2,1) = 0.000000000000000d0}
+\DoxyCodeLine{285         p(2,2) = 0.000000000000000d0}
+\DoxyCodeLine{286         p(2,3) = 100.0000000000000d0}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288         p(5,0) = 42.13045937773281d0}
+\DoxyCodeLine{289         p(5,1) = 38.71045260055064d0}
+\DoxyCodeLine{290         p(5,2) = 16.54764683624944d0}
+\DoxyCodeLine{291         p(5,3) = 1.628450497276325d0}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293         p(6,0) = 73.31699208541762d0}
+\DoxyCodeLine{294         p(6,1) = -\/66.17895647220249d0}
+\DoxyCodeLine{295         p(6,2) = 31.53024134467396d0}
+\DoxyCodeLine{296         p(6,3) = -\/1.253367244715983d0}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298         p(4,0) = 69.60509150033207d0}
+\DoxyCodeLine{299         p(4,1) = 34.42307953372518d0}
+\DoxyCodeLine{300         p(4,2) = -\/60.31848303205667d0}
+\DoxyCodeLine{301         p(4,3) = 4.647683605402023d0}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303         p(3,0) = 14.94745703651754d0}
+\DoxyCodeLine{304         p(3,1) = -\/6.954575662073326d0}
+\DoxyCodeLine{305         p(3,2) = 12.24059485113326d0}
+\DoxyCodeLine{306         p(3,3) = -\/5.022766857962365d0}
+\DoxyCodeLine{307     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ievent.eq.150) then}
+\DoxyCodeLine{308       newmom=1}
+\DoxyCodeLine{309       p(1,0) =   -\/100.0000000000000d0       }
+\DoxyCodeLine{310       p(1,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{311       p(1,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{312       p(1,3) =   -\/100.0000000000000d0}
+\DoxyCodeLine{313       }
+\DoxyCodeLine{314       p(2,0) =   -\/100.0000000000000d0}
+\DoxyCodeLine{315       p(2,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{316       p(2,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{317       p(2,3) =    100.0000000000000d0}
+\DoxyCodeLine{318       }
+\DoxyCodeLine{319       p(3,0) =    72.02905523601244d0}
+\DoxyCodeLine{320       p(3,1) =   32.33193950844802d0}
+\DoxyCodeLine{321       p(3,2) =   64.10893732125734d0}
+\DoxyCodeLine{322       p(3,3) =   5.733641195059672d0}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324       p(4,0) =    25.07519219892066d0}
+\DoxyCodeLine{325       p(4,1) =    2.906699172283076d0}
+\DoxyCodeLine{326       p(4,2) =    -\/24.65281899347465d0}
+\DoxyCodeLine{327       p(4,3) =    3.543286526606821d0}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329       p(5,0) =    60.19609558319355d0}
+\DoxyCodeLine{330       p(5,1) =    2.282219923475870d0}
+\DoxyCodeLine{331       p(5,2) =    -\/59.72688022443283d0}
+\DoxyCodeLine{332       p(5,3) =    -\/7.145710205299344d0}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334       p(6,0) =    42.69965698187335d0}
+\DoxyCodeLine{335       p(6,1) =    -\/37.52085860420697d0}
+\DoxyCodeLine{336       p(6,2) =    20.27076189665014d0}
+\DoxyCodeLine{337       p(6,3) =    -\/2.131217516367149d0}
+\DoxyCodeLine{338     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ievent.eq.200) then}
+\DoxyCodeLine{339       newmom=1}
+\DoxyCodeLine{340       p(1,0) =   -\/100.0000000000000d0       }
+\DoxyCodeLine{341       p(1,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{342       p(1,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{343       p(1,3) =   -\/100.0000000000000d0}
+\DoxyCodeLine{344       }
+\DoxyCodeLine{345       p(2,0) =   -\/100.0000000000000d0}
+\DoxyCodeLine{346       p(2,1) =    0.0000000000000000d+00}
+\DoxyCodeLine{347       p(2,2) =    0.0000000000000000d+00}
+\DoxyCodeLine{348       p(2,3) =    100.0000000000000d0}
+\DoxyCodeLine{349       }
+\DoxyCodeLine{350       p(3,0) =    69.63925440091566d0}
+\DoxyCodeLine{351       p(3,1) =   -\/68.33683461638704d0}
+\DoxyCodeLine{352       p(3,2) =   -\/3.803463998624776d0}
+\DoxyCodeLine{353       p(3,3) =   -\/12.85443307731553d0}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355       p(4,0) =    34.49634785978589d0}
+\DoxyCodeLine{356       p(4,1) =    21.54290146454439d0}
+\DoxyCodeLine{357       p(4,2) =    -\/15.60187514686951d0}
+\DoxyCodeLine{358       p(4,3) =    21.96549348532329d0}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360       p(5,0) =    66.20628864972379d0}
+\DoxyCodeLine{361       p(5,1) =    65.60907499667245d0}
+\DoxyCodeLine{362       p(5,2) =    -\/3.500460884404577d0}
+\DoxyCodeLine{363       p(5,3) =    -\/8.152834381263276d0}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365       p(6,0) =    29.65810908957467d0}
+\DoxyCodeLine{366       p(6,1) =    -\/18.81514184482980d0}
+\DoxyCodeLine{367       p(6,2) =    22.90580002989887d0}
+\DoxyCodeLine{368       p(6,3) =    -\/0.9582260267444891d0}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ievent.eq.250) then}
+\DoxyCodeLine{371       newmom=1}
+\DoxyCodeLine{372         p( 1, 0) =      -\/159.2798637127597488d0}
+\DoxyCodeLine{373         p( 1, 1) =         0.0000000000000000d0}
+\DoxyCodeLine{374         p( 1, 2) =         0.0000000000000000d0}
+\DoxyCodeLine{375         p( 1, 3) =      -\/159.2798637127597488d0}
+\DoxyCodeLine{376         p( 2, 0) =      -\/237.6261878491357891d0}
+\DoxyCodeLine{377         p( 2, 1) =         0.0000000000000000d0}
+\DoxyCodeLine{378         p( 2, 2) =         0.0000000000000000d0}
+\DoxyCodeLine{379         p( 2, 3) =       237.6261878491357891d0}
+\DoxyCodeLine{380         p( 3, 0) =       133.6018149124976446d0}
+\DoxyCodeLine{381         p( 3, 1) =        60.5134748218625731d0}
+\DoxyCodeLine{382         p( 3, 2) =       112.6312302087531094d0}
+\DoxyCodeLine{383         p( 3, 3) =       -\/38.7526811273741174d0}
+\DoxyCodeLine{384         p( 4, 0) =        69.9256648527542950d0}
+\DoxyCodeLine{385         p( 4, 1) =        66.6463990867762135d0}
+\DoxyCodeLine{386         p( 4, 2) =         7.6538437283820429d0}
+\DoxyCodeLine{387         p( 4, 3) =       -\/19.7300473909055754d0}
+\DoxyCodeLine{388         p( 5, 0) =        85.7314709474216841d0}
+\DoxyCodeLine{389         p( 5, 1) =       -\/38.6625297933730749d0}
+\DoxyCodeLine{390         p( 5, 2) =       -\/63.4432116127613241d0}
+\DoxyCodeLine{391         p( 5, 3) =       -\/42.7791164126088006d0}
+\DoxyCodeLine{392         p( 6, 0) =       107.6471008492219283d0}
+\DoxyCodeLine{393         p( 6, 1) =       -\/88.4973441152657188d0}
+\DoxyCodeLine{394         p( 6, 2) =       -\/56.8418623243738281d0}
+\DoxyCodeLine{395         p( 6, 3) =        22.9155207945124531d0}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398     \textcolor{keyword}{end }if}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400     \textcolor{keywordflow}{if} (newmom.eq.1) then}
+\DoxyCodeLine{401       \textcolor{comment}{! define invariants}}
+\DoxyCodeLine{402       n=6 }
+\DoxyCodeLine{403       \textcolor{keywordflow}{do} k=0,n-\/1}
+\DoxyCodeLine{404         s(modulo(k+1,n),k) = p(k+1,0)**2}
+\DoxyCodeLine{405         \textcolor{keywordflow}{do} i=1,3}
+\DoxyCodeLine{406           s(modulo(k+1,n),k) = s(modulo(k+1,n),k) -\/ p(k+1,i)**2}
+\DoxyCodeLine{407         \textcolor{keyword}{end }do}
+\DoxyCodeLine{408         \textcolor{keywordflow}{if}(abs(s(modulo(k+1,n),k)).lt.1d-\/14* abs(p(k+1,0))**2) s(modulo(k+1,n),k) = 0d0}
+\DoxyCodeLine{409       }
+\DoxyCodeLine{410         s(k,modulo(k+1,n)) = s(modulo(k+1,n),k)}
+\DoxyCodeLine{411       \textcolor{keyword}{end }do}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413       \textcolor{keywordflow}{do} k=0,n-\/1}
+\DoxyCodeLine{414         s(modulo(k+2,n),k) = (p(modulo(k+1,n)+1,0) + p(k+1,0))**2}
+\DoxyCodeLine{415         \textcolor{keywordflow}{do} i=1,3}
+\DoxyCodeLine{416           s(modulo(k+2,n),k) = s(modulo(k+2,n),k) \&}
+\DoxyCodeLine{417               -\/ (p(modulo(k+1,n)+1,i) + p(k+1,i))**2}
+\DoxyCodeLine{418         \textcolor{keyword}{end }do}
+\DoxyCodeLine{419         s(k,modulo(k+2,n)) = s(modulo(k+2,n),k)}
+\DoxyCodeLine{420       \textcolor{keyword}{end }do}
+\DoxyCodeLine{421       \textcolor{keywordflow}{do} k=0,(n-\/1)/2}
+\DoxyCodeLine{422         s(modulo(k+3,n),k) = (p(modulo(k+2,n)+1,0) + p(modulo(k+1,n)+1,0) + p(k+1,0))**2}
+\DoxyCodeLine{423         \textcolor{keywordflow}{do} i=1,3}
+\DoxyCodeLine{424           s(modulo(k+3,n),k) = s(modulo(k+3,n),k) \&}
+\DoxyCodeLine{425               -\/ (p(modulo(k+2,n)+1,i) + p(modulo(k+1,n)+1,i) + p(k+1,i))**2}
+\DoxyCodeLine{426         \textcolor{keyword}{end }do}
+\DoxyCodeLine{427         s(k,modulo(k+3,n)) = s(modulo(k+3,n),k)}
+\DoxyCodeLine{428       \textcolor{keyword}{end }do}
+\DoxyCodeLine{429       }
+\DoxyCodeLine{430       \textcolor{keywordflow}{do} k=1,n}
+\DoxyCodeLine{431         mominv6(k) = s(modulo(k,n),k-\/1)}
+\DoxyCodeLine{432       \textcolor{keyword}{end }do}
+\DoxyCodeLine{433       \textcolor{keywordflow}{do} k=1,n}
+\DoxyCodeLine{434         mominv6(k+n) = s(modulo(k+1,n),k-\/1)}
+\DoxyCodeLine{435       \textcolor{keyword}{end }do}
+\DoxyCodeLine{436       \textcolor{keywordflow}{do} k=1,n/2}
+\DoxyCodeLine{437         mominv6(k+2*n) = s(modulo(k+2,n),k-\/1)}
+\DoxyCodeLine{438       \textcolor{keyword}{end }do}
+\DoxyCodeLine{439       fact = 47d0/97d0  }
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441     else}
+\DoxyCodeLine{442 \textcolor{comment}{!     rescale invariants}}
+\DoxyCodeLine{443       fact = 4*fact*(1-\/fact)}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445       \textcolor{keywordflow}{do} k=1,n}
+\DoxyCodeLine{446         mominv6(k) = s(modulo(k,n),k-\/1)*fact}
+\DoxyCodeLine{447       \textcolor{keyword}{end }do}
+\DoxyCodeLine{448       \textcolor{keywordflow}{do} k=1,n}
+\DoxyCodeLine{449         mominv6(k+n) = s(modulo(k+1,n),k-\/1)*fact}
+\DoxyCodeLine{450       \textcolor{keyword}{end }do}
+\DoxyCodeLine{451       \textcolor{keywordflow}{do} k=1,n/2}
+\DoxyCodeLine{452         mominv6(k+2*n) = s(modulo(k+2,n),k-\/1)*fact}
+\DoxyCodeLine{453       \textcolor{keyword}{end }do}
+\DoxyCodeLine{454     \textcolor{keyword}{end }if}
+\DoxyCodeLine{455       }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{democache_8f90_aa08ec99fbe2eba620c66f7b0eff1b488}\label{democache_8f90_aa08ec99fbe2eba620c66f7b0eff1b488}} 
+\index{democache.f90@{democache.f90}!submasses@{submasses}}
+\index{submasses@{submasses}!democache.f90@{democache.f90}}
+\doxysubsubsection{\texorpdfstring{submasses()}{submasses()}}
+{\footnotesize\ttfamily double complex function, dimension(0\+:n-\/2) democache\+::submasses (\begin{DoxyParamCaption}\item[{integer}]{N,  }\item[{integer}]{k,  }\item[{double complex, dimension(0\+:n-\/1)}]{masses }\end{DoxyParamCaption})}
+
+
+
+Definition at line 468 of file democache.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469     \textcolor{keywordtype}{integer} :: N,k,i}
+\DoxyCodeLine{470     \textcolor{keywordtype}{double complex} :: masses(0:N-\/1), SubMasses(0:N-\/2)}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472     \textcolor{keywordflow}{do} i=0,n-\/2}
+\DoxyCodeLine{473       \textcolor{keywordflow}{if} (i.lt.k) then}
+\DoxyCodeLine{474         \mbox{\hyperlink{democache_8f90_aa08ec99fbe2eba620c66f7b0eff1b488}{submasses}}(i) = masses(i)}
+\DoxyCodeLine{475       else}
+\DoxyCodeLine{476         \mbox{\hyperlink{democache_8f90_aa08ec99fbe2eba620c66f7b0eff1b488}{submasses}}(i) = masses(i+1)}
+\DoxyCodeLine{477       \textcolor{keyword}{end }if}
+\DoxyCodeLine{478 \textcolor{keywordflow}{    end do}    }
+\DoxyCodeLine{479 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}\label{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}} 
+\index{democache.f90@{democache.f90}!submominv@{submominv}}
+\index{submominv@{submominv}!democache.f90@{democache.f90}}
+\doxysubsubsection{\texorpdfstring{submominv()}{submominv()}}
+{\footnotesize\ttfamily double complex function, dimension((n-\/1)$\ast$(n-\/2)/2) democache\+::submominv (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{k,  }\item[{double complex, dimension(n$\ast$(n-\/1)/2)}]{Mom\+Inv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 495 of file democache.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,k}
+\DoxyCodeLine{497     \textcolor{keywordtype}{integer} :: i,cnt,moms,limit}
+\DoxyCodeLine{498     \textcolor{keywordtype}{double complex} :: MomInv(N*(N-\/1)/2), SubMomInv((N-\/1)*(N-\/2)/2)}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{500     \textcolor{keywordflow}{if} (n.eq.2) return}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502     cnt = 1}
+\DoxyCodeLine{503     \textcolor{keywordflow}{do} moms=1,(n-\/3)/2}
+\DoxyCodeLine{504       \textcolor{keywordflow}{do} i=1,n}
+\DoxyCodeLine{505         \textcolor{keywordflow}{if} (i.ne.k+1) then}
+\DoxyCodeLine{506           \textcolor{keywordflow}{if} ((k.ge.i).and.(i.ge.k-\/moms+1).or.(n+k.ge.i).and.(i.ge.n+k-\/moms+1)) then}
+\DoxyCodeLine{507             \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*moms+i)}
+\DoxyCodeLine{508           else}
+\DoxyCodeLine{509             \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*(moms-\/1)+i)}
+\DoxyCodeLine{510           \textcolor{keyword}{end }if}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512           cnt = cnt+1}
+\DoxyCodeLine{513         \textcolor{keyword}{end }if}
+\DoxyCodeLine{514       \textcolor{keyword}{end }do}
+\DoxyCodeLine{515     \textcolor{keyword}{end }do}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517     \textcolor{keywordflow}{if} (mod(n,2).eq.1) then}
+\DoxyCodeLine{518       moms = (n-\/1)/2}
+\DoxyCodeLine{519       \textcolor{keywordflow}{if}(k.le.(n-\/1)/2) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{520         limit = (n+1)/2}
+\DoxyCodeLine{521       else}
+\DoxyCodeLine{522         limit = (n-\/1)/2}
+\DoxyCodeLine{523       \textcolor{keyword}{end }if}
+\DoxyCodeLine{524       \textcolor{keywordflow}{do} i=1,limit}
+\DoxyCodeLine{525         \textcolor{keywordflow}{if} (i.ne.k+1) then}
+\DoxyCodeLine{526           \textcolor{keywordflow}{if} ((k.ge.i).and.(i.ge.k-\/moms+1).or.(n+k.ge.i).and.(i.ge.n+k-\/moms+1)) then}
+\DoxyCodeLine{527             \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*moms+i-\/(n-\/1)/2)}
+\DoxyCodeLine{528           else}
+\DoxyCodeLine{529             \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*(moms-\/1)+i)}
+\DoxyCodeLine{530           \textcolor{keyword}{end }if}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532           cnt = cnt+1}
+\DoxyCodeLine{533         \textcolor{keyword}{end }if}
+\DoxyCodeLine{534       \textcolor{keyword}{end }do}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536     else}
+\DoxyCodeLine{537       \textcolor{keywordflow}{do} i=1,n}
+\DoxyCodeLine{538         \textcolor{keywordflow}{if} (i.ne.k+1) then}
+\DoxyCodeLine{539           moms = (n/2-\/1)}
+\DoxyCodeLine{540           \textcolor{keywordflow}{if} ((k.ge.i).and.(i.ge.k-\/moms+1).or.(n+k.ge.i).and.(i.ge.n+k-\/moms+1)) then}
+\DoxyCodeLine{541             \textcolor{keywordflow}{if} (i.gt.n/2) then}
+\DoxyCodeLine{542               \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*moms-\/n/2+i)}
+\DoxyCodeLine{543             else}
+\DoxyCodeLine{544               \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*moms+i)}
+\DoxyCodeLine{545             \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
+\DoxyCodeLine{546           else}
+\DoxyCodeLine{547             \mbox{\hyperlink{democache_8f90_a2b90f126f45301f6852c77bc8cb10842}{submominv}}(cnt) = mominv(n*(moms-\/1)+i)}
+\DoxyCodeLine{548           \textcolor{keyword}{end }if}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550           cnt = cnt+1}
+\DoxyCodeLine{551         \textcolor{keyword}{end }if}
+\DoxyCodeLine{552       \textcolor{keyword}{end }do}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554 \textcolor{keywordflow}{    end if}  }
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 }
+
+\end{DoxyCode}

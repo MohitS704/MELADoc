@@ -1,0 +1,46 @@
+Our approach to matrix elements in Madgraph is different to that of E\+F\+T2\+Obs. In keeping with the way that M\+E\+LA is structured, there are a select few processes/production modes that are supported through the native M\+E\+LA ecosystem. All the final states are 4-\/leptons. This is colloquially referenced as \char`\"{}\+Mad\+M\+E\+L\+A\char`\"{} throughout the rest of the text, and is managed by Mad\+Mela.\+hh.
+
+So far, these production modes (and their respective processes) are\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Production }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Process  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Production }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Process  }\\\cline{1-2}
+\endhead
+quark-\/antiquark production &Signal  \\\cline{1-2}
+quark-\/antiquark production &Background  \\\cline{1-2}
+quark-\/antiquark production &B\+SI  \\\cline{1-2}
+gluon-\/fusion &Signal  \\\cline{1-2}
+\end{longtabu}
+
+
+Where
+
+
+\begin{DoxyItemize}
+\item \char`\"{}\+Signal\char`\"{} indicates the presence of a Higgs Boson,
+\item \char`\"{}\+Background\char`\"{} a process with the same initial and final state but without the presence of a Higgs
+\item \char`\"{}\+B\+S\+I\char`\"{} the sum of signal, background, and interference between the two
+\end{DoxyItemize}\hypertarget{madMELA_madMELA_configure}{}\doxysection{Configuration}\label{madMELA_madMELA_configure}
+Mad\+M\+E\+LA is configured through a series of Wilson Coefficients and functions. These coefficients are set in the same manner as the couplings used in J\+H\+U\+Gen or M\+C\+FM, but are all real-\/valued.\hypertarget{madMELA_autotoc_md0}{}\doxysubsection{C++}\label{madMELA_autotoc_md0}
+In {\ttfamily C++}, couplings are set using the {\ttfamily Self\+D\+S\+M\+E\+F\+T\+Sim\+Coupl} array (Mela\+::\+Self\+D\+S\+M\+E\+F\+T\+Sim\+Coupl), with indices corresponding to the indices shown \mbox{\hyperlink{MELA_couplings_table_table_SMEFT}{here}}.\hypertarget{madMELA_autotoc_md1}{}\doxysubsection{Python}\label{madMELA_autotoc_md1}
+In Python, couplings {\itshape can} be set using {\ttfamily Self\+D\+S\+M\+E\+F\+T\+Sim\+Coupl}, similar to {\ttfamily C++}. However, Python utilizes named couplings to self-\/configure. These can also be seem in the same table \mbox{\hyperlink{MELA_couplings_table_table_SMEFT}{referenced above}}.
+
+The documentation for setting various items in Python can be seen in \mbox{\hyperlink{PyMela_page}{here}}\hypertarget{madMELA_madMELA_compile}{}\doxysection{Compilation}\label{madMELA_madMELA_compile}
+Mad\+M\+E\+LA is compiled through combining multiple different Madgraph stand-\/alone reweighting areas into one shareable library that is used by the C++ \mbox{\hyperlink{classMela}{Mela}} interface through Mad\+Mela.\+hh.
+
+The steps are as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item Each different sub-\/area is compiled to form a static library for that process.
+\item While each area is being compiled, a large common block that contains all the possible parameters for each area is created. This large common block contains all the numbered general couplings that are possible for each Madgraph reweighting area.
+\item This large common block replaces the respective common blocks for each area through symbolic links pointing to the large block placed in a separate dedicated directory.
+\item All the compute functions and other commonly-\/named items for each given area are renamed in the symbol table using {\ttfamily objcopy} to something else unique and appropriate.
+\item All of these are collated together and compiled 
+\end{DoxyEnumerate}

@@ -1,0 +1,1037 @@
+\hypertarget{namespaceinittensors}{}\doxysection{inittensors Module Reference}
+\label{namespaceinittensors}\index{inittensors@{inittensors}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_a88509e2a8c74ea9e9445cf28b55232b0}{init\+\_\+tables2}} (Nm1, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_aa3f1f3d87073eafb7627a13693bd94bb}{setrts}} (rmax)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_a23053b101e7180c949c566206018b7a5}{setlorindtab}} (rmax)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_ada936330b2439177c0bbf78e0b2d0280}{setaddindtab}} (rmax)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_ad9911f2113c50fd3bc5406096251b2fa}{setaddgtab}} (rmax)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_ae57d9159a9531b8478e636b42e69e335}{setcftab}} (rmax)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_ae1706147de5d3d75c47e1352b1e2429c}{setindspiprod}} (Nm1max, rmax)
+\item 
+integer function, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespaceinittensors_a7285e105387c377df814650592163fb9}{calcindspiprod}} (Nm1, r)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_a4f0b59bb99afc8d64395820faac768de}{switchoffcalcuv\+\_\+ten}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_a6c4921a4e1b02f6c8f1e4d402b85820e}{switchoncalcuv\+\_\+ten}} ()
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_a2b95588f5f178d1a04646d0c87ce2fb8}{checktensors\+\_\+cll}} (T1, T2, Mom\+Vec, Mom\+Inv, masses2, norm, N, rmax, Tdiff)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_a90a83505f9a6d197d41f3f521dc11762}{checktensorslist\+\_\+cll}} (T1, T2, Mom\+Vec, Mom\+Inv, masses2, norm, N, rmax, Tdiff)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_af16c85626f39ee149df0957164b9201d}{checktena\+\_\+cll}} (T1, T2, masses2, norm, rmax, Tdiff)
+\item 
+subroutine \mbox{\hyperlink{namespaceinittensors_aa836c548541989c8755833e7b88d418f}{checktenalist\+\_\+cll}} (T1, T2, masses2, norm, rmax, Tdiff)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespaceinittensors_a345cc6982f8781d5f0abf0835722b53a}{cftab}}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespaceinittensors_a79dfd4977f14e8a06b24ebb35655d9a0}{lorindtab}}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespaceinittensors_abc210e3b07b2eb4e9c4fe623536ef7d6}{addindtab}}
+\item 
+integer, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespaceinittensors_a8b08fe95fe3f07de06342dd8171efe06}{addgtab}}
+\item 
+integer, dimension(\+:,\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespaceinittensors_a6bf630cafc244f135a6ac2abb292567d}{indspiprod}}
+\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}{rts}}
+\item 
+real \mbox{\hyperlink{namespaceinittensors_a40962870d4f1b40ba193d1919b9c6cf6}{stin}}
+\item 
+real \mbox{\hyperlink{namespaceinittensors_a9428681a49ae6714db823243c259e3d9}{stout}}
+\item 
+real \mbox{\hyperlink{namespaceinittensors_ad86b228826a56e3cdc9a87e7ccdb1cb3}{time1}}
+\item 
+real \mbox{\hyperlink{namespaceinittensors_abc0a939059032987fa398902f3de9444}{time2}}
+\item 
+real \mbox{\hyperlink{namespaceinittensors_adbf1a3256a37e19e82c2559e62cc376d}{time3}}
+\item 
+logical \mbox{\hyperlink{namespaceinittensors_af9ee28e6b4716837fbc238fe31bb8bc5}{calcuv\+\_\+ten}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceinittensors_a7285e105387c377df814650592163fb9}\label{namespaceinittensors_a7285e105387c377df814650592163fb9}} 
+\index{inittensors@{inittensors}!calcindspiprod@{calcindspiprod}}
+\index{calcindspiprod@{calcindspiprod}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{calcindspiprod()}{calcindspiprod()}}
+{\footnotesize\ttfamily integer function, dimension(\+:,\+:,\+:), allocatable inittensors\+::calcindspiprod (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{Nm1,  }\item[{integer, intent(in)}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line 302 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{302   }
+\DoxyCodeLine{303     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: Nm1, r}
+\DoxyCodeLine{304     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(:,:,:)}, \textcolor{keywordtype}{allocatable} :: IndsPiProd}
+\DoxyCodeLine{305     \textcolor{keywordtype}{integer} :: str, i, j, inds(r), indsp1(r+1), pos, cnt}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307     str = binomtable(r,r+nm1-\/1)}
+\DoxyCodeLine{308     \textcolor{keyword}{allocate}(indspiprod(0:1,1:nm1,1:str))}
+\DoxyCodeLine{309     }
+\DoxyCodeLine{310     \textcolor{keywordflow}{do} i=1,str}
+\DoxyCodeLine{311       inds = indcombiseq(1:r,i,r,nm1)}
+\DoxyCodeLine{312       }
+\DoxyCodeLine{313       pos = 1}
+\DoxyCodeLine{314       \textcolor{keywordflow}{do} j=1,nm1}
+\DoxyCodeLine{315         }
+\DoxyCodeLine{316         cnt = 1}
+\DoxyCodeLine{317         \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (pos.le.r)}
+\DoxyCodeLine{318           \textcolor{keywordflow}{if} (inds(pos)>j) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{319             \textcolor{keywordflow}{exit}}
+\DoxyCodeLine{320           \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (inds(pos).eq.j) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{321             cnt = cnt+1}
+\DoxyCodeLine{322 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{323           pos = pos+1}
+\DoxyCodeLine{324 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{325         }
+\DoxyCodeLine{326         indsp1(1:pos-\/1) = inds(1:pos-\/1)}
+\DoxyCodeLine{327         indsp1(pos) = j}
+\DoxyCodeLine{328         indsp1(pos+1:r+1) = inds(pos:r)}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330         indspiprod(0,j,i) = calcposindcombiseq(nm1,r+1,indsp1)}
+\DoxyCodeLine{331         indspiprod(1,j,i) = cnt}
+\DoxyCodeLine{332         }
+\DoxyCodeLine{333 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{334       }
+\DoxyCodeLine{335 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{336   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_af16c85626f39ee149df0957164b9201d}\label{namespaceinittensors_af16c85626f39ee149df0957164b9201d}} 
+\index{inittensors@{inittensors}!checktena\_cll@{checktena\_cll}}
+\index{checktena\_cll@{checktena\_cll}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{checktena\_cll()}{checktena\_cll()}}
+{\footnotesize\ttfamily subroutine inittensors\+::checktena\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{T1,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{T2,  }\item[{double complex, dimension(0\+:0), intent(in)}]{masses2,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{norm,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Tdiff }\end{DoxyParamCaption})}
+
+
+
+Definition at line 635 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{637     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T1(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{638     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T2(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{639     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: masses2(0:0)}
+\DoxyCodeLine{640     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: norm(0:rmax)    }
+\DoxyCodeLine{641     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Tdiff(0:rmax)    }
+\DoxyCodeLine{642     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,i,j,flag}
+\DoxyCodeLine{643     \textcolor{keywordtype}{double complex} :: diffTN}
+\DoxyCodeLine{644     \textcolor{keywordtype}{double precision} :: ratio}
+\DoxyCodeLine{645     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt1 = \textcolor{stringliteral}{"(A8,'(',i2,')  = dcmplx(',d25.18,',',d25.18,' )')"}}
+\DoxyCodeLine{646     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt2 = \&}
+\DoxyCodeLine{647     \textcolor{stringliteral}{"(A6,' TNten(',i1,',',i1,',',i1,',',i1,') = (',d23.16,' , ',d23.16,' ), r=',i2)"}    }
+\DoxyCodeLine{648     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt3 = \&}
+\DoxyCodeLine{649     \textcolor{stringliteral}{"(A7,'(',i1,',',i2,') = dcmplx(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651     checkcntten\_cll(1) = checkcntten\_cll(1) + 1}
+\DoxyCodeLine{652 }
+\DoxyCodeLine{653 \textcolor{comment}{!    data CheckCntTN /0/}}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655     flag=1}
+\DoxyCodeLine{656     \textcolor{keywordflow}{if}(diffcntten\_cll(1).ge.maxcheck\_cll(1)) flag=0}
+\DoxyCodeLine{657     \textcolor{keywordflow}{if}(ncheckout\_cll.eq.-\/1) flag=0}
+\DoxyCodeLine{658     }
+\DoxyCodeLine{659     ratio=0d0}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661     tdiff=0d0}
+\DoxyCodeLine{662     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{663       \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{664         \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{665           \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{666             n3=r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668             difftn = t1(n0,n1,n2,n3)-\/t2(n0,n1,n2,n3)}
+\DoxyCodeLine{669             tdiff(r) = max(tdiff(r),abs(difftn)/norm(r))}
+\DoxyCodeLine{670             \textcolor{keywordflow}{if} ((abs(dreal(difftn)).gt.checkacc\_cll*norm(r).or.abs(dimag(difftn)).gt.checkacc\_cll*norm(r)) .and.(flag.eq.1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{671               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'***************************************************************************'}}
+\DoxyCodeLine{672               \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A15,I2,A16,I10)'}) \textcolor{stringliteral}{'TNten with N ='},1,\textcolor{stringliteral}{' difference NO.'}, diffcntten\_cll(1)+1}
+\DoxyCodeLine{673               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'COLI and DD do not agree!    checkacc ='}, checkacc\_cll}
+\DoxyCodeLine{674               \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A24,I2,A10,I2,A4,I2)'}) \textcolor{stringliteral}{'TNten integral with N ='}, 1, \textcolor{stringliteral}{' and rank '}, r,\textcolor{stringliteral}{' of '},rmax}
+\DoxyCodeLine{675               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{676               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'GLOBAL PARAMETERS:'}}
+\DoxyCodeLine{677               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'mode        '}, mode\_cll}
+\DoxyCodeLine{678               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muUV2       '}, muuv2\_cll}
+\DoxyCodeLine{679               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muIR2       '}, muir2\_cll}
+\DoxyCodeLine{680               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaUV     '}, deltauv\_cll}
+\DoxyCodeLine{681               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR1    '}, deltair1\_cll}
+\DoxyCodeLine{682               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR2    '}, deltair2\_cll}
+\DoxyCodeLine{683               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'nminf       '}, nminf\_cll}
+\DoxyCodeLine{684               \textcolor{keywordflow}{do} i=1,nminf\_cll}
+\DoxyCodeLine{685                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'minf2       '}, i, minf2\_cll(i)}
+\DoxyCodeLine{686 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{687               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'dprec       '}, dprec\_cll}
+\DoxyCodeLine{688               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'reqacc      '}, reqacc\_cll}
+\DoxyCodeLine{689               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'critacc     '}, critacc\_cll}
+\DoxyCodeLine{690               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'checkacc    '}, checkacc\_cll}
+\DoxyCodeLine{691               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'ErrFlag     '}, errflag\_cll}
+\DoxyCodeLine{692               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{693               \textcolor{keyword}{write}(ncheckout\_cll,fmt1) \textcolor{stringliteral}{'masses2'}, 0, masses2(0)}
+\DoxyCodeLine{694               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{695               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},0,0,0,0,t1(0,0,0,0),0}
+\DoxyCodeLine{696               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},0,0,0,0,t2(0,0,0,0),0}
+\DoxyCodeLine{697               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(n0,n1,n2,n3),r}
+\DoxyCodeLine{698               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(n0,n1,n2,n3),r}
+\DoxyCodeLine{699               \textcolor{keywordflow}{if}(norm(r).ne.0d0)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{700                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{701                 ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{702               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{703                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{704                 ratio=1d50}
+\DoxyCodeLine{705 \textcolor{keywordflow}{              endif}}
+\DoxyCodeLine{706               flag=2}
+\DoxyCodeLine{707             \textcolor{keywordflow}{elseif}((flag.eq.2).and.(abs(difftn).gt.ratio*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{708               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(n0,n1,n2,n3),r}
+\DoxyCodeLine{709               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(n0,n1,n2,n3),r}
+\DoxyCodeLine{710               \textcolor{keywordflow}{if}(norm(r).gt.1d-\/100)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{711                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{712                 ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{713               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{714                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{715                 ratio=1d50}
+\DoxyCodeLine{716 \textcolor{keywordflow}{              endif}}
+\DoxyCodeLine{717             \textcolor{keywordflow}{elseif} ((flag.eq.0).and.(abs(difftn).gt.checkacc\_cll*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{718               flag=3}
+\DoxyCodeLine{719 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{720             }
+\DoxyCodeLine{721 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{722 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{723 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{724 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{725 }
+\DoxyCodeLine{726     \textcolor{keywordflow}{if}(flag.eq.2)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{727       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'*************************************************************************'}}
+\DoxyCodeLine{728       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' end TNten '}}
+\DoxyCodeLine{729       \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{730       diffcntten\_cll(1) =  diffcntten\_cll(1) + 1}
+\DoxyCodeLine{731       \textcolor{keywordflow}{if}(diffcntten\_cll(1).eq.maxcheck\_cll(1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{732         \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' Further output for differences in TNten functions suppressed for N ='}, 1   }
+\DoxyCodeLine{733         \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{734 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{735     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (flag.eq.3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{736       diffcntten\_cll(1) =  diffcntten\_cll(1) + 1}
+\DoxyCodeLine{737 \textcolor{keywordflow}{    endif}      }
+\DoxyCodeLine{738 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_aa836c548541989c8755833e7b88d418f}\label{namespaceinittensors_aa836c548541989c8755833e7b88d418f}} 
+\index{inittensors@{inittensors}!checktenalist\_cll@{checktenalist\_cll}}
+\index{checktenalist\_cll@{checktenalist\_cll}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{checktenalist\_cll()}{checktenalist\_cll()}}
+{\footnotesize\ttfamily subroutine inittensors\+::checktenalist\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\mbox{\hyperlink{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}{rts}}(rmax)), intent(in)}]{T1,  }\item[{double complex, dimension(\mbox{\hyperlink{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}{rts}}(rmax)), intent(in)}]{T2,  }\item[{double complex, dimension(0\+:0), intent(in)}]{masses2,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{norm,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Tdiff }\end{DoxyParamCaption})}
+
+
+
+Definition at line 751 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{753 \textcolor{comment}{!    double complex, intent(in) :: T1(0:RtS(rmax)), T2(0:RtS(rmax))}}
+\DoxyCodeLine{754     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T1(RtS(rmax)), T2(RtS(rmax))}
+\DoxyCodeLine{755     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: masses2(0:0)}
+\DoxyCodeLine{756     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: norm(0:rmax)}
+\DoxyCodeLine{757     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Tdiff(0:rmax)    }
+\DoxyCodeLine{758     \textcolor{keywordtype}{integer} :: r,ind,i,j,flag,n0,n1,n2,n3}
+\DoxyCodeLine{759     \textcolor{keywordtype}{double complex} :: diffTN}
+\DoxyCodeLine{760     \textcolor{keywordtype}{double precision} :: ratio}
+\DoxyCodeLine{761     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt1 = \textcolor{stringliteral}{"(A8,'(',i2,')  = dcmplx(',d25.18,',',d25.18,' )')"}}
+\DoxyCodeLine{762     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt2 = \&}
+\DoxyCodeLine{763     \textcolor{stringliteral}{"(A6,' TNten(',i1,',',i1,',',i1,',',i1,') = (',d23.16,' , ',d23.16,' ), r=',i2)"}    }
+\DoxyCodeLine{764     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt3 = \&}
+\DoxyCodeLine{765     \textcolor{stringliteral}{"(A7,'(',i1,',',i2,') = dcmplx(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767     checkcntten\_cll(1) = checkcntten\_cll(1) + 1}
+\DoxyCodeLine{768 }
+\DoxyCodeLine{769 \textcolor{comment}{!    data CheckCntTN /0/}}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771     flag=1}
+\DoxyCodeLine{772     \textcolor{keywordflow}{if}(diffcntten\_cll(1).ge.maxcheck\_cll(1)) flag=0}
+\DoxyCodeLine{773     \textcolor{keywordflow}{if}(ncheckout\_cll.eq.-\/1) flag=0}
+\DoxyCodeLine{774     }
+\DoxyCodeLine{775     ratio=0d0}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777     tdiff=0d0}
+\DoxyCodeLine{778     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{779       \textcolor{keywordflow}{do} ind=rts(r-\/1)+1,rts(r)}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781         n0 = lorindtab(0,ind)}
+\DoxyCodeLine{782         n1 = lorindtab(1,ind)}
+\DoxyCodeLine{783         n2 = lorindtab(2,ind)}
+\DoxyCodeLine{784         n3 = lorindtab(3,ind)}
+\DoxyCodeLine{785         difftn = t1(ind)-\/t2(ind)}
+\DoxyCodeLine{786         tdiff(r) = max(tdiff(r),abs(difftn)/norm(r))}
+\DoxyCodeLine{787         }
+\DoxyCodeLine{788         \textcolor{keywordflow}{if} ((abs(dreal(difftn)).gt.checkacc\_cll*norm(r).or.abs(dimag(difftn)).gt.checkacc\_cll*norm(r)) .and.(flag.eq.1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{789           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'***************************************************************************'}}
+\DoxyCodeLine{790           \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A15,I2,A16,I10)'}) \textcolor{stringliteral}{'TNten with N ='},1,\textcolor{stringliteral}{' difference NO.'}, diffcntten\_cll(1)+1}
+\DoxyCodeLine{791           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'COLI and DD do not agree!    checkacc ='}, checkacc\_cll}
+\DoxyCodeLine{792           \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A24,I2,A10,I2,A4,I2)'}) \textcolor{stringliteral}{'TNten integral with N ='}, 1, \textcolor{stringliteral}{' and rank '}, r,\textcolor{stringliteral}{' of '},rmax}
+\DoxyCodeLine{793           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{794           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'GLOBAL PARAMETERS:'}}
+\DoxyCodeLine{795           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'mode        '}, mode\_cll}
+\DoxyCodeLine{796           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muUV2       '}, muuv2\_cll}
+\DoxyCodeLine{797           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muIR2       '}, muir2\_cll}
+\DoxyCodeLine{798           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaUV     '}, deltauv\_cll}
+\DoxyCodeLine{799           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR1    '}, deltair1\_cll}
+\DoxyCodeLine{800           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR2    '}, deltair2\_cll}
+\DoxyCodeLine{801           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'nminf       '}, nminf\_cll}
+\DoxyCodeLine{802           \textcolor{keywordflow}{do} i=1,nminf\_cll}
+\DoxyCodeLine{803             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'minf2       '}, i, minf2\_cll(i)}
+\DoxyCodeLine{804 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{805           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'dprec       '}, dprec\_cll}
+\DoxyCodeLine{806           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'reqacc      '}, reqacc\_cll}
+\DoxyCodeLine{807           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'critacc     '}, critacc\_cll}
+\DoxyCodeLine{808           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'checkacc    '}, checkacc\_cll}
+\DoxyCodeLine{809           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'ErrFlag     '}, errflag\_cll}
+\DoxyCodeLine{810           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{811           \textcolor{keyword}{write}(ncheckout\_cll,fmt1) \textcolor{stringliteral}{'masses2'}, 0, masses2(0)}
+\DoxyCodeLine{812           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{813           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},0,0,0,0,t1(1),0}
+\DoxyCodeLine{814           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},0,0,0,0,t2(1),0}
+\DoxyCodeLine{815           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(ind),r}
+\DoxyCodeLine{816           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(ind),r}
+\DoxyCodeLine{817           \textcolor{keywordflow}{if}(norm(r).ne.0d0)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{818             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{819             ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{820           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{821             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{822             ratio=1d50}
+\DoxyCodeLine{823 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{824           flag=2}
+\DoxyCodeLine{825         \textcolor{keywordflow}{elseif}((flag.eq.2).and.(abs(difftn).gt.ratio*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{826           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(ind),r}
+\DoxyCodeLine{827           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(ind),r}
+\DoxyCodeLine{828           \textcolor{keywordflow}{if}(norm(r).gt.1d-\/100)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{829             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{830             ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{831           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{832             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{833             ratio=1d50}
+\DoxyCodeLine{834 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{835         \textcolor{keywordflow}{elseif} ((flag.eq.0).and.(abs(difftn).gt.checkacc\_cll*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{836           flag=3}
+\DoxyCodeLine{837 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{838             }
+\DoxyCodeLine{839 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{840 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842     \textcolor{keywordflow}{if}(flag.eq.2)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{843       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'*************************************************************************'}}
+\DoxyCodeLine{844       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' end TNten '}}
+\DoxyCodeLine{845       \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{846       diffcntten\_cll(1) =  diffcntten\_cll(1) + 1}
+\DoxyCodeLine{847       \textcolor{keywordflow}{if}(diffcntten\_cll(1).eq.maxcheck\_cll(1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{848         \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' Further output for differences in TNten functions suppressed for N ='}, 1   }
+\DoxyCodeLine{849         \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{850 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{851     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (flag.eq.3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{852       diffcntten\_cll(1) =  diffcntten\_cll(1) + 1}
+\DoxyCodeLine{853 \textcolor{keywordflow}{    endif}      }
+\DoxyCodeLine{854 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a2b95588f5f178d1a04646d0c87ce2fb8}\label{namespaceinittensors_a2b95588f5f178d1a04646d0c87ce2fb8}} 
+\index{inittensors@{inittensors}!checktensors\_cll@{checktensors\_cll}}
+\index{checktensors\_cll@{checktensors\_cll}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{checktensors\_cll()}{checktensors\_cll()}}
+{\footnotesize\ttfamily subroutine inittensors\+::checktensors\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{T1,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{T2,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(binomtable(2,n)), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:n-\/1), intent(in)}]{masses2,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{norm,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Tdiff }\end{DoxyParamCaption})}
+
+
+
+Definition at line 379 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, rmax}
+\DoxyCodeLine{381     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T1(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{382     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T2(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{383     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1)}
+\DoxyCodeLine{384     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(BinomTable(2,N)), masses2(0:N-\/1)}
+\DoxyCodeLine{385     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: norm(0:rmax)    }
+\DoxyCodeLine{386     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Tdiff(0:rmax)    }
+\DoxyCodeLine{387     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,i,j,flag}
+\DoxyCodeLine{388     \textcolor{keywordtype}{double complex} :: diffTN}
+\DoxyCodeLine{389     \textcolor{keywordtype}{double precision} :: ratio}
+\DoxyCodeLine{390     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt1 = \textcolor{stringliteral}{"(A8,'(',i2,')  = dcmplx(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{391     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt2 = \&}
+\DoxyCodeLine{392     \textcolor{stringliteral}{"(A6,' TNten(',i1,',',i1,',',i1,',',i1,') = (',d23.16,' , ',d23.16,' ), r=',i2)"}}
+\DoxyCodeLine{393     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt3 = \&}
+\DoxyCodeLine{394     \textcolor{stringliteral}{"(A7,'(',i1,',',i2,') = dcmplx(',d25.18,' , ',d25.18,' )')"}    }
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397     checkcntten\_cll(n) = checkcntten\_cll(n) + 1}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399 \textcolor{comment}{!    data CheckCntTN /0/}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401     flag=1}
+\DoxyCodeLine{402     \textcolor{keywordflow}{if}(diffcntten\_cll(n).ge.maxcheck\_cll(n)) flag=0}
+\DoxyCodeLine{403     \textcolor{keywordflow}{if}(ncheckout\_cll.eq.-\/1) flag=0}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405     ratio=0d0}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407     tdiff=0d0}
+\DoxyCodeLine{408     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{409       \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{410         \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{411           \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{412             n3=r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414             difftn = t1(n0,n1,n2,n3)-\/t2(n0,n1,n2,n3)}
+\DoxyCodeLine{415             tdiff(r) = max(tdiff(r),abs(difftn)/norm(r))}
+\DoxyCodeLine{416             \textcolor{keywordflow}{if} ((abs(difftn).gt.checkacc\_cll*norm(r)) .and.(flag.eq.1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{417               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'***************************************************************************'}}
+\DoxyCodeLine{418               \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A15,I2,A16,I10)'}) \textcolor{stringliteral}{'TNten with N ='},n,\textcolor{stringliteral}{', difference NO.'}, diffcntten\_cll(n)+1}
+\DoxyCodeLine{419               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'COLI and DD do not agree!    checkacc ='}, checkacc\_cll}
+\DoxyCodeLine{420               \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A24,I2,A10,I2,A4,I2)'}) \textcolor{stringliteral}{'TNten integral with N ='}, n, \textcolor{stringliteral}{' and rank '}, r,\textcolor{stringliteral}{' of '},rmax}
+\DoxyCodeLine{421               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{422               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'GLOBAL PARAMETERS:'}}
+\DoxyCodeLine{423               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'mode        '}, mode\_cll}
+\DoxyCodeLine{424               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muUV2       '}, muuv2\_cll}
+\DoxyCodeLine{425               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muIR2       '}, muir2\_cll}
+\DoxyCodeLine{426               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaUV     '}, deltauv\_cll}
+\DoxyCodeLine{427               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR1    '}, deltair1\_cll}
+\DoxyCodeLine{428               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR2    '}, deltair2\_cll}
+\DoxyCodeLine{429               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'nminf       '}, nminf\_cll}
+\DoxyCodeLine{430               \textcolor{keywordflow}{do} i=1,nminf\_cll}
+\DoxyCodeLine{431                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'minf2       '}, i, minf2\_cll(i)}
+\DoxyCodeLine{432 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{433               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'dprec       '}, dprec\_cll}
+\DoxyCodeLine{434               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'reqacc      '}, reqacc\_cll}
+\DoxyCodeLine{435               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'critacc     '}, critacc\_cll}
+\DoxyCodeLine{436               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'checkacc    '}, checkacc\_cll}
+\DoxyCodeLine{437               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'ErrFlag     '}, errflag\_cll}
+\DoxyCodeLine{438               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{439               \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{440                 \textcolor{keywordflow}{do} j=0,3}
+\DoxyCodeLine{441                   \textcolor{keyword}{write}(ncheckout\_cll,fmt3) \textcolor{stringliteral}{'MomVec'}, j, i, momvec(j,i)}
+\DoxyCodeLine{442 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{443 \textcolor{keywordflow}{              end do}              }
+\DoxyCodeLine{444               \textcolor{keywordflow}{do} i=1,binomtable(2,n)}
+\DoxyCodeLine{445                 \textcolor{keyword}{write}(ncheckout\_cll,fmt1) \textcolor{stringliteral}{'MomInv '}, i, mominv(i)}
+\DoxyCodeLine{446 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{447               \textcolor{keywordflow}{do} i=0,n-\/1}
+\DoxyCodeLine{448                 \textcolor{keyword}{write}(ncheckout\_cll,fmt1) \textcolor{stringliteral}{'masses2'}, i, masses2(i)}
+\DoxyCodeLine{449 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{450               \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{451               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},0,0,0,0,t1(0,0,0,0),0}
+\DoxyCodeLine{452               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},0,0,0,0,t2(0,0,0,0),0}
+\DoxyCodeLine{453               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(n0,n1,n2,n3),r}
+\DoxyCodeLine{454               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(n0,n1,n2,n3),r}
+\DoxyCodeLine{455               \textcolor{keywordflow}{if}(norm(r).ne.0d0)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{456                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{457                 ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{458               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{459                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{460                 ratio=1d50}
+\DoxyCodeLine{461 \textcolor{keywordflow}{              endif}}
+\DoxyCodeLine{462               flag=2}
+\DoxyCodeLine{463             \textcolor{keywordflow}{elseif}((flag.eq.2).and.(abs(difftn).gt.ratio*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{464               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(n0,n1,n2,n3),r}
+\DoxyCodeLine{465               \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(n0,n1,n2,n3),r}
+\DoxyCodeLine{466               \textcolor{keywordflow}{if}(norm(r).gt.1d-\/100)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{467                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{468                 ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{469               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{470                 \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{471                 ratio=1d50}
+\DoxyCodeLine{472 \textcolor{keywordflow}{              endif}}
+\DoxyCodeLine{473             \textcolor{keywordflow}{elseif} ((flag.eq.0).and.(abs(difftn).gt.checkacc\_cll*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{474               flag=3}
+\DoxyCodeLine{475 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{478 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{479 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{480 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482     \textcolor{keywordflow}{if}(flag.eq.2)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{483       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'*************************************************************************'}}
+\DoxyCodeLine{484       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' end TNten '}}
+\DoxyCodeLine{485       \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{486       diffcntten\_cll(n) =  diffcntten\_cll(n) + 1}
+\DoxyCodeLine{487       \textcolor{keywordflow}{if}(diffcntten\_cll(n).eq.maxcheck\_cll(n)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{488         \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'((A),I4)'}) \textcolor{stringliteral}{' Further output for differences in TNten functions suppressed for N ='}, n   }
+\DoxyCodeLine{489         \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{490 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{491     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (flag.eq.3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{492       diffcntten\_cll(n) =  diffcntten\_cll(n) + 1}
+\DoxyCodeLine{493 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{494 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a90a83505f9a6d197d41f3f521dc11762}\label{namespaceinittensors_a90a83505f9a6d197d41f3f521dc11762}} 
+\index{inittensors@{inittensors}!checktensorslist\_cll@{checktensorslist\_cll}}
+\index{checktensorslist\_cll@{checktensorslist\_cll}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{checktensorslist\_cll()}{checktensorslist\_cll()}}
+{\footnotesize\ttfamily subroutine inittensors\+::checktensorslist\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\mbox{\hyperlink{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}{rts}}(rmax)), intent(in)}]{T1,  }\item[{double complex, dimension(\mbox{\hyperlink{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}{rts}}(rmax)), intent(in)}]{T2,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(binomtable(2,n)), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:n-\/1), intent(in)}]{masses2,  }\item[{double precision, dimension(0\+:rmax), intent(in)}]{norm,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{Tdiff }\end{DoxyParamCaption})}
+
+
+
+Definition at line 507 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, rmax}
+\DoxyCodeLine{509 \textcolor{comment}{!    double complex, intent(in) :: T1(0:RtS(rmax)), T2(0:RtS(rmax))}}
+\DoxyCodeLine{510     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T1(RtS(rmax)), T2(RtS(rmax))}
+\DoxyCodeLine{511     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1)}
+\DoxyCodeLine{512     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(BinomTable(2,N)), masses2(0:N-\/1)}
+\DoxyCodeLine{513     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: norm(0:rmax)    }
+\DoxyCodeLine{514     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: Tdiff(0:rmax)    }
+\DoxyCodeLine{515     \textcolor{keywordtype}{integer} :: r,ind,i,j,flag,n0,n1,n2,n3}
+\DoxyCodeLine{516     \textcolor{keywordtype}{double complex} :: diffTN}
+\DoxyCodeLine{517     \textcolor{keywordtype}{double precision} :: ratio}
+\DoxyCodeLine{518     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt1 = \textcolor{stringliteral}{"(A8,'(',i2,')  = dcmplx(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{519     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt2 = \&}
+\DoxyCodeLine{520     \textcolor{stringliteral}{"(A6,' TNten(',i1,',',i1,',',i1,',',i1,') = (',d23.16,' , ',d23.16,' ), r=',i2)"}    }
+\DoxyCodeLine{521     \textcolor{keywordtype}{character(len=*)},\textcolor{keywordtype}{parameter} :: fmt3 = \&}
+\DoxyCodeLine{522     \textcolor{stringliteral}{"(A7,'(',i1,',',i2,') = dcmplx(',d25.18,' , ',d25.18,' )')"}}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524     checkcntten\_cll(n) = checkcntten\_cll(n) + 1}
+\DoxyCodeLine{525 }
+\DoxyCodeLine{526 \textcolor{comment}{!    data CheckCntTN /0/}}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528     flag=1}
+\DoxyCodeLine{529     \textcolor{keywordflow}{if}(diffcntten\_cll(n).ge.maxcheck\_cll(n)) flag=0}
+\DoxyCodeLine{530     \textcolor{keywordflow}{if}(ncheckout\_cll.eq.-\/1) flag=0}
+\DoxyCodeLine{531     }
+\DoxyCodeLine{532     ratio=0d0}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534     tdiff=0d0}
+\DoxyCodeLine{535     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{536       \textcolor{keywordflow}{do} ind=rts(r-\/1)+1,rts(r)}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538         n0 = lorindtab(0,ind)}
+\DoxyCodeLine{539         n1 = lorindtab(1,ind)}
+\DoxyCodeLine{540         n2 = lorindtab(2,ind)}
+\DoxyCodeLine{541         n3 = lorindtab(3,ind)}
+\DoxyCodeLine{542 }
+\DoxyCodeLine{543         difftn = t1(ind)-\/t2(ind)}
+\DoxyCodeLine{544         tdiff(r) = max(tdiff(r),abs(difftn)/norm(r))}
+\DoxyCodeLine{545         }
+\DoxyCodeLine{546         \textcolor{keywordflow}{if} ((abs(dreal(difftn)).gt.checkacc\_cll*norm(r).or.abs(dimag(difftn)).gt.checkacc\_cll*norm(r)) .and.(flag.eq.1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{547           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'***************************************************************************'}}
+\DoxyCodeLine{548           \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A15,I2,A16,I10)'}) \textcolor{stringliteral}{'TNten with N ='},n,\textcolor{stringliteral}{' difference NO.'}, diffcntten\_cll(n)+1}
+\DoxyCodeLine{549           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'COLI and DD do not agree!    checkacc ='}, checkacc\_cll}
+\DoxyCodeLine{550           \textcolor{keyword}{write}(ncheckout\_cll,\textcolor{stringliteral}{'(A24,I2,A10,I2,A4,I2)'}) \textcolor{stringliteral}{'TNten integral with N ='}, n, \textcolor{stringliteral}{' and rank '}, r,\textcolor{stringliteral}{' of '},rmax}
+\DoxyCodeLine{551           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{552           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'GLOBAL PARAMETERS:'}}
+\DoxyCodeLine{553           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'mode        '}, mode\_cll}
+\DoxyCodeLine{554           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muUV2       '}, muuv2\_cll}
+\DoxyCodeLine{555           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'muIR2       '}, muir2\_cll}
+\DoxyCodeLine{556           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaUV     '}, deltauv\_cll}
+\DoxyCodeLine{557           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR1    '}, deltair1\_cll}
+\DoxyCodeLine{558           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'deltaIR2    '}, deltair2\_cll}
+\DoxyCodeLine{559           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'nminf       '}, nminf\_cll}
+\DoxyCodeLine{560           \textcolor{keywordflow}{do} i=1,nminf\_cll}
+\DoxyCodeLine{561             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'minf2       '}, i, minf2\_cll(i)}
+\DoxyCodeLine{562 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{563           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'dprec       '}, dprec\_cll}
+\DoxyCodeLine{564           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'reqacc      '}, reqacc\_cll}
+\DoxyCodeLine{565           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'critacc     '}, critacc\_cll}
+\DoxyCodeLine{566           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'checkacc    '}, checkacc\_cll}
+\DoxyCodeLine{567           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'ErrFlag     '}, errflag\_cll}
+\DoxyCodeLine{568           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{569           \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{570             \textcolor{keywordflow}{do} j=0,3}
+\DoxyCodeLine{571               \textcolor{keyword}{write}(ncheckout\_cll,fmt3) \textcolor{stringliteral}{'MomVec'}, j, i, momvec(j,i)}
+\DoxyCodeLine{572 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{573 \textcolor{keywordflow}{          end do}              }
+\DoxyCodeLine{574           \textcolor{keywordflow}{do} i=1,binomtable(2,n)}
+\DoxyCodeLine{575             \textcolor{keyword}{write}(ncheckout\_cll,fmt1) \textcolor{stringliteral}{'MomInv '}, i, mominv(i)}
+\DoxyCodeLine{576 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{577           \textcolor{keywordflow}{do} i=0,n-\/1}
+\DoxyCodeLine{578             \textcolor{keyword}{write}(ncheckout\_cll,fmt1) \textcolor{stringliteral}{'masses2'}, i, masses2(i)}
+\DoxyCodeLine{579 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{580           \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'}}
+\DoxyCodeLine{581           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},0,0,0,0,t1(1),0}
+\DoxyCodeLine{582           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},0,0,0,0,t2(1),0}
+\DoxyCodeLine{583           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(ind),r}
+\DoxyCodeLine{584           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(ind),r}
+\DoxyCodeLine{585           \textcolor{keywordflow}{if}(norm(r).ne.0d0)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{586             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{587             ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{588           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{589             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{590             ratio=1d50}
+\DoxyCodeLine{591 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{592           flag=2}
+\DoxyCodeLine{593         \textcolor{keywordflow}{elseif}((flag.eq.2).and.(abs(difftn).gt.ratio*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{594           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'COLI:'},n0,n1,n2,n3,t1(ind),r}
+\DoxyCodeLine{595           \textcolor{keyword}{write}(ncheckout\_cll,fmt2) \textcolor{stringliteral}{'DD  :'},n0,n1,n2,n3,t2(ind),r}
+\DoxyCodeLine{596           \textcolor{keywordflow}{if}(norm(r).gt.1d-\/100)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{597             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, abs(difftn)/norm(r)}
+\DoxyCodeLine{598             ratio=abs(difftn)/norm(r)}
+\DoxyCodeLine{599           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{600             \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'diff:'}, 1d50}
+\DoxyCodeLine{601             ratio=1d50}
+\DoxyCodeLine{602 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{603         \textcolor{keywordflow}{elseif} ((flag.eq.0).and.(abs(difftn).gt.checkacc\_cll*norm(r))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{604           flag=3}
+\DoxyCodeLine{605 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{606             }
+\DoxyCodeLine{607 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{608 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{609 }
+\DoxyCodeLine{610     \textcolor{keywordflow}{if}(flag.eq.2)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{611       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{'*************************************************************************'}}
+\DoxyCodeLine{612       \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' end TNten '}}
+\DoxyCodeLine{613       \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{614       diffcntten\_cll(n) =  diffcntten\_cll(n) + 1}
+\DoxyCodeLine{615       \textcolor{keywordflow}{if}(diffcntten\_cll(n).eq.maxcheck\_cll(n)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{616         \textcolor{keyword}{write}(ncheckout\_cll,*) \textcolor{stringliteral}{' Further output for differences in TNten functions suppressed for N ='}, n   }
+\DoxyCodeLine{617         \textcolor{keyword}{write}(ncheckout\_cll,*)}
+\DoxyCodeLine{618 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{619     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (flag.eq.3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{620       diffcntten\_cll(n) =  diffcntten\_cll(n) + 1}
+\DoxyCodeLine{621 \textcolor{keywordflow}{    endif}      }
+\DoxyCodeLine{622 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a88509e2a8c74ea9e9445cf28b55232b0}\label{namespaceinittensors_a88509e2a8c74ea9e9445cf28b55232b0}} 
+\index{inittensors@{inittensors}!init\_tables2@{init\_tables2}}
+\index{init\_tables2@{init\_tables2}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{init\_tables2()}{init\_tables2()}}
+{\footnotesize\ttfamily subroutine inittensors\+::init\+\_\+tables2 (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{Nm1,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: Nm1,rmax}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keyword}{call }setrts(rmax)}
+\DoxyCodeLine{56     \textcolor{keyword}{call }setlorindtab(rmax)}
+\DoxyCodeLine{57     \textcolor{keyword}{call }setaddindtab(rmax)}
+\DoxyCodeLine{58     \textcolor{keyword}{call }setaddgtab(rmax)}
+\DoxyCodeLine{59     \textcolor{keyword}{call }setcftab(rmax)}
+\DoxyCodeLine{60     \textcolor{keyword}{call }setindspiprod(nm1,rmax)}
+\DoxyCodeLine{61 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_ad9911f2113c50fd3bc5406096251b2fa}\label{namespaceinittensors_ad9911f2113c50fd3bc5406096251b2fa}} 
+\index{inittensors@{inittensors}!setaddgtab@{setaddgtab}}
+\index{setaddgtab@{setaddgtab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{setaddgtab()}{setaddgtab()}}
+{\footnotesize\ttfamily subroutine inittensors\+::setaddgtab (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 171 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{173     \textcolor{keywordtype}{integer} :: r,nsum,mu,nu,munu,IndMu(0:3),IndN(0:3)}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     \textcolor{keywordflow}{if} (rmax.le.1) \textcolor{keywordflow}{return}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(addgtab)) \textcolor{keyword}{deallocate}(addgtab)}
+\DoxyCodeLine{178     \textcolor{keyword}{allocate}(addgtab(rts(rmax),rts(rmax/2)))}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \textcolor{keywordflow}{do} nsum=1,rmax/2}
+\DoxyCodeLine{181       \textcolor{keywordflow}{do} nu=rts(nsum-\/1)+1,rts(nsum)}
+\DoxyCodeLine{182         indn = lorindtab(:,nu)}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184         \textcolor{keywordflow}{do} munu=rts(2*nsum-\/1)+1,rts(2*nsum)}
+\DoxyCodeLine{185           \textcolor{keywordflow}{if} (all(lorindtab(:,munu).eq.2*indn)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{186             addgtab(1,nu) = munu }
+\DoxyCodeLine{187 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{188 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{189                }
+\DoxyCodeLine{190         \textcolor{keywordflow}{do} r=1,rmax-\/2*nsum}
+\DoxyCodeLine{191           \textcolor{keywordflow}{do} mu=rts(r-\/1)+1,rts(r)}
+\DoxyCodeLine{192             indmu = lorindtab(:,mu)}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194             \textcolor{keywordflow}{do} munu=rts(r+2*nsum-\/1)+1,rts(r+2*nsum)}
+\DoxyCodeLine{195                }
+\DoxyCodeLine{196                \textcolor{keywordflow}{if} (all(lorindtab(:,munu).eq.indmu+2*indn)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{197                  addgtab(mu,nu) = munu }
+\DoxyCodeLine{198 \textcolor{keywordflow}{               end if}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{203 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{206 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{207 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_ada936330b2439177c0bbf78e0b2d0280}\label{namespaceinittensors_ada936330b2439177c0bbf78e0b2d0280}} 
+\index{inittensors@{inittensors}!setaddindtab@{setaddindtab}}
+\index{setaddindtab@{setaddindtab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{setaddindtab()}{setaddindtab()}}
+{\footnotesize\ttfamily subroutine inittensors\+::setaddindtab (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 136 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{138     \textcolor{keywordtype}{integer} :: r,mu,nu,IndMu(0:3),i}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(addindtab)) \textcolor{keyword}{deallocate}(addindtab)}
+\DoxyCodeLine{141     \textcolor{keyword}{allocate}(addindtab(rts(rmax-\/1),0:3))}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     addindtab(1,:) = (/ 2,3,4,5 /)}
+\DoxyCodeLine{144     \textcolor{keywordflow}{do} r=1,rmax-\/1}
+\DoxyCodeLine{145       \textcolor{keywordflow}{do} mu=rts(r-\/1)+1,rts(r)}
+\DoxyCodeLine{146         indmu = lorindtab(:,mu)}
+\DoxyCodeLine{147         \textcolor{keywordflow}{do} i=0,3 }
+\DoxyCodeLine{148           indmu(i) = indmu(i)+1}
+\DoxyCodeLine{149           \textcolor{keywordflow}{do} nu=rts(r)+1,rts(r+1)}
+\DoxyCodeLine{150             \textcolor{keywordflow}{if} (all(lorindtab(:,nu).eq.indmu)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{151               addindtab(mu,i) = nu}
+\DoxyCodeLine{152 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{153 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{154           indmu(i) = indmu(i)-\/1}
+\DoxyCodeLine{155 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{156 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{157 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{158 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_ae57d9159a9531b8478e636b42e69e335}\label{namespaceinittensors_ae57d9159a9531b8478e636b42e69e335}} 
+\index{inittensors@{inittensors}!setcftab@{setcftab}}
+\index{setcftab@{setcftab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{setcftab()}{setcftab()}}
+{\footnotesize\ttfamily subroutine inittensors\+::setcftab (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 220 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{222     \textcolor{keywordtype}{integer} :: mu, nu, IndMu(0:3), IndNu(0:3), CF, i, r}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(cftab)) \textcolor{keyword}{deallocate}(cftab)}
+\DoxyCodeLine{225     \textcolor{keyword}{allocate}(cftab(rts(rmax),2:rts(rmax/2)))}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{228       \textcolor{keywordflow}{do} mu=rts(r-\/1)+1,rts(r)}
+\DoxyCodeLine{229         indmu = lorindtab(:,mu)}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231         \textcolor{keywordflow}{do} nu=2,rts((rmax-\/r)/2)}
+\DoxyCodeLine{232           indnu = lorindtab(:,nu)}
+\DoxyCodeLine{233        }
+\DoxyCodeLine{234           cf = (-\/1)**(indnu(1)+indnu(2)+indnu(3))}
+\DoxyCodeLine{235           \textcolor{keywordflow}{do} i=0,3}
+\DoxyCodeLine{236             cf = cf*calcfactorial(indmu(i)+2*indnu(i)) \&}
+\DoxyCodeLine{237                /(2**indnu(i)*calcfactorial(indmu(i))*calcfactorial(indnu(i)))          }
+\DoxyCodeLine{238 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{239           cftab(mu,nu) = cf}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{242 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{243 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{244 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_ae1706147de5d3d75c47e1352b1e2429c}\label{namespaceinittensors_ae1706147de5d3d75c47e1352b1e2429c}} 
+\index{inittensors@{inittensors}!setindspiprod@{setindspiprod}}
+\index{setindspiprod@{setindspiprod}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{setindspiprod()}{setindspiprod()}}
+{\footnotesize\ttfamily subroutine inittensors\+::setindspiprod (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{Nm1max,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 261 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{261   }
+\DoxyCodeLine{262     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: Nm1max, rmax}
+\DoxyCodeLine{263     \textcolor{keywordtype}{integer} :: strmax, Nm1}
+\DoxyCodeLine{264     }
+\DoxyCodeLine{265     strmax = binomtable(rmax,rmax+nm1max-\/1)}
+\DoxyCodeLine{266     \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(indspiprod)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{267       \textcolor{keyword}{deallocate}(indspiprod)}
+\DoxyCodeLine{268 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{269     \textcolor{keyword}{allocate}(indspiprod(0:1,nm1max,strmax,nm1max))}
+\DoxyCodeLine{270     indspiprod = 0}
+\DoxyCodeLine{271     }
+\DoxyCodeLine{272     \textcolor{keywordflow}{do} nm1=1,nm1max}
+\DoxyCodeLine{273       strmax = binomtable(rmax,rmax+nm1-\/1)}
+\DoxyCodeLine{274       indspiprod(0:1,1:nm1,1:strmax,nm1) = calcindspiprod(nm1,rmax)}
+\DoxyCodeLine{275 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{276     }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a23053b101e7180c949c566206018b7a5}\label{namespaceinittensors_a23053b101e7180c949c566206018b7a5}} 
+\index{inittensors@{inittensors}!setlorindtab@{setlorindtab}}
+\index{setlorindtab@{setlorindtab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{setlorindtab()}{setlorindtab()}}
+{\footnotesize\ttfamily subroutine inittensors\+::setlorindtab (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 98 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{100     \textcolor{keywordtype}{integer} :: r,mu0,mu1,mu2,mu3,cnt}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(lorindtab)) \textcolor{keyword}{deallocate}(lorindtab)}
+\DoxyCodeLine{103     \textcolor{keyword}{allocate}(lorindtab(0:3,rts(rmax)))}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     cnt = 1}
+\DoxyCodeLine{106     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{107       \textcolor{keywordflow}{do} mu0=r,0,-\/1}
+\DoxyCodeLine{108         \textcolor{keywordflow}{do} mu1=r-\/mu0,0,-\/1}
+\DoxyCodeLine{109           \textcolor{keywordflow}{do} mu2=r-\/mu0-\/mu1,0,-\/1}
+\DoxyCodeLine{110             mu3=r-\/mu0-\/mu1-\/mu2}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112             lorindtab(0,cnt) = mu0}
+\DoxyCodeLine{113             lorindtab(1,cnt) = mu1}
+\DoxyCodeLine{114             lorindtab(2,cnt) = mu2}
+\DoxyCodeLine{115             lorindtab(3,cnt) = mu3}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117             cnt = cnt+1}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{120 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{121 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{122 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{123 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_aa3f1f3d87073eafb7627a13693bd94bb}\label{namespaceinittensors_aa3f1f3d87073eafb7627a13693bd94bb}} 
+\index{inittensors@{inittensors}!setrts@{setrts}}
+\index{setrts@{setrts}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{setrts()}{setrts()}}
+{\footnotesize\ttfamily subroutine inittensors\+::setrts (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{76     \textcolor{keywordtype}{integer} :: r}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(rts)) \textcolor{keyword}{deallocate}(rts)}
+\DoxyCodeLine{79     \textcolor{keyword}{allocate}(rts(-\/1:rmax+1))}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     rts(-\/1) = 0}
+\DoxyCodeLine{82     \textcolor{keywordflow}{do} r=0,rmax+1}
+\DoxyCodeLine{83       rts(r) = rts(r-\/1) + binomtable(r,r+3)}
+\DoxyCodeLine{84 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{85 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a4f0b59bb99afc8d64395820faac768de}\label{namespaceinittensors_a4f0b59bb99afc8d64395820faac768de}} 
+\index{inittensors@{inittensors}!switchoffcalcuv\_ten@{switchoffcalcuv\_ten}}
+\index{switchoffcalcuv\_ten@{switchoffcalcuv\_ten}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{switchoffcalcuv\_ten()}{switchoffcalcuv\_ten()}}
+{\footnotesize\ttfamily subroutine inittensors\+::switchoffcalcuv\+\_\+ten}
+
+
+
+Definition at line 349 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350     calcuv\_ten = .false.}
+\DoxyCodeLine{351 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a6c4921a4e1b02f6c8f1e4d402b85820e}\label{namespaceinittensors_a6c4921a4e1b02f6c8f1e4d402b85820e}} 
+\index{inittensors@{inittensors}!switchoncalcuv\_ten@{switchoncalcuv\_ten}}
+\index{switchoncalcuv\_ten@{switchoncalcuv\_ten}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{switchoncalcuv\_ten()}{switchoncalcuv\_ten()}}
+{\footnotesize\ttfamily subroutine inittensors\+::switchoncalcuv\+\_\+ten}
+
+
+
+Definition at line 364 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365     calcuv\_ten = .true.}
+\DoxyCodeLine{366 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceinittensors_a8b08fe95fe3f07de06342dd8171efe06}\label{namespaceinittensors_a8b08fe95fe3f07de06342dd8171efe06}} 
+\index{inittensors@{inittensors}!addgtab@{addgtab}}
+\index{addgtab@{addgtab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{addgtab}{addgtab}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable inittensors\+::addgtab}
+
+
+
+Definition at line 37 of file Init\+Tensors.\+F90.
+
+\mbox{\Hypertarget{namespaceinittensors_abc210e3b07b2eb4e9c4fe623536ef7d6}\label{namespaceinittensors_abc210e3b07b2eb4e9c4fe623536ef7d6}} 
+\index{inittensors@{inittensors}!addindtab@{addindtab}}
+\index{addindtab@{addindtab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{addindtab}{addindtab}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable inittensors\+::addindtab}
+
+
+
+Definition at line 37 of file Init\+Tensors.\+F90.
+
+\mbox{\Hypertarget{namespaceinittensors_af9ee28e6b4716837fbc238fe31bb8bc5}\label{namespaceinittensors_af9ee28e6b4716837fbc238fe31bb8bc5}} 
+\index{inittensors@{inittensors}!calcuv\_ten@{calcuv\_ten}}
+\index{calcuv\_ten@{calcuv\_ten}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{calcuv\_ten}{calcuv\_ten}}
+{\footnotesize\ttfamily logical inittensors\+::calcuv\+\_\+ten}
+
+
+
+Definition at line 41 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41   \textcolor{keywordtype}{logical} :: calcUV\_ten}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a345cc6982f8781d5f0abf0835722b53a}\label{namespaceinittensors_a345cc6982f8781d5f0abf0835722b53a}} 
+\index{inittensors@{inittensors}!cftab@{cftab}}
+\index{cftab@{cftab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{cftab}{cftab}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable inittensors\+::cftab}
+
+
+
+Definition at line 37 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(:,:)}, \textcolor{keywordtype}{allocatable} :: CFtab, LorIndTab, AddIndTab, AddGtab}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a6bf630cafc244f135a6ac2abb292567d}\label{namespaceinittensors_a6bf630cafc244f135a6ac2abb292567d}} 
+\index{inittensors@{inittensors}!indspiprod@{indspiprod}}
+\index{indspiprod@{indspiprod}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{indspiprod}{indspiprod}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:,\+:,\+:), allocatable inittensors\+::indspiprod}
+
+
+
+Definition at line 38 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(:,:,:,:)}, \textcolor{keywordtype}{allocatable} :: IndsPiProd}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a79dfd4977f14e8a06b24ebb35655d9a0}\label{namespaceinittensors_a79dfd4977f14e8a06b24ebb35655d9a0}} 
+\index{inittensors@{inittensors}!lorindtab@{lorindtab}}
+\index{lorindtab@{lorindtab}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{lorindtab}{lorindtab}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:), allocatable inittensors\+::lorindtab}
+
+
+
+Definition at line 37 of file Init\+Tensors.\+F90.
+
+\mbox{\Hypertarget{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}\label{namespaceinittensors_aa03580d2c4fcd63d8c346248fb3afcce}} 
+\index{inittensors@{inittensors}!rts@{rts}}
+\index{rts@{rts}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{rts}{rts}}
+{\footnotesize\ttfamily integer, dimension(\+:), allocatable inittensors\+::rts}
+
+
+
+Definition at line 39 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: RtS}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a40962870d4f1b40ba193d1919b9c6cf6}\label{namespaceinittensors_a40962870d4f1b40ba193d1919b9c6cf6}} 
+\index{inittensors@{inittensors}!stin@{stin}}
+\index{stin@{stin}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{stin}{stin}}
+{\footnotesize\ttfamily real inittensors\+::stin}
+
+
+
+Definition at line 40 of file Init\+Tensors.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \textcolor{keywordtype}{  real} :: stin, stout, time1, time2, time3}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinittensors_a9428681a49ae6714db823243c259e3d9}\label{namespaceinittensors_a9428681a49ae6714db823243c259e3d9}} 
+\index{inittensors@{inittensors}!stout@{stout}}
+\index{stout@{stout}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{stout}{stout}}
+{\footnotesize\ttfamily real inittensors\+::stout}
+
+
+
+Definition at line 40 of file Init\+Tensors.\+F90.
+
+\mbox{\Hypertarget{namespaceinittensors_ad86b228826a56e3cdc9a87e7ccdb1cb3}\label{namespaceinittensors_ad86b228826a56e3cdc9a87e7ccdb1cb3}} 
+\index{inittensors@{inittensors}!time1@{time1}}
+\index{time1@{time1}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{time1}{time1}}
+{\footnotesize\ttfamily real inittensors\+::time1}
+
+
+
+Definition at line 40 of file Init\+Tensors.\+F90.
+
+\mbox{\Hypertarget{namespaceinittensors_abc0a939059032987fa398902f3de9444}\label{namespaceinittensors_abc0a939059032987fa398902f3de9444}} 
+\index{inittensors@{inittensors}!time2@{time2}}
+\index{time2@{time2}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{time2}{time2}}
+{\footnotesize\ttfamily real inittensors\+::time2}
+
+
+
+Definition at line 40 of file Init\+Tensors.\+F90.
+
+\mbox{\Hypertarget{namespaceinittensors_adbf1a3256a37e19e82c2559e62cc376d}\label{namespaceinittensors_adbf1a3256a37e19e82c2559e62cc376d}} 
+\index{inittensors@{inittensors}!time3@{time3}}
+\index{time3@{time3}!inittensors@{inittensors}}
+\doxysubsubsection{\texorpdfstring{time3}{time3}}
+{\footnotesize\ttfamily real inittensors\+::time3}
+
+
+
+Definition at line 40 of file Init\+Tensors.\+F90.
+

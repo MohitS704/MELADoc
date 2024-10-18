@@ -1,0 +1,1412 @@
+\hypertarget{classSuperMELA}{}\doxysection{Super\+M\+E\+LA Class Reference}
+\label{classSuperMELA}\index{SuperMELA@{SuperMELA}}
+
+
+{\ttfamily \#include $<$Super\+M\+E\+L\+A.\+h$>$}
+
+
+
+Collaboration diagram for Super\+M\+E\+LA\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSuperMELA__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSuperMELA_a47caf178fb85ed97dbf5f948104e1bf7}{Super\+M\+E\+LA}} (double mH=125, std\+::string channel=\char`\"{}4mu\char`\"{}, double L\+H\+Csqrts=8.)
+\item 
+\mbox{\hyperlink{classSuperMELA_aae2e4f55e2bbeceac2db6037fd585bd0}{$\sim$\+Super\+M\+E\+LA}} ()
+\item 
+void \mbox{\hyperlink{classSuperMELA_a67b59e01e34b08f47c949b3ccc9e0ee7}{init}} ()
+\item 
+double \mbox{\hyperlink{classSuperMELA_a59d3d5c494b39d1fcd2bd993532e7bd1}{Get\+Sig\+Shape\+Systematic}} (std\+::string par\+Name)
+\item 
+double \mbox{\hyperlink{classSuperMELA_a8e20aafc31dea57f87e1f6aadb7c61ae}{Get\+Sig\+Shape\+Parameter}} (std\+::string par\+Name)
+\item 
+void \mbox{\hyperlink{classSuperMELA_ade312a7527d2ecbca8c9e7bdae420c1c}{Set\+Verbosity}} (bool verb=true)
+\item 
+void \mbox{\hyperlink{classSuperMELA_abea01fd34de4b48193fbdb03237ff60e}{Set\+Decay\+Channel}} (std\+::string my\+Chan)
+\item 
+void \mbox{\hyperlink{classSuperMELA_aefd6caea7259f692a61bd70e389c390c}{Set\+MH}} (double my\+MH)
+\item 
+void \mbox{\hyperlink{classSuperMELA_a744c109c2010edf3b094d6093ac9b152}{Set\+Path\+To\+Cards}} (std\+::string dir\+To\+Cards)
+\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classSuperMELA_a4964cef54e1a2d9675e5a7c8c126328c}{M4l\+Prob}} (double m4l)
+\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classSuperMELA_a81ce8f2ca475e26fba620922417828f9}{M4l\+Prob}} (std\+::pair$<$ double, double $>$ const \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{split\+Line}} (const std\+::string \&rawoption, std\+::vector$<$ std\+::string $>$ \&splitoptions, char delimiter)
+\item 
+void \mbox{\hyperlink{classSuperMELA_a9392bc7b7e52f3ad4caaf8830d531622}{read\+Sig\+Pars\+From\+File}} (std\+::string \&str\+\_\+mean\+\_\+\+CB, std\+::string \&str\+\_\+sigma\+\_\+\+CB, std\+::string \&str\+\_\+n\+\_\+\+CB, std\+::string \&str\+\_\+alpha\+\_\+\+CB, std\+::string \&str\+\_\+n2\+\_\+\+CB, std\+::string \&str\+\_\+alpha2\+\_\+\+CB)
+\item 
+void \mbox{\hyperlink{classSuperMELA_a0d0c15daf51a3e2282bb1d5761162f73}{read\+Bkg\+Pars\+From\+File}} (std\+::vector$<$ double $>$ \&apars)
+\item 
+void \mbox{\hyperlink{classSuperMELA_a5a3d479b7b6acf5f77e4509a1b7d6878}{read\+Sig\+Syst\+From\+File}} (double \&str\+\_\+mean\+\_\+\+C\+B\+\_\+err\+\_\+e, double \&str\+\_\+mean\+\_\+\+C\+B\+\_\+err\+\_\+m, double \&str\+\_\+sigma\+\_\+\+C\+B\+\_\+err\+\_\+e, double \&str\+\_\+sigma\+\_\+\+C\+B\+\_\+err\+\_\+m)
+\item 
+void \mbox{\hyperlink{classSuperMELA_a347ff58bdb84ba1befc2e4dc036521d4}{calc\+\_\+m\+Z\+Z\+\_\+range}} (const double m\+H\+Val, double \&low\+\_\+M, double \&high\+\_\+M)
+\item 
+bool \mbox{\hyperlink{classSuperMELA_adef332e518c8b19309c0e121df15c82d}{check\+Channel}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{m\+H\+Val\+\_\+}}
+\item 
+double \mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\+\_\+}}
+\item 
+double \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{low\+M\+H\+\_\+}}
+\item 
+double \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{high\+M\+H\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{str\+Chan\+\_\+}}
+\item 
+int \mbox{\hyperlink{classSuperMELA_a83f97355315dc8b5215c094e0ebb448a}{ch\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{path\+To\+Cards\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\+\_\+rrv\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{m\+H\+\_\+rrv\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Formula\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{mean\+T\+O\+T\+\_\+\+C\+B\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\+\_\+\+C\+B\+\_\+err\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\+\_\+\+C\+B\+\_\+err\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\+\_\+mean\+\_\+sig}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\+\_\+sigma\+\_\+sig}}
+\item 
+\mbox{\hyperlink{classMELADoubleCB}{M\+E\+L\+A\+Double\+CB}} $\ast$ \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\+\_\+\+C\+B\+\_\+}}
+\item 
+\mbox{\hyperlink{classMELARelBWUFParam}{M\+E\+L\+A\+Rel\+B\+W\+U\+F\+Param}} $\ast$ \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\+\_\+\+B\+W\+\_\+}}
+\item 
+Roo\+F\+F\+T\+Conv\+Pdf $\ast$ \mbox{\hyperlink{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}{sig\+\_\+\+F\+F\+T\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\+\_\+\+B\+W\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\+\_\+\+B\+W\+\_\+}}
+\item 
+double \mbox{\hyperlink{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}{norm\+\_\+sig\+\_\+\+C\+B\+\_\+}}
+\item 
+double \mbox{\hyperlink{classSuperMELA_a63f9ebbd13e25138aa14d60de76943a0}{norm\+\_\+sig\+\_\+\+F\+F\+T\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+Roo\+Real\+Var $\ast$ \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\+\_\+qq\+Z\+Z\+\_\+}}
+\item 
+\mbox{\hyperlink{classMELAqqZZPdf__v2}{M\+E\+L\+Aqq\+Z\+Z\+Pdf\+\_\+v2}} $\ast$ \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qq\+Z\+Z\+\_\+pdf\+\_\+}}
+\item 
+double \mbox{\hyperlink{classSuperMELA_abc0022a3511ebb264c25c1d8b4d5fd4f}{norm\+\_\+bkg\+\_\+qq\+Z\+Z\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 17 of file Super\+M\+E\+L\+A.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSuperMELA_a47caf178fb85ed97dbf5f948104e1bf7}\label{classSuperMELA_a47caf178fb85ed97dbf5f948104e1bf7}} 
+\index{SuperMELA@{SuperMELA}!SuperMELA@{SuperMELA}}
+\index{SuperMELA@{SuperMELA}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{SuperMELA()}{SuperMELA()}}
+{\footnotesize\ttfamily Super\+M\+E\+L\+A\+::\+Super\+M\+E\+LA (\begin{DoxyParamCaption}\item[{double}]{mH = {\ttfamily 125},  }\item[{std\+::string}]{channel = {\ttfamily \char`\"{}4mu\char`\"{}},  }\item[{double}]{L\+H\+Csqrts = {\ttfamily 8.} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22     :}
+\DoxyCodeLine{23   \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}}(mH),}
+\DoxyCodeLine{24   \mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}(LHCsqrts)}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26   \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{27   \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{28   \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{31   \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{32   \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{33   \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{34   \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{35   \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{38   \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{41   \mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\_sigma\_sig}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43   \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{44   \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{45   \mbox{\hyperlink{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}{sig\_FFT\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47   \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{48   \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{49   \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{50   \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{51   \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{52   \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{53   \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{54   \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{55   \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{56   \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{57   \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{58   \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{59   \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{60   \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{65   \mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mH"}, \textcolor{stringliteral}{"mH"}, \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}}, 0., \mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}*1000.);}
+\DoxyCodeLine{66   \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{67   \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}=channel;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69   \textcolor{comment}{//pathToCards\_="../../../HiggsAnalysis/HZZ4L\_CombinationPy/CreateDatacards/SM\_inputs\_8TeV/";}}
+\DoxyCodeLine{70   \mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}=\textcolor{stringliteral}{"../data/CombinationInputs/SM\_inputs\_8TeV/"};}
+\DoxyCodeLine{71   \textcolor{comment}{//init();}}
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_aae2e4f55e2bbeceac2db6037fd585bd0}\label{classSuperMELA_aae2e4f55e2bbeceac2db6037fd585bd0}} 
+\index{SuperMELA@{SuperMELA}!````~SuperMELA@{$\sim$SuperMELA}}
+\index{````~SuperMELA@{$\sim$SuperMELA}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{$\sim$SuperMELA()}{~SuperMELA()}}
+{\footnotesize\ttfamily Super\+M\+E\+L\+A\+::$\sim$\+Super\+M\+E\+LA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                      \{}
+\DoxyCodeLine{75   \textcolor{comment}{// Delete in reverse order wrt SuperMELA::init()}}
+\DoxyCodeLine{76   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}; \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}};}
+\DoxyCodeLine{79   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}};}
+\DoxyCodeLine{80   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}};}
+\DoxyCodeLine{81   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}; \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}};}
+\DoxyCodeLine{82   \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{83   \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{84   \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{85   \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}=\textcolor{keyword}{nullptr}; \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}{sig\_FFT\_}}; \mbox{\hyperlink{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}{sig\_FFT\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{88   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}}; \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{89   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}; \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}}; \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{92   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}; \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}; \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{95   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}; \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{96   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}}; \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\_sigma\_sig}}; \mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\_sigma\_sig}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{99   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}}; \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}}; \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{102   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}}; \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{103   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}; \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{104   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}; \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}; \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{107   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}; \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}; \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{110   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}; \mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{111 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSuperMELA_a347ff58bdb84ba1befc2e4dc036521d4}\label{classSuperMELA_a347ff58bdb84ba1befc2e4dc036521d4}} 
+\index{SuperMELA@{SuperMELA}!calc\_mZZ\_range@{calc\_mZZ\_range}}
+\index{calc\_mZZ\_range@{calc\_mZZ\_range}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{calc\_mZZ\_range()}{calc\_mZZ\_range()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::calc\+\_\+m\+Z\+Z\+\_\+range (\begin{DoxyParamCaption}\item[{const double}]{m\+H\+Val,  }\item[{double \&}]{low\+\_\+M,  }\item[{double \&}]{high\+\_\+M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 533 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{533                                                                                \{}
+\DoxyCodeLine{534   \textcolor{comment}{//low\_M=0.;}}
+\DoxyCodeLine{535   \textcolor{comment}{//high\_M=sqrts\_*1000.;}}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537   \textcolor{keyword}{const} \textcolor{keywordtype}{string} MELAPKGPATH = \mbox{\hyperlink{namespaceTVar_a06f1ddf9957f91a474c2cf0fbc73caed}{TVar::GetMELAPath}}();}
+\DoxyCodeLine{538   \textcolor{keywordtype}{string} path = MELAPKGPATH + \textcolor{stringliteral}{"data/HiggsTotalWidth\_YR3.txt"};}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540   path.erase((find(path.rbegin(), path.rend(), \textcolor{charliteral}{'/'}).base()), path.end());}
+\DoxyCodeLine{541   \mbox{\hyperlink{classMELAHXSWidth}{MELAHXSWidth}} myCSW(path.c\_str());}
+\DoxyCodeLine{542   \textcolor{keywordtype}{double} widthHVal =  myCSW.HiggsWidth(mHVal);}
+\DoxyCodeLine{543   \textcolor{keywordtype}{double} windowVal = max(widthHVal, 1.);}
+\DoxyCodeLine{544   \textcolor{keywordtype}{double} lowside = 100.;}
+\DoxyCodeLine{545   \textcolor{keywordflow}{if} (mHVal >= 275)\{ lowside = 180.; \}}
+\DoxyCodeLine{546   \textcolor{keywordflow}{else} \{ lowside = 100.; \}}
+\DoxyCodeLine{547   \textcolor{comment}{// Apply rounding}}
+\DoxyCodeLine{548   low\_M = int(max((mHVal -\/ 20.*windowVal), lowside)+0.5);}
+\DoxyCodeLine{549   high\_M = int(min((mHVal + 15.*windowVal), \mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}*1000.)+0.5);}
+\DoxyCodeLine{550 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_adef332e518c8b19309c0e121df15c82d}\label{classSuperMELA_adef332e518c8b19309c0e121df15c82d}} 
+\index{SuperMELA@{SuperMELA}!checkChannel@{checkChannel}}
+\index{checkChannel@{checkChannel}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{checkChannel()}{checkChannel()}}
+{\footnotesize\ttfamily bool Super\+M\+E\+L\+A\+::check\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 598 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{598                             \{}
+\DoxyCodeLine{599   \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{600     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}!=\textcolor{stringliteral}{"4mu"} \&\& \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}!=\textcolor{stringliteral}{"4e"} \&\& \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}!=\textcolor{stringliteral}{"2e2mu"}  \&\& \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}!=\textcolor{stringliteral}{"2mu2e"})\{}
+\DoxyCodeLine{601       \textcolor{keywordflow}{throw} 10;}
+\DoxyCodeLine{602     \}}
+\DoxyCodeLine{603   \}}
+\DoxyCodeLine{604   \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} e)\{}
+\DoxyCodeLine{605     \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Exception "} << e << \textcolor{stringliteral}{" from SuperMELA::SetDecayChannel(string myChan). Unrecognized string for decay channel: "} << \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str() << endl;}
+\DoxyCodeLine{606     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{607   \}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}==\textcolor{stringliteral}{"4mu"}) \mbox{\hyperlink{classSuperMELA_a83f97355315dc8b5215c094e0ebb448a}{ch\_}}=0;}
+\DoxyCodeLine{610   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}==\textcolor{stringliteral}{"4e"}) \mbox{\hyperlink{classSuperMELA_a83f97355315dc8b5215c094e0ebb448a}{ch\_}}=1;}
+\DoxyCodeLine{611   \textcolor{keywordflow}{else} \mbox{\hyperlink{classSuperMELA_a83f97355315dc8b5215c094e0ebb448a}{ch\_}}=2;}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}==\textcolor{stringliteral}{"2mu2e"}) \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}=\textcolor{stringliteral}{"2e2mu"};}
+\DoxyCodeLine{614   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{615 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a8e20aafc31dea57f87e1f6aadb7c61ae}\label{classSuperMELA_a8e20aafc31dea57f87e1f6aadb7c61ae}} 
+\index{SuperMELA@{SuperMELA}!GetSigShapeParameter@{GetSigShapeParameter}}
+\index{GetSigShapeParameter@{GetSigShapeParameter}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{GetSigShapeParameter()}{GetSigShapeParameter()}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::\+Get\+Sig\+Shape\+Parameter (\begin{DoxyParamCaption}\item[{std\+::string}]{par\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140                                                     \{}
+\DoxyCodeLine{141   \textcolor{keywordflow}{if} (parName==\textcolor{stringliteral}{"meanCB"}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}-\/>getVal();}
+\DoxyCodeLine{142   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (parName==\textcolor{stringliteral}{"sigmaCB"}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}-\/>getVal();}
+\DoxyCodeLine{143   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (parName==\textcolor{stringliteral}{"alphaCB"}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}-\/>getVal();}
+\DoxyCodeLine{144   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (parName==\textcolor{stringliteral}{"nCB"}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}-\/>getVal();}
+\DoxyCodeLine{145   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{146     \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{147       \textcolor{keywordflow}{throw} 40;}
+\DoxyCodeLine{148     \}}
+\DoxyCodeLine{149     \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} e)\{}
+\DoxyCodeLine{150       \textcolor{keywordflow}{if} (e==40) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Exception "} << e << \textcolor{stringliteral}{"  in SuperMELA::GetSigShapeParameter! Unrecognized type of parameter requested: "} << parName.c\_str() << \textcolor{stringliteral}{"  . Valid options are meanCB ; sigmaCB ; alphaCB ; nCB"} << endl;}
+\DoxyCodeLine{151       \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{152     \}}
+\DoxyCodeLine{153   \}}
+\DoxyCodeLine{154   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{155 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a59d3d5c494b39d1fcd2bd993532e7bd1}\label{classSuperMELA_a59d3d5c494b39d1fcd2bd993532e7bd1}} 
+\index{SuperMELA@{SuperMELA}!GetSigShapeSystematic@{GetSigShapeSystematic}}
+\index{GetSigShapeSystematic@{GetSigShapeSystematic}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{GetSigShapeSystematic()}{GetSigShapeSystematic()}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::\+Get\+Sig\+Shape\+Systematic (\begin{DoxyParamCaption}\item[{std\+::string}]{par\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124                                                      \{}
+\DoxyCodeLine{125   \textcolor{keywordflow}{if} (parName==\textcolor{stringliteral}{"meanCB"}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}-\/>getVal();}
+\DoxyCodeLine{126   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (parName==\textcolor{stringliteral}{"sigmaCB"}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}-\/>getVal();}
+\DoxyCodeLine{127   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{128     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error from SuperMELA::GetSigShapeSystematic, unrecognized input: "} << parName.c\_str() << endl;}
+\DoxyCodeLine{129     \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{130       \textcolor{keywordflow}{throw} 40;}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132     \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} e)\{}
+\DoxyCodeLine{133       \textcolor{keywordflow}{if} (e==40) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Exception "} << e << \textcolor{stringliteral}{"  in SuperMELA::GetSigShapeSystematic! Unrecognized type of parameter requested: "} << parName.c\_str() << \textcolor{stringliteral}{"  . Valid options are meanCB ; sigmaCB"} << endl;}
+\DoxyCodeLine{134       \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136   \}}
+\DoxyCodeLine{137   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{138 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a67b59e01e34b08f47c949b3ccc9e0ee7}\label{classSuperMELA_a67b59e01e34b08f47c949b3ccc9e0ee7}} 
+\index{SuperMELA@{SuperMELA}!init@{init}}
+\index{init@{init}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 158 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                     \{}
+\DoxyCodeLine{159   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Begin SuperMELA::init..."} << endl;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161   \textcolor{comment}{// Calculate m4l ranges for the given mH, set range of rrv}}
+\DoxyCodeLine{162   \mbox{\hyperlink{classSuperMELA_a347ff58bdb84ba1befc2e4dc036521d4}{calc\_mZZ\_range}}(\mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}}, \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}}, \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}});}
+\DoxyCodeLine{163   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Range width="} << \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}} -\/ \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}} << endl;}
+\DoxyCodeLine{164   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}; \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_mass"}, \textcolor{stringliteral}{"CMS\_zz4l\_mass"}, \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}}, \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}}, \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}});}
+\DoxyCodeLine{165   \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}-\/>setBins(2000, \textcolor{stringliteral}{"fft"});}
+\DoxyCodeLine{166   \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}-\/>setRange(\textcolor{stringliteral}{"shape"}, \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}}, \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}});}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168   \textcolor{comment}{//parameters for signal m4l shape systematics}}
+\DoxyCodeLine{169   \textcolor{keywordtype}{double} str\_mean\_CB\_err\_e;}
+\DoxyCodeLine{170   \textcolor{keywordtype}{double} str\_mean\_CB\_err\_m;}
+\DoxyCodeLine{171   \textcolor{keywordtype}{double} str\_sigma\_CB\_err\_e;}
+\DoxyCodeLine{172   \textcolor{keywordtype}{double} str\_sigma\_CB\_err\_m;}
+\DoxyCodeLine{173   \mbox{\hyperlink{classSuperMELA_a5a3d479b7b6acf5f77e4509a1b7d6878}{readSigSystFromFile}}(str\_mean\_CB\_err\_e, str\_mean\_CB\_err\_m, str\_sigma\_CB\_err\_e, str\_sigma\_CB\_err\_m);}
+\DoxyCodeLine{174   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{175     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"mean\_CB systematics (ele and mu): "} << str\_mean\_CB\_err\_e << \textcolor{stringliteral}{" / "} << str\_mean\_CB\_err\_m << endl;}
+\DoxyCodeLine{176     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"sigma\_CB systematics (ele and mu): "} << str\_sigma\_CB\_err\_e << \textcolor{stringliteral}{" / "} << str\_sigma\_CB\_err\_m << endl;}
+\DoxyCodeLine{177   \}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179   \textcolor{comment}{//delete old stuff before reinitialization}}
+\DoxyCodeLine{180   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}};}
+\DoxyCodeLine{181   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}};}
+\DoxyCodeLine{182   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}==\textcolor{stringliteral}{"4mu"})\{}
+\DoxyCodeLine{183     \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mean\_CB\_err"}, \textcolor{stringliteral}{"mean\_CB\_err"}, str\_mean\_CB\_err\_m);}
+\DoxyCodeLine{184     \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"sigma\_CB\_err"}, \textcolor{stringliteral}{"sigma\_CB\_err"}, str\_sigma\_CB\_err\_m);}
+\DoxyCodeLine{185   \}}
+\DoxyCodeLine{186   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}==\textcolor{stringliteral}{"4e"})\{}
+\DoxyCodeLine{187     \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mean\_CB\_err"}, \textcolor{stringliteral}{"mean\_CB\_err"}, str\_mean\_CB\_err\_e);}
+\DoxyCodeLine{188     \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"sigma\_CB\_err"}, \textcolor{stringliteral}{"sigma\_CB\_err"}, str\_sigma\_CB\_err\_e);}
+\DoxyCodeLine{189   \}}
+\DoxyCodeLine{190   \textcolor{keywordflow}{else}\{\textcolor{comment}{//2e2mu, we should have already checked that the string of the channel is a sensible one}}
+\DoxyCodeLine{191     \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"mean\_CB\_err"}, \textcolor{stringliteral}{"mean\_CB\_err"}, (str\_mean\_CB\_err\_m + str\_mean\_CB\_err\_e));}
+\DoxyCodeLine{192     \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"sigma\_CB\_err"}, \textcolor{stringliteral}{"sigma\_CB\_err"}, sqrt(pow(str\_sigma\_CB\_err\_m, 2) + pow(str\_sigma\_CB\_err\_e, 2)));}
+\DoxyCodeLine{193   \}}
+\DoxyCodeLine{194   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}-\/>getVal()<0.)\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Negative error on the m4l mean ! "} << \mbox{\hyperlink{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}{mean\_CB\_err\_}}-\/>getVal() << endl; \}}
+\DoxyCodeLine{195   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}-\/>getVal()<0.)\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Negative error on the m4l sigma ! "} << \mbox{\hyperlink{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}{sigma\_CB\_err\_}}-\/>getVal() << endl; \}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198   \textcolor{comment}{//set parameters for signal m4l shape and calculate normalization}}
+\DoxyCodeLine{199   \textcolor{keywordtype}{string} str\_n\_CB;}
+\DoxyCodeLine{200   \textcolor{keywordtype}{string} str\_alpha\_CB;}
+\DoxyCodeLine{201   \textcolor{keywordtype}{string} str\_n2\_CB;}
+\DoxyCodeLine{202   \textcolor{keywordtype}{string} str\_alpha2\_CB;}
+\DoxyCodeLine{203   \textcolor{keywordtype}{string} str\_mean\_CB;}
+\DoxyCodeLine{204   \textcolor{keywordtype}{string} str\_sigma\_CB;}
+\DoxyCodeLine{205   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Reading signal shape formulas"} << endl;}
+\DoxyCodeLine{206   \mbox{\hyperlink{classSuperMELA_a9392bc7b7e52f3ad4caaf8830d531622}{readSigParsFromFile}}(str\_mean\_CB, str\_sigma\_CB, str\_n\_CB, str\_alpha\_CB, str\_n2\_CB, str\_alpha2\_CB);}
+\DoxyCodeLine{207   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{208     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Read from input card the following formulas: "} << endl;}
+\DoxyCodeLine{209     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Mean RooFormula (string): "} << str\_mean\_CB.c\_str() << endl;}
+\DoxyCodeLine{210     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Sigma RooFormula (string): "} << str\_sigma\_CB.c\_str() << endl;}
+\DoxyCodeLine{211   \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}};}
+\DoxyCodeLine{214   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}};}
+\DoxyCodeLine{215   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}};}
+\DoxyCodeLine{216   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}};}
+\DoxyCodeLine{217   \textcolor{keywordtype}{char} rrvName[96];}
+\DoxyCodeLine{218   sprintf(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_n\_sig\_\%s\_\%d"}, \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str(), \textcolor{keywordtype}{int}(\mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}));}
+\DoxyCodeLine{219   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::init: Constructing n\_CB\_ from formula "} << str\_n\_CB.c\_str() << endl;}
+\DoxyCodeLine{220   \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(rrvName, str\_n\_CB.c\_str(), RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}));}
+\DoxyCodeLine{221   sprintf(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_alpha\_sig\_\%s\_\%d"}, \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str(), \textcolor{keywordtype}{int}(\mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}));}
+\DoxyCodeLine{222   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::init: Constructing alpha\_CB\_ from formula "} << str\_alpha\_CB.c\_str() << endl;}
+\DoxyCodeLine{223   \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(rrvName, str\_alpha\_CB.c\_str(), RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}));}
+\DoxyCodeLine{224   sprintf(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_n2\_sig\_\%s\_\%d"}, \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str(), \textcolor{keywordtype}{int}(\mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}));}
+\DoxyCodeLine{225   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::init: Constructing n2\_CB\_ from formula "} << str\_n2\_CB.c\_str() << endl;}
+\DoxyCodeLine{226   \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(rrvName, str\_n2\_CB.c\_str(), RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}));}
+\DoxyCodeLine{227   sprintf(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_alpha2\_sig\_\%s\_\%d"}, \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str(), \textcolor{keywordtype}{int}(\mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}));}
+\DoxyCodeLine{228   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::init: Constructing alpha2\_CB\_ from formula "} << str\_alpha2\_CB.c\_str() << endl;}
+\DoxyCodeLine{229   \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(rrvName, str\_alpha2\_CB.c\_str(), RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}));}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231   \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_mean\_sig\_corrMH"}, \textcolor{stringliteral}{"CMS\_zz4l\_mean\_sig\_corrMH"}, 0., -\/10., 10.);}
+\DoxyCodeLine{232   \mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\_sigma\_sig}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_sigma\_sig\_corrMH"}, \textcolor{stringliteral}{"CMS\_zz4l\_sigma\_sig\_corrMH"}, 0., -\/10., 10.);}
+\DoxyCodeLine{233   \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}}-\/>setConstant(\textcolor{keyword}{true});}
+\DoxyCodeLine{234   \mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\_sigma\_sig}}-\/>setConstant(\textcolor{keyword}{true});}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}};}
+\DoxyCodeLine{237   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}};}
+\DoxyCodeLine{238   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}};}
+\DoxyCodeLine{239   \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(\textcolor{stringliteral}{"CMS\_zz4l\_mean\_m\_sig"}, Form(\textcolor{stringliteral}{"(\%s)+@0*@1"}, str\_mean\_CB.c\_str()), RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}, *\mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}}));\textcolor{comment}{//this is normalized by mHVal\_}}
+\DoxyCodeLine{240   \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(\textcolor{stringliteral}{"CMS\_zz4l\_mean\_sig"}, \textcolor{stringliteral}{"(@0+@1)"}, RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}, *\mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}}));}
+\DoxyCodeLine{241   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Signal Mean vals -\/> Correction: "} << \mbox{\hyperlink{classSuperMELA_adceea41af2043b34160aba558f2a05e6}{corr\_mean\_sig}}-\/>getVal() << \textcolor{stringliteral}{"  Mean: "} << \mbox{\hyperlink{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}{mean\_CB\_}}-\/>getVal() << \textcolor{stringliteral}{"  Total: "} << \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}-\/>getVal() << endl; \}}
+\DoxyCodeLine{242   \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}=\textcolor{keyword}{new} RooFormulaVar(\textcolor{stringliteral}{"CMS\_zz4l\_sigma\_m\_sig"}, Form(\textcolor{stringliteral}{"(\%s)*(1+@0*@1)"}, str\_sigma\_CB.c\_str()), RooArgList(*\mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}, *\mbox{\hyperlink{classSuperMELA_a47ae553f215846f620160a2890f05fd2}{corr\_sigma\_sig}}));}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244   \textcolor{comment}{//for high-\/mass one also needs a gamma RooFormulaVar, }}
+\DoxyCodeLine{245   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}};}
+\DoxyCodeLine{246   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}};}
+\DoxyCodeLine{247   sprintf(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_mean\_BW\_sig\_\%s\_\%d"}, \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str(), \textcolor{keywordtype}{int}(\mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}));}
+\DoxyCodeLine{248   \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}=\textcolor{keyword}{new} RooRealVar(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_mean\_BW"}, \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}}, 100., 1000.);}
+\DoxyCodeLine{249   sprintf(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_width\_BW\_sig\_\%s\_\%d"}, \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str(), \textcolor{keywordtype}{int}(\mbox{\hyperlink{classSuperMELA_a58412faf9b43be8502790fb28baf95df}{sqrts\_}}));}
+\DoxyCodeLine{250   \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}}=\textcolor{keyword}{new} RooRealVar(rrvName, \textcolor{stringliteral}{"CMS\_zz4l\_width\_BW"}, 1.);}
+\DoxyCodeLine{251   \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}-\/>setVal(\mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}});}
+\DoxyCodeLine{252   \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}-\/>setConstant(\textcolor{keyword}{true});}
+\DoxyCodeLine{253   \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}}-\/>setConstant(\textcolor{keyword}{true});}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{256     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Signal shape parameter values: "} << endl;}
+\DoxyCodeLine{257     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Mean (formula value) = "} << \mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{258     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Sigma (formula value) = "} << \mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{259     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"n (formula value) = "} << \mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{260     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"alpha (formula value) = "} << \mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{261     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"n2 (formula value) = "} << \mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{262     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"alpha2 (formula value) = "} << \mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{263     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Mean BW (realvar value) = "} << \mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{264     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Width BW (realvar value) = "} << \mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{265   \}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}{sig\_FFT\_}};}
+\DoxyCodeLine{268   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}};}
+\DoxyCodeLine{269   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}};}
+\DoxyCodeLine{270   \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}} =\textcolor{keyword}{new} \mbox{\hyperlink{classMELADoubleCB}{MELADoubleCB}}(\textcolor{stringliteral}{"signalCB\_ggH"}, \textcolor{stringliteral}{"signalCB\_ggH"}, *\mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}, *\mbox{\hyperlink{classSuperMELA_a644a7328083bc34556e518235a99e7b2}{meanTOT\_CB\_}}, *\mbox{\hyperlink{classSuperMELA_a89a8152052963c389fc491b276ab64b7}{sigma\_CB\_}}, *\mbox{\hyperlink{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}{alpha\_CB\_}}, *\mbox{\hyperlink{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}{n\_CB\_}}, *\mbox{\hyperlink{classSuperMELA_adc50184c352d2e590f28f7788149a787}{alpha2\_CB\_}}, *\mbox{\hyperlink{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}{n2\_CB\_}});}
+\DoxyCodeLine{271   \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}} =\textcolor{keyword}{new} \mbox{\hyperlink{classMELARelBWUFParam}{MELARelBWUFParam}}(\textcolor{stringliteral}{"signalBW\_ggH"}, \textcolor{stringliteral}{"signalBW\_ggH"}, *\mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}, *\mbox{\hyperlink{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}{mean\_BW\_}}, *\mbox{\hyperlink{classSuperMELA_a4633440e4d299a291000e38c4af59695}{width\_BW\_}});}
+\DoxyCodeLine{272   \textcolor{comment}{//sig\_FFT\_=new RooFFTConvPdf("signal\_ggH", "BW (X) CB", *m4l\_rrv\_, *sig\_BW\_, *sig\_CB\_, 2);}}
+\DoxyCodeLine{273   \textcolor{comment}{//sig\_FFT\_-\/>setBufferFraction(0.2);}}
+\DoxyCodeLine{274   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{275     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Value of signal m4l CB shape is "} << \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{276     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Value of signal m4l BW shape is "} << \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}}-\/>getVal() << endl;}
+\DoxyCodeLine{277     \textcolor{comment}{//sig\_FFT\_-\/>Print("v");}}
+\DoxyCodeLine{278     \textcolor{comment}{//MELAout << "Value of signal m4l FFT shape is " << sig\_FFT\_-\/>getVal() << endl;}}
+\DoxyCodeLine{279   \}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281   RooAbsReal* tmpint;}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283   tmpint = \mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}-\/>createIntegral(RooArgSet(*\mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}), RooFit::Range(\textcolor{stringliteral}{"shape"}));}
+\DoxyCodeLine{284   \mbox{\hyperlink{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}{norm\_sig\_CB\_}} =tmpint-\/>getVal();}
+\DoxyCodeLine{285   \textcolor{keyword}{delete} tmpint;}
+\DoxyCodeLine{286   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Normalization of signal m4l CB shape is "} << \mbox{\hyperlink{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}{norm\_sig\_CB\_}} << endl;}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"\(\backslash\)n-\/-\/-\/> Integrating Breit-\/Wigner:"} << endl;}
+\DoxyCodeLine{289   tmpint = \mbox{\hyperlink{classSuperMELA_acaf4c70424499898ce8611fef723f455}{sig\_BW\_}}-\/>createIntegral(RooArgSet(*\mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}), RooFit::Range(\textcolor{stringliteral}{"shape"}));}
+\DoxyCodeLine{290   \textcolor{keywordtype}{double} norm\_sig\_BW\_ =tmpint-\/>getVal();}
+\DoxyCodeLine{291   \textcolor{keyword}{delete} tmpint;}
+\DoxyCodeLine{292   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Normalization of signal m4l BW shape is "} << norm\_sig\_BW\_ << endl;}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294   \textcolor{comment}{/*}}
+\DoxyCodeLine{295 \textcolor{comment}{  if (verbose\_)MELAout << "\(\backslash\)n-\/-\/-\/> Integrating full signal:" << endl;}}
+\DoxyCodeLine{296 \textcolor{comment}{  tmpint = sig\_FFT\_-\/>createIntegral(RooArgSet(*m4l\_rrv\_), RooFit::Range("shape"));}}
+\DoxyCodeLine{297 \textcolor{comment}{  norm\_sig\_FFT\_=tmpint-\/>getVal();}}
+\DoxyCodeLine{298 \textcolor{comment}{  delete tmpint;}}
+\DoxyCodeLine{299 \textcolor{comment}{  if (verbose\_)MELAout << "Normalization of signal m4l shape is " << norm\_sig\_FFT\_ << endl;}}
+\DoxyCodeLine{300 \textcolor{comment}{  */}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Reading background shape parameters"} << endl;}
+\DoxyCodeLine{303   vector<double> v\_apars;}
+\DoxyCodeLine{304   \mbox{\hyperlink{classSuperMELA_a0d0c15daf51a3e2282bb1d5761162f73}{readBkgParsFromFile}}(v\_apars);}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{307     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Size of vector with bkg shape pars is "} << v\_apars.size() << endl;}
+\DoxyCodeLine{308     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Param [0]="} << v\_apars.at(0) << \textcolor{stringliteral}{" [13]="} << v\_apars.at(13) << endl;}
+\DoxyCodeLine{309   \}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a0\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a0\_qqZZ"}, v\_apars.at(0), 0., 200.);}
+\DoxyCodeLine{312   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a1\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a1\_qqZZ"}, v\_apars.at(1), 0., 200.);}
+\DoxyCodeLine{313   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a2\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a2\_qqZZ"}, v\_apars.at(2), 0., 200.);}
+\DoxyCodeLine{314   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a3\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a3\_qqZZ"}, v\_apars.at(3), 0., 1.);}
+\DoxyCodeLine{315   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a4\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a4\_qqZZ"}, v\_apars.at(4), 0., 200.);}
+\DoxyCodeLine{316   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a5\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a5\_qqZZ"}, v\_apars.at(5), 0., 200.);}
+\DoxyCodeLine{317   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a6\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a6\_qqZZ"}, v\_apars.at(6), 0., 100.);}
+\DoxyCodeLine{318   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a7\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a7\_qqZZ"}, v\_apars.at(7), 0., 1.);}
+\DoxyCodeLine{319   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a8\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a8\_qqZZ"}, v\_apars.at(8), 0., 200.);}
+\DoxyCodeLine{320   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a9\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a9\_qqZZ"}, v\_apars.at(9), 0., 1.);}
+\DoxyCodeLine{321   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a10\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a10\_qqZZ"}, v\_apars.at(10), 0., 200.);}
+\DoxyCodeLine{322   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a11\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a11\_qqZZ"}, v\_apars.at(11), -\/100., 100.);}
+\DoxyCodeLine{323   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a12\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a12\_qqZZ"}, v\_apars.at(12), 0., 10000.);}
+\DoxyCodeLine{324   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}}; \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}}=\textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"CMS\_zz4l\_a13\_qqZZ"}, \textcolor{stringliteral}{"CMS\_zz4l\_a13\_qqZZ"}, v\_apars.at(13), 0., 1.);}
+\DoxyCodeLine{325   \mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{326   \mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{327   \mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{328   \mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{329   \mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{330   \mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{331   \mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{332   \mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{333   \mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{334   \mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{335   \mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{336   \mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{337   \mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{338   \mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}}-\/>setConstant(kTRUE);}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341   \textcolor{keyword}{delete} \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}; \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}} = \textcolor{keyword}{new} \mbox{\hyperlink{classMELAqqZZPdf__v2}{MELAqqZZPdf\_v2}}(\textcolor{stringliteral}{"bkg\_qqzz"}, \textcolor{stringliteral}{"bkg\_qqzz"}, *\mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}, *\mbox{\hyperlink{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}{a0\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}{a1\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}{a2\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a6575228e41f1fbde80920be34139d34c}{a3\_qqZZ\_}},}
+\DoxyCodeLine{342     *\mbox{\hyperlink{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}{a4\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}{a5\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}{a6\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}{a7\_qqZZ\_}},}
+\DoxyCodeLine{343     *\mbox{\hyperlink{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}{a8\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}{a9\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}{a10\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a051a8804eecfec531e3d78163de52206}{a11\_qqZZ\_}},}
+\DoxyCodeLine{344     *\mbox{\hyperlink{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}{a12\_qqZZ\_}}, *\mbox{\hyperlink{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}{a13\_qqZZ\_}});}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346   tmpint = \mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}-\/>createIntegral(RooArgSet(*\mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}), RooFit::Range(\textcolor{stringliteral}{"shape"}));}
+\DoxyCodeLine{347   \mbox{\hyperlink{classSuperMELA_abc0022a3511ebb264c25c1d8b4d5fd4f}{norm\_bkg\_qqZZ\_}}=tmpint-\/>getVal();}
+\DoxyCodeLine{348   \textcolor{keyword}{delete} tmpint;}
+\DoxyCodeLine{349 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a4964cef54e1a2d9675e5a7c8c126328c}\label{classSuperMELA_a4964cef54e1a2d9675e5a7c8c126328c}} 
+\index{SuperMELA@{SuperMELA}!M4lProb@{M4lProb}}
+\index{M4lProb@{M4lProb}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{M4lProb()}{M4lProb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Super\+M\+E\+L\+A\+::\+M4l\+Prob (\begin{DoxyParamCaption}\item[{double}]{m4l }\end{DoxyParamCaption})}
+
+
+
+Definition at line 552 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{552                                                     \{}
+\DoxyCodeLine{553   \textcolor{keywordtype}{double} Psig =-\/1.;}
+\DoxyCodeLine{554   \textcolor{keywordtype}{double} Pbkg =-\/1.;}
+\DoxyCodeLine{555   \textcolor{keywordflow}{if} (m4l<lowMH\_ || m4l>\mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}})\{}
+\DoxyCodeLine{556     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SuperMELA::M4lProb: m4l = "} << m4l << \textcolor{stringliteral}{" outside range ["} << \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}} << \textcolor{stringliteral}{"]. Setting SuperMELA to dummy values."} << endl;}
+\DoxyCodeLine{557   \}}
+\DoxyCodeLine{558   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{559     \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}-\/>setVal(m4l);}
+\DoxyCodeLine{560     Psig=\mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}-\/>getVal() / \mbox{\hyperlink{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}{norm\_sig\_CB\_}};}
+\DoxyCodeLine{561     Pbkg=\mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}-\/>getVal() / \mbox{\hyperlink{classSuperMELA_abc0022a3511ebb264c25c1d8b4d5fd4f}{norm\_bkg\_qqZZ\_}};}
+\DoxyCodeLine{562     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{563       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::M4lProb: m4l = "} << m4l}
+\DoxyCodeLine{564         << \textcolor{stringliteral}{", m4lPsig = "} << Psig}
+\DoxyCodeLine{565         << \textcolor{stringliteral}{", m4lPbkg = "} << Pbkg}
+\DoxyCodeLine{566         << endl;}
+\DoxyCodeLine{567     \}}
+\DoxyCodeLine{568   \}}
+\DoxyCodeLine{569   \textcolor{keywordflow}{return} make\_pair(Psig, Pbkg);}
+\DoxyCodeLine{570 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a81ce8f2ca475e26fba620922417828f9}\label{classSuperMELA_a81ce8f2ca475e26fba620922417828f9}} 
+\index{SuperMELA@{SuperMELA}!M4lProb@{M4lProb}}
+\index{M4lProb@{M4lProb}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{M4lProb()}{M4lProb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ double, double $>$ Super\+M\+E\+L\+A\+::\+M4l\+Prob (\begin{DoxyParamCaption}\item[{std\+::pair$<$ double, double $>$ const \&}]{m4l\+Pair }\end{DoxyParamCaption})}
+
+
+
+Definition at line 573 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{573                                                                                 \{}
+\DoxyCodeLine{574   \textcolor{keywordtype}{double} Psig =-\/1.;}
+\DoxyCodeLine{575   \textcolor{keywordtype}{double} Pbkg =-\/1.;}
+\DoxyCodeLine{576   \textcolor{keywordflow}{if} (}
+\DoxyCodeLine{577     (m4lPair.first<\mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}} || m4lPair.first>\mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}})}
+\DoxyCodeLine{578     ||}
+\DoxyCodeLine{579     (m4lPair.second<\mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}} || m4lPair.second>\mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}})}
+\DoxyCodeLine{580     )\{}
+\DoxyCodeLine{581     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SuperMELA::M4lProb: m4l pairs "} << m4lPair.first << \textcolor{stringliteral}{" -\/ "} << m4lPair.second << \textcolor{stringliteral}{" outside range ["} << \mbox{\hyperlink{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}{lowMH\_}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}{highMH\_}} << \textcolor{stringliteral}{"]. Setting SuperMELA to dummy values."} << endl;}
+\DoxyCodeLine{582   \}}
+\DoxyCodeLine{583   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{584     \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}-\/>setVal(m4lPair.first);}
+\DoxyCodeLine{585     Psig=\mbox{\hyperlink{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}{sig\_CB\_}}-\/>getVal() / \mbox{\hyperlink{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}{norm\_sig\_CB\_}};}
+\DoxyCodeLine{586     \mbox{\hyperlink{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}{m4l\_rrv\_}}-\/>setVal(m4lPair.second);}
+\DoxyCodeLine{587     Pbkg=\mbox{\hyperlink{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}{qqZZ\_pdf\_}}-\/>getVal() / \mbox{\hyperlink{classSuperMELA_abc0022a3511ebb264c25c1d8b4d5fd4f}{norm\_bkg\_qqZZ\_}};}
+\DoxyCodeLine{588     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\{}
+\DoxyCodeLine{589       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::M4lProb: "}}
+\DoxyCodeLine{590         << \textcolor{stringliteral}{"m4lPsig("} << m4lPair.first << \textcolor{stringliteral}{") = "} << Psig}
+\DoxyCodeLine{591         << \textcolor{stringliteral}{", m4lPbkg("} << m4lPair.second << \textcolor{stringliteral}{") = "} << Pbkg}
+\DoxyCodeLine{592         << endl;}
+\DoxyCodeLine{593     \}}
+\DoxyCodeLine{594   \}}
+\DoxyCodeLine{595   \textcolor{keywordflow}{return} make\_pair(Psig, Pbkg);}
+\DoxyCodeLine{596 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a0d0c15daf51a3e2282bb1d5761162f73}\label{classSuperMELA_a0d0c15daf51a3e2282bb1d5761162f73}} 
+\index{SuperMELA@{SuperMELA}!readBkgParsFromFile@{readBkgParsFromFile}}
+\index{readBkgParsFromFile@{readBkgParsFromFile}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{readBkgParsFromFile()}{readBkgParsFromFile()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::read\+Bkg\+Pars\+From\+File (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{apars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 490 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{490                                                         \{}
+\DoxyCodeLine{491   \textcolor{keyword}{const} \textcolor{keywordtype}{int} nPars=14;}
+\DoxyCodeLine{492   \textcolor{keywordtype}{int} nFound=0;}
+\DoxyCodeLine{493   apars.resize(14);}
+\DoxyCodeLine{494   \textcolor{keywordtype}{string} fCardName=\mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}+\textcolor{stringliteral}{"inputs\_"}+\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}+\textcolor{stringliteral}{".txt"};}
+\DoxyCodeLine{495   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}})\mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Parsing input card "} << fCardName.c\_str() << endl;}
+\DoxyCodeLine{496   ifstream card(fCardName.c\_str(), ios::in);}
+\DoxyCodeLine{497   \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499   \textcolor{keywordflow}{while} (card.good())\{}
+\DoxyCodeLine{500     getline(card, line);}
+\DoxyCodeLine{501     vector<string> fields;}
+\DoxyCodeLine{502     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(line, fields, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{503     \textcolor{keywordflow}{if} (fields.size()==0 || fields[0]!=\textcolor{stringliteral}{"qqZZshape"})\textcolor{keywordflow}{continue};}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505     \textcolor{keywordflow}{if} (fields.size()<3)\{}
+\DoxyCodeLine{506       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigParsFromFile! Incorrect format of line \(\backslash\)'"} << line.c\_str() << \textcolor{stringliteral}{"\(\backslash\)' . It contains "} << fields.size() << \textcolor{stringliteral}{"fields (it should be 3)"} << endl;}
+\DoxyCodeLine{507       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{508     \}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510     stringstream ssip;}
+\DoxyCodeLine{511     ssip << nFound;}
+\DoxyCodeLine{512     \textcolor{keywordflow}{if} (fields[1]==\textcolor{stringliteral}{"a"}+ssip.str()+\textcolor{stringliteral}{"\_bkgd"})\{}
+\DoxyCodeLine{513       apars[nFound]=atof(fields[2].c\_str());}
+\DoxyCodeLine{514       nFound++;}
+\DoxyCodeLine{515     \}}
+\DoxyCodeLine{516   \}}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518   \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{519     \textcolor{keywordflow}{if} (nFound!=nPars)\{}
+\DoxyCodeLine{520       \textcolor{keywordflow}{throw} 30;}
+\DoxyCodeLine{521     \}}
+\DoxyCodeLine{522   \}}
+\DoxyCodeLine{523   \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} e)\{}
+\DoxyCodeLine{524     \textcolor{keywordflow}{if} (e==30)\{}
+\DoxyCodeLine{525       \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Exception from void SuperMELA::readBkgParsFromFile(vector<double> apars ). Mismatched number of params of qqZZ shape read from card file "} << fCardName.c\_str() << \textcolor{stringliteral}{" -\/-\/-\/> "} << nFound << \textcolor{stringliteral}{" (it should be "} << nPars << endl;}
+\DoxyCodeLine{526       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0; j<apars.size(); j++)\{ \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << apars[j] << \textcolor{stringliteral}{"   "} << flush; \}}
+\DoxyCodeLine{527       \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << endl;}
+\DoxyCodeLine{528     \}}
+\DoxyCodeLine{529   \}}
+\DoxyCodeLine{530   card.\mbox{\hyperlink{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}{close}}();}
+\DoxyCodeLine{531 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a9392bc7b7e52f3ad4caaf8830d531622}\label{classSuperMELA_a9392bc7b7e52f3ad4caaf8830d531622}} 
+\index{SuperMELA@{SuperMELA}!readSigParsFromFile@{readSigParsFromFile}}
+\index{readSigParsFromFile@{readSigParsFromFile}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{readSigParsFromFile()}{readSigParsFromFile()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::read\+Sig\+Pars\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str\+\_\+mean\+\_\+\+CB,  }\item[{std\+::string \&}]{str\+\_\+sigma\+\_\+\+CB,  }\item[{std\+::string \&}]{str\+\_\+n\+\_\+\+CB,  }\item[{std\+::string \&}]{str\+\_\+alpha\+\_\+\+CB,  }\item[{std\+::string \&}]{str\+\_\+n2\+\_\+\+CB,  }\item[{std\+::string \&}]{str\+\_\+alpha2\+\_\+\+CB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 447 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{454    \{}
+\DoxyCodeLine{455   \textcolor{keywordtype}{bool} meanOK=\textcolor{keyword}{false}, sigmaOK=\textcolor{keyword}{false}, nOK=\textcolor{keyword}{false}, alphaOK=\textcolor{keyword}{false}, n2OK=\textcolor{keyword}{false}, alpha2OK=\textcolor{keyword}{false};}
+\DoxyCodeLine{456   \textcolor{comment}{//open text file}}
+\DoxyCodeLine{457   \textcolor{keywordtype}{string} fCardName=\mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}+\textcolor{stringliteral}{"inputs\_"}+\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}+\textcolor{stringliteral}{".txt"};}
+\DoxyCodeLine{458   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Parsing input card "} << fCardName.c\_str() << endl;}
+\DoxyCodeLine{459   ifstream card(fCardName.c\_str(), ios::in);}
+\DoxyCodeLine{460   \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{461   \textcolor{keywordflow}{while} (card.good())\{}
+\DoxyCodeLine{462     getline(card, line);}
+\DoxyCodeLine{463     vector<string> fields;}
+\DoxyCodeLine{464     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(line, fields, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{465     \textcolor{keywordflow}{if} (fields.size()==0 || fields[0]!=\textcolor{stringliteral}{"signalShape"})\textcolor{keywordflow}{continue};}
+\DoxyCodeLine{466     \textcolor{comment}{//ok, we found somethign interesting}}
+\DoxyCodeLine{467     \textcolor{keywordflow}{if} (fields.size()<3)\{}
+\DoxyCodeLine{468       \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigParsFromFile! Incorrect format of line "} << line.c\_str() << \textcolor{stringliteral}{" There should be at least three fields, I could find only "} << fields.size() << \textcolor{stringliteral}{" fields."} << endl;}
+\DoxyCodeLine{469       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{470     \}}
+\DoxyCodeLine{471     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"n\_CB"})\{ str\_n\_CB=fields.at(2); nOK=\textcolor{keyword}{true}; \}}
+\DoxyCodeLine{472     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"alpha\_CB"})\{ str\_alpha\_CB=fields.at(2); alphaOK=\textcolor{keyword}{true}; \}}
+\DoxyCodeLine{473     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"n2\_CB"})\{ str\_n2\_CB=fields.at(2); n2OK=\textcolor{keyword}{true}; \}}
+\DoxyCodeLine{474     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"alpha2\_CB"})\{ str\_alpha2\_CB=fields.at(2); alpha2OK=\textcolor{keyword}{true}; \}}
+\DoxyCodeLine{475     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"mean\_CB"})\{ str\_mean\_CB=fields.at(2); meanOK=\textcolor{keyword}{true}; \}}
+\DoxyCodeLine{476     \textcolor{keywordflow}{if} (fields.at(1)==\textcolor{stringliteral}{"sigma\_CB"})\{ str\_sigma\_CB=fields.at(2); sigmaOK=\textcolor{keyword}{true}; \}}
+\DoxyCodeLine{477     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << fields.at(1) << \textcolor{stringliteral}{" == "} << fields.at(2) << endl;}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479     \textcolor{keywordflow}{if} (meanOK \&\& sigmaOK \&\& alphaOK \&\& nOK \&\& alpha2OK \&\& n2OK)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{480   \}\textcolor{comment}{//end while loop on lines}}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482   \textcolor{keywordflow}{if} (!(meanOK \&\& sigmaOK \&\& alphaOK \&\& nOK \&\& alpha2OK \&\& n2OK))\{}
+\DoxyCodeLine{483     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Exception  in SuperMELA::readSigParsFromFile! Not all signal shape formulas were read "} << meanOK << \textcolor{stringliteral}{" "} << sigmaOK << \textcolor{stringliteral}{"  "} << alphaOK << \textcolor{stringliteral}{"  "} << nOK << \textcolor{stringliteral}{"  "} << alpha2OK << \textcolor{stringliteral}{"  "} << n2OK << endl;}
+\DoxyCodeLine{484     \textcolor{keywordflow}{throw} 20;}
+\DoxyCodeLine{485   \}}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487   card.\mbox{\hyperlink{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}{close}}();}
+\DoxyCodeLine{488 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a5a3d479b7b6acf5f77e4509a1b7d6878}\label{classSuperMELA_a5a3d479b7b6acf5f77e4509a1b7d6878}} 
+\index{SuperMELA@{SuperMELA}!readSigSystFromFile@{readSigSystFromFile}}
+\index{readSigSystFromFile@{readSigSystFromFile}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{readSigSystFromFile()}{readSigSystFromFile()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::read\+Sig\+Syst\+From\+File (\begin{DoxyParamCaption}\item[{double \&}]{str\+\_\+mean\+\_\+\+C\+B\+\_\+err\+\_\+e,  }\item[{double \&}]{str\+\_\+mean\+\_\+\+C\+B\+\_\+err\+\_\+m,  }\item[{double \&}]{str\+\_\+sigma\+\_\+\+C\+B\+\_\+err\+\_\+e,  }\item[{double \&}]{str\+\_\+sigma\+\_\+\+C\+B\+\_\+err\+\_\+m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 383 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{388    \{}
+\DoxyCodeLine{389   \textcolor{keywordtype}{bool} mean\_e\_OK=\textcolor{keyword}{false}, sigma\_e\_OK=\textcolor{keyword}{false};}
+\DoxyCodeLine{390   \textcolor{keywordtype}{bool} mean\_m\_OK=\textcolor{keyword}{false}, sigma\_m\_OK=\textcolor{keyword}{false};}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392   \textcolor{comment}{//open text file}}
+\DoxyCodeLine{393   \textcolor{keywordtype}{string} fCardName=\mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}+\textcolor{stringliteral}{"inputs\_"}+\mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}+\textcolor{stringliteral}{".txt"};}
+\DoxyCodeLine{394   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::readSigSystFromFile: Parsing signal shape systematics from input card "} << fCardName.c\_str() << endl;}
+\DoxyCodeLine{395   ifstream card(fCardName.c\_str(), ios::in);}
+\DoxyCodeLine{396   \textcolor{keywordflow}{if} (!card.good())\{}
+\DoxyCodeLine{397     \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"SuperMELA::readSigSystFromFile: Input card "} << fCardName << \textcolor{stringliteral}{" is not good!"} << endl;}
+\DoxyCodeLine{398     assert(0);}
+\DoxyCodeLine{399   \}}
+\DoxyCodeLine{400   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::readSigSystFromFile: Input card "} << fCardName << \textcolor{stringliteral}{" can be read!"} << endl;}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402   \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{403   \textcolor{keywordflow}{while} (card.good())\{}
+\DoxyCodeLine{404     getline(card, line);}
+\DoxyCodeLine{405     vector<string> fields;}
+\DoxyCodeLine{406     \mbox{\hyperlink{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}{splitLine}}(line, fields, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     \textcolor{keywordflow}{if} (fields.size()<2 || !(fields[0]==\textcolor{stringliteral}{"systematic"}\&\&fields[1]==\textcolor{stringliteral}{"param"})) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410     \textcolor{keywordflow}{if} (fields.size()!=4)\{}
+\DoxyCodeLine{411       \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Error in SuperMELA::readSigSystFromFile! Incorrect format of line "} << line.c\_str() << endl;}
+\DoxyCodeLine{412       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{413     \}}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415     \textcolor{keywordflow}{if} (fields[2]==\textcolor{stringliteral}{"CMS\_zz4l\_mean\_m\_sig"})\{}
+\DoxyCodeLine{416       str\_mean\_CB\_err\_m = atof(fields.at(3).c\_str());}
+\DoxyCodeLine{417       mean\_m\_OK=\textcolor{keyword}{true};}
+\DoxyCodeLine{418     \}}
+\DoxyCodeLine{419     \textcolor{keywordflow}{if} (fields[2]==\textcolor{stringliteral}{"CMS\_zz4l\_mean\_e\_sig"})\{}
+\DoxyCodeLine{420       str\_mean\_CB\_err\_e = atof(fields.at(3).c\_str());}
+\DoxyCodeLine{421       mean\_e\_OK=\textcolor{keyword}{true};}
+\DoxyCodeLine{422     \}}
+\DoxyCodeLine{423     \textcolor{keywordflow}{if} (fields[2]==\textcolor{stringliteral}{"CMS\_zz4l\_sigma\_m\_sig"})\{}
+\DoxyCodeLine{424       str\_sigma\_CB\_err\_m = atof(fields.at(3).c\_str());}
+\DoxyCodeLine{425       sigma\_m\_OK=\textcolor{keyword}{true};}
+\DoxyCodeLine{426     \}}
+\DoxyCodeLine{427     \textcolor{keywordflow}{if} (fields[2]==\textcolor{stringliteral}{"CMS\_zz4l\_sigma\_e\_sig"})\{}
+\DoxyCodeLine{428       str\_sigma\_CB\_err\_e = atof(fields.at(3).c\_str());}
+\DoxyCodeLine{429       sigma\_e\_OK=\textcolor{keyword}{true};}
+\DoxyCodeLine{430     \}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432     \textcolor{keywordflow}{if} (mean\_e\_OK \&\& sigma\_e\_OK \&\& mean\_m\_OK \&\& sigma\_m\_OK) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{433   \}}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435   \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{436     \textcolor{keywordflow}{if} ((!(mean\_e\_OK\&\&sigma\_e\_OK))\&\&(!(mean\_m\_OK\&\&sigma\_m\_OK))) \textcolor{keywordflow}{throw} 20;}
+\DoxyCodeLine{437   \}}
+\DoxyCodeLine{438   \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} e)\{}
+\DoxyCodeLine{439     \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}}}
+\DoxyCodeLine{440       << \textcolor{stringliteral}{"Exception "} << e << \textcolor{stringliteral}{" in SuperMELA::readSigSystFromFile! Not all signal shape formulas were read "} << mean\_e\_OK << \textcolor{stringliteral}{"  "} << sigma\_e\_OK << \textcolor{stringliteral}{"  "} << mean\_m\_OK << \textcolor{stringliteral}{"  "} << sigma\_m\_OK}
+\DoxyCodeLine{441       << endl;}
+\DoxyCodeLine{442   \}}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444   card.\mbox{\hyperlink{classMELAOutputStreamer_afe550795f82fdedc35e5bdee32976a16}{close}}();}
+\DoxyCodeLine{445 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_abea01fd34de4b48193fbdb03237ff60e}\label{classSuperMELA_abea01fd34de4b48193fbdb03237ff60e}} 
+\index{SuperMELA@{SuperMELA}!SetDecayChannel@{SetDecayChannel}}
+\index{SetDecayChannel@{SetDecayChannel}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{SetDecayChannel()}{SetDecayChannel()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::\+Set\+Decay\+Channel (\begin{DoxyParamCaption}\item[{std\+::string}]{my\+Chan }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113                                             \{}
+\DoxyCodeLine{114   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"SuperMELA::SetDecayChannel: Switching from "} << \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}} << \textcolor{stringliteral}{" to "} << myChan << endl;}
+\DoxyCodeLine{115   \textcolor{keywordflow}{if} (myChan != \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}})\{ \textcolor{comment}{// do nothing if it's the same as before}}
+\DoxyCodeLine{116     \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}=myChan;}
+\DoxyCodeLine{117     \textcolor{keywordtype}{bool} newChanOK = \mbox{\hyperlink{classSuperMELA_adef332e518c8b19309c0e121df15c82d}{checkChannel}}();}
+\DoxyCodeLine{118     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Setting decay channel of SuperMELA to "} << \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str() << \textcolor{stringliteral}{" , re-\/initializing..."} << endl;}
+\DoxyCodeLine{119     \mbox{\hyperlink{classSuperMELA_a67b59e01e34b08f47c949b3ccc9e0ee7}{init}}();}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}} \&\& newChanOK) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Decay channel set successfully to "} << \mbox{\hyperlink{classSuperMELA_a61450a444b820301db09c716e92496bc}{strChan\_}}.c\_str() << endl;}
+\DoxyCodeLine{121   \}}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_aefd6caea7259f692a61bd70e389c390c}\label{classSuperMELA_aefd6caea7259f692a61bd70e389c390c}} 
+\index{SuperMELA@{SuperMELA}!SetMH@{SetMH}}
+\index{SetMH@{SetMH}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{SetMH()}{SetMH()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::\+Set\+MH (\begin{DoxyParamCaption}\item[{double}]{my\+MH }\end{DoxyParamCaption})}
+
+
+
+Definition at line 351 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{351                                 \{}
+\DoxyCodeLine{352   \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}}=myMH;}
+\DoxyCodeLine{353   \mbox{\hyperlink{classSuperMELA_ad821105a6c148635038c34b51403e7d5}{mH\_rrv\_}}-\/>setVal(\mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}});}
+\DoxyCodeLine{354   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"Setting MH to "} << \mbox{\hyperlink{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}{mHVal\_}} << endl;}
+\DoxyCodeLine{355   \mbox{\hyperlink{classSuperMELA_a67b59e01e34b08f47c949b3ccc9e0ee7}{init}}();}
+\DoxyCodeLine{356 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a744c109c2010edf3b094d6093ac9b152}\label{classSuperMELA_a744c109c2010edf3b094d6093ac9b152}} 
+\index{SuperMELA@{SuperMELA}!SetPathToCards@{SetPathToCards}}
+\index{SetPathToCards@{SetPathToCards}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{SetPathToCards()}{SetPathToCards()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::\+Set\+Path\+To\+Cards (\begin{DoxyParamCaption}\item[{std\+::string}]{dir\+To\+Cards }\end{DoxyParamCaption})}
+
+
+
+Definition at line 358 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{358                                                \{}
+\DoxyCodeLine{359   \mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}}=dirToCards;}
+\DoxyCodeLine{360   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}) \mbox{\hyperlink{namespaceMELAStreamHelpers_a540da07450fb5154e684e182766cd72d}{MELAout}} << \textcolor{stringliteral}{"New path to cards is "} << \mbox{\hyperlink{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}{pathToCards\_}} << endl;}
+\DoxyCodeLine{361 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_ade312a7527d2ecbca8c9e7bdae420c1c}\label{classSuperMELA_ade312a7527d2ecbca8c9e7bdae420c1c}} 
+\index{SuperMELA@{SuperMELA}!SetVerbosity@{SetVerbosity}}
+\index{SetVerbosity@{SetVerbosity}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{SetVerbosity()}{SetVerbosity()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::\+Set\+Verbosity (\begin{DoxyParamCaption}\item[{bool}]{verb = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file Super\+M\+E\+L\+A.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{ \mbox{\hyperlink{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}{verbose\_}}=verb; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}\label{classSuperMELA_a58f258ddc4c0bf9f820667cba0e9bd4c}} 
+\index{SuperMELA@{SuperMELA}!splitLine@{splitLine}}
+\index{splitLine@{splitLine}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{splitLine()}{splitLine()}}
+{\footnotesize\ttfamily void Super\+M\+E\+L\+A\+::split\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{rawoption,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{splitoptions,  }\item[{char}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 363 of file Super\+M\+E\+L\+A.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{363                                                                                               \{}
+\DoxyCodeLine{364   \textcolor{keywordtype}{string} suboption=rawoption, result=rawoption;}
+\DoxyCodeLine{365   \textcolor{keywordtype}{string} remnant;}
+\DoxyCodeLine{366   \textcolor{keywordflow}{while} (result!=\textcolor{stringliteral}{""})\{}
+\DoxyCodeLine{367     \textcolor{keywordtype}{size\_t} posEq = suboption.find(delimiter);}
+\DoxyCodeLine{368     \textcolor{keywordflow}{if} (posEq!=string::npos)\{}
+\DoxyCodeLine{369       result=suboption;}
+\DoxyCodeLine{370       remnant=suboption.substr(posEq+1);}
+\DoxyCodeLine{371       result.erase(result.begin()+posEq, result.end());}
+\DoxyCodeLine{372     \}}
+\DoxyCodeLine{373     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{374       result=\textcolor{stringliteral}{""};}
+\DoxyCodeLine{375       remnant=suboption;}
+\DoxyCodeLine{376     \}}
+\DoxyCodeLine{377     \textcolor{keywordflow}{if} (result!=\textcolor{stringliteral}{""}) splitoptions.push\_back(result);}
+\DoxyCodeLine{378     suboption = remnant;}
+\DoxyCodeLine{379   \}}
+\DoxyCodeLine{380   \textcolor{keywordflow}{if} (remnant!=\textcolor{stringliteral}{""}) splitoptions.push\_back(remnant);}
+\DoxyCodeLine{381 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}\label{classSuperMELA_a427dc4fa124cc9c27a418a40cfd14efb}} 
+\index{SuperMELA@{SuperMELA}!a0\_qqZZ\_@{a0\_qqZZ\_}}
+\index{a0\_qqZZ\_@{a0\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a0\_qqZZ\_}{a0\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a0\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 88 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}\label{classSuperMELA_a43b9aa90edf8527319dc5489c130362a}} 
+\index{SuperMELA@{SuperMELA}!a10\_qqZZ\_@{a10\_qqZZ\_}}
+\index{a10\_qqZZ\_@{a10\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a10\_qqZZ\_}{a10\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a10\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 98 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a051a8804eecfec531e3d78163de52206}\label{classSuperMELA_a051a8804eecfec531e3d78163de52206}} 
+\index{SuperMELA@{SuperMELA}!a11\_qqZZ\_@{a11\_qqZZ\_}}
+\index{a11\_qqZZ\_@{a11\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a11\_qqZZ\_}{a11\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a11\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 99 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}\label{classSuperMELA_a06081e7e9bcc775fa5436c8db4da96a5}} 
+\index{SuperMELA@{SuperMELA}!a12\_qqZZ\_@{a12\_qqZZ\_}}
+\index{a12\_qqZZ\_@{a12\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a12\_qqZZ\_}{a12\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a12\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 100 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}\label{classSuperMELA_a1726beba7512f7cfdfe1f644ebc5dc19}} 
+\index{SuperMELA@{SuperMELA}!a13\_qqZZ\_@{a13\_qqZZ\_}}
+\index{a13\_qqZZ\_@{a13\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a13\_qqZZ\_}{a13\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a13\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 101 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}\label{classSuperMELA_ac69a5056ac0c9c464bf615c423f5ff4a}} 
+\index{SuperMELA@{SuperMELA}!a1\_qqZZ\_@{a1\_qqZZ\_}}
+\index{a1\_qqZZ\_@{a1\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a1\_qqZZ\_}{a1\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a1\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 89 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}\label{classSuperMELA_aee1505a1fb006d2c53343d32c1d2ce4a}} 
+\index{SuperMELA@{SuperMELA}!a2\_qqZZ\_@{a2\_qqZZ\_}}
+\index{a2\_qqZZ\_@{a2\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a2\_qqZZ\_}{a2\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a2\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 90 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a6575228e41f1fbde80920be34139d34c}\label{classSuperMELA_a6575228e41f1fbde80920be34139d34c}} 
+\index{SuperMELA@{SuperMELA}!a3\_qqZZ\_@{a3\_qqZZ\_}}
+\index{a3\_qqZZ\_@{a3\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a3\_qqZZ\_}{a3\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a3\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 91 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}\label{classSuperMELA_a0772b16725b5d6f2df5cdd6a8f5d296a}} 
+\index{SuperMELA@{SuperMELA}!a4\_qqZZ\_@{a4\_qqZZ\_}}
+\index{a4\_qqZZ\_@{a4\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a4\_qqZZ\_}{a4\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a4\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 92 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}\label{classSuperMELA_a668ff5647e7f74da3214d141a61c6bbd}} 
+\index{SuperMELA@{SuperMELA}!a5\_qqZZ\_@{a5\_qqZZ\_}}
+\index{a5\_qqZZ\_@{a5\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a5\_qqZZ\_}{a5\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a5\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 93 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}\label{classSuperMELA_a9fcc6116c64d15f0f4acf8e37bb616ea}} 
+\index{SuperMELA@{SuperMELA}!a6\_qqZZ\_@{a6\_qqZZ\_}}
+\index{a6\_qqZZ\_@{a6\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a6\_qqZZ\_}{a6\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a6\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 94 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}\label{classSuperMELA_a9fd4f9e668f95738dfb1985da0e5cbfc}} 
+\index{SuperMELA@{SuperMELA}!a7\_qqZZ\_@{a7\_qqZZ\_}}
+\index{a7\_qqZZ\_@{a7\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a7\_qqZZ\_}{a7\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a7\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 95 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}\label{classSuperMELA_ab0a139701a210ef7514f8202d4e12a30}} 
+\index{SuperMELA@{SuperMELA}!a8\_qqZZ\_@{a8\_qqZZ\_}}
+\index{a8\_qqZZ\_@{a8\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a8\_qqZZ\_}{a8\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a8\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 96 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}\label{classSuperMELA_ae5f03fa071a899662bddae2eb50f9f4f}} 
+\index{SuperMELA@{SuperMELA}!a9\_qqZZ\_@{a9\_qqZZ\_}}
+\index{a9\_qqZZ\_@{a9\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{a9\_qqZZ\_}{a9\_qqZZ\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::a9\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 97 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_adc50184c352d2e590f28f7788149a787}\label{classSuperMELA_adc50184c352d2e590f28f7788149a787}} 
+\index{SuperMELA@{SuperMELA}!alpha2\_CB\_@{alpha2\_CB\_}}
+\index{alpha2\_CB\_@{alpha2\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{alpha2\_CB\_}{alpha2\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::alpha2\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 69 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}\label{classSuperMELA_a1b7f84a3ed1a3bdad0d55b2c9981a822}} 
+\index{SuperMELA@{SuperMELA}!alpha\_CB\_@{alpha\_CB\_}}
+\index{alpha\_CB\_@{alpha\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{alpha\_CB\_}{alpha\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::alpha\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 67 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a83f97355315dc8b5215c094e0ebb448a}\label{classSuperMELA_a83f97355315dc8b5215c094e0ebb448a}} 
+\index{SuperMELA@{SuperMELA}!ch\_@{ch\_}}
+\index{ch\_@{ch\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{ch\_}{ch\_}}
+{\footnotesize\ttfamily int Super\+M\+E\+L\+A\+::ch\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 59 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_adceea41af2043b34160aba558f2a05e6}\label{classSuperMELA_adceea41af2043b34160aba558f2a05e6}} 
+\index{SuperMELA@{SuperMELA}!corr\_mean\_sig@{corr\_mean\_sig}}
+\index{corr\_mean\_sig@{corr\_mean\_sig}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{corr\_mean\_sig}{corr\_mean\_sig}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::corr\+\_\+mean\+\_\+sig\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 77 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a47ae553f215846f620160a2890f05fd2}\label{classSuperMELA_a47ae553f215846f620160a2890f05fd2}} 
+\index{SuperMELA@{SuperMELA}!corr\_sigma\_sig@{corr\_sigma\_sig}}
+\index{corr\_sigma\_sig@{corr\_sigma\_sig}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{corr\_sigma\_sig}{corr\_sigma\_sig}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::corr\+\_\+sigma\+\_\+sig\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 78 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}\label{classSuperMELA_a58284faaa0de8d1e257f4e31c17f66b1}} 
+\index{SuperMELA@{SuperMELA}!highMH\_@{highMH\_}}
+\index{highMH\_@{highMH\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{highMH\_}{highMH\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::high\+M\+H\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}\label{classSuperMELA_a7a2a9897fbe3c58ee898428652b3a23d}} 
+\index{SuperMELA@{SuperMELA}!lowMH\_@{lowMH\_}}
+\index{lowMH\_@{lowMH\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{lowMH\_}{lowMH\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::low\+M\+H\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}\label{classSuperMELA_a61f6fe4302b9efd7b6a88d22572d259a}} 
+\index{SuperMELA@{SuperMELA}!m4l\_rrv\_@{m4l\_rrv\_}}
+\index{m4l\_rrv\_@{m4l\_rrv\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{m4l\_rrv\_}{m4l\_rrv\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::m4l\+\_\+rrv\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 63 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}\label{classSuperMELA_a9b1a4e6ae0e462ad215cc7739f06666f}} 
+\index{SuperMELA@{SuperMELA}!mean\_BW\_@{mean\_BW\_}}
+\index{mean\_BW\_@{mean\_BW\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{mean\_BW\_}{mean\_BW\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::mean\+\_\+\+B\+W\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 83 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}\label{classSuperMELA_abac2f5d27676ab02a8824b24b60b1ada}} 
+\index{SuperMELA@{SuperMELA}!mean\_CB\_@{mean\_CB\_}}
+\index{mean\_CB\_@{mean\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{mean\_CB\_}{mean\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::mean\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 70 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}\label{classSuperMELA_aa36beab86d66f22a8c843074fbb0e08e}} 
+\index{SuperMELA@{SuperMELA}!mean\_CB\_err\_@{mean\_CB\_err\_}}
+\index{mean\_CB\_err\_@{mean\_CB\_err\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{mean\_CB\_err\_}{mean\_CB\_err\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::mean\+\_\+\+C\+B\+\_\+err\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 74 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a644a7328083bc34556e518235a99e7b2}\label{classSuperMELA_a644a7328083bc34556e518235a99e7b2}} 
+\index{SuperMELA@{SuperMELA}!meanTOT\_CB\_@{meanTOT\_CB\_}}
+\index{meanTOT\_CB\_@{meanTOT\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{meanTOT\_CB\_}{meanTOT\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::mean\+T\+O\+T\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 72 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_ad821105a6c148635038c34b51403e7d5}\label{classSuperMELA_ad821105a6c148635038c34b51403e7d5}} 
+\index{SuperMELA@{SuperMELA}!mH\_rrv\_@{mH\_rrv\_}}
+\index{mH\_rrv\_@{mH\_rrv\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{mH\_rrv\_}{mH\_rrv\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::m\+H\+\_\+rrv\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 64 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}\label{classSuperMELA_a4f01782fa8d526c7fd47f9e19bc3657b}} 
+\index{SuperMELA@{SuperMELA}!mHVal\_@{mHVal\_}}
+\index{mHVal\_@{mHVal\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{mHVal\_}{mHVal\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::m\+H\+Val\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}\label{classSuperMELA_a587b8fa0562b28576717965d25ad08f5}} 
+\index{SuperMELA@{SuperMELA}!n2\_CB\_@{n2\_CB\_}}
+\index{n2\_CB\_@{n2\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{n2\_CB\_}{n2\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::n2\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 68 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}\label{classSuperMELA_ac37297e042a0c99e32bdadc94f3ea369}} 
+\index{SuperMELA@{SuperMELA}!n\_CB\_@{n\_CB\_}}
+\index{n\_CB\_@{n\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{n\_CB\_}{n\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::n\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 66 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_abc0022a3511ebb264c25c1d8b4d5fd4f}\label{classSuperMELA_abc0022a3511ebb264c25c1d8b4d5fd4f}} 
+\index{SuperMELA@{SuperMELA}!norm\_bkg\_qqZZ\_@{norm\_bkg\_qqZZ\_}}
+\index{norm\_bkg\_qqZZ\_@{norm\_bkg\_qqZZ\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{norm\_bkg\_qqZZ\_}{norm\_bkg\_qqZZ\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::norm\+\_\+bkg\+\_\+qq\+Z\+Z\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 103 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}\label{classSuperMELA_afbbabc777c3bde35fb21c01ae6af059e}} 
+\index{SuperMELA@{SuperMELA}!norm\_sig\_CB\_@{norm\_sig\_CB\_}}
+\index{norm\_sig\_CB\_@{norm\_sig\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{norm\_sig\_CB\_}{norm\_sig\_CB\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::norm\+\_\+sig\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 85 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a63f9ebbd13e25138aa14d60de76943a0}\label{classSuperMELA_a63f9ebbd13e25138aa14d60de76943a0}} 
+\index{SuperMELA@{SuperMELA}!norm\_sig\_FFT\_@{norm\_sig\_FFT\_}}
+\index{norm\_sig\_FFT\_@{norm\_sig\_FFT\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{norm\_sig\_FFT\_}{norm\_sig\_FFT\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::norm\+\_\+sig\+\_\+\+F\+F\+T\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 85 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}\label{classSuperMELA_a660f834688bfce1cb92f730db419dc8b}} 
+\index{SuperMELA@{SuperMELA}!pathToCards\_@{pathToCards\_}}
+\index{pathToCards\_@{pathToCards\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{pathToCards\_}{pathToCards\_}}
+{\footnotesize\ttfamily std\+::string Super\+M\+E\+L\+A\+::path\+To\+Cards\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 61 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}\label{classSuperMELA_a1abb700168a1cff11d03e0d8fc5a4dd9}} 
+\index{SuperMELA@{SuperMELA}!qqZZ\_pdf\_@{qqZZ\_pdf\_}}
+\index{qqZZ\_pdf\_@{qqZZ\_pdf\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{qqZZ\_pdf\_}{qqZZ\_pdf\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELAqqZZPdf__v2}{M\+E\+L\+Aqq\+Z\+Z\+Pdf\+\_\+v2}}$\ast$ Super\+M\+E\+L\+A\+::qq\+Z\+Z\+\_\+pdf\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 102 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_acaf4c70424499898ce8611fef723f455}\label{classSuperMELA_acaf4c70424499898ce8611fef723f455}} 
+\index{SuperMELA@{SuperMELA}!sig\_BW\_@{sig\_BW\_}}
+\index{sig\_BW\_@{sig\_BW\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{sig\_BW\_}{sig\_BW\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELARelBWUFParam}{M\+E\+L\+A\+Rel\+B\+W\+U\+F\+Param}}$\ast$ Super\+M\+E\+L\+A\+::sig\+\_\+\+B\+W\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 81 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}\label{classSuperMELA_a0a935886cfafbf6d4cdcad426ad2fe8f}} 
+\index{SuperMELA@{SuperMELA}!sig\_CB\_@{sig\_CB\_}}
+\index{sig\_CB\_@{sig\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{sig\_CB\_}{sig\_CB\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMELADoubleCB}{M\+E\+L\+A\+Double\+CB}}$\ast$ Super\+M\+E\+L\+A\+::sig\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 80 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}\label{classSuperMELA_a61f0414e3be1fe9905f7cae8e757cd00}} 
+\index{SuperMELA@{SuperMELA}!sig\_FFT\_@{sig\_FFT\_}}
+\index{sig\_FFT\_@{sig\_FFT\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{sig\_FFT\_}{sig\_FFT\_}}
+{\footnotesize\ttfamily Roo\+F\+F\+T\+Conv\+Pdf$\ast$ Super\+M\+E\+L\+A\+::sig\+\_\+\+F\+F\+T\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 82 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a89a8152052963c389fc491b276ab64b7}\label{classSuperMELA_a89a8152052963c389fc491b276ab64b7}} 
+\index{SuperMELA@{SuperMELA}!sigma\_CB\_@{sigma\_CB\_}}
+\index{sigma\_CB\_@{sigma\_CB\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{sigma\_CB\_}{sigma\_CB\_}}
+{\footnotesize\ttfamily Roo\+Formula\+Var$\ast$ Super\+M\+E\+L\+A\+::sigma\+\_\+\+C\+B\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 71 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}\label{classSuperMELA_a16a7b0312695a7097428c0debfe3c34f}} 
+\index{SuperMELA@{SuperMELA}!sigma\_CB\_err\_@{sigma\_CB\_err\_}}
+\index{sigma\_CB\_err\_@{sigma\_CB\_err\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{sigma\_CB\_err\_}{sigma\_CB\_err\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::sigma\+\_\+\+C\+B\+\_\+err\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 75 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a58412faf9b43be8502790fb28baf95df}\label{classSuperMELA_a58412faf9b43be8502790fb28baf95df}} 
+\index{SuperMELA@{SuperMELA}!sqrts\_@{sqrts\_}}
+\index{sqrts\_@{sqrts\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{sqrts\_}{sqrts\_}}
+{\footnotesize\ttfamily double Super\+M\+E\+L\+A\+::sqrts\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a61450a444b820301db09c716e92496bc}\label{classSuperMELA_a61450a444b820301db09c716e92496bc}} 
+\index{SuperMELA@{SuperMELA}!strChan\_@{strChan\_}}
+\index{strChan\_@{strChan\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{strChan\_}{strChan\_}}
+{\footnotesize\ttfamily std\+::string Super\+M\+E\+L\+A\+::str\+Chan\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 58 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}\label{classSuperMELA_aa74212a291c1513ea12244cdcc93f8d5}} 
+\index{SuperMELA@{SuperMELA}!verbose\_@{verbose\_}}
+\index{verbose\_@{verbose\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{verbose\_}{verbose\_}}
+{\footnotesize\ttfamily bool Super\+M\+E\+L\+A\+::verbose\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 60 of file Super\+M\+E\+L\+A.\+h.
+
+\mbox{\Hypertarget{classSuperMELA_a4633440e4d299a291000e38c4af59695}\label{classSuperMELA_a4633440e4d299a291000e38c4af59695}} 
+\index{SuperMELA@{SuperMELA}!width\_BW\_@{width\_BW\_}}
+\index{width\_BW\_@{width\_BW\_}!SuperMELA@{SuperMELA}}
+\doxysubsubsection{\texorpdfstring{width\_BW\_}{width\_BW\_}}
+{\footnotesize\ttfamily Roo\+Real\+Var$\ast$ Super\+M\+E\+L\+A\+::width\+\_\+\+B\+W\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 84 of file Super\+M\+E\+L\+A.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{SuperMELA_8h}{Super\+M\+E\+L\+A.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{SuperMELA_8cc}{Super\+M\+E\+L\+A.\+cc}}\end{DoxyCompactItemize}

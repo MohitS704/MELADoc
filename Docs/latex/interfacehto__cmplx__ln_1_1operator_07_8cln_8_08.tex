@@ -1,0 +1,50 @@
+\hypertarget{interfacehto__cmplx__ln_1_1operator_07_8cln_8_08}{}\doxysection{hto\+\_\+cmplx\+\_\+ln\+::operator(.cln.) Interface Reference}
+\label{interfacehto__cmplx__ln_1_1operator_07_8cln_8_08}\index{hto\_cmplx\_ln::operator(.cln.)@{hto\_cmplx\_ln::operator(.cln.)}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{interfacehto__cmplx__ln_1_1operator_07_8cln_8_08_ac3a81b2bd62550f7735887f300491d19}{cln}} (x, ep)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 440 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacehto__cmplx__ln_1_1operator_07_8cln_8_08_ac3a81b2bd62550f7735887f300491d19}\label{interfacehto__cmplx__ln_1_1operator_07_8cln_8_08_ac3a81b2bd62550f7735887f300491d19}} 
+\index{hto\_cmplx\_ln::operator(.cln.)@{hto\_cmplx\_ln::operator(.cln.)}!cln@{cln}}
+\index{cln@{cln}!hto\_cmplx\_ln::operator(.cln.)@{hto\_cmplx\_ln::operator(.cln.)}}
+\doxysubsubsection{\texorpdfstring{cln()}{cln()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+cmplx\+\_\+ln\+::operator(.cln.)\+::cln (\begin{DoxyParamCaption}\item[{real$\ast$8, intent(in)}]{x,  }\item[{real$\ast$8, intent(in)}]{ep }\end{DoxyParamCaption})}
+
+
+
+Definition at line 445 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{445        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{446        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{447        real*8, \textcolor{keywordtype}{dimension(2)} :: cln}
+\DoxyCodeLine{448        real*8, \textcolor{keywordtype}{INTENT(IN)} :: x,ep}
+\DoxyCodeLine{449        \textcolor{keywordflow}{IF}(abs(ep).ne.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{450         print*,\textcolor{stringliteral}{' Wrong argument for CLN '}}
+\DoxyCodeLine{451         stop}
+\DoxyCodeLine{452 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{453        cln(1)= log(abs(x))}
+\DoxyCodeLine{454        \textcolor{keywordflow}{IF}(x > 0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{455         cln(2)= 0.d0}
+\DoxyCodeLine{456        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{457         cln(2)= ep*pi}
+\DoxyCodeLine{458 \textcolor{keywordflow}{       ENDIF} }
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/fortran/\+C\+P\+S/\mbox{\hyperlink{CALLING__cpHTO_8f}{C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f}}\end{DoxyCompactItemize}

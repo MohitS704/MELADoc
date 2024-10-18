@@ -1,0 +1,176 @@
+\hypertarget{namespacehto__root__find2}{}\doxysection{hto\+\_\+root\+\_\+find2 Module Reference}
+\label{namespacehto__root__find2}\index{hto\_root\_find2@{hto\_root\_find2}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8 function \mbox{\hyperlink{namespacehto__root__find2_a639fa414c36aee03d64b13ba342dcb19}{hto\+\_\+zeroin}} (f, ax, bx, aerr, rerr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__root__find2_a639fa414c36aee03d64b13ba342dcb19}\label{namespacehto__root__find2_a639fa414c36aee03d64b13ba342dcb19}} 
+\index{hto\_root\_find2@{hto\_root\_find2}!hto\_zeroin@{hto\_zeroin}}
+\index{hto\_zeroin@{hto\_zeroin}!hto\_root\_find2@{hto\_root\_find2}}
+\doxysubsubsection{\texorpdfstring{hto\_zeroin()}{hto\_zeroin()}}
+{\footnotesize\ttfamily real$\ast$8 function hto\+\_\+root\+\_\+find2\+::hto\+\_\+zeroin (\begin{DoxyParamCaption}\item[{}]{f,  }\item[{real$\ast$8, intent(in)}]{ax,  }\item[{real$\ast$8, intent(in)}]{bx,  }\item[{real$\ast$8, intent(in)}]{aerr,  }\item[{real$\ast$8, intent(in)}]{rerr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3428 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3428 \textcolor{comment}{*}}
+\DoxyCodeLine{3429       \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__rootw}{hto\_rootw}}}
+\DoxyCodeLine{3430 \textcolor{comment}{* }}
+\DoxyCodeLine{3431 \textcolor{comment}{! Code converted using TO\_F90 by Alan Miller}}
+\DoxyCodeLine{3432 \textcolor{comment}{! Date: 2003-\/07-\/14  Time: 12:32:54}}
+\DoxyCodeLine{3433  }
+\DoxyCodeLine{3434 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3435 }
+\DoxyCodeLine{3436 \textcolor{comment}{!         FINDING A ZERO OF THE FUNCTION F(X) IN THE INTERVAL (AX,BX)}}
+\DoxyCodeLine{3437 }
+\DoxyCodeLine{3438 \textcolor{comment}{!                       -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3439 }
+\DoxyCodeLine{3440 \textcolor{comment}{!  INPUT...}}
+\DoxyCodeLine{3441 }
+\DoxyCodeLine{3442 \textcolor{comment}{!  F      FUNCTION SUBPROGRAM WHICH EVALUATES F(X) FOR ANY X IN THE}}
+\DoxyCodeLine{3443 \textcolor{comment}{!         CLOSED INTERVAL (AX,BX).  IT IS ASSUMED THAT F IS CONTINUOUS,}}
+\DoxyCodeLine{3444 \textcolor{comment}{!         AND THAT F(AX) AND F(BX) HAVE DIFFERENT SIGNS.}}
+\DoxyCodeLine{3445 \textcolor{comment}{!  AX     LEFT ENDPOINT OF THE INTERVAL}}
+\DoxyCodeLine{3446 \textcolor{comment}{!  BX     RIGHT ENDPOINT OF THE INTERVAL}}
+\DoxyCodeLine{3447 \textcolor{comment}{!  AERR   THE ABSOLUTE ERROR TOLERANCE TO BE SATISFIED}}
+\DoxyCodeLine{3448 \textcolor{comment}{!  RERR   THE RELATIVE ERROR TOLERANCE TO BE SATISFIED}}
+\DoxyCodeLine{3449 }
+\DoxyCodeLine{3450 \textcolor{comment}{!  OUTPUT...}}
+\DoxyCodeLine{3451 }
+\DoxyCodeLine{3452 \textcolor{comment}{!         ABCISSA APPROXIMATING A ZERO OF F IN THE INTERVAL (AX,BX)}}
+\DoxyCodeLine{3453 }
+\DoxyCodeLine{3454 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3455 \textcolor{comment}{!  ZEROIN IS A SLIGHTLY MODIFIED TRANSLATION OF THE ALGOL PROCEDURE}}
+\DoxyCodeLine{3456 \textcolor{comment}{!  ZERO GIVEN BY RICHARD BRENT IN ALGORITHMS FOR MINIMIZATION WITHOUT}}
+\DoxyCodeLine{3457 \textcolor{comment}{!  DERIVATIVES, PRENTICE-\/HALL, INC. (1973).}}
+\DoxyCodeLine{3458 \textcolor{comment}{!-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{3459       }
+\DoxyCodeLine{3460       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3461       real*8, \textcolor{keywordtype}{INTENT(IN)}  :: ax}
+\DoxyCodeLine{3462       real*8, \textcolor{keywordtype}{INTENT(IN)}  :: bx}
+\DoxyCodeLine{3463       real*8, \textcolor{keywordtype}{INTENT(IN)}  :: aerr}
+\DoxyCodeLine{3464       real*8, \textcolor{keywordtype}{INTENT(IN)}  :: rerr}
+\DoxyCodeLine{3465       real*8              :: fn\_val}
+\DoxyCodeLine{3466 \textcolor{comment}{*}}
+\DoxyCodeLine{3467 \textcolor{comment}{* EXTERNAL f}}
+\DoxyCodeLine{3468 \textcolor{comment}{*}}
+\DoxyCodeLine{3469       \textcolor{keyword}{INTERFACE}}
+\DoxyCodeLine{3470        \textcolor{keyword}{FUNCTION }f(x) \textcolor{keyword}{RESULT}(fn\_val)}
+\DoxyCodeLine{3471        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{3472        real*8, \textcolor{keywordtype}{INTENT(IN)}  :: x}
+\DoxyCodeLine{3473        real*8              :: fn\_val}
+\DoxyCodeLine{3474        \textcolor{keyword}{END FUNCTION }f}
+\DoxyCodeLine{3475       \textcolor{keyword}{END INTERFACE}}
+\DoxyCodeLine{3476 \textcolor{comment}{*}}
+\DoxyCodeLine{3477       real*8 :: a,b,c,d,e,\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}},fa,fb,fc,tol,xm,p,q,r,s,atol,rtol}
+\DoxyCodeLine{3478 }
+\DoxyCodeLine{3479 \textcolor{comment}{!  COMPUTE EPS, THE RELATIVE MACHINE PRECISION}}
+\DoxyCodeLine{3480 }
+\DoxyCodeLine{3481       \mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}}= epsilon(0.0d0)}
+\DoxyCodeLine{3482 }
+\DoxyCodeLine{3483 \textcolor{comment}{! INITIALIZATION}}
+\DoxyCodeLine{3484       }
+\DoxyCodeLine{3485       a= ax}
+\DoxyCodeLine{3486       b= bx}
+\DoxyCodeLine{3487       fa= f(a)}
+\DoxyCodeLine{3488       fb= f(b)}
+\DoxyCodeLine{3489       \textcolor{keywordflow}{IF}(fa*fb.gt.0.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3490        \mbox{\hyperlink{namespacehto__rootw_a51e365cf14dc5783680394486ebc97d7}{inc}}= 1}
+\DoxyCodeLine{3491 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{3492       atol= 0.5d0*aerr}
+\DoxyCodeLine{3493       rtol= max(0.5d0*rerr, 2.0d0*\mbox{\hyperlink{namespacehto__units_abab92a867fb77543c0c4ff069d1783d4}{eps}})}
+\DoxyCodeLine{3494 }
+\DoxyCodeLine{3495 \textcolor{comment}{! BEGIN STEP}}
+\DoxyCodeLine{3496 }
+\DoxyCodeLine{3497    10 c= a}
+\DoxyCodeLine{3498       fc= fa}
+\DoxyCodeLine{3499       d= b-\/a}
+\DoxyCodeLine{3500       e= d}
+\DoxyCodeLine{3501    20 \textcolor{keywordflow}{IF}(abs(fc) < abs(fb)) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3502          a= b}
+\DoxyCodeLine{3503          b= c}
+\DoxyCodeLine{3504          c= a}
+\DoxyCodeLine{3505          fa= fb}
+\DoxyCodeLine{3506          fb= fc}
+\DoxyCodeLine{3507          fc= fa}
+\DoxyCodeLine{3508 \textcolor{keywordflow}{      END IF}}
+\DoxyCodeLine{3509 }
+\DoxyCodeLine{3510 \textcolor{comment}{! CONVERGENCE TEST}}
+\DoxyCodeLine{3511 }
+\DoxyCodeLine{3512       tol= rtol*max(abs(b),abs(c))+atol}
+\DoxyCodeLine{3513       xm= 0.5d0*(c-\/b)}
+\DoxyCodeLine{3514       \textcolor{keywordflow}{IF}(abs(xm) > tol) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3515        \textcolor{keywordflow}{IF}(fb /= 0.0d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3516             }
+\DoxyCodeLine{3517 \textcolor{comment}{! IS BISECTION NECESSARY}}
+\DoxyCodeLine{3518     }
+\DoxyCodeLine{3519         \textcolor{keywordflow}{IF}(abs(e) >= tol) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3520          \textcolor{keywordflow}{IF}(abs(fa) > abs(fb)) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3521         }
+\DoxyCodeLine{3522 \textcolor{comment}{! IS QUADRATIC INTERPOLATION POSSIBLE}}
+\DoxyCodeLine{3523         }
+\DoxyCodeLine{3524           \textcolor{keywordflow}{IF}(a == c) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3525           }
+\DoxyCodeLine{3526 \textcolor{comment}{! LINEAR INTERPOLATION}}
+\DoxyCodeLine{3527           }
+\DoxyCodeLine{3528            s= fb/fc}
+\DoxyCodeLine{3529            p= (c-\/b)*s}
+\DoxyCodeLine{3530            q= 1.0d0-\/s}
+\DoxyCodeLine{3531           \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{3532           }
+\DoxyCodeLine{3533 \textcolor{comment}{! INVERSE QUADRATIC INTERPOLATION}}
+\DoxyCodeLine{3534           }
+\DoxyCodeLine{3535            q= fa/fc}
+\DoxyCodeLine{3536            r= fb/fc}
+\DoxyCodeLine{3537            s= fb/fa}
+\DoxyCodeLine{3538            p= s*((c-\/b)*q*(q-\/r)-\/(b-\/a)*(r-\/1.0d0))}
+\DoxyCodeLine{3539            q= (q-\/1.0d0)*(r-\/1.0d0)*(s-\/1.0d0)}
+\DoxyCodeLine{3540 \textcolor{keywordflow}{          ENDIF}}
+\DoxyCodeLine{3541         }
+\DoxyCodeLine{3542 \textcolor{comment}{! ADJUST SIGNS}}
+\DoxyCodeLine{3543         }
+\DoxyCodeLine{3544           \textcolor{keywordflow}{IF}(p > 0.0d0) q= -\/q}
+\DoxyCodeLine{3545           p= abs(p)}
+\DoxyCodeLine{3546         }
+\DoxyCodeLine{3547 \textcolor{comment}{! IS INTERPOLATION ACCEPTABLE}}
+\DoxyCodeLine{3548         }
+\DoxyCodeLine{3549           \textcolor{keywordflow}{IF}(2.0*p < (3.0*xm*q-\/abs(tol*q))) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3550            \textcolor{keywordflow}{IF}(p < abs(0.5d0*e*q)) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{3551             e= d}
+\DoxyCodeLine{3552             d= p/q}
+\DoxyCodeLine{3553             \textcolor{keywordflow}{GO TO} 30}
+\DoxyCodeLine{3554 \textcolor{keywordflow}{           ENDIF}}
+\DoxyCodeLine{3555 \textcolor{keywordflow}{          ENDIF}}
+\DoxyCodeLine{3556 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{3557 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{3558     }
+\DoxyCodeLine{3559 \textcolor{comment}{! BISECTION}}
+\DoxyCodeLine{3560     }
+\DoxyCodeLine{3561         d= xm}
+\DoxyCodeLine{3562         e= d}
+\DoxyCodeLine{3563     }
+\DoxyCodeLine{3564 \textcolor{comment}{! COMPLETE STEP}}
+\DoxyCodeLine{3565     }
+\DoxyCodeLine{3566   30    a= b}
+\DoxyCodeLine{3567         fa= fb}
+\DoxyCodeLine{3568         \textcolor{keywordflow}{IF}(abs(d) > tol) b= b+d}
+\DoxyCodeLine{3569         \textcolor{keywordflow}{IF}(abs(d) <= tol) b= b+sign(tol,xm)}
+\DoxyCodeLine{3570         fb= f(b)}
+\DoxyCodeLine{3571         \textcolor{keywordflow}{IF}(fb*(fc/abs(fc)) > 0.0d0) \textcolor{keywordflow}{GO TO} 10}
+\DoxyCodeLine{3572         \textcolor{keywordflow}{GO TO} 20}
+\DoxyCodeLine{3573 \textcolor{keywordflow}{       ENDIF}}
+\DoxyCodeLine{3574 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{3575 }
+\DoxyCodeLine{3576 \textcolor{comment}{! DONE}}
+\DoxyCodeLine{3577 }
+\DoxyCodeLine{3578       fn\_val= b}
+\DoxyCodeLine{3579       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}

@@ -1,0 +1,116 @@
+\hypertarget{namespaceTUtilHelpers}{}\doxysection{T\+Util\+Helpers Namespace Reference}
+\label{namespaceTUtilHelpers}\index{TUtilHelpers@{TUtilHelpers}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}{copy\+Vector}} (std\+::vector$<$ T $>$ const \&input, std\+::vector$<$ T $>$ \&target)
+\item 
+{\footnotesize template$<$typename T , typename U  = T$>$ }\\bool \mbox{\hyperlink{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}{check\+Element\+Exists}} (T const \&element, std\+::vector$<$ U $>$ const \&elementlist)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{namespaceTUtilHelpers_aa210de9b601a59c26984d7b511a44541}{has\+Common\+Elements}} (std\+::vector$<$ T $>$ const \&v1, std\+::vector$<$ T $>$ const \&v2)
+\item 
+void \mbox{\hyperlink{namespaceTUtilHelpers_ad6fe059920d844f1c5a88bd06002eb0c}{Expand\+Environment\+Variables}} (std\+::string \&str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}\label{namespaceTUtilHelpers_a90aa829c6ee4dc4ee445d4b25c554d7e}} 
+\index{TUtilHelpers@{TUtilHelpers}!checkElementExists@{checkElementExists}}
+\index{checkElementExists@{checkElementExists}!TUtilHelpers@{TUtilHelpers}}
+\doxysubsubsection{\texorpdfstring{checkElementExists()}{checkElementExists()}}
+{\footnotesize\ttfamily template$<$typename T , typename U  = T$>$ \\
+bool T\+Util\+Helpers\+::check\+Element\+Exists (\begin{DoxyParamCaption}\item[{T const \&}]{element,  }\item[{std\+::vector$<$ U $>$ const \&}]{elementlist }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file T\+Util\+Helpers.\+hh.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42                                                                                                                        \{}
+\DoxyCodeLine{43   \textcolor{keywordflow}{for} (U \textcolor{keyword}{const}\& el:elementlist)\{ \textcolor{keywordflow}{if} (el==element) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{44   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}\label{namespaceTUtilHelpers_ad3d14e2f2ee73f5f85403a15b71895f3}} 
+\index{TUtilHelpers@{TUtilHelpers}!copyVector@{copyVector}}
+\index{copyVector@{copyVector}!TUtilHelpers@{TUtilHelpers}}
+\doxysubsubsection{\texorpdfstring{copyVector()}{copyVector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void T\+Util\+Helpers\+::copy\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ const \&}]{input,  }\item[{std\+::vector$<$ T $>$ \&}]{target }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file T\+Util\+Helpers.\+hh.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                                                                                  \{}
+\DoxyCodeLine{25   std::copy(input.cbegin(), input.cend(), std::back\_inserter(target));}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceTUtilHelpers_ad6fe059920d844f1c5a88bd06002eb0c}\label{namespaceTUtilHelpers_ad6fe059920d844f1c5a88bd06002eb0c}} 
+\index{TUtilHelpers@{TUtilHelpers}!ExpandEnvironmentVariables@{ExpandEnvironmentVariables}}
+\index{ExpandEnvironmentVariables@{ExpandEnvironmentVariables}!TUtilHelpers@{TUtilHelpers}}
+\doxysubsubsection{\texorpdfstring{ExpandEnvironmentVariables()}{ExpandEnvironmentVariables()}}
+{\footnotesize\ttfamily void T\+Util\+Helpers\+::\+Expand\+Environment\+Variables (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file T\+Util\+Helpers.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                                            \{}
+\DoxyCodeLine{7   \textcolor{comment}{// Take care of special characters}}
+\DoxyCodeLine{8   \textcolor{keywordtype}{size\_t} ipos;}
+\DoxyCodeLine{9   std::string strTakeOut, strPutIn;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11   strTakeOut = \textcolor{stringliteral}{".oODOLLAROo."};}
+\DoxyCodeLine{12   strPutIn = \textcolor{stringliteral}{"\$"};}
+\DoxyCodeLine{13   ipos = str.find(strTakeOut);}
+\DoxyCodeLine{14   \textcolor{keywordflow}{while} (ipos!=std::string::npos)\{ str.replace(ipos, strTakeOut.length(), strPutIn.c\_str()); ipos = str.find(strTakeOut); \}}
+\DoxyCodeLine{15   strTakeOut = \textcolor{stringliteral}{".oOOPEN\_BRACKETOo."};}
+\DoxyCodeLine{16   strPutIn = \textcolor{stringliteral}{"\{"};}
+\DoxyCodeLine{17   ipos = str.find(strTakeOut);}
+\DoxyCodeLine{18   \textcolor{keywordflow}{while} (ipos!=std::string::npos)\{ str.replace(ipos, strTakeOut.length(), strPutIn.c\_str()); ipos = str.find(strTakeOut); \}}
+\DoxyCodeLine{19   strTakeOut = \textcolor{stringliteral}{".oOCLOSE\_BRACKETOo."};}
+\DoxyCodeLine{20   strPutIn = \textcolor{stringliteral}{"\}"};}
+\DoxyCodeLine{21   ipos = str.find(strTakeOut);}
+\DoxyCodeLine{22   \textcolor{keywordflow}{while} (ipos!=std::string::npos)\{ str.replace(ipos, strTakeOut.length(), strPutIn.c\_str()); ipos = str.find(strTakeOut); \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24   \textcolor{keyword}{static} std::regex env(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\$\(\backslash\)\(\backslash\)\{([\string^\}]+)\(\backslash\)\(\backslash\)\}"});}
+\DoxyCodeLine{25   std::smatch match;}
+\DoxyCodeLine{26   \textcolor{keywordflow}{while} (std::regex\_search(str, match, env))\{}
+\DoxyCodeLine{27     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* s = getenv(match[1].str().c\_str());}
+\DoxyCodeLine{28     \textcolor{keyword}{const} std::string var(s == NULL ? \textcolor{stringliteral}{""} : s);}
+\DoxyCodeLine{29     str.replace(match[0].first, match[0].\mbox{\hyperlink{namespacemodparameters_ab25730bf36fa1669616bd6fbf66f8614}{second}}, var);}
+\DoxyCodeLine{30   \}}
+\DoxyCodeLine{31 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceTUtilHelpers_aa210de9b601a59c26984d7b511a44541}\label{namespaceTUtilHelpers_aa210de9b601a59c26984d7b511a44541}} 
+\index{TUtilHelpers@{TUtilHelpers}!hasCommonElements@{hasCommonElements}}
+\index{hasCommonElements@{hasCommonElements}!TUtilHelpers@{TUtilHelpers}}
+\doxysubsubsection{\texorpdfstring{hasCommonElements()}{hasCommonElements()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool T\+Util\+Helpers\+::has\+Common\+Elements (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ const \&}]{v1,  }\item[{std\+::vector$<$ T $>$ const \&}]{v2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file T\+Util\+Helpers.\+hh.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                                                                        \{}
+\DoxyCodeLine{64   \textcolor{keywordflow}{for} (T \textcolor{keyword}{const}\& el1:v1)\{}
+\DoxyCodeLine{65     \textcolor{keywordflow}{for} (T \textcolor{keyword}{const}\& el2:v2)\{}
+\DoxyCodeLine{66       \textcolor{keywordflow}{if} (el1==el2) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68   \}}
+\DoxyCodeLine{69   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}

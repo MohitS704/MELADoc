@@ -1,0 +1,495 @@
+\hypertarget{namespacemodtopdecay}{}\doxysection{modtopdecay Module Reference}
+\label{namespacemodtopdecay}\index{modtopdecay@{modtopdecay}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodtopdecay_ac0e741197b0c87c87664b5b9cc978796}{topdecay}} (Flavor, Mom, Spinor, Top\+Hel)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodtopdecay_af6bdae3637f369e1f2e91ec14b1a56e7}{wdecay}} (Charge, Mom, W\+Curr)
+\item 
+subroutine \mbox{\hyperlink{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}{ubarspi\+\_\+weyl}} (p, i, ubar\+Spi)
+\item 
+subroutine \mbox{\hyperlink{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}{vspi\+\_\+weyl}} (p, i, v\+Spi)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodtopdecay_a4799bc11251d9df1652a5d5ec18edf01}{vbqg\+\_\+weyl}} (sp, e1)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodtopdecay_a37e5b747fd3694b57762a8acb71626b6}{vgq\+\_\+weyl}} (e1, sp)
+\item 
+double complex function, dimension(1\+:4) \mbox{\hyperlink{namespacemodtopdecay_a7a1299691bd52efbd163bcf7ec780c6c}{weyltodirac}} (sp)
+\item 
+complex(8) function \mbox{\hyperlink{namespacemodtopdecay_aac3bf6eedcfd98426e9db80b1e91897c}{psp1\+\_\+}} (sp1, sp2)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodtopdecay_abbe65bbce11527ccccf0de21f7842442}{ubarspi\+\_\+dirac}} (p, m, i, f)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodtopdecay_a04294c1d5d5668e0dab676f448ea392c}{vspi\+\_\+dirac}} (p, m, i, f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemodtopdecay_aac3bf6eedcfd98426e9db80b1e91897c}\label{namespacemodtopdecay_aac3bf6eedcfd98426e9db80b1e91897c}} 
+\index{modtopdecay@{modtopdecay}!psp1\_@{psp1\_}}
+\index{psp1\_@{psp1\_}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{psp1\_()}{psp1\_()}}
+{\footnotesize\ttfamily complex(8) function modtopdecay\+::psp1\+\_\+ (\begin{DoxyParamCaption}\item[{complex(8), dimension(\+:), intent(in)}]{sp1,  }\item[{complex(8), dimension(\+:), intent(in)}]{sp2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 317 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{317           \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{318           \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp1(:)}
+\DoxyCodeLine{319           \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp2(:)}
+\DoxyCodeLine{320           \textcolor{keywordtype}{complex(8)} :: res}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322             res = sum(sp1(1:)*sp2(1:))}
+\DoxyCodeLine{323 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_ac0e741197b0c87c87664b5b9cc978796}\label{namespacemodtopdecay_ac0e741197b0c87c87664b5b9cc978796}} 
+\index{modtopdecay@{modtopdecay}!topdecay@{topdecay}}
+\index{topdecay@{topdecay}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{topdecay()}{topdecay()}}
+{\footnotesize\ttfamily subroutine, public modtopdecay\+::topdecay (\begin{DoxyParamCaption}\item[{integer}]{Flavor,  }\item[{real(8), dimension(1\+:4,1\+:3)}]{Mom,  }\item[{complex(8), dimension(1\+:4)}]{Spinor,  }\item[{integer, optional}]{Top\+Hel }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{16 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{17 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{18 \textcolor{keywordtype}{real}(8) :: Mom(1:4,1:3)}
+\DoxyCodeLine{19 \textcolor{keywordtype}{integer} :: flavor}
+\DoxyCodeLine{20 \textcolor{keywordtype}{integer},\textcolor{keywordtype}{optional} :: TopHel}
+\DoxyCodeLine{21 \textcolor{keywordtype}{complex(8)} :: Spinor(1:4)}
+\DoxyCodeLine{22 \textcolor{keywordtype}{real}(8) :: zeros(1:6),TopMom(1:4),NWAFactor\_Top}
+\DoxyCodeLine{23 \textcolor{keywordtype}{complex(8)} :: Spi(1:4),BarSpi(1:4),BotSpi(1:4),WCurr(1:4)}
+\DoxyCodeLine{24 \textcolor{keywordtype}{real}(8) :: NWAFactor\_W}
+\DoxyCodeLine{25 \textcolor{keywordtype}{complex(8)} :: WProp}
+\DoxyCodeLine{26 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Nc=xn,nflav=2}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 nwafactor\_w   = 1d0/dsqrt(2d0*ga\_w*m\_w)}
+\DoxyCodeLine{29 wprop = (0d0,-\/1d0)*nwafactor\_w}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{!     zeros(1:4) = dble(TopMom(1:4)) -\/ Mom(1:4,1)-\/Mom(1:4,2)-\/Mom(1:4,3)}}
+\DoxyCodeLine{34 \textcolor{comment}{!     if( any(abs(zeros(1:4)/dble(TopMom(1))).gt.1d-\/8) ) then}}
+\DoxyCodeLine{35 \textcolor{comment}{!         print *, "ERROR: energy-\/momentum violation in SUBROUTINE TopDecay(): ",zeros(1:4)}}
+\DoxyCodeLine{36 \textcolor{comment}{!         print *, "momentum dump:"}}
+\DoxyCodeLine{37 \textcolor{comment}{!         print *, Mom(1:4,1:12)}}
+\DoxyCodeLine{38 \textcolor{comment}{!     endif}}
+\DoxyCodeLine{39 \textcolor{comment}{!}}
+\DoxyCodeLine{40 \textcolor{comment}{!     zeros(1) = dble(TopMom(1:4).dot.TopMom(1:4)) -\/ m\_Top**2}}
+\DoxyCodeLine{41 \textcolor{comment}{!     zeros(2) = Mom(1:4,1).dot.Mom(1:4,1)}}
+\DoxyCodeLine{42 \textcolor{comment}{!     zeros(3) = Mom(1:4,2).dot.Mom(1:4,2)}}
+\DoxyCodeLine{43 \textcolor{comment}{!     zeros(4) = Mom(1:4,3).dot.Mom(1:4,3)}}
+\DoxyCodeLine{44 \textcolor{comment}{!     if( any(abs(zeros(1:6)/dble(TopMom(1))**2).gt.1d-\/8) ) then}}
+\DoxyCodeLine{45 \textcolor{comment}{!         print *, "ERROR: onshell-\/ness violation in SUBROUTINE TopDecay(): ",zeros(1:6)}}
+\DoxyCodeLine{46 \textcolor{comment}{!         print *, "momentum dump:"}}
+\DoxyCodeLine{47 \textcolor{comment}{!         print *, Mom(1:4,1:12)}}
+\DoxyCodeLine{48 \textcolor{comment}{!     endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     topmom(1:4) = mom(1:4,1)+mom(1:4,2)+mom(1:4,3)}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if}( topdecays.eq.0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{54 \textcolor{comment}{!         if( Flavor.eq.Top\_  ) call ubarSpi\_Dirac(dcmplx(TopMom(1:4)),M\_Top,TopHel,Spinor(1:4))}}
+\DoxyCodeLine{55 \textcolor{comment}{!         if( Flavor.eq.ATop\_ ) call    vSpi\_Dirac(dcmplx(TopMom(1:4)),M\_Top,TopHel,Spinor(1:4))}}
+\DoxyCodeLine{56         spinor(1:4) = 0d0}
+\DoxyCodeLine{57         \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{58 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{59 \textcolor{comment}{!     elseif( TOPDECAYS.eq.1 ) then}}
+\DoxyCodeLine{60     nwafactor\_top = 1d0/dsqrt(2d0*ga\_top*m\_top)}
+\DoxyCodeLine{61 \textcolor{comment}{!     elseif( TOPDECAYS.eq.2 ) then}}
+\DoxyCodeLine{62 \textcolor{comment}{!         NWAFactor\_Top = 1d0/dsqrt(2d0*Ga\_Top*m\_Top)}}
+\DoxyCodeLine{63 \textcolor{comment}{!         NWAFactor\_Top = NWAFactor\_Top * dsqrt(dsqrt(Nc*NFlav)**2)}}
+\DoxyCodeLine{64 \textcolor{comment}{!     elseif( TOPDECAYS.eq.3 .or. TOPDECAYS.eq.4 ) then}}
+\DoxyCodeLine{65 \textcolor{comment}{!         NWAFactor\_Top = 1d0/dsqrt(2d0*Ga\_Top*m\_Top)}}
+\DoxyCodeLine{66 \textcolor{comment}{!         NWAFactor\_Top = NWAFactor\_Top * dsqrt(dsqrt(Nc*NFlav))}}
+\DoxyCodeLine{67 \textcolor{comment}{!     endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordflow}{if}( flavor.eq.top\_ ) \textcolor{keywordflow}{then} \textcolor{comment}{! Top quark decay}}
+\DoxyCodeLine{71 \textcolor{comment}{!       assemble lepton current}}
+\DoxyCodeLine{72         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}{ubarspi\_weyl}}(dcmplx(mom(1:4,1)),-\/1,botspi(1:4))  \textcolor{comment}{! bot}}
+\DoxyCodeLine{73         \textcolor{keyword}{call    }\mbox{\hyperlink{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}{vspi\_weyl}}(dcmplx(mom(1:4,2)),+1,spi(1:4))     \textcolor{comment}{! l+ or dn\_bar}}
+\DoxyCodeLine{74         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}{ubarspi\_weyl}}(dcmplx(mom(1:4,3)),-\/1,barspi(1:4))  \textcolor{comment}{! nu or up}}
+\DoxyCodeLine{75         wcurr(1:4)  = vbqq\_weyl(barspi(1:4),spi(1:4)) * wprop * gwsq \textcolor{comment}{! vbqq introduces -\/i/Sqrt(2)}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{!       connect to quark current}}
+\DoxyCodeLine{78         barspi(1:4) = botspi(1:4)}
+\DoxyCodeLine{79         spinor(1:4) = \mbox{\hyperlink{namespacemodtopdecay_a37e5b747fd3694b57762a8acb71626b6}{vgq\_weyl}}( wcurr(1:4),barspi(1:4) ) \textcolor{comment}{! vgq introduces -\/i/Sqrt(2)}}
+\DoxyCodeLine{80         spinor(1:4) =( spb2\_weyl(spinor(1:4),dcmplx(topmom(1:4))) + m\_top*spinor(1:4) ) * nwafactor\_top}
+\DoxyCodeLine{81         spinor(1:4) = \mbox{\hyperlink{namespacemodtopdecay_a7a1299691bd52efbd163bcf7ec780c6c}{weyltodirac}}(spinor(1:4))}
+\DoxyCodeLine{82     \textcolor{keywordflow}{elseif}( flavor.eq.atop\_ ) \textcolor{keywordflow}{then} \textcolor{comment}{! Anti-\/Top quark decay}}
+\DoxyCodeLine{83 \textcolor{comment}{!       assemble lepton current}}
+\DoxyCodeLine{84         \textcolor{keyword}{call    }\mbox{\hyperlink{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}{vspi\_weyl}}(dcmplx(mom(1:4,1)),+1,botspi(1:4))  \textcolor{comment}{! Abot}}
+\DoxyCodeLine{85         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}{ubarspi\_weyl}}(dcmplx(mom(1:4,2)),-\/1,barspi(1:4))  \textcolor{comment}{! l-\/ or dn}}
+\DoxyCodeLine{86         \textcolor{keyword}{call    }\mbox{\hyperlink{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}{vspi\_weyl}}(dcmplx(mom(1:4,3)),+1,spi(1:4))     \textcolor{comment}{! nubar or up\_bar}}
+\DoxyCodeLine{87         wcurr(1:4)  = vbqq\_weyl(barspi(1:4),spi(1:4)) * wprop * gwsq \textcolor{comment}{! vbqq introduces -\/i/Sqrt(2)}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{comment}{!       connect to quark current:}}
+\DoxyCodeLine{90         spi(1:4) = botspi(1:4)}
+\DoxyCodeLine{91         spinor(1:4) = \mbox{\hyperlink{namespacemodtopdecay_a4799bc11251d9df1652a5d5ec18edf01}{vbqg\_weyl}}( spi(1:4),wcurr(1:4) )\textcolor{comment}{! vbqg introduces -\/i/Sqrt(2)}}
+\DoxyCodeLine{92         spinor(1:4) = ( spi2\_weyl(dcmplx(topmom(1:4)),spinor(1:4)) -\/ m\_top*spinor(1:4) ) * nwafactor\_top}
+\DoxyCodeLine{93         spinor(1:4) = \mbox{\hyperlink{namespacemodtopdecay_a7a1299691bd52efbd163bcf7ec780c6c}{weyltodirac}}(spinor(1:4))}
+\DoxyCodeLine{94 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_abbe65bbce11527ccccf0de21f7842442}\label{namespacemodtopdecay_abbe65bbce11527ccccf0de21f7842442}} 
+\index{modtopdecay@{modtopdecay}!ubarspi\_dirac@{ubarspi\_dirac}}
+\index{ubarspi\_dirac@{ubarspi\_dirac}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{ubarspi\_dirac()}{ubarspi\_dirac()}}
+{\footnotesize\ttfamily subroutine, public modtopdecay\+::ubarspi\+\_\+dirac (\begin{DoxyParamCaption}\item[{complex(8), dimension(4)}]{p,  }\item[{real(8)}]{m,  }\item[{integer}]{i,  }\item[{complex(8), dimension(4)}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line 331 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{331           \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{332           \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{333           \textcolor{keywordtype}{integer} i}
+\DoxyCodeLine{334 \textcolor{keywordtype}{          real}(8) m}
+\DoxyCodeLine{335           \textcolor{keywordtype}{complex(8)} p(4)}
+\DoxyCodeLine{336           \textcolor{keywordtype}{complex(8)} f(4),fc}
+\DoxyCodeLine{337 \textcolor{keywordtype}{          real}(8)  p0,px,py,pz,fc2}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339           p0=dreal(p(1))}
+\DoxyCodeLine{340           px=dreal(p(2))}
+\DoxyCodeLine{341           py=dreal(p(3))}
+\DoxyCodeLine{342           pz=dreal(p(4))}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344           fc2=p0+m}
+\DoxyCodeLine{345           fc=cdsqrt( dcmplx(fc2))}
+\DoxyCodeLine{346 \textcolor{comment}{!           fc=dsqrt(fc2)}}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348           \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{349             f(1)=fc}
+\DoxyCodeLine{350             f(2)=dcmplx(0d0,0d0)}
+\DoxyCodeLine{351             f(3)=-\/1d0*pz*fc/fc2}
+\DoxyCodeLine{352             f(4)=-\/(px-\/(0d0,1d0)*py)*fc/fc2}
+\DoxyCodeLine{353           \textcolor{keywordflow}{elseif} (i.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{354             f(1)=dcmplx(0d0,0d0)}
+\DoxyCodeLine{355             f(2)=fc}
+\DoxyCodeLine{356             f(3)=-\/(px+(0d0,1d0)*py)*fc/fc2}
+\DoxyCodeLine{357             f(4)=pz*fc/fc2}
+\DoxyCodeLine{358           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{359               print *, \textcolor{stringliteral}{"wrong helicity setting in ubarSpi"}}
+\DoxyCodeLine{360               stop}
+\DoxyCodeLine{361 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363           \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}\label{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}} 
+\index{modtopdecay@{modtopdecay}!ubarspi\_weyl@{ubarspi\_weyl}}
+\index{ubarspi\_weyl@{ubarspi\_weyl}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{ubarspi\_weyl()}{ubarspi\_weyl()}}
+{\footnotesize\ttfamily subroutine modtopdecay\+::ubarspi\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(4), intent(in)}]{p,  }\item[{integer, intent(in)}]{i,  }\item[{complex(8), dimension(4)}]{ubar\+Spi }\end{DoxyParamCaption})}
+
+
+
+Definition at line 151 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{151           \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{152           \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{153           \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)}:: i}
+\DoxyCodeLine{154           \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p(4)}
+\DoxyCodeLine{155           \textcolor{keywordtype}{complex(8)} :: ubarSpi(4)}
+\DoxyCodeLine{156           \textcolor{keywordtype}{complex(8)} :: ephi}
+\DoxyCodeLine{157 \textcolor{keywordtype}{          real}(8) :: p0,px,py,pz}
+\DoxyCodeLine{158           \textcolor{keywordtype}{complex(8)} :: fc, fc2}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160           p0=dreal(p(1))}
+\DoxyCodeLine{161           px=dreal(p(2))}
+\DoxyCodeLine{162           py=dreal(p(3))}
+\DoxyCodeLine{163           pz=dreal(p(4))}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165          fc2 = p0 + pz}
+\DoxyCodeLine{166          fc=cdsqrt(fc2)}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168          \textcolor{keywordflow}{if} (cdabs(fc2).gt.1d-\/15) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170          \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{171             ubarspi(1)=(0d0,0d0)}
+\DoxyCodeLine{172             ubarspi(2)=(0d0,0d0)}
+\DoxyCodeLine{173             ubarspi(3)=fc}
+\DoxyCodeLine{174             ubarspi(4)=(px-\/(0d0,1d0)*py)/fc}
+\DoxyCodeLine{175          \textcolor{keywordflow}{elseif} (i.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{176             ubarspi(1)=(px+(0d0,1d0)*py)/fc}
+\DoxyCodeLine{177             ubarspi(2)=-\/fc}
+\DoxyCodeLine{178             ubarspi(3)=(0d0,0d0)}
+\DoxyCodeLine{179             ubarspi(4)=(0d0,0d0)}
+\DoxyCodeLine{180          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{181           \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"wrong helicity setting in ubarSpi\_Weyl"})}
+\DoxyCodeLine{182 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186          \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{187             ubarspi(1) = (0d0,0d0)}
+\DoxyCodeLine{188             ubarspi(2) = (0d0,0d0)}
+\DoxyCodeLine{189             ubarspi(3) = (0d0,0d0)}
+\DoxyCodeLine{190             ubarspi(4) = dsqrt(2d0*p0)}
+\DoxyCodeLine{191          \textcolor{keywordflow}{elseif} (i.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{192             ubarspi(1) = dsqrt(2d0*p0)}
+\DoxyCodeLine{193             ubarspi(2) = (0d0,0d0)}
+\DoxyCodeLine{194             ubarspi(3) = (0d0,0d0)}
+\DoxyCodeLine{195             ubarspi(4) = (0d0,0d0)}
+\DoxyCodeLine{196          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{197             \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"wrong helicity setting in ubarSpi\_Weyl"})}
+\DoxyCodeLine{198 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{201         \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_a4799bc11251d9df1652a5d5ec18edf01}\label{namespacemodtopdecay_a4799bc11251d9df1652a5d5ec18edf01}} 
+\index{modtopdecay@{modtopdecay}!vbqg\_weyl@{vbqg\_weyl}}
+\index{vbqg\_weyl@{vbqg\_weyl}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{vbqg\_weyl()}{vbqg\_weyl()}}
+{\footnotesize\ttfamily complex(8) function, dimension(size(sp)) modtopdecay\+::vbqg\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(\+:), intent(in)}]{sp,  }\item[{complex(8), dimension(\+:), intent(in)}]{e1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 273 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{273         \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}                }
+\DoxyCodeLine{274         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{275         \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: e1(:)}
+\DoxyCodeLine{276         \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp(:)}
+\DoxyCodeLine{277         \textcolor{keywordtype}{complex(8)} :: vbqg\_Weyl(size(sp))}
+\DoxyCodeLine{278 \textcolor{keywordtype}{        real}(8), \textcolor{keywordtype}{parameter} :: sqrt2 = 1.4142135623730950488016887242096980786d0}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280             vbqg\_weyl = (0d0,-\/1d0)/sqrt2*spi2\_weyl(e1,sp)}
+\DoxyCodeLine{281 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_a37e5b747fd3694b57762a8acb71626b6}\label{namespacemodtopdecay_a37e5b747fd3694b57762a8acb71626b6}} 
+\index{modtopdecay@{modtopdecay}!vgq\_weyl@{vgq\_weyl}}
+\index{vgq\_weyl@{vgq\_weyl}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{vgq\_weyl()}{vgq\_weyl()}}
+{\footnotesize\ttfamily complex(8) function, dimension(size(sp)) modtopdecay\+::vgq\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(\+:), intent(in)}]{e1,  }\item[{complex(8), dimension(\+:), intent(in)}]{sp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 287 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{287         \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}                }
+\DoxyCodeLine{288         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{289         \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: e1(:)}
+\DoxyCodeLine{290         \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: sp(:)}
+\DoxyCodeLine{291         \textcolor{keywordtype}{complex(8)} :: vgq\_Weyl(size(sp))}
+\DoxyCodeLine{292 \textcolor{keywordtype}{        real}(8), \textcolor{keywordtype}{parameter} :: sqrt2 = 1.4142135623730950488016887242096980786d0}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294             vgq\_weyl = (0d0,-\/1d0)/sqrt2*spb2\_weyl(sp,e1)}
+\DoxyCodeLine{295 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_a04294c1d5d5668e0dab676f448ea392c}\label{namespacemodtopdecay_a04294c1d5d5668e0dab676f448ea392c}} 
+\index{modtopdecay@{modtopdecay}!vspi\_dirac@{vspi\_dirac}}
+\index{vspi\_dirac@{vspi\_dirac}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{vspi\_dirac()}{vspi\_dirac()}}
+{\footnotesize\ttfamily subroutine, public modtopdecay\+::vspi\+\_\+dirac (\begin{DoxyParamCaption}\item[{complex(8), dimension(4)}]{p,  }\item[{real(8)}]{m,  }\item[{integer}]{i,  }\item[{complex(8), dimension(4)}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line 374 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{374           \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{375           \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{376           \textcolor{keywordtype}{integer} i}
+\DoxyCodeLine{377 \textcolor{keywordtype}{          real}(8) m}
+\DoxyCodeLine{378           \textcolor{keywordtype}{complex(8)} p(4)}
+\DoxyCodeLine{379           \textcolor{keywordtype}{complex(8)} f(4),fc}
+\DoxyCodeLine{380 \textcolor{keywordtype}{          real}(8) p0,px,py,pz,fc2}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382           p0=dreal(p(1))}
+\DoxyCodeLine{383           px=dreal(p(2))}
+\DoxyCodeLine{384           py=dreal(p(3))}
+\DoxyCodeLine{385           pz=dreal(p(4))}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387           fc2 = p0+m}
+\DoxyCodeLine{388           fc=cdsqrt(dcmplx(fc2))}
+\DoxyCodeLine{389 \textcolor{comment}{!           fc=dsqrt(fc2)}}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391           \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{392             f(1)=pz*fc/fc2}
+\DoxyCodeLine{393             f(2)=(px+(0d0,1d0)*py)*fc/fc2}
+\DoxyCodeLine{394             f(3)=fc}
+\DoxyCodeLine{395             f(4)=dcmplx(0d0,0d0)}
+\DoxyCodeLine{396           \textcolor{keywordflow}{elseif} (i.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{397             f(1)=(px-\/(0d0,1d0)*py)*fc/fc2}
+\DoxyCodeLine{398             f(2)=-\/pz*fc/fc2}
+\DoxyCodeLine{399             f(3)=dcmplx(0d0,0d0)}
+\DoxyCodeLine{400             f(4)=fc}
+\DoxyCodeLine{401           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{402               print *, \textcolor{stringliteral}{"wrong helicity setting in vSpi"}}
+\DoxyCodeLine{403 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405           \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}\label{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}} 
+\index{modtopdecay@{modtopdecay}!vspi\_weyl@{vspi\_weyl}}
+\index{vspi\_weyl@{vspi\_weyl}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{vspi\_weyl()}{vspi\_weyl()}}
+{\footnotesize\ttfamily subroutine modtopdecay\+::vspi\+\_\+weyl (\begin{DoxyParamCaption}\item[{complex(8), dimension(4), intent(in)}]{p,  }\item[{integer, intent(in)}]{i,  }\item[{complex(8), dimension(4)}]{v\+Spi }\end{DoxyParamCaption})}
+
+
+
+Definition at line 209 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{209           \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{210           \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{211           \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)}:: i}
+\DoxyCodeLine{212           \textcolor{keywordtype}{complex(8)}, \textcolor{keywordtype}{intent(in)} :: p(4)}
+\DoxyCodeLine{213           \textcolor{keywordtype}{complex(8)} :: vSpi(4)}
+\DoxyCodeLine{214           \textcolor{keywordtype}{complex(8)} :: ephi}
+\DoxyCodeLine{215 \textcolor{keywordtype}{          real}(8) :: p0,px,py,pz}
+\DoxyCodeLine{216 \textcolor{keywordtype}{          real}(8) :: nx,ny,nz,theta,phi}
+\DoxyCodeLine{217 \textcolor{keywordtype}{          real}(8) :: ct,ct2,st,st2,cphi,sphi}
+\DoxyCodeLine{218           \textcolor{keywordtype}{complex(8)} :: fc2, fc}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220           p0=dreal(p(1))}
+\DoxyCodeLine{221           px=dreal(p(2))}
+\DoxyCodeLine{222           py=dreal(p(3))}
+\DoxyCodeLine{223           pz=dreal(p(4))}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225          fc2 = p0 + pz}
+\DoxyCodeLine{226          fc=cdsqrt(fc2)}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228          \textcolor{keywordflow}{if} (cdabs(fc2).gt.1d-\/15) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230          \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{231             vspi(1)=(0d0,0d0)}
+\DoxyCodeLine{232             vspi(2)=(0d0,0d0)}
+\DoxyCodeLine{233             vspi(3)=(px-\/(0d0,1d0)*py)/fc}
+\DoxyCodeLine{234             vspi(4)=-\/fc}
+\DoxyCodeLine{235          \textcolor{keywordflow}{elseif} (i.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{236             vspi(1)=fc}
+\DoxyCodeLine{237             vspi(2)=(px+(0d0,1d0)*py)/fc}
+\DoxyCodeLine{238             vspi(3)=(0d0,0d0)}
+\DoxyCodeLine{239             vspi(4)=(0d0,0d0)}
+\DoxyCodeLine{240          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{241             \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"wrong helicity setting in vSpi\_Weyl"})}
+\DoxyCodeLine{242 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246          \textcolor{keywordflow}{if} (i.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{247             vspi(1)=(0d0,0d0)}
+\DoxyCodeLine{248             vspi(2)=(0d0,0d0)}
+\DoxyCodeLine{249             vspi(3)=dsqrt(2d0*p0)}
+\DoxyCodeLine{250             vspi(4)=(0d0,0d0)}
+\DoxyCodeLine{251          \textcolor{keywordflow}{elseif} (i.eq.-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{252             vspi(1)=(0d0,0d0)}
+\DoxyCodeLine{253             vspi(2)=dsqrt(2d0*p0)}
+\DoxyCodeLine{254             vspi(3)=(0d0,0d0)}
+\DoxyCodeLine{255             vspi(4)=(0d0,0d0)}
+\DoxyCodeLine{256          \textcolor{keywordflow}{else}}
+\DoxyCodeLine{257             \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodmisc_a67da31b838636e613886adf687dd9040}{error}}(\textcolor{stringliteral}{"wrong helicity setting in vSpi\_Weyl"})}
+\DoxyCodeLine{258 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262          \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_af6bdae3637f369e1f2e91ec14b1a56e7}\label{namespacemodtopdecay_af6bdae3637f369e1f2e91ec14b1a56e7}} 
+\index{modtopdecay@{modtopdecay}!wdecay@{wdecay}}
+\index{wdecay@{wdecay}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{wdecay()}{wdecay()}}
+{\footnotesize\ttfamily subroutine, public modtopdecay\+::wdecay (\begin{DoxyParamCaption}\item[{integer}]{Charge,  }\item[{real(8), dimension(1\+:4,1\+:2)}]{Mom,  }\item[{complex(8), dimension(1\+:4)}]{W\+Curr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodmisc}{modmisc}}}
+\DoxyCodeLine{107 \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacemodparameters}{modparameters}}}
+\DoxyCodeLine{108 \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{109 \textcolor{keywordtype}{real}(8) :: Mom(1:4,1:2)}
+\DoxyCodeLine{110 \textcolor{keywordtype}{integer} :: Charge}
+\DoxyCodeLine{111 \textcolor{keywordtype}{real}(8) :: WMom(1:4)}
+\DoxyCodeLine{112 \textcolor{keywordtype}{complex(8)} :: Spi(1:4),BarSpi(1:4),BotSpi(1:4),WCurr(1:4)}
+\DoxyCodeLine{113 \textcolor{keywordtype}{real}(8) :: NWAFactor\_W}
+\DoxyCodeLine{114 \textcolor{keywordtype}{complex(8)} :: WProp}
+\DoxyCodeLine{115 \textcolor{keywordtype}{real}(8),\textcolor{keywordtype}{parameter} :: Nc=xn,nflav=2}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 nwafactor\_w   = 1d0/dsqrt(2d0*ga\_w*m\_w)}
+\DoxyCodeLine{118 wprop = (0d0,-\/1d0)*dsqrt(gwsq)*nwafactor\_w}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     wmom(1:4) = mom(1:4,1)+mom(1:4,2)}
+\DoxyCodeLine{123     \textcolor{keywordflow}{if}( topdecays.eq.0 ) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{124         wcurr(1:4) = 0d0}
+\DoxyCodeLine{125         \textcolor{keywordflow}{RETURN}}
+\DoxyCodeLine{126 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{if}( charge.eq.wp\_ ) \textcolor{keywordflow}{then} \textcolor{comment}{! W+ decay}}
+\DoxyCodeLine{130 \textcolor{comment}{!       assemble lepton current}}
+\DoxyCodeLine{131         \textcolor{keyword}{call    }\mbox{\hyperlink{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}{vspi\_weyl}}(dcmplx(mom(1:4,1)),+1,spi(1:4))     \textcolor{comment}{! l+ or dn\_bar}}
+\DoxyCodeLine{132         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}{ubarspi\_weyl}}(dcmplx(mom(1:4,2)),-\/1,barspi(1:4))  \textcolor{comment}{! nu or up}}
+\DoxyCodeLine{133         wcurr(1:4)  = vbqq\_weyl(barspi(1:4),spi(1:4)) * wprop \textcolor{comment}{! vbqq introduces -\/i/Sqrt(2)}}
+\DoxyCodeLine{134         }
+\DoxyCodeLine{135     \textcolor{keywordflow}{elseif}( charge.eq.wm\_ ) \textcolor{keywordflow}{then} \textcolor{comment}{! W-\/ decay}}
+\DoxyCodeLine{136 \textcolor{comment}{!       assemble lepton current}}
+\DoxyCodeLine{137         \textcolor{keyword}{call }\mbox{\hyperlink{namespacemodtopdecay_af283835ebc94f5ae5a805d391d388e0d}{ubarspi\_weyl}}(dcmplx(mom(1:4,1)),-\/1,barspi(1:4))  \textcolor{comment}{! l-\/ or dn}}
+\DoxyCodeLine{138         \textcolor{keyword}{call    }\mbox{\hyperlink{namespacemodtopdecay_acdd837f7e4e2343d09b72a7ef90de008}{vspi\_weyl}}(dcmplx(mom(1:4,2)),+1,spi(1:4))     \textcolor{comment}{! nubar or up\_bar}}
+\DoxyCodeLine{139         wcurr(1:4)  = vbqq\_weyl(barspi(1:4),spi(1:4)) * wprop \textcolor{comment}{! vbqq introduces -\/i/Sqrt(2)}}
+\DoxyCodeLine{140         }
+\DoxyCodeLine{141 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodtopdecay_a7a1299691bd52efbd163bcf7ec780c6c}\label{namespacemodtopdecay_a7a1299691bd52efbd163bcf7ec780c6c}} 
+\index{modtopdecay@{modtopdecay}!weyltodirac@{weyltodirac}}
+\index{weyltodirac@{weyltodirac}!modtopdecay@{modtopdecay}}
+\doxysubsubsection{\texorpdfstring{weyltodirac()}{weyltodirac()}}
+{\footnotesize\ttfamily double complex function, dimension(1\+:4) modtopdecay\+::weyltodirac (\begin{DoxyParamCaption}\item[{double complex, dimension(1\+:4)}]{sp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 301 of file mod\+\_\+\+Top\+Decay.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{301           \textcolor{keywordtype}{implicit none}              \textcolor{comment}{! sp can be spinor or bar-\/spinor, i.e. U\string^dagger.sp = barsp.U}}
+\DoxyCodeLine{302           \textcolor{keywordtype}{double complex} :: sp(1:4)}
+\DoxyCodeLine{303           \textcolor{keywordtype}{double complex} :: WeylToDirac(1:4)}
+\DoxyCodeLine{304           \textcolor{keywordtype}{double precision},\textcolor{keywordtype}{parameter} :: SqrtFac=1d0/dsqrt(2d0)}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306               weyltodirac(1) = sqrtfac*(sp(1)+sp(3))}
+\DoxyCodeLine{307               weyltodirac(2) = sqrtfac*(sp(2)+sp(4))}
+\DoxyCodeLine{308               weyltodirac(3) = sqrtfac*(sp(1)-\/sp(3))}
+\DoxyCodeLine{309               weyltodirac(4) = sqrtfac*(sp(2)-\/sp(4))}
+\DoxyCodeLine{310           \textcolor{keywordflow}{return}}
+
+\end{DoxyCode}

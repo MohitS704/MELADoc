@@ -1,0 +1,337 @@
+\hypertarget{classTensorPdfFactory}{}\doxysection{Tensor\+Pdf\+Factory Class Reference}
+\label{classTensorPdfFactory}\index{TensorPdfFactory@{TensorPdfFactory}}
+
+
+{\ttfamily \#include $<$Tensor\+Pdf\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Tensor\+Pdf\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classTensorPdfFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tensor\+Pdf\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTensorPdfFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTensorPdfFactory_ac98d01947bcedc363976f9812d881aee}{Tensor\+Pdf\+Factory}} (\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&measurables\+\_\+, \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}} V1decay\+\_\+=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}, \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}} V2decay\+\_\+=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}, Bool\+\_\+t Onshell\+H\+\_\+=true)
+\item 
+virtual \mbox{\hyperlink{classTensorPdfFactory_ae870be9cb1724953cb0ffa70cbe5d900}{$\sim$\+Tensor\+Pdf\+Factory}} ()
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_ad1f755adc1f4e904075ca0268d60a682}{make\+Couplings\+Const}} (bool yes\+No=true)
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_aa536a03b1965aa4d2052462bc22c8078}{add\+Hypothesis}} (int ig, double initval, double iphase=0)
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_a8b64df02be5754db5b5f59ecf40c5573}{set\+Tensor\+Polarization}} (int ig, double initval)
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_a72ae05add6106a031bb78d3ce1d69106}{reset\+Hypotheses}} ()
+\item 
+virtual \mbox{\hyperlink{classRooSpinTwo}{Roo\+Spin\+Two}} $\ast$ \mbox{\hyperlink{classTensorPdfFactory_ad608424ac9626582b9cc67fb0c413739}{get\+P\+DF}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings}{Roo\+Spin\+Two\+::model\+Couplings}} \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_a8b2a93827932cec07770d32239d8d4c4}{init\+G\+Vals}} ()
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_a2596adececd94f55148acb4d5a715cb8}{destroy\+G\+Vals}} ()
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_aaf939302641b43b20d7cf037cd3ea1d2}{init\+P\+DF}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classTensorPdfFactory_aac6748549318049021bf3b06b4e5fbe7}{destroy\+P\+DF}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 10 of file Tensor\+Pdf\+Factory.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTensorPdfFactory_ac98d01947bcedc363976f9812d881aee}\label{classTensorPdfFactory_ac98d01947bcedc363976f9812d881aee}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!TensorPdfFactory@{TensorPdfFactory}}
+\index{TensorPdfFactory@{TensorPdfFactory}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{TensorPdfFactory()}{TensorPdfFactory()}}
+{\footnotesize\ttfamily Tensor\+Pdf\+Factory\+::\+Tensor\+Pdf\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRooSpin_1_1modelMeasurables}{Roo\+Spin\+::model\+Measurables}} const \&}]{measurables\+\_\+,  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V1decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723}{Roo\+Spin\+::\+Vdecay\+Type}}}]{V2decay\+\_\+ = {\ttfamily \mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723adfcc2d3a22f8f320d92b164e65788c37}{Roo\+Spin\+::k\+Vdecay\+Type\+\_\+\+Zll}}},  }\item[{Bool\+\_\+t}]{Onshell\+H\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                                                                                                                                         :}
+\DoxyCodeLine{9 \mbox{\hyperlink{classSpinPdfFactory_ad10e24b0b56d547bae5ec802402b5da3}{SpinPdfFactory}}(measurables\_, V1decay\_, V2decay\_, OnshellH\_)}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11   \mbox{\hyperlink{classTensorPdfFactory_a8b2a93827932cec07770d32239d8d4c4}{initGVals}}();}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTensorPdfFactory_ae870be9cb1724953cb0ffa70cbe5d900}\label{classTensorPdfFactory_ae870be9cb1724953cb0ffa70cbe5d900}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!````~TensorPdfFactory@{$\sim$TensorPdfFactory}}
+\index{````~TensorPdfFactory@{$\sim$TensorPdfFactory}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$TensorPdfFactory()}{~TensorPdfFactory()}}
+{\footnotesize\ttfamily Tensor\+Pdf\+Factory\+::$\sim$\+Tensor\+Pdf\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 14 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                                    \{}
+\DoxyCodeLine{15   \mbox{\hyperlink{classTensorPdfFactory_a2596adececd94f55148acb4d5a715cb8}{destroyGVals}}();}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTensorPdfFactory_aa536a03b1965aa4d2052462bc22c8078}\label{classTensorPdfFactory_aa536a03b1965aa4d2052462bc22c8078}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!addHypothesis@{addHypothesis}}
+\index{addHypothesis@{addHypothesis}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{addHypothesis()}{addHypothesis()}}
+{\footnotesize\ttfamily void Tensor\+Pdf\+Factory\+::add\+Hypothesis (\begin{DoxyParamCaption}\item[{int}]{ig,  }\item[{double}]{initval,  }\item[{double}]{iphase = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 56 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                                                                          \{}
+\DoxyCodeLine{57   \textcolor{keywordflow}{if} (ig>=(\textcolor{keywordtype}{int})\mbox{\hyperlink{raw__couplings_8txt_a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26}{SIZE\_GVV}} || ig<0) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Invalid g"} << ig << endl;}
+\DoxyCodeLine{58   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{59     ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[ig][0])-\/>setVal(initval*cos(iphase));}
+\DoxyCodeLine{60     ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[ig][1])-\/>setVal(initval*sin(iphase));}
+\DoxyCodeLine{61   \}}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTensorPdfFactory_a2596adececd94f55148acb4d5a715cb8}\label{classTensorPdfFactory_a2596adececd94f55148acb4d5a715cb8}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!destroyGVals@{destroyGVals}}
+\index{destroyGVals@{destroyGVals}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{destroyGVals()}{destroyGVals()}}
+{\footnotesize\ttfamily void Tensor\+Pdf\+Factory\+::destroy\+G\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSpinPdfFactory_a6147e6a5e94e6d2fa6da43bde3b9e302}{Spin\+Pdf\+Factory}}.
+
+
+
+Definition at line 44 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44                                    \{}
+\DoxyCodeLine{45   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} v=0; v<(int)\mbox{\hyperlink{raw__couplings_8txt_a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26}{SIZE\_GVV}}; v++)\{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{47       \textcolor{keyword}{delete} \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[v][im];}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49   \}}
+\DoxyCodeLine{50   \textcolor{keyword}{delete} \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a502a3dec26b9952a933432e7e25a4939}{Lambda}};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{delete} \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a16f9193d7cfafc85a45813731b84cc76}{f\_spinz1}};}
+\DoxyCodeLine{53   \textcolor{keyword}{delete} \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a95812538dbe5ca992085263732f91738}{f\_spinz2}};}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTensorPdfFactory_aac6748549318049021bf3b06b4e5fbe7}\label{classTensorPdfFactory_aac6748549318049021bf3b06b4e5fbe7}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!destroyPDF@{destroyPDF}}
+\index{destroyPDF@{destroyPDF}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{destroyPDF()}{destroyPDF()}}
+{\footnotesize\ttfamily virtual void Tensor\+Pdf\+Factory\+::destroy\+P\+DF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSpinPdfFactory_a6b6ec4f4b3ffcbdd10c26aa97371f65f}{Spin\+Pdf\+Factory}}.
+
+
+
+Implemented in \mbox{\hyperlink{classTensorPdfFactory__ppHVV_ac61d3a4f8a32c1957337c97c8410a34f}{Tensor\+Pdf\+Factory\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classTensorPdfFactory_ad608424ac9626582b9cc67fb0c413739}\label{classTensorPdfFactory_ad608424ac9626582b9cc67fb0c413739}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!getPDF@{getPDF}}
+\index{getPDF@{getPDF}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{getPDF()}{getPDF()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRooSpinTwo}{Roo\+Spin\+Two}}$\ast$ Tensor\+Pdf\+Factory\+::get\+P\+DF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classTensorPdfFactory__ppHVV_acad2e9f3058fd9d43db87324c014d77a}{Tensor\+Pdf\+Factory\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classTensorPdfFactory_a8b2a93827932cec07770d32239d8d4c4}\label{classTensorPdfFactory_a8b2a93827932cec07770d32239d8d4c4}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!initGVals@{initGVals}}
+\index{initGVals@{initGVals}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{initGVals()}{initGVals()}}
+{\footnotesize\ttfamily void Tensor\+Pdf\+Factory\+::init\+G\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSpinPdfFactory_a334a54252b5578b5260854498da5e8b1}{Spin\+Pdf\+Factory}}.
+
+
+
+Definition at line 17 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                 \{}
+\DoxyCodeLine{18   \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a502a3dec26b9952a933432e7e25a4939}{Lambda}} = \textcolor{keyword}{new} RooRealVar(\textcolor{stringliteral}{"Lambda"}, \textcolor{stringliteral}{"Lambda"}, 1000.);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} v=0; v<(int)\mbox{\hyperlink{raw__couplings_8txt_a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26}{SIZE\_GVV}}; v++)\{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{22       TString strcore;}
+\DoxyCodeLine{23       \textcolor{keywordtype}{double} initval = 0;}
+\DoxyCodeLine{24       TString strapp = \textcolor{stringliteral}{"Val"};}
+\DoxyCodeLine{25       \textcolor{keywordflow}{if} (im==1) strapp.Append(\textcolor{stringliteral}{"Im"});}
+\DoxyCodeLine{26       strapp.Prepend(Form(\textcolor{stringliteral}{"\%i"}, v+1));}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28       strcore = \textcolor{stringliteral}{"g"};}
+\DoxyCodeLine{29       strcore.Append(strapp);}
+\DoxyCodeLine{30       RooRealVar* gVal = \textcolor{keyword}{new} RooRealVar(strcore, strcore, initval, -\/1e15, 1e15);}
+\DoxyCodeLine{31       gVal-\/>removeMin();}
+\DoxyCodeLine{32       gVal-\/>removeMax();}
+\DoxyCodeLine{33       \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[v][im] = (RooAbsReal*)gVal;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35   \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceglobalc_acd9b06e29f792896407a5295fe52de7a}{f}}=0; \mbox{\hyperlink{namespaceglobalc_acd9b06e29f792896407a5295fe52de7a}{f}}<2; \mbox{\hyperlink{namespaceglobalc_acd9b06e29f792896407a5295fe52de7a}{f}}++)\{}
+\DoxyCodeLine{38     TString strcore = Form(\textcolor{stringliteral}{"f\_spinz\%i"}, \mbox{\hyperlink{namespaceglobalc_acd9b06e29f792896407a5295fe52de7a}{f}}+1);}
+\DoxyCodeLine{39     RooRealVar* fVal = \textcolor{keyword}{new} RooRealVar(strcore, strcore, 0., 0., 1.);}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespaceglobalc_acd9b06e29f792896407a5295fe52de7a}{f}}==0) \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a16f9193d7cfafc85a45813731b84cc76}{f\_spinz1}} = (RooRealVar*)fVal;}
+\DoxyCodeLine{41     \textcolor{keywordflow}{else} \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a95812538dbe5ca992085263732f91738}{f\_spinz2}} = (RooRealVar*)fVal;}
+\DoxyCodeLine{42   \}}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTensorPdfFactory_aaf939302641b43b20d7cf037cd3ea1d2}\label{classTensorPdfFactory_aaf939302641b43b20d7cf037cd3ea1d2}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!initPDF@{initPDF}}
+\index{initPDF@{initPDF}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{initPDF()}{initPDF()}}
+{\footnotesize\ttfamily virtual void Tensor\+Pdf\+Factory\+::init\+P\+DF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSpinPdfFactory_a75ae6989146c5621672f56cf3b3df6aa}{Spin\+Pdf\+Factory}}.
+
+
+
+Implemented in \mbox{\hyperlink{classTensorPdfFactory__ppHVV_a440e7ab8c17413cecc9cc8c975084890}{Tensor\+Pdf\+Factory\+\_\+pp\+H\+VV}}.
+
+\mbox{\Hypertarget{classTensorPdfFactory_ad1f755adc1f4e904075ca0268d60a682}\label{classTensorPdfFactory_ad1f755adc1f4e904075ca0268d60a682}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!makeCouplingsConst@{makeCouplingsConst}}
+\index{makeCouplingsConst@{makeCouplingsConst}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{makeCouplingsConst()}{makeCouplingsConst()}}
+{\footnotesize\ttfamily void Tensor\+Pdf\+Factory\+::make\+Couplings\+Const (\begin{DoxyParamCaption}\item[{bool}]{yes\+No = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSpinPdfFactory_a280c4b121d847bc0e6825ec7d647ffef}{Spin\+Pdf\+Factory}}.
+
+
+
+Definition at line 78 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                                                    \{}
+\DoxyCodeLine{79   \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a502a3dec26b9952a933432e7e25a4939}{Lambda}}-\/>setConstant(\textcolor{keyword}{true}); \textcolor{comment}{// The user is not allowed to change this value!}}
+\DoxyCodeLine{80   }
+\DoxyCodeLine{81   \textcolor{comment}{// Set fqq, fz2}}
+\DoxyCodeLine{82   \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a16f9193d7cfafc85a45813731b84cc76}{f\_spinz1}}-\/>setConstant(yesNo);}
+\DoxyCodeLine{83   \mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a95812538dbe5ca992085263732f91738}{f\_spinz2}}-\/>setConstant(yesNo);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{comment}{// Set the b decay couplings}}
+\DoxyCodeLine{86   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ig=0; ig<(int)\mbox{\hyperlink{raw__couplings_8txt_a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26}{SIZE\_GVV}}; ig++)\{}
+\DoxyCodeLine{87     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++)\{}
+\DoxyCodeLine{88       \textcolor{keywordflow}{if} (\textcolor{keyword}{dynamic\_cast<}RooRealVar*\textcolor{keyword}{>}(\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[ig][im])!=0) ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[ig][im])-\/>setConstant(yesNo);}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90   \}}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTensorPdfFactory_a72ae05add6106a031bb78d3ce1d69106}\label{classTensorPdfFactory_a72ae05add6106a031bb78d3ce1d69106}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!resetHypotheses@{resetHypotheses}}
+\index{resetHypotheses@{resetHypotheses}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{resetHypotheses()}{resetHypotheses()}}
+{\footnotesize\ttfamily void Tensor\+Pdf\+Factory\+::reset\+Hypotheses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classSpinPdfFactory_ac6e90c38ce3daa936696fbee0fc135ac}{Spin\+Pdf\+Factory}}.
+
+
+
+Definition at line 70 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70                                       \{}
+\DoxyCodeLine{71   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ig=0; ig<(int)\mbox{\hyperlink{raw__couplings_8txt_a30ec47c3f0ae33b081fa62627a19a676a447153b0d9234e6cd875bac94c1eab26}{SIZE\_GVV}}; ig++)\{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} im=0; im<2; im++) ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a779cb1fc5486bccaf0c1a3a616e73e95}{bList}}[ig][im])-\/>setVal(0.);}
+\DoxyCodeLine{73   \}}
+\DoxyCodeLine{74   ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a16f9193d7cfafc85a45813731b84cc76}{f\_spinz1}})-\/>setVal(0.);}
+\DoxyCodeLine{75   ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a95812538dbe5ca992085263732f91738}{f\_spinz2}})-\/>setVal(0.);}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTensorPdfFactory_a8b64df02be5754db5b5f59ecf40c5573}\label{classTensorPdfFactory_a8b64df02be5754db5b5f59ecf40c5573}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!setTensorPolarization@{setTensorPolarization}}
+\index{setTensorPolarization@{setTensorPolarization}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{setTensorPolarization()}{setTensorPolarization()}}
+{\footnotesize\ttfamily void Tensor\+Pdf\+Factory\+::set\+Tensor\+Polarization (\begin{DoxyParamCaption}\item[{int}]{ig,  }\item[{double}]{initval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 63 of file Tensor\+Pdf\+Factory.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                                   \{}
+\DoxyCodeLine{64   \textcolor{keywordflow}{if} (ig>2 || ig<=0) \mbox{\hyperlink{namespaceMELAStreamHelpers_a48e6b604de686a3c2033bdcf75c51f6f}{MELAerr}} << \textcolor{stringliteral}{"Cannot set f\_spinz"} << ig << \textcolor{stringliteral}{". Please st f\_spinz1 or f\_spinz2 only."} << endl;}
+\DoxyCodeLine{65   \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} (ig==1) ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a16f9193d7cfafc85a45813731b84cc76}{f\_spinz1}})-\/>setVal(initval);}
+\DoxyCodeLine{67     \textcolor{keywordflow}{else} ((RooRealVar*)\mbox{\hyperlink{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}{couplings}}.\mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings_a95812538dbe5ca992085263732f91738}{f\_spinz2}})-\/>setVal(initval);}
+\DoxyCodeLine{68   \}}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}\label{classTensorPdfFactory_a605a71ef2822982c3bd4ae7fc641f341}} 
+\index{TensorPdfFactory@{TensorPdfFactory}!couplings@{couplings}}
+\index{couplings@{couplings}!TensorPdfFactory@{TensorPdfFactory}}
+\doxysubsubsection{\texorpdfstring{couplings}{couplings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRooSpinTwo_1_1modelCouplings}{Roo\+Spin\+Two\+::model\+Couplings}} Tensor\+Pdf\+Factory\+::couplings}
+
+
+
+Definition at line 12 of file Tensor\+Pdf\+Factory.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/interface/\mbox{\hyperlink{TensorPdfFactory_8h}{Tensor\+Pdf\+Factory.\+h}}\item 
+M\+E\+L\+A/src/\mbox{\hyperlink{TensorPdfFactory_8cc}{Tensor\+Pdf\+Factory.\+cc}}\end{DoxyCompactItemize}

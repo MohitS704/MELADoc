@@ -1,0 +1,534 @@
+\hypertarget{namespacecoli__stat}{}\doxysection{coli\+\_\+stat Module Reference}
+\label{namespacecoli__stat}\index{coli\_stat@{coli\_stat}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecoli__stat_af94b20befcbbd513cef8ac7ff89164be}{initstatisticsa\+\_\+coli}}
+\item 
+subroutine \mbox{\hyperlink{namespacecoli__stat_ae327f6f45f71c51be78f300c9844ec3a}{printstatistics\+\_\+coli}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}} =7
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}} =7
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_ab317c28316a02efbeb37e2a0ec904bbb}{kcountc}} =2$\ast$$\ast$nmethodC
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a4c9d6e90282ef68e001b3d3a54d36908}{kcountd}} =2$\ast$$\ast$nmethodD
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}{ccountoffset0}} =20
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}{ccountoffset1}} =C\+Countoffset0+kcountC
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}{ccountoffset2}} =Ccountoffset1+kcountC
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}{ccountoffset3}} =Ccountoffset2+kcountC
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}{dcountoffset0}} =20
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}{dcountoffset1}} =D\+Countoffset0+kcountD
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}{dcountoffset2}} =Dcountoffset1+kcountD
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}{dcountoffset3}} =Dcountoffset2+kcountD
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_a27433c0508515080100be9a69ade468f}{ncountc}} =C\+Countoffset3+2$\ast$$\ast$nmethodC
+\item 
+integer, parameter \mbox{\hyperlink{namespacecoli__stat_abe4b95f0e31a9d103515e2174113c6ff}{ncountd}} =D\+Countoffset3+2$\ast$$\ast$nmethodD
+\item 
+integer(kind=8), dimension(0\+:\mbox{\hyperlink{namespacecoli__stat_a27433c0508515080100be9a69ade468f}{ncountc}}) \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}
+\item 
+integer(kind=8), dimension(0\+:\mbox{\hyperlink{namespacecoli__stat_abe4b95f0e31a9d103515e2174113c6ff}{ncountd}}) \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacecoli__stat_af94b20befcbbd513cef8ac7ff89164be}\label{namespacecoli__stat_af94b20befcbbd513cef8ac7ff89164be}} 
+\index{coli\_stat@{coli\_stat}!initstatisticsa\_coli@{initstatisticsa\_coli}}
+\index{initstatisticsa\_coli@{initstatisticsa\_coli}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{initstatisticsa\_coli()}{initstatisticsa\_coli()}}
+{\footnotesize\ttfamily subroutine coli\+\_\+stat\+::initstatisticsa\+\_\+coli}
+
+
+
+Definition at line 54 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}} = 0}
+\DoxyCodeLine{56     \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}} = 0 }
+\DoxyCodeLine{57 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_ae327f6f45f71c51be78f300c9844ec3a}\label{namespacecoli__stat_ae327f6f45f71c51be78f300c9844ec3a}} 
+\index{coli\_stat@{coli\_stat}!printstatistics\_coli@{printstatistics\_coli}}
+\index{printstatistics\_coli@{printstatistics\_coli}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{printstatistics\_coli()}{printstatistics\_coli()}}
+{\footnotesize\ttfamily subroutine coli\+\_\+stat\+::printstatistics\+\_\+coli}
+
+
+
+Definition at line 64 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{use }\mbox{\hyperlink{namespacecoli__aux2}{coli\_aux2}}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{integer} :: i}
+\DoxyCodeLine{68     \textcolor{keywordtype}{double precision} :: normC,normD}
+\DoxyCodeLine{69     \textcolor{keywordtype}{character} :: stringC(0:ncountC)*32  \textcolor{comment}{!  4*nmethodC}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#ifdef GM}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{}    \textcolor{keywordtype}{character} :: stringD(0:ncountD)*36  \textcolor{comment}{!  4*nmethodD}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{}\textcolor{comment}{!    character :: stringD(0:ncountD)*24  !  4*nmethodD}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{character} :: stringD(0:ncountD)*32  \textcolor{comment}{!  4*nmethodD}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{}}
+\DoxyCodeLine{77 \textcolor{comment}{!    if (nout.ne.0) then }}
+\DoxyCodeLine{78 \textcolor{comment}{!      call setnstatsoutcoli\_cll(nout)}}
+\DoxyCodeLine{79 \textcolor{comment}{!     call setnstatsout\_coli(nout)}}
+\DoxyCodeLine{80 \textcolor{comment}{!     if (nout.ne.6) then}}
+\DoxyCodeLine{81 \textcolor{comment}{!       call OpenStatisticsOutFileCOLI\_cll('output\_cll/StatisticsOut.coli')}}
+\DoxyCodeLine{82 \textcolor{comment}{!     end if}}
+\DoxyCodeLine{83 \textcolor{comment}{!    end if }}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     normc = dble(max(\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(0),1))}
+\DoxyCodeLine{86     normd = dble(max(\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(0),1))}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{!    write(*,*) 'printstat C',CCount}}
+\DoxyCodeLine{89 \textcolor{comment}{!    write(*,*) 'printstat D',DCount}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     stringc(0) = \textcolor{stringliteral}{'total   '}}
+\DoxyCodeLine{93     stringc(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}) = \textcolor{stringliteral}{'sum    '}}
+\DoxyCodeLine{94     \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}{ccountoffset0}}) = 0}
+\DoxyCodeLine{95     \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}{ccountoffset1}}) = 0}
+\DoxyCodeLine{96     \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}{ccountoffset2}}) = 0}
+\DoxyCodeLine{97     \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}{ccountoffset3}}) = 0}
+\DoxyCodeLine{98     \textcolor{keywordflow}{do} i=1,2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}-\/1}
+\DoxyCodeLine{99       stringc(i)= \textcolor{stringliteral}{'                    '}}
+\DoxyCodeLine{100       \textcolor{keywordflow}{if} (mod(i,2).eq.1) stringc(i)(1:4) = \textcolor{stringliteral}{'pv1 '}}
+\DoxyCodeLine{101       \textcolor{keywordflow}{if} (mod(i,4)-\/mod(i,2).eq.2) stringc(i)(5:8) = \textcolor{stringliteral}{'pv2 '}}
+\DoxyCodeLine{102       \textcolor{keywordflow}{if} (mod(i,8)-\/mod(i,4).eq.4) stringc(i)(9:12) = \textcolor{stringliteral}{' g '}}
+\DoxyCodeLine{103       \textcolor{keywordflow}{if} (mod(i,16)-\/mod(i,8).eq.8) stringc(i)(13:16) = \textcolor{stringliteral}{' gc '}}
+\DoxyCodeLine{104       \textcolor{keywordflow}{if} (mod(i,32)-\/mod(i,16).eq.16) stringc(i)(17:20) = \textcolor{stringliteral}{' sm '}}
+\DoxyCodeLine{105       \textcolor{keywordflow}{if} (mod(i,64)-\/mod(i,32).eq.32) stringc(i)(21:24) = \textcolor{stringliteral}{' gr '}}
+\DoxyCodeLine{106       \textcolor{keywordflow}{if} (mod(i,128)-\/mod(i,64).eq.64) stringc(i)(25:28) = \textcolor{stringliteral}{'smf '}}
+\DoxyCodeLine{107       \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}{ccountoffset0}})=\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}{ccountoffset0}})+\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(i+\mbox{\hyperlink{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}{ccountoffset0}})}
+\DoxyCodeLine{108       \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}{ccountoffset1}})=\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}{ccountoffset1}})+\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(i+\mbox{\hyperlink{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}{ccountoffset1}})}
+\DoxyCodeLine{109       \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}{ccountoffset2}})=\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}{ccountoffset2}})+\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(i+\mbox{\hyperlink{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}{ccountoffset2}})}
+\DoxyCodeLine{110       \mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}{ccountoffset3}})=\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(2**\mbox{\hyperlink{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}{nmethodc}}+\mbox{\hyperlink{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}{ccountoffset3}})+\mbox{\hyperlink{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}{ccount}}(i+\mbox{\hyperlink{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}{ccountoffset3}})}
+\DoxyCodeLine{111     \textcolor{keyword}{end }do}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     stringd(0) = \textcolor{stringliteral}{'total  '}}
+\DoxyCodeLine{114     stringd(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}) = \textcolor{stringliteral}{'sum    '}}
+\DoxyCodeLine{115     \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}{dcountoffset0}}) = 0}
+\DoxyCodeLine{116     \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}{dcountoffset1}}) = 0}
+\DoxyCodeLine{117     \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}{dcountoffset2}}) = 0}
+\DoxyCodeLine{118     \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}{dcountoffset3}}) = 0}
+\DoxyCodeLine{119     \textcolor{keywordflow}{do} i=1,2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}-\/1}
+\DoxyCodeLine{120       stringd(i)= \textcolor{stringliteral}{'                    '}}
+\DoxyCodeLine{121       \textcolor{keywordflow}{if} (mod(i,2).eq.1) stringd(i)(1:4) = \textcolor{stringliteral}{'pv1 '}}
+\DoxyCodeLine{122       \textcolor{keywordflow}{if} (mod(i,4)-\/mod(i,2).eq.2) stringd(i)(5:8) = \textcolor{stringliteral}{'pv2 '}}
+\DoxyCodeLine{123       \textcolor{keywordflow}{if} (mod(i,8)-\/mod(i,4).eq.4) stringd(i)(9:12) = \textcolor{stringliteral}{' g '}}
+\DoxyCodeLine{124       \textcolor{keywordflow}{if} (mod(i,16)-\/mod(i,8).eq.8) stringd(i)(13:16) = \textcolor{stringliteral}{' gc '}}
+\DoxyCodeLine{125       \textcolor{keywordflow}{if} (mod(i,32)-\/mod(i,16).eq.16) stringd(i)(17:20) = \textcolor{stringliteral}{' sm '}}
+\DoxyCodeLine{126       \textcolor{keywordflow}{if} (mod(i,64)-\/mod(i,32).eq.32) stringd(i)(21:24) = \textcolor{stringliteral}{' gr '}}
+\DoxyCodeLine{127       \textcolor{keywordflow}{if} (mod(i,128)-\/mod(i,64).eq.64) stringd(i)(25:28) = \textcolor{stringliteral}{'smf '}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#ifdef GM}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{}      \textcolor{keywordflow}{if} (mod(i,256)-\/mod(i,128).eq.128) stringd(i)(29:32) = \textcolor{stringliteral}{' gm '}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{}      \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}{dcountoffset0}})=\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}{dcountoffset0}})+\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(i+\mbox{\hyperlink{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}{dcountoffset0}})}
+\DoxyCodeLine{132       \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}{dcountoffset1}})=\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}{dcountoffset1}})+\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(i+\mbox{\hyperlink{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}{dcountoffset1}})}
+\DoxyCodeLine{133       \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}{dcountoffset2}})=\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}{dcountoffset2}})+\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(i+\mbox{\hyperlink{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}{dcountoffset2}})}
+\DoxyCodeLine{134       \mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}{dcountoffset3}})=\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(2**\mbox{\hyperlink{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}{nmethodd}}+\mbox{\hyperlink{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}{dcountoffset3}})+\mbox{\hyperlink{namespacecoli__stat_a7de44beed234ff3117530863305e7051}{dcount}}(i+\mbox{\hyperlink{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}{dcountoffset3}})}
+\DoxyCodeLine{135    \textcolor{keyword}{end }do}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     ccount(19)=0}
+\DoxyCodeLine{138     dcount(19)=0}
+\DoxyCodeLine{139     \textcolor{keywordflow}{do} i=1,6}
+\DoxyCodeLine{140        ccount(19)=ccount(19)+ccount(i)+ccount(10+i)}
+\DoxyCodeLine{141        dcount(19)=dcount(19)+dcount(i)+dcount(10+i)}
+\DoxyCodeLine{142     \textcolor{keyword}{end }do}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \textcolor{keyword}{write}(nstatsout\_coli,100)}
+\DoxyCodeLine{145 100 \textcolor{keyword}{format} (/\textcolor{stringliteral}{' Collier: Numbers for calls of different branches in C and D reduction'}/)}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keyword}{write}(nstatsout\_coli,300) (ccount(i),dble(ccount(i))/normc*1d2,i=1,nmethodc),    \&}
+\DoxyCodeLine{149         ccount(8),dble(ccount(8))/normc*1d2,     \&}
+\DoxyCodeLine{150         ccount(9),dble(ccount(9))/normc*1d2,     \&}
+\DoxyCodeLine{151         (ccount(i),dble(ccount(i))/normc*1d2,i=11,10+nmethodc),               \&}
+\DoxyCodeLine{152         ccount(19),dble(ccount(19))/normc*1d2,     \&}
+\DoxyCodeLine{153         ccount(0),dble(ccount(0))/normc*1d2}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 300 \textcolor{keyword}{format}(\textcolor{stringliteral}{' \#calls C pv1 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/               \&}
+\DoxyCodeLine{156     \&       \textcolor{stringliteral}{' \#calls C pv2 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{157     \&       \textcolor{stringliteral}{' \#calls C g   1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{158     \&       \textcolor{stringliteral}{' \#calls C gc  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{159     \&       \textcolor{stringliteral}{' \#calls C sm  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{160     \&       \textcolor{stringliteral}{' \#calls C gr  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{161     \&       \textcolor{stringliteral}{' \#calls C smf 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{162 \textcolor{comment}{!    \&       ' \#calls C gm  1 = ',i20,' or ',F10.5,' \%'/              \&}}
+\DoxyCodeLine{163     \&       \textcolor{stringliteral}{' \#calls C pvs+1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{164     \&       \textcolor{stringliteral}{' \#calls C pvs 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{165     \&       \textcolor{stringliteral}{' \#calls C pv1 2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{166     \&       \textcolor{stringliteral}{' \#calls C pv2 2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{167     \&       \textcolor{stringliteral}{' \#calls C g   2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{168     \&       \textcolor{stringliteral}{' \#calls C gc  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{169     \&       \textcolor{stringliteral}{' \#calls C sm  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{170     \&       \textcolor{stringliteral}{' \#calls C gr  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{171     \&       \textcolor{stringliteral}{' \#calls C smf 2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{172 \textcolor{comment}{!    \&       ' \#calls C gm  2 = ',i20,' or ',F10.5,' \%'/              \&}}
+\DoxyCodeLine{173     \&       \textcolor{stringliteral}{' \#calls C all m = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{174     \&       \textcolor{stringliteral}{' \#calls C       = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/)}
+\DoxyCodeLine{175  }
+\DoxyCodeLine{176     \textcolor{keywordflow}{do} i=1,2**nmethodc}
+\DoxyCodeLine{177       \textcolor{keywordflow}{if} (ccount(i+ccountoffset0).ne.0.or.i.eq.2**nmethodc) then}
+\DoxyCodeLine{178       \textcolor{keyword}{write}(nstatsout\_coli,310) stringc(i),ccount(i+ccountoffset0),dble(ccount(i+ccountoffset0))/normc*1d2}
+\DoxyCodeLine{179       \textcolor{keyword}{end }if}
+\DoxyCodeLine{180     \textcolor{keyword}{end }do}
+\DoxyCodeLine{181     \textcolor{keyword}{write}(nstatsout\_coli,310)   stringc(0),ccount(0),dble(ccount(0))/normc*1d2}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 310 \textcolor{keyword}{format}(\textcolor{stringliteral}{' \#calls C '},a32 ,\textcolor{stringliteral}{' = '},i16,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'})}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{keyword}{write}(nstatsout\_coli,400) (dcount(i),dble(dcount(i))/normd*1d2,i=1,nmethodd),    \&}
+\DoxyCodeLine{186         (dcount(i),dble(dcount(i))/normd*1d2,i=11,10+nmethodd),               \&}
+\DoxyCodeLine{187          dcount(19),dble(dcount(19))/normd*1d2,     \&}
+\DoxyCodeLine{188          dcount(0),dble(dcount(0))/normd*1d2}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 400 \textcolor{keyword}{format}(/\textcolor{stringliteral}{' \#calls D pv1 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/               \&}
+\DoxyCodeLine{191     \&       \textcolor{stringliteral}{' \#calls D pv2 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{192     \&       \textcolor{stringliteral}{' \#calls D g   1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{193     \&       \textcolor{stringliteral}{' \#calls D gc  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{194     \&       \textcolor{stringliteral}{' \#calls D sm  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{195     \&       \textcolor{stringliteral}{' \#calls D gr  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{196     \&       \textcolor{stringliteral}{' \#calls D smf 1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#ifdef GM}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{}    \&       \textcolor{stringliteral}{' \#calls D gm  1 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{}    \&       \textcolor{stringliteral}{' \#calls D pv1 2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{201     \&       \textcolor{stringliteral}{' \#calls D pv2 2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{202     \&       \textcolor{stringliteral}{' \#calls D g   2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{203     \&       \textcolor{stringliteral}{' \#calls D gc  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{204     \&       \textcolor{stringliteral}{' \#calls D sm  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{205     \&       \textcolor{stringliteral}{' \#calls D gr  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{206     \&       \textcolor{stringliteral}{' \#calls D smf 2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#ifdef GM}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{}    \&       \textcolor{stringliteral}{' \#calls D gm  2 = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{}    \&       \textcolor{stringliteral}{' \#calls D all m = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/              \&}
+\DoxyCodeLine{211     \&       \textcolor{stringliteral}{' \#calls D       = '},i20,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'}/)}
+\DoxyCodeLine{212  }
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{keywordflow}{do} i=1,2**nmethodd}
+\DoxyCodeLine{215       \textcolor{keywordflow}{if} (dcount(i+dcountoffset0).ne.0.or.i.eq.2**nmethodd) then}
+\DoxyCodeLine{216         \textcolor{keyword}{write}(nstatsout\_coli,410) stringd(i),dcount(i+dcountoffset0),dble(dcount(i+dcountoffset0))/normd*1d2}
+\DoxyCodeLine{217       \textcolor{keyword}{end }if}
+\DoxyCodeLine{218     \textcolor{keyword}{end }do}
+\DoxyCodeLine{219     \textcolor{keyword}{write}(nstatsout\_coli,410)   stringd(0),dcount(0),dble(dcount(0))/normd*1d2}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#ifdef GM}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{}410 \textcolor{keyword}{format}(\textcolor{stringliteral}{' \#calls D '},a36 ,\textcolor{stringliteral}{' = '},i16,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'})}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{}410 \textcolor{keyword}{format}(\textcolor{stringliteral}{' \#calls D '},a32 ,\textcolor{stringliteral}{' = '},i16,\textcolor{stringliteral}{' or '},f10.5,\textcolor{stringliteral}{' \%'})}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{}}
+\DoxyCodeLine{227     \textcolor{keyword}{write}(nstatsout\_coli,110) reqacc\_coli}
+\DoxyCodeLine{228 110 \textcolor{keyword}{format} (/\textcolor{stringliteral}{' Collier: Numbers for calls of different branches in C and D reduction'}/  \&}
+\DoxyCodeLine{229              \textcolor{stringliteral}{'          with an accuracy worse than reqacc\_coli ='},es11.4/)}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231     \textcolor{keywordflow}{do} i=1,2**nmethodc}
+\DoxyCodeLine{232       \textcolor{keywordflow}{if} (ccount(i+ccountoffset1).ne.0.or.i.eq.2**nmethodc) then}
+\DoxyCodeLine{233         \textcolor{keyword}{write}(nstatsout\_coli,310) stringc(i),ccount(i+ccountoffset1),dble(ccount(i+ccountoffset1))/normc*1d2}
+\DoxyCodeLine{234       \textcolor{keyword}{end }if}
+\DoxyCodeLine{235     \textcolor{keyword}{end }do}
+\DoxyCodeLine{236     \textcolor{keyword}{write}(nstatsout\_coli,310)   stringc(0),ccount(0),dble(ccount(0))/normc*1d2}
+\DoxyCodeLine{237     \textcolor{keyword}{write}(nstatsout\_coli,*) }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{keywordflow}{do} i=1,2**nmethodd}
+\DoxyCodeLine{240       \textcolor{keywordflow}{if} (dcount(i+dcountoffset1).ne.0.or.i.eq.2**nmethodd) then}
+\DoxyCodeLine{241         \textcolor{keyword}{write}(nstatsout\_coli,410) stringd(i),dcount(i+dcountoffset1),dble(dcount(i+dcountoffset1))/normd*1d2}
+\DoxyCodeLine{242       \textcolor{keyword}{end }if}
+\DoxyCodeLine{243     \textcolor{keyword}{end }do}
+\DoxyCodeLine{244     \textcolor{keyword}{write}(nstatsout\_coli,410)   stringd(0),dcount(0),dble(dcount(0))/normd*1d2}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{keyword}{write}(nstatsout\_coli,130) sqrt(reqacc\_coli)}
+\DoxyCodeLine{247 130 \textcolor{keyword}{format} (/\textcolor{stringliteral}{' Collier: Numbers for calls of different branches in C and D reduction'}/  \&}
+\DoxyCodeLine{248              \textcolor{stringliteral}{'          with an accuracy worse than sqrt(reqacc\_coli) ='},es11.4/)}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     \textcolor{keywordflow}{do} i=1,2**nmethodc}
+\DoxyCodeLine{251       \textcolor{keywordflow}{if} (ccount(i+ccountoffset3).ne.0.or.i.eq.2**nmethodc) then}
+\DoxyCodeLine{252         \textcolor{keyword}{write}(nstatsout\_coli,310) stringc(i),ccount(i+ccountoffset3),dble(ccount(i+ccountoffset3))/normc*1d2}
+\DoxyCodeLine{253       \textcolor{keyword}{end }if}
+\DoxyCodeLine{254     \textcolor{keyword}{end }do}
+\DoxyCodeLine{255     \textcolor{keyword}{write}(nstatsout\_coli,310)   stringc(0),ccount(0),dble(ccount(0))/normc*1d2}
+\DoxyCodeLine{256     \textcolor{keyword}{write}(nstatsout\_coli,*) }
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keywordflow}{do} i=1,2**nmethodd}
+\DoxyCodeLine{259       \textcolor{keywordflow}{if} (dcount(i+dcountoffset3).ne.0.or.i.eq.2**nmethodd) then}
+\DoxyCodeLine{260         \textcolor{keyword}{write}(nstatsout\_coli,410) stringd(i),dcount(i+dcountoffset3),dble(dcount(i+dcountoffset3))/normd*1d2}
+\DoxyCodeLine{261       \textcolor{keyword}{end }if}
+\DoxyCodeLine{262     \textcolor{keyword}{end }do}
+\DoxyCodeLine{263     \textcolor{keyword}{write}(nstatsout\_coli,410)   stringd(0),dcount(0),dble(dcount(0))/normd*1d2}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \textcolor{keyword}{write}(nstatsout\_coli,120) critacc\_coli}
+\DoxyCodeLine{267 120 \textcolor{keyword}{format} (/\textcolor{stringliteral}{' Collier: Numbers for calls of different branches in C and D reduction'}/  \&}
+\DoxyCodeLine{268              \textcolor{stringliteral}{'          with an accuracy worse than critacc\_coli ='},es11.4/)}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270     \textcolor{keywordflow}{do} i=1,2**nmethodc}
+\DoxyCodeLine{271       \textcolor{keywordflow}{if} (ccount(i+ccountoffset2).ne.0.or.i.eq.2**nmethodc) then}
+\DoxyCodeLine{272         \textcolor{keyword}{write}(nstatsout\_coli,310) stringc(i),ccount(i+ccountoffset2),dble(ccount(i+ccountoffset2))/normc*1d2}
+\DoxyCodeLine{273       \textcolor{keyword}{end }if}
+\DoxyCodeLine{274     \textcolor{keyword}{end }do}
+\DoxyCodeLine{275     \textcolor{keyword}{write}(nstatsout\_coli,310)   stringc(0),ccount(0),dble(ccount(0))/normc*1d2}
+\DoxyCodeLine{276     \textcolor{keyword}{write}(nstatsout\_coli,*) }
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \textcolor{keywordflow}{do} i=1,2**nmethodd}
+\DoxyCodeLine{279       \textcolor{keywordflow}{if} (dcount(i+dcountoffset2).ne.0.or.i.eq.2**nmethodd) then}
+\DoxyCodeLine{280         \textcolor{keyword}{write}(nstatsout\_coli,410) stringd(i),dcount(i+dcountoffset2),dble(dcount(i+dcountoffset2))/normd*1d2}
+\DoxyCodeLine{281 \textcolor{keywordflow}{      end if} }
+\DoxyCodeLine{282    \textcolor{keyword}{end }do}
+\DoxyCodeLine{283     \textcolor{keyword}{write}(nstatsout\_coli,410)   stringd(0),dcount(0),dble(dcount(0))/normd*1d2}
+\DoxyCodeLine{284     \textcolor{keyword}{write}(nstatsout\_coli,*) }
+\DoxyCodeLine{285 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}\label{namespacecoli__stat_a9bb28bcb383d088519980da8c97e4287}} 
+\index{coli\_stat@{coli\_stat}!ccount@{ccount}}
+\index{ccount@{ccount}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ccount}{ccount}}
+{\footnotesize\ttfamily integer (kind=8), dimension(0\+:\mbox{\hyperlink{namespacecoli__stat_a27433c0508515080100be9a69ade468f}{ncountc}}) coli\+\_\+stat\+::ccount}
+
+
+
+Definition at line 44 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44   \textcolor{keywordtype}{integer (kind=8)} :: CCount(0:ncountC),DCount(0:ncountD)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}\label{namespacecoli__stat_a8eaea7da4fedf01a262994f08942e660}} 
+\index{coli\_stat@{coli\_stat}!ccountoffset0@{ccountoffset0}}
+\index{ccountoffset0@{ccountoffset0}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ccountoffset0}{ccountoffset0}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::ccountoffset0 =20}
+
+
+
+Definition at line 34 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: CCountoffset0=20}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}\label{namespacecoli__stat_a839d18c235a7fe2ce791214cb72174d4}} 
+\index{coli\_stat@{coli\_stat}!ccountoffset1@{ccountoffset1}}
+\index{ccountoffset1@{ccountoffset1}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ccountoffset1}{ccountoffset1}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::ccountoffset1 =C\+Countoffset0+kcountC}
+
+
+
+Definition at line 35 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: Ccountoffset1=ccountoffset0+kcountc}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}\label{namespacecoli__stat_a9c776b250cf540cd25c22e7e9c317564}} 
+\index{coli\_stat@{coli\_stat}!ccountoffset2@{ccountoffset2}}
+\index{ccountoffset2@{ccountoffset2}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ccountoffset2}{ccountoffset2}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::ccountoffset2 =Ccountoffset1+kcountC}
+
+
+
+Definition at line 36 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: CCountoffset2=ccountoffset1+kcountc}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}\label{namespacecoli__stat_a6b9006b9ada064ebbb787e60ab771782}} 
+\index{coli\_stat@{coli\_stat}!ccountoffset3@{ccountoffset3}}
+\index{ccountoffset3@{ccountoffset3}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ccountoffset3}{ccountoffset3}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::ccountoffset3 =Ccountoffset2+kcountC}
+
+
+
+Definition at line 37 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: CCountoffset3=ccountoffset2+kcountc}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a7de44beed234ff3117530863305e7051}\label{namespacecoli__stat_a7de44beed234ff3117530863305e7051}} 
+\index{coli\_stat@{coli\_stat}!dcount@{dcount}}
+\index{dcount@{dcount}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{dcount}{dcount}}
+{\footnotesize\ttfamily integer (kind=8), dimension(0\+:\mbox{\hyperlink{namespacecoli__stat_abe4b95f0e31a9d103515e2174113c6ff}{ncountd}}) coli\+\_\+stat\+::dcount}
+
+
+
+Definition at line 44 of file coli\+\_\+stat.\+F90.
+
+\mbox{\Hypertarget{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}\label{namespacecoli__stat_ad9aa88586e884f2107b6939382e08a71}} 
+\index{coli\_stat@{coli\_stat}!dcountoffset0@{dcountoffset0}}
+\index{dcountoffset0@{dcountoffset0}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{dcountoffset0}{dcountoffset0}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::dcountoffset0 =20}
+
+
+
+Definition at line 38 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: DCountoffset0=20}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}\label{namespacecoli__stat_a60865ccc867e2395c826580326fe127c}} 
+\index{coli\_stat@{coli\_stat}!dcountoffset1@{dcountoffset1}}
+\index{dcountoffset1@{dcountoffset1}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{dcountoffset1}{dcountoffset1}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::dcountoffset1 =D\+Countoffset0+kcountD}
+
+
+
+Definition at line 39 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: Dcountoffset1=dcountoffset0+kcountd}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}\label{namespacecoli__stat_ad64a2967102b06a084d3083c020eec26}} 
+\index{coli\_stat@{coli\_stat}!dcountoffset2@{dcountoffset2}}
+\index{dcountoffset2@{dcountoffset2}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{dcountoffset2}{dcountoffset2}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::dcountoffset2 =Dcountoffset1+kcountD}
+
+
+
+Definition at line 40 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: DCountoffset2=dcountoffset1+kcountd}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}\label{namespacecoli__stat_a5c8f08395d70ae305da313411794d602}} 
+\index{coli\_stat@{coli\_stat}!dcountoffset3@{dcountoffset3}}
+\index{dcountoffset3@{dcountoffset3}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{dcountoffset3}{dcountoffset3}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::dcountoffset3 =Dcountoffset2+kcountD}
+
+
+
+Definition at line 41 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: DCountoffset3=dcountoffset2+kcountd}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_ab317c28316a02efbeb37e2a0ec904bbb}\label{namespacecoli__stat_ab317c28316a02efbeb37e2a0ec904bbb}} 
+\index{coli\_stat@{coli\_stat}!kcountc@{kcountc}}
+\index{kcountc@{kcountc}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{kcountc}{kcountc}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::kcountc =2$\ast$$\ast$nmethodC}
+
+
+
+Definition at line 32 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: kcountC=2**nmethodc}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a4c9d6e90282ef68e001b3d3a54d36908}\label{namespacecoli__stat_a4c9d6e90282ef68e001b3d3a54d36908}} 
+\index{coli\_stat@{coli\_stat}!kcountd@{kcountd}}
+\index{kcountd@{kcountd}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{kcountd}{kcountd}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::kcountd =2$\ast$$\ast$nmethodD}
+
+
+
+Definition at line 33 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: kcountD=2**nmethodd}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a27433c0508515080100be9a69ade468f}\label{namespacecoli__stat_a27433c0508515080100be9a69ade468f}} 
+\index{coli\_stat@{coli\_stat}!ncountc@{ncountc}}
+\index{ncountc@{ncountc}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ncountc}{ncountc}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::ncountc =C\+Countoffset3+2$\ast$$\ast$nmethodC}
+
+
+
+Definition at line 42 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ncountC=ccountoffset3+2**nmethodc   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_abe4b95f0e31a9d103515e2174113c6ff}\label{namespacecoli__stat_abe4b95f0e31a9d103515e2174113c6ff}} 
+\index{coli\_stat@{coli\_stat}!ncountd@{ncountd}}
+\index{ncountd@{ncountd}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{ncountd}{ncountd}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::ncountd =D\+Countoffset3+2$\ast$$\ast$nmethodD}
+
+
+
+Definition at line 43 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ncountD=dcountoffset3+2**nmethodd   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}\label{namespacecoli__stat_a0b5fa73f70f03aa78e149f50fc1f43ed}} 
+\index{coli\_stat@{coli\_stat}!nmethodc@{nmethodc}}
+\index{nmethodc@{nmethodc}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{nmethodc}{nmethodc}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::nmethodc =7}
+
+
+
+Definition at line 30 of file coli\+\_\+stat.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30   \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: nmethodC=7, nmethodd=7}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}\label{namespacecoli__stat_a77f53e727c82a7a9c16fa6f6e3a5302e}} 
+\index{coli\_stat@{coli\_stat}!nmethodd@{nmethodd}}
+\index{nmethodd@{nmethodd}!coli\_stat@{coli\_stat}}
+\doxysubsubsection{\texorpdfstring{nmethodd}{nmethodd}}
+{\footnotesize\ttfamily integer, parameter coli\+\_\+stat\+::nmethodd =7}
+
+
+
+Definition at line 30 of file coli\+\_\+stat.\+F90.
+

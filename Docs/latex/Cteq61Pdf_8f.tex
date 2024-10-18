@@ -1,0 +1,517 @@
+\hypertarget{Cteq61Pdf_8f}{}\doxysection{M\+E\+L\+A/fortran/pdfs/\+Cteq61\+Pdf.f File Reference}
+\label{Cteq61Pdf_8f}\index{MELA/fortran/pdfs/Cteq61Pdf.f@{MELA/fortran/pdfs/Cteq61Pdf.f}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+function \mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}} (Iparton, X, Q)
+\item 
+subroutine \mbox{\hyperlink{Cteq61Pdf_8f_a9fd96a0329f646170f46a5a614bfdaca}{setctq6}} (Iset)
+\item 
+subroutine \mbox{\hyperlink{Cteq61Pdf_8f_ad829f97f16c52736f19dd5e1739ecbb1}{readtbl}} (Nu)
+\item 
+function \mbox{\hyperlink{Cteq61Pdf_8f_a5d509963c0431fd3abcf31c7d313e4f6}{nextun}} ()
+\item 
+subroutine \mbox{\hyperlink{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}{polint}} (XA, YA, N, X, Y, DY)
+\item 
+function \mbox{\hyperlink{Cteq61Pdf_8f_a31513ac9e58e076a26cca506bf3375b3}{partonx6}} (I\+P\+R\+TN, XX, QQ)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}\label{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}} 
+\index{Cteq61Pdf.f@{Cteq61Pdf.f}!ctq6pdf@{ctq6pdf}}
+\index{ctq6pdf@{ctq6pdf}!Cteq61Pdf.f@{Cteq61Pdf.f}}
+\doxysubsubsection{\texorpdfstring{ctq6pdf()}{ctq6pdf()}}
+{\footnotesize\ttfamily function ctq6pdf (\begin{DoxyParamCaption}\item[{}]{Iparton,  }\item[{}]{X,  }\item[{}]{Q }\end{DoxyParamCaption})}
+
+
+
+Definition at line 93 of file Cteq61\+Pdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93       \textcolor{keywordtype}{Implicit Double Precision} (a-\/h,o-\/z)}
+\DoxyCodeLine{94       \textcolor{keywordtype}{Logical} Warn}
+\DoxyCodeLine{95       \textcolor{keyword}{Common}}
+\DoxyCodeLine{96      > / ctqpar2 / nx, nt, nfmx}
+\DoxyCodeLine{97      > / qcdtable /  alambda, nfl, iorder}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99       \textcolor{keyword}{Data} warn /.true./}
+\DoxyCodeLine{100       \textcolor{keywordtype}{save} warn}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102       \textcolor{keywordflow}{If} (x .lt. 0d0 .or. x .gt. 1d0) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{103         print *, \textcolor{stringliteral}{'X out of range in Ctq6Pdf: '}, x}
+\DoxyCodeLine{104         stop}
+\DoxyCodeLine{105 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{106       \textcolor{keywordflow}{If} (q .lt. alambda) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{107         print *, \textcolor{stringliteral}{'Q out of range in Ctq6Pdf: '}, q}
+\DoxyCodeLine{108         stop}
+\DoxyCodeLine{109 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{110       \textcolor{keywordflow}{If} ((iparton .lt. -\/nfmx .or. iparton .gt. nfmx)) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{111          \textcolor{keywordflow}{If} (warn) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{112 \textcolor{comment}{C        put a warning for calling extra flavor.}}
+\DoxyCodeLine{113              print *, \textcolor{stringliteral}{'Warning: Iparton out of range in Ctq6Pdf! '}}
+\DoxyCodeLine{114              print *, \textcolor{stringliteral}{'Iparton, MxFlvN0: '}, iparton, nfmx}
+\DoxyCodeLine{115 \textcolor{keywordflow}{         Endif}}
+\DoxyCodeLine{116          \mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}} = 0d0}
+\DoxyCodeLine{117          \textcolor{keywordflow}{Return}}
+\DoxyCodeLine{118 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120       \mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}} = \mbox{\hyperlink{Cteq61Pdf_8f_a31513ac9e58e076a26cca506bf3375b3}{partonx6}}(iparton, x, q)}
+\DoxyCodeLine{121       \textcolor{keywordflow}{if}(\mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}}.lt.0.d0)  \mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}} = 0.d0}
+\DoxyCodeLine{122       \textcolor{keywordflow}{if}(isnan(\mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}})) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{123          \textcolor{keywordflow}{if} (warn) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{124             print *, \textcolor{stringliteral}{'Warning: Ctq6Pdf is NaN!'}}
+\DoxyCodeLine{125             print *, \textcolor{stringliteral}{'Iparton, MxFlvN0, X, Q: '}, iparton, nfmx, x, q}
+\DoxyCodeLine{126 \textcolor{keywordflow}{         endif}}
+\DoxyCodeLine{127          \mbox{\hyperlink{Cteq61Pdf_8f_addeda3c6cd649deac1d17e969f11fe9c}{ctq6pdf}} = 0.d0}
+\DoxyCodeLine{128 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130       \textcolor{keywordflow}{if} (warn) warn = .false.}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132       \textcolor{keywordflow}{Return}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{comment}{C                             ********************}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Cteq61Pdf_8f_a5d509963c0431fd3abcf31c7d313e4f6}\label{Cteq61Pdf_8f_a5d509963c0431fd3abcf31c7d313e4f6}} 
+\index{Cteq61Pdf.f@{Cteq61Pdf.f}!nextun@{nextun}}
+\index{nextun@{nextun}!Cteq61Pdf.f@{Cteq61Pdf.f}}
+\doxysubsubsection{\texorpdfstring{nextun()}{nextun()}}
+{\footnotesize\ttfamily function nextun}
+
+
+
+Definition at line 224 of file Cteq61\+Pdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{224 \textcolor{comment}{C                                 Returns an unallocated FORTRAN i/o unit.}}
+\DoxyCodeLine{225       \textcolor{keywordtype}{Logical} EX}
+\DoxyCodeLine{226 \textcolor{comment}{C}}
+\DoxyCodeLine{227       \textcolor{keywordflow}{Do} 10 n = 10, 300}
+\DoxyCodeLine{228          \textcolor{keyword}{INQUIRE} (unit=n, opened=ex)}
+\DoxyCodeLine{229          \textcolor{keywordflow}{If} (.NOT. ex) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{230             \mbox{\hyperlink{Cteq61Pdf_8f_a5d509963c0431fd3abcf31c7d313e4f6}{nextun}} = n}
+\DoxyCodeLine{231             \textcolor{keywordflow}{Return}}
+\DoxyCodeLine{232 \textcolor{keywordflow}{         Endif}}
+\DoxyCodeLine{233  10   \textcolor{keywordflow}{Continue}}
+\DoxyCodeLine{234       stop \textcolor{stringliteral}{' There is no available I/O unit. '}}
+\DoxyCodeLine{235 \textcolor{comment}{C               *************************}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Cteq61Pdf_8f_a31513ac9e58e076a26cca506bf3375b3}\label{Cteq61Pdf_8f_a31513ac9e58e076a26cca506bf3375b3}} 
+\index{Cteq61Pdf.f@{Cteq61Pdf.f}!partonx6@{partonx6}}
+\index{partonx6@{partonx6}!Cteq61Pdf.f@{Cteq61Pdf.f}}
+\doxysubsubsection{\texorpdfstring{partonx6()}{partonx6()}}
+{\footnotesize\ttfamily function partonx6 (\begin{DoxyParamCaption}\item[{}]{I\+P\+R\+TN,  }\item[{}]{XX,  }\item[{}]{QQ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 281 of file Cteq61\+Pdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{comment}{c  Given the parton distribution function in the array U in}}
+\DoxyCodeLine{283 \textcolor{comment}{c  COMMON / PEVLDT / , this routine interpolates to find}}
+\DoxyCodeLine{284 \textcolor{comment}{c  the parton distribution at an arbitray point in x and q.}}
+\DoxyCodeLine{285 \textcolor{comment}{c}}
+\DoxyCodeLine{286       \textcolor{keywordtype}{Implicit Double Precision} (a-\/h,o-\/z)}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288       parameter(mxx = 96, mxq = 20, mxf = 5)}
+\DoxyCodeLine{289       parameter(mxqx= mxq * mxx,   mxpqx = mxqx * (mxf+3))}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291       \textcolor{keyword}{Common}}
+\DoxyCodeLine{292      > / ctqpar1 / al, xv(0:mxx), tv(0:mxq), upd(mxpqx)}
+\DoxyCodeLine{293      > / ctqpar2 / nx, nt, nfmx}
+\DoxyCodeLine{294      > / xqrange / qini, qmax, xmin}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296       dimension fvec(4), fij(4)}
+\DoxyCodeLine{297       dimension xvpow(0:mxx)}
+\DoxyCodeLine{298       \textcolor{keyword}{Data} onep / 1.00001 /}
+\DoxyCodeLine{299       \textcolor{keyword}{Data} xpow / 0.3d0 /       \textcolor{comment}{!**** choice of interpolation variable}}
+\DoxyCodeLine{300       \textcolor{keyword}{Data} nqvec / 4 /}
+\DoxyCodeLine{301       \textcolor{keyword}{Data} ientry / 0 /}
+\DoxyCodeLine{302       \textcolor{keywordtype}{Save} ientry,xvpow}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{comment}{c store the powers used for interpolation on first call...}}
+\DoxyCodeLine{305       \textcolor{keywordflow}{if}(ientry .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{306          ientry = 1}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308          xvpow(0) = 0d0}
+\DoxyCodeLine{309          \textcolor{keywordflow}{do} i = 1, nx}
+\DoxyCodeLine{310             xvpow(i) = xv(i)**xpow}
+\DoxyCodeLine{311 \textcolor{keywordflow}{         enddo}}
+\DoxyCodeLine{312 \textcolor{keywordflow}{      endif}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314       x = xx}
+\DoxyCodeLine{315       q = qq}
+\DoxyCodeLine{316       tt = log(log(q/al))}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{comment}{c      -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/    find lower end of interval containing x, i.e.,}}
+\DoxyCodeLine{319 \textcolor{comment}{c                       get jx such that xv(jx) .le. x .le. xv(jx+1)...}}
+\DoxyCodeLine{320       jlx = -\/1}
+\DoxyCodeLine{321       ju = nx+1}
+\DoxyCodeLine{322  11   \textcolor{keywordflow}{If} (ju-\/jlx .GT. 1) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{323          jm = (ju+jlx) / 2}
+\DoxyCodeLine{324          \textcolor{keywordflow}{If} (x .Ge. xv(jm)) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{325             jlx = jm}
+\DoxyCodeLine{326          \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{327             ju = jm}
+\DoxyCodeLine{328 \textcolor{keywordflow}{         Endif}}
+\DoxyCodeLine{329          \textcolor{keywordflow}{Goto} 11}
+\DoxyCodeLine{330 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{331 \textcolor{comment}{C                     Ix    0   1   2      Jx  JLx         Nx-\/2     Nx}}
+\DoxyCodeLine{332 \textcolor{comment}{C                           |-\/-\/-\/|-\/-\/-\/|-\/-\/-\/|...|-\/-\/-\/|-\/x-\/|-\/-\/-\/|...|-\/-\/-\/|-\/-\/-\/|}}
+\DoxyCodeLine{333 \textcolor{comment}{C                     x     0  Xmin               x                 1}}
+\DoxyCodeLine{334 \textcolor{comment}{C}}
+\DoxyCodeLine{335       \textcolor{keywordflow}{If}     (jlx .LE. -\/1) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{336         print \textcolor{stringliteral}{'(A,1pE12.4)'}, \textcolor{stringliteral}{'Severe error: x <= 0 in PartonX6! x = '}, x}
+\DoxyCodeLine{337         stop}
+\DoxyCodeLine{338       \textcolor{keywordflow}{ElseIf} (jlx .Eq. 0) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{339          jx = 0}
+\DoxyCodeLine{340       \textcolor{keywordflow}{Elseif} (jlx .LE. nx-\/2) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342 \textcolor{comment}{C                For interrior points, keep x in the middle, as shown above}}
+\DoxyCodeLine{343          jx = jlx -\/ 1}
+\DoxyCodeLine{344       \textcolor{keywordflow}{Elseif} (jlx.Eq.nx-\/1 .or. x.LT.onep) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346 \textcolor{comment}{C                  We tolerate a slight over-\/shoot of one (OneP=1.00001),}}
+\DoxyCodeLine{347 \textcolor{comment}{C              perhaps due to roundoff or whatever, but not more than that.}}
+\DoxyCodeLine{348 \textcolor{comment}{C                                      Keep at least 4 points >= Jx}}
+\DoxyCodeLine{349          jx = jlx -\/ 2}
+\DoxyCodeLine{350       \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{351         print \textcolor{stringliteral}{'(A,1pE12.4)'}, \textcolor{stringliteral}{'Severe error: x > 1 in PartonX6! x = '}, x}
+\DoxyCodeLine{352         stop}
+\DoxyCodeLine{353 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{354 \textcolor{comment}{C          -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Note: JLx uniquely identifies the x-\/bin; Jx does not.}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{comment}{C                       This is the variable to be interpolated in}}
+\DoxyCodeLine{357       ss = x**xpow}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359       \textcolor{keywordflow}{If} (jlx.Ge.2 .and. jlx.Le.nx-\/2) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{comment}{c     initiation work for "interior bins": store the lattice points in s...}}
+\DoxyCodeLine{362       svec1 = xvpow(jx)}
+\DoxyCodeLine{363       svec2 = xvpow(jx+1)}
+\DoxyCodeLine{364       svec3 = xvpow(jx+2)}
+\DoxyCodeLine{365       svec4 = xvpow(jx+3)}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367       s12 = svec1 -\/ svec2}
+\DoxyCodeLine{368       s13 = svec1 -\/ svec3}
+\DoxyCodeLine{369       s23 = svec2 -\/ svec3}
+\DoxyCodeLine{370       s24 = svec2 -\/ svec4}
+\DoxyCodeLine{371       s34 = svec3 -\/ svec4}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373       sy2 = ss -\/ svec2}
+\DoxyCodeLine{374       sy3 = ss -\/ svec3}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 \textcolor{comment}{c constants needed for interpolating in s at fixed t lattice points...}}
+\DoxyCodeLine{377       const1 = s13/s23}
+\DoxyCodeLine{378       const2 = s12/s23}
+\DoxyCodeLine{379       const3 = s34/s23}
+\DoxyCodeLine{380       const4 = s24/s23}
+\DoxyCodeLine{381       s1213 = s12 + s13}
+\DoxyCodeLine{382       s2434 = s24 + s34}
+\DoxyCodeLine{383       sdet = s12*s34 -\/ s1213*s2434}
+\DoxyCodeLine{384       tmp = sy2*sy3/sdet}
+\DoxyCodeLine{385       const5 = (s34*sy2-\/s2434*sy3)*tmp/s12}
+\DoxyCodeLine{386       const6 = (s1213*sy2-\/s12*sy3)*tmp/s34}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{keywordflow}{      EndIf}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{comment}{c         -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Now find lower end of interval containing Q, i.e.,}}
+\DoxyCodeLine{391 \textcolor{comment}{c                          get jq such that qv(jq) .le. q .le. qv(jq+1)...}}
+\DoxyCodeLine{392       jlq = -\/1}
+\DoxyCodeLine{393       ju = nt+1}
+\DoxyCodeLine{394  12   \textcolor{keywordflow}{If} (ju-\/jlq .GT. 1) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{395          jm = (ju+jlq) / 2}
+\DoxyCodeLine{396          \textcolor{keywordflow}{If} (tt .GE. tv(jm)) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{397             jlq = jm}
+\DoxyCodeLine{398          \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{399             ju = jm}
+\DoxyCodeLine{400 \textcolor{keywordflow}{         Endif}}
+\DoxyCodeLine{401          \textcolor{keywordflow}{Goto} 12}
+\DoxyCodeLine{402 \textcolor{keywordflow}{       Endif}}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404       \textcolor{keywordflow}{If}     (jlq .LE. 0) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{405          jq = 0}
+\DoxyCodeLine{406       \textcolor{keywordflow}{Elseif} (jlq .LE. nt-\/2) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{407 \textcolor{comment}{C                                  keep q in the middle, as shown above}}
+\DoxyCodeLine{408          jq = jlq -\/ 1}
+\DoxyCodeLine{409       \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{410 \textcolor{comment}{C                         JLq .GE. Nt-\/1 case:  Keep at least 4 points >= Jq.}}
+\DoxyCodeLine{411         jq = nt -\/ 3}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{414 \textcolor{comment}{C                                   This is the interpolation variable in Q}}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416       \textcolor{keywordflow}{If} (jlq.GE.1 .and. jlq.LE.nt-\/2) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{417 \textcolor{comment}{c                                        store the lattice points in t...}}
+\DoxyCodeLine{418       tvec1 = tv(jq)}
+\DoxyCodeLine{419       tvec2 = tv(jq+1)}
+\DoxyCodeLine{420       tvec3 = tv(jq+2)}
+\DoxyCodeLine{421       tvec4 = tv(jq+3)}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423       t12 = tvec1 -\/ tvec2}
+\DoxyCodeLine{424       t13 = tvec1 -\/ tvec3}
+\DoxyCodeLine{425       t23 = tvec2 -\/ tvec3}
+\DoxyCodeLine{426       t24 = tvec2 -\/ tvec4}
+\DoxyCodeLine{427       t34 = tvec3 -\/ tvec4}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429       ty2 = tt -\/ tvec2}
+\DoxyCodeLine{430       ty3 = tt -\/ tvec3}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432       tmp1 = t12 + t13}
+\DoxyCodeLine{433       tmp2 = t24 + t34}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435       tdet = t12*t34 -\/ tmp1*tmp2}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437 \textcolor{keywordflow}{      EndIf}}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{comment}{c get the pdf function values at the lattice points...}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442       \textcolor{keywordflow}{If} (iprtn .GE. 3) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{443          ip = -\/ iprtn}
+\DoxyCodeLine{444       \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{445          ip = iprtn}
+\DoxyCodeLine{446 \textcolor{keywordflow}{      EndIf}}
+\DoxyCodeLine{447       jtmp = ((ip + nfmx)*(nt+1)+(jq-\/1))*(nx+1)+jx+1}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449       \textcolor{keywordflow}{Do} it = 1, nqvec}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451          j1  = jtmp + it*(nx+1)}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453        \textcolor{keywordflow}{If} (jx .Eq. 0) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{454 \textcolor{comment}{C                          For the first 4 x points, interpolate x\string^2*f(x,Q)}}
+\DoxyCodeLine{455 \textcolor{comment}{C                           This applies to the two lowest bins JLx = 0, 1}}
+\DoxyCodeLine{456 \textcolor{comment}{C            We can not put the JLx.eq.1 bin into the "interrior" section}}
+\DoxyCodeLine{457 \textcolor{comment}{C                           (as we do for q), since Upd(J1) is undefined.}}
+\DoxyCodeLine{458          fij(1) = 0}
+\DoxyCodeLine{459          fij(2) = upd(j1+1) * xv(1)**2}
+\DoxyCodeLine{460          fij(3) = upd(j1+2) * xv(2)**2}
+\DoxyCodeLine{461          fij(4) = upd(j1+3) * xv(3)**2}
+\DoxyCodeLine{462 \textcolor{comment}{C}}
+\DoxyCodeLine{463 \textcolor{comment}{C                 Use Polint which allows x to be anywhere w.r.t. the grid}}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465          \textcolor{keyword}{Call }\mbox{\hyperlink{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}{polint}} (xvpow(0), fij(1), 4, ss, fx, dfx)}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467          \textcolor{keywordflow}{If} (x .GT. 0d0)  fvec(it) =  fx / x**2}
+\DoxyCodeLine{468 \textcolor{comment}{C                                              Pdf is undefined for x.eq.0}}
+\DoxyCodeLine{469        \textcolor{keywordflow}{ElseIf}  (jlx .Eq. nx-\/1) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{470 \textcolor{comment}{C                                                This is the highest x bin:}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472         \textcolor{keyword}{Call }\mbox{\hyperlink{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}{polint}} (xvpow(nx-\/3), upd(j1), 4, ss, fx, dfx)}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474         fvec(it) = fx}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476        \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{477 \textcolor{comment}{C                       for all interior points, use Jon's in-\/line function}}
+\DoxyCodeLine{478 \textcolor{comment}{C                              This applied to (JLx.Ge.2 .and. JLx.Le.Nx-\/2)}}
+\DoxyCodeLine{479          sf2 = upd(j1+1)}
+\DoxyCodeLine{480          sf3 = upd(j1+2)}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482          g1 =  sf2*const1 -\/ sf3*const2}
+\DoxyCodeLine{483          g4 = -\/sf2*const3 + sf3*const4}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485          fvec(it) = (const5*(upd(j1)-\/g1)}
+\DoxyCodeLine{486      \&               + const6*(upd(j1+3)-\/g4)}
+\DoxyCodeLine{487      \&               + sf2*sy3 -\/ sf3*sy2) / s23}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \textcolor{keywordflow}{       Endif}}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491 \textcolor{keywordflow}{      enddo}}
+\DoxyCodeLine{492 \textcolor{comment}{C                                   We now have the four values Fvec(1:4)}}
+\DoxyCodeLine{493 \textcolor{comment}{c     interpolate in t...}}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495       \textcolor{keywordflow}{If} (jlq .LE. 0) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{496 \textcolor{comment}{C                         1st Q-\/bin, as well as extrapolation to lower Q}}
+\DoxyCodeLine{497         \textcolor{keyword}{Call }\mbox{\hyperlink{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}{polint}} (tv(0), fvec(1), 4, tt, ff, dfq)}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499       \textcolor{keywordflow}{ElseIf} (jlq .GE. nt-\/1) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{500 \textcolor{comment}{C                         Last Q-\/bin, as well as extrapolation to higher Q}}
+\DoxyCodeLine{501         \textcolor{keyword}{Call }\mbox{\hyperlink{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}{polint}} (tv(nt-\/3), fvec(1), 4, tt, ff, dfq)}
+\DoxyCodeLine{502       \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{503 \textcolor{comment}{C                         Interrior bins : (JLq.GE.1 .and. JLq.LE.Nt-\/2)}}
+\DoxyCodeLine{504 \textcolor{comment}{C       which include JLq.Eq.1 and JLq.Eq.Nt-\/2, since Upd is defined for}}
+\DoxyCodeLine{505 \textcolor{comment}{C                         the full range QV(0:Nt)  (in contrast to XV)}}
+\DoxyCodeLine{506         tf2 = fvec(2)}
+\DoxyCodeLine{507         tf3 = fvec(3)}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509         g1 = ( tf2*t13 -\/ tf3*t12) / t23}
+\DoxyCodeLine{510         g4 = (-\/tf2*t34 + tf3*t24) / t23}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512         h00 = ((t34*ty2-\/tmp2*ty3)*(fvec(1)-\/g1)/t12}
+\DoxyCodeLine{513      \&    +  (tmp1*ty2-\/t12*ty3)*(fvec(4)-\/g4)/t34)}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515         ff = (h00*ty2*ty3/tdet + tf2*ty3 -\/ tf3*ty2) / t23}
+\DoxyCodeLine{516 \textcolor{keywordflow}{      EndIf}}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518       \mbox{\hyperlink{Cteq61Pdf_8f_a31513ac9e58e076a26cca506bf3375b3}{partonx6}} = ff}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520       \textcolor{keywordflow}{Return}}
+\DoxyCodeLine{521 \textcolor{comment}{C                                       ********************}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}\label{Cteq61Pdf_8f_a1428013ed79b43e7e293736d15280439}} 
+\index{Cteq61Pdf.f@{Cteq61Pdf.f}!polint@{polint}}
+\index{polint@{polint}!Cteq61Pdf.f@{Cteq61Pdf.f}}
+\doxysubsubsection{\texorpdfstring{polint()}{polint()}}
+{\footnotesize\ttfamily subroutine polint (\begin{DoxyParamCaption}\item[{dimension(n)}]{XA,  }\item[{dimension(n)}]{YA,  }\item[{}]{N,  }\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{DY }\end{DoxyParamCaption})}
+
+
+
+Definition at line 240 of file Cteq61\+Pdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241       \textcolor{keywordtype}{IMPLICIT DOUBLE PRECISION} (a-\/h, o-\/z)}
+\DoxyCodeLine{242 \textcolor{comment}{C                                        Adapted from "Numerical Recipes"}}
+\DoxyCodeLine{243       parameter(nmax=10)}
+\DoxyCodeLine{244       dimension xa(n),ya(n),c(nmax),d(nmax)}
+\DoxyCodeLine{245       ns=1}
+\DoxyCodeLine{246       dif=abs(x-\/xa(1))}
+\DoxyCodeLine{247       \textcolor{keywordflow}{DO} 11 i=1,n}
+\DoxyCodeLine{248         dift=abs(x-\/xa(i))}
+\DoxyCodeLine{249         \textcolor{keywordflow}{IF} (dift.LT.dif) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{250           ns=i}
+\DoxyCodeLine{251           dif=dift}
+\DoxyCodeLine{252 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{253         c(i)=ya(i)}
+\DoxyCodeLine{254         d(i)=ya(i)}
+\DoxyCodeLine{255 11    \textcolor{keywordflow}{CONTINUE}}
+\DoxyCodeLine{256       y=ya(ns)}
+\DoxyCodeLine{257       ns=ns-\/1}
+\DoxyCodeLine{258       \textcolor{keywordflow}{DO} 13 m=1,n-\/1}
+\DoxyCodeLine{259         \textcolor{keywordflow}{DO} 12 i=1,n-\/m}
+\DoxyCodeLine{260           ho=xa(i)-\/x}
+\DoxyCodeLine{261           hp=xa(i+m)-\/x}
+\DoxyCodeLine{262           w=c(i+1)-\/d(i)}
+\DoxyCodeLine{263           den=ho-\/hp}
+\DoxyCodeLine{264 \textcolor{comment}{!           IF(DEN.EQ.0.)PAUSE}}
+\DoxyCodeLine{265           den=w/den}
+\DoxyCodeLine{266           d(i)=hp*den}
+\DoxyCodeLine{267           c(i)=ho*den}
+\DoxyCodeLine{268 12      \textcolor{keywordflow}{CONTINUE}}
+\DoxyCodeLine{269         \textcolor{keywordflow}{IF} (2*ns.LT.n-\/m)\textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{270           dy=c(ns+1)}
+\DoxyCodeLine{271         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{272           dy=d(ns)}
+\DoxyCodeLine{273           ns=ns-\/1}
+\DoxyCodeLine{274 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{275         y=y+dy}
+\DoxyCodeLine{276 13    \textcolor{keywordflow}{CONTINUE}}
+\DoxyCodeLine{277       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Cteq61Pdf_8f_ad829f97f16c52736f19dd5e1739ecbb1}\label{Cteq61Pdf_8f_ad829f97f16c52736f19dd5e1739ecbb1}} 
+\index{Cteq61Pdf.f@{Cteq61Pdf.f}!readtbl@{readtbl}}
+\index{readtbl@{readtbl}!Cteq61Pdf.f@{Cteq61Pdf.f}}
+\doxysubsubsection{\texorpdfstring{readtbl()}{readtbl()}}
+{\footnotesize\ttfamily subroutine readtbl (\begin{DoxyParamCaption}\item[{}]{Nu }\end{DoxyParamCaption})}
+
+
+
+Definition at line 179 of file Cteq61\+Pdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179       \textcolor{keywordtype}{Implicit Double Precision} (a-\/h,o-\/z)}
+\DoxyCodeLine{180       \textcolor{keywordtype}{Character} Line*80}
+\DoxyCodeLine{181       parameter(mxx = 96, mxq = 20, mxf = 5)}
+\DoxyCodeLine{182       parameter(mxpqx = (mxf + 3) * mxq * mxx)}
+\DoxyCodeLine{183       \textcolor{keyword}{Common}}
+\DoxyCodeLine{184      > / ctqpar1 / al, xv(0:mxx), tv(0:mxq), upd(mxpqx)}
+\DoxyCodeLine{185      > / ctqpar2 / nx, nt, nfmx}
+\DoxyCodeLine{186      > / xqrange / qini, qmax, xmin}
+\DoxyCodeLine{187      > / qcdtable /  alambda, nfl, iorder}
+\DoxyCodeLine{188      > / masstbl / amass(6)}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190       \textcolor{keyword}{Read}  (nu, \textcolor{stringliteral}{'(A)'}) line}
+\DoxyCodeLine{191       \textcolor{keyword}{Read}  (nu, \textcolor{stringliteral}{'(A)'}) line}
+\DoxyCodeLine{192       \textcolor{keyword}{Read}  (nu, *) dr, fl, al, (amass(i),i=1,6)}
+\DoxyCodeLine{193       iorder = nint(dr)}
+\DoxyCodeLine{194       nfl = nint(fl)}
+\DoxyCodeLine{195       alambda = al}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197       \textcolor{keyword}{Read}  (nu, \textcolor{stringliteral}{'(A)'}) line}
+\DoxyCodeLine{198       \textcolor{keyword}{Read}  (nu, *) nx,  nt, nfmx}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200       \textcolor{keyword}{Read}  (nu, \textcolor{stringliteral}{'(A)'}) line}
+\DoxyCodeLine{201       \textcolor{keyword}{Read}  (nu, *) qini, qmax, (tv(i), i =0, nt)}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203       \textcolor{keyword}{Read}  (nu, \textcolor{stringliteral}{'(A)'}) line}
+\DoxyCodeLine{204       \textcolor{keyword}{Read}  (nu, *) xmin, (xv(i), i =0, nx)}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206       \textcolor{keywordflow}{Do} 11 iq = 0, nt}
+\DoxyCodeLine{207          tv(iq) = log(log(tv(iq) /al))}
+\DoxyCodeLine{208    11 \textcolor{keywordflow}{Continue}}
+\DoxyCodeLine{209 \textcolor{comment}{C}}
+\DoxyCodeLine{210 \textcolor{comment}{C                  Since quark = anti-\/quark for nfl>2 at this stage,}}
+\DoxyCodeLine{211 \textcolor{comment}{C                  we Read  out only the non-\/redundent data points}}
+\DoxyCodeLine{212 \textcolor{comment}{C     No of flavors = NfMx (sea) + 1 (gluon) + 2 (valence)}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214       nblk = (nx+1) * (nt+1)}
+\DoxyCodeLine{215       npts =  nblk  * (nfmx+3)}
+\DoxyCodeLine{216       \textcolor{keyword}{Read}  (nu, \textcolor{stringliteral}{'(A)'}) line}
+\DoxyCodeLine{217       \textcolor{keyword}{Read}  (nu, *, iostat=iret) (upd(i), i=1,npts)}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219       \textcolor{keywordflow}{Return}}
+\DoxyCodeLine{220 \textcolor{comment}{C                        ****************************}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Cteq61Pdf_8f_a9fd96a0329f646170f46a5a614bfdaca}\label{Cteq61Pdf_8f_a9fd96a0329f646170f46a5a614bfdaca}} 
+\index{Cteq61Pdf.f@{Cteq61Pdf.f}!setctq6@{setctq6}}
+\index{setctq6@{setctq6}!Cteq61Pdf.f@{Cteq61Pdf.f}}
+\doxysubsubsection{\texorpdfstring{setctq6()}{setctq6()}}
+{\footnotesize\ttfamily subroutine setctq6 (\begin{DoxyParamCaption}\item[{}]{Iset }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file Cteq61\+Pdf.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138       \textcolor{keywordtype}{Implicit Double Precision} (a-\/h,o-\/z)}
+\DoxyCodeLine{139       parameter(isetmax0=5)}
+\DoxyCodeLine{140       \textcolor{keywordtype}{Character} Flnm(Isetmax0)*6, nn*3, Tablefile*40}
+\DoxyCodeLine{141       \textcolor{keyword}{Data} (flnm(i), i=1,isetmax0)}
+\DoxyCodeLine{142      > / \textcolor{stringliteral}{'cteq6m'}, \textcolor{stringliteral}{'cteq6d'}, \textcolor{stringliteral}{'cteq6l'}, \textcolor{stringliteral}{'cteq6l'},\textcolor{stringliteral}{'ctq61.'}/}
+\DoxyCodeLine{143       \textcolor{keyword}{Data} isetold, isetmin0, isetmin1, isetmax1 /-\/987,1,100,140/}
+\DoxyCodeLine{144       \textcolor{keyword}{Data} isetmin2,isetmax2 /200,240/}
+\DoxyCodeLine{145       \textcolor{keywordtype}{save}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{comment}{C             If data file not initialized, do so.}}
+\DoxyCodeLine{148       \textcolor{keywordflow}{If}(iset.ne.isetold) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{149          iu= \mbox{\hyperlink{Cteq61Pdf_8f_a5d509963c0431fd3abcf31c7d313e4f6}{nextun}}()}
+\DoxyCodeLine{150          \textcolor{keywordflow}{If} (iset.ge.isetmin0 .and. iset.le.3) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{151             tablefile=flnm(iset)//\textcolor{stringliteral}{'.tbl'}}
+\DoxyCodeLine{152          \textcolor{keywordflow}{Elseif} (iset.eq.4) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{153             tablefile=flnm(iset)//\textcolor{stringliteral}{'1.tbl'}}
+\DoxyCodeLine{154          \textcolor{keywordflow}{Elseif} (iset.ge.isetmin1 .and. iset.le.isetmax1) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{155             \textcolor{keyword}{write}(nn,\textcolor{stringliteral}{'(I3)'}) iset}
+\DoxyCodeLine{156             tablefile=flnm(1)//nn//\textcolor{stringliteral}{'.tbl'}}
+\DoxyCodeLine{157          \textcolor{keywordflow}{Elseif} (iset.ge.isetmin2 .and. iset.le.isetmax2) \textcolor{keywordflow}{Then}}
+\DoxyCodeLine{158             \textcolor{keyword}{write}(nn,\textcolor{stringliteral}{'(I3)'}) iset}
+\DoxyCodeLine{159             tablefile=flnm(5)//nn(2:3)//\textcolor{stringliteral}{'.tbl'}}
+\DoxyCodeLine{160          \textcolor{keywordflow}{Else}}
+\DoxyCodeLine{161             print *, \textcolor{stringliteral}{'Invalid Iset number in SetCtq6 :'}, iset}
+\DoxyCodeLine{162             stop}
+\DoxyCodeLine{163 \textcolor{keywordflow}{         Endif}}
+\DoxyCodeLine{164          \textcolor{keyword}{Open}(iu, file=\textcolor{stringliteral}{'pdfs/'}//tablefile}
+\DoxyCodeLine{165      .            ,status=\textcolor{stringliteral}{'OLD'}, err=100)}
+\DoxyCodeLine{166  21      \textcolor{keyword}{Call }\mbox{\hyperlink{Cteq61Pdf_8f_ad829f97f16c52736f19dd5e1739ecbb1}{readtbl}} (iu)}
+\DoxyCodeLine{167          \textcolor{keyword}{Close} (iu)}
+\DoxyCodeLine{168          isetold=iset}
+\DoxyCodeLine{169 \textcolor{keywordflow}{      Endif}}
+\DoxyCodeLine{170       \textcolor{keywordflow}{Return}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172  100  print *, \textcolor{stringliteral}{' Data file '}, tablefile, \textcolor{stringliteral}{' cannot be opened '}}
+\DoxyCodeLine{173      >//\textcolor{stringliteral}{'in SetCtq6!!'}}
+\DoxyCodeLine{174       stop}
+\DoxyCodeLine{175 \textcolor{comment}{C                             ********************}}
+
+\end{DoxyCode}

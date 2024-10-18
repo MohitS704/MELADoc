@@ -1,0 +1,1475 @@
+\hypertarget{namespacetensorreduction}{}\doxysection{tensorreduction Module Reference}
+\label{namespacetensorreduction}\index{tensorreduction@{tensorreduction}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacetensorreduction_a7a6f13f40c0bdd834cf3733bc0d3a03a}{calctensorfr}} (TF, T\+Fuv, T\+Ferr, Mom\+Vec, Mom\+Inv, masses2, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacetensorreduction_a949651398401da0ccb54ac2f75e2e0ef}{calctensorfrred}} (TF, C\+Fuv, T\+Ferr, Mom\+Vec, Mom\+Inv, masses2, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacetensorreduction_a8887d8e175cfb3f42a4ef1115e22f7d1}{calctensorfr\+\_\+list}} (TF, T\+Fuv, T\+Ferr, Mom\+Vec, Mom\+Inv, masses2, rmax)
+\item 
+recursive subroutine \mbox{\hyperlink{namespacetensorreduction_af09e82caa7b52f2e55fd2811833ff6e4}{calctensortnr}} (TN, T\+Nuv, T\+Nerr, Mom\+Vec, Mom\+Inv, masses2, N, rmax, id, C\+Nuv)
+\item 
+recursive subroutine \mbox{\hyperlink{namespacetensorreduction_aaf30407e751ed7e7dab66fb30f19bea5}{calctensortnrred}} (TN, T\+Nerr, Mom\+Vec, Mom\+Inv, masses2, N, rmax, id, C\+Nuv)
+\item 
+subroutine \mbox{\hyperlink{namespacetensorreduction_ac885d41ff36dbb96756109346a8d5801}{calctensortnr\+\_\+list}} (TN, T\+Nuv, T\+Nerr, Mom\+Vec, Mom\+Inv, masses2, N, rmax)
+\item 
+subroutine \mbox{\hyperlink{namespacetensorreduction_a041f666dd114678cf583cec1fe66aef4}{checktensors}} (TN, Mom\+Vec, Mom\+Inv, masses2, N, rmax, writeout, acc)
+\item 
+subroutine \mbox{\hyperlink{namespacetensorreduction_a740f7693b96ef13de03fdbdcb4cbb7f1}{comparetensors}} (T1, T2, rmax, writeout, acc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacetensorreduction_a7a6f13f40c0bdd834cf3733bc0d3a03a}\label{namespacetensorreduction_a7a6f13f40c0bdd834cf3733bc0d3a03a}} 
+\index{tensorreduction@{tensorreduction}!calctensorfr@{calctensorfr}}
+\index{calctensorfr@{calctensorfr}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{calctensorfr()}{calctensorfr()}}
+{\footnotesize\ttfamily subroutine tensorreduction\+::calctensorfr (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TF,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Ferr,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(15), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:5), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45   }
+\DoxyCodeLine{46     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{47     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5), masses2(0:5), MomInv(15)}
+\DoxyCodeLine{48     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{49     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TFuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{50     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TFerr(0:rmax)}
+\DoxyCodeLine{51     \textcolor{keywordtype}{double complex} :: CFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{52     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: TFaux(:,:,:,:), CFuvaux(:,:,:,:,:,:)}
+\DoxyCodeLine{53     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: TFerraux(:)}
+\DoxyCodeLine{54     \textcolor{keywordtype}{double complex} :: x(41)}
+\DoxyCodeLine{55     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: fct(:)}
+\DoxyCodeLine{56     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,n5,i,rank,bino,cnt}
+\DoxyCodeLine{57     \textcolor{keywordtype}{logical} :: nocalc,wrica}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordflow}{if} (tenred\_cll.gt.6) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{61       \textcolor{keywordflow}{if} (erroutlev\_cll.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{62         \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'inconsistent call of CalcTensorFr'}}
+\DoxyCodeLine{63 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{64       stop }
+\DoxyCodeLine{65 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{if} (use\_cache\_system) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{68       \textcolor{keywordflow}{if} ((ncache.gt.0).and.(ncache.le.ncache\_max)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{69 \textcolor{comment}{!        if (use\_cache(ncache).ge.6) then}}
+\DoxyCodeLine{70           x(1:15) = mominv}
+\DoxyCodeLine{71           x(16:21) = masses2}
+\DoxyCodeLine{72           \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{73             x(22+(i-\/1)*4:21+i*4) = momvec(0:3,i)}
+\DoxyCodeLine{74 \textcolor{keywordflow}{          end do}   }
+\DoxyCodeLine{75           rank = rmax}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77           \textcolor{keywordflow}{if} (rmax.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{78             \textcolor{keyword}{allocate}(fct(rts(rmax)+ncoefs(rmax-\/8,6)+rmax+1))}
+\DoxyCodeLine{79             \textcolor{keyword}{call }readcache(fct,rts(rmax)+ncoefs(rmax-\/8,6)+rmax+1,x,41,10+mode\_cll,0,6,rank,nocalc,wrica)}
+\DoxyCodeLine{80           \textcolor{keywordflow}{else} }
+\DoxyCodeLine{81             \textcolor{keyword}{allocate}(fct(rts(rmax)+rmax+1))}
+\DoxyCodeLine{82             \textcolor{keyword}{call }readcache(fct,rts(rmax)+rmax+1,x,41,10+mode\_cll,0,6,rank,nocalc,wrica)}
+\DoxyCodeLine{83 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85           \textcolor{keywordflow}{if}(nocalc)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{86             tfuv = 0d0}
+\DoxyCodeLine{87             cnt = 1}
+\DoxyCodeLine{88             \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{89               \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{90                 \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{91                   \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{92                     n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{93                     tf(n0,n1,n2,n3) = fct(cnt)}
+\DoxyCodeLine{94                     cnt = cnt+1}
+\DoxyCodeLine{95 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{96 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{97 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{98               \textcolor{keywordflow}{do} n0=4,r/2}
+\DoxyCodeLine{99                 \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{100                   \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{101                     \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{102                       \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{103                         n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{104         }
+\DoxyCodeLine{105                         cfuv(n0,n1,n2,n3,n4,n5) = fct(cnt)}
+\DoxyCodeLine{106                         cnt = cnt+1}
+\DoxyCodeLine{107     }
+\DoxyCodeLine{108 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{109 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{110 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{111 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{112 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{113               tferr(r) = real(fct(cnt))}
+\DoxyCodeLine{114               cnt = cnt+1}
+\DoxyCodeLine{115 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{116             tfuv = 0d0}
+\DoxyCodeLine{117             \textcolor{keywordflow}{if} (rmax.ge.8) \textcolor{keyword}{call }calctensorfuv(tfuv,cfuv,momvec,rmax)   }
+\DoxyCodeLine{118             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{119 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121           }
+\DoxyCodeLine{122           }
+\DoxyCodeLine{123           \textcolor{keywordflow}{if}(rank.eq.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125             \textcolor{keyword}{call }calctensorfrred(tf,cfuv,tferr,momvec,mominv,masses2,rank)}
+\DoxyCodeLine{126           }
+\DoxyCodeLine{127             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{128               cnt = 0}
+\DoxyCodeLine{129               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{130                 \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{131                   \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{132                     \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{133                       n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{134  }
+\DoxyCodeLine{135                       cnt = cnt+1}
+\DoxyCodeLine{136                       fct(cnt) = tf(n0,n1,n2,n3)}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{139 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{140 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{141                 \textcolor{keywordflow}{do} n0=4,r/2}
+\DoxyCodeLine{142                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{143                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{144                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{145                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{146                           n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{147         }
+\DoxyCodeLine{148                           cnt = cnt+1}
+\DoxyCodeLine{149                           fct(cnt) = cfuv(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{150     }
+\DoxyCodeLine{151 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{152 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{153 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{154 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{155 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{156                 cnt = cnt+1}
+\DoxyCodeLine{157                 fct(cnt) = tferr(r)}
+\DoxyCodeLine{158 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{159    }
+\DoxyCodeLine{160               \textcolor{keywordflow}{if} (rank.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{161                 \textcolor{keyword}{call }writecache(fct,rts(rank)+ncoefs(rank-\/8,6)+rank+1,0,6,rank)}
+\DoxyCodeLine{162               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{163                 \textcolor{keyword}{call }writecache(fct,rts(rank)+rank+1,0,6,rank)}
+\DoxyCodeLine{164 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168             tfuv = 0d0}
+\DoxyCodeLine{169             \textcolor{keywordflow}{if} (rmax.ge.8) \textcolor{keyword}{call }calctensorfuv(tfuv,cfuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax),momvec,rmax)}
+\DoxyCodeLine{170             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{171             }
+\DoxyCodeLine{172             }
+\DoxyCodeLine{173           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{174             \textcolor{keyword}{allocate}(tfaux(0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{175             \textcolor{keyword}{allocate}(cfuvaux(0:rank/2,0:rank,0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{176             \textcolor{keyword}{allocate}(tferraux(0:rank))}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178             \textcolor{keyword}{call }calctensorfrred(tfaux,cfuvaux,tferraux,momvec,mominv,masses2,rank)}
+\DoxyCodeLine{179           }
+\DoxyCodeLine{180             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{181               cnt = 0}
+\DoxyCodeLine{182               \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{183               \textcolor{keywordflow}{if} (rank.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{184                 \textcolor{keyword}{allocate}(fct(rts(rank)+ncoefs(rank-\/8,6)+rank+1))}
+\DoxyCodeLine{185               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{186                 \textcolor{keyword}{allocate}(fct(rts(rank)+rank+1))}
+\DoxyCodeLine{187 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{188               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{190                   \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{191                     \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{192                       n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{193  }
+\DoxyCodeLine{194                       cnt = cnt+1}
+\DoxyCodeLine{195                       fct(cnt) = tfaux(n0,n1,n2,n3)}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{198 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{199 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{200                 \textcolor{keywordflow}{do} n0=4,r/2}
+\DoxyCodeLine{201                   \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{202                     \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{203                       \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{204                         \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{205                           n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{206         }
+\DoxyCodeLine{207                           cnt = cnt+1}
+\DoxyCodeLine{208                           fct(cnt) = cfuvaux(n0,n1,n2,n3,n4,n5)}
+\DoxyCodeLine{209     }
+\DoxyCodeLine{210 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{211 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{212 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{213 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{214 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{215                 cnt = cnt+1}
+\DoxyCodeLine{216                 fct(cnt) = tferraux(r)}
+\DoxyCodeLine{217 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{218    }
+\DoxyCodeLine{219               \textcolor{keywordflow}{if} (rank.ge.8) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{220                 \textcolor{keyword}{call }writecache(fct,rts(rank)+ncoefs(rank-\/8,6)+rank+1,0,6,rank)}
+\DoxyCodeLine{221               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{222                 \textcolor{keyword}{call }writecache(fct,rts(rank)+rank+1,0,6,rank)}
+\DoxyCodeLine{223 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227             tf = tfaux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{228             tfuv = 0d0}
+\DoxyCodeLine{229             \textcolor{keywordflow}{if} (rmax.ge.8) \textcolor{keyword}{call }calctensorfuv(tfuv,cfuvaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax),momvec,rmax)}
+\DoxyCodeLine{230             tferr = tferraux(0:rmax)}
+\DoxyCodeLine{231             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{234           }
+\DoxyCodeLine{235 \textcolor{comment}{!       end if          }}
+\DoxyCodeLine{236 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{237 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{keyword}{allocate}(cfuvaux(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax))}
+\DoxyCodeLine{240     \textcolor{keyword}{call }calctensorfrred(tf,cfuvaux,tferr,momvec,mominv,masses2,rmax)}
+\DoxyCodeLine{241     tfuv = 0d0}
+\DoxyCodeLine{242     \textcolor{keywordflow}{if} (rmax.ge.8) \textcolor{keyword}{call }calctensorfuv(tfuv,cfuvaux,momvec,rmax)}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_a8887d8e175cfb3f42a4ef1115e22f7d1}\label{namespacetensorreduction_a8887d8e175cfb3f42a4ef1115e22f7d1}} 
+\index{tensorreduction@{tensorreduction}!calctensorfr\_list@{calctensorfr\_list}}
+\index{calctensorfr\_list@{calctensorfr\_list}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{calctensorfr\_list()}{calctensorfr\_list()}}
+{\footnotesize\ttfamily subroutine tensorreduction\+::calctensorfr\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TF,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Ferr,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(15), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:5), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 584 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{584   }
+\DoxyCodeLine{585     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{586     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5), masses2(0:5), MomInv(15)}
+\DoxyCodeLine{587     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(RtS(rmax)), TFuv(RtS(rmax))}
+\DoxyCodeLine{588     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TFerr(0:rmax)}
+\DoxyCodeLine{589     \textcolor{keywordtype}{double complex} :: TF\_aux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{590     \textcolor{keywordtype}{double complex} :: TFuv\_aux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{591     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593     \textcolor{keyword}{call }calctensorfr(tf\_aux,tfuv\_aux,tferr,momvec,mominv,masses2,rmax)}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{596       tf(mu) = tf\_aux(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu))}
+\DoxyCodeLine{597 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599     \textcolor{keywordflow}{if} (calcuv\_cll) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{600       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{601         tfuv(mu) = tfuv\_aux(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu))}
+\DoxyCodeLine{602 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{603 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{604 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_a949651398401da0ccb54ac2f75e2e0ef}\label{namespacetensorreduction_a949651398401da0ccb54ac2f75e2e0ef}} 
+\index{tensorreduction@{tensorreduction}!calctensorfrred@{calctensorfrred}}
+\index{calctensorfrred@{calctensorfrred}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{calctensorfrred()}{calctensorfrred()}}
+{\footnotesize\ttfamily subroutine tensorreduction\+::calctensorfrred (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TF,  }\item[{double complex, dimension(0\+:rmax/2,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{C\+Fuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Ferr,  }\item[{double complex, dimension(0\+:3,5), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(15), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:5), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 260 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{260   }
+\DoxyCodeLine{261     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
+\DoxyCodeLine{262     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,5), masses2(0:5), MomInv(15)}
+\DoxyCodeLine{263     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TF(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{264     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TFerr(0:rmax)}
+\DoxyCodeLine{265     \textcolor{keywordtype}{double complex},\textcolor{keywordtype}{intent(out)} :: CFuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{266     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: TE(:,:,:,:,:), TE\_0aux(:,:,:,:)}
+\DoxyCodeLine{267     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: TEuv(:,:,:,:,:), TEuv\_0aux(:,:,:,:)}
+\DoxyCodeLine{268     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: TEerr(:,:)}
+\DoxyCodeLine{269     \textcolor{keywordtype}{double precision} :: p1max}
+\DoxyCodeLine{270     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: CE(:,:,:,:,:), CEuv(:,:,:,:,:), CE0uv(:,:,:,:,:,:)}
+\DoxyCodeLine{271     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: CEerr(:) }
+\DoxyCodeLine{272     \textcolor{keywordtype}{double complex} :: MomVecE(0:3,4), masses2E(0:4), MomInvE(10)}
+\DoxyCodeLine{273     \textcolor{keywordtype}{double complex} :: q10,q21,q32,q43,q54,q50,q20,q31,q42,q53,q40}
+\DoxyCodeLine{274     \textcolor{keywordtype}{double complex} :: q51,q30,q41,q52,mm02,mm12,mm22,mm32,mm42,mm52,ff(5)}
+\DoxyCodeLine{275     \textcolor{keywordtype}{double complex} :: mx(0:5,0:5), mxinv(0:5,0:5),mx0k(5,5),mx0kinv(5,5),mxinvP(5,0:3)}
+\DoxyCodeLine{276     \textcolor{keywordtype}{double complex} :: mxinvs,mxinvPs(0:3)}
+\DoxyCodeLine{277     \textcolor{keywordtype}{double complex} :: det,newdet}
+\DoxyCodeLine{278     \textcolor{keywordtype}{double complex} :: Smod, Faux(5), elimminf2\_coli,chdet,P1ten}
+\DoxyCodeLine{279     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,n5,np0,np1,np2,np3,k,i,j,kbest,rmaxE,mu,combi,nid(0:4),bin}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282     \textcolor{comment}{! determine inverse modified Caley matrix}}
+\DoxyCodeLine{283     mm02 = elimminf2\_coli(masses2(0))}
+\DoxyCodeLine{284     mm12 = elimminf2\_coli(masses2(1))}
+\DoxyCodeLine{285     mm22 = elimminf2\_coli(masses2(2))}
+\DoxyCodeLine{286     mm32 = elimminf2\_coli(masses2(3))}
+\DoxyCodeLine{287     mm42 = elimminf2\_coli(masses2(4))}
+\DoxyCodeLine{288     mm52 = elimminf2\_coli(masses2(5))}
+\DoxyCodeLine{289     q10  = elimminf2\_coli(mominv(1))}
+\DoxyCodeLine{290     q21  = elimminf2\_coli(mominv(2))}
+\DoxyCodeLine{291     q32  = elimminf2\_coli(mominv(3))}
+\DoxyCodeLine{292     q43  = elimminf2\_coli(mominv(4))}
+\DoxyCodeLine{293     q54  = elimminf2\_coli(mominv(5))}
+\DoxyCodeLine{294     q50  = elimminf2\_coli(mominv(6))}
+\DoxyCodeLine{295     q20  = elimminf2\_coli(mominv(7))}
+\DoxyCodeLine{296     q31  = elimminf2\_coli(mominv(8))}
+\DoxyCodeLine{297     q42  = elimminf2\_coli(mominv(9))}
+\DoxyCodeLine{298     q53  = elimminf2\_coli(mominv(10))}
+\DoxyCodeLine{299     q40  = elimminf2\_coli(mominv(11))}
+\DoxyCodeLine{300     q51  = elimminf2\_coli(mominv(12))}
+\DoxyCodeLine{301     q30  = elimminf2\_coli(mominv(13))}
+\DoxyCodeLine{302     q41  = elimminf2\_coli(mominv(14))}
+\DoxyCodeLine{303     q52  = elimminf2\_coli(mominv(15))}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     ff(1) = q10+mm02-\/mm12}
+\DoxyCodeLine{306     ff(2) = q20+mm02-\/mm22}
+\DoxyCodeLine{307     ff(3) = q30+mm02-\/mm32}
+\DoxyCodeLine{308     ff(4) = q40+mm02-\/mm42}
+\DoxyCodeLine{309     ff(5) = q50+mm02-\/mm52    }
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311  }
+\DoxyCodeLine{312     mx(0,0) = 2d0*mm02}
+\DoxyCodeLine{313     mx(1,0) = q10 -\/ mm12 + mm02}
+\DoxyCodeLine{314     mx(2,0) = q20 -\/ mm22 + mm02}
+\DoxyCodeLine{315     mx(3,0) = q30 -\/ mm32 + mm02}
+\DoxyCodeLine{316     mx(4,0) = q40 -\/ mm42 + mm02}
+\DoxyCodeLine{317     mx(5,0) = q50 -\/ mm52 + mm02}
+\DoxyCodeLine{318     mx(0,1) = mx(1,0)}
+\DoxyCodeLine{319     mx(1,1) = 2d0*q10}
+\DoxyCodeLine{320     mx(2,1) = q10+q20-\/q21}
+\DoxyCodeLine{321     mx(3,1) = q10+q30-\/q31}
+\DoxyCodeLine{322     mx(4,1) = q10+q40-\/q41}
+\DoxyCodeLine{323     mx(5,1) = q10+q50-\/q51}
+\DoxyCodeLine{324     mx(0,2) = mx(2,0)}
+\DoxyCodeLine{325     mx(1,2) = mx(2,1)}
+\DoxyCodeLine{326     mx(2,2) = 2d0*q20}
+\DoxyCodeLine{327     mx(3,2) = q20+q30-\/q32}
+\DoxyCodeLine{328     mx(4,2) = q20+q40-\/q42}
+\DoxyCodeLine{329     mx(5,2) = q20+q50-\/q52}
+\DoxyCodeLine{330     mx(0,3) = mx(3,0)}
+\DoxyCodeLine{331     mx(1,3) = mx(3,1)}
+\DoxyCodeLine{332     mx(2,3) = mx(3,2)}
+\DoxyCodeLine{333     mx(3,3) = 2d0*q30}
+\DoxyCodeLine{334     mx(4,3) = q30+q40-\/q43}
+\DoxyCodeLine{335     mx(5,3) = q30+q50-\/q53}
+\DoxyCodeLine{336     mx(0,4) = mx(4,0)}
+\DoxyCodeLine{337     mx(1,4) = mx(4,1)}
+\DoxyCodeLine{338     mx(2,4) = mx(4,2)}
+\DoxyCodeLine{339     mx(3,4) = mx(4,3)}
+\DoxyCodeLine{340     mx(4,4) = 2d0*q40}
+\DoxyCodeLine{341     mx(5,4) = q40+q50-\/q54}
+\DoxyCodeLine{342     mx(0,5) = mx(5,0)}
+\DoxyCodeLine{343     mx(1,5) = mx(5,1)}
+\DoxyCodeLine{344     mx(2,5) = mx(5,2)}
+\DoxyCodeLine{345     mx(3,5) = mx(5,3)}
+\DoxyCodeLine{346     mx(4,5) = mx(5,4)}
+\DoxyCodeLine{347     mx(5,5) = 2d0*q50}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349     \textcolor{keyword}{call }chinv(6,mx,mxinv)}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352     \textcolor{comment}{! determine X\_(0,5)}}
+\DoxyCodeLine{353     \textcolor{keywordflow}{do} j=1,5}
+\DoxyCodeLine{354       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{355         mx0k(i,j) = mx(i,j-\/1)}
+\DoxyCodeLine{356 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{357 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359     det = chdet(5,mx0k)}
+\DoxyCodeLine{360     kbest = 5}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362     \textcolor{keywordflow}{do} j=5,2,-\/1}
+\DoxyCodeLine{363       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{364         mx0k(i,j) = mx(i,j)}
+\DoxyCodeLine{365 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367       newdet =  chdet(5,mx0k)}
+\DoxyCodeLine{368       \textcolor{keywordflow}{if} (abs(newdet).gt.abs(det)) \textcolor{keywordflow}{then}          }
+\DoxyCodeLine{369         kbest = j-\/1}
+\DoxyCodeLine{370         det = newdet}
+\DoxyCodeLine{371 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{372     }
+\DoxyCodeLine{373 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{374     }
+\DoxyCodeLine{375     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{376       mx0k(i,1) = mx(i,1)}
+\DoxyCodeLine{377       mx0k(i,kbest) = mx(i,0)}
+\DoxyCodeLine{378 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380     \textcolor{keyword}{call }chinv(5,mx0k,mx0kinv)}
+\DoxyCodeLine{381     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{382       mx0kinv(kbest,i) = 0d0}
+\DoxyCodeLine{383 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{384     }
+\DoxyCodeLine{385     mxinvs = sum(mxinv(0:5,0))}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387     \textcolor{comment}{! build rank5 tensors}}
+\DoxyCodeLine{388     rmaxe = max(rmax-\/1,0)}
+\DoxyCodeLine{389     \textcolor{keyword}{allocate}(ce0uv(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{390     \textcolor{keyword}{allocate}(ce(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{391     \textcolor{keyword}{allocate}(ceuv(0:rmaxe/2,0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{392     \textcolor{keyword}{allocate}(ceerr(0:rmaxe))}
+\DoxyCodeLine{393     \textcolor{keyword}{allocate}(te(0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,0:5))}
+\DoxyCodeLine{394     \textcolor{keyword}{allocate}(te\_0aux(0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{395     \textcolor{keyword}{allocate}(teuv(0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe,0:5))}
+\DoxyCodeLine{396     \textcolor{keyword}{allocate}(teuv\_0aux(0:rmaxe,0:rmaxe,0:rmaxe,0:rmaxe))}
+\DoxyCodeLine{397     \textcolor{keyword}{allocate}(teerr(0:5,0:rmaxe))}
+\DoxyCodeLine{398     }
+\DoxyCodeLine{399     mominve = submominv(6,0,mominv)}
+\DoxyCodeLine{400     masses2e = submasses(6,0,masses2)}
+\DoxyCodeLine{401     \textcolor{keyword}{call }e\_main\_cll(ce(:,:,:,:,:),ce0uv(:,0,:,:,:,:), \&}
+\DoxyCodeLine{402                     mominve(1),mominve(2),mominve(3),mominve(4),mominve(5),mominve(6), \&}
+\DoxyCodeLine{403                     mominve(7),mominve(8),mominve(9),mominve(10),masses2e(0),masses2e(1), \&}
+\DoxyCodeLine{404                     masses2e(2),masses2e(3),masses2e(4),rmaxe,eerr2=ceerr,id\_in=1)                           }
+\DoxyCodeLine{405     \textcolor{keyword}{call }calctensore(te\_0aux(:,:,:,:),teuv\_0aux(:,:,:,:),teerr(0,0:),  \&}
+\DoxyCodeLine{406                      ce(:,:,:,:,:),ce0uv(:,0,:,:,:,:),ceerr,submomvec(6,0,momvec),rmaxe)}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408     \textcolor{comment}{! shift of integration momentum in TE\(\backslash\)\{0\}}}
+\DoxyCodeLine{409     te(:,:,:,:,0) = 0d0}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411     \textcolor{keywordflow}{do} r=0,rmaxe}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413       \textcolor{keywordflow}{do} np0=0,r}
+\DoxyCodeLine{414         \textcolor{keywordflow}{do} np1=0,r-\/np0}
+\DoxyCodeLine{415           \textcolor{keywordflow}{do} np2=0,r-\/np0-\/np1}
+\DoxyCodeLine{416             \textcolor{keywordflow}{do} np3=0,r-\/np0-\/np1-\/np2}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418               p1ten = (-\/momvec(0,1))**np0*(-\/momvec(1,1))**np1*  \&}
+\DoxyCodeLine{419                       (-\/momvec(2,1))**np2*(-\/momvec(3,1))**np3}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421               \textcolor{keywordflow}{do} n0=0,r-\/np0-\/np1-\/np2-\/np3}
+\DoxyCodeLine{422                 \textcolor{keywordflow}{do} n1=0,r-\/np0-\/np1-\/np2-\/np3-\/n0}
+\DoxyCodeLine{423                   \textcolor{keywordflow}{do} n2=0,r-\/np0-\/np1-\/np2-\/np3-\/n0-\/n1}
+\DoxyCodeLine{424                     n3 = r-\/np0-\/np1-\/np2-\/np3-\/n0-\/n1-\/n2}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426                     combi = binomtable(n0,n0+np0)*binomtable(n1,n1+np1)*  \&}
+\DoxyCodeLine{427                             binomtable(n2,n2+np2)*binomtable(n3,n3+np3)}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429                     te(np0+n0,np1+n1,np2+n2,np3+n3,0) = te(np0+n0,np1+n1,np2+n2,np3+n3,0)  \&}
+\DoxyCodeLine{430                         + combi*te\_0aux(n0,n1,n2,n3)*p1ten}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{433 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{434 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{435             }
+\DoxyCodeLine{436 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{437 \textcolor{keywordflow}{          end do} }
+\DoxyCodeLine{438 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{439 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{442  }
+\DoxyCodeLine{443     \textcolor{comment}{! shift of integration momentum in TEuv\(\backslash\)\{0\} coefficients}}
+\DoxyCodeLine{444     \textcolor{keywordflow}{do} n1=1,rmaxe-\/6}
+\DoxyCodeLine{445       \textcolor{keywordflow}{do} n2=0,rmaxe-\/n1-\/6}
+\DoxyCodeLine{446         \textcolor{keywordflow}{do} n3=0,rmaxe-\/n1-\/n2-\/6}
+\DoxyCodeLine{447           \textcolor{keywordflow}{do} n4=0,rmaxe-\/n1-\/n2-\/n3-\/6}
+\DoxyCodeLine{448             \textcolor{keywordflow}{do} n5=0,rmaxe-\/n1-\/n2-\/n3-\/n4-\/6}
+\DoxyCodeLine{449               n0 = (rmaxe-\/n1-\/n2-\/n3-\/n4-\/n5)/2}
+\DoxyCodeLine{450               ce0uv(0:n0,n1,n2,n3,n4,n5) = -\/ce0uv(0:n0,n1-\/1,n2,n3,n4,n5)-\/ce0uv(0:n0,n1-\/1,n2+1,n3,n4,n5) \&}
+\DoxyCodeLine{451                                            -\/ce0uv(0:n0,n1-\/1,n2,n3+1,n4,n5)-\/ce0uv(0:n0,n1-\/1,n2,n3,n4+1,n5)  \&}
+\DoxyCodeLine{452                                            -\/ce0uv(0:n0,n1-\/1,n2,n3,n4,n5+1)}
+\DoxyCodeLine{453 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{454 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{455 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{456 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{457 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460     p1max = maxval(abs(momvec(0:3,1)))}
+\DoxyCodeLine{461     \textcolor{keywordflow}{do} r=1,rmaxe}
+\DoxyCodeLine{462       \textcolor{keywordflow}{do} i=1,r}
+\DoxyCodeLine{463         teerr(0,r) = max(teerr(0,i),teerr(0,r-\/i)*p1max**i)}
+\DoxyCodeLine{464 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{465 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{469       mominve = submominv(6,i,mominv)}
+\DoxyCodeLine{470       masses2e = submasses(6,i,masses2)}
+\DoxyCodeLine{471       \textcolor{keyword}{call }e\_main\_cll(ce,ceuv,mominve(1),mominve(2),mominve(3),mominve(4),mominve(5),mominve(6), \&}
+\DoxyCodeLine{472                               mominve(7),mominve(8),mominve(9),mominve(10),masses2e(0),masses2e(1), \&}
+\DoxyCodeLine{473                               masses2e(2),masses2e(3),masses2e(4),rmaxe,eerr2=ceerr,id\_in=2**i)}
+\DoxyCodeLine{474       \textcolor{keyword}{call }calctensore(te(:,:,:,:,i),teuv(:,:,:,:,i),teerr(i,0:),  \&}
+\DoxyCodeLine{475                        ce,ceuv,ceerr,submomvec(6,i,momvec),rmaxe)}
+\DoxyCodeLine{476 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478     \textcolor{comment}{! UV divergent tensor}}
+\DoxyCodeLine{479     \textcolor{comment}{! calculation of UV-\/divergent parts      }}
+\DoxyCodeLine{480     \textcolor{comment}{! F\_(n0,n1,n2,n3) UV-\/finite for n0<4}}
+\DoxyCodeLine{481     cfuv(0:min(rmax/2,3),:,:,:,:,:) = 0d0}
+\DoxyCodeLine{482     \textcolor{comment}{! PV reduction (5.10)}}
+\DoxyCodeLine{483     \textcolor{keywordflow}{do} r=8,rmax}
+\DoxyCodeLine{484       \textcolor{keywordflow}{do} n0=3,r/2}
+\DoxyCodeLine{485         \textcolor{keywordflow}{do} n1=0,r-\/2*n0}
+\DoxyCodeLine{486           \textcolor{keywordflow}{do} n2=0,r-\/2*n0-\/n1}
+\DoxyCodeLine{487             \textcolor{keywordflow}{do} n3=0,r-\/2*n0-\/n1-\/n2}
+\DoxyCodeLine{488               \textcolor{keywordflow}{do} n4=0,r-\/2*n0-\/n1-\/n2-\/n3}
+\DoxyCodeLine{489                 n5 = r-\/2*n0-\/n1-\/n2-\/n3-\/n4}
+\DoxyCodeLine{490         }
+\DoxyCodeLine{491                 cfuv(n0,n1,n2,n3,n4,n5) = (ce0uv(n0-\/1,n1,n2,n3,n4,n5)  \& }
+\DoxyCodeLine{492                                        + 2*masses2(0)*cfuv(n0-\/1,n1,n2,n3,n4,n5)  \&}
+\DoxyCodeLine{493                                        + ff(1)*cfuv(n0-\/1,n1+1,n2,n3,n4,n5)  \& }
+\DoxyCodeLine{494                                        + ff(2)*cfuv(n0-\/1,n1,n2+1,n3,n4,n5)  \& }
+\DoxyCodeLine{495                                        + ff(3)*cfuv(n0-\/1,n1,n2,n3+1,n4,n5)  \&}
+\DoxyCodeLine{496                                        + ff(4)*cfuv(n0-\/1,n1,n2,n3,n4+1,n5)  \&}
+\DoxyCodeLine{497                                        + ff(5)*cfuv(n0-\/1,n1,n2,n3,n4,n5+1))/ (2*(r-\/3))}
+\DoxyCodeLine{498     }
+\DoxyCodeLine{499 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{500 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{501 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{502 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{503 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{504 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506     }
+\DoxyCodeLine{507     tf = 0d0}
+\DoxyCodeLine{508     tf(0,0,0,0) = -\/mxinv(0,0)*te(0,0,0,0,0)}
+\DoxyCodeLine{509     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{510       tf(0,0,0,0) = tf(0,0,0,0) + mxinv(i,0)*(te(0,0,0,0,i)-\/te(0,0,0,0,0))}
+\DoxyCodeLine{511 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{512     tferr(0) = max( abs(mxinvs)*teerr(0,0), \&}
+\DoxyCodeLine{513                     abs(mxinv(1,0))*teerr(1,0) , \&}
+\DoxyCodeLine{514                     abs(mxinv(2,0))*teerr(2,0) , \&}
+\DoxyCodeLine{515                     abs(mxinv(3,0))*teerr(3,0) , \&}
+\DoxyCodeLine{516                     abs(mxinv(4,0))*teerr(4,0) , \&}
+\DoxyCodeLine{517                     abs(mxinv(5,0))*teerr(5,0) )}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519     \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{520       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{521         mxinvp(i,mu)=0d0}
+\DoxyCodeLine{522         \textcolor{keywordflow}{do} j=1,5}
+\DoxyCodeLine{523           mxinvp(i,mu) = mxinvp(i,mu) + mx0kinv(j,i)*momvec(mu,j)}
+\DoxyCodeLine{524 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{525 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{526       mxinvps(mu) = sum(mxinvp(1:5,mu))}
+\DoxyCodeLine{527 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530     }
+\DoxyCodeLine{531     }
+\DoxyCodeLine{532     \textcolor{keywordflow}{do} r=1,rmax    }
+\DoxyCodeLine{533       \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{534         \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{535           \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{536             n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538             \textcolor{keywordflow}{if} (n0.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{539               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{540                 smod = te(n0-\/1,n1,n2,n3,i) -\/ te(n0-\/1,n1,n2,n3,0)}
+\DoxyCodeLine{541                 tf(n0,n1,n2,n3) = tf(n0,n1,n2,n3) + mxinvp(i,0)*smod}
+\DoxyCodeLine{542 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{543             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n1.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{544               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{545                 smod = te(n0,n1-\/1,n2,n3,i) -\/ te(n0,n1-\/1,n2,n3,0)}
+\DoxyCodeLine{546                 tf(n0,n1,n2,n3) = tf(n0,n1,n2,n3) + mxinvp(i,1)*smod}
+\DoxyCodeLine{547 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{548             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n2.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{549               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{550                 smod = te(n0,n1,n2-\/1,n3,i) -\/ te(n0,n1,n2-\/1,n3,0)}
+\DoxyCodeLine{551                 tf(n0,n1,n2,n3) = tf(n0,n1,n2,n3) + mxinvp(i,2)*smod}
+\DoxyCodeLine{552 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{553             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{554               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{555                 smod = te(n0,n1,n2,n3-\/1,i) -\/ te(n0,n1,n2,n3-\/1,0)}
+\DoxyCodeLine{556                 tf(n0,n1,n2,n3) = tf(n0,n1,n2,n3) + mxinvp(i,3)*smod}
+\DoxyCodeLine{557 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{558 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{561 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{562 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564       tferr(r) = max(maxval(abs(mxinvps(0:3)))*teerr(0,r-\/1), \&}
+\DoxyCodeLine{565                      maxval(abs(mxinvp(1,0:3)))*teerr(1,r-\/1), \&}
+\DoxyCodeLine{566                      maxval(abs(mxinvp(2,0:3)))*teerr(2,r-\/1), \&}
+\DoxyCodeLine{567                      maxval(abs(mxinvp(3,0:3)))*teerr(3,r-\/1))}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{569 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_af09e82caa7b52f2e55fd2811833ff6e4}\label{namespacetensorreduction_af09e82caa7b52f2e55fd2811833ff6e4}} 
+\index{tensorreduction@{tensorreduction}!calctensortnr@{calctensortnr}}
+\index{calctensortnr@{calctensortnr}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{calctensortnr()}{calctensortnr()}}
+{\footnotesize\ttfamily recursive subroutine tensorreduction\+::calctensortnr (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TN,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Nuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Nerr,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(binomtable(2,n)), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:n-\/1), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double complex, dimension(binomtable(rmax-\/2$\ast$n+4,max(rmax-\/n+2,0)),n-\/2\+:rmax/2,2$\ast$n-\/4\+:rmax), intent(out), optional}]{C\+Nuv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 617 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{617   }
+\DoxyCodeLine{618     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax,id}
+\DoxyCodeLine{619     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1), masses2(0:N-\/1)}
+\DoxyCodeLine{620     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(BinomTable(2,N))}
+\DoxyCodeLine{621     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TN(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{622     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TNuv(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{623     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: CNuv(BinomTable(rmax-\/2*N+4,max(rmax-\/N+2,0)),N-\/2:rmax/2,2*N-\/4:rmax)}
+\DoxyCodeLine{624     \textcolor{keywordtype}{double complex} :: CNuvaux0(BinomTable(max(rmax-\/2*N+4,0),max(rmax-\/N+2,0)),N-\/2:max(rmax/2,N-\/2),2*N-\/4:max(rmax,2*N-\/4))   }
+\DoxyCodeLine{625     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TNerr(0:rmax)}
+\DoxyCodeLine{626     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: TNaux(:,:,:,:),TNuvaux(:,:,:,:)}
+\DoxyCodeLine{627     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: TNerraux(:),CNerr(:)}
+\DoxyCodeLine{628     \textcolor{keywordtype}{double complex} :: x(BinomTable(2,N)+N+4*(N-\/1))}
+\DoxyCodeLine{629     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: fct(:),CN(:),CNuvaux1(:),CNuvaux2(:,:,:)}
+\DoxyCodeLine{630     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,i,rank,bino,cnt,cntC}
+\DoxyCodeLine{631     \textcolor{keywordtype}{logical} :: nocalc,wrica}
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633     \textcolor{keywordflow}{if} ((use\_cache\_system).and.(n.ge.tencache)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{634       \textcolor{keywordflow}{if} ((ncache.gt.0).and.(ncache.le.ncache\_max)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{635 \textcolor{comment}{!        if (use\_cache(ncache).ge.N) then}}
+\DoxyCodeLine{636           \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{637             x((i-\/1)*4+1:i*4) = momvec(0:3,i)}
+\DoxyCodeLine{638 \textcolor{keywordflow}{          end do} }
+\DoxyCodeLine{639           bino = binomtable(2,n)}
+\DoxyCodeLine{640           x(4*n-\/3:bino+4*n-\/4) = mominv}
+\DoxyCodeLine{641           x(4*n-\/3+bino:bino+5*n-\/4) = masses2  }
+\DoxyCodeLine{642           rank = rmax}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644           \textcolor{keywordflow}{if} (rmax.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{645             \textcolor{keyword}{allocate}(fct(rts(rmax)+ncoefs(rmax-\/2*n+4,n)+rmax+1))}
+\DoxyCodeLine{646             \textcolor{keyword}{call }readcache(fct,rts(rmax)+ncoefs(rmax-\/2*n+4,n)+rmax+1,x,bino+5*n-\/4,mode\_cll+10,id,n,rank,nocalc,wrica)}
+\DoxyCodeLine{647           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{648             \textcolor{keyword}{allocate}(fct(rts(rmax)+rmax+1))}
+\DoxyCodeLine{649             \textcolor{keyword}{call }readcache(fct,rts(rmax)+rmax+1,x,bino+5*n-\/4,mode\_cll+10,id,n,rank,nocalc,wrica)}
+\DoxyCodeLine{650 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{651           \textcolor{comment}{! write(*,*) N,id, nocalc,wrica, masses2(0)}}
+\DoxyCodeLine{652   }
+\DoxyCodeLine{653           \textcolor{keywordflow}{if}(nocalc)\textcolor{keywordflow}{then}}
+\DoxyCodeLine{654             cnt = 1}
+\DoxyCodeLine{655             \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{656               \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{657                 \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{658                   \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{659                     n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{660                     tn(n0,n1,n2,n3) = fct(cnt)}
+\DoxyCodeLine{661                     cnt = cnt+1}
+\DoxyCodeLine{662 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{663 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{664 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{665               \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{666                 \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{667                   \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{668                     cnuvaux0(i,n0,r) = fct(cnt)}
+\DoxyCodeLine{669                     cnt = cnt+1}
+\DoxyCodeLine{670 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{671 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{672               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{673                 \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{674                   \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{675                     cnuv(i,n0,r) = fct(cnt)}
+\DoxyCodeLine{676                     cnt = cnt+1}
+\DoxyCodeLine{677 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{678 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{679 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{680               tnerr(r) = real(fct(cnt))}
+\DoxyCodeLine{681               cnt = cnt+1}
+\DoxyCodeLine{682 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{683 \textcolor{comment}{!            write(*,*) 'nocalc', N, rmax, cnt-\/1, fct(4)}}
+\DoxyCodeLine{684             \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{685               \textcolor{keywordflow}{if}(rmax.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{686                 \textcolor{keyword}{call }calctensortnuv\_list(tnuv,cnuvaux0(1:binomtable(rmax-\/2*n+4,max(rmax-\/n+2,0)), \&}
+\DoxyCodeLine{687                                                        n-\/2:rmax/2,2*n-\/4:rmax),momvec,n,rmax)}
+\DoxyCodeLine{688               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{689                 tnuv=0d0}
+\DoxyCodeLine{690 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{691 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{692             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{693 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695           }
+\DoxyCodeLine{696           \textcolor{keywordflow}{if}(rank.eq.rmax) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698             \textcolor{keywordflow}{if} (n.eq.tenred\_cll-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{699               \textcolor{keyword}{allocate}(cn(ncoefs(rank,n)))}
+\DoxyCodeLine{700               \textcolor{keyword}{allocate}(cnuvaux1(ncoefs(rank,n)))}
+\DoxyCodeLine{701               \textcolor{keyword}{allocate}(cnerr(0:rank))}
+\DoxyCodeLine{702               \textcolor{keyword}{allocate}(tnuvaux(0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{703               \textcolor{keyword}{call }tn\_cll(cn,cnuvaux1,mominv,masses2,n,rank,tnerr2=cnerr,id\_in=id)}
+\DoxyCodeLine{704               \textcolor{keyword}{call }calctensortn(tn,tnuv,tnerr,cn,cnuvaux1,cnerr,momvec,n,rank)}
+\DoxyCodeLine{705               \textcolor{keywordflow}{if}((id.ne.0).and.(rmax.ge.2*n-\/4)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{706                 \textcolor{keywordflow}{do} r=2*n-\/4,rmax}
+\DoxyCodeLine{707                   cnt = ncoefs(r-\/1,n)+1                }
+\DoxyCodeLine{708                   \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{709                     \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{710                       cnuv(i,n0,r) = cnuvaux1(cnt)}
+\DoxyCodeLine{711                       cnt = cnt+1}
+\DoxyCodeLine{712 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{713 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{714 \textcolor{keywordflow}{                end do} }
+\DoxyCodeLine{715 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{716             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{717               \textcolor{keywordflow}{if}(rank.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{718                 \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{719                   \textcolor{keyword}{call }calctensortnrred(tn,tnerr,momvec,mominv,masses2,n,rank,id,cnuvaux0)                 }
+\DoxyCodeLine{720                   \textcolor{keyword}{call }calctensortnuv\_list(tnuv,cnuvaux0,momvec,n,rank)}
+\DoxyCodeLine{721                 \textcolor{keywordflow}{else} }
+\DoxyCodeLine{722                   \textcolor{keyword}{call }calctensortnrred(tn,tnerr,momvec,mominv,masses2,n,rank,id,cnuv)               }
+\DoxyCodeLine{723 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{724               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{725                 \textcolor{keyword}{call }calctensortnrred(tn,tnerr,momvec,mominv,masses2,n,rank,id)}
+\DoxyCodeLine{726                 \textcolor{keywordflow}{if}(id.eq.0) tnuv=0d0}
+\DoxyCodeLine{727 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{728 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{731               cnt = 0}
+\DoxyCodeLine{732               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{733                 \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{734                   \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{735                     \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{736                       n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{737                       cnt = cnt+1}
+\DoxyCodeLine{738                       fct(cnt) = tn(n0,n1,n2,n3)}
+\DoxyCodeLine{739 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{740 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{741 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{742                 \textcolor{keywordflow}{if}(r.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{743                   \textcolor{keywordflow}{if}(n.eq.tenred\_cll-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{744                     \textcolor{keywordflow}{do} i=ncoefs(r-\/2*n+3,n)+1,ncoefs(r-\/2*n+4,n)}
+\DoxyCodeLine{745                       cnt = cnt+1}
+\DoxyCodeLine{746                       fct(cnt) = cnuvaux1(i)}
+\DoxyCodeLine{747 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{748                   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{749                     \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{750                       \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{751                         \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{752                           cnt = cnt+1}
+\DoxyCodeLine{753                           fct(cnt) = cnuvaux0(i,n0,r)}
+\DoxyCodeLine{754 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{755 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{756                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{757                       \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{758                         \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{759                           cnt = cnt+1}
+\DoxyCodeLine{760                           fct(cnt) = cnuv(i,n0,r)}
+\DoxyCodeLine{761 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{762 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{763 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{764 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{765 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767                 cnt = cnt+1}
+\DoxyCodeLine{768                 fct(cnt) = tnerr(r)}
+\DoxyCodeLine{769 }
+\DoxyCodeLine{770 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{771 \textcolor{comment}{!              write(*,*) 'wrica', N, rank, cnt, fct(4)}}
+\DoxyCodeLine{772    }
+\DoxyCodeLine{773               \textcolor{keywordflow}{if}(rank.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{774                 \textcolor{keyword}{call }writecache(fct,rts(rank)+ncoefs(rank-\/2*n+4,n)+rank+1,id,n,rank)}
+\DoxyCodeLine{775               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{776                 \textcolor{keyword}{call }writecache(fct,rts(rank)+rank+1,id,n,rank)}
+\DoxyCodeLine{777 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{780             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{781             }
+\DoxyCodeLine{782             }
+\DoxyCodeLine{783           \textcolor{keywordflow}{else}  }
+\DoxyCodeLine{784             \textcolor{keyword}{allocate}(tnaux(0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{785             \textcolor{keyword}{allocate}(tnerraux(0:rank))}
+\DoxyCodeLine{786 }
+\DoxyCodeLine{787             \textcolor{keywordflow}{if} (n.eq.tenred\_cll-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{788               \textcolor{keyword}{allocate}(cn(ncoefs(rank,n)))}
+\DoxyCodeLine{789               \textcolor{keyword}{allocate}(cnuvaux1(ncoefs(rank,n)))}
+\DoxyCodeLine{790               \textcolor{keyword}{allocate}(cnerr(0:rank))}
+\DoxyCodeLine{791               \textcolor{keyword}{allocate}(tnuvaux(0:rank,0:rank,0:rank,0:rank))}
+\DoxyCodeLine{792               \textcolor{keyword}{call }tn\_cll(cn,cnuvaux1,mominv,masses2,n,rank,tnerr2=cnerr,id\_in=id)}
+\DoxyCodeLine{793               \textcolor{keyword}{call }calctensortn(tnaux,tnuvaux,tnerraux,cn,cnuvaux1,cnerr,momvec,n,rank)}
+\DoxyCodeLine{794               \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{795                 tnuv = tnuvaux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{796               \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rmax.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{797                 \textcolor{keywordflow}{do} r=2*n-\/4,rmax}
+\DoxyCodeLine{798                   cnt = ncoefs(r-\/1,n)+1                }
+\DoxyCodeLine{799                   \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{800                     \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{801                       cnuv(i,n0,r) = cnuvaux1(cnt)}
+\DoxyCodeLine{802                       cnt = cnt+1}
+\DoxyCodeLine{803 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{804 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{805 \textcolor{keywordflow}{                end do} }
+\DoxyCodeLine{806 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{807             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{808               \textcolor{keywordflow}{if}(rank.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{809                 \textcolor{keyword}{allocate}(cnuvaux2(binomtable(rank-\/2*n+4,max(rank-\/n+2,0)),n-\/2:rank/2,2*n-\/4:rank))}
+\DoxyCodeLine{810                 \textcolor{keyword}{call }calctensortnrred(tnaux,tnerraux,momvec,mominv,masses2,n,rank,id,cnuvaux2)}
+\DoxyCodeLine{811                 \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{812                   tnuv = 0d0}
+\DoxyCodeLine{813                   \textcolor{keyword}{call }calctensortnuv\_list(tnuv,cnuvaux2(1:binomtable(rmax-\/2*n+4,max(rmax-\/n+2,0)), \&}
+\DoxyCodeLine{814                                                      n-\/2:rmax/2,2*n-\/4:rmax),momvec,n,rmax)}
+\DoxyCodeLine{815                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{816                   cnuv(1:binomtable(rmax-\/2*n+4,max(rmax-\/n+2,0)),n-\/2:rmax/2,2*n-\/4:rmax) = \&}
+\DoxyCodeLine{817                   cnuvaux2(1:binomtable(rmax-\/2*n+4,max(rmax-\/n+2,0)),n-\/2:rmax/2,2*n-\/4:rmax)}
+\DoxyCodeLine{818 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{819               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{820                 \textcolor{keyword}{call }calctensortnrred(tnaux,tnerraux,momvec,mominv,masses2,n,rank,id)}
+\DoxyCodeLine{821                 \textcolor{keywordflow}{if}(id.eq.0) tnuv=0d0}
+\DoxyCodeLine{822 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{823 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{824 }
+\DoxyCodeLine{825             \textcolor{keywordflow}{if} (wrica) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{826               cnt = 0}
+\DoxyCodeLine{827               cntc = 0}
+\DoxyCodeLine{828               \textcolor{keyword}{deallocate}(fct)}
+\DoxyCodeLine{829               \textcolor{keywordflow}{if}(rank.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{830                 \textcolor{keyword}{allocate}(fct(rts(rank)+ncoefs(rank-\/2*n+4,n)+rank+1))}
+\DoxyCodeLine{831               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{832                 \textcolor{keyword}{allocate}(fct(rts(rank)+rank+1))}
+\DoxyCodeLine{833 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{834               \textcolor{keywordflow}{do} r=0,rank}
+\DoxyCodeLine{835                 \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{836                   \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{837                     \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{838                       n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{839                       cnt = cnt+1}
+\DoxyCodeLine{840                       fct(cnt) = tnaux(n0,n1,n2,n3)}
+\DoxyCodeLine{841 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{842 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{843 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{844                 \textcolor{keywordflow}{if}(r.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{845                   \textcolor{keywordflow}{if}(n.eq.tenred\_cll-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{846                     \textcolor{keywordflow}{do} i=ncoefs(r-\/2*n+3,n)+1,ncoefs(r-\/2*n+4,n)}
+\DoxyCodeLine{847                       cnt = cnt+1}
+\DoxyCodeLine{848                       fct(cnt) = cnuvaux1(i)}
+\DoxyCodeLine{849 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{850                   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{851                     \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{852                       \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{853                         cnt = cnt+1}
+\DoxyCodeLine{854                         fct(cnt) = cnuvaux2(i,n0,r)}
+\DoxyCodeLine{855 \textcolor{keywordflow}{                      end do}}
+\DoxyCodeLine{856 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{857 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{858 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860                 cnt = cnt+1}
+\DoxyCodeLine{861                 fct(cnt) = tnerraux(r)}
+\DoxyCodeLine{862 }
+\DoxyCodeLine{863 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{864    }
+\DoxyCodeLine{865               \textcolor{keywordflow}{if}(rank.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{866                 \textcolor{keyword}{call }writecache(fct,rts(rank)+ncoefs(rank-\/2*n+4,n)+rank+1,id,n,rank)}
+\DoxyCodeLine{867               \textcolor{keywordflow}{else}}
+\DoxyCodeLine{868                 \textcolor{keyword}{call }writecache(fct,rts(rank)+rank+1,id,n,rank)}
+\DoxyCodeLine{869 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{870 }
+\DoxyCodeLine{871 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{872 }
+\DoxyCodeLine{873             tn = tnaux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{874             tnerr = tnerraux(0:rmax)}
+\DoxyCodeLine{875             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{878             }
+\DoxyCodeLine{879 \textcolor{comment}{!        end if}}
+\DoxyCodeLine{880 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{881 \textcolor{keywordflow}{    end if}  }
+\DoxyCodeLine{882     }
+\DoxyCodeLine{883     \textcolor{keywordflow}{if} (n.le.tenred\_cll-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{884       \textcolor{keyword}{allocate}(cn(ncoefs(rmax,n)))}
+\DoxyCodeLine{885       \textcolor{keyword}{allocate}(cnuvaux1(ncoefs(rmax,n)))}
+\DoxyCodeLine{886       \textcolor{keyword}{allocate}(cnerr(0:rmax))}
+\DoxyCodeLine{887       \textcolor{keyword}{call }tn\_cll(cn,cnuvaux1,mominv,masses2,n,rmax,tnerr2=cnerr,id\_in=id)}
+\DoxyCodeLine{888       \textcolor{keyword}{call }calctensortn(tn,tnuv,tnerr,cn,cnuvaux1,cnerr,momvec,n,rmax)}
+\DoxyCodeLine{889       \textcolor{keywordflow}{if}((id.ne.0).and.(rmax.ge.2*n-\/4)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{890         \textcolor{keywordflow}{do} r=2*n-\/4,rmax}
+\DoxyCodeLine{891           cnt = ncoefs(r-\/1,n)+1                }
+\DoxyCodeLine{892           \textcolor{keywordflow}{do} n0=r/2,n-\/2,-\/1}
+\DoxyCodeLine{893             \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,max(n+r-\/2*n0-\/2,0))}
+\DoxyCodeLine{894               cnuv(i,n0,r) = cnuvaux1(cnt)}
+\DoxyCodeLine{895               cnt = cnt+1}
+\DoxyCodeLine{896 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{897 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{898 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{899 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{900     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{901       \textcolor{keywordflow}{if}(rmax.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{902         \textcolor{keywordflow}{if}(id.eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{903           \textcolor{keyword}{call }calctensortnrred(tn,tnerr,momvec,mominv,masses2,n,rmax,id,cnuvaux0)                 }
+\DoxyCodeLine{904           \textcolor{keyword}{call }calctensortnuv\_list(tnuv,cnuvaux0,momvec,n,rmax)}
+\DoxyCodeLine{905         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{906           \textcolor{keyword}{call }calctensortnrred(tn,tnerr,momvec,mominv,masses2,n,rmax,id,cnuv)               }
+\DoxyCodeLine{907 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{908       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{909         \textcolor{keyword}{call }calctensortnrred(tn,tnerr,momvec,mominv,masses2,n,rmax,id)}
+\DoxyCodeLine{910         \textcolor{keywordflow}{if}(id.eq.0) tnuv=0d0}
+\DoxyCodeLine{911 \textcolor{keywordflow}{      end if}   }
+\DoxyCodeLine{912 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{913 }
+\DoxyCodeLine{914 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_ac885d41ff36dbb96756109346a8d5801}\label{namespacetensorreduction_ac885d41ff36dbb96756109346a8d5801}} 
+\index{tensorreduction@{tensorreduction}!calctensortnr\_list@{calctensortnr\_list}}
+\index{calctensortnr\_list@{calctensortnr\_list}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{calctensortnr\_list()}{calctensortnr\_list()}}
+{\footnotesize\ttfamily subroutine tensorreduction\+::calctensortnr\+\_\+list (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TN,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Nuv,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Nerr,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(binomtable(2,n)), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:n-\/1), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1264 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1264   }
+\DoxyCodeLine{1265     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax}
+\DoxyCodeLine{1266     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1), masses2(0:N-\/1)}
+\DoxyCodeLine{1267     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(BinomTable(2,N))}
+\DoxyCodeLine{1268     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TN(RtS(rmax)),TNuv(RtS(rmax))}
+\DoxyCodeLine{1269     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TNerr(0:rmax)}
+\DoxyCodeLine{1270     \textcolor{keywordtype}{double complex} :: TN\_aux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1271     \textcolor{keywordtype}{double complex} :: TNuv\_aux(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1272     \textcolor{keywordtype}{integer} :: mu}
+\DoxyCodeLine{1273 }
+\DoxyCodeLine{1274     \textcolor{keyword}{call }calctensortnr(tn\_aux,tnuv\_aux,tnerr,momvec,mominv,masses2,n,rmax,0)}
+\DoxyCodeLine{1275 }
+\DoxyCodeLine{1276     \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1277       tn(mu) = tn\_aux(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu))}
+\DoxyCodeLine{1278 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1279 }
+\DoxyCodeLine{1280     \textcolor{keywordflow}{if} (calcuv\_cll) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1281       \textcolor{keywordflow}{do} mu=1,rts(rmax)}
+\DoxyCodeLine{1282         tnuv(mu) = tnuv\_aux(lorindtab(0,mu),lorindtab(1,mu),lorindtab(2,mu),lorindtab(3,mu))}
+\DoxyCodeLine{1283 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1284 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1285 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_aaf30407e751ed7e7dab66fb30f19bea5}\label{namespacetensorreduction_aaf30407e751ed7e7dab66fb30f19bea5}} 
+\index{tensorreduction@{tensorreduction}!calctensortnrred@{calctensortnrred}}
+\index{calctensortnrred@{calctensortnrred}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{calctensortnrred()}{calctensortnrred()}}
+{\footnotesize\ttfamily recursive subroutine tensorreduction\+::calctensortnrred (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TN,  }\item[{double precision, dimension(0\+:rmax), intent(out)}]{T\+Nerr,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(binomtable(2,n)), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:n-\/1), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{id,  }\item[{double complex, dimension(binomtable(rmax-\/2$\ast$n+4,max(rmax-\/n+2,0)),n-\/2\+:rmax/2,2$\ast$n-\/4\+:rmax), intent(out), optional}]{C\+Nuv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 927 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{927   }
+\DoxyCodeLine{928     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax,id}
+\DoxyCodeLine{929     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1), masses2(0:N-\/1)}
+\DoxyCodeLine{930     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomInv(BinomTable(2,N))}
+\DoxyCodeLine{931     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TN(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{932     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: CNuv(BinomTable(rmax-\/2*N+4,max(rmax-\/N+2,0)),N-\/2:rmax/2,2*N-\/4:rmax)}
+\DoxyCodeLine{933     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)} :: TNerr(0:rmax)}
+\DoxyCodeLine{934     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: TNm1(:,:,:,:,:),TNm1\_0aux(:,:,:,:)}
+\DoxyCodeLine{935     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: TNm1uv\_0aux(:,:,:,:)}
+\DoxyCodeLine{936     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{allocatable} :: CNm1UV\_0(:,:,:),CNm1UV\_0aux(:,:,:),CNm1UV\_i(:,:,:)}
+\DoxyCodeLine{937     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{allocatable} :: TNm1err(:,:)}
+\DoxyCodeLine{938     \textcolor{keywordtype}{double precision} :: p1max}
+\DoxyCodeLine{939     \textcolor{keywordtype}{double complex} :: q10,q21,q32,q43,q54,q50,q20,q31,q42,q53,q40}
+\DoxyCodeLine{940     \textcolor{keywordtype}{double complex} :: q51,q30,q41,q52,mm02,mm12,mm22,mm32,mm42,mm52}
+\DoxyCodeLine{941     \textcolor{keywordtype}{double complex} :: mx(0:5,0:5), mxinv(0:5,0:5),mx0k(5,5),mx0kinv(5,5)}
+\DoxyCodeLine{942     \textcolor{keywordtype}{double complex} :: det,newdet,ff(N-\/1)}
+\DoxyCodeLine{943     \textcolor{keywordtype}{double complex} :: Smod, elimminf2\_coli,chdet,P1ten,mxinvP(5,0:3)}
+\DoxyCodeLine{944     \textcolor{keywordtype}{double complex} :: mxinvs,mxinvPs(0:3)}
+\DoxyCodeLine{945     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3,n4,n5,np0,np1,np2,np3,k,i,j,kbest,rmax\_m1,combi,mu,cnt}
+\DoxyCodeLine{946     \textcolor{keywordtype}{integer} :: bin,nid(0:5),r0,rBCD,mia,bino\_0,bino\_i,cind,mia1,mia2,mia3}
+\DoxyCodeLine{947 }
+\DoxyCodeLine{948 }
+\DoxyCodeLine{949     \textcolor{comment}{! determine inverse modified Caley matrix}}
+\DoxyCodeLine{950     mm02 = elimminf2\_coli(masses2(0))}
+\DoxyCodeLine{951     mm12 = elimminf2\_coli(masses2(1))}
+\DoxyCodeLine{952     mm22 = elimminf2\_coli(masses2(2))}
+\DoxyCodeLine{953     mm32 = elimminf2\_coli(masses2(3))}
+\DoxyCodeLine{954     mm42 = elimminf2\_coli(masses2(4))}
+\DoxyCodeLine{955     mm52 = elimminf2\_coli(masses2(5))}
+\DoxyCodeLine{956     q10  = elimminf2\_coli(mominv(1))}
+\DoxyCodeLine{957     q21  = elimminf2\_coli(mominv(2))}
+\DoxyCodeLine{958     q32  = elimminf2\_coli(mominv(3))}
+\DoxyCodeLine{959     q43  = elimminf2\_coli(mominv(4))}
+\DoxyCodeLine{960     q54  = elimminf2\_coli(mominv(5))}
+\DoxyCodeLine{961     \textcolor{keywordflow}{if} (n.le.9) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{962       q50  = elimminf2\_coli(mominv((n-\/6)*n+6))}
+\DoxyCodeLine{963     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{964       q50 = elimminf2\_coli(mominv(4*n+1))}
+\DoxyCodeLine{965 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{966     q20  = elimminf2\_coli(mominv(n+1))}
+\DoxyCodeLine{967     q31  = elimminf2\_coli(mominv(n+2))}
+\DoxyCodeLine{968     q42  = elimminf2\_coli(mominv(n+3))}
+\DoxyCodeLine{969     q53  = elimminf2\_coli(mominv(n+4))}
+\DoxyCodeLine{970     \textcolor{keywordflow}{if} (n.le.7) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{971       q40 = elimminf2\_coli(mominv((n-\/5)*n+5))}
+\DoxyCodeLine{972       q51 = elimminf2\_coli(mominv((n-\/5)*n+6))}
+\DoxyCodeLine{973     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{974       q40 = elimminf2\_coli(mominv(3*n+1))}
+\DoxyCodeLine{975       q51 = elimminf2\_coli(mominv(3*n+2))}
+\DoxyCodeLine{976 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{977     q30  = elimminf2\_coli(mominv(2*n+1))}
+\DoxyCodeLine{978     q41  = elimminf2\_coli(mominv(2*n+2))}
+\DoxyCodeLine{979     q52  = elimminf2\_coli(mominv(2*n+3))}
+\DoxyCodeLine{980     }
+\DoxyCodeLine{981     cnt = 1}
+\DoxyCodeLine{982     \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{983       ff(i) = elimminf2\_coli(mominv(cnt)) + mm02  \&}
+\DoxyCodeLine{984             -\/ elimminf2\_coli(masses2(i))}
+\DoxyCodeLine{985       cnt = cnt+n-\/i}
+\DoxyCodeLine{986 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{987  }
+\DoxyCodeLine{988     mx(0,0) = 2d0*mm02}
+\DoxyCodeLine{989     mx(1,0) = q10 -\/ mm12 + mm02}
+\DoxyCodeLine{990     mx(2,0) = q20 -\/ mm22 + mm02}
+\DoxyCodeLine{991     mx(3,0) = q30 -\/ mm32 + mm02}
+\DoxyCodeLine{992     mx(4,0) = q40 -\/ mm42 + mm02}
+\DoxyCodeLine{993     mx(5,0) = q50 -\/ mm52 + mm02}
+\DoxyCodeLine{994     mx(0,1) = mx(1,0)}
+\DoxyCodeLine{995     mx(1,1) = 2d0*q10}
+\DoxyCodeLine{996     mx(2,1) = q10+q20-\/q21}
+\DoxyCodeLine{997     mx(3,1) = q10+q30-\/q31}
+\DoxyCodeLine{998     mx(4,1) = q10+q40-\/q41}
+\DoxyCodeLine{999     mx(5,1) = q10+q50-\/q51}
+\DoxyCodeLine{1000     mx(0,2) = mx(2,0)}
+\DoxyCodeLine{1001     mx(1,2) = mx(2,1)}
+\DoxyCodeLine{1002     mx(2,2) = 2d0*q20}
+\DoxyCodeLine{1003     mx(3,2) = q20+q30-\/q32}
+\DoxyCodeLine{1004     mx(4,2) = q20+q40-\/q42}
+\DoxyCodeLine{1005     mx(5,2) = q20+q50-\/q52}
+\DoxyCodeLine{1006     mx(0,3) = mx(3,0)}
+\DoxyCodeLine{1007     mx(1,3) = mx(3,1)}
+\DoxyCodeLine{1008     mx(2,3) = mx(3,2)}
+\DoxyCodeLine{1009     mx(3,3) = 2d0*q30}
+\DoxyCodeLine{1010     mx(4,3) = q30+q40-\/q43}
+\DoxyCodeLine{1011     mx(5,3) = q30+q50-\/q53}
+\DoxyCodeLine{1012     mx(0,4) = mx(4,0)}
+\DoxyCodeLine{1013     mx(1,4) = mx(4,1)}
+\DoxyCodeLine{1014     mx(2,4) = mx(4,2)}
+\DoxyCodeLine{1015     mx(3,4) = mx(4,3)}
+\DoxyCodeLine{1016     mx(4,4) = 2d0*q40}
+\DoxyCodeLine{1017     mx(5,4) = q40+q50-\/q54}
+\DoxyCodeLine{1018     mx(0,5) = mx(5,0)}
+\DoxyCodeLine{1019     mx(1,5) = mx(5,1)}
+\DoxyCodeLine{1020     mx(2,5) = mx(5,2)}
+\DoxyCodeLine{1021     mx(3,5) = mx(5,3)}
+\DoxyCodeLine{1022     mx(4,5) = mx(5,4)}
+\DoxyCodeLine{1023     mx(5,5) = 2d0*q50}
+\DoxyCodeLine{1024 }
+\DoxyCodeLine{1025     \textcolor{keyword}{call }chinv(6,mx,mxinv)}
+\DoxyCodeLine{1026 }
+\DoxyCodeLine{1027     \textcolor{comment}{! determine X\_(0,5)}}
+\DoxyCodeLine{1028     \textcolor{keywordflow}{do} j=1,5}
+\DoxyCodeLine{1029       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1030         mx0k(i,j) = mx(i,j-\/1)}
+\DoxyCodeLine{1031 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1032 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1033 }
+\DoxyCodeLine{1034     det = chdet(5,mx0k)}
+\DoxyCodeLine{1035     kbest = 5}
+\DoxyCodeLine{1036 }
+\DoxyCodeLine{1037     \textcolor{keywordflow}{do} j=5,2,-\/1}
+\DoxyCodeLine{1038       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1039         mx0k(i,j) = mx(i,j)}
+\DoxyCodeLine{1040 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1041 }
+\DoxyCodeLine{1042       newdet =  chdet(5,mx0k)}
+\DoxyCodeLine{1043       \textcolor{keywordflow}{if} (abs(newdet).gt.abs(det)) \textcolor{keywordflow}{then}          }
+\DoxyCodeLine{1044         kbest = j-\/1}
+\DoxyCodeLine{1045         det = newdet}
+\DoxyCodeLine{1046 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1047     }
+\DoxyCodeLine{1048 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1049     }
+\DoxyCodeLine{1050     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1051       mx0k(i,1) = mx(i,1)}
+\DoxyCodeLine{1052       mx0k(i,kbest) = mx(i,0)}
+\DoxyCodeLine{1053 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1054 }
+\DoxyCodeLine{1055     \textcolor{keyword}{call }chinv(5,mx0k,mx0kinv)}
+\DoxyCodeLine{1056     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1057       mx0kinv(kbest,i) = 0d0}
+\DoxyCodeLine{1058 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1059     }
+\DoxyCodeLine{1060     mxinvs = sum(mxinv(0:5,0))}
+\DoxyCodeLine{1061 }
+\DoxyCodeLine{1062     \textcolor{comment}{! determine binaries for F-\/coefficients}}
+\DoxyCodeLine{1063     k=0}
+\DoxyCodeLine{1064     bin = 1}
+\DoxyCodeLine{1065     \textcolor{keywordflow}{do} \textcolor{keywordflow}{while} (k.le.5)}
+\DoxyCodeLine{1066       \textcolor{keywordflow}{if} (mod(id/bin,2).eq.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1067         nid(k) = id+bin}
+\DoxyCodeLine{1068         k = k+1}
+\DoxyCodeLine{1069 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1070       bin = 2*bin}
+\DoxyCodeLine{1071 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1072 }
+\DoxyCodeLine{1073 }
+\DoxyCodeLine{1074     rmax\_m1 = max(rmax-\/1,0)}
+\DoxyCodeLine{1075     bino\_0 = binomtable(rmax\_m1,n+rmax\_m1-\/2)}
+\DoxyCodeLine{1076     bino\_i = binomtable(rmax\_m1,n+rmax\_m1-\/3)}
+\DoxyCodeLine{1077     \textcolor{keyword}{allocate}(tnm1(0:rmax\_m1,0:rmax\_m1,0:rmax\_m1,0:rmax\_m1,0:5))}
+\DoxyCodeLine{1078     \textcolor{keyword}{allocate}(tnm1\_0aux(0:rmax\_m1,0:rmax\_m1,0:rmax\_m1,0:rmax\_m1))}
+\DoxyCodeLine{1079     \textcolor{keyword}{allocate}(tnm1uv\_0aux(0:rmax\_m1,0:rmax\_m1,0:rmax\_m1,0:rmax\_m1))}
+\DoxyCodeLine{1080     \textcolor{keyword}{allocate}(tnm1err(0:5,0:rmax\_m1))}
+\DoxyCodeLine{1081   }
+\DoxyCodeLine{1082     \textcolor{keywordflow}{if}(rmax\_m1.ge.2*n-\/6) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1083       \textcolor{keyword}{allocate}(cnm1uv\_0(bino\_0,n-\/3:rmax/2,2*n-\/6:rmax))}
+\DoxyCodeLine{1084       \textcolor{keyword}{allocate}(cnm1uv\_0aux(bino\_i,n-\/3:rmax\_m1/2,2*n-\/6:rmax\_m1))}
+\DoxyCodeLine{1085       \textcolor{keyword}{allocate}(cnm1uv\_i(bino\_i,0:rmax\_m1/2,0:rmax\_m1))}
+\DoxyCodeLine{1086       \textcolor{keyword}{call }calctensortnr(tnm1\_0aux(:,:,:,:),tnm1uv\_0aux,tnm1err(0,0:rmax\_m1),submomvec(n,0,momvec),submominv(n,0,mominv), \&}
+\DoxyCodeLine{1087                          submasses(n,0,masses2),n-\/1,rmax\_m1,nid(0),cnm1uv\_0aux)}
+\DoxyCodeLine{1088       \textcolor{keywordflow}{do} i=1,5    }
+\DoxyCodeLine{1089         \textcolor{keyword}{call }calctensortnr(tnm1(:,:,:,:,i),tnm1uv\_0aux,tnm1err(i,0:rmax\_m1),submomvec(n,i,momvec),submominv(n,i,mominv), \&}
+\DoxyCodeLine{1090                            submasses(n,i,masses2),n-\/1,rmax\_m1,nid(i),cnm1uv\_i)}
+\DoxyCodeLine{1091 \textcolor{keywordflow}{      end do}                   }
+\DoxyCodeLine{1092     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1093       \textcolor{keyword}{call }calctensortnr(tnm1\_0aux(:,:,:,:),tnm1uv\_0aux,tnm1err(0,0:rmax\_m1),submomvec(n,0,momvec),  \&}
+\DoxyCodeLine{1094                          submominv(n,0,mominv),submasses(n,0,masses2),n-\/1,rmax\_m1,nid(0))}
+\DoxyCodeLine{1095       \textcolor{keywordflow}{do} i=1,5    }
+\DoxyCodeLine{1096         \textcolor{keyword}{call }calctensortnr(tnm1(:,:,:,:,i),tnm1uv\_0aux,tnm1err(i,0:rmax\_m1),submomvec(n,i,momvec),  \&}
+\DoxyCodeLine{1097                            submominv(n,i,mominv),submasses(n,i,masses2),n-\/1,rmax\_m1,nid(i))}
+\DoxyCodeLine{1098 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1099 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1100       }
+\DoxyCodeLine{1101     \textcolor{comment}{! shift of integration momentum in TE\(\backslash\)\{0\}}}
+\DoxyCodeLine{1102     tnm1(:,:,:,:,0) = 0d0}
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1104     \textcolor{keywordflow}{do} r=0,rmax\_m1}
+\DoxyCodeLine{1105 }
+\DoxyCodeLine{1106       \textcolor{keywordflow}{do} np0=0,r}
+\DoxyCodeLine{1107         \textcolor{keywordflow}{do} np1=0,r-\/np0}
+\DoxyCodeLine{1108           \textcolor{keywordflow}{do} np2=0,r-\/np0-\/np1}
+\DoxyCodeLine{1109             \textcolor{keywordflow}{do} np3=0,r-\/np0-\/np1-\/np2}
+\DoxyCodeLine{1110 }
+\DoxyCodeLine{1111               p1ten = (-\/momvec(0,1))**np0*(-\/momvec(1,1))**np1*  \&}
+\DoxyCodeLine{1112                       (-\/momvec(2,1))**np2*(-\/momvec(3,1))**np3}
+\DoxyCodeLine{1113 }
+\DoxyCodeLine{1114               \textcolor{keywordflow}{do} n0=0,r-\/np0-\/np1-\/np2-\/np3}
+\DoxyCodeLine{1115                 \textcolor{keywordflow}{do} n1=0,r-\/np0-\/np1-\/np2-\/np3-\/n0}
+\DoxyCodeLine{1116                   \textcolor{keywordflow}{do} n2=0,r-\/np0-\/np1-\/np2-\/np3-\/n0-\/n1}
+\DoxyCodeLine{1117                     n3 = r-\/np0-\/np1-\/np2-\/np3-\/n0-\/n1-\/n2}
+\DoxyCodeLine{1118 }
+\DoxyCodeLine{1119                     combi = binomtable(n0,n0+np0)*binomtable(n1,n1+np1)*  \&}
+\DoxyCodeLine{1120                             binomtable(n2,n2+np2)*binomtable(n3,n3+np3)}
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1122                     tnm1(np0+n0,np1+n1,np2+n2,np3+n3,0) = tnm1(np0+n0,np1+n1,np2+n2,np3+n3,0)  \&}
+\DoxyCodeLine{1123                         + combi*tnm1\_0aux(n0,n1,n2,n3)*p1ten}
+\DoxyCodeLine{1124 }
+\DoxyCodeLine{1125 \textcolor{keywordflow}{                  end do}}
+\DoxyCodeLine{1126 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{1127 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1128 }
+\DoxyCodeLine{1129 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1130 \textcolor{keywordflow}{          end do} }
+\DoxyCodeLine{1131 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1132 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1133 }
+\DoxyCodeLine{1134 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1135 }
+\DoxyCodeLine{1136     p1max = maxval(abs(momvec(0:3,1)))}
+\DoxyCodeLine{1137     \textcolor{keywordflow}{do} r=1,rmax\_m1}
+\DoxyCodeLine{1138       \textcolor{keywordflow}{do} i=1,r}
+\DoxyCodeLine{1139         tnm1err(0,r) = max(tnm1err(0,i),tnm1err(0,r-\/i)*p1max**i)}
+\DoxyCodeLine{1140 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1141 \textcolor{keywordflow}{    end do}    }
+\DoxyCodeLine{1142 }
+\DoxyCodeLine{1143     tn = 0d0}
+\DoxyCodeLine{1144     tn(0,0,0,0) = -\/mxinv(0,0)*tnm1(0,0,0,0,0)}
+\DoxyCodeLine{1145     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1146       tn(0,0,0,0) = tn(0,0,0,0) + mxinv(i,0)*(tnm1(0,0,0,0,i)-\/tnm1(0,0,0,0,0))}
+\DoxyCodeLine{1147 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1148     tnerr(0) = max( abs(mxinvs)*tnm1err(0,0), \&}
+\DoxyCodeLine{1149                     abs(mxinv(1,0))*tnm1err(1,0) , \&}
+\DoxyCodeLine{1150                     abs(mxinv(2,0))*tnm1err(2,0) , \&}
+\DoxyCodeLine{1151                     abs(mxinv(3,0))*tnm1err(3,0) , \&}
+\DoxyCodeLine{1152                     abs(mxinv(4,0))*tnm1err(4,0) , \&}
+\DoxyCodeLine{1153                     abs(mxinv(5,0))*tnm1err(5,0) )}
+\DoxyCodeLine{1154 }
+\DoxyCodeLine{1155     \textcolor{keywordflow}{do} mu=0,3}
+\DoxyCodeLine{1156       \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1157         mxinvp(i,mu)=0d0}
+\DoxyCodeLine{1158         \textcolor{keywordflow}{do} j=1,5}
+\DoxyCodeLine{1159           mxinvp(i,mu) = mxinvp(i,mu) + mx0kinv(j,i)*momvec(mu,j)}
+\DoxyCodeLine{1160 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1161 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1162       mxinvps(mu) = sum(mxinvp(1:5,mu))}
+\DoxyCodeLine{1163 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1164 }
+\DoxyCodeLine{1165     \textcolor{comment}{! calculation of UV-\/divergent parts      }}
+\DoxyCodeLine{1166     \textcolor{comment}{! TN UV-\/finite for n0<N-\/2}}
+\DoxyCodeLine{1167     \textcolor{comment}{! TNuv(:,0:min(rmax/2,N-\/3),:) = 0d0}}
+\DoxyCodeLine{1168     }
+\DoxyCodeLine{1169     \textcolor{comment}{! PV reduction (5.10)}}
+\DoxyCodeLine{1170     \textcolor{keywordflow}{if}(rmax.ge.2*n-\/4) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1171       cnm1uv\_0 = 0d0      }
+\DoxyCodeLine{1172       \textcolor{keywordflow}{do} n0=n-\/3,rmax\_m1/2}
+\DoxyCodeLine{1173         cnm1uv\_0(1,n0,2*n0) = cnm1uv\_0aux(1,n0,2*n0)}
+\DoxyCodeLine{1174         \textcolor{keywordflow}{do} r=1,rmax\_m1-\/2*n0}
+\DoxyCodeLine{1175           mia1 = binomtable(r-\/1,n+r-\/3)+1}
+\DoxyCodeLine{1176           mia2 = binomtable(r,n+r-\/3)}
+\DoxyCodeLine{1177           mia3 = binomtable(r,n+r-\/2) }
+\DoxyCodeLine{1178           cnm1uv\_0(mia1:mia3,n0,r+2*n0) = cnm1uv\_0aux(1:mia2,n0,r+2*n0)}
+\DoxyCodeLine{1179 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1180 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1181       \textcolor{keywordflow}{do} r=2*n-\/6,rmax\_m1}
+\DoxyCodeLine{1182         \textcolor{keywordflow}{do} n0=n-\/3,(r-\/1)/2}
+\DoxyCodeLine{1183           \textcolor{keywordflow}{do} i=binomtable(r-\/2*n0-\/1,n+r-\/2*n0-\/3),1,-\/1}
+\DoxyCodeLine{1184             cnm1uv\_0(i,n0,r) = -\/cnm1uv\_0(i,n0,r-\/1)}
+\DoxyCodeLine{1185             \textcolor{keywordflow}{do} j=2,n-\/1}
+\DoxyCodeLine{1186               cnm1uv\_0(i,n0,r) = cnm1uv\_0(i,n0,r)  \&}
+\DoxyCodeLine{1187                                -\/ cnm1uv\_0(addtocind(j,i,r-\/2*n0-\/1,n-\/1),n0,r) }
+\DoxyCodeLine{1188 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1189 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1190 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1191 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1192       cnuv = 0d0}
+\DoxyCodeLine{1193       \textcolor{keywordflow}{do} r=2*n-\/4,rmax}
+\DoxyCodeLine{1194         \textcolor{keywordflow}{do} n0=n-\/2,r/2}
+\DoxyCodeLine{1195           \textcolor{keywordflow}{do} cind=1,binomtable(r-\/2*n0,n+r-\/2*n0-\/2)}
+\DoxyCodeLine{1196         }
+\DoxyCodeLine{1197             cnuv(cind,n0,r) = cnm1uv\_0(cind,n0-\/1,r-\/2)}
+\DoxyCodeLine{1198             \textcolor{keywordflow}{if}(n0.ge.n-\/1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1199               cnuv(cind,n0,r) = cnuv(cind,n0,r) + 2*mm02*cnuv(cind,n0-\/1,r-\/2)}
+\DoxyCodeLine{1200               \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{1201                 cnuv(cind,n0,r) = cnuv(cind,n0,r)  \&}
+\DoxyCodeLine{1202                                 + ff(i)*cnuv(addtocind(i,cind,r-\/2*n0,n-\/1),n0-\/1,r-\/1)}
+\DoxyCodeLine{1203 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1204 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{1205             cnuv(cind,n0,r) = cnuv(cind,n0,r)/(2*(r+3-\/n))}
+\DoxyCodeLine{1206     }
+\DoxyCodeLine{1207 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1208 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1209 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1210 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{1211 }
+\DoxyCodeLine{1212     \textcolor{keywordflow}{do} r=1,rmax    }
+\DoxyCodeLine{1213       \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{1214         \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{1215           \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{1216             n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{1217 }
+\DoxyCodeLine{1218             \textcolor{keywordflow}{if} (n0.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1219               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1220                 smod = tnm1(n0-\/1,n1,n2,n3,i) -\/ tnm1(n0-\/1,n1,n2,n3,0)}
+\DoxyCodeLine{1221                 tn(n0,n1,n2,n3) = tn(n0,n1,n2,n3) + mxinvp(i,0)*smod}
+\DoxyCodeLine{1222 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1223             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n1.ge.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1224               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1225                 smod = tnm1(n0,n1-\/1,n2,n3,i) -\/ tnm1(n0,n1-\/1,n2,n3,0)}
+\DoxyCodeLine{1226                 tn(n0,n1,n2,n3) = tn(n0,n1,n2,n3) + mxinvp(i,1)*smod}
+\DoxyCodeLine{1227 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1228             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n2.ge.1) \textcolor{keywordflow}{then}              }
+\DoxyCodeLine{1229               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1230                 smod = tnm1(n0,n1,n2-\/1,n3,i) -\/ tnm1(n0,n1,n2-\/1,n3,0)}
+\DoxyCodeLine{1231                 tn(n0,n1,n2,n3) = tn(n0,n1,n2,n3) + mxinvp(i,2)*smod}
+\DoxyCodeLine{1232 \textcolor{keywordflow}{              end do}           }
+\DoxyCodeLine{1233             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1234               \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{1235                 smod = tnm1(n0,n1,n2,n3-\/1,i) -\/ tnm1(n0,n1,n2,n3-\/1,0)}
+\DoxyCodeLine{1236                 tn(n0,n1,n2,n3) = tn(n0,n1,n2,n3) + mxinvp(i,3)*smod}
+\DoxyCodeLine{1237 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1238 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{1239 }
+\DoxyCodeLine{1240 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1241 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1242 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1243 }
+\DoxyCodeLine{1244       tnerr(r) = max(maxval(abs(mxinvps(0:3)))*tnm1err(0,r-\/1), \&}
+\DoxyCodeLine{1245                      maxval(abs(mxinvp(1,0:3)))*tnm1err(1,r-\/1), \&}
+\DoxyCodeLine{1246                      maxval(abs(mxinvp(2,0:3)))*tnm1err(2,r-\/1), \&}
+\DoxyCodeLine{1247                      maxval(abs(mxinvp(3,0:3)))*tnm1err(3,r-\/1))}
+\DoxyCodeLine{1248 }
+\DoxyCodeLine{1249 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1250 }
+\DoxyCodeLine{1251   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_a041f666dd114678cf583cec1fe66aef4}\label{namespacetensorreduction_a041f666dd114678cf583cec1fe66aef4}} 
+\index{tensorreduction@{tensorreduction}!checktensors@{checktensors}}
+\index{checktensors@{checktensors}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{checktensors()}{checktensors()}}
+{\footnotesize\ttfamily subroutine tensorreduction\+::checktensors (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{TN,  }\item[{double complex, dimension(0\+:3,n-\/1), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(binomtable(2,n)), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:n-\/1), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{writeout,  }\item[{double precision, intent(in)}]{acc }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1298 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1298 }
+\DoxyCodeLine{1299     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N,rmax,writeout}
+\DoxyCodeLine{1300     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: acc}
+\DoxyCodeLine{1301     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: TN(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1302     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,N-\/1), MomInv(BinomTable(2,N)), masses2(0:N-\/1)}
+\DoxyCodeLine{1303     \textcolor{keywordtype}{double complex} :: CoefsN(BinomTable(rmax,N+rmax-\/2),0:rmax/2,0:rmax)}
+\DoxyCodeLine{1304     \textcolor{keywordtype}{double complex} :: CoefsNuv(BinomTable(rmax,N+rmax-\/2),0:rmax/2,0:rmax)}
+\DoxyCodeLine{1305     \textcolor{keywordtype}{double complex} :: check1, check2, fac, Gram(N-\/1,N-\/1)}
+\DoxyCodeLine{1306     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{allocatable} :: pinds(:),loinds(:)}
+\DoxyCodeLine{1307     \textcolor{keywordtype}{integer} :: struc1(0:N-\/1), struc2(0:N-\/1)}
+\DoxyCodeLine{1308     \textcolor{keywordtype}{integer} :: r,n0,i,j,mu,mu0,sgn,tinds(0:3),cnt,nn0,ii}
+\DoxyCodeLine{1309     \textcolor{keywordtype}{double precision} :: TNerr(0:rmax),TNerr2(0:rmax)}
+\DoxyCodeLine{1310 }
+\DoxyCodeLine{1311     \textcolor{keyword}{call }calctn(coefsn,coefsnuv,mominv,masses2,n,rmax,0,tnerr,tnerr2)}
+\DoxyCodeLine{1312 }
+\DoxyCodeLine{1313 }
+\DoxyCodeLine{1314     \textcolor{comment}{! determine Gram matrix}}
+\DoxyCodeLine{1315     cnt = 1}
+\DoxyCodeLine{1316     \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{1317       gram(i,i) = mominv(cnt)}
+\DoxyCodeLine{1318       cnt = cnt+n-\/i}
+\DoxyCodeLine{1319 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1320 }
+\DoxyCodeLine{1321     cnt = 2}
+\DoxyCodeLine{1322     \textcolor{keywordflow}{do} i=1,n-\/1}
+\DoxyCodeLine{1323       \textcolor{keywordflow}{do} j=i+1,n-\/1}
+\DoxyCodeLine{1324         gram(i,j) = (gram(i,i)+gram(j,j)-\/mominv(cnt))/2d0}
+\DoxyCodeLine{1325         gram(j,i) = gram(i,j)}
+\DoxyCodeLine{1326         cnt = cnt+1}
+\DoxyCodeLine{1327 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1328       cnt = cnt+1}
+\DoxyCodeLine{1329 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1330 }
+\DoxyCodeLine{1331 }
+\DoxyCodeLine{1332     \textcolor{keywordflow}{do} r=1,rmax}
+\DoxyCodeLine{1333         }
+\DoxyCodeLine{1334       \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(loinds)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1335         \textcolor{keyword}{deallocate}(loinds)}
+\DoxyCodeLine{1336 \textcolor{keywordflow}{      end if}}
+\DoxyCodeLine{1337       \textcolor{keyword}{allocate}(loinds(r))}
+\DoxyCodeLine{1338 }
+\DoxyCodeLine{1339       \textcolor{keywordflow}{do} n0=r/2,0,-\/1}
+\DoxyCodeLine{1340         }
+\DoxyCodeLine{1341         \textcolor{keywordflow}{if} (\textcolor{keyword}{allocated}(pinds)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1342           \textcolor{keyword}{deallocate}(pinds)}
+\DoxyCodeLine{1343 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{1344         \textcolor{keyword}{allocate}(pinds(r-\/2*n0))}
+\DoxyCodeLine{1345 }
+\DoxyCodeLine{1346         \textcolor{keywordflow}{do} i=1,binomtable(r-\/2*n0,r-\/2*n0+n-\/2)}
+\DoxyCodeLine{1347           \textcolor{keywordflow}{if} (r.gt.2*n0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1348             pinds = indcombiseq(1:r-\/2*n0,i,r-\/2*n0,n-\/1)}
+\DoxyCodeLine{1349 \textcolor{keywordflow}{          end if}}
+\DoxyCodeLine{1350 }
+\DoxyCodeLine{1351           struc1(1:n-\/1) = calccindarr(n-\/1,r-\/2*n0,i)}
+\DoxyCodeLine{1352           \textcolor{comment}{! contract TN(r) with g(n0)*MomVec(pinds)}}
+\DoxyCodeLine{1353           \textcolor{comment}{! -\/-\/> check1}}
+\DoxyCodeLine{1354           check1 = 0d0}
+\DoxyCodeLine{1355 }
+\DoxyCodeLine{1356           loinds = 0}
+\DoxyCodeLine{1357           \textcolor{keywordflow}{do} mu=0,4**r-\/1}
+\DoxyCodeLine{1358 }
+\DoxyCodeLine{1359             mu0 = mu}
+\DoxyCodeLine{1360             tinds = 0}
+\DoxyCodeLine{1361             \textcolor{keywordflow}{do} j=1,r}
+\DoxyCodeLine{1362               loinds(j) = mod(mu0,4)}
+\DoxyCodeLine{1363               tinds(loinds(j)) = tinds(loinds(j))+1}
+\DoxyCodeLine{1364               mu0 = mu0/4}
+\DoxyCodeLine{1365 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1366 }
+\DoxyCodeLine{1367             \textcolor{comment}{! sign of contraction from Minkowski metric}}
+\DoxyCodeLine{1368             sgn=(-\/1)**(r-\/tinds(0))}
+\DoxyCodeLine{1369             \textcolor{keywordflow}{do} j=1,n0}
+\DoxyCodeLine{1370               \textcolor{keywordflow}{select case} (loinds(2*j)-\/loinds(2*j-\/1))}
+\DoxyCodeLine{1371                 \textcolor{keywordflow}{case} (0)}
+\DoxyCodeLine{1372                   \textcolor{keywordflow}{if} (loinds(2*j).ne.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1373                     sgn = -\/sgn}
+\DoxyCodeLine{1374 \textcolor{keywordflow}{                  end if}}
+\DoxyCodeLine{1375 \textcolor{keywordflow}{                case default}}
+\DoxyCodeLine{1376                   sgn = 0}
+\DoxyCodeLine{1377 \textcolor{keywordflow}{              end select}}
+\DoxyCodeLine{1378 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1379 }
+\DoxyCodeLine{1380             \textcolor{keywordflow}{if} (sgn.ne.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1381 }
+\DoxyCodeLine{1382               fac = 1d0}
+\DoxyCodeLine{1383               \textcolor{keywordflow}{do} j=1,r-\/2*n0}
+\DoxyCodeLine{1384                 fac = fac*momvec(loinds(2*n0+j),pinds(j))}
+\DoxyCodeLine{1385 \textcolor{keywordflow}{              end do}}
+\DoxyCodeLine{1386 }
+\DoxyCodeLine{1387               check1 = check1 + sgn*fac*tn(tinds(0),tinds(1),tinds(2),tinds(3))}
+\DoxyCodeLine{1388 }
+\DoxyCodeLine{1389 \textcolor{keywordflow}{            end if}      }
+\DoxyCodeLine{1390           }
+\DoxyCodeLine{1391 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1392 }
+\DoxyCodeLine{1393           }
+\DoxyCodeLine{1394           \textcolor{comment}{! calculate contraction directly from coefficients}}
+\DoxyCodeLine{1395           \textcolor{comment}{! -\/-\/> check2}}
+\DoxyCodeLine{1396           check2 = 0d0}
+\DoxyCodeLine{1397 }
+\DoxyCodeLine{1398           struc1(0) = n0}
+\DoxyCodeLine{1399           struc1(1:n-\/1) = calccindarr(n-\/1,r-\/2*n0,i)}
+\DoxyCodeLine{1400 }
+\DoxyCodeLine{1401           \textcolor{keywordflow}{do} nn0=r/2,0,-\/1}
+\DoxyCodeLine{1402             \textcolor{keywordflow}{do} ii=1,binomtable(r-\/2*nn0,r-\/2*nn0+n-\/2)}
+\DoxyCodeLine{1403 }
+\DoxyCodeLine{1404               struc2(0) = nn0}
+\DoxyCodeLine{1405               struc2(1:n-\/1) = calccindarr(n-\/1,r-\/2*nn0,ii)}
+\DoxyCodeLine{1406 }
+\DoxyCodeLine{1407               check2 = check2 + coefsn(ii,nn0,r)*  \&}
+\DoxyCodeLine{1408                        contractlostruc(n-\/1,struc1,struc2,gram)}
+\DoxyCodeLine{1409 }
+\DoxyCodeLine{1410 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{1411 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1412 }
+\DoxyCodeLine{1413           \textcolor{keywordflow}{select case} (writeout)}
+\DoxyCodeLine{1414 }
+\DoxyCodeLine{1415             \textcolor{keywordflow}{case}(1)}
+\DoxyCodeLine{1416               \textcolor{keywordflow}{if} (abs(check1-\/check2)/abs(check2).gt.acc) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1417                 \textcolor{keyword}{write}(ninfout\_cll,*) struc1}
+\DoxyCodeLine{1418                 \textcolor{keyword}{write}(ninfout\_cll,*) \textcolor{stringliteral}{'check1:'}, check1}
+\DoxyCodeLine{1419                 \textcolor{keyword}{write}(ninfout\_cll,*) \textcolor{stringliteral}{'check2:'}, check2}
+\DoxyCodeLine{1420 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{1421 }
+\DoxyCodeLine{1422             \textcolor{keywordflow}{case}(2)}
+\DoxyCodeLine{1423                 \textcolor{keyword}{write}(ninfout\_cll,*) struc1}
+\DoxyCodeLine{1424                 \textcolor{keyword}{write}(ninfout\_cll,*) \textcolor{stringliteral}{'check1:'}, check1}
+\DoxyCodeLine{1425                 \textcolor{keyword}{write}(ninfout\_cll,*) \textcolor{stringliteral}{'check2:'}, check2}
+\DoxyCodeLine{1426 }
+\DoxyCodeLine{1427 \textcolor{keywordflow}{          end select}}
+\DoxyCodeLine{1428 }
+\DoxyCodeLine{1429 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1430 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1431 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1432 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetensorreduction_a740f7693b96ef13de03fdbdcb4cbb7f1}\label{namespacetensorreduction_a740f7693b96ef13de03fdbdcb4cbb7f1}} 
+\index{tensorreduction@{tensorreduction}!comparetensors@{comparetensors}}
+\index{comparetensors@{comparetensors}!tensorreduction@{tensorreduction}}
+\doxysubsubsection{\texorpdfstring{comparetensors()}{comparetensors()}}
+{\footnotesize\ttfamily subroutine tensorreduction\+::comparetensors (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{T1,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(in)}]{T2,  }\item[{integer, intent(in)}]{rmax,  }\item[{integer, intent(in)}]{writeout,  }\item[{double precision, intent(in)}]{acc }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1555 of file Tensor\+Reduction.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1555 }
+\DoxyCodeLine{1556     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax, writeout}
+\DoxyCodeLine{1557     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T1(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1558     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: T2(0:rmax,0:rmax,0:rmax,0:rmax)}
+\DoxyCodeLine{1559     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(in)} :: acc}
+\DoxyCodeLine{1560     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3}
+\DoxyCodeLine{1561 }
+\DoxyCodeLine{1562     \textcolor{keywordflow}{do} r=0,rmax}
+\DoxyCodeLine{1563       \textcolor{keywordflow}{do} n0=0,r}
+\DoxyCodeLine{1564         \textcolor{keywordflow}{do} n1=0,r-\/n0}
+\DoxyCodeLine{1565           \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
+\DoxyCodeLine{1566             n3 = r-\/n0-\/n1-\/n2}
+\DoxyCodeLine{1567 }
+\DoxyCodeLine{1568             \textcolor{keywordflow}{if} (writeout.eq.1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1569               \textcolor{keywordflow}{if} (abs(t1(n0,n1,n2,n3)-\/t2(n0,n1,n2,n3)).gt.  \&}
+\DoxyCodeLine{1570                   acc*abs(t1(n0,n1,n2,n3)+t2(n0,n1,n2,n3))) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{1571                 \textcolor{keyword}{write}(ninfout\_cll,*) n0,n1,n2,n3}
+\DoxyCodeLine{1572                 \textcolor{keyword}{write}(ninfout\_cll,*) t1(n0,n1,n2,n3), t2(n0,n1,n2,n3)}
+\DoxyCodeLine{1573 \textcolor{keywordflow}{              end if}}
+\DoxyCodeLine{1574 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{1575 }
+\DoxyCodeLine{1576 \textcolor{keywordflow}{          end do}}
+\DoxyCodeLine{1577 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{1578 \textcolor{keywordflow}{      end do}}
+\DoxyCodeLine{1579 \textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{1580 }
+
+\end{DoxyCode}

@@ -1,0 +1,142 @@
+\hypertarget{mod__TTBHiggs_8F90}{}\doxysection{M\+E\+L\+A/fortran/mod\+\_\+\+T\+T\+B\+Higgs.F90 File Reference}
+\label{mod__TTBHiggs_8F90}\index{MELA/fortran/mod\_TTBHiggs.F90@{MELA/fortran/mod\_TTBHiggs.F90}}
+\doxysubsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{structmodttbhiggs_1_1particle}{modttbhiggs\+::particle}}
+\item 
+type \mbox{\hyperlink{structmodttbhiggs_1_1ptrtoparticle}{modttbhiggs\+::ptrtoparticle}}
+\item 
+type \mbox{\hyperlink{structmodttbhiggs_1_1treeprocess}{modttbhiggs\+::treeprocess}}
+\item 
+interface \mbox{\hyperlink{interfacemodttbhiggs_1_1operator_07_8ndot_8_08}{modttbhiggs\+::operator(.\+ndot.)}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacemodttbhiggs}{modttbhiggs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodttbhiggs_a02a58de06c7a82420c58721567c36927}{modttbhiggs\+::evalxsec\+\_\+pp\+\_\+ttbh}} (Mom, Select\+Process, Res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodttbhiggs_a65e3275546f4df87be8563957d0d2907}{modttbhiggs\+::evalxsec\+\_\+pp\+\_\+bbbh}} (Mom, Select\+Process, Res)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodttbhiggs_a5c94ac5f8e9e04d9c6b3950545a44d48}{modttbhiggs\+::initprocess\+\_\+ttbh}} ()
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodttbhiggs_a40d35869f3706c38d358332860891b9c}{modttbhiggs\+::exitprocess\+\_\+ttbh}} ()
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodttbhiggs_aa7190026459c187d5653d724aac7ffe4}{modttbhiggs\+::evalamp\+\_\+gg\+\_\+ttbh}} (Mom, Sq\+Amp)
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodttbhiggs_addb2d779063d5155da736dd7ed41d091}{modttbhiggs\+::evalamp\+\_\+qqb\+\_\+ttbh}} (Mom, Sq\+Amp)
+\item 
+subroutine \mbox{\hyperlink{namespacemodttbhiggs_a982192d11209498ce988df66d10a8c0e}{modttbhiggs\+::new\+\_\+calc\+\_\+ampl}} (tag\+\_\+f, tag\+\_\+Z, Tree\+Proc, Res)
+\item 
+subroutine \mbox{\hyperlink{namespacemodttbhiggs_a593e2b56b0306035b7527938b164e4ee}{modttbhiggs\+::linktreeparticles}} (The\+Tree\+Amp, The\+Particles)
+\item 
+complex(8) function, dimension(1\+:ds) \mbox{\hyperlink{namespacemodttbhiggs_a1600f3895fd4d0e6828f9a3a3f63ee1d}{modttbhiggs\+::cur\+\_\+f\+\_\+2fv}} (Gluons, Quark, Quark1\+Part\+Type, Boson, Num\+Glu)
+\item 
+recursive complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a34ef86c930ffb557abd146d64486e7ae}{modttbhiggs\+::fv}} (e, k, sp, p, mass, Quark\+Flavor, eV, kV, ms)
+\item 
+recursive complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a6cf6e9462f72b415424686a3de71ac61}{modttbhiggs\+::bfv}} (e, k, sp, p, mass, Quark\+Flavor, eV, kV, ms)
+\item 
+complex(8) function, dimension(1\+:ds) \mbox{\hyperlink{namespacemodttbhiggs_abc69cbe148d81013745b94be70548d62}{modttbhiggs\+::cur\+\_\+f\+\_\+4fv}} (Gluons, Quarks, Quark1\+Part\+Type, Boson, Boson\+Vertex, Num\+Glu, tag\+\_\+f, tag\+\_\+Z)
+\item 
+complex(8) function, dimension(1\+:ds) \mbox{\hyperlink{namespacemodttbhiggs_a2b50d80982627a5e499fe2c4eec44c88}{modttbhiggs\+::cur\+\_\+f\+\_\+4f}} (Gluons, Quarks, Quark1\+Part\+Type, Num\+Glu, tag\+\_\+f, tag\+\_\+\+Z\+\_\+arg)
+\item 
+recursive complex(8) function, dimension(size(e, dim=1)) \mbox{\hyperlink{namespacemodttbhiggs_a235b60cc7641638d472db6f260b76d34}{modttbhiggs\+::g}} (e, k)
+\item 
+complex(8) function, dimension(1\+:dv) \mbox{\hyperlink{namespacemodttbhiggs_a0dc774774e5e2448b8831066fb707b53}{modttbhiggs\+::cur\+\_\+g}} (Gluons, Num\+Glu)
+\item 
+recursive complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_adad982f9354a9487600f7cc5dbc4123c}{modttbhiggs\+::f}} (e, k, sp, p, mass, flout, flin, ms)
+\item 
+recursive complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a41f4ae90288c5e36dad4f4634dd93c40}{modttbhiggs\+::bf}} (e, k, sp, p, mass, flout, flin, ms)
+\item 
+complex(8) function, dimension(1\+:dv) \mbox{\hyperlink{namespacemodttbhiggs_ac2974da70d23237fa04bb606cce64e0d}{modttbhiggs\+::cur\+\_\+g\+\_\+2f}} (Gluons, Quarks, Num\+Glu)
+\item 
+complex(8) function, dimension(1\+:dv) \mbox{\hyperlink{namespacemodttbhiggs_a10392cd5645a49f21e9eedfe34cff22a}{modttbhiggs\+::cur\+\_\+g\+\_\+2fv}} (Gluons, Quarks, Boson, Num\+Glu)
+\item 
+complex(8) function, dimension(1\+:ds) \mbox{\hyperlink{namespacemodttbhiggs_a60f6b75e3113bbfd04d46ef7f3e8ae2c}{modttbhiggs\+::cur\+\_\+f\+\_\+2f}} (Gluons, Quarks, Quark1\+Part\+Type, Num\+Glu)
+\item 
+complex(8) function, dimension(dv) \mbox{\hyperlink{namespacemodttbhiggs_a82bea00e16ce7c2b885be798bb71bd76}{modttbhiggs\+::cur\+\_\+g\+\_\+4f}} (Gluons, Quarks, Num\+Glu)
+\item 
+complex(8) function, dimension(1\+:ds) \mbox{\hyperlink{namespacemodttbhiggs_ae785e0d6b1486d410b4df20499e9f48f}{modttbhiggs\+::cur\+\_\+f\+\_\+6f}} (Gluons, Quarks, Quark1\+Part\+Type, Num\+Glu, tag\+\_\+f, tag\+\_\+Z)
+\item 
+complex(8) function, dimension(dv) \mbox{\hyperlink{namespacemodttbhiggs_a94a94906ea77f211ca50b80310f0da1c}{modttbhiggs\+::cur\+\_\+g\+\_\+4fv}} (Gluons, Quarks, Boson, Boson\+Vertex, Num\+Glu)
+\item 
+complex(8) function, dimension(1\+:ds) \mbox{\hyperlink{namespacemodttbhiggs_adf47ca461bff280d07ab94c06f982305}{modttbhiggs\+::cur\+\_\+f\+\_\+6fv}} (Gluons, Quarks, Quark1\+Part\+Type, Boson, Boson\+Vertex, Num\+Glu, tag\+\_\+f)
+\item 
+complex(8) function, dimension(1\+:dv) \mbox{\hyperlink{namespacemodttbhiggs_a0b1723a80e27200260bd362a8ac62788}{modttbhiggs\+::summom}} (Particles, i1, i2)
+\item 
+complex(8) function \mbox{\hyperlink{namespacemodttbhiggs_aaa7b206d44682122266c543abc74fd1f}{modttbhiggs\+::fourvecdot}} (p1, p2)
+\item 
+complex(8) function, dimension(1\+:dv) \mbox{\hyperlink{namespacemodttbhiggs_a288ffcd69e7511bab4de892ff5b4972c}{modttbhiggs\+::eval\+\_\+tripvert}} (k1, k2, v1, v2)
+\item 
+complex(8) function, dimension(1\+:dv) \mbox{\hyperlink{namespacemodttbhiggs_afca1d82cc226d765fdffe455835ca6d5}{modttbhiggs\+::eval\+\_\+quadvert}} (k1, k2, k3)
+\item 
+integer function \mbox{\hyperlink{namespacemodttbhiggs_a16ddc269abb6f66df5607491a89ecc65}{modttbhiggs\+::linear\+\_\+map}} (i1, i2, Ngluons)
+\item 
+subroutine \mbox{\hyperlink{namespacemodttbhiggs_aee7a049ddac0cf1681dffd71093a36cf}{modttbhiggs\+::copyparticleptr}} (In\+Pointer, Out\+Pointer)
+\item 
+subroutine \mbox{\hyperlink{namespacemodttbhiggs_aabd6b0430e2766e11b744504ae344a72}{modttbhiggs\+::spi2}} (Dv, Ds, v, sp, f)
+\item 
+double complex function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a5ad23d4a036af583552482ced325bf9b}{modttbhiggs\+::spi2\+\_\+}} (v, sp)
+\item 
+double complex function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_ad5dba1690a2142af045213493a451f7a}{modttbhiggs\+::spivl}} (sp, v)
+\item 
+subroutine \mbox{\hyperlink{namespacemodttbhiggs_a299bd2c18d43760781811270fe270da4}{modttbhiggs\+::spb2}} (Dv, Ds, sp, v, f)
+\item 
+double complex function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a9a1c65c401f7769cf3b25ee32dd38947}{modttbhiggs\+::spb2\+\_\+}} (sp, v)
+\item 
+complex(8) function \mbox{\hyperlink{namespacemodttbhiggs_a7b29e228d381ca9e221522f8c42bbb98}{modttbhiggs\+::psp1\+\_\+}} (sp1, sp2)
+\item 
+recursive double complex function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a6ff336a409158adea0b84ed7c7b00ec8}{modttbhiggs\+::chir}} (sign, sp)
+\item 
+recursive double complex function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a691b8daf9b0359f845579cedad904110}{modttbhiggs\+::ichir}} (sign, sp)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_ae1b6e6df57b28d1e2182621e940e0844}{modttbhiggs\+::vbqv}} (sp, e1, coupl\+\_\+left, coupl\+\_\+right)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a3d24c4cb137f694c79a6b2bf661197ed}{modttbhiggs\+::vvq}} (e1, sp, coupl\+\_\+left, coupl\+\_\+right)
+\item 
+complex(8) function \mbox{\hyperlink{namespacemodttbhiggs_acd313348e371d4b4ce20b49e13bd8150}{modttbhiggs\+::sc\+\_\+}} (p1, p2)
+\item 
+subroutine \mbox{\hyperlink{namespacemodttbhiggs_a99dfd6ee0756556121a9b1c6afc52438}{modttbhiggs\+::rsc\+\_\+}} (n, x, y, r)
+\item 
+complex(8) function, dimension(size(e1)) \mbox{\hyperlink{namespacemodttbhiggs_a48cd166d20e787937992441341647c89}{modttbhiggs\+::vggg}} (e1, k1, e2, k2)
+\item 
+complex(8) function, dimension(size(e1)) \mbox{\hyperlink{namespacemodttbhiggs_a2ce118a94d782b404e2b1a2ea351c712}{modttbhiggs\+::vgggg}} (e1, e2, e3)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_ac3c1479d53b579f46ac4c03fb2ecd0d2}{modttbhiggs\+::vqg}} (sp, e1)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_ac4f079809619d88cb2e1b6baeb3f7a6b}{modttbhiggs\+::vgq}} (e1, sp)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_a0b9541da43e68bf247f4df1f5815eb3b}{modttbhiggs\+::vbqg}} (sp, e1)
+\item 
+complex(8) function, dimension(size(sp)) \mbox{\hyperlink{namespacemodttbhiggs_aeca72a3609fdd110519e863051ae0f41}{modttbhiggs\+::vgbq}} (e1, sp)
+\item 
+complex(8) function, dimension(4) \mbox{\hyperlink{namespacemodttbhiggs_ac3051975f148046a7367290dcdb74ca0}{modttbhiggs\+::vbqq}} (Dummy, sp1, sp2)
+\item 
+complex(8) function, dimension(4, 4) \mbox{\hyperlink{namespacemodttbhiggs_a5b104066b13a69934a51cabea496a60d}{modttbhiggs\+::vvbqq}} (sp1, sp2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacemodttbhiggs_ac443a0bbcc3995d84eb7cebb785ded23}{modttbhiggs\+::colorlesstag}} = 1
+\item 
+real(8), parameter \mbox{\hyperlink{namespacemodttbhiggs_abbd7324dda04127446e49c1c30e969c2}{modttbhiggs\+::propcut}} = 1.\+0d-\/8
+\item 
+integer, parameter \mbox{\hyperlink{namespacemodttbhiggs_a7f6622afac664a5817946dd4ae8037df}{modttbhiggs\+::dv}} =4
+\item 
+integer, parameter \mbox{\hyperlink{namespacemodttbhiggs_a01abea4828bc903646d14cdaf7a4c5b3}{modttbhiggs\+::ds}} =4
+\item 
+type(particle), dimension(1\+:7), save \mbox{\hyperlink{namespacemodttbhiggs_ab922587e9b30199ee7eab7c5f37af3f0}{modttbhiggs\+::extparticles}}
+\item 
+type(treeprocess), dimension(1\+:2), save \mbox{\hyperlink{namespacemodttbhiggs_abca7fa4f7a865911adc4c444a6926295}{modttbhiggs\+::thetreeamps\+\_\+gg\+\_\+ttbh}}
+\item 
+type(treeprocess), dimension(1\+:1), save \mbox{\hyperlink{namespacemodttbhiggs_a1f8089d51466581a31c1b6b62e861282}{modttbhiggs\+::thetreeamps\+\_\+qqb\+\_\+ttbh}}
+\item 
+complex(8) \mbox{\hyperlink{namespacemodttbhiggs_a2f0eff3b1324eeeaf015ebcbd94e111b}{modttbhiggs\+::couplhtt\+\_\+right\+\_\+dyn}}
+\item 
+complex(8) \mbox{\hyperlink{namespacemodttbhiggs_a52094e1c2f161117f051ce4438845fc3}{modttbhiggs\+::couplhtt\+\_\+left\+\_\+dyn}}
+\end{DoxyCompactItemize}

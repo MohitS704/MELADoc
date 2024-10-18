@@ -1,0 +1,88 @@
+\hypertarget{mela__binding_8cpp}{}\doxysection{M\+E\+L\+A/python/mela\+\_\+binding.cpp File Reference}
+\label{mela__binding_8cpp}\index{MELA/python/mela\_binding.cpp@{MELA/python/mela\_binding.cpp}}
+{\ttfamily \#include \char`\"{}Mela.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Var.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Couplings\+Base.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+M\+C\+F\+M.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Util.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+E\+L\+A\+Candidate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}T\+Lorentz\+Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pybind11/pybind11.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pybind11/stl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pybind11/numpy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pybind11/operators.\+h\char`\"{}}\newline
+Include dependency graph for mela\+\_\+binding.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mela__binding_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__Macros_gadbce8a383a4cf2796780b92b39d58d7b}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+A\+R\+R\+\_\+\+S\+P\+I\+N\+\_\+\+Z\+E\+RO}}(array\+Name,  size,  arr\+Type)
+\begin{DoxyCompactList}\small\item\em Generates the array for spin 0 values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga9f633657006d95e850aeb54f8703afbb}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+A\+R\+R\+\_\+\+S\+P\+I\+N\+\_\+\+O\+N\+E\+T\+WO}}(array\+Name,  size)
+\begin{DoxyCompactList}\small\item\em Generates the array for spin 1 and spin 2 values in J\+H\+U\+Gen. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_gaf01a9cfa945ab415d1055bdcf338482c}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+M\+A\+G\+I\+N\+A\+R\+Y\+\_\+\+S\+P\+I\+N\+\_\+\+Z\+E\+RO}}(array\+Name,  coupling\+Name,  coupling\+Index,  higgs\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for spin 0 values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga7d0ee746b41b9d0ee682dbe0eeb9acb0}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+R\+E\+A\+L\+\_\+\+I\+M\+A\+G\+I\+N\+A\+R\+Y\+\_\+\+S\+P\+I\+N\+\_\+\+O\+N\+E\+T\+WO}}(array\+Name,  coupling\+Name,  coupling\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for spin 1 and spin 2 values in J\+H\+U\+Gen. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_gab42e82b4aafec22a48831d1e65bdbd02}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+C\+\_\+\+L\+A\+M\+B\+DA}}(array\+Name,  coupling\+Name,  coupling\+Index,  higgs\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for C Lambda values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga714cb041e6825c617d24177cfbe14f88}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+L\+A\+M\+B\+DA}}(array\+Name,  coupling\+Name,  coupling\+Index\+\_\+1,  coupling\+Index\+\_\+2,  higgs\+Index)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for Lambda values in J\+H\+U\+Gen and J\+H\+U\+Gen-\/\+M\+C\+FM. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__Macros_ga54ddaa358221facd9ab1d75a19ebb69b}{M\+A\+K\+E\+\_\+\+C\+O\+U\+P\+L\+I\+N\+G\+\_\+\+M\+A\+D\+M\+E\+LA}}(coupling\+Name,  coupling\+Index\+\_\+1)
+\begin{DoxyCompactList}\small\item\em Generates the couplings for S\+M\+E\+F\+T\+Sim Wilson Coefficients in Mad\+M\+E\+LA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{group__ReferenceGroup_gaa47066fa81c263b2ba5cd36ce331bf3a}{computeP}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, bool use\+Constant=true)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a8503608babd744076ebe4f173b519844}{Mela\+::computeP}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_gaa433518a851148e7fe35632c7bee6949}{compute\+ProdP}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, bool use\+Constant=true)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a2e5af4f25feb182e3d68a7b651d45dcc}{Mela\+::compute\+ProdP}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga2a62c2a8d9fe332ae15c106cd387354e}{compute\+Prod\+DecP}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, bool use\+Constant=true)
+\begin{DoxyCompactList}\small\item\em analog of Mel\+They cover a slew of uses, from converting a\+::compute\+Prod\+DecP \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_gae84258a887fca261615f5ebfe71091a9}{compute\+D\+\_\+\+CP}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} my\+ME, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} my\+Type)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_ad935ce70f751c6bc0ea90ce45cbf0f3d}{Mela\+::compute\+D\+\_\+\+CP}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_gad63a52ad56bea84fd4af826630c7727f}{compute\+Prod\+P\+\_\+\+VH}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, bool include\+Higgs\+Decay, bool use\+Constant)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a817d72f9d39bf2bb0747d4d77dc811a1}{Mela\+::compute\+Prod\+P\+\_\+\+VH}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_gad8261a7743f1d7e42728f592bd5b1f14}{compute\+Prod\+P\+\_\+ttH}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, int top\+Process, int top\+Decay, bool use\+Constant)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a92651068b8ec1788d274900a99c4a9b9}{Mela\+::compute\+Prod\+P\+\_\+ttH}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_gadac828a6cf0ae588295cdcb8c30ffdc6}{compute4\+Fermion\+Weight}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a59d1a090a31df4b2825526d62c7d7024}{Mela\+::compute4\+Fermion\+Weight}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga4644c22cdd6ca58d01e321ade7610771}{get\+X\+Propagator}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, \mbox{\hyperlink{namespaceTVar_ac79830020a0eed4f6dcd3a62a496b016}{T\+Var\+::\+Resonance\+Propagator\+Scheme}} scheme)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a4683c0250cc1a9c37bccd26ad8f849e9}{Mela\+::get\+X\+Propagator}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga323e30f69d9b305e5787d3f65c992636}{compute\+P\+M4l}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, \mbox{\hyperlink{namespaceTVar_ab4e6f4908dbdc9191d8833fa1007a328}{T\+Var\+::\+Super\+Mela\+Syst}} syst)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a6e945c3826090ac856f69a32dc6ee3db}{Mela\+::compute\+P\+M4l}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga9c3db6a97aa481fd3b77e2c78254233e}{compute\+D\+\_\+gg}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, \mbox{\hyperlink{namespaceTVar_a3d91617913b8024e8b41f4711196815f}{T\+Var\+::\+Matrix\+Element}} my\+ME, \mbox{\hyperlink{namespaceTVar_a0c6d3acf0d4f0af16181b35a88d813a1}{T\+Var\+::\+Process}} my\+Type)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a00a769b235fa9dc161cc1c25d74b5f0e}{Mela\+::compute\+D\+\_\+gg}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga35a42d893f650474799372f6f73797a9}{get\+Constant}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMela_a40221b711597c6c682e2283692255f18}{Mela\+::get\+Constant}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga08f5fec8e7cb30e4933277ce183d79ed}{compute\+Dijet\+Conv\+BW}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, bool use\+True\+BW)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMela_a29e05816b98616ecfe3d8e623e8eac82}{Mela\+::compute\+Dijet\+Conv\+BW}} \end{DoxyCompactList}\item 
+py\+::array \mbox{\hyperlink{group__ReferenceGroup_gaee7cb9b925ab038e0fcdc350d0df514a}{get\+Weighted\+M\+E\+Array}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMelaIO_ab4e957236cbbf6ade45aeb417cefece4}{Mela\+I\+O\+::get\+Weighted\+M\+E\+Array}} \end{DoxyCompactList}\item 
+py\+::array \mbox{\hyperlink{group__ReferenceGroup_ga54444a31b98e2314f14d635729bb8de6}{get\+Unweighted\+M\+E\+Array}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMelaIO_ad97cca34dde69f8fff28d569163f9c6b}{Mela\+I\+O\+::get\+Unweighted\+M\+E\+Array}} \end{DoxyCompactList}\item 
+py\+::tuple \mbox{\hyperlink{group__ReferenceGroup_ga658c6176dfa92eae5a20bf7f9c1087b6}{get\+Parton\+Weights}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMelaIO_ad4b7a6968711dc50b2053baa6a1ab640}{Mela\+I\+O\+::get\+Parton\+Weights}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{group__ReferenceGroup_ga70d67bcfd72657c96a4b663637449627}{get\+P\+Aux}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMela_a1094cda5be40b685507ec9f720fa57f2}{Mela\+::get\+P\+Aux}} \end{DoxyCompactList}\item 
+array$<$ float, 8 $>$ \mbox{\hyperlink{group__ReferenceGroup_gae2dd2dc5ce6cd622604bf07e125e21b6}{compute\+Decay\+Angles}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em the analog of \mbox{\hyperlink{classMela_a7ed076cbbb4121926e53f56cb4d56bab}{Mela\+::compute\+Decay\+Angles}} \end{DoxyCompactList}\item 
+array$<$ float, 7 $>$ \mbox{\hyperlink{group__ReferenceGroup_ga3e5c80c3083a841c93748bc7ad7a4c81}{compute\+V\+B\+F\+Angles}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a888f07999471870590557aa4fec74caa}{Mela\+::compute\+V\+B\+F\+Angles}} \end{DoxyCompactList}\item 
+array$<$ float, 9 $>$ \mbox{\hyperlink{group__ReferenceGroup_ga99a4f44b673b208276ee858af78f0792}{compute\+V\+B\+F\+Angles\+\_\+\+Complex\+Boost}} (\mbox{\hyperlink{classMela}{Mela}} \&mela)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a30000328153231efb52ec54cafca4e4f}{Mela\+::compute\+V\+B\+F\+Angles\+\_\+\+Complex\+Boost}} \end{DoxyCompactList}\item 
+array$<$ float, 7 $>$ \mbox{\hyperlink{group__ReferenceGroup_ga3bbbf01f4886dbaa99dde6f4aef486ca}{compute\+V\+H\+Angles}} (\mbox{\hyperlink{classMela}{Mela}} \&mela, \mbox{\hyperlink{namespaceTVar_a1d885f45cfb17fdc0cb80d0b3dd4f28c}{T\+Var\+::\+Production}} prod)
+\begin{DoxyCompactList}\small\item\em analog of \mbox{\hyperlink{classMela_a4b68e6c2c5b1f430d6f88bc048137e88}{Mela\+::compute\+V\+H\+Angles}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{Simple\+Particle\+\_\+t}} \mbox{\hyperlink{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}{particle\+\_\+initializer}} (int id, float x, float y, float z, float e, bool pt\+Eta\+Phi=false)
+\begin{DoxyCompactList}\small\item\em This function intializes a single Simple\+Particle\+\_\+t in the Python. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} \mbox{\hyperlink{group__Constructors_ga3628fafc5e9c788fbf3eb77a4d233ebf}{collection\+\_\+initializer\+\_\+from\+\_\+column}} (std\+::vector$<$ int $>$ ids, std\+::vector$<$ double $>$ x, std\+::vector$<$ double $>$ y, std\+::vector$<$ double $>$ z, std\+::vector$<$ double $>$ e, bool pt\+Eta\+Phi=false)
+\begin{DoxyCompactList}\small\item\em This function initializes a single Simple\+Particle\+Collection\+\_\+t (or a list of Simple\+Particle\+\_\+t) in the Python from a series of lists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{TVar_8hh_ac8ad3b9b9fb4621a213e219ad7289d76}{Simple\+Particle\+Collection\+\_\+t}} \mbox{\hyperlink{group__Constructors_ga998852a6ab36522e70987757f9aa9bf1}{collection\+\_\+initializer}} (py\+::list list\+Of\+Particles)
+\begin{DoxyCompactList}\small\item\em This function initializes a single Simple\+Particle\+Collection\+\_\+t (or a list of Simple\+Particle\+\_\+t) in the Python from a single list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__Macros_ga712bf232a292f1ea9ae9be7804d4c17e}{P\+Y\+B\+I\+N\+D11\+\_\+\+M\+O\+D\+U\+LE}} (\mbox{\hyperlink{classMela}{Mela}}, m)
+\begin{DoxyCompactList}\small\item\em The actual binding code for M\+E\+LA. \end{DoxyCompactList}\end{DoxyCompactItemize}

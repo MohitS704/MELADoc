@@ -31,9 +31,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">v2.4.1</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -140,12 +141,8 @@ Code Examples</h1>
 <p>On a more general note - the steps to begin re-weighting events with MELA are as follows:</p>
 <ol type="1">
 <li>Set the process, production, and matrix element. These values are defined for both <a class="el" href="tvar_enums.html">Python</a> and in the <code>C++</code> in the <a class="el" href="namespaceTVar.html">TVar</a> namespace. Use Mela::SetProcess to do this step.</li>
-</ol>
-<ol type="1">
 <li>Set the input event using Mela::SetInputEvent.</li>
 <li>Set coupling values for MELA (examples for Python are available in documentation found <a class="el" href="MELA_python.html">here</a>)</li>
-</ol>
-<ol type="1">
 <li>Call a compute function of some kind. This is either:<ul>
 <li><a class="el" href="classMela.html#a8503608babd744076ebe4f173b519844" title="Computes the probability for the probabilities on the decay side of things using the constituent daug...">Mela::computeP</a></li>
 <li><a class="el" href="classMela.html#a2e5af4f25feb182e3d68a7b651d45dcc" title="computes Production side probabilities while taking in coupling arrays">Mela::computeProdP</a></li>

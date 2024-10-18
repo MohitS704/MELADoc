@@ -1,0 +1,60 @@
+\hypertarget{interfacehto__acmplx__pro_1_1operator_07_8cp_8_08}{}\doxysection{hto\+\_\+acmplx\+\_\+pro\+::operator(.cp.) Interface Reference}
+\label{interfacehto__acmplx__pro_1_1operator_07_8cp_8_08}\index{hto\_acmplx\_pro::operator(.cp.)@{hto\_acmplx\_pro::operator(.cp.)}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+real $\ast$8 function, dimension(2) \mbox{\hyperlink{interfacehto__acmplx__pro_1_1operator_07_8cp_8_08_a4613f58997708097a8b9b82920b11e93}{cp}} (x, y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 258 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+
+\doxysubsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacehto__acmplx__pro_1_1operator_07_8cp_8_08_a4613f58997708097a8b9b82920b11e93}\label{interfacehto__acmplx__pro_1_1operator_07_8cp_8_08_a4613f58997708097a8b9b82920b11e93}} 
+\index{hto\_acmplx\_pro::operator(.cp.)@{hto\_acmplx\_pro::operator(.cp.)}!cp@{cp}}
+\index{cp@{cp}!hto\_acmplx\_pro::operator(.cp.)@{hto\_acmplx\_pro::operator(.cp.)}}
+\doxysubsubsection{\texorpdfstring{cp()}{cp()}}
+{\footnotesize\ttfamily real$\ast$8 function, dimension(2) hto\+\_\+acmplx\+\_\+pro\+::operator(.cp.)\+::cp (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2), intent(in)}]{x,  }\item[{real$\ast$8, dimension(2), intent(in)}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 263 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{263        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__riemann}{hto\_riemann}}}
+\DoxyCodeLine{264        \textcolor{keywordtype}{USE }\mbox{\hyperlink{namespacehto__units}{hto\_units}}}
+\DoxyCodeLine{265        \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{266        real*8, \textcolor{keywordtype}{dimension(2)} :: \mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}},z1,z2}
+\DoxyCodeLine{267        real*8, \textcolor{keywordtype}{INTENT(IN)}, \textcolor{keywordtype}{dimension(2)} :: x,y}
+\DoxyCodeLine{268        \textcolor{keywordflow}{IF}(abs(x(2)).eq.1.d0.and.abs(y(2)).eq.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{269         \mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}(1)= x(1)*y(1)}
+\DoxyCodeLine{270         \mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}(2)= 0.d0}
+\DoxyCodeLine{271        \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{272         \textcolor{keywordflow}{IF}(abs(x(2)).eq.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{273          z1(1)= x(1)}
+\DoxyCodeLine{274          z1(2)= 0.d0}
+\DoxyCodeLine{275         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{276          z1= x}
+\DoxyCodeLine{277 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{278         \textcolor{keywordflow}{IF}(abs(y(2)).eq.1.d0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{279          z2(1)= y(1)}
+\DoxyCodeLine{280          z2(2)= 0.d0}
+\DoxyCodeLine{281         \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{282          z2= y        }
+\DoxyCodeLine{283 \textcolor{keywordflow}{        ENDIF}}
+\DoxyCodeLine{284         \mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}(1)= z1(1)*z2(1)-\/z1(2)*z2(2)}
+\DoxyCodeLine{285         \mbox{\hyperlink{namespacehto__acmplx__pro_af81a898c1ff3e91aa0daa2eed68d8ba2}{cp}}(2)= z1(1)*z2(2)+z1(2)*z2(1)}
+\DoxyCodeLine{286 \textcolor{keywordflow}{       ENDIF}}
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+E\+L\+A/fortran/\+C\+P\+S/\mbox{\hyperlink{CALLING__cpHTO_8f}{C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f}}\end{DoxyCompactItemize}

@@ -1,0 +1,228 @@
+\hypertarget{namespacemodhiggsj}{}\doxysection{modhiggsj Module Reference}
+\label{namespacemodhiggsj}\index{modhiggsj@{modhiggsj}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \mbox{\hyperlink{namespacemodhiggsj_adb7dee52b99526ea8810c352b90ba372}{evalamp\+\_\+hj}} (p, res)
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggsj_a6dbfc45fc31ed0742b6a4d04735981e2}{me2\+\_\+ggg\+\_\+tree}} (j1, j2, j3, sprod, me2)
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggsj_a8907af214708b3eff5dbde3c73ba6805}{me2\+\_\+qbqg\+\_\+tree}} (j1, j2, j3, sprod, me2)
+\item 
+subroutine \mbox{\hyperlink{namespacemodhiggsj_ab4734e029575a57d373881c466e27bb8}{spinoru2}} (n, p, za, zb, s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemodhiggsj_adb7dee52b99526ea8810c352b90ba372}\label{namespacemodhiggsj_adb7dee52b99526ea8810c352b90ba372}} 
+\index{modhiggsj@{modhiggsj}!evalamp\_hj@{evalamp\_hj}}
+\index{evalamp\_hj@{evalamp\_hj}!modhiggsj@{modhiggsj}}
+\doxysubsubsection{\texorpdfstring{evalamp\_hj()}{evalamp\_hj()}}
+{\footnotesize\ttfamily subroutine, public modhiggsj\+::evalamp\+\_\+hj (\begin{DoxyParamCaption}\item[{real(dp), dimension(4,4), intent(in)}]{p,  }\item[{real(dp), dimension(-\/5\+:5,-\/5\+:5), intent(out)}]{res }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file mod\+\_\+\+Higgs\+J.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \textcolor{keywordtype}{    real}(dp), \textcolor{keywordtype}{intent(in)} :: p(4,4)}
+\DoxyCodeLine{13     \textcolor{keywordtype}{complex(dp)} :: heftcoupl}
+\DoxyCodeLine{14 \textcolor{keywordtype}{    real}(dp), \textcolor{keywordtype}{intent(out)} :: res(-\/5:5,-\/5:5)}
+\DoxyCodeLine{15 \textcolor{keywordtype}{    real}(dp) :: sprod(4,4)}
+\DoxyCodeLine{16     \textcolor{keywordtype}{complex(dp)} :: za(4,4), zb(4,4)}
+\DoxyCodeLine{17 \textcolor{keywordtype}{    real}(dp) :: restmp\textcolor{comment}{!, restmpid}}
+\DoxyCodeLine{18     \textcolor{keywordtype}{integer} :: i,j}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     heftcoupl = gs*alphas/(6.0\_dp * pi * vev)}
+\DoxyCodeLine{21         res=\mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{call }spinoru2(3,(/-\/p(:,1),-\/p(:,2),p(:,4)/),za,zb,sprod)}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{call }me2\_ggg\_tree(1,2,3,sprod,res(0,0))}
+\DoxyCodeLine{26     res(0,0) = res(0,0)*avegg}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{29       \textcolor{keyword}{call }me2\_qbqg\_tree(2,3,1,sprod,res(0,i))}
+\DoxyCodeLine{30       res(0,i) = -\/res(0,i)*aveqg}
+\DoxyCodeLine{31       \textcolor{comment}{!print *,res(0,i)}}
+\DoxyCodeLine{32 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{35       \textcolor{keyword}{call }me2\_qbqg\_tree(1,3,2,sprod,res(i,0))}
+\DoxyCodeLine{36       res(i,0) = -\/res(i,0)*aveqg}
+\DoxyCodeLine{37       \textcolor{comment}{!print *,res(i,0)}}
+\DoxyCodeLine{38 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{41       \textcolor{keyword}{call }me2\_qbqg\_tree(3,2,1,sprod,res(0,-\/i))}
+\DoxyCodeLine{42       res(0,-\/i) = -\/res(0,-\/i)*aveqg}
+\DoxyCodeLine{43       \textcolor{comment}{!print *,res(0,-\/i)}}
+\DoxyCodeLine{44 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{47       \textcolor{keyword}{call }me2\_qbqg\_tree(1,3,2,sprod,res(-\/i,0))}
+\DoxyCodeLine{48       res(-\/i,0) = -\/res(-\/i,0)*aveqg}
+\DoxyCodeLine{49     \textcolor{comment}{!if(res(-\/i,0).le.0d0) then}}
+\DoxyCodeLine{50     \textcolor{comment}{!print *,res(-\/i,0)}}
+\DoxyCodeLine{51     \textcolor{comment}{!endif}}
+\DoxyCodeLine{52 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{55       \textcolor{keyword}{call }me2\_qbqg\_tree(1,2,3,sprod,res(-\/i,i))}
+\DoxyCodeLine{56       res(-\/i,i) = res(-\/i,i) * aveqq}
+\DoxyCodeLine{57 \textcolor{comment}{!      res(i,-\/i) = res(i,-\/i) + restmp * aveqq}}
+\DoxyCodeLine{58 \textcolor{comment}{!      res(0, i) = res(0, i) + restmp * aveqg}}
+\DoxyCodeLine{59 \textcolor{comment}{!      res(0,-\/i) = res(0,-\/i) + restmp * aveqg}}
+\DoxyCodeLine{60 \textcolor{comment}{!      res(i, 0) = res(i, 0) + restmp * aveqg}}
+\DoxyCodeLine{61 \textcolor{comment}{!      res(-\/i,0) = res(-\/i,0) + restmp * aveqg}}
+\DoxyCodeLine{62 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordflow}{do} i=1,5}
+\DoxyCodeLine{65       \textcolor{keyword}{call }me2\_qbqg\_tree(2,1,3,sprod,res(i,-\/i))}
+\DoxyCodeLine{66       res(i,-\/i) = res(i,-\/i)*aveqq}
+\DoxyCodeLine{67 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     res = res * (heftcoupl**2)}
+\DoxyCodeLine{70 \textcolor{comment}{!if(res(0,0).gt.10000d0)then}}
+\DoxyCodeLine{71     \textcolor{comment}{!do i = -\/5,5}}
+\DoxyCodeLine{72     \textcolor{comment}{!do j = -\/5,5}}
+\DoxyCodeLine{73     \textcolor{comment}{!print *, res(i,j),i,j}}
+\DoxyCodeLine{74     \textcolor{comment}{!enddo}}
+\DoxyCodeLine{75     \textcolor{comment}{!enddo}}
+\DoxyCodeLine{76 \textcolor{comment}{!    print *, dsqrt(scr(p(:,1),p(:,1))), dsqrt(scr(p(:,2),p(:,2))), dsqrt(scr(p(:,3),p(:,3))), dsqrt(scr(p(:,4),p(:,4)))}}
+\DoxyCodeLine{77 \textcolor{comment}{!    print*, p}}
+\DoxyCodeLine{78 \textcolor{comment}{!endif}}
+\DoxyCodeLine{79 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodhiggsj_a6dbfc45fc31ed0742b6a4d04735981e2}\label{namespacemodhiggsj_a6dbfc45fc31ed0742b6a4d04735981e2}} 
+\index{modhiggsj@{modhiggsj}!me2\_ggg\_tree@{me2\_ggg\_tree}}
+\index{me2\_ggg\_tree@{me2\_ggg\_tree}!modhiggsj@{modhiggsj}}
+\doxysubsubsection{\texorpdfstring{me2\_ggg\_tree()}{me2\_ggg\_tree()}}
+{\footnotesize\ttfamily subroutine modhiggsj\+::me2\+\_\+ggg\+\_\+tree (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{j1,  }\item[{integer, intent(in)}]{j2,  }\item[{integer, intent(in)}]{j3,  }\item[{real(dp), dimension(3,3), intent(in)}]{sprod,  }\item[{real(dp), intent(out)}]{me2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 87 of file mod\+\_\+\+Higgs\+J.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: j1,j2,j3}
+\DoxyCodeLine{88 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(in)} :: sprod(3,3)}
+\DoxyCodeLine{89 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(out)} :: me2}
+\DoxyCodeLine{90 \textcolor{keywordtype}{   real}(dp) :: s12, s13, s23, qsq}
+\DoxyCodeLine{91 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{parameter} :: col\_gg = 4.0d0 * ca**2 * cf}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93    me2 = \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95    s12 = sprod(j1,j2)}
+\DoxyCodeLine{96    s13 = sprod(j1,j3)}
+\DoxyCodeLine{97    s23 = sprod(j2,j3)}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99    qsq = s12 + s13 + s23}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101    me2 = (s12**4 + s13**4 + s23**4 + qsq**4)/s12/s13/s23}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103    me2 = me2 * two * col\_gg}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105    \textcolor{keywordflow}{return}}
+\DoxyCodeLine{106 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodhiggsj_a8907af214708b3eff5dbde3c73ba6805}\label{namespacemodhiggsj_a8907af214708b3eff5dbde3c73ba6805}} 
+\index{modhiggsj@{modhiggsj}!me2\_qbqg\_tree@{me2\_qbqg\_tree}}
+\index{me2\_qbqg\_tree@{me2\_qbqg\_tree}!modhiggsj@{modhiggsj}}
+\doxysubsubsection{\texorpdfstring{me2\_qbqg\_tree()}{me2\_qbqg\_tree()}}
+{\footnotesize\ttfamily subroutine modhiggsj\+::me2\+\_\+qbqg\+\_\+tree (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{j1,  }\item[{integer, intent(in)}]{j2,  }\item[{integer, intent(in)}]{j3,  }\item[{real(dp), dimension(3,3), intent(in)}]{sprod,  }\item[{real(dp), intent(out)}]{me2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 112 of file mod\+\_\+\+Higgs\+J.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112    \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: j1, j2, j3}
+\DoxyCodeLine{113 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(in)} :: sprod(3,3)}
+\DoxyCodeLine{114 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{intent(out)} :: me2}
+\DoxyCodeLine{115 \textcolor{keywordtype}{   real}(dp) :: s12, s13,s23}
+\DoxyCodeLine{116 \textcolor{keywordtype}{   real}(dp), \textcolor{keywordtype}{parameter} :: col\_qg = two * xn * cf}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118    me2 = \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120    s12 = sprod(j1,j2)}
+\DoxyCodeLine{121    s13 = sprod(j1,j3)}
+\DoxyCodeLine{122    s23 = sprod(j2,j3)}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124    me2 = two * (s13**2 + s23**2)/s12 * col\_qg}
+\DoxyCodeLine{125 \textcolor{comment}{!if(me2.le.0d0)then}}
+\DoxyCodeLine{126 \textcolor{comment}{!print *, s12,s13,s23}}
+\DoxyCodeLine{127 \textcolor{comment}{!endif}}
+\DoxyCodeLine{128    \textcolor{keywordflow}{return}}
+\DoxyCodeLine{129 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemodhiggsj_ab4734e029575a57d373881c466e27bb8}\label{namespacemodhiggsj_ab4734e029575a57d373881c466e27bb8}} 
+\index{modhiggsj@{modhiggsj}!spinoru2@{spinoru2}}
+\index{spinoru2@{spinoru2}!modhiggsj@{modhiggsj}}
+\doxysubsubsection{\texorpdfstring{spinoru2()}{spinoru2()}}
+{\footnotesize\ttfamily subroutine modhiggsj\+::spinoru2 (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{n,  }\item[{real(dp), dimension(4,n), intent(in)}]{p,  }\item[{complex(dp), dimension(n,n), intent(out)}]{za,  }\item[{complex(dp), dimension(n,n), intent(out)}]{zb,  }\item[{real(dp), dimension(n,n), intent(out)}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 137 of file mod\+\_\+\+Higgs\+J.\+F90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137     \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{138     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: n}
+\DoxyCodeLine{139 \textcolor{keywordtype}{    real}(dp), \textcolor{keywordtype}{intent(in)} :: p(4,n)}
+\DoxyCodeLine{140     \textcolor{keywordtype}{complex(dp)}, \textcolor{keywordtype}{intent(out)} :: za(n,n), zb(n,n)}
+\DoxyCodeLine{141 \textcolor{keywordtype}{    real}(dp), \textcolor{keywordtype}{intent(out)} :: s(n,n)}
+\DoxyCodeLine{142     \textcolor{keywordtype}{integer} :: i,j}
+\DoxyCodeLine{143     \textcolor{keywordtype}{complex(dp)} :: c23(n), f(n)}
+\DoxyCodeLine{144 \textcolor{keywordtype}{    real}(dp) :: rt(n)}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \textcolor{comment}{!-\/-\/-\/if one of the vectors happens to be zero this routine fails.}}
+\DoxyCodeLine{147     \textcolor{keywordflow}{do} j=1,n}
+\DoxyCodeLine{148        za(j,j)=czero}
+\DoxyCodeLine{149        zb(j,j)=za(j,j)}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151        \textcolor{comment}{!-\/-\/-\/-\/-\/positive energy case}}
+\DoxyCodeLine{152        \textcolor{keywordflow}{if} (p(1,j) .gt. \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{153           rt(j)=sqrt(p(2,j)+p(1,j))}
+\DoxyCodeLine{154           c23(j)=cmplx(p(4,j),-\/p(3,j),kind=dp)}
+\DoxyCodeLine{155           f(j)=(\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},\mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}})}
+\DoxyCodeLine{156        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{157        \textcolor{comment}{!-\/-\/-\/-\/-\/negative energy case}}
+\DoxyCodeLine{158           rt(j)=sqrt(-\/p(1,j)-\/p(2,j))}
+\DoxyCodeLine{159           c23(j)=cmplx(-\/p(4,j),p(3,j),kind=dp)}
+\DoxyCodeLine{160           f(j)=\mbox{\hyperlink{namespacehto__units_af02db4603cd8c3f0b97612d4c1b416eb}{ci}}}
+\DoxyCodeLine{161 \textcolor{keywordflow}{       endif}}
+\DoxyCodeLine{162 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{keywordflow}{do} i=2,n}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166      \textcolor{keywordflow}{do} j=1,i-\/1}
+\DoxyCodeLine{167           s(i,j)=two*scr(p(:,i),p(:,j))}
+\DoxyCodeLine{168           za(i,j)=f(i)*f(j) \&}
+\DoxyCodeLine{169                *(c23(i)*cmplx(rt(j)/rt(i),kind=dp)-\/c23(j)*cmplx(rt(i)/rt(j),kind=dp))}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171           \textcolor{keywordflow}{if} (abs(s(i,j)).lt.1d-\/5) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{172              zb(i,j)=-\/(f(i)*f(j))**2*conjg(za(i,j))}
+\DoxyCodeLine{173           \textcolor{keywordflow}{else}}
+\DoxyCodeLine{174              zb(i,j)=-\/cmplx(s(i,j),kind=dp)/za(i,j)}
+\DoxyCodeLine{175 \textcolor{keywordflow}{          endif}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177           za(j,i)=-\/za(i,j)}
+\DoxyCodeLine{178           zb(j,i)=-\/zb(i,j)}
+\DoxyCodeLine{179           s(j,i)=s(i,j)}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keywordflow}{       enddo}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{186 }
+
+\end{DoxyCode}

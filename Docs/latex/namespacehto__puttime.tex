@@ -1,0 +1,96 @@
+\hypertarget{namespacehto__puttime}{}\doxysection{hto\+\_\+puttime Module Reference}
+\label{namespacehto__puttime}\index{hto\_puttime@{hto\_puttime}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacehto__puttime_a04188ac3806eff906eaed6b87d3f43a6}{hto\+\_\+timestamp}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacehto__puttime_a04188ac3806eff906eaed6b87d3f43a6}\label{namespacehto__puttime_a04188ac3806eff906eaed6b87d3f43a6}} 
+\index{hto\_puttime@{hto\_puttime}!hto\_timestamp@{hto\_timestamp}}
+\index{hto\_timestamp@{hto\_timestamp}!hto\_puttime@{hto\_puttime}}
+\doxysubsubsection{\texorpdfstring{hto\_timestamp()}{hto\_timestamp()}}
+{\footnotesize\ttfamily subroutine hto\+\_\+puttime\+::hto\+\_\+timestamp}
+
+
+
+Definition at line 101 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101 \textcolor{comment}{*}}
+\DoxyCodeLine{102 \textcolor{comment}{!**************************************************************************80}}
+\DoxyCodeLine{103 \textcolor{comment}{!}}
+\DoxyCodeLine{104 \textcolor{comment}{!! TIMESTAMP prints the current YMDHMS date as a time stamp.}}
+\DoxyCodeLine{105 \textcolor{comment}{!}}
+\DoxyCodeLine{106 \textcolor{comment}{!  Example:}}
+\DoxyCodeLine{107 \textcolor{comment}{!}}
+\DoxyCodeLine{108 \textcolor{comment}{!    31 May 2001   9:45:54.872 AM}}
+\DoxyCodeLine{109 \textcolor{comment}{!}}
+\DoxyCodeLine{110 \textcolor{comment}{!  Modified:}}
+\DoxyCodeLine{111 \textcolor{comment}{!}}
+\DoxyCodeLine{112 \textcolor{comment}{!    06 August 2005}}
+\DoxyCodeLine{113 \textcolor{comment}{!}}
+\DoxyCodeLine{114 \textcolor{comment}{!  Author:}}
+\DoxyCodeLine{115 \textcolor{comment}{!}}
+\DoxyCodeLine{116 \textcolor{comment}{!    John Burkardt}}
+\DoxyCodeLine{117 \textcolor{comment}{!}}
+\DoxyCodeLine{118 \textcolor{comment}{!  Parameters:}}
+\DoxyCodeLine{119 \textcolor{comment}{!}}
+\DoxyCodeLine{120 \textcolor{comment}{!    None}}
+\DoxyCodeLine{121 \textcolor{comment}{!}}
+\DoxyCodeLine{122       \textcolor{keywordtype}{IMPLICIT NONE}}
+\DoxyCodeLine{123       }
+\DoxyCodeLine{124       \textcolor{keywordtype}{CHARACTER (len=8)} ampm}
+\DoxyCodeLine{125       \textcolor{keywordtype}{INTEGER} d}
+\DoxyCodeLine{126       \textcolor{keywordtype}{INTEGER} h}
+\DoxyCodeLine{127       \textcolor{keywordtype}{INTEGER} m}
+\DoxyCodeLine{128       \textcolor{keywordtype}{INTEGER} mm}
+\DoxyCodeLine{129       \textcolor{keywordtype}{CHARACTER (len= 9)}, \textcolor{keywordtype}{parameter}, \textcolor{keywordtype}{dimension(12)} :: month= (/ }
+\DoxyCodeLine{130      \#  \textcolor{stringliteral}{'January  '}, \textcolor{stringliteral}{'February '}, \textcolor{stringliteral}{'March    '}, \textcolor{stringliteral}{'April    '}, }
+\DoxyCodeLine{131      \#  \textcolor{stringliteral}{'May      '}, \textcolor{stringliteral}{'June     '}, \textcolor{stringliteral}{'July     '}, \textcolor{stringliteral}{'August   '}, }
+\DoxyCodeLine{132      \#  \textcolor{stringliteral}{'September'}, \textcolor{stringliteral}{'October  '}, \textcolor{stringliteral}{'November '}, \textcolor{stringliteral}{'December '} /)}
+\DoxyCodeLine{133       \textcolor{keywordtype}{INTEGER} n}
+\DoxyCodeLine{134       \textcolor{keywordtype}{INTEGER} s}
+\DoxyCodeLine{135       \textcolor{keywordtype}{INTEGER} values(8)}
+\DoxyCodeLine{136       \textcolor{keywordtype}{INTEGER} y}
+\DoxyCodeLine{137       }
+\DoxyCodeLine{138       \textcolor{keyword}{CALL }date\_and\_time (values= values)}
+\DoxyCodeLine{139       }
+\DoxyCodeLine{140       y= values(1)}
+\DoxyCodeLine{141       m= values(2)}
+\DoxyCodeLine{142       d= values(3)}
+\DoxyCodeLine{143       h= values(5)}
+\DoxyCodeLine{144       n= values(6)}
+\DoxyCodeLine{145       s= values(7)}
+\DoxyCodeLine{146       \mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}}= values(8)}
+\DoxyCodeLine{147       }
+\DoxyCodeLine{148       \textcolor{keywordflow}{IF}(h < 12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{149          ampm= \textcolor{stringliteral}{'AM'}}
+\DoxyCodeLine{150       \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF} (h== 12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{151          \textcolor{keywordflow}{IF}(n== 0 .and. s== 0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{152             ampm= \textcolor{stringliteral}{'Noon'}}
+\DoxyCodeLine{153          \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{154             ampm= \textcolor{stringliteral}{'PM'}}
+\DoxyCodeLine{155 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{156       \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{157          h= h-\/12}
+\DoxyCodeLine{158          \textcolor{keywordflow}{IF}(h < 12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{159             ampm= \textcolor{stringliteral}{'PM'}}
+\DoxyCodeLine{160          \textcolor{keywordflow}{ELSE} \textcolor{keywordflow}{IF} (h== 12) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{161             \textcolor{keywordflow}{IF}(n== 0 .and. s== 0) \textcolor{keywordflow}{THEN}}
+\DoxyCodeLine{162                ampm= \textcolor{stringliteral}{'Midnight'}}
+\DoxyCodeLine{163             \textcolor{keywordflow}{ELSE}}
+\DoxyCodeLine{164                ampm= \textcolor{stringliteral}{'AM'}}
+\DoxyCodeLine{165 \textcolor{keywordflow}{            ENDIF}}
+\DoxyCodeLine{166 \textcolor{keywordflow}{         ENDIF}}
+\DoxyCodeLine{167 \textcolor{keywordflow}{      ENDIF}}
+\DoxyCodeLine{168       }
+\DoxyCodeLine{169       \textcolor{keyword}{WRITE} (*,\textcolor{stringliteral}{'(i2,1x,a,1x,i4,2x,i2,a1,i2.2,a1,i2.2,a1,i3.3,1x,a)'}) }
+\DoxyCodeLine{170      \#    d,trim(month(m)),y,h,\textcolor{stringliteral}{':'},n,\textcolor{stringliteral}{':'},s,\textcolor{stringliteral}{'.'},\mbox{\hyperlink{namespacehto__masses_a30fa4fc095ad54faf010092d8b11677f}{mm}},trim(ampm)}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172       \textcolor{keywordflow}{RETURN}}
+
+\end{DoxyCode}
