@@ -34,7 +34,7 @@
   <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.7, MELA v2.4.3</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">for</span>(i = 0; i &lt; ids.size(); i++){</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        collection.push_back(</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <a class="code" href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a>(ids[i], x[i], y[i], <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>[i], e[i], ptEtaPhi)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <a class="code" href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a>(ids[i], x[i], y[i], z[i], e[i], ptEtaPhi)</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        );</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
@@ -312,9 +312,9 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                                                                      {</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    TLorentzVector vec = TLorentzVector();</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">if</span>(ptEtaPhi){</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        vec.SetPtEtaPhiM(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, e);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        vec.SetPtEtaPhiM(x, y, z, e);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    } <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        vec.SetPxPyPzE(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, e);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        vec.SetPxPyPzE(x, y, z, e);</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a>(<span class="keywordtype">id</span>, vec);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
@@ -325,12 +325,11 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aTVar_8hh_html_a2bc0c1a02f5152697e55ab2bbda40aff"><div class="ttname"><a href="TVar_8hh.html#a2bc0c1a02f5152697e55ab2bbda40aff">SimpleParticle_t</a></div><div class="ttdeci">std::pair&lt; int, TLorentzVector &gt; SimpleParticle_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00024">TVar.hh:24</a></div></div>
 <div class="ttc" id="agroup__Constructors_html_gab37cf49a7626b894bfb27c2b396f5b99"><div class="ttname"><a href="group__Constructors.html#gab37cf49a7626b894bfb27c2b396f5b99">particle_initializer</a></div><div class="ttdeci">SimpleParticle_t particle_initializer(int id, float x, float y, float z, float e, bool ptEtaPhi=false)</div><div class="ttdoc">This function intializes a single SimpleParticle_t in the Python.</div><div class="ttdef"><b>Definition:</b> <a href="mela__binding_8cpp_source.html#l00328">mela_binding.cpp:328</a></div></div>
-<div class="ttc" id="anamespaceglobalc_html_a68e62f5d752be9315f909681fa34b5dc"><div class="ttname"><a href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">globalc::z</a></div><div class="ttdeci">double complex, dimension(2, 2) z</div><div class="ttdef"><b>Definition:</b> <a href="reductionC_8F90_source.html#l00050">reductionC.F90:50</a></div></div>
 <div class="ttc" id="aTVar_8hh_html_ac8ad3b9b9fb4621a213e219ad7289d76"><div class="ttname"><a href="TVar_8hh.html#ac8ad3b9b9fb4621a213e219ad7289d76">SimpleParticleCollection_t</a></div><div class="ttdeci">std::vector&lt; SimpleParticle_t &gt; SimpleParticleCollection_t</div><div class="ttdef"><b>Definition:</b> <a href="TVar_8hh_source.html#l00025">TVar.hh:25</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 18 2024 15:51:15 for JHUGen MELA by
+    <li class="footer">Generated on Fri Dec 20 2024 20:31:25 for JHUGen MELA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

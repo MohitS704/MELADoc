@@ -34,7 +34,7 @@
   <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.7, MELA v2.4.3</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -779,8 +779,8 @@ $(document).ready(function(){initNavTree('mod__VHiggs_8F90_source.html',''); ini
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="comment">!     real(8) Pi</span></div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="keywordtype">      real</span>(8) Twopi, Fourpi, epsilon</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;<span class="comment">!     parameter( Pi = 3.14159265358979323846d0 )</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;      parameter( twopi = 2d0 * pi )</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;      parameter( fourpi = 4d0 * pi )</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;      parameter( twopi = 2d0 * <a class="code" href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">pi</a> )</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;      parameter( fourpi = 4d0 * <a class="code" href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">pi</a> )</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;      parameter( epsilon = 1d-13 ) <span class="comment">!a small quantity slightly above machine precision</span></div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;<span class="keywordtype">      real</span>(8) sincos(4), vector(4), abs3p, phi</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;<span class="comment">!sincos(1)=cos(theta)</span></div>
@@ -812,7 +812,7 @@ $(document).ready(function(){initNavTree('mod__VHiggs_8F90_source.html',''); ini
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="keywordflow">      endif</span></div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="comment">!shift phi so that 0 &lt; phi &lt; 2Pi</span></div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;      <span class="keywordflow">if</span>(vector(2).lt.0d0)<span class="keywordflow">then</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;         phi=phi+pi</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;         phi=phi+<a class="code" href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">pi</a></div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="keywordflow">      endif</span></div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;      <span class="keywordflow">if</span>(phi.lt.0d0)<span class="keywordflow">then</span></div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;         phi=phi+twopi</div>
@@ -832,8 +832,8 @@ $(document).ready(function(){initNavTree('mod__VHiggs_8F90_source.html',''); ini
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="comment">!     real(8) Pi</span></div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;<span class="keywordtype">      real</span>(8) Twopi, Fourpi, epsilon</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;<span class="comment">!     parameter( Pi = 3.14159265358979323846d0 )</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;      parameter( twopi = 2d0 * pi )</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;      parameter( fourpi = 4d0 * pi )</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;      parameter( twopi = 2d0 * <a class="code" href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">pi</a> )</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;      parameter( fourpi = 4d0 * <a class="code" href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">pi</a> )</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;      parameter( epsilon = 1d-13 ) <span class="comment">!a small quantity slightly above machine precision</span></div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;      <span class="keywordtype">complex(8)</span> p1(4), p2(4)</div>
@@ -1730,7 +1730,7 @@ $(document).ready(function(){initNavTree('mod__VHiggs_8F90_source.html',''); ini
 <div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespacemodparameters.html#afb535a4820273c11d4a8dd798fb9bda4">h_dk</a> ) <span class="keyword">call </span><a class="code" href="namespacemodmisc.html#a67da31b838636e613886adf687dd9040">error</a>(<span class="stringliteral">&quot;Higgs decay not implemented&quot;</span>)</div>
 <div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160; </div>
 <div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;    prop = (0d0,1d0)/(((p(1:4,4)+p(1:4,5)).dot.(p(1:4,4)+p(1:4,5))) -<a class="code" href="namespacemodparameters.html#a3ded7281aeb85e020c80c647b3978f81">m_v</a>**2 + (0d0,1d0)*<a class="code" href="namespacemodparameters.html#a3ded7281aeb85e020c80c647b3978f81">m_v</a>*<a class="code" href="namespacemodparameters.html#a95b2b48ce64c1a2be6234521f9bac744">ga_v</a> )</div>
-<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;    prefac = 4d0*pi*<a class="code" href="namespacemodparameters.html#ab25ed4b8462cf6acf16b5f05e0fdf918">alpha_qed</a>/4d0/<a class="code" href="namespacemodparameters.html#a16b6994a69e4fb345820977063e6609d">sitw</a>**2/(1d0-<a class="code" href="namespacemodparameters.html#a16b6994a69e4fb345820977063e6609d">sitw</a>**2)      <span class="comment">! gets squared below</span></div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;    prefac = 4d0*<a class="code" href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">pi</a>*<a class="code" href="namespacemodparameters.html#ab25ed4b8462cf6acf16b5f05e0fdf918">alpha_qed</a>/4d0/<a class="code" href="namespacemodparameters.html#a16b6994a69e4fb345820977063e6609d">sitw</a>**2/(1d0-<a class="code" href="namespacemodparameters.html#a16b6994a69e4fb345820977063e6609d">sitw</a>**2)      <span class="comment">! gets squared below</span></div>
 <div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160; </div>
 <div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;    <span class="comment">! initial state couplings</span></div>
 <div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespacemodparameters.html#a2edcfa9afc7298dfdf8e93f1d736f159">isawdecay</a>(<a class="code" href="namespacemodparameters.html#a2aea81d9f9004ec11a67c697fcf4dcb7">decaymode1</a>) ) <span class="keywordflow">then</span></div>
@@ -1863,6 +1863,7 @@ $(document).ready(function(){initNavTree('mod__VHiggs_8F90_source.html',''); ini
 <div class="ttc" id="anamespacemodvhiggs_html_a79e78df82578c43bb28cea9ee96251bc"><div class="ttname"><a href="namespacemodvhiggs.html#a79e78df82578c43bb28cea9ee96251bc">modvhiggs::vvs2</a></div><div class="ttdeci">subroutine vvs2(p1, p2, pp)</div><div class="ttdef"><b>Definition:</b> <a href="mod__VHiggs_8F90_source.html#l01435">mod_VHiggs.F90:1435</a></div></div>
 <div class="ttc" id="anamespacemodparameters_html_a389822865ce831a828ab87c58f563d2b"><div class="ttname"><a href="namespacemodparameters.html#a389822865ce831a828ab87c58f563d2b">modparameters::ar_qdn</a></div><div class="ttdeci">real(8), public ar_qdn</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l01064">mod_Parameters.F90:1064</a></div></div>
 <div class="ttc" id="anamespacemodparameters_html_a7aca40346d8c01a2edabedc58e5af40d"><div class="ttname"><a href="namespacemodparameters.html#a7aca40346d8c01a2edabedc58e5af40d">modparameters::ckmbare</a></div><div class="ttdeci">real(8) function ckmbare(id1in, id2in)</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l01563">mod_Parameters.F90:1563</a></div></div>
+<div class="ttc" id="anamespacemodparameters_html_acc6172ab6e6887cac2ef553a6b44a484"><div class="ttname"><a href="namespacemodparameters.html#acc6172ab6e6887cac2ef553a6b44a484">modparameters::pi</a></div><div class="ttdeci">real(dp), parameter, public pi</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l00079">mod_Parameters.F90:79</a></div></div>
 <div class="ttc" id="anamespacemodvhiggs_html_a436a26fa7bd00a57c5a2e4aeb1dccd22"><div class="ttname"><a href="namespacemodvhiggs.html#a436a26fa7bd00a57c5a2e4aeb1dccd22">modvhiggs::matrixelement1</a></div><div class="ttdeci">subroutine matrixelement1(p, FermFlav, UnPolSqAmp)</div><div class="ttdef"><b>Definition:</b> <a href="mod__VHiggs_8F90_source.html#l01621">mod_VHiggs.F90:1621</a></div></div>
 <div class="ttc" id="anamespacemodparameters_html_ac0cda99097b9ee501421fd19bdf2dee2"><div class="ttname"><a href="namespacemodparameters.html#ac0cda99097b9ee501421fd19bdf2dee2">modparameters::scale_alpha_z_ll</a></div><div class="ttdeci">real(8), public scale_alpha_z_ll</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l00329">mod_Parameters.F90:329</a></div></div>
 <div class="ttc" id="anamespacemodparameters_html_ad738ab7e94da0fbafe0c58d279d6ca2b"><div class="ttname"><a href="namespacemodparameters.html#ad738ab7e94da0fbafe0c58d279d6ca2b">modparameters::bl</a></div><div class="ttdeci">real(8), public bl</div><div class="ttdef"><b>Definition:</b> <a href="mod__Parameters_8F90_source.html#l01066">mod_Parameters.F90:1066</a></div></div>
@@ -1938,7 +1939,7 @@ $(document).ready(function(){initNavTree('mod__VHiggs_8F90_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_1e990d202f380d40186005b13f113cb8.html">fortran</a></li><li class="navelem"><a class="el" href="mod__VHiggs_8F90.html">mod_VHiggs.F90</a></li>
-    <li class="footer">Generated on Fri Oct 18 2024 15:51:14 for JHUGen MELA by
+    <li class="footer">Generated on Fri Dec 20 2024 20:31:18 for JHUGen MELA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

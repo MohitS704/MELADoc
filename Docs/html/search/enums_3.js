@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventscalescheme_10069',['EventScaleScheme',['../namespaceTVar.html#ab9fe70f6c2d4abb0f3fa561abc04805c',1,'TVar']]]
+  ['fermionmassremoval_8093',['FermionMassRemoval',['../namespaceTVar.html#a9725014132a3701b15e4b3b0ae454288',1,'TVar']]]
 ];

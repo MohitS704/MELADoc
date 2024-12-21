@@ -1,591 +1,0 @@
-\hypertarget{interfacecollier__tensors_1_1gten__cll}{}\doxysection{collier\+\_\+tensors\+::gten\+\_\+cll Interface Reference}
-\label{interfacecollier__tensors_1_1gten__cll}\index{collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1gten__cll_ac4b1ae2267813c8c56ac0132bfc74e92}{gten\+\_\+main\+\_\+cll}} (TG, T\+Guv, Mom\+Vec, Mom\+Inv, masses2, rmax, T\+Gerr)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1gten__cll_a8f11bfee18fe398679fbd92fa9d31220}{gten\+\_\+list\+\_\+cll}} (TG, T\+Guv, Mom\+Vec, Mom\+Inv, masses2, rmax, T\+Gerr)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1gten__cll_a104d51436ee559454edaa50aefb9ee6a}{gten\+\_\+args\+\_\+cll}} (TG, T\+Guv, p1vec, p2vec, p3vec, p4vec, p5vec, p6vec, p10, p21, p32, p43, p54, p65, p60, p20, p31, p42, p53, p64, p50, p61, p30, p41, p52, p63, p40, p51, p62, m02, m12, m22, m32, m42, m52, m62, rmax, T\+Gerr)
-\item 
-subroutine \mbox{\hyperlink{interfacecollier__tensors_1_1gten__cll_a736c222f078eb2eac26c5cab39cc5914}{gten\+\_\+args\+\_\+list\+\_\+cll}} (TG, T\+Guv, p1vec, p2vec, p3vec, p4vec, p5vec, p6vec, p10, p21, p32, p43, p54, p65, p60, p20, p31, p42, p53, p64, p50, p61, p30, p41, p52, p63, p40, p51, p62, m02, m12, m22, m32, m42, m52, m62, rmax, T\+Gerr)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-
-
-Definition at line 80 of file collier\+\_\+tensors.\+F90.
-
-
-
-\doxysubsection{Member Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1gten__cll_a104d51436ee559454edaa50aefb9ee6a}\label{interfacecollier__tensors_1_1gten__cll_a104d51436ee559454edaa50aefb9ee6a}} 
-\index{collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}!gten\_args\_cll@{gten\_args\_cll}}
-\index{gten\_args\_cll@{gten\_args\_cll}!collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}}
-\doxysubsubsection{\texorpdfstring{gten\_args\_cll()}{gten\_args\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::gten\+\_\+cll\+::gten\+\_\+args\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TG,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Guv,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p1vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p2vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p3vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p4vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p5vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p6vec,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p65,  }\item[{double complex, intent(in)}]{p60,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p64,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p61,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{p63,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p62,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double complex, intent(in)}]{m62,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Gerr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5371 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5371     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{5372     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p1vec(0:3),p2vec(0:3),p3vec(0:3),p4vec(0:3)}
-\DoxyCodeLine{5373     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p5vec(0:3),p6vec(0:3)}
-\DoxyCodeLine{5374     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53}
-\DoxyCodeLine{5375     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p64,p50,p61,p30,p41,p52,p63,p40,p51,p62}
-\DoxyCodeLine{5376     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42,m52,m62}
-\DoxyCodeLine{5377     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TG(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5378     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TGuv(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5379     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TGerr(0:rmax)}
-\DoxyCodeLine{5380     \textcolor{keywordtype}{double complex} :: TG2(0:rmax,0:rmax,0:rmax,0:rmax), TGuv2(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5381     \textcolor{keywordtype}{double precision} :: TGerr\_aux(0:rmax),TGerr\_aux2(0:rmax)   }
-\DoxyCodeLine{5382     \textcolor{keywordtype}{double complex} :: MomVec(0:3,6), MomInv(21), masses2(0:6)}
-\DoxyCodeLine{5383     \textcolor{keywordtype}{double complex} :: CG(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax) }
-\DoxyCodeLine{5384     \textcolor{keywordtype}{double complex} :: CGuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5385     \textcolor{keywordtype}{double precision} :: CGerr(0:rmax), TGacc(0:rmax)}
-\DoxyCodeLine{5386     \textcolor{keywordtype}{double precision} :: norm(0:rmax),norm\_coli,norm\_dd, TGdiff(0:rmax)}
-\DoxyCodeLine{5387     \textcolor{keywordtype}{double complex} :: args(52)}
-\DoxyCodeLine{5388     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3}
-\DoxyCodeLine{5389     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{5390 }
-\DoxyCodeLine{5391     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
-\DoxyCodeLine{5392       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{5393       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
-\DoxyCodeLine{5394       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{5395       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
-\DoxyCodeLine{5396       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5397       return}
-\DoxyCodeLine{5398 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5399     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{5400       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{5401       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{5402       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{5403       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{5404       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{5405       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5406       return}
-\DoxyCodeLine{5407 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5408 }
-\DoxyCodeLine{5409     momvec(0:,1) = p1vec}
-\DoxyCodeLine{5410     momvec(0:,2) = p2vec}
-\DoxyCodeLine{5411     momvec(0:,3) = p3vec}
-\DoxyCodeLine{5412     momvec(0:,4) = p4vec}
-\DoxyCodeLine{5413     momvec(0:,5) = p5vec}
-\DoxyCodeLine{5414     momvec(0:,6) = p6vec}
-\DoxyCodeLine{5415     mominv(1) = p10}
-\DoxyCodeLine{5416     mominv(2) = p21}
-\DoxyCodeLine{5417     mominv(3) = p32}
-\DoxyCodeLine{5418     mominv(4) = p43}
-\DoxyCodeLine{5419     mominv(5) = p54}
-\DoxyCodeLine{5420     mominv(6) = p65}
-\DoxyCodeLine{5421     mominv(7) = p60}
-\DoxyCodeLine{5422     mominv(8) = p20}
-\DoxyCodeLine{5423     mominv(9) = p31}
-\DoxyCodeLine{5424     mominv(10) = p42}
-\DoxyCodeLine{5425     mominv(11) = p53}
-\DoxyCodeLine{5426     mominv(12) = p64}
-\DoxyCodeLine{5427     mominv(13) = p50}
-\DoxyCodeLine{5428     mominv(14) = p61}
-\DoxyCodeLine{5429     mominv(15) = p30}
-\DoxyCodeLine{5430     mominv(16) = p41}
-\DoxyCodeLine{5431     mominv(17) = p52}
-\DoxyCodeLine{5432     mominv(18) = p63}
-\DoxyCodeLine{5433     mominv(19) = p40}
-\DoxyCodeLine{5434     mominv(20) = p51}
-\DoxyCodeLine{5435     mominv(21) = p62}
-\DoxyCodeLine{5436     masses2(0) = m02}
-\DoxyCodeLine{5437     masses2(1) = m12}
-\DoxyCodeLine{5438     masses2(2) = m22}
-\DoxyCodeLine{5439     masses2(3) = m32}
-\DoxyCodeLine{5440     masses2(4) = m42}
-\DoxyCodeLine{5441     masses2(5) = m52}
-\DoxyCodeLine{5442     masses2(6) = m62}
-\DoxyCodeLine{5443 }
-\DoxyCodeLine{5444     \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{5445     args(1:4) = momvec(0:,1)}
-\DoxyCodeLine{5446     args(5:8) = momvec(0:,2)}
-\DoxyCodeLine{5447     args(9:12) = momvec(0:,3)}
-\DoxyCodeLine{5448     args(13:16) = momvec(0:,4)}
-\DoxyCodeLine{5449     args(17:20) = momvec(0:,5)}
-\DoxyCodeLine{5450     args(21:24) = momvec(0:,6)}
-\DoxyCodeLine{5451     args(25:45) = mominv}
-\DoxyCodeLine{5452     args(46:52) = masses2}
-\DoxyCodeLine{5453     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'Gten\_cll'})}
-\DoxyCodeLine{5454     \textcolor{keyword}{call }setmastern\_cll(7)}
-\DoxyCodeLine{5455     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
-\DoxyCodeLine{5456     \textcolor{keyword}{call }setmasterargs\_cll(52,args)}
-\DoxyCodeLine{5457 }
-\DoxyCodeLine{5458     \textcolor{keyword}{call }settencache\_cll(tenred\_cll-\/1)}
-\DoxyCodeLine{5459 }
-\DoxyCodeLine{5460 }
-\DoxyCodeLine{5461     \textcolor{keywordflow}{if} (tenred\_cll.le.7) then}
-\DoxyCodeLine{5462     }
-\DoxyCodeLine{5463       \textcolor{keywordflow}{if} (mode\_cll.gt.1) \textcolor{keyword}{call }tn\_dd\_dummy(7,rmax)  }
-\DoxyCodeLine{5464       }
-\DoxyCodeLine{5465       \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
-\DoxyCodeLine{5466         \textcolor{comment}{! calculate tensor with coefficients from COLI}}
-\DoxyCodeLine{5467         mode\_cll = 1}
-\DoxyCodeLine{5468         \textcolor{keyword}{call }calctensortnr(tg,tguv,tgerr\_aux,momvec,mominv,masses2,7,rmax,0)        }
-\DoxyCodeLine{5469       }
-\DoxyCodeLine{5470         \textcolor{comment}{! calculate tensor with coefficients from DD}}
-\DoxyCodeLine{5471         mode\_cll = 2}
-\DoxyCodeLine{5472         \textcolor{keyword}{call }calctensortnr(tg2,tguv2,tgerr\_aux2,momvec,mominv,masses2,7,rmax,0)         }
-\DoxyCodeLine{5473       }
-\DoxyCodeLine{5474         \textcolor{comment}{! comparison -\/-\/> take better result}}
-\DoxyCodeLine{5475         mode\_cll = 3}
-\DoxyCodeLine{5476         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5477           norm\_coli=0d0}
-\DoxyCodeLine{5478           norm\_dd=0d0}
-\DoxyCodeLine{5479           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{5480             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{5481               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{5482                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{5483                 norm\_coli = max(norm\_coli,abs(tg(n0,n1,n2,n3)))}
-\DoxyCodeLine{5484                 norm\_dd = max(norm\_dd,abs(tg2(n0,n1,n2,n3)))}
-\DoxyCodeLine{5485               \textcolor{keyword}{end }do}
-\DoxyCodeLine{5486             \textcolor{keyword}{end }do}
-\DoxyCodeLine{5487           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5488           \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{5489             norm\_coli = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5490             \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{5491               norm\_coli=1d0/norm\_coli**(5-\/real(r)/2)}
-\DoxyCodeLine{5492             else}
-\DoxyCodeLine{5493               norm\_coli=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5494             \textcolor{keyword}{end }if}
-\DoxyCodeLine{5495           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5496           \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{5497             norm\_dd = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5498             \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{5499               norm\_dd=1d0/norm\_dd**(5-\/real(r)/2)}
-\DoxyCodeLine{5500             else}
-\DoxyCodeLine{5501               norm\_dd=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5502             \textcolor{keyword}{end }if}
-\DoxyCodeLine{5503           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5504           norm(r) = min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{5505         \textcolor{keyword}{end }do}
-\DoxyCodeLine{5506       }
-\DoxyCodeLine{5507         \textcolor{keyword}{call }checktensors\_cll(tg,tg2,momvec,mominv,masses2,norm,7,rmax,tgdiff)        }
-\DoxyCodeLine{5508        }
-\DoxyCodeLine{5509         \textcolor{keywordflow}{if} (tgerr\_aux(rmax).lt.tgerr\_aux2(rmax)) then}
-\DoxyCodeLine{5510           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr))  tgerr = max(tgerr\_aux,tgdiff*norm)}
-\DoxyCodeLine{5511           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5512             tgacc(r) = max(tgerr\_aux(r)/norm(r),tgdiff(r))}
-\DoxyCodeLine{5513           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5514           \textcolor{keywordflow}{if} (monitoring) pointscntgten\_coli =  pointscntgten\_coli + 1}
-\DoxyCodeLine{5515         else}
-\DoxyCodeLine{5516           tg = tg2}
-\DoxyCodeLine{5517           tguv = tguv2        }
-\DoxyCodeLine{5518           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr))  tgerr = max(tgerr\_aux2,tgdiff*norm)    }
-\DoxyCodeLine{5519           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5520             tgacc(r) = max(tgerr\_aux2(r)/norm(r),tgdiff(r))}
-\DoxyCodeLine{5521 \textcolor{keywordflow}{          end do}         }
-\DoxyCodeLine{5522           \textcolor{keywordflow}{if} (monitoring) pointscntgten\_dd =  pointscntgten\_dd + 1}
-\DoxyCodeLine{5523         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5524         }
-\DoxyCodeLine{5525       \textcolor{keywordflow}{else}    }
-\DoxyCodeLine{5526         \textcolor{keyword}{call }calctensortnr(tg,tguv,tgerr\_aux,momvec,mominv,masses2,7,rmax,0)        }
-\DoxyCodeLine{5527         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr)) tgerr = tgerr\_aux}
-\DoxyCodeLine{5528         norm = 0d0}
-\DoxyCodeLine{5529         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5530           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{5531             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{5532               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{5533                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{5534                 norm(r) = max(norm(r),abs(tg(n0,n1,n2,n3)))}
-\DoxyCodeLine{5535               \textcolor{keyword}{end }do}
-\DoxyCodeLine{5536             \textcolor{keyword}{end }do}
-\DoxyCodeLine{5537           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5538           \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{5539             norm(r) = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5540             \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{5541               norm(r)=1d0/norm(r)**(5-\/real(r)/2)}
-\DoxyCodeLine{5542             else}
-\DoxyCodeLine{5543               norm(r)=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5544             \textcolor{keyword}{end }if}
-\DoxyCodeLine{5545           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5546           tgacc(r) = tgerr\_aux(r)/norm(r)}
-\DoxyCodeLine{5547 \textcolor{keywordflow}{        end do}        }
-\DoxyCodeLine{5548         }
-\DoxyCodeLine{5549 \textcolor{keywordflow}{      end if}      }
-\DoxyCodeLine{5550       }
-\DoxyCodeLine{5551     else}
-\DoxyCodeLine{5552       \textcolor{keyword}{call }g\_main\_cll(cg,cguv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),mominv(6), \&}
-\DoxyCodeLine{5553                       mominv(7),mominv(8),mominv(9),mominv(10),mominv(11),mominv(12), \&}
-\DoxyCodeLine{5554                       mominv(13),mominv(14),mominv(15),mominv(16),mominv(17),mominv(18), \&}
-\DoxyCodeLine{5555                       mominv(19),mominv(20),mominv(21),masses2(0),masses2(1),masses2(2), \&}
-\DoxyCodeLine{5556                       masses2(3),masses2(4),masses2(5),masses2(6),rmax,gerr2=cgerr,id\_in=0)}
-\DoxyCodeLine{5557       \textcolor{keyword}{call }calctensorg(tg,tguv,tgerr\_aux,cg,cguv,cgerr,momvec,rmax)}
-\DoxyCodeLine{5558       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr)) tgerr = tgerr\_aux}
-\DoxyCodeLine{5559       norm = 0d0}
-\DoxyCodeLine{5560       \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5561         \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{5562           \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{5563             \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{5564               n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{5565               norm(r) = max(norm(r),abs(tg(n0,n1,n2,n3)))}
-\DoxyCodeLine{5566             \textcolor{keyword}{end }do}
-\DoxyCodeLine{5567           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5568 \textcolor{keywordflow}{        end do}      }
-\DoxyCodeLine{5569         \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{5570           norm(r) = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5571           \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{5572             norm(r)=1d0/norm(r)**(5-\/real(r)/2)}
-\DoxyCodeLine{5573           else}
-\DoxyCodeLine{5574             norm(r)=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5575           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5576         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5577         tgacc(r) = tgerr\_aux(r)/norm(r)}
-\DoxyCodeLine{5578 \textcolor{keywordflow}{      end do}      }
-\DoxyCodeLine{5579     \textcolor{keyword}{end }if}
-\DoxyCodeLine{5580 }
-\DoxyCodeLine{5581     \textcolor{keywordflow}{if} (monitoring) then}
-\DoxyCodeLine{5582       pointscntgten\_cll =  pointscntgten\_cll + 1}
-\DoxyCodeLine{5583 }
-\DoxyCodeLine{5584       \textcolor{keywordflow}{if}(maxval(tgacc).gt.reqacc\_cll) accpointscntgten\_cll = accpointscntgten\_cll + 1}
-\DoxyCodeLine{5585 }
-\DoxyCodeLine{5586       \textcolor{keywordflow}{if}(maxval(tgacc).gt.critacc\_cll) then}
-\DoxyCodeLine{5587         critpointscntgten\_cll =  critpointscntgten\_cll + 1}
-\DoxyCodeLine{5588         \textcolor{keywordflow}{if} ( critpointscntgten\_cll.le.noutcritpointsmax\_cll(7) ) then}
-\DoxyCodeLine{5589           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TGten\_cll'},0,maxval(tgacc),critpointscntgten\_cll)}
-\DoxyCodeLine{5590           \textcolor{keywordflow}{if}( critpointscntgten\_cll.eq.noutcritpointsmax\_cll(7)) then}
-\DoxyCodeLine{5591             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TGten\_cll suppressed'}   }
-\DoxyCodeLine{5592             \textcolor{keyword}{write}(ncpout\_cll,*)}
-\DoxyCodeLine{5593           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5594         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5595       \textcolor{keyword}{end }if}
-\DoxyCodeLine{5596     \textcolor{keyword}{end }if}
-\DoxyCodeLine{5597 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1gten__cll_a736c222f078eb2eac26c5cab39cc5914}\label{interfacecollier__tensors_1_1gten__cll_a736c222f078eb2eac26c5cab39cc5914}} 
-\index{collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}!gten\_args\_list\_cll@{gten\_args\_list\_cll}}
-\index{gten\_args\_list\_cll@{gten\_args\_list\_cll}!collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}}
-\doxysubsubsection{\texorpdfstring{gten\_args\_list\_cll()}{gten\_args\_list\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::gten\+\_\+cll\+::gten\+\_\+args\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(rts(rmax)), intent(out)}]{TG,  }\item[{double complex, dimension(rts(rmax)), intent(out)}]{T\+Guv,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p1vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p2vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p3vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p4vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p5vec,  }\item[{double complex, dimension(0\+:3), intent(in)}]{p6vec,  }\item[{double complex, intent(in)}]{p10,  }\item[{double complex, intent(in)}]{p21,  }\item[{double complex, intent(in)}]{p32,  }\item[{double complex, intent(in)}]{p43,  }\item[{double complex, intent(in)}]{p54,  }\item[{double complex, intent(in)}]{p65,  }\item[{double complex, intent(in)}]{p60,  }\item[{double complex, intent(in)}]{p20,  }\item[{double complex, intent(in)}]{p31,  }\item[{double complex, intent(in)}]{p42,  }\item[{double complex, intent(in)}]{p53,  }\item[{double complex, intent(in)}]{p64,  }\item[{double complex, intent(in)}]{p50,  }\item[{double complex, intent(in)}]{p61,  }\item[{double complex, intent(in)}]{p30,  }\item[{double complex, intent(in)}]{p41,  }\item[{double complex, intent(in)}]{p52,  }\item[{double complex, intent(in)}]{p63,  }\item[{double complex, intent(in)}]{p40,  }\item[{double complex, intent(in)}]{p51,  }\item[{double complex, intent(in)}]{p62,  }\item[{double complex, intent(in)}]{m02,  }\item[{double complex, intent(in)}]{m12,  }\item[{double complex, intent(in)}]{m22,  }\item[{double complex, intent(in)}]{m32,  }\item[{double complex, intent(in)}]{m42,  }\item[{double complex, intent(in)}]{m52,  }\item[{double complex, intent(in)}]{m62,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Gerr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5616 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5616     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{5617     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p1vec(0:3),p2vec(0:3),p3vec(0:3),p4vec(0:3)}
-\DoxyCodeLine{5618     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p5vec(0:3),p6vec(0:3)}
-\DoxyCodeLine{5619     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53}
-\DoxyCodeLine{5620     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: p64,p50,p61,p30,p41,p52,p63,p40,p51,p62}
-\DoxyCodeLine{5621     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: m02,m12,m22,m32,m42,m52,m62}
-\DoxyCodeLine{5622     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TG(RtS(rmax)), TGuv(RtS(rmax))}
-\DoxyCodeLine{5623     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TGerr(0:rmax)}
-\DoxyCodeLine{5624     \textcolor{keywordtype}{double complex} :: TG2(RtS(rmax)), TGuv2(RtS(rmax))}
-\DoxyCodeLine{5625     \textcolor{keywordtype}{double precision} :: TGerr\_aux(0:rmax), TGerr\_aux2(0:rmax)   }
-\DoxyCodeLine{5626     \textcolor{keywordtype}{double complex} :: MomVec(0:3,6), MomInv(21), masses2(0:6)}
-\DoxyCodeLine{5627     \textcolor{keywordtype}{double complex} :: CG(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5628     \textcolor{keywordtype}{double complex} :: CGuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{5629     \textcolor{keywordtype}{double precision} :: CGerr(0:rmax), TGacc(0:rmax)}
-\DoxyCodeLine{5630     \textcolor{keywordtype}{double precision} :: norm(0:rmax), TGdiff(0:rmax), norm\_coli, norm\_dd}
-\DoxyCodeLine{5631     \textcolor{keywordtype}{double complex} :: args(52)}
-\DoxyCodeLine{5632     \textcolor{keywordtype}{integer} :: r,i}
-\DoxyCodeLine{5633     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{5634 }
-\DoxyCodeLine{5635     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
-\DoxyCodeLine{5636       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{5637       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
-\DoxyCodeLine{5638       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{5639       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
-\DoxyCodeLine{5640       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5641       return}
-\DoxyCodeLine{5642 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5643     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{5644       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{5645       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{5646       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{5647       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{5648       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{5649       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5650       return}
-\DoxyCodeLine{5651 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5652 }
-\DoxyCodeLine{5653     \textcolor{keyword}{call }gten\_args\_list\_checked\_cll(tg,tguv,p1vec,p2vec,p3vec,p4vec,p5vec,p6vec,  \&}
-\DoxyCodeLine{5654                            p10,p21,p32,p43,p54,p65,p60,p20,p31,p42,p53,  \&}
-\DoxyCodeLine{5655                            p64,p50,p61,p30,p41,p52,p63,p40,p51,p62,  \&}
-\DoxyCodeLine{5656                            m02,m12,m22,m32,m42,m52,m62,rmax,tgerr)}
-\DoxyCodeLine{5657 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1gten__cll_a8f11bfee18fe398679fbd92fa9d31220}\label{interfacecollier__tensors_1_1gten__cll_a8f11bfee18fe398679fbd92fa9d31220}} 
-\index{collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}!gten\_list\_cll@{gten\_list\_cll}}
-\index{gten\_list\_cll@{gten\_list\_cll}!collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}}
-\doxysubsubsection{\texorpdfstring{gten\_list\_cll()}{gten\_list\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::gten\+\_\+cll\+::gten\+\_\+list\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(\+:), intent(out)}]{TG,  }\item[{double complex, dimension(\+:), intent(out)}]{T\+Guv,  }\item[{double complex, dimension(0\+:3,6), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(21), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:6), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Gerr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 5168 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{5168 }
-\DoxyCodeLine{5169     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{5170     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,6), MomInv(21), masses2(0:6)}
-\DoxyCodeLine{5171     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TG(:),TGuv(:)}
-\DoxyCodeLine{5172     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TGerr(0:rmax)}
-\DoxyCodeLine{5173     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{5174 }
-\DoxyCodeLine{5175     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
-\DoxyCodeLine{5176       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{5177       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
-\DoxyCodeLine{5178       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{5179       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
-\DoxyCodeLine{5180       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5181       return}
-\DoxyCodeLine{5182 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5183     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{5184       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{5185       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{5186       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{5187       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{5188       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{5189       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{5190       return}
-\DoxyCodeLine{5191 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5192 }
-\DoxyCodeLine{5193     \textcolor{keyword}{call }gten\_list\_checked\_cll(tg,tguv,momvec,mominv,masses2,rmax,tgerr)}
-\DoxyCodeLine{5194 }
-
-\end{DoxyCode}
-\mbox{\Hypertarget{interfacecollier__tensors_1_1gten__cll_ac4b1ae2267813c8c56ac0132bfc74e92}\label{interfacecollier__tensors_1_1gten__cll_ac4b1ae2267813c8c56ac0132bfc74e92}} 
-\index{collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}!gten\_main\_cll@{gten\_main\_cll}}
-\index{gten\_main\_cll@{gten\_main\_cll}!collier\_tensors::gten\_cll@{collier\_tensors::gten\_cll}}
-\doxysubsubsection{\texorpdfstring{gten\_main\_cll()}{gten\_main\_cll()}}
-{\footnotesize\ttfamily subroutine collier\+\_\+tensors\+::gten\+\_\+cll\+::gten\+\_\+main\+\_\+cll (\begin{DoxyParamCaption}\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{TG,  }\item[{double complex, dimension(0\+:rmax,0\+:rmax,0\+:rmax,0\+:rmax), intent(out)}]{T\+Guv,  }\item[{double complex, dimension(0\+:3,6), intent(in)}]{Mom\+Vec,  }\item[{double complex, dimension(21), intent(in)}]{Mom\+Inv,  }\item[{double complex, dimension(0\+:6), intent(in)}]{masses2,  }\item[{integer, intent(in)}]{rmax,  }\item[{double precision, dimension(0\+:rmax), intent(out), optional}]{T\+Gerr }\end{DoxyParamCaption})}
-
-
-
-Definition at line 4945 of file collier\+\_\+tensors.\+F90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{4945 }
-\DoxyCodeLine{4946     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: rmax}
-\DoxyCodeLine{4947     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(in)} :: MomVec(0:3,6), MomInv(21), masses2(0:6)}
-\DoxyCodeLine{4948     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TG(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4949     \textcolor{keywordtype}{double complex}, \textcolor{keywordtype}{intent(out)} :: TGuv(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4950     \textcolor{keywordtype}{double precision}, \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{optional} :: TGerr(0:rmax)}
-\DoxyCodeLine{4951     \textcolor{keywordtype}{double precision} :: TGerr\_aux(0:rmax), TGerr\_aux2(0:rmax)   }
-\DoxyCodeLine{4952     \textcolor{keywordtype}{double complex} :: TG2(0:rmax,0:rmax,0:rmax,0:rmax), TGuv2(0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4953     \textcolor{keywordtype}{double complex} :: CG(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4954     \textcolor{keywordtype}{double complex} :: CGuv(0:rmax/2,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax,0:rmax)}
-\DoxyCodeLine{4955     \textcolor{keywordtype}{double precision} :: CGerr(0:rmax), TGacc(0:rmax)}
-\DoxyCodeLine{4956     \textcolor{keywordtype}{double precision} :: norm(0:rmax),norm\_coli,norm\_dd, TGdiff(0:rmax)}
-\DoxyCodeLine{4957     \textcolor{keywordtype}{double complex} :: args(52)}
-\DoxyCodeLine{4958     \textcolor{keywordtype}{integer} :: r,n0,n1,n2,n3}
-\DoxyCodeLine{4959     \textcolor{keywordtype}{logical} :: eflag}
-\DoxyCodeLine{4960 }
-\DoxyCodeLine{4961     \textcolor{keywordflow}{if} (7.gt.nmax\_cll) then}
-\DoxyCodeLine{4962       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4963       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'Nmax\_cll smaller 7'},eflag,.true.)}
-\DoxyCodeLine{4964       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Nmax\_cll ='},nmax\_cll}
-\DoxyCodeLine{4965       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with Nmax\_cll >= 7'}}
-\DoxyCodeLine{4966       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4967       return}
-\DoxyCodeLine{4968 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4969     \textcolor{keywordflow}{if} (rmax.gt.rmax\_cll) then}
-\DoxyCodeLine{4970       \textcolor{keyword}{call }seterrflag\_cll(-\/10)}
-\DoxyCodeLine{4971       \textcolor{keyword}{call }errout\_cll(\textcolor{stringliteral}{'Gten\_cll'},\textcolor{stringliteral}{'argument rmax larger than rmax\_cll'},eflag,.true.)}
-\DoxyCodeLine{4972       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax     ='},rmax}
-\DoxyCodeLine{4973       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'rmax\_cll ='},rmax\_cll}
-\DoxyCodeLine{4974       \textcolor{keyword}{write}(nerrout\_cll,*) \textcolor{stringliteral}{'Reinitialize COLLIER with rmax\_cll >= '},rmax}
-\DoxyCodeLine{4975       \textcolor{keyword}{call }propagateerrflag\_cll}
-\DoxyCodeLine{4976       return}
-\DoxyCodeLine{4977 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{4978 }
-\DoxyCodeLine{4979     \textcolor{comment}{! set ID of master call}}
-\DoxyCodeLine{4980     args(1:4) = momvec(0:,1)}
-\DoxyCodeLine{4981     args(5:8) = momvec(0:,2)}
-\DoxyCodeLine{4982     args(9:12) = momvec(0:,3)}
-\DoxyCodeLine{4983     args(13:16) = momvec(0:,4)}
-\DoxyCodeLine{4984     args(17:20) = momvec(0:,5)}
-\DoxyCodeLine{4985     args(21:24) = momvec(0:,6)}
-\DoxyCodeLine{4986     args(25:45) = mominv}
-\DoxyCodeLine{4987     args(46:52) = masses2}
-\DoxyCodeLine{4988     \textcolor{keyword}{call }setmasterfname\_cll(\textcolor{stringliteral}{'Gten\_cll'})}
-\DoxyCodeLine{4989     \textcolor{keyword}{call }setmastern\_cll(7)}
-\DoxyCodeLine{4990     \textcolor{keyword}{call }setmasterr\_cll(rmax)}
-\DoxyCodeLine{4991     \textcolor{keyword}{call }setmasterargs\_cll(52,args)}
-\DoxyCodeLine{4992 }
-\DoxyCodeLine{4993     \textcolor{keyword}{call }settencache\_cll(tenred\_cll-\/1)}
-\DoxyCodeLine{4994 }
-\DoxyCodeLine{4995     \textcolor{keywordflow}{if} (tenred\_cll.le.7) then}
-\DoxyCodeLine{4996     }
-\DoxyCodeLine{4997       \textcolor{keywordflow}{if} (mode\_cll.gt.1) \textcolor{keyword}{call }tn\_dd\_dummy(7,rmax)  }
-\DoxyCodeLine{4998       }
-\DoxyCodeLine{4999       \textcolor{keywordflow}{if} (mode\_cll.eq.3) then}
-\DoxyCodeLine{5000         \textcolor{comment}{! calculate tensor with coefficients from COLI}}
-\DoxyCodeLine{5001         mode\_cll = 1}
-\DoxyCodeLine{5002         \textcolor{keyword}{call }calctensortnr(tg,tguv,tgerr\_aux,momvec,mominv,masses2,7,rmax,0)        }
-\DoxyCodeLine{5003       }
-\DoxyCodeLine{5004         \textcolor{comment}{! calculate tensor with coefficients from DD}}
-\DoxyCodeLine{5005         mode\_cll = 2}
-\DoxyCodeLine{5006         \textcolor{keyword}{call }calctensortnr(tg2,tguv2,tgerr\_aux2,momvec,mominv,masses2,7,rmax,0)         }
-\DoxyCodeLine{5007       }
-\DoxyCodeLine{5008         \textcolor{comment}{! comparison -\/-\/> take better result}}
-\DoxyCodeLine{5009         mode\_cll = 3}
-\DoxyCodeLine{5010         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5011           norm\_coli=0d0}
-\DoxyCodeLine{5012           norm\_dd=0d0}
-\DoxyCodeLine{5013           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{5014             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{5015               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{5016                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{5017                 norm\_coli = max(norm\_coli,abs(tg(n0,n1,n2,n3)))}
-\DoxyCodeLine{5018                 norm\_dd = max(norm\_dd,abs(tg2(n0,n1,n2,n3)))}
-\DoxyCodeLine{5019               \textcolor{keyword}{end }do}
-\DoxyCodeLine{5020             \textcolor{keyword}{end }do}
-\DoxyCodeLine{5021           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5022           \textcolor{keywordflow}{if} (norm\_coli.eq.0d0) then}
-\DoxyCodeLine{5023             norm\_coli = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5024             \textcolor{keywordflow}{if}(norm\_coli.ne.0d0) then}
-\DoxyCodeLine{5025               norm\_coli=1d0/norm\_coli**(5-\/real(r)/2)}
-\DoxyCodeLine{5026             else}
-\DoxyCodeLine{5027               norm\_coli=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5028             \textcolor{keyword}{end }if}
-\DoxyCodeLine{5029           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5030           \textcolor{keywordflow}{if} (norm\_dd.eq.0d0) then}
-\DoxyCodeLine{5031             norm\_dd = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5032             \textcolor{keywordflow}{if}(norm\_dd.ne.0d0) then}
-\DoxyCodeLine{5033               norm\_dd=1d0/norm\_dd**(5-\/real(r)/2)}
-\DoxyCodeLine{5034             else}
-\DoxyCodeLine{5035               norm\_dd=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5036             \textcolor{keyword}{end }if}
-\DoxyCodeLine{5037           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5038           norm(r) = min(norm\_coli,norm\_dd)}
-\DoxyCodeLine{5039         \textcolor{keyword}{end }do}
-\DoxyCodeLine{5040       }
-\DoxyCodeLine{5041         \textcolor{keyword}{call }checktensors\_cll(tg,tg2,momvec,mominv,masses2,norm,7,rmax,tgdiff)        }
-\DoxyCodeLine{5042        }
-\DoxyCodeLine{5043         \textcolor{keywordflow}{if} (tgerr\_aux(rmax).lt.tgerr\_aux2(rmax)) then}
-\DoxyCodeLine{5044           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr))  tgerr = max(tgerr\_aux,tgdiff*norm)}
-\DoxyCodeLine{5045           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5046             tgacc(r) = max(tgerr\_aux(r)/norm(r),tgdiff(r))}
-\DoxyCodeLine{5047           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5048           \textcolor{keywordflow}{if} (monitoring) pointscntgten\_coli =  pointscntgten\_coli + 1}
-\DoxyCodeLine{5049         else}
-\DoxyCodeLine{5050           tg = tg2}
-\DoxyCodeLine{5051           tguv = tguv2        }
-\DoxyCodeLine{5052           \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr))  tgerr = max(tgerr\_aux2,tgdiff*norm)    }
-\DoxyCodeLine{5053           \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5054             tgacc(r) = max(tgerr\_aux2(r)/norm(r),tgdiff(r))}
-\DoxyCodeLine{5055 \textcolor{keywordflow}{          end do}         }
-\DoxyCodeLine{5056           \textcolor{keywordflow}{if} (monitoring) pointscntgten\_dd =  pointscntgten\_dd + 1}
-\DoxyCodeLine{5057         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5058         }
-\DoxyCodeLine{5059       \textcolor{keywordflow}{else}    }
-\DoxyCodeLine{5060         \textcolor{keyword}{call }calctensortnr(tg,tguv,tgerr\_aux,momvec,mominv,masses2,7,rmax,0)        }
-\DoxyCodeLine{5061         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr)) tgerr = tgerr\_aux}
-\DoxyCodeLine{5062         norm = 0d0}
-\DoxyCodeLine{5063         \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5064           \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{5065             \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{5066               \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{5067                 n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{5068                 norm(r) = max(norm(r),abs(tg(n0,n1,n2,n3)))}
-\DoxyCodeLine{5069               \textcolor{keyword}{end }do}
-\DoxyCodeLine{5070             \textcolor{keyword}{end }do}
-\DoxyCodeLine{5071           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5072           \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{5073             norm(r) = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5074             \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{5075               norm(r)=1d0/norm(r)**(5-\/real(r)/2)}
-\DoxyCodeLine{5076             else}
-\DoxyCodeLine{5077               norm(r)=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5078             \textcolor{keyword}{end }if}
-\DoxyCodeLine{5079           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5080           tgacc(r) = tgerr\_aux(r)/norm(r)}
-\DoxyCodeLine{5081 \textcolor{keywordflow}{        end do}        }
-\DoxyCodeLine{5082         }
-\DoxyCodeLine{5083 \textcolor{keywordflow}{      end if}      }
-\DoxyCodeLine{5084      }
-\DoxyCodeLine{5085     else}
-\DoxyCodeLine{5086       \textcolor{keyword}{call }g\_main\_cll(cg,cguv,mominv(1),mominv(2),mominv(3),mominv(4),mominv(5),mominv(6), \&}
-\DoxyCodeLine{5087                       mominv(7),mominv(8),mominv(9),mominv(10),mominv(11),mominv(12), \&}
-\DoxyCodeLine{5088                       mominv(13),mominv(14),mominv(15),mominv(16),mominv(17),mominv(18), \&}
-\DoxyCodeLine{5089                       mominv(19),mominv(20),mominv(21),masses2(0),masses2(1),masses2(2), \&}
-\DoxyCodeLine{5090                       masses2(3),masses2(4),masses2(5),masses2(6),rmax,gerr2=cgerr,id\_in=0)}
-\DoxyCodeLine{5091       \textcolor{keyword}{call }calctensorg(tg,tguv,tgerr\_aux,cg,cguv,cgerr,momvec,rmax)}
-\DoxyCodeLine{5092       \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(tgerr)) tgerr = tgerr\_aux}
-\DoxyCodeLine{5093       norm = 0d0}
-\DoxyCodeLine{5094       \textcolor{keywordflow}{do} r=0,rmax}
-\DoxyCodeLine{5095         \textcolor{keywordflow}{do} n0=0,r}
-\DoxyCodeLine{5096           \textcolor{keywordflow}{do} n1=0,r-\/n0}
-\DoxyCodeLine{5097             \textcolor{keywordflow}{do} n2=0,r-\/n0-\/n1}
-\DoxyCodeLine{5098               n3=r-\/n0-\/n1-\/n2}
-\DoxyCodeLine{5099               norm(r) = max(norm(r),abs(tg(n0,n1,n2,n3)))}
-\DoxyCodeLine{5100             \textcolor{keyword}{end }do}
-\DoxyCodeLine{5101           \textcolor{keyword}{end }do}
-\DoxyCodeLine{5102 \textcolor{keywordflow}{        end do}      }
-\DoxyCodeLine{5103         \textcolor{keywordflow}{if} (norm(r).eq.0d0) then}
-\DoxyCodeLine{5104           norm(r) = max(maxval(abs(mominv(1:21))),maxval(abs(masses2(0:6))))}
-\DoxyCodeLine{5105           \textcolor{keywordflow}{if}(norm(r).ne.0d0) then}
-\DoxyCodeLine{5106             norm(r)=1d0/norm(r)**(5-\/real(r)/2)}
-\DoxyCodeLine{5107           else}
-\DoxyCodeLine{5108             norm(r)=1d0/muir2\_cll**(5-\/real(r)/2)}
-\DoxyCodeLine{5109           \textcolor{keyword}{end }if}
-\DoxyCodeLine{5110         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5111         tgacc(r) = tgerr\_aux(r)/norm(r)}
-\DoxyCodeLine{5112 \textcolor{keywordflow}{      end do}      }
-\DoxyCodeLine{5113 \textcolor{keywordflow}{    end if}    }
-\DoxyCodeLine{5114 }
-\DoxyCodeLine{5115     \textcolor{keywordflow}{if} (monitoring) then}
-\DoxyCodeLine{5116       \textcolor{keywordflow}{if} (monitoring) pointscntgten\_cll =  pointscntgten\_cll + 1}
-\DoxyCodeLine{5117 }
-\DoxyCodeLine{5118       \textcolor{keywordflow}{if}(maxval(tgacc).gt.reqacc\_cll) accpointscntgten\_cll = accpointscntgten\_cll + 1}
-\DoxyCodeLine{5119 }
-\DoxyCodeLine{5120       \textcolor{keywordflow}{if}(maxval(tgacc).gt.critacc\_cll) then}
-\DoxyCodeLine{5121         critpointscntgten\_cll =  critpointscntgten\_cll + 1}
-\DoxyCodeLine{5122         \textcolor{keywordflow}{if} ( critpointscntgten\_cll.le.noutcritpointsmax\_cll(7) ) then}
-\DoxyCodeLine{5123           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TGten\_cll'},0,maxval(tgacc),critpointscntgten\_cll)}
-\DoxyCodeLine{5124           \textcolor{keywordflow}{if}( critpointscntgten\_cll.eq.noutcritpointsmax\_cll(7)) then}
-\DoxyCodeLine{5125             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TGten\_cll suppressed'}   }
-\DoxyCodeLine{5126             \textcolor{keyword}{write}(ncpout\_cll,*)}
-\DoxyCodeLine{5127           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5128         \textcolor{keyword}{end }if}
-\DoxyCodeLine{5129       \textcolor{keyword}{end }if}
-\DoxyCodeLine{5130     \textcolor{keyword}{end }if}
-\DoxyCodeLine{5131 }
-\DoxyCodeLine{5132     \textcolor{keywordflow}{if} (monitoring) then}
-\DoxyCodeLine{5133       pointscntgten\_cll =  pointscntgten\_cll + 1}
-\DoxyCodeLine{5134 }
-\DoxyCodeLine{5135       \textcolor{keywordflow}{if}(maxval(tgacc).gt.reqacc\_cll) accpointscntgten\_cll = accpointscntgten\_cll + 1}
-\DoxyCodeLine{5136 }
-\DoxyCodeLine{5137       \textcolor{keywordflow}{if}(maxval(tgacc).gt.critacc\_cll) then}
-\DoxyCodeLine{5138         critpointscntgten\_cll =  critpointscntgten\_cll + 1}
-\DoxyCodeLine{5139         \textcolor{keywordflow}{if} ( critpointscntgten\_cll.le.noutcritpointsmax\_cll(7) ) then}
-\DoxyCodeLine{5140           \textcolor{keyword}{call }critpointsout\_cll(\textcolor{stringliteral}{'TGten\_cll'},0,maxval(tgacc),critpointscntgten\_cll)}
-\DoxyCodeLine{5141           \textcolor{keywordflow}{if}( critpointscntgten\_cll.eq.noutcritpointsmax\_cll(7)) then}
-\DoxyCodeLine{5142             \textcolor{keyword}{write}(ncpout\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TGten\_cll suppressed'}   }
-\DoxyCodeLine{5143             \textcolor{keyword}{write}(ncpout\_cll,*)}
-\DoxyCodeLine{5144           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5145 \textcolor{preprocessor}{\#ifdef CritPoints2}}
-\DoxyCodeLine{5146 \textcolor{preprocessor}{}          \textcolor{keyword}{call }critpointsout2\_cll(\textcolor{stringliteral}{'TGten\_cll'},0,maxval(tgacc),critpointscntgten\_cll)}
-\DoxyCodeLine{5147           \textcolor{keywordflow}{if}( critpointscntgten\_cll.eq.noutcritpointsmax\_cll(7)) then}
-\DoxyCodeLine{5148             \textcolor{keyword}{write}(ncpout2\_cll,*) \textcolor{stringliteral}{' Further output of Critical Points for TGten\_cll suppressed'}   }
-\DoxyCodeLine{5149             \textcolor{keyword}{write}(ncpout2\_cll,*)}
-\DoxyCodeLine{5150           \mbox{\hyperlink{CMakeLists_8txt_a2d474886b4d574f7ab3f0ca3e2dc7463}{endif}}}
-\DoxyCodeLine{5151 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{5152 \textcolor{preprocessor}{}        \textcolor{keyword}{end }if}
-\DoxyCodeLine{5153       \textcolor{keyword}{end }if}
-\DoxyCodeLine{5154 \textcolor{keywordflow}{    end if}  }
-\DoxyCodeLine{5155 }
-
-\end{DoxyCode}
-
-
-The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-M\+E\+L\+A/\+C\+O\+L\+L\+I\+E\+R/colliertmp/\+C\+O\+L\+L\+I\+E\+R-\/1.\+2/src/\mbox{\hyperlink{collier__tensors_8F90}{collier\+\_\+tensors.\+F90}}\end{DoxyCompactItemize}

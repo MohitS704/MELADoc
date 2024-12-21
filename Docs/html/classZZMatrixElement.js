@@ -46,7 +46,7 @@ var classZZMatrixElement =
     [ "set_SpinTwoContact", "classZZMatrixElement.html#a39f6db6d02c2025c8ec5029a165a36b4", null ],
     [ "set_SpinTwoCouplings", "classZZMatrixElement.html#a73013b864b85a4bb86baabaef15832f4", null ],
     [ "set_SpinZeroContact", "classZZMatrixElement.html#a7c6b9f4feb84b69f2f7008131494acb5", null ],
-    [ "set_SpinZeroCouplings", "classZZMatrixElement.html#a0f75bcba03c4687398644d461dd04fc4", null ],
+    [ "set_SpinZeroCouplings", "classZZMatrixElement.html#a789fd9858cbf18450a85dd643a5999c4", null ],
     [ "set_TempCandidate", "classZZMatrixElement.html#a6fec23332f9bd6a332527b91ad1a3748", null ],
     [ "set_Verbosity", "classZZMatrixElement.html#a1b5fb27ebe3fe65ef236f2766471a857", null ],
     [ "set_VprimeContactCouplings", "classZZMatrixElement.html#a108a0a31d7185e3e87ddaecd2a4acd1b", null ],

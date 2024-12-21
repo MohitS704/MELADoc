@@ -139,7 +139,7 @@ Definition at line 5805 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5905        wa1(j)= 0.0}
 \DoxyCodeLine{5906        wa2(j)= diag(j)*x(j)}
 \DoxyCodeLine{5907 \textcolor{keywordflow}{      ENDDO}}
-\DoxyCodeLine{5908       qnorm= hto\_enorm(n,wa2)}
+\DoxyCodeLine{5908       qnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa2)}
 \DoxyCodeLine{5909 \textcolor{comment}{*}}
 \DoxyCodeLine{5910       \textcolor{keywordflow}{IF}(qnorm > delta) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{5911        l= 1}
@@ -151,7 +151,7 @@ Definition at line 5805 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5917 \textcolor{keywordflow}{        ENDDO}}
 \DoxyCodeLine{5918         wa1(j)= wa1(j)/diag(j)}
 \DoxyCodeLine{5919 \textcolor{keywordflow}{       ENDDO}}
-\DoxyCodeLine{5920        gnorm= hto\_enorm(n,wa1)}
+\DoxyCodeLine{5920        gnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa1)}
 \DoxyCodeLine{5921        sgnorm= 0.0}
 \DoxyCodeLine{5922        alpha= delta/qnorm}
 \DoxyCodeLine{5923        \textcolor{keywordflow}{IF}(gnorm /= 0.0) \textcolor{keywordflow}{THEN}}
@@ -167,11 +167,11 @@ Definition at line 5805 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5933 \textcolor{keywordflow}{         ENDDO}}
 \DoxyCodeLine{5934          wa2(j)= sum}
 \DoxyCodeLine{5935 \textcolor{keywordflow}{        ENDDO}}
-\DoxyCodeLine{5936         temp= hto\_enorm(n,wa2)}
+\DoxyCodeLine{5936         temp= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa2)}
 \DoxyCodeLine{5937         sgnorm= (gnorm/temp)/temp}
 \DoxyCodeLine{5938         alpha= 0.0}
 \DoxyCodeLine{5939         \textcolor{keywordflow}{IF}(sgnorm < delta) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{5940          bnorm= hto\_enorm(n,qtb)}
+\DoxyCodeLine{5940          bnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,qtb)}
 \DoxyCodeLine{5941          temp= (bnorm/gnorm)*(bnorm/qnorm)*(sgnorm/delta)}
 \DoxyCodeLine{5942          temp= temp-\/(delta/qnorm)*(sgnorm/delta)**2+}
 \DoxyCodeLine{5943      \#         sqrt((temp-\/(delta/qnorm))**2+(1.0d0-\/(delta/qnorm)**2)*}
@@ -595,7 +595,7 @@ Definition at line 5311 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5434       mu= n-\/1}
 \DoxyCodeLine{5435       mode= 2}
 \DoxyCodeLine{5436       nprint= 0}
-\DoxyCodeLine{5437       \textcolor{keyword}{CALL }hto\_hybrd(hto\_fcn,n,x,fvec,xtol,maxfev,ml,mu,epsfcn,diag,}
+\DoxyCodeLine{5437       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_a2fedece7d4082c4306271f14df72387e}{hto\_hybrd}}(hto\_fcn,n,x,fvec,xtol,maxfev,ml,mu,epsfcn,diag,}
 \DoxyCodeLine{5438      \#               mode,factor,nprint,info,nfev)}
 \DoxyCodeLine{5439       \textcolor{keywordflow}{IF}(info == 5) info= 4}
 \DoxyCodeLine{5440    20 \textcolor{keywordflow}{RETURN}}
@@ -814,7 +814,7 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5645       \textcolor{keyword}{CALL }hto\_fcn(n,x,fvec,iflag)}
 \DoxyCodeLine{5646       nfev= 1}
 \DoxyCodeLine{5647       \textcolor{keywordflow}{IF}(iflag >= 0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{5648       fnorm= hto\_enorm(n,fvec)}
+\DoxyCodeLine{5648       fnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,fvec)}
 \DoxyCodeLine{5649       msum= min(ml+mu+1,n)}
 \DoxyCodeLine{5650       iter= 1}
 \DoxyCodeLine{5651       ncsuc= 0}
@@ -823,11 +823,11 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5654       nslow2= 0}
 \DoxyCodeLine{5655   20  jeval= .true.}
 \DoxyCodeLine{5656       iflag= 2}
-\DoxyCodeLine{5657       \textcolor{keyword}{CALL }hto\_fdjac1(hto\_fcn,n,x,fvec,fjac,n,iflag,ml,mu,epsfcn,}
+\DoxyCodeLine{5657       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_a9b9991931fe83ae42bd577aa132fd691}{hto\_fdjac1}}(hto\_fcn,n,x,fvec,fjac,n,iflag,ml,mu,epsfcn,}
 \DoxyCodeLine{5658      \#                wa1,wa2)}
 \DoxyCodeLine{5659       nfev= nfev+msum}
 \DoxyCodeLine{5660       \textcolor{keywordflow}{IF}(iflag >= 0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{5661       \textcolor{keyword}{CALL }hto\_qrfac(n,n,fjac,n,.false.,iwa,1,wa1,wa2,wa3)}
+\DoxyCodeLine{5661       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_a98884f67245c484b378efff769d60f69}{hto\_qrfac}}(n,n,fjac,n,.false.,iwa,1,wa1,wa2,wa3)}
 \DoxyCodeLine{5662       \textcolor{keywordflow}{IF}(iter == 1) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{5663       \textcolor{keywordflow}{IF}(mode /= 2) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{5664        \textcolor{keywordflow}{DO} j= 1,n}
@@ -836,7 +836,7 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5667 \textcolor{keywordflow}{       ENDDO}}
 \DoxyCodeLine{5668 \textcolor{keywordflow}{      ENDIF}}
 \DoxyCodeLine{5669       wa3(1:n)= diag(1:n)*x(1:n)}
-\DoxyCodeLine{5670       xnorm= hto\_enorm(n,wa3)}
+\DoxyCodeLine{5670       xnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa3)}
 \DoxyCodeLine{5671       delta= factor*xnorm}
 \DoxyCodeLine{5672       \textcolor{keywordflow}{IF}(delta == \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}) delta= factor}
 \DoxyCodeLine{5673 \textcolor{keywordflow}{      ENDIF}}
@@ -866,7 +866,7 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5697        r(l)= wa1(j)}
 \DoxyCodeLine{5698        \textcolor{keywordflow}{IF}(wa1(j) == \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}) sing= .true.}
 \DoxyCodeLine{5699 \textcolor{keywordflow}{      ENDDO}}
-\DoxyCodeLine{5700       \textcolor{keyword}{CALL }hto\_qform(n,n,fjac,n,wa1)}
+\DoxyCodeLine{5700       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_a6c27c7948dee7924b448527cd0e47aff}{hto\_qform}}(n,n,fjac,n,wa1)}
 \DoxyCodeLine{5701       \textcolor{keywordflow}{IF}(mode /= 2) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{5702        \textcolor{keywordflow}{DO} j= 1,n}
 \DoxyCodeLine{5703         diag(j)= max(diag(j),wa2(j))}
@@ -877,19 +877,19 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5708        \textcolor{keywordflow}{IF}(mod(iter-\/1,nprint) == 0) \textcolor{keyword}{CALL }hto\_fcn(n,x,fvec,iflag)}
 \DoxyCodeLine{5709        \textcolor{keywordflow}{IF}(iflag < 0) \textcolor{keywordflow}{GO TO} 190}
 \DoxyCodeLine{5710 \textcolor{keywordflow}{      ENDIF}}
-\DoxyCodeLine{5711       \textcolor{keyword}{CALL }hto\_dogleg(n,r,lr,diag,qtf,delta,wa1,wa2,wa3)}
+\DoxyCodeLine{5711       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_afe4e5fea1ad06250f9e5ce2a5ac37e33}{hto\_dogleg}}(n,r,lr,diag,qtf,delta,wa1,wa2,wa3)}
 \DoxyCodeLine{5712       \textcolor{keywordflow}{DO} j= 1,n}
 \DoxyCodeLine{5713        wa1(j)= -\/wa1(j)}
 \DoxyCodeLine{5714        wa2(j)= x(j)+wa1(j)}
 \DoxyCodeLine{5715        wa3(j)= diag(j)*wa1(j)}
 \DoxyCodeLine{5716 \textcolor{keywordflow}{      ENDDO}}
-\DoxyCodeLine{5717       pnorm= hto\_enorm(n,wa3)}
+\DoxyCodeLine{5717       pnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa3)}
 \DoxyCodeLine{5718       \textcolor{keywordflow}{IF}(iter == 1) delta= min(delta,pnorm)}
 \DoxyCodeLine{5719       iflag= 1}
 \DoxyCodeLine{5720       \textcolor{keyword}{CALL }hto\_fcn(n,wa2,wa4,iflag)}
 \DoxyCodeLine{5721       nfev= nfev+1}
 \DoxyCodeLine{5722       \textcolor{keywordflow}{IF}(iflag >= 0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{5723       fnorm1= hto\_enorm(n,wa4)}
+\DoxyCodeLine{5723       fnorm1= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa4)}
 \DoxyCodeLine{5724       actred= -\/\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}}}
 \DoxyCodeLine{5725       \textcolor{keywordflow}{IF}(fnorm1 < fnorm) actred= \mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}}-\/(fnorm1/fnorm)**2}
 \DoxyCodeLine{5726       l= 1}
@@ -901,7 +901,7 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5732 \textcolor{keywordflow}{       ENDDO}}
 \DoxyCodeLine{5733        wa3(i)= qtf(i)+sum}
 \DoxyCodeLine{5734 \textcolor{keywordflow}{      ENDDO}}
-\DoxyCodeLine{5735       temp= hto\_enorm(n,wa3)}
+\DoxyCodeLine{5735       temp= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa3)}
 \DoxyCodeLine{5736       prered= \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
 \DoxyCodeLine{5737       \textcolor{keywordflow}{IF}(temp < fnorm) prered= \mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}}-\/(temp/fnorm)**2}
 \DoxyCodeLine{5738       ratio= \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}}
@@ -922,7 +922,7 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5753         wa2(j)= diag(j)*x(j)}
 \DoxyCodeLine{5754         fvec(j)= wa4(j)}
 \DoxyCodeLine{5755 \textcolor{keywordflow}{       ENDDO}}
-\DoxyCodeLine{5756        xnorm= hto\_enorm(n,wa2)}
+\DoxyCodeLine{5756        xnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(n,wa2)}
 \DoxyCodeLine{5757        fnorm= fnorm1}
 \DoxyCodeLine{5758        iter= iter+1}
 \DoxyCodeLine{5759 \textcolor{keywordflow}{      ENDIF}}
@@ -947,9 +947,9 @@ Definition at line 5450 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{5778        wa1(j)= diag(j)*((diag(j)*wa1(j))/pnorm)}
 \DoxyCodeLine{5779        \textcolor{keywordflow}{IF}(ratio >= p0001) qtf(j)= sum}
 \DoxyCodeLine{5780 \textcolor{keywordflow}{      ENDDO}}
-\DoxyCodeLine{5781       \textcolor{keyword}{CALL }hto\_r1updt(n,n,r,lr,wa1,wa2,wa3,sing)}
-\DoxyCodeLine{5782       \textcolor{keyword}{CALL }hto\_r1mpyq(n,n,fjac,n,wa2,wa3)}
-\DoxyCodeLine{5783       \textcolor{keyword}{CALL }hto\_r1mpyq(1,n,qtf,1,wa2,wa3)}
+\DoxyCodeLine{5781       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_af73d8384fe07fde7b063afc452466f03}{hto\_r1updt}}(n,n,r,lr,wa1,wa2,wa3,sing)}
+\DoxyCodeLine{5782       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_a89a4ef64a31dd4d201b9b6bb3c077ab1}{hto\_r1mpyq}}(n,n,fjac,n,wa2,wa3)}
+\DoxyCodeLine{5783       \textcolor{keyword}{CALL }\mbox{\hyperlink{namespacehto__solve__nonlin_a89a4ef64a31dd4d201b9b6bb3c077ab1}{hto\_r1mpyq}}(1,n,qtf,1,wa2,wa3)}
 \DoxyCodeLine{5784       jeval= .false.}
 \DoxyCodeLine{5785       \textcolor{keywordflow}{GO TO} 120}
 \DoxyCodeLine{5786 \textcolor{keywordflow}{      ENDIF}}
@@ -1171,7 +1171,7 @@ Definition at line 6214 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{6300 \textcolor{comment}{*}}
 \DoxyCodeLine{6301       epsmch= epsilon(1.0d0)}
 \DoxyCodeLine{6302       \textcolor{keywordflow}{DO} j= 1,n}
-\DoxyCodeLine{6303        acnorm(j)= hto\_enorm(m,a(1:,j))}
+\DoxyCodeLine{6303        acnorm(j)= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(m,a(1:,j))}
 \DoxyCodeLine{6304        rdiag(j)= acnorm(j)}
 \DoxyCodeLine{6305        wa(j)= rdiag(j)}
 \DoxyCodeLine{6306        \textcolor{keywordflow}{IF}(pivot) ipvt(j)= j}
@@ -1196,7 +1196,7 @@ Definition at line 6214 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{6325          ipvt(kmax)= k}
 \DoxyCodeLine{6326 \textcolor{keywordflow}{        ENDIF}}
 \DoxyCodeLine{6327 \textcolor{keywordflow}{       ENDIF}}
-\DoxyCodeLine{6328        ajnorm= hto\_enorm(m-\/j+1,a(j:,j))}
+\DoxyCodeLine{6328        ajnorm= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(m-\/j+1,a(j:,j))}
 \DoxyCodeLine{6329        \textcolor{keywordflow}{IF}(ajnorm /= \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}) \textcolor{keywordflow}{THEN}}
 \DoxyCodeLine{6330         \textcolor{keywordflow}{IF}(a(j,j) < \mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}}) ajnorm= -\/ajnorm}
 \DoxyCodeLine{6331         \textcolor{keywordflow}{DO} i= j,m}
@@ -1218,7 +1218,7 @@ Definition at line 6214 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{6347            temp= a(j,k)/rdiag(k)}
 \DoxyCodeLine{6348            rdiag(k)= rdiag(k)*sqrt(max(\mbox{\hyperlink{namespacehto__units_a99185641f2fef22fbd699ff69ee64f18}{zero}},\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}}-\/temp**2))}
 \DoxyCodeLine{6349            \textcolor{keywordflow}{IF}(p05*(rdiag(k)/wa(k))**2 <= epsmch) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{6350             rdiag(k)= hto\_enorm(m-\/j,a(jp1:,k))}
+\DoxyCodeLine{6350             rdiag(k)= \mbox{\hyperlink{namespacehto__solve__nonlin_a52df74850a83808488fb1b90d7e539ed}{hto\_enorm}}(m-\/j,a(jp1:,k))}
 \DoxyCodeLine{6351             wa(k)= rdiag(k)}
 \DoxyCodeLine{6352 \textcolor{keywordflow}{           ENDIF}}
 \DoxyCodeLine{6353 \textcolor{keywordflow}{          ENDIF}}

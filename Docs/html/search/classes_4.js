@@ -1,7 +1,28 @@
 var searchData=
 [
-  ['e0_5fcll_5238',['e0_cll',['../interfacecollier__coefs_1_1e0__cll.html',1,'collier_coefs']]],
-  ['e_5fcll_5239',['e_cll',['../interfacecollier__coefs_1_1e__cll.html',1,'collier_coefs']]],
-  ['eten_5fcll_5240',['eten_cll',['../interfacecollier__tensors_1_1eten__cll.html',1,'collier_tensors']]],
-  ['event_5fscales_5ftype_5241',['event_scales_type',['../structTVar_1_1event__scales__type.html',1,'TVar']]]
+  ['mela_4242',['Mela',['../classMela.html',1,'']]],
+  ['melacandidate_4243',['MELACandidate',['../classMELACandidate.html',1,'']]],
+  ['meladifermionresolutionmodel_4244',['MELADifermionResolutionModel',['../classMELADifermionResolutionModel.html',1,'']]],
+  ['meladoublecb_4245',['MELADoubleCB',['../classMELADoubleCB.html',1,'']]],
+  ['melafuncpdf_4246',['MELAFuncPdf',['../classMELAFuncPdf.html',1,'']]],
+  ['melaggzzpdf_5fv2_4247',['MELAggZZPdf_v2',['../classMELAggZZPdf__v2.html',1,'']]],
+  ['melahxswidth_4248',['MELAHXSWidth',['../classMELAHXSWidth.html',1,'']]],
+  ['melaio_4249',['MelaIO',['../classMelaIO.html',1,'']]],
+  ['melalinearinterpfunc_4250',['MELALinearInterpFunc',['../classMELALinearInterpFunc.html',1,'']]],
+  ['melancspline_5f1d_5ffast_4251',['MELANCSpline_1D_fast',['../classMELANCSpline__1D__fast.html',1,'']]],
+  ['melancspline_5f2d_5ffast_4252',['MELANCSpline_2D_fast',['../classMELANCSpline__2D__fast.html',1,'']]],
+  ['melancspline_5f3d_5ffast_4253',['MELANCSpline_3D_fast',['../classMELANCSpline__3D__fast.html',1,'']]],
+  ['melancsplinecore_4254',['MELANCSplineCore',['../classMELANCSplineCore.html',1,'']]],
+  ['melancsplinefactory_5f1d_4255',['MELANCSplineFactory_1D',['../classMELANCSplineFactory__1D.html',1,'']]],
+  ['melancsplinefactory_5f2d_4256',['MELANCSplineFactory_2D',['../classMELANCSplineFactory__2D.html',1,'']]],
+  ['melancsplinefactory_5f3d_4257',['MELANCSplineFactory_3D',['../classMELANCSplineFactory__3D.html',1,'']]],
+  ['melaoutputstreamer_4258',['MELAOutputStreamer',['../classMELAOutputStreamer.html',1,'']]],
+  ['melaparticle_4259',['MELAParticle',['../classMELAParticle.html',1,'']]],
+  ['melapconstant_4260',['MelaPConstant',['../classMelaPConstant.html',1,'']]],
+  ['melaqqzzpdf_5fv2_4261',['MELAqqZZPdf_v2',['../classMELAqqZZPdf__v2.html',1,'']]],
+  ['melarelbwufparam_4262',['MELARelBWUFParam',['../classMELARelBWUFParam.html',1,'']]],
+  ['melathreebodydecaycandidate_4263',['MELAThreeBodyDecayCandidate',['../classMELAThreeBodyDecayCandidate.html',1,'']]],
+  ['modelcouplings_4264',['modelCouplings',['../structRooSpinZero_1_1modelCouplings.html',1,'RooSpinZero::modelCouplings'],['../structRooSpinTwo_1_1modelCouplings.html',1,'RooSpinTwo::modelCouplings']]],
+  ['modelmeasurables_4265',['modelMeasurables',['../structRooSpin_1_1modelMeasurables.html',1,'RooSpin']]],
+  ['modelparameters_4266',['modelParameters',['../structRooSpin_1_1modelParameters.html',1,'RooSpin']]]
 ];

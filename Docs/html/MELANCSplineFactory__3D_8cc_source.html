@@ -34,7 +34,7 @@
   <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.7, MELA v2.4.3</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -208,13 +208,13 @@ $(document).ready(function(){initNavTree('MELANCSplineFactory__3D_8cc_source.htm
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1">MELANCSplineFactory_3D::setPoints</a>(TTree* tree){</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  vector&lt;splineQuadruplet_t&gt; pList;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, <a class="code" href="classMELANCSplineFactory__3D.html#af64ee7b92c45ddfd0867ba556014d09b">fcn</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="classMELANCSplineCore.html#a95c39d3f034fd95001c071a73ff2ef99">MELANCSplineCore::T</a> x, y, z, <a class="code" href="classMELANCSplineFactory__3D.html#af64ee7b92c45ddfd0867ba556014d09b">fcn</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;X&quot;</span>, &amp;x);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;Y&quot;</span>, &amp;y);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;Z&quot;</span>, &amp;<a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;Z&quot;</span>, &amp;z);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  tree-&gt;SetBranchAddress(<span class="stringliteral">&quot;Fcn&quot;</span>, &amp;<a class="code" href="classMELANCSplineFactory__3D.html#af64ee7b92c45ddfd0867ba556014d09b">fcn</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">int</span> n = tree-&gt;GetEntries();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ip=0; ip&lt;n; ip++){ tree-&gt;GetEntry(ip); pList.push_back(<a class="code" href="MELANCSplineFactory__3D_8h.html#a3c4f33e2459c98d793be09ce3e50e0e0">splineQuadruplet_t</a>(x, y, <a class="code" href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">z</a>, <a class="code" href="classMELANCSplineFactory__3D.html#af64ee7b92c45ddfd0867ba556014d09b">fcn</a>)); }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ip=0; ip&lt;n; ip++){ tree-&gt;GetEntry(ip); pList.push_back(<a class="code" href="MELANCSplineFactory__3D_8h.html#a3c4f33e2459c98d793be09ce3e50e0e0">splineQuadruplet_t</a>(x, y, z, <a class="code" href="classMELANCSplineFactory__3D.html#af64ee7b92c45ddfd0867ba556014d09b">fcn</a>)); }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1">setPoints</a>(pList);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
@@ -267,14 +267,13 @@ $(document).ready(function(){initNavTree('MELANCSplineFactory__3D_8cc_source.htm
 <div class="ttc" id="aclassMELAFuncPdf_html"><div class="ttname"><a href="classMELAFuncPdf.html">MELAFuncPdf</a></div><div class="ttdef"><b>Definition:</b> <a href="MELAFuncPdf_8h_source.html#l00007">MELAFuncPdf.h:7</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_a52adf3a695320f55871a85ca22b54cd2"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#a52adf3a695320f55871a85ca22b54cd2">MELANCSplineFactory_3D::XVar</a></div><div class="ttdeci">RooAbsReal * XVar</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8h_source.html#l00025">MELANCSplineFactory_3D.h:25</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_afb8a03c2d889440aa2f642fdff2d637c"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#afb8a03c2d889440aa2f642fdff2d637c">MELANCSplineFactory_3D::PDF</a></div><div class="ttdeci">MELAFuncPdf * PDF</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8h_source.html#l00029">MELANCSplineFactory_3D.h:29</a></div></div>
-<div class="ttc" id="anamespaceglobalc_html_a68e62f5d752be9315f909681fa34b5dc"><div class="ttname"><a href="namespaceglobalc.html#a68e62f5d752be9315f909681fa34b5dc">globalc::z</a></div><div class="ttdeci">double complex, dimension(2, 2) z</div><div class="ttdef"><b>Definition:</b> <a href="reductionC_8F90_source.html#l00050">reductionC.F90:50</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_aac91ce9aca66ebad69904dac7011b5c1"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#aac91ce9aca66ebad69904dac7011b5c1">MELANCSplineFactory_3D::setPoints</a></div><div class="ttdeci">void setPoints(TTree *tree)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8cc_source.html#l00112">MELANCSplineFactory_3D.cc:112</a></div></div>
 <div class="ttc" id="aclassMELANCSplineFactory__3D_html_a08e80bb18d1f5e89bf3ae70736555c5b"><div class="ttname"><a href="classMELANCSplineFactory__3D.html#a08e80bb18d1f5e89bf3ae70736555c5b">MELANCSplineFactory_3D::MELANCSplineFactory_3D</a></div><div class="ttdeci">MELANCSplineFactory_3D(RooAbsReal &amp;XVar_, RooAbsReal &amp;YVar_, RooAbsReal &amp;ZVar_, TString appendName_=&quot;&quot;, MELANCSplineCore::BoundaryCondition const bcBeginX_=MELANCSplineCore::bcNaturalSpline, MELANCSplineCore::BoundaryCondition const bcEndX_=MELANCSplineCore::bcNaturalSpline, MELANCSplineCore::BoundaryCondition const bcBeginY_=MELANCSplineCore::bcNaturalSpline, MELANCSplineCore::BoundaryCondition const bcEndY_=MELANCSplineCore::bcNaturalSpline, MELANCSplineCore::BoundaryCondition const bcBeginZ_=MELANCSplineCore::bcNaturalSpline, MELANCSplineCore::BoundaryCondition const bcEndZ_=MELANCSplineCore::bcNaturalSpline)</div><div class="ttdef"><b>Definition:</b> <a href="MELANCSplineFactory__3D_8cc_source.html#l00006">MELANCSplineFactory_3D.cc:6</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li><li class="navelem"><a class="el" href="MELANCSplineFactory__3D_8cc.html">MELANCSplineFactory_3D.cc</a></li>
-    <li class="footer">Generated on Fri Oct 18 2024 15:51:14 for JHUGen MELA by
+    <li class="footer">Generated on Fri Dec 20 2024 20:31:18 for JHUGen MELA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

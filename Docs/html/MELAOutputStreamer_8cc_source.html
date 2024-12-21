@@ -34,7 +34,7 @@
   <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.7, MELA v2.4.3</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('MELAOutputStreamer_8cc_source.html',''
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classMELAOutputStreamer.html#a286924e788a93a6b4c43e6e052662ff3">    7</a></span>&#160;<a class="code" href="classMELAOutputStreamer.html#a286924e788a93a6b4c43e6e052662ff3">MELAOutputStreamer::MELAOutputStreamer</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fname, std::ios_base::openmode fmode, <span class="keywordtype">bool</span> printError) :</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;theFile(fname, fmode)</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (!printError) <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a> = &amp;<a class="code" href="namespacedd__global.html#aaae36494da03fa13a3685638982a01ae">std::cout</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (!printError) <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a> = &amp;std::cout;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">else</span> <a class="code" href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">stdout_ptr</a> = &amp;std::cerr;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classMELAOutputStreamer.html#a0799f92f2d62c5d7a41391c97193205b">   13</a></span>&#160;<a class="code" href="classMELAOutputStreamer.html#a0799f92f2d62c5d7a41391c97193205b">MELAOutputStreamer::~MELAOutputStreamer</a>(){ this-&gt;<a class="code" href="classMELAOutputStreamer.html#afe550795f82fdedc35e5bdee32976a16">close</a>(); }</div>
@@ -276,7 +276,6 @@ $(document).ready(function(){initNavTree('MELAOutputStreamer_8cc_source.html',''
 <div class="ttc" id="aclassMELAOutputStreamer_html_a0bc46b66128216e7c7ad88c52ce936e8"><div class="ttname"><a href="classMELAOutputStreamer.html#a0bc46b66128216e7c7ad88c52ce936e8">MELAOutputStreamer::stdout_ptr</a></div><div class="ttdeci">std::ostream * stdout_ptr</div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8h_source.html#l00024">MELAOutputStreamer.h:24</a></div></div>
 <div class="ttc" id="aclassMELAOutputStreamer_html_a0799f92f2d62c5d7a41391c97193205b"><div class="ttname"><a href="classMELAOutputStreamer.html#a0799f92f2d62c5d7a41391c97193205b">MELAOutputStreamer::~MELAOutputStreamer</a></div><div class="ttdeci">~MELAOutputStreamer()</div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8cc_source.html#l00013">MELAOutputStreamer.cc:13</a></div></div>
 <div class="ttc" id="aclassMELACandidate_html_a53709194c53932ee53830e5308f41fb2"><div class="ttname"><a href="classMELACandidate.html#a53709194c53932ee53830e5308f41fb2">MELACandidate::getAssociatedTops</a></div><div class="ttdeci">std::vector&lt; MELATopCandidate_t * &gt; &amp; getAssociatedTops()</div><div class="ttdef"><b>Definition:</b> <a href="MELACandidate_8cc_source.html#l00183">MELACandidate.cc:183</a></div></div>
-<div class="ttc" id="anamespacedd__global_html_aaae36494da03fa13a3685638982a01ae"><div class="ttname"><a href="namespacedd__global.html#aaae36494da03fa13a3685638982a01ae">dd_global::cout</a></div><div class="ttdeci">integer cout</div><div class="ttdef"><b>Definition:</b> <a href="DD__global_8F90_source.html#l00021">DD_global.F90:21</a></div></div>
 <div class="ttc" id="aclassMELAOutputStreamer_html"><div class="ttname"><a href="classMELAOutputStreamer.html">MELAOutputStreamer</a></div><div class="ttdef"><b>Definition:</b> <a href="MELAOutputStreamer_8h_source.html#l00021">MELAOutputStreamer.h:21</a></div></div>
 <div class="ttc" id="aclassMELACandidate_html_a15724d0e24799f94c38204a3598cd09b"><div class="ttname"><a href="classMELACandidate.html#a15724d0e24799f94c38204a3598cd09b">MELACandidate::getNSortedVs</a></div><div class="ttdeci">int getNSortedVs() const</div><div class="ttdef"><b>Definition:</b> <a href="MELACandidate_8h_source.html#l00062">MELACandidate.h:62</a></div></div>
 <div class="ttc" id="aclassMELACandidate_html_a8d1ea43958f7a2ecf1f35006eb8152e8"><div class="ttname"><a href="classMELACandidate.html#a8d1ea43958f7a2ecf1f35006eb8152e8">MELACandidate::getAssociatedJets</a></div><div class="ttdeci">std::vector&lt; MELAParticle * &gt; &amp; getAssociatedJets()</div><div class="ttdef"><b>Definition:</b> <a href="MELACandidate_8cc_source.html#l00182">MELACandidate.cc:182</a></div></div>
@@ -290,7 +289,7 @@ $(document).ready(function(){initNavTree('MELAOutputStreamer_8cc_source.html',''
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_00387dd39d960209b81c23b2fe5ca929.html">MELA</a></li><li class="navelem"><a class="el" href="dir_a4d860b944a98453144538543559cfe2.html">src</a></li><li class="navelem"><a class="el" href="MELAOutputStreamer_8cc.html">MELAOutputStreamer.cc</a></li>
-    <li class="footer">Generated on Fri Oct 18 2024 15:51:14 for JHUGen MELA by
+    <li class="footer">Generated on Fri Dec 20 2024 20:31:18 for JHUGen MELA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

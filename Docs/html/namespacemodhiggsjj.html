@@ -34,7 +34,7 @@
   <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.7, MELA v2.4.3</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -3944,7 +3944,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l02817"></a><span class="lineno"> 2817</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">intent(out)</span> :: res</div>
 <div class="line"><a name="l02818"></a><span class="lineno"> 2818</span>&#160;    <span class="keywordtype">complex(dp)</span> :: a1234(-1:1,-1:1,-1:1,-1:1), a1324(-1:1,-1:1,-1:1,-1:1)</div>
 <div class="line"><a name="l02819"></a><span class="lineno"> 2819</span>&#160;    <span class="keywordtype">complex(dp)</span> :: aphi1234(1:2,-1:1,-1:1,-1:1,-1:1), aphi1324(1:2,-1:1,-1:1,-1:1,-1:1)</div>
-<div class="line"><a name="l02820"></a><span class="lineno"> 2820</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">parameter</span> :: col = 8.0_dp * ca**3 * cf</div>
+<div class="line"><a name="l02820"></a><span class="lineno"> 2820</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">parameter</span> :: col = 8.0_dp * <a class="code" href="namespacehto__colour.html#a2c9d16838ff6bc6257284d3e0002b886">ca</a>**3 * <a class="code" href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">cf</a></div>
 <div class="line"><a name="l02821"></a><span class="lineno"> 2821</span>&#160;    <span class="keywordtype">integer</span> :: i1,i2,i3,i4</div>
 <div class="line"><a name="l02822"></a><span class="lineno"> 2822</span>&#160;    <span class="keywordtype">complex(dp)</span> :: scalar, pseudo</div>
 <div class="line"><a name="l02823"></a><span class="lineno"> 2823</span>&#160; </div>
@@ -4060,8 +4060,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l02862"></a><span class="lineno"> 2862</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">intent(out)</span> :: res</div>
 <div class="line"><a name="l02863"></a><span class="lineno"> 2863</span>&#160;    <span class="keywordtype">complex(dp)</span> :: a1234(-1:1,-1:1,-1:1), a1243(-1:1,-1:1,-1:1)</div>
 <div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;    <span class="keywordtype">complex(dp)</span> :: aphi1234(1:2,-1:1,-1:1,-1:1), aphi1243(1:2,-1:1,-1:1,-1:1)</div>
-<div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">parameter</span> :: col1 = 4.0_dp * xn * cf**2</div>
-<div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">parameter</span> :: col2 = 2.0_dp * xn * cf * (2.0_dp * cf - ca)</div>
+<div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">parameter</span> :: col1 = 4.0_dp * xn * <a class="code" href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">cf</a>**2</div>
+<div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">parameter</span> :: col2 = 2.0_dp * xn * <a class="code" href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">cf</a> * (2.0_dp * <a class="code" href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">cf</a> - <a class="code" href="namespacehto__colour.html#a2c9d16838ff6bc6257284d3e0002b886">ca</a>)</div>
 <div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160;    <span class="keywordtype">integer</span> :: i12,i3,i4</div>
 <div class="line"><a name="l02868"></a><span class="lineno"> 2868</span>&#160;    <span class="keywordtype">complex(dp)</span> :: scalar, pseudo</div>
 <div class="line"><a name="l02869"></a><span class="lineno"> 2869</span>&#160; </div>
@@ -4377,11 +4377,13 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacehto__units_html_adb7ab93d326f14720c354f68b0f7ee6c"><div class="ttname"><a href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">hto_units::one</a></div><div class="ttdeci">real *8, parameter one</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00184">CALLING_cpHTO.f:184</a></div></div>
+<div class="ttc" id="anamespacehto__colour_html_a2c9d16838ff6bc6257284d3e0002b886"><div class="ttname"><a href="namespacehto__colour.html#a2c9d16838ff6bc6257284d3e0002b886">hto_colour::ca</a></div><div class="ttdeci">real *8 ca</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l02059">CALLING_cpHTO.f:2059</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_af02db4603cd8c3f0b97612d4c1b416eb"><div class="ttname"><a href="namespacehto__units.html#af02db4603cd8c3f0b97612d4c1b416eb">hto_units::ci</a></div><div class="ttdeci">real *8, dimension(1:2) ci</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00189">CALLING_cpHTO.f:189</a></div></div>
 <div class="ttc" id="anamespacemodmisc_html_a7262c4ef2e4832436c895d154dbe3080"><div class="ttname"><a href="namespacemodmisc.html#a7262c4ef2e4832436c895d154dbe3080">modmisc::swapr</a></div><div class="ttdeci">subroutine swapr(i, j)</div><div class="ttdef"><b>Definition:</b> <a href="mod__Misc_8F90_source.html#l00403">mod_Misc.F90:403</a></div></div>
 <div class="ttc" id="anamespacemodmisc_html"><div class="ttname"><a href="namespacemodmisc.html">modmisc</a></div><div class="ttdef"><b>Definition:</b> <a href="mod__Misc_8F90_source.html#l00001">mod_Misc.F90:1</a></div></div>
 <div class="ttc" id="anamespacemodmisc_html_a3f09f85d546e0284b955a11b37ef1310"><div class="ttname"><a href="namespacemodmisc.html#a3f09f85d546e0284b955a11b37ef1310">modmisc::scr</a></div><div class="ttdeci">double precision function scr(p1, p2)</div><div class="ttdef"><b>Definition:</b> <a href="mod__Misc_8F90_source.html#l00135">mod_Misc.F90:135</a></div></div>
 <div class="ttc" id="aTMCFM_8hh_html_a726ca809ffd3d67ab4b8476646f26635a9ef27f05549f71d70319d03789242cea"><div class="ttname"><a href="TMCFM_8hh.html#a726ca809ffd3d67ab4b8476646f26635a9ef27f05549f71d70319d03789242cea">nf</a></div><div class="ttdeci">@ nf</div><div class="ttdef"><b>Definition:</b> <a href="TMCFM_8hh_source.html#l00017">TMCFM.hh:17</a></div></div>
+<div class="ttc" id="anamespacehto__colour_html_a836ff5ae2e2c290b7853e7f53855a2f6"><div class="ttname"><a href="namespacehto__colour.html#a836ff5ae2e2c290b7853e7f53855a2f6">hto_colour::cf</a></div><div class="ttdeci">real *8 cf</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l02059">CALLING_cpHTO.f:2059</a></div></div>
 <div class="ttc" id="anamespacemodmisc_html_a5e82d0b873a2134ae12c18569547f5d6"><div class="ttname"><a href="namespacemodmisc.html#a5e82d0b873a2134ae12c18569547f5d6">modmisc::swapi</a></div><div class="ttdeci">subroutine swapi(i, j)</div><div class="ttdef"><b>Definition:</b> <a href="mod__Misc_8F90_source.html#l00393">mod_Misc.F90:393</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_a99185641f2fef22fbd699ff69ee64f18"><div class="ttname"><a href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">hto_units::zero</a></div><div class="ttdeci">real *8, parameter zero</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00185">CALLING_cpHTO.f:185</a></div></div>
 <div class="ttc" id="ainterfacemodmisc_1_1swap_html"><div class="ttname"><a href="interfacemodmisc_1_1swap.html">modmisc::swap</a></div><div class="ttdef"><b>Definition:</b> <a href="mod__Misc_8F90_source.html#l00005">mod_Misc.F90:5</a></div></div>
@@ -4389,7 +4391,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemodhiggsjj.html">modhiggsjj</a></li>
-    <li class="footer">Generated on Fri Oct 18 2024 15:51:18 for JHUGen MELA by
+    <li class="footer">Generated on Fri Dec 20 2024 20:31:28 for JHUGen MELA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

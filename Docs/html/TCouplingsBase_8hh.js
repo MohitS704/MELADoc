@@ -71,6 +71,21 @@ var TCouplingsBase_8hh =
       [ "gHIGGS_GG_4", "TCouplingsBase_8hh.html#a77462076b09e259275cd1c6aedbfcd0fa2a509a2137a6569611d7ae390e8b7a7d", null ],
       [ "SIZE_HGG", "TCouplingsBase_8hh.html#a77462076b09e259275cd1c6aedbfcd0fac6f5899e5a4cbe0755428cb2fe1922b6", null ]
     ] ],
+    [ "CouplingIndex_HHH", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11a", [
+      [ "gHIGGS_HH_c6", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aaf2738dd1b0fc2ecbe436386f795788b6", null ],
+      [ "gHIGGS_HH_t1", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aad1e87f8e5777295bb4c8f9bfba857a9d", null ],
+      [ "gHIGGS_HH_t2", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aa359ba776f97c0ceee20cb7dd5934d182", null ],
+      [ "gHIGGS_HH_t3", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aab21e00d8c987b68738221d230dd7994d", null ],
+      [ "gHIGGS_HH_t4", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aa79555af6b5d4e6de83fad2dcb1bcd914", null ],
+      [ "gHIGGS_HH_t5", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aaaffeb0ecde91908ae8c9038ae3a7fcb7", null ],
+      [ "gHIGGS_HH_t6", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aa65935c253bcd891f998decc82b2debb1", null ],
+      [ "gHIGGS_HH_w1", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aafe9d266e0136f5d153fab1249ab6ca67", null ],
+      [ "gHIGGS_HH_w2", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aa00b8f4753902dfa218ab78d527120621", null ],
+      [ "gHIGGS_HH_w3", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aae9c88c403dd5e3a83a022126a97a15ff", null ],
+      [ "gHIGGS_HH_w4", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aa69d3f3946bb6a3f7d362b6f9de12883e", null ],
+      [ "gHIGGS_HH_w5", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aa9c41d582edcb15f62cf27add6e486446", null ],
+      [ "SIZE_HHH", "TCouplingsBase_8hh.html#a3bffccc27c75fcffd2cd73ec1a5ed11aacdc79dc380b355c7428b1a00841a7b98", null ]
+    ] ],
     [ "CouplingIndex_HQQ", "TCouplingsBase_8hh.html#aaf9cd6338752839e3ae292e9b24ff0b1", [
       [ "gHIGGS_KAPPA", "TCouplingsBase_8hh.html#aaf9cd6338752839e3ae292e9b24ff0b1a35e1d43c48b9e28416d66bc091eeb3da", null ],
       [ "gHIGGS_KAPPA_TILDE", "TCouplingsBase_8hh.html#aaf9cd6338752839e3ae292e9b24ff0b1a79d3c039fbb48d9bf84602dd59a5c040", null ],
@@ -123,6 +138,16 @@ var TCouplingsBase_8hh =
       [ "cLambdaHIGGS_VV_QSQ2", "TCouplingsBase_8hh.html#ad870efc6840ceabecdb2ac1f16326135aef3127c75f6aac445f1b9e8e3cc42488", null ],
       [ "cLambdaHIGGS_VV_QSQ12", "TCouplingsBase_8hh.html#ad870efc6840ceabecdb2ac1f16326135aad04249285e92f6874b0b4f6f01f7e55", null ],
       [ "SIZE_HVV_CQSQ", "TCouplingsBase_8hh.html#ad870efc6840ceabecdb2ac1f16326135a055abb91879193503c05acdd76ac5df9", null ]
+    ] ],
+    [ "CouplingIndex_HVV_LAMBDAFF", "TCouplingsBase_8hh.html#a6b2cc40169a19f0d4e8daed7faf00c59", [
+      [ "LambdaHIGGS_VV_FF1", "TCouplingsBase_8hh.html#a6b2cc40169a19f0d4e8daed7faf00c59afe12d99ae1f2c50364c629b2aef730e3", null ],
+      [ "LambdaHIGGS_VV_FF2", "TCouplingsBase_8hh.html#a6b2cc40169a19f0d4e8daed7faf00c59a642fe073aa732fb3ba12f47de4d952dc", null ],
+      [ "SIZE_HVV_LAMBDAFF", "TCouplingsBase_8hh.html#a6b2cc40169a19f0d4e8daed7faf00c59a1a96124fccf815197d45395f2fba6b72", null ]
+    ] ],
+    [ "CouplingIndex_HVV_NFF", "TCouplingsBase_8hh.html#a90bc31cbba1d4b37d0622d84b5262305", [
+      [ "nHIGGS_VV_FF1", "TCouplingsBase_8hh.html#a90bc31cbba1d4b37d0622d84b5262305a3862b8c37f647b040197636ff3f3b0ff", null ],
+      [ "nHIGGS_VV_FF2", "TCouplingsBase_8hh.html#a90bc31cbba1d4b37d0622d84b5262305a3a378aebead644cdd7f4d155b5d96e20", null ],
+      [ "SIZE_HVV_NFF", "TCouplingsBase_8hh.html#a90bc31cbba1d4b37d0622d84b5262305a1afd3eeb9266715e079e3655a6b17eb3", null ]
     ] ],
     [ "CouplingIndex_LAMBDAQSQ", "TCouplingsBase_8hh.html#ac5ccba37d05000fe5a8f00f9b907dcd9", [
       [ "LambdaHIGGS_QSQ_VV_1", "TCouplingsBase_8hh.html#ac5ccba37d05000fe5a8f00f9b907dcd9a30822343c17a4cea32c82599cd40a352", null ],

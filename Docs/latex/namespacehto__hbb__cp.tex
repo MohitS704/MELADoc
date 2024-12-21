@@ -43,7 +43,7 @@ Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3629        \textcolor{keywordtype}{IMPLICIT NONE}}
 \DoxyCodeLine{3630 *}
 \DoxyCodeLine{3631        \textcolor{keywordtype}{INTEGER} nc,iz}
-\DoxyCodeLine{3632        real*8 hto\_shh,muhr,rgh,muhs,scal,scals,p2,xm0,str,sti,ewc,}
+\DoxyCodeLine{3632        real*8 \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\_shh}},muhr,rgh,muhs,scal,scals,p2,xm0,str,sti,ewc,}
 \DoxyCodeLine{3633      \textcolor{preprocessor}{\#        sconv,asmur,emc,emb,emt,as\_NLO,rmbs,rmcs,rmss,}}
 \DoxyCodeLine{3634 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#        crmbs,crmcs,lcxb,lcxc,lcxbs,lcxcs,lclxb,lclxc,qcdtop,neg}}
 \DoxyCodeLine{3635 \textcolor{preprocessor}{}       real*8, \textcolor{keywordtype}{dimension(2)} :: axm0}
@@ -116,7 +116,7 @@ Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3702        iz= 1}
 \DoxyCodeLine{3703        \textcolor{keyword}{CALL }\mbox{\hyperlink{CALLING__cpHTO_8f_a31bcaa369fd57a5433768e2fea681711}{hto\_initalphas}}(iz,\mbox{\hyperlink{namespacehto__units_adb7ab93d326f14720c354f68b0f7ee6c}{one}},\mbox{\hyperlink{namespacehto__masses_aa9e6764720e3ea1122ab5a2f0490504b}{mz}},asmur,emc,emb,emt)}
 \DoxyCodeLine{3704        \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}= \mbox{\hyperlink{CALLING__cpHTO_8f_a9e9857c0067d52b705085796b0b73151}{hto\_alphas}}(scal)}
-\DoxyCodeLine{3705        as\_nlo= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}/pi}
+\DoxyCodeLine{3705        as\_nlo= \mbox{\hyperlink{namespacehto__set__phys__const_acefe4c64c5ea3e69c7657084878920cb}{als}}/\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
 \DoxyCodeLine{3706 *}
 \DoxyCodeLine{3707        runbc= \mbox{\hyperlink{namespacehto__qcd_a56727402fd2ceaa1f03af4e6415f8ae8}{hto\_run\_bc}}(scal)}
 \DoxyCodeLine{3708        crmbs= runbc(2)*runbc(2)}
@@ -131,7 +131,7 @@ Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3717        lclxc= log(lcxc)}
 \DoxyCodeLine{3718 *}
 \DoxyCodeLine{3719        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__aux__hcp_a6736a2a621a3b459df115cbc30feb04b}{gtop}} == 1) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{3720         \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}= \mbox{\hyperlink{namespacehto__set__phys__const_adf97d1bf3a663ded7ef686746aaba509}{g\_f}}/(8.d0*sqrt(2.d0)*pi)*(\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}*\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}-\/\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}*\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}})**2*}
+\DoxyCodeLine{3720         \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}= \mbox{\hyperlink{namespacehto__set__phys__const_adf97d1bf3a663ded7ef686746aaba509}{g\_f}}/(8.d0*sqrt(2.d0)*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}})*(\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}*\mbox{\hyperlink{namespacehto__masses_aac88894e5a12f3e2714f96d1e81c710b}{mt}}-\/\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}}*\mbox{\hyperlink{namespacehto__masses_aafa2253852313b2e36a6fe30d95afb88}{mw}})**2*}
 \DoxyCodeLine{3721      \textcolor{preprocessor}{\#      (mt*mt+2.d0*mw*mw)/mt**3}}
 \DoxyCodeLine{3722 \textcolor{preprocessor}{}       \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__aux__hcp_a6736a2a621a3b459df115cbc30feb04b}{gtop}} == 0) \textcolor{keywordflow}{THEN} }
 \DoxyCodeLine{3723         \mbox{\hyperlink{namespacehto__set__phys__const_a3b3f85b2e5be4ddb1064e979abe8eee3}{imt}}= 0.d0}
@@ -154,7 +154,7 @@ Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3740        cmxw= -\/\mbox{\hyperlink{namespacehto__aux__hbb_a63703586d88022f920dbba65ebfcbf00}{cxw}}}
 \DoxyCodeLine{3741 *}
 \DoxyCodeLine{3742        clmw= cmxw(1).\mbox{\hyperlink{namespacehto__full__ln_a5ec575d7693b0759eacc711a5e49688e}{fln}}.cmxw(2)}
-\DoxyCodeLine{3743        clmw(2)= clmw(2)-\/2.d0*pi}
+\DoxyCodeLine{3743        clmw(2)= clmw(2)-\/2.d0*\mbox{\hyperlink{namespacehto__riemann_aa29c661c983363871ad0d454f9f954cd}{pi}}}
 \DoxyCodeLine{3744 *}
 \DoxyCodeLine{3745        sh(1)= muhs/scals}
 \DoxyCodeLine{3746        sh(2)= -\/muhr*rgh/scals}
@@ -480,7 +480,7 @@ Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{4066 *       dw= 0.d0}
 \DoxyCodeLine{4067 *}
 \DoxyCodeLine{4068        \textcolor{keywordflow}{IF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.0) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{4069         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4069         \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\_shh}}= rgh/muhr*}
 \DoxyCodeLine{4070      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
 \DoxyCodeLine{4071 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*total(2)+swi*total(1))/sconv}}
 \DoxyCodeLine{4072 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +as\_NLO*g\_f/(sqrt(2.d0)*pis)*}}
@@ -488,18 +488,18 @@ Definition at line 3611 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{4074 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +qcdtop}}
 \DoxyCodeLine{4075 \textcolor{preprocessor}{}*}
 \DoxyCodeLine{4076        \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.1) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{4077         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4077         \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\_shh}}= rgh/muhr*}
 \DoxyCodeLine{4078      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
 \DoxyCodeLine{4079 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*totalf(2)+swi*totalf(1))/sconv}}
 \DoxyCodeLine{4080 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +as\_NLO*g\_f/(sqrt(2.d0)*pis)*}}
 \DoxyCodeLine{4081 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       (sh(1)*nloqcd(2)+sh(2)*nloqcd(1))/sconv}}
 \DoxyCodeLine{4082 \textcolor{preprocessor}{}       \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.2) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{4083         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4083         \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\_shh}}= rgh/muhr*}
 \DoxyCodeLine{4084      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
 \DoxyCodeLine{4085 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*totalt(2)+swi*totalt(1))/sconv}}
 \DoxyCodeLine{4086 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       +qcdtop}}
 \DoxyCodeLine{4087 \textcolor{preprocessor}{}       \textcolor{keywordflow}{ELSEIF}(\mbox{\hyperlink{namespacehto__ferbos_a6a817ba29f4cd27ba4ae451c20b0acf1}{ifb}}.eq.3) \textcolor{keywordflow}{THEN}}
-\DoxyCodeLine{4088         hto\_shh= rgh/muhr*}
+\DoxyCodeLine{4088         \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\_shh}}= rgh/muhr*}
 \DoxyCodeLine{4089      \textcolor{preprocessor}{\#       (1.d0+EWC*(swr*DW(1)-\/swi*DW(2)))}}
 \DoxyCodeLine{4090 \textcolor{preprocessor}{}     \textcolor{preprocessor}{\#       -\/EWC*(swr*totalb(2)+swi*totalb(1))/sconv}}
 \DoxyCodeLine{4091 \textcolor{preprocessor}{}\textcolor{keywordflow}{       ENDIF}}
@@ -526,14 +526,14 @@ Definition at line 3590 of file C\+A\+L\+L\+I\+N\+G\+\_\+cp\+H\+T\+O.\+f.
 \DoxyCodeLine{3593 \textcolor{comment}{*}}
 \DoxyCodeLine{3594 \textcolor{comment}{c I've commented the following line and added the other twos (Carlo Oleari)}}
 \DoxyCodeLine{3595 \textcolor{comment}{c      REAL*8 HTO\_SSHH,rgh,muc,scalc,x}}
-\DoxyCodeLine{3596       real*8 hto\_sshh,rgh,muc,scalc}
+\DoxyCodeLine{3596       real*8 \mbox{\hyperlink{namespacehto__hbb__cp_a8feffc4d9be4bf53bae92ecfbd1c1200}{hto\_sshh}},rgh,muc,scalc}
 \DoxyCodeLine{3597       real*8, \textcolor{keywordtype}{INTENT(IN)}  :: x}
 \DoxyCodeLine{3598 \textcolor{comment}{*}}
 \DoxyCodeLine{3599       muc= \mbox{\hyperlink{namespacehto__aux__hcp_ab3f40e3738ae6befd75d6811ce8846f1}{muhcp}}}
 \DoxyCodeLine{3600       scalc= \mbox{\hyperlink{namespacehto__aux__hcp_aa11378073105ae2f60600fde51820c2f}{scalec}}}
 \DoxyCodeLine{3601       rgh= x*muc}
 \DoxyCodeLine{3602 \textcolor{comment}{*}}
-\DoxyCodeLine{3603       hto\_sshh= hto\_shh(muc,scalc,rgh)}
+\DoxyCodeLine{3603       \mbox{\hyperlink{namespacehto__hbb__cp_a8feffc4d9be4bf53bae92ecfbd1c1200}{hto\_sshh}}= \mbox{\hyperlink{namespacehto__hbb__cp_acfe90cf9010d4a290c824991a0f12400}{hto\_shh}}(muc,scalc,rgh)}
 \DoxyCodeLine{3604 \textcolor{comment}{*}}
 \DoxyCodeLine{3605       \textcolor{keywordflow}{RETURN}}
 

@@ -1,8 +1,5 @@
 var annotated_dup =
 [
-    [ "collier_coefs", "namespacecollier__coefs.html", "namespacecollier__coefs" ],
-    [ "collier_init", "namespacecollier__init.html", "namespacecollier__init" ],
-    [ "collier_tensors", "namespacecollier__tensors.html", "namespacecollier__tensors" ],
     [ "hto_acmplx_pro", "namespacehto__acmplx__pro.html", "namespacehto__acmplx__pro" ],
     [ "hto_acmplx_rat", "namespacehto__acmplx__rat.html", "namespacehto__acmplx__rat" ],
     [ "hto_cmplx_ln", "namespacehto__cmplx__ln.html", "namespacehto__cmplx__ln" ],
@@ -44,8 +41,8 @@ var annotated_dup =
     [ "MELAqqZZPdf_v2", "classMELAqqZZPdf__v2.html", "classMELAqqZZPdf__v2" ],
     [ "MELARelBWUFParam", "classMELARelBWUFParam.html", "classMELARelBWUFParam" ],
     [ "MELAThreeBodyDecayCandidate", "classMELAThreeBodyDecayCandidate.html", "classMELAThreeBodyDecayCandidate" ],
-    [ "PseudoMELA", "classPseudoMELA.html", "classPseudoMELA" ],
     [ "PseudoMela", "classPseudoMela.html", null ],
+    [ "PseudoMELA", "classPseudoMELA.html", "classPseudoMELA" ],
     [ "RooqqZZ_JHU", "classRooqqZZ__JHU.html", "classRooqqZZ__JHU" ],
     [ "RooqqZZ_JHU_ZgammaZZ_fast", "classRooqqZZ__JHU__ZgammaZZ__fast.html", "classRooqqZZ__JHU__ZgammaZZ__fast" ],
     [ "RooRapidityBkg", "classRooRapidityBkg.html", "classRooRapidityBkg" ],

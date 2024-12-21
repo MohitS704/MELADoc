@@ -288,13 +288,13 @@ Definition at line 347 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+2\+D\+\_\+fast.\+cc
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{347                                                                                         \{}
-\DoxyCodeLine{348   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSpline__2D__fast_a0c2dd3b3a1315e6fc633d9e6f3004945}{interpolateFcn}}(code, rangeName);}
-\DoxyCodeLine{349   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}})\{}
-\DoxyCodeLine{350     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast ERROR::MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{") integration returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl;}
-\DoxyCodeLine{351     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}};}
+\DoxyCodeLine{348   Double\_t value = \mbox{\hyperlink{classMELANCSpline__2D__fast_a0c2dd3b3a1315e6fc633d9e6f3004945}{interpolateFcn}}(code, rangeName);}
+\DoxyCodeLine{349   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& value<\mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}})\{}
+\DoxyCodeLine{350     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Integration) << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast ERROR::MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{") integration returned "} << value << \textcolor{stringliteral}{" for code = "} << code << endl;}
+\DoxyCodeLine{351     value = \mbox{\hyperlink{classMELANCSplineCore_abbe41867b34ccb098b7b0f6eae9ca3b0}{floorInt}};}
 \DoxyCodeLine{352   \}}
-\DoxyCodeLine{353   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
-\DoxyCodeLine{354   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{353   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ cout << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{")::analyticalIntegral = "} << value << \textcolor{stringliteral}{" for code = "} << code << endl; \}}
+\DoxyCodeLine{354   \textcolor{keywordflow}{return} value;}
 \DoxyCodeLine{355 \}}
 
 \end{DoxyCode}
@@ -385,13 +385,13 @@ Definition at line 313 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+2\+D\+\_\+fast.\+cc
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{313                                              \{}
-\DoxyCodeLine{314   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSpline__2D__fast_a0c2dd3b3a1315e6fc633d9e6f3004945}{interpolateFcn}}(0);}
-\DoxyCodeLine{315   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}}<\mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}})\{}
-\DoxyCodeLine{316     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast ERROR::MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at (x, y) = ("} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classMELANCSpline__2D__fast_a20b1851aaba920d2fc58cbcb5b83454d}{theYVar}} << \textcolor{stringliteral}{")"} << endl;}
-\DoxyCodeLine{317     \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}};}
+\DoxyCodeLine{314   Double\_t value = \mbox{\hyperlink{classMELANCSpline__2D__fast_a0c2dd3b3a1315e6fc633d9e6f3004945}{interpolateFcn}}(0);}
+\DoxyCodeLine{315   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_ad7f81f65dc5c79ff1c8b7916b8b0d7c7}{useFloor}} \&\& value<\mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}})\{}
+\DoxyCodeLine{316     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}>=\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a2cd1f414fc93dcf9ef99c2b00549c986}{MELANCSplineCore::kError}}) coutE(Eval) << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast ERROR::MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{") evaluation returned "} << value << \textcolor{stringliteral}{" at (x, y) = ("} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classMELANCSpline__2D__fast_a20b1851aaba920d2fc58cbcb5b83454d}{theYVar}} << \textcolor{stringliteral}{")"} << endl;}
+\DoxyCodeLine{317     value = \mbox{\hyperlink{classMELANCSplineCore_a9cc748a9d519b5fa4e07f6c13f90eef2}{floorEval}};}
 \DoxyCodeLine{318   \}}
-\DoxyCodeLine{319   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} << \textcolor{stringliteral}{" at (x, y) = ("} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classMELANCSpline__2D__fast_a20b1851aaba920d2fc58cbcb5b83454d}{theYVar}} << \textcolor{stringliteral}{")"} << endl; \}}
-\DoxyCodeLine{320   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{319   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ cout << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{")::evaluate = "} << value << \textcolor{stringliteral}{" at (x, y) = ("} << \mbox{\hyperlink{classMELANCSplineCore_a0e34d3e05bc6c0eb790775aa0686ede4}{theXVar}} << \textcolor{stringliteral}{", "} << \mbox{\hyperlink{classMELANCSpline__2D__fast_a20b1851aaba920d2fc58cbcb5b83454d}{theYVar}} << \textcolor{stringliteral}{")"} << endl; \}}
+\DoxyCodeLine{320   \textcolor{keywordflow}{return} value;}
 \DoxyCodeLine{321 \}}
 
 \end{DoxyCode}
@@ -591,7 +591,7 @@ Definition at line 149 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+2\+D\+\_\+fast.\+cc
 \DoxyCodeLine{149                                                                                             \{}
 \DoxyCodeLine{150   \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{DefaultAccumulator<MELANCSplineCore::T>}} res;}
 \DoxyCodeLine{151 }
-\DoxyCodeLine{152   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn begin with code: "} << code << endl; \}}
+\DoxyCodeLine{152   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{ cout << \textcolor{stringliteral}{"MELANCSpline\_2D\_fast("} << GetName() << \textcolor{stringliteral}{")::interpolateFcn begin with code: "} << code << endl; \}}
 \DoxyCodeLine{153 }
 \DoxyCodeLine{154   \textcolor{comment}{// Get bins}}
 \DoxyCodeLine{155   Int\_t xbin=-\/1, xbinmin=-\/1, xbinmax=-\/1, ybin=-\/1, ybinmin=-\/1, ybinmax=-\/1;}
@@ -638,8 +638,8 @@ Definition at line 149 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+2\+D\+\_\+fast.\+cc
 \DoxyCodeLine{196     \textcolor{keywordflow}{else} txhigh=tx;}
 \DoxyCodeLine{197 }
 \DoxyCodeLine{198     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{}
-\DoxyCodeLine{199       \textcolor{keywordflow}{if} (code==0 || code\%2!=0) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Evaluating tx="} << txhigh << \textcolor{stringliteral}{" in bin "} << ix << endl;}
-\DoxyCodeLine{200       \textcolor{keywordflow}{else} \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"Evaluating tx["} << txlow << \textcolor{stringliteral}{", "} << txhigh << \textcolor{stringliteral}{"] in bin "} << ix << endl;}
+\DoxyCodeLine{199       \textcolor{keywordflow}{if} (code==0 || code\%2!=0) cout << \textcolor{stringliteral}{"Evaluating tx="} << txhigh << \textcolor{stringliteral}{" in bin "} << ix << endl;}
+\DoxyCodeLine{200       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"Evaluating tx["} << txlow << \textcolor{stringliteral}{", "} << txhigh << \textcolor{stringliteral}{"] in bin "} << ix << endl;}
 \DoxyCodeLine{201     \}}
 \DoxyCodeLine{202 }
 \DoxyCodeLine{203     \textcolor{comment}{// Get the x coefficients interpolated across y}}
@@ -647,7 +647,7 @@ Definition at line 149 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+2\+D\+\_\+fast.\+cc
 \DoxyCodeLine{205     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} ic=0; ic<(int)\mbox{\hyperlink{classMELANCSpline__2D__fast_a41b425b1b732be54d31b849ed0bd7794}{coefficients}}.at(ix).size(); ic++)\{}
 \DoxyCodeLine{206       \textcolor{keyword}{const} vector<vector<MELANCSplineCore::T>>\& yCoefs = \mbox{\hyperlink{classMELANCSpline__2D__fast_a41b425b1b732be54d31b849ed0bd7794}{coefficients}}.at(ix).at(ic);}
 \DoxyCodeLine{207 }
-\DoxyCodeLine{208       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}}) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"\(\backslash\)tCoefficient "} << ic << \textcolor{stringliteral}{":\(\backslash\)n"};}
+\DoxyCodeLine{208       \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}}) cout << \textcolor{stringliteral}{"\(\backslash\)tCoefficient "} << ic << \textcolor{stringliteral}{":\(\backslash\)n"};}
 \DoxyCodeLine{209 }
 \DoxyCodeLine{210       \mbox{\hyperlink{classTNumericUtil_1_1KahanAccumulator}{DefaultAccumulator<MELANCSplineCore::T>}} theCoef;}
 \DoxyCodeLine{211       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} iy=0; iy<(int)yCoefs.size(); iy++)\{}
@@ -665,8 +665,8 @@ Definition at line 149 of file M\+E\+L\+A\+N\+C\+Spline\+\_\+2\+D\+\_\+fast.\+cc
 \DoxyCodeLine{223         \textcolor{keywordflow}{else} tyhigh=ty;}
 \DoxyCodeLine{224 }
 \DoxyCodeLine{225         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMELANCSplineCore_a8ab4e8e64ab4752af5ed73393c0d0c6c}{verbosity}}==\mbox{\hyperlink{classMELANCSplineCore_a7e9d09d4589ef578830ff571e9ea6613a89838cdb0985474349019b83adce9b49}{MELANCSplineCore::kVerbose}})\{}
-\DoxyCodeLine{226           \textcolor{keywordflow}{if} (code==0 || code\%3!=0) \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"\(\backslash\)tEvaluating ty="} << tyhigh << \textcolor{stringliteral}{" in bin "} << iy << endl;}
-\DoxyCodeLine{227           \textcolor{keywordflow}{else} \mbox{\hyperlink{namespacedd__global_aaae36494da03fa13a3685638982a01ae}{cout}} << \textcolor{stringliteral}{"\(\backslash\)tEvaluating ty["} << tylow << \textcolor{stringliteral}{", "} << tyhigh << \textcolor{stringliteral}{"] in bin "} << iy << endl;}
+\DoxyCodeLine{226           \textcolor{keywordflow}{if} (code==0 || code\%3!=0) cout << \textcolor{stringliteral}{"\(\backslash\)tEvaluating ty="} << tyhigh << \textcolor{stringliteral}{" in bin "} << iy << endl;}
+\DoxyCodeLine{227           \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"\(\backslash\)tEvaluating ty["} << tylow << \textcolor{stringliteral}{", "} << tyhigh << \textcolor{stringliteral}{"] in bin "} << iy << endl;}
 \DoxyCodeLine{228         \}}
 \DoxyCodeLine{229 }
 \DoxyCodeLine{230         theCoef += \mbox{\hyperlink{classMELANCSplineCore_a3236653994df040165ec3785ea381b1e}{evalSplineSegment}}(yCoefs.at(iy), \mbox{\hyperlink{classMELANCSpline__2D__fast_a0408b227ce33a7794dc22fcc1263dbd3}{kappaY}}.at(iy), tyhigh, tylow, (code>0 \&\& code\%3==0));}

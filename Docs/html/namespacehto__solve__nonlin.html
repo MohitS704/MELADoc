@@ -34,7 +34,7 @@
   <td id="projectlogo"><img alt="Logo" src="MELA.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">JHUGen MELA
-   &#160;<span id="projectnumber">JHUGen v7.5.6, MELA v2.4.2</span>
+   &#160;<span id="projectnumber">JHUGen v7.5.7, MELA v2.4.3</span>
    </div>
    <div id="projectbrief">Matrix element calculations as used in JHUGen.</div>
   </td>
@@ -292,7 +292,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05905"></a><span class="lineno"> 5905</span>&#160;       wa1(j)= 0.0</div>
 <div class="line"><a name="l05906"></a><span class="lineno"> 5906</span>&#160;       wa2(j)= diag(j)*x(j)</div>
 <div class="line"><a name="l05907"></a><span class="lineno"> 5907</span>&#160;<span class="keywordflow">      ENDDO</span></div>
-<div class="line"><a name="l05908"></a><span class="lineno"> 5908</span>&#160;      qnorm= hto_enorm(n,wa2)</div>
+<div class="line"><a name="l05908"></a><span class="lineno"> 5908</span>&#160;      qnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa2)</div>
 <div class="line"><a name="l05909"></a><span class="lineno"> 5909</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l05910"></a><span class="lineno"> 5910</span>&#160;      <span class="keywordflow">IF</span>(qnorm &gt; delta) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l05911"></a><span class="lineno"> 5911</span>&#160;       l= 1</div>
@@ -304,7 +304,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05917"></a><span class="lineno"> 5917</span>&#160;<span class="keywordflow">        ENDDO</span></div>
 <div class="line"><a name="l05918"></a><span class="lineno"> 5918</span>&#160;        wa1(j)= wa1(j)/diag(j)</div>
 <div class="line"><a name="l05919"></a><span class="lineno"> 5919</span>&#160;<span class="keywordflow">       ENDDO</span></div>
-<div class="line"><a name="l05920"></a><span class="lineno"> 5920</span>&#160;       gnorm= hto_enorm(n,wa1)</div>
+<div class="line"><a name="l05920"></a><span class="lineno"> 5920</span>&#160;       gnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa1)</div>
 <div class="line"><a name="l05921"></a><span class="lineno"> 5921</span>&#160;       sgnorm= 0.0</div>
 <div class="line"><a name="l05922"></a><span class="lineno"> 5922</span>&#160;       alpha= delta/qnorm</div>
 <div class="line"><a name="l05923"></a><span class="lineno"> 5923</span>&#160;       <span class="keywordflow">IF</span>(gnorm /= 0.0) <span class="keywordflow">THEN</span></div>
@@ -320,11 +320,11 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05933"></a><span class="lineno"> 5933</span>&#160;<span class="keywordflow">         ENDDO</span></div>
 <div class="line"><a name="l05934"></a><span class="lineno"> 5934</span>&#160;         wa2(j)= sum</div>
 <div class="line"><a name="l05935"></a><span class="lineno"> 5935</span>&#160;<span class="keywordflow">        ENDDO</span></div>
-<div class="line"><a name="l05936"></a><span class="lineno"> 5936</span>&#160;        temp= hto_enorm(n,wa2)</div>
+<div class="line"><a name="l05936"></a><span class="lineno"> 5936</span>&#160;        temp= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa2)</div>
 <div class="line"><a name="l05937"></a><span class="lineno"> 5937</span>&#160;        sgnorm= (gnorm/temp)/temp</div>
 <div class="line"><a name="l05938"></a><span class="lineno"> 5938</span>&#160;        alpha= 0.0</div>
 <div class="line"><a name="l05939"></a><span class="lineno"> 5939</span>&#160;        <span class="keywordflow">IF</span>(sgnorm &lt; delta) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l05940"></a><span class="lineno"> 5940</span>&#160;         bnorm= hto_enorm(n,qtb)</div>
+<div class="line"><a name="l05940"></a><span class="lineno"> 5940</span>&#160;         bnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,qtb)</div>
 <div class="line"><a name="l05941"></a><span class="lineno"> 5941</span>&#160;         temp= (bnorm/gnorm)*(bnorm/qnorm)*(sgnorm/delta)</div>
 <div class="line"><a name="l05942"></a><span class="lineno"> 5942</span>&#160;         temp= temp-(delta/qnorm)*(sgnorm/delta)**2+</div>
 <div class="line"><a name="l05943"></a><span class="lineno"> 5943</span>&#160;     #         sqrt((temp-(delta/qnorm))**2+(1.0d0-(delta/qnorm)**2)*</div>
@@ -892,7 +892,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05434"></a><span class="lineno"> 5434</span>&#160;      mu= n-1</div>
 <div class="line"><a name="l05435"></a><span class="lineno"> 5435</span>&#160;      mode= 2</div>
 <div class="line"><a name="l05436"></a><span class="lineno"> 5436</span>&#160;      nprint= 0</div>
-<div class="line"><a name="l05437"></a><span class="lineno"> 5437</span>&#160;      <span class="keyword">CALL </span>hto_hybrd(hto_fcn,n,x,fvec,xtol,maxfev,ml,mu,epsfcn,diag,</div>
+<div class="line"><a name="l05437"></a><span class="lineno"> 5437</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#a2fedece7d4082c4306271f14df72387e">hto_hybrd</a>(hto_fcn,n,x,fvec,xtol,maxfev,ml,mu,epsfcn,diag,</div>
 <div class="line"><a name="l05438"></a><span class="lineno"> 5438</span>&#160;     #               mode,factor,nprint,info,nfev)</div>
 <div class="line"><a name="l05439"></a><span class="lineno"> 5439</span>&#160;      <span class="keywordflow">IF</span>(info == 5) info= 4</div>
 <div class="line"><a name="l05440"></a><span class="lineno"> 5440</span>&#160;   20 <span class="keywordflow">RETURN</span></div>
@@ -1205,7 +1205,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05645"></a><span class="lineno"> 5645</span>&#160;      <span class="keyword">CALL </span>hto_fcn(n,x,fvec,iflag)</div>
 <div class="line"><a name="l05646"></a><span class="lineno"> 5646</span>&#160;      nfev= 1</div>
 <div class="line"><a name="l05647"></a><span class="lineno"> 5647</span>&#160;      <span class="keywordflow">IF</span>(iflag &gt;= 0) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l05648"></a><span class="lineno"> 5648</span>&#160;      fnorm= hto_enorm(n,fvec)</div>
+<div class="line"><a name="l05648"></a><span class="lineno"> 5648</span>&#160;      fnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,fvec)</div>
 <div class="line"><a name="l05649"></a><span class="lineno"> 5649</span>&#160;      msum= min(ml+mu+1,n)</div>
 <div class="line"><a name="l05650"></a><span class="lineno"> 5650</span>&#160;      iter= 1</div>
 <div class="line"><a name="l05651"></a><span class="lineno"> 5651</span>&#160;      ncsuc= 0</div>
@@ -1214,11 +1214,11 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05654"></a><span class="lineno"> 5654</span>&#160;      nslow2= 0</div>
 <div class="line"><a name="l05655"></a><span class="lineno"> 5655</span>&#160;  20  jeval= .true.</div>
 <div class="line"><a name="l05656"></a><span class="lineno"> 5656</span>&#160;      iflag= 2</div>
-<div class="line"><a name="l05657"></a><span class="lineno"> 5657</span>&#160;      <span class="keyword">CALL </span>hto_fdjac1(hto_fcn,n,x,fvec,fjac,n,iflag,ml,mu,epsfcn,</div>
+<div class="line"><a name="l05657"></a><span class="lineno"> 5657</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#a9b9991931fe83ae42bd577aa132fd691">hto_fdjac1</a>(hto_fcn,n,x,fvec,fjac,n,iflag,ml,mu,epsfcn,</div>
 <div class="line"><a name="l05658"></a><span class="lineno"> 5658</span>&#160;     #                wa1,wa2)</div>
 <div class="line"><a name="l05659"></a><span class="lineno"> 5659</span>&#160;      nfev= nfev+msum</div>
 <div class="line"><a name="l05660"></a><span class="lineno"> 5660</span>&#160;      <span class="keywordflow">IF</span>(iflag &gt;= 0) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l05661"></a><span class="lineno"> 5661</span>&#160;      <span class="keyword">CALL </span>hto_qrfac(n,n,fjac,n,.false.,iwa,1,wa1,wa2,wa3)</div>
+<div class="line"><a name="l05661"></a><span class="lineno"> 5661</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#a98884f67245c484b378efff769d60f69">hto_qrfac</a>(n,n,fjac,n,.false.,iwa,1,wa1,wa2,wa3)</div>
 <div class="line"><a name="l05662"></a><span class="lineno"> 5662</span>&#160;      <span class="keywordflow">IF</span>(iter == 1) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l05663"></a><span class="lineno"> 5663</span>&#160;      <span class="keywordflow">IF</span>(mode /= 2) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l05664"></a><span class="lineno"> 5664</span>&#160;       <span class="keywordflow">DO</span> j= 1,n</div>
@@ -1227,7 +1227,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05667"></a><span class="lineno"> 5667</span>&#160;<span class="keywordflow">       ENDDO</span></div>
 <div class="line"><a name="l05668"></a><span class="lineno"> 5668</span>&#160;<span class="keywordflow">      ENDIF</span></div>
 <div class="line"><a name="l05669"></a><span class="lineno"> 5669</span>&#160;      wa3(1:n)= diag(1:n)*x(1:n)</div>
-<div class="line"><a name="l05670"></a><span class="lineno"> 5670</span>&#160;      xnorm= hto_enorm(n,wa3)</div>
+<div class="line"><a name="l05670"></a><span class="lineno"> 5670</span>&#160;      xnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa3)</div>
 <div class="line"><a name="l05671"></a><span class="lineno"> 5671</span>&#160;      delta= factor*xnorm</div>
 <div class="line"><a name="l05672"></a><span class="lineno"> 5672</span>&#160;      <span class="keywordflow">IF</span>(delta == <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a>) delta= factor</div>
 <div class="line"><a name="l05673"></a><span class="lineno"> 5673</span>&#160;<span class="keywordflow">      ENDIF</span></div>
@@ -1257,7 +1257,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05697"></a><span class="lineno"> 5697</span>&#160;       r(l)= wa1(j)</div>
 <div class="line"><a name="l05698"></a><span class="lineno"> 5698</span>&#160;       <span class="keywordflow">IF</span>(wa1(j) == <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a>) sing= .true.</div>
 <div class="line"><a name="l05699"></a><span class="lineno"> 5699</span>&#160;<span class="keywordflow">      ENDDO</span></div>
-<div class="line"><a name="l05700"></a><span class="lineno"> 5700</span>&#160;      <span class="keyword">CALL </span>hto_qform(n,n,fjac,n,wa1)</div>
+<div class="line"><a name="l05700"></a><span class="lineno"> 5700</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#a6c27c7948dee7924b448527cd0e47aff">hto_qform</a>(n,n,fjac,n,wa1)</div>
 <div class="line"><a name="l05701"></a><span class="lineno"> 5701</span>&#160;      <span class="keywordflow">IF</span>(mode /= 2) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l05702"></a><span class="lineno"> 5702</span>&#160;       <span class="keywordflow">DO</span> j= 1,n</div>
 <div class="line"><a name="l05703"></a><span class="lineno"> 5703</span>&#160;        diag(j)= max(diag(j),wa2(j))</div>
@@ -1268,19 +1268,19 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05708"></a><span class="lineno"> 5708</span>&#160;       <span class="keywordflow">IF</span>(mod(iter-1,nprint) == 0) <span class="keyword">CALL </span>hto_fcn(n,x,fvec,iflag)</div>
 <div class="line"><a name="l05709"></a><span class="lineno"> 5709</span>&#160;       <span class="keywordflow">IF</span>(iflag &lt; 0) <span class="keywordflow">GO TO</span> 190</div>
 <div class="line"><a name="l05710"></a><span class="lineno"> 5710</span>&#160;<span class="keywordflow">      ENDIF</span></div>
-<div class="line"><a name="l05711"></a><span class="lineno"> 5711</span>&#160;      <span class="keyword">CALL </span>hto_dogleg(n,r,lr,diag,qtf,delta,wa1,wa2,wa3)</div>
+<div class="line"><a name="l05711"></a><span class="lineno"> 5711</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#afe4e5fea1ad06250f9e5ce2a5ac37e33">hto_dogleg</a>(n,r,lr,diag,qtf,delta,wa1,wa2,wa3)</div>
 <div class="line"><a name="l05712"></a><span class="lineno"> 5712</span>&#160;      <span class="keywordflow">DO</span> j= 1,n</div>
 <div class="line"><a name="l05713"></a><span class="lineno"> 5713</span>&#160;       wa1(j)= -wa1(j)</div>
 <div class="line"><a name="l05714"></a><span class="lineno"> 5714</span>&#160;       wa2(j)= x(j)+wa1(j)</div>
 <div class="line"><a name="l05715"></a><span class="lineno"> 5715</span>&#160;       wa3(j)= diag(j)*wa1(j)</div>
 <div class="line"><a name="l05716"></a><span class="lineno"> 5716</span>&#160;<span class="keywordflow">      ENDDO</span></div>
-<div class="line"><a name="l05717"></a><span class="lineno"> 5717</span>&#160;      pnorm= hto_enorm(n,wa3)</div>
+<div class="line"><a name="l05717"></a><span class="lineno"> 5717</span>&#160;      pnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa3)</div>
 <div class="line"><a name="l05718"></a><span class="lineno"> 5718</span>&#160;      <span class="keywordflow">IF</span>(iter == 1) delta= min(delta,pnorm)</div>
 <div class="line"><a name="l05719"></a><span class="lineno"> 5719</span>&#160;      iflag= 1</div>
 <div class="line"><a name="l05720"></a><span class="lineno"> 5720</span>&#160;      <span class="keyword">CALL </span>hto_fcn(n,wa2,wa4,iflag)</div>
 <div class="line"><a name="l05721"></a><span class="lineno"> 5721</span>&#160;      nfev= nfev+1</div>
 <div class="line"><a name="l05722"></a><span class="lineno"> 5722</span>&#160;      <span class="keywordflow">IF</span>(iflag &gt;= 0) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l05723"></a><span class="lineno"> 5723</span>&#160;      fnorm1= hto_enorm(n,wa4)</div>
+<div class="line"><a name="l05723"></a><span class="lineno"> 5723</span>&#160;      fnorm1= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa4)</div>
 <div class="line"><a name="l05724"></a><span class="lineno"> 5724</span>&#160;      actred= -<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a></div>
 <div class="line"><a name="l05725"></a><span class="lineno"> 5725</span>&#160;      <span class="keywordflow">IF</span>(fnorm1 &lt; fnorm) actred= <a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>-(fnorm1/fnorm)**2</div>
 <div class="line"><a name="l05726"></a><span class="lineno"> 5726</span>&#160;      l= 1</div>
@@ -1292,7 +1292,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05732"></a><span class="lineno"> 5732</span>&#160;<span class="keywordflow">       ENDDO</span></div>
 <div class="line"><a name="l05733"></a><span class="lineno"> 5733</span>&#160;       wa3(i)= qtf(i)+sum</div>
 <div class="line"><a name="l05734"></a><span class="lineno"> 5734</span>&#160;<span class="keywordflow">      ENDDO</span></div>
-<div class="line"><a name="l05735"></a><span class="lineno"> 5735</span>&#160;      temp= hto_enorm(n,wa3)</div>
+<div class="line"><a name="l05735"></a><span class="lineno"> 5735</span>&#160;      temp= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa3)</div>
 <div class="line"><a name="l05736"></a><span class="lineno"> 5736</span>&#160;      prered= <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
 <div class="line"><a name="l05737"></a><span class="lineno"> 5737</span>&#160;      <span class="keywordflow">IF</span>(temp &lt; fnorm) prered= <a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>-(temp/fnorm)**2</div>
 <div class="line"><a name="l05738"></a><span class="lineno"> 5738</span>&#160;      ratio= <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a></div>
@@ -1313,7 +1313,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05753"></a><span class="lineno"> 5753</span>&#160;        wa2(j)= diag(j)*x(j)</div>
 <div class="line"><a name="l05754"></a><span class="lineno"> 5754</span>&#160;        fvec(j)= wa4(j)</div>
 <div class="line"><a name="l05755"></a><span class="lineno"> 5755</span>&#160;<span class="keywordflow">       ENDDO</span></div>
-<div class="line"><a name="l05756"></a><span class="lineno"> 5756</span>&#160;       xnorm= hto_enorm(n,wa2)</div>
+<div class="line"><a name="l05756"></a><span class="lineno"> 5756</span>&#160;       xnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(n,wa2)</div>
 <div class="line"><a name="l05757"></a><span class="lineno"> 5757</span>&#160;       fnorm= fnorm1</div>
 <div class="line"><a name="l05758"></a><span class="lineno"> 5758</span>&#160;       iter= iter+1</div>
 <div class="line"><a name="l05759"></a><span class="lineno"> 5759</span>&#160;<span class="keywordflow">      ENDIF</span></div>
@@ -1338,9 +1338,9 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l05778"></a><span class="lineno"> 5778</span>&#160;       wa1(j)= diag(j)*((diag(j)*wa1(j))/pnorm)</div>
 <div class="line"><a name="l05779"></a><span class="lineno"> 5779</span>&#160;       <span class="keywordflow">IF</span>(ratio &gt;= p0001) qtf(j)= sum</div>
 <div class="line"><a name="l05780"></a><span class="lineno"> 5780</span>&#160;<span class="keywordflow">      ENDDO</span></div>
-<div class="line"><a name="l05781"></a><span class="lineno"> 5781</span>&#160;      <span class="keyword">CALL </span>hto_r1updt(n,n,r,lr,wa1,wa2,wa3,sing)</div>
-<div class="line"><a name="l05782"></a><span class="lineno"> 5782</span>&#160;      <span class="keyword">CALL </span>hto_r1mpyq(n,n,fjac,n,wa2,wa3)</div>
-<div class="line"><a name="l05783"></a><span class="lineno"> 5783</span>&#160;      <span class="keyword">CALL </span>hto_r1mpyq(1,n,qtf,1,wa2,wa3)</div>
+<div class="line"><a name="l05781"></a><span class="lineno"> 5781</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#af73d8384fe07fde7b063afc452466f03">hto_r1updt</a>(n,n,r,lr,wa1,wa2,wa3,sing)</div>
+<div class="line"><a name="l05782"></a><span class="lineno"> 5782</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#a89a4ef64a31dd4d201b9b6bb3c077ab1">hto_r1mpyq</a>(n,n,fjac,n,wa2,wa3)</div>
+<div class="line"><a name="l05783"></a><span class="lineno"> 5783</span>&#160;      <span class="keyword">CALL </span><a class="code" href="namespacehto__solve__nonlin.html#a89a4ef64a31dd4d201b9b6bb3c077ab1">hto_r1mpyq</a>(1,n,qtf,1,wa2,wa3)</div>
 <div class="line"><a name="l05784"></a><span class="lineno"> 5784</span>&#160;      jeval= .false.</div>
 <div class="line"><a name="l05785"></a><span class="lineno"> 5785</span>&#160;      <span class="keywordflow">GO TO</span> 120</div>
 <div class="line"><a name="l05786"></a><span class="lineno"> 5786</span>&#160;<span class="keywordflow">      ENDIF</span></div>
@@ -1660,7 +1660,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l06300"></a><span class="lineno"> 6300</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l06301"></a><span class="lineno"> 6301</span>&#160;      epsmch= epsilon(1.0d0)</div>
 <div class="line"><a name="l06302"></a><span class="lineno"> 6302</span>&#160;      <span class="keywordflow">DO</span> j= 1,n</div>
-<div class="line"><a name="l06303"></a><span class="lineno"> 6303</span>&#160;       acnorm(j)= hto_enorm(m,a(1:,j))</div>
+<div class="line"><a name="l06303"></a><span class="lineno"> 6303</span>&#160;       acnorm(j)= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(m,a(1:,j))</div>
 <div class="line"><a name="l06304"></a><span class="lineno"> 6304</span>&#160;       rdiag(j)= acnorm(j)</div>
 <div class="line"><a name="l06305"></a><span class="lineno"> 6305</span>&#160;       wa(j)= rdiag(j)</div>
 <div class="line"><a name="l06306"></a><span class="lineno"> 6306</span>&#160;       <span class="keywordflow">IF</span>(pivot) ipvt(j)= j</div>
@@ -1685,7 +1685,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l06325"></a><span class="lineno"> 6325</span>&#160;         ipvt(kmax)= k</div>
 <div class="line"><a name="l06326"></a><span class="lineno"> 6326</span>&#160;<span class="keywordflow">        ENDIF</span></div>
 <div class="line"><a name="l06327"></a><span class="lineno"> 6327</span>&#160;<span class="keywordflow">       ENDIF</span></div>
-<div class="line"><a name="l06328"></a><span class="lineno"> 6328</span>&#160;       ajnorm= hto_enorm(m-j+1,a(j:,j))</div>
+<div class="line"><a name="l06328"></a><span class="lineno"> 6328</span>&#160;       ajnorm= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(m-j+1,a(j:,j))</div>
 <div class="line"><a name="l06329"></a><span class="lineno"> 6329</span>&#160;       <span class="keywordflow">IF</span>(ajnorm /= <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a>) <span class="keywordflow">THEN</span></div>
 <div class="line"><a name="l06330"></a><span class="lineno"> 6330</span>&#160;        <span class="keywordflow">IF</span>(a(j,j) &lt; <a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a>) ajnorm= -ajnorm</div>
 <div class="line"><a name="l06331"></a><span class="lineno"> 6331</span>&#160;        <span class="keywordflow">DO</span> i= j,m</div>
@@ -1707,7 +1707,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l06347"></a><span class="lineno"> 6347</span>&#160;           temp= a(j,k)/rdiag(k)</div>
 <div class="line"><a name="l06348"></a><span class="lineno"> 6348</span>&#160;           rdiag(k)= rdiag(k)*sqrt(max(<a class="code" href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">zero</a>,<a class="code" href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">one</a>-temp**2))</div>
 <div class="line"><a name="l06349"></a><span class="lineno"> 6349</span>&#160;           <span class="keywordflow">IF</span>(p05*(rdiag(k)/wa(k))**2 &lt;= epsmch) <span class="keywordflow">THEN</span></div>
-<div class="line"><a name="l06350"></a><span class="lineno"> 6350</span>&#160;            rdiag(k)= hto_enorm(m-j,a(jp1:,k))</div>
+<div class="line"><a name="l06350"></a><span class="lineno"> 6350</span>&#160;            rdiag(k)= <a class="code" href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_enorm</a>(m-j,a(jp1:,k))</div>
 <div class="line"><a name="l06351"></a><span class="lineno"> 6351</span>&#160;            wa(k)= rdiag(k)</div>
 <div class="line"><a name="l06352"></a><span class="lineno"> 6352</span>&#160;<span class="keywordflow">           ENDIF</span></div>
 <div class="line"><a name="l06353"></a><span class="lineno"> 6353</span>&#160;<span class="keywordflow">          ENDIF</span></div>
@@ -2089,13 +2089,21 @@ Functions/Subroutines</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacehto__units_html_adb7ab93d326f14720c354f68b0f7ee6c"><div class="ttname"><a href="namespacehto__units.html#adb7ab93d326f14720c354f68b0f7ee6c">hto_units::one</a></div><div class="ttdeci">real *8, parameter one</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00184">CALLING_cpHTO.f:184</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_a9b9991931fe83ae42bd577aa132fd691"><div class="ttname"><a href="namespacehto__solve__nonlin.html#a9b9991931fe83ae42bd577aa132fd691">hto_solve_nonlin::hto_fdjac1</a></div><div class="ttdeci">subroutine hto_fdjac1(HTO_FCN, n, x, fvec, fjac, ldfjac, iflag, ml, mu, epsfcn, wa1, wa2)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l05962">CALLING_cpHTO.f:5962</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_a2fedece7d4082c4306271f14df72387e"><div class="ttname"><a href="namespacehto__solve__nonlin.html#a2fedece7d4082c4306271f14df72387e">hto_solve_nonlin::hto_hybrd</a></div><div class="ttdeci">subroutine, public hto_hybrd(HTO_FCN, n, x, fvec, xtol, maxfev, ml, mu, epsfcn, diag, mode, factor, nprint, info, nfev)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l05450">CALLING_cpHTO.f:5450</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_a89a4ef64a31dd4d201b9b6bb3c077ab1"><div class="ttname"><a href="namespacehto__solve__nonlin.html#a89a4ef64a31dd4d201b9b6bb3c077ab1">hto_solve_nonlin::hto_r1mpyq</a></div><div class="ttdeci">subroutine hto_r1mpyq(m, n, a, lda, v, w)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l06367">CALLING_cpHTO.f:6367</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_afe4e5fea1ad06250f9e5ce2a5ac37e33"><div class="ttname"><a href="namespacehto__solve__nonlin.html#afe4e5fea1ad06250f9e5ce2a5ac37e33">hto_solve_nonlin::hto_dogleg</a></div><div class="ttdeci">subroutine hto_dogleg(n, r, lr, diag, qtb, delta, x, wa1, wa2)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l05805">CALLING_cpHTO.f:5805</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_a52df74850a83808488fb1b90d7e539ed"><div class="ttname"><a href="namespacehto__solve__nonlin.html#a52df74850a83808488fb1b90d7e539ed">hto_solve_nonlin::hto_enorm</a></div><div class="ttdeci">real *8 function hto_enorm(n, x)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l06621">CALLING_cpHTO.f:6621</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_a98884f67245c484b378efff769d60f69"><div class="ttname"><a href="namespacehto__solve__nonlin.html#a98884f67245c484b378efff769d60f69">hto_solve_nonlin::hto_qrfac</a></div><div class="ttdeci">subroutine hto_qrfac(m, n, a, lda, pivot, ipvt, lipvt, rdiag, acnorm, wa)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l06214">CALLING_cpHTO.f:6214</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_abab92a867fb77543c0c4ff069d1783d4"><div class="ttname"><a href="namespacehto__units.html#abab92a867fb77543c0c4ff069d1783d4">hto_units::eps</a></div><div class="ttdeci">real *8, parameter eps</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00183">CALLING_cpHTO.f:183</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_af73d8384fe07fde7b063afc452466f03"><div class="ttname"><a href="namespacehto__solve__nonlin.html#af73d8384fe07fde7b063afc452466f03">hto_solve_nonlin::hto_r1updt</a></div><div class="ttdeci">subroutine hto_r1updt(m, n, s, ls, u, v, w, sing)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l06459">CALLING_cpHTO.f:6459</a></div></div>
+<div class="ttc" id="anamespacehto__solve__nonlin_html_a6c27c7948dee7924b448527cd0e47aff"><div class="ttname"><a href="namespacehto__solve__nonlin.html#a6c27c7948dee7924b448527cd0e47aff">hto_solve_nonlin::hto_qform</a></div><div class="ttdeci">subroutine hto_qform(m, n, q, ldq, wa)</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l06121">CALLING_cpHTO.f:6121</a></div></div>
 <div class="ttc" id="anamespacehto__units_html_a99185641f2fef22fbd699ff69ee64f18"><div class="ttname"><a href="namespacehto__units.html#a99185641f2fef22fbd699ff69ee64f18">hto_units::zero</a></div><div class="ttdeci">real *8, parameter zero</div><div class="ttdef"><b>Definition:</b> <a href="CALLING__cpHTO_8f_source.html#l00185">CALLING_cpHTO.f:185</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacehto__solve__nonlin.html">hto_solve_nonlin</a></li>
-    <li class="footer">Generated on Fri Oct 18 2024 15:51:17 for JHUGen MELA by
+    <li class="footer">Generated on Fri Dec 20 2024 20:31:27 for JHUGen MELA by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

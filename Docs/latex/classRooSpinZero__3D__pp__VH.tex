@@ -170,7 +170,7 @@ Definition at line 219 of file Roo\+Spin\+Zero\+\_\+3\+D\+\_\+pp\+\_\+\+V\+H.\+c
 \DoxyCodeLine{232   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRooSpin_a6be7e2229bd99c01fad396c435ad74a1}{Vdecay2}}!=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}) term2Coeff = 2.*m2\_*\mbox{\hyperlink{classRooSpin_ac926655ebb69be16dd2af5de93e4d8d8}{GeVunit}};}
 \DoxyCodeLine{233   Double\_t plumi = \mbox{\hyperlink{classRooSpinZero__3D__pp__VH_ac87d9eb87534962dbbac946de1ae20ea}{partonicLuminosity}}(m1\_, \mbox{\hyperlink{classRooSpin_a7c157be6d06500537be09c606cc169a9}{Y}}, \mbox{\hyperlink{classRooSpinZero__3D__pp__VH_aa04b379b7156b6092e98ec9478792b27}{sqrts}});}
 \DoxyCodeLine{234 }
-\DoxyCodeLine{235   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = 0;}
+\DoxyCodeLine{235   Double\_t value = 0;}
 \DoxyCodeLine{236   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode1=0; VGammaVpmode1<=2; VGammaVpmode1++)\{}
 \DoxyCodeLine{237     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode2=0; VGammaVpmode2<=2; VGammaVpmode2++)\{}
 \DoxyCodeLine{238       \textcolor{keywordflow}{if} (!(}
@@ -190,11 +190,11 @@ Definition at line 219 of file Roo\+Spin\+Zero\+\_\+3\+D\+\_\+pp\+\_\+\+V\+H.\+c
 \DoxyCodeLine{252         )) \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{253       Double\_t val\_A00=0, val\_App=0, val\_Amm=0, val\_A0p=0, val\_A0m=0, val\_Amp=0;}
 \DoxyCodeLine{254       \mbox{\hyperlink{classRooSpinZero__3D__pp__VH_a275d6fbf15da30f1d52ba8db42fb5b79}{evaluatePolarizationTerms}}(val\_A00, val\_App, val\_Amm, val\_A0p, val\_A0m, val\_Amp, code, VGammaVpmode1, VGammaVpmode2);}
-\DoxyCodeLine{255       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
+\DoxyCodeLine{255       value += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
 \DoxyCodeLine{256     \}}
 \DoxyCodeLine{257   \}}
-\DoxyCodeLine{258   \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} *= betaVal*term1Coeff*term2Coeff*plumi;}
-\DoxyCodeLine{259   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{258   value *= betaVal*term1Coeff*term2Coeff*plumi;}
+\DoxyCodeLine{259   \textcolor{keywordflow}{return} value;}
 \DoxyCodeLine{260 \}}
 
 \end{DoxyCode}
@@ -252,7 +252,7 @@ Definition at line 166 of file Roo\+Spin\+Zero\+\_\+3\+D\+\_\+pp\+\_\+\+V\+H.\+c
 \DoxyCodeLine{182   \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRooSpin_a6be7e2229bd99c01fad396c435ad74a1}{Vdecay2}}!=\mbox{\hyperlink{classRooSpin_ac6122b9b6a334da66a3eea86e30d7723ac45898772f20719ac21c306f133f29dd}{RooSpin::kVdecayType\_GammaOnshell}}) term2Coeff = 2.*m2\_*\mbox{\hyperlink{classRooSpin_ac926655ebb69be16dd2af5de93e4d8d8}{GeVunit}};}
 \DoxyCodeLine{183   Double\_t plumi = \mbox{\hyperlink{classRooSpinZero__3D__pp__VH_ac87d9eb87534962dbbac946de1ae20ea}{partonicLuminosity}}(m1\_, \mbox{\hyperlink{classRooSpin_a7c157be6d06500537be09c606cc169a9}{Y}}, \mbox{\hyperlink{classRooSpinZero__3D__pp__VH_aa04b379b7156b6092e98ec9478792b27}{sqrts}});}
 \DoxyCodeLine{184 }
-\DoxyCodeLine{185   Double\_t \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} = 0;}
+\DoxyCodeLine{185   Double\_t value = 0;}
 \DoxyCodeLine{186   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode1=0; VGammaVpmode1<=2; VGammaVpmode1++)\{}
 \DoxyCodeLine{187     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} VGammaVpmode2=0; VGammaVpmode2<=2; VGammaVpmode2++)\{}
 \DoxyCodeLine{188       \textcolor{keywordflow}{if} (!(}
@@ -269,11 +269,11 @@ Definition at line 166 of file Roo\+Spin\+Zero\+\_\+3\+D\+\_\+pp\+\_\+\+V\+H.\+c
 \DoxyCodeLine{199         ) \textcolor{keywordflow}{continue};}
 \DoxyCodeLine{200       Double\_t val\_A00=0, val\_App=0, val\_Amm=0, val\_A0p=0, val\_A0m=0, val\_Amp=0;}
 \DoxyCodeLine{201       \mbox{\hyperlink{classRooSpinZero__3D__pp__VH_a275d6fbf15da30f1d52ba8db42fb5b79}{evaluatePolarizationTerms}}(val\_A00, val\_App, val\_Amm, val\_A0p, val\_A0m, val\_Amp, code, VGammaVpmode1, VGammaVpmode2);}
-\DoxyCodeLine{202       \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
+\DoxyCodeLine{202       value += val\_A00 + val\_App + val\_Amm + val\_A0p + val\_A0m + val\_Amp;}
 \DoxyCodeLine{203     \}}
 \DoxyCodeLine{204   \}}
-\DoxyCodeLine{205   \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}} *= betaVal*term1Coeff*term2Coeff*plumi;}
-\DoxyCodeLine{206   \textcolor{keywordflow}{return} \mbox{\hyperlink{output_8txt_a14cbf2c203e363db8f9aaf1d15b93e1d}{value}};}
+\DoxyCodeLine{205   value *= betaVal*term1Coeff*term2Coeff*plumi;}
+\DoxyCodeLine{206   \textcolor{keywordflow}{return} value;}
 \DoxyCodeLine{207 \}}
 
 \end{DoxyCode}

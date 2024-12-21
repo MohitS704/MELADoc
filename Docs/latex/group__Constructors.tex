@@ -111,7 +111,7 @@ Definition at line 349 of file mela\+\_\+binding.\+cpp.
 \DoxyCodeLine{352     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i;}
 \DoxyCodeLine{353     \textcolor{keywordflow}{for}(i = 0; i < ids.size(); i++)\{}
 \DoxyCodeLine{354         collection.push\_back(}
-\DoxyCodeLine{355             \mbox{\hyperlink{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}{particle\_initializer}}(ids[i], x[i], y[i], \mbox{\hyperlink{namespaceglobalc_a68e62f5d752be9315f909681fa34b5dc}{z}}[i], e[i], ptEtaPhi)}
+\DoxyCodeLine{355             \mbox{\hyperlink{group__Constructors_gab37cf49a7626b894bfb27c2b396f5b99}{particle\_initializer}}(ids[i], x[i], y[i], z[i], e[i], ptEtaPhi)}
 \DoxyCodeLine{356         );}
 \DoxyCodeLine{357     \}}
 \DoxyCodeLine{358 }
@@ -158,9 +158,9 @@ Definition at line 328 of file mela\+\_\+binding.\+cpp.
 \DoxyCodeLine{328                                                                                                       \{}
 \DoxyCodeLine{329     TLorentzVector vec = TLorentzVector();}
 \DoxyCodeLine{330     \textcolor{keywordflow}{if}(ptEtaPhi)\{}
-\DoxyCodeLine{331         vec.SetPtEtaPhiM(x, y, \mbox{\hyperlink{namespaceglobalc_a68e62f5d752be9315f909681fa34b5dc}{z}}, e);}
+\DoxyCodeLine{331         vec.SetPtEtaPhiM(x, y, z, e);}
 \DoxyCodeLine{332     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{333         vec.SetPxPyPzE(x, y, \mbox{\hyperlink{namespaceglobalc_a68e62f5d752be9315f909681fa34b5dc}{z}}, e);}
+\DoxyCodeLine{333         vec.SetPxPyPzE(x, y, z, e);}
 \DoxyCodeLine{334     \}}
 \DoxyCodeLine{335     \textcolor{keywordflow}{return} \mbox{\hyperlink{TVar_8hh_a2bc0c1a02f5152697e55ab2bbda40aff}{SimpleParticle\_t}}(\textcolor{keywordtype}{id}, vec);}
 \DoxyCodeLine{336 \}}

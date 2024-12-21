@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quadruplet_5293',['quadruplet',['../structTNumericUtil_1_1quadruplet.html',1,'TNumericUtil']]]
+  ['vectorpdffactory_4319',['VectorPdfFactory',['../classVectorPdfFactory.html',1,'']]],
+  ['vprimecouplings_4320',['VprimeCouplings',['../classVprimeCouplings.html',1,'']]]
 ];

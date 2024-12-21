@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['globalc_5351',['globalc',['../namespaceglobalc.html',1,'']]],
-  ['globald_5352',['globald',['../namespaceglobald.html',1,'']]]
+  ['pdghelpers_4387',['PDGHelpers',['../namespacePDGHelpers.html',1,'']]]
 ];

@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['mela_5248',['Mela',['../classMela.html',1,'']]],
-  ['melacandidate_5249',['MELACandidate',['../classMELACandidate.html',1,'']]],
-  ['meladifermionresolutionmodel_5250',['MELADifermionResolutionModel',['../classMELADifermionResolutionModel.html',1,'']]],
-  ['meladoublecb_5251',['MELADoubleCB',['../classMELADoubleCB.html',1,'']]],
-  ['melafuncpdf_5252',['MELAFuncPdf',['../classMELAFuncPdf.html',1,'']]],
-  ['melaggzzpdf_5fv2_5253',['MELAggZZPdf_v2',['../classMELAggZZPdf__v2.html',1,'']]],
-  ['melahxswidth_5254',['MELAHXSWidth',['../classMELAHXSWidth.html',1,'']]],
-  ['melaio_5255',['MelaIO',['../classMelaIO.html',1,'']]],
-  ['melalinearinterpfunc_5256',['MELALinearInterpFunc',['../classMELALinearInterpFunc.html',1,'']]],
-  ['melancspline_5f1d_5ffast_5257',['MELANCSpline_1D_fast',['../classMELANCSpline__1D__fast.html',1,'']]],
-  ['melancspline_5f2d_5ffast_5258',['MELANCSpline_2D_fast',['../classMELANCSpline__2D__fast.html',1,'']]],
-  ['melancspline_5f3d_5ffast_5259',['MELANCSpline_3D_fast',['../classMELANCSpline__3D__fast.html',1,'']]],
-  ['melancsplinecore_5260',['MELANCSplineCore',['../classMELANCSplineCore.html',1,'']]],
-  ['melancsplinefactory_5f1d_5261',['MELANCSplineFactory_1D',['../classMELANCSplineFactory__1D.html',1,'']]],
-  ['melancsplinefactory_5f2d_5262',['MELANCSplineFactory_2D',['../classMELANCSplineFactory__2D.html',1,'']]],
-  ['melancsplinefactory_5f3d_5263',['MELANCSplineFactory_3D',['../classMELANCSplineFactory__3D.html',1,'']]],
-  ['melaoutputstreamer_5264',['MELAOutputStreamer',['../classMELAOutputStreamer.html',1,'']]],
-  ['melaparticle_5265',['MELAParticle',['../classMELAParticle.html',1,'']]],
-  ['melapconstant_5266',['MelaPConstant',['../classMelaPConstant.html',1,'']]],
-  ['melaqqzzpdf_5fv2_5267',['MELAqqZZPdf_v2',['../classMELAqqZZPdf__v2.html',1,'']]],
-  ['melarelbwufparam_5268',['MELARelBWUFParam',['../classMELARelBWUFParam.html',1,'']]],
-  ['melathreebodydecaycandidate_5269',['MELAThreeBodyDecayCandidate',['../classMELAThreeBodyDecayCandidate.html',1,'']]],
-  ['modelcouplings_5270',['modelCouplings',['../structRooSpinTwo_1_1modelCouplings.html',1,'RooSpinTwo::modelCouplings'],['../structRooSpinZero_1_1modelCouplings.html',1,'RooSpinZero::modelCouplings']]],
-  ['modelmeasurables_5271',['modelMeasurables',['../structRooSpin_1_1modelMeasurables.html',1,'RooSpin']]],
-  ['modelparameters_5272',['modelParameters',['../structRooSpin_1_1modelParameters.html',1,'RooSpin']]]
+  ['quadruplet_4287',['quadruplet',['../structTNumericUtil_1_1quadruplet.html',1,'TNumericUtil']]]
 ];

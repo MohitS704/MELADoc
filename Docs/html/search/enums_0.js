@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['atqgc_5findices_10051',['ATQGC_indices',['../raw__couplings_8txt.html#a50157f4ba2e38c8aac06bfb946832003',1,'raw_couplings.txt']]],
-  ['azff_5findices_10052',['AZff_indices',['../raw__couplings_8txt.html#a204368bc54ec193f58db7311b8996a55',1,'raw_couplings.txt']]]
+  ['boundarycondition_8073',['BoundaryCondition',['../classMELANCSplineCore.html#aa2f429fca01ad9fe299b8806db643910',1,'MELANCSplineCore']]]
 ];
